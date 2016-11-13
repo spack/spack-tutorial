@@ -9,10 +9,9 @@
 Tutorial: Spack 101
 ===================
 
-This is a full-day introduction to Spack with lectures and live demos.
-It was last presented at the `Practice and Experience in Advanced
-Research Computing Conference (PEARC19)
-<https://www.pearc19.pearc.org/>`_ on July 31, 2019.
+This is a 3-hour introduction to Spack with lectures and live demos. It
+was presented as a tutorial at `Supercomputing 2016
+<http://sc16.supercomputing.org>`_ on November 13, 2016.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -22,45 +21,30 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/pearc19-tutorial-slide-preview.png
+.. image:: tutorial/images/sc16-tutorial-slide-preview.png
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/spack-pearc19-tutorial-slides.pdf>`.
+:download:`Download Slides <tutorial/slides/Spack-SC16-Tutorial.pdf>`.
 
-**Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
-Gamblin. Managing HPC Software Complexity with Spack. Tutorial presented
-at the Practice and Experience in Advanced Research Computing Conference
-(PEARC19). July 31, 2019. Chicago, IL, USA.
+**Full citation:** Todd Gamblin, Massimiliano Culpo, Gregory Becker, Matt
+Legendre, Greg Lee, Elizabeth Fischer, and Benedikt Hegner.
+`Managing HPC Software Complexity with Spack
+<http://sc16.supercomputing.org/conference-components/tutorials-sunmon/index.html>`_.
+Tutorial presented at Supercomputing 2016. November 13, 2016, Salt Lake
+City, UT, USA.
 
 .. _live-demos:
 
 .. rubric:: Live Demos
 
-We provide scripts that take you step-by-step through basic Spack tasks.
-They correspond to sections in the slides above. You can use one of the
-following methods to run through the scripts:
-
-  1. We provide the `spack/tutorial
-     <https://hub.docker.com/r/spack/tutorial>`_ container image on
-     Docker Hub that you can use to do the tutorial on your local
-     machine.  You can invoke ``docker run -it spack/tutorial`` to start
-     using the container.
-
-  2. When we host the tutorial, we also provision VM instances in `AWS
-     <https://aws.amazon.com/>`_, so that users who are unfamiliar with
-     Docker can simply log into a VPM to do the demo exercises.
-
-You should now be ready to run through our demo scripts:
+These scripts will take you step-by-step through basic Spack tasks. They
+correspond to sections in the slides above.
 
   1. :ref:`basics-tutorial`
-  2. :ref:`configs-tutorial`
-  3. :ref:`packaging-tutorial`
-  4. :ref:`environments-tutorial`
-  5. :ref:`modules-tutorial`
-  6. :ref:`build-systems-tutorial`
-  7. :ref:`advanced-packaging-tutorial`
+  2. :ref:`packaging-tutorial`
+  3. :ref:`modules-tutorial`
 
 Full contents:
 
@@ -74,10 +58,6 @@ Full contents:
    :maxdepth: 3
    :caption: Tutorial
 
-   tutorial_basics
-   tutorial_configuration
-   tutorial_packaging
-   tutorial_environments
-   tutorial_modules
-   tutorial_buildsystems
-   tutorial_advanced_packaging
+   tutorial_sc16_spack_basics
+   tutorial_sc16_packaging
+   tutorial_sc16_modules
