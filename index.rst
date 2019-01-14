@@ -10,10 +10,8 @@ Tutorial: Spack 101
 ===================
 
 This is a full-day introduction to Spack with lectures and live demos.
-It was last presented at the `International Supercomputing Conference
-<https://isc-hpc.com>`_ on June 16, 2019. That instance was a half day
-tutorial, but the materials here include all the material you need for a
-full day.
+It was presented as a tutorial at the `Exascale Computing Project Annual
+Meeting <https://ecpannualmeeting.com/agenda.php>`_ in 2019.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -23,37 +21,24 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc19-tutorial-slide-preview.png
+.. image:: tutorial/images/ecp19-tutorial-slide-preview.png
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/Spack-ISC19-Tutorial.pdf>`.
+:download:`Download Slides <tutorial/slides/Spack-ECP19-Tutorial.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, and
-Michael Kuhn.  Managing HPC Software Complexity with Spack.  Tutorial
-presented at International Supercomputing Conference (ISC'19). June 16, 2019.
-Frankfurt, Germany.
+**Full citation:** Todd Gamblin, Gregory Becker, Matt Legendre, Mario
+Melara, and Peter Scheibel. `Spack Tutorial
+<https://whova.com/embedded/subsession/aecm_201901/503158/503161/>`_.
+Presented at ECP Annual Meeting 2019. January 14, 2019. Houston, TX, USA.
 
 .. _live-demos:
 
 .. rubric:: Live Demos
 
-We provide scripts that take you step-by-step through basic Spack tasks.
-They correspond to sections in the slides above. You can use one of the
-following methods to run through the scripts:
-
-  1. We provide the `spack/tutorial
-     <https://hub.docker.com/r/spack/tutorial>`_ container image on
-     Docker Hub that you can use to do the tutorial on your local
-     machine.  You can invoke ``docker run -it spack/tutorial`` to start
-     using the container.
-
-  2. When we host the tutorial, we also provision VM instances in `AWS
-     <https://aws.amazon.com/>`_, so that users who are unfamiliar with
-     Docker can simply log into a VPM to do the demo exercises.
-
-You should now be ready to run through our demo scripts:
+These scripts will take you step-by-step through basic Spack tasks.  They
+correspond to sections in the slides above.
 
   1. :ref:`basics-tutorial`
   2. :ref:`configs-tutorial`
