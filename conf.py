@@ -124,10 +124,10 @@ source_suffix = '.rst'
 source_encoding = 'utf-8-sig'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'tutorial'
 
 # General information about the project.
-project = u'Spack'
+project = u'Spack Tutorial'
 copyright = u'2013-2019, Lawrence Livermore National Laboratory.'
 
 # The version info for the project you're documenting, acts as replacement for
