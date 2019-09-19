@@ -66,6 +66,9 @@ You should now be ready to run through our demo scripts:
 Full contents:
 
 .. toctree::
+   :maxdepth: 3
+   :caption: Contents
+
    tutorial_basics
    tutorial_configuration
    tutorial_packaging
