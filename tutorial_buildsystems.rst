@@ -5,9 +5,9 @@
 
 .. _build-systems-tutorial:
 
-==============================
+===========================
 Spack Package Build Systems
-==============================
+===========================
 
 You may begin to notice after writing a couple of package template files a
 pattern emerge for some packages. For example, you may find yourself writing

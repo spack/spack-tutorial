@@ -22,7 +22,7 @@ should have a clear understanding of:
 .. _module_file_tutorial_overview:
 
 -------------------
-Modules at a glance
+Modules at a Glance
 -------------------
 
 Let's start by summarizing what module files are and how you can use
@@ -136,7 +136,7 @@ them in the next sections.
 .. _module_file_tutorial_prerequisites:
 
 ----------------------
-Setup for the tutorial
+Setup for the Tutorial
 ----------------------
 
 In order to showcase the capabilities of Spack's module file generation, we need
@@ -269,7 +269,7 @@ Finally, we should use Spack to install the packages used in the examples:
 .. _module_file_tutorial_non_hierarchical:
 
 -----------------------------
-Non-hierarchical module files
+Non-hierarchical Module Files
 -----------------------------
 
 If you arrived to this point you should have an environment that looks similar to:
@@ -991,7 +991,7 @@ In case messages are unwanted during the autoload procedure, it will be
 sufficient to omit the line setting ``verbose: True`` in the configuration file above.
 
 -------------------------
-Hierarchical module files
+Hierarchical Module Files
 -------------------------
 
 So far we worked with non-hierarchical module files, i.e. with module files
@@ -1405,7 +1405,7 @@ is made inactive when we switch the ``LAPACK`` provider. The user
 environment is now consistent by design!
 
 ----------------------
-Working with templates
+Working with Templates
 ----------------------
 
 As briefly mentioned in the introduction, Spack uses `Jinja2 <http://jinja.pocoo.org/docs/2.9/>`_

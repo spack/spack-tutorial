@@ -5,9 +5,9 @@
 
 .. _spack-101:
 
-=============================
+===================
 Tutorial: Spack 101
-=============================
+===================
 
 This is a full-day introduction to Spack with lectures and live demos.
 It was last presented at the `Practice and Experience in Advanced

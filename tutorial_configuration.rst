@@ -80,7 +80,7 @@ the effective configuration. Spack will show from which scopes
 the configuration has been assembled.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Platform-specific Scopes
+Platform-specific scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 Some facilities manage multiple platforms from a single shared
@@ -275,7 +275,7 @@ This new compiler also works on Fortran codes:
 
 
 ^^^^^^^^^^^^^^
-Compiler Flags
+Compiler flags
 ^^^^^^^^^^^^^^
 
 Some compilers may require specific compiler flags to work properly in
@@ -329,7 +329,7 @@ spec is concretized:
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Advanced Compiler Configuration
+Advanced compiler configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 There are three fields of the compiler configuration entry that we
@@ -482,7 +482,7 @@ overrides the default settings just for these two items.
 
 
 ^^^^^^^^^^^^^^^^^^^
-Variant Preferences
+Variant preferences
 ^^^^^^^^^^^^^^^^^^^
 
 The packages configuration file can also set variant preferences for
@@ -566,7 +566,7 @@ In general, every attribute that we can set for all packages we can
 set separately for an individual package.
 
 ^^^^^^^^^^^^^^^^^
-External Packages
+External packages
 ^^^^^^^^^^^^^^^^^
 
 The packages configuration file also controls when Spack will build
@@ -788,7 +788,7 @@ command line can be specified in ``packages.yaml`` with the exact
 same spec syntax.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
-Installation Permissions
+Installation permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``packages.yaml`` file also controls the default permissions
