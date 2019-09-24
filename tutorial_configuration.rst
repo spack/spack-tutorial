@@ -859,7 +859,7 @@ from this file system with the following ``config.yaml``:
    inadvertently remove unrelated files.  This can be accomplished by
    including a combination of ``spack`` and or ``stage`` in each path
    as shown in the default settings and documented examples.  See
-   :ref:`config-yaml` for details.
+   `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
 
 
 On systems with compilers that absolutely *require* environment variables

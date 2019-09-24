@@ -10,11 +10,12 @@ Environments Tutorial
 =====================
 
 We've shown you how to install and remove packages with Spack.  You can
-use :ref:`cmd-spack-install` to install packages,
-:ref:`cmd-spack-uninstall` to remove them, and :ref:`cmd-spack-find` to
+use `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages,
+`spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them, 
+and `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
 look at and query what is installed.  We've also shown you how to
 customize Spack's installation with configuration files like
-:ref:`packages.yaml <build-settings>`.
+`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_.
 
 If you build a lot of software, or if you work on multiple projects,
 managing everything in one place can be overwhelming. The default ``spack

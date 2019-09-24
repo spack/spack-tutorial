@@ -142,7 +142,7 @@ Setup for the Tutorial
 In order to showcase the capabilities of Spack's module file generation, we need
 a representative set of software to work with. This set must include different
 flavors of the same packages installed alongside each other and some
-:ref:`external packages <sec-external-packages>`.
+`external packages <https://spack.readthedocs.io/en/latest/build_settings.html#sec-external-packages>`_.
 
 The purpose of this setup is not to make our life harder but to demonstrate
 how Spack can help with similar situations, as they will happen on real HPC clusters.
@@ -188,7 +188,7 @@ our module path.
 
 .. FIXME: check the docs here, update them if necessary
   If you need to install Lmod or Environment module you can refer
-  to the documentation :ref:`here <InstallEnvironmentModules>`.
+  to the documentation `here <https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules>`_.
 
 
 ^^^^^^^^^^^^^^^^^^
@@ -311,7 +311,7 @@ If you arrived to this point you should have an environment that looks similar t
   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 The non-hierarchical module files that have been generated so far
-follow :ref:`the default rules for module generation <modules-yaml>`.
+follow `the default rules for module generation <https://spack.readthedocs.io/en/latest/module_file_support.html#modules-yaml>`_.
 Taking a look at the ``gcc`` module you'll see, for example:
 
 .. code-block:: console
@@ -610,7 +610,7 @@ name. We can add suffixes to differentiate them:
           '^mpich': mpich
 
 As you can see it is possible to specify rules that apply only to a
-restricted set of packages using :ref:`anonymous specs <anonymous_specs>`.
+restricted set of packages using `anonymous specs <https://spack.readthedocs.io/en/latest/module_file_support.html#anonymous-specs>`_.
 Regenerating module files now we obtain:
 
 .. code-block:: console
@@ -1110,7 +1110,7 @@ After these modifications your configuration file should look like:
   Double colon in configuration files
     The double colon after ``enable`` is intentional and it serves the
     purpose of overriding the default list of enabled generators so
-    that only ``lmod`` will be active (see :ref:`config-overrides` for more
+    that only ``lmod`` will be active (see `Overriding entire sections <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for more
     details).
 
 The directive ``core_compilers`` accepts a list of compilers. Everything built
