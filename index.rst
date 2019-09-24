@@ -18,24 +18,24 @@ You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
 Spack is used in practice.
 
-.. _sc16-slides:
+.. _slides:
 
 .. rubric:: Slides
 
-.. figure:: tutorial/sc16-tutorial-slide-preview.png
-   :target: https://spack.io/slides/spack-pearc19-tutorial-slides.pdf
+.. figure:: tutorial/pearc19-tutorial-slide-preview.png
+   :target: https://spack-tutorial.readthedocs.io/tutorial/slides/spack-pearc19-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-`Download Slides <https://spack.io/slides/spack-pearc19-tutorial-slides.pdf>`_.
+`Download Slides <https://spack-tutorial.readthedocs.io/tutorial/slides/spack-pearc19-tutorial-slides.pdf>`_.
 
 **Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
 Gamblin. Managing HPC Software Complexity with Spack.  Tutorial presented
 at the Practice and Experience in Advanced Research Computing Conference
 (PEARC19).  July 31, 2019.  Chicago, IL, USA.
 
-.. _sc16-live-demos:
+.. _live-demos:
 
 .. rubric:: Live Demos
 
