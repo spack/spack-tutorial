@@ -22,13 +22,13 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. figure:: tutorial/pearc19-tutorial-slide-preview.png
-   :target: https://spack-tutorial.readthedocs.io/tutorial/slides/spack-pearc19-tutorial-slides.pdf
+.. figure:: tutorial/sc16-tutorial-slide-preview.png
+   :target: https://spack.io/slides/spack-pearc19-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-`Download Slides <https://spack-tutorial.readthedocs.io/tutorial/slides/spack-pearc19-tutorial-slides.pdf>`_.
+`Download Slides <https://spack.io/slides/spack-pearc19-tutorial-slides.pdf>`_.
 
 **Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
 Gamblin. Managing HPC Software Complexity with Spack.  Tutorial presented
