@@ -213,7 +213,7 @@ Take note of the following:
    :emphasize-lines: 21,27,34
    :linenos:
 
-Similar to :code:`Autotools`, :code:`MakefilePackage` class has properties
+Similar to :code:``Auto`tools`, :code:`MakefilePackage` class has properties
 that can be set by the packager. We can also override the different
 methods highlighted.
 

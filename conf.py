@@ -23,23 +23,7 @@ import re
 import subprocess
 from glob import glob
 
-from sphinx.ext.apidoc import main as sphinx_apidoc
-
 # -- Spack customizations -----------------------------------------------------
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('_spack_root/lib/spack/external'))
-
-if sys.version_info[0] < 3:
-    sys.path.insert(
-        0, os.path.abspath('_spack_root/lib/spack/external/yaml/lib'))
-else:
-    sys.path.insert(
-        0, os.path.abspath('_spack_root/lib/spack/external/yaml/lib3'))
-
-sys.path.append(os.path.abspath('_spack_root/lib/spack/'))
-
 # Add the Spack bin directory to the path so that we can use its output in docs.
 os.environ['SPACK_ROOT'] = os.path.abspath('_spack_root')
 os.environ['PATH'] += "%s%s" % (os.pathsep, os.path.abspath('_spack_root/bin'))
@@ -48,32 +32,6 @@ os.environ['PATH'] += "%s%s" % (os.pathsep, os.path.abspath('_spack_root/bin'))
 # a terminal.
 os.environ['COLIFY_SIZE'] = '25x120'
 os.environ['COLUMNS'] = '120'
-
-# Generate full package list if needed
-subprocess.call([
-    'spack', 'list', '--format=html', '--update=package_list.html'])
-
-# Generate a command index if an update is needed
-subprocess.call([
-    'spack', 'commands',
-    '--format=rst',
-    '--header=command_index.in',
-    '--update=command_index.rst'] + glob('*rst'))
-
-#
-# Run sphinx-apidoc
-#
-# Remove any previous API docs
-# Read the Docs doesn't clean up after previous builds
-# Without this, the API Docs will never actually update
-#
-apidoc_args = [
-    '--force',         # Overwrite existing files
-    '--no-toc',        # Don't create a table of contents file
-    '--output-dir=.',  # Directory to place all output
-]
-sphinx_apidoc(apidoc_args + ['_spack_root/lib/spack/spack'])
-sphinx_apidoc(apidoc_args + ['_spack_root/lib/spack/llnl'])
 
 # Enable todo items
 todo_include_todos = True
@@ -99,11 +57,8 @@ needs_sphinx = '1.8'
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.autodoc',
-              'sphinx.ext.graphviz',
-              'sphinx.ext.napoleon',
-              'sphinx.ext.todo',
-              'sphinxcontrib.programoutput']
+extensions = ['sphinx.ext.graphviz',
+              'sphinx.ext.todo']
 
 # Set default graphviz options
 graphviz_dot_args = [
