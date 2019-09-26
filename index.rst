@@ -31,9 +31,9 @@ Spack is used in practice.
 `Download Slides </tutorial/slides/spack-pearc19-tutorial-slides.pdf>`_.
 
 **Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
-Gamblin. Managing HPC Software Complexity with Spack.  Tutorial presented
+Gamblin. Managing HPC Software Complexity with Spack. Tutorial presented
 at the Practice and Experience in Advanced Research Computing Conference
-(PEARC19).  July 31, 2019.  Chicago, IL, USA.
+(PEARC19). July 31, 2019. Chicago, IL, USA.
 
 .. _live-demos:
 
