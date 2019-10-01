@@ -26,10 +26,10 @@ Package Class Hierarchy
 
 .. graphviz::
 
-    digraph {
+    digraph G {
 
         node [
-            shape = "record"
+            shape = "box"
         ]
         edge [
             arrowhead = "empty"
