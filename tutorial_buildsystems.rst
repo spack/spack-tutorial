@@ -27,7 +27,7 @@ Package Class Hierarchy
 .. graphviz::
 
     digraph G {
-        node [shape=box, color=black]
+        node [shape=box, color=black, rankdir=TB]
         edge [arrowhead=empty]
         PackageBase -> Package [dir=back]
         PackageBase -> MakefilePackage [dir=back]
