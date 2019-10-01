@@ -26,7 +26,7 @@ Package Class Hierarchy
 
 .. graphviz::
 
-    digraph G {
+    digraph {
 
         node [
             shape = "record"
