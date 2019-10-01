@@ -22,8 +22,8 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. figure:: tutorial/pearc19-tutorial-slide-preview.png
-   :target: tutorial/slides/spack-pearc19-tutorial-slides.pdf
+.. figure:: ../tutorial/pearc19-tutorial-slide-preview.png
+   :target: ../tutorial/slides/spack-pearc19-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
