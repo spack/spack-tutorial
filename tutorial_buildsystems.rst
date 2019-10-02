@@ -27,15 +27,21 @@ Package Class Hierarchy
 .. graphviz::
 
     digraph G {
-        node [shape=box, color=black, orientation=landscape]
-        edge [arrowhead=empty]
+
+        node [
+            shape = "record"
+        ]
+        edge [
+            arrowhead = "empty"
+        ]
+
         PackageBase -> Package [dir=back]
         PackageBase -> MakefilePackage [dir=back]
         PackageBase -> AutotoolsPackage [dir=back]
         PackageBase -> CMakePackage [dir=back]
         PackageBase -> PythonPackage [dir=back]
     }
-
+ 
 The above diagram gives a high level view of the class hierarchy and how each
 package relates. Each subclass inherits from the :code:`PackageBaseClass`
 super class. The bulk of the work is done in this super class which includes
