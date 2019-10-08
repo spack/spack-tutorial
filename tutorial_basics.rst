@@ -1718,7 +1718,7 @@ added to the configuration.
 
 We can add gcc to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-gcc@7.2.0.
+gcc @7.2.0.
 
 .. code-block:: console
 
