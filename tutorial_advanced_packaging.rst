@@ -22,7 +22,7 @@ dependencies, and how you can automatically provide important information to
 dependents in your package.
 
 ----------------------
-Setup for the tutorial
+Setup for the Tutorial
 ----------------------
 
 .. note::
@@ -39,7 +39,7 @@ in a separate package repository, which can be enabled with:
   $ spack repo add --scope=site var/spack/repos/tutorial
 
 This section of the tutorial may also require a newer version of
-gcc. If you have not already installed gcc@7.2.0 and added it to your
+gcc. If you have not already installed gcc @7.2.0 and added it to your
 configuration, you can do so with:
 
 .. code-block:: console
@@ -66,12 +66,12 @@ the rest of the tutorial.
   OpenMPI if you install it from scratch, but this is slow (>10 min.).
   A binary cache of MPICH may be provided, in which case you can force
   the package to use it and install quickly. All tutorial examples with
-  packages that depend on MPICH include the spec syntax for building with it
+  packages that depend on MPICH include the spec syntax for building with it.
 
 .. _adv_pkg_tutorial_start:
 
 ---------------------------------------
-Modifying a package's build environment
+Modifying a Package's Build Environment
 ---------------------------------------
 
 Spack sets up several environment variables like ``PATH`` by default to aid in
@@ -199,7 +199,7 @@ In the end your method should look like:
 At this point it's possible to proceed with the installation of ``elpa ^mpich``
 
 ------------------------------
-Retrieving library information
+Retrieving Library Information
 ------------------------------
 
 Although Spack attempts to help packages locate their dependency libraries

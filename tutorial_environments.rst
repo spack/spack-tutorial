@@ -10,11 +10,12 @@ Environments Tutorial
 =====================
 
 We've shown you how to install and remove packages with Spack.  You can
-use :ref:`cmd-spack-install` to install packages,
-:ref:`cmd-spack-uninstall` to remove them, and :ref:`cmd-spack-find` to
+use `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages,
+`spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them, 
+and `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
 look at and query what is installed.  We've also shown you how to
 customize Spack's installation with configuration files like
-:ref:`packages.yaml <build-settings>`.
+`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_.
 
 If you build a lot of software, or if you work on multiple projects,
 managing everything in one place can be overwhelming. The default ``spack
@@ -26,7 +27,7 @@ packages in the same group the same way.
 Spack **environments** provide a way to handle these problems.
 
 -------------------
-Environment basics
+Environment Basics
 -------------------
 
 Let's look at the output of ``spack find`` at this point in the tutorial.
@@ -247,7 +248,7 @@ it is no longer needed by any environments or packages.  If it is still
 needed, it is only removed from the environment.
 
 -------------------------------
-Dealing with many specs at once
+Dealing with Many Specs at Once
 -------------------------------
 
 In the above examples, we just used ``install`` and ``uninstall``.  There
@@ -350,9 +351,9 @@ all at once, or we can install them with the usual ``install`` and
 we don't have to write a script outside of Spack to automate this, and we
 can kick off a large build of many packages easily.
 
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 Configuration
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 So far, ``myproject`` does not have any special configuration associated
 with it.  The specs concretize using Spack's defaults:
@@ -546,9 +547,9 @@ to force everything in the environment to be re-concretized using ``spack
 concretize -f``.  *Then* we can re-run ``spack install``.
 
 
------------------------------------
+---------------------------------
 ``spack.yaml`` and ``spack.lock``
------------------------------------
+---------------------------------
 
 So far we've shown you how to interact with environments from the command
 line, but they also have a file-based interface that can be used by

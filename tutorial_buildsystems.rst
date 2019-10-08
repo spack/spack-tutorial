@@ -5,9 +5,9 @@
 
 .. _build-systems-tutorial:
 
-==============================
+===========================
 Spack Package Build Systems
-==============================
+===========================
 
 You may begin to notice after writing a couple of package template files a
 pattern emerge for some packages. For example, you may find yourself writing
@@ -41,7 +41,7 @@ Package Class Hierarchy
         PackageBase -> CMakePackage [dir=back]
         PackageBase -> PythonPackage [dir=back]
     }
-
+ 
 The above diagram gives a high level view of the class hierarchy and how each
 package relates. Each subclass inherits from the :code:`PackageBaseClass`
 super class. The bulk of the work is done in this super class which includes
@@ -777,7 +777,7 @@ It is quite important to declare all the dependencies of a Python package.
 Spack can "activate" Python packages to prevent the user from having to
 load each dependency module explictly. If a dependency is missed, Spack will
 be unable to properly activate the package and it will cause an issue. To
-learn more about extensions go to :ref:`cmd-spack-extensions`.
+learn more about extensions go to `spack extensions <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-extensions>`_.
 
 From this example, you can see that building Python modules is made easy
 through the :code:`PythonPackage` class.
@@ -804,4 +804,4 @@ you can use the :code:`Package` class.
 
 Hopefully by now you can see how we aim to make packaging simple and
 robust through these classes. If you want to learn more about these build
-systems, check out :ref:`installation_procedure` in the Packaging Guide.
+systems, check out `Implementing the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.

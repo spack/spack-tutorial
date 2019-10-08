@@ -3,99 +3,75 @@
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-.. Spack documentation master file, created by
-   sphinx-quickstart on Mon Dec  9 15:32:41 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. _spack-101:
 
 ===================
-Spack
+Tutorial: Spack 101
 ===================
 
-.. epigraph::
+This is a full-day introduction to Spack with lectures and live demos.
+It was last presented at the `Practice and Experience in Advanced
+Research Computing Conference (PEARC19)
+<https://www.pearc19.pearc.org/>`_ on July 31, 2019.
 
-   `These are docs for the Spack package manager. For sphere packing, see` `pyspack <https://pyspack.readthedocs.io>`_.
+You can use these materials to teach a course on Spack at your own site,
+or you can just skip ahead and read the live demo scripts to see how
+Spack is used in practice.
 
-Spack is a package management tool designed to support multiple
-versions and configurations of software on a wide variety of platforms
-and environments.  It was designed for large supercomputing centers,
-where many users and application teams share common installations of
-software on clusters with exotic architectures, using libraries that
-do not have a standard ABI.  Spack is non-destructive: installing a
-new version does not break existing installations, so many
-configurations can coexist on the same system.
+.. _slides:
 
-Most importantly, Spack is *simple*.  It offers a simple *spec* syntax
-so that users can specify versions and configuration options
-concisely.  Spack is also simple for package authors: package files
-are written in pure Python, and specs allow package authors to
-maintain a single file for many different builds of the same package.
+.. rubric:: Slides
 
-See the :doc:`features` for examples and highlights.
+.. image:: tutorial/images/pearc19-tutorial-slide-preview.png
+   :height: 72px
+   :align: left
+   :alt: Slide Preview
 
-Get spack from the `github repository
-<https://github.com/spack/spack>`_ and install your first
-package:
+:download:`Download Slides <tutorial/slides/spack-pearc19-tutorial-slides.pdf>`.
 
-.. code-block:: console
+**Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
+Gamblin. Managing HPC Software Complexity with Spack. Tutorial presented
+at the Practice and Experience in Advanced Research Computing Conference
+(PEARC19). July 31, 2019. Chicago, IL, USA.
 
-   $ git clone https://github.com/spack/spack.git
-   $ cd spack/bin
-   $ ./spack install libelf
+.. _live-demos:
 
-If you're new to spack and want to start using it, see :doc:`getting_started`,
-or refer to the full manual below.
+.. rubric:: Live Demos
 
+We provide scripts that take you step-by-step through basic Spack tasks.
+They correspond to sections in the slides above. You can use one of the
+following methods to run through the scripts:
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Basics
+  1. We provide the `spack/tutorial
+     <https://hub.docker.com/r/spack/tutorial>`_ container image on
+     Docker Hub that you can use to do the tutorial on your local
+     machine.  You can invoke ``docker run -it spack/tutorial`` to start
+     using the container.
 
-   features
-   getting_started
-   basic_usage
-   workflows
-   tutorial
-   known_issues
+  2. When we host the tutorial, we also provision VM instances in `AWS
+     <https://aws.amazon.com/>`_, so that users who are unfamiliar with
+     Docker can simply log into a VPM to do the demo exercises.
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Reference
+You should now be ready to run through our demo scripts:
 
-   configuration
-   config_yaml
-   build_settings
-   environments
-   mirrors
-   module_file_support
-   repositories
-   binary_caches
-   command_index
-   package_list
-   chain
-   extensions
+  1. :ref:`basics-tutorial`
+  2. :ref:`configs-tutorial`
+  3. :ref:`packaging-tutorial`
+  4. :ref:`environments-tutorial`
+  5. :ref:`modules-tutorial`
+  6. :ref:`build-systems-tutorial`
+  7. :ref:`advanced-packaging-tutorial`
+
+Full contents:
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contributing
+   :maxdepth: 3
+   :caption: Contents
 
-   contribution_guide
-   packaging_guide
-   build_systems
-   developer_guide
-   docker_for_developers
-
-.. toctree::
-   :maxdepth: 2
-   :caption: API Docs
-
-   Spack API Docs <spack>
-   LLNL API Docs <llnl>
-
-==================
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   tutorial_basics
+   tutorial_configuration
+   tutorial_packaging
+   tutorial_environments
+   tutorial_modules
+   tutorial_buildsystems
+   tutorial_advanced_packaging
