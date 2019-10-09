@@ -10,11 +10,11 @@ This tutorial covers basic to advanced usage, packaging, developer features, and
 
 Updating the tutorial
 ---------------------------------
-1. `git filter-branch` instructions TBD.
+1. Create a new branch named for the event/milestone that corresponds to the new version you want to create.
 2. Tagging instructions TBD.
-3. Upload screen shot of first slide (244px wide, .png) to [images directory](https://github.com/spack/spack-tutorial/tree/master/lib/spack/docs/tutorial/images) following existing file-naming convention.
-4. Upload PDF of slide deck to [slides directory](https://github.com/spack/spack-tutorial/tree/master/lib/spack/docs/tutorial/slides) following existing file-naming convention.
-5. Update [index.rst](https://github.com/spack/spack-tutorial/blob/master/lib/spack/docs/index.rst) with event name and date; full citation; and file paths for image and PDF.
+3. Upload screen shot of first slide (244px wide, .png) to [images directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/images) following existing file-naming convention.
+4. Upload PDF of slide deck to [slides directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/slides) following existing file-naming convention.
+5. Update [index.rst](https://github.com/spack/spack-tutorial/blob/master/index.rst) with event name and date; full citation; and file paths for image and PDF.
 
 License
 ----------------
