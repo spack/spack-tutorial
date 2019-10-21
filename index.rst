@@ -27,7 +27,7 @@ Spack is used in practice.
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/Spack-RIKEN19-Tutorial.pdf>`.
+:download: `Download Slides <tutorial/slides/Spack-RIKEN19-Tutorial.pdf>`.
 
 **Full citation:** Todd Gamblin, Gregory Becker, and Peter Scheibel.
 Managing HPC Software Complexity with Spack. Tutorial presented at RIKEN
