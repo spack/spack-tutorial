@@ -1,24 +1,12 @@
 # <img src="https://cdn.rawgit.com/spack/spack/develop/share/spack/logo/spack-logo.svg" width="64" valign="middle" alt="Spack"/> Spack Tutorial
 
-[![Read the Docs](https://readthedocs.org/projects/spack-tutorial/badge/?version=latest)](https://spack-tutorial.readthedocs.io)
+[![Read the Docs](https://readthedocs.org/projects/spack-tutorial/badge/?version=riken)](https://spack-tutorial.readthedocs.io)
 
 Spack is a multi-platform package manager that builds and installs multiple versions and configurations of software. It works on Linux, macOS, and many supercomputers. Spack is non-destructive: installing a new version of a package does not break existing installations, so many configurations of the same package can coexist.
 
-This repository houses Spack's [**hands-on tutorial**](https://spack-tutorial.readthedocs.io/en/latest/), which is a subset of Spack's [**full documentation**](https://spack.readthedocs.io/) (or you can run `spack help` or `spack help --all`).
+This repository houses Spack's [**hands-on tutorial**](https://spack-tutorial.readthedocs.io/en/riken/), which is a subset of Spack's [**full documentation**](https://spack.readthedocs.io/) (or you can run `spack help` or `spack help --all`).
 
 This tutorial covers basic to advanced usage, packaging, developer features, and large HPC deployments.  You can do all of the exercises on your own laptop using a Docker container. Feel free to use these materials to teach users at your organization about Spack.
-
-## Updating the tutorial
-
-1. Create a new branch named for the event/milestone that corresponds to the new version you want to create.
-2. Create and push a tag for that branch.
-3. Upload screen shot of first slide (244px wide, .png) to [images directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/images) following existing file-naming convention.
-4. Upload PDF of slide deck to [slides directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/slides) following existing file-naming convention.
-5. Update [index.rst](https://github.com/spack/spack-tutorial/blob/master/index.rst) with event name and date; full citation; and file paths for image and PDF.
-6. Update this README (lines 3 and 7) with link to new version's URL.
-6. Build docs locally.
-7. Push changes to GitHub and active new tag/version on Read the Docs.
-8. Build new version on Read the Docs.
 
 ## License
 
