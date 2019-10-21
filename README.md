@@ -8,8 +8,7 @@ This repository houses Spack's [**hands-on tutorial**](https://spack-tutorial.re
 
 This tutorial covers basic to advanced usage, packaging, developer features, and large HPC deployments.  You can do all of the exercises on your own laptop using a Docker container. Feel free to use these materials to teach users at your organization about Spack.
 
-License
-----------------
+## License
 
 Spack is distributed under the terms of both the MIT license and the Apache License (Version 2.0). Users may choose either license, at their option.
 
