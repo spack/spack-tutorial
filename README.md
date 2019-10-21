@@ -8,16 +8,19 @@ This repository houses Spack's [**hands-on tutorial**](https://spack-tutorial.re
 
 This tutorial covers basic to advanced usage, packaging, developer features, and large HPC deployments.  You can do all of the exercises on your own laptop using a Docker container. Feel free to use these materials to teach users at your organization about Spack.
 
-Updating the tutorial
----------------------------------
+## Updating the tutorial
+
 1. Create a new branch named for the event/milestone that corresponds to the new version you want to create.
-2. Tagging instructions TBD.
+2. Create and push a tag for that branch.
 3. Upload screen shot of first slide (244px wide, .png) to [images directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/images) following existing file-naming convention.
 4. Upload PDF of slide deck to [slides directory](https://github.com/spack/spack-tutorial/tree/master/tutorial/slides) following existing file-naming convention.
 5. Update [index.rst](https://github.com/spack/spack-tutorial/blob/master/index.rst) with event name and date; full citation; and file paths for image and PDF.
+6. Update this README (lines 3 and 7) with link to new version's URL.
+6. Build docs locally.
+7. Push changes to GitHub and active new tag/version on Read the Docs.
+8. Build new version on Read the Docs.
 
-License
-----------------
+## License
 
 Spack is distributed under the terms of both the MIT license and the Apache License (Version 2.0). Users may choose either license, at their option.
 
