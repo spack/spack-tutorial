@@ -31,7 +31,7 @@ Spack is used in practice.
 
 **Full citation:** Todd Gamblin and Gregory Becker. Managing HPC Software
 Complexity with Spack. Tutorial presented at the First Workshop on NSF
-and DOE High Performance Computing Tools. July 9, 2019. Eugene, Oregon,
+and DOE High Performance Computing Tools. July 10, 2019. Eugene, Oregon,
 USA.
 
 .. _live-demos:
