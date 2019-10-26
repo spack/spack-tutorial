@@ -65,8 +65,14 @@ You should now be ready to run through our demo scripts:
 Full contents:
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Links
+
+   Main Spack Documentation <https://spack.readthedocs.io>
+
+.. toctree::
    :maxdepth: 3
-   :caption: Contents
+   :caption: Tutorial
 
    tutorial_basics
    tutorial_configuration
