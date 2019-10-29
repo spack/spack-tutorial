@@ -54,13 +54,14 @@ following methods to run through the scripts:
 
 You should now be ready to run through our demo scripts:
 
-  1. :ref:`basics-tutorial`
-  2. :ref:`configs-tutorial`
-  3. :ref:`packaging-tutorial`
-  4. :ref:`environments-tutorial`
-  5. :ref:`modules-tutorial`
-  6. :ref:`build-systems-tutorial`
-  7. :ref:`advanced-packaging-tutorial`
+  #. :ref:`basics-tutorial`
+  #. :ref:`configs-tutorial`
+  #. :ref:`packaging-tutorial`
+  #. :ref:`developer-workflows-tutorial`
+  #. :ref:`environments-tutorial`
+  #. :ref:`modules-tutorial`
+  #. :ref:`build-systems-tutorial`
+  #. :ref:`advanced-packaging-tutorial`
 
 Full contents:
 
@@ -77,6 +78,7 @@ Full contents:
    tutorial_basics
    tutorial_configuration
    tutorial_packaging
+   tutorial_developer_workflows
    tutorial_environments
    tutorial_modules
    tutorial_buildsystems

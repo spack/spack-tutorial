@@ -3,7 +3,7 @@
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-.. _developer-workflows-tutorial
+.. _developer-workflows-tutorial:
 
 ============================
 Developer Workflows Tutorial
