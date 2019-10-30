@@ -875,7 +875,7 @@ Extend the hierarchy to other virtual providers
   This is an experimental feature
     Having a hierarchy deeper than ``Core``/``Compiler``/``MPI`` is an experimental
     feature, still not fully supported by ``module spider``,
-    see `here <https://github.com/TACC/Lmod/issues/114>`_. Furthermore its use
+    see `the Lmod repo <https://github.com/TACC/Lmod/issues/114>`_. Furthermore its use
     with hierarchies more complex than ``Core``/``Compiler``/``MPI``/``LAPACK``
     has not been thoroughly tested in production environments.
 
