@@ -34,10 +34,10 @@ Prerequisites
 Before proceeding further ensure:
 
 - you have LMod or Environment Modules available
-- have shell support activated in Spack
+- have `shell support <https://spack.readthedocs.io/en/latest/module_file_support.html#id2>`_ activated in Spack
 
 If you need to install Lmod or Environment module you can refer
-to the documentation :ref:`here <InstallEnvironmentModules>`.
+to the documentation `here <https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules>`_.
 
 
 ^^^^^^^^^^^^^^^^^^
@@ -132,7 +132,7 @@ Filter unwanted modifications to the environment
 
 The non-hierarchical TCL module files that have been generated so far
 follow the default rules for module generation, which are given
-:ref:`here <modules-yaml>` in the reference part of the manual. Taking a
+`here <https://spack.readthedocs.io/en/latest/module_file_support.html#write-a-configuration-file>`_ in the reference part of the manual. Taking a
 look at the ``gcc`` module you'll see something like:
 
 .. code-block:: console
@@ -368,7 +368,7 @@ name. We have the possibility to add suffixes to differentiate them:
           '^mpich': mpich
 
 As you can see it is possible to specify rules that applies only to a
-restricted set of packages using :ref:`anonymous specs <anonymous_specs>`.
+restricted set of packages using `anonymous specs <https://spack.readthedocs.io/en/latest/module_file_support.html>`_.
 Regenerating module files now we obtain:
 
 .. code-block:: console
@@ -780,8 +780,8 @@ After modifications the configuration file will be:
   The double colon
     The double colon after ``enable`` is intentional and it serves the
     purpose of overriding the default list of enabled generators so
-    that only ``lmod`` will be active (see :ref:`the reference
-    manual <config-overrides>` for a more detailed explanation of
+    that only ``lmod`` will be active (see `the reference
+    manual <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for a more detailed explanation of
     config scopes).
 
 The directive ``core_compilers`` accepts a list of compilers : everything built
