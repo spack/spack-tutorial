@@ -17,6 +17,11 @@ jobs:
       os: linux
       language: python
 
+# Need dot to build
+addons:
+  apt:
+    packages:
+      - graphviz
 
 # Install various dependencies
 install:
