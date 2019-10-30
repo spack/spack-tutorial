@@ -21,7 +21,7 @@ with Python.
 
 Also note that this document is a tutorial.  It can help you get started
 with packaging, but is not intended to be complete.  See Spack's
-:ref:`packaging-guide` for more complete documentation on this topic.
+`packaging-guide <https://spack.readthedocs.io/en/latest/packaging_guide.html>`_ for more complete documentation on this topic.
 
 ---------------
 Getting Started
@@ -185,7 +185,7 @@ dependencies before building mpileaks.  Note that the mpi dependency is a
 different kind of beast than the adept-utils and callpath dependencies;
 there is no mpi package available in Spack.  Instead mpi is a virtual
 dependency.  Spack may satisfy that dependency by installing packages
-such as ``openmpi`` or ``mvapich``.  See the :ref:`packaging-guide` for more
+such as ``openmpi`` or ``mvapich``.  See the `packaging-guide <https://spack.readthedocs.io/en/latest/packaging_guide.html>`_ for more
 information on virtual dependencies.
 
 Now when we try to install this package a lot more happens:
@@ -419,7 +419,7 @@ powerful class for querying information about what we're building.  For
 example, you could use the spec to query information about how a
 package's dependencies were built, or what compiler was being used, or
 what version of a package is being installed.  Full documentation can be
-found in the :ref:`packaging-guide`, but here's some quick snippets with
+found in the `packaging-guide <https://spack.readthedocs.io/en/latest/packaging_guide.html>`_, but here's some quick snippets with
 common queries:
 
 - Am I building ``mpileaks`` version ``1.1`` or greater?
