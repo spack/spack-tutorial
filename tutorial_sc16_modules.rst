@@ -132,7 +132,7 @@ Filter unwanted modifications to the environment
 
 The non-hierarchical TCL module files that have been generated so far
 follow the default rules for module generation, which are given
-`here <https://spack.readthedocs.io/en/latest/module_file_support.html#write-a-configuration-file>`_ in the reference part of the manual. Taking a
+here in the `reference part <https://spack.readthedocs.io/en/latest/module_file_support.html#write-a-configuration-file>`_ of the manual. Taking a
 look at the ``gcc`` module you'll see something like:
 
 .. code-block:: console
