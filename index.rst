@@ -62,6 +62,7 @@ You should now be ready to run through our demo scripts:
   #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
   #. :ref:`advanced-packaging-tutorial`
+  #. :ref:`spack-scripting-tutorial`
 
 Full contents:
 
@@ -83,3 +84,4 @@ Full contents:
    tutorial_modules
    tutorial_buildsystems
    tutorial_advanced_packaging
+   tutorial_spack_scripting
