@@ -42,7 +42,7 @@ Installing from local source
 
 The `spack install` command, as you know, fetches source code from a
 mirror or the internet before building and installing your package. As
-a developer, we want to build from local source, which we will
+developers, we want to build from local source, which we will
 constantly change, build, and test.
 
 Let's imagine for a second we're HDF5 developers.
@@ -106,15 +106,15 @@ as well.
 Development iteration cycles
 -----------------------------
 
-Generally, as a developer, we only want to configure our package once,
+Generally, as developers, we only want to configure our package once,
 and then we want to iterate developing and building our code, before
 installing it once if at all. We can do this in Spack using the
 ``-u/--until`` option with the ``spack dev-build`` command. To do this
 we need to know the phases of the build that Spack will
 use. Fortunately, as experienced HDF5 developers we all happen to know
 that those phases are ``autoreconf``, ``configure``, ``build``, and
-``install``. If we didn't remember the phases, we could find
-out using the ``spack info`` command.
+``install``. If we don't remember the phases, we could find out using
+the ``spack info`` command.
 
 .. code-block:: console
   :emphasize-lines: 54,55
@@ -209,7 +209,7 @@ To build our code, we have a couple options. We could use `spack
 dev-build` and the `-u` option to configure and build our code, but
 we've already configured our code, and the changes we made don't
 affect the build system. Instead, let's run our build system directly
--- we are developers of this code now after all. The first thing we
+-- we are developers of this code now, after all. The first thing we
 need to do is activate Spack's build environment for our code:
 
 .. code-block:: console
