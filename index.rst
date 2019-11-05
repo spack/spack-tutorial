@@ -22,7 +22,7 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/pearc19-tutorial-slide-preview.png
+.. image:: tutorial/images/lanl19-tutorial-slide-preview.png
    :height: 72px
    :align: left
    :alt: Slide Preview
