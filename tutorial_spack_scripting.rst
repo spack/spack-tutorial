@@ -28,9 +28,7 @@ start over.
 
 .. code-block:: console
 
-  $ spack uninstall -ay %gcc
-  ...
-  $ spack uninstall -ay %clang
+  $ spack uninstall -ay
   ...
   $ spack compiler rm gcc@8.3.0
   ...
