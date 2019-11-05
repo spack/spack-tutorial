@@ -11,7 +11,7 @@ Environments Tutorial
 
 We've shown you how to install and remove packages with Spack.  You can
 use `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages,
-`spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them, 
+`spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them,
 and `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
 look at and query what is installed.  We've also shown you how to
 customize Spack's installation with configuration files like
@@ -34,33 +34,30 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 
 .. code-block:: console
 
-   $ spack find
-   ==> 70 installed packages
-   -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-   tcl@8.6.8  zlib@1.2.8  zlib@1.2.11
+	$ spack find
+	==> 62 installed packages
+	-- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+	tcl@8.6.8  zlib@1.2.8  zlib@1.2.11
 
-   -- linux-ubuntu16.04-x86_64 / gcc@4.7 ---------------------------
-   zlib@1.2.11
+	-- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
+	zlib@1.2.11
 
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   adept-utils@1.0.1  hdf5@1.10.4          mpc@1.1.0               perl@5.26.2
-   autoconf@2.69      hdf5@1.10.4          mpfr@3.1.6              pkgconf@1.4.2
-   automake@1.16.1    hdf5@1.10.4          mpich@3.2.1             readline@7.0
-   boost@1.68.0       hwloc@1.11.9         mpileaks@1.0            suite-sparse@5.3.0
-   bzip2@1.0.6        hypre@2.15.1         mumps@5.1.1             tar@1.30
-   callpath@1.0.4     hypre@2.15.1         mumps@5.1.1             tcl@8.6.8
-   cmake@3.12.3       isl@0.18             ncurses@6.1             tcl@8.6.8
-   diffutils@3.6      libdwarf@20180129    netcdf@4.6.1            texinfo@6.5
-   dyninst@9.3.2      libiberty@2.31.1     netcdf@4.6.1            trilinos@12.12.1
-   elfutils@0.173     libpciaccess@0.13.5  netlib-scalapack@2.0.2  trilinos@12.12.1
-   findutils@4.6.0    libsigsegv@2.11      netlib-scalapack@2.0.2  util-macros@1.19.1
-   gcc@7.2.0          libtool@2.4.6        numactl@2.0.11          xz@5.2.4
-   gdbm@1.14.1        libxml2@2.9.8        openblas@0.3.3          zlib@1.2.8
-   gettext@0.19.8.1   m4@1.4.18            openmpi@3.1.3           zlib@1.2.8
-   glm@0.9.7.1        matio@1.5.9          openssl@1.0.2o          zlib@1.2.11
-   gmp@6.1.2          matio@1.5.9          parmetis@4.0.3
-   hdf5@1.10.4        metis@5.1.0          parmetis@4.0.3
-
+	-- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+	autoconf@2.69    hwloc@1.11.11        mpich@3.3.1             pkgconf@1.6.3
+	automake@1.16.1  hypre@2.18.1         mumps@5.2.0             readline@8.0
+	boost@1.70.0     hypre@2.18.1         mumps@5.2.0             suite-sparse@5.3.0
+	bzip2@1.0.8      isl@0.18             ncurses@6.1             tcl@8.6.8
+	cmake@3.15.4     libiconv@1.16        netcdf@4.7.1            tcl@8.6.8
+	diffutils@3.7    libpciaccess@0.13.5  netcdf@4.7.1            texinfo@6.5
+	findutils@4.6.0  libsigsegv@2.12      netlib-scalapack@2.0.2  trilinos@12.14.1
+	gcc@8.3.0        libtool@2.4.6        netlib-scalapack@2.0.2  trilinos@12.14.1
+	gdbm@1.18.1      libxml2@2.9.9        numactl@2.0.12          util-macros@1.19.1
+	glm@0.9.7.1      m4@1.4.18            openblas@0.3.7          xz@5.2.4
+	gmp@6.1.2        matio@1.5.13         openmpi@3.1.4           zlib@1.2.8
+	hdf5@1.10.5      matio@1.5.13         openssl@1.1.1d          zlib@1.2.8
+	hdf5@1.10.5      metis@5.1.0          parmetis@4.0.3          zlib@1.2.11
+	hdf5@1.10.5      mpc@1.1.0            parmetis@4.0.3
+	hdf5@1.10.5      mpfr@3.1.6           perl@5.30.0
 
 This is a complete, but cluttered view.  There are packages built with
 both ``openmpi`` and ``mpich``, as well as multiple variants of other
@@ -77,11 +74,15 @@ The ``spack env`` command can help.  Let's create a new environment:
 
 .. code-block:: console
 
-   $ spack env create myproject
-   ==> Created environment 'myproject' in ~/spack/var/spack/environments/myproject
+	$ spack env create myproject
+	==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
+	==> Created environment 'myproject' in /home/spack1/spack/var/spack/environments/myproject
 
 An environment is a virtualized ``spack`` instance that you can use for a
-specific purpose.  You can see the environments we've created so far like this:
+specific purpose.  The environment also has an associated *view*, which
+is a single prefix where all packages from the environment are linked.
+
+You can see the environments we've created so far like this:
 
 .. code-block:: console
 
@@ -96,14 +97,14 @@ And you can **activate** an environment with ``spack env activate``:
    $ spack env activate myproject
 
 Once you enter an environment, ``spack find`` shows only what is in the
-current environment.  That's nothing, so far:
+current environment.  We just created this environment, so we have a
+clean slate -- 0 packages:
 
 .. code-block:: console
 
    $ spack find
    ==> In environment myproject
    ==> No root specs
-
    ==> 0 installed packages
 
 The ``spack find`` output is still *slightly* different.  It tells you
@@ -119,7 +120,7 @@ If you *only* want to check what environment you are in, you can use
    $ spack env status
    ==> In environment myproject
 
-And, if you want to leave this environment and go back to normal Spack,
+If you want to leave this environment and go back to normal Spack,
 you can use ``spack env deactivate``.  We like to use the
 ``despacktivate`` alias (which Spack sets up automatically) for short:
 
@@ -129,13 +130,31 @@ you can use ``spack env deactivate``.  We like to use the
    $ spack env status
    ==> No active environment
    $ spack find
-   netcdf@4.6.1            readline@7.0        zlib@1.2.11
-   diffutils@3.6      hdf5@1.10.4       m4@1.4.18            netcdf@4.6.1            suite-sparse@5.3.0
-   dyninst@10.0.0     hwloc@1.11.9      matio@1.5.9          netlib-scalapack@2.0.2  tar@1.30
-   elfutils@0.173     hypre@2.15.1      matio@1.5.9          netlib-scalapack@2.0.2  tcl@8.6.8
-   findutils@4.6.0    hypre@2.15.1      metis@5.1.0          numactl@2.0.11          tcl@8.6.8
-   gcc@7.2.0          intel-tbb@2019    mpc@1.1.0            openblas@0.3.3          texinfo@6.5~
+   ==> 62 installed packages
+   -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+   tcl@8.6.8  zlib@1.2.8  zlib@1.2.11
 
+   -- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
+   zlib@1.2.11
+
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   autoconf@2.69    hwloc@1.11.11        mpich@3.3.1             pkgconf@1.6.3
+   automake@1.16.1  hypre@2.18.1         mumps@5.2.0             readline@8.0
+   boost@1.70.0     hypre@2.18.1         mumps@5.2.0             suite-sparse@5.3.0
+   bzip2@1.0.8      isl@0.18             ncurses@6.1             tcl@8.6.8
+   cmake@3.15.4     libiconv@1.16        netcdf@4.7.1            tcl@8.6.8
+   diffutils@3.7    libpciaccess@0.13.5  netcdf@4.7.1            texinfo@6.5
+   findutils@4.6.0  libsigsegv@2.12      netlib-scalapack@2.0.2  trilinos@12.14.1
+   gcc@8.3.0        libtool@2.4.6        netlib-scalapack@2.0.2  trilinos@12.14.1
+   gdbm@1.18.1      libxml2@2.9.9        numactl@2.0.12          util-macros@1.19.1
+   glm@0.9.7.1      m4@1.4.18            openblas@0.3.7          xz@5.2.4
+   gmp@6.1.2        matio@1.5.13         openmpi@3.1.4           zlib@1.2.8
+   hdf5@1.10.5      matio@1.5.13         openssl@1.1.1d          zlib@1.2.8
+   hdf5@1.10.5      metis@5.1.0          parmetis@4.0.3          zlib@1.2.11
+   hdf5@1.10.5      mpc@1.1.0            parmetis@4.0.3
+   hdf5@1.10.5      mpfr@3.1.6           perl@5.30.0
+
+Phew -- all of our packages are still installed.
 
 ^^^^^^^^^^^^^^^^^^^
 Installing packages
@@ -148,20 +167,24 @@ back to ``myproject`` and *install* a few packages:
 
    $ spack env activate myproject
    $ spack install tcl
-   ==> tcl is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/tcl-8.6.8-qhwyccywhx2i6s7ob2gvjrjtj3rnfuqt
+   ==> tcl is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/tcl-8.6.8-t3gp773osdwptcklekqkqg5742zbq42b
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
    $ spack install trilinos
-   ==> trilinos is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/trilinos-12.12.1-rlsruavxqvwk2tgxzxboclbo6ykjf54r
+   ==> trilinos is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-mpalhktqqjjo2hayykb6ut2jyhkmow3z
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
    $ spack find
    ==> In environment myproject
    ==> Root specs
    tcl  trilinos
 
-   ==> 22 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   boost@1.68.0  hwloc@1.11.9         matio@1.5.9   netlib-scalapack@2.0.2  parmetis@4.0.3      xz@5.2.4
-   bzip2@1.0.6   hypre@2.15.1         metis@5.1.0   numactl@2.0.11          suite-sparse@5.3.0  zlib@1.2.11
-   glm@0.9.7.1   libpciaccess@0.13.5  mumps@5.1.1   openblas@0.3.3          tcl@8.6.8
-   hdf5@1.10.4   libxml2@2.9.8        netcdf@4.6.1  openmpi@3.1.3           trilinos@12.12.1
+   ==> 23 installed packages
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   boost@1.70.0   libiconv@1.16        netcdf@4.7.1            suite-sparse@5.3.0
+   bzip2@1.0.8    libpciaccess@0.13.5  netlib-scalapack@2.0.2  tcl@8.6.8
+   glm@0.9.7.1    libxml2@2.9.9        numactl@2.0.12          trilinos@12.14.1
+   hdf5@1.10.5    matio@1.5.13         openblas@0.3.7          xz@5.2.4
+   hwloc@1.11.11  metis@5.1.0          openmpi@3.1.4           zlib@1.2.11
+   hypre@2.18.1   mumps@5.2.0          parmetis@4.0.3
 
 We've installed ``tcl`` and ``trilinos`` in our environment, along with
 all of their dependencies.  We call ``tcl`` and ``trilinos`` the
@@ -173,31 +196,112 @@ The "<package> is already installed" messages above are generated because
 we already installed these packages in previous steps of the tutorial,
 and we don't have to rebuild them to put them in an environment.
 
+^^^^^^^^^^^^^^^^^^^^^
+Using packages
+^^^^^^^^^^^^^^^^^^^^^
+
+When you install packages into an environment, they are linked into a
+single prefix, or a *view*.  When you *activate* the environment with
+``spack env activate``, Spack adds subdirectories from the view to
+``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH`` and other
+environment variables.  This makes the environment easier to use.
+
+Without environments, you need to ``spack load`` or ``module load`` a
+package in order to use it.  With environments, you can simply run
+``spack env activate`` to get everything in the environment on your
+``PATH``.
+
+Let's try it out.  ``myproject`` is still the active environment, and we
+just installed ``tcl``.  You can see ``tclsh`` in your ``PATH``
+immediately:
+
+.. code-block:: console
+
+   $ which tclsh
+   /home/spack1/spack/var/spack/environments/myproject/.spack-env/view/bin/tclsh
+
+And you can run it like you would any other program:
+
+.. code-block:: console
+
+	$ tclsh
+	% echo "hello world!"
+	hello world!
+	% exit
+
+Likewise, we installed Trilinos, and you can run some of its sub-programs
+as well:
+
+.. code-block:: console
+
+	$ which algebra
+	/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/bin/algebra
+	$ algebra
+
+	           AAAAA   LL        GGGGG   EEEEEEE  BBBBBB   RRRRRR    AAAAA
+	          AA   AA  LL       GG   GG  EE       BB   BB  RR   RR  AA   AA
+	          AA   AA  LL       GG       EE       BB   BB  RR   RR  AA   AA
+	          AAAAAAA  LL       GG       EEEEE    BBBBBB   RRRRRR   AAAAAAA
+	          AA   AA  LL       GG  GGG  EE       BB   BB  RRRRR    AA   AA
+	          AA   AA  LL       GG   GG  EE       BB   BB  RR  RR   AA   AA
+	          AA   AA  LLLLLLL   GGGGG   EEEEEEE  BBBBBB   RR   RR  AA   AA
+
+
+	                          *** algebra Version 1.45 ***
+	                               Revised 2018/08/08
+
+	                        AN ALGEBRAIC MANIPULATION PROGRAM
+	                 FOR POST-PROCESSING OF FINITE ELEMENT ANALYSES
+	                                EXODUS II VERSION
+
+	                          Run on 2019-11-05 at 07:11:24
+
+	               ==== Email gdsjaar@sandia.gov for support ====
+
+	                          +++ Copyright 2008 NTESS +++
+	                       +++ Under the terms of Contract +++
+	                      +++ DE-NA0003525 with NTESS, the +++
+	        +++ U.S. Government retains certain rights in this software. +++
+
+        ...
+
+
+^^^^^^^^^^^^^^^^^^^^^
+Uninstalling packages
+^^^^^^^^^^^^^^^^^^^^^
+
 Now let's create *another* project.  We'll call this one ``myproject2``:
 
 .. code-block:: console
 
    $ spack env create myproject2
-   ==> Created environment 'myproject2' in ~/spack/var/spack/environments/myproject2
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject2/.spack-env/view
+   ==> Created environment 'myproject2' in /home/spack1/spack/var/spack/environments/myproject2
+
    $ spack env activate myproject2
-   $ spack install hdf5
-   ==> hdf5 is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/hdf5-1.10.4-ozyvmhzdew66byarohm4p36ep7wtcuiw
+   $ spack install hdf5+hl
+   ==> hdf5 is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hdf5-1.10.5-audmuesjjp62dbn2ldwt576f3yurx5cs
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject2/.spack-env/view
    $ spack install trilinos
-   ==> trilinos is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/trilinos-12.12.1-rlsruavxqvwk2tgxzxboclbo6ykjf54r
+   ==> trilinos is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-mpalhktqqjjo2hayykb6ut2jyhkmow3z
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject2/.spack-env/view
    $ spack find
    ==> In environment myproject2
    ==> Root specs
-   hdf5  trilinos
+   hdf5 +hl  trilinos
 
    ==> 22 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   boost@1.68.0  hdf5@1.10.4          libxml2@2.9.8  netcdf@4.6.1            openmpi@3.1.3       xz@5.2.4
-   bzip2@1.0.6   hwloc@1.11.9         matio@1.5.9    netlib-scalapack@2.0.2  parmetis@4.0.3      zlib@1.2.11
-   glm@0.9.7.1   hypre@2.15.1         metis@5.1.0    numactl@2.0.11          suite-sparse@5.3.0
-   hdf5@1.10.4   libpciaccess@0.13.5  mumps@5.1.1    openblas@0.3.3          trilinos@12.12.1
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   boost@1.70.0   hypre@2.18.1         metis@5.1.0             openblas@0.3.7      xz@5.2.4
+   bzip2@1.0.8    libiconv@1.16        mumps@5.2.0             openmpi@3.1.4       zlib@1.2.11
+   glm@0.9.7.1    libpciaccess@0.13.5  netcdf@4.7.1            parmetis@4.0.3
+   hdf5@1.10.5    libxml2@2.9.9        netlib-scalapack@2.0.2  suite-sparse@5.3.0
+   hwloc@1.11.11  matio@1.5.13         numactl@2.0.12          trilinos@12.14.1
 
 Now we have two environments: one with ``tcl`` and ``trilinos``, and
-another with ``hdf5`` and ``trilinos``.
+another with ``hdf5 +hl`` and ``trilinos``.  Notice that the roots display *exactly* as
+we asked for them on the command line -- the ``hdf5`` for this environemnt has an
+``+hl`` requirement.
 
 We can uninstall trilinos from ``myproject2`` as you would expect:
 
@@ -206,20 +310,21 @@ We can uninstall trilinos from ``myproject2`` as you would expect:
    $ spack uninstall trilinos
    ==> The following packages will be uninstalled:
 
-       -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-       rlsruav trilinos@12.12.1%gcc~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
+       -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+       mpalhkt trilinos@12.14.1%gcc ~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
    ==> Do you want to proceed? [y/N] y
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject2/.spack-env/view
    $ spack find
    ==> In environment myproject2
    ==> Root specs
-   hdf5
+   hdf5 +hl
 
-   ==> 8 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   hdf5@1.10.4   libpciaccess@0.13.5  numactl@2.0.11  xz@5.2.4
-   hwloc@1.11.9  libxml2@2.9.8        openmpi@3.1.3   zlib@1.2.11
+   ==> 9 installed packages
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   hdf5@1.10.5    libiconv@1.16        libxml2@2.9.9   openmpi@3.1.4  zlib@1.2.11
+   hwloc@1.11.11  libpciaccess@0.13.5  numactl@2.0.12  xz@5.2.4
 
-Now there is only one root spec, ``hdf5``, which requires fewer
+Now there is only one root spec, ``hdf5 +hl``, which requires fewer
 additional dependencies.
 
 However, we still needed ``trilinos`` for the ``myproject`` environment!
@@ -232,14 +337,15 @@ What happened to it?  Let's switch back and see.
    $ spack find
    ==> In environment myproject
    ==> Root specs
-   tcl  trilinos
+   tcl   trilinos
 
-   ==> 22 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   boost@1.68.0  hwloc@1.11.9         matio@1.5.9   netlib-scalapack@2.0.2  parmetis@4.0.3      xz@5.2.4
-   bzip2@1.0.6   hypre@2.15.1         metis@5.1.0   numactl@2.0.11          suite-sparse@5.3.0  zlib@1.2.11
-   glm@0.9.7.1   libpciaccess@0.13.5  mumps@5.1.1   openblas@0.3.3          tcl@8.6.8
-   hdf5@1.10.4   libxml2@2.9.8        netcdf@4.6.1  openmpi@3.1.3           trilinos@12.12.1
+   ==> 23 installed packages
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   boost@1.70.0   hypre@2.18.1         metis@5.1.0             openblas@0.3.7      trilinos@12.14.1
+   bzip2@1.0.8    libiconv@1.16        mumps@5.2.0             openmpi@3.1.4       xz@5.2.4
+   glm@0.9.7.1    libpciaccess@0.13.5  netcdf@4.7.1            parmetis@4.0.3      zlib@1.2.11
+   hdf5@1.10.5    libxml2@2.9.9        netlib-scalapack@2.0.2  suite-sparse@5.3.0
+   hwloc@1.11.11  matio@1.5.13         numactl@2.0.12          tcl@8.6.8
 
 
 Spack is smart enough to realize that ``trilinos`` is still present in
@@ -258,28 +364,31 @@ are other ways to deal with groups of packages, as well.
 Adding specs
 ^^^^^^^^^^^^^
 
-Let's go back to our first ``myproject`` environment and *add* a few specs instead of installing them:
+While we're still in ``myproject``, let's *add* a few specs instead of installing them:
 
 .. code-block:: console
 
-   $ spack add hdf5
-   ==> Adding hdf5 to environment myproject
+   $ spack add hdf5+hl
+   ==> Adding hdf5+hl to environment myproject
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
    $ spack add gmp
-   ==> Adding mumps to environment myproject
+   ==> Adding gmp to environment myproject
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
    $ spack find
    ==> In environment myproject
    ==> Root specs
-   gmp  hdf5  tcl  trilinos
+   gmp   hdf5 +hl  tcl   trilinos
 
-   ==> 22 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   boost@1.68.0  hwloc@1.11.9         matio@1.5.9   netlib-scalapack@2.0.2  parmetis@4.0.3      xz@5.2.4
-   bzip2@1.0.6   hypre@2.15.1         metis@5.1.0   numactl@2.0.11          suite-sparse@5.3.0  zlib@1.2.11
-   glm@0.9.7.1   libpciaccess@0.13.5  mumps@5.1.1   openblas@0.3.3          tcl@8.6.8
-   hdf5@1.10.4   libxml2@2.9.8        netcdf@4.6.1  openmpi@3.1.3           trilinos@12.12.1
+   ==> 23 installed packages
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   boost@1.70.0   hypre@2.18.1         metis@5.1.0             openblas@0.3.7      trilinos@12.14.1
+   bzip2@1.0.8    libiconv@1.16        mumps@5.2.0             openmpi@3.1.4       xz@5.2.4
+   glm@0.9.7.1    libpciaccess@0.13.5  netcdf@4.7.1            parmetis@4.0.3      zlib@1.2.11
+   hdf5@1.10.5    libxml2@2.9.9        netlib-scalapack@2.0.2  suite-sparse@5.3.0
+   hwloc@1.11.11  matio@1.5.13         numactl@2.0.12          tcl@8.6.8
 
-Let's take a close look at what happened.  The two packages we added,
-``hdf5`` and ``gmp``, are present, but they're not installed in the
+Let's take a close look at what happened.  The two requirements we added,
+``hdf5 +hl`` and ``gmp``, are present, but they're not installed in the
 environment yet.  ``spack add`` just adds *roots* to the environment, but
 it does not automatically install them.
 
@@ -289,43 +398,49 @@ simply running ``spack install`` with no arguments:
 .. code-block:: console
 
    $ spack install
-   ==> Concretizing hdf5
-   [+]  ozyvmhz  hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran~hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-   [+]  3njc4q5      ^openmpi@3.1.3%gcc@5.4.0~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-   [+]  43tkw5m          ^hwloc@1.11.9%gcc@5.4.0~cairo~cuda+libxml2+pci+shared arch=linux-ubuntu16.04-x86_64
-   [+]  5urc6tc              ^libpciaccess@0.13.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf                  ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc                      ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp                          ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a                  ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  milz7fm                  ^util-macros@1.19.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  wpexsph              ^libxml2@2.9.8%gcc@5.4.0~python arch=linux-ubuntu16.04-x86_64
-   [+]  teneqii                  ^xz@5.2.4%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn                  ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  ft463od              ^numactl@2.0.11%gcc@5.4.0 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe                  ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa                      ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo                          ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                              ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou                                  ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im                  ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing gmp
-   [+]  qc4qcfz  gmp@6.1.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe      ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc          ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp              ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa          ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo              ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                  ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou                      ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a                          ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im      ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf      ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
+   ==> Concretized hdf5+hl
+   [+]  65cucf4  hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran+hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+   [+]  f6maodn      ^openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+   [+]  xcjsxcr          ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vhehc32              ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw                  ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6                      ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm                          ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps                  ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  a226ran                  ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  fg5evg4              ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb                  ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ur2jffe                  ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y                  ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  n6yyt2y              ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful                  ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei                      ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd                          ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                              ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior                                  ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo                  ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized gmp
+   [+]  fz3lzqi  gmp@6.1.2%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful      ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6          ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm              ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei          ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd              ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                  ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior                      ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps                          ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo      ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw      ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
    ==> Installing environment myproject
-   ==> tcl is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/tcl-8.6.8-qhwyccywhx2i6s7ob2gvjrjtj3rnfuqt
-   ==> trilinos is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/trilinos-12.12.1-rlsruavxqvwk2tgxzxboclbo6ykjf54r
-   ==> hdf5 is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/hdf5-1.10.4-ozyvmhzdew66byarohm4p36ep7wtcuiw
-   ==> gmp is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/gmp-6.1.2-qc4qcfz4monpllc3nqupdo7vwinf73sw
+   ==> tcl is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/tcl-8.6.8-t3gp773osdwptcklekqkqg5742zbq42b
+   ==> trilinos is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-mpalhktqqjjo2hayykb6ut2jyhkmow3z
+   ==> hdf5 is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hdf5-1.10.5-65cucf4mb2vyni6xto4me4sei6kwvjqv
+   ==> gmp is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/gmp-6.1.2-fz3lzqixnahwwqeqsxwevhek4eejmz3z
+   ==> gmp@6.1.2 : marking the package explicit
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
 
 Spack will concretize the new roots, and install everything you added to
 the environment.  Now we can see the installed roots in the output of
@@ -336,14 +451,15 @@ the environment.  Now we can see the installed roots in the output of
    $ spack find
    ==> In environment myproject
    ==> Root specs
-   gmp  hdf5  tcl  trilinos
+   gmp   hdf5 +hl  tcl   trilinos
 
    ==> 24 installed packages
-   -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-   boost@1.68.0  hdf5@1.10.4   libpciaccess@0.13.5  mumps@5.1.1             openblas@0.3.3      tcl@8.6.8
-   bzip2@1.0.6   hdf5@1.10.4   libxml2@2.9.8        netcdf@4.6.1            openmpi@3.1.3       trilinos@12.12.1
-   glm@0.9.7.1   hwloc@1.11.9  matio@1.5.9          netlib-scalapack@2.0.2  parmetis@4.0.3      xz@5.2.4
-   gmp@6.1.2     hypre@2.15.1  metis@5.1.0          numactl@2.0.11          suite-sparse@5.3.0  zlib@1.2.11
+   -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+   boost@1.70.0  hwloc@1.11.11        matio@1.5.13            numactl@2.0.12      tcl@8.6.8
+   bzip2@1.0.8   hypre@2.18.1         metis@5.1.0             openblas@0.3.7      trilinos@12.14.1
+   glm@0.9.7.1   libiconv@1.16        mumps@5.2.0             openmpi@3.1.4       xz@5.2.4
+   gmp@6.1.2     libpciaccess@0.13.5  netcdf@4.7.1            parmetis@4.0.3      zlib@1.2.11
+   hdf5@1.10.5   libxml2@2.9.9        netlib-scalapack@2.0.2  suite-sparse@5.3.0
 
 We can build whole environments this way, by adding specs and installing
 all at once, or we can install them with the usual ``install`` and
@@ -367,26 +483,27 @@ with it.  The specs concretize using Spack's defaults:
 
    Concretized
    --------------------------------
-   hypre@2.15.1%gcc@5.4.0~debug~int64+internal-superlu+mpi+shared arch=linux-ubuntu16.04-x86_64
-       ^openblas@0.3.3%gcc@5.4.0 cpu_target= ~ilp64 patches=47cfa7a952ac7b2e4632c73ae199d69fb54490627b66a62c681e21019c4ddc9d,714aea33692304a50bd0ccde42590c176c82ded4a8ac7f06e573dc8071929c33 +pic+shared threads=none ~virtual_machine arch=linux-ubuntu16.04-x86_64
-       ^openmpi@3.1.3%gcc@5.4.0~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-           ^hwloc@1.11.9%gcc@5.4.0~cairo~cuda+libxml2+pci+shared arch=linux-ubuntu16.04-x86_64
-               ^libpciaccess@0.13.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                       ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                           ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^util-macros@1.19.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-               ^libxml2@2.9.8%gcc@5.4.0~python arch=linux-ubuntu16.04-x86_64
-                   ^xz@5.2.4%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-               ^numactl@2.0.11%gcc@5.4.0 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-                   ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                       ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-                           ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                               ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                                   ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                   ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
+   hypre@2.18.1%gcc@7.4.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+       ^openblas@0.3.7%gcc@7.4.0+avx2~avx512 cpu_target=auto ~ilp64+pic+shared threads=none ~virtual_machine arch=linux-ubuntu18.04-x86_64
+       ^openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+           ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+               ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                       ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                           ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+                   ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+               ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                       ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                           ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                               ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                                   ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                   ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
 
 You may want to add extra configuration to your environment.  You can see
 how your environment is configured using ``spack config get``:
@@ -400,7 +517,8 @@ how your environment is configured using ``spack config get``:
    # configuration settings.
    spack:
      # add package specs to the `specs` list
-     specs: [tcl, trilinos, hdf5, gmp]
+     specs: [tcl, trilinos, hdf5+hl, gmp]
+     view: true
 
 It turns out that this is a special configuration format where Spack
 stores the state for the environment. Currently, the file is just a
@@ -441,21 +559,27 @@ Now if we run ``spack spec`` again in the environment, specs will concretize wit
 
    Concretized
    --------------------------------
-   hypre@2.15.1%gcc@5.4.0~debug~int64+internal-superlu+mpi+shared arch=linux-ubuntu16.04-x86_64
-       ^mpich@3.2.1%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-           ^findutils@4.6.0%gcc@5.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu16.04-x86_64
-               ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                       ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-                       ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                           ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                               ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                                   ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-               ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-               ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-               ^texinfo@6.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-       ^openblas@0.3.3%gcc@5.4.0 cpu_target= ~ilp64 patches=47cfa7a952ac7b2e4632c73ae199d69fb54490627b66a62c681e21019c4ddc9d,714aea33692304a50bd0ccde42590c176c82ded4a8ac7f06e573dc8071929c33 +pic+shared threads=none ~virtual_machine arch=linux-ubuntu16.04-x86_64
+   hypre@2.18.1%gcc@7.4.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+       ^mpich@3.3.1%gcc@7.4.0 device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+           ^findutils@4.6.0%gcc@7.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+               ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                       ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                       ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                           ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                               ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                                   ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^texinfo@6.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+           ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+           ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+               ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+       ^openblas@0.3.7%gcc@7.4.0+avx2~avx512 cpu_target=auto ~ilp64+pic+shared threads=none ~virtual_machine arch=linux-ubuntu18.04-x86_64
 
 In addition to the ``specs`` section, an environment's configuration can
 contain any of the configuration options from Spack's various config
@@ -472,69 +596,84 @@ all of its specs.  We can run it here:
 .. code-block:: console
 
    $ spack concretize -f
-   ==> Concretizing tcl
-   [+]  qhwyccy  tcl@8.6.8%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn      ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing trilinos
-   [+]  kqc52mo  trilinos@12.12.1%gcc@5.4.0~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu16.04-x86_64
-   [+]  zbgfxap      ^boost@1.68.0%gcc@5.4.0+atomic+chrono~clanglibcpp cxxstd=default +date_time~debug+exception+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 +program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave arch=linux-ubuntu16.04-x86_64
-   [+]  ufczdvs          ^bzip2@1.0.6%gcc@5.4.0+shared arch=linux-ubuntu16.04-x86_64
-   [+]  2rhuivg              ^diffutils@3.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn          ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  otafqzh      ^cmake@3.12.3%gcc@5.4.0~doc+ncurses+openssl+ownlibs patches=dd3a40d4d92f6b2158b87d6fb354c277947c776424aa03f6dc8096cf3135f5d0 ~qt arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou          ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a              ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  b4y3w3b          ^openssl@1.0.2o%gcc@5.4.0+systemcerts arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa              ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo                  ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                      ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  jnw622j      ^glm@0.9.7.1%gcc@5.4.0 build_type=RelWithDebInfo arch=linux-ubuntu16.04-x86_64
-   [+]  xxd7syh      ^hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-   [+]  p3f7p2r          ^mpich@3.2.1%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-   [+]  d4iajxs              ^findutils@4.6.0%gcc@5.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe                  ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc                      ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp                          ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im                  ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf                  ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  zs7a2pc                  ^texinfo@6.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  obewuoz      ^hypre@2.15.1%gcc@5.4.0~debug~int64~internal-superlu+mpi+shared arch=linux-ubuntu16.04-x86_64
-   [+]  cyeg2yi          ^openblas@0.3.3%gcc@5.4.0 cpu_target= ~ilp64 patches=47cfa7a952ac7b2e4632c73ae199d69fb54490627b66a62c681e21019c4ddc9d,714aea33692304a50bd0ccde42590c176c82ded4a8ac7f06e573dc8071929c33 +pic+shared threads=none ~virtual_machine arch=linux-ubuntu16.04-x86_64
-   [+]  gvyqldh      ^matio@1.5.9%gcc@5.4.0+hdf5+shared+zlib arch=linux-ubuntu16.04-x86_64
-   [+]  3wnvp4j      ^metis@5.1.0%gcc@5.4.0 build_type=Release ~gdb~int64 patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1 ~real64+shared arch=linux-ubuntu16.04-x86_64
-   [+]  cumcj5a      ^mumps@5.1.1%gcc@5.4.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu16.04-x86_64
-   [+]  p7iln2p          ^netlib-scalapack@2.0.2%gcc@5.4.0 build_type=RelWithDebInfo ~pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  wmmx5sg      ^netcdf@4.6.1%gcc@5.4.0~dap~hdf4 maxdims=1024 maxvars=8192 +mpi~parallel-netcdf+shared arch=linux-ubuntu16.04-x86_64
-   [+]  jehtata      ^parmetis@4.0.3%gcc@5.4.0 build_type=RelWithDebInfo ~gdb patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d +shared arch=linux-ubuntu16.04-x86_64
-   [+]  zaau4ki      ^suite-sparse@5.3.0%gcc@5.4.0~cuda~openmp+pic~tbb arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing hdf5
-    -   zjgyn3w  hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran~hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-   [+]  p3f7p2r      ^mpich@3.2.1%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-   [+]  d4iajxs          ^findutils@4.6.0%gcc@5.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe              ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc                  ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp                      ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa                  ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo                      ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                          ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou                              ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a                                  ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im              ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf              ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  zs7a2pc              ^texinfo@6.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn      ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing gmp
-   [+]  qc4qcfz  gmp@6.1.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe      ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc          ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp              ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa          ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo              ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                  ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou                      ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a                          ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im      ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf      ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
+   ==> Concretized tcl
+   [+]  t3gp773  tcl@8.6.8%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y      ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized trilinos
+   [+]  ioo4i64  trilinos@12.14.1%gcc@7.4.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu18.04-x86_64
+   [+]  d42gtzk      ^boost@1.70.0%gcc@7.4.0+atomic+chrono~clanglibcpp~context~coroutine cxxstd=98 +date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 ~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout visibility=hidden +wave arch=linux-ubuntu18.04-x86_64
+   [+]  g2ghsbb          ^bzip2@1.0.8%gcc@7.4.0+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vku7yph              ^diffutils@3.7%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb                  ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y          ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  3wkiwji      ^cmake@3.15.4%gcc@7.4.0~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior          ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps              ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  jujqjv5          ^openssl@1.1.1d%gcc@7.4.0+systemcerts arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei              ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd                  ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                      ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4zyyrqs      ^glm@0.9.7.1%gcc@7.4.0 build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+   [+]  c24mwwt      ^hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran+hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+   [+]  6e3rvex          ^mpich@3.3.1%gcc@7.4.0 device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+   [+]  uf3gw7k              ^findutils@4.6.0%gcc@7.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful                  ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6                      ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm                          ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo                  ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw                  ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hyetop5                  ^texinfo@6.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  vhehc32              ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  a226ran                  ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  fg5evg4              ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+   [+]  ur2jffe                  ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ubwkr5u      ^hypre@2.18.1%gcc@7.4.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+   [+]  jepvsjb          ^openblas@0.3.7%gcc@7.4.0+avx2~avx512 cpu_target=auto ~ilp64+pic+shared threads=none ~virtual_machine arch=linux-ubuntu18.04-x86_64
+   [+]  mexumm4      ^matio@1.5.13%gcc@7.4.0+hdf5+shared+zlib arch=linux-ubuntu18.04-x86_64
+   [+]  q6wvktu      ^metis@5.1.0%gcc@7.4.0 build_type=Release ~gdb~int64 patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1,b1225da886605ea558db7ac08dd8054742ea5afe5ed61ad4d0fe7a495b1270d2 ~real64+shared arch=linux-ubuntu18.04-x86_64
+   [+]  nippo7j      ^mumps@5.2.0%gcc@7.4.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu18.04-x86_64
+   [+]  tbp3lv6          ^netlib-scalapack@2.0.2%gcc@7.4.0 build_type=RelWithDebInfo patches=22ebf4e3d5a6356cd6086ea65bfdf30f9d0a2038136127590cd269d15bdb03af,e8f30dd1f26e523dfb552f8d7b8ad26ac88fc0c8d72e3d4f9a9717a3383e0b33 ~pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vx6vje7      ^netcdf@4.7.1%gcc@7.4.0~dap~hdf4 maxdims=1024 maxvars=8192 +mpi~parallel-netcdf+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  t6gxi6e      ^parmetis@4.0.3%gcc@7.4.0 build_type=RelWithDebInfo ~gdb patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d +shared arch=linux-ubuntu18.04-x86_64
+   [+]  3jghv4q      ^suite-sparse@5.3.0%gcc@7.4.0~cuda~openmp+pic~tbb arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized hdf5+hl
+   [+]  c24mwwt  hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran+hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+   [+]  6e3rvex      ^mpich@3.3.1%gcc@7.4.0 device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+   [+]  uf3gw7k          ^findutils@4.6.0%gcc@7.4.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful              ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6                  ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm                      ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei                  ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd                      ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                          ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior                              ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps                                  ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo              ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw              ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hyetop5              ^texinfo@6.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  vhehc32          ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  a226ran              ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  fg5evg4          ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb              ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ur2jffe              ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y              ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized gmp
+   [+]  fz3lzqi  gmp@6.1.2%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful      ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6          ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm              ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei          ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd              ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                  ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior                      ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps                          ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo      ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw      ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+
+   ==> Updating view at /home/spack1/spack/var/spack/environments/myproject/.spack-env/view
 
 Now, all the specs in the environment are concrete and ready to be
 installed with ``mpich`` as the MPI implementation.
@@ -545,6 +684,82 @@ configuration, ``spack add`` some specs, and ``spack install``.
 But, when we already have installed packages in the environment, we have
 to force everything in the environment to be re-concretized using ``spack
 concretize -f``.  *Then* we can re-run ``spack install``.
+
+
+---------------------------------
+Building in environments
+---------------------------------
+
+You've already learned about ``spack dev-build`` as a way to build a project
+you've already checked out.  You can also use environments to set up a
+development environment.  As mentioned, you can use any of the binaries in
+the environment's view:
+
+.. code-block:: console
+
+   $ spack env status
+   ==> In environment myproject
+   $ which mpicc
+   /home/spack1/spack/var/spack/environments/myproject/.spack-env/view/bin/mpicc
+
+Spack also sets variables like ``CPATH``, ``LIBRARY_PATH``,
+and ``LD_LIBRARY_PATH`` so that you can easily find headers and libraries in
+environemnts.
+
+   $ env | grep PATH=
+   LD_LIBRARY_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib:/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib64
+   CMAKE_PREFIX_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view
+   CPATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/include
+   LIBRARY_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib:/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib64
+   ACLOCAL_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/share/aclocal
+   MANPATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/share/man:/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/man
+   MODULEPATH=/home/spack1/spack/share/spack/modules/linux-ubuntu18.04-x86_64
+   PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/bin:/home/spack1/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
+   PKG_CONFIG_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib/pkgconfig:/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib64/pkgconfig
+
+We can use this to easily build programs.  Let's build a really simple MPI program
+using this environment.  Make a simple test program like this one.  Call it ``mpi-hello.c``.
+
+.. code-block:: c
+
+	#include <stdio.h>
+	#include <mpi.h>
+	#include <zlib.h>
+
+	int main(int argc, char **argv) {
+	  int rank;
+	  MPI_Init(&argc, &argv);
+
+	  MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+	  printf("Hello world from rank %d\n", rank);
+
+	  if (rank == 0) {
+	    printf("zlib version: %s\n", ZLIB_VERSION);
+	  }
+
+	  MPI_Finalize();
+	}
+
+This program includes a header from zlib, and prints out a message from each MPI rank.
+It also prints the zlib version.
+
+All you need to do is build and run it:
+
+.. code-block: console
+
+    $ mpicc ./mpi-hello.c
+    $ mpirun -n 4 ./a.out
+    Hello world from rank 0
+    zlib version: 1.2.11
+    Hello world from rank 2
+    Hello world from rank 1
+    Hello world from rank 3
+
+Note that we did not need to pass any special arguments to the compiler; just
+the source file.  This simple example only scratches the surface, but you
+can use environments to set up dependencies for a project, set up a run
+environment for a user, support your usual development environment, and
+many other use cases.
 
 
 ---------------------------------
@@ -572,7 +787,7 @@ We can get directly to the current environment's location using ``spack cd``:
 
    $ spack cd -e myproject
    $ pwd
-   ~/spack/var/spack/environments/myproject
+   /home/spack1/spack/var/spack/environments/myproject
    $ ls
    spack.lock  spack.yaml
 
@@ -643,70 +858,80 @@ install the project's dependencies.  They need only clone the repository,
 .. code-block:: console
 
    $ spack install
-   ==> Concretizing boost
-   [+]  zbgfxap  boost@1.68.0%gcc@5.4.0+atomic+chrono~clanglibcpp cxxstd=default +date_time~debug+exception+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 +program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave arch=linux-ubuntu16.04-x86_64
-   [+]  ufczdvs      ^bzip2@1.0.6%gcc@5.4.0+shared arch=linux-ubuntu16.04-x86_64
-   [+]  2rhuivg          ^diffutils@3.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn      ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing trilinos
-   [+]  rlsruav  trilinos@12.12.1%gcc@5.4.0~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu16.04-x86_64
-   [+]  zbgfxap      ^boost@1.68.0%gcc@5.4.0+atomic+chrono~clanglibcpp cxxstd=default +date_time~debug+exception+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 +program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave arch=linux-ubuntu16.04-x86_64
-   [+]  ufczdvs          ^bzip2@1.0.6%gcc@5.4.0+shared arch=linux-ubuntu16.04-x86_64
-   [+]  2rhuivg              ^diffutils@3.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn          ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  otafqzh      ^cmake@3.12.3%gcc@5.4.0~doc+ncurses+openssl+ownlibs patches=dd3a40d4d92f6b2158b87d6fb354c277947c776424aa03f6dc8096cf3135f5d0 ~qt arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou          ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a              ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  b4y3w3b          ^openssl@1.0.2o%gcc@5.4.0+systemcerts arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa              ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo                  ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                      ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  jnw622j      ^glm@0.9.7.1%gcc@5.4.0 build_type=RelWithDebInfo arch=linux-ubuntu16.04-x86_64
-   [+]  oqwnui7      ^hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-   [+]  3njc4q5          ^openmpi@3.1.3%gcc@5.4.0~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-   [+]  43tkw5m              ^hwloc@1.11.9%gcc@5.4.0~cairo~cuda+libxml2+pci+shared arch=linux-ubuntu16.04-x86_64
-   [+]  5urc6tc                  ^libpciaccess@0.13.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf                      ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc                          ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp                              ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  milz7fm                      ^util-macros@1.19.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  wpexsph                  ^libxml2@2.9.8%gcc@5.4.0~python arch=linux-ubuntu16.04-x86_64
-   [+]  teneqii                      ^xz@5.2.4%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ft463od                  ^numactl@2.0.11%gcc@5.4.0 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe                      ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im                      ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  fshksdp      ^hypre@2.15.1%gcc@5.4.0~debug~int64~internal-superlu+mpi+shared arch=linux-ubuntu16.04-x86_64
-   [+]  cyeg2yi          ^openblas@0.3.3%gcc@5.4.0 cpu_target= ~ilp64 patches=47cfa7a952ac7b2e4632c73ae199d69fb54490627b66a62c681e21019c4ddc9d,714aea33692304a50bd0ccde42590c176c82ded4a8ac7f06e573dc8071929c33 +pic+shared threads=none ~virtual_machine arch=linux-ubuntu16.04-x86_64
-   [+]  lmzdgss      ^matio@1.5.9%gcc@5.4.0+hdf5+shared+zlib arch=linux-ubuntu16.04-x86_64
-   [+]  3wnvp4j      ^metis@5.1.0%gcc@5.4.0 build_type=Release ~gdb~int64 patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1 ~real64+shared arch=linux-ubuntu16.04-x86_64
-   [+]  acsg2dz      ^mumps@5.1.1%gcc@5.4.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu16.04-x86_64
-   [+]  wotpfwf          ^netlib-scalapack@2.0.2%gcc@5.4.0 build_type=RelWithDebInfo ~pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  mhm4izp      ^netcdf@4.6.1%gcc@5.4.0~dap~hdf4 maxdims=1024 maxvars=8192 +mpi~parallel-netcdf+shared arch=linux-ubuntu16.04-x86_64
-   [+]  uv6h3sq      ^parmetis@4.0.3%gcc@5.4.0 build_type=RelWithDebInfo ~gdb patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d +shared arch=linux-ubuntu16.04-x86_64
-   [+]  zaau4ki      ^suite-sparse@5.3.0%gcc@5.4.0~cuda~openmp+pic~tbb arch=linux-ubuntu16.04-x86_64
-   ==> Concretizing openmpi
-   [+]  3njc4q5  openmpi@3.1.3%gcc@5.4.0~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-   [+]  43tkw5m      ^hwloc@1.11.9%gcc@5.4.0~cairo~cuda+libxml2+pci+shared arch=linux-ubuntu16.04-x86_64
-   [+]  5urc6tc          ^libpciaccess@0.13.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  o2pfwjf              ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  suf5jtc                  ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-   [+]  fypapcp                      ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  fovrh7a              ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  milz7fm              ^util-macros@1.19.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  wpexsph          ^libxml2@2.9.8%gcc@5.4.0~python arch=linux-ubuntu16.04-x86_64
-   [+]  teneqii              ^xz@5.2.4%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  5nus6kn              ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-   [+]  ft463od          ^numactl@2.0.11%gcc@5.4.0 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-   [+]  3sx2gxe              ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  ic2kyoa                  ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-   [+]  q4fpyuo                      ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  nxhwrg7                          ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   [+]  3o765ou                              ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-   [+]  rymw7im              ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-   ==> Installing environment ~/code
-   ==> boost is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/boost-1.68.0-zbgfxapchxa4awxdwpleubfuznblxzvt
-   ==> trilinos is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/trilinos-12.12.1-rlsruavxqvwk2tgxzxboclbo6ykjf54r
-   ==> openmpi is already installed in ~/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.1.3-3njc4q5pqdpptq6jvqjrezkffwokv2sx
+   ==> Concretized boost
+   [+]  d42gtzk  boost@1.70.0%gcc@7.4.0+atomic+chrono~clanglibcpp~context~coroutine cxxstd=98 +date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 ~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout visibility=hidden +wave arch=linux-ubuntu18.04-x86_64
+   [+]  g2ghsbb      ^bzip2@1.0.8%gcc@7.4.0+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vku7yph          ^diffutils@3.7%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb              ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y      ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized trilinos
+   [+]  mpalhkt  trilinos@12.14.1%gcc@7.4.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu18.04-x86_64
+   [+]  d42gtzk      ^boost@1.70.0%gcc@7.4.0+atomic+chrono~clanglibcpp~context~coroutine cxxstd=98 +date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy patches=2ab6c72d03dec6a4ae20220a9dfd5c8c572c5294252155b85c6874d97c323199 ~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout visibility=hidden +wave arch=linux-ubuntu18.04-x86_64
+   [+]  g2ghsbb          ^bzip2@1.0.8%gcc@7.4.0+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vku7yph              ^diffutils@3.7%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb                  ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y          ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  3wkiwji      ^cmake@3.15.4%gcc@7.4.0~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior          ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps              ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  jujqjv5          ^openssl@1.1.1d%gcc@7.4.0+systemcerts arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei              ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd                  ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                      ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4zyyrqs      ^glm@0.9.7.1%gcc@7.4.0 build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+   [+]  65cucf4      ^hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran+hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+   [+]  f6maodn          ^openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+   [+]  xcjsxcr              ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vhehc32                  ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw                      ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6                          ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm                              ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  a226ran                      ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  fg5evg4                  ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+   [+]  ur2jffe                      ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  n6yyt2y                  ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful                      ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo                      ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  gsuceum      ^hypre@2.18.1%gcc@7.4.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+   [+]  jepvsjb          ^openblas@0.3.7%gcc@7.4.0+avx2~avx512 cpu_target=auto ~ilp64+pic+shared threads=none ~virtual_machine arch=linux-ubuntu18.04-x86_64
+   [+]  7643xwi      ^matio@1.5.13%gcc@7.4.0+hdf5+shared+zlib arch=linux-ubuntu18.04-x86_64
+   [+]  q6wvktu      ^metis@5.1.0%gcc@7.4.0 build_type=Release ~gdb~int64 patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1,b1225da886605ea558db7ac08dd8054742ea5afe5ed61ad4d0fe7a495b1270d2 ~real64+shared arch=linux-ubuntu18.04-x86_64
+   [+]  s2ezmwe      ^mumps@5.2.0%gcc@7.4.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu18.04-x86_64
+   [+]  gfcwr4d          ^netlib-scalapack@2.0.2%gcc@7.4.0 build_type=RelWithDebInfo patches=22ebf4e3d5a6356cd6086ea65bfdf30f9d0a2038136127590cd269d15bdb03af,e8f30dd1f26e523dfb552f8d7b8ad26ac88fc0c8d72e3d4f9a9717a3383e0b33 ~pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  t6uuk2x      ^netcdf@4.7.1%gcc@7.4.0~dap~hdf4 maxdims=1024 maxvars=8192 +mpi~parallel-netcdf+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  khzaszh      ^parmetis@4.0.3%gcc@7.4.0 build_type=RelWithDebInfo ~gdb patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d +shared arch=linux-ubuntu18.04-x86_64
+   [+]  3jghv4q      ^suite-sparse@5.3.0%gcc@7.4.0~cuda~openmp+pic~tbb arch=linux-ubuntu18.04-x86_64
+
+   ==> Concretized openmpi
+   [+]  f6maodn  openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+   [+]  xcjsxcr      ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+   [+]  vhehc32          ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  4neu5jw              ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ut64la6                  ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+   [+]  3khohgm                      ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  eifxmps              ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  a226ran              ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  fg5evg4          ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+   [+]  zvmmgjb              ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  ur2jffe              ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  o2viq7y              ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+   [+]  n6yyt2y          ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  g23qful              ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  cxcj6ei                  ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+   [+]  surdjxd                      ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  hzwkvqa                          ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+   [+]  s4rsior                              ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+   [+]  io3tplo              ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+
+   ==> Updating view at /home/spack1/code/.spack-env/view
+   ==> Installing environment /home/spack1/code
+   ==> boost is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/boost-1.70.0-d42gtzk7f4chkyjqyqbg5c7tkd3r375y
+   ==> boost@1.70.0 : marking the package explicit
+   ==> trilinos is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-mpalhktqqjjo2hayykb6ut2jyhkmow3z
+   ==> openmpi is already installed in /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel
+   ==> openmpi@3.1.4 : marking the package explicit
+   ==> Updating view at /home/spack1/code/.spack-env/view
 
 
 Spack concretizes the specs in the ``spack.yaml`` file and installs them.
@@ -722,7 +947,8 @@ So, from ``~/code``, we can actually manipulate ``spack.yaml`` using
 .. code-block:: console
 
    $ spack add hdf5@5.5.1
-   ==> Adding hdf5 to environment ~/code
+   ==> Adding hdf5@5.5.1 to environment /home/spack1/code
+   ==> Updating view at /home/spack1/code/.spack-env/view
    $ cat spack.yaml
    # This is a Spack Environment file.
    #
@@ -737,7 +963,8 @@ So, from ``~/code``, we can actually manipulate ``spack.yaml`` using
      - hdf5@5.5.1
 
    $ spack remove hdf5
-   ==> Removing hdf5 from environment ~/code
+   ==> Removing hdf5 from environment /home/spack1/code
+   ==> Updating view at /home/spack1/code/.spack-env/view
    $ cat spack.yaml
    # This is a Spack Environment file.
    #
@@ -769,17 +996,37 @@ environment:
 
 .. code-block:: console
 
-   $ head spack.lock
+   $ head -30 spack.lock
    {
-     "concrete_specs": {
-      "teneqii2xv5u6zl5r6qi3pwurc6pmypz": {
-       "xz": {
-         "version": "5.2.4",
-         "arch": {
-           "platform": "linux",
-           "platform_os": "ubuntu16.04",
-         "target": "x86_64"
+    "_meta": {
+     "file-type": "spack-lockfile",
+     "lockfile-version": 2
     },
+    "roots": [
+     {
+      "hash": "wi3sbffok5yxurb26b72pvyzs2mqt4ys",
+      "spec": "boost"
+     },
+     {
+      "hash": "y6px5eztobm2igeebvnro447ye3btcgz",
+      "spec": "trilinos"
+     },
+     {
+      "hash": "piivh3gomhqjl6cudoevh76xvmrnkenj",
+      "spec": "openmpi"
+     }
+    ],
+    "concrete_specs": {
+     "wi3sbffok5yxurb26b72pvyzs2mqt4ys": {
+      "boost": {
+       "version": "1.70.0",
+       "arch": {
+        "platform": "linux",
+        "platform_os": "ubuntu18.04",
+        "target": "x86_64"
+       },
+       "compiler": {
+        "name": "gcc",
     ...
 
 ``spack.yaml`` and ``spack.lock`` correspond to two fundamental concepts
