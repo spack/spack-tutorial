@@ -17,6 +17,31 @@ will be impossible to cover everything that can be done with the
 ``spack python`` command, but we provide an introduction to the types
 of functionality available.
 
+---------------------------
+Setting up for the tutorial
+---------------------------
+
+Depending on which sections of the tutorial you've done up until this
+point, you may have a lot of packages installed already. To get more
+manageable outputs in this section, we will uninstall everything and
+start over.
+
+.. code-block:: console
+
+  $ spack uninstall -ay %gcc
+  ...
+  $ spack uninstall -ay %clang
+  ...
+  $ spack compiler rm gcc@8.3.0
+  ...
+  $ spack install hdf5
+  ...
+  $ spack install zlib%clang
+  ...
+
+All of these commands should be familiar from earlier sections of the
+Spack tutorial.
+
 -----------------------------
 Scripting with ``spack find``
 -----------------------------
@@ -30,7 +55,9 @@ make for easy input to user scripts.
 .. code-block:: console
 
   $ spack find --format "{name} {version} {hash:10}"
-  TODO: output
+  autoconf 2.69 g23qfulbkb    hdf5 1.10.5 audmuesjjp    libpciaccess 0.13.5 vhehc322oo  libxml2 2.9.9 fg5evg4bxx  numactl 2.0.12 n6yyt2yxl3  pkgconf 1.6.3 eifxmpsduq       xz 5.2.4 ur2jffeua3
+  automake 1.16.1 io3tplo73z  hwloc 1.11.11 xcjsxcroxc  libsigsegv 2.12 3khohgmwhb      m4 1.4.18 ut64la6rpt      openmpi 3.1.4 f6maodnm53   readline 8.0 hzwkvqampr        zlib 1.2.11 5qffmms6gw
+  gdbm 1.18.1 surdjxdcan      libiconv 1.16 zvmmgjbnfr  libtool 2.4.6 4neu5jwwmu        ncurses 6.1 s4rsiori6b    perl 5.30.0 cxcj6eisjs     util-macros 1.19.1 a226ran4th  zlib 1.2.11 o2viq7yrii
 
 The other scripting option to the ``spack find`` command is the
 ``--json`` option. This formats the serializes the spec objects in the
@@ -39,7 +66,34 @@ output as json objects.
 .. code-block:: console
 
   $ spack find --json
-  TODO: output
+  [
+   {
+    "name": "zlib",
+    "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
+    "version": "1.2.11",
+    "arch": {
+     "platform": "linux",
+     "platform_os": "ubuntu18.04",
+     "target": "x86_64"
+    },
+    "compiler": {
+     "name": "clang",
+     "version": "6.0.0"
+    },
+    "namespace": "builtin",
+    "parameters": {
+     "optimize": true,
+     "pic": true,
+     "shared": true,
+     "cflags": [],
+     "cppflags": [],
+     "cxxflags": [],
+     "fflags": [],
+     "ldflags": [],
+     "ldlibs": []
+    }
+   }
+  ]$
 
 ----------------------------
 The ``spack python`` command
@@ -57,7 +111,7 @@ querying Spack's internal database of installed packages.
 
   $ spack python
   Spack version 0.13.0
-  Python 3.7.4, Darwin x86_64
+  Python 3.6.8, Linux x86_64
   >>> ...
 
 ^^^^^^^^^^^^^^^^^^^
@@ -80,13 +134,13 @@ specs.
   >>> s.version
   Traceback (most recent call last):
     File "<console>", line 1, in <module>
-    File "/Users/becker33/spack/lib/spack/spack/spec.py", line 3136, in version
+    File "/home/spack/spack/lib/spack/spack/spec.py", line 3136, in version
       raise SpecError("Spec version is not concrete: " + str(self))
-  spack.error.SpecError: Spec version is not concrete: zlib
+  spack.error.SpecError: Spec version is not concrete: zlib arch=linux-None-ivybridge
   >>> s.versions
   [:]
   >>> s.architecture
-  darwin-None-ivybridge
+  linux-None-ivybridge
 
 These same methods are always set for concrete specs.
 
@@ -100,7 +154,7 @@ These same methods are always set for concrete specs.
   >>> s.versions
   [Version('1.2.11')]
   >>> s.architecture
-  darwin-mojave-ivybridge
+  linux-ubuntu18.04-ivybridge
 
 We can also ask Spack for concrete specs without storing the
 intermediate abstract spec.
@@ -176,9 +230,10 @@ tutorial.
 
 Thinking back to our usage of the ``spack find`` command, there are
 some queries that we cannot write. For example, it is impossible to
-search for all packages that do not satisfy a certain criterion. So
-let's use the ``spack python`` command to find all packages that were
-compiled with ``gcc`` but do not depend on ``mpich``.
+search, using the ``spack find`` command, for all packages that do not
+satisfy a certain criterion. So let's use the ``spack python`` command
+to find all packages that were compiled with ``gcc`` but do not depend
+on ``mpich``. This is just a few lines of code using ``spack python``.
 
 .. code-block:: console
 
@@ -187,7 +242,11 @@ compiled with ``gcc`` but do not depend on ``mpich``.
   >>> result = filter(lambda spec: not spec.satisfies('^mpich'), gcc_specs)
   >>> import spack.cmd
   >>> spack.cmd.display_specs(result)
-  TODO: output
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
+  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
+  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
+  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
 
 ^^^^^^^^^^^^^
 Using scripts
@@ -224,7 +283,11 @@ Now we can run this new command using ``spack python``.
 .. code-block:: console
 
   $ spack python find_exclude.py %gcc ^mpich
-  TODO: output
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
+  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
+  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
+  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
 
 -------------------------------
 The ``spack-python`` executable
@@ -254,8 +317,9 @@ This is great, and will work on some systems.
 
 .. code-block:: console
 
+  $ chmod u+x find_exclude.py
   $ ./find_exclude.py %gcc ^mpich
-  TODO: output
+  /usr/bin/env: 'spack python': No such file or directory
 
 However, on some systems the shebang line cannot take multiple
 arguments. The ``spack-python`` executable exists to solve this
@@ -284,8 +348,13 @@ Now we can run on any system with Spack installed.
 .. code-block:: console
 
   ./find_exclude.py %gcc ^mpich
-  TODO: output
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
+  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
+  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
+  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
 
 With the ``spack-python`` shebang you can create any infrastructure
 you need on top of what Spack already provides, or prototype ideas
-that you eventually aim to contribute back to Spack.
+that you eventually aim to contribute back to Spack. We've only just
+scratched the surface of the capabilities of this command!
