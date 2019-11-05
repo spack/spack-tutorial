@@ -11,7 +11,7 @@ Tutorial: Spack 201
 
 This is a half-day (3 hours of course time) intermediate tutorial on
 Spack with lectures and live demos. It was originally presented at Los
-Alamos National Laboratory in November, 2019. This tutorial assumes
+Alamos National Laboratory on November 5, 2019. This tutorial assumes
 users are familiar with ~75% of the content in the Spack 101 tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
@@ -27,7 +27,7 @@ Spack is used in practice.
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/spack-pearc19-tutorial-slides.pdf>`.
+:download:`Download Slides <tutorial/slides/spack-lanl19-tutorial-slides.pdf>`.
 
 **Full citation:** Gregory Becker and Todd Gamblin. Intermediate Spack
 Tutorial. Tutorial presented at Los Alamos National
