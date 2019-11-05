@@ -6,13 +6,13 @@
 .. _spack-101:
 
 ===================
-Tutorial: Spack 101
+Tutorial: Spack 201
 ===================
 
-This is a full-day introduction to Spack with lectures and live demos.
-It was last presented at the `Practice and Experience in Advanced
-Research Computing Conference (PEARC19)
-<https://www.pearc19.pearc.org/>`_ on July 31, 2019.
+This is a half-day (3 hours of course time) intermediate tutorial on
+Spack with lectures and live demos. It was originally presented at Los
+Alamos National Laboratory in November, 2019. This tutorial assumes
+users are familiar with ~75% of the content in the Spack 101 tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -29,18 +29,18 @@ Spack is used in practice.
 
 :download:`Download Slides <tutorial/slides/spack-pearc19-tutorial-slides.pdf>`.
 
-**Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
-Gamblin. Managing HPC Software Complexity with Spack. Tutorial presented
-at the Practice and Experience in Advanced Research Computing Conference
-(PEARC19). July 31, 2019. Chicago, IL, USA.
+**Full citation:** Gregory Becker and Todd Gamblin. Intermediate Spack
+Tutorial. Tutorial presented at Los Alamos National
+Laboratory. November 5, 2019. Los Alamos, NM, USA.
 
 .. _live-demos:
 
 .. rubric:: Live Demos
 
-We provide scripts that take you step-by-step through basic Spack tasks.
-They correspond to sections in the slides above. You can use one of the
-following methods to run through the scripts:
+We provide scripts that take you step-by-step through basic Spack
+tasks.  Some of the scripts corrospond to sections in the slides
+above. Other sections use only scripts, or only slides. You can use
+one of the following methods to run through the scripts:
 
   1. We provide the `spack/tutorial
      <https://hub.docker.com/r/spack/tutorial>`_ container image on
@@ -54,15 +54,9 @@ following methods to run through the scripts:
 
 You should now be ready to run through our demo scripts:
 
-  #. :ref:`basics-tutorial`
-  #. :ref:`configs-tutorial`
-  #. :ref:`packaging-tutorial`
   #. :ref:`developer-workflows-tutorial`
   #. :ref:`environments-tutorial`
   #. :ref:`stacks-tutorial`
-  #. :ref:`modules-tutorial`
-  #. :ref:`build-systems-tutorial`
-  #. :ref:`advanced-packaging-tutorial`
   #. :ref:`spack-scripting-tutorial`
 
 Full contents:
@@ -77,13 +71,7 @@ Full contents:
    :maxdepth: 3
    :caption: Tutorial
 
-   tutorial_basics
-   tutorial_configuration
-   tutorial_packaging
    tutorial_developer_workflows
    tutorial_environments
    tutorial_stacks
-   tutorial_modules
-   tutorial_buildsystems
-   tutorial_advanced_packaging
    tutorial_spack_scripting
