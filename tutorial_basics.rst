@@ -1684,54 +1684,49 @@ really need.
 
   $ spack find -d tcl
   ==> 3 installed packages
-  -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-      tcl@8.6.8
-          ^zlib@1.2.8
+  -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+  tcl@8.6.8
+      zlib@1.2.8
 
 
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-      tcl@8.6.8
-          ^zlib@1.2.8
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  tcl@8.6.8
+      zlib@1.2.11
 
-      tcl@8.6.8
-          ^zlib@1.2.11
+  tcl@8.6.8
+      zlib@1.2.8
 
 
   $ spack find zlib
-  ==> 6 installed packages.
-  -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
+  ==> 6 installed packages
+  -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
   zlib@1.2.8  zlib@1.2.11
 
-  -- linux-ubuntu16.04-x86_64 / gcc@4.7 ---------------------------
+  -- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
   zlib@1.2.11
 
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
   zlib@1.2.8  zlib@1.2.8  zlib@1.2.11
 
 We can uninstall packages by spec using the same syntax as install.
 
 .. code-block:: console
 
-  $ spack uninstall zlib %gcc@4.7
+  $ spack uninstall zlib %gcc@6.5.0
   ==> The following packages will be uninstalled:
 
-  -- linux-ubuntu16.04-x86_64 / gcc@4.7 ---------------------------
-  bq2wtdx zlib@1.2.11%gcc+optimize+pic+shared
-
+      -- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
+      qtrzwov zlib@1.2.11%gcc +optimize+pic+shared
   ==> Do you want to proceed? [y/N] y
-  ==> Successfully uninstalled zlib@1.2.11%gcc@4.7+optimize+pic+shared arch=linux-ubuntu16.04-x86_64 /bq2wtdx
+  ==> Successfully uninstalled zlib@1.2.11%gcc@6.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64/qtrzwov
 
   $ spack find -lf zlib
-  ==> 5 installed packages.
-  -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-  i426yu3 zlib@1.2.8%clang
-  4pt75q7 zlib@1.2.11%clang
+  ==> 5 installed packages
+  -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+  pdfmc5x zlib@1.2.8%clang   5qffmms zlib@1.2.11%clang
 
-
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-  bkyl5bh zlib@1.2.8%gcc
-  64mns5m zlib@1.2.8%gcc cppflags="-O3"
-  5nus6kn zlib@1.2.11%gcc
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  d6ety7c zlib@1.2.8%gcc   hmvjty5 zlib@1.2.8%gcc  cppflags="-O3"   o2viq7y zlib@1.2.11%gcc
 
 We can also uninstall packages by referring only to their hash.
 
@@ -1740,24 +1735,25 @@ remove packages that are required by another installed package.
 
 .. code-block:: console
 
-  $ spack uninstall zlib/i426
-  ==> Error: Will not uninstall zlib@1.2.8%clang@3.8.0-2ubuntu4/i426yu3
-
+  $ spack uninstall zlib/pdfmc5x
+  ==> Will not uninstall zlib@1.2.8%clang@6.0.0/pdfmc5x
   The following packages depend on it:
-      -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-      6wc66et tcl@8.6.8%clang
+      -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+      4ef57sw tcl@8.6.8%clang
 
-  ==> Error: Use \`spack uninstall --dependents\` to uninstall these dependencies as well.
+  ==> Error: There are still dependents.
+    use `spack uninstall --dependents` to remove dependents too
 
-  $ spack uninstall -R zlib/i426
+
+  $ spack uninstall -R zlib/pdfmc5x
   ==> The following packages will be uninstalled:
 
-      -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-      6wc66et tcl@8.6.8%clang
-      i426yu3 zlib@1.2.8%clang+optimize+pic+shared
+      -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+      4ef57sw tcl@8.6.8%clang   pdfmc5x zlib@1.2.8%clang +optimize+pic+shared
   ==> Do you want to proceed? [y/N] y
-  ==> Successfully uninstalled tcl@8.6.8%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64 /6wc66et
-  ==> Successfully uninstalled zlib@1.2.8%clang@3.8.0-2ubuntu4+optimize+pic+shared arch=linux-ubuntu16.04-x86_64 /i426yu3
+  ==> Successfully uninstalled tcl@8.6.8%clang@6.0.0 arch=linux-ubuntu18.04-x86_64/4ef57sw
+  ==> Successfully uninstalled zlib@1.2.8%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64/pdfmc5x
+
 
 Spack will not uninstall packages that are not sufficiently
 specified. The ``-a`` (all) flag can be used to uninstall multiple
@@ -1768,22 +1764,22 @@ packages at once.
   $ spack uninstall trilinos
   ==> Error: trilinos matches multiple packages:
 
-      -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-      rlsruav trilinos@12.12.1%gcc~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
-      kqc52mo trilinos@12.12.1%gcc~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
+      -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+      mpalhkt trilinos@12.14.1%gcc ~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
+      ioo4i64 trilinos@12.14.1%gcc ~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
 
   ==> Error: You can either:
       a) use a more specific spec, or
       b) use `spack uninstall --all` to uninstall ALL matching specs.
 
 
-  $ spack uninstall /rlsr
+  $ spack uninstall /mpalhkt
   ==> The following packages will be uninstalled:
 
-      -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-      rlsruav trilinos@12.12.1%gcc~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
+      -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+      mpalhkt trilinos@12.14.1%gcc ~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2
   ==> Do you want to proceed? [y/N] y
-  ==> Successfully uninstalled trilinos@12.12.1%gcc@5.4.0~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~complex~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu16.04-x86_64 /rlsruav
+  ==> Successfully uninstalled trilinos@12.14.1%gcc@7.4.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost build_type=RelWithDebInfo ~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+metis~minitensor+ml+muelu+mumps~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 arch=linux-ubuntu18.04-x86_64/mpalhkt
 
 -----------------------------
 Advanced ``spack find`` Usage
