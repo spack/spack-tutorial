@@ -706,6 +706,8 @@ Spack also sets variables like ``CPATH``, ``LIBRARY_PATH``,
 and ``LD_LIBRARY_PATH`` so that you can easily find headers and libraries in
 environemnts.
 
+.. code-block:: console
+
    $ env | grep PATH=
    LD_LIBRARY_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib:/home/spack1/spack/var/spack/environments/myproject/.spack-env/view/lib64
    CMAKE_PREFIX_PATH=/home/spack1/spack/var/spack/environments/myproject/.spack-env/view
