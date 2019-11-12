@@ -43,9 +43,9 @@ clone Spack and immediately checkout the most recent release, v0.12.
   Resolving deltas: 100% (64414/64414), done.
   Checking connectivity... done.
   $ cd spack
-  $ git checkout releases/v0.12
-  Branch releases/v0.12 set up to track remote branch releases/v0.12 from origin.
-  Switched to a new branch 'releases/v0.12'
+  $ git checkout releases/v0.13
+  Branch releases/v0.13 set up to track remote branch releases/v0.13 from origin.
+  Switched to a new branch 'releases/v0.13'
 
 Next add Spack to your path. Spack has some nice command line
 integration tools, so instead of simply appending to your ``PATH``
