@@ -1799,13 +1799,12 @@ return every package which was built with ``cppflags="-O3"``.
 
   $ spack find ^mpich
   ==> 8 installed packages
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-  hdf5@1.10.4   matio@1.5.9  netcdf@4.6.1            parmetis@4.0.3
-  hypre@2.15.1  mumps@5.1.1  netlib-scalapack@2.0.2  trilinos@12.12.1
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  hdf5@1.10.5  hypre@2.18.1  matio@1.5.13  mumps@5.2.0  netcdf@4.7.1  netlib-scalapack@2.0.2  parmetis@4.0.3  trilinos@12.14.1
 
   $ spack find cppflags=-O3
-  ==> 1 installed packages.
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
+  ==> 1 installed package
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
   zlib@1.2.8
 
 The ``find`` command can also show which packages were installed
@@ -1818,19 +1817,19 @@ command.
 
   $ spack find -px
   ==> 10 installed packages
-  -- linux-ubuntu16.04-x86_64 / clang@3.8.0-2ubuntu4 --------------
-      zlib@1.2.11  /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/clang-3.8.0-2ubuntu4/zlib-1.2.11-4pt75q7qq6lygf3hgnona4lyc2uwedul
+  -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+  zlib@1.2.11  /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/clang-6.0.0/zlib-1.2.11-5qffmms6gwykcikh6aag4h3z4scrfdla
 
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-      hdf5@1.10.4       /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/hdf5-1.10.4-5vcv5r67vpjzenq4apyebshclelnzuja
-      hdf5@1.10.4       /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/hdf5-1.10.4-ozyvmhzdew66byarohm4p36ep7wtcuiw
-      hdf5@1.10.4       /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/hdf5-1.10.4-xxd7syhgej6onpyfyewxqcqe7ltkt7ob
-      tcl@8.6.8         /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/tcl-8.6.8-am4pbatrtga3etyusg2akmsvrswwxno2
-      tcl@8.6.8         /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/tcl-8.6.8-qhwyccywhx2i6s7ob2gvjrjtj3rnfuqt
-      trilinos@12.12.1  /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/trilinos-12.12.1-kqc52moweigxqxzwzfqajc6ocxwdwn4w
-      zlib@1.2.8        /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.8-bkyl5bhuep6fmhuxzkmhqy25qefjcvzc
-      zlib@1.2.8        /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.8-64mns5mvdacqvlashkf7v6lqrxixhmxu
-      zlib@1.2.11       /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  hdf5@1.10.5       /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hdf5-1.10.5-fuuwoa2jk65h7xlr4tmhvomswegcpkjo
+  hdf5@1.10.5       /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hdf5-1.10.5-audmuesjjp62dbn2ldwt576f3yurx5cs
+  hdf5@1.10.5       /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hdf5-1.10.5-c24mwwta5dws3itb6vetov3ctoza4g6v
+  tcl@8.6.8         /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/tcl-8.6.8-t3gp773osdwptcklekqkqg5742zbq42b
+  tcl@8.6.8         /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/tcl-8.6.8-nstkcalz4ryzfzirsyeql5dmmi2chcig
+  trilinos@12.14.1  /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-ioo4i643shsbor4jfjdtzxju2m4hv4we
+  zlib@1.2.8        /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/zlib-1.2.8-d6ety7cr4j2otoiai3cuqparcdifq35n
+  zlib@1.2.8        /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/zlib-1.2.8-hmvjty5ey5ism3za5m7yewpa7in22poc
+  zlib@1.2.11       /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/zlib-1.2.11-o2viq7yriiaw6nwqpaa7ltpyzqkaonhb
 
 ---------------------
 Customizing Compilers
