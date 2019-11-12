@@ -1844,11 +1844,11 @@ compilers`` command is an alias for the command ``spack compiler list``.
 
   $ spack compilers
   ==> Available compilers
-  -- clang ubuntu16.04-x86_64 -------------------------------------
-  clang@3.8.0-2ubuntu4  clang@3.7.1-2ubuntu2
+  -- clang ubuntu18.04-x86_64 -------------------------------------
+  clang@6.0.0
 
-  -- gcc ubuntu16.04-x86_64 ---------------------------------------
-  gcc@5.4.0  gcc@4.7
+  -- gcc ubuntu18.04-x86_64 ---------------------------------------
+  gcc@7.4.0  gcc@6.5.0
 
 The compilers are maintained in a YAML file. Later in the tutorial you
 will learn how to configure compilers by hand for special cases. Spack
@@ -1857,102 +1857,117 @@ added to the configuration.
 
 .. code-block:: console
 
-  $ spack install gcc @7.2.0
-  ==> libsigsegv is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/libsigsegv-2.11-fypapcprssrj3nstp6njprskeyynsgaz
-  ==> m4 is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/m4-1.4.18-suf5jtcfehivwfesrc5hjy72r4nukyel
-  ==> pkgconf is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/pkgconf-1.4.2-fovrh7alpft646n6mhis5mml6k6e5f4v
-  ==> ncurses is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/ncurses-6.1-3o765ourmesfrji6yeclb4wb5w54aqbh
-  ==> readline is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/readline-7.0-nxhwrg7xwc6nbsm2v4ezwe63l6nfidbi
-  ==> gdbm is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/gdbm-1.14.1-q4fpyuo7ouhkeq6d3oabtrppctpvxmes
-  ==> perl is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/perl-5.26.2-ic2kyoadgp3dxfejcbllyplj2wf524fo
-  ==> autoconf is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/autoconf-2.69-3sx2gxeibc4oasqd4o5h6lnwpcpsgd2q
-  ==> automake is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/automake-1.16.1-rymw7imfehycqxzj4nuy2oiw3abegooy
-  ==> libtool is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/libtool-2.4.6-o2pfwjf44353ajgr42xqtvzyvqsazkgu
+  $ spack install gcc @8.3.0
+  ==> libsigsegv is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/libsigsegv-2.12-3khohgmwhbgvxehlt7rcnnzqfxelyv4p
+  ==> m4 is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/m4-1.4.18-ut64la6rptcwos3uwl2kp5mle572hlhi
+  ==> pkgconf is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/pkgconf-1.6.3-eifxmpsduqbsvgrk2sx5pn7cy5eraanr
+  ==> ncurses is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/ncurses-6.1-s4rsiori6blknfxf2jx4nbfxfzvcww2k
+  ==> readline is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/readline-8.0-hzwkvqampr3c6mfceyxq4xej7eyxoxoj
+  ==> gdbm is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/gdbm-1.18.1-surdjxdcankv3xqk5tnnwroz3tor77o7
+  ==> perl is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/perl-5.30.0-cxcj6eisjsfp3iv6xlio6rvc33fbxfmc
+  ==> autoconf is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/autoconf-2.69-g23qfulbkb5qtgmpuwyv65o3p2r7w434
+  ==> automake is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/automake-1.16.1-io3tplo73zw2v5lkbknnvsk7tszjaj2d
+  ==> libtool is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/libtool-2.4.6-4neu5jwwmuo26mjs6363q6bupczjk6hk
   ==> Installing gmp
   ==> Searching for binary cache of gmp
   ==> Finding buildcaches in /mirror/build_cache
+  ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/gmp-6.1.2/linux-ubuntu18.04-x86_64-gcc-7.4.0-gmp-6.1.2-fz3lzqixnahwwqeqsxwevhek4eejmz3z.spack
+  ########################################################################################################################################### 100.0%
   ==> Installing gmp from binary cache
-  ==> Fetching file:///mirror/build_cache/linux-ubuntu16.04-x86_64/gcc-5.4.0/gmp-6.1.2/linux-ubuntu16.04-x86_64-gcc-5.4.0-gmp-6.1.2-qc4qcfz4monpllc3nqupdo7vwinf73sw.spack
-  ######################################################################## 100.0%
-  gpg: Signature made Sat Nov 10 05:18:16 2018 UTC using RSA key ID 3B7C69B2
-  gpg: Good signature from "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" [unknown]
+  gpg: Signature made Thu Oct 31 21:59:51 2019 UTC
+  gpg:                using RSA key 7D344E2992071B0AAAE1EDB0E68DE2A80314303D
+  gpg: Good signature from "prl" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 95C7 1787 7AC0 0FFD AA8F  D6E9 9CFA 4A45 3B7C 69B2
+  Primary key fingerprint: 7D34 4E29 9207 1B0A AAE1  EDB0 E68D E2A8 0314 303D
+  ==> Relocating package from
+    /spack/opt/spack to /home/spack/spack/opt/spack.
   ==> Successfully installed gmp from binary cache
-  [+] /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/gmp-6.1.2-qc4qcfz4monpllc3nqupdo7vwinf73sw
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/gmp-6.1.2-fz3lzqixnahwwqeqsxwevhek4eejmz3z
   ==> Installing isl
   ==> Searching for binary cache of isl
+  ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/isl-0.18/linux-ubuntu18.04-x86_64-gcc-7.4.0-isl-0.18-f4xq2neprkyl7n2ietukf7uzlbqhg2pf.spack
+  ########################################################################################################################################### 100.0%
   ==> Installing isl from binary cache
-  ==> Fetching file:///mirror/build_cache/linux-ubuntu16.04-x86_64/gcc-5.4.0/isl-0.18/linux-ubuntu16.04-x86_64-gcc-5.4.0-isl-0.18-vttqoutnsmjpm3ogb52rninksc7hq5ax.spack
-  ######################################################################## 100.0%
-  gpg: Signature made Sat Nov 10 05:05:19 2018 UTC using RSA key ID 3B7C69B2
-  gpg: Good signature from "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" [unknown]
+  gpg: Signature made Thu Oct 31 22:00:20 2019 UTC
+  gpg:                using RSA key 7D344E2992071B0AAAE1EDB0E68DE2A80314303D
+  gpg: Good signature from "prl" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 95C7 1787 7AC0 0FFD AA8F  D6E9 9CFA 4A45 3B7C 69B2
+  Primary key fingerprint: 7D34 4E29 9207 1B0A AAE1  EDB0 E68D E2A8 0314 303D
+  ==> Relocating package from
+    /spack/opt/spack to /home/spack/spack/opt/spack.
   ==> Successfully installed isl from binary cache
-  [+] /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/isl-0.18-vttqoutnsmjpm3ogb52rninksc7hq5ax
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/isl-0.18-f4xq2neprkyl7n2ietukf7uzlbqhg2pf
+  ==> libiconv is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/libiconv-1.16-zvmmgjbnfrzbo3hl2ijqxcjpkiv7q3ab
   ==> Installing mpfr
   ==> Searching for binary cache of mpfr
+  ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpfr-3.1.6/linux-ubuntu18.04-x86_64-gcc-7.4.0-mpfr-3.1.6-joz6bhq7cyctk45wb62n564dqwyl2njr.spack
+  ########################################################################################################################################### 100.0%
   ==> Installing mpfr from binary cache
-  ==> Fetching file:///mirror/build_cache/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpfr-3.1.6/linux-ubuntu16.04-x86_64-gcc-5.4.0-mpfr-3.1.6-jnt2nnp5pmvikbw7opueajlbwbhmjxyv.spack
-  ######################################################################## 100.0%
-  gpg: Signature made Sat Nov 10 05:32:07 2018 UTC using RSA key ID 3B7C69B2
-  gpg: Good signature from "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" [unknown]
+  gpg: Signature made Thu Oct 31 21:56:12 2019 UTC
+  gpg:                using RSA key 7D344E2992071B0AAAE1EDB0E68DE2A80314303D
+  gpg: Good signature from "prl" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 95C7 1787 7AC0 0FFD AA8F  D6E9 9CFA 4A45 3B7C 69B2
+  Primary key fingerprint: 7D34 4E29 9207 1B0A AAE1  EDB0 E68D E2A8 0314 303D
+  ==> Relocating package from
+    /spack/opt/spack to /home/spack/spack/opt/spack.
   ==> Successfully installed mpfr from binary cache
-  [+] /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpfr-3.1.6-jnt2nnp5pmvikbw7opueajlbwbhmjxyv
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpfr-3.1.6-joz6bhq7cyctk45wb62n564dqwyl2njr
   ==> Installing mpc
   ==> Searching for binary cache of mpc
+  ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpc-1.1.0/linux-ubuntu18.04-x86_64-gcc-7.4.0-mpc-1.1.0-7uvv4z62tyub5ywgulhaf332wwvv3cla.spack
+  ########################################################################################################################################### 100.0%
   ==> Installing mpc from binary cache
-  ==> Fetching file:///mirror/build_cache/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpc-1.1.0/linux-ubuntu16.04-x86_64-gcc-5.4.0-mpc-1.1.0-iuf3gc3zpgr4n4mditnxhff6x3joxi27.spack
-  ######################################################################## 100.0%
-  gpg: Signature made Sat Nov 10 05:30:35 2018 UTC using RSA key ID 3B7C69B2
-  gpg: Good signature from "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" [unknown]
+  gpg: Signature made Thu Oct 31 21:56:39 2019 UTC
+  gpg:                using RSA key 7D344E2992071B0AAAE1EDB0E68DE2A80314303D
+  gpg: Good signature from "prl" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 95C7 1787 7AC0 0FFD AA8F  D6E9 9CFA 4A45 3B7C 69B2
+  Primary key fingerprint: 7D34 4E29 9207 1B0A AAE1  EDB0 E68D E2A8 0314 303D
+  ==> Relocating package from
+    /spack/opt/spack to /home/spack/spack/opt/spack.
   ==> Successfully installed mpc from binary cache
-  [+] /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpc-1.1.0-iuf3gc3zpgr4n4mditnxhff6x3joxi27
-  ==> zlib is already installed in /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
-  Installing gcc
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpc-1.1.0-7uvv4z62tyub5ywgulhaf332wwvv3cla
+  ==> zlib is already installed in /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/zlib-1.2.11-o2viq7yriiaw6nwqpaa7ltpyzqkaonhb
+  ==> Installing gcc
   ==> Searching for binary cache of gcc
-  ==> Finding buildcaches in /mirror/build_cache
+  ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/gcc-8.3.0/linux-ubuntu18.04-x86_64-gcc-7.4.0-gcc-8.3.0-rvoysuvia7pirmb3kee6xjh7zcmhbi5k.spack
+  ########################################################################################################################################### 100.0%
   ==> Installing gcc from binary cache
-  ==> Fetching file:///mirror/build_cache/linux-ubuntu16.04-x86_64/gcc-5.4.0/gcc-7.2.0/linux-ubuntu16.04-x86_64-gcc-5.4.0-gcc-7.2.0-b7smjjcsmwe5u5fcsvjmonlhlzzctnfs.spack
-  ######################################################################## 100.0%
-  gpg: Signature made Sat Nov 10 05:22:47 2018 UTC using RSA key ID 3B7C69B2
-  gpg: Good signature from "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" [unknown]
+  gpg: Signature made Thu Oct 31 21:51:00 2019 UTC
+  gpg:                using RSA key 7D344E2992071B0AAAE1EDB0E68DE2A80314303D
+  gpg: Good signature from "prl" [unknown]
   gpg: WARNING: This key is not certified with a trusted signature!
   gpg:          There is no indication that the signature belongs to the owner.
-  Primary key fingerprint: 95C7 1787 7AC0 0FFD AA8F  D6E9 9CFA 4A45 3B7C 69B2
+  Primary key fingerprint: 7D34 4E29 9207 1B0A AAE1  EDB0 E68D E2A8 0314 303D
+  ==> Relocating package from
+    /spack/opt/spack to /home/spack/spack/opt/spack.
   ==> Successfully installed gcc from binary cache
-  [+] /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/gcc-7.2.0-b7smjjcsmwe5u5fcsvjmonlhlzzctnfs
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/gcc-8.3.0-rvoysuvia7pirmb3kee6xjh7zcmhbi5k
 
   $ spack find -p gcc
   spack find -p gcc
   ==> 1 installed package
-  -- linux-ubuntu16.04-x86_64 / gcc@5.4.0 -------------------------
-      gcc@7.2.0  /home/spack1/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/gcc-7.2.0-b7smjjcsmwe5u5fcsvjmonlhlzzctnfs
+  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
+  gcc@8.3.0  /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/gcc-8.3.0-rvoysuvia7pirmb3kee6xjh7zcmhbi5k
 
 We can add gcc to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-gcc @7.2.0.
+gcc @8.3.0.
 
 .. code-block:: console
 
-  $ spack compiler add `spack location -i gcc@7.2.0`
-  ==> Added 1 new compiler to /home/ubuntu/.spack/linux/compilers.yaml
-      gcc@7.2.0
+  $ spack compiler add $(spack location -i gcc@8.3.0)
+  ==> Added 1 new compiler to /home/spack/.spack/linux/compilers.yaml
+      gcc@8.3.0
   ==> Compilers are defined in the following files:
-      /home/ubuntu/.spack/linux/compilers.yaml
+      /home/spack/.spack/linux/compilers.yaml
 
 We can also remove compilers from our configuration using ``spack compiler remove <compiler_spec>``
 
 .. code-block:: console
 
-  $ spack compiler remove gcc@7.2.0
-  ==> Removed compiler gcc@7.2.0
+  $ spack compiler remove gcc@8.3.0
+  ==> Removed compiler gcc@8.3.0
