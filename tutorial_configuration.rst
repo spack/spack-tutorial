@@ -25,7 +25,7 @@ configuration file. For some, we will then demonstrate how the
 configuration affects the install command, and for others we will use
 the ``spack spec`` command to demonstrate how the configuration
 changes have affected Spack's concretization algorithm. The provided
-output is all from a server running Ubuntu version 16.04.
+output is all from a server running Ubuntu version 18.04.
 
 .. _configs-tutorial-scopes:
 
@@ -125,13 +125,13 @@ consider a user's compilers configuration file as follows:
        extra_rpaths: []
        flags: {}
        modules: []
-       operating_system: ubuntu16.04
+       operating_system: ubuntu18.04
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
-       spec: gcc@5.4.0
+       spec: gcc@7.4.0
        target: x86_64
 
 
@@ -139,7 +139,7 @@ This ensures that no other compilers are used, as the user configuration
 scope is the last scope searched and the ``compilers::`` line replaces
 all previous configuration files information. If the same
 configuration file had a single colon instead of the double colon, it
-would add the GCC version 5.4.0 compiler to whatever other compilers
+would add the GCC version 7.4.0 compiler to whatever other compilers
 were listed in other configuration files.
 
 .. _configs-tutorial-compilers:
@@ -167,60 +167,46 @@ We will start by opening the compilers configuration file:
 
    compilers:
    - compiler:
+       spec: clang@6.0.0
+       paths:
+         cc: /usr/bin/clang-6.0
+         cxx: /usr/bin/clang++-6.0
+         f77:
+         fc:
+       flags: {}
+       operating_system: ubuntu18.04
+       target: x86_64
+       modules: []
        environment: {}
        extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu16.04
-       paths:
-         cc: /usr/bin/clang-3.7
-         cxx: /usr/bin/clang++-3.7
-         f77: null
-         fc: null
-       spec: clang@3.7.1-2ubuntu2
-       target: x86_64
    - compiler:
+       spec: gcc@6.5.0
+       paths:
+         cc: /usr/bin/gcc-6
+         cxx:
+         f77:
+         fc:
+       flags: {}
+       operating_system: ubuntu18.04
+       target: x86_64
+       modules: []
        environment: {}
        extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu16.04
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: null
-         fc: null
-       spec: clang@3.8.0-2ubuntu4
-       target: x86_64
    - compiler:
+       spec: gcc@7.4.0
+       paths:
+         cc: /usr/bin/gcc-7
+         cxx: /usr/bin/g++-7
+         f77: /usr/bin/gfortran-7
+         fc: /usr/bin/gfortran-7
+       flags: {}
+       operating_system: ubuntu18.04
+       target: x86_64
+       modules: []
        environment: {}
        extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu16.04
-       paths:
-         cc: /usr/bin/gcc-4.7
-         cxx: /usr/bin/g++-4.7
-         f77: /usr/bin/gfortran-4.7
-         fc: /usr/bin/gfortran-4.7
-       spec: gcc@4.7
-       target: x86_64
-   - compiler:
-       environment: {}
-       extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu16.04
-       paths:
-         cc: /usr/bin/gcc
-         cxx: /usr/bin/g++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       spec: gcc@5.4.0
-       target: x86_64
 
-
-This specifies two versions of the GCC compiler and two versions of the
+This specifies two versions of the GCC compiler and one versions of the
 Clang compiler with no Flang compiler. Now suppose we have a code that
 we want to compile with the Clang compiler for C/C++ code, but with
 gfortran for Fortran components. We can do this by adding another entry
@@ -233,13 +219,13 @@ to the ``compilers.yaml`` file.
        extra_rpaths: []
        flags: {}
        modules: []
-       operating_system: ubuntu16.04
+       operating_system: ubuntu18.04
        paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       spec: clang@3.8.0-gfortran
+         cc: /usr/bin/clang-6.0
+         cxx: /usr/bin/clang++-6.0
+         f77: /usr/bin/gfortran-7
+         fc: /usr/bin/gfortran-7
+       spec: clang@6.0.0-gfortran
        target: x86_64
 
 
@@ -262,7 +248,7 @@ We can verify that our new compiler works by invoking it now:
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@3.8.0-gfortran
+   $ spack install --no-cache zlib %clang@6.0.0-gfortran
    ...
 
 
@@ -270,7 +256,7 @@ This new compiler also works on Fortran codes:
 
 .. code-block:: console
 
-   $ spack install --no-cache cfitsio~bzip2 %clang@3.8.0-gfortran
+   $ spack install --no-cache cfitsio~bzip2 %clang@6.0.0-gfortran
    ...
 
 
@@ -296,13 +282,13 @@ Let's open our compilers configuration file again and add a compiler flag:
        flags:
          cppflags: -g
        modules: []
-       operating_system: ubuntu16.04
+       operating_system: ubuntu18.04
        paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       spec: clang@3.8.0-gfortran
+         cc: /usr/bin/clang-6.0
+         cxx: /usr/bin/clang++-6.0
+         f77: /usr/bin/gfortran-7
+         fc: /usr/bin/gfortran-7
+       spec: clang@6.0.0-gfortran
        target: x86_64
 
 
@@ -311,20 +297,25 @@ spec is concretized:
 
 .. code-block:: console
 
-   $ spack spec cfitsio %clang@3.8.0-gfortran
+   $ spack spec cfitsio %clang@6.0.0-gfortran
    Input spec
    --------------------------------
-   cfitsio%clang@3.8.0-gfortran
-
-   Normalized
-   --------------------------------
-   cfitsio%clang@3.8.0-gfortran
+   cfitsio%clang@6.0.0-gfortran
 
    Concretized
    --------------------------------
-   cfitsio@3.410%clang@3.8.0-gfortran cppflags="-g" +bzip2+shared arch=linux-ubuntu16.04-x86_64
-       ^bzip2@1.0.6%clang@3.8.0-gfortran cppflags="-g" +shared arch=linux-ubuntu16.04-x86_64
-
+   cfitsio@3.450%clang@6.0.0-gfortran cppflags="-g" +bzip2+shared arch=linux-ubuntu18.04-x86_64
+       ^bzip2@1.0.8%clang@6.0.0-gfortran cppflags="-g" +shared arch=linux-ubuntu18.04-x86_64
+           ^diffutils@3.7%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+       ^curl@7.63.0%clang@6.0.0-gfortran cppflags="-g" ~darwinssl~gssapi~libssh~libssh2~nghttp2 arch=linux-ubuntu18.04-x86_64
+           ^openssl@1.1.1d%clang@6.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
+               ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                   ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                       ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                           ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                               ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 
