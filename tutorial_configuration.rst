@@ -405,25 +405,26 @@ MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran~hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^openmpi@3.1.3%gcc@5.4.0~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-           ^hwloc@1.11.9%gcc@5.4.0~cairo~cuda+libxml2+pci+shared arch=linux-ubuntu16.04-x86_64
-               ^libpciaccess@0.13.5%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^libtool@2.4.6%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                       ^m4@1.4.18%gcc@5.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                           ^libsigsegv@2.11%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^pkgconf@1.4.2%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^util-macros@1.19.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-               ^libxml2@2.9.8%gcc@5.4.0~python arch=linux-ubuntu16.04-x86_64
-                   ^xz@5.2.4%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                   ^zlib@1.2.11%gcc@5.4.0+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
-               ^numactl@2.0.11%gcc@5.4.0 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-                   ^autoconf@2.69%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                       ^perl@5.26.2%gcc@5.4.0+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-                           ^gdbm@1.14.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                               ^readline@7.0%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
-                                   ^ncurses@6.1%gcc@5.4.0~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                   ^automake@1.16.1%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64
+   hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+           ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+               ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                       ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                           ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+               ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
+                   ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+               ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                   ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                       ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                           ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                               ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+                                   ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                   ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
 
 
 Now we will open the packages configuration file and update our
@@ -455,21 +456,26 @@ overrides the default settings just for these two items.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^mpich@3.2.1%clang@3.8.0-2ubuntu4 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-           ^findutils@4.6.0%clang@3.8.0-2ubuntu4 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu16.04-x86_64
-               ^autoconf@2.69%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^m4@1.4.18%clang@3.8.0-2ubuntu4 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                       ^libsigsegv@2.11%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^perl@5.26.2%clang@3.8.0-2ubuntu4+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac +shared+threads arch=linux-ubuntu16.04-x86_64
-                       ^gdbm@1.14.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                           ^readline@7.0%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                               ^ncurses@6.1%clang@3.8.0-2ubuntu4~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                                   ^pkgconf@1.4.2%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^automake@1.16.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^libtool@2.4.6%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^texinfo@6.5%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.11%clang@3.8.0-2ubuntu4+optimize+pic+shared arch=linux-ubuntu16.04-x86_64
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^mpich@3.3.1%clang@6.0.0-gfortran cppflags="-g"  device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+           ^findutils@4.6.0%clang@6.0.0-gfortran cppflags="-g"  patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+               ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                       ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                       ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                           ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                               ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^texinfo@6.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+           ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+           ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
+               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -502,22 +508,26 @@ We can check the effect of this command with ``spack spec hdf5`` again.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl+mpi+pic~shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^mpich@3.2.1%clang@3.8.0-2ubuntu4 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-           ^findutils@4.6.0%clang@3.8.0-2ubuntu4 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu16.04-x86_64
-               ^autoconf@2.69%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^m4@1.4.18%clang@3.8.0-2ubuntu4 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                       ^libsigsegv@2.11%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^perl@5.26.2%clang@3.8.0-2ubuntu4+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac ~shared+threads arch=linux-ubuntu16.04-x86_64
-                       ^gdbm@1.14.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                           ^readline@7.0%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                               ^ncurses@6.1%clang@3.8.0-2ubuntu4~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                                   ^pkgconf@1.4.2%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^automake@1.16.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^libtool@2.4.6%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^texinfo@6.5%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.11%clang@3.8.0-2ubuntu4+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
-
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic~shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^mpich@3.3.1%clang@6.0.0-gfortran cppflags="-g"  device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+           ^findutils@4.6.0%clang@6.0.0-gfortran cppflags="-g"  patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+               ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                       ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm~shared+threads arch=linux-ubuntu18.04-x86_64
+                       ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                           ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                               ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^texinfo@6.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+           ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+           ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
+               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 So far we have only made global changes to the package preferences. As
 we've seen throughout this tutorial, HDF5 builds with MPI enabled by
@@ -549,8 +559,8 @@ Now hdf5 will concretize without an MPI dependency by default.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.11%clang@3.8.0-2ubuntu4+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 
 In general, every attribute that we can set for all packages we can
@@ -576,7 +586,7 @@ pre-installed zlib.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64: /usr
+         zlib@1.2.8%gcc@7.4.0: /usr
 
 
 Here, we've told Spack that zlib 1.2.8 is installed on our system.
@@ -593,9 +603,8 @@ okay.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%gcc@5.4.0~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.8%gcc@5.4.0+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
-
+   hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 You'll notice that Spack is now using the external zlib installation,
 but the compiler used to build zlib is now overriding our compiler
@@ -610,9 +619,8 @@ preference of clang. If we explicitly specify Clang:
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.11%clang@3.8.0-2ubuntu4+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
-
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 Spack concretizes to both HDF5 and zlib being built with Clang.
 This has a side-effect of rebuilding zlib. If we want to force
@@ -632,7 +640,7 @@ not allowed to build its own zlib. We'll go with the latter.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64: /usr
+         zlib@1.2.8%gcc@7.4.0: /usr
        buildable: False
 
 
@@ -647,9 +655,8 @@ Now Spack will be forced to choose the external zlib.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.8%gcc@5.4.0+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
-
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
@@ -667,11 +674,11 @@ of HDF5? Well, fortunately we have MPICH installed on these systems.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64: /usr
+         zlib@1.2.8%gcc@7.4.0: /usr
        buildable: False
      mpich:
        paths:
-         mpich@3.2%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64: /usr
+         mpich@3.2%gcc@7.4.0: /usr
        buildable: False
 
 
@@ -687,26 +694,26 @@ build with an alternate MPI implementation.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl+mpi+pic+shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^openmpi@3.1.3%clang@3.8.0-2ubuntu4~cuda+cxx_exceptions fabrics= ~java~legacylaunchers~memchecker~pmi schedulers= ~sqlite3~thread_multiple+vt arch=linux-ubuntu16.04-x86_64
-           ^hwloc@1.11.9%clang@3.8.0-2ubuntu4~cairo~cuda+libxml2+pci~shared arch=linux-ubuntu16.04-x86_64
-               ^libpciaccess@0.13.5%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^libtool@2.4.6%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                       ^m4@1.4.18%clang@3.8.0-2ubuntu4 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,c0a408fbffb7255fcc75e26bd8edab116fc81d216bfd18b473668b7739a4158e,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu16.04-x86_64
-                           ^libsigsegv@2.11%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^pkgconf@1.4.2%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^util-macros@1.19.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-               ^libxml2@2.9.8%clang@3.8.0-2ubuntu4~python arch=linux-ubuntu16.04-x86_64
-                   ^xz@5.2.4%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                   ^zlib@1.2.8%gcc@5.4.0+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
-               ^numactl@2.0.11%clang@3.8.0-2ubuntu4 patches=592f30f7f5f757dfc239ad0ffd39a9a048487ad803c26b419e0f96b8cda08c1a arch=linux-ubuntu16.04-x86_64
-                   ^autoconf@2.69%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                       ^perl@5.26.2%clang@3.8.0-2ubuntu4+cpanm patches=0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac ~shared+threads arch=linux-ubuntu16.04-x86_64
-                           ^gdbm@1.14.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                               ^readline@7.0%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-                                   ^ncurses@6.1%clang@3.8.0-2ubuntu4~symlinks~termlib arch=linux-ubuntu16.04-x86_64
-                   ^automake@1.16.1%clang@3.8.0-2ubuntu4 arch=linux-ubuntu16.04-x86_64
-
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^openmpi@3.1.4%clang@6.0.0-gfortran cppflags="-g" ~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
+           ^hwloc@1.11.11%clang@6.0.0-gfortran cppflags="-g" ~cairo~cuda~gl+libxml2~nvml+pci~shared arch=linux-ubuntu18.04-x86_64
+               ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                       ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
+                           ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+               ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
+                   ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
+               ^numactl@2.0.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                   ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                       ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm~shared+threads arch=linux-ubuntu18.04-x86_64
+                           ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                               ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                                   ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+                   ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
 
 We have only expressed a preference for MPICH over other MPI
 implementations, and Spack will happily build with one we haven't
@@ -729,11 +736,11 @@ again.
        variants: ~shared
      zlib:
        paths:
-         zlib@1.2.8%gcc@5.4.0 arch=linux-ubuntu16.04-x86_64: /usr
+         zlib@1.2.8%gcc@7.4.0: /usr
        buildable: False
      mpich:
        paths:
-         mpich@3.2%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64: /usr
+         mpich@3.2%gcc@7.4.0: /usr
        buildable: False
      openmpi:
        buildable: False
@@ -751,6 +758,8 @@ again.
        buildable: False
      charmpp:
        buildable: False
+     fujitsu-mpi:
+       buildable: False
 
 
 Now that we have configured Spack not to build any of the possible
@@ -765,9 +774,9 @@ providers for MPI, we can try again.
 
    Concretized
    --------------------------------
-   hdf5@1.10.4%clang@3.8.0-2ubuntu4~cxx~debug~fortran~hl+mpi+pic~shared~szip~threadsafe arch=linux-ubuntu16.04-x86_64
-       ^mpich@3.2%gcc@5.4.0 device=ch3 +hydra netmod=tcp +pmi+romio~verbs arch=linux-ubuntu16.04-x86_64
-       ^zlib@1.2.8%gcc@5.4.0+optimize+pic~shared arch=linux-ubuntu16.04-x86_64
+   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic~shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
+       ^mpich@3.2%gcc@7.4.0 device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
+       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 
 By configuring most of our package preferences in ``packages.yaml``,
