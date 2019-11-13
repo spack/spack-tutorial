@@ -976,20 +976,22 @@ all the software is visible at the same time:
 
   $ module avail
 
-  ----------------------------------------------- /home/spack1/spack/share/spack/modules/linux-ubuntu16.04-x86_64 -----------------------------------------------
-     autoconf/2.69-gcc-7.2.0          m4/1.4.18-gcc-7.2.0                                      pkgconf/1.4.2-gcc-7.2.0
-     automake/1.16.1-gcc-7.2.0        mpich/3.2.1-gcc-7.2.0                                    py-numpy/1.15.2-gcc-7.2.0-openblas (L)
-     bzip2/1.0.6-gcc-7.2.0            ncurses/6.1-gcc-7.2.0                                    py-scipy/1.1.0-gcc-7.2.0-openblas  (L)
-     cmake/3.12.3-gcc-7.2.0           netlib-lapack/3.8.0-gcc-7.2.0                            py-setuptools/40.4.3-gcc-7.2.0
-     diffutils/3.6-gcc-7.2.0          netlib-scalapack/2.0.2-gcc-7.2.0-netlib-mpich           python/2.7.15-gcc-7.2.0            (L)
-     findutils/4.6.0-gcc-7.2.0        netlib-scalapack/2.0.2-gcc-7.2.0-netlib-openmpi         readline/7.0-gcc-7.2.0
-     gcc/7.2.0-gcc-5.4.0              netlib-scalapack/2.0.2-gcc-7.2.0-openblas-mpich          sqlite/3.23.1-gcc-7.2.0
-     gdbm/1.14.1-gcc-7.2.0            netlib-scalapack/2.0.2-gcc-7.2.0-openblas-openmpi (D)    texinfo/6.5-gcc-7.2.0
-     hwloc/1.11.9-gcc-7.2.0           numactl/2.0.11-gcc-7.2.0                                 util-macros/1.19.1-gcc-7.2.0
-     libpciaccess/0.13.5-gcc-7.2.0    openblas/0.3.3-gcc-7.2.0                          (L)    xz/5.2.4-gcc-7.2.0
-     libsigsegv/2.11-gcc-7.2.0        openmpi/3.1.3-gcc-7.2.0                                  zlib/1.2.11-gcc-7.2.0
-     libtool/2.4.6-gcc-7.2.0          openssl/1.0.2o-gcc-7.2.0
-     libxml2/2.9.8-gcc-7.2.0          perl/5.26.2-gcc-7.2.0
+  ----------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------
+     autoconf/2.69-gcc-8.3.0          libsigsegv/2.12-gcc-8.3.0                                perl/5.30.0-gcc-8.3.0
+     automake/1.16.1-gcc-8.3.0        libtool/2.4.6-gcc-8.3.0                                  pkgconf/1.6.3-gcc-8.3.0
+     bzip2/1.0.8-gcc-8.3.0            libxml2/2.9.9-gcc-8.3.0                                  py-numpy/1.17.3-gcc-8.3.0-openblas (L)
+     cmake/3.15.4-gcc-8.3.0           m4/1.4.18-gcc-8.3.0                                      py-scipy/1.3.1-gcc-8.3.0-openblas  (L)
+     diffutils/3.7-gcc-8.3.0          mpich/3.3.1-gcc-8.3.0                                    py-setuptools/41.4.0-gcc-8.3.0
+     expat/2.2.9-gcc-8.3.0            ncurses/6.1-gcc-8.3.0                                    python/3.7.4-gcc-8.3.0             (L)
+     findutils/4.6.0-gcc-8.3.0        netlib-lapack/3.8.0-gcc-8.3.0                            readline/8.0-gcc-8.3.0
+     gcc/8.3.0-gcc-7.4.0              netlib-scalapack/2.0.2-gcc-8.3.0-netlib-mpich            sqlite/3.30.1-gcc-8.3.0
+     gdbm/1.18.1-gcc-8.3.0            netlib-scalapack/2.0.2-gcc-8.3.0-netlib-openmpi          tar/1.32-gcc-8.3.0
+     gettext/0.20.1-gcc-8.3.0         netlib-scalapack/2.0.2-gcc-8.3.0-openblas-mpich          texinfo/6.5-gcc-8.3.0
+     hwloc/1.11.11-gcc-8.3.0          netlib-scalapack/2.0.2-gcc-8.3.0-openblas-openmpi (D)    util-macros/1.19.1-gcc-8.3.0
+     libbsd/0.9.1-gcc-8.3.0           numactl/2.0.12-gcc-8.3.0                                 xz/5.2.4-gcc-8.3.0
+     libffi/3.2.1-gcc-8.3.0           openblas/0.3.7-gcc-8.3.0                          (L)    zlib/1.2.11-gcc-8.3.0
+     libiconv/1.16-gcc-8.3.0          openmpi/3.1.4-gcc-8.3.0
+     libpciaccess/0.13.5-gcc-8.3.0    openssl/1.1.1d-gcc-8.3.0
 
     Where:
      L:  Module is loaded
@@ -1004,11 +1006,11 @@ that nothing prevents users from loading incompatible sets of modules:
 .. code-block:: console
 
   $ module purge
-  $ module load netlib-lapack/3.8.0-gcc-7.2.0 openblas/0.3.3-gcc-7.2.0
+  $ module load netlib-lapack openblas
   $ module list
 
   Currently Loaded Modules:
-    1) netlib-lapack/3.8.0-gcc-7.2.0   2) openblas/0.3.3-gcc-7.2.0
+    1) netlib-lapack/3.8.0-gcc-8.3.0   2) openblas/0.3.7-gcc-8.3.0
 
 Even if ``conflicts`` directives are carefully placed in module files, they:
 
@@ -1047,14 +1049,14 @@ After these modifications your configuration file should look like:
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@5.4.0'
+        - 'gcc@7.4.0'
       hierarchy:
         - mpi
       hash_length: 0
       whitelist:
         - gcc
       blacklist:
-        - '%gcc@5.4.0'
+        - '%gcc@7.4.0'
       all:
         suffixes:
           '^openblas': openblas
@@ -1064,14 +1066,6 @@ After these modifications your configuration file should look like:
         environment:
           set:
             '{name}_ROOT': '{prefix}'
-      gcc:
-        environment:
-          set:
-            CC: gcc
-            CXX: g++
-            FC: gfortran
-            F90: gfortran
-            F77: gfortran
       openmpi:
         environment:
           set:
@@ -1104,8 +1098,8 @@ and update ``MODULEPATH`` to point to the ``Core``:
 .. code-block:: console
 
   $ module purge
-  $ module unuse $HOME/spack/share/spack/modules/linux-ubuntu16.04-x86_64
-  $ module use $HOME/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/Core
+  $ module unuse $HOME/spack/share/spack/modules/linux-ubuntu18.04-x86_64
+  $ module use $HOME/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core
 
 asking for the available modules will return:
 
@@ -1113,8 +1107,8 @@ asking for the available modules will return:
 
   $ module avail
 
-  ----------------------------------------------------------- share/spack/lmod/linux-ubuntu16.04-x86_64/Core ------------------------------------------------------------
-     gcc/7.2.0
+  ---------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
+     gcc/8.3.0
 
   Use "module spider" to find all possible modules.
   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
@@ -1127,15 +1121,17 @@ the ``Compiler`` part of the hierarchy:
   $ module load gcc
   $ module avail
 
-  ------------------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/gcc/7.2.0 --------------------------------------------
-     autoconf/2.69      findutils/4.6.0        libtool/2.4.6    netlib-lapack/3.8.0    perl/5.26.2                 python/2.7.15         xz/5.2.4
-     automake/1.16.1    gdbm/1.14.1            libxml2/2.9.8    numactl/2.0.11         pkgconf/1.4.2               readline/7.0          zlib/1.2.11
-     bzip2/1.0.6        hwloc/1.11.9           m4/1.4.18        openblas/0.3.3         py-numpy/1.15.2-openblas    sqlite/3.23.1
-     cmake/3.12.3       libpciaccess/0.13.5    mpich/3.2.1      openmpi/3.1.3          py-scipy/1.1.0-openblas     texinfo/6.5
-     diffutils/3.6      libsigsegv/2.11        ncurses/6.1      openssl/1.0.2o         py-setuptools/40.4.3        util-macros/1.19.1
+  ------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.3.0 --------------------------------------
+     autoconf/2.69      gdbm/1.18.1            libsigsegv/2.12        numactl/2.0.12              py-scipy/1.3.1-openblas    util-macros/1.19.1
+     automake/1.16.1    gettext/0.20.1         libtool/2.4.6          openblas/0.3.7              py-setuptools/41.4.0       xz/5.2.4
+     bzip2/1.0.8        hwloc/1.11.11          libxml2/2.9.9          openmpi/3.1.4               python/3.7.4               zlib/1.2.11
+     cmake/3.15.4       libbsd/0.9.1           m4/1.4.18              openssl/1.1.1d              readline/8.0
+     diffutils/3.7      libffi/3.2.1           mpich/3.3.1            perl/5.30.0                 sqlite/3.30.1
+     expat/2.2.9        libiconv/1.16          ncurses/6.1            pkgconf/1.6.3               tar/1.32
+     findutils/4.6.0    libpciaccess/0.13.5    netlib-lapack/3.8.0    py-numpy/1.17.3-openblas    texinfo/6.5
 
-  ----------------------------------------------------------- share/spack/lmod/linux-ubuntu16.04-x86_64/Core ------------------------------------------------------------
-     gcc/7.2.0 (L)
+  ---------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
+     gcc/8.3.0 (L)
 
     Where:
      L:  Module is loaded
@@ -1151,18 +1147,21 @@ either ``mpich`` or ``openmpi``. Let's start by loading ``mpich``:
   $ module load mpich
   $ module avail
 
-  --------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/mpich/3.2.1-vt5xcat/gcc/7.2.0 ----------------------------------
-     netlib-scalapack/2.0.2-netlib    netlib-scalapack/2.0.2-openblas (D)
+  --------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/mpich/3.3.1-shejyq6/gcc/8.3.0 ----------------------------
+     netlib-scalapack/2.0.2-netlib-mpich    netlib-scalapack/2.0.2-openblas-mpich (D)
 
-  ------------------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/gcc/7.2.0 --------------------------------------------
-     autoconf/2.69      findutils/4.6.0        libtool/2.4.6        netlib-lapack/3.8.0    perl/5.26.2                 python/2.7.15         xz/5.2.4
-     automake/1.16.1    gdbm/1.14.1            libxml2/2.9.8        numactl/2.0.11         pkgconf/1.4.2               readline/7.0          zlib/1.2.11
-     bzip2/1.0.6        hwloc/1.11.9           m4/1.4.18            openblas/0.3.3         py-numpy/1.15.2-openblas    sqlite/3.23.1
-     cmake/3.12.3       libpciaccess/0.13.5    mpich/3.2.1   (L)    openmpi/3.1.3          py-scipy/1.1.0-openblas     texinfo/6.5
-     diffutils/3.6      libsigsegv/2.11        ncurses/6.1          openssl/1.0.2o         py-setuptools/40.4.3        util-macros/1.19.1
+  ------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.3.0 --------------------------------------
+     autoconf/2.69      gettext/0.20.1         libxml2/2.9.9              openssl/1.1.1d              sqlite/3.30.1
+     automake/1.16.1    hwloc/1.11.11          m4/1.4.18                  perl/5.30.0                 tar/1.32
+     bzip2/1.0.8        libbsd/0.9.1           mpich/3.3.1         (L)    pkgconf/1.6.3               texinfo/6.5
+     cmake/3.15.4       libffi/3.2.1           ncurses/6.1                py-numpy/1.17.3-openblas    util-macros/1.19.1
+     diffutils/3.7      libiconv/1.16          netlib-lapack/3.8.0        py-scipy/1.3.1-openblas     xz/5.2.4
+     expat/2.2.9        libpciaccess/0.13.5    numactl/2.0.12             py-setuptools/41.4.0        zlib/1.2.11
+     findutils/4.6.0    libsigsegv/2.12        openblas/0.3.7             python/3.7.4
+     gdbm/1.18.1        libtool/2.4.6          openmpi/3.1.4              readline/8.0
 
-  ----------------------------------------------------------- share/spack/lmod/linux-ubuntu16.04-x86_64/Core ------------------------------------------------------------
-     gcc/7.2.0 (L)
+  ---------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
+     gcc/8.3.0 (L)
 
     Where:
      L:  Module is loaded
@@ -1172,11 +1171,11 @@ either ``mpich`` or ``openmpi``. Let's start by loading ``mpich``:
   Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
-  root@module-file-tutorial:/# module load openblas netlib-scalapack/2.0.2-openblas
-  root@module-file-tutorial:/# module list
+  $ module load openblas netlib-scalapack/2.0.2-openblas
+  $ module list
 
   Currently Loaded Modules:
-    1) gcc/7.2.0   2) mpich/3.2.1   3) openblas/0.3.3   4) netlib-scalapack/2.0.2-openblas
+    1) gcc/8.3.0   2) mpich/3.3.1   3) openblas/0.3.7   4) netlib-scalapack/2.0.2-openblas
 
 At this point we can showcase the improved consistency that a hierarchical layout provides
 over a non-hierarchical one:
@@ -1185,7 +1184,7 @@ over a non-hierarchical one:
 
   $ module load openmpi
 
-  Lmod is automatically replacing "mpich/3.2.1" with "openmpi/3.1.3".
+  Lmod is automatically replacing "mpich/3.3.1" with "openmpi/3.1.4".
 
 
   Due to MODULEPATH changes, the following have been reloaded:
@@ -1212,20 +1211,20 @@ for ``LAPACK`` implementations:
 
 .. code-block:: console
 
-  root@module-file-tutorial:/# module list
+  $ module list
 
   Currently Loaded Modules:
-    1) gcc/7.2.0   2) openblas/0.3.3   3) openmpi/3.1.3   4) netlib-scalapack/2.0.2-openblas
+    1) gcc/8.3.0   2) openblas/0.3.7   3) openmpi/3.1.4   4) netlib-scalapack/2.0.2-openblas
 
-  root@module-file-tutorial:/# module load netlib-scalapack/2.0.2-netlib
+  $ module load netlib-scalapack/2.0.2-netlib
 
   The following have been reloaded with a version change:
     1) netlib-scalapack/2.0.2-openblas => netlib-scalapack/2.0.2-netlib
 
-  root@module-file-tutorial:/# module list
+  $ module list
 
   Currently Loaded Modules:
-    1) gcc/7.2.0   2) openblas/0.3.3   3) openmpi/3.1.3   4) netlib-scalapack/2.0.2-netlib
+    1) gcc/8.3.0   2) openblas/0.3.7   3) openmpi/3.1.4   4) netlib-scalapack/2.0.2-netlib
 
 Hierarchies that are deeper than ``Core``/``Compiler``/``MPI`` are
 probably still considered "unusual" or "impractical" at many sites, mainly because
@@ -1258,7 +1257,7 @@ Coming back to our example, let's add ``lapack`` to the hierarchy and remove any
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@5.4.0'
+        - 'gcc@7.4.0'
       hierarchy:
         - mpi
         - lapack
@@ -1266,21 +1265,13 @@ Coming back to our example, let's add ``lapack`` to the hierarchy and remove any
       whitelist:
         - gcc
       blacklist:
-        - '%gcc@5.4.0'
+        - '%gcc@7.4.0'
       all:
         filter:
           environment_blacklist: ['CPATH', 'LIBRARY_PATH']
         environment:
           set:
             '{name}_ROOT': '{prefix}'
-      gcc:
-        environment:
-          set:
-            CC: gcc
-            CXX: g++
-            FC: gfortran
-            F90: gfortran
-            F77: gfortran
       openmpi:
         environment:
           set:
@@ -1291,9 +1282,9 @@ After module files have been regenerated as usual:
 
 .. code-block:: console
 
-  root@module-file-tutorial:/# module purge
+  $ module purge
 
-  root@module-file-tutorial:/# spack module lmod refresh --delete-tree -y
+  $ spack module lmod refresh --delete-tree -y
   ==> Regenerating lmod module files
 
 we can see that now we have additional components in the hierarchy:
@@ -1304,18 +1295,19 @@ we can see that now we have additional components in the hierarchy:
   $ module load openblas
   $ module avail
 
-  -------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/openblas/0.3.3-xxoxfh4/gcc/7.2.0 --------------------------------
-     py-numpy/1.15.2    py-scipy/1.1.0
+  -------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openblas/0.3.7-ldv4b4h/gcc/8.3.0 --------------------------
+     py-numpy/1.17.3    py-scipy/1.3.1
 
-  ------------------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/gcc/7.2.0 --------------------------------------------
-     autoconf/2.69      findutils/4.6.0        libtool/2.4.6    netlib-lapack/3.8.0        perl/5.26.2             sqlite/3.23.1
-     automake/1.16.1    gdbm/1.14.1            libxml2/2.9.8    numactl/2.0.11             pkgconf/1.4.2           texinfo/6.5
-     bzip2/1.0.6        hwloc/1.11.9           m4/1.4.18        openblas/0.3.3      (L)    py-setuptools/40.4.3    util-macros/1.19.1
-     cmake/3.12.3       libpciaccess/0.13.5    mpich/3.2.1      openmpi/3.1.3              python/2.7.15           xz/5.2.4
-     diffutils/3.6      libsigsegv/2.11        ncurses/6.1      openssl/1.0.2o             readline/7.0            zlib/1.2.11
+  ------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.3.0 --------------------------------------
+     autoconf/2.69      findutils/4.6.0    libiconv/1.16          mpich/3.3.1                openssl/1.1.1d          sqlite/3.30.1
+     automake/1.16.1    gdbm/1.18.1        libpciaccess/0.13.5    ncurses/6.1                perl/5.30.0             tar/1.32
+     bzip2/1.0.8        gettext/0.20.1     libsigsegv/2.12        netlib-lapack/3.8.0        pkgconf/1.6.3           texinfo/6.5
+     cmake/3.15.4       hwloc/1.11.11      libtool/2.4.6          numactl/2.0.12             py-setuptools/41.4.0    util-macros/1.19.1
+     diffutils/3.7      libbsd/0.9.1       libxml2/2.9.9          openblas/0.3.7      (L)    python/3.7.4            xz/5.2.4
+     expat/2.2.9        libffi/3.2.1       m4/1.4.18              openmpi/3.1.4              readline/8.0            zlib/1.2.11
 
-  ----------------------------------------------------------- share/spack/lmod/linux-ubuntu16.04-x86_64/Core ------------------------------------------------------------
-     gcc/7.2.0 (L)
+  ---------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
+     gcc/8.3.0 (L)
 
     Where:
      L:  Module is loaded
@@ -1327,21 +1319,22 @@ we can see that now we have additional components in the hierarchy:
   $ module load openmpi
   $ module avail
 
-  --------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/openmpi/3.1.3-do5xfer/openblas/0.3.3-xxoxfh4/gcc/7.2.0 ---------------------
+  --------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openmpi/3.1.4-dorc4s4/openblas/0.3.7-ldv4b4h/gcc/8.3.0 ---------------
      netlib-scalapack/2.0.2
 
-  -------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/openblas/0.3.3-xxoxfh4/gcc/7.2.0 --------------------------------
-     py-numpy/1.15.2    py-scipy/1.1.0
+  -------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openblas/0.3.7-ldv4b4h/gcc/8.3.0 --------------------------
+     py-numpy/1.17.3    py-scipy/1.3.1
 
-  ------------------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/gcc/7.2.0 --------------------------------------------
-     autoconf/2.69      findutils/4.6.0        libtool/2.4.6    netlib-lapack/3.8.0        perl/5.26.2             sqlite/3.23.1
-     automake/1.16.1    gdbm/1.14.1            libxml2/2.9.8    numactl/2.0.11             pkgconf/1.4.2           texinfo/6.5
-     bzip2/1.0.6        hwloc/1.11.9           m4/1.4.18        openblas/0.3.3      (L)    py-setuptools/40.4.3    util-macros/1.19.1
-     cmake/3.12.3       libpciaccess/0.13.5    mpich/3.2.1      openmpi/3.1.3       (L)    python/2.7.15           xz/5.2.4
-     diffutils/3.6      libsigsegv/2.11        ncurses/6.1      openssl/1.0.2o             readline/7.0            zlib/1.2.11
+  ------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.3.0 --------------------------------------
+     autoconf/2.69      findutils/4.6.0    libiconv/1.16          mpich/3.3.1                openssl/1.1.1d          sqlite/3.30.1
+     automake/1.16.1    gdbm/1.18.1        libpciaccess/0.13.5    ncurses/6.1                perl/5.30.0             tar/1.32
+     bzip2/1.0.8        gettext/0.20.1     libsigsegv/2.12        netlib-lapack/3.8.0        pkgconf/1.6.3           texinfo/6.5
+     cmake/3.15.4       hwloc/1.11.11      libtool/2.4.6          numactl/2.0.12             py-setuptools/41.4.0    util-macros/1.19.1
+     diffutils/3.7      libbsd/0.9.1       libxml2/2.9.9          openblas/0.3.7      (L)    python/3.7.4            xz/5.2.4
+     expat/2.2.9        libffi/3.2.1       m4/1.4.18              openmpi/3.1.4       (L)    readline/8.0            zlib/1.2.11
 
-  ---------------------------------------------- /home/spack1/spack/share/spack/lmod/linux-ubuntu16.04-x86_64/Core ----------------------------------------------
-     gcc/7.2.0 (L)
+  ---------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
+     gcc/8.3.0 (L)
 
     Where:
      L:  Module is loaded
@@ -1356,7 +1349,7 @@ Both ``MPI`` and ``LAPACK`` providers will now benefit from the same safety feat
   $ module load py-numpy netlib-scalapack
   $ module load mpich
 
-  Lmod is automatically replacing "openmpi/3.1.3" with "mpich/3.2.1".
+  Lmod is automatically replacing "openmpi/3.1.4" with "mpich/3.3.1".
 
 
   Due to MODULEPATH changes, the following have been reloaded:
@@ -1364,7 +1357,7 @@ Both ``MPI`` and ``LAPACK`` providers will now benefit from the same safety feat
 
   $ module load netlib-lapack
 
-  Lmod is automatically replacing "openblas/0.3.3" with "netlib-lapack/3.8.0".
+  Lmod is automatically replacing "openblas/0.3.7" with "netlib-lapack/3.8.0".
 
 
   Inactive Modules:
