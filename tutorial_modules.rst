@@ -166,7 +166,7 @@ module file layouts.
 
 .. code-block:: console
 
-  $ bin/spack install lmod
+  $ spack install lmod
 
 Once the module tool is installed we need to have it available in the
 current shell. As the installation directories are definitely not easy
@@ -198,22 +198,19 @@ Add a new compiler
 The second step is to build a recent compiler. On first use, Spack
 scans the environment and automatically locates the compiler(s)
 already available on the system. For this tutorial, however, we want
-to use ``gcc@7.2.0``.
+to use ``gcc@8.3.0``.
 
 
 .. code-block:: console
 
-  $ spack install gcc@7.2.0
-  ...
-  Wait a long time
-  ...
+  $ spack install gcc@8.3.0
 
 Once ``gcc`` is installed we can use shell support to load it and make
 it readily available:
 
 .. code-block:: console
 
-  $ spack load gcc@7.2.0
+  $ spack load gcc@8.3.0
 
 It may not be apparent, but the last command employed the module files
 generated automatically by Spack. What happens under the hood when you use
@@ -227,28 +224,29 @@ You can use this command to double check:
 .. code-block:: console
 
   $ module list
+
   Currently Loaded Modules:
-  1) gcc-7.2.0-gcc-5.4.0-b7smjjc
+    1) gcc-8.3.0-gcc-7.4.0-rvoysuv
 
 Note that the 7-digit hash at the end of the generated module may vary depending
-on architecture or package version. Now that we have ``gcc@7.2.0`` in ``PATH`` we
+on architecture or package version. Now that we have ``gcc@8.3.0`` in ``PATH`` we
 can finally add it to the list of compilers known to Spack:
 
 .. code-block:: console
 
   $ spack compiler add
-  ==> Added 1 new compiler to /home/spack1/.spack/linux/compilers.yaml
-      gcc@7.2.0
+  ==> Added 1 new compiler to /home/spack/.spack/linux/compilers.yaml
+      gcc@8.3.0
   ==> Compilers are defined in the following files:
-      /home/spack1/.spack/linux/compilers.yaml
+      /home/spack/.spack/linux/compilers.yaml
 
   $ spack compiler list
   ==> Available compilers
-  -- clang ubuntu16.04-x86_64 -------------------------------------
-  clang@3.8.0-2ubuntu4  clang@3.7.1-2ubuntu2
+  -- clang ubuntu18.04-x86_64 -------------------------------------
+  clang@6.0.0
 
-  -- gcc ubuntu16.04-x86_64 ---------------------------------------
-  gcc@7.2.0  gcc@5.4.0  gcc@4.7
+  -- gcc ubuntu18.04-x86_64 ---------------------------------------
+  gcc@8.3.0  gcc@7.4.0  gcc@6.5.0
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
