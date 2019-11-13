@@ -1428,7 +1428,7 @@ that tells them who to contact in your organization to be inserted in the group?
 
 To automate the generation of module files with such site-specific behavior
 we'll start by extending the list of locations where Spack looks for module
-files. Let's create the file ``~/.spack/config.yaml`` with the content:
+files. Let's create the file ``${SPACK_ROOT}/etc/spack/config.yaml`` with the content:
 
 .. code-block:: yaml
 
@@ -1479,14 +1479,14 @@ need to use the new custom template. For the sake of illustration let's assume
 it's ``netlib-scalapack``:
 
 .. code-block:: yaml
-  :emphasize-lines: 35-36
+  :emphasize-lines: 27-28
 
   modules:
     enable::
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@5.4.0'
+        - 'gcc@7.4.0'
       hierarchy:
         - mpi
         - lapack
@@ -1494,7 +1494,7 @@ it's ``netlib-scalapack``:
       whitelist:
         - gcc
       blacklist:
-        - '%gcc@5.4.0'
+        - '%gcc@7.4.0'
         - readline
       all:
         filter:
@@ -1502,14 +1502,6 @@ it's ``netlib-scalapack``:
         environment:
           set:
             '{name}_ROOT': '{prefix}'
-      gcc:
-        environment:
-          set:
-            CC: gcc
-            CXX: g++
-            FC: gfortran
-            F90: gfortran
-            F77: gfortran
       openmpi:
         environment:
           set:
@@ -1522,7 +1514,7 @@ If we regenerate the module files one last time:
 
 .. code-block:: console
 
-  root@module-file-tutorial:/# spack module lmod refresh -y netlib-scalapack
+  $ spack module lmod refresh -y netlib-scalapack
   ==> Regenerating lmod module files
 
 we'll find the following at the end of each ``netlib-scalapack`` module file:
@@ -1530,7 +1522,7 @@ we'll find the following at the end of each ``netlib-scalapack`` module file:
 .. code-block:: lua
 
   -- Access is granted only to specific groups
-  if not isDir("/usr/local/opt/spack/linux-ubuntu16.04-x86_64/gcc-7.2.0/netlib-scalapack-2.0.2-d3lertflood3twaor44eam2kcr4l72ag") then
+  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
       LmodError (
           "You don't have the necessary rights to run \"netlib-scalapack\".\n\n",
           "\tPlease write an e-mail to 1234@foo.com if you need further information on how to get access to it.\n"
