@@ -68,48 +68,30 @@ packages for its dependencies:
        fillcolor=lightblue,
        style="rounded,filled"  ]
 
-    "eifxmpsduqbsvgrk2sx5pn7cy5eraanr" [label="pkgconf"]
-    "surdjxdcankv3xqk5tnnwroz3tor77o7" [label="gdbm"]
-    "hzwkvqampr3c6mfceyxq4xej7eyxoxoj" [label="readline"]
-    "vhehc322oo5ipbbk465m6py6zzr4kdam" [label="libpciaccess"]
-    "3khohgmwhbgvxehlt7rcnnzqfxelyv4p" [label="libsigsegv"]
-    "ut64la6rptcwos3uwl2kp5mle572hlhi" [label="m4"]
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" [label="hwloc"]
-    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" [label="autoconf"]
-    "s4rsiori6blknfxf2jx4nbfxfzvcww2k" [label="ncurses"]
-    "4neu5jwwmuo26mjs6363q6bupczjk6hk" [label="libtool"]
-    "ur2jffeua3gzg5otnmqgfnfdexgtjxcl" [label="xz"]
-    "o2viq7yriiaw6nwqpaa7ltpyzqkaonhb" [label="zlib"]
-    "fg5evg4bxx4jy3paclojb46lok4fjclf" [label="libxml2"]
-    "a226ran4thxadofd7yow3sfng3gy3t3k" [label="util-macros"]
-    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" [label="automake"]
-    "zvmmgjbnfrzbo3hl2ijqxcjpkiv7q3ab" [label="libiconv"]
-    "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc" [label="perl"]
-
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "fg5evg4bxx4jy3paclojb46lok4fjclf"
-    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "ur2jffeua3gzg5otnmqgfnfdexgtjxcl"
-    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" -> "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc"
-    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
-    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" -> "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc"
-    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "4neu5jwwmuo26mjs6363q6bupczjk6hk"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
-    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "a226ran4thxadofd7yow3sfng3gy3t3k"
-    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "io3tplo73zw2v5lkbknnvsk7tszjaj2d"
-    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" -> "g23qfulbkb5qtgmpuwyv65o3p2r7w434"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "4neu5jwwmuo26mjs6363q6bupczjk6hk"
-    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
-    "s4rsiori6blknfxf2jx4nbfxfzvcww2k" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
-    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "zvmmgjbnfrzbo3hl2ijqxcjpkiv7q3ab"
-    "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc" -> "surdjxdcankv3xqk5tnnwroz3tor77o7"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "vhehc322oo5ipbbk465m6py6zzr4kdam"
-    "surdjxdcankv3xqk5tnnwroz3tor77o7" -> "hzwkvqampr3c6mfceyxq4xej7eyxoxoj"
-    "4neu5jwwmuo26mjs6363q6bupczjk6hk" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
-    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "g23qfulbkb5qtgmpuwyv65o3p2r7w434"
-    "ut64la6rptcwos3uwl2kp5mle572hlhi" -> "3khohgmwhbgvxehlt7rcnnzqfxelyv4p"
-    "hzwkvqampr3c6mfceyxq4xej7eyxoxoj" -> "s4rsiori6blknfxf2jx4nbfxfzvcww2k"
-    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "o2viq7yriiaw6nwqpaa7ltpyzqkaonhb"
+    "hwloc" -> "libxml2"
+    "libxml2" -> "xz"
+    "automake" -> "perl"
+    "libxml2" -> "pkgconf"
+    "autoconf" -> "perl"
+    "libpciaccess" -> "libtool"
+    "hwloc" -> "pkgconf"
+    "libpciaccess" -> "util-macros"
+    "autoconf" -> "m4"
+    "hwloc" -> "m4"
+    "hwloc" -> "automake"
+    "automake" -> "autoconf"
+    "hwloc" -> "libtool"
+    "libpciaccess" -> "pkgconf"
+    "ncurses" -> "pkgconf"
+    "libxml2" -> "libiconv"
+    "perl" -> "gdbm"
+    "hwloc" -> "libpciaccess"
+    "gdbm" -> "readline"
+    "libtool" -> "m4"
+    "hwloc" -> "autoconf"
+    "m4" -> "libsigsegv"
+    "readline" -> "ncurses"
+    "libxml2" -> "zlib"
   }
 
 .. code-block:: console
