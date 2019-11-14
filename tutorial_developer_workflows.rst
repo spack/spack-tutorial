@@ -62,7 +62,7 @@ the console.
 
 .. code-block:: console
 
-  $ spack dev-build hwloc@develop
+  $ spack dev-build hwloc@master
   ...
   ==> Installing hwloc
   ==> Searching for binary cache of hwloc
@@ -76,7 +76,7 @@ the console.
   ==> Building hwloc [AutotoolsPackage]
   ==> Executing phase: 'autoreconf'
   ==> Executing phase: 'configure'
-  ==> [2019-11-14-14:29:45.751143] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-develop-kezfab6iyi5nljlnfmpwy3bgxu7f6rie' '--disable-opencl' '--enable-netloc' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--enable-pci' '--enable-shared'
+  ==> [2019-11-14-15:57:44.921343] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-master-qk6frrw75e7r5wp7f5r65x23cxtv5p4i' '--disable-opencl' '--enable-netloc' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--enable-pci' '--enable-shared'
 
   ###
   ### Configuring hwloc distribution tarball
@@ -91,8 +91,8 @@ the console.
   ...
 
   ==> Successfully installed hwloc
-  Fetch: 0.00s.  Build: 26.48s.  Total: 26.48s.
-  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-develop-kezfab6iyi5nljlnfmpwy3bgxu7f6rie
+  Fetch: 0.00s.  Build: 55.16s.  Total: 55.16s.
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-master-qk6frrw75e7r5wp7f5r65x23cxtv5p4i
 
 Done! HWLOC is installed.
 
@@ -149,7 +149,7 @@ the ``spack info`` command.
       2.0.2      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.2.tar.gz
 
   Safe versions:
-      develop    [git] https://github.com/open-mpi/hwloc.git on branch develop
+      master    [git] https://github.com/open-mpi/hwloc.git on branch master
       2.0.2      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.2.tar.gz
       2.0.1      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.1.tar.gz
       2.0.0      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.0.tar.gz
@@ -202,7 +202,7 @@ phase completes.
 
 .. code-block:: console
 
-  $ spack dev-build --until configure hwloc@develop
+  $ spack dev-build --until configure hwloc@master
 
 Now, we can develop our code. For the sake of this demo, we're just
 going to intentionally introduce an error. Let's edit a file and
@@ -221,7 +221,7 @@ need to do is activate Spack's build environment for our code:
 
 .. code-block:: console
 
-  $ spack build-env hwloc@develop -- bash
+  $ spack build-env hwloc@master -- bash
   $ make
   Making all in include
   make[1]: Entering directory '/home/spack/hwloc/include'
