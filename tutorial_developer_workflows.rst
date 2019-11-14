@@ -45,7 +45,72 @@ mirror or the internet before building and installing your package. As
 developers, we want to build from local source, which we will
 constantly change, build, and test.
 
-Let's imagine for a second we're HWLOC developers.
+Let's imagine for a second we're working on `hwloc`.  `hwloc` is a tool used
+by MPI libraries to understand the hierarchy (NUMA, sockets, etc.) of modern
+node architectures.  It's a pretty low-level library, but we've chosen it as an
+example here because it's quick to build, and we already have binary
+packages for its dependencies:
+
+.. graphviz::
+
+    digraph G {
+    labelloc = "b"
+    rankdir = "TB"
+    ranksep = "1"
+    edge[
+       penwidth=4  ]
+    node[
+       fontname=Monaco,
+       penwidth=4,
+       fontsize=24,
+       margin=.2,
+       shape=box,
+       fillcolor=lightblue,
+       style="rounded,filled"  ]
+
+    "eifxmpsduqbsvgrk2sx5pn7cy5eraanr" [label="pkgconf"]
+    "surdjxdcankv3xqk5tnnwroz3tor77o7" [label="gdbm"]
+    "hzwkvqampr3c6mfceyxq4xej7eyxoxoj" [label="readline"]
+    "vhehc322oo5ipbbk465m6py6zzr4kdam" [label="libpciaccess"]
+    "3khohgmwhbgvxehlt7rcnnzqfxelyv4p" [label="libsigsegv"]
+    "ut64la6rptcwos3uwl2kp5mle572hlhi" [label="m4"]
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" [label="hwloc"]
+    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" [label="autoconf"]
+    "s4rsiori6blknfxf2jx4nbfxfzvcww2k" [label="ncurses"]
+    "4neu5jwwmuo26mjs6363q6bupczjk6hk" [label="libtool"]
+    "ur2jffeua3gzg5otnmqgfnfdexgtjxcl" [label="xz"]
+    "o2viq7yriiaw6nwqpaa7ltpyzqkaonhb" [label="zlib"]
+    "fg5evg4bxx4jy3paclojb46lok4fjclf" [label="libxml2"]
+    "a226ran4thxadofd7yow3sfng3gy3t3k" [label="util-macros"]
+    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" [label="automake"]
+    "zvmmgjbnfrzbo3hl2ijqxcjpkiv7q3ab" [label="libiconv"]
+    "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc" [label="perl"]
+
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "fg5evg4bxx4jy3paclojb46lok4fjclf"
+    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "ur2jffeua3gzg5otnmqgfnfdexgtjxcl"
+    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" -> "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc"
+    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
+    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" -> "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc"
+    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "4neu5jwwmuo26mjs6363q6bupczjk6hk"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
+    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "a226ran4thxadofd7yow3sfng3gy3t3k"
+    "g23qfulbkb5qtgmpuwyv65o3p2r7w434" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "io3tplo73zw2v5lkbknnvsk7tszjaj2d"
+    "io3tplo73zw2v5lkbknnvsk7tszjaj2d" -> "g23qfulbkb5qtgmpuwyv65o3p2r7w434"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "4neu5jwwmuo26mjs6363q6bupczjk6hk"
+    "vhehc322oo5ipbbk465m6py6zzr4kdam" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
+    "s4rsiori6blknfxf2jx4nbfxfzvcww2k" -> "eifxmpsduqbsvgrk2sx5pn7cy5eraanr"
+    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "zvmmgjbnfrzbo3hl2ijqxcjpkiv7q3ab"
+    "cxcj6eisjsfp3iv6xlio6rvc33fbxfmc" -> "surdjxdcankv3xqk5tnnwroz3tor77o7"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "vhehc322oo5ipbbk465m6py6zzr4kdam"
+    "surdjxdcankv3xqk5tnnwroz3tor77o7" -> "hzwkvqampr3c6mfceyxq4xej7eyxoxoj"
+    "4neu5jwwmuo26mjs6363q6bupczjk6hk" -> "ut64la6rptcwos3uwl2kp5mle572hlhi"
+    "qk6frrw75e7r5wp7f5r65x23cxtv5p4i" -> "g23qfulbkb5qtgmpuwyv65o3p2r7w434"
+    "ut64la6rptcwos3uwl2kp5mle572hlhi" -> "3khohgmwhbgvxehlt7rcnnzqfxelyv4p"
+    "hzwkvqampr3c6mfceyxq4xej7eyxoxoj" -> "s4rsiori6blknfxf2jx4nbfxfzvcww2k"
+    "fg5evg4bxx4jy3paclojb46lok4fjclf" -> "o2viq7yriiaw6nwqpaa7ltpyzqkaonhb"
+  }
 
 .. code-block:: console
 
@@ -53,7 +118,7 @@ Let's imagine for a second we're HWLOC developers.
   $ git clone https://github.com/open-mpi/hwloc.git
   $ cd hwloc
 
-Here we have the local HWLOC source that we've been working on. If we
+Here we have the local `hwloc` source that we've been working on. If we
 want to build and install it, we can do so using the ``spack
 dev-build`` command. Note that we need to provide a version in the
 spec we pass to ``spack dev-build``. By default, the ``spack
@@ -94,16 +159,16 @@ the console.
   Fetch: 0.00s.  Build: 55.16s.  Total: 55.16s.
   [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-master-qk6frrw75e7r5wp7f5r65x23cxtv5p4i
 
-Done! HWLOC is installed.
+Done! `hwloc` is installed.
 
 So what's going on here? When we use the `spack dev-build` command,
 Spack still manages the package's dependencies as it would for the
-``spack install`` command. The dependencies for HWLOC are all
+``spack install`` command. The dependencies for `hwloc` are all
 installed, either from binary or source, if they were not
-already. Instead of downloading the source code for HWLOC, Spack
+already. Instead of downloading the source code for `hwloc`, Spack
 constructed a stage in the current directory to use the local
 source. Spack then constructed the build environment and arguments for
-the HWLOC build system as it would for the ``spack install``
+the `hwloc` build system as it would for the ``spack install``
 command. The resulting installation is added to Spack's database as
 usual, and post-install hooks including modulefile generation are ran
 as well.
@@ -117,7 +182,7 @@ and then we want to iterate developing and building our code, before
 installing it once if at all. We can do this in Spack using the
 ``-u/--until`` option with the ``spack dev-build`` command. To do this
 we need to know the phases of the build that Spack will
-use. Fortunately, as experienced HWLOC developers we all happen to know
+use. Fortunately, as experienced `hwloc` developers we all happen to know
 that those phases are ``autoreconf``, ``configure``, ``build``, and
 ``install``. If we don't remember the phases, we could find out using
 the ``spack info`` command.
@@ -195,7 +260,7 @@ the ``spack info`` command.
   Virtual Packages:
       None
 
-We will tell Spack to stop installing HWLOC after the ``configure``
+We will tell Spack to stop installing `hwloc` after the ``configure``
 stage. This will execute exactly the same as before, except it will
 stop the installation after the listed, in our case ``configure``,
 phase completes.
