@@ -19,7 +19,7 @@ build system as necessary.
 Prepare for the tutorial
 -----------------------------
 
-If you have already done the :ref:_basics-tutorial you have probably
+If you have already done the :ref:`basics-tutorial` you have probably
 already set up Spack to run in the tutorial image. If not, you will
 want to run the following commands:
 
