@@ -28,6 +28,10 @@ class Mpileaks(Package):
     homepage = "http://www.example.com"
     url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
+    # FIXME: Add a list of GitHub accounts to
+    # notify when the package is updated.
+    # maintainers = ['github_user1', 'github_user2']
+
     version('1.0', sha256='2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825')
 
     # FIXME: Add dependencies if required.
