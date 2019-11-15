@@ -206,7 +206,7 @@ We will start by opening the compilers configuration file:
        environment: {}
        extra_rpaths: []
 
-This specifies two versions of the GCC compiler and one versions of the
+This specifies two versions of the GCC compiler and one version of the
 Clang compiler with no Flang compiler. Now suppose we have a code that
 we want to compile with the Clang compiler for C/C++ code, but with
 gfortran for Fortran components. We can do this by adding another entry
