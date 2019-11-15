@@ -252,11 +252,15 @@ We can verify that our new compiler works by invoking it now:
    ...
 
 
-This new compiler also works on Fortran codes:
+This new compiler also works on Fortran codes. We'll show it by
+compiling a small package using as a build dependency ``cmake%gcc@7.4.0``
+since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install --no-cache cfitsio~bzip2 %clang@6.0.0-gfortran
+   $ spack install cmake %gcc@7.4.0
+   ...
+   $ spack install --no-cache json-fortran %clang@6.0.0-gfortran ^cmake%gcc@7.4.0
    ...
 
 
@@ -297,24 +301,21 @@ spec is concretized:
 
 .. code-block:: console
 
-   $ spack spec cfitsio %clang@6.0.0-gfortran
+   $ spack spec json-fortran %clang@6.0.0-gfortran
    Input spec
    --------------------------------
-   cfitsio%clang@6.0.0-gfortran
+   json-fortran%clang@6.0.0-gfortran
 
    Concretized
    --------------------------------
-   cfitsio@3.450%clang@6.0.0-gfortran cppflags="-g" +bzip2+shared arch=linux-ubuntu18.04-x86_64
-       ^bzip2@1.0.8%clang@6.0.0-gfortran cppflags="-g" +shared arch=linux-ubuntu18.04-x86_64
-           ^diffutils@3.7%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-       ^curl@7.63.0%clang@6.0.0-gfortran cppflags="-g" ~darwinssl~gssapi~libssh~libssh2~nghttp2 arch=linux-ubuntu18.04-x86_64
+   json-fortran@7.1.0%clang@6.0.0-gfortran cppflags="-g"  build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+       ^cmake@3.15.4%clang@6.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
+           ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
+               ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
            ^openssl@1.1.1d%clang@6.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
                ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
                    ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
                        ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                           ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-                               ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
                ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
