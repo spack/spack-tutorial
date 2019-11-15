@@ -141,11 +141,18 @@ We can bring the ``package.py`` file back into our ``EDITOR`` with the
 
    $ spack edit mpileaks
 
-Let's remove some of the ``FIXME`` comments, add links to the mpileaks
-homepage, and document what mpileaks does.  I'm also going to cut out the
-Copyright clause at this point to keep this tutorial document shorter,
-but you shouldn't do that normally.  The results of these changes can be
-found in ``$SPACK_ROOT/lib/spack/docs/tutorial/examples/1.package.py``
+Let's remove some of the ``FIXME`` comments, add a link to the mpileaks
+homepage, and document what mpileaks does. Let's also add a maintainer
+to the package. The ``maintainers`` field is a comma-separated list of
+GitHub accounts of users who want to be notified when a change is made
+to a package. This is useful for developers who maintain a Spack package
+for their own software, and for users who rely on a piece of software
+and want to ensure that the package doesn't break.
+
+I'm also going to cut out the Copyright clause at this point to keep
+this tutorial document shorter, but you shouldn't do that normally.
+The results of these changes can be found in
+``$SPACK_ROOT/lib/spack/docs/tutorial/examples/1.package.py``
 and are displayed below.  Make these changes to your ``package.py``:
 
 .. literalinclude:: tutorial/examples/1.package.py
@@ -166,6 +173,8 @@ allow Spack to provide some documentation on this package to other users:
        MPI_Datatypes.
 
    Homepage: https://github.com/LLNL/mpileaks
+
+   Maintainers: @adamjstewart
 
    Tags:
        None
@@ -505,7 +514,7 @@ powerful class for querying information about what we're building.  For
 example, you could use the spec to query information about how a
 package's dependencies were built, or what compiler was being used, or
 what version of a package is being installed.  Full documentation can be
-found in the `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_, 
+found in the `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_,
 but here's some quick snippets with common queries:
 
 - Am I building ``mpileaks`` version ``1.1`` or greater?
