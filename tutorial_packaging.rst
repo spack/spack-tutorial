@@ -412,9 +412,9 @@ This is all we need for a working mpileaks package! If we install now we'll see:
    ==> Searching for binary cache of mpileaks
    ==> Finding buildcaches in /mirror/build_cache
    ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: $SPACK_ROOT/var/spack/cache/mpileaks/mpileaks-1.0.tar.gz
-   ==> Staging archive: $SPACK_ROOT/var/spack/stage/mpileaks-1.0-csoikctsalli4cdkkdk377gprkc472rb/mpileaks-1.0.tar.gz
-   ==> Created stage in $SPACK_ROOT/var/spack/stage/mpileaks-1.0-csoikctsalli4cdkkdk377gprkc472rb
+   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/mpileaks-1.0.tar.gz
+   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
    ==> No patches needed for mpileaks
    ==> Building mpileaks [AutotoolsPackage]
    ==> Executing phase: 'autoreconf'
@@ -422,8 +422,8 @@ This is all we need for a working mpileaks package! If we install now we'll see:
    ==> Executing phase: 'build'
    ==> Executing phase: 'install'
    ==> Successfully installed mpileaks
-     Fetch: 0.00s.  Build: 9.41s.  Total: 9.41s.
-   [+] $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpileaks-1.0-csoikctsalli4cdkkdk377gprkc472rb
+     Fetch: 0.02s.  Build: 1m 0.46s.  Total: 1m 0.48s.
+   [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
 
 --------
 Variants
