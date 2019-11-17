@@ -73,15 +73,15 @@ we run ``spack create`` on it:
    ==> Found 1 version of mpileaks:
 
      1.0  https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-
+   ==>
    ==> How many would you like to checksum? (default is 1, q to abort) 1
    ==> Downloading...
    ==> Fetching https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-   ############################################################################# 100.0%
-   ==> Checksummed 1 version of mpileaks:
+   ########################################################################################################################################### 100.0%
+   ==> Checksummed 1 version of mpileaks
    ==> This package looks like it uses the autotools build system
    ==> Created template for mpileaks package
-   ==> Created package file: $SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py
+   ==> Created package file: /home/spack/spack/var/spack/repos/tutorial/packages/mpileaks/package.py
 
 Spack should spawn a text editor with this file:
 
@@ -107,28 +107,30 @@ to build this package:
    $ spack install mpileaks
    ==> Installing mpileaks
    ==> Searching for binary cache of mpileaks
+   ==> Finding buildcaches in /mirror/build_cache
    ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: $SPACK_ROOT/var/spack/cache/mpileaks/mpileaks-1.0.tar.gz
-   ==> Staging archive: $SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks/mpileaks-1.0.tar.gz
-   ==> Created stage in $SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks
+   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/mpileaks-1.0.tar.gz
+   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh
    ==> No patches needed for mpileaks
    ==> Building mpileaks [AutotoolsPackage]
    ==> Executing phase: 'autoreconf'
    ==> Executing phase: 'configure'
    ==> Error: ProcessError: Command exited with status 1:
-       '$SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks/spack-src/configure' '--prefix=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks'
+       '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh'
 
    1 error found in build log:
-        36    no
-        37    -n Checking whether not-found responds to '-compile-info'...
-        38    no
-        39    -n Checking whether not-found responds to '-show'...
-        40    no
-        41    Unable to find suitable MPI Compiler. Try setting MPICC.
-     >> 42    configure: error: unable to locate adept-utils installation
+        30    checking for mpipgcc... no
+        31    Checking whether not-found responds to '-showme:compile'... no
+        32    Checking whether not-found responds to '-showme'... no
+        33    Checking whether not-found responds to '-compile-info'... no
+        34    Checking whether not-found responds to '-show'... no
+        35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-src/configure: line 4931: Echo: command not fou
+              nd
+     >> 36    configure: error: unable to locate adept-utils installation
 
    See build log for details:
-     $SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks/spack-build-out.txt
+     /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-build-out.txt
 
 This obviously didn't work; we need to fill in the package-specific
 information. Specifically, Spack didn't try to build any of mpileaks'
