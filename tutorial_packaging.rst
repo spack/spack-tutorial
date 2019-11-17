@@ -77,7 +77,7 @@ we run ``spack create`` on it:
    ==> How many would you like to checksum? (default is 1, q to abort) 1
    ==> Downloading...
    ==> Fetching https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-   ########################################################################################################################################### 100.0%
+   ################################################################################################ 100.0%
    ==> Checksummed 1 version of mpileaks
    ==> This package looks like it uses the autotools build system
    ==> Created template for mpileaks package
@@ -125,8 +125,8 @@ to build this package:
         32    Checking whether not-found responds to '-showme'... no
         33    Checking whether not-found responds to '-compile-info'... no
         34    Checking whether not-found responds to '-show'... no
-        35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-src/configure: line 4931: Echo: command not fou
-              nd
+        35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-
+              src/configure: line 4931: Echo: command not found
      >> 36    configure: error: unable to locate adept-utils installation
 
    See build log for details:
