@@ -6,7 +6,7 @@
 from spack import *
 
 
-class Mpileaks(Package):
+class Mpileaks(AutotoolsPackage):
     """Tool to detect and report MPI objects like MPI_Requests and
     MPI_Datatypes."""
 
@@ -20,7 +20,8 @@ class Mpileaks(Package):
     # FIXME: Add dependencies if required.
     # depends_on('foo')
 
-    def install(self, spec, prefix):
-        # FIXME: Unknown build system
-        make()
-        make('install')
+    def configure_args(self):
+        # FIXME: Add arguments other than --prefix
+        # FIXME: If not needed delete this function
+        args = []
+        return args
