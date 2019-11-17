@@ -453,16 +453,15 @@ configure line (output truncated for length):
    ==> Searching for binary cache of mpileaks
    ==> Finding buildcaches in /mirror/build_cache
    ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: $SPACK_ROOT/var/spack/cache/mpileaks/mpileaks-1.0.tar.gz
-   ==> Staging archive: $SPACK_ROOT/var/spack/stage/mpileaks-1.0-meufjojkxve3l7rci2mbud3faidgplto/mpileaks-1.0.tar.gz
-   ==> Created stage in $SPACK_ROOT/var/spack/stage/mpileaks-1.0-meufjojkxve3l7rci2mbud3faidgplto
+   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq/mpileaks-1.0.tar.gz
+   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq
    ==> No patches needed for mpileaks
    ==> Building mpileaks [AutotoolsPackage]
    ==> Executing phase: 'autoreconf'
    ==> Executing phase: 'configure'
-   ==> Executing phase: 'build'
-   ==> Executing phase: 'install'
-   ==> '$SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks/spack-src/configure' '--prefix=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks' '--with-adept-utils=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/adept-utils-1.0.1-7tippnvo5g76wpijk7x5kwfpr3iqiaen' '--with-callpath=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/callpath-1.0.4-empvyxdkc4j4pwg7gznwhbiumruey66x' '--with-stack-start-c=4' '--with-stack-start-fortran=4'
+   ==> [2019-11-17-19:42:10.493951] '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq' '--with-adept-utils=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/adept-utils-1.0.1-kzcrayeek3kccpor44m5bjflmrrqt3jl' '--with-callpath=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/callpath-1.0.4-67ca64hu2bc2a6l24q6qng3gdcmutumm' '--with-stack-start-c=4' '--with-stack-start-fortran=4'
+   ...
 
 ---------------
 The Spec Object
