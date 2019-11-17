@@ -304,31 +304,32 @@ log:
 
    ==> Executing phase: 'autoreconf'
    ==> Executing phase: 'configure'
-   ==> '$SPACK_ROOT/var/spack/stage/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks/spack-src/configure' '--prefix=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks'
+   ==> [2019-11-17-19:25:30.481411] '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2'
    checking metadata... no
    checking installation directory variables... yes
    checking for a BSD-compatible install... /usr/bin/install -c
    checking whether build environment is sane... yes
    checking for a thread-safe mkdir -p... /bin/mkdir -p
-   checking for gawk... gawk
+   checking for gawk... no
+   checking for mawk... mawk
    checking whether make sets $(MAKE)... yes
-   checking for gcc... $SPACK_ROOT/lib/spack/env/gcc/gcc
+   checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
    checking for C compiler default output file name... a.out
    checking whether the C compiler works... yes
    checking whether we are cross compiling... no
    checking for suffix of executables...
    checking for suffix of object files... o
    checking whether we are using the GNU C compiler... yes
-   checking whether $SPACK_ROOT/lib/spack/env/gcc/gcc accepts -g... yes
-   checking for $SPACK_ROOT/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
+   checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
+   checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
    checking for style of include used by make... GNU
-   checking dependency style of $SPACK_ROOT/lib/spack/env/gcc/gcc... gcc3
-   checking whether $SPACK_ROOT/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
+   checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
+   checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
    checking whether we are using the GNU C++ compiler... yes
-   checking whether $SPACK_ROOT/lib/spack/env/gcc/g++ accepts -g... yes
-   checking dependency style of $SPACK_ROOT/lib/spack/env/gcc/g++... gcc3
-   checking for $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc... $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc
-   Checking whether $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc responds to '-showme:compile'... yes
+   checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+   checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+   checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc
+   Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc responds to '-showme:compile'... yes
    configure: error: unable to locate adept-utils installation
 
 This gives us the output from the build, and mpileaks isn't finding
@@ -343,8 +344,8 @@ We can also enter the build area and try to manually run the build:
 
 .. code-block:: console
 
-  $ spack build-env mpileaks bash
   $ spack cd mpileaks
+  $ spack build-env mpileaks bash
 
 The ``spack build-env`` command spawns a new shell that contains the
 same environment that Spack used to build the mpileaks package (you
@@ -354,31 +355,32 @@ From here we can manually re-run the build:
 
 .. code-block:: console
 
-  $ ./configure --prefix=$SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/mpileaks-1.0-yfgbfza3exokldtlerdfuaki6fsbziks
+  $ ./configure --prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
   checking metadata... no
   checking installation directory variables... yes
   checking for a BSD-compatible install... /usr/bin/install -c
   checking whether build environment is sane... yes
   checking for a thread-safe mkdir -p... /bin/mkdir -p
-  checking for gawk... gawk
+  checking for gawk... no
+  checking for mawk... mawk
   checking whether make sets $(MAKE)... yes
-  checking for gcc... $SPACK_ROOT/lib/spack/env/gcc/gcc
+  checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
   checking for C compiler default output file name... a.out
   checking whether the C compiler works... yes
   checking whether we are cross compiling... no
   checking for suffix of executables...
   checking for suffix of object files... o
   checking whether we are using the GNU C compiler... yes
-  checking whether $SPACK_ROOT/lib/spack/env/gcc/gcc accepts -g... yes
-  checking for $SPACK_ROOT/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
+  checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
+  checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
   checking for style of include used by make... GNU
-  checking dependency style of $SPACK_ROOT/lib/spack/env/gcc/gcc... gcc3
-  checking whether $SPACK_ROOT/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
+  checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
+  checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
   checking whether we are using the GNU C++ compiler... yes
-  checking whether $SPACK_ROOT/lib/spack/env/gcc/g++ accepts -g... yes
-  checking dependency style of $SPACK_ROOT/lib/spack/env/gcc/g++... gcc3
-  checking for $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc... $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc
-  Checking whether $SPACK_ROOT/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/openmpi-3.0.0-yo5qkfvumpmgmvlbalqcadu46j5bd52f/bin/mpicc responds to '-showme:compile'... yes
+  checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+  checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+  checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc
+  Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc responds to '-showme:compile'... yes
   configure: error: unable to locate adept-utils installation
 
 We're seeing the same error, but now we're in a shell where we can run
