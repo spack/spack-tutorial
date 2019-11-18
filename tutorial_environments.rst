@@ -1045,18 +1045,18 @@ be either a ``spack.yaml`` or a ``spack.lock`` file:
 
 .. code-block:: console
 
-   $ spack env create my-project spack.yaml
+   $ spack env create abstract spack.yaml
 
-   $ spack env create my-project spack.lock
+   $ spack env create concrete spack.lock
 
-Both of these create a new environment called ``my-project``, but which
-one you choose to use depends on your needs:
+Both of these create a new environment from the old one, but which one
+you choose to use depends on your needs:
 
-#. copying the yaml file allows someone else to build your *requirements*,
-   potentially a different way.
+#. ``abstract``: copying the yaml file allows someone else to build your
+   *requirements*, potentially a different way.
 
-#. copying the lock file allows someone else to rebuild your
-   *installation* exactly as you built it.
+#. ``concrete``: copying the lock file allows someone else to rebuild
+   your *installation* exactly as you built it.
 
 The first use case can *re-concretize* the same specs on new platforms in
 order to build, but it will preserve the abstract requirements.  The
