@@ -112,10 +112,10 @@ the configuration scopes are updated as dictionaries in increasing
 order of precedence, allowing higher precedence files to override
 lower. YAML dictionaries use a colon ":" to specify key-value
 pairs. Spack extends YAML syntax slightly to allow a double-colon
-"::" to specify a key-value pair. When a double-colon is used to
-specify a key-value pair, instead of adding that section, Spack
-replaces what was in that section with the new value. For example,
-consider a user's compilers configuration file as follows:
+"::" to specify a key-value pair. When a double-colon is used,
+instead of adding that section, Spack replaces what was in that
+section with the new value. For example, consider a user's compilers
+configuration file as follows:
 
 .. code-block:: yaml
 
@@ -237,7 +237,7 @@ compiler for both specifications of Fortran. We've also changed the
 ``spec`` entry for this compiler. The ``spec`` entry is effectively the
 name of the compiler for Spack. It consists of a name and a version
 number, separated by the ``@`` sigil. The name must be one of the supported
-compiler names in Spack (gcc, intel, pgi, xl, xl_r, clang, nag, cce, arm).
+compiler names in Spack (arm, cce, clang, fj, gcc, intel, nag, pgi, xl, xl_r).
 The version number can be an arbitrary string of alphanumeric characters,
 as well as ``-``, ``.``, and ``_``. The ``target`` and ``operating_system``
 sections we leave unchanged. These sections specify when Spack can use
@@ -331,7 +331,16 @@ The ``modules`` field of the compiler is used primarily on Cray systems,
 but can be useful on any system that has compilers that are only
 useful when a particular module is loaded. Any modules in the
 ``modules`` field of the compiler configuration will be loaded as part
-of the build environment for packages using that compiler.
+of the build environment for packages using that compiler:
+
+.. code-block:: yaml
+
+   - compiler:
+       ...
+       modules:
+       - PrgEnv-gnu
+       - gcc/5.3.0
+       ...
 
 The ``extra_rpaths`` field of the compiler configuration is used for
 compilers that do not rpath all of their dependencies by
@@ -349,10 +358,10 @@ this field can be set by:
 .. code-block:: yaml
 
    - compiler:
-     ...
-     extra_rpaths:
-      - /apps/intel/ComposerXE2017/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin
-     ...
+       ...
+       extra_rpaths:
+       - /apps/intel/ComposerXE2017/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin
+       ...
 
 
 The ``environment`` field of the compiler configuration is used for
@@ -440,7 +449,7 @@ preferences.
 
    packages:
      all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
+       compiler: [clang, gcc, intel, pgi, xl, nag, fj]
        providers:
          mpi: [mpich, openmpi]
 
@@ -449,6 +458,7 @@ Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
 
 .. code-block:: console
+   :emphasize-lines: 9
 
    $ spack spec hdf5
    Input spec
@@ -501,6 +511,7 @@ off the ``shared`` variant on all packages that have one.
 We can check the effect of this command with ``spack spec hdf5`` again.
 
 .. code-block:: console
+   :emphasize-lines: 8,14,27
 
    $ spack spec hdf5
    Input spec
@@ -794,7 +805,7 @@ Installation permissions
 
 The ``packages.yaml`` file also controls the default permissions
 to use when installing a package. You'll notice that by default,
-the installation prefix will be world readable but only user writable.
+the installation prefix will be world-readable but only user-writable.
 
 Let's say we need to install ``converge``, a licensed software package.
 Since a specific research group, ``fluid_dynamics``, pays for this
@@ -906,9 +917,8 @@ node with 16 cores, this will look like:
 As you can see, we are building with all 16 cores on the node. If you are
 on a shared login node, this can slow down the system for other users. If
 you have a strict ulimit or restriction on the number of available licenses,
-you may not be able to build at all with this many cores. On nodes with 64+
-cores, you may not see a significant speedup of the build anyway. To limit
-the number of cores our build uses, set ``build_jobs`` like so:
+you may not be able to build at all with this many cores. To limit the
+number of cores our build uses, set ``build_jobs`` like so:
 
 .. code-block:: yaml
 
