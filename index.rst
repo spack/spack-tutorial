@@ -9,6 +9,14 @@
 Tutorial: Spack 101
 ===================
 
+.. note::
+
+   **Attention SC attendees!** Please `use this link to send
+   feedback <http://bit.ly/sc19-spack-feedback>`_ once the tutorial is
+   over!  You'll need to click the "give feedback" link on the
+   destination page. Your reviews will help us keep improving this
+   course.
+
 This is a full-day introduction to Spack with lectures and live demos.
 It was last presented at `Supercomputing 2019
 <https://sc19.supercomputing.org/>`_ on November 18, 2019.
