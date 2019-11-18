@@ -838,8 +838,8 @@ Let's edit our ``spack.yaml`` file one last time.
       full:
         root: views/full
         projections:
-          ^mpi: '{name}/{name}-{version}-{^mpi.name}-{^mpi.version}-{compiler.name}-{compiler.version}
-          all: '{name}/{name}-{version}-{compiler.name}-{compiler.version}
+          ^mpi: '{name}/{name}-{version}-{^mpi.name}-{^mpi.version}-{compiler.name}-{compiler.version}'
+          all: '{name}/{name}-{version}-{compiler.name}-{compiler.version}'
 
 We won't see the views fully filled-in since we don't have time to
 install everything in the stack during the tutorial, but the packages
