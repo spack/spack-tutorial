@@ -22,12 +22,12 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/pearc19-tutorial-slide-preview.png
-   :target: tutorial/slides/Spack-SC19-Tutorial.pdf
+   :target: _static/slides/Spack-SC19-Tutorial.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/Spack-SC19-Tutorial.pdf>`.
+:download:`Download Slides <_static/slides/Spack-SC19-Tutorial.pdf>`.
 
 **Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo,
 Mario Melara, Peter Scheibel, and Adam J. Stewart. Managing HPC Software
