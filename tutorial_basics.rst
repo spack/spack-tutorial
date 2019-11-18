@@ -1668,7 +1668,7 @@ complicated packages. The output can be changed to the ``graphviz``
 
 .. code-block:: console
 
-  $ spack graph --dot trilinos | dot -Tpdf trilinos_graph.pdf
+  $ spack graph --dot trilinos | dot -Tpdf > trilinos_graph.pdf
 
 .. _basics-tutorial-uninstall:
 
