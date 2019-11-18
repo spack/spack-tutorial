@@ -56,12 +56,10 @@ You should now be ready to run through our demo scripts:
   #. :ref:`basics-tutorial`
   #. :ref:`configs-tutorial`
   #. :ref:`packaging-tutorial`
-  #. :ref:`developer-workflows-tutorial`
+  #. :ref:`modules-tutorial`
   #. :ref:`environments-tutorial`
   #. :ref:`stacks-tutorial`
-  #. :ref:`modules-tutorial`
-  #. :ref:`build-systems-tutorial`
-  #. :ref:`advanced-packaging-tutorial`
+  #. :ref:`developer-workflows-tutorial`
   #. :ref:`spack-scripting-tutorial`
 
 Full contents:
@@ -79,10 +77,8 @@ Full contents:
    tutorial_basics
    tutorial_configuration
    tutorial_packaging
-   tutorial_developer_workflows
+   tutorial_modules
    tutorial_environments
    tutorial_stacks
-   tutorial_modules
-   tutorial_buildsystems
-   tutorial_advanced_packaging
+   tutorial_developer_workflows
    tutorial_spack_scripting
