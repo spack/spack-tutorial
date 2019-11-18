@@ -918,8 +918,8 @@ all packages, including implicit dependencies, into the view. The
       full:
         root: views/full
         projections:
-          ^mpi: '{name}/{name}-{version}-{^mpi.name}-{^mpi.version}-{compiler.name}-{compiler.version}
-          all: '{name}/{name}-{version}-{compiler.name}-{compiler.version}
+          ^mpi: '{name}/{name}-{version}-{^mpi.name}-{^mpi.version}-{compiler.name}-{compiler.version}'
+          all: '{name}/{name}-{version}-{compiler.name}-{compiler.version}'
 
 .. code-block:: console
 
