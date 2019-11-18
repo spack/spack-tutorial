@@ -10,9 +10,8 @@ Tutorial: Spack 101
 ===================
 
 This is a full-day introduction to Spack with lectures and live demos.
-It was last presented at the `Practice and Experience in Advanced
-Research Computing Conference (PEARC19)
-<https://www.pearc19.pearc.org/>`_ on July 31, 2019.
+It was last presented at `Supercomputing 2019
+<https://sc19.supercomputing.org/>`_ on November 18, 2019.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -27,12 +26,12 @@ Spack is used in practice.
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <tutorial/slides/spack-pearc19-tutorial-slides.pdf>`.
+:download:`Download Slides <tutorial/slides/Spack-SC19-Tutorial.pdf>`.
 
-**Full citation:** Levi Baber, Gregory Becker, Adam J. Stewart, and Todd
-Gamblin. Managing HPC Software Complexity with Spack. Tutorial presented
-at the Practice and Experience in Advanced Research Computing Conference
-(PEARC19). July 31, 2019. Chicago, IL, USA.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo,
+Mario Melara, Peter Scheibel, and Adam J. Stewart. Managing HPC Software
+Complexity with Spack. Tutorial presented at Supercomputing 2019 (SC'19)
+November 18, 2019. Denver, CO, USA.
 
 .. _live-demos:
 
