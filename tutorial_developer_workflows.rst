@@ -249,6 +249,7 @@ phase completes.
 
 .. code-block:: console
 
+  $ spack uninstall hwloc
   $ spack dev-build --until configure hwloc@master
 
 Now, we can develop our code. For the sake of this demo, we're just
