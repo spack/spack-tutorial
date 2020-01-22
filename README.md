@@ -19,6 +19,10 @@ This tutorial covers basic to advanced usage, packaging, developer features, and
 7. Push changes to GitHub and active new tag/version on Read the Docs.
 8. Build new version on Read the Docs.
 
+## Updating the tutorial container
+
+The spack tutorial container is built from another [repository](https://github.com/spack/spack-tutorial-container) by an automated process.  For instructions on how to create an updated version of the tutorial container, see these [instructions](https://github.com/spack/spack-tutorial-container/blob/master/UPDATING.md).  For a general description of the automated process used to build the tutorial container, read the [description](https://github.com/spack/spack-tutorial-container/blob/master/DESCRIPTION.md).
+
 ## License
 
 Spack is distributed under the terms of both the MIT license and the Apache License (Version 2.0). Users may choose either license, at their option.
