@@ -380,7 +380,7 @@ license server, you can set this in ``compilers.yaml`` as follows:
 
 
 In addition to ``set``, ``environment`` also supports ``unset``,
-``prepend-path``, and ``append-path``.
+``prepend_path``, and ``append_path``.
 
 .. _configs-tutorial-package-prefs:
 
