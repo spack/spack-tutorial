@@ -205,7 +205,7 @@ this section.
   zlib@1.2.11
 
 The matrix operation does exactly what it looks like it does. It takes
-the spec constraints in any number of lists and takes their inner
+the spec constraints in any number of lists and takes their cross
 product. Here, we get ``boost``, ``trilinos``, and ``openmpi``, each
 compiled with both ``gcc`` and ``clang``. Note that the compiler
 constraints are prefaced with the ``%`` sigil, as they would be on the
