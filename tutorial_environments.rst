@@ -747,7 +747,7 @@ It also prints the zlib version.
 
 All you need to do is build and run it:
 
-.. code-block: console
+.. code-block:: console
 
     $ mpicc ./mpi-hello.c
     $ mpirun -n 4 ./a.out
