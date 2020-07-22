@@ -799,6 +799,23 @@ selecting providers via `^`, anything that you can specify on the
 command line can be specified in ``packages.yaml`` with the exact
 same spec syntax.
 
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Configure Virtual Packages
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The last block differentiating all the possible providers of the virtual package ``mpi`` and setting preferences was a bit verbose.
+With Spack 0.15.0+, we can also express to simply pick up a *specific implementation* of MPI in an external package for *any* dependency on the virtual package ``mpi``:
+
+.. code-block:: yaml
+
+   packages:
+     mpi:
+       buildable: False
+       paths:
+         mpich@3.1: /opt/mpich
+
+
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Installation permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
