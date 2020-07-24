@@ -16,9 +16,9 @@ consider how to use a specialized sort of Spack environment, that we
 call a Spack stack, to manage large deployments of software using
 Spack.
 
-------------
-Spec matrics
-------------
+-------------
+Spec matrices
+-------------
 
 In a typical Spack environment for a single user, a simple list of
 specs is sufficient. For software deployment, however, we often have a
