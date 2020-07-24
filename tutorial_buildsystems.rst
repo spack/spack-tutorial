@@ -110,8 +110,8 @@ This will open the :code:`AutotoolsPackage` file in your text editor.
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py
     :language: python
-    :emphasize-lines: 33,36,54
-    :lines: 30-76,240-248
+    :emphasize-lines: 14,17,24-34
+    :lines: 55-77,242-260
     :linenos:
 
 
