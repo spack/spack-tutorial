@@ -1321,14 +1321,14 @@ let's look at an even more complicated package.
   [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/trilinos-12.14.1-mpalhktqqjjo2hayykb6ut2jyhkmow3z
 
 Now we're starting to see the power of Spack. Trilinos in its default
-configuration has 23 top level dependecies, many of which have
+configuration has 23 top level dependencies, many of which have
 dependencies of their own. Installing more complex packages can take
 days or weeks even for an experienced user. Although we've done a
 binary installation for the tutorial, a source installation of
 trilinos using Spack takes about 3 hours (depending on the system),
 but only 20 seconds of programmer time.
 
-Spack manages constistency of the entire DAG. Every MPI dependency will
+Spack manages consistency of the entire DAG. Every MPI dependency will
 be satisfied by the same configuration of MPI, etc. If we install
 ``trilinos`` again specifying a dependency on our previous HDF5 built
 with ``mpich``:
