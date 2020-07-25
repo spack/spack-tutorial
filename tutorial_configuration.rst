@@ -131,7 +131,7 @@ configuration file as follows:
          cxx: /usr/bin/g++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
-       spec: gcc@7.4.0
+       spec: gcc@7.5.0
        target: x86_64
 
 
@@ -193,7 +193,7 @@ We will start by opening the compilers configuration file:
        environment: {}
        extra_rpaths: []
    - compiler:
-       spec: gcc@7.4.0
+       spec: gcc@7.5.0
        paths:
          cc: /usr/bin/gcc-7
          cxx: /usr/bin/g++-7
@@ -253,14 +253,14 @@ We can verify that our new compiler works by invoking it now:
 
 
 This new compiler also works on Fortran codes. We'll show it by
-compiling a small package using as a build dependency ``cmake%gcc@7.4.0``
+compiling a small package using as a build dependency ``cmake%gcc@7.5.0``
 since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install cmake %gcc@7.4.0
+   $ spack install cmake %gcc@7.5.0
    ...
-   $ spack install --no-cache json-fortran %clang@6.0.0-gfortran ^cmake%gcc@7.4.0
+   $ spack install --no-cache json-fortran %clang@6.0.0-gfortran ^cmake%gcc@7.5.0
    ...
 
 
@@ -299,24 +299,9 @@ Let's open our compilers configuration file again and add a compiler flag:
 We can test this out using the ``spack spec`` command to show how the
 spec is concretized:
 
-.. code-block:: console
+.. literal-include:: tutorial/examples/configuration/0.compiler_flags.example
+    :language: console
 
-   $ spack spec json-fortran %clang@6.0.0-gfortran
-   Input spec
-   --------------------------------
-   json-fortran%clang@6.0.0-gfortran
-
-   Concretized
-   --------------------------------
-   json-fortran@7.1.0%clang@6.0.0-gfortran cppflags="-g"  build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
-       ^cmake@3.15.4%clang@6.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
-           ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-               ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-           ^openssl@1.1.1d%clang@6.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
-               ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                   ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                       ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 
@@ -406,35 +391,8 @@ virtual packages. To illustrate how this works, suppose we want to
 change the preferences to prefer the Clang compiler and to prefer
 MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
-.. code-block:: console
-
-   $ spack spec hdf5
-   Input spec
-   --------------------------------
-   hdf5
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^openmpi@3.1.4%gcc@7.4.0~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
-           ^hwloc@1.11.11%gcc@7.4.0~cairo~cuda~gl+libxml2~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
-               ^libpciaccess@0.13.5%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^libtool@2.4.6%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                       ^m4@1.4.18%gcc@7.4.0 patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
-                           ^libsigsegv@2.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^pkgconf@1.6.3%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^util-macros@1.19.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-               ^libxml2@2.9.9%gcc@7.4.0~python arch=linux-ubuntu18.04-x86_64
-                   ^libiconv@1.16%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^xz@5.2.4%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^zlib@1.2.11%gcc@7.4.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
-               ^numactl@2.0.12%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                   ^autoconf@2.69%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                       ^perl@5.30.0%gcc@7.4.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                           ^gdbm@1.18.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                               ^readline@8.0%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
-                                   ^ncurses@6.1%gcc@7.4.0~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-                   ^automake@1.16.1%gcc@7.4.0 arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/0.prefs.example
+    :language: console
 
 
 Now we will open the packages configuration file and update our
@@ -457,36 +415,9 @@ preferences.
 Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
 
-.. code-block:: console
-   :emphasize-lines: 9
-
-   $ spack spec hdf5
-   Input spec
-   --------------------------------
-   hdf5
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^mpich@3.3.1%clang@6.0.0-gfortran cppflags="-g"  device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
-           ^findutils@4.6.0%clang@6.0.0-gfortran cppflags="-g"  patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
-               ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
-                       ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                       ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                           ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                               ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-                                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^texinfo@6.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-           ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-           ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
-               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/1.prefs.example
+    :language: console
+    :emphasize-lines: 9
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -510,36 +441,10 @@ off the ``shared`` variant on all packages that have one.
 
 We can check the effect of this command with ``spack spec hdf5`` again.
 
-.. code-block:: console
+.. literalinclude:: tutorial/examples/configuration/2.prefs.example
+   :language: console
    :emphasize-lines: 8,14,27
 
-   $ spack spec hdf5
-   Input spec
-   --------------------------------
-   hdf5
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic~shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^mpich@3.3.1%clang@6.0.0-gfortran cppflags="-g"  device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
-           ^findutils@4.6.0%clang@6.0.0-gfortran cppflags="-g"  patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
-               ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
-                       ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm~shared+threads arch=linux-ubuntu18.04-x86_64
-                       ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                           ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                               ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-                                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^texinfo@6.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-           ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-           ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
-               ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 So far we have only made global changes to the package preferences. As
 we've seen throughout this tutorial, HDF5 builds with MPI enabled by
@@ -562,17 +467,8 @@ HDF5.
 
 Now hdf5 will concretize without an MPI dependency by default.
 
-.. code-block:: console
-
-   $ spack spec hdf5
-   Input spec
-   --------------------------------
-   hdf5
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/3.prefs.example
+   :language: console
 
 
 In general, every attribute that we can set for all packages we can
@@ -598,7 +494,7 @@ pre-installed zlib.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@7.4.0: /usr
+         zlib@1.2.8%gcc@7.5.0: /usr
 
 
 Here, we've told Spack that zlib 1.2.8 is installed on our system.
@@ -606,33 +502,16 @@ We've also told it the installation prefix where zlib can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
 
-.. code-block:: console
+.. literalinclude:: tutorial/examples/configuration/0.externals.example
+   :language: console
 
-   $ spack spec hdf5
-   Input spec
-   --------------------------------
-   hdf5
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%gcc@7.4.0~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 You'll notice that Spack is now using the external zlib installation,
 but the compiler used to build zlib is now overriding our compiler
 preference of clang. If we explicitly specify Clang:
 
-.. code-block:: console
-
-   $ spack spec hdf5 %clang
-   Input spec
-   --------------------------------
-   hdf5%clang
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic~shared arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/1.externals.example
+   :language: console
 
 Spack concretizes to both HDF5 and zlib being built with Clang.
 This has a side-effect of rebuilding zlib. If we want to force
@@ -652,23 +531,15 @@ not allowed to build its own zlib. We'll go with the latter.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@7.4.0: /usr
-       buildable: False
+         zlib@1.2.8%gcc@7.5.0: /usr
+       buildable: false
 
 
 Now Spack will be forced to choose the external zlib.
 
-.. code-block:: console
+.. literalinclude:: tutorial/examples/configuration/2.externals.example
+   :language: console
 
-   $ spack spec hdf5 %clang
-   Input spec
-   --------------------------------
-   hdf5%clang
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
 
 This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
@@ -686,50 +557,23 @@ of HDF5? Well, fortunately we have MPICH installed on these systems.
        variants: ~mpi
      zlib:
        paths:
-         zlib@1.2.8%gcc@7.4.0: /usr
-       buildable: False
+         zlib@1.2.8%gcc@7.5.0: /usr
+       buildable: false
      mpich:
        paths:
-         mpich@3.2%gcc@7.4.0: /usr
-       buildable: False
+         mpich@3.3%gcc@7.5.0: /usr
+       buildable: false
 
 
 If we concretize ``hdf5+mpi`` with this configuration file, we will just
 build with an alternate MPI implementation.
 
-.. code-block:: console
-
-   $ spack spec hdf5+mpi %clang
-   Input spec
-   --------------------------------
-   hdf5%clang+mpi
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic+shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^openmpi@3.1.4%clang@6.0.0-gfortran cppflags="-g" ~cuda+cxx_exceptions fabrics=none ~java~legacylaunchers~memchecker~pmi schedulers=none ~sqlite3~thread_multiple+vt arch=linux-ubuntu18.04-x86_64
-           ^hwloc@1.11.11%clang@6.0.0-gfortran cppflags="-g" ~cairo~cuda~gl+libxml2~nvml+pci~shared arch=linux-ubuntu18.04-x86_64
-               ^libpciaccess@0.13.5%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                       ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g"  patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 +sigsegv arch=linux-ubuntu18.04-x86_64
-                           ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^pkgconf@1.6.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-               ^libxml2@2.9.9%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
-                   ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^xz@5.2.4%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
-               ^numactl@2.0.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                   ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                       ^perl@5.30.0%clang@6.0.0-gfortran cppflags="-g" +cpanm~shared+threads arch=linux-ubuntu18.04-x86_64
-                           ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                               ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                                   ^ncurses@6.1%clang@6.0.0-gfortran cppflags="-g" ~symlinks~termlib arch=linux-ubuntu18.04-x86_64
-                   ^automake@1.16.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/3.externals.example
+   :language: console
 
 We have only expressed a preference for MPICH over other MPI
 implementations, and Spack will happily build with one we haven't
-forbid it from building. We could resolve this by requesting
+forbidden it from building. We could resolve this by requesting
 ``hdf5+mpi%clang^mpich`` explicitly, or we can configure Spack not to
 use any other MPI implementation. Since we're focused on
 configurations here and the former can get tedious, we'll need to
@@ -748,47 +592,20 @@ again.
        variants: ~shared
      zlib:
        paths:
-         zlib@1.2.8%gcc@7.4.0: /usr
-       buildable: False
+         zlib@1.2.8%gcc@7.5.0: /usr
+       buildable: false
      mpich:
        paths:
-         mpich@3.2%gcc@7.4.0: /usr
-       buildable: False
-     openmpi:
-       buildable: False
-     mvapich2:
-       buildable: False
-     intel-mpi:
-       buildable: False
-     intel-parallel-studio:
-       buildable: False
-     spectrum-mpi:
-       buildable: False
-     mpilander:
-       buildable: False
-     charm:
-       buildable: False
-     charmpp:
-       buildable: False
-     fujitsu-mpi:
+         mpich@3.3%gcc@7.5.0: /usr
+     mpi:
        buildable: False
 
 
-Now that we have configured Spack not to build any of the possible
-providers for MPI, we can try again.
+Now that we have configured Spack not to build any possible provider
+for MPI, we can try again.
 
-.. code-block:: console
-
-   $ spack spec hdf5 %clang
-   Input spec
-   --------------------------------
-   hdf5%clang
-
-   Concretized
-   --------------------------------
-   hdf5@1.10.5%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl+mpi patches=b61e2f058964ad85be6ee5ecea10080bf79e73f83ff88d1fa4b602d00209da9c +pic~shared~szip~threadsafe arch=linux-ubuntu18.04-x86_64
-       ^mpich@3.2%gcc@7.4.0 device=ch3 +hydra netmod=tcp +pci pmi=pmi +romio~slurm~verbs+wrapperrpath arch=linux-ubuntu18.04-x86_64
-       ^zlib@1.2.8%gcc@7.4.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
+.. literalinclude:: tutorial/examples/configuration/4.externals.example
+   :language: console
 
 
 By configuring most of our package preferences in ``packages.yaml``,
@@ -897,21 +714,14 @@ node with 16 cores, this will look like:
 
    $ spack install --no-cache --verbose --overwrite zlib
    ==> Installing zlib
-   ==> Using cached archive: /home/user/spack/var/spack/cache/zlib/zlib-1.2.11.tar.gz
-   ==> Staging archive: /home/user/spack/var/spack/stage/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb/zlib-1.2.11.tar.gz
-   ==> Created stage in /home/user/spack/var/spack/stage/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
-   ==> No patches needed for zlib
-   ==> Building zlib [Package]
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
    ...
    ==> 'make' '-j16'
    ...
    ==> 'make' '-j16' 'install'
    ...
-   ==> Successfully installed zlib
-     Fetch: 0.00s.  Build: 1.03s.  Total: 1.03s.
-   [+] /home/user/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
+   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
 
 
 As you can see, we are building with all 16 cores on the node. If you are
@@ -932,21 +742,14 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
 
    $ spack install --no-cache --verbose --overwrite zlib
    ==> Installing zlib
-   ==> Using cached archive: /home/user/spack/var/spack/cache/zlib/zlib-1.2.11.tar.gz
-   ==> Staging archive: /home/user/spack/var/spack/stage/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb/zlib-1.2.11.tar.gz
-   ==> Created stage in /home/user/spack/var/spack/stage/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
-   ==> No patches needed for zlib
-   ==> Building zlib [Package]
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
    ...
    ==> 'make' '-j2'
    ...
    ==> 'make' '-j2' 'install'
    ...
-   ==> Successfully installed zlib
-     Fetch: 0.00s.  Build: 1.03s.  Total: 1.03s.
-   [+] /home/user/spack/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/zlib-1.2.11-5nus6knzumx4ik2yl44jxtgtsl7d54xb
+   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
 
 
 Obviously, if you want to build everything in serial for whatever reason,
