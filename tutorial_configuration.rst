@@ -299,7 +299,7 @@ Let's open our compilers configuration file again and add a compiler flag:
 We can test this out using the ``spack spec`` command to show how the
 spec is concretized:
 
-.. literal-include:: tutorial/examples/configuration/0.compiler_flags.example
+.. literalinclude:: tutorial/examples/configuration/0.compiler_flags.example
     :language: console
 
 
