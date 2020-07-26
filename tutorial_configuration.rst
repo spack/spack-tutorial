@@ -299,7 +299,7 @@ Let's open our compilers configuration file again and add a compiler flag:
 We can test this out using the ``spack spec`` command to show how the
 spec is concretized:
 
-.. literalinclude:: tutorial/examples/configuration/0.compiler_flags.example
+.. literalinclude:: outputs/config/0.compiler_flags.out
     :language: console
 
 
@@ -391,7 +391,7 @@ virtual packages. To illustrate how this works, suppose we want to
 change the preferences to prefer the Clang compiler and to prefer
 MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
-.. literalinclude:: tutorial/examples/configuration/0.prefs.example
+.. literalinclude:: outputs/config/0.prefs.out
     :language: console
 
 
@@ -415,7 +415,7 @@ preferences.
 Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
 
-.. literalinclude:: tutorial/examples/configuration/1.prefs.example
+.. literalinclude:: outputs/config/1.prefs.out
     :language: console
     :emphasize-lines: 9
 
@@ -441,7 +441,7 @@ off the ``shared`` variant on all packages that have one.
 
 We can check the effect of this command with ``spack spec hdf5`` again.
 
-.. literalinclude:: tutorial/examples/configuration/2.prefs.example
+.. literalinclude:: outputs/config/2.prefs.out
    :language: console
    :emphasize-lines: 8,14,27
 
@@ -467,7 +467,7 @@ HDF5.
 
 Now hdf5 will concretize without an MPI dependency by default.
 
-.. literalinclude:: tutorial/examples/configuration/3.prefs.example
+.. literalinclude:: outputs/config/3.prefs.out
    :language: console
 
 
@@ -502,7 +502,7 @@ We've also told it the installation prefix where zlib can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
 
-.. literalinclude:: tutorial/examples/configuration/0.externals.example
+.. literalinclude:: outputs/config/0.externals.out
    :language: console
 
 
@@ -510,7 +510,7 @@ You'll notice that Spack is now using the external zlib installation,
 but the compiler used to build zlib is now overriding our compiler
 preference of clang. If we explicitly specify Clang:
 
-.. literalinclude:: tutorial/examples/configuration/1.externals.example
+.. literalinclude:: outputs/config/1.externals.out
    :language: console
 
 Spack concretizes to both HDF5 and zlib being built with Clang.
@@ -537,7 +537,7 @@ not allowed to build its own zlib. We'll go with the latter.
 
 Now Spack will be forced to choose the external zlib.
 
-.. literalinclude:: tutorial/examples/configuration/2.externals.example
+.. literalinclude:: outputs/config/2.externals.out
    :language: console
 
 
@@ -568,7 +568,7 @@ of HDF5? Well, fortunately we have MPICH installed on these systems.
 If we concretize ``hdf5+mpi`` with this configuration file, we will just
 build with an alternate MPI implementation.
 
-.. literalinclude:: tutorial/examples/configuration/3.externals.example
+.. literalinclude:: outputs/config/3.externals.out
    :language: console
 
 We have only expressed a preference for MPICH over other MPI
@@ -604,7 +604,7 @@ again.
 Now that we have configured Spack not to build any possible provider
 for MPI, we can try again.
 
-.. literalinclude:: tutorial/examples/configuration/4.externals.example
+.. literalinclude:: outputs/config/4.externals.out
    :language: console
 
 
