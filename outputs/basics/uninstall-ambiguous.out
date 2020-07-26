@@ -1,0 +1,11 @@
+$ spack uninstall trilinos
+==> Error: trilinos matches multiple packages:
+
+    -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+    j6dav6k trilinos@12.18.1  rhmspsu trilinos@12.18.1
+
+==> Error: You can either:
+    a) use a more specific spec, or
+    b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
+    c) use `spack uninstall --all` to uninstall ALL matching specs.
+

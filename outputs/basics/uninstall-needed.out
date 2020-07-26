@@ -1,0 +1,8 @@
+$ spack uninstall zlib/pdf
+==> Will not uninstall zlib@1.2.8%clang@6.0.0/pdfmc5x
+The following packages depend on it:
+    -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+    4ef57sw tcl@8.6.8
+
+==> Error: There are still dependents.
+  use `spack uninstall --dependents` to remove dependents too
