@@ -127,6 +127,7 @@ spack add openmpi
 example environments/install-anonymous-1 "spack install"
 
 example environments/add-anonymous-1     "spack add hdf5@5.5.1"
+example environments/add-anonymous-1     "cat spack.yaml"
 example environments/add-anonymous-1     "spack remove hdf5"
 
 example environments/lockfile-1          "head -30 spack.lock"
