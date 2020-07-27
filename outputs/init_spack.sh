@@ -1,11 +1,11 @@
 #!/bin/bash
 
-if [ ! -d spack ]; then
-    git clone https://github.com/spack/spack
-    cd spack
+if [ ! -d ~/spack ]; then
+    git clone https://github.com/spack/spack ~/spack
+    cd ~/spack
     git checkout releases/v0.15
 else
-    cd spack
+    cd ~spack
 fi
 
 . share/spack/setup-env.sh
