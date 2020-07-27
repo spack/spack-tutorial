@@ -25,7 +25,7 @@ example basics/list            "spack list"
 example basics/list-py         "spack list py-"
 
 # spack install
-example basics/        zlib    "spack install zlib"
+example basics/zlib            "spack install zlib"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
 example basics/mirror          "spack gpg trust /mirror/public.key"
