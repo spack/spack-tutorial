@@ -51,10 +51,8 @@ repositories allow you to separate sets of packages that take
 precedence over one another. We will use the tutorial repo that ships
 with Spack to avoid breaking the builtin Spack packages.
 
-.. code-block:: console
-
-   $ spack repo add $SPACK_ROOT/var/spack/repos/tutorial/
-   ==> Added repo with namespace 'tutorial'.
+.. literalinclude:: outputs/packaging/repo-add.out
+   :language: console
 
 -------------------------
 Creating the Package File
@@ -66,22 +64,8 @@ the code, and sets up some basic packaging infrastructure for you. The
 mpileaks source code can be found on GitHub, and here's what happens when
 we run ``spack create`` on it:
 
-.. code-block:: console
-
-   $ spack create https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-   ==> This looks like a URL for mpileaks
-   ==> Found 1 version of mpileaks:
-
-     1.0  https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-   ==>
-   ==> How many would you like to checksum? (default is 1, q to abort) 1
-   ==> Downloading...
-   ==> Fetching https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-   ################################################################################################ 100.0%
-   ==> Checksummed 1 version of mpileaks
-   ==> This package looks like it uses the autotools build system
-   ==> Created template for mpileaks package
-   ==> Created package file: /home/spack/spack/var/spack/repos/tutorial/packages/mpileaks/package.py
+.. literalinclude:: outputs/packaging/create.out
+   :language: console
 
 Spack should spawn a text editor with this file:
 
@@ -102,35 +86,8 @@ Spack has created, which we'll fill in as part of this tutorial:
 For the moment, exit your editor and let's see what happens when we try
 to build this package:
 
-.. code-block:: console
-
-   $ spack install mpileaks
-   ==> Installing mpileaks
-   ==> Searching for binary cache of mpileaks
-   ==> Finding buildcaches in /mirror/build_cache
-   ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
-   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/mpileaks-1.0.tar.gz
-   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh
-   ==> No patches needed for mpileaks
-   ==> Building mpileaks [AutotoolsPackage]
-   ==> Executing phase: 'autoreconf'
-   ==> Executing phase: 'configure'
-   ==> Error: ProcessError: Command exited with status 1:
-       '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh'
-
-   1 error found in build log:
-        30    checking for mpipgcc... no
-        31    Checking whether not-found responds to '-showme:compile'... no
-        32    Checking whether not-found responds to '-showme'... no
-        33    Checking whether not-found responds to '-compile-info'... no
-        34    Checking whether not-found responds to '-show'... no
-        35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-
-              src/configure: line 4931: Echo: command not found
-     >> 36    configure: error: unable to locate adept-utils installation
-
-   See build log for details:
-     /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-3qzsur4suru5pdaoi6cze3vyrxkbd6bh/spack-build-out.txt
+.. literalinclude:: outputs/packaging/install-mpileaks-1.out
+   :language: console
 
 This obviously didn't work; we need to fill in the package-specific
 information. Specifically, Spack didn't try to build any of mpileaks'
@@ -169,45 +126,8 @@ We've filled in the comment that describes what this package does and
 added a link to its website. That won't help us build yet, but it will
 allow Spack to provide some documentation on this package to other users:
 
-.. code-block:: console
-
-   $ spack info mpileaks
-   AutotoolsPackage:   mpileaks
-
-   Description:
-       Tool to detect and report MPI objects like MPI_Requests and
-       MPI_Datatypes.
-
-   Homepage: https://github.com/LLNL/mpileaks
-
-   Maintainers: @adamjstewart
-
-   Tags:
-       None
-
-   Preferred version:
-       1.0    https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-
-   Safe versions:
-       1.0    https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
-
-   Variants:
-       None
-
-   Installation Phases:
-       autoreconf    configure    build    install
-
-   Build Dependencies:
-       None
-
-   Link Dependencies:
-       None
-
-   Run Dependencies:
-       None
-
-   Virtual Packages:
-       None
+.. literalinclude:: outputs/packaging/info-mpileaks.out
+   :language: console
 
 As we fill in more information about this package the ``spack info`` command
 will become more informative. Now let's start making this package build.
@@ -240,45 +160,8 @@ for more information on virtual dependencies.
 
 Now when we try to install this package, a lot more happens:
 
-.. code-block:: console
-
-   $ spack install mpileaks
-   ...
-   ==> Installing callpath
-   ==> Searching for binary cache of callpath
-   ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.4.0/callpath-1.0.4/linux-ubuntu18.04-x86_64-gcc-7.4.0-callpath-1.0.4-67ca64hu2bc2a6l24q6qng3gdcmutumm.spack
-   ########################################################################################################################################### 100.0%
-   ==> Installing callpath from binary cache
-   ==> Relocating package from
-     /spack/opt/spack to /home/spack/spack/opt/spack.
-   ==> Successfully installed callpath from binary cache
-   [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/callpath-1.0.4-67ca64hu2bc2a6l24q6qng3gdcmutumm
-   ==> Installing mpileaks
-   ==> Searching for binary cache of mpileaks
-   ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
-   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/mpileaks-1.0.tar.gz
-   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
-   ==> No patches needed for mpileaks
-   ==> Building mpileaks [AutotoolsPackage]
-   ==> Executing phase: 'autoreconf'
-   ==> Executing phase: 'configure'
-   ==> Error: ProcessError: Command exited with status 1:
-       '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2'
-
-   1 error found in build log:
-        23    checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
-        24    checking whether we are using the GNU C++ compiler... yes
-        25    checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
-        26    checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-        27    checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc..
-              . /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc
-        28    Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpi
-              cc responds to '-showme:compile'... yes
-     >> 29    configure: error: unable to locate adept-utils installation
-
-   See build log for details:
-     /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/spack-build-out.txt
+.. literalinclude:: outputs/packaging/install-mpileaks-2.out
+   :language: console
 
 Note that this command may take a while to run and produce more output if
 you don't have an MPI already installed or configured in Spack.
@@ -353,35 +236,8 @@ can substitute bash for your favorite shell). The ``spack cd`` command
 changed our working directory to the last attempted build for mpileaks.
 From here we can manually re-run the build:
 
-.. code-block:: console
-
-  $ ./configure --prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
-  checking metadata... no
-  checking installation directory variables... yes
-  checking for a BSD-compatible install... /usr/bin/install -c
-  checking whether build environment is sane... yes
-  checking for a thread-safe mkdir -p... /bin/mkdir -p
-  checking for gawk... no
-  checking for mawk... mawk
-  checking whether make sets $(MAKE)... yes
-  checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
-  checking for C compiler default output file name... a.out
-  checking whether the C compiler works... yes
-  checking whether we are cross compiling... no
-  checking for suffix of executables...
-  checking for suffix of object files... o
-  checking whether we are using the GNU C compiler... yes
-  checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
-  checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
-  checking for style of include used by make... GNU
-  checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
-  checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
-  checking whether we are using the GNU C++ compiler... yes
-  checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
-  checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-  checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc
-  Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc responds to '-showme:compile'... yes
-  configure: error: unable to locate adept-utils installation
+.. literalinclude:: outputs/packaging/build-env-configure.out
+   :language: console
 
 We're seeing the same error, but now we're in a shell where we can run
 the command ourselves and debug as needed. We could, for example, run
@@ -404,26 +260,8 @@ Let's add the configure arguments to the mpileaks' ``package.py``.
 
 This is all we need for a working mpileaks package! If we install now we'll see:
 
-.. code-block:: console
-
-   $ spack install mpileaks
-   ...
-   ==> Installing mpileaks
-   ==> Searching for binary cache of mpileaks
-   ==> Finding buildcaches in /mirror/build_cache
-   ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
-   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/mpileaks-1.0.tar.gz
-   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
-   ==> No patches needed for mpileaks
-   ==> Building mpileaks [AutotoolsPackage]
-   ==> Executing phase: 'autoreconf'
-   ==> Executing phase: 'configure'
-   ==> Executing phase: 'build'
-   ==> Executing phase: 'install'
-   ==> Successfully installed mpileaks
-     Fetch: 0.02s.  Build: 1m 0.46s.  Total: 1m 0.48s.
-   [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2
+.. literalinclude:: outputs/packaging/install-mpileaks-3.out
+   :language: console
 
 --------
 Variants
@@ -445,23 +283,9 @@ We've added the variant ``stackstart``, and given it a default value of
 ``0``. If we install now we can see the stackstart variant added to the
 configure line (output truncated for length):
 
-.. code-block:: console
 
-   $ spack install --verbose mpileaks stackstart=4
-   ...
-   ==> Installing mpileaks
-   ==> Searching for binary cache of mpileaks
-   ==> Finding buildcaches in /mirror/build_cache
-   ==> No binary for mpileaks found: installing from source
-   ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
-   ==> Staging archive: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq/mpileaks-1.0.tar.gz
-   ==> Created stage in /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq
-   ==> No patches needed for mpileaks
-   ==> Building mpileaks [AutotoolsPackage]
-   ==> Executing phase: 'autoreconf'
-   ==> Executing phase: 'configure'
-   ==> [2019-11-17-19:42:10.493951] '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-ih6fqd7kewpqigkot3fqqqwqifqppglq' '--with-adept-utils=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/adept-utils-1.0.1-kzcrayeek3kccpor44m5bjflmrrqt3jl' '--with-callpath=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/callpath-1.0.4-67ca64hu2bc2a6l24q6qng3gdcmutumm' '--with-stack-start-c=4' '--with-stack-start-fortran=4'
-   ...
+.. literalinclude:: outputs/packaging/install-mpileaks-4.out
+   :language: console
 
 ---------------
 The Spec Object
@@ -526,8 +350,5 @@ To ensure that future sections of the tutorial run properly, please
 uninstall mpileaks and remove the tutorial repo from your
 configuration.
 
-.. code-block:: console
-
-   $ spack uninstall -ay mpileaks
-   $ spack repo remove tutorial
-   $ rm -rf $SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks
+.. literalinclude:: outputs/packaging/cleanup.out
+   :language: console
