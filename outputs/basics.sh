@@ -8,10 +8,10 @@ project=$(dirname "$0")
 rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
 
 # basic installation
-example basics/clone         "git clone https://github.com/spack/spack"
+example basics/clone         "git clone https://github.com/spack/spack ~/spack"
 
-example basics/checkout      "cd spack"
-cd spack
+example basics/checkout      "cd ~/spack"
+cd ~/spack
 example basics/checkout      "git checkout releases/v0.15"
 
 example basics/source-setup  ". share/spack/setup-env.sh"
