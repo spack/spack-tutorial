@@ -1,0 +1,51 @@
+$ spack install
+==> Concretized hdf5+hl
+[+]  7r2lztq  hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+[+]  wudo6ky      ^openmpi@3.1.6%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions+gpfs~java~legacylaunchers~memchecker~pmi~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
+[+]  ckxpgsn          ^hwloc@1.11.11%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+[+]  cmn6yii              ^libpciaccess@0.13.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  jdxbjft                  ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  mkc3u4x                      ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
+[+]  lbrx7ln                          ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  4sh6pym                  ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  gs6ag7k                  ^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  m3l53bh              ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
+[+]  jearpk4                  ^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  6nxes4r                  ^xz@5.2.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  smoyzzo                  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  yvxocdy              ^numactl@2.0.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  nwb3bf5                  ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  hyrsxn4                      ^perl@5.30.3%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+[+]  4av4gyw                          ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  t54jzdy                              ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  crhlefo                                  ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+[+]  wdflovn                  ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+
+==> Concretized gmp
+ -   3ol3tld  gmp@6.1.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  nwb3bf5      ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  mkc3u4x          ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
+[+]  lbrx7ln              ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  hyrsxn4          ^perl@5.30.3%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+[+]  4av4gyw              ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  t54jzdy                  ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  crhlefo                      ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+[+]  4sh6pym                          ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  wdflovn      ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  jdxbjft      ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+
+==> Installing environment myproject
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
+==> Installing gmp
+==> Extracting gmp from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t
+==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view

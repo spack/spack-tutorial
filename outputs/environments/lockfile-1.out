@@ -1,0 +1,31 @@
+$ head -30 spack.lock
+{
+ "_meta": {
+  "file-type": "spack-lockfile",
+  "lockfile-version": 2
+ },
+ "roots": [
+  {
+   "hash": "cspsw4ijcdfonvmibeld54hp6covw2if",
+   "spec": "boost"
+  },
+  {
+   "hash": "uqdfygm4nzcgw3b4k4vpg4kwogrq2o2z",
+   "spec": "trilinos"
+  },
+  {
+   "hash": "vseiegeewfblj7sxn5nctaucw2wwdu5t",
+   "spec": "openmpi"
+  }
+ ],
+ "concrete_specs": {
+  "cspsw4ijcdfonvmibeld54hp6covw2if": {
+   "boost": {
+    "version": "1.73.0",
+    "arch": {
+     "platform": "linux",
+     "platform_os": "ubuntu18.04",
+     "target": "x86_64"
+    },
+    "compiler": {
+     "name": "gcc",
