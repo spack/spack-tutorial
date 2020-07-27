@@ -12,11 +12,13 @@ example() {
     # print the command to the file
     echo "$ $@" &>> "$filename"
 
-    # get the command's output
-    script -q -a "$filename" -c "$@"
+    cmd="$@"
 
-    # strip "script started/done" output from the file
-    grep -v '^Script started\|^Script done' "$filename" > "${filename}.tmp"
-    sed -i~ '$d' "${filename}.tmp"
-    mv "${filename}.tmp" "$filename"
+    # Don't use despacktivate alias (and strip comment)
+    if [[ "$cmd" == despacktivate* ]]; then
+        cmd="spack env deactivate"
+    fi
+
+    # get the command's output
+    $cmd | tee -a "$filename"
 }
