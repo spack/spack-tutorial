@@ -2,9 +2,9 @@
 # Project settings
 #=============================================================================
 # Only build master and develop on push; do not build every branch.
-branches:
-  only:
-    - master
+pull_requests:
+  except:
+    - no-ci/*
 
 
 
