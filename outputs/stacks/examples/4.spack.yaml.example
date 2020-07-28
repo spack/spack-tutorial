@@ -1,0 +1,24 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration setings.
+spack:
+  # named lists
+  definitions:
+    - packages: [boost, trilinos, openmpi]
+    - mpis: [mpich, mvapich2 fabrics=mrail]
+    - compilers: ['%gcc']
+    - compilers: ['%clang']
+      when: 'env.get("SPACK_STACK_USE_CLANG", "") == "1"'
+    - singleton_packages: [python, tcl]
+
+  specs:
+    - matrix:
+        - [$packages]
+        - [$^mpis]
+        - [$compilers]
+      exclude:
+        - '%clang ^mvapich2'
+    - $singleton_packages
+
+  view: false
