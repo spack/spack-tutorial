@@ -26,16 +26,8 @@ point, you may have a lot of packages installed already. To get more
 manageable outputs in this section, we will uninstall everything and
 start over.
 
-.. code-block:: console
-
-  $ spack uninstall -ay
-  ...
-  $ spack compiler rm gcc@8.3.0
-  ...
-  $ spack install hdf5
-  ...
-  $ spack install zlib%clang
-  ...
+.. literalinclude:: outputs/scripting/setup.out
+   :language: console
 
 All of these commands should be familiar from earlier sections of the
 Spack tutorial.
@@ -50,48 +42,15 @@ takes a Spack Spec format string, and calls ``Spec.format`` with that
 string for each Spec in the output. This allows custom formatting to
 make for easy input to user scripts.
 
-.. code-block:: console
-
-  $ spack find --format "{name} {version} {hash:10}"
-  autoconf 2.69 g23qfulbkb    hdf5 1.10.5 audmuesjjp    libpciaccess 0.13.5 vhehc322oo  libxml2 2.9.9 fg5evg4bxx  numactl 2.0.12 n6yyt2yxl3  pkgconf 1.6.3 eifxmpsduq       xz 5.2.4 ur2jffeua3
-  automake 1.16.1 io3tplo73z  hwloc 1.11.11 xcjsxcroxc  libsigsegv 2.12 3khohgmwhb      m4 1.4.18 ut64la6rpt      openmpi 3.1.4 f6maodnm53   readline 8.0 hzwkvqampr        zlib 1.2.11 5qffmms6gw
-  gdbm 1.18.1 surdjxdcan      libiconv 1.16 zvmmgjbnfr  libtool 2.4.6 4neu5jwwmu        ncurses 6.1 s4rsiori6b    perl 5.30.0 cxcj6eisjs     util-macros 1.19.1 a226ran4th  zlib 1.2.11 o2viq7yrii
+.. literalinclude:: outputs/scripting/find-format.out
+   :language: console
 
 The other scripting option to the ``spack find`` command is the
 ``--json`` option. This formats the serializes the spec objects in the
 output as json objects.
 
-.. code-block:: console
-
-  $ spack find --json
-  [
-   {
-    "name": "zlib",
-    "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
-    "version": "1.2.11",
-    "arch": {
-     "platform": "linux",
-     "platform_os": "ubuntu18.04",
-     "target": "x86_64"
-    },
-    "compiler": {
-     "name": "clang",
-     "version": "6.0.0"
-    },
-    "namespace": "builtin",
-    "parameters": {
-     "optimize": true,
-     "pic": true,
-     "shared": true,
-     "cflags": [],
-     "cppflags": [],
-     "cxxflags": [],
-     "fflags": [],
-     "ldflags": [],
-     "ldlibs": []
-    }
-   }
-  ]$
+.. literalinclude:: outputs/scripting/find-json.out
+   :language: console
 
 ----------------------------
 The ``spack python`` command
@@ -105,12 +64,8 @@ and concretized specs, and directly access other internal components
 of Spack. In this tutorial we will cover the ``Spec`` object and
 querying Spack's internal database of installed packages.
 
-.. code-block:: console
-
-  $ spack python
-  Spack version 0.13.0
-  Python 3.6.8, Linux x86_64
-  >>> ...
+.. literalinclude:: outputs/scripting/spack-python-1.out
+   :language: console
 
 ^^^^^^^^^^^^^^^^^^^
 The ``Spec`` object
@@ -132,9 +87,9 @@ specs.
   >>> s.version
   Traceback (most recent call last):
     File "<console>", line 1, in <module>
-    File "/home/spack/spack/lib/spack/spack/spec.py", line 3136, in version
+    File "/home/spack/spack/lib/spack/spack/spec.py", line 3166, in version
       raise SpecError("Spec version is not concrete: " + str(self))
-  spack.error.SpecError: Spec version is not concrete: zlib arch=linux-None-ivybridge
+  SpecError: Spec version is not concrete: zlib arch=linux-None-ivybridge
   >>> s.versions
   [:]
   >>> s.architecture
@@ -240,11 +195,12 @@ on ``mpich``. This is just a few lines of code using ``spack python``.
   >>> result = filter(lambda spec: not spec.satisfies('^mpich'), gcc_specs)
   >>> import spack.cmd
   >>> spack.cmd.display_specs(result)
-  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
-  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
-  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
-  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
-  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
+  -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+  autoconf@2.69    libiconv@1.16        m4@1.4.18       perl@5.30.3         zlib@1.2.11
+  automake@1.16.2  libpciaccess@0.13.5  ncurses@6.2     pkgconf@1.7.3
+  gdbm@1.18.1      libsigsegv@2.12      numactl@2.0.12  readline@8.0
+  hdf5@1.10.6      libtool@2.4.6        openmpi@3.1.6   util-macros@1.19.1
+  hwloc@1.11.11    libxml2@2.9.10       patchelf@0.10   xz@5.2.5
 
 ^^^^^^^^^^^^^
 Using scripts
@@ -261,31 +217,13 @@ arguments.
 
   $EDITOR find_exclude.py
 
-.. code-block:: python
-
-  from spack.spec import Spec
-  import spack.store
-  import spack.cmd
-  import sys
-
-  include_spec = Spec(sys.argv[1])
-  exclude_spec = Spec(sys.argv[2])
-
-  all_included = spack.store.db.query(include_spec)
-  result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
-
-  spack.cmd.display_specs(result)
+.. literalinclude:: outputs/scripting/0.find_exclude.py.example
+   :language: python
 
 Now we can run this new command using ``spack python``.
 
-.. code-block:: console
-
-  $ spack python find_exclude.py %gcc ^mpich
-  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
-  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
-  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
-  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
-  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
+.. literalinclude:: outputs/scripting/find-exclude-1.out
+   :language: console
 
 -------------------------------
 The ``spack-python`` executable
@@ -294,63 +232,28 @@ The ``spack-python`` executable
 The last thing we want to do in this example is run our code using a
 shebang.
 
-.. code-block:: python
-  :emphasize-lines: 1
-
-  #!/usr/bin/env spack python
-  from spack.spec import Spec
-  import spack.store
-  import spack.cmd
-  import sys
-
-  include_spec = Spec(sys.argv[1])
-  exclude_spec = Spec(sys.argv[2])
-
-  all_included = spack.store.db.query(include_spec)
-  result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
-
-  spack.cmd.display_specs(result)
+.. literalinclude:: outputs/scripting/1.find_exclude.py.example
+   :language: python
+   :emphasize-lines: 1
 
 This is great, and will work on some systems.
 
-.. code-block:: console
-
-  $ chmod u+x find_exclude.py
-  $ ./find_exclude.py %gcc ^mpich
-  /usr/bin/env: 'spack python': No such file or directory
+.. literalinclude:: outputs/scripting/find-exclude-2.out
+   :language: console
 
 However, on some systems the shebang line cannot take multiple
 arguments. The ``spack-python`` executable exists to solve this
 problem. It provides a single-argument shim layer to the ``spack
 python`` command.
 
-.. code-block:: python
-  :emphasize-lines: 1
-
-  #!/usr/bin/env spack-python
-  from spack.spec import Spec
-  import spack.store
-  import spack.cmd
-  import sys
-
-  include_spec = Spec(sys.argv[1])
-  exclude_spec = Spec(sys.argv[2])
-
-  all_included = spack.store.db.query(include_spec)
-  result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
-
-  spack.cmd.display_specs(result)
+.. literalinclude:: outputs/scripting/2.find_exclude.py.example
+   :language: python
+   :emphasize-lines: 1
 
 Now we can run on any system with Spack installed.
 
-.. code-block:: console
-
-  ./find_exclude.py %gcc ^mpich
-  -- linux-ubuntu18.04-x86_64 / gcc@7.4.0 -------------------------
-  autoconf@2.69    hwloc@1.11.11        libtool@2.4.6  numactl@2.0.12  readline@8.0
-  automake@1.16.1  libiconv@1.16        libxml2@2.9.9  openmpi@3.1.4   util-macros@1.19.1
-  gdbm@1.18.1      libpciaccess@0.13.5  m4@1.4.18      perl@5.30.0     xz@5.2.4
-  hdf5@1.10.5      libsigsegv@2.12      ncurses@6.1    pkgconf@1.6.3   zlib@1.2.11
+.. literalinclude:: outputs/scripting/find-exclude-3.out
+   :language: console
 
 With the ``spack-python`` shebang you can create any infrastructure
 you need on top of what Spack already provides, or prototype ideas

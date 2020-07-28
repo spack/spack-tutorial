@@ -1,0 +1,13 @@
+#!/usr/bin/env spack-python
+from spack.spec import Spec
+import spack.store
+import spack.cmd
+import sys
+
+include_spec = Spec(sys.argv[1])
+exclude_spec = Spec(sys.argv[2])
+
+all_included = spack.store.db.query(include_spec)
+result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
+
+spack.cmd.display_specs(result)
