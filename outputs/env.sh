@@ -46,7 +46,8 @@ example environments/env-create-2    "spack install hdf5+hl"
 example environments/env-create-2    "spack install trilinos"
 example environments/env-create-2    "spack find"
 
-echo y | example environments/env-uninstall-1 "spack uninstall trilinos"
+echo "y
+" | example environments/env-uninstall-1 "spack uninstall trilinos"
 example environments/env-uninstall-1 "spack find"
 
 example -tee environments/env-swap-1      "despacktivate"

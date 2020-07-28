@@ -5,7 +5,7 @@ if [ ! -d ~/spack ]; then
     cd ~/spack
     git checkout releases/v0.15
 else
-    cd ~spack
+    cd ~/spack
 fi
 
 . share/spack/setup-env.sh

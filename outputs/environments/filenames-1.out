@@ -1,19 +1,23 @@
 $ spack cd -e myproject
+==> This command requires spack's shell integration.
+
+  To initialize spack's shell commands:
+
+      # for bash and zsh
+      . /home/spack/spack/share/spack/setup-env.sh
+
+      # for csh and tcsh
+      setenv SPACK_ROOT /home/spack/spack
+      source /home/spack/spack/share/spack/setup-env.csh
+
+  This exposes a 'spack' shell function, which you can use like
+      $ spack load package-foo
+
+  Running the Spack executable directly (for example, invoking
+  ./bin/spack) will bypass the shell function and print this
+  placeholder message, even if you have sourced one of the above
+  shell integration scripts.
 $ pwd
 /home/spack/spack
 $ ls
-CHANGELOG.md
-COPYRIGHT
-LICENSE-APACHE
-LICENSE-MIT
-NOTICE
-README.md
-bin
-etc
-fort.99
-lib
-mpi-hello.c
-opt
-pytest.ini
-share
-var
+CHANGELOG.md  COPYRIGHT  LICENSE-APACHE  LICENSE-MIT  NOTICE  README.md  bin  etc  fort.99  lib  mpi-hello.c  opt  pytest.ini  share  var
