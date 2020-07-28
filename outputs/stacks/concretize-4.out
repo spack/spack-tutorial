@@ -11,11 +11,17 @@ boost%gcc   boost%gcc	openmpi%gcc   openmpi%gcc   trilinos%gcc   trilinos%gcc
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
 boost@1.73.0  openmpi@3.1.6  python@3.7.7  tcl@8.6.8  trilinos@12.18.1	trilinos@12.18.1
 
-==> 29 installed packages
+==> 43 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	 bzip2@1.0.8	gdbm@1.18.1    libiconv@1.16	    libtool@2.4.6   metis@5.1.0     openblas@0.3.10  perl@5.30.3    suite-sparse@5.7.2	xz@5.2.5
-automake@1.16.2  cmake@3.17.3	glm@0.9.7.1    libpciaccess@0.13.5  libxml2@2.9.10  ncurses@6.2     openmpi@3.1.6    pkgconf@1.7.3  tcl@8.6.8		zlib@1.2.11
-boost@1.73.0	 diffutils@3.7	hwloc@1.11.11  libsigsegv@2.12	    m4@1.4.18	    numactl@2.0.12  openssl@1.1.1g   readline@8.0   util-macros@1.19.1
+autoconf@2.69	 glm@0.9.7.1	      libxml2@2.9.10	      numactl@2.0.12	  tar@1.32
+automake@1.16.2  hdf5@1.10.6	      m4@1.4.18 	      openblas@0.3.10	  tcl@8.6.8
+boost@1.73.0	 hwloc@1.11.11	      matio@1.5.13	      openmpi@3.1.6	  texinfo@6.5
+bzip2@1.0.8	 hwloc@2.2.0	      metis@5.1.0	      openssl@1.1.1g	  trilinos@12.18.1
+cmake@3.17.3	 hypre@2.18.2	      mpich@3.3.2	      parmetis@4.0.3	  util-macros@1.19.1
+diffutils@3.7	 libiconv@1.16	      mumps@5.3.3	      perl@5.30.3	  xz@5.2.5
+findutils@4.6.0  libpciaccess@0.13.5  ncurses@6.2	      pkgconf@1.7.3	  zlib@1.2.11
+gdbm@1.18.1	 libsigsegv@2.12      netcdf-c@4.7.3	      readline@8.0
+gettext@0.20.2	 libtool@2.4.6	      netlib-scalapack@2.1.0  suite-sparse@5.7.2
 $ export SPACK_STACK_USE_CLANG=1
 $ spack concretize
 ==> Concretized boost%clang ^mpich
@@ -23,7 +29,7 @@ $ spack concretize
  -   qxfbjyc	  ^bzip2@1.0.8%clang@6.0.0+shared arch=linux-ubuntu18.04-x86_64
  -   sdvt7ef	      ^diffutils@3.7%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
  -   3fxiwph		  ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
- -   5qffmms	  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  5qffmms	  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized trilinos%clang ^mpich
  -   h7lf5xz  trilinos@12.18.1%clang@6.0.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+glm+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+matio~mesquite+metis~minitensor+ml+mpi+muelu+mumps+netcdf~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk~stratimikos+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 build_type=RelWithDebInfo gotype=long patches=4cdedfb9619b0b585af588f75d18ab63212bbb9ff7a416823c15d17c00bd2092 arch=linux-ubuntu18.04-x86_64
@@ -31,7 +37,7 @@ $ spack concretize
  -   qxfbjyc	      ^bzip2@1.0.8%clang@6.0.0+shared arch=linux-ubuntu18.04-x86_64
  -   sdvt7ef		  ^diffutils@3.7%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
  -   3fxiwph		      ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
- -   5qffmms	      ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  5qffmms	      ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
  -   khwb5e2	  ^cmake@3.17.3%clang@6.0.0~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
  -   muufhm7	      ^ncurses@6.2%clang@6.0.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
  -   mghrtpj		  ^pkgconf@1.7.3%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
@@ -76,7 +82,7 @@ $ spack concretize
  -   btpmsep	      ^libxml2@2.9.10%clang@6.0.0~python arch=linux-ubuntu18.04-x86_64
  -   3fxiwph		  ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
  -   tuna5hy		  ^xz@5.2.5%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
- -   5qffmms		  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  5qffmms		  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
  -   lic4g5m	      ^numactl@2.0.12%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
  -   fl43gyh		  ^autoconf@2.69%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
  -   hvuuzya		      ^perl@5.30.3%clang@6.0.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
@@ -103,8 +109,17 @@ boost@1.73.0  openmpi@3.1.6  trilinos@12.18.1
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
 boost@1.73.0  openmpi@3.1.6  python@3.7.7  tcl@8.6.8  trilinos@12.18.1	trilinos@12.18.1
 
-==> 29 installed packages
+==> 44 installed packages
+-- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+zlib@1.2.11
+
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	 bzip2@1.0.8	gdbm@1.18.1    libiconv@1.16	    libtool@2.4.6   metis@5.1.0     openblas@0.3.10  perl@5.30.3    suite-sparse@5.7.2	xz@5.2.5
-automake@1.16.2  cmake@3.17.3	glm@0.9.7.1    libpciaccess@0.13.5  libxml2@2.9.10  ncurses@6.2     openmpi@3.1.6    pkgconf@1.7.3  tcl@8.6.8		zlib@1.2.11
-boost@1.73.0	 diffutils@3.7	hwloc@1.11.11  libsigsegv@2.12	    m4@1.4.18	    numactl@2.0.12  openssl@1.1.1g   readline@8.0   util-macros@1.19.1
+autoconf@2.69	 glm@0.9.7.1	      libxml2@2.9.10	      numactl@2.0.12	  tar@1.32
+automake@1.16.2  hdf5@1.10.6	      m4@1.4.18 	      openblas@0.3.10	  tcl@8.6.8
+boost@1.73.0	 hwloc@1.11.11	      matio@1.5.13	      openmpi@3.1.6	  texinfo@6.5
+bzip2@1.0.8	 hwloc@2.2.0	      metis@5.1.0	      openssl@1.1.1g	  trilinos@12.18.1
+cmake@3.17.3	 hypre@2.18.2	      mpich@3.3.2	      parmetis@4.0.3	  util-macros@1.19.1
+diffutils@3.7	 libiconv@1.16	      mumps@5.3.3	      perl@5.30.3	  xz@5.2.5
+findutils@4.6.0  libpciaccess@0.13.5  ncurses@6.2	      pkgconf@1.7.3	  zlib@1.2.11
+gdbm@1.18.1	 libsigsegv@2.12      netcdf-c@4.7.3	      readline@8.0
+gettext@0.20.2	 libtool@2.4.6	      netlib-scalapack@2.1.0  suite-sparse@5.7.2

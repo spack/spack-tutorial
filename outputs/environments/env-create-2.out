@@ -49,16 +49,16 @@ $ spack install trilinos
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1-c3mfw24ivgvgfwwxfia3ipk5lqlxdgcd
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.12-yvxocdy2kcxvvgatrrst3sqzyt7yxhgn
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/suite-sparse-5.7.2-dgppz4n6wg4b42d4er5zovpefdywbuy3
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-ckxpgsn6uuptknjsle5cagqxpbo3b7uc
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-3.1.6-wudo6kygednztgzemlnq4l7rlwrwu3zw
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0-bvapk5ozv46rizqyzb3tlra7jwxkj2ay
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.6-7r2lztqivzy6umgvnhihn4565whablho
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.18.2-dnwivcw3g3kjliygwa536iyaykvjfag6
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0-bvapk5ozv46rizqyzb3tlra7jwxkj2ay
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/parmetis-4.0.3-zdxekoefv7fk2qpoyv6xr26622tnosli
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.6-7r2lztqivzy6umgvnhihn4565whablho
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3-qb6yumyjj73wcewf4sa4wc2kc5kutswq
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netcdf-c-4.7.3-uctbd5yydaciec4ircts7prazhmpllj5
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/matio-1.5.13-w3dbllqxjzh3xyc5hexo7jedowsixau5
@@ -71,7 +71,9 @@ hdf5 +hl  trilinos
 
 ==> 36 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	 cmake@3.17.3	hdf5@1.10.6    libpciaccess@0.13.5  m4@1.4.18	  ncurses@6.2		  openblas@0.3.10  perl@5.30.3	       trilinos@12.18.1
-automake@1.16.2  diffutils@3.7	hwloc@1.11.11  libsigsegv@2.12	    matio@1.5.13  netcdf-c@4.7.3	  openmpi@3.1.6    pkgconf@1.7.3       util-macros@1.19.1
-boost@1.73.0	 gdbm@1.18.1	hypre@2.18.2   libtool@2.4.6	    metis@5.1.0   netlib-scalapack@2.1.0  openssl@1.1.1g   readline@8.0        xz@5.2.5
-bzip2@1.0.8	 glm@0.9.7.1	libiconv@1.16  libxml2@2.9.10	    mumps@5.3.3   numactl@2.0.12	  parmetis@4.0.3   suite-sparse@5.7.2  zlib@1.2.11
+autoconf@2.69	 gdbm@1.18.1	libpciaccess@0.13.5  metis@5.1.0	     openblas@0.3.10  readline@8.0
+automake@1.16.2  glm@0.9.7.1	libsigsegv@2.12      mumps@5.3.3	     openmpi@3.1.6    suite-sparse@5.7.2
+boost@1.73.0	 hdf5@1.10.6	libtool@2.4.6	     ncurses@6.2	     openssl@1.1.1g   trilinos@12.18.1
+bzip2@1.0.8	 hwloc@1.11.11	libxml2@2.9.10	     netcdf-c@4.7.3	     parmetis@4.0.3   util-macros@1.19.1
+cmake@3.17.3	 hypre@2.18.2	m4@1.4.18	     netlib-scalapack@2.1.0  perl@5.30.3      xz@5.2.5
+diffutils@3.7	 libiconv@1.16	matio@1.5.13	     numactl@2.0.12	     pkgconf@1.7.3    zlib@1.2.11

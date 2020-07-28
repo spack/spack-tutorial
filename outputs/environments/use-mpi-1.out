@@ -1,4 +1,7 @@
 $ mpicc ./mpi-hello.c
-sh: 1: mpicc: not found
 $ mpirun -n 4 ./a.out
-sh: 1: mpirun: not found
+Hello world from rank 0
+Hello world from rank 1
+Hello world from rank 2
+Hello world from rank 3
+zlib version: 1.2.11

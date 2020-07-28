@@ -22,15 +22,15 @@ Setting up for the tutorial
 ---------------------------
 
 Depending on which sections of the tutorial you've done up until this
-point, you may have a lot of packages installed already. To get more
-manageable outputs in this section, we will uninstall everything and
-start over.
+point, you may or may not have a lot of packages installed already. To
+ensure reasonable outputs for this section, we will remove the
+``gcc@8.3.0`` compiler and install a couple of packages.
 
 .. literalinclude:: outputs/scripting/setup.out
    :language: console
 
-All of these commands should be familiar from earlier sections of the
-Spack tutorial.
+These commands should be familiar from earlier sections of the Spack
+tutorial.
 
 -----------------------------
 Scripting with ``spack find``

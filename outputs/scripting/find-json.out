@@ -2,34 +2,8 @@ $ spack find --json zlib
 [
  {
   "name": "zlib",
-  "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
-  "version": "1.2.11",
-  "arch": {
-   "platform": "linux",
-   "platform_os": "ubuntu18.04",
-   "target": "x86_64"
-  },
-  "compiler": {
-   "name": "clang",
-   "version": "6.0.0"
-  },
-  "namespace": "builtin",
-  "parameters": {
-   "optimize": true,
-   "pic": true,
-   "shared": true,
-   "cflags": [],
-   "cppflags": [],
-   "cxxflags": [],
-   "fflags": [],
-   "ldflags": [],
-   "ldlibs": []
-  }
- },
- {
-  "name": "zlib",
-  "hash": "smoyzzo2qhzpn6mg6rd3l2p7b23enshg",
-  "version": "1.2.11",
+  "hash": "t4p5jnme6csjrx4vbnla5za7ghcctg76",
+  "version": "1.2.8",
   "arch": {
    "platform": "linux",
    "platform_os": "ubuntu18.04",
@@ -51,39 +25,11 @@ $ spack find --json zlib
    "ldflags": [],
    "ldlibs": []
   }
- }
-]$ spack find --json zlib
-[
- {
-  "name": "zlib",
-  "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
-  "version": "1.2.11",
-  "arch": {
-   "platform": "linux",
-   "platform_os": "ubuntu18.04",
-   "target": "x86_64"
-  },
-  "compiler": {
-   "name": "clang",
-   "version": "6.0.0"
-  },
-  "namespace": "builtin",
-  "parameters": {
-   "optimize": true,
-   "pic": true,
-   "shared": true,
-   "cflags": [],
-   "cppflags": [],
-   "cxxflags": [],
-   "fflags": [],
-   "ldflags": [],
-   "ldlibs": []
-  }
  },
  {
   "name": "zlib",
-  "hash": "smoyzzo2qhzpn6mg6rd3l2p7b23enshg",
-  "version": "1.2.11",
+  "hash": "h6i53ifim7gcwnzo4s6thvcbe7nxybps",
+  "version": "1.2.8",
   "arch": {
    "platform": "linux",
    "platform_os": "ubuntu18.04",
@@ -99,15 +45,15 @@ $ spack find --json zlib
    "pic": true,
    "shared": true,
    "cflags": [],
-   "cppflags": [],
+   "cppflags": [
+    "-O3"
+   ],
    "cxxflags": [],
    "fflags": [],
    "ldflags": [],
    "ldlibs": []
   }
- }
-]$ spack find --json zlib
-[
+ },
  {
   "name": "zlib",
   "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
@@ -160,58 +106,3 @@ $ spack find --json zlib
    "ldlibs": []
   }
  }
-]$ spack find --json zlib
-[
- {
-  "name": "zlib",
-  "hash": "5qffmms6gwykcikh6aag4h3z4scrfdla",
-  "version": "1.2.11",
-  "arch": {
-   "platform": "linux",
-   "platform_os": "ubuntu18.04",
-   "target": "x86_64"
-  },
-  "compiler": {
-   "name": "clang",
-   "version": "6.0.0"
-  },
-  "namespace": "builtin",
-  "parameters": {
-   "optimize": true,
-   "pic": true,
-   "shared": true,
-   "cflags": [],
-   "cppflags": [],
-   "cxxflags": [],
-   "fflags": [],
-   "ldflags": [],
-   "ldlibs": []
-  }
- },
- {
-  "name": "zlib",
-  "hash": "smoyzzo2qhzpn6mg6rd3l2p7b23enshg",
-  "version": "1.2.11",
-  "arch": {
-   "platform": "linux",
-   "platform_os": "ubuntu18.04",
-   "target": "x86_64"
-  },
-  "compiler": {
-   "name": "gcc",
-   "version": "7.5.0"
-  },
-  "namespace": "builtin",
-  "parameters": {
-   "optimize": true,
-   "pic": true,
-   "shared": true,
-   "cflags": [],
-   "cppflags": [],
-   "cxxflags": [],
-   "fflags": [],
-   "ldflags": [],
-   "ldlibs": []
-  }
- }
-]

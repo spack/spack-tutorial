@@ -1,64 +1,1181 @@
 $ spack dev-build hwloc@master
 ==> Warning: Missing a source id for hwloc@master
-==> Installing libsigsegv
-==> Extracting libsigsegv from binary cache
-==> Installing patchelf
-==> No binary for patchelf found: installing from source
-==> patchelf: Executing phase: 'autoreconf'
-==> patchelf: Executing phase: 'configure'
-==> patchelf: Executing phase: 'build'
-==> patchelf: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
-==> Installing pkgconf
-==> Extracting pkgconf from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
-==> Installing util-macros
-==> Extracting util-macros from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
-==> Installing libiconv
-==> Extracting libiconv from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
-==> Installing xz
-==> Extracting xz from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-6nxes4rhk52rhxj7dntwqa5nzou5sv2t
-==> Installing zlib
-==> Extracting zlib from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
-==> Installing m4
-==> Extracting m4 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
-==> Installing ncurses
-==> Extracting ncurses from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
-==> Installing libxml2
-==> Extracting libxml2 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq
-==> Installing libtool
-==> Extracting libtool from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
-==> Installing readline
-==> Extracting readline from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
-==> Installing libpciaccess
-==> Extracting libpciaccess from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.13.5-cmn6yii6vkzjrapeabvbcna3qqqx6web
-==> Installing gdbm
-==> Extracting gdbm from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
-==> Installing perl
-==> Extracting perl from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
-==> Installing autoconf
-==> Extracting autoconf from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
-==> Installing automake
-==> Extracting automake from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
 ==> Installing hwloc
 ==> No binary for hwloc found: installing from source
 ==> hwloc: Executing phase: 'autoreconf'
+==> [2020-07-28-12:08:19.198277] Configure script not found: trying to generate it
+==> [2020-07-28-12:08:19.198474] Warning: *********************************************************
+==> [2020-07-28-12:08:19.198597] Warning: * If the default procedure fails, consider implementing *
+==> [2020-07-28-12:08:19.198641] Warning: *	   a custom AUTORECONF phase in the package	  *
+==> [2020-07-28-12:08:19.198808] Warning: *********************************************************
+==> [2020-07-28-12:08:19.200677] '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin/autoreconf' '-ivf' '-I' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/share/aclocal' '-I' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/share/aclocal' '-I' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/share/aclocal' '-I' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/share/aclocal'
+autoreconf: Entering directory `.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal -I /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/share/aclocal -I /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/share/aclocal -I /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/share/aclocal -I /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/share/aclocal --force -I ./config
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, './config'.
+libtoolize: copying file './config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, './config'.
+libtoolize: copying file './config/libtool.m4'
+libtoolize: copying file './config/ltoptions.m4'
+libtoolize: copying file './config/ltsugar.m4'
+libtoolize: copying file './config/ltversion.m4'
+libtoolize: copying file './config/lt~obsolete.m4'
+autoreconf: running: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin/autoconf --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/share/aclocal --force
+autoreconf: running: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin/autoheader --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/share/aclocal --include=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/share/aclocal --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:87: installing './config/ar-lib'
+configure.ac:44: installing './config/compile'
+configure.ac:37: installing './config/config.guess'
+configure.ac:37: installing './config/config.sub'
+configure.ac:40: installing './config/install-sh'
+configure.ac:40: installing './config/missing'
+contrib/misc/Makefile.am: installing './config/depcomp'
+parallel-tests: installing './config/test-driver'
+autoreconf: Leaving directory `.'
 ==> hwloc: Executing phase: 'configure'
+==> [2020-07-28-12:08:30.318962] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p' '--disable-opencl' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--disable-libudev' '--enable-pci' '--enable-shared'
+
+ ##
+ ## Configuring hwloc distribution tarball
+ ## Startup tests
+ ##
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc understands -c and -o together... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
+checking how to run the C preprocessor... /home/spack/spack/lib/spack/env/gcc/gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by /home/spack/spack/lib/spack/env/gcc/gcc... /home/spack/spack/lib/spack/env/ld
+checking if the linker (/home/spack/spack/lib/spack/env/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /home/spack/spack/lib/spack/env/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /home/spack/spack/lib/spack/env/gcc/gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -fno-rtti -fno-exceptions... no
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to produce PIC... -fPIC -DPIC
+checking if /home/spack/spack/lib/spack/env/gcc/gcc PIC flag -fPIC -DPIC works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc static flag -static works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... (cached) yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/gcc linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether we are using the GNU C++ compiler... yes
+checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+checking how to run the C++ preprocessor... /home/spack/spack/lib/spack/env/gcc/g++ -E
+checking for ld used by /home/spack/spack/lib/spack/env/gcc/g++... /home/spack/spack/lib/spack/env/ld -m elf_x86_64
+checking if the linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) is GNU ld... yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking for /home/spack/spack/lib/spack/env/gcc/g++ option to produce PIC... -fPIC -DPIC
+checking if /home/spack/spack/lib/spack/env/gcc/g++ PIC flag -fPIC -DPIC works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ static flag -static works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... (cached) yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for gcc... (cached) /home/spack/spack/lib/spack/env/gcc/gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... (cached) yes
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... (cached) none needed
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc understands -c and -o together... (cached) yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... (cached) gcc3
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C99... none needed
+checking for pkg-config... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for X... no
+
+ ##
+ ## Configuring hwloc core
+ ##
+checking hwloc building mode... standalone
+configure: hwloc builddir: /home/spack/hwloc
+configure: hwloc srcdir: /home/spack/hwloc
+checking for hwloc version... 2.3.0a1-git
+checking if want hwloc maintainer support... disabled
+checking for hwloc directory prefix... (none)
+checking for hwloc symbol prefix... hwloc_
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C99... (cached) none needed
+checking size of void *... 8
+checking which OS support to include... Linux
+checking which CPU support to include... x86_64
+checking size of unsigned long... 8
+checking size of unsigned int... 4
+checking for the C compiler vendor... gnu
+checking for __attribute__... yes
+checking for __attribute__(aligned)... yes
+checking for __attribute__(always_inline)... yes
+checking for __attribute__(cold)... yes
+checking for __attribute__(const)... yes
+checking for __attribute__(deprecated)... yes
+checking for __attribute__(format)... yes
+checking for __attribute__(hot)... yes
+checking for __attribute__(malloc)... yes
+checking for __attribute__(may_alias)... yes
+checking for __attribute__(no_instrument_function)... yes
+checking for __attribute__(nonnull)... yes
+checking for __attribute__(noreturn)... yes
+checking for __attribute__(packed)... yes
+checking for __attribute__(pure)... yes
+checking for __attribute__(sentinel)... yes
+checking for __attribute__(unused)... yes
+checking for __attribute__(warn_unused_result)... yes
+checking for __attribute__(weak_alias)... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -fvisibility=hidden... yes
+checking whether to enable symbol visibility... yes (via -fvisibility=hidden)
+configure: WARNING: "-fvisibility=hidden" has been added to the hwloc CFLAGS
+checking whether the C compiler rejects function calls with too many arguments... yes
+checking whether the C compiler rejects function calls with too few arguments... yes
+checking whether to enable "picky" compiler mode... yes (default)
+checking if gcc supports -Wdiscarded-qualifiers... yes
+checking if gcc supports -Wvariadic-macros... yes
+checking if gcc supports -Wtype-limits... yes
+checking if gcc supports -Wstack-usage=262144... yes
+checking if gcc supports -Wmissing-field-initializers... yes
+checking if gcc supports -Wcast-function-type... no
+checking for unistd.h... (cached) yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking for strings.h... (cached) yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking for strcasecmp... yes
+checking whether strcasecmp is declared... yes
+checking whether function strcasecmp has a complete prototype... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... yes
+checking whether function strncasecmp has a complete prototype... yes
+checking for strftime... yes
+checking for setlocale... yes
+checking for stdint.h... (cached) yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+
+**** Linux-specific checks
+checking whether sched_getcpu is declared... yes
+checking whether sched_setaffinity is declared... yes
+checking whether function sched_setaffinity has a complete prototype... yes
+checking for old prototype of sched_setaffinity... no
+checking for working CPU_SET... yes
+checking for working CPU_SET_S... yes
+checking for working syscall with 6 parameters... yes
+**** end of Linux-specific checks
+
+checking whether pthread_setaffinity_np is declared... yes
+checking whether pthread_getaffinity_np is declared... yes
+checking whether fabsf is declared... yes
+checking for fabsf in -lm... yes
+checking whether modff is declared... yes
+checking for modff in -lm... yes
+checking whether _SC_NPROCESSORS_ONLN is declared... yes
+checking whether _SC_NPROCESSORS_CONF is declared... yes
+checking whether _SC_NPROC_ONLN is declared... no
+checking whether _SC_NPROC_CONF is declared... no
+checking whether _SC_PAGESIZE is declared... yes
+checking whether _SC_PAGE_SIZE is declared... yes
+checking whether _SC_LARGE_PAGESIZE is declared... no
+checking mach/mach_init.h usability... no
+checking mach/mach_init.h presence... no
+checking for mach/mach_init.h... no
+checking mach_init.h usability... no
+checking mach_init.h presence... no
+checking for mach_init.h... no
+checking mach/mach_host.h usability... no
+checking mach/mach_host.h presence... no
+checking for mach/mach_host.h... no
+checking whether strtoull is declared... yes
+checking for ssize_t... yes
+checking whether snprintf is declared... yes
+checking whether _strdup is declared... no
+checking whether _putenv is declared... no
+checking whether snprintf is correct... yes
+checking whether getprogname is declared... no
+checking whether getexecname is declared... no
+checking for program_invocation_name... yes
+checking for __progname... yes
+checking for pthread_t... yes
+checking for bash... /bin/bash
+checking for ffs... yes
+checking whether ffs is declared... yes
+checking whether function ffs has a complete prototype... yes
+checking for ffsl... yes
+checking whether ffsl is declared... yes
+checking whether function ffsl has a complete prototype... yes
+checking for fls... no
+checking for flsl... no
+checking for clz... no
+checking for clzl... no
+checking for openat... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for getpagesize... yes
+checking for memalign... yes
+checking for posix_memalign... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking for uname... yes
+checking valgrind/valgrind.h usability... no
+checking valgrind/valgrind.h presence... no
+checking for valgrind/valgrind.h... no
+checking whether RUNNING_ON_VALGRIND is declared... no
+checking for PCIACCESS... yes
+checking pciaccess.h usability... yes
+checking pciaccess.h presence... yes
+checking for pciaccess.h... yes
+checking for pci_slot_match_iterator_create... yes
+checking for final PCIACCESS support... yes
+checking rocm_smi/rocm_smi.h usability... no
+checking rocm_smi/rocm_smi.h presence... no
+checking for rocm_smi/rocm_smi.h... no
+checking for LIBXML2... yes
+checking libxml/parser.h usability... yes
+checking libxml/parser.h presence... yes
+checking for libxml/parser.h... yes
+checking for xmlNewDoc... yes
+checking for final LIBXML2 support... yes
+checking for x86 cpuid... yes
+checking for pthread_mutex_lock... yes
+checking if plugin support is enabled... no
+checking components to build statically...  noos xml synthetic xml_nolibxml linux pci xml_libxml x86
+checking components to build as plugins...
+
+ ##
+ ## Configuring netloc core
+ ##
+checking for asprintf... yes
+checking if netloc supports this platform... yes
+checking for SCOTCH_archSub in -lscotch... no
+checking mpi.h usability... no
+checking mpi.h presence... no
+checking for mpi.h... no
+checking for xz... yes
+checking for diff... /usr/bin/diff
+
+ ##
+ ## Configuring hwloc documentation
+ ##
+checking if this is a developer build... yes
+checking for doxygen... no
+checking for pdflatex... no
+checking for makeindex... no
+checking for fig2dev... no
+checking for gs... no
+checking for epstopdf... no
+checking if can build doxygen docs... no
+checking for w3m... no
+checking for lynx... no
+checking if can build top-level README... no
+checking if will build doxygen docs... no
+checking if will install doxygen docs... no
+
+ ##
+ ## Configuring hwloc command line utilities
+ ##
+checking X11/Xlib.h usability... no
+checking X11/Xlib.h presence... no
+checking for X11/Xlib.h... no
+checking for wchar_t... yes
+checking for putwc... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for setlocale... (cached) yes
+checking for uselocale... yes
+checking xlocale.h usability... no
+checking xlocale.h presence... no
+checking for xlocale.h... no
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for nl_langinfo... yes
+checking termcap support using ncurses and ... no
+checking termcap support using ncurses and -ltermcap... no
+checking termcap support using ncurses and -lncursesw... no
+checking termcap support using ncurses and -lncurses... no
+checking termcap support using curses and ... no
+checking termcap support using curses and -ltermcap... no
+checking termcap support using curses and -lcursesw... no
+checking termcap support using curses and -lcurses... no
+checking whether diff accepts -u... yes
+checking whether diff accepts -w... yes
+checking whether bind is declared... yes
+checking for bind in -lsocket... no
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for clock_gettime... yes
+
+ ##
+ ## Configuring tests
+ ##
+checking for pthread_self in -lpthread... yes
+checking for NUMA... no
+checking for numa_available in -lnuma... no
+checking for stdlib.h... (cached) yes
+checking for mkstemp... yes
+checking infiniband/verbs.h usability... no
+checking infiniband/verbs.h presence... no
+checking for infiniband/verbs.h... no
+checking for xmllint... xmllint
+checking for bunzip2... bunzip2
+checking if CXX works... yes
+checking whether diff accepts -u... yes
+
+ ##
+ ## Performing final hwloc configuration
+ ##
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating hwloc/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/examples/Makefile
+config.status: creating doc/doxygen-config.cfg
+config.status: creating utils/Makefile
+config.status: creating utils/hwloc/Makefile
+config.status: creating utils/lstopo/Makefile
+config.status: creating hwloc.pc
+config.status: creating netloc/Makefile
+config.status: creating utils/netloc/infiniband/Makefile
+config.status: creating utils/netloc/draw/Makefile
+config.status: creating utils/netloc/scotch/Makefile
+config.status: creating utils/netloc/mpi/Makefile
+config.status: creating netloc.pc
+config.status: creating netlocscotch.pc
+config.status: creating tests/Makefile
+config.status: creating tests/hwloc/Makefile
+config.status: creating tests/hwloc/linux/Makefile
+config.status: creating tests/hwloc/linux/allowed/Makefile
+config.status: creating tests/hwloc/linux/gather/Makefile
+config.status: creating tests/hwloc/x86/Makefile
+config.status: creating tests/hwloc/x86+linux/Makefile
+config.status: creating tests/hwloc/xml/Makefile
+config.status: creating tests/hwloc/ports/Makefile
+config.status: creating tests/hwloc/rename/Makefile
+config.status: creating tests/hwloc/linux/allowed/test-topology.sh
+config.status: creating tests/hwloc/linux/gather/test-gather-topology.sh
+config.status: creating tests/hwloc/linux/test-topology.sh
+config.status: creating tests/hwloc/x86/test-topology.sh
+config.status: creating tests/hwloc/x86+linux/test-topology.sh
+config.status: creating tests/hwloc/xml/test-topology.sh
+config.status: creating tests/hwloc/wrapper.sh
+config.status: creating utils/hwloc/hwloc-compress-dir
+config.status: creating utils/hwloc/hwloc-gather-topology
+config.status: creating utils/hwloc/test-hwloc-annotate.sh
+config.status: creating utils/hwloc/test-hwloc-calc.sh
+config.status: creating utils/hwloc/test-hwloc-compress-dir.sh
+config.status: creating utils/hwloc/test-hwloc-diffpatch.sh
+config.status: creating utils/hwloc/test-hwloc-distrib.sh
+config.status: creating utils/hwloc/test-hwloc-info.sh
+config.status: creating utils/hwloc/test-fake-plugin.sh
+config.status: creating utils/hwloc/test-parsing-flags.sh
+config.status: creating utils/hwloc/test-hwloc-dump-hwdata/Makefile
+config.status: creating utils/hwloc/test-hwloc-dump-hwdata/test-hwloc-dump-hwdata.sh
+config.status: creating utils/lstopo/test-lstopo.sh
+config.status: creating utils/lstopo/test-lstopo-shmem.sh
+config.status: creating utils/netloc/infiniband/netloc_ib_gather_raw
+config.status: creating contrib/hwloc-ps.www/Makefile
+config.status: creating contrib/systemd/Makefile
+config.status: creating contrib/completion/Makefile
+config.status: creating contrib/misc/Makefile
+config.status: creating contrib/windows/Makefile
+config.status: creating contrib/windows/test-windows-version.sh
+config.status: creating tests/netloc/Makefile
+config.status: creating tests/netloc/tests.sh
+config.status: creating include/private/autogen/config.h
+config.status: creating include/hwloc/autogen/config.h
+config.status: linking hwloc/topology-solaris.c to tests/hwloc/ports/topology-solaris.c
+config.status: linking hwloc/topology-solaris-chiptype.c to tests/hwloc/ports/topology-solaris-chiptype.c
+config.status: linking hwloc/topology-aix.c to tests/hwloc/ports/topology-aix.c
+config.status: linking hwloc/topology-windows.c to tests/hwloc/ports/topology-windows.c
+config.status: linking hwloc/topology-darwin.c to tests/hwloc/ports/topology-darwin.c
+config.status: linking hwloc/topology-freebsd.c to tests/hwloc/ports/topology-freebsd.c
+config.status: linking hwloc/topology-netbsd.c to tests/hwloc/ports/topology-netbsd.c
+config.status: linking hwloc/topology-hpux.c to tests/hwloc/ports/topology-hpux.c
+config.status: linking hwloc/topology-bgq.c to tests/hwloc/ports/topology-bgq.c
+config.status: linking hwloc/topology-opencl.c to tests/hwloc/ports/topology-opencl.c
+config.status: linking hwloc/topology-cuda.c to tests/hwloc/ports/topology-cuda.c
+config.status: linking hwloc/topology-nvml.c to tests/hwloc/ports/topology-nvml.c
+config.status: linking hwloc/topology-rsmi.c to tests/hwloc/ports/topology-rsmi.c
+config.status: linking hwloc/topology-gl.c to tests/hwloc/ports/topology-gl.c
+config.status: linking utils/lstopo/lstopo-windows.c to tests/hwloc/ports/lstopo-windows.c
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing chmoding-scripts commands
+
+-----------------------------------------------------------------------------
+Hwloc optional build support status (more details can be found above):
+
+Probe / display I/O devices: PCI(pciaccess+linux) LinuxIO
+Graphical output:	     no
+XML input / output:	     full
+Netloc functionality:	     yes (without scotch)
+Plugin support: 	     no
+-----------------------------------------------------------------------------
+
 ==> hwloc: Executing phase: 'build'
+==> [2020-07-28-12:08:43.726424] 'make' '-j4'
+Making all in include
+make[1]: Entering directory '/home/spack/hwloc/include'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/include'
+Making all in hwloc
+make[1]: Entering directory '/home/spack/hwloc/hwloc'
+  CC	   topology.lo
+  CC	   traversal.lo
+  CC	   components.lo
+  CC	   distances.lo
+  CC	   bind.lo
+  CC	   bitmap.lo
+  CC	   pci-common.lo
+  CC	   diff.lo
+  CC	   shmem.lo
+  CC	   misc.lo
+  CC	   base64.lo
+  CC	   topology-noos.lo
+  CC	   topology-synthetic.lo
+  CC	   topology-xml.lo
+  CC	   topology-xml-nolibxml.lo
+  CC	   topology-xml-libxml.lo
+  CC	   topology-pci.lo
+  CC	   topology-linux.lo
+  CC	   topology-hardwired.lo
+  CC	   topology-x86.lo
+  CCLD	   libhwloc.la
+make[1]: Leaving directory '/home/spack/hwloc/hwloc'
+Making all in netloc
+make[1]: Entering directory '/home/spack/hwloc/netloc'
+  CC	   support.lo
+  CC	   topology.lo
+  CC	   edge.lo
+  CC	   node.lo
+  CC	   physical_link.lo
+topology.c: In function 'netloc_topology_construct':
+topology.c:88:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&realhwlocpath, "%s/%s", dirname(path_tmp), hwlocpath);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+node.c: In function 'netloc_node_pretty_print':
+node.c:111:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&str, " [%23s]/[%d] -- %s (%d links)",
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	      node->physical_id,
+	      ~~~~~~~~~~~~~~~~~~
+	      node->logical_id,
+	      ~~~~~~~~~~~~~~~~~
+	      node->description,
+	      ~~~~~~~~~~~~~~~~~~
+	      utarray_len(node->physical_links));
+	      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC	   path.lo
+  CC	   architecture.lo
+physical_link.c: In function 'netloc_link_pretty_print':
+physical_link.c:73:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&str, "%3d (%s) [%23s] %d [<- %s / %s (%f) ->] (%s) [%23s] %d",
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	      link->id,
+	      ~~~~~~~~~
+	      tmp_src_str,
+	      ~~~~~~~~~~~~
+	      link->src->physical_id,
+	      ~~~~~~~~~~~~~~~~~~~~~~~
+	      link->ports[0],
+	      ~~~~~~~~~~~~~~~
+	      link->speed,
+	      ~~~~~~~~~~~~
+	      link->width,
+	      ~~~~~~~~~~~~
+	      link->gbits,
+	      ~~~~~~~~~~~~
+	      tmp_dest_str,
+	      ~~~~~~~~~~~~~
+	      link->dest->physical_id,
+	      ~~~~~~~~~~~~~~~~~~~~~~~~
+	      link->ports[1]);
+	      ~~~~~~~~~~~~~~~
+  CC	   hwloc.lo
+  CC	   mpicomm.lo
+hwloc.c: In function 'netloc_topology_read_hwloc':
+hwloc.c:39:9: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	 asprintf(&hwloc_path, "%s/%s", dirname(path_tmp), topology->hwlocpath);
+	 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hwloc.c:82:9: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	 asprintf(&hwloc_file, "%s/%s.diff.xml", hwloc_path, node->hostname);
+	 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hwloc.c:93:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&hwloc_file, "%s/%s.xml", hwloc_path, node->hostname);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hwloc.c:100:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&refname, "%s", node->hostname);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+hwloc.c:119:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&hwloc_ref_path, "%s/%s.xml", hwloc_path, refname);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CCLD	   libnetloc.la
+make[1]: Leaving directory '/home/spack/hwloc/netloc'
+Making all in utils
+make[1]: Entering directory '/home/spack/hwloc/utils'
+Making all in hwloc
+make[2]: Entering directory '/home/spack/hwloc/utils/hwloc'
+Making all in .
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc'
+  CC	   hwloc-annotate.o
+  CC	   hwloc-diff.o
+  CC	   hwloc-calc.o
+  CC	   hwloc-bind.o
+  CC	   hwloc-distrib.o
+  CC	   hwloc-info.o
+  CC	   hwloc-patch.o
+  CC	   hwloc-ps.o
+  CC	   common-ps.lo
+  CC	   hwloc-gather-cpuid.o
+common-ps.c: In function 'hwloc_ps_read_process':
+common-ps.c:135:7: warning: ignoring return value of 'read', declared with attribute warn_unused_result [-Wunused-result]
+       (void) read(fd, &status, sizeof(status));
+       ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CC	   hwloc_dump_hwdata-hwloc-dump-hwdata.o
+  CC	   hwloc_dump_hwdata-hwloc-dump-hwdata-knl.o
+Creating hwloc.7 man page...
+Creating hwloc-annotate.1 man page...
+Creating hwloc-bind.1 man page...
+Creating hwloc-calc.1 man page...
+Creating hwloc-compress-dir.1 man page...
+Creating hwloc-diff.1 man page...
+Creating hwloc-distrib.1 man page...
+Creating hwloc-info.1 man page...
+Creating hwloc-patch.1 man page...
+Creating hwloc-gather-topology.1 man page...
+Creating hwloc-ps.1 man page...
+Creating hwloc-gather-cpuid.1 man page...
+Creating hwloc-dump-hwdata.1 man page...
+  CCLD	   hwloc-annotate
+  CCLD	   hwloc-bind
+  CCLD	   hwloc-calc
+  CCLD	   hwloc-diff
+  CCLD	   hwloc-distrib
+  CCLD	   hwloc-info
+  CCLD	   hwloc-patch
+  CCLD	   libutils_common.la
+ar: `u' modifier ignored since `D' is the default (see `U')
+  CCLD	   hwloc-gather-cpuid
+  CCLD	   hwloc-ps
+  CCLD	   hwloc-dump-hwdata
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making all in test-hwloc-dump-hwdata
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[2]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making all in lstopo
+make[2]: Entering directory '/home/spack/hwloc/utils/lstopo'
+  CC	   lstopo_no_graphics-lstopo.o
+  CC	   lstopo_no_graphics-lstopo-draw.o
+  CC	   lstopo_no_graphics-lstopo-fig.o
+  CC	   lstopo_no_graphics-lstopo-tikz.o
+  CC	   lstopo_no_graphics-lstopo-svg.o
+  CC	   lstopo_no_graphics-lstopo-ascii.o
+  CC	   lstopo_no_graphics-lstopo-text.o
+  CC	   lstopo_no_graphics-lstopo-xml.o
+  CC	   lstopo_no_graphics-lstopo-shmem.o
+Creating lstopo-no-graphics.1 man page...
+  CCLD	   lstopo-no-graphics
+make[2]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+Making all in netloc/infiniband
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
+  CC	   netloc_ib_extract_dats.o
+netloc_ib_extract_dats.c: In function 'get_node':
+netloc_ib_extract_dats.c:158:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&id, "%.4s:%.4s:%.4s:%.4s",
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	     guid, guid+4, guid+8, guid+12);
+	     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c: In function 'main':
+netloc_ib_extract_dats.c:522:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&realpath, "%s/%s", outpath, hwlocpath);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c:554:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&subnet, "%.19s", filename+10);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c:559:13: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	     asprintf(&route_filename, "%s/ibroutes-%s", inpath, subnet);
+	     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c:572:21: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+		     asprintf(&route_filename, "ibroutes-%s", subnet);
+		     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c: In function 'read_discover':
+netloc_ib_extract_dats.c:677:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&discover_path, "%s/%s", path, filename);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c: In function 'write_into_file':
+netloc_ib_extract_dats.c:920:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&output_path, "%s/IB-%s-nodes.txt", path, subnet);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c: In function 'read_routes':
+netloc_ib_extract_dats.c:1019:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&route_path, "%s/%s", path, route_dirname);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c:1035:17: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+		 asprintf(&route_filename, "%s/%s", route_path, filename);
+		 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_ib_extract_dats.c: In function 'main':
+netloc_ib_extract_dats.c:515:9: warning: argument 1 null where non-null expected [-Wnonnull]
+	 closedir(outdir);
+	 ^~~~~~~~~~~~~~~~
+In file included from netloc_ib_extract_dats.c:27:0:
+/usr/include/dirent.h:149:12: note: in a call to function 'closedir' declared here
+ extern int closedir (DIR *__dirp) __nonnull ((1));
+	    ^~~~~~~~
+  CCLD	   netloc_ib_extract_dats
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
+Making all in netloc/draw
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/draw'
+  CC	   netloc_draw_to_json.o
+netloc_draw_to_json.c: In function 'json_dict_add':
+netloc_draw_to_json.c:179:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&field_string, "\"%s\":", field);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_draw_to_json.c: In function 'json_string_new':
+netloc_draw_to_json.c:214:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&new_value, "\"%s\"", value);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_draw_to_json.c: In function 'json_int_new':
+netloc_draw_to_json.c:226:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&new_value, "%d", value);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_draw_to_json.c: In function 'json_float_new':
+netloc_draw_to_json.c:238:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&new_value, "%f", value);
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_draw_to_json.c: In function 'main':
+netloc_draw_to_json.c:609:9: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+	 asprintf(&topopath, "%s/%s", netlocpath, dir_entry->d_name);
+	 ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+netloc_draw_to_json.c: In function 'netloc_to_json_draw':
+netloc_draw_to_json.c:529:5: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+     asprintf(&draw, "%s-%s.json", basename, "draw");
+     ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  CCLD	   netloc_draw_to_json
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/draw'
+Making all in netloc/mpi
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/mpi'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/mpi'
+Making all in netloc/scotch
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Entering directory '/home/spack/hwloc/utils'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/spack/hwloc/utils'
+make[1]: Leaving directory '/home/spack/hwloc/utils'
+Making all in tests
+make[1]: Entering directory '/home/spack/hwloc/tests'
+Making all in hwloc
+make[2]: Entering directory '/home/spack/hwloc/tests/hwloc'
+Making all in .
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making all in ports
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/ports'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/ports'
+Making all in xml
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/xml'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/xml'
+Making all in linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in .
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in allowed
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+Making all in gather
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in x86
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86'
+Making all in x86+linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[2]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making all in netloc
+make[2]: Entering directory '/home/spack/hwloc/tests/netloc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/tests/netloc'
+make[2]: Entering directory '/home/spack/hwloc/tests'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/spack/hwloc/tests'
+make[1]: Leaving directory '/home/spack/hwloc/tests'
+Making all in contrib/systemd
+make[1]: Entering directory '/home/spack/hwloc/contrib/systemd'
+Creating hwloc-dump-hwdata.service...
+make[1]: Leaving directory '/home/spack/hwloc/contrib/systemd'
+Making all in contrib/completion
+make[1]: Entering directory '/home/spack/hwloc/contrib/completion'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/completion'
+Making all in contrib/misc
+make[1]: Entering directory '/home/spack/hwloc/contrib/misc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/misc'
+Making all in contrib/hwloc-ps.www
+make[1]: Entering directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+Making all in doc
+make[1]: Entering directory '/home/spack/hwloc/doc'
+make  all-recursive
+make[2]: Entering directory '/home/spack/hwloc/doc'
+Making all in examples
+make[3]: Entering directory '/home/spack/hwloc/doc/examples'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/doc/examples'
+make[3]: Entering directory '/home/spack/hwloc/doc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/spack/hwloc/doc'
+make[2]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Entering directory '/home/spack/hwloc'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/home/spack/hwloc'
 ==> hwloc: Executing phase: 'install'
+==> [2020-07-28-12:08:53.186778] 'make' '-j4' 'install'
+Making install in include
+make[1]: Entering directory '/home/spack/hwloc/include'
+make[2]: Entering directory '/home/spack/hwloc/include'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include/hwloc/autogen'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include/hwloc'
+ /usr/bin/install -c -m 644 hwloc.h '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include'
+ /usr/bin/install -c -m 644 hwloc/autogen/config.h '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include/hwloc/autogen'
+ /usr/bin/install -c -m 644 hwloc/bitmap.h hwloc/helper.h hwloc/inlines.h hwloc/diff.h hwloc/shmem.h hwloc/distances.h hwloc/export.h hwloc/openfabrics-verbs.h hwloc/opencl.h hwloc/cuda.h hwloc/cudart.h hwloc/nvml.h hwloc/rsmi.h hwloc/plugins.h hwloc/gl.h hwloc/rename.h hwloc/deprecated.h hwloc/linux.h hwloc/linux-libnuma.h hwloc/glibc-sched.h '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/include/hwloc'
+make[2]: Leaving directory '/home/spack/hwloc/include'
+make[1]: Leaving directory '/home/spack/hwloc/include'
+Making install in hwloc
+make[1]: Entering directory '/home/spack/hwloc/hwloc'
+make[2]: Entering directory '/home/spack/hwloc/hwloc'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+ /bin/bash ../libtool	--mode=install /usr/bin/install -c   libhwloc.la '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib'
+ /usr/bin/install -c -m 644 ./hwloc.dtd ./hwloc2.dtd ./hwloc2-diff.dtd '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+libtool: install: /usr/bin/install -c .libs/libhwloc.so.0.0.0 /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/libhwloc.so.0.0.0
+libtool: install: (cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib && { ln -s -f libhwloc.so.0.0.0 libhwloc.so.0 || { rm -f libhwloc.so.0 && ln -s libhwloc.so.0.0.0 libhwloc.so.0; }; })
+libtool: install: (cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib && { ln -s -f libhwloc.so.0.0.0 libhwloc.so || { rm -f libhwloc.so && ln -s libhwloc.so.0.0.0 libhwloc.so; }; })
+libtool: install: /usr/bin/install -c .libs/libhwloc.lai /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/libhwloc.la
+libtool: finish: PATH="/home/spack/spack/lib/spack/env/gcc:/home/spack/spack/lib/spack/env/case-insensitive:/home/spack/spack/lib/spack/env:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin:/home/spack/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make  install-exec-hook
+make[3]: Entering directory '/home/spack/hwloc/hwloc'
+make[3]: Nothing to be done for 'install-exec-hook'.
+make[3]: Leaving directory '/home/spack/hwloc/hwloc'
+make[2]: Leaving directory '/home/spack/hwloc/hwloc'
+make[1]: Leaving directory '/home/spack/hwloc/hwloc'
+Making install in netloc
+make[1]: Entering directory '/home/spack/hwloc/netloc'
+make[2]: Entering directory '/home/spack/hwloc/netloc'
+make[2]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib'
+ /bin/bash ../libtool	--mode=install /usr/bin/install -c   libnetloc.la '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib'
+libtool: warning: relinking 'libnetloc.la'
+libtool: install: (cd /home/spack/hwloc/netloc; /bin/bash "/home/spack/hwloc/libtool"  --silent --tag CC --mode=relink /home/spack/spack/lib/spack/env/gcc/gcc -g -O2 -version-info 0:0:0 -o libnetloc.la -rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib support.lo topology.lo edge.lo node.lo physical_link.lo path.lo architecture.lo hwloc.lo mpicomm.lo ../hwloc/libhwloc.la )
+libtool: install: /usr/bin/install -c .libs/libnetloc.so.0.0.0T /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/libnetloc.so.0.0.0
+libtool: install: (cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib && { ln -s -f libnetloc.so.0.0.0 libnetloc.so.0 || { rm -f libnetloc.so.0 && ln -s libnetloc.so.0.0.0 libnetloc.so.0; }; })
+libtool: install: (cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib && { ln -s -f libnetloc.so.0.0.0 libnetloc.so || { rm -f libnetloc.so && ln -s libnetloc.so.0.0.0 libnetloc.so; }; })
+libtool: install: /usr/bin/install -c .libs/libnetloc.lai /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/libnetloc.la
+libtool: finish: PATH="/home/spack/spack/lib/spack/env/gcc:/home/spack/spack/lib/spack/env/case-insensitive:/home/spack/spack/lib/spack/env:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps/bin:/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy/bin:/home/spack/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib
+----------------------------------------------------------------------
+Libraries have been installed in:
+   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib
+
+If you ever happen to want to link against installed libraries
+in a given directory, LIBDIR, you must either use libtool, and
+specify the full pathname of the library, or use the '-LLIBDIR'
+flag during linking and do at least one of the following:
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
+     during execution
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
+     during linking
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
+
+See any operating system documentation about shared libraries for
+more information, such as the ld(1) and ld.so(8) manual pages.
+----------------------------------------------------------------------
+make[2]: Leaving directory '/home/spack/hwloc/netloc'
+make[1]: Leaving directory '/home/spack/hwloc/netloc'
+Making install in utils
+make[1]: Entering directory '/home/spack/hwloc/utils'
+Making install in hwloc
+make[2]: Entering directory '/home/spack/hwloc/utils/hwloc'
+Making install in .
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc'
+make[4]: Entering directory '/home/spack/hwloc/utils/hwloc'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/sbin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c hwloc-annotate hwloc-bind hwloc-calc hwloc-diff hwloc-distrib hwloc-info hwloc-patch hwloc-ps hwloc-gather-cpuid '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c hwloc-dump-hwdata '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/sbin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1'
+ /usr/bin/install -c hwloc-compress-dir hwloc-gather-topology '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man7'
+ /usr/bin/install -c -m 644 hwloc-annotate.1 hwloc-bind.1 hwloc-calc.1 hwloc-compress-dir.1 hwloc-diff.1 hwloc-distrib.1 hwloc-info.1 hwloc-patch.1 hwloc-gather-topology.1 hwloc-ps.1 hwloc-gather-cpuid.1 hwloc-dump-hwdata.1 '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1'
+ /usr/bin/install -c -m 644 hwloc.7 '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man7'
+libtool: install: /usr/bin/install -c .libs/hwloc-dump-hwdata /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/sbin/hwloc-dump-hwdata
+libtool: install: /usr/bin/install -c .libs/hwloc-annotate /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-annotate
+libtool: install: /usr/bin/install -c .libs/hwloc-bind /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-bind
+libtool: install: /usr/bin/install -c .libs/hwloc-calc /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-calc
+libtool: install: /usr/bin/install -c .libs/hwloc-diff /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-diff
+libtool: install: /usr/bin/install -c .libs/hwloc-distrib /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-distrib
+libtool: install: /usr/bin/install -c .libs/hwloc-info /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-info
+libtool: install: /usr/bin/install -c .libs/hwloc-patch /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-patch
+libtool: install: /usr/bin/install -c .libs/hwloc-ps /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-ps
+libtool: install: /usr/bin/install -c .libs/hwloc-gather-cpuid /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-cpuid
+make  install-exec-hook
+make[5]: Entering directory '/home/spack/hwloc/utils/hwloc'
+/bin/sed -e 's/HWLOC_top_builddir\/utils\/hwloc/bindir/' -e 's/HWLOC_top_builddir\/utils\/lstopo/bindir/' -e '/HWLOC_top_builddir/d' /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-compress-dir > /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-compress-dir.tmp && mv -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-compress-dir.tmp /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-compress-dir
+chmod +x /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-compress-dir
+/bin/sed -e 's/HWLOC_top_builddir\/utils\/lstopo/bindir/' -e 's/HWLOC_top_builddir\/utils\/hwloc/bindir/' -e '/HWLOC_top_builddir/d' /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-topology > /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-topology.tmp && mv -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-topology.tmp /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-topology
+chmod +x /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-gather-topology
+make[5]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+make[4]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making install in test-hwloc-dump-hwdata
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[4]: Entering directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[2]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making install in lstopo
+make[2]: Entering directory '/home/spack/hwloc/utils/lstopo'
+make[3]: Entering directory '/home/spack/hwloc/utils/lstopo'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1'
+  /bin/bash ../../libtool   --mode=install /usr/bin/install -c lstopo-no-graphics '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /usr/bin/install -c -m 644 lstopo-no-graphics.1 '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1'
+make  install-data-hook
+make[4]: Entering directory '/home/spack/hwloc/utils/lstopo'
+rm -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1/hwloc-ls.1
+cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1 && ln -s lstopo-no-graphics.1 hwloc-ls.1
+rm -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1/lstopo.1
+cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/man/man1 && ln -s lstopo-no-graphics.1 lstopo.1
+make[4]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+libtool: install: /usr/bin/install -c .libs/lstopo-no-graphics /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/lstopo-no-graphics
+make  install-exec-hook
+make[4]: Entering directory '/home/spack/hwloc/utils/lstopo'
+rm -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/hwloc-ls
+cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin && ln -s lstopo-no-graphics hwloc-ls
+rm -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/lstopo
+cd /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin && ln -s lstopo-no-graphics lstopo || true
+make[4]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+make[3]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+make[2]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+Making install in netloc/infiniband
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
+make[3]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
+make[3]: Nothing to be done for 'install-data-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /usr/bin/install -c netloc_ib_gather_raw '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c netloc_ib_extract_dats '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+libtool: install: /usr/bin/install -c .libs/netloc_ib_extract_dats /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_extract_dats
+make  install-exec-hook
+make[4]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
+/bin/sed -e 's/HWLOC_top_builddir\/utils\/lstopo/bindir/' -e '/HWLOC_top_builddir/d' /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_gather_raw > /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_gather_raw.tmp && mv -f /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_gather_raw.tmp /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_gather_raw
+chmod +x /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_ib_gather_raw
+make[4]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
+make[3]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
+Making install in netloc/draw
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/draw'
+make[3]: Entering directory '/home/spack/hwloc/utils/netloc/draw'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+ /usr/bin/install -c -m 644 netloc_draw.html netloc_draw.js visdist/vis.min.js visdist/vis.min.css '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+  /bin/bash ../../../libtool   --mode=install /usr/bin/install -c netloc_draw_to_json '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin'
+libtool: install: /usr/bin/install -c .libs/netloc_draw_to_json /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/bin/netloc_draw_to_json
+make[3]: Leaving directory '/home/spack/hwloc/utils/netloc/draw'
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/draw'
+Making install in netloc/mpi
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/mpi'
+make[3]: Entering directory '/home/spack/hwloc/utils/netloc/mpi'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/spack/hwloc/utils/netloc/mpi'
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/mpi'
+Making install in netloc/scotch
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/scotch'
+make[3]: Entering directory '/home/spack/hwloc/utils/netloc/scotch'
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Entering directory '/home/spack/hwloc/utils'
+make[3]: Entering directory '/home/spack/hwloc/utils'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/spack/hwloc/utils'
+make[2]: Leaving directory '/home/spack/hwloc/utils'
+make[1]: Leaving directory '/home/spack/hwloc/utils'
+Making install in tests
+make[1]: Entering directory '/home/spack/hwloc/tests'
+Making install in hwloc
+make[2]: Entering directory '/home/spack/hwloc/tests/hwloc'
+Making install in .
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc'
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making install in ports
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/ports'
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/ports'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/ports'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/ports'
+Making install in xml
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/xml'
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/xml'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/xml'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/xml'
+Making install in linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+Making install in .
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+make[5]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making install in allowed
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+make[5]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+Making install in gather
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[5]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[5]: Nothing to be done for 'install-exec-am'.
+make[5]: Nothing to be done for 'install-data-am'.
+make[5]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making install in x86
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86'
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/x86'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86'
+Making install in x86+linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[2]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making install in netloc
+make[2]: Entering directory '/home/spack/hwloc/tests/netloc'
+make[3]: Entering directory '/home/spack/hwloc/tests/netloc'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/netloc'
+make[2]: Leaving directory '/home/spack/hwloc/tests/netloc'
+make[2]: Entering directory '/home/spack/hwloc/tests'
+make[3]: Entering directory '/home/spack/hwloc/tests'
+make[3]: Nothing to be done for 'install-exec-am'.
+make[3]: Nothing to be done for 'install-data-am'.
+make[3]: Leaving directory '/home/spack/hwloc/tests'
+make[2]: Leaving directory '/home/spack/hwloc/tests'
+make[1]: Leaving directory '/home/spack/hwloc/tests'
+Making install in contrib/systemd
+make[1]: Entering directory '/home/spack/hwloc/contrib/systemd'
+make[2]: Entering directory '/home/spack/hwloc/contrib/systemd'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+ /usr/bin/install -c -m 644 hwloc-dump-hwdata.service '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+make[2]: Leaving directory '/home/spack/hwloc/contrib/systemd'
+make[1]: Leaving directory '/home/spack/hwloc/contrib/systemd'
+Making install in contrib/completion
+make[1]: Entering directory '/home/spack/hwloc/contrib/completion'
+make[2]: Entering directory '/home/spack/hwloc/contrib/completion'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/etc/bash_completion.d'
+ /usr/bin/install -c -m 644 hwloc-completion.bash '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/etc/bash_completion.d'
+make[2]: Leaving directory '/home/spack/hwloc/contrib/completion'
+make[1]: Leaving directory '/home/spack/hwloc/contrib/completion'
+Making install in contrib/misc
+make[1]: Entering directory '/home/spack/hwloc/contrib/misc'
+make[2]: Entering directory '/home/spack/hwloc/contrib/misc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/doc/hwloc'
+ /usr/bin/install -c -m 644 dynamic_SVG_example.html '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/doc/hwloc'
+make[2]: Leaving directory '/home/spack/hwloc/contrib/misc'
+make[1]: Leaving directory '/home/spack/hwloc/contrib/misc'
+Making install in contrib/hwloc-ps.www
+make[1]: Entering directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+make[2]: Entering directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc/hwloc-ps.www'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc/hwloc-ps.www/assets'
+ /usr/bin/install -c -m 644 client.js package.json README '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc/hwloc-ps.www'
+ /usr/bin/install -c -m 644 assets/index.html assets/main.css assets/script.js assets/style.css '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc/hwloc-ps.www/assets'
+make[2]: Leaving directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+make[1]: Leaving directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+Making install in doc
+make[1]: Entering directory '/home/spack/hwloc/doc'
+make  install-recursive
+make[2]: Entering directory '/home/spack/hwloc/doc'
+Making install in examples
+make[3]: Entering directory '/home/spack/hwloc/doc/examples'
+make[4]: Entering directory '/home/spack/hwloc/doc/examples'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Nothing to be done for 'install-data-am'.
+make[4]: Leaving directory '/home/spack/hwloc/doc/examples'
+make[3]: Leaving directory '/home/spack/hwloc/doc/examples'
+make[3]: Entering directory '/home/spack/hwloc/doc'
+make[4]: Entering directory '/home/spack/hwloc/doc'
+make[4]: Nothing to be done for 'install-exec-am'.
+make[4]: Leaving directory '/home/spack/hwloc/doc'
+make[3]: Leaving directory '/home/spack/hwloc/doc'
+make[2]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Entering directory '/home/spack/hwloc'
+make[2]: Entering directory '/home/spack/hwloc'
+make[2]: Nothing to be done for 'install-exec-am'.
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+ /bin/mkdir -p '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/pkgconfig'
+ /usr/bin/install -c -m 644 contrib/hwloc-valgrind.supp '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/share/hwloc'
+ /usr/bin/install -c -m 644 hwloc.pc '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p/lib/pkgconfig'
+make[2]: Leaving directory '/home/spack/hwloc'
+make[1]: Leaving directory '/home/spack/hwloc'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p

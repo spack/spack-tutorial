@@ -4,7 +4,7 @@ $ spack concretize -f
 [+]  smoyzzo	  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized trilinos
- -   rhmspsu  trilinos@12.18.1%gcc@7.5.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+glm+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+matio~mesquite+metis~minitensor+ml+mpi+muelu+mumps+netcdf~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk~stratimikos+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 build_type=RelWithDebInfo gotype=long arch=linux-ubuntu18.04-x86_64
+[+]  rhmspsu  trilinos@12.18.1%gcc@7.5.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+glm+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+matio~mesquite+metis~minitensor+ml+mpi+muelu+mumps+netcdf~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk~stratimikos+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 build_type=RelWithDebInfo gotype=long arch=linux-ubuntu18.04-x86_64
 [+]  qzr23mk	  ^boost@1.73.0%gcc@7.5.0+atomic+chrono~clanglibcpp~container~context~coroutine+date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave cxxstd=98 patches=246508e052c44b6f4e8c2542a71c06cacaa72cd1447ab8d2a542b987bc35ace9,4dd507e1f5a29e3b87b15321a4d8c74afdc8331433edabf7aeab89b3c405d556 visibility=hidden arch=linux-ubuntu18.04-x86_64
 [+]  fvfpt26	      ^bzip2@1.0.8%gcc@7.5.0+shared arch=linux-ubuntu18.04-x86_64
 [+]  otkkten		  ^diffutils@3.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
@@ -18,33 +18,33 @@ $ spack concretize -f
 [+]  4av4gyw		      ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  t54jzdy			  ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  c3mfw24	  ^glm@0.9.7.1%gcc@7.5.0 build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
- -   znt7mfz	  ^hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
- -   qrpxybc	      ^mpich@3.3.2%gcc@7.5.0+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
+[+]  znt7mfz	  ^hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+[+]  qrpxybc	      ^mpich@3.3.2%gcc@7.5.0+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
 [+]  nwb3bf5		  ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  mkc3u4x		      ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
 [+]  lbrx7ln			  ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  wdflovn		  ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   hrv4dx5		  ^findutils@4.6.0%gcc@7.5.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+[+]  hrv4dx5		  ^findutils@4.6.0%gcc@7.5.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
 [+]  jdxbjft		      ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   cr3i7es		      ^texinfo@6.5%gcc@7.5.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
- -   luexnup		  ^hwloc@2.2.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+[+]  cr3i7es		      ^texinfo@6.5%gcc@7.5.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
+[+]  luexnup		  ^hwloc@2.2.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
 [+]  cmn6yii		      ^libpciaccess@0.13.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  gs6ag7k			  ^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  m3l53bh		      ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
 [+]  6nxes4r			  ^xz@5.2.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   amfr6qp	  ^hypre@2.18.2%gcc@7.5.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+[+]  amfr6qp	  ^hypre@2.18.2%gcc@7.5.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
 [+]  m5gktgo	      ^openblas@0.3.10%gcc@7.5.0~consistent_fpcsr~ilp64+pic+shared threads=none arch=linux-ubuntu18.04-x86_64
- -   w6s7lu2	  ^matio@1.5.13%gcc@7.5.0+hdf5+shared+zlib arch=linux-ubuntu18.04-x86_64
+[+]  w6s7lu2	  ^matio@1.5.13%gcc@7.5.0+hdf5+shared+zlib arch=linux-ubuntu18.04-x86_64
 [+]  edcrft4	  ^metis@5.1.0%gcc@7.5.0~gdb~int64~real64+shared build_type=Release patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1,b1225da886605ea558db7ac08dd8054742ea5afe5ed61ad4d0fe7a495b1270d2 arch=linux-ubuntu18.04-x86_64
- -   hbvf64o	  ^mumps@5.3.3%gcc@7.5.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu18.04-x86_64
- -   i6dfzly	      ^netlib-scalapack@2.1.0%gcc@7.5.0~pic+shared build_type=RelWithDebInfo patches=f2baedde688ffe4c20943c334f580eb298e04d6f35c86b90a1f4e8cb7ae344a2 arch=linux-ubuntu18.04-x86_64
- -   swympwh	  ^netcdf-c@4.7.3%gcc@7.5.0~dap~hdf4~jna+mpi~parallel-netcdf+pic+shared arch=linux-ubuntu18.04-x86_64
- -   v42khiu	  ^parmetis@4.0.3%gcc@7.5.0~gdb+shared build_type=RelWithDebInfo patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d arch=linux-ubuntu18.04-x86_64
+[+]  hbvf64o	  ^mumps@5.3.3%gcc@7.5.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu18.04-x86_64
+[+]  i6dfzly	      ^netlib-scalapack@2.1.0%gcc@7.5.0~pic+shared build_type=RelWithDebInfo patches=f2baedde688ffe4c20943c334f580eb298e04d6f35c86b90a1f4e8cb7ae344a2 arch=linux-ubuntu18.04-x86_64
+[+]  swympwh	  ^netcdf-c@4.7.3%gcc@7.5.0~dap~hdf4~jna+mpi~parallel-netcdf+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  v42khiu	  ^parmetis@4.0.3%gcc@7.5.0~gdb+shared build_type=RelWithDebInfo patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d arch=linux-ubuntu18.04-x86_64
 [+]  dgppz4n	  ^suite-sparse@5.7.2%gcc@7.5.0~cuda~openmp+pic~tbb arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized hdf5+hl
- -   znt7mfz  hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
- -   qrpxybc	  ^mpich@3.3.2%gcc@7.5.0+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
+[+]  znt7mfz  hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+[+]  qrpxybc	  ^mpich@3.3.2%gcc@7.5.0+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
 [+]  nwb3bf5	      ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  mkc3u4x		  ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
 [+]  lbrx7ln		      ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
@@ -54,10 +54,10 @@ $ spack concretize -f
 [+]  crhlefo			      ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
 [+]  4sh6pym				  ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  wdflovn	      ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   hrv4dx5	      ^findutils@4.6.0%gcc@7.5.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+[+]  hrv4dx5	      ^findutils@4.6.0%gcc@7.5.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
 [+]  jdxbjft		  ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   cr3i7es		  ^texinfo@6.5%gcc@7.5.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
- -   luexnup	      ^hwloc@2.2.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+[+]  cr3i7es		  ^texinfo@6.5%gcc@7.5.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
+[+]  luexnup	      ^hwloc@2.2.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
 [+]  cmn6yii		  ^libpciaccess@0.13.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  gs6ag7k		      ^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 [+]  m3l53bh		  ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
