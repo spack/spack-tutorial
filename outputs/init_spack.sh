@@ -13,3 +13,4 @@ fi
 spack mirror add tutorial /mirror
 spack gpg trust /mirror/public.key
 spack config add 'config:suppress_gpg_warnings:true'
+spack config add 'packages:all:target:[x86_64]'

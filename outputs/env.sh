@@ -15,19 +15,19 @@ example environments/env-create-1    "spack env create myproject"
 
 example environments/env-list-1      "spack env list"
 
-example environments/env-activate-1  "spack env activate myproject"
+example -tee environments/env-activate-1  "spack env activate myproject"
 spack env activate myproject
 
 example environments/find-env-1      "spack find"
 
 example environments/env-status-1    "spack env status"
 
-example environments/env-status-2    "despacktivate    # short alias for `spack env deactivate`"
+example -tee environments/env-status-2    "despacktivate    # short alias for `spack env deactivate`"
 spack env deactivate
 example environments/env-status-2    "spack env status"
 example environments/env-status-2    "spack find"
 
-example environments/env-install-1   "spack env activate myproject"
+example -tee environments/env-install-1   "spack env activate myproject"
 spack env activate myproject
 example environments/env-install-1   "spack install tcl"
 example environments/env-install-1   "spack install trilinos"
@@ -40,7 +40,7 @@ example environments/use-trilinos-1  "which algebra"
 example environments/use-trilinos-1  "algebra"
 
 example environments/env-create-2    "spack env create myproject2"
-example environments/env-create-2    "spack env activate myproject2"
+example -tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
 example environments/env-create-2    "spack install hdf5+hl"
 example environments/env-create-2    "spack install trilinos"
@@ -49,9 +49,9 @@ example environments/env-create-2    "spack find"
 echo y | example environments/env-uninstall-1 "spack uninstall trilinos"
 example environments/env-uninstall-1 "spack find"
 
-example environments/env-swap-1      "despacktivate"
+example -tee environments/env-swap-1      "despacktivate"
 spack env deactivate
-example environments/env-swap-1      "spack env activate myproject"
+example -tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
 
@@ -118,7 +118,7 @@ example environments/anonymous-create-1 "spack env create -d ."
 example environments/anonymous-create-2 "ls"
 example environments/anonymous-create-2 "cat spack.yaml"
 
-example environments/install-anonymous-1 "spack env activate ."
+example -tee environments/install-anonymous-1 "spack env activate ."
 spack env activate .
 # mock a hand-edit from before we activated
 spack add boost
