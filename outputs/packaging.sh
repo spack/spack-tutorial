@@ -21,7 +21,7 @@ example packaging/info-mpileaks       "spack info mpileaks"
 
 spack uninstall -ay mpileaks
 cp /project/package-py-files/2.package.py $mpileaks_package_py
-example packaging/install-mpileaks-2  "spack install --keep-stage mpileaks"
+example packaging/install-mpileaks-2  "spack install mpileaks"
 
 stage_dir=$(spack location -s mpileaks)
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
