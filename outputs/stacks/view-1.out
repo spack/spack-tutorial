@@ -3,5 +3,89 @@ $ spack concretize
 ==> Updating view at views/full
 $ ls views/default
 bin  etc  include  lib	man  share
+$ ls views/default/lib
+cmake				  libboost_log.so.1.73.0		  libboost_program_options-mt.so.1	     libboost_wave-mt.so.1.73
+itcl4.1.1			  libboost_log_setup-mt.a		  libboost_program_options-mt.so.1.73	     libboost_wave-mt.so.1.73.0
+libboost_atomic-mt.a		  libboost_log_setup-mt.so		  libboost_program_options-mt.so.1.73.0      libboost_wave.a
+libboost_atomic-mt.so		  libboost_log_setup-mt.so.1		  libboost_program_options.a		     libboost_wave.so
+libboost_atomic-mt.so.1 	  libboost_log_setup-mt.so.1.73 	  libboost_program_options.so		     libboost_wave.so.1
+libboost_atomic-mt.so.1.73	  libboost_log_setup-mt.so.1.73.0	  libboost_program_options.so.1 	     libboost_wave.so.1.73
+libboost_atomic-mt.so.1.73.0	  libboost_log_setup.a			  libboost_program_options.so.1.73	     libboost_wave.so.1.73.0
+libboost_atomic.a		  libboost_log_setup.so 		  libboost_program_options.so.1.73.0	     libboost_wserialization-mt.a
+libboost_atomic.so		  libboost_log_setup.so.1		  libboost_random-mt.a			     libboost_wserialization-mt.so
+libboost_atomic.so.1		  libboost_log_setup.so.1.73		  libboost_random-mt.so 		     libboost_wserialization-mt.so.1
+libboost_atomic.so.1.73 	  libboost_log_setup.so.1.73.0		  libboost_random-mt.so.1		     libboost_wserialization-mt.so.1.73
+libboost_atomic.so.1.73.0	  libboost_math_c99-mt.a		  libboost_random-mt.so.1.73		     libboost_wserialization-mt.so.1.73.0
+libboost_chrono-mt.a		  libboost_math_c99-mt.so		  libboost_random-mt.so.1.73.0		     libboost_wserialization.a
+libboost_chrono-mt.so		  libboost_math_c99-mt.so.1		  libboost_random.a			     libboost_wserialization.so
+libboost_chrono-mt.so.1 	  libboost_math_c99-mt.so.1.73		  libboost_random.so			     libboost_wserialization.so.1
+libboost_chrono-mt.so.1.73	  libboost_math_c99-mt.so.1.73.0	  libboost_random.so.1			     libboost_wserialization.so.1.73
+libboost_chrono-mt.so.1.73.0	  libboost_math_c99.a			  libboost_random.so.1.73		     libboost_wserialization.so.1.73.0
+libboost_chrono.a		  libboost_math_c99.so			  libboost_random.so.1.73.0		     libmpi.a
+libboost_chrono.so		  libboost_math_c99.so.1		  libboost_regex-mt.a			     libmpi.la
+libboost_chrono.so.1		  libboost_math_c99.so.1.73		  libboost_regex-mt.so			     libmpi.so
+libboost_chrono.so.1.73 	  libboost_math_c99.so.1.73.0		  libboost_regex-mt.so.1		     libmpi.so.40
+libboost_chrono.so.1.73.0	  libboost_math_c99f-mt.a		  libboost_regex-mt.so.1.73		     libmpi.so.40.10.4
+libboost_date_time-mt.a 	  libboost_math_c99f-mt.so		  libboost_regex-mt.so.1.73.0		     libmpi_mpifh.a
+libboost_date_time-mt.so	  libboost_math_c99f-mt.so.1		  libboost_regex.a			     libmpi_mpifh.la
+libboost_date_time-mt.so.1	  libboost_math_c99f-mt.so.1.73 	  libboost_regex.so			     libmpi_mpifh.so
+libboost_date_time-mt.so.1.73	  libboost_math_c99f-mt.so.1.73.0	  libboost_regex.so.1			     libmpi_mpifh.so.40
+libboost_date_time-mt.so.1.73.0   libboost_math_c99f.a			  libboost_regex.so.1.73		     libmpi_mpifh.so.40.11.3
+libboost_date_time.a		  libboost_math_c99f.so 		  libboost_regex.so.1.73.0		     libmpi_usempi_ignore_tkr.a
+libboost_date_time.so		  libboost_math_c99f.so.1		  libboost_serialization-mt.a		     libmpi_usempi_ignore_tkr.la
+libboost_date_time.so.1 	  libboost_math_c99f.so.1.73		  libboost_serialization-mt.so		     libmpi_usempi_ignore_tkr.so
+libboost_date_time.so.1.73	  libboost_math_c99f.so.1.73.0		  libboost_serialization-mt.so.1	     libmpi_usempi_ignore_tkr.so.40
+libboost_date_time.so.1.73.0	  libboost_math_c99l-mt.a		  libboost_serialization-mt.so.1.73	     libmpi_usempi_ignore_tkr.so.40.10.2
+libboost_exception-mt.a 	  libboost_math_c99l-mt.so		  libboost_serialization-mt.so.1.73.0	     libmpi_usempif08.a
+libboost_exception.a		  libboost_math_c99l-mt.so.1		  libboost_serialization.a		     libmpi_usempif08.la
+libboost_filesystem-mt.a	  libboost_math_c99l-mt.so.1.73 	  libboost_serialization.so		     libmpi_usempif08.so
+libboost_filesystem-mt.so	  libboost_math_c99l-mt.so.1.73.0	  libboost_serialization.so.1		     libmpi_usempif08.so.40
+libboost_filesystem-mt.so.1	  libboost_math_c99l.a			  libboost_serialization.so.1.73	     libmpi_usempif08.so.40.10.3
+libboost_filesystem-mt.so.1.73	  libboost_math_c99l.so 		  libboost_serialization.so.1.73.0	     libompitrace.a
+libboost_filesystem-mt.so.1.73.0  libboost_math_c99l.so.1		  libboost_system-mt.a			     libompitrace.la
+libboost_filesystem.a		  libboost_math_c99l.so.1.73		  libboost_system-mt.so 		     libompitrace.so
+libboost_filesystem.so		  libboost_math_c99l.so.1.73.0		  libboost_system-mt.so.1		     libompitrace.so.40
+libboost_filesystem.so.1	  libboost_math_tr1-mt.a		  libboost_system-mt.so.1.73		     libompitrace.so.40.10.1
+libboost_filesystem.so.1.73	  libboost_math_tr1-mt.so		  libboost_system-mt.so.1.73.0		     libopen-pal.a
+libboost_filesystem.so.1.73.0	  libboost_math_tr1-mt.so.1		  libboost_system.a			     libopen-pal.la
+libboost_graph-mt.a		  libboost_math_tr1-mt.so.1.73		  libboost_system.so			     libopen-pal.so
+libboost_graph-mt.so		  libboost_math_tr1-mt.so.1.73.0	  libboost_system.so.1			     libopen-pal.so.40
+libboost_graph-mt.so.1		  libboost_math_tr1.a			  libboost_system.so.1.73		     libopen-pal.so.40.10.6
+libboost_graph-mt.so.1.73	  libboost_math_tr1.so			  libboost_system.so.1.73.0		     libopen-rte.a
+libboost_graph-mt.so.1.73.0	  libboost_math_tr1.so.1		  libboost_test_exec_monitor-mt.a	     libopen-rte.la
+libboost_graph.a		  libboost_math_tr1.so.1.73		  libboost_test_exec_monitor.a		     libopen-rte.so
+libboost_graph.so		  libboost_math_tr1.so.1.73.0		  libboost_thread-mt.a			     libopen-rte.so.40
+libboost_graph.so.1		  libboost_math_tr1f-mt.a		  libboost_thread-mt.so 		     libopen-rte.so.40.10.5
+libboost_graph.so.1.73		  libboost_math_tr1f-mt.so		  libboost_thread-mt.so.1		     liboshmem.a
+libboost_graph.so.1.73.0	  libboost_math_tr1f-mt.so.1		  libboost_thread-mt.so.1.73		     liboshmem.la
+libboost_iostreams-mt.a 	  libboost_math_tr1f-mt.so.1.73 	  libboost_thread-mt.so.1.73.0		     liboshmem.so
+libboost_iostreams-mt.so	  libboost_math_tr1f-mt.so.1.73.0	  libboost_thread.a			     liboshmem.so.40
+libboost_iostreams-mt.so.1	  libboost_math_tr1f.a			  libboost_thread.so			     liboshmem.so.40.10.2
+libboost_iostreams-mt.so.1.73	  libboost_math_tr1f.so 		  libboost_thread.so.1			     libtcl8.6.so
+libboost_iostreams-mt.so.1.73.0   libboost_math_tr1f.so.1		  libboost_thread.so.1.73		     libtclstub8.6.a
+libboost_iostreams.a		  libboost_math_tr1f.so.1.73		  libboost_thread.so.1.73.0		     mpi.mod
+libboost_iostreams.so		  libboost_math_tr1f.so.1.73.0		  libboost_timer-mt.a			     mpi_ext.mod
+libboost_iostreams.so.1 	  libboost_math_tr1l-mt.a		  libboost_timer-mt.so			     mpi_f08.mod
+libboost_iostreams.so.1.73	  libboost_math_tr1l-mt.so		  libboost_timer-mt.so.1		     mpi_f08_callbacks.mod
+libboost_iostreams.so.1.73.0	  libboost_math_tr1l-mt.so.1		  libboost_timer-mt.so.1.73		     mpi_f08_ext.mod
+libboost_locale-mt.a		  libboost_math_tr1l-mt.so.1.73 	  libboost_timer-mt.so.1.73.0		     mpi_f08_interfaces.mod
+libboost_locale-mt.so		  libboost_math_tr1l-mt.so.1.73.0	  libboost_timer.a			     mpi_f08_interfaces_callbacks.mod
+libboost_locale-mt.so.1 	  libboost_math_tr1l.a			  libboost_timer.so			     mpi_f08_types.mod
+libboost_locale-mt.so.1.73	  libboost_math_tr1l.so 		  libboost_timer.so.1			     openmpi
+libboost_locale-mt.so.1.73.0	  libboost_math_tr1l.so.1		  libboost_timer.so.1.73		     pkgconfig
+libboost_locale.a		  libboost_math_tr1l.so.1.73		  libboost_timer.so.1.73.0		     pmpi_f08_interfaces.mod
+libboost_locale.so		  libboost_math_tr1l.so.1.73.0		  libboost_unit_test_framework-mt.a	     sqlite3.21.0
+libboost_locale.so.1		  libboost_prg_exec_monitor-mt.a	  libboost_unit_test_framework-mt.so	     tcl8
+libboost_locale.so.1.73 	  libboost_prg_exec_monitor-mt.so	  libboost_unit_test_framework-mt.so.1	     tcl8.6
+libboost_locale.so.1.73.0	  libboost_prg_exec_monitor-mt.so.1	  libboost_unit_test_framework-mt.so.1.73    tclConfig.sh
+libboost_log-mt.a		  libboost_prg_exec_monitor-mt.so.1.73	  libboost_unit_test_framework-mt.so.1.73.0  tclConfig.sh~
+libboost_log-mt.so		  libboost_prg_exec_monitor-mt.so.1.73.0  libboost_unit_test_framework.a	     tclooConfig.sh
+libboost_log-mt.so.1		  libboost_prg_exec_monitor.a		  libboost_unit_test_framework.so	     tdbc1.0.6
+libboost_log-mt.so.1.73 	  libboost_prg_exec_monitor.so		  libboost_unit_test_framework.so.1	     tdbcmysql1.0.6
+libboost_log-mt.so.1.73.0	  libboost_prg_exec_monitor.so.1	  libboost_unit_test_framework.so.1.73	     tdbcodbc1.0.6
+libboost_log.a			  libboost_prg_exec_monitor.so.1.73	  libboost_unit_test_framework.so.1.73.0     tdbcpostgres1.0.6
+libboost_log.so 		  libboost_prg_exec_monitor.so.1.73.0	  libboost_wave-mt.a			     thread2.8.2
+libboost_log.so.1		  libboost_program_options-mt.a 	  libboost_wave-mt.so
+libboost_log.so.1.73		  libboost_program_options-mt.so	  libboost_wave-mt.so.1
 $ ls views/full
 boost  bzip2  gdbm  glm  hwloc	libiconv  libpciaccess	libxml2  metis	ncurses  numactl  openblas  openmpi  openssl  readline	suite-sparse  tcl  xz  zlib
