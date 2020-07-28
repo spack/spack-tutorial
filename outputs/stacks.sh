@@ -54,4 +54,5 @@ cat $project/stacks/examples/6.spack.yaml.example > spack.yaml
 
 example stacks/view-1       "spack concretize"
 example stacks/view-1       "ls views/default"
+example stacks/view-1       "ls views/default/lib"
 example stacks/view-1       "ls views/full"

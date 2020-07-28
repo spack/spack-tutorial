@@ -104,7 +104,8 @@ EOF
 example environments/use-mpi-1       "mpicc ./mpi-hello.c"
 example environments/use-mpi-1       "mpirun -n 4 ./a.out"
 
-example environments/filenames-1     "spack cd -e myproject"
+example -tee environments/filenames-1     "spack cd -e myproject"
+spack cd -e myproject
 example environments/filenames-1     "pwd"
 example environments/filenames-1     "ls"
 
