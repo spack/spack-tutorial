@@ -19,6 +19,9 @@ example() {
         cmd="spack env deactivate"
     fi
 
+    # print command to stdout to help debugging
+    echo "$cmd"
+
     # get the command's output
     $cmd | tee -a "$filename"
 }
