@@ -1,5 +1,5 @@
-$ spack mirror add tutorial /mirror
-$ spack gpg trust /mirror/public.key
+$ spack mirror add tutorial s3://spack-tutorial-container/mirror/
+$ spack gpg trust share/spack/keys/tutorial.pub
 gpg: keybox '/home/spack/spack/opt/spack/gpg/pubring.kbx' created
 gpg: /home/spack/spack/opt/spack/gpg/trustdb.gpg: trustdb created
 gpg: key 95F8681195E239D8: public key "Spack Build Pipeline (Demo Key) <key@spack.demo>" imported
