@@ -209,7 +209,7 @@ Adding specs
 
 While we're still in ``myproject``, let's *add* a few specs instead of installing them:
 
-.. literalinclude:: outputs/environments/env-add-1.out
+.. literalinclude:: outputs/environments/add-1.out
    :language: console
 
 Let's take a close look at what happened.  The two requirements we added,
