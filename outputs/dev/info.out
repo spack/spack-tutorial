@@ -1,0 +1,91 @@
+$ spack info hwloc
+AutotoolsPackage:   hwloc
+
+Description:
+    The Hardware Locality (hwloc) software project. The Portable Hardware
+    Locality (hwloc) software package provides a portable abstraction
+    (across OS, versions, architectures, ...) of the hierarchical topology
+    of modern architectures, including NUMA memory nodes, sockets, shared
+    caches, cores and simultaneous multithreading. It also gathers various
+    system attributes such as cache and memory information as well as the
+    locality of I/O devices such as network interfaces, InfiniBand HCAs or
+    GPUs. It primarily aims at helping applications with gathering
+    information about modern computing hardware so as to exploit it
+    accordingly and efficiently.
+
+Homepage: http://www.open-mpi.org/projects/hwloc/
+
+Maintainers: @bgoglin
+
+Tags: 
+    None
+
+Preferred version:  
+    2.2.0      http://www.open-mpi.org/software/hwloc/v2.2/downloads/hwloc-2.2.0.tar.gz
+
+Safe versions:  
+    master     [git] https://github.com/open-mpi/hwloc.git on branch master
+    2.2.0      http://www.open-mpi.org/software/hwloc/v2.2/downloads/hwloc-2.2.0.tar.gz
+    2.1.0      http://www.open-mpi.org/software/hwloc/v2.1/downloads/hwloc-2.1.0.tar.gz
+    2.0.2      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.2.tar.gz
+    2.0.1      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.1.tar.gz
+    2.0.0      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.0.tar.gz
+    1.11.11    http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.11.tar.gz
+    1.11.10    http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.10.tar.gz
+    1.11.9     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.9.tar.gz
+    1.11.8     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.8.tar.gz
+    1.11.7     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.7.tar.gz
+    1.11.6     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.6.tar.gz
+    1.11.5     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.5.tar.gz
+    1.11.4     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.4.tar.gz
+    1.11.3     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.3.tar.gz
+    1.11.2     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.2.tar.gz
+    1.11.1     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.1.tar.gz
+    1.9        http://www.open-mpi.org/software/hwloc/v1.9/downloads/hwloc-1.9.tar.gz
+
+Variants:
+    Name [Default]    Allowed values    Description
+    ==============    ==============    ===================================================
+
+    cairo [off]       on, off           Enable the Cairo back-end of hwloc's lstopo command
+    cuda [off]        on, off           Support CUDA devices
+    gl [off]          on, off           Support GL device discovery
+    libudev [off]     on, off           Build with libudev
+    libxml2 [on]      on, off           Build with libxml2
+    netloc [off]      on, off           Enable netloc [requires MPI]
+    nvml [off]        on, off           Support NVML device discovery
+    pci [on]          on, off           Support analyzing devices on PCI bus
+    shared [on]       on, off           Build shared libraries
+
+Installation Phases:
+    autoreconf    configure    build    install
+
+Build Dependencies:
+    autoconf
+    automake
+    cairo
+    cuda
+    gl
+    libpciaccess
+    libtool
+    libxml2
+    m4
+    mpi
+    numactl
+    pkgconfig
+
+Link Dependencies:
+    cairo
+    cuda
+    gl
+    libpciaccess
+    libxml2
+    mpi
+    numactl
+
+Run Dependencies:
+    None
+
+Virtual Packages: 
+    None
+

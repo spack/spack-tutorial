@@ -1,7 +1,9 @@
 .PHONY: all replay
 
 raw_output = raw/*/*.out
-subdirs = basics packaging
+
+subdirs = basics packaging dev
+
 
 
 all:
