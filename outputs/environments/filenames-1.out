@@ -3,10 +3,10 @@ $ spack cd -e myproject
 
   To initialize spack's shell commands:
 
-      # for bash and zsh
+        for bash and zsh
       . /home/spack/spack/share/spack/setup-env.sh
 
-      # for csh and tcsh
+        for csh and tcsh
       setenv SPACK_ROOT /home/spack/spack
       source /home/spack/spack/share/spack/setup-env.csh
 

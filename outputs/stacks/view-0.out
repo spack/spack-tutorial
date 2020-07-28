@@ -1,0 +1,143 @@
+$ spack concretize
+==> Updating view at views/default
+==> Updating view at views/full
+$ ls views/default
+bin  etc  include  lib	man  sbin  share
+$ ls views/default/lib
+cmake				  libboost_math_tr1-mt.so		     libboost_wave.so.1.73		   libncurses++.so.6.2
+engines-1.1			  libboost_math_tr1-mt.so.1		     libboost_wave.so.1.73.0		   libncurses++_g.a
+itcl4.1.1			  libboost_math_tr1-mt.so.1.73		     libboost_wserialization-mt.a	   libncurses++w.a
+libamd.so			  libboost_math_tr1-mt.so.1.73.0	     libboost_wserialization-mt.so	   libncurses++w.so
+libamd.so.2			  libboost_math_tr1.a			     libboost_wserialization-mt.so.1	   libncurses++w.so.6
+libamd.so.2.4.6 		  libboost_math_tr1.so			     libboost_wserialization-mt.so.1.73    libncurses++w.so.6.2
+libboost_atomic-mt.a		  libboost_math_tr1.so.1		     libboost_wserialization-mt.so.1.73.0  libncurses++w_g.a
+libboost_atomic-mt.so		  libboost_math_tr1.so.1.73		     libboost_wserialization.a		   libncurses.a
+libboost_atomic-mt.so.1 	  libboost_math_tr1.so.1.73.0		     libboost_wserialization.so 	   libncurses.so
+libboost_atomic-mt.so.1.73	  libboost_math_tr1f-mt.a		     libboost_wserialization.so.1	   libncurses.so.6
+libboost_atomic-mt.so.1.73.0	  libboost_math_tr1f-mt.so		     libboost_wserialization.so.1.73	   libncurses.so.6.2
+libboost_atomic.a		  libboost_math_tr1f-mt.so.1		     libboost_wserialization.so.1.73.0	   libncurses_g.a
+libboost_atomic.so		  libboost_math_tr1f-mt.so.1.73 	     libbtf.so				   libncursesw.a
+libboost_atomic.so.1		  libboost_math_tr1f-mt.so.1.73.0	     libbtf.so.1			   libncursesw.so
+libboost_atomic.so.1.73 	  libboost_math_tr1f.a			     libbtf.so.1.2.6			   libncursesw.so.6
+libboost_atomic.so.1.73.0	  libboost_math_tr1f.so 		     libbz2.a				   libncursesw.so.6.2
+libboost_chrono-mt.a		  libboost_math_tr1f.so.1		     libbz2.so				   libncursesw_g.a
+libboost_chrono-mt.so		  libboost_math_tr1f.so.1.73		     libbz2.so.1			   libnuma.a
+libboost_chrono-mt.so.1 	  libboost_math_tr1f.so.1.73.0		     libbz2.so.1.0			   libnuma.la
+libboost_chrono-mt.so.1.73	  libboost_math_tr1l-mt.a		     libbz2.so.1.0.8			   libnuma.so
+libboost_chrono-mt.so.1.73.0	  libboost_math_tr1l-mt.so		     libcamd.so 			   libnuma.so.1
+libboost_chrono.a		  libboost_math_tr1l-mt.so.1		     libcamd.so.2			   libnuma.so.1.0.0
+libboost_chrono.so		  libboost_math_tr1l-mt.so.1.73 	     libcamd.so.2.4.6			   libompitrace.a
+libboost_chrono.so.1		  libboost_math_tr1l-mt.so.1.73.0	     libccolamd.so			   libompitrace.la
+libboost_chrono.so.1.73 	  libboost_math_tr1l.a			     libccolamd.so.2			   libompitrace.so
+libboost_chrono.so.1.73.0	  libboost_math_tr1l.so 		     libccolamd.so.2.9.6		   libompitrace.so.40
+libboost_date_time-mt.a 	  libboost_math_tr1l.so.1		     libcharset.a			   libompitrace.so.40.10.1
+libboost_date_time-mt.so	  libboost_math_tr1l.so.1.73		     libcharset.la			   libopen-pal.a
+libboost_date_time-mt.so.1	  libboost_math_tr1l.so.1.73.0		     libcharset.so			   libopen-pal.la
+libboost_date_time-mt.so.1.73	  libboost_prg_exec_monitor-mt.a	     libcharset.so.1			   libopen-pal.so
+libboost_date_time-mt.so.1.73.0   libboost_prg_exec_monitor-mt.so	     libcharset.so.1.0.0		   libopen-pal.so.40
+libboost_date_time.a		  libboost_prg_exec_monitor-mt.so.1	     libcholmod.so			   libopen-pal.so.40.10.6
+libboost_date_time.so		  libboost_prg_exec_monitor-mt.so.1.73	     libcholmod.so.3			   libopen-rte.a
+libboost_date_time.so.1 	  libboost_prg_exec_monitor-mt.so.1.73.0     libcholmod.so.3.0.14		   libopen-rte.la
+libboost_date_time.so.1.73	  libboost_prg_exec_monitor.a		     libcolamd.so			   libopen-rte.so
+libboost_date_time.so.1.73.0	  libboost_prg_exec_monitor.so		     libcolamd.so.2			   libopen-rte.so.40
+libboost_exception-mt.a 	  libboost_prg_exec_monitor.so.1	     libcolamd.so.2.9.6 		   libopen-rte.so.40.10.5
+libboost_exception.a		  libboost_prg_exec_monitor.so.1.73	     libcrypto.a			   libopenblas-r0.3.10.a
+libboost_filesystem-mt.a	  libboost_prg_exec_monitor.so.1.73.0	     libcrypto.so			   libopenblas-r0.3.10.so
+libboost_filesystem-mt.so	  libboost_program_options-mt.a 	     libcrypto.so.1.1			   libopenblas.a
+libboost_filesystem-mt.so.1	  libboost_program_options-mt.so	     libcurses.a			   libopenblas.so
+libboost_filesystem-mt.so.1.73	  libboost_program_options-mt.so.1	     libcurses.so			   libopenblas.so.0
+libboost_filesystem-mt.so.1.73.0  libboost_program_options-mt.so.1.73	     libcxsparse.so			   liboshmem.a
+libboost_filesystem.a		  libboost_program_options-mt.so.1.73.0      libcxsparse.so.3			   liboshmem.la
+libboost_filesystem.so		  libboost_program_options.a		     libcxsparse.so.3.2.0		   liboshmem.so
+libboost_filesystem.so.1	  libboost_program_options.so		     libform.a				   liboshmem.so.40
+libboost_filesystem.so.1.73	  libboost_program_options.so.1 	     libform.so 			   liboshmem.so.40.10.2
+libboost_filesystem.so.1.73.0	  libboost_program_options.so.1.73	     libform.so.6			   libpanel.a
+libboost_graph-mt.a		  libboost_program_options.so.1.73.0	     libform.so.6.2			   libpanel.so
+libboost_graph-mt.so		  libboost_random-mt.a			     libform_g.a			   libpanel.so.6
+libboost_graph-mt.so.1		  libboost_random-mt.so 		     libformw.a 			   libpanel.so.6.2
+libboost_graph-mt.so.1.73	  libboost_random-mt.so.1		     libformw.so			   libpanel_g.a
+libboost_graph-mt.so.1.73.0	  libboost_random-mt.so.1.73		     libformw.so.6			   libpanelw.a
+libboost_graph.a		  libboost_random-mt.so.1.73.0		     libformw.so.6.2			   libpanelw.so
+libboost_graph.so		  libboost_random.a			     libformw_g.a			   libpanelw.so.6
+libboost_graph.so.1		  libboost_random.so			     libgdbm.a				   libpanelw.so.6.2
+libboost_graph.so.1.73		  libboost_random.so.1			     libgdbm.la 			   libpanelw_g.a
+libboost_graph.so.1.73.0	  libboost_random.so.1.73		     libgdbm.so 			   libpciaccess.a
+libboost_iostreams-mt.a 	  libboost_random.so.1.73.0		     libgdbm.so.6			   libpciaccess.la
+libboost_iostreams-mt.so	  libboost_regex-mt.a			     libgdbm.so.6.0.0			   libpciaccess.so
+libboost_iostreams-mt.so.1	  libboost_regex-mt.so			     libgdbm_compat.a			   libpciaccess.so.0
+libboost_iostreams-mt.so.1.73	  libboost_regex-mt.so.1		     libgdbm_compat.la			   libpciaccess.so.0.11.1
+libboost_iostreams-mt.so.1.73.0   libboost_regex-mt.so.1.73		     libgdbm_compat.so			   librbio.so
+libboost_iostreams.a		  libboost_regex-mt.so.1.73.0		     libgdbm_compat.so.4		   librbio.so.2
+libboost_iostreams.so		  libboost_regex.a			     libgdbm_compat.so.4.0.0		   librbio.so.2.2.6
+libboost_iostreams.so.1 	  libboost_regex.so			     libgraphblas.so			   libreadline.a
+libboost_iostreams.so.1.73	  libboost_regex.so.1			     libgraphblas.so.3			   libreadline.so
+libboost_iostreams.so.1.73.0	  libboost_regex.so.1.73		     libgraphblas.so.3.2.2		   libreadline.so.8
+libboost_locale-mt.a		  libboost_regex.so.1.73.0		     libhistory.a			   libreadline.so.8.0
+libboost_locale-mt.so		  libboost_serialization-mt.a		     libhistory.so			   libspqr.so
+libboost_locale-mt.so.1 	  libboost_serialization-mt.so		     libhistory.so.8			   libspqr.so.2
+libboost_locale-mt.so.1.73	  libboost_serialization-mt.so.1	     libhistory.so.8.0			   libspqr.so.2.0.9
+libboost_locale-mt.so.1.73.0	  libboost_serialization-mt.so.1.73	     libhwloc.la			   libssl.a
+libboost_locale.a		  libboost_serialization-mt.so.1.73.0	     libhwloc.so			   libssl.so
+libboost_locale.so		  libboost_serialization.a		     libhwloc.so.5			   libssl.so.1.1
+libboost_locale.so.1		  libboost_serialization.so		     libhwloc.so.5.7.8			   libsuitesparseconfig.so
+libboost_locale.so.1.73 	  libboost_serialization.so.1		     libiconv.la			   libsuitesparseconfig.so.5
+libboost_locale.so.1.73.0	  libboost_serialization.so.1.73	     libiconv.so			   libsuitesparseconfig.so.5.7.2
+libboost_log-mt.a		  libboost_serialization.so.1.73.0	     libiconv.so.2			   libtcl8.6.so
+libboost_log-mt.so		  libboost_system-mt.a			     libiconv.so.2.6.1			   libtclstub8.6.a
+libboost_log-mt.so.1		  libboost_system-mt.so 		     libklu.so				   libtinfo.a
+libboost_log-mt.so.1.73 	  libboost_system-mt.so.1		     libklu.so.1			   libtinfo.so
+libboost_log-mt.so.1.73.0	  libboost_system-mt.so.1.73		     libklu.so.1.3.8			   libtinfo.so.6
+libboost_log.a			  libboost_system-mt.so.1.73.0		     libldl.so				   libtinfo.so.6.2
+libboost_log.so 		  libboost_system.a			     libldl.so.2			   libtinfo_g.a
+libboost_log.so.1		  libboost_system.so			     libldl.so.2.2.6			   libtinfow.a
+libboost_log.so.1.73		  libboost_system.so.1			     liblzma.a				   libtinfow.so
+libboost_log.so.1.73.0		  libboost_system.so.1.73		     liblzma.la 			   libtinfow.so.6
+libboost_log_setup-mt.a 	  libboost_system.so.1.73.0		     liblzma.so 			   libtinfow.so.6.2
+libboost_log_setup-mt.so	  libboost_test_exec_monitor-mt.a	     liblzma.so.5			   libtinfow_g.a
+libboost_log_setup-mt.so.1	  libboost_test_exec_monitor.a		     liblzma.so.5.2.5			   libumfpack.so
+libboost_log_setup-mt.so.1.73	  libboost_thread-mt.a			     libmenu.a				   libumfpack.so.5
+libboost_log_setup-mt.so.1.73.0   libboost_thread-mt.so 		     libmenu.so 			   libumfpack.so.5.7.9
+libboost_log_setup.a		  libboost_thread-mt.so.1		     libmenu.so.6			   libxml2.a
+libboost_log_setup.so		  libboost_thread-mt.so.1.73		     libmenu.so.6.2			   libxml2.la
+libboost_log_setup.so.1 	  libboost_thread-mt.so.1.73.0		     libmenu_g.a			   libxml2.so
+libboost_log_setup.so.1.73	  libboost_thread.a			     libmenuw.a 			   libxml2.so.2
+libboost_log_setup.so.1.73.0	  libboost_thread.so			     libmenuw.so			   libxml2.so.2.9.10
+libboost_math_c99-mt.a		  libboost_thread.so.1			     libmenuw.so.6			   libz.a
+libboost_math_c99-mt.so 	  libboost_thread.so.1.73		     libmenuw.so.6.2			   libz.so
+libboost_math_c99-mt.so.1	  libboost_thread.so.1.73.0		     libmenuw_g.a			   libz.so.1
+libboost_math_c99-mt.so.1.73	  libboost_timer-mt.a			     libmetis.so			   libz.so.1.2.11
+libboost_math_c99-mt.so.1.73.0	  libboost_timer-mt.so			     libmongoose.a			   mpi.mod
+libboost_math_c99.a		  libboost_timer-mt.so.1		     libmongoose.so			   mpi_ext.mod
+libboost_math_c99.so		  libboost_timer-mt.so.1.73		     libmongoose.so.2			   mpi_f08.mod
+libboost_math_c99.so.1		  libboost_timer-mt.so.1.73.0		     libmongoose.so.2.0.4		   mpi_f08_callbacks.mod
+libboost_math_c99.so.1.73	  libboost_timer.a			     libmpi.a				   mpi_f08_ext.mod
+libboost_math_c99.so.1.73.0	  libboost_timer.so			     libmpi.la				   mpi_f08_interfaces.mod
+libboost_math_c99f-mt.a 	  libboost_timer.so.1			     libmpi.so				   mpi_f08_interfaces_callbacks.mod
+libboost_math_c99f-mt.so	  libboost_timer.so.1.73		     libmpi.so.40			   mpi_f08_types.mod
+libboost_math_c99f-mt.so.1	  libboost_timer.so.1.73.0		     libmpi.so.40.10.4			   openmpi
+libboost_math_c99f-mt.so.1.73	  libboost_unit_test_framework-mt.a	     libmpi_mpifh.a			   pkgconfig
+libboost_math_c99f-mt.so.1.73.0   libboost_unit_test_framework-mt.so	     libmpi_mpifh.la			   pmpi_f08_interfaces.mod
+libboost_math_c99f.a		  libboost_unit_test_framework-mt.so.1	     libmpi_mpifh.so			   sqlite3.21.0
+libboost_math_c99f.so		  libboost_unit_test_framework-mt.so.1.73    libmpi_mpifh.so.40 		   tcl8
+libboost_math_c99f.so.1 	  libboost_unit_test_framework-mt.so.1.73.0  libmpi_mpifh.so.40.11.3		   tcl8.6
+libboost_math_c99f.so.1.73	  libboost_unit_test_framework.a	     libmpi_usempi_ignore_tkr.a 	   tclConfig.sh
+libboost_math_c99f.so.1.73.0	  libboost_unit_test_framework.so	     libmpi_usempi_ignore_tkr.la	   tclConfig.sh~
+libboost_math_c99l-mt.a 	  libboost_unit_test_framework.so.1	     libmpi_usempi_ignore_tkr.so	   tclooConfig.sh
+libboost_math_c99l-mt.so	  libboost_unit_test_framework.so.1.73	     libmpi_usempi_ignore_tkr.so.40	   tdbc1.0.6
+libboost_math_c99l-mt.so.1	  libboost_unit_test_framework.so.1.73.0     libmpi_usempi_ignore_tkr.so.40.10.2   tdbcmysql1.0.6
+libboost_math_c99l-mt.so.1.73	  libboost_wave-mt.a			     libmpi_usempif08.a 		   tdbcodbc1.0.6
+libboost_math_c99l-mt.so.1.73.0   libboost_wave-mt.so			     libmpi_usempif08.la		   tdbcpostgres1.0.6
+libboost_math_c99l.a		  libboost_wave-mt.so.1 		     libmpi_usempif08.so		   terminfo
+libboost_math_c99l.so		  libboost_wave-mt.so.1.73		     libmpi_usempif08.so.40		   thread2.8.2
+libboost_math_c99l.so.1 	  libboost_wave-mt.so.1.73.0		     libmpi_usempif08.so.40.10.3	   x86_64-linux-gnu
+libboost_math_c99l.so.1.73	  libboost_wave.a			     libncurses++.a			   xml2Conf.sh
+libboost_math_c99l.so.1.73.0	  libboost_wave.so			     libncurses++.so
+libboost_math_tr1-mt.a		  libboost_wave.so.1			     libncurses++.so.6
+$ ls views/full
+boost  bzip2  gdbm  glm  hwloc	libiconv  libpciaccess	libxml2  metis	ncurses  numactl  openblas  openmpi  openssl  readline	suite-sparse  tcl  xz  zlib
+$ ls views/full/zlib
+zlib-1.2.11-gcc-7.5.0
+$ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0
+include  lib  share
+$ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib
+libz.a	libz.so  libz.so.1  libz.so.1.2.11  pkgconfig
