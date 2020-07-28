@@ -25,7 +25,7 @@ spack:
     default:
       root: views/default
       select: ['%gcc']
-      exclude: [^mvapich2]
+      exclude: [^mvapich2, 'hwloc@:1.99']
     full:
       root: views/full
       projections:

@@ -183,7 +183,7 @@ all packages, including implicit dependencies, into the view. The
 
 .. literalinclude:: outputs/stacks/examples/6.spack.yaml.example
    :language: yaml
-   :emphasize-lines: 29
+   :emphasize-lines: 28-29
 
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
