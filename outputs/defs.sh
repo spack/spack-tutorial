@@ -24,6 +24,8 @@ example() {
     $cmd | tee -a "$filename"
 }
 
+# This allows us to echo a different command than we run
+# Used to stay out of the build environment subshell
 fake_example(){
     filename="$raw_outputs/$1.out"
     shift
