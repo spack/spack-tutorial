@@ -1,0 +1,142 @@
+$ $EDITOR hwloc/base64.c
+$ make
+Making all in include
+make[1]: Entering directory '/home/spack/hwloc/include'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/include'
+Making all in hwloc
+make[1]: Entering directory '/home/spack/hwloc/hwloc'
+  CC       base64.lo
+  CCLD     libhwloc.la
+make[1]: Leaving directory '/home/spack/hwloc/hwloc'
+Making all in netloc
+make[1]: Entering directory '/home/spack/hwloc/netloc'
+  CCLD     libnetloc.la
+make[1]: Leaving directory '/home/spack/hwloc/netloc'
+Making all in utils
+make[1]: Entering directory '/home/spack/hwloc/utils'
+Making all in hwloc
+make[2]: Entering directory '/home/spack/hwloc/utils/hwloc'
+Making all in .
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc'
+  CCLD     hwloc-annotate
+  CCLD     hwloc-bind
+  CCLD     hwloc-calc
+  CCLD     hwloc-diff
+  CCLD     hwloc-distrib
+  CCLD     hwloc-info
+  CCLD     hwloc-patch
+  CCLD     libutils_common.la
+  CCLD     hwloc-ps
+  CCLD     hwloc-gather-cpuid
+  CCLD     hwloc-dump-hwdata
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making all in test-hwloc-dump-hwdata
+make[3]: Entering directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
+make[2]: Leaving directory '/home/spack/hwloc/utils/hwloc'
+Making all in lstopo
+make[2]: Entering directory '/home/spack/hwloc/utils/lstopo'
+  CCLD     lstopo-no-graphics
+make[2]: Leaving directory '/home/spack/hwloc/utils/lstopo'
+Making all in netloc/infiniband
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
+  CCLD     netloc_ib_extract_dats
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
+Making all in netloc/draw
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/draw'
+  CCLD     netloc_draw_to_json
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/draw'
+Making all in netloc/mpi
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/mpi'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/mpi'
+Making all in netloc/scotch
+make[2]: Entering directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/scotch'
+make[2]: Entering directory '/home/spack/hwloc/utils'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/spack/hwloc/utils'
+make[1]: Leaving directory '/home/spack/hwloc/utils'
+Making all in tests
+make[1]: Entering directory '/home/spack/hwloc/tests'
+Making all in hwloc
+make[2]: Entering directory '/home/spack/hwloc/tests/hwloc'
+Making all in .
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making all in ports
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/ports'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/ports'
+Making all in xml
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/xml'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/xml'
+Making all in linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in .
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux'
+make[4]: Nothing to be done for 'all-am'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in allowed
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/allowed'
+Making all in gather
+make[4]: Entering directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[4]: Nothing to be done for 'all'.
+make[4]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux/gather'
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/linux'
+Making all in x86
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86'
+Making all in x86+linux
+make[3]: Entering directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/tests/hwloc/x86+linux'
+make[2]: Leaving directory '/home/spack/hwloc/tests/hwloc'
+Making all in netloc
+make[2]: Entering directory '/home/spack/hwloc/tests/netloc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/spack/hwloc/tests/netloc'
+make[2]: Entering directory '/home/spack/hwloc/tests'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/home/spack/hwloc/tests'
+make[1]: Leaving directory '/home/spack/hwloc/tests'
+Making all in contrib/systemd
+make[1]: Entering directory '/home/spack/hwloc/contrib/systemd'
+Creating hwloc-dump-hwdata.service...
+make[1]: Leaving directory '/home/spack/hwloc/contrib/systemd'
+Making all in contrib/completion
+make[1]: Entering directory '/home/spack/hwloc/contrib/completion'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/completion'
+Making all in contrib/misc
+make[1]: Entering directory '/home/spack/hwloc/contrib/misc'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/misc'
+Making all in contrib/hwloc-ps.www
+make[1]: Entering directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/contrib/hwloc-ps.www'
+Making all in doc
+make[1]: Entering directory '/home/spack/hwloc/doc'
+make  all-recursive
+make[2]: Entering directory '/home/spack/hwloc/doc'
+Making all in examples
+make[3]: Entering directory '/home/spack/hwloc/doc/examples'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/spack/hwloc/doc/examples'
+make[3]: Entering directory '/home/spack/hwloc/doc'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/spack/hwloc/doc'
+make[2]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Leaving directory '/home/spack/hwloc/doc'
+make[1]: Entering directory '/home/spack/hwloc'
+make[1]: Nothing to be done for 'all-am'.
+make[1]: Leaving directory '/home/spack/hwloc'
