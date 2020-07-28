@@ -27,7 +27,7 @@ $ spack dev-build --until configure --drop-in bash hwloc@master
 ==> No binary for hwloc found: installing from source
 ==> hwloc: Executing phase: 'autoreconf'
 ==> hwloc: Executing phase: 'configure'
-==> [2020-07-28-01:55:45.284993] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p' '--disable-opencl' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--disable-libudev' '--enable-pci' '--enable-shared'
+==> [2020-07-28-09:52:32.411527] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p' '--disable-opencl' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--disable-libudev' '--enable-pci' '--enable-shared'
 
  ##
  ## Configuring hwloc distribution tarball
@@ -481,9 +481,9 @@ config.status: executing chmoding-scripts commands
 Hwloc optional build support status (more details can be found above):
 
 Probe / display I/O devices: PCI(pciaccess+linux) LinuxIO
-Graphical output:            no
-XML input / output:          full
-Netloc functionality:        yes (without scotch)
-Plugin support:              no
+Graphical output:	     no
+XML input / output:	     full
+Netloc functionality:	     yes (without scotch)
+Plugin support: 	     no
 -----------------------------------------------------------------------------
 

@@ -17,13 +17,13 @@ Homepage: http://www.open-mpi.org/projects/hwloc/
 
 Maintainers: @bgoglin
 
-Tags: 
+Tags:
     None
 
-Preferred version:  
+Preferred version:
     2.2.0      http://www.open-mpi.org/software/hwloc/v2.2/downloads/hwloc-2.2.0.tar.gz
 
-Safe versions:  
+Safe versions:
     master     [git] https://github.com/open-mpi/hwloc.git on branch master
     2.2.0      http://www.open-mpi.org/software/hwloc/v2.2/downloads/hwloc-2.2.0.tar.gz
     2.1.0      http://www.open-mpi.org/software/hwloc/v2.1/downloads/hwloc-2.1.0.tar.gz
@@ -44,48 +44,31 @@ Safe versions:
     1.9        http://www.open-mpi.org/software/hwloc/v1.9/downloads/hwloc-1.9.tar.gz
 
 Variants:
-    Name [Default]    Allowed values    Description
-    ==============    ==============    ===================================================
+    Name [Default]    Allowed values	Description
+    ==============    ==============	===================================================
 
-    cairo [off]       on, off           Enable the Cairo back-end of hwloc's lstopo command
-    cuda [off]        on, off           Support CUDA devices
-    gl [off]          on, off           Support GL device discovery
-    libudev [off]     on, off           Build with libudev
-    libxml2 [on]      on, off           Build with libxml2
-    netloc [off]      on, off           Enable netloc [requires MPI]
-    nvml [off]        on, off           Support NVML device discovery
-    pci [on]          on, off           Support analyzing devices on PCI bus
-    shared [on]       on, off           Build shared libraries
+    cairo [off]       on, off		Enable the Cairo back-end of hwloc's lstopo command
+    cuda [off]	      on, off		Support CUDA devices
+    gl [off]	      on, off		Support GL device discovery
+    libudev [off]     on, off		Build with libudev
+    libxml2 [on]      on, off		Build with libxml2
+    netloc [off]      on, off		Enable netloc [requires MPI]
+    nvml [off]	      on, off		Support NVML device discovery
+    pci [on]	      on, off		Support analyzing devices on PCI bus
+    shared [on]       on, off		Build shared libraries
 
 Installation Phases:
-    autoreconf    configure    build    install
+    autoreconf	  configure    build	install
 
 Build Dependencies:
-    autoconf
-    automake
-    cairo
-    cuda
-    gl
-    libpciaccess
-    libtool
-    libxml2
-    m4
-    mpi
-    numactl
-    pkgconfig
+    autoconf  automake	cairo  cuda  gl  libpciaccess  libtool	libxml2  m4  mpi  numactl  pkgconfig
 
 Link Dependencies:
-    cairo
-    cuda
-    gl
-    libpciaccess
-    libxml2
-    mpi
-    numactl
+    cairo  cuda  gl  libpciaccess  libxml2  mpi  numactl
 
 Run Dependencies:
     None
 
-Virtual Packages: 
+Virtual Packages:
     None
 

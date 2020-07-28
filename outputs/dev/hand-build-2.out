@@ -6,12 +6,12 @@ make[1]: Nothing to be done for 'all'.
 make[1]: Leaving directory '/home/spack/hwloc/include'
 Making all in hwloc
 make[1]: Entering directory '/home/spack/hwloc/hwloc'
-  CC       base64.lo
-  CCLD     libhwloc.la
+  CC	   base64.lo
+  CCLD	   libhwloc.la
 make[1]: Leaving directory '/home/spack/hwloc/hwloc'
 Making all in netloc
 make[1]: Entering directory '/home/spack/hwloc/netloc'
-  CCLD     libnetloc.la
+  CCLD	   libnetloc.la
 make[1]: Leaving directory '/home/spack/hwloc/netloc'
 Making all in utils
 make[1]: Entering directory '/home/spack/hwloc/utils'
@@ -19,17 +19,17 @@ Making all in hwloc
 make[2]: Entering directory '/home/spack/hwloc/utils/hwloc'
 Making all in .
 make[3]: Entering directory '/home/spack/hwloc/utils/hwloc'
-  CCLD     hwloc-annotate
-  CCLD     hwloc-bind
-  CCLD     hwloc-calc
-  CCLD     hwloc-diff
-  CCLD     hwloc-distrib
-  CCLD     hwloc-info
-  CCLD     hwloc-patch
-  CCLD     libutils_common.la
-  CCLD     hwloc-ps
-  CCLD     hwloc-gather-cpuid
-  CCLD     hwloc-dump-hwdata
+  CCLD	   hwloc-annotate
+  CCLD	   hwloc-bind
+  CCLD	   hwloc-calc
+  CCLD	   hwloc-diff
+  CCLD	   hwloc-distrib
+  CCLD	   hwloc-info
+  CCLD	   hwloc-patch
+  CCLD	   libutils_common.la
+  CCLD	   hwloc-ps
+  CCLD	   hwloc-gather-cpuid
+  CCLD	   hwloc-dump-hwdata
 make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc'
 Making all in test-hwloc-dump-hwdata
 make[3]: Entering directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata'
@@ -38,15 +38,15 @@ make[3]: Leaving directory '/home/spack/hwloc/utils/hwloc/test-hwloc-dump-hwdata
 make[2]: Leaving directory '/home/spack/hwloc/utils/hwloc'
 Making all in lstopo
 make[2]: Entering directory '/home/spack/hwloc/utils/lstopo'
-  CCLD     lstopo-no-graphics
+  CCLD	   lstopo-no-graphics
 make[2]: Leaving directory '/home/spack/hwloc/utils/lstopo'
 Making all in netloc/infiniband
 make[2]: Entering directory '/home/spack/hwloc/utils/netloc/infiniband'
-  CCLD     netloc_ib_extract_dats
+  CCLD	   netloc_ib_extract_dats
 make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/infiniband'
 Making all in netloc/draw
 make[2]: Entering directory '/home/spack/hwloc/utils/netloc/draw'
-  CCLD     netloc_draw_to_json
+  CCLD	   netloc_draw_to_json
 make[2]: Leaving directory '/home/spack/hwloc/utils/netloc/draw'
 Making all in netloc/mpi
 make[2]: Entering directory '/home/spack/hwloc/utils/netloc/mpi'
