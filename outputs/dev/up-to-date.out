@@ -1,0 +1,7 @@
+$ git clone https://github.com/spack/spack.git ~/spack
+$ cd ~/spack
+$ git checkout releases/v0.15
+Branch 'releases/v0.15' set up to track remote branch 'releases/v0.15' from 'origin'.
+$ . share/spack/setup-env.sh
+$ spack mirror add tutorial s3://spack-tutorial-container/mirror/
+$ spack gpg trust share/spack/keys/tutorial.pub

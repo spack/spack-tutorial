@@ -1,0 +1,489 @@
+$ spack uninstall hwloc
+==> The following packages will be uninstalled:
+
+    -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+    umvxpk7 hwloc@master
+
+==> Do you want to proceed? [y/N] y
+==> Successfully uninstalled hwloc@master%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64/umvxpk7
+$ spack dev-build --until configure --drop-in bash hwloc@master
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-6nxes4rhk52rhxj7dntwqa5nzou5sv2t
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.13.5-cmn6yii6vkzjrapeabvbcna3qqqx6web
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
+==> Installing hwloc
+==> No binary for hwloc found: installing from source
+==> hwloc: Executing phase: 'autoreconf'
+==> hwloc: Executing phase: 'configure'
+==> [2020-07-28-01:55:45.284993] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p' '--disable-opencl' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--disable-libudev' '--enable-pci' '--enable-shared'
+
+###
+### Configuring hwloc distribution tarball
+### Startup tests
+###
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /bin/mkdir -p
+checking for gawk... no
+checking for mawk... mawk
+checking whether make sets $(MAKE)... yes
+checking whether make supports nested variables... yes
+checking whether UID '1000' is supported by ustar format... yes
+checking whether GID '1000' is supported by ustar format... yes
+checking how to create a ustar tar archive... gnutar
+checking whether make supports nested variables... (cached) yes
+checking whether make supports the include directive... yes (GNU style)
+checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables...
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc understands -c and -o together... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
+checking how to run the C preprocessor... /home/spack/spack/lib/spack/env/gcc/gcc -E
+checking for grep that handles long lines and -e... /bin/grep
+checking for egrep... /bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking for ar... ar
+checking the archiver (ar) interface... ar
+checking how to print strings... printf
+checking for a sed that does not truncate output... /bin/sed
+checking for fgrep... /bin/grep -F
+checking for ld used by /home/spack/spack/lib/spack/env/gcc/gcc... /home/spack/spack/lib/spack/env/ld
+checking if the linker (/home/spack/spack/lib/spack/env/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
+checking the name lister (/usr/bin/nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /home/spack/spack/lib/spack/env/ld option to reload object files... -r
+checking for objdump... objdump
+checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for archiver @FILE support... @
+checking for strip... strip
+checking for ranlib... ranlib
+checking command to parse /usr/bin/nm -B output from /home/spack/spack/lib/spack/env/gcc/gcc object... ok
+checking for sysroot... no
+checking for a working dd... /bin/dd
+checking how to truncate binary pipes... /bin/dd bs=4096 count=1
+checking for mt... no
+checking if : is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -fno-rtti -fno-exceptions... no
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to produce PIC... -fPIC -DPIC
+checking if /home/spack/spack/lib/spack/env/gcc/gcc PIC flag -fPIC -DPIC works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc static flag -static works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... (cached) yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/gcc linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking whether -lc should be explicitly linked in... no
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for shl_load... no
+checking for shl_load in -ldld... no
+checking for dlopen... no
+checking for dlopen in -ldl... yes
+checking whether a program can dlopen itself... yes
+checking whether a statically linked program can dlopen itself... no
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... yes
+checking whether to build static libraries... no
+checking whether we are using the GNU C++ compiler... yes
+checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+checking how to run the C++ preprocessor... /home/spack/spack/lib/spack/env/gcc/g++ -E
+checking for ld used by /home/spack/spack/lib/spack/env/gcc/g++... /home/spack/spack/lib/spack/env/ld -m elf_x86_64
+checking if the linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) is GNU ld... yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking for /home/spack/spack/lib/spack/env/gcc/g++ option to produce PIC... -fPIC -DPIC
+checking if /home/spack/spack/lib/spack/env/gcc/g++ PIC flag -fPIC -DPIC works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ static flag -static works... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... yes
+checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... (cached) yes
+checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking for gcc... (cached) /home/spack/spack/lib/spack/env/gcc/gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... (cached) yes
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... (cached) none needed
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc understands -c and -o together... (cached) yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... (cached) gcc3
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C99... none needed
+checking for pkg-config... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7/bin/pkg-config
+checking pkg-config is at least version 0.9.0... yes
+checking for X... no
+
+###
+### Configuring hwloc core
+###
+checking hwloc building mode... standalone
+configure: hwloc builddir: /home/spack/hwloc
+configure: hwloc srcdir: /home/spack/hwloc
+checking for hwloc version... 2.3.0a1-git
+checking if want hwloc maintainer support... disabled
+checking for hwloc directory prefix... (none)
+checking for hwloc symbol prefix... hwloc_
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C99... (cached) none needed
+checking size of void *... 8
+checking which OS support to include... Linux
+checking which CPU support to include... x86_64
+checking size of unsigned long... 8
+checking size of unsigned int... 4
+checking for the C compiler vendor... gnu
+checking for __attribute__... yes
+checking for __attribute__(aligned)... yes
+checking for __attribute__(always_inline)... yes
+checking for __attribute__(cold)... yes
+checking for __attribute__(const)... yes
+checking for __attribute__(deprecated)... yes
+checking for __attribute__(format)... yes
+checking for __attribute__(hot)... yes
+checking for __attribute__(malloc)... yes
+checking for __attribute__(may_alias)... yes
+checking for __attribute__(no_instrument_function)... yes
+checking for __attribute__(nonnull)... yes
+checking for __attribute__(noreturn)... yes
+checking for __attribute__(packed)... yes
+checking for __attribute__(pure)... yes
+checking for __attribute__(sentinel)... yes
+checking for __attribute__(unused)... yes
+checking for __attribute__(warn_unused_result)... yes
+checking for __attribute__(weak_alias)... yes
+checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -fvisibility=hidden... yes
+checking whether to enable symbol visibility... yes (via -fvisibility=hidden)
+configure: WARNING: "-fvisibility=hidden" has been added to the hwloc CFLAGS
+checking whether the C compiler rejects function calls with too many arguments... yes
+checking whether the C compiler rejects function calls with too few arguments... yes
+checking whether to enable "picky" compiler mode... yes (default)
+checking if gcc supports -Wdiscarded-qualifiers... yes
+checking if gcc supports -Wvariadic-macros... yes
+checking if gcc supports -Wtype-limits... yes
+checking if gcc supports -Wstack-usage=262144... yes
+checking if gcc supports -Wmissing-field-initializers... yes
+checking if gcc supports -Wcast-function-type... no
+checking for unistd.h... (cached) yes
+checking dirent.h usability... yes
+checking dirent.h presence... yes
+checking for dirent.h... yes
+checking for strings.h... (cached) yes
+checking ctype.h usability... yes
+checking ctype.h presence... yes
+checking for ctype.h... yes
+checking for strcasecmp... yes
+checking whether strcasecmp is declared... yes
+checking whether function strcasecmp has a complete prototype... yes
+checking for strncasecmp... yes
+checking whether strncasecmp is declared... yes
+checking whether function strncasecmp has a complete prototype... yes
+checking for strftime... yes
+checking for setlocale... yes
+checking for stdint.h... (cached) yes
+checking sys/mman.h usability... yes
+checking sys/mman.h presence... yes
+checking for sys/mman.h... yes
+
+**** Linux-specific checks
+checking whether sched_getcpu is declared... yes
+checking whether sched_setaffinity is declared... yes
+checking whether function sched_setaffinity has a complete prototype... yes
+checking for old prototype of sched_setaffinity... no
+checking for working CPU_SET... yes
+checking for working CPU_SET_S... yes
+checking for working syscall with 6 parameters... yes
+**** end of Linux-specific checks
+
+checking whether pthread_setaffinity_np is declared... yes
+checking whether pthread_getaffinity_np is declared... yes
+checking whether fabsf is declared... yes
+checking for fabsf in -lm... yes
+checking whether modff is declared... yes
+checking for modff in -lm... yes
+checking whether _SC_NPROCESSORS_ONLN is declared... yes
+checking whether _SC_NPROCESSORS_CONF is declared... yes
+checking whether _SC_NPROC_ONLN is declared... no
+checking whether _SC_NPROC_CONF is declared... no
+checking whether _SC_PAGESIZE is declared... yes
+checking whether _SC_PAGE_SIZE is declared... yes
+checking whether _SC_LARGE_PAGESIZE is declared... no
+checking mach/mach_init.h usability... no
+checking mach/mach_init.h presence... no
+checking for mach/mach_init.h... no
+checking mach_init.h usability... no
+checking mach_init.h presence... no
+checking for mach_init.h... no
+checking mach/mach_host.h usability... no
+checking mach/mach_host.h presence... no
+checking for mach/mach_host.h... no
+checking whether strtoull is declared... yes
+checking for ssize_t... yes
+checking whether snprintf is declared... yes
+checking whether _strdup is declared... no
+checking whether _putenv is declared... no
+checking whether snprintf is correct... yes
+checking whether getprogname is declared... no
+checking whether getexecname is declared... no
+checking for program_invocation_name... yes
+checking for __progname... yes
+checking for pthread_t... yes
+checking for bash... /bin/bash
+checking for ffs... yes
+checking whether ffs is declared... yes
+checking whether function ffs has a complete prototype... yes
+checking for ffsl... yes
+checking whether ffsl is declared... yes
+checking whether function ffsl has a complete prototype... yes
+checking for fls... no
+checking for flsl... no
+checking for clz... no
+checking for clzl... no
+checking for openat... yes
+checking malloc.h usability... yes
+checking malloc.h presence... yes
+checking for malloc.h... yes
+checking for getpagesize... yes
+checking for memalign... yes
+checking for posix_memalign... yes
+checking sys/utsname.h usability... yes
+checking sys/utsname.h presence... yes
+checking for sys/utsname.h... yes
+checking for uname... yes
+checking valgrind/valgrind.h usability... no
+checking valgrind/valgrind.h presence... no
+checking for valgrind/valgrind.h... no
+checking whether RUNNING_ON_VALGRIND is declared... no
+checking for PCIACCESS... yes
+checking pciaccess.h usability... yes
+checking pciaccess.h presence... yes
+checking for pciaccess.h... yes
+checking for pci_slot_match_iterator_create... yes
+checking for final PCIACCESS support... yes
+checking rocm_smi/rocm_smi.h usability... no
+checking rocm_smi/rocm_smi.h presence... no
+checking for rocm_smi/rocm_smi.h... no
+checking for LIBXML2... yes
+checking libxml/parser.h usability... yes
+checking libxml/parser.h presence... yes
+checking for libxml/parser.h... yes
+checking for xmlNewDoc... yes
+checking for final LIBXML2 support... yes
+checking for x86 cpuid... yes
+checking for pthread_mutex_lock... yes
+checking if plugin support is enabled... no
+checking components to build statically...  noos xml synthetic xml_nolibxml linux pci xml_libxml x86
+checking components to build as plugins...
+
+###
+### Configuring netloc core
+###
+checking for asprintf... yes
+checking if netloc supports this platform... yes
+checking for SCOTCH_archSub in -lscotch... no
+checking mpi.h usability... no
+checking mpi.h presence... no
+checking for mpi.h... no
+checking for xz... yes
+checking for diff... /usr/bin/diff
+
+###
+### Configuring hwloc documentation
+###
+checking if this is a developer build... yes
+checking for doxygen... no
+checking for pdflatex... no
+checking for makeindex... no
+checking for fig2dev... no
+checking for gs... no
+checking for epstopdf... no
+checking if can build doxygen docs... no
+checking for w3m... no
+checking for lynx... no
+checking if can build top-level README... no
+checking if will build doxygen docs... no
+checking if will install doxygen docs... no
+
+###
+### Configuring hwloc command line utilities
+###
+checking X11/Xlib.h usability... no
+checking X11/Xlib.h presence... no
+checking for X11/Xlib.h... no
+checking for wchar_t... yes
+checking for putwc... yes
+checking locale.h usability... yes
+checking locale.h presence... yes
+checking for locale.h... yes
+checking for setlocale... (cached) yes
+checking for uselocale... yes
+checking xlocale.h usability... no
+checking xlocale.h presence... no
+checking for xlocale.h... no
+checking langinfo.h usability... yes
+checking langinfo.h presence... yes
+checking for langinfo.h... yes
+checking for nl_langinfo... yes
+checking termcap support using ncurses and ... no
+checking termcap support using ncurses and -ltermcap... no
+checking termcap support using ncurses and -lncursesw... no
+checking termcap support using ncurses and -lncurses... no
+checking termcap support using curses and ... no
+checking termcap support using curses and -ltermcap... no
+checking termcap support using curses and -lcursesw... no
+checking termcap support using curses and -lcurses... no
+checking whether diff accepts -u... yes
+checking whether diff accepts -w... yes
+checking whether bind is declared... yes
+checking for bind in -lsocket... no
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for clock_gettime... yes
+
+###
+### Configuring tests
+###
+checking for pthread_self in -lpthread... yes
+checking for NUMA... no
+checking for numa_available in -lnuma... no
+checking for stdlib.h... (cached) yes
+checking for mkstemp... yes
+checking infiniband/verbs.h usability... no
+checking infiniband/verbs.h presence... no
+checking for infiniband/verbs.h... no
+checking for xmllint... xmllint
+checking for bunzip2... bunzip2
+checking if CXX works... yes
+checking whether diff accepts -u... yes
+
+###
+### Performing final hwloc configuration
+###
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating include/Makefile
+config.status: creating hwloc/Makefile
+config.status: creating doc/Makefile
+config.status: creating doc/examples/Makefile
+config.status: creating doc/doxygen-config.cfg
+config.status: creating utils/Makefile
+config.status: creating utils/hwloc/Makefile
+config.status: creating utils/lstopo/Makefile
+config.status: creating hwloc.pc
+config.status: creating netloc/Makefile
+config.status: creating utils/netloc/infiniband/Makefile
+config.status: creating utils/netloc/draw/Makefile
+config.status: creating utils/netloc/scotch/Makefile
+config.status: creating utils/netloc/mpi/Makefile
+config.status: creating netloc.pc
+config.status: creating netlocscotch.pc
+config.status: creating tests/Makefile
+config.status: creating tests/hwloc/Makefile
+config.status: creating tests/hwloc/linux/Makefile
+config.status: creating tests/hwloc/linux/allowed/Makefile
+config.status: creating tests/hwloc/linux/gather/Makefile
+config.status: creating tests/hwloc/x86/Makefile
+config.status: creating tests/hwloc/x86+linux/Makefile
+config.status: creating tests/hwloc/xml/Makefile
+config.status: creating tests/hwloc/ports/Makefile
+config.status: creating tests/hwloc/rename/Makefile
+config.status: creating tests/hwloc/linux/allowed/test-topology.sh
+config.status: creating tests/hwloc/linux/gather/test-gather-topology.sh
+config.status: creating tests/hwloc/linux/test-topology.sh
+config.status: creating tests/hwloc/x86/test-topology.sh
+config.status: creating tests/hwloc/x86+linux/test-topology.sh
+config.status: creating tests/hwloc/xml/test-topology.sh
+config.status: creating tests/hwloc/wrapper.sh
+config.status: creating utils/hwloc/hwloc-compress-dir
+config.status: creating utils/hwloc/hwloc-gather-topology
+config.status: creating utils/hwloc/test-hwloc-annotate.sh
+config.status: creating utils/hwloc/test-hwloc-calc.sh
+config.status: creating utils/hwloc/test-hwloc-compress-dir.sh
+config.status: creating utils/hwloc/test-hwloc-diffpatch.sh
+config.status: creating utils/hwloc/test-hwloc-distrib.sh
+config.status: creating utils/hwloc/test-hwloc-info.sh
+config.status: creating utils/hwloc/test-fake-plugin.sh
+config.status: creating utils/hwloc/test-parsing-flags.sh
+config.status: creating utils/hwloc/test-hwloc-dump-hwdata/Makefile
+config.status: creating utils/hwloc/test-hwloc-dump-hwdata/test-hwloc-dump-hwdata.sh
+config.status: creating utils/lstopo/test-lstopo.sh
+config.status: creating utils/lstopo/test-lstopo-shmem.sh
+config.status: creating utils/netloc/infiniband/netloc_ib_gather_raw
+config.status: creating contrib/hwloc-ps.www/Makefile
+config.status: creating contrib/systemd/Makefile
+config.status: creating contrib/completion/Makefile
+config.status: creating contrib/misc/Makefile
+config.status: creating contrib/windows/Makefile
+config.status: creating contrib/windows/test-windows-version.sh
+config.status: creating tests/netloc/Makefile
+config.status: creating tests/netloc/tests.sh
+config.status: creating include/private/autogen/config.h
+config.status: include/private/autogen/config.h is unchanged
+config.status: creating include/hwloc/autogen/config.h
+config.status: include/hwloc/autogen/config.h is unchanged
+config.status: linking hwloc/topology-solaris.c to tests/hwloc/ports/topology-solaris.c
+config.status: linking hwloc/topology-solaris-chiptype.c to tests/hwloc/ports/topology-solaris-chiptype.c
+config.status: linking hwloc/topology-aix.c to tests/hwloc/ports/topology-aix.c
+config.status: linking hwloc/topology-windows.c to tests/hwloc/ports/topology-windows.c
+config.status: linking hwloc/topology-darwin.c to tests/hwloc/ports/topology-darwin.c
+config.status: linking hwloc/topology-freebsd.c to tests/hwloc/ports/topology-freebsd.c
+config.status: linking hwloc/topology-netbsd.c to tests/hwloc/ports/topology-netbsd.c
+config.status: linking hwloc/topology-hpux.c to tests/hwloc/ports/topology-hpux.c
+config.status: linking hwloc/topology-bgq.c to tests/hwloc/ports/topology-bgq.c
+config.status: linking hwloc/topology-opencl.c to tests/hwloc/ports/topology-opencl.c
+config.status: linking hwloc/topology-cuda.c to tests/hwloc/ports/topology-cuda.c
+config.status: linking hwloc/topology-nvml.c to tests/hwloc/ports/topology-nvml.c
+config.status: linking hwloc/topology-rsmi.c to tests/hwloc/ports/topology-rsmi.c
+config.status: linking hwloc/topology-gl.c to tests/hwloc/ports/topology-gl.c
+config.status: linking utils/lstopo/lstopo-windows.c to tests/hwloc/ports/lstopo-windows.c
+config.status: executing depfiles commands
+config.status: executing libtool commands
+config.status: executing chmoding-scripts commands
+
+-----------------------------------------------------------------------------
+Hwloc optional build support status (more details can be found above):
+
+Probe / display I/O devices: PCI(pciaccess+linux) LinuxIO
+Graphical output:            no
+XML input / output:          full
+Netloc functionality:        yes (without scotch)
+Plugin support:              no
+-----------------------------------------------------------------------------
+
