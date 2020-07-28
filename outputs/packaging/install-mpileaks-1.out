@@ -1,0 +1,21 @@
+$ spack install mpileaks
+==> Installing mpileaks
+==> No binary for mpileaks found: installing from source
+==> mpileaks: Executing phase: 'autoreconf'
+==> mpileaks: Executing phase: 'configure'
+==> Error: ProcessError: Command exited with status 1:
+    '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3'
+
+1 error found in build log:
+     30    checking for mpipgcc... no
+     31    Checking whether not-found responds to '-showme:compile'... no
+     32    Checking whether not-found responds to '-showme'... no
+     33    Checking whether not-found responds to '-compile-info'... no
+     34    Checking whether not-found responds to '-show'... no
+     35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3/spack-s
+	   rc/configure: line 4931: Echo: command not found
+  >> 36    configure: error: unable to locate adept-utils installation
+
+See build log for details:
+  /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3/spack-build-out.txt
+
