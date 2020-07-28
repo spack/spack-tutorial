@@ -28,7 +28,7 @@ Installing Spack
 ----------------
 
 Spack works out of the box. Simply clone spack and get going. We will
-clone Spack and immediately checkout the most recent release, v0.13.
+clone Spack and immediately checkout the most recent release, v0.15.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -44,7 +44,18 @@ variable, source the spack setup script.  Then add Spack to your path.
 
   $ . share/spack/setup-env.sh
 
-You're good to go!
+Finally, if you are running in an Amazon Cloud9 instance (which you
+likely are for this tutorial), you will need to run one additional setup
+script:
+
+.. code-block:: console
+
+  $ . share/spack/setup-tutorial-env.sh
+
+You should see a lot of output. This is important, as it will increase
+your available disk space and install some needed system software.
+
+Once you've sourced these scripts, you're good to go!
 
 -----------------
 What is in Spack?

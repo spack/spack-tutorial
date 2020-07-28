@@ -183,37 +183,8 @@ We have a few options that can tell us about what's going wrong:
 As per the error message, Spack has given us a ``spack-build-out.txt`` debug
 log:
 
-.. code-block:: console
-
-   ==> Executing phase: 'autoreconf'
-   ==> Executing phase: 'configure'
-   ==> [2019-11-17-19:25:30.481411] '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/mpileaks-1.0-g4wqm3n33mzlxww6vgs6piu4gm5bvnb2'
-   checking metadata... no
-   checking installation directory variables... yes
-   checking for a BSD-compatible install... /usr/bin/install -c
-   checking whether build environment is sane... yes
-   checking for a thread-safe mkdir -p... /bin/mkdir -p
-   checking for gawk... no
-   checking for mawk... mawk
-   checking whether make sets $(MAKE)... yes
-   checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
-   checking for C compiler default output file name... a.out
-   checking whether the C compiler works... yes
-   checking whether we are cross compiling... no
-   checking for suffix of executables...
-   checking for suffix of object files... o
-   checking whether we are using the GNU C compiler... yes
-   checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
-   checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
-   checking for style of include used by make... GNU
-   checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
-   checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
-   checking whether we are using the GNU C++ compiler... yes
-   checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
-   checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-   checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc
-   Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/openmpi-3.1.4-f6maodnm53tkmchq5woe33nt5wbt2tel/bin/mpicc responds to '-showme:compile'... yes
-   configure: error: unable to locate adept-utils installation
+.. literalinclude:: outputs/packaging/build-output.out
+   :language: console
 
 This gives us the output from the build, and mpileaks isn't finding
 its ``adept-utils`` dependency. Spack has automatically added the

@@ -1,0 +1,10 @@
+$ spack spec hdf5
+Input spec
+--------------------------------
+hdf5
+
+Concretized
+--------------------------------
+hdf5@1.10.6%gcc@7.5.0~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+    ^zlib@1.2.8%gcc@7.5.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
+
