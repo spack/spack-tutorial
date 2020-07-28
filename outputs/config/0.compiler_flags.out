@@ -1,0 +1,16 @@
+$ spack spec json-fortran%clang@6.0.0-gfortran
+Input spec
+--------------------------------
+json-fortran%clang@6.0.0-gfortran
+
+Concretized
+--------------------------------
+json-fortran@7.1.0%clang@6.0.0-gfortran cppflags="-g"  build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+    ^cmake@3.17.3%clang@6.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
+        ^ncurses@6.2%clang@6.0.0-gfortran cppflags="-g" ~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+            ^pkgconf@1.7.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+        ^openssl@1.1.1g%clang@6.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
+            ^perl@5.30.3%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                    ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+            ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
