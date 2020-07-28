@@ -228,7 +228,7 @@ Spack will concretize the new roots, and install everything you added to
 the environment.  Now we can see the installed roots in the output of
 ``spack find``:
 
-.. literalinclude:: outputs/environments/env-add-3.out
+.. literalinclude:: outputs/environments/add-3.out
    :language: console
 
 
