@@ -34,6 +34,11 @@ example() {
         $cmd 2>&1 | tee -a "$filename"
     else
         script -q -a "$filename" -c "$@"
+
+        # strip "script started/done" output from the file
+        grep -v '^Script started\|^Script done' "$filename" > "${filename}.tmp"
+        sed -i~ '$d' "${filename}.tmp"
+        mv "${filename}.tmp" "$filename"
     fi
 }
 
