@@ -84,7 +84,7 @@ are *no root specs*.  We'll get back to what that means later.
 If you *only* want to check what environment you are in, you can use
 ``spack env status``:
 
-.. literalinclude:: outputs/environments/find-status-1.out
+.. literalinclude:: outputs/environments/env-status-1.out
    :language: console
 
 
