@@ -3,7 +3,6 @@
 raw_output = raw/*/*.out
 subdirs = basics packaging env stacks dev scripting
 
-
 all:
 	echo "Filtering raw outputs though col"
 	for raw in $(raw_output); do \
