@@ -220,7 +220,7 @@ it does not automatically install them.
 We can install *all* the as-yet uninstalled packages in an environment by
 simply running ``spack install`` with no arguments:
 
-.. literalinclude:: outputs/environments/env-add-2.out
+.. literalinclude:: outputs/environments/add-2.out
    :language: console
 
 
