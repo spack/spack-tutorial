@@ -7,8 +7,8 @@ project=$(dirname "$0")
 rm -rf $raw_outputs/dev
 pip install boto3
 
-example dev/up-to-date git clone https://github.com/spack/spack ~/spack
-example dev/up-to-date cd ~/spack
+example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
+example dev/up-to-date "cd ~/spack"
 cd ~/spack
 example dev/up-to-date "git checkout releases/v0.15"
 example dev/up-to-date ". share/spack/setup-env.sh"
@@ -19,7 +19,7 @@ spack config add "packages:all:target:[x86_64]"
 example dev/up-to-date "spack mirror add tutorial s3://spack-tutorial-container/mirror/"
 example dev/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
 
-example dev/setup-hwloc cd ~
+example dev/setup-hwloc "cd ~"
 cd ~
 example dev/setup-hwloc "git clone https://github.com/open-mpi/hwloc.git"
 example dev/setup-hwloc "cd hwloc"
