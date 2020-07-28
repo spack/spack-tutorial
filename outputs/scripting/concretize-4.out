@@ -1,0 +1,126 @@
+$ spack concretize
+$ spack find -c
+==> In environment /home/spack/code
+==> Root specs
+python
+tcl
+
+-- no arch / gcc ------------------------------------------------
+boost%gcc
+boost%gcc
+openmpi%gcc
+openmpi%gcc
+trilinos%gcc
+trilinos%gcc
+
+==> Concretized roots
+-- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+boost@1.73.0
+openmpi@3.1.6
+python@3.7.7
+tcl@8.6.8
+trilinos@12.18.1
+trilinos@12.18.1
+
+$ export SPACK_STACK_USE_CLANG=1
+$ spack concretize
+==> Concretized boost%clang ^mpich
+ -   lejogg6  boost@1.73.0%clang@6.0.0+atomic+chrono~clanglibcpp~container~context~coroutine+date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave cxxstd=98 patches=246508e052c44b6f4e8c2542a71c06cacaa72cd1447ab8d2a542b987bc35ace9,4dd507e1f5a29e3b87b15321a4d8c74afdc8331433edabf7aeab89b3c405d556 visibility=hidden arch=linux-ubuntu18.04-x86_64
+ -   qxfbjyc	  ^bzip2@1.0.8%clang@6.0.0+shared arch=linux-ubuntu18.04-x86_64
+ -   sdvt7ef	      ^diffutils@3.7%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   3fxiwph		  ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   5qffmms	  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+
+==> Concretized trilinos%clang ^mpich
+ -   h7lf5xz  trilinos@12.18.1%clang@6.0.0~adios2~alloptpkgs+amesos+amesos2+anasazi+aztec+belos+boost~cgns~chaco~complex~debug~dtk+epetra+epetraext+exodus+explicit_template_instantiation~float+fortran~fortrilinos+glm+gtest+hdf5+hypre+ifpack+ifpack2~intrepid~intrepid2~isorropia+kokkos+matio~mesquite+metis~minitensor+ml+mpi+muelu+mumps+netcdf~nox~openmp~phalanx~piro~pnetcdf~python~rol~rythmos+sacado~shards+shared~shylu~stk~stratimikos+suite-sparse~superlu~superlu-dist~teko~tempus+teuchos+tpetra~x11~xsdkflags~zlib+zoltan+zoltan2 build_type=RelWithDebInfo gotype=long patches=4cdedfb9619b0b585af588f75d18ab63212bbb9ff7a416823c15d17c00bd2092 arch=linux-ubuntu18.04-x86_64
+ -   lejogg6	  ^boost@1.73.0%clang@6.0.0+atomic+chrono~clanglibcpp~container~context~coroutine+date_time~debug+exception~fiber+filesystem+graph~icu+iostreams+locale+log+math~mpi+multithreaded~numpy~pic+program_options~python+random+regex+serialization+shared+signals~singlethreaded+system~taggedlayout+test+thread+timer~versionedlayout+wave cxxstd=98 patches=246508e052c44b6f4e8c2542a71c06cacaa72cd1447ab8d2a542b987bc35ace9,4dd507e1f5a29e3b87b15321a4d8c74afdc8331433edabf7aeab89b3c405d556 visibility=hidden arch=linux-ubuntu18.04-x86_64
+ -   qxfbjyc	      ^bzip2@1.0.8%clang@6.0.0+shared arch=linux-ubuntu18.04-x86_64
+ -   sdvt7ef		  ^diffutils@3.7%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   3fxiwph		      ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   5qffmms	      ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+ -   khwb5e2	  ^cmake@3.17.3%clang@6.0.0~doc+ncurses+openssl+ownlibs~qt arch=linux-ubuntu18.04-x86_64
+ -   muufhm7	      ^ncurses@6.2%clang@6.0.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+ -   mghrtpj		  ^pkgconf@1.7.3%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   ldh3tj3	      ^openssl@1.1.1g%clang@6.0.0+systemcerts arch=linux-ubuntu18.04-x86_64
+ -   hvuuzya		  ^perl@5.30.3%clang@6.0.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+ -   ymkkpkx		      ^gdbm@1.18.1%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   b5yhipp			  ^readline@8.0%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   czhoguz	  ^glm@0.9.7.1%clang@6.0.0 build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+ -   ocy3uo2	  ^hdf5@1.10.6%clang@6.0.0~cxx~debug~fortran+hl+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+ -   i2qg43z	      ^mpich@3.3.2%clang@6.0.0+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
+ -   fl43gyh		  ^autoconf@2.69%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   ebsmave		      ^m4@1.4.18%clang@6.0.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
+ -   dfd6u7k			  ^libsigsegv@2.12%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   hdyrtup		  ^automake@1.16.2%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   jsefksx		  ^findutils@4.6.0%clang@6.0.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
+ -   s2dxedn		      ^libtool@2.4.6%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   roq73gk		      ^texinfo@6.5%clang@6.0.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
+ -   sklqmhm		  ^hwloc@2.2.0%clang@6.0.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+ -   azzjaku		      ^libpciaccess@0.13.5%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   yzzs2pw			  ^util-macros@1.19.1%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   btpmsep		      ^libxml2@2.9.10%clang@6.0.0~python arch=linux-ubuntu18.04-x86_64
+ -   tuna5hy			  ^xz@5.2.5%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   gu3jbxl	  ^hypre@2.18.2%clang@6.0.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist arch=linux-ubuntu18.04-x86_64
+ -   czomwnl	      ^openblas@0.3.10%clang@6.0.0~consistent_fpcsr~ilp64+pic+shared threads=none arch=linux-ubuntu18.04-x86_64
+ -   lyspa5m	  ^matio@1.5.13%clang@6.0.0+hdf5+shared+zlib arch=linux-ubuntu18.04-x86_64
+ -   5dhwwts	  ^metis@5.1.0%clang@6.0.0~gdb~int64~real64+shared build_type=Release patches=4991da938c1d3a1d3dea78e49bbebecba00273f98df2a656e38b83d55b281da1 arch=linux-ubuntu18.04-x86_64
+ -   r5yo2bl	  ^mumps@5.3.3%clang@6.0.0+complex+double+float~int64~metis+mpi~parmetis~ptscotch~scotch+shared arch=linux-ubuntu18.04-x86_64
+ -   tvc2bcp	      ^netlib-scalapack@2.1.0%clang@6.0.0~pic+shared build_type=RelWithDebInfo patches=f2baedde688ffe4c20943c334f580eb298e04d6f35c86b90a1f4e8cb7ae344a2 arch=linux-ubuntu18.04-x86_64
+ -   m7ehxu6	  ^netcdf-c@4.7.3%clang@6.0.0~dap~hdf4~jna+mpi~parallel-netcdf+pic+shared arch=linux-ubuntu18.04-x86_64
+ -   jwem6y2	  ^parmetis@4.0.3%clang@6.0.0~gdb+shared build_type=RelWithDebInfo patches=4f892531eb0a807eb1b82e683a416d3e35154a455274cf9b162fb02054d11a5b,50ed2081bc939269689789942067c58b3e522c269269a430d5d34c00edbc5870,704b84f7c7444d4372cb59cca6e1209df4ef3b033bc4ee3cf50f369bce972a9d arch=linux-ubuntu18.04-x86_64
+ -   6mp66cg	  ^suite-sparse@5.7.2%clang@6.0.0~cuda~openmp+pic~tbb arch=linux-ubuntu18.04-x86_64
+
+==> Concretized openmpi%clang ^mpich
+ -   fvu7vmu  openmpi@3.1.6%clang@6.0.0~atomics~cuda~cxx~cxx_exceptions+gpfs~java~legacylaunchers~memchecker~pmi~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
+ -   woigkhp	  ^hwloc@1.11.11%clang@6.0.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+ -   azzjaku	      ^libpciaccess@0.13.5%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   s2dxedn		  ^libtool@2.4.6%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   ebsmave		      ^m4@1.4.18%clang@6.0.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
+ -   dfd6u7k			  ^libsigsegv@2.12%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   mghrtpj		  ^pkgconf@1.7.3%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   yzzs2pw		  ^util-macros@1.19.1%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   btpmsep	      ^libxml2@2.9.10%clang@6.0.0~python arch=linux-ubuntu18.04-x86_64
+ -   3fxiwph		  ^libiconv@1.16%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   tuna5hy		  ^xz@5.2.5%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   5qffmms		  ^zlib@1.2.11%clang@6.0.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+ -   lic4g5m	      ^numactl@2.0.12%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   fl43gyh		  ^autoconf@2.69%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   hvuuzya		      ^perl@5.30.3%clang@6.0.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+ -   ymkkpkx			  ^gdbm@1.18.1%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   b5yhipp			      ^readline@8.0%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+ -   muufhm7				  ^ncurses@6.2%clang@6.0.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+ -   hdyrtup		  ^automake@1.16.2%clang@6.0.0 arch=linux-ubuntu18.04-x86_64
+
+$ spack find -c
+==> In environment /home/spack/code
+==> Root specs
+python
+tcl
+
+-- no arch / clang ----------------------------------------------
+boost%clang
+openmpi%clang
+trilinos%clang
+
+-- no arch / gcc ------------------------------------------------
+boost%gcc
+boost%gcc
+openmpi%gcc
+openmpi%gcc
+trilinos%gcc
+trilinos%gcc
+
+==> Concretized roots
+-- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+boost@1.73.0
+openmpi@3.1.6
+trilinos@12.18.1
+
+-- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+boost@1.73.0
+openmpi@3.1.6
+python@3.7.7
+tcl@8.6.8
+trilinos@12.18.1
+trilinos@12.18.1
+
