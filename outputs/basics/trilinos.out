@@ -25,47 +25,57 @@ $ spack install trilinos
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.13.5-cmn6yii6vkzjrapeabvbcna3qqqx6web
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
 ==> Installing openssl
 ==> Extracting openssl from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1g-4dj34ywr6ytskzutiwgjrj66sryvav2q
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
 ==> Installing cmake
 ==> Extracting cmake from binary cache
+==> Warning: patchelf --print-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in produced an error [Command exited with status 1:
+    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--print-rpath' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
+patchelf: not an ELF executable
+]
+==> Warning: patchelf --force-rpath --set-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in failed with error Command exited with status 1:
+    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--force-rpath' '--set-rpath' '' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
+patchelf: not an ELF executable
+
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
-==> Installing glm
-==> Extracting glm from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1-c3mfw24ivgvgfwwxfia3ipk5lqlxdgcd
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.12-yvxocdy2kcxvvgatrrst3sqzyt7yxhgn
 ==> Installing metis
 ==> Extracting metis from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.12-yvxocdy2kcxvvgatrrst3sqzyt7yxhgn
+==> Installing glm
+==> Extracting glm from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1-c3mfw24ivgvgfwwxfia3ipk5lqlxdgcd
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-ckxpgsn6uuptknjsle5cagqxpbo3b7uc
 ==> Installing suite-sparse
 ==> Extracting suite-sparse from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/suite-sparse-5.7.2-dgppz4n6wg4b42d4er5zovpefdywbuy3
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-ckxpgsn6uuptknjsle5cagqxpbo3b7uc
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-3.1.6-wudo6kygednztgzemlnq4l7rlwrwu3zw
-==> Installing hdf5
-==> Extracting hdf5 from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.6-7r2lztqivzy6umgvnhihn4565whablho
 ==> Installing netlib-scalapack
 ==> Extracting netlib-scalapack from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0-bvapk5ozv46rizqyzb3tlra7jwxkj2ay
-==> Installing hypre
-==> Extracting hypre from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.18.2-dnwivcw3g3kjliygwa536iyaykvjfag6
 ==> Installing parmetis
 ==> Extracting parmetis from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/parmetis-4.0.3-zdxekoefv7fk2qpoyv6xr26622tnosli
+==> Installing hypre
+==> Extracting hypre from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.18.2-dnwivcw3g3kjliygwa536iyaykvjfag6
+==> Installing hdf5
+==> Extracting hdf5 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.6-7r2lztqivzy6umgvnhihn4565whablho
+==> Installing mumps
+==> Extracting mumps from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3-qb6yumyjj73wcewf4sa4wc2kc5kutswq
 ==> Installing netcdf-c
 ==> Extracting netcdf-c from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netcdf-c-4.7.3-uctbd5yydaciec4ircts7prazhmpllj5
 ==> Installing matio
 ==> Extracting matio from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/matio-1.5.13-w3dbllqxjzh3xyc5hexo7jedowsixau5
-==> Installing mumps
-==> Extracting mumps from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3-qb6yumyjj73wcewf4sa4wc2kc5kutswq
 ==> Installing trilinos
+ =#=- #
 ==> Extracting trilinos from binary cache
+ls
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-12.18.1-j6dav6kowb2c4sfq36vpn7vfhn7es3zf
