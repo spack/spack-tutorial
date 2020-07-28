@@ -7,6 +7,9 @@ project=$(dirname "$0")
 rm -rf $raw_outputs/scripting
 . $project/init_spack.sh
 
+spack install gcc@8.3.0
+spack compiler find `spack location -i gcc@8.3.0`
+
 example scripting/setup           "spack uninstall -ay"
 example scripting/setup           "spack compiler rm gcc@8.3.0"
 example scripting/setup           "spack install hdf5"
@@ -38,7 +41,7 @@ EOF
 
 example scripting/find-exclude-1 "spack python find_exclude.py %gcc ^mpich"
 
-{ echo "#!/usr/bin/env spack python" & cat find_exclude.py; } | tee /project/raw/1.find_exclude.py.example scripting/find_exclude.py
+{ echo "#!/usr/bin/env spack python" & cat find_exclude.py; } | tee /project/raw/1.find_exclude.py.example find_exclude.py
 
 example scripting/find-exclude-2 "chmod u+x find_exclude.py"
 example scripting/find-exclude-2 "./find_exclude.py %gcc ^mpich"
