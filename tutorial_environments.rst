@@ -92,7 +92,7 @@ If you want to leave this environment and go back to normal Spack,
 you can use ``spack env deactivate``.  We like to use the
 ``despacktivate`` alias (which Spack sets up automatically) for short:
 
-.. literalinclude:: outputs/environments/find-status-2.out
+.. literalinclude:: outputs/environments/env-status-2.out
    :language: console
 
 
