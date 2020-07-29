@@ -148,7 +148,7 @@ conditionally append clang to it when our environment variable is set
 properly.
 
 .. literalinclude:: outputs/stacks/concretize-4.out
-   :language: yaml
+   :language: console
 
 ----------------
 View descriptors

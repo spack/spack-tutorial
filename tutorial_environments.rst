@@ -105,8 +105,6 @@ Installing packages
 Ok, now that we understand how creation and activation work, let's go
 back to ``myproject`` and *install* a few packages:
 
-.. code-block:: console
-
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
 
