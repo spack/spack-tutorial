@@ -1,0 +1,59 @@
+$ spack concretize
+==> Concretized python
+ -   7u24vur  python@3.7.7%gcc@7.5.0+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4~uuid+zlib patches=0d98e93189bc278fbc37a50ed7f183bd8aaf249a8e1670a465f0db6bb4f8cf87 arch=linux-ubuntu18.04-x86_64
+ -   fvfpt26	  ^bzip2@1.0.8%gcc@7.5.0+shared arch=linux-ubuntu18.04-x86_64
+ -   otkkten	      ^diffutils@3.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   jearpk4		  ^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   3f3kkbl	  ^expat@2.2.9%gcc@7.5.0+libbsd arch=linux-ubuntu18.04-x86_64
+ -   u6ue7vw	      ^libbsd@0.10.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   4av4gyw	  ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   t54jzdy	      ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   crhlefo		  ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+ -   4sh6pym		      ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   p4xwlyy	  ^gettext@0.20.2%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu18.04-x86_64
+ -   m3l53bh	      ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
+ -   6nxes4r		  ^xz@5.2.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   smoyzzo		  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+ -   uwe6tb5	      ^tar@1.32%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   hyhbnrm	  ^libffi@3.3%gcc@7.5.0 patches=26f26c6f29a7ce9bf370ad3ab2610f99365b4bdd7b82e7c31df41a3370d685c0 arch=linux-ubuntu18.04-x86_64
+ -   4dj34yw	  ^openssl@1.1.1g%gcc@7.5.0+systemcerts arch=linux-ubuntu18.04-x86_64
+ -   hyrsxn4	      ^perl@5.30.3%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+ -   utjn4ks	  ^sqlite@3.31.1%gcc@7.5.0+column_metadata+fts~functions~rtree arch=linux-ubuntu18.04-x86_64
+
+==> Concretized tcl
+ -   aszidzn  tcl@8.6.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+ -   smoyzzo	  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+
+$ spack find -c
+==> In environment /home/spack/code
+==> Root specs
+python
+tcl
+
+-- no arch / clang ----------------------------------------------
+boost%clang
+openmpi%clang
+trilinos%clang
+
+-- no arch / gcc ------------------------------------------------
+boost%gcc
+boost%gcc
+openmpi%gcc
+openmpi%gcc
+trilinos%gcc
+trilinos%gcc
+
+==> Concretized roots
+-- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+boost@1.73.0
+openmpi@3.1.6
+trilinos@12.18.1
+
+-- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+boost@1.73.0
+openmpi@3.1.6
+python@3.7.7
+tcl@8.6.8
+trilinos@12.18.1
+trilinos@12.18.1
+

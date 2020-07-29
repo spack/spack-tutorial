@@ -1,0 +1,20 @@
+$ git clone https://github.com/spack/spack ~/spack
+Cloning into '/home/spack/spack'...
+remote: Enumerating objects: 114, done.K
+remote: Counting objects: 100% (114/114), done.K
+remote: Compressing objects: 100% (80/80), done.K
+remote:nTotale2210059(delta828),2reused,560(deltaB14),0pack-reused 220891K
+Receiving objects: 100% (221005/221005), 88.06 MiB | 20.25 MiB/s, done.
+Resolving deltas: 100% (93890/93890), done.
+$ cd ~/spack
+$ git checkout releases/v0.15
+Branch 'releases/v0.15' set up to track remote branch 'releases/v0.15' from 'origin'.
+Switched to a new branch 'releases/v0.15'
+$ . share/spack/setup-env.sh
+$ spack mirror add tutorial s3://spack-tutorial-container/mirror/
+$ spack gpg trust share/spack/keys/tutorial.pub
+gpg: keybox '/home/spack/spack/opt/spack/gpg/pubring.kbx' created
+gpg: /home/spack/spack/opt/spack/gpg/trustdb.gpg: trustdb created
+gpg: key 95F8681195E239D8: public key "Spack Build Pipeline (Demo Key) <key@spack.demo>" imported
+gpg: Total number processed: 1
+gpg:		   imported: 1

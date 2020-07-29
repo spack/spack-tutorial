@@ -1,8 +1,7 @@
 .PHONY: all replay
 
 raw_output = raw/*/*.out
-subdirs = basics packaging
-
+subdirs = basics packaging environments stacks dev scripting
 
 all:
 	echo "Filtering raw outputs though col"

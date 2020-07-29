@@ -1,0 +1,20 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration setings.
+spack:
+  # named lists
+  definitions:
+    - packages: [boost, trilinos, openmpi]
+    - mpis: [mpich, mvapich2 fabrics=mrail]
+    - compilers: ['%gcc', '%clang']
+
+  specs:
+    - matrix:
+        - [$packages]
+        - [$^mpis]
+        - [$compilers]
+      exclude:
+        - '%clang ^mvapich2'
+
+  view: false

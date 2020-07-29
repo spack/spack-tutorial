@@ -1,0 +1,12 @@
+$ make
+Making all in include
+make[1]: Entering directory '/home/spack/hwloc/include'
+make[1]: Nothing to be done for 'all'.
+make[1]: Leaving directory '/home/spack/hwloc/include'
+Making all in hwloc
+make[1]: Entering directory '/home/spack/hwloc/hwloc'
+  CC	   components.lo
+  CC	   base64.lo
+Makefile:949: recipe for target 'base64.lo' failed
+make[1]: Leaving directory '/home/spack/hwloc/hwloc'
+Makefile:632: recipe for target 'all-recursive' failed

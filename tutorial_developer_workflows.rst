@@ -23,14 +23,9 @@ If you have already done the :ref:`basics-tutorial` you have probably
 already set up Spack to run in the tutorial image. If not, you will
 want to run the following commands:
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/up-to-date.out
+   :language: console
 
-  $ git clone https://github.com/spack/spack
-  $ cd spack
-  $ git checkout releases/v0.13
-  $ . share/spack/setup-env.sh
-  $ spack mirror add tutorial /mirror
-  $ spack gpg trust /mirror/public.key
 
 These commands install Spack into your home directory, add Spack to
 your path, and configure Spack to make use of the binary packages
@@ -94,11 +89,9 @@ packages for its dependencies:
     "libxml2" -> "zlib"
   }
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/setup-hwloc.out
+   :language: console
 
-  $ cd ~
-  $ git clone https://github.com/open-mpi/hwloc.git
-  $ cd hwloc
 
 Here we have the local `hwloc` source that we've been working on. If we
 want to build and install it, we can do so using the ``spack
@@ -107,39 +100,8 @@ spec we pass to ``spack dev-build``. By default, the ``spack
 dev-build`` command will print verbose output from the build system to
 the console.
 
-.. code-block:: console
-
-  $ spack dev-build hwloc@master
-  ...
-  ==> Installing hwloc
-  ==> Searching for binary cache of hwloc
-  ==> Finding buildcaches in /mirror/build_cache
-  ==> No binary for hwloc found: installing from source
-  ==> No need to fetch for DIY.
-  ==> No checksum needed for DIY.
-  ==> Sources for DIY stages are not cached
-  ==> Using source directory: /home/spack/hwloc
-  ==> No patches needed for hwloc
-  ==> Building hwloc [AutotoolsPackage]
-  ==> Executing phase: 'autoreconf'
-  ==> Executing phase: 'configure'
-  ==> [2019-11-14-15:57:44.921343] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-master-qk6frrw75e7r5wp7f5r65x23cxtv5p4i' '--disable-opencl' '--enable-netloc' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--enable-pci' '--enable-shared'
-
-  ###
-  ### Configuring hwloc distribution tarball
-  ### Startup tests
-  ###
-  checking build system type... x86_64-pc-linux-gnu
-  checking host system type... x86_64-pc-linux-gnu
-  checking target system type... x86_64-pc-linux-gnu
-  checking for a BSD-compatible install... /usr/bin/install -c
-  checking whether build environment is sane... yes
-
-  ...
-
-  ==> Successfully installed hwloc
-  Fetch: 0.00s.  Build: 55.16s.  Total: 55.16s.
-  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.4.0/hwloc-master-qk6frrw75e7r5wp7f5r65x23cxtv5p4i
+.. literalinclude:: outputs/dev/dev-build-1.out
+   :language: console
 
 Done! `hwloc` is installed.
 
@@ -169,148 +131,47 @@ that those phases are ``autoreconf``, ``configure``, ``build``, and
 ``install``. If we don't remember the phases, we could find out using
 the ``spack info`` command.
 
-.. code-block:: console
-  :emphasize-lines: 56,57
+.. literalinclude:: outputs/dev/info.out
+   :language: console
 
-  $ spack info hwloc
-  AutotoolsPackage:   hwloc
-
-  Description:
-      The Hardware Locality (hwloc) software project. The Portable Hardware
-      Locality (hwloc) software package provides a portable abstraction
-      (across OS, versions, architectures, ...) of the hierarchical topology
-      of modern architectures, including NUMA memory nodes, sockets, shared
-      caches, cores and simultaneous multithreading. It also gathers various
-      system attributes such as cache and memory information as well as the
-      locality of I/O devices such as network interfaces, InfiniBand HCAs or
-      GPUs. It primarily aims at helping applications with gathering
-      information about modern computing hardware so as to exploit it
-      accordingly and efficiently.
-
-  Homepage: http://www.open-mpi.org/projects/hwloc/
-
-  Tags:
-      None
-
-  Preferred version:
-      2.0.2      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.2.tar.gz
-
-  Safe versions:
-      master    [git] https://github.com/open-mpi/hwloc.git on branch master
-      2.0.2      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.2.tar.gz
-      2.0.1      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.1.tar.gz
-      2.0.0      http://www.open-mpi.org/software/hwloc/v2.0/downloads/hwloc-2.0.0.tar.gz
-      1.11.11    http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.11.tar.gz
-      1.11.10    http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.10.tar.gz
-      1.11.9     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.9.tar.gz
-      1.11.8     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.8.tar.gz
-      1.11.7     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.7.tar.gz
-      1.11.6     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.6.tar.gz
-      1.11.5     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.5.tar.gz
-      1.11.4     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.4.tar.gz
-      1.11.3     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.3.tar.gz
-      1.11.2     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.2.tar.gz
-      1.11.1     http://www.open-mpi.org/software/hwloc/v1.11/downloads/hwloc-1.11.1.tar.gz
-      1.9        http://www.open-mpi.org/software/hwloc/v1.9/downloads/hwloc-1.9.tar.gz
-
-  Variants:
-      Name [Default]    Allowed values    Description
-
-
-      cairo [off]       True, False       Enable the Cairo back-end of
-                                          hwloc's lstopo command
-      cuda [off]        True, False       Support CUDA devices
-      gl [off]          True, False       Support GL device discovery
-      libxml2 [on]      True, False       Build with libxml2
-      nvml [off]        True, False       Support NVML device discovery
-      pci [on]          True, False       Support analyzing devices on
-                                          PCI bus
-      shared [on]       True, False       Build shared libraries
-
-  Installation Phases:
-      autoreconf    configure    build    install
-
-  Build Dependencies:
-      autoconf  automake  cairo  cuda  gl  libpciaccess  libtool  libxml2  m4  numactl  pkgconfig
-
-  Link Dependencies:
-      cairo  cuda  gl  libpciaccess  libxml2  numactl
-
-  Run Dependencies:
-      None
-
-  Virtual Packages:
-      None
 
 We will tell Spack to stop installing `hwloc` after the ``configure``
 stage. This will execute exactly the same as before, except it will
 stop the installation after the listed, in our case ``configure``,
-phase completes.
+phase completes. We will also tell Spack to launch a subshell in the
+build environment, so that we can use the ``hwloc`` build system
+manually as Spack would use it.
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/dev-build-2.out
+   :language: console
 
-  $ spack uninstall hwloc
-  $ spack dev-build --until configure hwloc@master
 
 Now, we can develop our code. For the sake of this demo, we're just
 going to intentionally introduce an error. Let's edit a file and
 remove the first semi-colon we find.
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/edit-1.out
+   :language: console
 
-  $ $EDITOR hwloc/base64.c
 
 To build our code, we have a couple options. We could use `spack
 dev-build` and the `-u` option to configure and build our code, but
 we've already configured our code, and the changes we made don't
 affect the build system. Instead, let's run our build system directly
--- we are developers of this code now, after all. The first thing we
-need to do is activate Spack's build environment for our code:
+-- we are developers of this code now, after all. If you forgot the
+`--drop-in` option above, you can use ``spack build-env hwloc@master
+-- bash`` to launch it now.
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/hand-build-1.out
+   :language: console
 
-  $ spack build-env hwloc@master -- bash
-  $ make
-  Making all in include
-  make[1]: Entering directory '/home/spack/hwloc/include'
-  make[1]: Nothing to be done for 'all'.
-  make[1]: Leaving directory '/home/spack/hwloc/include'
-  Making all in hwloc
-  make[1]: Entering directory '/home/spack/hwloc/hwloc'
-    CC       base64.lo
-  base64.c:64:1: error: expected ',' or ';' before 'static'
-   static const char Pad64 = '=';
-   ^~~~~~
-  base64.c: In function 'hwloc_encode_to_base64':
-  base64.c:176:27: error: 'Pad64' undeclared (first use in this function); did you mean 'Base64'?
-      target[datalength++] = Pad64;
-                             ^~~~~
-                             Base64
-  base64.c:176:27: note: each undeclared identifier is reported only once for each function it appears in
-  base64.c: In function 'hwloc_decode_from_base64':
-  base64.c:207:13: error: 'Pad64' undeclared (first use in this function); did you mean 'Base64'?
-     if (ch == Pad64)
-               ^~~~~
-               Base64
-  Makefile:924: recipe for target 'base64.lo' failed
-  make[1]: *** [base64.lo] Error 1
-  make[1]: Leaving directory '/home/spack/hwloc/hwloc'
-  Makefile:686: recipe for target 'all-recursive' failed
-  make: *** [all-recursive] Error 1
 
 This is exactly what we'd expect, since we broke the code on
 purpose. Now let's fix it and rebuild directly.
 
-.. code-block:: console
+.. literalinclude:: outputs/dev/hand-build-2.out
+   :language: console
 
-  $ $EDITOR hwloc/base64.c
-  $ make
-  Making all in include
-  make[1]: Entering directory '/home/spack/hwloc/include'
-  ...
-  make[1]: Leaving directory '/home/spack/hwloc/doc'
-  make[1]: Entering directory '/home/spack/hwloc'
-  make[1]: Nothing to be done for 'all-am'.
 
 We've now used Spack to install all of our dependencies and configure
 our code, but we can have a faster development cycle using our build
@@ -320,6 +181,7 @@ system directly.
 Workflow Summary
 -------------------
 
-Use the ``spack dev-build`` command with the ``-u/--until`` option and
-the ``spack build-env`` command to setup all your dependencies with
-Spack and iterate using your native build system as Spack would use it.
+Use the ``spack dev-build`` command with the ``-u/--until`` and
+``--drop-in`` options to setup all of your dependencies and the build
+environment with Spack, and iterate using your native build system as
+Spack would use it.

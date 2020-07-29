@@ -1,0 +1,15 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration setings.
+spack:
+  # add package specs to the `specs` list
+  specs:
+    - matrix:
+        - [boost, trilinos, openmpi]
+        - [^mpich, ^mvapich2 fabrics=mrail]
+        - ['%gcc', '%clang']
+      exclude:
+        - '%clang ^mvapich2'
+
+  view: False
