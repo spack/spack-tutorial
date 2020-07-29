@@ -9,6 +9,7 @@ rm -rf $raw_outputs/modules
 
 # reinit modules
 rm -f ~/.spack/modules.yaml ~/.spack/linux/modules.yaml
+rm -f ~/.spack/compilers.yaml ~/.spack/linux/compilers.yaml
 spack module tcl refresh -y
 
 #

@@ -1,55 +1,34 @@
 $ module avail
 
 ---------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 ----------------------------------------
-   autoconf-2.69-gcc-7.5.0-nwb3bf5	libpciaccess-0.13.5-gcc-8.3.0-rqqclxg			    openssl/1.1.1g-gcc-8.3.0
-   autoconf-2.69-gcc-8.3.0-c7fxiuu	libpciaccess/0.13.5-gcc-8.3.0				    patchelf-0.10-gcc-7.5.0-2nj3vxx
-   autoconf/2.69-gcc-8.3.0		libsigsegv-2.12-gcc-7.5.0-lbrx7ln			    patchelf-0.10-gcc-8.3.0-35lyjgt
-   automake-1.16.2-gcc-7.5.0-wdflovn	libsigsegv-2.12-gcc-8.3.0-oaiujfn			    patchelf/0.10-gcc-8.3.0
-   automake-1.16.2-gcc-8.3.0-25eawip	libsigsegv/2.12-gcc-8.3.0				    pcre2-10.35-gcc-7.5.0-xyujt3h
-   automake/1.16.2-gcc-8.3.0		libtool-2.4.6-gcc-7.5.0-jdxbjft 			    perl-5.30.3-gcc-7.5.0-hyrsxn4
-   bzip2-1.0.8-gcc-7.5.0-fvfpt26	libtool-2.4.6-gcc-8.3.0-too4ft7 			    perl-5.30.3-gcc-8.3.0-xmhlmqr
-   bzip2-1.0.8-gcc-8.3.0-jx7bite	libtool/2.4.6-gcc-8.3.0 				    perl/5.30.3-gcc-8.3.0
-   bzip2/1.0.8-gcc-8.3.0		libunistring-0.9.10-gcc-7.5.0-dyq3apq			    pkgconf-1.7.3-gcc-7.5.0-4sh6pym
-   cmake-3.17.3-gcc-8.3.0-7otuah5	libxml2-2.9.10-gcc-7.5.0-m3l53bh			    pkgconf-1.7.3-gcc-8.3.0-oo4jobp
-   cmake/3.17.3-gcc-8.3.0		libxml2-2.9.10-gcc-8.3.0-u5khonr			    pkgconf/1.7.3-gcc-8.3.0
-   curl-7.68.0-gcc-7.5.0-e4rrsab	libxml2/2.9.10-gcc-8.3.0				    py-cython-0.29.16-gcc-8.3.0-mbnkbhv
-   diffutils-3.7-gcc-7.5.0-otkkten	lmod-8.3-gcc-7.5.0-kqbszrm				    py-cython/0.29.16-gcc-8.3.0
-   diffutils-3.7-gcc-8.3.0-5fvw3jh	lua-5.3.5-gcc-7.5.0-n37jedg				    py-numpy-1.19.0-gcc-8.3.0-3s3aj6y
-   diffutils/3.7-gcc-8.3.0		lua-luafilesystem-1_7_0_2-gcc-7.5.0-tk7fdik		    py-numpy/1.19.0-gcc-8.3.0-openblas
-   expat-2.2.9-gcc-7.5.0-3f3kkbl	lua-luaposix-33.4.0-gcc-7.5.0-sas2uzg			    py-pybind11-2.5.0-gcc-8.3.0-mjmujjo
-   expat-2.2.9-gcc-8.3.0-xrk7vwz	m4-1.4.18-gcc-7.5.0-mkc3u4x				    py-pybind11/2.5.0-gcc-8.3.0
-   expat/2.2.9-gcc-8.3.0		m4-1.4.18-gcc-8.3.0-65odbgi				    py-scipy-1.5.0-gcc-8.3.0-6f5vgp6
-   findutils-4.6.0-gcc-8.3.0-gxxeusv	m4/1.4.18-gcc-8.3.0					    py-scipy/1.5.0-gcc-8.3.0-openblas
-   findutils/4.6.0-gcc-8.3.0		mpc-1.1.0-gcc-7.5.0-uur2dd6				    py-setuptools-46.1.3-gcc-8.3.0-4dcvntv
-   gcc-8.3.0-gcc-7.5.0-6hbkzol		mpfr-3.1.6-gcc-7.5.0-nwsubsw				    py-setuptools/46.1.3-gcc-8.3.0
-   gcc/8.3.0-gcc-7.5.0			mpich-3.3.2-gcc-8.3.0-focol2k				    python-3.7.7-gcc-8.3.0-4uojybm
-   gdbm-1.18.1-gcc-7.5.0-4av4gyw	mpich/3.3.2-gcc-8.3.0					    python/3.7.7-gcc-8.3.0
-   gdbm-1.18.1-gcc-8.3.0-alz6ery	ncurses-6.2-gcc-7.5.0-crhlefo				    readline-8.0-gcc-7.5.0-t54jzdy
-   gdbm/1.18.1-gcc-8.3.0		ncurses-6.2-gcc-8.3.0-klfkayd				    readline-8.0-gcc-8.3.0-l33t67c
-   gettext-0.20.2-gcc-7.5.0-p4xwlyy	ncurses/6.2-gcc-8.3.0					    readline/8.0-gcc-8.3.0
-   gettext-0.20.2-gcc-8.3.0-euuxtvr	netlib-lapack-3.8.0-gcc-8.3.0-kbk7dg3			    sqlite-3.31.1-gcc-8.3.0-vz4awtk
-   gettext/0.20.2-gcc-8.3.0		netlib-lapack/3.8.0-gcc-8.3.0				    sqlite/3.31.1-gcc-8.3.0
-   git-2.27.0-gcc-7.5.0-pzqvpp2 	netlib-scalapack-2.1.0-gcc-8.3.0-h2amar2		    tar-1.32-gcc-7.5.0-uwe6tb5
-   gmp-6.1.2-gcc-7.5.0-3ol3tld		netlib-scalapack-2.1.0-gcc-8.3.0-kt5c5on		    tar-1.32-gcc-8.3.0-fk4qp4i
-   hwloc-1.11.11-gcc-8.3.0-lz2i2dd	netlib-scalapack-2.1.0-gcc-8.3.0-qsewiuz		    tar/1.32-gcc-8.3.0
-   hwloc-2.2.0-gcc-8.3.0-4otoxex	netlib-scalapack-2.1.0-gcc-8.3.0-uf4ynvq		    tcl-8.6.8-gcc-7.5.0-aszidzn
-   hwloc/1.11.11-gcc-8.3.0		netlib-scalapack/2.1.0-gcc-8.3.0-netlib-lapack		    texinfo-6.5-gcc-8.3.0-7t62l5t
-   hwloc/2.2.0-gcc-8.3.0		netlib-scalapack/2.1.0-gcc-8.3.0-netlib-lapack-3.1.6	    texinfo/6.5-gcc-8.3.0
-   isl-0.18-gcc-7.5.0-4lkvfkv		netlib-scalapack/2.1.0-gcc-8.3.0-openblas		    unzip-6.0-gcc-7.5.0-2ozim4d
-   libbsd-0.10.0-gcc-7.5.0-u6ue7vw	netlib-scalapack/2.1.0-gcc-8.3.0-openblas-3.1.6      (D)    util-macros-1.19.1-gcc-8.3.0-obeg5kx
-   libbsd-0.10.0-gcc-8.3.0-nr46ju6	numactl-2.0.12-gcc-8.3.0-tusy4nf			    util-macros/1.19.1-gcc-8.3.0
-   libbsd/0.10.0-gcc-8.3.0		numactl/2.0.12-gcc-8.3.0				    xz-5.2.5-gcc-7.5.0-6nxes4r
-   libffi-3.3-gcc-8.3.0-lo4lv3d 	openblas-0.3.10-gcc-8.3.0-x32w5jn			    xz-5.2.5-gcc-8.3.0-72wq5od
-   libffi/3.3-gcc-8.3.0 		openblas/0.3.10-gcc-8.3.0				    xz/5.2.5-gcc-8.3.0
-   libiconv-1.16-gcc-7.5.0-jearpk4	openmpi-3.1.6-gcc-8.3.0-4twpso3 			    zlib-1.2.11-gcc-7.5.0-smoyzzo
-   libiconv-1.16-gcc-8.3.0-brkkjge	openmpi/3.1.6-gcc-8.3.0 				    zlib-1.2.11-gcc-8.3.0-2icaxiy
-   libiconv/1.16-gcc-8.3.0		openssl-1.1.1g-gcc-7.5.0-4dj34yw			    zlib/1.2.11-gcc-8.3.0
-   libidn2-2.1.1a-gcc-7.5.0-gcbfo3a	openssl-1.1.1g-gcc-8.3.0-yygx7ht
-
-  Where:
-   D:  Default Module
+   autoconf-2.69-gcc-7.5.0-nwb3bf5	libidn2-2.1.1a-gcc-7.5.0-gcbfo3a	       openssl-1.1.1g-gcc-7.5.0-4dj34yw
+   autoconf-2.69-gcc-8.3.0-c7fxiuu	libpciaccess-0.13.5-gcc-8.3.0-rqqclxg	       openssl-1.1.1g-gcc-8.3.0-yygx7ht
+   automake-1.16.2-gcc-7.5.0-wdflovn	libsigsegv-2.12-gcc-7.5.0-lbrx7ln	       patchelf-0.10-gcc-7.5.0-2nj3vxx
+   automake-1.16.2-gcc-8.3.0-25eawip	libsigsegv-2.12-gcc-8.3.0-oaiujfn	       patchelf-0.10-gcc-8.3.0-35lyjgt
+   bzip2-1.0.8-gcc-7.5.0-fvfpt26	libtool-2.4.6-gcc-7.5.0-jdxbjft 	       pcre2-10.35-gcc-7.5.0-xyujt3h
+   bzip2-1.0.8-gcc-8.3.0-jx7bite	libtool-2.4.6-gcc-8.3.0-too4ft7 	       perl-5.30.3-gcc-7.5.0-hyrsxn4
+   cmake-3.17.3-gcc-8.3.0-7otuah5	libunistring-0.9.10-gcc-7.5.0-dyq3apq	       perl-5.30.3-gcc-8.3.0-xmhlmqr
+   curl-7.68.0-gcc-7.5.0-e4rrsab	libxml2-2.9.10-gcc-7.5.0-m3l53bh	       pkgconf-1.7.3-gcc-7.5.0-4sh6pym
+   diffutils-3.7-gcc-7.5.0-otkkten	libxml2-2.9.10-gcc-8.3.0-u5khonr	       pkgconf-1.7.3-gcc-8.3.0-oo4jobp
+   diffutils-3.7-gcc-8.3.0-5fvw3jh	lmod-8.3-gcc-7.5.0-kqbszrm		       py-cython-0.29.16-gcc-8.3.0-mbnkbhv
+   expat-2.2.9-gcc-7.5.0-3f3kkbl	lua-5.3.5-gcc-7.5.0-n37jedg		       py-numpy-1.19.0-gcc-8.3.0-3s3aj6y
+   expat-2.2.9-gcc-8.3.0-xrk7vwz	lua-luafilesystem-1_7_0_2-gcc-7.5.0-tk7fdik    py-pybind11-2.5.0-gcc-8.3.0-mjmujjo
+   findutils-4.6.0-gcc-8.3.0-gxxeusv	lua-luaposix-33.4.0-gcc-7.5.0-sas2uzg	       py-scipy-1.5.0-gcc-8.3.0-6f5vgp6
+   gcc-8.3.0-gcc-7.5.0-6hbkzol		m4-1.4.18-gcc-7.5.0-mkc3u4x		       py-setuptools-46.1.3-gcc-8.3.0-4dcvntv
+   gdbm-1.18.1-gcc-7.5.0-4av4gyw	m4-1.4.18-gcc-8.3.0-65odbgi		       python-3.7.7-gcc-8.3.0-4uojybm
+   gdbm-1.18.1-gcc-8.3.0-alz6ery	mpc-1.1.0-gcc-7.5.0-uur2dd6		       readline-8.0-gcc-7.5.0-t54jzdy
+   gettext-0.20.2-gcc-7.5.0-p4xwlyy	mpfr-3.1.6-gcc-7.5.0-nwsubsw		       readline-8.0-gcc-8.3.0-l33t67c
+   gettext-0.20.2-gcc-8.3.0-euuxtvr	mpich-3.3.2-gcc-8.3.0-focol2k		       sqlite-3.31.1-gcc-8.3.0-vz4awtk
+   git-2.27.0-gcc-7.5.0-pzqvpp2 	ncurses-6.2-gcc-7.5.0-crhlefo		       tar-1.32-gcc-7.5.0-uwe6tb5
+   gmp-6.1.2-gcc-7.5.0-3ol3tld		ncurses-6.2-gcc-8.3.0-klfkayd		       tar-1.32-gcc-8.3.0-fk4qp4i
+   hwloc-1.11.11-gcc-8.3.0-lz2i2dd	netlib-lapack-3.8.0-gcc-8.3.0-kbk7dg3	       tcl-8.6.8-gcc-7.5.0-aszidzn
+   hwloc-2.2.0-gcc-8.3.0-4otoxex	netlib-scalapack-2.1.0-gcc-8.3.0-h2amar2       texinfo-6.5-gcc-8.3.0-7t62l5t
+   isl-0.18-gcc-7.5.0-4lkvfkv		netlib-scalapack-2.1.0-gcc-8.3.0-kt5c5on       unzip-6.0-gcc-7.5.0-2ozim4d
+   libbsd-0.10.0-gcc-7.5.0-u6ue7vw	netlib-scalapack-2.1.0-gcc-8.3.0-qsewiuz       util-macros-1.19.1-gcc-8.3.0-obeg5kx
+   libbsd-0.10.0-gcc-8.3.0-nr46ju6	netlib-scalapack-2.1.0-gcc-8.3.0-uf4ynvq       xz-5.2.5-gcc-7.5.0-6nxes4r
+   libffi-3.3-gcc-8.3.0-lo4lv3d 	numactl-2.0.12-gcc-8.3.0-tusy4nf	       xz-5.2.5-gcc-8.3.0-72wq5od
+   libiconv-1.16-gcc-7.5.0-jearpk4	openblas-0.3.10-gcc-8.3.0-x32w5jn	       zlib-1.2.11-gcc-7.5.0-smoyzzo
+   libiconv-1.16-gcc-8.3.0-brkkjge	openmpi-3.1.6-gcc-8.3.0-4twpso3 	       zlib-1.2.11-gcc-8.3.0-2icaxiy
 
 Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
-
-
