@@ -1,0 +1,30 @@
+modules:
+  enable::
+    - lmod
+  lmod:
+    core_compilers:
+      - 'gcc@7.5.0'
+    hierarchy:
+      - mpi
+      - lapack
+    hash_length: 0
+    whitelist:
+      - gcc
+    blacklist:
+      - '%gcc@7.5.0'
+    all:
+      filter:
+        environment_blacklist:
+          - "C_INCLUDE_PATH"
+          - "CPLUS_INCLUDE_PATH"
+          - "LIBRARY_PATH"
+      environment:
+        set:
+          '{name}_ROOT': '{prefix}'
+    openmpi:
+      environment:
+        set:
+          SLURM_MPI_TYPE: pmi2
+          OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
+    projections:
+      all:          '{name}/{version}'
