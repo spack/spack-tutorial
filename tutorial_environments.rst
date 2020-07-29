@@ -115,10 +115,6 @@ all of their dependencies.  We call ``tcl`` and ``trilinos`` the
 listed under "installed packages" are present because they were needed as
 dependencies.  So, these are the roots of the packages' dependency graph.
 
-The "<package> is already installed" messages above are generated because
-we already installed these packages in previous steps of the tutorial,
-and we don't have to rebuild them to put them in an environment.
-
 ^^^^^^^^^^^^^^^^^^^^^
 Using packages
 ^^^^^^^^^^^^^^^^^^^^^
@@ -456,11 +452,6 @@ install the project's dependencies.  They need only clone the repository,
 
 
 Spack concretizes the specs in the ``spack.yaml`` file and installs them.
-
-What happened here?  If you ``cd`` into a directory that has a
-``spack.yaml`` file in it, Spack considers this directory's environment
-to be activated.  The directory does not have to live within Spack; it
-can be anywhere.
 
 So, from ``~/code``, we can actually manipulate ``spack.yaml`` using
 ``spack add`` and ``spack remove`` (just like managed environments):
