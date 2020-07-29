@@ -711,14 +711,14 @@ After these modifications your configuration file should look like:
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@7.4.0'
+        - 'gcc@7.5.0'
       hierarchy:
         - mpi
       hash_length: 0
       whitelist:
         - gcc
       blacklist:
-        - '%gcc@7.4.0'
+        - '%gcc@7.5.0'
       all:
         filter:
           environment_blacklist:
