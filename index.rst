@@ -11,7 +11,9 @@ Tutorial: Spack 101
 
 This is a full-day introduction to Spack with lectures and live demos. It
 was last presented as a virtual event in cooperation with `Amazon Web
-Services <https://spack-tutorial.workshop.aws/>`_, on July 28-29, 2020.
+Services <https://spack-tutorial.workshop.aws/>`_, on July 28-29, 2020. 
+Videos from `day 1 (3:19:18) <https://www.youtube.com/watch?v=Os4k8SpZE3s>`_ 
+and `day 2 (3:30:18) <https://www.youtube.com/watch?v=lHTJBWisabo>`_ are available.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
