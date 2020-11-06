@@ -5,9 +5,9 @@
 
 .. _modules-tutorial:
 
-=======================
-Module Files Generation
-=======================
+=====================
+Module Files Tutorial
+=====================
 
 This tutorial illustrates how Spack can be used to generate module files
 for the software that has been installed. Both hierarchical and non-hierarchical
