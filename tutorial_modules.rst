@@ -443,7 +443,7 @@ The problem here is that without the hashes the four different flavors of
 the names are formatted to differentiate them:
 
 .. code-block:: yaml
-  :emphasize-lines: 9-10,16-20
+  :emphasize-lines: 9-10,16-19
 
   modules:
     tcl:
@@ -461,10 +461,9 @@ the names are formatted to differentiate them:
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
       projections:
-        all:          '{name}/{version}-{compiler.name}-{compiler.version}'
-        ^mpi^lapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.version}'
-        ^lapack:      '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
-        ^mpi:         '{name}/{version}-{compiler.name}-{compiler.version}-{^mpi.name}'
+        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 As you can see it is possible to specify rules that apply only to a
 restricted set of packages using `anonymous specs
@@ -519,10 +518,9 @@ is installed. You can achieve this with Spack by adding an
           set:
             '{name}_ROOT': '{prefix}'
       projections:
-        all:          '{name}/{version}-{compiler.name}-{compiler.version}'
-        ^mpi^lapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.version}'
-        ^lapack:      '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
-        ^mpi:         '{name}/{version}-{compiler.name}-{compiler.version}-{^mpi.name}'
+        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 
 Under the hood Spack uses the :meth:`~spack.spec.Spec.format` API to substitute
@@ -576,10 +574,9 @@ only certain packages. You can for instance apply modifications to the
             SLURM_MPI_TYPE: pmi2
             OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
       projections:
-        all:          '{name}/{version}-{compiler.name}-{compiler.version}'
-        ^mpi^lapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.version}'
-        ^lapack:      '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
-        ^mpi:         '{name}/{version}-{compiler.name}-{compiler.version}-{^mpi.name}'
+        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 This time we will be more selective and regenerate only the ``openmpi`` module file:
 
@@ -600,7 +597,7 @@ modules that load their dependencies by adding the ``autoload``
 directive and assigning it the value ``direct``:
 
 .. code-block:: yaml
-  :emphasize-lines: 3,39,40
+  :emphasize-lines: 3,38,39
 
   modules:
     tcl:
@@ -636,10 +633,9 @@ directive and assigning it the value ``direct``:
             SLURM_MPI_TYPE: pmi2
             OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
       projections:
-        all:          '{name}/{version}-{compiler.name}-{compiler.version}'
-        ^mpi^lapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.version}'
-        ^lapack:      '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
-        ^mpi:         '{name}/{version}-{compiler.name}-{compiler.version}-{^mpi.name}'
+        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
       ^python:
         autoload:  direct
 
@@ -704,7 +700,7 @@ There are just a few steps needed to adapt the ``modules.yaml`` file we used pre
 After these modifications your configuration file should look like:
 
 .. code-block:: yaml
-  :emphasize-lines: 2-8
+  :emphasize-lines: 2-8,28-30
 
   modules:
     enable::
