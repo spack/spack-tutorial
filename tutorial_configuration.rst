@@ -121,25 +121,25 @@ configuration file as follows:
 
    compilers::
    - compiler:
-       environment: {}
-       extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu18.04
+       spec: gcc@7.5.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
-       spec: gcc@7.5.0
+       flags: {}
+       operating_system: ubuntu18.04
        target: x86_64
+       modules: []
+       environment: {}
+       extra_rpaths: []
 
 
 This ensures that no other compilers are used, as the user configuration
 scope is the last scope searched and the ``compilers::`` line replaces
 all previous configuration files information. If the same
 configuration file had a single colon instead of the double colon, it
-would add the GCC version 7.4.0 compiler to whatever other compilers
+would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
 
 .. _configs-tutorial-compilers:
@@ -210,23 +210,24 @@ This specifies two versions of the GCC compiler and one version of the
 Clang compiler with no Flang compiler. Now suppose we have a code that
 we want to compile with the Clang compiler for C/C++ code, but with
 gfortran for Fortran components. We can do this by adding another entry
-to the ``compilers.yaml`` file.
+to the ``compilers.yaml`` file:
 
 .. code-block:: yaml
+   :emphasize-lines: 2,6-7
 
    - compiler:
-       environment: {}
-       extra_rpaths: []
-       flags: {}
-       modules: []
-       operating_system: ubuntu18.04
+       spec: clang@6.0.0-gfortran
        paths:
          cc: /usr/bin/clang-6.0
          cxx: /usr/bin/clang++-6.0
          f77: /usr/bin/gfortran-7
          fc: /usr/bin/gfortran-7
-       spec: clang@6.0.0-gfortran
+       flags: {}
+       operating_system: ubuntu18.04
        target: x86_64
+       modules: []
+       environment: {}
+       extra_rpaths: []
 
 
 Let's talk about the sections of this compiler entry that we've changed.
@@ -279,28 +280,29 @@ through the implicit build variables ``cflags``, ``cxxflags``, ``cppflags``,
 Let's open our compilers configuration file again and add a compiler flag:
 
 .. code-block:: yaml
+   :emphasize-lines: 8-9
 
    - compiler:
-       environment: {}
-       extra_rpaths: []
-       flags:
-         cppflags: -g
-       modules: []
-       operating_system: ubuntu18.04
+       spec: clang@6.0.0-gfortran
        paths:
          cc: /usr/bin/clang-6.0
          cxx: /usr/bin/clang++-6.0
          f77: /usr/bin/gfortran-7
          fc: /usr/bin/gfortran-7
-       spec: clang@6.0.0-gfortran
+       flags:
+         cppflags: -g
+       operating_system: ubuntu18.04
        target: x86_64
+       modules: []
+       environment: {}
+       extra_rpaths: []
 
 
 We can test this out using the ``spack spec`` command to show how the
 spec is concretized:
 
 .. literalinclude:: outputs/config/0.compiler_flags.out
-    :language: console
+   :language: console
 
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
@@ -327,6 +329,25 @@ of the build environment for packages using that compiler:
        - gcc/5.3.0
        ...
 
+The ``environment`` field of the compiler configuration is used for
+compilers that require environment variables to be set during build
+time. For example, if your Intel compiler suite requires the
+``INTEL_LICENSE_FILE`` environment variable to point to the proper
+license server, you can set this in ``compilers.yaml`` as follows:
+
+.. code-block:: yaml
+
+   - compiler:
+       ...
+       environment:
+         set:
+           INTEL_LICENSE_FILE: 1713@license4
+       ...
+
+
+In addition to ``set``, ``environment`` also supports ``unset``,
+``prepend_path``, and ``append_path``.
+
 The ``extra_rpaths`` field of the compiler configuration is used for
 compilers that do not rpath all of their dependencies by
 default. Since compilers are often installed externally to Spack,
@@ -349,24 +370,6 @@ this field can be set by:
        ...
 
 
-The ``environment`` field of the compiler configuration is used for
-compilers that require environment variables to be set during build
-time. For example, if your Intel compiler suite requires the
-``INTEL_LICENSE_FILE`` environment variable to point to the proper
-license server, you can set this in ``compilers.yaml`` as follows:
-
-.. code-block:: yaml
-
-  - compiler:
-      environment:
-        set:
-          INTEL_LICENSE_FILE: 1713@license4
-      ...
-
-
-In addition to ``set``, ``environment`` also supports ``unset``,
-``prepend_path``, and ``append_path``.
-
 .. _configs-tutorial-package-prefs:
 
 -------------------------------
@@ -384,15 +387,17 @@ configuration file. First, we will look at the default
 
 .. literalinclude:: _spack_root/etc/spack/defaults/packages.yaml
    :language: yaml
+   :emphasize-lines: 18,37
 
 
 This sets the default preferences for compilers and for providers of
-virtual packages. To illustrate how this works, suppose we want to
+virtual dependencies. To illustrate how this works, suppose we want to
 change the preferences to prefer the Clang compiler and to prefer
 MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
-    :language: console
+   :language: console
+   :emphasize-lines: 9
 
 
 Now we will open the packages configuration file and update our
@@ -400,7 +405,7 @@ preferences.
 
 .. code-block:: console
 
-  $ spack config edit packages
+   $ spack config edit packages
 
 
 .. code-block:: yaml
@@ -416,8 +421,8 @@ Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
-    :language: console
-    :emphasize-lines: 9
+   :language: console
+   :emphasize-lines: 9
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -430,6 +435,7 @@ packages without shared libraries. We will accomplish this by turning
 off the ``shared`` variant on all packages that have one.
 
 .. code-block:: yaml
+   :emphasize-lines: 6
 
    packages:
      all:
@@ -443,7 +449,7 @@ We can check the effect of this command with ``spack spec hdf5`` again.
 
 .. literalinclude:: outputs/config/2.prefs.out
    :language: console
-   :emphasize-lines: 8,14,27
+   :emphasize-lines: 8,13,22,28
 
 
 So far we have only made global changes to the package preferences. As
@@ -454,6 +460,7 @@ need serial HDF5, that might get annoying quickly, having to type
 HDF5.
 
 .. code-block:: yaml
+   :emphasize-lines: 7-8
 
    packages:
      all:
@@ -469,6 +476,7 @@ Now hdf5 will concretize without an MPI dependency by default.
 
 .. literalinclude:: outputs/config/3.prefs.out
    :language: console
+   :emphasize-lines: 8
 
 
 In general, every attribute that we can set for all packages we can
@@ -479,10 +487,17 @@ External packages
 ^^^^^^^^^^^^^^^^^
 
 The packages configuration file also controls when Spack will build
-against an externally installed package. On these systems we have a
-pre-installed zlib.
+against an externally installed package. Spack has a
+``spack external find`` command that can automatically discover and
+register externally installed packages. This works for many common
+build dependencies, but it's also important to know how to do this
+manually for packages that Spack cannot yet detect.
+
+On these systems we have a pre-installed zlib. Let's tell Spack about
+this package and where it can be found:
 
 .. code-block:: yaml
+   :emphasize-lines: 9-11
 
    packages:
      all:
@@ -520,6 +535,7 @@ specify it on the command line, or we can tell Spack that it's
 not allowed to build its own zlib. We'll go with the latter.
 
 .. code-block:: yaml
+   :emphasize-lines: 12
 
    packages:
      all:
@@ -543,9 +559,10 @@ Now Spack will be forced to choose the external zlib.
 
 This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
-of HDF5? Well, fortunately we have MPICH installed on these systems.
+of HDF5. Well, fortunately we have MPICH installed on these systems.
 
 .. code-block:: yaml
+   :emphasize-lines: 13-16
 
    packages:
      all:
@@ -570,6 +587,7 @@ build with an alternate MPI implementation.
 
 .. literalinclude:: outputs/config/3.externals.out
    :language: console
+   :emphasize-lines: 9
 
 We have only expressed a preference for MPICH over other MPI
 implementations, and Spack will happily build with one we haven't
@@ -583,6 +601,7 @@ While we're at it, we can configure HDF5 to build with MPI by default
 again.
 
 .. code-block:: yaml
+   :emphasize-lines: 14-15
 
    packages:
      all:
@@ -606,13 +625,14 @@ for MPI, we can try again.
 
 .. literalinclude:: outputs/config/4.externals.out
    :language: console
+   :emphasize-lines: 9
 
 
 By configuring most of our package preferences in ``packages.yaml``,
 we can cut down on the amount of work we need to do when specifying
 a spec on the command line. In addition to compiler and variant
 preferences, we can specify version preferences as well. Except for
-selecting providers via `^`, anything that you can specify on the
+specifying dependencies via ``^``, anything that you can specify on the
 command line can be specified in ``packages.yaml`` with the exact
 same spec syntax.
 
