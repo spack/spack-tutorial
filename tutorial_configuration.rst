@@ -391,7 +391,7 @@ configuration file. First, we will look at the default
 
 
 This sets the default preferences for compilers and for providers of
-virtual dependencies. To illustrate how this works, suppose we want to
+virtual packages. To illustrate how this works, suppose we want to
 change the preferences to prefer the Clang compiler and to prefer
 MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
