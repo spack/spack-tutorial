@@ -314,7 +314,7 @@ follow this naming scheme must implement this function themselves, e.g.
     def libs(self):
         shared = "+shared" in self.spec
         return find_libraries(
-            "libopencv_*", root=self.prefix, shared=shared, recurse=True
+            "libopencv_*", root=self.prefix, shared=shared, recursive=True
         )
 
 This issue is common for packages which implement an interface (i.e.
