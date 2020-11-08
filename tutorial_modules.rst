@@ -997,7 +997,7 @@ need to use the new custom template. For the sake of illustration let's assume
 it's ``netlib-scalapack``:
 
 .. code-block:: yaml
-  :emphasize-lines: 27-28
+  :emphasize-lines: 30-31
 
   modules:
     enable::
