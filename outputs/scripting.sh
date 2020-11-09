@@ -24,7 +24,7 @@ echo "exit()
 
 fake_example scripting/edit '$EDITOR find_exclude.py' "/bin/true"
 
-cat <<EOF | tee /project/raw/0.find_exclude.py.example find_exclude.py
+cat <<EOF | tee ${PROJECT}/raw/0.find_exclude.py.example find_exclude.py
 from spack.spec import Spec
 import spack.store
 import spack.cmd
@@ -41,11 +41,11 @@ EOF
 
 example scripting/find-exclude-1 "spack python find_exclude.py %gcc ^mpich"
 
-{ echo "#!/usr/bin/env spack python" & cat find_exclude.py; } | tee /project/raw/1.find_exclude.py.example find_exclude.py
+{ echo "#!/usr/bin/env spack python" & cat find_exclude.py; } | tee ${PROJECT}/raw/1.find_exclude.py.example find_exclude.py
 
 example scripting/find-exclude-2 "chmod u+x find_exclude.py"
 example scripting/find-exclude-2 "./find_exclude.py %gcc ^mpich"
 
-sed s'|spack python|spack-python|' find_exclude.py | tee /project/raw/2.find_exclude.py.example find_exclude.py
+sed s'|spack python|spack-python|' find_exclude.py | tee  ${PROJECT}/raw/2.find_exclude.py.example find_exclude.py
 
 example scripting/find-exclude-3 "./find_exclude.py %gcc ^mpich"
