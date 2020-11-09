@@ -381,7 +381,7 @@ added to the configuration.
 
 We can add gcc to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-gcc@8.3.0.
+``gcc@8.3.0``.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
    :language: console
