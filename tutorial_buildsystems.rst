@@ -3,6 +3,8 @@
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+.. include:: common/setup.rst
+
 .. _build-systems-tutorial:
 
 ===========================
@@ -41,7 +43,7 @@ Package Class Hierarchy
         PackageBase -> CMakePackage [dir=back]
         PackageBase -> PythonPackage [dir=back]
     }
- 
+
 The above diagram gives a high level view of the class hierarchy and how each
 package relates. Each subclass inherits from the :code:`PackageBaseClass`
 super class. The bulk of the work is done in this super class which includes
