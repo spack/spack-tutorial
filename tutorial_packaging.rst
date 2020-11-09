@@ -53,14 +53,13 @@ Getting Started
 ---------------
 
 Before we get started, you need to confirm you have three environment
-variables set:
+variables set as follows:
 
-- ``SPACK_ROOT``: We'll use this variable to refer to the Spack installation
-  location so you should ensure it is set to that path;
-- ``PATH``: ``$SPACK_ROOT/bin`` should be in your ``PATH`` so calls to the
-  so calls to the ``spack`` command work; and
-- ``EDITOR``: This variable needs to be set to your preferred text editor so
-  Spack can bring the editor up when we modify the package.
+- ``SPACK_ROOT``: consisting of the path to your Spack installation;
+- ``PATH``: including ``$SPACK_ROOT/bin`` (so calls to the ``spack`` command
+  work); and
+- ``EDITOR``: containing the path of your preferred text editor (so Spack can
+  run it when we modify the package).
 
 The first two variables are automatically set by ``setup-env.sh`` so, if they
 aren't, run the following command:
@@ -72,7 +71,7 @@ aren't, run the following command:
 or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
 In order to avoid modifying your Spack installation with the package
-we are creating, we can add a *package repository* just for this tutorial
+we are creating, you can add a *package repository* just for this tutorial
 by entering the following command:
 
 .. literalinclude:: outputs/packaging/repo-add.out
