@@ -732,7 +732,7 @@ node with 16 cores, this will look like:
 
 .. code-block:: console
 
-   $ spack install --no-cache --verbose --overwrite zlib
+   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
    ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
@@ -750,6 +750,11 @@ you have a strict ulimit or restriction on the number of available licenses,
 you may not be able to build at all with this many cores. To limit the
 number of cores our build uses, set ``build_jobs`` like so:
 
+.. code-block:: console
+
+   $ spack config edit config
+
+
 .. code-block:: yaml
 
    config:
@@ -760,7 +765,7 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
 
 .. code-block:: console
 
-   $ spack install --no-cache --verbose --overwrite zlib
+   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
    ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
@@ -775,9 +780,16 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
 Obviously, if you want to build everything in serial for whatever reason,
 you would set ``build_jobs`` to 1.
 
---------
-Examples
---------
+----------
+Conclusion
+----------
+
+In this tutorial, we covered basic Spack configuration using ``compilers.yaml``,
+``packages.yaml``, and ``config.yaml``. Spack has many more configuration files,
+including ``modules.yaml``, which will be covered in the :ref:`modules-tutorial`.
+For more detailed documentation on Spack's many configuration settings, see
+`the configuration section <https://spack.readthedocs.io/en/latest/configuration.html>`_
+of Spack's main documentation.
 
 For examples of how other sites configure Spack, see
 https://github.com/spack/spack-configs. If you use Spack at your site
