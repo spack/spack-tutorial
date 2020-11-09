@@ -11,8 +11,8 @@ Package Creation Tutorial
 
 This tutorial walks you through the steps behind building and 
 debugging a new, simple package installation script.
-We are using ``mpileaks``, an MPI debugging tool, as our example.
-An iterative approach is taken to develop and debug the package
+Our example is ``mpileaks``, which is an MPI debugging tool.
+We will take an iterative approach to develop and debug the package
 to gain more experience with additional Spack commands.
 
 Installation scripts are essentially recipes for building software.
@@ -23,7 +23,7 @@ They define properties and behavior of the build, such as:
 - options for building the software from source; and
 - build commands.
 
-This information is coded into a package and provides the flexibility
+We code this information into the package to provide the flexibility
 needed for build portability and feature variability using Spack.
 In other words, once we've specified a package's recipe, we can
 ask Spack to build that package on different systems and with different
@@ -33,79 +33,85 @@ features.
 Caveats
 -------
 
-This tutorial assumes you have a basic familiarity with some of the
-Spack commands and a working version of Spack installed. Refer to the
+This tutorial assumes you have a working version of Spack installed.
+Refer to the
 `Getting Started <https://spack.readthedocs.io/en/latest/getting_started.html#getting-started>`_
 guide for information on how to install Spack.
 
 We'll be writing code so it is assumed you have at least a
 beginner's-level familiarity with Python.
-Successive versions of the Python code examples used here can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples``.
 
-Also note that this document is a tutorial. It can help you get started
-with packaging, but is not intended to be complete. See Spack's
+Being a tutorial, this document can help you get started with packaging,
+but it is not intended to be complete. See Spack's
 `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
 for more complete documentation on this topic.
+The Python code examples used here can be found at
+https://github.com/spack/spack-tutorial under ``tutorial/examples``.
 
 ---------------
 Getting Started
 ---------------
 
-Before we get started you need to confirm you have three environment variables
-set properly:
+Before we get started you need to confirm you have three environment
+variables set:
 
 - ``SPACK_ROOT``: We'll use this variable to refer to the Spack installation
-  location so you should set it to that path;
-- ``PATH``:  Add ``$SPACK_ROOT/bin`` to your ``PATH`` before you start so
-  calls to the ``spack`` command work; and
-- ``EDITOR``: Ensure this variable is set to your preferred text editor so
-  Spack can bring it up when we modify the package.
+  location so you should ensure it is set to that path;
+- ``PATH``: ``$SPACK_ROOT/bin`` should be in your ``PATH`` so calls to the
+  so calls to the ``spack`` command work; and
+- ``EDITOR``: This variable needs to be set to your preferred text editor so
+  Spack can bring the editor up when we modify the package.
 
-It is important that we sandbox the effects of this tutorial from
-built-in packages and the other tutorials.
-We can accomplish this with a package repository, which is used to separate
-sets of packages with precedence rules.
-More information on that topic, including overriding other repositories, can
-be found at
-`Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ .
+The first two variables are automatically set by ``setup-env.sh`` so, if they
+aren't, run the following command:
 
-Spack ships with a tutorial repository that we can use to override built-in
-packages. Tell Spack to add the tutorial repository to its list by entering
-the following:
+.. code-block:: console
+
+   $ . share/spack/setup-env.sh
+
+or the equivalent for your shell (e.g., ``csh``, ``fish``).
+
+In order to avoid modifying your Spack installation with the new package
+we are creating, we can add a *package repository* just for this tutorial
+by entering the following command:
 
 .. literalinclude:: outputs/packaging/repo-add.out
    :language: console
 
-This command will ensure you are working in the tutorial repository.
+Doing this will sandbox any changes we make here, and it will prevent them
+from adversely affecting other parts of the tutorial. You can find out more
+about repositories at
+`Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ .
 
 -------------------------
 Creating the Package File
 -------------------------
 
-Now that we have our environment set up for this tutorial, we can create
-our package.
-Spack comes with a handy command for this purpose, ``spack create``.
-The command takes the location of the package's source code and uses it
-to fetch the code, create a suitable package skeleton, and open the file
-up in your editor of choice.
+Suppose we wanted to install the ``mpileaks`` but found Spack did not
+already have a built-in package for it. Fortunately, Spack comes with
+a handy command for creating one: ``spack create``. The command takes
+the location of the package's source code and uses it to:
 
-The ``mpileaks`` source code can be found on GitHub in a tar file.
-Spack will look at the contents of the tar file and generate a package
-when we run ``spack create`` with its URL.
+- fetch the code;
+- create a package skeleton; and 
+- open the file up in your editor of choice.
+
+The ``mpileaks`` source code can be found on GitHub in a tarball. Spack
+will look at the contents of the tarball and generate a package when we
+run ``spack create`` with the URL.
 
 .. literalinclude:: outputs/packaging/create.out
    :language: console
 
-A text editor should have been spawned for the resulting ``package.py`` file
-with the following contents:
+You should now be in your text editor of choice, with the ``package.py``
+file open for editing. The file have the following contents:
 
 .. literalinclude:: tutorial/examples/0.package.py
    :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
    :language: python
 
-The file itself should now reside in the suitably named packages subdirectory
-of the tutorial repository we added above, i.e.,
+The file itself should now reside in the ``mpileaks`` subdirectory of
+the tutorial repository packages directory, i.e.,
 ``$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py``
 
 Take a moment to look over the file. Spack created a few placeholders that
@@ -126,7 +132,7 @@ This obviously didn't work.
 
 We need to fill in package-specific build information. Specifically,
 Spack didn't try to build any of mpileaks' dependencies, nor did it
-use the proper configure arguments because we haven't provided that
+use the configure arguments because we haven't provided that
 information.
 
 Let's start fixing things.
@@ -173,9 +179,9 @@ Now make the changes and additions to your ``package.py`` file:
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
-for others.
+for review.
 
-Let's see what is reported by entering the ``spack info`` command:
+Let's enter the ``spack info`` command:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
@@ -190,8 +196,7 @@ information derived from the package:
 - the default Autotools package installation phases are listed.
 
 There are also entries for the different types of dependencies.
-We don't currently have any specified so they are each reported
-as ``None``.
+We don't currently have any specified so they are reported as ``None``.
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -226,8 +231,8 @@ installed *before* it can build our package.
 It is worth noting that ``mpi`` is different than the other two dependencies.
 Specifically, there is no mpi package available in Spack since mpi is
 a *virtual dependency*. That means Spack must satisfy the dependency with
-a concrete package that provides ``mpi`` functionality, such as ``openmpi``
-or ``mvapich2``. See the
+an actual package that *provides* the ``mpi`` interface, such as ``openmpi``
+or ``mvapich2``. We call such packages *providers*. See the
 `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
 for more information on virtual dependencies.
 
@@ -240,10 +245,10 @@ package again:
 Note that this command may take a while to run. It may also produce more
 output if you don't already have an MPI installed or configured in Spack.
 
-We see that Spack has now identified and made sure all of our dependencies
-have been built. It found that the ``openmpi`` package will satisfy our ``mpi``
-dependency. It also determined that the ``callpath`` and ``adept-utils``
-packages satisfy our concrete dependencies.
+We see that Spack has now identified and built all of our dependencies.
+It found that the ``openmpi`` package will satisfy our ``mpi`` dependency.
+It also determined that the ``callpath`` and ``adept-utils`` packages
+satisfy our concrete dependencies.
 
 But we are still not able to build the package.
 
@@ -333,7 +338,7 @@ Leave the spawned shell and return to the Spack repository directory:
   $ exit
   $ cd $SPACK_ROOT
 
-Now we know what arguments to provide to configure we can add them.
+Now that we know what arguments to provide to configure, we can add them.
 
 ------------------------------
 Specifying Configure Arguments
@@ -345,9 +350,10 @@ installation paths for the two concrete dependencies.
 We know what options we want to use, but how do we know where to find
 the installation paths for the dependencies?
 
-We can get that information by querying the package's Spec instance.
-The ``self.spec`` field holds the package's directed acyclic graph (DAG)
-of its dependencies. Each dependency's Spec, accessed using its name,
+We can get that information by querying the package's concrete Spec
+instance.
+The ``self.spec`` property holds the package's directed acyclic graph
+(DAG) of its dependencies. Each dependency's Spec, accessed by name,
 has a ``prefix`` property with that information.
 
 So let's add the configuration arguments for specifying the paths to
@@ -408,7 +414,7 @@ the corresponding arguments when a non-zero value is provided by the user.
    :language: python
 
 Notice the variant directive is retained as a ``variants`` dictionary
-in ``self.spec``. Also note the value provided by the user is accessed
+in ``self.spec``. Also note that the value provided by the user is accessed
 by the entry's ``value`` property.
 
 Now run the installation again with the ``--verbose`` install option -- to
@@ -436,7 +442,7 @@ comes in.
 
 So far we've looked at getting the paths for dependencies and values from
 variants from the Spec but there is more. The package's Spec, ``self.spec``,
-field allows you to query information about the package being built. The
+property allows you to query information about the package being built. The
 information includes:
 
 - how a package's dependencies were built;
@@ -494,7 +500,7 @@ Spec you can use the Spec's ``name`` property. For example:
 Querying Variants
 ~~~~~~~~~~~~~~~~~
 
-Adjusting build options based on enabled variants can be made by querying
+Adjusting build options based on enabled variants can be done by querying
 the Spec itself, such as:
 
 - Am I building with the ``debug`` variant:
@@ -516,9 +522,9 @@ Good Luck!
 Cleaning Up
 -----------
 
-Before leaving this tutorial, let's ensure that future sections run
-properly. You'll want to undo the work we've done here by entering
-the following commands:
+Before leaving this tutorial, let's ensure what we have done does not
+interfere with your Spack instance or future sections of the tutorial.
+Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
