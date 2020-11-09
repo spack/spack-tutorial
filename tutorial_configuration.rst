@@ -788,7 +788,8 @@ In this tutorial, we covered basic Spack configuration using ``compilers.yaml``,
 ``packages.yaml``, and ``config.yaml``. Spack has many more configuration files,
 including ``modules.yaml``, which will be covered in the :ref:`modules-tutorial`.
 For more detailed documentation on Spack's many configuration settings, see
-https://spack.readthedocs.io/en/latest/configuration.html.
+`the configuration section <https://spack.readthedocs.io/en/latest/configuration.html>`_
+of Spack's main documentation.
 
 For examples of how other sites configure Spack, see
 https://github.com/spack/spack-configs. If you use Spack at your site
