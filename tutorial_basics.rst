@@ -44,18 +44,7 @@ variable, source the spack setup script.
 
   $ . share/spack/setup-env.sh
 
-Finally, if you are running in an Amazon Cloud9 instance (which you
-likely are for this tutorial), you will need to run one additional setup
-script:
-
-.. code-block:: console
-
-  $ . share/spack/setup-tutorial-env.sh
-
-You should see a lot of output. This is important, as it will increase
-your available disk space and install some needed system software.
-
-Once you've sourced these scripts, you're good to go!
+You're good to go!
 
 -----------------
 What is in Spack?
@@ -128,6 +117,9 @@ compilers.
 .. literalinclude:: outputs/basics/zlib-1.2.8.out
    :language: console
 
+.. literalinclude:: outputs/basics/zlib-gcc-6.5.0.out
+   :language: console
+
 The spec syntax also includes compiler flags. Spack accepts
 ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and
 ``ldlibs`` parameters.  The values of these fields must be quoted on
@@ -166,7 +158,7 @@ top-level package, we can also specify about a dependency using ``^``.
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
 of our optimized installation of zlib (``cppflags="-O3"``) began with
-``hmvjty5``. We can now explicitly build with that package without typing
+``h6i53if``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
