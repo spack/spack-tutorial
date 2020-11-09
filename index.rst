@@ -10,10 +10,9 @@ Tutorial: Spack 101
 ===================
 
 This is a full-day introduction to Spack with lectures and live demos. It
-was last presented as a virtual event in cooperation with `Amazon Web
-Services <https://spack-tutorial.workshop.aws/>`_, on July 28-29, 2020. 
-Videos from `day 1 (3:19:18) <https://www.youtube.com/watch?v=Os4k8SpZE3s>`_ 
-and `day 2 (3:30:18) <https://www.youtube.com/watch?v=lHTJBWisabo>`_ are available.
+was last presented as a virtual event at `Supercomputing 2020
+<https://sc20.supercomputing.org/program/tutorials/>`_ on November
+9-10, 2020.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -24,15 +23,17 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/pearc19-tutorial-slide-preview.png
-   :target: _static/slides/spack-aws20-tutorial-slides.pdf
+   :target: _static/slides/spack-sc20-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-aws20-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-sc20-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, and Sean Smith.
-Spack Tutorial on AWS. Virtual event. July 28-29, 2020.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo,
+ Tamara Dahlgren, Peter Scheibel, and Adam Stewart. Managing HPC Software
+ Complexity with Spack. Supercomputing 2020. Virtual event. November
+ 9-10, 2020.
 
 .. _live-demos:
 
