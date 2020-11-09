@@ -68,9 +68,8 @@ example modules/tcl-refresh-4           "spack module tcl refresh --delete-tree 
 
 # use new projections
 spack config add                        "modules:tcl:projections:all:'{name}/{version}-{compiler.name}-{compiler.version}'"
-spack config add                        "modules:tcl:projections:'^mpi^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.version}'"
-spack config add                        "modules:tcl:projections:'^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
-spack config add                        "modules:tcl:projections:'^mpi':'{name}/{version}-{compiler.name}-{compiler.version}-{^mpi.name}'"
+spack config add                        "modules:tcl:projections:'netlib-scalapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'"
+spack config add                        "modules:tcl:projections:'^python^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
 spack config add                        "modules:tcl:all:conflict:['{name}']"
 example      modules/tcl-refresh-5      "spack module tcl refresh --delete-tree -y"
 example -tee modules/module-avail-5     "module avail"
