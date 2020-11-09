@@ -1,6 +1,14 @@
 #!/bin/bash
 
-raw_outputs=/project/raw
+# if in a container, put stuff in the bindmounted
+# /project directory (see Makefile).  Otherwise use ${PWD}
+if [ -d /project ]; then
+    PROJECT=/project
+else
+    PROJECT="${PWD}"
+fi
+
+raw_outputs="${PROJECT}/raw"
 
 example() {
     if [[ "$1" == "-tee" ]]; then

@@ -104,7 +104,7 @@ module load netlib-lapack openblas
 example -tee modules/lmod-intro-conflict  "module list"
 
 
-cp /project/module-configs/lmod.1.yaml ~/.spack/modules.yaml
+cp ${PROJECT}/module-configs/lmod.1.yaml ~/.spack/modules.yaml
 example      modules/lmod-refresh-1     "spack module lmod refresh --delete-tree -y"
 module purge
 module unuse $HOME/spack/share/spack/modules/linux-ubuntu18.04-x86_64
@@ -138,7 +138,7 @@ module load netlib-scalapack/2.1.0-netlib-lapack
 example -tee modules/lapack-conflict    "module list"
 
 
-cp /project/module-configs/lmod.2.yaml ~/.spack/modules.yaml
+cp ${PROJECT}/module-configs/lmod.2.yaml ~/.spack/modules.yaml
 example -tee modules/lmod-refresh-2    "module purge"
 example -tee modules/lmod-refresh-2    "spack module lmod refresh --delete-tree -y"
 
