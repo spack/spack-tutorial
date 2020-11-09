@@ -243,7 +243,7 @@ using different versions of a dependency to build, which obviously cannot
 be done with linked dependencies.
 
 ``HDF5`` is more complicated than our basic example of zlib and
-openssl, but it's still within the realm of software that an experienced
+tcl, but it's still within the realm of software that an experienced
 HPC user could reasonably expect to install given a bit of time. Now
 let's look at an even more complicated package.
 
