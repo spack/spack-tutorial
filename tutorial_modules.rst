@@ -1053,3 +1053,18 @@ we'll find the following at the end of each ``netlib-scalapack`` module file:
 
 and every user that doesn't have access to the software will now be redirected to
 the right e-mail address where to ask for it!
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Restore settings for future sections
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For future sections of the tutorial, we will not use the ``gcc@8.3.0``
+compiler. Since it is currently the default compiler (our current
+defualt is the most recent version of gcc available), we will remove
+it now.
+
+.. code-block:: console
+
+  $ spack compiler rm gcc@8.3.0
+
+This will ensure the rest of the tutorial goes smoothly for you.
