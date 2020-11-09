@@ -105,6 +105,7 @@ run ``spack create`` with the URL:
 
 .. literalinclude:: outputs/packaging/create.out
    :language: console
+   :emphasize-lines: 1
 
 You should now be in your text editor of choice, with the ``package.py``
 file open for editing. The file will have the following contents:
@@ -112,6 +113,7 @@ file open for editing. The file will have the following contents:
 .. literalinclude:: tutorial/examples/0.package.py
    :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
    :language: python
+   :emphasize-lines: 27,29-30,33-35,39-40,43-44
 
 Your ``package.py`` file should reside in the ``mpileaks`` subdirectory of
 your tutorial repository packages directory, i.e.,
@@ -132,6 +134,7 @@ command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
+   :emphasize-lines: 1,17
 
 It clearly did not build. The error indicates configure is unable to find
 the installation location of a dependency.
@@ -177,15 +180,17 @@ Now make the changes and additions to your ``package.py`` file:
    :caption: mpileaks/package.py (from tutorial/examples/1.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 5-6,8,11
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
 for review.
 
-Let's enter the ``spack info`` command:
+Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
+   :emphasize-lines: 1-2,5-6,8,10,16,25,28,31,34
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
@@ -208,8 +213,9 @@ Now let's start adding important build information.
 Adding Dependencies
 -------------------
 
-First we'll add the dependencies.
-The ``mpileaks`` software requires three packages:
+First we'll add the dependencies we determined by reviewing documentation
+in the software's repository (https://github.com/LLNL/mpileaks). The
+``mpileaks`` software requires three packages:
 
 - ``mpi``,
 - ``adept-utils``, and
@@ -225,6 +231,7 @@ Let's add those dependencies to our ``package.py`` file using the
    :caption: mpileaks/package.py (from tutorial/examples/2.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 15-17
 
 Adding dependencies tells Spack that it must ensure these packages are
 installed *before* it can build our package.
@@ -242,6 +249,7 @@ package again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
+   :emphasize-lines: 1,73
 
 Note that this command may take a while to run. It may also produce more
 output if you don't already have an MPI installed or configured in Spack.
@@ -277,6 +285,7 @@ failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
+   :emphasize-lines: 1,30
 
 Here we see a number of checks performed by the configure command. And,
 at the very bottom, the same error reported during the installation
@@ -317,6 +326,7 @@ command:
 
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
+   :emphasize-lines: 1,27
 
 Unfortunately, the output does not provide any additional information
 that can help us with the build.
@@ -328,12 +338,13 @@ help as follows:
 
 .. literalinclude:: outputs/packaging/configure-help.out
    :language: console
+   :emphasize-lines: 1,80-81
 
 Note that you can specify configure paths for the two concrete dependencies
 with the following configure options:
 
-- ``--with-adept-utils=PATH``  Specify adept-utils path
-- ``--with-callpath=PATH``     Specify libcallpath path
+- ``--with-adept-utils=PATH``
+- ``--with-callpath=PATH``
 
 Leave the spawned shell and return to the Spack repository directory:
 
@@ -368,11 +379,13 @@ package:
    :caption: mpileaks/package.py (from tutorial/examples/3.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 20-23
 
 Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
+   :emphasize-lines: 1
 
 Success!
 
@@ -386,24 +399,25 @@ Adding Variants
 ---------------
 
 What if we want to allow users to take advantage of a package's optional
-features?  You can add build-time options by adding a *variant* to the Spack
-package.
+features?  You can do this by adding build-time options as *variants* to
+Spack packages.
 
-Like many packages, mpileaks has features that can be added at build time.
-Specifically, ``mpileaks`` has an option for truncating stack traces. This
-option is used to reduce the noise of internal mpileaks library function calls
-in stack traces.
+Recall from the configure help output for ``mpileaks`` that the software has
+several optional features and packages that we could expose to the Spack
+package user. Two stand out for tutorial purposes because they both take
+integers, as opposed to simply needing to support enabling/disabling them.
 
-From the output of the configure help above *and* the software's documentation
-page at https://github.com/LLNL/mpileaks, we know there are separate
-configure options for C and FORTRAN:
+.. literalinclude:: outputs/packaging/configure-build-options.out
+   :language: console
+   :emphasize-lines: 18-23
 
-- ``--with-stack-start-c=<value>``
-- ``--with-stack-start-fortran=<value>``
+According to the software's documentation (https://github.com/LLNL/mpileaks),
+the integer values for the ``--with-stack-start*`` options represent the
+numbers of calls to shave off of the top of the stack traces for each
+language, effectively reducing the noise of internal mpileaks library function
+calls in generated traces.
 
-These options take non-negative integer values representing the numbers
-of calls to shave off of the top of stack traces for each language.
-For simplicity, we'll use one variant to supply the value for both options.
+For simplicity, we'll use one variant to supply the value for both arguments.
 
 Supporting this optional feature will require two changes to the package:
 
@@ -411,27 +425,30 @@ Supporting this optional feature will require two changes to the package:
 - change the configure options to use the value.
 
 Let's add the variant to expect an ``int`` value with a default of
-``0``. Also change ``configure_args`` to retrieve the value and add
-the corresponding arguments when a non-zero value is provided by the user.
+``0``. Defaulting to ``0`` effectively disables the option. Also change
+``configure_args`` to retrieve the value and add the corresponding
+configure arguments when a non-zero value is provided by the user.
 
 .. literalinclude:: tutorial/examples/4.package.py
    :caption: mpileaks/package.py (from tutorial/examples/4.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 15-16,28-33
 
-Notice the variant directive is retained as a ``variants`` dictionary
+Notice the variant directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
 by the entry's ``value`` property.
 
 Now run the installation again with the ``--verbose`` install option -- to
-get more output during the build -- and the ``stackstart`` package option
-we added above:
+get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
+   :emphasize-lines: 1,39
 
-Notice the addition of the two stack start options in the command that
-appears in the line after mpileaks' ``Executing phase: 'configure'``.
+Notice the addition of the two stack start arguments in the configure
+command that appears in the highlighted line after mpileaks'
+``Executing phase: 'configure'``.
 
 At this point we've covered how to create a package; update its
 documentation; add dependencies; and add variants for optional features.
@@ -534,3 +551,4 @@ Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
+   :emphasize-lines: 1,4,6
