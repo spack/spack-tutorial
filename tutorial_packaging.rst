@@ -9,11 +9,11 @@
 Package Creation Tutorial
 =========================
 
-This tutorial walks you through the steps behind building and 
-debugging a new, simple package installation script.
-Our example is ``mpileaks``, which is an MPI debugging tool.
-We will take an iterative approach to develop and debug the package
-to gain more experience with additional Spack commands.
+This tutorial walks you through the steps behind building and
+debugging a simple package installation script. Our example is
+``mpileaks``, which is an MPI debugging tool. We will take an
+iterative approach to develop and debug the package to gain more
+experience with additional Spack commands.
 
 Installation scripts are essentially recipes for building software.
 They define properties and behavior of the build, such as:
@@ -52,7 +52,7 @@ https://github.com/spack/spack-tutorial under ``tutorial/examples``.
 Getting Started
 ---------------
 
-Before we get started you need to confirm you have three environment
+Before we get started, you need to confirm you have three environment
 variables set:
 
 - ``SPACK_ROOT``: We'll use this variable to refer to the Spack installation
@@ -71,7 +71,7 @@ aren't, run the following command:
 
 or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
-In order to avoid modifying your Spack installation with the new package
+In order to avoid modifying your Spack installation with the package
 we are creating, we can add a *package repository* just for this tutorial
 by entering the following command:
 
@@ -87,55 +87,55 @@ about repositories at
 Creating the Package File
 -------------------------
 
-Suppose we wanted to install the ``mpileaks`` but found Spack did not
-already have a built-in package for it. Fortunately, Spack comes with
-a handy command for creating one: ``spack create``. The command takes
-the location of the package's source code and uses it to:
+Suppose you want to install software that depends on mpileaks but found
+Spack did not already have a built-in package for it. This means you are
+going to have to create one.
+
+Spack's *create* command builds a new package from a template by taking
+the location of the package's source code and using it to:
 
 - fetch the code;
-- create a package skeleton; and 
+- create a package skeleton; and
 - open the file up in your editor of choice.
 
 The ``mpileaks`` source code can be found on GitHub in a tarball. Spack
 will look at the contents of the tarball and generate a package when we
-run ``spack create`` with the URL.
+run ``spack create`` with the URL:
 
 .. literalinclude:: outputs/packaging/create.out
    :language: console
 
 You should now be in your text editor of choice, with the ``package.py``
-file open for editing. The file have the following contents:
+file open for editing. The file will have the following contents:
 
 .. literalinclude:: tutorial/examples/0.package.py
    :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
    :language: python
 
-The file itself should now reside in the ``mpileaks`` subdirectory of
-the tutorial repository packages directory, i.e.,
+Your ``package.py`` file should reside in the ``mpileaks`` subdirectory of
+your tutorial repository packages directory, i.e.,
 ``$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py``
 
-Take a moment to look over the file. Spack created a few placeholders that
-we will fill in as we:
+Take a moment to look over the file.
+
+Spack created a few placeholders that we will fill in as we:
 
 - document some information about this package;
 - add dependencies; and
 - add the configuration arguments needed to build the package.
 
 For the moment, let's see what Spack does with the skeleton.
+
 Exit your editor and try to build the package with the ``spack install``
 command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
 
-This obviously didn't work. 
+It clearly did not build. The error indicates configure is unable to find
+the installation location of a dependency.
 
-We need to fill in package-specific build information. Specifically,
-Spack didn't try to build any of mpileaks' dependencies, nor did it
-use the configure arguments because we haven't provided that
-information.
-
-Let's start fixing things.
+So let's start fixing things.
 
 ----------------------------
 Adding Package Documentation
@@ -212,7 +212,7 @@ The ``mpileaks`` software requires three packages:
 
 - ``mpi``,
 - ``adept-utils``, and
-- ``callpath``. 
+- ``callpath``.
 
 Luckily, all of these dependencies are already built-in packages in Spack;
 otherwise, we would have to create packages for them as well.
@@ -236,7 +236,7 @@ or ``mvapich2``. We call such packages *providers*. See the
 `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
 for more information on virtual dependencies.
 
-We now get a lot further in the build process when we try to install the 
+We now get a lot further in the build process when we try to install the
 package again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
@@ -280,7 +280,7 @@ failed installation:
 Here we see a number of checks performed by the configure command. And,
 at the very bottom, the same error reported during the installation
 attempt. Specifically, configure cannot find the installation of its
-``adept-utils`` dependency. 
+``adept-utils`` dependency.
 
 Spack automatically adds the include and library directories to the
 compiler's search path but that information is not getting picked up
@@ -382,7 +382,7 @@ Adding Variants
 ---------------
 
 What if we want to allow users to take advantage of a package's optional
-features? 
+features?
 
 This is where variants come in. Like many packages, mpileaks has features
 that can be added at build time. Specifically, ``mpileaks`` has build-time
@@ -436,7 +436,7 @@ What if you need to customize the build to reflect feature changes?
 Querying the Spec Object
 ------------------------
 
-As packages evolve and are ported to different systems, the builds 
+As packages evolve and are ported to different systems, the builds
 often have to reflect those changes. This is where the package's Spec
 comes in.
 
@@ -513,7 +513,7 @@ the Spec itself, such as:
 
 These are just a few examples of Spec queries. Spack has thousands of
 built-in packages that can serve as examples to guide the development
-of your package. You can find these packages in 
+of your package. You can find these packages in
 ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
 
 Good Luck!
