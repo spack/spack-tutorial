@@ -316,19 +316,22 @@ command:
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
 
-Unfortunately, all we see is the same error.
+Unfortunately, the output does not provide any additional information
+that can help us with the build.
 
 Given this is a simple package built with configure and we know
 the installation directories need to be specified, we can see what
 options are available for us to provide the paths by getting configure
 help as follows:
 
-.. code-block:: console
+.. literalinclude:: outputs/packaging/configure-help.out
+   :language: console
 
-  $ ./configure --help
+Note that you can specify configure paths for the two concrete dependencies
+with the following configure options:
 
-Note that you can specify configure path options for a dependency by
-prefacing the dependency name with ``--with-``.
+- ``--with-adept-utils=PATH``  Specify adept-utils path
+- ``--with-callpath=PATH``     Specify libcallpath path
 
 Leave the spawned shell and return to the Spack repository directory:
 
@@ -381,18 +384,20 @@ Adding Variants
 ---------------
 
 What if we want to allow users to take advantage of a package's optional
-features?
+features?  You can add build-time options by adding a *variant* to the Spack
+package.
 
-This is where variants come in. Like many packages, mpileaks has features
-that can be added at build time. Specifically, ``mpileaks`` has build-time
-options to truncate stack traces. This option is used to reduce the noise
-of internal mpileaks library function calls in stack traces.
+Like many packages, mpileaks has features that can be added at build time.
+Specifically, ``mpileaks`` has an option for truncating stack traces. This
+option is used to reduce the noise of internal mpileaks library function calls
+in stack traces.
 
-From https://github.com/LLNL/mpileaks we know there are separate configure
-options for C and FORTRAN:
+From the output of the configure help above *and* the software's documentation
+page at https://github.com/LLNL/mpileaks, we know there are separate
+configure options for C and FORTRAN:
 
-- ``--with-stack-start-c``
-- ``--with-stack-start-fortran``
+- ``--with-stack-start-c=<value>``
+- ``--with-stack-start-fortran=<value>``
 
 These options take non-negative integer values representing the numbers
 of calls to shave off of the top of stack traces for each language.
