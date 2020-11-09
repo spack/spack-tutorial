@@ -1,0 +1,26 @@
+Optional Features:
+  --disable-option-checking  ignore unrecognized --enable/--with options
+  --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+  --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+  --disable-dependency-tracking  speeds up one-time build
+  --enable-dependency-tracking   do not reject slow dependency extractors
+  --enable-shared[=PKGS]  build shared libraries [default=yes]
+  --enable-static[=PKGS]  build static libraries [default=yes]
+  --enable-fast-install[=PKGS]
+                          optimize for fast installation [default=yes]
+  --disable-libtool-lock  avoid locking (might break parallel builds)
+
+Optional Packages:
+  --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+  --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+  --with-adept-utils=PATH Specify adept-utils path
+  --with-callpath=PATH    Specify libcallpath path
+  --with-stack-start-c=value
+                          Specify integer number for MPILEAKS_STACK_START for
+                          C code
+  --with-stack-start-fortran=value
+                          Specify integer number for MPILEAKS_STACK_START for
+                          FORTRAN code
+  --with-pic              try to use only PIC/non-PIC objects [default=use
+                          both]
+  --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
