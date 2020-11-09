@@ -38,7 +38,7 @@ clone Spack and immediately checkout the most recent release, v0.15.
 
 Next add Spack to your path. Spack has some nice command line
 integration tools, so instead of simply appending to your ``PATH``
-variable, source the spack setup script.  Then add Spack to your path.
+variable, source the spack setup script.
 
 .. code-block:: console
 
@@ -69,8 +69,9 @@ The ``spack list`` command shows available packages.
 
 
 The ``spack list`` command can also take a query string. Spack
-automatically adds wildcards to both ends of the string. For example,
-we can view all available python packages.
+automatically adds wildcards to both ends of the string, or you
+can add your own wildcards. For example, we can view all available
+python packages.
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -388,7 +389,7 @@ added to the configuration.
 
 We can add gcc to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-gcc @8.3.0.
+gcc@8.3.0.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
    :language: console

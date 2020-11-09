@@ -1,7 +1,5 @@
 #!/bin/bash
 
-pip3 install boto3
-
 # Source definitions
 project=$(dirname "$0")
 . $project/defs.sh
@@ -27,7 +25,7 @@ spack config add "config:suppress_gpg_warnings:true"
 
 # spack list
 example basics/list            "spack list"
-example basics/list-py         "spack list py-"
+example basics/list-py         "spack list 'py-*'"
 
 # spack install
 example basics/zlib            "spack install zlib"
