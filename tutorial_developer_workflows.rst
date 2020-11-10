@@ -16,22 +16,6 @@ develop that source code, and iterate on the different phases of your
 build system as necessary.
 
 -----------------------------
-Prepare for the tutorial
------------------------------
-
-If you have already done the :ref:`basics-tutorial` you have probably
-already set up Spack to run in the tutorial image. If not, you will
-want to run the following commands:
-
-.. literalinclude:: outputs/dev/up-to-date.out
-   :language: console
-
-
-These commands install Spack into your home directory, add Spack to
-your path, and configure Spack to make use of the binary packages
-published for this tutorial.
-
------------------------------
 Installing from local source
 -----------------------------
 
