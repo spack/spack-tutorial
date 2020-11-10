@@ -1,0 +1,11 @@
+  >>> gcc_query_spec = Spec('%gcc')
+  >>> gcc_specs = spack.store.db.query(gcc_query_spec)
+  >>> result = filter(lambda spec: not spec.satisfies('^mpich'), gcc_specs)
+  >>> import spack.cmd
+  >>> spack.cmd.display_specs(result)
+  -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+  autoconf@2.69    libiconv@1.16        m4@1.4.18       perl@5.30.3         zlib@1.2.11
+  automake@1.16.2  libpciaccess@0.13.5  ncurses@6.2     pkgconf@1.7.3
+  gdbm@1.18.1      libsigsegv@2.12      numactl@2.0.12  readline@8.0
+  hdf5@1.10.6      libtool@2.4.6        openmpi@3.1.6   util-macros@1.19.1
+  hwloc@1.11.11    libxml2@2.9.10       patchelf@0.10   xz@5.2.5
