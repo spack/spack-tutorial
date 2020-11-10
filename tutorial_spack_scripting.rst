@@ -106,7 +106,7 @@ Introducing the ``spack python`` command
 What if we need to perform more advanced queries?
 
 Spack provides the ``spack python`` command to launch a python interpreter
-with Spack's python modules already imported. It uses the underlying
+with Spack's python modules available to import. It uses the underlying
 python for the rest of its commands. So you can write scripts to:
 
 - run Spack commands;
