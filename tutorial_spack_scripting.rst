@@ -11,14 +11,14 @@
 Scripting with Spack
 ====================
 
-This tutorial introduces advanced capabilities for programmatically
-querying information about packages installed with Spack so you can
-create your own custom scripts. Specifically, we will discuss how to
-use the ``spack find`` and ``spack python`` commands for this purpose. 
+This tutorial introduces advanced Spack features related to scripting.
+Specifically, we will show you how to write scripts using the ``spack
+find`` and ``spack python`` commands.
 
-Only an introductory-level discussion of the functionality of scripting
-with the ``spack python`` command is provides since it exposes the Spack
-API. Therefore, more thorough coverage is beyond the scope of this tutorial.
+``spack python`` lets you use all of Spack's `internal APIs
+<https://spack.readthedocs.io/en/latest/spack.html>`_, so we'll only
+scratch the surface here. We'll give you enough to start writing your own
+scripts and to find what you need, with a little digging.
 
 -----------------------
 Setting up the tutorial
@@ -43,28 +43,41 @@ to query the installed packages.
 Scripting with ``spack find``
 -----------------------------
 
-Earlier sections of the tutorial introduced different uses of the
-``spack find`` command for querying installed packages at the command
-line. Depending on the scripting language and associated tools you want
-to use, you can take advantage of the following advanced options to
-generate machine-readable output:
+Earlier sections of the tutorial showed you how to use ``spack find`` to
+query installed packages on the command line. So far, the output we've
+seen from ``spack find`` has been human-readable, but you can take
+advantage of some advanced options of ``spack find`` to generate
+machine-readable output suitable for piping to a script.
 
-- ``--format FORMAT``; and
-- ``--json``.
+^^^^^^^^^^^^^^^^^^^^^^^
+``spack find --format``
+^^^^^^^^^^^^^^^^^^^^^^^
 
-``FORMAT`` is a string that uses the same syntax expected by the Python
-``format()`` command. The format string is passed to ``Spec.format``.
+The main job of ``spack find`` is to show the user a bunch of concrete
+specs that correspond to installed packages. By default, we display them
+with some default attributes, like the ``@version`` suffix you're used to
+seeing in the output.
 
-Let's see the first option in action.
+The ``--format`` argument allows you to display the specs however you
+choose, using custom format strings. Format strings let you specify the
+names of particular *parts* of the specs you want displayed. Let's see
+the first option in action.
 
-Suppose you want the name, version, and first ten (10) characters of the
-hash for every package installed in your Spack instance with a space 
-between each field. You can get the information in the requested
-format with the following command:
+Suppose you only want to display the name, version, and first ten (10)
+characters of the hash for every package installed in your Spack
+instance. You can do that with the following command:
 
 .. literalinclude:: outputs/scripting/find-format.out
    :language: console
    :emphasize-lines: 1
+
+``{name}``, ``{version}``, etc. are just attributes on Spack's internal
+``Spec`` object, and you can make ``spack find --format`` print them out
+by enclosing them in braces in your format string.
+
+^^^^^^^^^^^^^^^^^^^^^
+``spack find --json``
+^^^^^^^^^^^^^^^^^^^^^
 
 Alternatively, you can get a serialized version of Spec objects in
 the `JSON` format using the ``--json`` option. For example, you can
@@ -74,13 +87,17 @@ get attributes for all installations of ``zlib`` by entering:
    :language: console
    :emphasize-lines: 1
 
-Refer to
-https://spack.readthedocs.io/en/latest/basic_usage.html#machine-readable-output
+
+``spack find --format`` is useful for printing just what is needed -- you
+can pipe its output to typical UNIX command-line tools like ``sort`` or
+``uniq``. ``spack find --json``, on the other hand, gives you everything
+we know about specs in a structured format. You can pipe its output to
+JSON filtering tools like ``jq`` to extract just the parts you want.
+
+Check out the `basic usage docs
+<https://spack.readthedocs.io/en/latest/basic_usage.html#machine-readable-output>`_.
 for more examples.
 
-Hence, the ``spack find`` command is useful for developing scripts
-based on queries of attributes of installed packages with specific
-values.
 
 ----------------------------------------
 Introducing the ``spack python`` command
@@ -96,43 +113,48 @@ python for the rest of its commands. So you can write scripts to:
 - explore abstract and concretized specs; and
 - directly access other internal components of Spack.
 
-Launch a Spack-aware python interpreter and exit the interpreter by
-entering the following two commands:
+Let's launch a Spack-aware python interpreter with ``spack python``:
 
 .. literalinclude:: outputs/scripting/spack-python-1.out
    :language: console
    :emphasize-lines: 1,4
 
-Now let's revisit the Spack ``Spec`` object described in earlier tutorials.
-We will also look at querying Spack's internal database of installed
-packages. We will do our examples from within the python interpreter.
+As with a regular ``python`` REPL, ``exit()`` will quit and get you back
+to the terminal.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Accessing the ``Spec`` object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Since the Spack API is available within the interpreter, we can access
-both abstract and concrete specs. Typically ``package.py`` files reference
-concrete specs within the ``install`` method. But we'll look at the
-differences between the two.
+Now let's take a look at the Spack ``Spec`` object. You've heard all
+about specs in earlier tutorials, but here we'll be looking directly at
+Spack's internal ``Spec`` representation. We'll look at how to use
+simple ``Specs`` as well as how to make queries about installed packages
+using Spack's internal database.
 
-Open the python interpreter with ``spack python``, instantiate the
+As you already know, specs can be either *abstract* or *concrete*. The
+specs you've seen in ``package.py`` files (e.g., in the ``install()``
+method) have been *concrete*, or fully specified. The specs you've typed
+on the command line have been *abstract*. Understanding the differences
+between the two is key to understanding Spack's internal API.
+
+Open another python interpreter with ``spack python``, instantiate the
 ``zlib`` spec, and check a few properties of an abstract spec:
 
 .. literalinclude:: outputs/scripting/spack-python-abstract.out
    :language: console
    :emphasize-lines: 1-3,5,11,13
 
-Notice that there are Spec properties and methods that are not accessible
-to abstract specs; specifically:
+Notice that there are ``Spec`` properties and methods that are not
+accessible to abstract specs; specifically:
 
 - an exception -- ``SpecError`` -- is raised if we try to access its
   ``version``;
 - there are no associated ``versions``; and
-- the platform operating system is ``None``.
+- the spec's operating system is ``None``.
 
-Now, from within the same interpreter session, let's concretize the spec
-and try again:
+Now, without exiting the interpreter, let's concretize the spec and try
+again:
 
 .. literalinclude:: outputs/scripting/spack-python-concrete.out
    :language: console
@@ -144,8 +166,8 @@ Notice that the concretized spec now:
 - has a single entry in its ``versions`` list; and
 - the platform operating system is now ``ubuntu18.04``.
 
-It is not necessary to store the intermediate abstract spec as we can
-see when we instantiate and concretize a new instance:
+It is not necessary to store the intermediate abstract spec -- you can
+use the ``.concretized()`` method as shorthand:
 
 .. literalinclude:: outputs/scripting/spack-python-sans-intermediate.out
    :language: console
@@ -156,15 +178,10 @@ Querying the Spack database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Even more powerful queries are available when we look at the information
-stored in the Spack database, which manages read, write, and locking
-operations on the backing file system.
-
-Most queries will be using the ``Database.query`` method on the singleton
-instance of the database, which is accessed using ``spack.store.db``.
-Let's see the documentation available for the ``query`` method using 
-python's built-in ``help``.
-
-Enter the following python statements from within the interpreter:
+stored in the Spack database. The ``Database`` object in Spack is in the
+``spack.store.db`` variable. We'll interact with it mainly through the
+``query()`` method. Let's see the documentation available for ``query()``
+using python's built-in ``help()`` function:
 
 .. literalinclude:: outputs/scripting/spack-python-db-query-help.out
    :language: console
@@ -172,17 +189,17 @@ Enter the following python statements from within the interpreter:
 
 We will primarily make use of the ``query_spec`` argument.
 
-Recall that queries using the ``spack find`` command are limited to 
+Recall that queries using the ``spack find`` command are limited to
 queries of attributes with matching values, not values they do *not*
 have. In other words, we cannot use the ``spack find`` command for
 all packages that *do not* satisfy a certain criterion.
-Using the database, we can now perform such queries.
+Using the python interface, we can now perform such queries.
 
-For example, let's find all packages that were compiled with ``gcc``
-but do not depend on ``mpich``. We can do this from within the 
-interpreter by entering the following python statements, where we
-deliberately use ``spack.cmd.display_specs`` to get the output in
-the same pretty-printed format as that of the ``spack find`` command:
+For example, let's find all packages that were compiled with ``gcc`` but
+do not depend on ``mpich``. We can do this by using custom python code
+and Spack database queries. We will use the ``spack.cmd.display_specs``
+for output to achieve the same printing functionality as the ``spack
+find`` command:
 
 .. literalinclude:: outputs/scripting/spack-python-db-query-exclude.out
    :language: console
@@ -201,10 +218,10 @@ Now exit the interpreter so we are back at the command line:
 Using scripts
 ^^^^^^^^^^^^^
 
-Suppose we want to re-use our query with different specs?
-
-With a few generalizations to accept the include and exclude specs
-on the command line, we can create a general-purpose query script.
+Suppose now that we want to parameterize our script and accept arguments
+on the command line. With a few generalizations to accept the include and
+exclude specs on the command line, we can create a general-purpose query
+script.
 
 Open a file called ``find_exclude.py`` in your preferred editor
 and add the following code:
@@ -213,8 +230,7 @@ and add the following code:
    :language: python
 
 Notice we added importing and using the system package (``sys``)
-to access access the first and second command line arguments. We
-also concretized the exclude spec.
+to access access the first and second command line arguments.
 
 Now we can run this new command by entering the following:
 
@@ -233,7 +249,7 @@ What if we want to make our script available for others to use without
 the hassle of having to remember to use ``spack python``?
 
 We can take advantage of the shebang line typically added as the
-first line of python executable files. But there is a catch, as 
+first line of python executable files. But there is a catch, as
 we will soon see.
 
 Open the ``find_exclude.py`` script we created above in your preferred
@@ -251,10 +267,11 @@ running it as follows:
    :language: console
    :emphasize-lines: 1-2
 
-If you are lucky, it worked on your system but there is no guarantee.
-Some systems only support a single argument on the shebang line.
-So Spack developers created essentially a wrapper script for
-``spack python`` to address this issue.
+If you are lucky, it worked on your system, but there is no guarantee.
+Some systems only support a single argument on the shebang line (see
+`here <https://www.in-ulm.de/~mascheck/various/shebang/>`_).
+``spack-python`` (a wrapper script for ``spack python``) solves this
+issue.
 
 Bring up the file in your editor again and change the ``env`` argument
 to ``spack-python`` as follows:
@@ -271,6 +288,9 @@ Exit your editor and let's try to run the command again:
 
 Congratulations!  It will now work on any system with Spack installed.
 
-You now have the basic tools to create your own custom Spack 
-queries and prototype ideas that you will, hopefully, eventually
-contribute back to Spack.
+You now have the basic tools to create your own custom Spack queries and
+prototype ideas. We hope one day you'll contribute them back to Spack.
+
+..  LocalWords:  LLC Spack's APIs hdf zlib literalinclude json uniq jq
+..  LocalWords:  docs concretized REPL API SpecError spec's py ubuntu
+..  LocalWords:  concretize gcc mpich sys shebang env
