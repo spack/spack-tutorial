@@ -29,7 +29,7 @@ example dev/dev-build-1 "spack dev-build hwloc@master"
 
 example dev/info "spack info hwloc"
 
-echo y | example dev/dev-build-2 "spack uninstall hwloc"
+echo y | example dev/dev-build-2 "spack uninstall hwloc@master"
 fake_example dev/dev-build-2 "spack dev-build --until configure --drop-in bash hwloc@master" "spack dev-build --until configure hwloc@master"
 
 export EDITOR="bash -c exit 0"
