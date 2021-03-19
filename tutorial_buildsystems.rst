@@ -279,7 +279,7 @@ compiler:
 .. code-block:: console
 
     $ spack cd -s bowtie
-    $ cd bowtie-1.2
+    $ cd spack-src
     $ vim Makefile
 
 
