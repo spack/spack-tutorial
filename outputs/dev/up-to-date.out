@@ -1,18 +1,33 @@
 $ git clone https://github.com/spack/spack ~/spack
 Cloning into '/home/spack/spack'...
-remote: Enumerating objects: 114, done.K
-remote: Counting objects: 100% (114/114), done.K
-remote: Compressing objects: 100% (80/80), done.K
-remote:nTotale2210059(delta828),2reused,560(deltaB14),0pack-reused 220891K
-Receiving objects: 100% (221005/221005), 88.06 MiB | 20.25 MiB/s, done.
-Resolving deltas: 100% (93890/93890), done.
+remote: Enumerating objects: 38, done.K
+remote: Counting objects: 100% (38/38), done.K
+remote: Compressing objects: 100% (30/30), done.K
+remote:nTotale2747079(delta39),/reused)171(deltaM3),|pack-reused 274669K
+Receiving objects: 100% (274707/274707), 110.56 MiB | 3.77 MiB/s, done.
+Resolving deltas: 100% (116206/116206), done.
 $ cd ~/spack
-$ git checkout releases/v0.15
-Branch 'releases/v0.15' set up to track remote branch 'releases/v0.15' from 'origin'.
-Switched to a new branch 'releases/v0.15'
+$ git checkout releases/v0.16.1
+error: pathspec 'releases/v0.16.1' did not match any file(s) known to git.
+$ git checkout releases/v0.16
+Branch 'releases/v0.16' set up to track remote branch 'releases/v0.16' from 'origin'.
+Switched to a new branch 'releases/v0.16'
+$ . share/spack/setup-env.sh
+Traceback (most recent call last):
+  File "/home/spack/spack/bin/spack", line 66, in <module>
+    sys.exit(spack.main.main())
+  File "/home/spack/spack/lib/spack/spack/main.py", line 711, in main
+    env = ev.find_environment(args)
+  File "/home/spack/spack/lib/spack/spack/environment.py", line 307, in find_environment
+    raise SpackEnvironmentError('no environment in %s' % env)
+spack.environment.SpackEnvironmentError: no environment in /home/spack/devel-env
 $ . share/spack/setup-env.sh
 $ spack mirror add tutorial s3://spack-tutorial-container/mirror/
+==> Error: Mirror with name tutorial already exists.
 $ spack gpg trust share/spack/keys/tutorial.pub
+gpgconf: socketdir is '/home/spack/.gnupg'
+gpgconf:	no /run/user dir
+gpgconf:	using homedir as fallback
 gpg: keybox '/home/spack/spack/opt/spack/gpg/pubring.kbx' created
 gpg: /home/spack/spack/opt/spack/gpg/trustdb.gpg: trustdb created
 gpg: key 95F8681195E239D8: public key "Spack Build Pipeline (Demo Key) <key@spack.demo>" imported
