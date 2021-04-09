@@ -12,9 +12,13 @@ Cache Tutorial
 ============================
 
 This tutorial will guide you through the process of setting up a
-source and binary cache mirror. Source and binary caches are extremely
-useful when using spack on a machine without internet access. They
-also can be used to speed up builds when using spack within a larger
+source cache mirror and a binary cache mirror. Source and binary
+caches are extremely useful when using spack on a machine without
+internet access. Source cache mirrors allow you to fetch source code
+from a directory on your filesystem instead of accessing the outside
+internet, and binary cache mirrors allow you to install pre-compiled
+binaries to your spack installation path. Together, these caches can
+be used to speed up builds when using spack within a larger
 development team.
 
 --------------------------------
@@ -51,10 +55,10 @@ read from the mirror directory, spack will attempt to read source
 packages from the mirror instead of accessing the internet. This can
 be a huge boon for computers that can't access the external internet
 but can access a shared filesystem. If you need to use spack on a
-system that is air-gapped from the external internet, you must bundle
-the whole spack mirror directory and unbundle it on the air-gapped
+system that is isolated from the external internet, you must bundle
+the whole spack mirror directory and unbundle it on the isolated
 system. From there, you follow the same steps to use the spack mirror
-on the air-gapped system.
+as you would on any computer that can't access the external internet..
 
 If you need to add more sources to the mirror, you can re-run the
 command you used to create the mirror. For example, assume we want to
@@ -96,21 +100,20 @@ a package from a mirror with a binary cache, spack
 • If a binary package is found, spack checks to see if the
   signature on the spack binary package is trusted.
 * If the signature is trusted, then spack
-  * Unzips the spack package into your local installation prefix
+  * Unzips the spack package to a temporary directory.
   * Searches all text files to replace the package builder's path with
-    your specific local installation path
-  * Searches all binaries to replace the package builder's path with
-    your specific local installation path
+    your specific local installation path.
+  * Uses ``patchelf`` to replace all the rpaths in your binaries to
+    point to your specific local installation path.
+  * Searches all binaries to replace hard-coded C strings of the
+    package builder's path with your specific local installation path.
+  * Copies all these transformed files into your specific local
+    installation path.
 * Otherwise, spack proceeds to build the package from source.
 
-For the user, spack binary caches are transparent to use. Believe it
-or not, you've actually been using a binary cache for this entire
-tutorial! As part of the preparation for this tutorial, we prepared a
-spack source and binary cache for all the packages we've used. This is
-how spack is able to install the software packages so quickly in our
-demonstration. Here's part of the actual mirror setup we used to
-create this documentation.
-
+For the user, spack binary caches are transparent to use. We've
+already demonstrated using spack binary caches earlier in the tutorial
+when we set up spack to use a binary mirror. As a reminder, we ran:
 
 The spack gpg command is needed to tell spack that we "trust" the gpg
 key of the user who built the spack binary package.
@@ -154,5 +157,5 @@ Cache Summary
 If you're using spack within a development team, consider setting up
 source and binary cache mirrors. Source mirrors will let you replicate
 a spack environment on a machine without external internet access, and
-binary mirrors free you from the burden of recompiling
-everything from scratch and save you development time.
+binary mirrors free you from the burden of recompiling everything from
+scratch and save you development time.
