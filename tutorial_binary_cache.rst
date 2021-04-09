@@ -1,4 +1,4 @@
-.. Copyright 2013-2020 Lawrence Livermore National Security, LLC and other
+.. Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
    Spack Project Developers. See the top-level COPYRIGHT file for details.
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -27,9 +27,9 @@ works fine on most clusters, but what do you do if the cluster in
 question doesn't have access to the outside internet? This could
 happen for a variety of reasons. Maybe you're building on a compute
 node that isn't connected to the greater internet, or maybe even the
-whole cluster has been air-gapped from the internet.
+whole cluster has been isolated from the internet.
 
-Spack has an easy answer to this-- setting up a source mirror. When you
+Spack has an easy answer to this -- setting up a source mirror. When you
 use a source mirror, spack checks the mirror for the source code
 before going to the outside internet.
 
@@ -93,7 +93,7 @@ a package from a mirror with a binary cache, spack
 
 * Checks to see if there is a spack binary package that matches your
   exact SHA.
-• If a binary package is found, spack checks to see if you the
+• If a binary package is found, spack checks to see if the
   signature on the spack binary package is trusted.
 * If the signature is trusted, then spack
   * Unzips the spack package into your local installation prefix
@@ -136,14 +136,13 @@ so they can be re-used in the future.
 
 With this setup done, we're ready to fill a binary cache with binary
 packages. Binary packages are attached to an existing source mirror.
-We follow the same steps we used for the source mirror- making an
+We follow the same steps we used for the source mirror -- making an
 environment, creating the source mirror, and building the packages to
 a spack installation with our padded path. After we've built our
-environment, we run the following commands to transform our built
-software into binary packages.
+environment, we run the following commands to create binary packages from our build software.
 
 
-Viola, done! Our spack mirror has now been augmented with a binary
+Voila, done! Our spack mirror has now been augmented with a binary
 cache.  This cache can be used on systems without external internet
 access, just like with a spack source mirror.  As always, remember to
 update the file permissions after updating the mirror.
@@ -155,5 +154,5 @@ Cache Summary
 If you're using spack within a development team, consider setting up
 source and binary cache mirrors. Source mirrors will let you replicate
 a spack environment on a machine without external internet access, and
-binary mirrors speed free you from the burden of recompiling
+binary mirrors free you from the burden of recompiling
 everything from scratch and save you development time.
