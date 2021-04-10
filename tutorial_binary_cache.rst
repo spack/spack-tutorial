@@ -41,13 +41,22 @@ Building a source mirror is easy. Let's start with the same simple
 environment. First, let's build our software on a computer with
 external internet access.
 
+.. literalinclude:: outputs/cache/setup-scr.out
+   :language: console
+
 Once we've built this environment, we can easily make a spack mirror
 that contains all the sources required for this build.
+
+.. literalinclude:: outputs/cache/spack-mirror-1.out
+   :language: console
 
 When run within an environment, spack mirror create will upload every
 source used to build the current environment to the specified
 directory. We can configure spack to use this source mirror by adding
 a few lines to your spack.yaml file.
+
+.. literalinclude:: outputs/cache/spack-mirror-2.out
+   :language: console
 
 This directory can be shared between users on a shared filesystem and
 protected with typical unix file permissions. As long as spack can
@@ -64,7 +73,13 @@ If you need to add more sources to the mirror, you can re-run the
 command you used to create the mirror. For example, assume we want to
 add bzip2 to our environment.
 
+.. literalinclude:: outputs/cache/spack-mirror-3.out
+   :language: console
+
 Now that we've added bzip2, we need to update the mirror.
+
+.. literalinclude:: outputs/cache/spack-mirror-4.out
+   :language: console
 
 Spack will skip uploading source code packages that are already
 included in the spack mirror. Mirrors can be shared across different
@@ -72,7 +87,9 @@ environments, meaning one mirror can house all the source code needed
 to build your team's dependencies.
 
 If you're making a spack mirror on a shared filesystem, remember to
-fix the file permissions every time you update the mirror.
+fix the file permissions every time you update the mirror, or update
+your ``umask`` settings so any new files you create have the
+appropriate permissions.
 
 --------------------------------
 Setting up a binary cache mirror
@@ -115,35 +132,65 @@ For the user, spack binary caches are transparent to use. We've
 already demonstrated using spack binary caches earlier in the tutorial
 when we set up spack to use a binary mirror. As a reminder, we ran:
 
-The spack gpg command is needed to tell spack that we "trust" the gpg
-key of the user who built the spack binary package.
+.. literalinclude:: outputs/basics/mirror.out
+   :language: console
 
+Before we use a binary cache, we need to make sure that we trust all
+the packages listed in the binary cache. If you're sharing files
+between trusted users on a filesystem, you can do this with the
+following command:
+
+.. literalinclude:: outputs/cache/trust.out
+   :language: console
+
+Here, ``-i`` means install, ``-t`` means trust, and ``-f`` means
+force.  Together, this means download all the keys on the binary cache
+and trust them.
+              
 Building a spack binary cache mirror has some gotchas, but is almost
-as easy as building a source mirror. Before we build anything, we need
-to modify the following line in our spack configuration file:
+as easy as building a source mirror. We'll start by making a new
+environment for ourselves.  Since we're intending to publish to a
+binary cache, we'll need to compile all these packages ourselves.
+This can take some time, so we'll make a new environment with some
+packages that compile quickly.
 
-This change ensures that spack installs all our packages to a path
-that is at least 128 characters. We need to take this precaution
-because when spack installs a binary package, it replaces our path
-with the user's installation path. For text files this replacement can
-be done in place, but for binaries we need to make sure that all C
-strings hard-coded into the binaries are large enough to hold the
-user's eventual install path. We advise picking 128 because longer
-strings sometimes cause compilation problems with some software
-packages.
+.. literalinclude:: outputs/cache/binary-cache-1.out
+   :language: console
 
-We also need to create a gpg key to sign all our packages.
+Before we build anything, we need to modify the following line in our
+spack configuration file. Then, just to be sure, we'll initiate a
+build of this environment and force ourselves to not use any cache.
 
-We recommend backing up the secret and public keys to a secure place
-so they can be re-used in the future.
+.. literalinclude:: outputs/cache/binary-cache-2.out
+   :language: console
+
+This configuration change ensures that spack installs all our packages
+to a path that is at least 128 characters. We need to take this
+precaution because when spack installs a binary package, it replaces
+our path with the user's installation path. For text files this
+replacement can be done in place, but for binaries we need to make
+sure that all C strings hard-coded into the binaries are large enough
+to hold the user's eventual install path. We advise picking 128
+because longer strings sometimes cause compilation problems with some
+software packages.
+
+We also need to create a gpg key to sign all our packages. You should
+back up the secret and public keys to a secure place so they can be
+re-used in the future.
+
+.. literalinclude:: outputs/cache/binary-cache-3.out
+   :language: console
 
 With this setup done, we're ready to fill a binary cache with binary
 packages. Binary packages are attached to an existing source mirror.
 We follow the same steps we used for the source mirror -- making an
 environment, creating the source mirror, and building the packages to
 a spack installation with our padded path. After we've built our
-environment, we run the following commands to create binary packages from our build software.
+environment, we run the following commands to create binary packages
+from our build software.
 
+.. literalinclude::  outputs/cache/binary-cache-4.out
+   :language: console
 
 Voila, done! Our spack mirror has now been augmented with a binary
 cache.  This cache can be used on systems without external internet

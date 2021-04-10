@@ -1,0 +1,75 @@
+#!/bin/bash
+
+# Source definitions
+project=$(dirname "$0")
+. $project/defs.sh
+
+rm -rf $raw_outputs/cache
+pip install boto3
+
+example cache/up-to-date "git clone https://github.com/spack/spack ~/spack"
+example cache/up-to-date "cd ~/spack"
+cd ~/spack
+example cache/up-to-date "git checkout releases/v0.16"
+example cache/up-to-date ". share/spack/setup-env.sh"
+. share/spack/setup-env.sh
+spack config add "config:suppress_gpg_warnings:true"
+spack config add "packages:all:target:[x86_64]"
+
+example cache/up-to-date "spack mirror add tutorial s3://spack-binaries-prs/tutorial/ecp21/mirror"
+example cache/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
+
+example cache/setup-scr "cd ~"
+cd ~
+example cache/setup-scr "mkdir cache-env"
+example cache/setup-scr "cd cache-env"
+cd cache-env
+example cache/setup-scr "spack env create -d ."
+fake_example cache/setup-scr "spacktivate ." "spack env activate ."
+spack env activate .
+example cache/setup-scr "# for now, disable fortran support in all packages"
+example cache/setup-scr 'spack config add "packages:all:variants: ~fortran"'
+example cache/setup-scr "spack add macsio+scr"
+example cache/setup-scr "spack install"
+
+example cache/spack-mirror-1 "spack mirror create -d ~/mirror -a"
+
+example cache/spack-mirror-2 "spack mirror add mymirror ~/mirror"
+
+example cache/spack-mirror-3 "spack add bzip2"
+example cache/spack-mirror-3 "spack install"
+
+example cache/spack-mirror-4 "spack mirror create -d ~/mirror -a"
+
+
+example cache/trust "spack buildcache keys -itf"
+
+example cache/binary-cache-1 "cd ~"
+cd ~
+example cache/binary-cache-1 "mkdir cache-binary"
+example cache/binary-cache-1 "cd cache-binary"
+cd cache-binary
+example cache/binary-cache-1 "spack env create -d ."
+fake_example cache/binary-cache-1 "spacktivate ." "spack env activate ."
+spack env activate .
+example cache/binary-cache-1 "spack add bzip2"
+example cache/binary-cache-1 "spack add zlib"
+
+example cache/binary-cache-2 'spack config add "config:install_tree:padded_length:128"'
+example cache/binary-cache-2 "spack install --no-cache"
+
+example cache/binary-cache-3 'spack gpg create "My Name" "<my.email@my.domain.com>"'
+
+example cache/binary-cache-3 'mkdir ~/private_gpg_backup'
+example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup'
+example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/pubring.* ~/mirror'
+
+example cache/binary-cache-4 '
+for ii in $(spack find --format "yyy {version} /{hash}" |
+            grep -v -E "^(develop^master)" |
+            grep "yyy" |
+            cut -f3 -d" ")
+do
+  spack buildcache create -af -d ~/mirror --only=package $ii
+done'
+
