@@ -702,10 +702,8 @@ Now, only members of the ``fluid_dynamics`` group can use any
 
 .. warning::
 
-   Make sure to delete or move the ``packages.yaml`` you have been
-   editing up to this point. Otherwise, it will change the hashes
-   of your packages, leading to differences in the output of later
-   tutorial sections.
+   You should now ``spack env deactivate`` to avoid changing how
+   specs in later tutorial sections are concretized.
 
 
 -----------------
