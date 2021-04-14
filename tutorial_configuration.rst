@@ -450,14 +450,17 @@ packages without shared libraries. We will accomplish this by turning
 off the ``shared`` variant on all packages that have one.
 
 .. code-block:: yaml
-   :emphasize-lines: 6
+   :emphasize-lines: 9
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
 
 
 We can check the effect of this command with ``spack spec hdf5`` again.
@@ -475,16 +478,19 @@ need serial HDF5, that might get annoying quickly, having to type
 HDF5.
 
 .. code-block:: yaml
-   :emphasize-lines: 7-8
+   :emphasize-lines: 10-11
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
 
 
 Now hdf5 will concretize without an MPI dependency by default.
@@ -512,19 +518,23 @@ On these systems we have a pre-installed zlib. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 9-11
+   :emphasize-lines: 12-15
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
 
 
 Here, we've told Spack that zlib 1.2.8 is installed on our system.
@@ -552,18 +562,22 @@ not allowed to build its own zlib. We'll go with the latter.
 .. code-block:: yaml
    :emphasize-lines: 12
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
 
 
 Now Spack will be forced to choose the external zlib.
@@ -577,24 +591,29 @@ we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
 .. code-block:: yaml
-   :emphasize-lines: 13-16
+   :emphasize-lines: 17-21
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
-     mpich:
-       paths:
-         mpich@3.3%gcc@7.5.0: /usr
-       buildable: false
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
+       mpich:
+         externals:
+         - spec: mpich@3.3%gcc@7.5.0
+           prefix: /usr
+         buildable: false
 
 
 If we concretize ``hdf5+mpi`` with this configuration file, we will just
@@ -616,23 +635,28 @@ While we're at it, we can configure HDF5 to build with MPI by default
 again.
 
 .. code-block:: yaml
-   :emphasize-lines: 14-15
+   :emphasize-lines: 19-20
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
-     mpich:
-       paths:
-         mpich@3.3%gcc@7.5.0: /usr
-     mpi:
-       buildable: False
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
+       mpich:
+         externals:
+         - spec: mpich@3.3%gcc@7.5.0
+           prefix: /usr
+       mpi:
+         buildable: false
 
 
 Now that we have configured Spack not to build any possible provider
