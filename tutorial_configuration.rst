@@ -45,6 +45,7 @@ in order of decreasing priority, are:
 Scope          Directory
 ============   ===================================================
 Command-line   N/A
+Environment    In environment base directory (in ``spack.yaml``)
 Custom         Custom directory, specified with ``--config-scope``
 User           ``~/.spack/``
 Site           ``$SPACK_ROOT/etc/spack/``
@@ -402,21 +403,33 @@ MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
    :emphasize-lines: 9
 
 
-Now we will open the packages configuration file and update our
-preferences.
+Let's override these default preferences in an environment. When you
+have an activated environment, you can edit the associated
+configuration with ``spack config edit`` (you don't have to provide
+a section name):
 
 .. code-block:: console
 
-   $ spack config edit packages
+   $ spack env create config-env
+   $ spack env activate config-env
+   $ spack config edit
 
+
+Note that outside of an environment, the configuration sections are
+generally managed as separate files (e.g. the ``packages.yaml`` file
+stores all config related to package configuration) but in an
+environment, the sections are all stored in a single file.
 
 .. code-block:: yaml
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-       providers:
-         mpi: [mpich, openmpi]
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
 
 
 Because of the configuration scoping we discussed earlier, this
