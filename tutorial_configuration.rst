@@ -108,9 +108,13 @@ These files are listed in decreasing order of precedence, so files in
 YAML Format
 -----------
 
-Spack configurations are YAML dictionaries. Every configuration file
-begins with a top-level dictionary that tells Spack which
-configuration set it modifies. When Spack checks its configuration,
+Spack configurations are nested YAML dictionaries with a specified
+schema. The configuration is organized into sections based on theme
+(e.g. a 'compilers' section) and the highest-level keys of the dictionary
+specify the section. Spack generally maintains a separate file for
+each section (although environments keep them together).
+
+When Spack checks its configuration,
 the configuration scopes are updated as dictionaries in increasing
 order of precedence, allowing higher precedence files to override
 lower. YAML dictionaries use a colon ":" to specify key-value
