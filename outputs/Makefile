@@ -17,10 +17,10 @@ all:
 run:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
-		spack/tutorial:aws20 \
-		/project/basics.sh
+		spack/tutorial:ecp21-validation \
+		/project/stacks.sh
 
 interactive:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
-		spack/tutorial:aws20
+		spack/tutorial:ecp21-validation

@@ -26,7 +26,12 @@ In a typical Spack environment for a single user, a simple list of
 specs is sufficient. For software deployment, however, we often have a
 set of packages we want to install across a wide range of
 compilers. The simplest way to express this in Spack is through a
-matrix. Let's edit our ``spack.yaml`` file again.
+matrix. Let's go back to our code directory from the environments
+tutorial, activate our environment, and edit our ``spack.yaml`` file
+again.
+
+.. literalinclude:: outputs/stacks/setup-0.out
+   :language: console
 
 .. literalinclude:: outputs/stacks/examples/0.spack.yaml.example
    :language: yaml
