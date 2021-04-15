@@ -471,7 +471,7 @@ We can check the effect of this command with ``spack spec hdf5`` again.
 
 .. literalinclude:: outputs/config/2.prefs.out
    :language: console
-   :emphasize-lines: 8,13,22,28
+   :emphasize-lines: 8,13,23,29
 
 
 So far we have only made global changes to the package preferences. As

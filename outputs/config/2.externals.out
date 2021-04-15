@@ -5,6 +5,5 @@ hdf5%clang
 
 Concretized
 --------------------------------
-hdf5@1.10.6%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+hdf5@1.10.7%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~java~mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
     ^zlib@1.2.8%gcc@7.5.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
-
