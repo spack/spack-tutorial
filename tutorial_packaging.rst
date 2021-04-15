@@ -587,9 +587,6 @@ built-in packages that can serve as examples to guide the development
 of your package. You can find these packages in
 ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
 
-The adventurous may also want to check out `Advanced Topics in Packaging
-`<https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html>_`.
-
 Good Luck!
 
 -----------
