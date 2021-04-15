@@ -1,6 +1,8 @@
 $ spack install mpileaks
-==> Installing mpileaks
-==> No binary for mpileaks found: installing from source
+==> Installing mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3
+==> No binary for mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3 found: installing from source
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+ ######################################################################## 100.0%
 ==> mpileaks: Executing phase: 'autoreconf'
 ==> mpileaks: Executing phase: 'configure'
 ==> Error: ProcessError: Command exited with status 1:
@@ -12,8 +14,8 @@ $ spack install mpileaks
      32    Checking whether not-found responds to '-showme'... no
      33    Checking whether not-found responds to '-compile-info'... no
      34    Checking whether not-found responds to '-show'... no
-     35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-2zeskz65ktjgqj6u57venocpndampdt3/spack-s
-	   rc/configure: line 4931: Echo: command not found
+     35    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-2zeskz65ktjgqj6u57ve
+	   nocpndampdt3/spack-src/configure: line 4931: Echo: command not found
   >> 36    configure: error: unable to locate adept-utils installation
 
 See build log for details:
