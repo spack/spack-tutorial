@@ -33,8 +33,9 @@ example dev/setup-scr "spack add macsio+scr"
 example dev/setup-scr "spack install"
 
 example dev/develop-1 "spack develop scr@2.0.0"
-example dev/develop-1 "spack concretize -f"
 example dev/develop-1 "grep -3 develop: spack.yaml"
+
+example dev/develop-conc "spack concretize -f"
 
 example dev/develop-2 "spack install"
 

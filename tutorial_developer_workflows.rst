@@ -165,14 +165,18 @@ downloaded into a subdirectory of the environment. You can change the
 location of this source directory by modifying the ``path:`` attribute
 of the develop configuration in the environment.
 
-Please note that you need to manually specify the package version when
-specifying a package as a dev package. Spack needs to know the version
-of the dev package so it can supply the correct flags for the
-package's build system.  Also, please note that you'll need to
-re-concretize the environment so that the version number and the
-``dev_path=`` attributes are properly added to the cached spec in
-``spack.lock``.
+There are a two gotchas with the spack develop command
+* You need to manually specify the package version when specifying a
+  package as a dev package. Spack needs to know the version of the dev
+  package so it can supply the correct flags for the package's build
+  system.
+* You'll need to re-concretize the environment so that the version
+  number and the ``dev_path=`` attributes are properly added to the
+  cached spec in ``spack.lock``.
 
+.. literalinclude:: outputs/dev/devlop-conc.out
+   :language: console
+  
 Now that we have this done, we tell spack to rebuild both ``scr`` and
 ``macsio`` by running ``spack install``.
 
