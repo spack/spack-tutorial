@@ -11,8 +11,8 @@
 Developer Workflows Tutorial
 ============================
 
-This tutorial will guide you through the process of using the `spack
-develop` command to develop software from local source code within a
+This tutorial will guide you through the process of using the ``spack
+develop`` command to develop software from local source code within a
 spack environment. With this command spack will manage your
 dependencies while you focus on testing changes your library and/or
 application.
@@ -22,21 +22,22 @@ application.
 Installing from local source
 -----------------------------
 
-The `spack install` command, as you know, fetches source code from a
+The ``spack install`` command, as you know, fetches source code from a
 mirror or the internet before building and installing your package. As
 developers, we want to build from local source, which we will
 constantly change, build, and test.
 
-Let's imagine for a second we're working on `scr`.  `scr` is a library
-used to implement scalable checkpointing in application codes. It
-supports writing/reading checkpoints quickly and efficiently using MPI
-and high-bandwidth file I/O. We'd like to test changes to scr within
-an actual application so we'll test with `macsio`, a proxy application
-written to mimic typical HPC I/O workloads. We've chosen `scr` and
-`macsio` because together they are quick to build.
+Let's imagine for a second we're working on ``scr``.  ``scr`` is a
+library used to implement scalable checkpointing in application
+codes. It supports writing/reading checkpoints quickly and efficiently
+using MPI and high-bandwidth file I/O. We'd like to test changes to
+scr within an actual application so we'll test with ``macsio``, a
+proxy application written to mimic typical HPC I/O workloads. We've
+chosen ``scr`` and ``macsio`` because together they are quick to
+build.
 
 We'll start by making an environment for our development.  We need to
-build `macsio` with `scr` support, and we'd like everything to be
+build ``macsio`` with ``scr`` support, and we'd like everything to be
 built without fortran support for the time being. Let's set up that
 development workflow.
 
@@ -156,12 +157,12 @@ out a development version of scr:
    :language: console
 
 The spack develop command marks the package as being a "development"
-package in the spack.yaml. This adds a special `dev_path=` attribute
+package in the spack.yaml. This adds a special ``dev_path=`` attribute
 to the spec for the package, so spack remembers where the source code
 for this package is located. The develop command also downloads/checks
 out the source code for the package. By default, the source code is
 downloaded into a subdirectory of the environment. You can change the
-location of this source directory by modifying the `path:` attribute
+location of this source directory by modifying the ``path:`` attribute
 of the develop configuration in the environment.
 
 Please note that you need to manually specify the package version when
@@ -169,19 +170,19 @@ specifying a package as a dev package. Spack needs to know the version
 of the dev package so it can supply the correct flags for the
 package's build system.  Also, please note that you'll need to
 re-concretize the environment so that the version number and the
-`dev_path=` attributes are properly added to the cached spec in
-`spack.lock`.
+``dev_path=`` attributes are properly added to the cached spec in
+``spack.lock``.
 
-Now that we have this done, we tell spack to rebuild both `scr` and
-`macsio` by running `spack install`.
+Now that we have this done, we tell spack to rebuild both ``scr`` and
+``macsio`` by running ``spack install``.
 
 .. literalinclude:: outputs/dev/devlop-2.out
    :language: console
 
-This rebuilds `scr` from the subdirectory we specified. If your package
-uses cmake, spack will build the package in a build directory that
-matches the hash for your package. From here you can change into the
-appropriate directory and perform your own build/test cycles.
+This rebuilds ``scr`` from the subdirectory we specified. If your
+package uses cmake, spack will build the package in a build directory
+that matches the hash for your package. From here you can change into
+the appropriate directory and perform your own build/test cycles.
 
 Now, we can develop our code. For the sake of this demo, we're just
 going to intentionally introduce an error. Let's edit a file and
@@ -190,49 +191,49 @@ remove the first semi-colon we find.
 .. literalinclude:: outputs/dev/edit-1.out
    :language: console
 
-Once you have a development package, `spack install` also works much
+Once you have a development package, ``spack install`` also works much
 like "make". Since spack knows the source code directory of the
 package, it checks the filetimes on the source directory to see if
 we've made recent changes.  If the file times are newer, it will
-rebuild `scr` and any other package that depends on `scr`.
+rebuild ``scr`` and any other package that depends on ``scr``.
 
 .. literalinclude:: outputs/dev/devlop-3.out
    :language: console
 
  Here, the build failed as expected. We can look at the output for the
- build in `scr/spack-build-out.txt` to find out why, or we can launch
- a shell directly with the appropriate environment variables to figure
- out what went wrong by using ``spack build-env scr@2.0 -- bash``.  If
- that's too much to remember, then sourcing `scr/spack-build-env.txt`
- will also set all the appropriate environment variables so we can
- diagnose the build ourselves. Now let's fix it and rebuild directly.
+ build in ``scr/spack-build-out.txt`` to find out why, or we can
+ launch a shell directly with the appropriate environment variables to
+ figure out what went wrong by using ``spack build-env scr@2.0 --
+ bash``.  If that's too much to remember, then sourcing
+ ``scr/spack-build-env.txt`` will also set all the appropriate
+ environment variables so we can diagnose the build ourselves. Now
+ let's fix it and rebuild directly.
 
 .. literalinclude:: outputs/dev/develop-4.out
    :language: console
  
-You'll notice here that spack rebuilt both `scr` and `macsio`, as
+You'll notice here that spack rebuilt both ``scr`` and ``macsio``, as
 expected.
 
 Taking advantage of iterative builds with spack requires cooperation
 from your build system.  When spack performs a rebuild on a
-development package, it reruns all the build stages for your
-package without cleaning the source and build directories
-to a pristine state. If your build system can take advantage of the
-previously compiled object files then you'll end up with an iterative
-build.
+development package, it reruns all the build stages for your package
+without cleaning the source and build directories to a pristine
+state. If your build system can take advantage of the previously
+compiled object files then you'll end up with an iterative build.
 
 - If your package just uses make, you also should get iterative builds
-  for free when running `spack develop`.
-- If your package uses cmake with the typical `cmake` / `build` /
-  `install` build stages, you'll get iterative builds for free with
+  for free when running ``spack develop``.
+- If your package uses cmake with the typical ``cmake`` / ``build`` /
+  ``install`` build stages, you'll get iterative builds for free with
   spack because cmake doesn’t modify the filetime on the
-  `CMakeCache.txt` file if your cmake flags haven't changed.
+  ``CMakeCache.txt`` file if your cmake flags haven't changed.
 - If your package uses autoconf, then rerunning the typical
-  `autoreconf` stage typically modifies the filetime of `config.h`,
-  which can trigger a cascade of rebuilding.
+  ``autoreconf`` stage typically modifies the filetime of
+  ``config.h``, which can trigger a cascade of rebuilding.
 
 Multiple packages can also be marked as develop. If we were
-co-developing `macsio`, we could simply run
+co-developing ``macsio``, we could run
 
 .. literalinclude:: outputs/dev/develop-5.out
    :language: console
@@ -246,8 +247,8 @@ here.
 .. literalinclude:: outputs/dev/otherdevel.out
    :language: console
 
-Here, `spack develop` with no arguments will check out or download the
-source code and place in in the appropriate places.
+Here, ``spack develop`` with no arguments will check out or download
+the source code and place in in the appropriate places.
 
 When we're done developing, we simply tell spack that it no longer
 needs to keep a development version of the package.
