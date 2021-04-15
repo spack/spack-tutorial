@@ -15,7 +15,7 @@ example basics/clone         "git clone https://github.com/spack/spack ~/spack"
 
 example basics/checkout      "cd ~/spack"
 cd ~/spack
-example basics/checkout      "git checkout releases/v0.15"
+example basics/checkout      "git checkout releases/v0.16"
 
 example basics/source-setup  ". share/spack/setup-env.sh"
 
@@ -30,8 +30,8 @@ example basics/list-py         "spack list 'py-*'"
 # spack install
 example basics/zlib            "spack install zlib"
 
-example basics/mirror          "spack mirror add tutorial s3://spack-tutorial-container/mirror/"
-example basics/mirror          "spack gpg trust share/spack/keys/tutorial.pub"
+example basics/mirror          "spack mirror add tutorial s3://spack-binaries-prs/tutorial/ecp21/mirror"
+example basics/mirror          "spack buildcache keys -it"
 
 example basics/zlib-clang      "spack install zlib %clang"
 

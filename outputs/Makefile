@@ -18,7 +18,7 @@ run:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
 		spack/tutorial:ecp21-validation \
-		/project/stacks.sh
+		/project/basics.sh
 
 interactive:
 	docker run --rm -it \
