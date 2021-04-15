@@ -44,30 +44,48 @@ external internet access.
 .. literalinclude:: outputs/cache/setup-scr.out
    :language: console
 
-Once we've built this environment, we can easily make a spack mirror
-that contains all the sources required for this build.
+Once we've created and installed this environment, we can easily
+upload source code needed to reproduce this build to a mirror.  The
+following command both creates the mirror and uploads the source code
+for the ``scr`` package included in our environment. The ``-d`` flag
+tells spack where to place the mirrored source code files.
 
-.. literalinclude:: outputs/cache/spack-mirror-1.out
+.. literalinclude:: outputs/cache/spack-mirror-single.out
    :language: console
+              
+We can configure spack to use this source mirror by adding
+a few lines to your ``spack.yaml`` file.
 
-When run within an environment, spack mirror create will upload every
-source used to build the current environment to the specified
-directory. We can configure spack to use this source mirror by adding
-a few lines to your spack.yaml file.
+.. literalinclude:: outputs/cache/spack-mirror-config.out
+   :language: console
+              
+Manually uploading every package in an environment can be
+tedious. Luckily, when run within an environment, ``spack mirror
+create`` with the ``-a`` flag will upload every source used to build
+the current environment to the specified directory.
 
-.. literalinclude:: outputs/cache/spack-mirror-2.out
+.. literalinclude:: outputs/cache/spack-mirror-all.out
    :language: console
 
 This directory can be shared between users on a shared filesystem and
-protected with typical unix file permissions. As long as spack can
-read from the mirror directory, spack will attempt to read source
-packages from the mirror instead of accessing the internet. This can
-be a huge boon for computers that can't access the external internet
-but can access a shared filesystem. If you need to use spack on a
-system that is isolated from the external internet, you must bundle
-the whole spack mirror directory and unbundle it on the isolated
-system. From there, you follow the same steps to use the spack mirror
-as you would on any computer that can't access the external internet..
+protected with typical unix file permissions. If you're making a spack
+mirror on a shared filesystem, remember to fix the file permissions
+every time you update the mirror, or update your ``umask`` settings so
+any new files you create have the appropriate permissions. Here you
+would replace the word ``spack`` to the appropriate unix group.
+
+.. literalinclude:: outputs/cache/spack-mirror-permissions.out
+   :language: console
+
+As long as spack can read from the mirror directory, spack will
+attempt to read source packages from the mirror instead of accessing
+the internet. This can be a huge boon for computers that can't access
+the external internet but can access a shared filesystem. If you need
+to use spack on a system that is isolated from the external internet,
+you must bundle the whole spack mirror directory and unbundle it on
+the isolated system. From there, you follow the same steps to use the
+spack mirror as you would on any computer that can't access the
+external internet.
 
 If you need to add more sources to the mirror, you can re-run the
 command you used to create the mirror. For example, assume we want to
@@ -85,11 +103,6 @@ Spack will skip uploading source code packages that are already
 included in the spack mirror. Mirrors can be shared across different
 environments, meaning one mirror can house all the source code needed
 to build your team's dependencies.
-
-If you're making a spack mirror on a shared filesystem, remember to
-fix the file permissions every time you update the mirror, or update
-your ``umask`` settings so any new files you create have the
-appropriate permissions.
 
 --------------------------------
 Setting up a binary cache mirror
@@ -134,18 +147,6 @@ when we set up spack to use a binary mirror. As a reminder, we ran:
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
-
-Before we use a binary cache, we need to make sure that we trust all
-the packages listed in the binary cache. If you're sharing files
-between trusted users on a filesystem, you can do this with the
-following command:
-
-.. literalinclude:: outputs/cache/trust.out
-   :language: console
-
-Here, ``-i`` means install, ``-t`` means trust, and ``-f`` means
-force.  Together, this means download all the keys on the binary cache
-and trust them.
               
 Building a spack binary cache mirror has some gotchas, but is almost
 as easy as building a source mirror. We'll start by making a new
@@ -185,17 +186,39 @@ With this setup done, we're ready to fill a binary cache with binary
 packages. Binary packages are attached to an existing source mirror.
 We follow the same steps we used for the source mirror -- making an
 environment, creating the source mirror, and building the packages to
-a spack installation with our padded path. After we've built our
-environment, we run the following commands to create binary packages
-from our build software.
+a spack installation with our padded path. To upload a spec to a
+binary cache, simply use the command ``spack buildcache
+create --only=package spec``. We use this here in a for loop to create
+binary packages for every non-external package in our environment.
 
 .. literalinclude::  outputs/cache/binary-cache-4.out
    :language: console
 
 Voila, done! Our spack mirror has now been augmented with a binary
 cache.  This cache can be used on systems without external internet
-access, just like with a spack source mirror.  As always, remember to
+access, just like with a spack source mirror. As always, remember to
 update the file permissions after updating the mirror.
+
+.. literalinclude:: outputs/cache/spack-mirror-permissions.out
+   :language: console
+
+Though it's outside the scope of this tutorial, spack mirrors and
+build caches can also be hosted over ``https://`` and ``s3://`` as
+well. Consult the spack documentation for more information on how to
+do this.
+
+Before a user can use this binary cache, they will need to make sure
+that they trust all the packages listed in the binary cache. If you're
+sharing files between trusted users on a filesystem, you can do this
+with the following command:
+
+.. literalinclude:: outputs/cache/trust.out
+   :language: console
+
+Here, ``-i`` means install, ``-t`` means trust, and ``-f`` means
+force.  Together, this means download all the keys on the binary cache
+and trust them. Have your users run the above command on a new spack
+instance before they initiate a build.
 
 -------------
 Cache Summary
