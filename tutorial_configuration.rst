@@ -112,7 +112,8 @@ Spack configurations are nested YAML dictionaries with a specified
 schema. The configuration is organized into sections based on theme
 (e.g. a 'compilers' section) and the highest-level keys of the dictionary
 specify the section. Spack generally maintains a separate file for
-each section (although environments keep them together).
+each section, although environments keep them together (in
+``spack.yaml``).
 
 When Spack checks its configuration,
 the configuration scopes are updated as dictionaries in increasing
@@ -149,6 +150,33 @@ configuration file had a single colon instead of the double colon, it
 would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
 
+The schema for a section applies whether that section is an individual
+file or part of an environment, except that the sections are nested 1
+level underneath the top-level 'spack' key in an environment's
+``spack.yaml`` file. For example the above ``compilers.yaml`` could be
+incorporated into an environment's ``spack.yaml`` like so:
+
+.. code-block:: yaml
+
+   spack:
+     specs: []
+     view: true
+     compilers::
+     - compiler:
+         spec: gcc@7.5.0
+         paths:
+           cc: /usr/bin/gcc
+           cxx: /usr/bin/g++
+           f77: /usr/bin/gfortran
+           fc: /usr/bin/gfortran
+         flags: {}
+         operating_system: ubuntu18.04
+         target: x86_64
+         modules: []
+         environment: {}
+         extra_rpaths: []
+
+
 .. _configs-tutorial-compilers:
 
 ----------------------
@@ -169,6 +197,10 @@ We will start by opening the compilers configuration file:
 
    $ spack config edit compilers
 
+
+We start with no active environment, so this will open a
+``compilers.yaml`` file for editing (you can also do this with an
+active environment):
 
 .. code-block:: yaml
 
@@ -417,6 +449,16 @@ a section name):
    $ spack env create config-env
    $ spack env activate config-env
    $ spack config edit
+
+
+.. warning::
+
+   You will get exactly the same effects if you make these changes
+   without using an environment, but you must delete the
+   associated ``packages.yaml`` file after the config tutorial or
+   the commands you run in later tutorial sections will not
+   produce the same output (because they weren't run with the
+   configuration changes made here)
 
 
 Note that outside of an environment, the configuration sections are
@@ -704,10 +746,19 @@ the software. We can do this like so:
 Now, only members of the ``fluid_dynamics`` group can use any
 ``converge`` installations.
 
+At this point we want to discard the configuration changes we made
+in this tutorial section, so we can deactivate the environment:
+
+.. code-block:: console
+
+   $ spack env deactivate
+
+
 .. warning::
 
-   You should now ``spack env deactivate`` to avoid changing how
-   specs in later tutorial sections are concretized.
+   If you do not deactivate the ``config-env`` environment, then
+   specs will be concretized differently in later tutorial sections
+   and your results will not match.
 
 
 -----------------
@@ -715,9 +766,9 @@ High-level Config
 -----------------
 
 In addition to compiler and package settings, Spack allows customization
-of several high-level settings. These settings are stored in the generic
-``config.yaml`` configuration file. You can see the default settings by
-running:
+of several high-level settings. These settings are managed in the ``config``
+section (in ``config.yaml`` when stored as an individual file outside of
+an environment). You can see the default settings by running:
 
 .. code-block:: console
 
