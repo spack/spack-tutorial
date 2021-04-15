@@ -90,8 +90,9 @@ Some facilities manage multiple platforms from a single shared
 file system. In order to handle this, each of the configuration
 scopes listed above has two *sub-scopes*: platform-specific and
 platform-independent. For example, compiler settings can be stored
-in ``compilers.yaml`` configuration files in the following locations:
+in the following locations:
 
+#. ``environment-root-dir/spack.yaml``
 #. ``~/.spack/<platform>/compilers.yaml``
 #. ``~/.spack/compilers.yaml``
 #. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
@@ -150,11 +151,11 @@ configuration file had a single colon instead of the double colon, it
 would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
 
-The schema for a section applies whether that section is an individual
-file or part of an environment, except that the sections are nested 1
-level underneath the top-level 'spack' key in an environment's
-``spack.yaml`` file. For example the above ``compilers.yaml`` could be
-incorporated into an environment's ``spack.yaml`` like so:
+A configuration section appears nearly the same when managed in an
+environment's ``spack.yaml`` file except that the section is nested 1
+level underneath the top-level 'spack' key. For example the above
+``compilers.yaml`` could be incorporated into an environment's
+``spack.yaml`` like so:
 
 .. code-block:: yaml
 
@@ -415,9 +416,9 @@ this field can be set by:
 Configuring Package Preferences
 -------------------------------
 
-Package preferences in Spack are managed through the ``packages.yaml``
-configuration file. First, we will look at the default
-``packages.yaml`` file.
+Package preferences in Spack are managed through the ``packages``
+configuration section. First, we will look at the default ``packages.yaml``
+file.
 
 .. code-block:: console
 
@@ -460,11 +461,6 @@ a section name):
    produce the same output (because they weren't run with the
    configuration changes made here)
 
-
-Note that outside of an environment, the configuration sections are
-generally managed as separate files (e.g. the ``packages.yaml`` file
-stores all config related to package configuration) but in an
-environment, the sections are all stored in a single file.
 
 .. code-block:: yaml
 
@@ -675,7 +671,7 @@ forbidden it from building. We could resolve this by requesting
 ``hdf5+mpi%clang^mpich`` explicitly, or we can configure Spack not to
 use any other MPI implementation. Since we're focused on
 configurations here and the former can get tedious, we'll need to
-modify our ``packages.yaml`` file again.
+modify our ``packages`` configuration again.
 
 While we're at it, we can configure HDF5 to build with MPI by default
 again.
@@ -725,7 +721,7 @@ same spec syntax.
 Installation permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``packages.yaml`` file also controls the default permissions
+The ``packages`` configuration also controls the default permissions
 to use when installing a package. You'll notice that by default,
 the installation prefix will be world-readable but only user-writable.
 
