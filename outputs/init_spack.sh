@@ -10,6 +10,7 @@ fi
 
 . share/spack/setup-env.sh
 
+pip install boto3
 spack mirror add tutorial /mirror
 spack buildcache keys --install --trust
 spack config add 'config:suppress_gpg_warnings:true'

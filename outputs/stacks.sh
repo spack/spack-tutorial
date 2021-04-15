@@ -6,12 +6,21 @@ project=$(dirname "$0")
 
 rm -rf $raw_outputs/stacks
 . $project/init_spack.sh
+. share/spack/setup-env.sh
+
+spack install zlib%clang
+spack install trilinos^mpich
+spack install openmpi
 
 mkdir -p ~/code
+example stacks/setup-0 "cd ~/code"
 cd ~/code
 
 cat $project/stacks/examples/0.spack.yaml.example > spack.yaml
+example stacks/setup-0 "spack env activate ."
 spack env activate .
+
+fake_example stacks/setup-0 "spack config edit" "/bin/true"
 
 example stacks/concretize-0 "spack concretize"
 example stacks/concretize-0 "spack find -c"
