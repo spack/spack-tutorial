@@ -83,7 +83,7 @@ This directory can be shared between users on a shared filesystem and
 protected with typical unix file permissions. If you're making a spack
 mirror on a shared filesystem, remember to fix the file permissions
 every time you update the mirror, or update your
-`umask<https://man7.org/linux/man-pages/man2/umask.2.html>`_ settings
+`umask <https://man7.org/linux/man-pages/man2/umask.2.html>`_ settings
 so any new files you create have the appropriate permissions. Here you
 would replace the word ``spack`` to the appropriate unix group.
 
