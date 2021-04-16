@@ -1,0 +1,15 @@
+$ cd ~
+$ mkdir cache-binary
+$ cd cache-binary
+$ spack env create -d .
+==> Updating view at /home/spack/cache-binary/.spack-env/view
+==> Created environment in /home/spack/cache-binary
+==> You can activate this environment with:
+==>   spack env activate /home/spack/cache-binary
+$ spacktivate .
+$ spack add bzip2
+==> Adding bzip2 to environment /home/spack/cache-binary
+==> Updating view at /home/spack/cache-binary/.spack-env/view
+$ spack add zlib
+==> Adding zlib to environment /home/spack/cache-binary
+==> Updating view at /home/spack/cache-binary/.spack-env/view

@@ -16,8 +16,8 @@ example cache/up-to-date ". share/spack/setup-env.sh"
 spack config add "config:suppress_gpg_warnings:true"
 spack config add "packages:all:target:[x86_64]"
 
-example cache/up-to-date "spack mirror add tutorial s3://spack-binaries-prs/tutorial/ecp21/mirror"
-example cache/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
+example cache/up-to-date "spack mirror add tutorial /mirror"
+example cache/up-to-date "spack buildcache keys -it"
 
 example cache/mirror-list-0 "spack mirror list"
 

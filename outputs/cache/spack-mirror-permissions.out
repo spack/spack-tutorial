@@ -1,0 +1,5 @@
+$ umask 750
+$ chmod -R g+rS ~/mirror
+chmod: invalid mode: 'g+rS'
+Try 'chmod --help' for more information.
+$ chgrp -R spack ~/mirror
