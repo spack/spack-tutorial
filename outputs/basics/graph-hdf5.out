@@ -43,17 +43,20 @@ o | | | | | | | | |  zlib
 | | |_|_|/|
 | |/| | |/
 | | | | o  perl
-| | | | o  gdbm
-| | | | o  readline
-| | | | o  ncurses
-| |_|_|/
-|/| | |
-o | | |  pkgconf
- / / /
-| | o  libtool
-| |/
-|/|
-o |  m4
-o |  libsigsegv
+| | | | |\
+| | | | o |  gdbm
+| | | | o |  readline
+| | | | o |  ncurses
+| |_|_|/ /
+|/| | | |
+o | | | |  pkgconf
+ / / / /
+| | o |  libtool
+| |/ /
+|/| |
+o | |  m4
+o | |  libsigsegv
+ / /
+o |  libiconv
  /
-o  libiconv
+o  berkeley-db

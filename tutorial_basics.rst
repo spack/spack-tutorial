@@ -28,7 +28,7 @@ Installing Spack
 ----------------
 
 Spack works out of the box. Simply clone spack and get going. We will
-clone Spack and immediately checkout the most recent release, v0.15.
+clone Spack and immediately checkout the most recent release, v0.16.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console

@@ -1,27 +1,39 @@
 $ spack install gcc @8.3.0
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
-==> Installing gmp
-==> Extracting gmp from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-mm33a3ocsv3jsh2tfxc4mlab4xsurtdd
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-d2krmb5gweivlnztcymhklzsqbrpatt6
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t
-==> Installing mpfr
-==> Extracting mpfr from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-3.1.6-nwsubswuytvvsjtu3nuyuxquwyxyfebj
-==> Installing isl
-==> Extracting isl from binary cache
+==> Installing isl-0.18-4lkvfkviv45b2htxuyfxbivafx4wajud
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/isl-0.18/linux-ubuntu18.04-x86_64-gcc-7.5.0-isl-0.18-4lkvfkviv45b2htxuyfxbivafx4wajud.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting isl-0.18-4lkvfkviv45b2htxuyfxbivafx4wajud from binary cache
+gpgconf: socketdir is '/home/spack/.gnupg'
+gpgconf:	no /run/user dir
+gpgconf:	using homedir as fallback
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/isl-0.18-4lkvfkviv45b2htxuyfxbivafx4wajud
-==> Installing mpc
-==> Extracting mpc from binary cache
+==> Installing mpfr-3.1.6-nwsubswuytvvsjtu3nuyuxquwyxyfebj
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-3.1.6/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpfr-3.1.6-nwsubswuytvvsjtu3nuyuxquwyxyfebj.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting mpfr-3.1.6-nwsubswuytvvsjtu3nuyuxquwyxyfebj from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-3.1.6-nwsubswuytvvsjtu3nuyuxquwyxyfebj
+==> Installing mpc-1.1.0-uur2dd6aco22hxagwzxco23rvtyvqd7t
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpc-1.1.0-uur2dd6aco22hxagwzxco23rvtyvqd7t.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting mpc-1.1.0-uur2dd6aco22hxagwzxco23rvtyvqd7t from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0-uur2dd6aco22hxagwzxco23rvtyvqd7t
-==> Installing gcc
-==> Extracting gcc from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.3.0-6hbkzolzshktgws6mz3f4s23v6sbkgnl
+==> Installing gcc-8.3.0-7mh4po7nmny3ku6c3jv3ovcssb6wwqlw
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.3.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-gcc-8.3.0-7mh4po7nmny3ku6c3jv3ovcssb6wwqlw.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting gcc-8.3.0-7mh4po7nmny3ku6c3jv3ovcssb6wwqlw from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.3.0-7mh4po7nmny3ku6c3jv3ovcssb6wwqlw

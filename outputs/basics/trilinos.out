@@ -2,78 +2,131 @@ $ spack install trilinos
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-6nxes4rhk52rhxj7dntwqa5nzou5sv2t
-==> Installing openblas
-==> Extracting openblas from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.10-m5gktgohkqi2znlic6cwpz5euhqdle3i
-==> Installing diffutils
-==> Extracting diffutils from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-komekkmyciga3kl24edjmredhj3uyt7v
+==> Installing openblas-0.3.12-te35tjxctgjpeeuk357xghoinvwf2k7u
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.12/linux-ubuntu18.04-x86_64-gcc-7.5.0-openblas-0.3.12-te35tjxctgjpeeuk357xghoinvwf2k7u.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting openblas-0.3.12-te35tjxctgjpeeuk357xghoinvwf2k7u from binary cache
+gpgconf: socketdir is '/home/spack/.gnupg'
+gpgconf:	no /run/user dir
+gpgconf:	using homedir as fallback
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.12-te35tjxctgjpeeuk357xghoinvwf2k7u
+==> Installing autoconf-archive-2019.01.06-bdyarrkdgse5adcjr4kxqc4jns74k7yn
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-archive-2019.01.06/linux-ubuntu18.04-x86_64-gcc-7.5.0-autoconf-archive-2019.01.06-bdyarrkdgse5adcjr4kxqc4jns74k7yn.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting autoconf-archive-2019.01.06-bdyarrkdgse5adcjr4kxqc4jns74k7yn from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-archive-2019.01.06-bdyarrkdgse5adcjr4kxqc4jns74k7yn
+==> Installing diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-m3l53bhqaaznpmdxzs5jirieu4spdtyq
-==> Installing bzip2
-==> Extracting bzip2 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-yn2r3wfhiilelyulh5toteicdtxjhw7d
+==> Installing bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8/linux-ubuntu18.04-x86_64-gcc-7.5.0-bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
-==> Installing boost
-==> Extracting boost from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/boost-1.73.0-qzr23mk4jzlnkdfh4mrncz5lvpp67z2r
+==> Installing boost-1.74.0-hc5atqce4emwrrkxuyfayf5k43r5cst2
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/boost-1.74.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-boost-1.74.0-hc5atqce4emwrrkxuyfayf5k43r5cst2.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting boost-1.74.0-hc5atqce4emwrrkxuyfayf5k43r5cst2 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/boost-1.74.0-hc5atqce4emwrrkxuyfayf5k43r5cst2
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.13.5-cmn6yii6vkzjrapeabvbcna3qqqx6web
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.30.3-hyrsxn4yox7dp7sywfcs7lbknj45c5pq
-==> Installing openssl
-==> Extracting openssl from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1g-4dj34ywr6ytskzutiwgjrj66sryvav2q
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-nwb3bf5ibencr3coo5kgkxa7tjrj7yfy
-==> Installing cmake
-==> Extracting cmake from binary cache
-==> Warning: patchelf --print-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in produced an error [Command exited with status 1:
-    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--print-rpath' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-bob4o5m3uku6vtdil5imasprgy775zg7
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t
+==> Installing openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1h/linux-ubuntu18.04-x86_64-gcc-7.5.0-openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-mm33a3ocsv3jsh2tfxc4mlab4xsurtdd
+==> Installing cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4/linux-ubuntu18.04-x86_64-gcc-7.5.0-cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j from binary cache
+==> Warning: patchelf --print-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j/share/cmake-3.18/Modules/Internal/CPack/CPack.OSXScriptLauncher.in produced an error [Command exited with status 1:
+    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--print-rpath' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j/share/cmake-3.18/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
 patchelf: not an ELF executable
 ]
-==> Warning: patchelf --force-rpath --set-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in failed with error Command exited with status 1:
-    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--force-rpath' '--set-rpath' '' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy/share/cmake-3.17/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
+==> Warning: patchelf --force-rpath --set-rpath /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j/share/cmake-3.18/Modules/Internal/CPack/CPack.OSXScriptLauncher.in failed with error Command exited with status 1:
+    '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp/bin/patchelf' '--force-rpath' '--set-rpath' '' '/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j/share/cmake-3.18/Modules/Internal/CPack/CPack.OSXScriptLauncher.in'
 patchelf: not an ELF executable
 
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.17.3-thpwguiiywo7hewgnm76t7r6w53mt6cy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-wdflovn6aocicngqouowxgj3pi3w7uoc
-==> Installing metis
-==> Extracting metis from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-d2krmb5gweivlnztcymhklzsqbrpatt6
+==> Installing metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/metis-5.1.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/metis-5.1.0-edcrft4l4szpqji2kowdkzq2ofueh3dr
-==> Installing glm
-==> Extracting glm from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1-c3mfw24ivgvgfwwxfia3ipk5lqlxdgcd
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.12-yvxocdy2kcxvvgatrrst3sqzyt7yxhgn
-==> Installing suite-sparse
-==> Extracting suite-sparse from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/suite-sparse-5.7.2-dgppz4n6wg4b42d4er5zovpefdywbuy3
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-ckxpgsn6uuptknjsle5cagqxpbo3b7uc
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-3.1.6-wudo6kygednztgzemlnq4l7rlwrwu3zw
-==> Installing hypre
-==> Extracting hypre from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.18.2-dnwivcw3g3kjliygwa536iyaykvjfag6
-==> Installing parmetis
-==> Extracting parmetis from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/parmetis-4.0.3-zdxekoefv7fk2qpoyv6xr26622tnosli
-==> Installing netlib-scalapack
-==> Extracting netlib-scalapack from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0-bvapk5ozv46rizqyzb3tlra7jwxkj2ay
-==> Installing hdf5
-==> Extracting hdf5 from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.6-7r2lztqivzy6umgvnhihn4565whablho
-==> Installing mumps
-==> Extracting mumps from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3-qb6yumyjj73wcewf4sa4wc2kc5kutswq
-==> Installing matio
-==> Extracting matio from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/matio-1.5.13-w3dbllqxjzh3xyc5hexo7jedowsixau5
-==> Installing netcdf-c
-==> Extracting netcdf-c from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netcdf-c-4.7.3-uctbd5yydaciec4ircts7prazhmpllj5
-==> Installing trilinos
-==> Extracting trilinos from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-12.18.1-j6dav6kowb2c4sfq36vpn7vfhn7es3zf
+==> Installing glm-0.9.7.1-n4xti2gmzctc2oskcjphmruidrna4vfg
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-glm-0.9.7.1-n4xti2gmzctc2oskcjphmruidrna4vfg.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting glm-0.9.7.1-n4xti2gmzctc2oskcjphmruidrna4vfg from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/glm-0.9.7.1-n4xti2gmzctc2oskcjphmruidrna4vfg
+==> Installing gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.1.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.1.2-3ol3tldmm3oqflzrqonh6p2jmhgwsr4t
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh
+==> Installing mpfr-4.0.2-mpv2v7v7dasis5nbrrnmci5tc2rrca2y
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-4.0.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpfr-4.0.2-mpv2v7v7dasis5nbrrnmci5tc2rrca2y.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting mpfr-4.0.2-mpv2v7v7dasis5nbrrnmci5tc2rrca2y from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-4.0.2-mpv2v7v7dasis5nbrrnmci5tc2rrca2y
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu
+==> Installing suite-sparse-5.8.1-rdfmg5b5lobcgmho4yqzd7zq7wibbelk
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/suite-sparse-5.8.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-suite-sparse-5.8.1-rdfmg5b5lobcgmho4yqzd7zq7wibbelk.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting suite-sparse-5.8.1-rdfmg5b5lobcgmho4yqzd7zq7wibbelk from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/suite-sparse-5.8.1-rdfmg5b5lobcgmho4yqzd7zq7wibbelk
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-3.1.6-pmsyupw6w3gql4loaor25gfumlmvkl25
+==> Installing hypre-2.20.0-nndket2abxbsbuoocew5m643e36waxj3
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.20.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-hypre-2.20.0-nndket2abxbsbuoocew5m643e36waxj3.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting hypre-2.20.0-nndket2abxbsbuoocew5m643e36waxj3 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hypre-2.20.0-nndket2abxbsbuoocew5m643e36waxj3
+==> Installing parmetis-4.0.3-htdsyvt5yp6vl3nxbxp3627gohe7ldup
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/parmetis-4.0.3/linux-ubuntu18.04-x86_64-gcc-7.5.0-parmetis-4.0.3-htdsyvt5yp6vl3nxbxp3627gohe7ldup.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting parmetis-4.0.3-htdsyvt5yp6vl3nxbxp3627gohe7ldup from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/parmetis-4.0.3-htdsyvt5yp6vl3nxbxp3627gohe7ldup
+==> Installing hdf5-1.10.7-ejanivxt2gsv2qd3so7fil7izp4m3bcd
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.10.7-ejanivxt2gsv2qd3so7fil7izp4m3bcd.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting hdf5-1.10.7-ejanivxt2gsv2qd3so7fil7izp4m3bcd from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7-ejanivxt2gsv2qd3so7fil7izp4m3bcd
+==> Installing netlib-scalapack-2.1.0-wsiydak4jm7sms57zcu4rmzmdmgxqb5j
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-netlib-scalapack-2.1.0-wsiydak4jm7sms57zcu4rmzmdmgxqb5j.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting netlib-scalapack-2.1.0-wsiydak4jm7sms57zcu4rmzmdmgxqb5j from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netlib-scalapack-2.1.0-wsiydak4jm7sms57zcu4rmzmdmgxqb5j
+==> Installing matio-1.5.17-zoqjxgkw7h3yoxbagripnd6muniihwno
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/matio-1.5.17/linux-ubuntu18.04-x86_64-gcc-7.5.0-matio-1.5.17-zoqjxgkw7h3yoxbagripnd6muniihwno.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting matio-1.5.17-zoqjxgkw7h3yoxbagripnd6muniihwno from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/matio-1.5.17-zoqjxgkw7h3yoxbagripnd6muniihwno
+==> Installing netcdf-c-4.7.4-yixejlymvzs5aduzazrbs37hugw7sl7g
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/netcdf-c-4.7.4/linux-ubuntu18.04-x86_64-gcc-7.5.0-netcdf-c-4.7.4-yixejlymvzs5aduzazrbs37hugw7sl7g.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting netcdf-c-4.7.4-yixejlymvzs5aduzazrbs37hugw7sl7g from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/netcdf-c-4.7.4-yixejlymvzs5aduzazrbs37hugw7sl7g
+==> Installing mumps-5.3.3-3jmjrzw7kx44fyoltswqx7uhu33zikhm
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3/linux-ubuntu18.04-x86_64-gcc-7.5.0-mumps-5.3.3-3jmjrzw7kx44fyoltswqx7uhu33zikhm.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting mumps-5.3.3-3jmjrzw7kx44fyoltswqx7uhu33zikhm from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mumps-5.3.3-3jmjrzw7kx44fyoltswqx7uhu33zikhm
+==> Installing trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2.spack
+ ###################################################################################################################################################################### 100.0%
+==> Extracting trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1-qmjbxf2kamskoplhqlejy3esksrquni2
