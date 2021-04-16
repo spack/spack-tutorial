@@ -58,9 +58,9 @@ You should now be ready to run through our demo scripts:
   #. :ref:`basics-tutorial`
   #. :ref:`environments-tutorial`
   #. :ref:`configs-tutorial`
+  #. :ref:`packaging-tutorial`
   #. :ref:`developer-workflows-tutorial`
   #. :ref:`binary-cache-tutorial`
-  #. :ref:`packaging-tutorial`
   #. :ref:`stacks-tutorial`
   #. :ref:`spack-scripting-tutorial`
 
@@ -86,9 +86,9 @@ Full contents:
    tutorial_basics
    tutorial_environments
    tutorial_configuration
+   tutorial_packaging
    tutorial_developer_workflows
    tutorial_binary_cache
-   tutorial_packaging
    tutorial_stacks
    tutorial_spack_scripting
    tutorial_modules
