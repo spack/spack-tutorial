@@ -30,7 +30,7 @@ to increase download reliability. We've also already set up a mirror
 in this tutorial for binary caches. We can see these mirrors are
 configured
 
-.. literalinclude:: outputs/cache/mirror-list-0
+.. literalinclude:: outputs/cache/mirror-list-0.out
    :language: console
 
 --------------------------------
