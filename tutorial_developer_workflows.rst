@@ -153,7 +153,7 @@ Let's assume that scr has a bug, and we'd like to patch scr to find
 out what the problem is.  First, we tell spack that we'd like to check
 out a development version of scr:
 
-.. literalinclude:: outputs/dev/devlop-1.out
+.. literalinclude:: outputs/dev/develop-1.out
    :language: console
 
 The spack develop command marks the package as being a "development"
@@ -174,13 +174,13 @@ There are a two gotchas with the spack develop command
   number and the ``dev_path=`` attributes are properly added to the
   cached spec in ``spack.lock``.
 
-.. literalinclude:: outputs/dev/devlop-conc.out
+.. literalinclude:: outputs/dev/develop-conc.out
    :language: console
-  
+
 Now that we have this done, we tell spack to rebuild both ``scr`` and
 ``macsio`` by running ``spack install``.
 
-.. literalinclude:: outputs/dev/devlop-2.out
+.. literalinclude:: outputs/dev/develop-2.out
    :language: console
 
 This rebuilds ``scr`` from the subdirectory we specified. If your
@@ -201,7 +201,7 @@ package, it checks the filetimes on the source directory to see if
 we've made recent changes.  If the file times are newer, it will
 rebuild ``scr`` and any other package that depends on ``scr``.
 
-.. literalinclude:: outputs/dev/devlop-3.out
+.. literalinclude:: outputs/dev/develop-3.out
    :language: console
 
  Here, the build failed as expected. We can look at the output for the
@@ -215,7 +215,7 @@ rebuild ``scr`` and any other package that depends on ``scr``.
 
 .. literalinclude:: outputs/dev/develop-4.out
    :language: console
- 
+
 You'll notice here that spack rebuilt both ``scr`` and ``macsio``, as
 expected.
 
