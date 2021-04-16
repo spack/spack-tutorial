@@ -166,6 +166,7 @@ location of this source directory by modifying the ``path:`` attribute
 of the develop configuration in the environment.
 
 There are a two gotchas with the spack develop command
+
 * You need to manually specify the package version when specifying a
   package as a dev package. Spack needs to know the version of the dev
   package so it can supply the correct flags for the package's build
