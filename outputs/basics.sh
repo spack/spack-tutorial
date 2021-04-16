@@ -15,7 +15,7 @@ example basics/clone         "git clone https://github.com/spack/spack ~/spack"
 
 example basics/checkout      "cd ~/spack"
 cd ~/spack
-example basics/checkout      "git checkout releases/v0.16"
+example basics/checkout      "git checkout ${tutorial_branch}"
 
 example basics/source-setup  ". share/spack/setup-env.sh"
 

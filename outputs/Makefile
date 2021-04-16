@@ -1,7 +1,9 @@
 .PHONY: all replay
 
+# name of the container we'll generate the tutorial outputs with
+container = spack/tutorial:ecp21-validation
 raw_output = raw/*/*.out
-subdirs = basics packaging environments stacks dev scripting
+subdirs = basics environments packaging environments stacks dev scripting
 
 all:
 	echo "Filtering raw outputs though col"
@@ -17,10 +19,10 @@ all:
 run:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
-		spack/tutorial:ecp21-validation \
+		${container} \
 		/project/basics.sh
 
 interactive:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
-		spack/tutorial:ecp21-validation
+		${container}
