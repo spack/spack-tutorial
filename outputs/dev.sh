@@ -16,7 +16,7 @@ example dev/up-to-date ". share/spack/setup-env.sh"
 spack config add "config:suppress_gpg_warnings:true"
 spack config add "packages:all:target:[x86_64]"
 
-example dev/up-to-date "spack mirror add tutorial s3://spack-tutorial-container/mirror/"
+example dev/up-to-date "spack mirror add tutorial /mirror"
 example dev/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
 
 example dev/setup-scr "cd ~"
