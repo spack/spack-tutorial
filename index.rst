@@ -9,10 +9,9 @@
 Tutorial: Spack 101
 ===================
 
-This is a full-day introduction to Spack with lectures and live demos. It
-was last presented as a virtual event at `Supercomputing 2020
-<https://sc20.supercomputing.org/program/tutorials/>`_ on November
-9-10, 2020.
+This is a full-day introduction to Spack with lectures and live demos. It was
+last presented as a virtual event at the 2021 `ECP Annual Meeting
+<http://ecpannualmeeting.com/>`_ on April 16, 2021.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -23,17 +22,16 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/pearc19-tutorial-slide-preview.png
-   :target: _static/slides/spack-sc20-tutorial-slides.pdf
+   :target: _static/slides/spack-ecp21-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-sc20-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-ecp21-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo,
- Tamara Dahlgren, Peter Scheibel, and Adam Stewart. Managing HPC Software
- Complexity with Spack. Supercomputing 2020. Virtual event. November
- 9-10, 2020.
+**Full citation:** Gregory Becker, Robert Blake, Tamara Dahlgren, Peter
+Scheibel, Todd Gamblin. Using Spack to Accelerate Developer Workflows ECP
+Annual Meeting 2021. Virtual event. April 16, 2021.
 
 .. _live-demos:
 
