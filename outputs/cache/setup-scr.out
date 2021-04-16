@@ -11,7 +11,6 @@ $ # for now, disable fortran support in all packages
 $ spack config add "packages:all:variants: ~fortran"
 $ spack add macsio+scr
 ==> Adding macsio+scr to environment /home/spack/cache-env
-==> Updating view at /home/spack/cache-env/.spack-env/view
 $ spack install
 ==> Concretized macsio+scr
 [+]  lbkg732  macsio@1.1%gcc@7.5.0~exodus~hdf5~ipo+mpi~pdb+scr+silo~szip~typhonio~zfp~zlib build_type=RelWithDebInfo patches=59479b946e5bbf677e814dc1cde12b38dd3b083fec8c543fc6d3abf9f73dbbfa arch=linux-ubuntu18.04-x86_64
