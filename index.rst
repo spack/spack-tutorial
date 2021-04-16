@@ -79,10 +79,10 @@ Full contents:
    :caption: Tutorial
 
    tutorial_basics
+   tutorial_environments
    tutorial_configuration
    tutorial_packaging
    tutorial_developer_workflows
-   tutorial_environments
    tutorial_stacks
    tutorial_modules
    tutorial_buildsystems
