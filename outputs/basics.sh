@@ -30,8 +30,8 @@ example basics/list-py         "spack list 'py-*'"
 # spack install
 example basics/zlib            "spack install zlib"
 
-example basics/mirror          "spack mirror add tutorial s3://spack-binaries-prs/tutorial/ecp21/mirror"
-example basics/mirror          "spack buildcache keys -it"
+example basics/mirror          "spack mirror add tutorial /mirror"
+example basics/mirror          "spack buildcache keys --install --trust"
 
 example basics/zlib-clang      "spack install zlib %clang"
 
