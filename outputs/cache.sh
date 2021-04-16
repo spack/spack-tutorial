@@ -19,6 +19,8 @@ spack config add "packages:all:target:[x86_64]"
 example cache/up-to-date "spack mirror add tutorial s3://spack-binaries-prs/tutorial/ecp21/mirror"
 example cache/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
 
+example cache/mirror-list-0 "spack mirror list"
+
 example cache/setup-scr "cd ~"
 cd ~
 example cache/setup-scr "mkdir cache-env"
@@ -30,19 +32,21 @@ spack env activate .
 example cache/setup-scr "# for now, disable fortran support in all packages"
 example cache/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example cache/setup-scr "spack add macsio+scr"
+
+# The packages will already be installed by the dev tutorial
+spack install
+rm spack.lock
 example cache/setup-scr "spack install"
 
 example cache/spack-mirror-single "spack mirror create -d ~/mirror scr"
 
-example cache/spack-mirror-permissions "umask 750"
-example cache/spack-mirror-permissions "chmod -R g+rS ~/mirror"
-example cache/spack-mirror-permissions "chgrp -R spack ~/mirror"
-
 example cache/spack-mirror-config "spack mirror add mymirror ~/mirror"
-
 
 example cache/spack-mirror-all "spack mirror create -d ~/mirror -a"
 
+example cache/spack-mirror-permissions "umask 750"
+example cache/spack-mirror-permissions "chmod -R g+rS ~/mirror"
+example cache/spack-mirror-permissions "chgrp -R spack ~/mirror"
 
 example cache/spack-mirror-3 "spack add bzip2"
 example cache/spack-mirror-3 "spack install"
@@ -80,4 +84,3 @@ for ii in $(spack find --format "yyy {version} /{hash}" |
 do
   spack buildcache create -af -d ~/mirror --only=package $ii
 done'
-

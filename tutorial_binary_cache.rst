@@ -8,18 +8,30 @@
 .. _binary-cache-tutorial:
 
 ============================
-Cache Tutorial
+Mirror Tutorial
 ============================
 
 This tutorial will guide you through the process of setting up a
-source cache mirror and a binary cache mirror. Source and binary
-caches are extremely useful when using spack on a machine without
-internet access. Source cache mirrors allow you to fetch source code
-from a directory on your filesystem instead of accessing the outside
+mirror to cache source and binary files. Source and binary caches are
+extremely useful when using spack on a machine without internet
+access. Source cache mirrors allow you to fetch source code from a
+directory on your filesystem instead of accessing the outside
 internet, and binary cache mirrors allow you to install pre-compiled
 binaries to your spack installation path. Together, these caches can
 be used to speed up builds when using spack within a larger
 development team.
+
+We will use the filesystem for the mirrors in this tutorial, but
+mirrors can also be setup on web servers or s3 buckets -- any URL that
+``curl`` can access can be setup as a Spack mirror.
+
+By default, Spack comes configured with a source mirror in the cloud
+to increase download reliability. We've also already set up a mirror
+in this tutorial for binary caches. We can see these mirrors are
+configured
+
+.. literalinclude:: outputs/cache/mirror-list-0
+   :language: console
 
 --------------------------------
 Setting up a source cache mirror
@@ -52,13 +64,13 @@ tells spack where to place the mirrored source code files.
 
 .. literalinclude:: outputs/cache/spack-mirror-single.out
    :language: console
-              
+
 We can configure spack to use this source mirror by adding
 a few lines to your ``spack.yaml`` file.
 
 .. literalinclude:: outputs/cache/spack-mirror-config.out
    :language: console
-              
+
 Manually uploading every package in an environment can be
 tedious. Luckily, when run within an environment, ``spack mirror
 create`` with the ``-a`` flag will upload every source used to build
@@ -127,10 +139,11 @@ installed spack package signed with a gpg signature. When you install
 a package from a mirror with a binary cache, spack
 
 * Checks to see if there is a spack binary package that exactly
-  matches the hash of the spec you want to build.  exact SHA.
-• If a binary package is found, spack checks to see if the signature
+  matches the hash of the spec you want to build.
+* If a binary package is found, spack checks to see if the signature
   on the spack binary package is trusted. If the signature isn't
-  trusted, spack builds the package from source.
+  trusted or no package was found, spack builds the package from
+  source.
 * If the signature is trusted, then spack unzips and relocates the
   spack package.
 
@@ -142,7 +155,7 @@ set up spack to use a binary mirror. As a reminder, we ran:
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
-              
+
 Building a spack binary cache mirror has some gotchas, but is almost
 as easy as building a source mirror. We'll start by making a new
 environment for ourselves.  Since we're intending to publish to a
