@@ -11,20 +11,22 @@
 Environments Tutorial
 =====================
 
-We've shown you how to install and remove packages with Spack.  You can
-use `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages,
-`spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them,
-and `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
-look at and query what is installed.  We've also shown you how to
-customize Spack's installation with configuration files like
-`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_.
+So far, we've shown you the basics of how to install and remove packages with
+Spack. You can use `spack install
+<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_
+to install packages, `spack uninstall
+<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_
+to remove them, and `spack find
+<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
+look at and query what is installed.
 
 If you build a lot of software, or if you work on multiple projects,
 managing everything in one place can be overwhelming. The default ``spack
 find`` output may contain many packages, but you may want to *just* focus
 on packages for a particular project.  Moreover, you may want to include
 special configuration with your package groups, e.g., to build all the
-packages in the same group the same way.
+packages in the same group the same way. Or, you may want to build up
+development workflows around a subset of packages.
 
 Spack **environments** provide a way to handle these problems.
 
@@ -238,23 +240,28 @@ can kick off a large build of many packages easily.
 Configuration
 ^^^^^^^^^^^^^
 
-So far, ``myproject`` does not have any special configuration associated
-with it.  The specs concretize using Spack's defaults:
+An environment is more than just a list of root specs. It can also include
+*configuration* that changes the way Spack behaves when the environment is
+activated. So far, ``myproject`` does not have any special configuration
+associated with it. If you run ``spack spec``, you can see that concretization
+looks the same as it does outside the environment:
 
 .. literalinclude:: outputs/environments/spec-1.out
    :language: console
 
+We can customize this using `concretization preferences
+<https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_
+-- special configuration that changes the behavior of the concretizer.
 
-You may want to add extra configuration to your environment.  You can see
+Let's start by looking at the configuration of your environment. You can see
 how your environment is configured using ``spack config get``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
    :language: console
 
-
-It turns out that this is a special configuration format where Spack
-stores the state for the environment. Currently, the file is just a
-``spack:`` header and a list of ``specs``.  These are the roots.
+The output shows the special YAML configuration format that Spack uses to store
+the state of your environment. Currently, the file is just a ``spack:`` header
+and a list of ``specs``. These are the roots.
 
 You can edit this file to add your own custom configuration.  Spack
 provides a shortcut to do that:
@@ -263,7 +270,7 @@ provides a shortcut to do that:
 
    spack config edit
 
-You should now see the same file, and edit it to look like this:
+You should now see the same file in your editor. Change it to look like this:
 
 .. code-block:: yaml
 
@@ -280,23 +287,30 @@ You should now see the same file, and edit it to look like this:
      # add package specs to the `specs` list
      specs: [tcl, trilinos, hdf5, gmp]
 
-Now if we run ``spack spec`` again in the environment, specs will concretize with ``mpich`` as the MPI implementation:
+
+We will learn much more in the :ref:`configuration section <configs-tutorial>`,
+but for now, all you need to know is that this changes the default ``mpi``
+provider. That is, if a package depends on ``mpi``, Spack will now satisfy that
+dependency with ``mpich`` instead of the default ``openmpi``.
+
+To see what this looks like, run ``spack spec`` again in the environment. You
+can see that the spec concretizes with ``mpich`` as the MPI implementation:
 
 .. literalinclude:: outputs/environments/spec-2.out
    :language: console
 
 
-In addition to the ``specs`` section, an environment's configuration can
-contain any of the configuration options from Spack's various config
-sections. You can add custom repositories, a custom install location,
-custom compilers, or custom external packages, in addition to the ``package``
-preferences we show here.
+In addition to the ``packages`` section, an environment can contain many other
+types of configuration. You can add custom package repositories, a custom
+install location, custom compilers, custom external packages, and more. There
+are also ways to build workflows for CI and for software development using
+environment configuration, which we'll learn later in the tutorial.
 
-But now we have a problem.  We already installed part of this environment
-with openmpi, but now we want to install it with ``mpich``.
+Right now, though, we have a problem. We already installed part of this
+environment with openmpi, but now we want to install everything with ``mpich``.
 
-You can run ``spack concretize`` inside of an environment to concretize
-all of its specs.  We can run it here:
+You can run ``spack concretize --force`` inside of an environment to concretize
+all of its specs. We can run it here:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
@@ -310,32 +324,32 @@ configuration, ``spack add`` some specs, and ``spack install``.
 
 But, when we already have installed packages in the environment, we have
 to force everything in the environment to be re-concretized using ``spack
-concretize -f``.  *Then* we can re-run ``spack install``.
+concretize --force``.  *Then* we can re-run ``spack install``.
 
 
 ---------------------------------
 Building in environments
 ---------------------------------
 
-You've already learned about ``spack dev-build`` as a way to build a project
-you've already checked out.  You can also use environments to set up a
-development environment.  As mentioned, you can use any of the binaries in
-the environment's view:
+You can use environments to set up a development environment. With the
+environment activated, you can invoke any programs installed in the
+environment. Suppose you wanted to compile some MPI programs. This environment
+happens to have ``mpicc`` installed:
 
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
 
 
-Spack also sets variables like ``CPATH``, ``LIBRARY_PATH``,
-and ``LD_LIBRARY_PATH`` so that you can easily find headers and libraries in
-environemnts.
+In addition, activating the environment has set variables like ``CPATH``,
+``LIBRARY_PATH``, and ``LD_LIBRARY_PATH``, so that you can easily find headers
+and libraries from programs in the environemnt.
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
 
 
-We can use this to easily build programs.  Let's build a really simple MPI program
-using this environment.  Make a simple test program like this one.  Call it ``mpi-hello.c``.
+Let's use this to build a really simple MPI program. Make a simple test program
+like this one. Call it ``mpi-hello.c``.
 
 .. code-block:: c
 
@@ -357,8 +371,8 @@ using this environment.  Make a simple test program like this one.  Call it ``mp
 	  MPI_Finalize();
 	}
 
-This program includes a header from zlib, and prints out a message from each MPI rank.
-It also prints the zlib version.
+This program includes a header from zlib, and prints out a message from each
+MPI rank. It also prints the zlib version.
 
 All you need to do is build and run it:
 
@@ -367,21 +381,22 @@ All you need to do is build and run it:
 
 
 Note that we did not need to pass any special arguments to the compiler; just
-the source file.  This simple example only scratches the surface, but you
-can use environments to set up dependencies for a project, set up a run
-environment for a user, support your usual development environment, and
-many other use cases.
+the source file. This simple example only scratches the surface, but you can
+use environments to set up dependencies for a project, set up a run environment
+for a user, support your usual development environment, and many other use
+cases. We'll revisit some advanced use cases later, in the :ref:`developer
+workflows <developer-workflows-tutorial>` tutorial.
 
 
 ---------------------------------
 ``spack.yaml`` and ``spack.lock``
 ---------------------------------
 
-So far we've shown you how to interact with environments from the command
-line, but they also have a file-based interface that can be used by
-developers and admins to manage workflows for projects.
+We've shown you how to interact with environments from the command line, but
+they also have a file-based interface that can be used by developers and admins
+to manage projects in a reproducible way.
 
-In this section we'll dive a little deeper to see how environments are
+In this section, we'll dive a little deeper to see how environments are
 implemented, and how you could use this in your day-to-day development.
 
 ^^^^^^^^^^^^^^
@@ -398,10 +413,9 @@ We can get directly to the current environment's location using ``spack cd``:
    :language: console
 
 
-We notice two things here.  First, the environment is just a directory
-inside of ``var/spack/environments`` within the Spack installation.
-Second, it contains two important files: ``spack.yaml`` and
-``spack.lock``.
+You should notice two things here. First, the environment is just a directory
+inside of ``var/spack/environments`` within the Spack installation. Second, it
+contains two important files: ``spack.yaml`` and ``spack.lock``.
 
 ``spack.yaml`` is the configuration file for environments that we've
 already seen, but it does not *have* to live inside Spack.  If you create
@@ -483,32 +497,34 @@ environment:
 
 
 ``spack.yaml`` and ``spack.lock`` correspond to two fundamental concepts
-in Spack, but for environments:
+in Spack:
 
   * ``spack.yaml`` is the set of *abstract* specs and configuration that
     you want to install.
-  * ``spack.lock`` is the set of all fully *concretized* specs generated
-    from concretizing ``spack.yaml``
+  * ``spack.lock`` is the set of all fully *concrete* specs generated from
+    concretizing ``spack.yaml``
 
-Using either of these, you can recreate an environment that someone else
-built.  ``spack env create`` takes an extra optional argument, which can
-be either a ``spack.yaml`` or a ``spack.lock`` file:
+In this sense, you can think of environments as generalizations of specs, but
+for sets of packages.
+
+``spack.yaml`` and ``spack.lock`` both allow you to recreate an environment
+that someone else built. You can pass either as an argument to ``spack env
+create``:
 
 .. literalinclude:: outputs/environments/create-from-file-1.out
    :language: console
 
 
-Both of these create a new environment from the old one, but which one
-you choose to use depends on your needs:
+Both of these create a new environment from the old one, but which one you
+choose depends on your needs:
 
-#. ``abstract``: copying the yaml file allows someone else to build your
-   *requirements*, potentially a different way.
+#. ``abstract``: copying the ``spack.yaml`` file allows someone else to build
+your *requirements*, potentially a different way.
 
-#. ``concrete``: copying the lock file allows someone else to rebuild
+#. ``concrete``: copying the ``spack.lock`` file allows someone else to rebuild
    your *installation* exactly as you built it.
 
-The first use case can *re-concretize* the same specs on new platforms in
-order to build, but it will preserve the abstract requirements.  The
-second use case (currently) requires you to be on the same machine, but
-it retains all decisions made during concretization and is faithful to a
-prior install.
+The first use case can *re-concretize* the same specs on new platforms in order
+to build, but it will preserve the abstract requirements. The second use case
+(currently) requires you to be on the same type of machine, but it retains all
+decisions made during concretization and is faithful to a prior install.

@@ -74,7 +74,7 @@ spack config add packages:all:providers:mpi:[mpich]
 
 example environments/spec-2          "spack spec hypre"
 
-example environments/concretize-f-1 "spack concretize -f"
+example environments/concretize-f-1 "spack concretize --force"
 
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
