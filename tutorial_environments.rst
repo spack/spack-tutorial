@@ -518,10 +518,10 @@ create``:
 Both of these create a new environment from the old one, but which one you
 choose depends on your needs:
 
-#. ``abstract``: copying the ``spack.yaml`` file allows someone else to build
-your *requirements*, potentially a different way.
+1. ``abstract``: copying the ``spack.yaml`` file allows someone else to build
+   your *requirements*, potentially a different way.
 
-#. ``concrete``: copying the ``spack.lock`` file allows someone else to rebuild
+2. ``concrete``: copying the ``spack.lock`` file allows someone else to rebuild
    your *installation* exactly as you built it.
 
 The first use case can *re-concretize* the same specs on new platforms in order
