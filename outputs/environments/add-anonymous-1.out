@@ -2,12 +2,12 @@ $ spack add hdf5@5.5.1
 ==> Adding hdf5@5.5.1 to environment /home/spack/code
 ==> Updating view at /home/spack/code/.spack-env/view
 $ cat spack.yaml
-# This is a Spack Environment file.
-#
-# It describes a set of packages to be installed, along with
-# configuration settings.
+  This is a Spack Environment file.
+ 
+  It describes a set of packages to be installed, along with
+  configuration settings.
 spack:
-  # add package specs to the `specs` list
+    add package specs to the `specs` list
   specs: [boost, trilinos, openmpi, hdf5@5.5.1]
   view: true
 $ spack remove hdf5
