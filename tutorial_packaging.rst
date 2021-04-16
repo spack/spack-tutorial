@@ -573,7 +573,7 @@ and dependencies. Examples of each are:
 .. code-block:: python
 
    if self.spec.satisfies('@1.1:'):
-       # Do things needed for version 1.1 on
+       # Do things needed for version 1.1 or newer
 
 * Am I building with a ``gcc`` version up to ``5.0``?
 
