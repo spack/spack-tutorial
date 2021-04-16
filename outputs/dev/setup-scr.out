@@ -15,271 +15,103 @@ $ spack add macsio+scr
 $ spack install
 ==> Concretized macsio+scr
  -   lbkg732  macsio@1.1%gcc@7.5.0~exodus~hdf5~ipo+mpi~pdb+scr+silo~szip~typhonio~zfp~zlib build_type=RelWithDebInfo patches=59479b946e5bbf677e814dc1cde12b38dd3b083fec8c543fc6d3abf9f73dbbfa arch=linux-ubuntu18.04-x86_64
- -   bltycqw	  ^cmake@3.18.4%gcc@7.5.0~doc+ncurses+openssl+ownlibs~qt patches=bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d arch=linux-ubuntu18.04-x86_64
- -   crhlefo	      ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
- -   4sh6pym		  ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   es377uq	      ^openssl@1.1.1h%gcc@7.5.0+systemcerts arch=linux-ubuntu18.04-x86_64
- -   zfdvt2j		  ^perl@5.32.0%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
- -   4ihuiaz		      ^berkeley-db@18.1.40%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   4av4gyw		      ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   t54jzdy			  ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   smoyzzo		  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  bltycqw	  ^cmake@3.18.4%gcc@7.5.0~doc+ncurses+openssl+ownlibs~qt patches=bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d arch=linux-ubuntu18.04-x86_64
+[+]  crhlefo	      ^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+[+]  4sh6pym		  ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  es377uq	      ^openssl@1.1.1h%gcc@7.5.0+systemcerts arch=linux-ubuntu18.04-x86_64
+[+]  zfdvt2j		  ^perl@5.32.0%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+[+]  4ihuiaz		      ^berkeley-db@18.1.40%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  4av4gyw		      ^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  t54jzdy			  ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  smoyzzo		  ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
  -   7tkgwjv	  ^json-cwx@0.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   mm33a3o	      ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   mkc3u4x		  ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
- -   lbrx7ln		      ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   d2krmb5	      ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   jdxbjft	      ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   pmsyupw	  ^openmpi@3.1.6%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions+gpfs~java~legacylaunchers~lustre~memchecker~pmi~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
- -   zqwfzhw	      ^hwloc@1.11.11%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
- -   bob4o5m		  ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   gs6ag7k		      ^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   yn2r3wf		  ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
- -   jearpk4		      ^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   komekkm		      ^xz@5.2.5%gcc@7.5.0~pic arch=linux-ubuntu18.04-x86_64
- -   wbqbc5v		  ^numactl@2.0.14%gcc@7.5.0 patches=4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94 arch=linux-ubuntu18.04-x86_64
+[+]  mm33a3o	      ^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  mkc3u4x		  ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
+[+]  lbrx7ln		      ^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  d2krmb5	      ^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  jdxbjft	      ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  pmsyupw	  ^openmpi@3.1.6%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions+gpfs~java~legacylaunchers~lustre~memchecker~pmi~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
+[+]  zqwfzhw	      ^hwloc@1.11.11%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
+[+]  bob4o5m		  ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  gs6ag7k		      ^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  yn2r3wf		  ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
+[+]  jearpk4		      ^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  komekkm		      ^xz@5.2.5%gcc@7.5.0~pic arch=linux-ubuntu18.04-x86_64
+[+]  wbqbc5v		  ^numactl@2.0.14%gcc@7.5.0 patches=4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94 arch=linux-ubuntu18.04-x86_64
  -   sqm6ik6	  ^scr@2.0.0%gcc@7.5.0+dtcmp~fortran~ipo+libyogrt async_api=NONE build_type=RelWithDebInfo cache_base=/tmp cntl_base=/tmp copy_config=none file_lock=FLOCK resource_manager=SLURM scr_config=scr.conf arch=linux-ubuntu18.04-x86_64
  -   fxiami4	      ^dtcmp@1.1.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
  -   tzf27nc		  ^lwgrp@1.0.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
  -   ld352tm	      ^libyogrt@1.24%gcc@7.5.0~static scheduler=system arch=linux-ubuntu18.04-x86_64
  -   pv3zp64	      ^pdsh@2.31%gcc@7.5.0+ssh+static_modules arch=linux-ubuntu18.04-x86_64
  -   vfrf7as	  ^silo@4.10.2%gcc@7.5.0~fortran+mpi+pic+shared~silex patches=7b5a1dc2a0e358e667088d77e7caa780967fa8ea60be89c44986605df9990abe arch=linux-ubuntu18.04-x86_64
- -   vedchc5	      ^hdf5@1.10.7%gcc@7.5.0~cxx~debug~fortran~hl~java+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
+[+]  vedchc5	      ^hdf5@1.10.7%gcc@7.5.0~cxx~debug~fortran~hl~java+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
 
 ==> Installing environment /home/spack/devel-env
-==> Installing pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
-==> Extracting pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-komekkmyciga3kl24edjmredhj3uyt7v
+==> Installing libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libyogrt-1.24/linux-ubuntu18.04-x86_64-gcc-7.5.0-libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte.spack
+ ################################################################################################ 100.0%
+==> Extracting libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte from binary cache
 gpgconf: socketdir is '/home/spack/.gnupg'
 gpgconf:	no /run/user dir
 gpgconf:	using homedir as fallback
-==> Installing patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp
-==> No binary for patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b2/b2deabce05c34ce98558c0efb965f209de592197b2c88e930298d740ead09019.tar.gz
- ############################################################################################# 100.0%
-==> patchelf: Executing phase: 'autoreconf'
-==> patchelf: Executing phase: 'configure'
-==> patchelf: Executing phase: 'build'
-==> patchelf: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.10-2nj3vxxz5lwexpp5srseegxt7v6n4whp
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.7.3-4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7
-==> Installing berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn
-==> No binary for berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
- ############################################################################################# 100.0%
-==> berkeley-db: Executing phase: 'autoreconf'
-==> berkeley-db: Executing phase: 'configure'
-==> berkeley-db: Executing phase: 'build'
-==> berkeley-db: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-4ihuiazsglf22f3pntq5hc4kyszqzexn
-==> Installing zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
-==> Extracting zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
-==> Installing libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
-==> Extracting libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.12-lbrx7lnfz46ukewxbhxnucmx76g23c6q
-==> Installing util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
-==> Extracting util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2 from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.1-gs6ag7ktdoiirb62t7bcagjw62szrrg2
-==> Installing libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
-==> Extracting libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
-==> Installing xz-5.2.5-komekkmyciga3kl24edjmredhj3uyt7v
-==> No binary for xz-5.2.5-komekkmyciga3kl24edjmredhj3uyt7v found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/51/5117f930900b341493827d63aa910ff5e011e0b994197c3b71c08a20228a42df.tar.bz2
- ############################################################################################# 100.0%
-==> xz: Executing phase: 'autoreconf'
-==> xz: Executing phase: 'configure'
-==> xz: Executing phase: 'build'
-==> xz: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-komekkmyciga3kl24edjmredhj3uyt7v
-==> Installing libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte
-==> No binary for libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/36/36695030e72b24b1f22bfcfe42bfd1d3c87f9c0eea5e94ce0120782581ea522f.tar.gz
- ############################################################################################# 100.0%
-==> libyogrt: Executing phase: 'autoreconf'
-==> libyogrt: Executing phase: 'configure'
-==> libyogrt: Executing phase: 'build'
-==> libyogrt: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libyogrt-1.24-ld352tmlkqdjwucj2u5g4fktj2ab2xte
 ==> Installing pdsh-2.31-pv3zp64j5luhresoommun73mk5joqpb5
-==> No binary for pdsh-2.31-pv3zp64j5luhresoommun73mk5joqpb5 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/0e/0ee066ce395703285cf4f6cf00b54b7097d12457a4b1c146bc6f33d8ba73caa7.tar.gz
- ############################################################################################# 100.0%
-==> pdsh: Executing phase: 'autoreconf'
-==> pdsh: Executing phase: 'configure'
-==> pdsh: Executing phase: 'build'
-==> pdsh: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/pdsh-2.31/linux-ubuntu18.04-x86_64-gcc-7.5.0-pdsh-2.31-pv3zp64j5luhresoommun73mk5joqpb5.spack
+ ################################################################################################ 100.0%
+==> Extracting pdsh-2.31-pv3zp64j5luhresoommun73mk5joqpb5 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pdsh-2.31-pv3zp64j5luhresoommun73mk5joqpb5
-==> Installing ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
-==> Extracting ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-crhlefo3dv7lmsv5pf4icsy4gepkdorm
-==> Installing m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
-==> Extracting m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.18-mkc3u4x2p2wie6jfhuku7g5rkovcrxps
-==> Installing libxml2-2.9.10-yn2r3wfhiilelyulh5toteicdtxjhw7d
-==> No binary for libxml2-2.9.10-yn2r3wfhiilelyulh5toteicdtxjhw7d found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/aa/aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f.tar.gz
- ############################################################################################# 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
- ############################################################################################# 100.0%
-==> Moving resource stage
-	source : /tmp/spack/spack-stage/resource-xmlts-yn2r3wfhiilelyulh5toteicdtxjhw7d/spack-src/
-	destination : /tmp/spack/spack-stage/spack-stage-libxml2-2.9.10-yn2r3wfhiilelyulh5toteicdtxjhw7d/spack-src/xmlconf
-==> libxml2: Executing phase: 'autoreconf'
-==> libxml2: Executing phase: 'configure'
-==> libxml2: Executing phase: 'build'
-==> libxml2: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.10-yn2r3wfhiilelyulh5toteicdtxjhw7d
-==> Installing readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
-==> Extracting readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.0-t54jzdy2jj4snltjazlm3br2urcilc6v
-==> Installing libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
-==> Extracting libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-jdxbjftheiotj6solpomva7dowrhlerl
-==> Installing gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
-==> Extracting gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.18.1-4av4gywgpaspkhy3dvbb62nulqogtzbb
-==> Installing libpciaccess-0.16-bob4o5m3uku6vtdil5imasprgy775zg7
-==> No binary for libpciaccess-0.16-bob4o5m3uku6vtdil5imasprgy775zg7 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/84/84413553994aef0070cf420050aa5c0a51b1956b404920e21b81e96db6a61a27.tar.gz
- ############################################################################################# 100.0%
-==> libpciaccess: Executing phase: 'autoreconf'
-==> libpciaccess: Executing phase: 'configure'
-==> libpciaccess: Executing phase: 'build'
-==> libpciaccess: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-bob4o5m3uku6vtdil5imasprgy775zg7
-==> Installing perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t
-==> No binary for perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/ef/efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4.tar.gz
- ############################################################################################# 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
- ############################################################################################# 100.0%
-==> Moving resource stage
-	source : /tmp/spack/spack-stage/resource-cpanm-zfdvt2jjuaees43ffrrtphqs2ky3o22t/spack-src/
-	destination : /tmp/spack/spack-stage/spack-stage-perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t/spack-src/cpanm/cpanm
-==> perl: Executing phase: 'configure'
-==> perl: Executing phase: 'build'
-==> perl: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.32.0-zfdvt2jjuaees43ffrrtphqs2ky3o22t
-==> Installing autoconf-2.69-mm33a3ocsv3jsh2tfxc4mlab4xsurtdd
-==> No binary for autoconf-2.69-mm33a3ocsv3jsh2tfxc4mlab4xsurtdd found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
- ############################################################################################# 100.0%
-==> autoconf: Executing phase: 'autoreconf'
-==> autoconf: Executing phase: 'configure'
-==> autoconf: Executing phase: 'build'
-==> autoconf: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-mm33a3ocsv3jsh2tfxc4mlab4xsurtdd
-==> Installing openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52
-==> No binary for openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/5c/5c9ca8774bd7b03e5784f26ae9e9e6d749c9da2438545077e6b3d755a06595d9.tar.gz
- ############################################################################################# 100.0%
-==> openssl: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1h-es377uqsqougfc67jyg7yfjyyuukin52
-==> Installing automake-1.16.2-d2krmb5gweivlnztcymhklzsqbrpatt6
-==> No binary for automake-1.16.2-d2krmb5gweivlnztcymhklzsqbrpatt6 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b2/b2f361094b410b4acbf4efba7337bdb786335ca09eb2518635a09fb7319ca5c1.tar.gz
- ############################################################################################# 100.0%
-==> automake: Executing phase: 'autoreconf'
-==> automake: Executing phase: 'configure'
-==> automake: Executing phase: 'build'
-==> automake: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.2-d2krmb5gweivlnztcymhklzsqbrpatt6
-==> Installing cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j
-==> No binary for cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/59/597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77.tar.gz
- ############################################################################################# 100.0%
-==> cmake: Executing phase: 'bootstrap'
-==> cmake: Executing phase: 'build'
-==> cmake: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.18.4-bltycqwh5oofai4f6o42q4uuj4w5zb3j
-==> Installing numactl-2.0.14-wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh
-==> No binary for numactl-2.0.14-wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/1e/1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035.tar.gz
- ############################################################################################# 100.0%
-==> numactl: Executing phase: 'autoreconf'
-==> numactl: Executing phase: 'configure'
-==> numactl: Executing phase: 'build'
-==> numactl: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh
 ==> Installing json-cwx-0.12-7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh
-==> No binary for json-cwx-0.12-7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/3b/3bfae1f23eacba53ee130dbd1a6acf617af4627a9b4e4581d64b20a99b4e2b60.tar.gz
- ############################################################################################# 100.0%
-==> json-cwx: Executing phase: 'autoreconf'
-==> json-cwx: Executing phase: 'configure'
-==> json-cwx: Executing phase: 'build'
-==> json-cwx: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/json-cwx-0.12/linux-ubuntu18.04-x86_64-gcc-7.5.0-json-cwx-0.12-7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh.spack
+ ################################################################################################ 100.0%
+==> Extracting json-cwx-0.12-7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/json-cwx-0.12-7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh
-==> Installing hwloc-1.11.11-zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu
-==> No binary for hwloc-1.11.11-zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/74/74329da3be1b25de8e98a712adb28b14e561889244bf3a8138afe91ab18e0b3a.tar.gz
- ############################################################################################# 100.0%
-==> hwloc: Executing phase: 'autoreconf'
-==> hwloc: Executing phase: 'configure'
-==> hwloc: Executing phase: 'build'
-==> hwloc: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-1.11.11-zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu
-==> Installing openmpi-3.1.6-pmsyupw6w3gql4loaor25gfumlmvkl25
-==> No binary for openmpi-3.1.6-pmsyupw6w3gql4loaor25gfumlmvkl25 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/50/50131d982ec2a516564d74d5616383178361c2f08fdd7d1202b80bdf66a0d279.tar.bz2
- ############################################################################################# 100.0%
-==> openmpi: Executing phase: 'autoreconf'
-==> openmpi: Executing phase: 'configure'
-==> openmpi: Executing phase: 'build'
-==> openmpi: Executing phase: 'install'
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-3.1.6-pmsyupw6w3gql4loaor25gfumlmvkl25
-==> Installing hdf5-1.10.7-vedchc5aoqyu3ydbp346qrbpe6kg46rq
-==> No binary for hdf5-1.10.7-vedchc5aoqyu3ydbp346qrbpe6kg46rq found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/7a/7a1a0a54371275ce2dfc5cd093775bb025c365846512961e7e5ceaecb437ef15.tar.gz
- ############################################################################################# 100.0%
-==> hdf5: Executing phase: 'autoreconf'
-==> hdf5: Executing phase: 'configure'
-==> hdf5: Executing phase: 'build'
-==> hdf5: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7-vedchc5aoqyu3ydbp346qrbpe6kg46rq
 ==> Installing lwgrp-1.0.3-tzf27ncg7jccpnayixks4hlam3wpv4wy
-==> No binary for lwgrp-1.0.3-tzf27ncg7jccpnayixks4hlam3wpv4wy found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/20/20b2fc3908bfdf04d1c177f86e227a147214cd155c548b3dd75e54c78e1c1c47.tar.gz
- ############################################################################################# 100.0%
-==> lwgrp: Executing phase: 'autoreconf'
-==> lwgrp: Executing phase: 'configure'
-==> lwgrp: Executing phase: 'build'
-==> lwgrp: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/lwgrp-1.0.3/linux-ubuntu18.04-x86_64-gcc-7.5.0-lwgrp-1.0.3-tzf27ncg7jccpnayixks4hlam3wpv4wy.spack
+ ################################################################################################ 100.0%
+==> Extracting lwgrp-1.0.3-tzf27ncg7jccpnayixks4hlam3wpv4wy from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/lwgrp-1.0.3-tzf27ncg7jccpnayixks4hlam3wpv4wy
-==> Installing silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3
-==> No binary for silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/3a/3af87e5f0608a69849c00eb7c73b11f8422fa36903dd14610584506e7f68e638.tar.gz
- ############################################################################################# 100.0%
-==> silo: Executing phase: 'autoreconf'
-==> silo: Executing phase: 'configure'
-==> silo: Executing phase: 'build'
-==> silo: Executing phase: 'install'
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7-vedchc5aoqyu3ydbp346qrbpe6kg46rq
 ==> Installing dtcmp-1.1.1-fxiami4ydeszdv55txp4zfin3kzfvpc7
-==> No binary for dtcmp-1.1.1-fxiami4ydeszdv55txp4zfin3kzfvpc7 found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/dd/ddf3c57cbb83515e1b7e4111b8a83f832e66376b40eee5d8a5549dd7b8446bc6.tar.gz
- ############################################################################################# 100.0%
-==> dtcmp: Executing phase: 'autoreconf'
-==> dtcmp: Executing phase: 'configure'
-==> dtcmp: Executing phase: 'build'
-==> dtcmp: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/dtcmp-1.1.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-dtcmp-1.1.1-fxiami4ydeszdv55txp4zfin3kzfvpc7.spack
+ ################################################################################################ 100.0%
+==> Extracting dtcmp-1.1.1-fxiami4ydeszdv55txp4zfin3kzfvpc7 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/dtcmp-1.1.1-fxiami4ydeszdv55txp4zfin3kzfvpc7
+==> Installing silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/silo-4.10.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3.spack
+ ################################################################################################ 100.0%
+==> Extracting silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/silo-4.10.2-vfrf7asfclt7epufnoxibfqbkntbk5k3
 ==> Installing scr-2.0.0-sqm6ik6bttfz52bgcfhvgucuwegiucqz
-==> No binary for scr-2.0.0-sqm6ik6bttfz52bgcfhvgucuwegiucqz found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
- ############################################################################################# 100.0%
-==> scr: Executing phase: 'cmake'
-==> scr: Executing phase: 'build'
-==> scr: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/scr-2.0.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-scr-2.0.0-sqm6ik6bttfz52bgcfhvgucuwegiucqz.spack
+ ################################################################################################ 100.0%
+==> Extracting scr-2.0.0-sqm6ik6bttfz52bgcfhvgucuwegiucqz from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/scr-2.0.0-sqm6ik6bttfz52bgcfhvgucuwegiucqz
 ==> Installing macsio-1.1-lbkg732hoehcrvf6o3sfoi2pz7ie3c4o
-==> No binary for macsio-1.1-lbkg732hoehcrvf6o3sfoi2pz7ie3c4o found: installing from source
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
- ############################################################################################# 100.0%
-==> macsio: Executing phase: 'cmake'
-==> macsio: Executing phase: 'build'
-==> macsio: Executing phase: 'install'
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/macsio-1.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-macsio-1.1-lbkg732hoehcrvf6o3sfoi2pz7ie3c4o.spack
+ ################################################################################################ 100.0%
+==> Extracting macsio-1.1-lbkg732hoehcrvf6o3sfoi2pz7ie3c4o from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/macsio-1.1-lbkg732hoehcrvf6o3sfoi2pz7ie3c4o
 ==> Updating view at /home/spack/devel-env/.spack-env/view
 ==> Updating view at /home/spack/devel-env/.spack-env/view
