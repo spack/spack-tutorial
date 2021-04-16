@@ -573,16 +573,16 @@ and dependencies. Examples of each are:
 .. code-block:: python
 
    if self.spec.satisfies('@1.1:'):
-       # Do things needed for 1.1+
+       # Do things needed for version 1.1 or newer
 
-* Am I building with a ``gcc`` version less than ``5.0.0``:
+* Am I building with a ``gcc`` version up to ``5.0``?
 
 .. code-block:: python
 
-   if self.spec.satisfies('%gcc@:5.0.0'):
-       # Add arguments specific to gcc's earlier than 5.0.0
+   if self.spec.satisfies('%gcc@:5.0'):
+       # Add arguments specific to gcc's up to 5.0
 
-* Is my ``dyninst`` dependency greater than version ``8.0``?
+* Is my ``dyninst`` dependency at least version ``8.0``?
 
 .. code-block:: python
 
@@ -610,7 +610,7 @@ Querying Variants
 Adjusting build options based on enabled variants can be done by querying
 the ``Spec`` itself, such as:
 
-* Am I building with the ``debug`` variant:
+* Am I building with the ``debug`` variant?
 
 .. code-block:: python
 
