@@ -12,14 +12,13 @@ Mirror Tutorial
 ============================
 
 This tutorial will guide you through the process of setting up a
-mirror to cache source and binary files. Source and binary caches are
-extremely useful when using spack on a machine without internet
-access. Source cache mirrors allow you to fetch source code from a
-directory on your filesystem instead of accessing the outside
-internet, and binary cache mirrors allow you to install pre-compiled
-binaries to your spack installation path. Together, these caches can
-be used to speed up builds when using spack within a larger
-development team.
+source mirror with a binary cache. Source mirrors and binary caches
+are extremely useful when using spack on a machine without internet
+access. Source mirrors allow you to fetch source code from a directory
+on your filesystem instead of accessing the outside internet, and
+binary caches allow you to install pre-compiled binaries to your spack
+installation path. Together, these two features can speed up builds
+when using spack within a larger development team.
 
 We will use the filesystem for the mirrors in this tutorial, but
 mirrors can also be setup on web servers or s3 buckets -- any URL that
@@ -38,12 +37,12 @@ Setting up a source cache mirror
 --------------------------------
 
 When you run ``spack install``, spack goes out to the internet to grab
-the source code for your package in order to build your packages. This
-works fine on most clusters, but what do you do if the cluster in
-question doesn't have access to the outside internet? This could
-happen for a variety of reasons. Maybe you're building on a compute
-node that isn't connected to the greater internet, or maybe even the
-whole cluster has been isolated from the internet.
+the source code to build your packages. This works fine on most
+clusters, but what do you do if the cluster in question doesn't have
+access to the outside internet? This could happen for a variety of
+reasons. Maybe you're building on a compute node that isn't connected
+to the greater internet, or maybe even the whole cluster has been
+isolated from the internet.
 
 Spack has an easy answer to this -- setting up a source mirror. When you
 use a source mirror, spack checks the mirror for the source code
@@ -60,7 +59,8 @@ Once we've created and installed this environment, we can easily
 upload source code needed to reproduce this build to a mirror.  The
 following command both creates the mirror and uploads the source code
 for the ``scr`` package included in our environment. The ``-d`` flag
-tells spack where to place the mirrored source code files.
+(short for ``--directory``) tells spack where to place the mirrored
+source code files.
 
 .. literalinclude:: outputs/cache/spack-mirror-single.out
    :language: console
@@ -73,7 +73,7 @@ a few lines to your ``spack.yaml`` file.
 
 Manually uploading every package in an environment can be
 tedious. Luckily, when run within an environment, ``spack mirror
-create`` with the ``-a`` flag will upload every source used to build
+create`` with the ``--all`` flag will upload every source used to build
 the current environment to the specified directory.
 
 .. literalinclude:: outputs/cache/spack-mirror-all.out
@@ -134,7 +134,7 @@ instances and spack binary caches. For now, we're going to discuss
 spack binary caches as a way of solving this issue.
 
 A spack binary cache is made up of spack binary packages.  Each spack
-binary package, ending with a ``.spack`` extension, is a tarball of an
+binary package, ending with a ``*.spack`` extension, is a tarball of an
 installed spack package signed with a gpg signature. When you install
 a package from a mirror with a binary cache, spack
 
@@ -156,12 +156,12 @@ set up spack to use a binary mirror. As a reminder, we ran:
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-Building a spack binary cache mirror has some gotchas, but is almost
-as easy as building a source mirror. We'll start by making a new
-environment for ourselves.  Since we're intending to publish to a
-binary cache, we'll need to compile all these packages ourselves.
-This can take some time, so we'll make a new environment with some
-packages that compile quickly.
+Building a spack binary cache has some gotchas, but is almost as easy
+as building a source mirror. We'll start by making a new environment
+for ourselves.  Since we're intending to publish to a binary cache,
+we'll need to compile all these packages ourselves.  This can take
+some time, so we'll make a new environment with some packages that
+compile quickly.
 
 .. literalinclude:: outputs/cache/binary-cache-1.out
    :language: console
@@ -208,7 +208,9 @@ environment, creating the source mirror, and building the packages to
 a spack installation with our padded path. To upload a spec to a
 binary cache, simply use the command ``spack buildcache
 create --only=package spec``. We use this here in a for loop to create
-binary packages for every non-external package in our environment.
+binary packages for every non-external package in our environment. We
+do this by writing a find command that will return a hash of each spec
+in this environment and filtering out the external packages.
 
 .. literalinclude::  outputs/cache/binary-cache-4.out
    :language: console

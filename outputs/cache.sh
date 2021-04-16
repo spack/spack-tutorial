@@ -42,7 +42,7 @@ example cache/spack-mirror-single "spack mirror create -d ~/mirror scr"
 
 example cache/spack-mirror-config "spack mirror add mymirror ~/mirror"
 
-example cache/spack-mirror-all "spack mirror create -d ~/mirror -a"
+example cache/spack-mirror-all "spack mirror create -d ~/mirror --all"
 
 example cache/spack-mirror-permissions "umask 750"
 example cache/spack-mirror-permissions "chmod -R g+rS ~/mirror"
@@ -51,7 +51,7 @@ example cache/spack-mirror-permissions "chgrp -R spack ~/mirror"
 example cache/spack-mirror-3 "spack add bzip2"
 example cache/spack-mirror-3 "spack install"
 
-example cache/spack-mirror-4 "spack mirror create -d ~/mirror -a"
+example cache/spack-mirror-4 "spack mirror create -d ~/mirror --all"
 
 
 example cache/trust "spack buildcache keys --install --trust --force"
@@ -82,5 +82,5 @@ for ii in $(spack find --format "yyy {version} /{hash}" |
             grep "yyy" |
             cut -f3 -d" ")
 do
-  spack buildcache create -af -d ~/mirror --only=package $ii
+  spack buildcache create --allow-root --force -d ~/mirror --only=package $ii
 done'
