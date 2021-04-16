@@ -244,7 +244,7 @@ command will become more informative.
 
    The full list of build systems known to Spack can be found at
    `Build Systems
-   <https://spack.readthedocs.io/en/latest/build_systems.html>`.
+   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
 Now we're read to start filling in the build recipe.
 
@@ -286,7 +286,7 @@ installed *before* it can build our package.
 
 .. note::
 
-  The``mpi`` dependency is different from the other two in that it is
+  The ``mpi`` dependency is different from the other two in that it is
   a *virtual dependency*. That means Spack must satisfy the dependency
   with a package that *provides* the ``mpi`` interface, such as ``openmpi``
   or ``mvapich2``.
