@@ -70,8 +70,9 @@ the current environment to the specified directory.
 This directory can be shared between users on a shared filesystem and
 protected with typical unix file permissions. If you're making a spack
 mirror on a shared filesystem, remember to fix the file permissions
-every time you update the mirror, or update your ``umask`` settings so
-any new files you create have the appropriate permissions. Here you
+every time you update the mirror, or update your
+`umask<https://man7.org/linux/man-pages/man2/umask.2.html>`_ settings
+so any new files you create have the appropriate permissions. Here you
 would replace the word ``spack`` to the appropriate unix group.
 
 .. literalinclude:: outputs/cache/spack-mirror-permissions.out
@@ -121,29 +122,23 @@ instances and spack binary caches. For now, we're going to discuss
 spack binary caches as a way of solving this issue.
 
 A spack binary cache is made up of spack binary packages.  Each spack
-binary package, ending with a .spack extension, is a tarball of an
+binary package, ending with a ``.spack`` extension, is a tarball of an
 installed spack package signed with a gpg signature. When you install
 a package from a mirror with a binary cache, spack
 
-* Checks to see if there is a spack binary package that matches your
-  exact SHA.
-• If a binary package is found, spack checks to see if the
-  signature on the spack binary package is trusted.
-* If the signature is trusted, then spack
-  * Unzips the spack package to a temporary directory.
-  * Searches all text files to replace the package builder's path with
-    your specific local installation path.
-  * Uses ``patchelf`` to replace all the rpaths in your binaries to
-    point to your specific local installation path.
-  * Searches all binaries to replace hard-coded C strings of the
-    package builder's path with your specific local installation path.
-  * Copies all these transformed files into your specific local
-    installation path.
-* Otherwise, spack proceeds to build the package from source.
+* Checks to see if there is a spack binary package that exactly
+  matches the hash of the spec you want to build.  exact SHA.
+• If a binary package is found, spack checks to see if the signature
+  on the spack binary package is trusted. If the signature isn't
+  trusted, spack builds the package from source.
+* If the signature is trusted, then spack unzips and relocates the
+  spack package.
 
-For the user, spack binary caches are transparent to use. We've
-already demonstrated using spack binary caches earlier in the tutorial
-when we set up spack to use a binary mirror. As a reminder, we ran:
+For the user, spack binary caches are transparent to use. This is a
+clear departure from systems like conda, where you need to chose
+separate workflows for binary and source packages. We've already
+demonstrated using spack binary caches earlier in the tutorial when we
+set up spack to use a binary mirror. As a reminder, we ran:
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
@@ -166,14 +161,25 @@ build of this environment and force ourselves to not use any cache.
    :language: console
 
 This configuration change ensures that spack installs all our packages
-to a path that is at least 128 characters. We need to take this
-precaution because when spack installs a binary package, it replaces
-our path with the user's installation path. For text files this
-replacement can be done in place, but for binaries we need to make
-sure that all C strings hard-coded into the binaries are large enough
-to hold the user's eventual install path. We advise picking 128
-because longer strings sometimes cause compilation problems with some
-software packages.
+to a path that is at least 128 characters. We need this change because
+of how spack relocates packages. Relocation consists of the following
+steps:
+
+  * Search all text files to replace the package builder's path with
+    your specific local installation path.
+  * Use ``patchelf`` to replace all the RPATHs in your binaries to
+    point to your specific local installation path.
+  * Search all binaries to replace hard-coded C strings of the package
+    builder's path with your specific local installation path.
+
+Adding padding ensures that any paths hard-coded as C strings in our
+binaries will be large enough to hold our user's eventual install
+path. We advise picking 128 because longer strings occasionally cause
+compilation problems with some software packages. If the user's
+install path is too long, spack will give you a warning. All scripts
+and and RPATHs will still be properly relocated, but C strings within
+any binaries will not be modified. Depending on the package, this may
+cause problems when you try and use the software.
 
 We also need to create a gpg key to sign all our packages. You should
 back up the secret and public keys to a secure place so they can be
@@ -215,9 +221,8 @@ with the following command:
 .. literalinclude:: outputs/cache/trust.out
    :language: console
 
-Here, ``-i`` means install, ``-t`` means trust, and ``-f`` means
-force.  Together, this means download all the keys on the binary cache
-and trust them. Have your users run the above command on a new spack
+Together, this means download all the keys on the binary cache and
+trust them. Have your users run the above command on a new spack
 instance before they initiate a build.
 
 -------------
@@ -225,7 +230,7 @@ Cache Summary
 -------------
 
 If you're using spack within a development team, consider setting up
-source and binary cache mirrors. Source mirrors will let you replicate
-a spack environment on a machine without external internet access, and
-binary mirrors free you from the burden of recompiling everything from
-scratch and save you development time.
+source mirrors with binary caches. Source mirrors will let you
+replicate a spack environment on a machine without external internet
+access, and binary mirrors free you from the burden of recompiling
+everything from scratch and save you development time.

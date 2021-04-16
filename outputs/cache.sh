@@ -50,7 +50,7 @@ example cache/spack-mirror-3 "spack install"
 example cache/spack-mirror-4 "spack mirror create -d ~/mirror -a"
 
 
-example cache/trust "spack buildcache keys -itf"
+example cache/trust "spack buildcache keys --install --trust --force"
 
 example cache/binary-cache-1 "cd ~"
 cd ~
