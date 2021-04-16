@@ -166,7 +166,7 @@ command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,17
+   :emphasize-lines: 1,19
 
 It clearly did not build. The error indicates ``configure`` is unable 
 to find the installation location of a dependency.
@@ -189,11 +189,10 @@ Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the
 Let's make the following changes:
 
 * remove the instructions between dashed lines at the top;
-* replace the first ``FIXME`` comment with a description of
-  ``mpileaks`` in the docstring;
+* replace the first ``FIXME`` comment with a description of ``mpileaks``
+  in the docstring;
 * replace the homepage property with the correct link; and
-* uncomment the ``maintainers`` property and add your GitHub user
-    name.
+* uncomment the ``maintainers`` property and add your GitHub user name.
 
 .. note::
 
@@ -204,8 +203,7 @@ Let's make the following changes:
 
 Now make the changes and additions to your ``package.py`` file.
 
-The resulting package, sans the Copyright clause, should contain the
-following information:
+The resulting package should contain the following information:
 
 .. literalinclude:: tutorial/examples/1.package.py
    :caption: mpileaks/package.py (from tutorial/examples/1.package.py)
@@ -354,11 +352,9 @@ Most importantly, the last line is very clear: the installation path of the
 .. note::
 
    Spack automatically adds standard include and library directories
-   to the compiler's search path *but* that information is not getting
-   picked up for this package. This is not an uncommon occurrence. 
-
-   Some software builds require paths to be explicitly provided on the
-   command line. The ``mpileaks`` software is one such package.
+   to the compiler's search path *but* it is not uncommon for this
+   information to not get picked up. Some software, like ``mpileaks``,
+   requires the paths to be explicitly provided on the command line.
 
 So let's investigate further from the staged build directory.
 
@@ -375,11 +371,12 @@ Let's move to the build directory using the ``spack cd`` command:
 
   $ spack cd mpileaks
 
-You should now be in the build stage directory since this command
-moves us to the working directory for the last attempted build.
+You should now be in the appropriate stage directory since this
+command moves us into the working directory of the last attempted
+build.
 
-Now let's ensure the environment is properly set up for us using
-the ``spack build-env`` command:
+Now let's ensure the environment is properly set up using the
+``spack build-env`` command:
 
 .. code-block:: console
 
@@ -396,20 +393,19 @@ command:
    :language: console
    :emphasize-lines: 1,27
 
-And we get the same results as before in this case. Unfortunately,
-the output does not provide any additional information that can help
-us with the build.
+And we get the same results as before. Unfortunately, the output
+does not provide any additional information that can help us with
+the build.
 
 Given this is a simple package built with ``configure`` and we know
-that installation directories need to be specified, we can see what
-options are available for us to provide the paths by getting help
-as follows:
+that installation directories need to be specified, we can use its
+help to see what command line options are available for the software.
 
 .. literalinclude:: outputs/packaging/configure-help.out
    :language: console
    :emphasize-lines: 1,80-81
 
-Note that you can specify paths for the two concrete dependencies
+Note that you can specify the paths for the two concrete dependencies
 with the following options:
 
 * ``--with-adept-utils=PATH``
@@ -423,24 +419,20 @@ directory:
   $ exit
   $ cd $SPACK_ROOT
 
-Now that we know what arguments to provide to configure, we can add them.
+Now that we know what arguments to provide, we can update the recipe.
 
 ------------------------------
 Specifying Configure Arguments
 ------------------------------
 
-Let's add the arguments to the ``package.py`` file to specify the
-installation paths identified above for the two concrete dependencies.
+We now know which options we need to pass to ``configure``, but how do we
+know where to find the installation paths for the package's dependencies
+from within the ``package.py`` file?
 
-We know what options we want to use, but how do we know where to find
-the installation paths for the package's dependencies from within the
-``package.py`` file?
-
-We can get that information by querying the package's concrete ``Spec``
-instance.
+Fortunately, we can query the package's concrete ``Spec`` instance.
 The ``self.spec`` property holds the package's directed acyclic graph
 (DAG) of its dependencies. Each dependency's ``Spec``, accessed by name,
-has a ``prefix`` property that identifies its installation path.
+has a ``prefix`` property containing its installation path.
 
 So let's add the configuration arguments for specifying the paths to
 the two concrete dependencies in the ``configure_args`` method of our
@@ -462,6 +454,9 @@ in the ``configure_args`` method as follows:
    :language: python
    :emphasize-lines: 20-23
 
+Since this is an ``AutotoolsPackage``, the arguments returned from the
+method will automatically get passed to ``configure`` during the build.
+
 Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
@@ -470,10 +465,10 @@ Now let's try the build again:
 
 Success!
 
-All we needed to do was add those path arguments for configure to
-perform a simple, no frills build.
+All we needed to do was add the path arguments for the two concrete
+packages for configure to perform a simple, no frills build.
 
-But is that all we can do for this package?
+But is that all we can do to help other users build our software?
 
 ---------------
 Adding Variants
@@ -501,7 +496,7 @@ For simplicity, we'll use one variant to supply the value for both arguments.
 
 Supporting this optional feature will require two changes to the package:
 
-* add a variant directive; and
+* add a ``variant`` directive; and
 * change the configure options to use the value.
 
 Let's add the variant to expect an ``int`` value with a default of
@@ -524,7 +519,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :language: python
    :emphasize-lines: 15-16,28-33
 
-Notice the variant directive is translated into a ``variants`` dictionary
+Notice the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
 by the entry's ``value`` property.
 
@@ -554,9 +549,8 @@ often need to be changed. This is where the package's ``Spec`` comes
 in.
 
 So far we've looked at getting the paths for dependencies and values of
-variants from the ``Spec`` but there is more. The package's ``Spec``,
-``self.spec``, property allows you to query information about the package
-build, such as:
+variants from the ``Spec`` but there is more. The package's ``self.spec``,
+property allows you to query information about the package build, such as:
 
 * how a package's dependencies were built;
 * what compiler was being used;
