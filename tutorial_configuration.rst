@@ -1,4 +1,4 @@
-.. Copyright 2013-2020 Lawrence Livermore National Security, LLC and other
+.. Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
    Spack Project Developers. See the top-level COPYRIGHT file for details.
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -45,6 +45,7 @@ in order of decreasing priority, are:
 Scope          Directory
 ============   ===================================================
 Command-line   N/A
+Environment    In environment base directory (in ``spack.yaml``)
 Custom         Custom directory, specified with ``--config-scope``
 User           ``~/.spack/``
 Site           ``$SPACK_ROOT/etc/spack/``
@@ -89,8 +90,9 @@ Some facilities manage multiple platforms from a single shared
 file system. In order to handle this, each of the configuration
 scopes listed above has two *sub-scopes*: platform-specific and
 platform-independent. For example, compiler settings can be stored
-in ``compilers.yaml`` configuration files in the following locations:
+in the following locations:
 
+#. ``environment-root-dir/spack.yaml``
 #. ``~/.spack/<platform>/compilers.yaml``
 #. ``~/.spack/compilers.yaml``
 #. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
@@ -107,9 +109,14 @@ These files are listed in decreasing order of precedence, so files in
 YAML Format
 -----------
 
-Spack configurations are YAML dictionaries. Every configuration file
-begins with a top-level dictionary that tells Spack which
-configuration set it modifies. When Spack checks its configuration,
+Spack configurations are nested YAML dictionaries with a specified
+schema. The configuration is organized into sections based on theme
+(e.g. a 'compilers' section) and the highest-level keys of the dictionary
+specify the section. Spack generally maintains a separate file for
+each section, although environments keep them together (in
+``spack.yaml``).
+
+When Spack checks its configuration,
 the configuration scopes are updated as dictionaries in increasing
 order of precedence, allowing higher precedence files to override
 lower. YAML dictionaries use a colon ":" to specify key-value
@@ -144,6 +151,33 @@ configuration file had a single colon instead of the double colon, it
 would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
 
+A configuration section appears nearly the same when managed in an
+environment's ``spack.yaml`` file except that the section is nested 1
+level underneath the top-level 'spack' key. For example the above
+``compilers.yaml`` could be incorporated into an environment's
+``spack.yaml`` like so:
+
+.. code-block:: yaml
+
+   spack:
+     specs: []
+     view: true
+     compilers::
+     - compiler:
+         spec: gcc@7.5.0
+         paths:
+           cc: /usr/bin/gcc
+           cxx: /usr/bin/g++
+           f77: /usr/bin/gfortran
+           fc: /usr/bin/gfortran
+         flags: {}
+         operating_system: ubuntu18.04
+         target: x86_64
+         modules: []
+         environment: {}
+         extra_rpaths: []
+
+
 .. _configs-tutorial-compilers:
 
 ----------------------
@@ -164,6 +198,10 @@ We will start by opening the compilers configuration file:
 
    $ spack config edit compilers
 
+
+We start with no active environment, so this will open a
+``compilers.yaml`` file for editing (you can also do this with an
+active environment):
 
 .. code-block:: yaml
 
@@ -378,9 +416,9 @@ this field can be set by:
 Configuring Package Preferences
 -------------------------------
 
-Package preferences in Spack are managed through the ``packages.yaml``
-configuration file. First, we will look at the default
-``packages.yaml`` file.
+Package preferences in Spack are managed through the ``packages``
+configuration section. First, we will look at the default ``packages.yaml``
+file.
 
 .. code-block:: console
 
@@ -402,21 +440,38 @@ MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
    :emphasize-lines: 9
 
 
-Now we will open the packages configuration file and update our
-preferences.
+Let's override these default preferences in an environment. When you
+have an activated environment, you can edit the associated
+configuration with ``spack config edit`` (you don't have to provide
+a section name):
 
 .. code-block:: console
 
-   $ spack config edit packages
+   $ spack env create config-env
+   $ spack env activate config-env
+   $ spack config edit
+
+
+.. warning::
+
+   You will get exactly the same effects if you make these changes
+   without using an environment, but you must delete the
+   associated ``packages.yaml`` file after the config tutorial or
+   the commands you run in later tutorial sections will not
+   produce the same output (because they weren't run with the
+   configuration changes made here)
 
 
 .. code-block:: yaml
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-       providers:
-         mpi: [mpich, openmpi]
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
 
 
 Because of the configuration scoping we discussed earlier, this
@@ -437,21 +492,24 @@ packages without shared libraries. We will accomplish this by turning
 off the ``shared`` variant on all packages that have one.
 
 .. code-block:: yaml
-   :emphasize-lines: 6
+   :emphasize-lines: 9
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
 
 
 We can check the effect of this command with ``spack spec hdf5`` again.
 
 .. literalinclude:: outputs/config/2.prefs.out
    :language: console
-   :emphasize-lines: 8,13,22,28
+   :emphasize-lines: 8,13,23,29
 
 
 So far we have only made global changes to the package preferences. As
@@ -462,16 +520,19 @@ need serial HDF5, that might get annoying quickly, having to type
 HDF5.
 
 .. code-block:: yaml
-   :emphasize-lines: 7-8
+   :emphasize-lines: 10-11
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
 
 
 Now hdf5 will concretize without an MPI dependency by default.
@@ -499,19 +560,23 @@ On these systems we have a pre-installed zlib. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 9-11
+   :emphasize-lines: 12-15
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
 
 
 Here, we've told Spack that zlib 1.2.8 is installed on our system.
@@ -539,18 +604,22 @@ not allowed to build its own zlib. We'll go with the latter.
 .. code-block:: yaml
    :emphasize-lines: 12
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
 
 
 Now Spack will be forced to choose the external zlib.
@@ -564,24 +633,29 @@ we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
 .. code-block:: yaml
-   :emphasize-lines: 13-16
+   :emphasize-lines: 17-21
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     hdf5:
-       variants: ~mpi
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
-     mpich:
-       paths:
-         mpich@3.3%gcc@7.5.0: /usr
-       buildable: false
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       hdf5:
+         variants: ~mpi
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
+       mpich:
+         externals:
+         - spec: mpich@3.3%gcc@7.5.0
+           prefix: /usr
+         buildable: false
 
 
 If we concretize ``hdf5+mpi`` with this configuration file, we will just
@@ -597,29 +671,34 @@ forbidden it from building. We could resolve this by requesting
 ``hdf5+mpi%clang^mpich`` explicitly, or we can configure Spack not to
 use any other MPI implementation. Since we're focused on
 configurations here and the former can get tedious, we'll need to
-modify our ``packages.yaml`` file again.
+modify our ``packages`` configuration again.
 
 While we're at it, we can configure HDF5 to build with MPI by default
 again.
 
 .. code-block:: yaml
-   :emphasize-lines: 14-15
+   :emphasize-lines: 19-20
 
-   packages:
-     all:
-       compiler: [clang, gcc, intel, pgi, xl, nag]
-       providers:
-         mpi: [mpich, openmpi]
-       variants: ~shared
-     zlib:
-       paths:
-         zlib@1.2.8%gcc@7.5.0: /usr
-       buildable: false
-     mpich:
-       paths:
-         mpich@3.3%gcc@7.5.0: /usr
-     mpi:
-       buildable: False
+   spack:
+     specs: []
+     view: true
+     packages:
+       all:
+         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         providers:
+           mpi: [mpich, openmpi]
+         variants: ~shared
+       zlib:
+         externals:
+         - spec: zlib@1.2.8%gcc@7.5.0
+           prefix: /usr
+         buildable: false
+       mpich:
+         externals:
+         - spec: mpich@3.3%gcc@7.5.0
+           prefix: /usr
+       mpi:
+         buildable: false
 
 
 Now that we have configured Spack not to build any possible provider
@@ -642,7 +721,7 @@ same spec syntax.
 Installation permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``packages.yaml`` file also controls the default permissions
+The ``packages`` configuration also controls the default permissions
 to use when installing a package. You'll notice that by default,
 the installation prefix will be world-readable but only user-writable.
 
@@ -663,12 +742,19 @@ the software. We can do this like so:
 Now, only members of the ``fluid_dynamics`` group can use any
 ``converge`` installations.
 
+At this point we want to discard the configuration changes we made
+in this tutorial section, so we can deactivate the environment:
+
+.. code-block:: console
+
+   $ spack env deactivate
+
+
 .. warning::
 
-   Make sure to delete or move the ``packages.yaml`` you have been
-   editing up to this point. Otherwise, it will change the hashes
-   of your packages, leading to differences in the output of later
-   tutorial sections.
+   If you do not deactivate the ``config-env`` environment, then
+   specs will be concretized differently in later tutorial sections
+   and your results will not match.
 
 
 -----------------
@@ -676,9 +762,9 @@ High-level Config
 -----------------
 
 In addition to compiler and package settings, Spack allows customization
-of several high-level settings. These settings are stored in the generic
-``config.yaml`` configuration file. You can see the default settings by
-running:
+of several high-level settings. These settings are managed in the ``config``
+section (in ``config.yaml`` when stored as an individual file outside of
+an environment). You can see the default settings by running:
 
 .. code-block:: console
 
