@@ -14,7 +14,7 @@ Developer Workflows Tutorial
 This tutorial will guide you through the process of using the ``spack
 develop`` command to develop software from local source code within a
 spack environment. With this command spack will manage your
-dependencies while you focus on testing changes your library and/or
+dependencies while you focus on testing changes to your library and/or
 application.
 
 
@@ -253,7 +253,7 @@ here.
    :language: console
 
 Here, ``spack develop`` with no arguments will check out or download
-the source code and place in in the appropriate places.
+the source code and place it in the appropriate places.
 
 When we're done developing, we simply tell spack that it no longer
 needs to keep a development version of the package.
