@@ -8,13 +8,3 @@ gpg: revocation certificate stored as '/home/spack/spack/opt/spack/gpg/openpgp-r
 $ mkdir ~/private_gpg_backup
 $ cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup
 $ cp ~/spack/opt/spack/gpg/pubring.* ~/mirror
-$ spack gpg create "My Name" "<my.email@my.domain.com>"
-gpgconf: socketdir is '/home/spack/.gnupg'
-gpgconf:	no /run/user dir
-gpgconf:	using homedir as fallback
-gpg: key B28F0B6D9A27F948 marked as ultimately trusted
-gpg: directory '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d' created
-gpg: revocation certificate stored as '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d/08BF2D6598BA616129EA9C50B28F0B6D9A27F948.rev'
-$ mkdir ~/private_gpg_backup
-$ cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup
-$ cp ~/spack/opt/spack/gpg/pubring.* ~/mirror
