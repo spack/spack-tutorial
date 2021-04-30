@@ -21,7 +21,7 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/pearc19-tutorial-slide-preview.png
+.. image:: tutorial/images/ecp21-tutorial-slide-preview.png
    :target: _static/slides/spack-ecp21-tutorial-slides.pdf
    :height: 72px
    :align: left
@@ -32,6 +32,14 @@ Spack is used in practice.
 **Full citation:** Gregory Becker, Robert Blake, Tamara Dahlgren, Peter
 Scheibel, Todd Gamblin. Using Spack to Accelerate Developer Workflows ECP
 Annual Meeting 2021. Virtual event. April 16, 2021.
+
+.. _video:
+
+.. rubric:: Video
+
+.. raw:: html
+
+    <iframe height="144" src="https://youtu.be/RlczUgwFCJg" frameborder="0" allowfullscreen></iframe>
 
 .. _live-demos:
 
