@@ -6,8 +6,8 @@ $ spack env create -d .
 ==> Created environment in /home/spack/devel-env
 ==> You can activate this environment with:
 ==>   spack env activate /home/spack/devel-env
-$ spacktivate .
-$   for now, disable fortran support in all packages
+$ spack env activate .
+$ # for now, disable fortran support in all packages
 $ spack config add "packages:all:variants: ~fortran"
 $ spack add macsio+scr
 ==> Adding macsio+scr to environment /home/spack/devel-env
