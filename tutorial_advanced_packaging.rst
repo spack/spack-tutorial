@@ -93,20 +93,28 @@ so it is available at build time; this is required because the default setup
 that spack does is not sufficient for python to import modules.
 
 To provide environment setup for a dependent, a package can implement the
-:py:func:`setup_dependent_environment <spack.package.PackageBase.setup_dependent_environment>`
-function. This function takes as a parameter a :py:class:`EnvironmentModifications <spack.util.environment.EnvironmentModifications>`
-object which includes convenience methods to update the environment. For
-example, an MPI implementation can set ``MPICC`` for packages that depend on it:
+:py:func:`setup_dependent_build_environment
+<spack.package.PackageBase.setup_dependent_build_environment>`
+and or :py:func:`setup_dependent_run_environment
+<spack.package.PackageBase.setup_dependent_run_environment>` functions.
+These functions take as a parameter a :py:class:`EnvironmentModifications
+<spack.util.environment.EnvironmentModifications>` object, which includes
+convenience methods to update the environment. For example, an MPI
+implementation can set ``MPICC`` for build-time use for packages that
+depend on it:
 
 .. code-block:: python
 
-  def setup_dependent_environment(self, spack_env, run_env, dependent_spec):
-      spack_env.set('MPICC', join_path(self.prefix.bin, 'mpicc'))
+  def setup_dependent_build_environment(self, env, dependent_spec):
+      env.set('MPICC', join_path(self.prefix.bin, 'mpicc'))
 
 In this case packages that depend on ``mpi`` will have ``MPICC`` defined in
 their environment when they build. This section is focused on modifying the
-build-time environment represented by ``spack_env``, but it's worth noting that
-modifications to ``run_env`` are included in Spack's automatically-generated
+build-time environment represented by ``env``, but it's worth noting that
+modifications to the run-time environment, made through the 
+:py:func:`setup_dependent_run_environment
+<spack.package.PackageBase.setup_dependent_run_environment>` function's
+``env`` parameter, are included in Spack's automatically-generated
 module files.
 
 We can practice by editing the ``mpich`` package to set the ``MPICC``
@@ -158,24 +166,50 @@ Set environment variables in your own package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Packages can modify their own build-time environment by implementing the
-:py:func:`setup_environment <spack.package.PackageBase.setup_environment>` function.
+:py:func:`setup_build_environment 
+<spack.package.PackageBase.setup_build_environment` function and run-time
+environment by implementing the
+:py:func:`setup_run_environment
+<spack.package.PackageBase.setup_run_environment` function.
 For ``qt`` this looks like:
 
 .. code-block:: python
 
-    def setup_environment(self, spack_env, run_env):
-        spack_env.set('MAKEFLAGS', '-j{0}'.format(make_jobs))
-        run_env.set('QTDIR', self.prefix)
+    def setup_build_environment(self, env):
+        env.set('MAKEFLAGS', '-j{0}'.format(make_jobs))
+        if self.spec.satisfies('@5.11:'):
+            # QDoc uses LLVM as of 5.11; remove the LLVM_INSTALL_DIR to
+            # disable
+            try:
+                llvm_path = self.spec['llvm'].prefix
+            except KeyError:
+                # Prevent possibly incompatible system LLVM from being found
+                llvm_path = "/spack-disable-llvm"
+            env.set('LLVM_INSTALL_DIR', llvm_path)
 
-When ``qt`` builds, ``MAKEFLAGS`` will be defined in the environment.
+    def setup_run_environment(self, env):
+        env.set('QTDIR', self.prefix)
+        env.set('QTINC', self.prefix.inc)
+        env.set('QTLIB', self.prefix.lib)
+        env.prepend_path('QT_PLUGIN_PATH', self.prefix.plugins)
 
-To contrast with ``qt``'s :py:func:`setup_dependent_environment <spack.package.PackageBase.setup_dependent_environment>`
+When ``qt`` builds, ``MAKEFLAGS`` will be defined in the environment and,
+for versions from 5.11 on, ``LLVM_INSTALL_DIR`` will also be defined.
+
+To contrast with ``qt``'s :py:func:`setup_dependent_build_environment
+<spack.package.PackageBase.setup_dependent_build_environment>`
 function:
 
 .. code-block:: python
 
-    def setup_dependent_environment(self, spack_env, run_env, dependent_spec):
-        spack_env.set('QTDIR', self.prefix)
+    def setup_dependent_build_environment(self, env, dependent_spec):
+        env.set('QTDIR', self.prefix)
+        env.set('QTINC', self.prefix.inc)
+        env.set('QTLIB', self.prefix.lib)
+        env.prepend_path('QT_PLUGIN_PATH', self.prefix.plugins)
+
+It is not necessary to implement a ``setup_dependent_run_environment``
+method for ``qt`` so one is not provided.
 
 Let's see how it works by completing the ``elpa`` package:
 
