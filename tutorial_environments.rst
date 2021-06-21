@@ -168,7 +168,7 @@ Now let's create *another* project.  We'll call this one ``myproject2``:
 
 Now we have two environments: one with ``tcl`` and ``trilinos``, and
 another with ``hdf5 +hl`` and ``trilinos``.  Notice that the roots display *exactly* as
-we asked for them on the command line -- the ``hdf5`` for this environemnt has an
+we asked for them on the command line -- the ``hdf5`` for this environment has an
 ``+hl`` requirement.
 
 We can uninstall trilinos from ``myproject2`` as you would expect:
@@ -328,7 +328,7 @@ the environment's view:
 
 Spack also sets variables like ``CPATH``, ``LIBRARY_PATH``,
 and ``LD_LIBRARY_PATH`` so that you can easily find headers and libraries in
-environemnts.
+environment.
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
