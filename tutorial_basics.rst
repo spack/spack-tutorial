@@ -19,7 +19,7 @@ using Spack-built compilers within Spack. We will include full output
 from all of the commands demonstrated, although we will frequently
 call attention to only small portions of that output (or merely to the
 fact that it succeeded). The provided output is all from an AWS
-instance running Ubuntu 18.04
+instance running Ubuntu 18.04.
 
 .. _basics-tutorial-install:
 
@@ -27,7 +27,7 @@ instance running Ubuntu 18.04
 Installing Spack
 ----------------
 
-Spack works out of the box. Simply clone spack and get going. We will
+Spack works out of the box. Simply clone Spack and get going. We will
 clone Spack and immediately checkout the most recent release, v0.16.
 
 .. literalinclude:: outputs/basics/clone.out
@@ -36,9 +36,9 @@ clone Spack and immediately checkout the most recent release, v0.16.
 .. literalinclude:: outputs/basics/checkout.out
    :language: console
 
-Next add Spack to your path. Spack has some nice command line
+Next, add Spack to your path. Spack has some nice command line
 integration tools, so instead of simply appending to your ``PATH``
-variable, source the spack setup script.
+variable, source the Spack setup script.
 
 .. code-block:: console
 
@@ -60,7 +60,7 @@ The ``spack list`` command shows available packages.
 The ``spack list`` command can also take a query string. Spack
 automatically adds wildcards to both ends of the string, or you
 can add your own wildcards. For example, we can view all available
-python packages.
+Python packages.
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -160,10 +160,10 @@ hash. Using the ``spack find -lf`` command earlier we saw that the hash
 of our optimized installation of zlib (``cppflags="-O3"``) began with
 ``h6i53if``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
-other tools like git, you do not need to specify an *entire* hash on the
+other tools like Git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
 uniquely.  If a hash prefix is ambiguous (i.e., two or more installed
-packages share the prefix) then spack will report an error.
+packages share the prefix) then Spack will report an error.
 
 .. literalinclude:: outputs/basics/tcl-zlib-hash.out
    :language: console
@@ -175,9 +175,9 @@ even if it also appears as a dependency.
 .. literalinclude:: outputs/basics/find-ldf.out
    :language: console
 
-Let's move on to slightly more complicated packages. ``HDF5`` is a
+Let's move on to slightly more complicated packages. HDF5 is a
 good example of a more complicated package, with an MPI dependency. If
-we install it "out of the box," it will build with ``openmpi``.
+we install it "out of the box," it will build with OpenMPI.
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: console
@@ -196,10 +196,10 @@ We might also want to install HDF5 with a different MPI
 implementation. While MPI is not a package itself, packages can depend on
 abstract interfaces like MPI. Spack handles these through "virtual
 dependencies." A package, such as HDF5, can depend on the MPI
-interface. Other packages (``openmpi``, ``mpich``, ``mvapich``, etc.)
+interface. Other packages (``openmpi``, ``mpich``, ``mvapich2``, etc.)
 provide the MPI interface.  Any of these providers can be requested for
 an MPI dependency. For example, we can build HDF5 with MPI support
-provided by mpich by specifying a dependency on ``mpich``. Spack also
+provided by MPICH by specifying a dependency on ``mpich``. Spack also
 supports versioning of virtual dependencies. A package can depend on the
 MPI interface at version 3, and provider packages specify what version of
 the interface *they* provide. The partial spec ``^mpi@3`` can be safisfied
@@ -234,8 +234,8 @@ consistency requirements. It is entirely possible to have two packages
 using different versions of a dependency to build, which obviously cannot
 be done with linked dependencies.
 
-``HDF5`` is more complicated than our basic example of zlib and
-tcl, but it's still within the realm of software that an experienced
+HDF5 is more complicated than our basic example of zlib and
+Tcl, but it's still within the realm of software that an experienced
 HPC user could reasonably expect to install given a bit of time. Now
 let's look at an even more complicated package.
 
@@ -247,26 +247,26 @@ configuration has 23 top level dependencies, many of which have
 dependencies of their own. Installing more complex packages can take
 days or weeks even for an experienced user. Although we've done a
 binary installation for the tutorial, a source installation of
-trilinos using Spack takes about 3 hours (depending on the system),
+Trilinos using Spack takes about 3 hours (depending on the system),
 but only 20 seconds of programmer time.
 
 Spack manages consistency of the entire DAG. Every MPI dependency will
 be satisfied by the same configuration of MPI, etc. If we install
-``trilinos`` again specifying a dependency on our previous HDF5 built
-with ``mpich``:
+Trilinos again specifying a dependency on our previous HDF5 built
+with MPICH:
 
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
    :language: console
 
-We see that every package in the trilinos DAG that depends on MPI now
-uses ``mpich``.
+We see that every package in the Trilinos DAG that depends on MPI now
+uses MPICH.
 
 .. literalinclude:: outputs/basics/find-d-trilinos.out
    :language: console
 
 As we discussed before, the ``spack find -d`` command shows the
 dependency information as a tree. While that is often sufficient, many
-complicated packages, including trilinos, have dependencies that
+complicated packages, including Trilinos, have dependencies that
 cannot be fully represented as a tree. Again, the ``spack graph``
 command shows the full DAG of the dependency information.
 
@@ -276,7 +276,7 @@ command shows the full DAG of the dependency information.
 You can control how the output is displayed with a number of options.
 
 The ASCII output from ``spack graph`` can be difficult to parse for
-complicated packages. The output can be changed to the ``graphviz``
+complicated packages. The output can be changed to the Graphviz
 ``.dot`` format using the ``--dot`` flag.
 
 .. code-block:: console
@@ -289,7 +289,7 @@ complicated packages. The output can be changed to the ``graphviz``
 Uninstalling Packages
 ---------------------
 
-Earlier we installed many configurations each of zlib and tcl. Now we
+Earlier we installed many configurations each of zlib and Tcl. Now we
 will go through and uninstall some of those packages that we didn't
 really need.
 
@@ -339,7 +339,7 @@ already covered in the :ref:`basics-tutorial-install` and
 The ``spack find`` command can accept what we call "anonymous specs."
 These are expressions in spec syntax that do not contain a package
 name. For example, ``spack find ^mpich`` will return every installed
-package that depends on mpich, and ``spack find cppflags="-O3"`` will
+package that depends on MPICH, and ``spack find cppflags="-O3"`` will
 return every package which was built with ``cppflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
@@ -352,7 +352,7 @@ The ``find`` command can also show which packages were installed
 explicitly (rather than pulled in as a dependency) using the ``-x``
 flag. The ``-X`` flag shows implicit installs only. The ``find`` command can
 also show the path to which a spack package was installed using the ``-p``
-command.
+flag.
 
 .. literalinclude:: outputs/basics/find-px.out
    :language: console
@@ -379,9 +379,10 @@ added to the configuration.
 .. literalinclude:: outputs/basics/find-p-gcc.out
    :language: console
 
-We can add gcc to Spack as an available compiler using the ``spack
+We can add GCC to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-``gcc@8.3.0``.
+``gcc@8.3.0``. To avoid having to copy and paste GCC's path, we can use
+``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
    :language: console
