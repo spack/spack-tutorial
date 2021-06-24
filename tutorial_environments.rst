@@ -134,7 +134,7 @@ Now we can check the normal environment:
    :emphasize-lines: 1,2,4
 
 
-Notice that we are no longer in an environment and all of our packages
+Notice that we are no longer in an environment and all our packages
 are still installed.
 
 ^^^^^^^^^^^^^^^^^^^
@@ -149,7 +149,7 @@ back to ``myproject`` and *install* a couple of packages; specifically,
    :language: console
    :emphasize-lines: 1,2,4
 
-We see that ``tcl`` and all of the dependencies of ``trilinos`` are
+We see that ``tcl`` and all the dependencies of ``trilinos`` are
 already installed. Notice also that our environment's view gets updated.
 
 Now confirm the contents of the environment using ``spack find``:
@@ -275,15 +275,15 @@ Dealing with Many Specs at Once
 
 So far we have used ``install`` and ``uninstall`` for processing
 individual packages. Since environments define sets of packages,
-their Specs *can* be added to the environment before they are
+their specs *can* be added to the environment before they are
 installed together. Specs can be added at the command line or
 entered directly in the environment configuration file.
 
-Whole environments can be installed at once by adding Specs to
+Whole environments can be installed at once by adding specs to
 the environment before installing them. Individual packages can
 still be added and removed from the environment as it evolves.
 
-There are a couple of advantages of processing all of the Specs
+There are a couple of advantages of processing all the specs
 of an environment at once. First, we don't have to write a custom
 installation script outside of Spack. Second, we can launch a 
 large build of many packages in parallel by taking advantage of
@@ -324,7 +324,7 @@ arguments:
    :emphasize-lines: 1
 
 
-Spack concretizes the new root specs before ensuring that all of
+Spack concretizes the new root specs before ensuring that all
 the associated packages are installed. You can confirm this using
 ``spack find``:
 
@@ -341,7 +341,7 @@ An environment is more than just a list of root specs. It includes
 *configuration* settings that affect the way Spack behaves when the
 environment is activated. So far, ``myproject`` relies on configuration
 defaults that can be overridden. Here we'll look at how to add specs
-and ensure all of the packages depending on ``mpi`` build with ``mpich``.
+and ensure all the packages depending on ``mpi`` build with ``mpich``.
 
 Running ``spack spec`` shows that concretization looks the same as it
 does outside the environment:
@@ -425,7 +425,7 @@ installed part of the environment with ``openmpi``. Now we want
 to install everything in ``myproject`` with ``mpich``.
 
 Let's run ``spack concretize --force`` to make Spack re-concretize
-all of the environment's specs:
+all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
@@ -541,13 +541,12 @@ concretization.
 
 The two files represent two fundamental concepts:
 
-  * - ``spack.yaml`` is the set of *abstract* specs and configuration that
-    you want to install; and
-  * - ``spack.lock`` is the set of all fully *concrete* specs generated from
-    concretizing ``spack.yaml``
+  * - ``spack.yaml``: *abstract* specs and configuration to install; and
+  * - ``spack.lock``: all fully *concrete* specs.
 
-In this sense, you can think of environments as generalizations of specs,
-but for sets of packages.
+
+You can think of environments as generalizations of specs for sets of
+packages.
 
 Both environment files can be versioned in repositories, shared, and
 used to install the same set of software on different machines. The files
@@ -687,7 +686,7 @@ Now activate the environment and install the packages:
 
 Notice Spack concretized the specs before installing them and
 their dependencies. It also updated the environment's view. Since
-we already installed all of these packages outside of the environment,
+we already installed all these packages outside of the environment,
 their links were added to our environment.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -769,7 +768,7 @@ Here we see that Spack created a managed environment with the name
 we provided.
 
 The ``spack.lock`` file is used for an exact reproduction of the
-original build because it contains the information for all of the
+original build because it contains the information for all the
 decisions made during concretization. 
 
 Now let's create a concrete environment, called ``concrete`` from
