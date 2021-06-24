@@ -15,9 +15,6 @@ $ spack mirror add tutorial /mirror
 $ spack buildcache keys -it
 ==> Fetching file:///mirror/build_cache/_pgp/95C717877AC00FFDAA8FD6E99CFA4A453B7C69B2.pub
 ####################################################################################################################################################################### 100.0%
-gpgconf: socketdir is '/home/spack/.gnupg'
-gpgconf:	no /run/user dir
-gpgconf:	using homedir as fallback
 gpg: keybox '/home/spack/spack/opt/spack/gpg/pubring.kbx' created
 gpg: /home/spack/spack/opt/spack/gpg/trustdb.gpg: trustdb created
 gpg: key 9CFA4A453B7C69B2: public key "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" imported
