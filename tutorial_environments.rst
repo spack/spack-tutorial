@@ -76,7 +76,7 @@ called ``myproject``:
 
 
 An environment is a virtualized ``spack`` instance that you can use to
-aggregate package installations for a project or other purpose. The has
+aggregate package installations for a project or other purpose. It has
 an associated *view*, which is a single prefix where all packages from
 the environment are linked.
 
