@@ -14,9 +14,9 @@ Environments Tutorial
 We've covered how to install, remove, and list packages with Spack using the
 commands:
 
-  * - `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages;
-  * - `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
-  * - `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
+* `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages;
+* `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
+* `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
 
 Customizing Spack's installation with configuration files like
 `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_ have also been discussed.
@@ -32,12 +32,12 @@ and or varying configuration requirements (e.g., different implementations
 of ``mpi``) for multiple projects and efforts can be overwhelming. Spack
 environments allow you to readily:
 
-  * - establish standard software requirements for your project(s);
-  * - set up run environments for users;
-  * - support your usual development environment(s);
-  * - set up packages for CI/CD;
-  * - reproduce builds (approximately or exactly) on other machines; and
-  * - much more.
+* establish standard software requirements for your project(s);
+* set up run environments for users;
+* support your usual development environment(s);
+* set up packages for CI/CD;
+* reproduce builds (approximately or exactly) on other machines; and
+* much more.
 
 This tutorial introduces the basics of creating and using environments
 before delving into expanding, configuring, and building software in
@@ -541,8 +541,8 @@ concretization.
 
 The two files represent two fundamental concepts:
 
-  * - ``spack.yaml``: *abstract* specs and configuration to install; and
-  * - ``spack.lock``: all fully *concrete* specs.
+* ``spack.yaml``: *abstract* specs and configuration to install; and
+* ``spack.lock``: all fully *concrete* specs.
 
 
 You can think of environments as generalizations of specs for sets of
