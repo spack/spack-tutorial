@@ -145,7 +145,7 @@ Now that we understand how creation and activation work, let's go
 back to ``myproject`` and *install* a couple of packages; specifically,
 ``tcl`` and ``trilinos``.
 
-.. literalinclude:: outputs/environments/env-install-1.out
+.. literalinclude:: outputs/environments/env-install-pkgs-1.out
    :language: console
    :emphasize-lines: 1,2,4
 
@@ -300,7 +300,7 @@ Adding specs
 Let's start by *adding* a couple of specs to our ``myproject``
 environment:
 
-.. literalinclude:: outputs/environments/add-1.out
+.. literalinclude:: outputs/environments/add-specs-1.out
    :language: console
    :emphasize-lines: 1-2,5
 
