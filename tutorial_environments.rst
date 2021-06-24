@@ -287,7 +287,7 @@ still be added and removed from the environment as it evolves.
 
 There are a couple of advantages of processing all the specs
 of an environment at once. First, we don't have to write a custom
-installation script outside of Spack. Second, we can launch a 
+installation script outside of Spack. Second, we can launch a
 large build of many packages in parallel by taking advantage of
 Spack's `install-level build parallelism
 <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
@@ -365,7 +365,7 @@ Let's start by looking at the configuration of our environment using
    :emphasize-lines: 1
 
 The output shows the special YAML configuration format that Spack
-uses to store environment state. Currently, the file is just a 
+uses to store environment state. Currently, the file is just a
 ``spack:`` header and a list of the **root** ``specs``.
 
 Let's edit this file to prefer ``mpich`` as our ``mpi`` provider
@@ -412,7 +412,7 @@ and external packages (see :ref:`configuration section <configs-tutorial>`
 for more). Combinatorial environments can be defined (see
 :ref:`stacks <stacks-tutorial>`). Workflows for CI and software
 development, as described in the :ref:`developer workflows
-<developer-workflows-tutorial>` tutorial, can also be configured. 
+<developer-workflows-tutorial>` tutorial, can also be configured.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Updating the environment
@@ -445,7 +445,7 @@ Building in environments
 ------------------------
 
 Activated environments allow you to invoke any programs installed
-in them. 
+in them.
 
 Suppose you want to compile some MPI programs. We have an MPI
 implementation installed in our ``myproject`` environment, so
@@ -664,7 +664,7 @@ We can confirm that it is not a managed environment by running
 and noting that the path does not appear in the output.
 
 Now let's add some specs to the environment. Suppose your project
-depends on ``boost``, ``trilinos``, and ``openmpi``. Add these 
+depends on ``boost``, ``trilinos``, and ``openmpi``. Add these
 packages to the spec list using your favorite text editor. The
 dash syntax for a yaml list is used in our example. Your package
 should now contain the following entries:
@@ -774,7 +774,7 @@ we provided.
 
 The ``spack.lock`` file is used for an exact reproduction of the
 original build because it contains the information for all the
-decisions made during concretization. 
+decisions made during concretization.
 
 Now let's create a concrete environment, called ``concrete`` from
 the file:
@@ -790,3 +790,23 @@ provided name.
 
    Use of ``spack.lock`` to reproduce a build (currently) requires you
    to be on the same type of machine.
+
+-------------------
+More information
+-------------------
+
+This tutorial only scratches the surfaces of what environments can do. For more
+information, take a look at the following resources:
+
+* `Environments <https://spack.readthedocs.io/en/latest/environments.html>`_:
+  reference docs from Spack.
+* `Container Images <https://spack.readthedocs.io/en/latest/containers.html>`_:
+  create containers from environments.
+* `GitLab CI pipelines with Spack environments
+  <https://spack.readthedocs.io/en/latest/pipelines.html>`_: use environments
+  to generate CI pipelines.
+* `Developer workflows
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html>`_:
+  ways to develop code in an environment.
+* `Spack Stack Catalog <https://spack.github.io/spack-stack-catalog/>`_: a list
+  of environments that you can explore on GitHub.
