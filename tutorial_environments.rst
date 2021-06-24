@@ -685,7 +685,7 @@ Now activate the environment and install the packages:
    :emphasize-lines: 1-2
 
 
-Notice Spack concretized the the specs before installing them and
+Notice Spack concretized the specs before installing them and
 their dependencies. It also updated the environment's view. Since
 we already installed all of these packages outside of the environment,
 their links were added to our environment.
