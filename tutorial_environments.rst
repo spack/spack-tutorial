@@ -11,24 +11,41 @@
 Environments Tutorial
 =====================
 
-So far, we've shown you the basics of how to install and remove packages with
-Spack. You can use `spack install
-<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_
-to install packages, `spack uninstall
-<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_
-to remove them, and `spack find
-<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to
-look at and query what is installed.
+We've covered how to install, remove, and list packages with Spack using the
+commands:
 
-If you build a lot of software, or if you work on multiple projects,
-managing everything in one place can be overwhelming. The default ``spack
-find`` output may contain many packages, but you may want to *just* focus
-on packages for a particular project.  Moreover, you may want to include
-special configuration with your package groups, e.g., to build all the
-packages in the same group the same way. Or, you may want to build up
-development workflows around a subset of packages.
+* `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages;
+* `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
+* `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
 
-Spack **environments** provide a way to handle these problems.
+Customizing Spack's installation with configuration files, like
+`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
+
+This section of the tutorial introduces **Spack Environments**, which
+allow you to work with independent groups of packages separately. The
+goal is to provide users with *virtual environments* similar to those
+supported by other commonly used tools (e.g., Python) while allowing
+common installations to be seamlessly shared. They are also intended
+to be easily shared and re-used by others and across systems.
+
+Administering properly configured software involving lots of packages
+and/or varying configuration requirements (e.g., different implementations
+of ``mpi``) for multiple projects and efforts can be overwhelming. Spack
+environments allow you to readily:
+
+* establish standard software requirements for your project(s);
+* set up run environments for users;
+* support your usual development environment(s);
+* set up packages for CI/CD;
+* reproduce builds (approximately or exactly) on other machines; and
+* much more.
+
+This tutorial introduces the basics of creating and using environments,
+then explains how to expand, configure, and build software in them.
+We will start with the command line interface then cover editing key
+environment file directly. We will describe the difference between
+Spack-managed and independent environments, then finish with a section
+on reproducible builds.
 
 -------------------
 Environment Basics
@@ -38,111 +55,147 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 
 .. literalinclude:: outputs/environments/find-no-env-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-This is a complete, but cluttered view.  There are packages built with
-both ``openmpi`` and ``mpich``, as well as multiple variants of other
-packages, like ``zlib``.  The query mechanism we learned about in ``spack
-find`` can help, but it would be nice if we could start from a clean
-slate without losing what we've already done.
-
+This is a complete, but cluttered list of the installed packages and
+their dependencies. It contains packages built with both ``openmpi``
+and ``mpich``, as well as multiple variants of other packages, like
+``hdf5`` and ``zlib``. The query mechanism we learned about with
+``spack find`` can help, but it would be nice if we could start from
+a clean slate without losing what we've already installed.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating and activating environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``spack env`` command can help.  Let's create a new environment:
+The ``spack env`` command can help. Let's create a new environment
+called ``myproject``:
 
 .. literalinclude:: outputs/environments/env-create-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-An environment is a virtualized ``spack`` instance that you can use for a
-specific purpose.  The environment also has an associated *view*, which
-is a single prefix where all packages from the environment are linked.
+An environment is like a virtualized ``spack`` instance that you can
+use to aggregate package installations for a project or other purpose.
+It has an associated *view*, which is a single prefix where all packages
+from the environment are linked.
 
-You can see the environments we've created so far like this:
+You can see the environments we've created so far using the ``spack env
+list`` command:
 
 .. literalinclude:: outputs/environments/env-list-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-And you can **activate** an environment with ``spack env activate``:
+Now let's **activate** our environment with the ``spack env activate``
+command:
 
 .. literalinclude:: outputs/environments/env-activate-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-Once you enter an environment, ``spack find`` shows only what is in the
-current environment.  We just created this environment, so we have a
-clean slate -- 0 packages:
+.. note::
+   If you use the ``-p`` option for ``spack env activate``, Spack
+   will prepend the environment name to the prompt. This is a handy
+   way to be reminded if and which environment you are in.
+
+
+Once you activate an environment, ``spack find`` only shows what is
+in the current environment. We just created this environment, so we
+it does not contain any installed packages.
 
 .. literalinclude:: outputs/environments/find-env-1.out
    :language: console
+   :emphasize-lines: 1
 
-The ``spack find`` output is still *slightly* different.  It tells you
-that you're in the ``myproject`` environment, so that you don't panic
-when you see that there is nothing installed.  It also says that there
-are *no root specs*.  We'll get back to what that means later.
+The output from ``spack find`` is now *slightly* different. It tells
+you that you're in the ``myproject`` environment, so there is no need
+to panic when you see that none of the previously installed packages
+are available. It also states that there are **no** *root specs*. We'll
+get back to what that means later.
 
 If you *only* want to check what environment you are in, you can use
 ``spack env status``:
 
 .. literalinclude:: outputs/environments/env-status-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-If you want to leave this environment and go back to normal Spack,
-you can use ``spack env deactivate``.  We like to use the
-``despacktivate`` alias (which Spack sets up automatically) for short:
+If you want to leave this environment, you can use ``spack env deactivate``.
+We also automatically set up the ``despacktivate`` alias for short.
+
+Now we can check the normal environment:
 
 .. literalinclude:: outputs/environments/env-status-2.out
    :language: console
+   :emphasize-lines: 1,2,4
 
 
-Phew -- all of our packages are still installed.
+Notice that we are no longer in an environment and all our packages
+are still installed.
 
 ^^^^^^^^^^^^^^^^^^^
 Installing packages
 ^^^^^^^^^^^^^^^^^^^
 
-Ok, now that we understand how creation and activation work, let's go
-back to ``myproject`` and *install* a few packages:
+Now that we understand how creation and activation work, let's go
+back to ``myproject`` and *install* a couple of packages; specifically,
+``tcl`` and ``trilinos``.
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
+   :emphasize-lines: 1,2,4
+
+We see that ``tcl`` and all the dependencies of ``trilinos`` are
+already installed. Notice also that our environment's view gets updated.
+
+Now confirm the contents of the environment using ``spack find``:
+
+.. literalinclude:: outputs/environments/find-env-2.out
+   :language: console
+   :emphasize-lines: 1
 
 
-We've installed ``tcl`` and ``trilinos`` in our environment, along with
-all of their dependencies.  We call ``tcl`` and ``trilinos`` the
-**roots** because we asked for them explicitly.  The other 20 packages
-listed under "installed packages" are present because they were needed as
-dependencies.  So, these are the roots of the packages' dependency graph.
+We now see that ``tcl`` and ``trilinos`` are **root specs** in
+our environment. That is because we explicitly asked for them to
+be installed, which makes them the **roots** of the combined graph
+of all packages in the environment. The other installed packages
+are present because they are dependencies.
 
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 Using packages
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
-When you install packages into an environment, they are linked into a
-single prefix, or a *view*.  When you *activate* the environment with
-``spack env activate``, Spack adds subdirectories from the view to
-``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH`` and other
-environment variables.  This makes the environment easier to use.
+Environments provide a convenient way for using installed packages.
+Running ``spack env activate`` gives you everything in the environment
+on your ``PATH``. Otherwise, you would need to ``spack load`` or
+``module load`` a package to use it.
 
-Without environments, you need to ``spack load`` or ``module load`` a
-package in order to use it.  With environments, you can simply run
-``spack env activate`` to get everything in the environment on your
-``PATH``.
+When you install packages into an environment, they are, by default,
+linked into a single prefix, or *view*. Activating the environment
+with ``spack env activate`` results in subdirectories from the view
+being added to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH``
+and other environment variables. This makes the environment easier to use.
 
-Let's try it out.  ``myproject`` is still the active environment, and we
-just installed ``tcl``.  You can see ``tclsh`` in your ``PATH``
-immediately:
+Let's try it out. We just installed ``tcl`` into our ``myproject``
+environment. ``Tcl`` includes a shell-like application called ``tclsh``.
+You can see the path to ``tclsh`` using ``which``:
 
 .. literalinclude:: outputs/environments/use-tcl-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-And you can run it like you would any other program:
+Notice its path includes the name of our environment *and* a ``view``
+subdirectory.
+
+You can now run ``tclsh`` like you would any other program that is
+in your path:
 
 .. code-block:: console
 
@@ -151,126 +204,180 @@ And you can run it like you would any other program:
 	hello world!
 	% exit
 
-Likewise, we installed Trilinos, and you can run some of its sub-programs
-as well:
+Similarly, you can run Trilinos' programs. Let's see the path for
+and run ``algebra``:
 
 .. literalinclude:: outputs/environments/use-trilinos-1.out
    :language: console
+   :emphasize-lines: 1,3
 
+
+Again, we see the executable under our environment's view.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Uninstalling packages
 ^^^^^^^^^^^^^^^^^^^^^
 
-Now let's create *another* project.  We'll call this one ``myproject2``:
+We can uninstall packages from an environment without affecting
+other environments. This is possible since, while Spack shares
+common installations, environments only link to those installations.
+
+Let's demonstrate this feature by creating another environment.
+Suppose ``myproject`` requires ``trilinos`` but we have another
+project that has it installed but no longer requires it.
+
+Start by creating a ``myproject2`` environment with the installed
+packages ``hdf5+hl`` and ``trilinos``:
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: console
+   :emphasize-lines: 1,6-7,9,11
 
 
-Now we have two environments: one with ``tcl`` and ``trilinos``, and
-another with ``hdf5 +hl`` and ``trilinos``.  Notice that the roots display *exactly* as
-we asked for them on the command line -- the ``hdf5`` for this environemnt has an
-``+hl`` requirement.
+Notice that root specs display *exactly* as we asked for them on the
+command line. In this case, ``hdf5`` shows the ``+hl`` requirement.
 
-We can uninstall trilinos from ``myproject2`` as you would expect:
+Now we have two environments. The ``myproject`` environment has ``tcl``
+and ``trilinos`` while the ``myproject2`` environment has ``hdf5 +hl``
+and ``trilinos``.
+
+Now let's uninstall ``trilinos`` from ``myproject2`` and review the
+contents of the environment:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
    :language: console
+   :emphasize-lines: 1,10
 
 
-Now there is only one root spec, ``hdf5 +hl``, which requires fewer
-additional dependencies.
+The result is that the environment now has only one root spec, ``hdf5
++hl``, and contains fewer dependencies.
 
-However, we still needed ``trilinos`` for the ``myproject`` environment!
-What happened to it?  Let's switch back and see.
+However, we know ``trilinos`` is still needed for the ``myproject``
+environment. So let's switch back to confirm that it is still installed
+in that environment.
 
 .. literalinclude:: outputs/environments/env-swap-1.out
    :language: console
+   :emphasize-lines: 1-3
 
 
-Spack is smart enough to realize that ``trilinos`` is still present in
-the other environment.  Trilinos won't *actually* be uninstalled unless
-it is no longer needed by any environments or packages.  If it is still
-needed, it is only removed from the environment.
+Phew! We see that ``myproject`` still has ``trilinos`` as a root
+spec. Spack uses reference counting to know that ``trilinos`` is
+still installed for ``myproject``.
+
+.. note::
+
+   Trilinos would only have been uninstalled by Spack if it were
+   no longer needed by any environments.
+
 
 -------------------------------
 Dealing with Many Specs at Once
 -------------------------------
 
-In the above examples, we just used ``install`` and ``uninstall``.  There
-are other ways to deal with groups of packages, as well.
+So far we have used ``install`` and ``uninstall`` for processing
+individual packages. Since environments define sets of packages,
+their specs *can* be added to the environment before they are
+installed together. Specs can be added at the command line or
+entered directly in the environment configuration file.
+
+Whole environments can be installed at once by adding specs to
+the environment before installing them. Individual packages can
+still be added and removed from the environment as it evolves.
+
+There are a couple of advantages of processing all the specs
+of an environment at once. First, we don't have to write a custom
+installation script outside of Spack. Second, we can launch a 
+large build of many packages in parallel by taking advantage of
+Spack's `install-level build parallelism
+<https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
+
+This section focused on two ways to add specs to the environment before
+installing them.
 
 ^^^^^^^^^^^^^
 Adding specs
 ^^^^^^^^^^^^^
 
-While we're still in ``myproject``, let's *add* a few specs instead of installing them:
+Let's start by *adding* a couple of specs to our ``myproject``
+environment:
 
 .. literalinclude:: outputs/environments/add-1.out
    :language: console
+   :emphasize-lines: 1-2,5
 
-Let's take a close look at what happened.  The two requirements we added,
-``hdf5 +hl`` and ``gmp``, are present, but they're not installed in the
-environment yet.  ``spack add`` just adds *roots* to the environment, but
-it does not automatically install them.
+Now let's take a look at what happened using ``spack find``:
 
-We can install *all* the as-yet uninstalled packages in an environment by
-simply running ``spack install`` with no arguments:
+.. literalinclude:: outputs/environments/find-1.out
+   :language: console
+   :emphasize-lines: 1
+
+Notice the two specs we added, ``hdf5 +hl`` and ``gmp``, are now
+listed as **root specs**. They are not actually installed in the
+environment yet because ``spack add`` only adds *roots* to the
+environment.
+
+*All* of the yet-to-be-installed packages can be installed in an
+active environment by simply running ``spack install`` with no
+arguments:
 
 .. literalinclude:: outputs/environments/add-2.out
    :language: console
+   :emphasize-lines: 1
 
 
-Spack will concretize the new roots, and install everything you added to
-the environment.  Now we can see the installed roots in the output of
+Spack concretizes the new root specs before ensuring that all
+the associated packages are installed. You can confirm this using
 ``spack find``:
 
 .. literalinclude:: outputs/environments/add-3.out
    :language: console
+   :emphasize-lines: 1
 
 
-We can build whole environments this way, by adding specs and installing
-all at once, or we can install them with the usual ``install`` and
-``uninstall`` portions.  The advantage to doing them all at once is that
-we don't have to write a script outside of Spack to automate this, and we
-can kick off a large build of many packages easily.
+^^^^^^^^^^^^^^^^^
+Configuring specs
+^^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^
-Configuration
-^^^^^^^^^^^^^
+An environment is more than just a list of root specs. It includes
+*configuration* settings that affect the way Spack behaves when the
+environment is activated. So far, ``myproject`` relies on configuration
+defaults that can be overridden. Here we'll look at how to add specs
+and ensure all the packages depending on ``mpi`` build with ``mpich``.
 
-An environment is more than just a list of root specs. It can also include
-*configuration* that changes the way Spack behaves when the environment is
-activated. So far, ``myproject`` does not have any special configuration
-associated with it. If you run ``spack spec``, you can see that concretization
-looks the same as it does outside the environment:
+Running ``spack spec`` shows that concretization looks the same as it
+does outside the environment:
 
 .. literalinclude:: outputs/environments/spec-1.out
    :language: console
+   :emphasize-lines: 1
 
-We can customize this using `concretization preferences
+We can customize the selection of the ``mpi`` provider using
+`concretization preferences
 <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_
--- special configuration that changes the behavior of the concretizer.
+to change the behavior of the concretizer.
 
-Let's start by looking at the configuration of your environment. You can see
-how your environment is configured using ``spack config get``:
+Let's start by looking at the configuration of our environment using
+``spack config get``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
    :language: console
+   :emphasize-lines: 1
 
-The output shows the special YAML configuration format that Spack uses to store
-the state of your environment. Currently, the file is just a ``spack:`` header
-and a list of ``specs``. These are the roots.
+The output shows the special YAML configuration format that Spack
+uses to store environment state. Currently, the file is just a 
+``spack:`` header and a list of the **root** ``specs``.
 
-You can edit this file to add your own custom configuration.  Spack
-provides a shortcut to do that:
+Let's edit this file to prefer ``mpich`` as our ``mpi`` provider
+using ``spack edit config``.
 
-.. code-block:: console
+.. note::
 
-   spack config edit
+   First make sure your ``EDITOR`` environment variable is set to
+   the path of your preferred text editor.
 
-You should now see the same file in your editor. Change it to look like this:
+You should now have the above file open in your editor. Change it
+to include the ``packages:all:providers:mpi:`` entry below:
 
 .. code-block:: yaml
 
@@ -288,68 +395,84 @@ You should now see the same file in your editor. Change it to look like this:
      specs: [tcl, trilinos, hdf5, gmp]
 
 
-We will learn much more in the :ref:`configuration section <configs-tutorial>`,
-but for now, all you need to know is that this changes the default ``mpi``
-provider. That is, if a package depends on ``mpi``, Spack will now satisfy that
-dependency with ``mpich`` instead of the default ``openmpi``.
-
-To see what this looks like, run ``spack spec`` again in the environment. You
-can see that the spec concretizes with ``mpich`` as the MPI implementation:
+Let's see the effects of this change on our package using ``spack spec``:
 
 .. literalinclude:: outputs/environments/spec-2.out
    :language: console
+   :emphasize-lines: 1
 
+Notice ``mpich`` is now the ``mpi`` dependency for our concretized
+spec.
 
-In addition to the ``packages`` section, an environment can contain many other
-types of configuration. You can add custom package repositories, a custom
-install location, custom compilers, custom external packages, and more. There
-are also ways to build workflows for CI and for software development using
-environment configuration, which we'll learn later in the tutorial.
+At this point we only wanted to change the default ``mpi`` provider
+for packages that depend on ``mpi``. An environment can contain
+many other types of configuration, such as adding custom package
+repositories and customizing the installation location, compilers,
+and external packages (see :ref:`configuration section <configs-tutorial>`
+for more). Combinatorial environments can be defined (see
+:ref:`stacks <stacks-tutorial>`). Workflows for CI and software
+development, as described in the :ref:`developer workflows
+<developer-workflows-tutorial>` tutorial, can also be configured. 
 
-Right now, though, we have a problem. We already installed part of this
-environment with openmpi, but now we want to install everything with ``mpich``.
+^^^^^^^^^^^^^^^^^^^^^^^^
+Updating the environment
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can run ``spack concretize --force`` inside of an environment to concretize
-all of its specs. We can run it here:
+You may need to re-install packages in the environment after making
+significant changes to the configuration like changing virtual
+providers. This can be accomplished by forcing Spack to reconcretize
+the environment and re-installing the specs.
+
+For example, the packages installed in our ``myproject`` environment
+are now out of sync with our new configuration since we already
+installed part of the environment with ``openmpi``. Now we want
+to install everything in ``myproject`` with ``mpich``.
+
+Let's run ``spack concretize --force`` to make Spack re-concretize
+all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-Now, all the specs in the environment are concrete and ready to be
-installed with ``mpich`` as the MPI implementation.
+All the specs are concrete **and** ready to be installed with
+``mpich`` as the MPI implementation. You can now re-run ``spack
+install`` to finish the process.
 
-Normally, we could just run ``spack config edit``, edit the environment
-configuration, ``spack add`` some specs, and ``spack install``.
-
-But, when we already have installed packages in the environment, we have
-to force everything in the environment to be re-concretized using ``spack
-concretize --force``.  *Then* we can re-run ``spack install``.
-
-
----------------------------------
+------------------------
 Building in environments
----------------------------------
+------------------------
 
-You can use environments to set up a development environment. With the
-environment activated, you can invoke any programs installed in the
-environment. Suppose you wanted to compile some MPI programs. This environment
-happens to have ``mpicc`` installed:
+Activated environments allow you to invoke any programs installed
+in them. 
+
+Suppose you want to compile some MPI programs. We have an MPI
+implementation installed in our ``myproject`` environment, so
+``mpicc`` is available in our path. We can confirm this using
+``which``:
 
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
+   :emphasize-lines: 1,3
 
 
-In addition, activating the environment has set variables like ``CPATH``,
-``LIBRARY_PATH``, and ``LD_LIBRARY_PATH``, so that you can easily find headers
-and libraries from programs in the environemnt.
+As mentioned before, activating the environment sets a number of
+environment variables. That includes variables like ``CPATH``,
+``LIBRARY_PATH``, and ``LD_LIBRARY_PATH``, which allows you to
+easily find package headers and libraries installed in the environment.
+
+Let's look specifically at path-related environment variables using
+``env | grep PATH``:
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-Let's use this to build a really simple MPI program. Make a simple test program
-like this one. Call it ``mpi-hello.c``.
+We can demonstrate this by building a really simple MPI program.
+Make a simple test program called ``mpi-hello.c`` that contains
+the following statements:
 
 .. code-block:: c
 
@@ -371,80 +494,180 @@ like this one. Call it ``mpi-hello.c``.
 	  MPI_Finalize();
 	}
 
-This program includes a header from zlib, and prints out a message from each
-MPI rank. It also prints the zlib version.
+This program includes headers from ``mpi`` and ``zlib``.
+It also prints out a message from each MPI rank and the
+version of ``zlib``.
 
-All you need to do is build and run it:
+Let's build and run it:
 
 .. literalinclude:: outputs/environments/use-mpi-1.out
    :language: console
+   :emphasize-lines: 1-2
 
 
-Note that we did not need to pass any special arguments to the compiler; just
-the source file. This simple example only scratches the surface, but you can
-use environments to set up dependencies for a project, set up a run environment
-for a user, support your usual development environment, and many other use
-cases. We'll revisit some advanced use cases later, in the :ref:`developer
-workflows <developer-workflows-tutorial>` tutorial.
+Notice that we did *not* need to pass any special arguments
+to the compiler, such as include paths or libraries. We also
+see that ``Hello world`` is output for each of the ranks and
+the version of ``zlib`` used to build the program is printed.
+
+We can confirm the version of ``zlib`` is in our environment using
+``spack find``:
+
+.. literalinclude:: outputs/environments/myproject-zlib-1.out
+   :language: console
+   :emphasize-lines: 1
+
+Note that the reported version matches our installation.
+
+This simple example only scratches the surface of what we can do
+with environments. Advanced use cases are provided in the
+:ref:`developer workflows <developer-workflows-tutorial>` tutorial.
+
+------------------
+Reproducing builds
+------------------
+
+Spack environments provide users with *virtual environments*
+(think Python and Conda), where packages in one environment
+are separating from those of another. These environments can
+be managed or independent. In either case, their environment
+files can be used to reproduce builds on other machines.
+
+^^^^^^^^^^^^^^^^^
+Environment files
+^^^^^^^^^^^^^^^^^
+
+There are two key files tracking the contents of environments:
+``spack.yaml`` and ``spack.lock``. The ``spack.yaml`` file holds
+the environment configuration that we previously edited through
+``spack config edit``. The ``spack.lock`` file is automatically
+generated during concretization.
+
+The two files represent two fundamental concepts:
+
+* ``spack.yaml``: *abstract* specs and configuration to install; and
+* ``spack.lock``: all fully *concrete* specs.
 
 
----------------------------------
-``spack.yaml`` and ``spack.lock``
----------------------------------
+You can think of environments as generalizations of specs for sets of
+packages.
 
-We've shown you how to interact with environments from the command line, but
-they also have a file-based interface that can be used by developers and admins
-to manage projects in a reproducible way.
+Both environment files can be versioned in repositories, shared, and
+used to install the same set of software on different machines. The files
+are intended to be used by developers and administrators to manage the
+environments in a reproducible way. We will cover their re-use later.
 
-In this section, we'll dive a little deeper to see how environments are
-implemented, and how you could use this in your day-to-day development.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Managed versus independent environments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-^^^^^^^^^^^^^^
-``spack.yaml``
-^^^^^^^^^^^^^^
+Environments are either spack-managed or independent. Both types
+of environments are defined by their environment files. So far
+we have only created managed environments. This section describes
+their differences.
 
-Earlier, we changed an environment's configuration using ``spack config
-edit``.  We were actually editing a special file called ``spack.yaml``.
-Let's take a look.
+*Managed environments* are created using ``spack env create <name>``.
+They are automatically created in the ``var/spack/environments``
+subdirectory and can be referenced by their names.
 
-We can get directly to the current environment's location using ``spack cd``:
+*Independent environments* can be created in one of two ways. First,
+the Spack's environment file(s) can be placed in any directory
+(other than ``var/spack/environments``). Alternatively, you can
+use ``spack env create -d <directory>`` to specify the directory
+(``<directory>``) in which the files should reside. Independent
+environments are not named.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reviewing a managed environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We created our currently active environment, ``myproject``, earlier
+using ``spack env create myproject`` so let's mainly focus on its
+environment files in this section.
+
+Earlier, when we changed our environment's configuration using ``spack
+config edit``, we were actually editing its ``spack.yaml`` file. We
+can change to the directory containing the file using ``spack cd``:
 
 .. literalinclude:: outputs/environments/filenames-1.out
    :language: console
+   :emphasize-lines: 1-2,4
 
 
-You should notice two things here. First, the environment is just a directory
-inside of ``var/spack/environments`` within the Spack installation. Second, it
-contains two important files: ``spack.yaml`` and ``spack.lock``.
+Notice ``myproject`` is a subdirectory of ``var/spack/environments``
+within the Spack installation making it a *managed* environment.
+Consequently, it can be referenced by name. It will also show up
+running ``spack env list``:
 
-``spack.yaml`` is the configuration file for environments that we've
-already seen, but it does not *have* to live inside Spack.  If you create
-an environment using ``spack env create``, it is *managed* by
-Spack in the ``var/spack/environments`` directory, and you can refer to
-it by name.
+.. literalinclude:: outputs/environments/env-list-2.out
+   :language: console
+   :emphasize-lines: 1
 
-You can actually put a ``spack.yaml`` file *anywhere*, and you can use it
-to bundle an environment, or a list of dependencies to install, with your
-project.  Let's make a simple project:
+
+You can see that ``myproject`` is active because it is highlighted
+in green.
+
+We can also see from the directory listing that the environment
+directory contains both of the environment files: ``spack.yaml``
+and ``spack.lock``.
+
+If we ``cat`` the ``spack.yaml`` file, we'll see the same contents
+shown previously by ``spack config get``:
+
+.. literalinclude:: outputs/environments/cat-config-1.out
+   :language: console
+   :emphasize-lines: 1
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating an independent environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Environments do not have to be created in or managed by a Spack
+instance. Rather, their environment files can be placed in any
+directory. This feature can be quite helpful for environment-
+based software releases and CI/CD.
+
+Let's create an *independent* environment from scratch for a simple
+project:
 
 .. literalinclude:: outputs/environments/anonymous-create-1.out
    :language: console
+   :emphasize-lines: 1-4
 
 
-Here, we made a new directory called *code*, and we used the ``-d``
-option to create an environment in it.
+Notice the command shows Spack created the environment, updated
+the view, and gave the command needed to activate it. Since the
+environment is independent, it must be referenced by its directory
+path.
 
-What really happened?
+Let's see what really happened by listing the directory contents
+and looking at the configuration file:
 
 .. literalinclude:: outputs/environments/anonymous-create-2.out
    :language: console
+   :emphasize-lines: 1,3
 
 
-Spack just created a ``spack.yaml`` file in the code directory, with an
-empty list of root specs.  Now we have a Spack environment, *in a
-directory*, that we can use to manage dependencies.  Suppose your project
-depends on ``boost``, ``trilinos``, and ``openmpi``.  You can add these
-to your spec list:
+Notice Spack created a ``spack.yaml`` file in the *code* directory.
+Also note that the configuration file has an empty spec list (i.e.,
+``[]``). That list is intended to contain only the *root specs* of
+the environment.
+
+We can confirm that it is not a managed environment by running
+``spack env list``:
+
+.. literalinclude:: outputs/environments/env-list-2.out
+   :language: console
+   :emphasize-lines: 1
+
+and noting that the path does not appear in the output.
+
+Now let's add some specs to the environment. Suppose your project
+depends on ``boost``, ``trilinos``, and ``openmpi``. Add these 
+packages to the spec list using your favorite text editor. The
+dash syntax for a yaml list is used in our example. Your package
+should now contain the following entries:
 
 .. code-block:: yaml
 
@@ -459,72 +682,111 @@ to your spec list:
      - trilinos
      - openmpi
 
-And now *anyone* who uses the *code* repository can use this format to
-install the project's dependencies.  They need only clone the repository,
-``cd`` into it, and type ``spack install``:
+Now activate the environment and install the packages:
 
 .. literalinclude:: outputs/environments/install-anonymous-1.out
    :language: console
+   :emphasize-lines: 1-2
 
 
-Spack concretizes the specs in the ``spack.yaml`` file and installs them.
+Notice Spack concretized the specs before installing them and
+their dependencies. It also updated the environment's view. Since
+we already installed all these packages outside of the environment,
+their links were added to our environment.
 
-So, from ``~/code``, we can actually manipulate ``spack.yaml`` using
-``spack add`` and ``spack remove`` (just like managed environments):
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Updating an installed environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spack supports tweaking an environment even after the initial specs
+are installed. You are free to add and remove specs just as you would
+outside of the environment using the command line interface as before.
+
+For example, lets add ``hdf5`` and look at our file:
 
 .. literalinclude:: outputs/environments/add-anonymous-1.out
    :language: console
+   :emphasize-lines: 1,4
 
 
-^^^^^^^^^^^^^^
-``spack.lock``
-^^^^^^^^^^^^^^
+Notice ``spack add`` added the package to our active environment and
+it appears in the configuration file's spec list.
 
-Okay, we've covered managed environments, environments in directories, and
-the last thing we'll cover is ``spack.lock``. You may remember that when
-we ran ``spack install``, Spack concretized all the specs in the
-``spack.yaml`` file and installed them.
+Now use ``spack remove`` to remove it from the environment:
 
-Whenever we concretize Specs in an environment, all concrete specs in the
-environment are written out to a ``spack.lock`` file *alongside*
-``spack.yaml``.  The ``spack.lock`` file is not really human-readable
-like the ``spack.yaml`` file.  It is a ``json`` format that contains all
-the information that we need to *reproduce* the build of an
-environment:
+.. literalinclude:: outputs/environments/remove-anonymous-1.out
+   :language: console
+   :emphasize-lines: 1,4
+
+and we see the spec was removed from our environment and the spec list.
+
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Reviewing ``spack.lock``
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now let's turn our attention from the abstract to the concrete.
+Our focus so far has been on the abstract environment configuration
+represented by the ``spack.yaml`` file. Once that file is concretized,
+Spack *generates* a corresponding ``spack.lock`` file representing
+the full concretized state of the environment.
+
+This file is intended to be a machine-readable representation of the
+information needed to *reproduce* the build of an environment. As such,
+it is written in ``json``, which is less readable than ``yaml``.
+
+Let's look at the top 30 lines of our current environment:
 
 .. literalinclude:: outputs/environments/lockfile-1.out
    :language: console
+   :emphasize-lines: 1
 
 
-``spack.yaml`` and ``spack.lock`` correspond to two fundamental concepts
-in Spack:
+While it is still readable, it consists of nearly 2000 lines of
+of information representing the actual configurations for each
+of the environment's packages.
 
-  * ``spack.yaml`` is the set of *abstract* specs and configuration that
-    you want to install.
-  * ``spack.lock`` is the set of all fully *concrete* specs generated from
-    concretizing ``spack.yaml``
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+Reproducing an environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In this sense, you can think of environments as generalizations of specs, but
-for sets of packages.
+You can recreate an environment that someone else built by passing either
+of the environment files to ``spack env create``. The file you choose
+depends on whether you want to approximate the build using the abstract
+specs or an *exact* build based on the concrete specs.
 
-``spack.yaml`` and ``spack.lock`` both allow you to recreate an environment
-that someone else built. You can pass either as an argument to ``spack env
-create``:
+An approximate build is created using the ``spack.yaml`` file. This
+approach is relevant when we want to build the same specs on a new
+platform. It allows you to reproduce the environment by preserving
+the abstract requirements in the file. However, the software may
+actually build differently in part because the concretizer may choose
+different dependencies.
+
+Let's use ``spack env create`` to create an abstract environment from
+the file that we'll call ``abstract``:
 
 .. literalinclude:: outputs/environments/create-from-file-1.out
    :language: console
+   :emphasize-lines: 1
 
+Here we see that Spack created a managed environment with the name
+we provided.
 
-Both of these create a new environment from the old one, but which one you
-choose depends on your needs:
+The ``spack.lock`` file is used for an exact reproduction of the
+original build because it contains the information for all the
+decisions made during concretization. 
 
-1. ``abstract``: copying the ``spack.yaml`` file allows someone else to build
-   your *requirements*, potentially a different way.
+Now let's create a concrete environment, called ``concrete`` from
+the file:
 
-2. ``concrete``: copying the ``spack.lock`` file allows someone else to rebuild
-   your *installation* exactly as you built it.
+.. literalinclude:: outputs/environments/create-from-file-2.out
+   :language: console
+   :emphasize-lines: 1
 
-The first use case can *re-concretize* the same specs on new platforms in order
-to build, but it will preserve the abstract requirements. The second use case
-(currently) requires you to be on the same type of machine, but it retains all
-decisions made during concretization and is faithful to a prior install.
+Here we see that Spack again created a managed environment with the
+provided name.
+
+.. note::
+
+   Use of ``spack.lock`` to reproduce a build (currently) requires you
+   to be on the same type of machine.

@@ -1,22 +1,7 @@
+$ spack env activate myproject
 $ spack add hdf5+hl
 ==> Adding hdf5+hl to environment myproject
 ==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
 $ spack add gmp
 ==> Adding gmp to environment myproject
 ==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
-$ spack find
-==> In environment myproject
-==> Root specs
-gmp   hdf5 +hl	tcl   trilinos
-
-==> 41 installed packages
--- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69		     glm@0.9.7.1	libxml2@2.9.10		numactl@2.0.14	    tcl@8.6.10
-autoconf-archive@2019.01.06  gmp@6.1.2		m4@1.4.18		openblas@0.3.12     trilinos@13.0.1
-automake@1.16.2 	     hdf5@1.10.7	matio@1.5.17		openmpi@3.1.6	    util-macros@1.19.1
-berkeley-db@18.1.40	     hwloc@1.11.11	metis@5.1.0		openssl@1.1.1h	    xz@5.2.5
-boost@1.74.0		     hypre@2.20.0	mpfr@4.0.2		parmetis@4.0.3	    zlib@1.2.11
-bzip2@1.0.8		     libiconv@1.16	mumps@5.3.3		perl@5.32.0
-cmake@3.18.4		     libpciaccess@0.16	ncurses@6.2		pkgconf@1.7.3
-diffutils@3.7		     libsigsegv@2.12	netcdf-c@4.7.4		readline@8.0
-gdbm@1.18.1		     libtool@2.4.6	netlib-scalapack@2.1.0	suite-sparse@5.8.1
