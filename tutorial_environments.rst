@@ -22,10 +22,12 @@ Customizing Spack's installation with configuration files like
 `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_ have also been discussed.
 
 This section of the tutorial introduces **Spack Environments**, which
-allow segregating packages installed in one environment from those of
+allow separating packages installed in one environment from those of
 others. The goal is to provide users with *virtual environments* similar
-to those of other commonly used tools (e.g., Python) while allowing common
-installations to be seamlessly shared.
+to those supported by other commonly used tools (e.g., Python) while
+allowing common installations to be seamlessly shared. They are
+also intended to be easily shared and re-used by others and across
+systems.
 
 Administering properly configured software involving lots of packages
 and or varying configuration requirements (e.g., different implementations
@@ -42,8 +44,9 @@ environments allow you to readily:
 This tutorial introduces the basics of creating and using environments
 before delving into expanding, configuring, and building software in
 them. We will start with the command line interface then cover editing
-the key environment file directly. Distinction between managed and unmanaged
-environments will be described before covering reproducible builds.
+key environment file directly. The distinction between spack-managed
+and independent environments will be described before describing how
+builds can be reproduced.
 
 -------------------
 Environment Basics
@@ -410,9 +413,9 @@ and external packages. Workflows for CI and software development
 can also be configured. Refer to the :ref:`configuration section
 <configs-tutorial>` of the tutorial for more information.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Rejiggering the environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Updating the environment
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to re-install packages in the environment after making
 significant changes to the configuration like changing interface
@@ -525,8 +528,8 @@ Reproducing builds
 
 Spack environments provide users with *virtual environments*
 (think Python and Conda), where packages in one environment
-are segregated from those of another. These environments can
-be managed or unmanaged. In either case, their environment
+are separating from those of another. These environments can
+be managed or independent. In either case, their environment
 files can be used to reproduce builds on other machines.
 
 ^^^^^^^^^^^^^^^^^
@@ -553,12 +556,12 @@ used to install the same set of software on different machines. The files
 are intended to be used by developers and administrators to manage the
 environments in a reproducible way. We will cover their re-use later.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Managed versus unmanaged environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Managed versus independent environments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Environments are either managed or unmanaged. Both types of
-environments are defined by their environment files. So far
+Environments are either spack-managed or independent. Both types
+of environments are defined by their environment files. So far
 we have only created managed environments. This section describes
 their differences.
 
@@ -566,11 +569,11 @@ their differences.
 They are automatically created in the ``var/spack/environments``
 subdirectory and can be referenced by their names.
 
-*Unmanaged environments* can be created in one of two ways. First,
+*Independent environments* can be created in one of two ways. First,
 the Spack's environment file(s) can be placed in any directory
 (other than ``var/spack/environments``). Alternatively, you can
 use ``spack env create -d <directory>`` to specify the directory
-(``<directory>``) in which the files should reside. Unmanaged
+(``<directory>``) in which the files should reside. Independent
 environments are not named.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -615,15 +618,16 @@ shown previously by ``spack config get``:
    :emphasize-lines: 1
 
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an unmanaged environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating an independent environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Environments do not have to be created in a Spack instance; rather,
-you can put the environment files in any directory. This can be
-helpful for environment-based software releases and CI/CD.
+Environments do not have to be created in or managed by a Spack
+instance. Rather, their environment files can be placed in any
+directory. This feature can be quite helpful for environment-
+based software releases and CI/CD.
 
-Let's create an *unmanaged* environment from scratch for a simple
+Let's create an *independent* environment from scratch for a simple
 project:
 
 .. literalinclude:: outputs/environments/anonymous-create-1.out
@@ -633,7 +637,7 @@ project:
 
 Notice the command shows Spack created the environment, updated
 the view, and gave the command needed to activate it. Since the
-environment is unmanaged, it must be referenced by its directory
+environment is independent, it must be referenced by its directory
 path.
 
 Let's see what really happened by listing the directory contents
