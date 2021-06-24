@@ -340,7 +340,7 @@ Configuring specs
 An environment is more than just a list of root specs. It includes
 *configuration* settings that affect the way Spack behaves when the
 environment is activated. So far, ``myproject`` relies on configuration
-defaults that can be overriden. Here we'll look at how to add specs
+defaults that can be overridden. Here we'll look at how to add specs
 and ensure all of the packages depending on ``mpi`` build with ``mpich``.
 
 Running ``spack spec`` shows that concretization looks the same as it
