@@ -18,19 +18,18 @@ commands:
 * `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
 * `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
 
-Customizing Spack's installation with configuration files like
-`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_ have also been discussed.
+Customizing Spack's installation with configuration files, like
+`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
 This section of the tutorial introduces **Spack Environments**, which
-allow separating packages installed in one environment from those of
-others. The goal is to provide users with *virtual environments* similar
-to those supported by other commonly used tools (e.g., Python) while
-allowing common installations to be seamlessly shared. They are
-also intended to be easily shared and re-used by others and across
-systems.
+allow you to work with independent groups of packages separately. The
+goal is to provide users with *virtual environments* similar to those
+supported by other commonly used tools (e.g., Python) while allowing
+common installations to be seamlessly shared. They are also intended
+to be easily shared and re-used by others and across systems.
 
 Administering properly configured software involving lots of packages
-and or varying configuration requirements (e.g., different implementations
+and/or varying configuration requirements (e.g., different implementations
 of ``mpi``) for multiple projects and efforts can be overwhelming. Spack
 environments allow you to readily:
 
@@ -41,12 +40,12 @@ environments allow you to readily:
 * reproduce builds (approximately or exactly) on other machines; and
 * much more.
 
-This tutorial introduces the basics of creating and using environments
-before delving into expanding, configuring, and building software in
-them. We will start with the command line interface then cover editing
-key environment file directly. The distinction between spack-managed
-and independent environments will be described before describing how
-builds can be reproduced.
+This tutorial introduces the basics of creating and using environments,
+then explains how to expand, configure, and build software in them.
+We will start with the command line interface then cover editing key
+environment file directly. We will describe the difference between
+Spack-managed and independent environments, then finish with a section
+on reproducible builds.
 
 -------------------
 Environment Basics
@@ -78,10 +77,10 @@ called ``myproject``:
    :emphasize-lines: 1
 
 
-An environment is a virtualized ``spack`` instance that you can use to
-aggregate package installations for a project or other purpose. It has
-an associated *view*, which is a single prefix where all packages from
-the environment are linked.
+An environment is like a virtualized ``spack`` instance that you can
+use to aggregate package installations for a project or other purpose.
+It has an associated *view*, which is a single prefix where all packages
+from the environment are linked.
 
 You can see the environments we've created so far using the ``spack env
 list`` command:
@@ -177,11 +176,11 @@ Running ``spack env activate`` gives you everything in the environment
 on your ``PATH``. Otherwise, you would need to ``spack load`` or
 ``module load`` a package to use it.
 
-When you install packages into an environment, they are linked into
-a single prefix, or *view*. Activating the environment with ``spack
-env activate`` results in subdirectories from the view being added
-to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH`` and other
-environment variables. This makes the environment easier to use.
+When you install packages into an environment, they are, by default,
+linked into a single prefix, or *view*. Activating the environment
+with ``spack env activate`` results in subdirectories from the view
+being added to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH``
+and other environment variables. This makes the environment easier to use.
 
 Let's try it out. We just installed ``tcl`` into our ``myproject``
 environment. ``Tcl`` includes a shell-like application called ``tclsh``.
@@ -409,18 +408,20 @@ At this point we only wanted to change the default ``mpi`` provider
 for packages that depend on ``mpi``. An environment can contain
 many other types of configuration, such as adding custom package
 repositories and customizing the installation location, compilers,
-and external packages. Workflows for CI and software development
-can also be configured. Refer to the :ref:`configuration section
-<configs-tutorial>` of the tutorial for more information.
+and external packages (see :ref:`configuration section <configs-tutorial>`
+for more). Combinatorial environments can be defined (see
+:ref:`stacks <stacks-tutorial>`). Workflows for CI and software
+development, as described in the :ref:`developer workflows
+<developer-workflows-tutorial>` tutorial, can also be configured. 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Updating the environment
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to re-install packages in the environment after making
-significant changes to the configuration like changing interface
-provider packages. This can be accomplished by forcing Spack to
-reconcretize the environment and re-installing the specs.
+significant changes to the configuration like changing virtual
+providers. This can be accomplished by forcing Spack to reconcretize
+the environment and re-installing the specs.
 
 For example, the packages installed in our ``myproject`` environment
 are now out of sync with our new configuration since we already
@@ -537,10 +538,10 @@ Environment files
 ^^^^^^^^^^^^^^^^^
 
 There are two key files tracking the contents of environments:
-``spack.yaml`` and ``spack.lock``. The former is the environment
-configuration file that we previously edited through ``spack
-config edit``. The latter is automatically generated during
-concretization.
+``spack.yaml`` and ``spack.lock``. The ``spack.yaml`` file holds
+the environment configuration that we previously edited through
+``spack config edit``. The ``spack.lock`` file is automatically
+generated during concretization.
 
 The two files represent two fundamental concepts:
 
