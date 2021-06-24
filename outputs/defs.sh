@@ -10,6 +10,9 @@ fi
 
 raw_outputs="${PROJECT}/raw"
 
+# used by scripts
+tutorial_branch=releases/v0.16
+
 example() {
     if [[ "$1" == "-tee" ]]; then
         # tee option allows us to use bash function; only use when necessary

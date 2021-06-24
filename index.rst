@@ -9,10 +9,9 @@
 Tutorial: Spack 101
 ===================
 
-This is a full-day introduction to Spack with lectures and live demos. It
-was last presented as a virtual event at `Supercomputing 2020
-<https://sc20.supercomputing.org/program/tutorials/>`_ on November
-9-10, 2020.
+This is a full-day introduction to Spack with lectures and live demos. It was
+last presented as a virtual event at the 2021 `ECP Annual Meeting
+<http://ecpannualmeeting.com/>`_ on April 16, 2021.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -23,17 +22,16 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/pearc19-tutorial-slide-preview.png
-   :target: _static/slides/spack-sc20-tutorial-slides.pdf
+   :target: _static/slides/spack-ecp21-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-sc20-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-ecp21-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo,
- Tamara Dahlgren, Peter Scheibel, and Adam Stewart. Managing HPC Software
- Complexity with Spack. Supercomputing 2020. Virtual event. November
- 9-10, 2020.
+**Full citation:** Gregory Becker, Robert Blake, Tamara Dahlgren, Peter
+Scheibel, Todd Gamblin. Using Spack to Accelerate Developer Workflows ECP
+Annual Meeting 2021. Virtual event. April 16, 2021.
 
 .. _live-demos:
 
@@ -56,15 +54,20 @@ following methods to run through the scripts:
 You should now be ready to run through our demo scripts:
 
   #. :ref:`basics-tutorial`
+  #. :ref:`environments-tutorial`
   #. :ref:`configs-tutorial`
   #. :ref:`packaging-tutorial`
   #. :ref:`developer-workflows-tutorial`
-  #. :ref:`environments-tutorial`
+  #. :ref:`binary-cache-tutorial`
   #. :ref:`stacks-tutorial`
+  #. :ref:`spack-scripting-tutorial`
+
+Older sections of the tutorial are also available, although they may
+not be kept up-to-date as frequently:
+
   #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
   #. :ref:`advanced-packaging-tutorial`
-  #. :ref:`spack-scripting-tutorial`
 
 Full contents:
 
@@ -79,12 +82,13 @@ Full contents:
    :caption: Tutorial
 
    tutorial_basics
+   tutorial_environments
    tutorial_configuration
    tutorial_packaging
    tutorial_developer_workflows
-   tutorial_environments
+   tutorial_binary_cache
    tutorial_stacks
+   tutorial_spack_scripting
    tutorial_modules
    tutorial_buildsystems
    tutorial_advanced_packaging
-   tutorial_spack_scripting

@@ -1,0 +1,86 @@
+$ spack mirror create -d ~/mirror -a
+==> Adding package autoconf@2.69 to mirror
+==> Adding package automake@1.16.2 to mirror
+==> Adding package berkeley-db@18.1.40 to mirror
+==> Adding package bzip2@1.0.8 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+####################################################################################################################################################################### 100.0%
+==> Adding package cmake@3.18.4 to mirror
+==> Adding package diffutils@3.7 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b3/b3a7a6221c3dc916085f0d205abf6b8e1ba443d4dd965118da364a1dc1cb3a26.tar.xz
+####################################################################################################################################################################### 100.0%
+==> Adding package dtcmp@1.1.1 to mirror
+==> Adding package gdbm@1.18.1 to mirror
+==> Adding package hdf5@1.10.7 to mirror
+==> Adding package hwloc@1.11.11 to mirror
+==> Adding package json-cwx@0.12 to mirror
+==> Adding package libiconv@1.16 to mirror
+==> Adding package libpciaccess@0.16 to mirror
+==> Adding package libsigsegv@2.12 to mirror
+==> Adding package libtool@2.4.6 to mirror
+==> Adding package libxml2@2.9.10 to mirror
+==> Adding package libyogrt@1.24 to mirror
+==> Adding package lwgrp@1.0.3 to mirror
+==> Adding package m4@1.4.18 to mirror
+==> Adding package macsio@1.1 to mirror
+==> Adding package ncurses@6.2 to mirror
+==> Adding package numactl@2.0.14 to mirror
+==> Adding package openmpi@3.1.6 to mirror
+==> Adding package openssl@1.1.1h to mirror
+==> Adding package pdsh@2.31 to mirror
+==> Adding package perl@5.32.0 to mirror
+==> Adding package pkgconf@1.7.3 to mirror
+==> Adding package readline@8.0 to mirror
+==> Adding package scr@2.0.0 to mirror
+==> Adding package silo@4.10.2 to mirror
+==> Adding package util-macros@1.19.1 to mirror
+==> Adding package xz@5.2.5 to mirror
+==> Adding package zlib@1.2.11 to mirror
+==> Successfully updated mirror in file:///home/spack/mirror
+  Archive stats:
+    31	 already present
+    2	 added
+    0	 failed to fetch.
+$ spack mirror create -d ~/mirror --all
+==> Adding package autoconf@2.69 to mirror
+==> Adding package automake@1.16.2 to mirror
+==> Adding package berkeley-db@18.1.40 to mirror
+==> Adding package bzip2@1.0.8 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+####################################################################################################################################################################### 100.0%
+==> Adding package cmake@3.18.4 to mirror
+==> Adding package diffutils@3.7 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b3/b3a7a6221c3dc916085f0d205abf6b8e1ba443d4dd965118da364a1dc1cb3a26.tar.xz
+####################################################################################################################################################################### 100.0%
+==> Adding package dtcmp@1.1.1 to mirror
+==> Adding package gdbm@1.18.1 to mirror
+==> Adding package hdf5@1.10.7 to mirror
+==> Adding package hwloc@1.11.11 to mirror
+==> Adding package json-cwx@0.12 to mirror
+==> Adding package libiconv@1.16 to mirror
+==> Adding package libpciaccess@0.16 to mirror
+==> Adding package libsigsegv@2.12 to mirror
+==> Adding package libtool@2.4.6 to mirror
+==> Adding package libxml2@2.9.10 to mirror
+==> Adding package libyogrt@1.24 to mirror
+==> Adding package lwgrp@1.0.3 to mirror
+==> Adding package m4@1.4.18 to mirror
+==> Adding package macsio@1.1 to mirror
+==> Adding package ncurses@6.2 to mirror
+==> Adding package numactl@2.0.14 to mirror
+==> Adding package openmpi@3.1.6 to mirror
+==> Adding package openssl@1.1.1h to mirror
+==> Adding package pdsh@2.31 to mirror
+==> Adding package perl@5.32.0 to mirror
+==> Adding package pkgconf@1.7.3 to mirror
+==> Adding package readline@8.0 to mirror
+==> Adding package scr@2.0.0 to mirror
+==> Adding package silo@4.10.2 to mirror
+==> Adding package util-macros@1.19.1 to mirror
+==> Adding package xz@5.2.5 to mirror
+==> Adding package zlib@1.2.11 to mirror
+==> Successfully updated mirror in file:///home/spack/mirror
+  Archive stats:
+    31	 already present
+    2	 added
+    0	 failed to fetch.

@@ -1,0 +1,25 @@
+$ git clone https://github.com/spack/spack ~/spack
+Cloning into '/home/spack/spack'...
+remote: Enumerating objects: 275922, done.K
+remote: Counting objects: 100% (908/908), done.K
+remote: Compressing objects: 100% (560/560), done.K
+remote:nTotale2759229(delta4303),7reused4734.(delta|203),8pack-reused 275014K
+Receiving objects: 100% (275922/275922), 111.86 MiB | 1.51 MiB/s, done.
+Resolving deltas: 100% (116664/116664), done.
+$ cd ~/spack
+$ git checkout releases/v0.16
+Branch 'releases/v0.16' set up to track remote branch 'releases/v0.16' from 'origin'.
+Switched to a new branch 'releases/v0.16'
+$ . share/spack/setup-env.sh
+$ spack mirror add tutorial /mirror
+$ spack buildcache keys -it
+==> Fetching file:///mirror/build_cache/_pgp/95C717877AC00FFDAA8FD6E99CFA4A453B7C69B2.pub
+####################################################################################################################################################################### 100.0%
+gpgconf: socketdir is '/home/spack/.gnupg'
+gpgconf:	no /run/user dir
+gpgconf:	using homedir as fallback
+gpg: keybox '/home/spack/spack/opt/spack/gpg/pubring.kbx' created
+gpg: /home/spack/spack/opt/spack/gpg/trustdb.gpg: trustdb created
+gpg: key 9CFA4A453B7C69B2: public key "sc-tutorial (GPG created for Spack) <becker33@llnl.gov>" imported
+gpg: Total number processed: 1
+gpg:		   imported: 1

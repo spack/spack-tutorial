@@ -343,8 +343,8 @@ environment is activated. So far, ``myproject`` relies on configuration
 defaults that can be overriden. Here we'll look at how to add specs
 and ensure all of the packages depending on ``mpi`` build with ``mpich``.
 
-If you run ``spack spec``, you can see that concretization looks the
-same as it does outside the environment:
+Running ``spack spec`` shows that concretization looks the same as it
+does outside the environment:
 
 .. literalinclude:: outputs/environments/spec-1.out
    :language: console
@@ -393,7 +393,7 @@ to include the ``packages:all:providers:mpi:`` entry below:
      specs: [tcl, trilinos, hdf5, gmp]
 
 
-Let's see the effect of this change on our package using ``spack spec``:
+Let's see the effects of this change on our package using ``spack spec``:
 
 .. literalinclude:: outputs/environments/spec-2.out
    :language: console
@@ -513,7 +513,7 @@ We can confirm the version of ``zlib`` is in our environment using
    :language: console
    :emphasize-lines: 1
 
-Notice that the reported version matches our installation.
+Note that the reported version matches our installation.
 
 This simple example only scratches the surface of what we can do
 with environments. Advanced use cases are provided in the
@@ -593,8 +593,8 @@ can change to the directory containing the file using ``spack cd``:
 
 Notice ``myproject`` is a subdirectory of ``var/spack/environments``
 within the Spack installation making it a *managed* environment.
-Consequently, it can be referenced by name. For example, it will
-show up when running ``spack env list``:
+Consequently, it can be referenced by name. It will also show up
+running ``spack env list``:
 
 .. literalinclude:: outputs/environments/env-list-2.out
    :language: console

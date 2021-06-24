@@ -1,0 +1,18 @@
+$ spack mirror create -d ~/mirror scr
+==> Adding package scr@2.0.0 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
+####################################################################################################################################################################### 100.0%
+==> Successfully created mirror in file:///home/spack/mirror
+  Archive stats:
+    0	 already present
+    1	 added
+    0	 failed to fetch.
+$ spack mirror create -d ~/mirror scr
+==> Adding package scr@2.0.0 to mirror
+==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
+####################################################################################################################################################################### 100.0%
+==> Successfully created mirror in file:///home/spack/mirror
+  Archive stats:
+    0	 already present
+    1	 added
+    0	 failed to fetch.

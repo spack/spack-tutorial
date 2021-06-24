@@ -1,870 +1,1268 @@
 $ spack list
-==> 4338 packages.
-abinit			  intel-mpi			   perl-statistics-pca			    py-python-logstash				    r-ptw
-abseil-cpp		  intel-mpi-benchmarks		   perl-sub-exporter			    py-python-lzo				    r-purrr
-abyss			  intel-parallel-studio 	   perl-sub-exporter-progressive	    py-python-magic				    r-qtl
-accfft			  intel-pin			   perl-sub-identify			    py-python-mapnik				    r-quadprog
-accumulo		  intel-tbb			   perl-sub-install			    py-python-meep				    r-quantmod
-ace			  intel-xed			   perl-sub-name			    py-python-memcached 			    r-quantreg
-ack			  interproscan			   perl-sub-uplevel			    py-python-oauth2				    r-quantro
-acl			  intltool			   perl-svg				    py-python-rapidjson 			    r-qvalue
-acpid			  ioapi 			   perl-swissknife			    py-python-slugify				    r-r-cache
-activeharmony		  ior				   perl-sys-sigaction			    py-python-socketio				    r-r-methodss3
-activemq		  iozone			   perl-task-weaken			    py-python-subunit				    r-r-oo
-acts			  iperf2			   perl-term-readline-gnu		    py-python-swiftclient			    r-r-utils
-adept-utils		  iperf3			   perl-termreadkey			    py-python-utils				    r-r6
-adf			  ipopt 			   perl-test-cleannamespaces		    py-pythonqwt				    r-randomfields
-adiak			  iq-tree			   perl-test-deep			    py-pytimeparse				    r-randomfieldsutils
-adios			  isaac 			   perl-test-differences		    py-pytools					    r-randomforest
-adios2			  isaac-server			   perl-test-exception			    py-pytz					    r-randomglm
-adlbx			  isc-dhcp			   perl-test-fatal			    py-pyudev					    r-ranger
-adol-c			  isl				   perl-test-memory-cycle		    py-pyugrid					    r-rann
-advancecomp		  iso-codes			   perl-test-most			    py-pyutilib 				    r-rappdirs
-aegean			  itstool			   perl-test-needs			    py-pyvcf					    r-raster
-aespipe 		  itsx				   perl-test-requires			    py-pywavelets				    r-rbgl
-agrep			  iwyu				   perl-test-requiresinternet		    py-pywcs					    r-rbokeh
-aida			  jackcess			   perl-test-warn			    py-pyyaml					    r-rcmdcheck
-akantu			  jafka 			   perl-test-warnings			    py-pyzmq					    r-rcolorbrewer
-alan			  jags				   perl-text-csv			    py-qtawesome				    r-rcpp
-albany			  jali				   perl-text-diff			    py-qtconsole				    r-rcppannoy
-albert			  jansson			   perl-text-format			    py-qtpy					    r-rcpparmadillo
-alglib			  jasper			   perl-text-simpletable		    py-quantities				    r-rcppblaze
-allpaths-lg		  jbigkit			   perl-text-soundex			    py-quast					    r-rcppcctz
-alluxio 		  jblob 			   perl-text-unidecode			    py-queryablelist				    r-rcppcnpy
-alps			  jchronoss			   perl-time-hires			    py-radical-utils				    r-rcppeigen
-alquimia		  jdk				   perl-time-piece			    py-ranger-fm				    r-rcpphnsw
-alsa-lib		  jellyfish			   perl-timedate			    py-rasterio 				    r-rcppparallel
-aluminum		  jemalloc			   perl-try-tiny			    py-ratelim					    r-rcppprogress
-ambari			  jhpcn-df			   perl-uri				    py-raven					    r-rcurl
-amber			  jmol				   perl-want				    py-readme-renderer				    r-rda
-amdblis 		  jq				   perl-www-robotrules			    py-redis					    r-rdpack
-amg			  json-c			   perl-xml-dom 			    py-regex					    r-readbitmap
-amg2013 		  json-cwx			   perl-xml-dom-xpath			    py-reportlab				    r-readr
-amgx			  json-fortran			   perl-xml-filter-buffertext		    py-repoze-lru				    r-readxl
-aml			  json-glib			   perl-xml-libxml			    py-requests 				    r-recipes
-amp			  jsoncpp			   perl-xml-libxslt			    py-requests-futures 			    r-registry
-ampliconnoise		  jstorm			   perl-xml-namespacesupport		    py-requests-mock				    r-rematch
-amrex			  jube				   perl-xml-parser			    py-requests-oauthlib			    r-rematch2
-amrvis			  judy				   perl-xml-parser-lite 		    py-requests-toolbelt			    r-remotes
-anaconda2		  julea 			   perl-xml-quote			    py-resampy					    r-reordercluster
-anaconda3		  julia 			   perl-xml-regexp			    py-restview 				    r-reportingtools
-andi			  k8				   perl-xml-sax 			    py-resultsfile				    r-repr
-angsd			  kafka 			   perl-xml-sax-base			    py-retrying 				    r-reprex
-ant			  kahip 			   perl-xml-sax-writer			    py-rnacocktail				    r-reshape
-antimony		  kaiju 			   perl-xml-simple			    py-rope					    r-reshape2
-antlr			  kaks-calculator		   perl-xml-twig			    py-rpy2					    r-reticulate
-ants			  kaldi 			   perl-xml-writer			    py-rsa					    r-rex
-aoflagger		  kallisto			   perl-xml-xpathengine 		    py-rseqc					    r-rferns
-aom			  karma 			   perl-yaml				    py-rtree					    r-rgdal
-apachetop		  kbproto			   perl-yaml-libyaml			    py-ruamel-ordereddict			    r-rgenoud
-ape			  kcov				   petsc				    py-ruamel-yaml				    r-rgeos
-aperture-photometry	  kdiff3			   pexsi				    py-ruamel-yaml-clib 			    r-rgexf
-apex			  kea				   pfft 				    py-s3cmd					    r-rgl
-apple-libunwind 	  kealib			   pflotran				    py-s3transfer				    r-rgooglemaps
-applewmproto		  keepalived			   pfunit				    py-sacremoses				    r-rgraphviz
-appres			  kentutils			   pgdspider				    py-saga-python				    r-rhdf5
-apr			  keyutils			   pgi					    py-scandir					    r-rhdf5lib
-apr-util		  kibana			   pgmath				    py-scientificpython 			    r-rhmmer
-aragorn 		  kim-api			   phantompeakqualtools 		    py-scikit-build				    r-rhtslib
-arborx			  kinesis			   phast				    py-scikit-image				    r-rinside
-archer			  kitty 			   phasta				    py-scikit-learn				    r-rio
-argobots		  kmergenie			   phist				    py-scikit-optimize				    r-rjags
-argp-standalone 	  kmod				   photos				    py-scipy					    r-rjava
-argtable		  knem				   php					    py-scoop					    r-rjson
-aria2			  kokkos			   phrap-crossmatch-swat		    py-scp					    r-rjsonio
-arm-forge		  kokkos-kernels		   phred				    py-scs					    r-rlang
-armadillo		  kokkos-kernels-legacy 	   phylip				    py-seaborn					    r-rmariadb
-arpack-ng		  kokkos-legacy 		   phylobayesmpi			    py-secretstorage				    r-rmarkdown
-arrayfire		  kokkos-nvcc-wrapper		   phyluce				    py-selenium 				    r-rminer
-arrow			  kraken			   picard				    py-semantic-version 			    r-rmpfr
-asagi			  kraken2			   picsar				    py-semver					    r-rmpi
-ascent			  krb5				   picsarlite				    py-send2trash				    r-rms
-asciidoc		  krims 			   pidx 				    py-sentencepiece				    r-rmutil
-asciidoctor		  kripke			   pig					    py-setproctitle				    r-rmysql
-asdcplib		  kubernetes			   pigz 				    py-setuptools				    r-rnaseqmap
-asdf-cxx		  kvasir-mpl			   pilon				    py-setuptools-git				    r-rngtools
-aspa			  kvtree			   pindel				    py-setuptools-rust				    r-rnoaa
-aspcud			  ladot 			   pinentry				    py-setuptools-scm				    r-robust
-aspect			  laghos			   pipework				    py-setuptools-scm-git-archive		    r-robustbase
-aspell			  lame				   piranha				    py-sfepy					    r-roc
-aspell6-de		  lammps			   pism 				    py-sgp4					    r-rocr
-aspell6-en		  lapackpp			   pixman				    py-sh					    r-rodbc
-aspell6-es		  last				   pixz 				    py-shapely					    r-rook
-aspera-cli		  lastz 			   pkg-config				    py-shiboken 				    r-rots
-assimp			  laszip			   pkgconf				    py-shroud					    r-roxygen2
-astra			  latte 			   pktools				    py-simplegeneric				    r-rpart
-astral			  launchmon			   planck-likelihood			    py-simplejson				    r-rpart-plot
-astyle			  lazyten			   plasma				    py-simplekml				    r-rpostgresql
-at-spi2-atk		  lbann 			   platypus				    py-singledispatch				    r-rprojroot
-at-spi2-core		  lbxproxy			   plink				    py-sip					    r-rrblup
-athena			  lbzip2			   plink-ng				    py-six					    r-rrcov
-atk			  lcals 			   plplot				    py-slepc4py 				    r-rrpp
-atlas			  lcms				   plumed				    py-slurm-pipeline				    r-rsamtools
-atom-dft		  lcov				   pmdk 				    py-smart-open				    r-rsnns
-atompaw 		  ldc				   pmgr-collective			    py-sncosmo					    r-rsolnp
-atop			  ldc-bootstrap 		   pmix 				    py-snowballstemmer				    r-rspectra
-attr			  legion			   pmlib				    py-snuggs					    r-rsqlite
-audacious		  lemon 			   pnfft				    py-sonlib					    r-rstan
-audit-userspace 	  lesstif			   pngquant				    py-sortedcontainers 			    r-rstantools
-augustus		  leveldb			   pngwriter				    py-soundfile				    r-rstudioapi
-autoconf		  lftp				   pnmpi				    py-soupsieve				    r-rsvd
-autoconf-archive	  lhapdf			   poamsa				    py-spacy					    r-rtracklayer
-autodock-vina		  libaec			   pocl 				    py-spacy-models-en-core-web-sm		    r-rtsne
-autofact		  libaio			   podio				    py-spatialist				    r-runit
-autogen 		  libapplewm			   polymake				    py-spatialite				    r-rvcheck
-automaded		  libarchive			   poppler				    py-spdlog					    r-rversions
-automake		  libassuan			   poppler-data 			    py-spectra					    r-rvest
-avizo			  libatomic-ops 		   popt 				    py-spefile					    r-rzmq
-aws-parallelcluster	  libbacktrace			   porta				    py-spglib					    r-s4vectors
-awscli			  libbeagle			   portage				    py-sphinx					    r-samr
-axel			  libbeato			   portcullis				    py-sphinx-bootstrap-theme			    r-sandwich
-axl			  libbsd			   postgis				    py-sphinx-rtd-theme 			    r-scales
-axom			  libbson			   postgresql				    py-sphinxautomodapi 			    r-scater
-bam-readcount		  libc				   powerapi				    py-sphinxcontrib-applehelp			    r-scatterplot3d
-bamdst			  libcanberra			   ppl					    py-sphinxcontrib-bibtex			    r-scrime
-bamtools		  libcap			   pplacer				    py-sphinxcontrib-devhelp			    r-sctransform
-bamutil 		  libceed			   ppopen-appl-amr-fdm			    py-sphinxcontrib-htmlhelp			    r-sdmtools
-barrnap 		  libcerf			   ppopen-appl-bem			    py-sphinxcontrib-issuetracker		    r-segmented
-bart			  libcgroup			   ppopen-appl-bem-at			    py-sphinxcontrib-jsmath			    r-selectr
-bash			  libcint			   ppopen-appl-dem-util 		    py-sphinxcontrib-programoutput		    r-seqinr
-bash-completion 	  libcircle			   ppopen-appl-fdm			    py-sphinxcontrib-qthelp			    r-seqlogo
-bashtop 		  libconfig			   ppopen-appl-fdm-at			    py-sphinxcontrib-serializinghtml		    r-sessioninfo
-bat			  libconfuse			   ppopen-appl-fem			    py-sphinxcontrib-websupport 		    r-seurat
-batctl			  libcroco			   ppopen-appl-fvm			    py-spyder					    r-sf
-bats			  libctl			   ppopen-at				    py-spykeutils				    r-sfsmisc
-bazel			  libdap4			   ppopen-math-mp			    py-sqlalchemy				    r-shape
-bbcp			  libdivsufsort 		   ppopen-math-vis			    py-sqlparse 				    r-shiny
-bbmap			  libdmx			   prank				    py-srsly					    r-shinydashboard
-bc			  libdrm			   precice				    py-statsmodels				    r-shinyfiles
-bcache			  libdwarf			   presentproto 			    py-stdlib-list				    r-shortread
-bcftools		  libeatmydata			   preseq				    py-stestr					    r-siggenes
-bcl2fastq2		  libedit			   price				    py-stevedore				    r-simpleaffy
-bdftopcf		  libelf			   primer3				    py-storm					    r-singlecellexperiment
-bdw-gc			  libemos			   prinseq-lite 			    py-stratify 				    r-sitmo
-beagle			  libepoxy			   printproto				    py-stsci-distutils				    r-sm
-bear			  libev 			   prism				    py-subprocess32				    r-smoof
-beast-tracer		  libevent			   prmon				    py-subrosa					    r-sn
-beast1			  libevpath			   prng 				    py-svgpathtools				    r-snakecase
-beast2			  libexif			   probconsrna				    py-svgwrite 				    r-snow
-bedops			  libfabric			   procps				    py-symengine				    r-snowfall
-bedtools2		  libfastcommon 		   prodigal				    py-symfit					    r-snprelate
-beforelight		  libffi			   proj 				    py-sympy					    r-snpstats
-benchmark		  libffs			   prokka				    py-syned					    r-som
-berkeley-db		  libfive			   protobuf				    py-systemd-python				    r-somaticsignatures
-bertini 		  libflame			   protobuf-c				    py-tables					    r-sourcetools
-bgpdump 		  libfontenc			   proxymngr				    py-tabulate 				    r-sp
-bib2xhtml		  libfs 			   prrte				    py-tap-py					    r-spacetime
-bigreqsproto		  libgcrypt			   pruners-ninja			    py-tatsu					    r-spam
-bind9			  libgd 			   ps-lite				    py-tblib					    r-sparsem
-binutils		  libgeotiff			   psi4 				    py-tempora					    r-spatial
-bioawk			  libgit2			   pslib				    py-tensorboard				    r-spatialeco
-biobloom		  libglvnd			   psm					    py-tensorboard-plugin-wit			    r-spatialpack
-biopieces		  libgpg-error			   psmc 				    py-tensorboardx				    r-spatialreg
-bismark 		  libgpuarray			   pstreams				    py-tensorflow				    r-spatstat
-bison			  libgridxc			   pugixml				    py-tensorflow-estimator			    r-spatstat-data
-bitmap			  libgtextutils 		   pumi 				    py-termcolor				    r-spatstat-utils
-blaspp			  libharu			   pv					    py-terminado				    r-spdata
-blasr			  libhio			   pvm					    py-testinfra				    r-spdep
-blasr-libcpp		  libiberty			   pxz					    py-testpath 				    r-speedglm
-blast-legacy		  libibumad			   py-3to2				    py-testrepository				    r-spem
-blast-plus		  libical			   py-4suite-xml			    py-testresources				    r-splancs
-blast2go		  libice			   py-abipy				    py-testscenarios				    r-splitstackshape
-blat			  libiconv			   py-absl-py				    py-testtools				    r-sqldf
-blaze			  libid3tag			   py-adal				    py-tetoolkit				    r-squarem
-blis			  libidn2			   py-addict				    py-text-unidecode				    r-squash
-bliss			  libint			   py-adios				    py-texttable				    r-sseq
-blitz			  libiscsi			   py-advancedhtmlparser		    py-tfdlpack 				    r-stabledist
-blktrace		  libjpeg			   py-aenum				    py-theano					    r-stanheaders
-blogbench		  libjpeg-turbo 		   py-affine				    py-thinc					    r-stargazer
-bmake			  libkml			   py-agate				    py-thirdorder				    r-statmod
-bmi			  libksba			   py-agate-dbf 			    py-threadpoolctl				    r-statnet-common
-bml			  liblas			   py-agate-excel			    py-tifffile 				    r-stringi
-bohrium 		  liblbxutil			   py-agate-sql 			    py-tokenizers				    r-stringr
-boinc-client		  liblockfile			   py-alabaster 			    py-toml					    r-strucchange
-bolt			  libmad			   py-alembic				    py-tomopy					    r-subplex
-bonniepp		  libmatheval			   py-altgraph				    py-toolz					    r-summarizedexperiment
-bookleaf-cpp		  libmaxminddb			   py-amqp				    py-torch					    r-suppdists
-boost			  libmesh			   py-ansible				    py-torch-nvidia-apex			    r-survey
-boostmplcartesianproduct  libmmtf-cpp			   py-antlr4-python3-runtime		    py-torchaudio				    r-survival
-bowtie			  libmng			   py-apache-libcloud			    py-torchsummary				    r-sva
-bowtie2 		  libmo-unpack			   py-apipkg				    py-torchtext				    r-sys
-boxlib			  libmonitor			   py-appdirs				    py-torchvision				    r-tarifx
-bpp-core		  libnbc			   py-applicationinsights		    py-tornado					    r-taxizedb
-bpp-phyl		  libnetworkit			   py-appnope				    py-tox					    r-tclust
-bpp-seq 		  libnl 			   py-apptools				    py-tqdm					    r-teachingdemos
-bpp-suite		  libnotify			   py-apscheduler			    py-traceback2				    r-tensor
-bracken 		  libnova			   py-argcomplete			    py-traitlets				    r-tensora
-braker			  libnrm			   py-argparse				    py-traits					    r-testit
-branson 		  libnsl			   py-args				    py-traitsui 				    r-testthat
-breakdancer		  libogg			   py-arrow				    py-transformers				    r-tfbstools
-bref3			  liboldx			   py-arviz				    py-treehash 				    r-tfmpvalue
-breseq			  libpaper			   py-asciitree 			    py-tuiview					    r-th-data
-bridger 		  libpcap			   py-asdf				    py-twine					    r-threejs
-brigand 		  libpciaccess			   py-ase				    py-twisted					    r-tibble
-brltty			  libpeas			   py-asgiref				    py-typed-ast				    r-tidycensus
-brotli			  libpfm4			   py-asn1crypto			    py-typesentry				    r-tidygraph
-brpc			  libpipeline			   py-aspy-yaml 			    py-typing					    r-tidyr
-bsseeker2		  libplist			   py-asserts				    py-typing-extensions			    r-tidyselect
-bubblewrap		  libpmemobj-cpp		   py-asteval				    py-tzlocal					    r-tidyverse
-bucky			  libpng			   py-astor				    py-ujson					    r-tiff
-buddy			  libpsl			   py-astpretty 			    py-umalqurra				    r-tigris
-bumpversion		  libpthread-stubs		   py-astroid				    py-umi-tools				    r-timedate
-busco			  libquo			   py-astropy				    py-uncertainties				    r-tinytex
-busybox 		  librom			   py-astropy-helpers			    py-unicycler				    r-tmixclust
-butter			  librsb			   py-astunparse			    py-unidecode				    r-topgo
-butterflypack		  librsvg			   py-async-generator			    py-unittest2				    r-triebeard
-bwa			  libsamplerate 		   py-atomicwrites			    py-unittest2py3k				    r-trimcluster
-bwtool			  libseccomp			   py-atropos				    py-uritemplate				    r-truncdist
-byacc			  libsecret			   py-attrs				    py-urllib3					    r-truncnorm
-byobu			  libsharp			   py-audioread 			    py-urwid					    r-trust
-bzip2			  libshm			   py-autopep8				    py-us					    r-tseries
-c-ares			  libsigcpp			   py-auxlib				    py-usgs					    r-tsne
-c-blosc 		  libsigsegv			   py-avro				    py-utils					    r-ttr
-c-blosc2		  libsm 			   py-avro-json-serializer		    py-uwsgi					    r-tweenr
-c-lime			  libsndfile			   py-awesome-slugify			    py-vcf-kit					    r-txdb-hsapiens-ucsc-hg18-knowngene
-cabana			  libsodium			   py-azure-common			    py-vcversioner				    r-txdb-hsapiens-ucsc-hg19-knowngene
-caffe			  libspatialindex		   py-azure-core			    py-vermin					    r-tximport
-cairo			  libspatialite 		   py-azure-graphrbac			    py-versioneer				    r-ucminf
-cairomm 		  libsplash			   py-azure-identity			    py-vine					    r-udunits2
-caliper 		  libssh			   py-azure-mgmt-authorization		    py-virtualenv				    r-units
-callpath		  libssh2			   py-azure-mgmt-containerregistry	    py-virtualenv-clone 			    r-upsetr
-camellia		  libsvm			   py-azure-mgmt-keyvault		    py-virtualenvwrapper			    r-urca
-camx			  libszip			   py-azure-mgmt-network		    py-voluptuous				    r-urltools
-canal			  libtasn1			   py-azure-mgmt-nspkg			    py-vsc-base 				    r-usethis
-candle-benchmarks	  libtermkey			   py-azure-mgmt-resource		    py-vsc-install				    r-utf8
-cantera 		  libtiff			   py-azure-mgmt-storage		    py-wand					    r-uuid
-canu			  libtirpc			   py-azure-nspkg			    py-warlock					    r-uwot
-cap3			  libtlx			   py-azureml-automl-core		    py-wasabi					    r-variantannotation
-capnproto		  libtomlc99			   py-azureml-core			    py-wcsaxes					    r-varselrf
-capstone		  libtool			   py-azureml-dataprep			    py-wcwidth					    r-vcd
-cardioid		  libtree			   py-azureml-dataprep-native		    py-weave					    r-vctrs
-casacore		  libunistring			   py-azureml-pipeline			    py-webencodings				    r-vegan
-cask			  libunwind			   py-azureml-pipeline-core		    py-webkit-server				    r-vfs
-casper			  libusb			   py-azureml-pipeline-steps		    py-weblogo					    r-vgam
-cassandra		  libusbmuxd			   py-azureml-sdk			    py-websocket-client 			    r-vioplot
-catalyst		  libuuid			   py-azureml-telemetry 		    py-werkzeug 				    r-vipor
-catch2			  libuv 			   py-azureml-train			    py-whatshap 				    r-viridis
-cbench			  libvdwxc			   py-azureml-train-automl-client	    py-wheel					    r-viridislite
-cblas			  libvips			   py-azureml-train-core		    py-whichcraft				    r-visnetwork
-cbtf			  libvorbis			   py-azureml-train-restclients-hyperdrive  py-widgetsnbextension			    r-vsn
-cbtf-argonavis		  libvterm			   py-babel				    py-workload-automation			    r-watermelon
-cbtf-argonavis-gui	  libwebp			   py-backcall				    py-wradlib					    r-webshot
-cbtf-krell		  libwebsockets 		   py-backports-abc			    py-wrapt					    r-wgcna
-cbtf-lanl		  libwindowswm			   py-backports-functools-lru-cache	    py-wub					    r-whisker
-ccache			  libx11			   py-backports-shutil-get-terminal-size    py-wxmplot					    r-withr
-ccfits			  libxau			   py-backports-ssl-match-hostname	    py-wxpython 				    r-xde
-ccs-qcd 		  libxaw			   py-backports-tempfile		    py-xarray					    r-xfun
-cctools 		  libxaw3d			   py-backports-weakref 		    py-xattr					    r-xgboost
-cdbfasta		  libxc 			   py-basemap				    py-xdot					    r-xlconnect
-cdd			  libxcb			   py-basis-set-exchange		    py-xenv					    r-xlconnectjars
-cddlib			  libxcomposite 		   py-bcbio-gff 			    py-xlrd					    r-xlsx
-cdecimal		  libxcursor			   py-bcrypt				    py-xlsxwriter				    r-xlsxjars
-cdhit			  libxdamage			   py-beautifulsoup4			    py-xlwt					    r-xmapbridge
-cdo			  libxdmcp			   py-billiard				    py-xmlrunner				    r-xml
-ceed			  libxevie			   py-binaryornot			    py-xmltodict				    r-xml2
-cereal			  libxext			   py-bintrees				    py-xopen					    r-xnomial
-ceres-solver		  libxfixes			   py-binwalk				    py-xpyb					    r-xopen
-cfitsio 		  libxfont			   py-biom-format			    py-xvfbwrapper				    r-xtable
-cgal			  libxfont2			   py-biomine				    py-yahmm					    r-xts
-cgdb			  libxfontcache 		   py-biopandas 			    py-yajl					    r-xvector
-cgm			  libxft			   py-biopython 			    py-yamlreader				    r-yaimpute
-cgns			  libxi 			   py-bitarray				    py-yapf					    r-yaml
-channelflow		  libxinerama			   py-bitstring 			    py-youtube-dl				    r-yapsa
-chapel			  libxkbcommon			   py-black				    py-yt					    r-yaqcaffy
-charliecloud		  libxkbfile			   py-bleach				    py-ytopt					    r-yarn
-charmpp 		  libxkbui			   py-blessed				    py-zarr					    r-zeallot
-chatterbug		  libxml2			   py-blessings 			    py-zc-buildout				    r-zip
-check			  libxmu			   py-blinker				    py-zc-lockfile				    r-zlibbioc
-chgcentre		  libxp 			   py-blis				    py-zict					    r-zoo
-chill			  libxpm			   py-blosc				    py-zipp					    r3d
-chlorop 		  libxpresent			   py-bokeh				    py-zope-event				    rabbitmq
-chombo			  libxprintapputil		   py-boltons				    py-zope-interface				    racon
-chrpath 		  libxprintutil 		   py-boto3				    py-zxcvbn					    raft
-cinch			  libxrandr			   py-botocore				    pythia6					    ragel
-circos			  libxrender			   py-bottleneck			    pythia8					    raja
-cistem			  libxres			   py-breakseq2 			    python					    ramulator
-citcoms 		  libxscrnsaver 		   py-breathe				    qbank					    randfold
-cityhash		  libxshmfence			   py-brian				    qbox					    random123
-clamav			  libxslt			   py-brian2				    qca 					    randrproto
-clamr			  libxsmm			   py-brotlipy				    qemu					    range-v3
-clapack 		  libxstream			   py-bsddb3				    qgis					    rankstr
-clara			  libxt 			   py-bx-python 			    qhull					    rapidjson
-claw			  libxtrap			   py-bz2file				    qjson					    ravel
-cleaveland4		  libxtst			   py-cached-property			    qmcpack					    raxml
-cleverleaf		  libxv 			   py-cachetools			    qmd-progress				    ray
-clfft			  libxvmc			   py-cairocffi 			    qnnpack					    rclone
-clhep			  libxxf86dga			   py-cartopy				    qorts					    rdma-core
-clinfo			  libxxf86misc			   py-catalogue 			    qperf					    rdp-classifier
-clingo			  libxxf86vm			   py-cclib				    qrupdate					    rdptools
-cln			  libyaml			   py-cdat-lite 			    qscintilla					    re2c
-cloc			  libyogrt			   py-cdo				    qt						    readfq
-cloog			  libzip			   py-cdsapi				    qt-creator					    readline
-cloverleaf		  libzmq			   py-celery				    qtgraph					    recon
-cloverleaf3d		  liggghts			   py-certifi				    qthreads					    recordproto
-clp			  lighttpd			   py-certipy				    qtkeychain					    redis
-clustal-omega		  likwid			   py-cf-units				    quantum-espresso				    redset
-clustalw		  linkphase3			   py-cffi				    quicksilver 				    redundans
-cmake			  linsys-v			   py-cfgv				    quinoa					    reframe
-cmaq			  linux-headers 		   py-cftime				    qwt 					    regcm
-cminpack		  linux-pam			   py-chai				    qwtpolar					    relax
-cmocka			  listres			   py-chainer				    r						    relion
-cmockery		  lizard			   py-chardet				    r-a4					    remhos
-cmor			  lksctp-tools			   py-checkm-genome			    r-a4base					    rempi
-cnmem			  llvm				   py-cheetah				    r-a4classif 				    rename
-cnpy			  llvm-flang			   py-cheroot				    r-a4core					    rendercheck
-cntk			  llvm-openmp			   py-cherrypy				    r-a4preproc 				    renderproto
-cntk1bitsgd		  llvm-openmp-ompt		   py-cinema-lib			    r-a4reporting				    repeatmasker
-cnvnator		  lm-sensors			   py-click				    r-abadata					    repeatmodeler
-codar-cheetah		  lmbench			   py-click-plugins			    r-abaenrichment				    repeatscout
-codec2			  lmdb				   py-cligj				    r-abind					    resourceproto
-codes			  lmod				   py-clint				    r-absseq					    revbayes
-coevp			  lndir 			   py-clipboard 			    r-acde					    revocap-coupler
-cohmm			  log4c 			   py-cloudpickle			    r-acepack					    revocap-refiner
-coin3d			  log4cplus			   py-clustershell			    r-acgh					    rgb
-coinhsl 		  log4cxx			   py-cmake-format			    r-acme					    rhash
-collectd		  logstash			   py-cnvkit				    r-ada					    ripgrep
-colm			  loki				   py-codecov				    r-adabag					    rlwrap
-colordiff		  lordec			   py-cogent				    r-ade4					    rmats
-comd			  lrslib			   py-coilmq				    r-adegenet					    rmlab
-commons-lang		  lrzip 			   py-colorama				    r-adgoftest 				    rna-seqc
-commons-lang3		  lsf				   py-coloredlogs			    r-adsplit					    rnaz
-commons-logging 	  lshw				   py-colorlog				    r-aer					    rngstreams
-compiz			  lsof				   py-colormath 			    r-affxparser				    rocketmq
-compositeproto		  ltp				   py-colorpy				    r-affy					    rocksdb
-conda4aarch64		  ltr-retriever 		   py-configargparse			    r-affycomp					    rockstar
-conduit 		  ltrace			   py-configobj 			    r-affycompatible				    rodinia
-connect-proxy		  lua				   py-configparser			    r-affycontam				    root
-constype		  lua-bitlib			   py-contextlib2			    r-affycoretools				    rose
-converge		  lua-lpeg			   py-convertdate			    r-affydata					    ross
-coreutils		  lua-luafilesystem		   py-cookiecutter			    r-affyexpress				    routino
-corset			  lua-luajit			   py-counter				    r-affyilm					    rpcsvc-proto
-cosbench		  lua-luaposix			   py-cov-core				    r-affyio					    rr
-cosma			  lua-mpack			   py-coverage				    r-affypdnn					    rsbench
-cosmomc 		  lucene			   py-crispresso			    r-affyplm					    rsem
-cosp2			  luit				   py-crossmap				    r-affyqcreport				    rstart
-cotter			  lulesh			   py-cryptography			    r-affyrnadegradation			    rsync
-cowsay			  lumpy-sv			   py-cssselect 			    r-agdex					    rt-tests
-cp2k			  lvm2				   py-csvkit				    r-agilp					    rtags
-cpio			  lwgrp 			   py-current				    r-agimicrorna				    rtax
-cpp-httplib		  lwm2				   py-cutadapt				    r-aims					    ruby
-cppad			  lxc				   py-cvxopt				    r-aldex2					    ruby-gnuplot
-cppcheck		  lynx				   py-cvxpy				    r-allelicimbalance				    ruby-narray
-cppgsl			  lz4				   py-cycler				    r-alpine					    ruby-ronn
-cpprestsdk		  lzma				   py-cymem				    r-als					    ruby-rubyinline
-cppunit 		  lzo				   py-cython				    r-alsace					    ruby-svn2git
-cppzmq			  lzop				   py-cyvcf2				    r-altcdfenvs				    ruby-terminal-table
-cpu-features		  m4				   py-d2to1				    r-amap					    rust
-cpuinfo 		  macsio			   py-dask				    r-ampliqueso				    rust-bindgen
-cquery			  mad-numdiff			   py-dataclasses			    r-analysispageserver			    sabre
-cram			  mafft 			   py-dateparser			    r-anaquin					    saga-gis
-cray-libsci		  magics			   py-dbf				    r-aneufinder				    sailfish
-cromwell		  magma 			   py-dbfread				    r-aneufinderdata				    salmon
-cromwell-womtool	  makedepend			   py-decorator 			    r-animation 				    sambamba
-cryptopp		  maker 			   py-deeptools 			    r-annaffy					    samblaster
-cryptsetup		  mallocmc			   py-deeptoolsintervals		    r-annotate					    samrai
-cscope			  maloc 			   py-defusedxml			    r-annotationdbi				    samtools
-csdp			  man-db			   py-dendropy				    r-annotationfilter				    sandbox
-ctffind 		  manta 			   py-deprecated			    r-annotationforge				    sas
-ctre			  mapnik			   py-deprecation			    r-annotationhub				    satsuma2
-cub			  mapserver			   py-descartes 			    r-aod					    savanna
-cube			  maq				   py-devlib				    r-ape					    saws
-cubelib 		  margo 			   py-dgl				    r-argparse					    sbml
-cubew			  mariadb			   py-dill				    r-aroma-light				    sbt
-cubist			  mariadb-c-client		   py-discover				    r-askpass					    scala
-cuda			  masa				   py-diskcache 			    r-assertthat				    scalasca
-cuda-memtest		  masurca			   py-distributed			    r-backports 				    scallop
-cudnn			  mathematica			   py-distro				    r-bamsignals				    scalpel
-cufflinks		  matio 			   py-django				    r-base64					    scan-for-matches
-cups			  matlab			   py-dlcpar				    r-base64enc 				    scons
-curl			  maven 			   py-dnaio				    r-bayesm					    scorec-core
-cvs			  maverick			   py-docker				    r-bbmisc					    scorep
-cxxopts 		  mawk				   py-docopt				    r-beachmat					    scotch
-cyrus-sasl		  mbdyn 			   py-docutils				    r-beanplot					    scr
-czmq			  mbedtls			   py-docutils-stubs			    r-beeswarm					    screen
-dakota			  mc				   py-dotnetcore2			    r-bfast					    scripts
-daligner		  mcl				   py-doxypy				    r-bfastspatial				    scrnsaverproto
-damageproto		  mdtest			   py-doxypypy				    r-bglr					    scs
-damaris 		  med				   py-dryscrape 			    r-bh					    sctk
-damselfly		  meep				   py-dxchange				    r-biasedurn 				    sdl2
-darshan-runtime 	  mefit 			   py-dxfile				    r-bibtex					    sdl2-image
-darshan-util		  megadock			   py-earthengine-api			    r-bindr					    sdsl-lite
-dash			  megahit			   py-easybuild-easyblocks		    r-bindrcpp					    seacas
-datamash		  memaxes			   py-easybuild-easyconfigs		    r-bio3d					    sed
-dataspaces		  memcached			   py-easybuild-framework		    r-biobase					    sensei
-datatransferkit 	  meme				   py-ecdsa				    r-biocfilecache				    sentencepiece
-dateutils		  memkind			   py-ecos				    r-biocgenerics				    sentieon-genomics
-davix			  memsurfer			   py-edffile				    r-biocinstaller				    seqan
-dbcsr			  memtester			   py-editdistance			    r-biocmanager				    seqkit
-dbus			  meraculous			   py-elasticsearch			    r-biocneighbors				    seqprep
-dcmtk			  mercurial			   py-elephant				    r-biocparallel				    seqtk
-dd4hep			  mercury			   py-emcee				    r-biocsingular				    serf
-ddd			  mesa				   py-empy				    r-biocstyle 				    sessreg
-dealii			  mesa-glu			   py-entrypoints			    r-biom-utils				    setxkbmap
-dealii-parameter-gui	  meshkit			   py-enum34				    r-biomart					    sfcgal
-decentralized-internet	  meson 			   py-envisage				    r-biomartr					    sga
-deconseq-standalone	  mesquite			   py-ephem				    r-biomformat				    sgpp
-dejagnu 		  metabat			   py-epydoc				    r-biostrings				    shadow
-delly2			  metall			   py-espresso				    r-biovizbase				    shapeit
-delphes 		  metaphysicl			   py-espressopp			    r-bit					    shared-mime-info
-denovogear		  metis 			   py-et-xmlfile			    r-bit64					    shark
-dftfe			  mfem				   py-eventlet				    r-bitops					    shengbte
-dhpmm-f 		  mg				   py-execnet				    r-blob					    shiny-server
-dia			  mgis				   py-exodus-bundler			    r-blockmodeling				    shocklibs
-dialign 		  microbiomeutil		   py-extras				    r-bmp					    shoremap
-dialign-tx		  migrate			   py-fallocate 			    r-bookdown					    shortbred
-diamond 		  mii				   py-fastaindex			    r-boot					    shortstack
-diffsplice		  minced			   py-fastcache 			    r-boruta					    showfont
-diffutils		  mindthegap			   py-fastcluster			    r-brew					    shtools
-dihydrogen		  miniaero			   py-fasteners 			    r-broom					    shuffile
-dimemas 		  miniamr			   py-faststructure			    r-bsgenome					    sickle
-direnv			  miniasm			   py-filelock				    r-bsgenome-hsapiens-ucsc-hg19		    siesta
-discovar		  miniconda2			   py-filemagic 			    r-bumphunter				    signalp
-discovardenovo		  miniconda3			   py-fiona				    r-c50					    signify
-dislin			  minife			   py-fiscalyear			    r-cairo					    silo
-diy			  miniforge3			   py-fits-tools			    r-callr					    simgrid
-dlpack			  minigan			   py-fixtures				    r-car					    simmetrix-simmodsuite
-dmd			  minighost			   py-flake8				    r-caracas					    simplemoc
-dmlc-core		  minigmg			   py-flake8-import-order		    r-cardata					    simul
-dmtcp			  minimap2			   py-flake8-polyfill			    r-caret					    simulationio
-dmxproto		  minimd			   py-flask				    r-caroline					    singularity
-dnsmasq 		  miniqmc			   py-flask-compress			    r-category					    singularity-legacy
-docbook-xml		  minisign			   py-flask-socketio			    r-catools					    sirius
-docbook-xsl		  minismac2d			   py-flexx				    r-cdcfluview				    skilion-onedrive
-dock			  minitri			   py-flye				    r-cellranger				    skopeo
-dos2unix		  minivite			   py-fn-py				    r-checkmate 				    sl
-dotnet-core-sdk 	  minixyce			   py-fortranformat			    r-checkpoint				    slate
-double-conversion	  minizip			   py-fparser				    r-chemometrics				    sleef
-doxygen 		  minuit			   py-freezegun 			    r-chron					    slepc
-dpdk			  mira				   py-fsspec				    r-circlize					    slurm
-draco			  miranda			   py-funcsigs				    r-class					    smalt
-dramsim2		  mirdeep2			   py-functools32			    r-classint					    smartdenovo
-dri2proto		  mitofates			   py-fusepy				    r-cli					    smof
-dri3proto		  mitos 			   py-future				    r-clipr					    smproxy
-drill			  mixcr 			   py-futures				    r-clisymbols				    snakemake
-ds			  mkfontdir			   py-fypp				    r-clue					    snap
-dsdp			  mkfontscale			   py-gast				    r-cluster					    snap-berkeley
-dsrc			  mlhka 			   py-gcovr				    r-clustergeneration 			    snap-korf
-dssp			  mmg				   py-gdbgui				    r-clusterprofiler				    snappy
-dtcmp			  moab				   py-gdc-client			    r-cner					    snbone
-dyninst 		  modern-wheel			   py-gee-asset-manager 		    r-coda					    sniffles
-dysco			  modylas			   py-geeadd				    r-codetools 				    snpeff
-ea-utils		  mofem-cephas			   py-geeup				    r-codex					    snphylo
-eagle			  mofem-fracture-module 	   py-genders				    r-coin					    snptest
-easybuild		  mofem-minimal-surface-equation   py-genshi				    r-colorspace				    soapdenovo-trans
-ebms			  mofem-users-modules		   py-gensim				    r-combinat					    soapdenovo2
-eccodes 		  molcas			   py-geoalchemy2			    r-commonmark				    sofa-c
-ecflow			  mongo-c-driver		   py-geopandas 			    r-complexheatmap				    sollve
-eclipse-gcj-parser	  mongo-cxx-driver		   py-gevent				    r-compositions				    somatic-sniper
-ecos			  mono				   py-gf256				    r-condop					    sonlib
-ecp-io-sdk		  montage			   py-git-review			    r-construct 				    sortmerna
-ecp-proxy-apps		  moosefs			   py-gluoncv				    r-convevol					    sosflow
-ecp-viz-sdk		  moreutils			   py-gnuplot				    r-copula					    source-highlight
-ed			  mosh				   py-goatools				    r-corhmm					    sowing
-editline		  mothur			   py-google-api-core			    r-corpcor					    sox
-editres 		  motif 			   py-google-api-python-client		    r-corrplot					    spades
-eem			  motioncor2			   py-google-auth			    r-covr					    span-lite
-eigen			  mount-point-attributes	   py-google-auth-httplib2		    r-cowplot					    spark
-elasticsearch		  mozjs 			   py-google-auth-oauthlib		    r-crayon					    sparsehash
-elemental		  mpark-variant 		   py-google-cloud-core 		    r-crosstalk 				    sparta
-elfutils		  mpc				   py-google-cloud-storage		    r-crul					    spath
-elk			  mpdecimal			   py-google-pasta			    r-ctc					    spdlog
-elmerfem		  mpe2				   py-google-resumable-media		    r-cubature					    spectrum-mpi
-elpa			  mpest 			   py-googleapis-common-protos		    r-cubist					    speex
-elsd			  mpfr				   py-gpaw				    r-curl					    spfft
-elsdc			  mpi-bash			   py-gpy				    r-dada2					    spglib
-elsi			  mpich 			   py-gpytorch				    r-data-table				    sph2pipe
-emacs			  mpifileutils			   py-graphviz				    r-dbi					    spherepack
-ember			  mpilander			   py-greenlet				    r-dbplyr					    spindle
-emboss			  mpileaks			   py-grequests 			    r-debugme					    spiral
-enca			  mpip				   py-griddataformats			    r-decipher					    spm
-enchant 		  mpir				   py-grpcio				    r-delayedarray				    spot
-energyplus		  mpix-launch-swift		   py-gsd				    r-delayedmatrixstats			    sqlite
-entrezdirect		  mpt				   py-guidata				    r-deldir					    sqlitebrowser
-environment-modules	  mrbayes			   py-guiqwt				    r-dendextend				    sqoop
-eospac			  mrbench			   py-h5glance				    r-deoptim					    squashfs
-eq-r			  mrcpp 			   py-h5py				    r-deoptimr					    squid
-er			  mrnet 			   py-h5sh				    r-desc					    sratoolkit
-erfa			  mrtrix3			   py-hacking				    r-deseq					    sse2neon
-erlang			  mscgen			   py-hatchet				    r-deseq2					    sshpass
-ermod			  msgpack-c			   py-hdfs				    r-desolve					    ssht
-erne			  mshadow			   py-healpy				    r-devtools					    ssmtp
-es-shell		  msmc				   py-heapdict				    r-diagrammer				    sspace-longread
-esmf			  msmc2 			   py-hepdata-validator 		    r-dicekriging				    sspace-standard
-essl			  mstk				   py-horovod				    r-dichromat 				    sst-core
-etcd			  mt-metis			   py-hpcbench				    r-diffusionmap				    sst-dumpi
-ethminer		  multitail			   py-hpccm				    r-digest					    sst-elements
-ethtool 		  multitime			   py-html2text 			    r-diptest					    sst-macro
-etsf-io 		  multiverso			   py-html5lib				    r-dirichletmultinomial			    sst-transports
-everytrace		  mummer			   py-htmlgen				    r-dismo					    stacks
-everytrace-example	  mummer4			   py-htseq				    r-diversitree				    staden-io-lib
-evieext 		  mumps 			   py-httpbin				    r-dnacopy					    star
-evtgen			  munge 			   py-httplib2				    r-do-db					    star-ccm-plus
-exa			  muparser			   py-humanfriendly			    r-domc					    startup-notification
-exabayes		  muscle			   py-humanize				    r-doparallel				    stat
-examinimd		  muse				   py-hvac				    r-dorng					    stata
-exampm			  musl				   py-hypothesis			    r-dose					    stc
-exasp2			  muster			   py-ics				    r-dosnow					    steps
-exiv2			  mutationpp			   py-identify				    r-dotcall64 				    stinger
-exmcutils		  mvapich2			   py-idna				    r-downloader				    storm
-exodusii		  mxm				   py-illumina-utils			    r-dplyr					    stow
-exonerate		  mxml				   py-imageio				    r-dqrng					    strace
-exonerate-gff3		  mxnet 			   py-imagesize 			    r-dt					    stream
-expat			  mysql 			   py-iminuit				    r-dtw					    strelka
-expect			  nag				   py-importlib 			    r-dygraphs					    stress
-express 		  nalu				   py-importlib-metadata		    r-dynamictreecut				    string-view-lite
-extrae			  nalu-wind			   py-importlib-resources		    r-e1071					    stringtie
-exuberant-ctags 	  namd				   py-iniparse				    r-earth					    structure
-eztrace 		  nano				   py-intervaltree			    r-ecp					    strumpack
-f18			  nanoflann			   py-invoke				    r-edger					    su2
-f77-zmq 		  nanomsg			   py-ipaddress 			    r-ellipse					    sublime-text
-f90cache		  nanopb			   py-ipdb				    r-ellipsis					    subread
-fabtests		  nasm				   py-ipykernel 			    r-emmli					    subversion
-fairlogger		  nauty 			   py-ipython				    r-energy					    suite-sparse
-falcon			  ncbi-magicblast		   py-ipython-genutils			    r-enrichplot				    sumaclust
-fann			  ncbi-rmblastn 		   py-ipywidgets			    r-ensembldb 				    sumo
-faodel			  ncbi-toolkit			   py-irpf90				    r-envstats					    sundials
-fast-global-file-status   nccl				   py-isodate				    r-ergm					    superlu
-fasta			  nccl-tests			   py-isort				    r-europepmc 				    superlu-dist
-fastdfs 		  nccmp 			   py-itsdangerous			    r-evaluate					    superlu-mt
-fastjar 		  ncdu				   py-jaraco-functools			    r-evd					    supernova
-fastjet 		  ncftp 			   py-jdatetime 			    r-exactextractr				    sw4lite
-fastmath		  ncl				   py-jdcal				    r-exomecopy 				    swap-assembler
-fastme			  nco				   py-jedi				    r-exomedepth				    swarm
-fastp			  ncurses			   py-jeepney				    r-expint					    swfft
-fastphase		  ncview			   py-jellyfish 			    r-expm					    swftools
-fastq-screen		  ndiff 			   py-jinja2				    r-factoextra				    swiftsim
-fastqc			  nek5000			   py-jinja2-time			    r-factominer				    swig
-fastqvalidator		  nekbone			   py-jmespath				    r-fansi					    swipl
-fasttree		  nekcem			   py-joblib				    r-farver					    symengine
-fastx-toolkit		  nektar			   py-jplephem				    r-fastcluster				    sympol
-fca			  nektools			   py-jprops				    r-fastmatch 				    sysstat
-fd-find 		  neo4j 			   py-jpype1				    r-fdb-infiniummethylation-hg18		    sz
-feh			  neovim			   py-json5				    r-fdb-infiniummethylation-hg19		    tabix
-fenics			  nest				   py-jsonpatch 			    r-ff					    tajo
-fermi			  netcdf-c			   py-jsonpickle			    r-fftwtools 				    talass
-fermikit		  netcdf-cxx			   py-jsonpointer			    r-fgsea					    talloc
-fermisciencetools	  netcdf-cxx4			   py-jsonschema			    r-fields					    tantan
-ferret			  netcdf-fortran		   py-junit-xml 			    r-filehash					    tar
-ffb			  netdata			   py-jupyter				    r-findpython				    targetp
-ffmpeg			  netgauge			   py-jupyter-client			    r-fit-models				    task
-ffr			  netgen			   py-jupyter-console			    r-fitdistrplus				    taskd
-ffsb			  netkit-ftp			   py-jupyter-core			    r-flashclust				    tasmanian
-fftw			  netlib-lapack 		   py-jupyterhub			    r-flexclust 				    tassel
-fgsl			  netlib-scalapack		   py-jupyterlab			    r-flexmix					    tau
-figlet			  netlib-xblas			   py-jupyterlab-server 		    r-fnn					    tauola
-figtree 		  netperf			   py-keras				    r-forcats					    tbl2asn
-file			  nettle			   py-keras-applications		    r-foreach					    tcl
-filebench		  neuron			   py-keras-preprocessing		    r-forecast					    tcl-itcl
-filo			  nextflow			   py-kitchen				    r-foreign					    tcl-tcllib
-fimpute 		  nfft				   py-kiwisolver			    r-formatr					    tcl-tclxml
-find-circ		  nfs-ganesha			   py-kmodes				    r-formula					    tclap
-findutils		  nfs-utils			   py-kombu				    r-fpc					    tcoffee
-fio			  nghttp2			   py-lark-parser			    r-fracdiff					    tcptrace
-fish			  nginx 			   py-latexcodec			    r-fs					    tcsh
-fixesproto		  ngmerge			   py-lazy				    r-futile-logger				    tealeaf
-fjcontrib		  ngmlr 			   py-lazy-object-proxy 		    r-futile-options				    teckit
-fl			  nicstat			   py-lazy-property			    r-future					    tecplot
-flac			  nim				   py-lazyarray 			    r-future-apply				    templight
-flang			  ninja 			   py-leather				    r-gamlss					    templight-tools
-flann			  ninja-fortran 		   py-libconf				    r-gamlss-data				    tensorflow-serving-client
-flash			  nix				   py-libensemble			    r-gamlss-dist				    testdfsio
-flatbuffers		  nlohmann-json 		   py-librosa				    r-gbm					    tetgen
-flatcc			  nlopt 			   py-ligo-segments			    r-gbrd					    tethex
-flecsale		  nmap				   py-line-profiler			    r-gcrma					    texinfo
-flecsi			  nnvm				   py-linecache2			    r-gdalutils 				    texlive
-flecsph 		  node-js			   py-lit				    r-gdata					    texstudio
-flex			  notmuch			   py-llvmlite				    r-gdsfmt					    textparser
-flibcpp 		  npb				   py-lmfit				    r-geiger					    tfel
-flink			  npm				   py-localcider			    r-genefilter				    the-platinum-searcher
-flint			  npth				   py-locket				    r-genelendatabase				    the-silver-searcher
-flit			  nrm				   py-lockfile				    r-genemeta					    thornado-mini
-fltk			  ns-3-dev			   py-logilab-common			    r-geneplotter				    thrift
-flume			  nseg				   py-louie				    r-generics					    thrust
-flux-core		  nsimd 			   py-lru-dict				    r-genetics					    tig
-flux-sched		  nspr				   py-lscsoft-glue			    r-genie3					    time
-fluxbox 		  ntirpc			   py-luigi				    r-genomeinfodb				    timemory
-fmt			  ntpoly			   py-lxml				    r-genomeinfodbdata				    tinker
-foam-extend		  numactl			   py-lzstring				    r-genomicalignments 			    tinyxml
-folly			  numamma			   py-m2r				    r-genomicfeatures				    tinyxml2
-font-util		  numap 			   py-macholib				    r-genomicranges				    tioga
-fontcacheproto		  numdiff			   py-machotools			    r-gensa					    tippecanoe
-fontconfig		  nut				   py-macs2				    r-geomorph					    tix
-fontsproto		  nvdimmsim			   py-maestrowf 			    r-geonames					    tixi
-fonttosfnt		  nvptx-tools			   py-magic				    r-geoquery					    tk
-fox			  nwchem			   py-mako				    r-geor					    tldd
-fp16			  nyancat			   py-markdown				    r-geosphere 				    tmalign
-fpc			  ocaml 			   py-markupsafe			    r-getopt					    tmhmm
-fping			  occa				   py-matplotlib			    r-getoptlong				    tmux
-fpocket 		  oce				   py-mayavi				    r-ggally					    tmuxinator
-fqtrim			  ocl-icd			   py-mccabe				    r-ggbeeswarm				    tomcat
-fr-hit			  oclint			   py-mdanalysis			    r-ggbio					    tophat
-fraggenescan		  oclock			   py-mechanize 			    r-ggdendro					    tppred
-freebayes		  octave			   py-memory-profiler			    r-ggforce					    tracer
-freeglut		  octave-optim			   py-merlin				    r-ggjoy					    transabyss
-freeimage		  octave-splines		   py-metasv				    r-ggmap					    transdecoder
-freeipmi		  octave-struct 		   py-methylcode			    r-ggplot2					    transposome
-freetype		  octopus			   py-mg-rast-tools			    r-ggplotify 				    transset
-freexl			  of-catalyst			   py-misopy				    r-ggpubr					    trapproto
-fribidi 		  of-precice			   py-mistune				    r-ggraph					    tree
-frontistr		  omega-h			   py-mlxtend				    r-ggrepel					    treesub
-fseq			  ompss 			   py-mmcv				    r-ggridges					    trf
-fsl			  ompt-openmp			   py-mmtf-python			    r-ggsci					    triangle
-fslsfonts		  onednn			   py-mo-pack				    r-ggsignif					    trident
-fstobdf 		  oniguruma			   py-mock				    r-ggvis					    trilinos
-fstrack 		  ont-albacore			   py-modred				    r-gh					    trilinos-catalyst-ioss-adapter
-ftgl			  opa-psm2			   py-moltemplate			    r-gistr					    trimal
-fujitsu-mpi		  opam				   py-monotonic 			    r-git2r					    trimgalore
-funhpc			  opari2			   py-monty				    r-glimma					    trimmomatic
-fyba			  open-iscsi			   py-more-itertools			    r-glmnet					    trinity
-fzf			  open-isns			   py-mpi4py				    r-globaloptions				    trinotate
-g4abla			  openbabel			   py-mpld3				    r-globals					    trnascan-se
-g4emlow 		  openblas			   py-mpmath				    r-glue					    tulip
-g4ensdfstate		  opencascade			   py-msal				    r-gmodels					    turbine
-g4incl			  opencoarrays			   py-msal-extensions			    r-gmp					    turbomole
-g4ndl			  opencv			   py-msgpack				    r-go-db					    tut
-g4neutronxs		  opendx			   py-msrest				    r-goftest					    twm
-g4particlexs		  openexr			   py-msrestazure			    r-gofuncr					    tycho2
-g4photonevaporation	  openfast			   py-multi-key-dict			    r-googlevis 				    typhon
-g4pii			  openfdtd			   py-multiprocess			    r-goplot					    typhonio
-g4radioactivedecay	  openfoam			   py-multiqc				    r-gosemsim					    uchardet
-g4realsurface		  openfoam-org			   py-munch				    r-goseq					    ucx
-g4saiddata		  openfst			   py-murmurhash			    r-gostats					    udunits
-g4tendl 		  opengl			   py-mx				    r-gower					    ufo-core
-gams			  openglu			   py-myhdl				    r-gplots					    ufo-filters
-ganglia 		  openimageio			   py-mypy				    r-graph					    umap
-gapbs			  openjdk			   py-mypy-extensions			    r-graphlayouts				    umoci
-gapcloser		  openjpeg			   py-mysql-connector-python		    r-grbase					    umpire
-gapfiller		  openkim-models		   py-mysqlclient			    r-gridbase					    unblur
-gasnet			  openldap			   py-mysqldb1				    r-gridextra 				    uncrustify
-gatk			  openmc			   py-natsort				    r-gridgraphics				    unibilium
-gaudi			  openmm			   py-nbconvert 			    r-gsa					    unifdef
-gaussian		  openmolcas			   py-nbformat				    r-gsalib					    unifyfs
-gaussian-view		  openmpi			   py-nc-time-axis			    r-gseabase					    unison
-gawk			  openmx			   py-ndg-httpsclient			    r-gsl					    units
-gblocks 		  opennurbs			   py-neo				    r-gss					    unittest-cpp
-gcc			  openpa			   py-neobolt				    r-gstat					    unixodbc
-gccmakedep		  openpbs			   py-neotime				    r-gsubfn					    unqlite
-gccxml			  openpmd-api			   py-nestle				    r-gtable					    unrar
-gconf			  openresty			   py-netcdf4				    r-gtools					    unuran
-gcta			  openscenegraph		   py-netifaces 			    r-gtrellis					    unzip
-gdal			  openslide			   py-networkit 			    r-gviz					    upcxx
-gdb			  openspeedshop 		   py-networkx				    r-gwmodel					    uqtk
-gdbm			  openspeedshop-utils		   py-nltk				    r-haven					    uriparser
-gdk-pixbuf		  openssh			   py-nodeenv				    r-hdf5array 				    usearch
-gdl			  openssl			   py-nose				    r-hdf5r					    userspace-rcu
-gdrcopy 		  openstf			   py-nose-cov				    r-hexbin					    utf8proc
-geant4			  opensubdiv			   py-nose2				    r-highr					    util-linux
-geant4-data		  opentsdb			   py-nosexcover			    r-hmisc					    util-macros
-gearshifft		  opium 			   py-notebook				    r-hms					    uuid
-gemmlowp		  optional-lite 		   py-numba				    r-hoardr					    uvw
-genemark-et		  optipng			   py-numcodecs 			    r-htmltable 				    valgrind
-gengetopt		  opus				   py-numexpr				    r-htmltools 				    vampirtrace
-genomefinisher		  orca				   py-numexpr3				    r-htmlwidgets				    vardictjava
-genometools		  orfm				   py-numpy				    r-httpcode					    variorum
-genrich 		  orthofiller			   py-numpydoc				    r-httpuv					    varscan
-geode			  orthofinder			   py-oauth2client			    r-httr					    vc
-geopm			  orthomcl			   py-oauthlib				    r-hwriter					    vcftools
-geos			  osmctools			   py-olefile				    r-hypergraph				    vcsh
-gettext 		  osqp				   py-onnx				    r-ica					    vdt
-gflags			  osu-micro-benchmarks		   py-ont-fast5-api			    r-igraph					    veccore
-ghost			  otf				   py-openpmd-validator 		    r-illuminahumanmethylation450kanno-ilmn12-hg19  vecgeom
-ghostscript		  otf2				   py-openpyxl				    r-illuminaio				    veclibfort
-ghostscript-fonts	  p3dfft3			   py-openslide-python			    r-imager					    vegas2
-giflib			  p4est 			   py-opentuner 			    r-impute					    veloc
-ginkgo			  p7zip 			   py-opppy				    r-influencer				    velvet
-git			  pacbio-daligner		   py-opt-einsum			    r-ini					    velvetoptimiser
-git-fat-git		  pacbio-damasker		   py-ordereddict			    r-inline					    verilator
-git-imerge		  pacbio-dazz-db		   py-oset				    r-interactivedisplaybase			    verrou
-git-lfs 		  pacbio-dextractor		   py-osqp				    r-intervals 				    vesta
-gitconddb		  packmol			   py-overpy				    r-inum					    videoproto
-gl2ps			  pacvim			   py-owslib				    r-ipred					    viennarna
-glew			  pagit 			   py-packaging 			    r-iranges					    viewres
-glfmultiples		  pagmo 			   py-palettable			    r-irdisplay 				    vigra
-glfw			  pal				   py-pamela				    r-irkernel					    vim
-glib			  paml				   py-pandas				    r-irlba					    virtualgl
-glibmm			  panda 			   py-pandocfilters			    r-isdparser 				    visit
-glimmer 		  pandaseq			   py-parameterized			    r-iso					    vizglow
-glm			  pandoc			   py-paramiko				    r-iterators 				    vmatch
-global			  pango 			   py-paramz				    r-janitor					    vmc
-globalarrays		  pangomm			   py-parse				    r-jaspar2018				    vmd
-glog			  papi				   py-parsedatetime			    r-jomo					    voropp
-gloo			  papyrus			   py-parso				    r-jpeg					    votca-csg
-glpk			  paradiseo			   py-partd				    r-jsonlite					    votca-csg-tutorials
-glproto 		  parallel			   py-path-py				    r-kegg-db					    votca-csgapps
-glusterfs		  parallel-netcdf		   py-pathlib				    r-kegggraph 				    votca-ctp
-glvis			  paraver			   py-pathlib2				    r-keggrest					    votca-tools
-gmake			  paraview			   py-pathos				    r-kernlab					    votca-xtp
-gmap-gsnap		  parmetis			   py-pathspec				    r-kernsmooth				    vpfft
-gmime			  parmgridgen			   py-patsy				    r-kknn					    vpic
-gmodel			  parquet-cpp			   py-pauvre				    r-knitr					    vsearch
-gmp			  parsimonator			   py-pbr				    r-ks					    vt
-gmsh			  parsplice			   py-pep8				    r-labeling					    vtk
-gmt			  partitionfinder		   py-pep8-naming			    r-lambda-r					    vtk-h
-gmtsar			  pasta 			   py-performance			    r-laplacesdemon				    vtk-m
-gnat			  patch 			   py-periodictable			    r-lars					    wannier90
-gnome-common		  patchelf			   py-petastorm 			    r-later					    warpx
-gnupg			  pathfinder			   py-petsc4py				    r-lattice					    watch
-gnuplot 		  pax-utils			   py-pexpect				    r-latticeextra				    wcs
-gnutls			  pbbam 			   py-phonopy				    r-lava					    wcslib
-go			  pbmpi 			   py-pickleshare			    r-lazyeval					    wget
-go-bootstrap		  pbsuite			   py-picrust				    r-ldheatmap 				    wgsim
-go-md2man		  pcma				   py-pid				    r-leaflet					    which
-gobject-introspection	  pcre				   py-pil				    r-leaps					    whizard
-goblin-hmc-sim		  pcre2 			   py-pillow				    r-learnbayes				    windowswmproto
-googletest		  pdf2svg			   py-pint				    r-leiden					    wireshark
-gotcha			  pdftk 			   py-pip				    r-lfe					    wordnet
-gource			  pdsh				   py-pipits				    r-lhs					    workrave
-gpdb			  pdt				   py-pispino				    r-libcoin					    wt
-gperf			  pegtl 			   py-pkgconfig 			    r-limma					    wtdbg2
-gperftools		  pennant			   py-pkginfo				    r-listenv					    wxpropgrid
-gpgme			  percept			   py-plac				    r-lme4					    wxwidgets
-gplates 		  perfstubs			   py-planar				    r-lmtest					    x11perf
-gprolog 		  perl				   py-plotly				    r-locfit					    xabclib
-gpu-burn		  perl-acme-damn		   py-pluggy				    r-log4r					    xapian-core
-grackle 		  perl-algorithm-diff		   py-ply				    r-loo					    xauth
-gradle			  perl-alien-build		   py-pmw				    r-lpsolve					    xbacklight
-grafana 		  perl-alien-libxml2		   py-pomegranate			    r-lsei					    xbiff
-grandr			  perl-app-cmd			   py-portalocker			    r-lubridate 				    xbitmaps
-graph500		  perl-array-utils		   py-portend				    r-lumi					    xbraid
-graphblast		  perl-b-hooks-endofscope	   py-poster				    r-magic					    xcalc
-graphicsmagick		  perl-bio-searchio-hmmer	   py-pox				    r-magick					    xcb-demo
-graphite2		  perl-bioperl			   py-poyo				    r-magrittr					    xcb-proto
-graphlib		  perl-bit-vector		   py-ppft				    r-makecdfenv				    xcb-util
-graphmap		  perl-cairo			   py-pre-commit			    r-maldiquant				    xcb-util-cursor
-graphviz		  perl-capture-tiny		   py-preshed				    r-manipulatewidget				    xcb-util-errors
-grass			  perl-carp-clan		   py-prettytable			    r-mapplots					    xcb-util-image
-graylog2-server 	  perl-cgi			   py-profilehooks			    r-mapproj					    xcb-util-keysyms
-grep			  perl-class-data-inheritable	   py-progress				    r-maps					    xcb-util-renderutil
-grib-api		  perl-class-inspector		   py-progressbar2			    r-maptools					    xcb-util-wm
-gridlab-d		  perl-class-load		   py-projectq				    r-markdown					    xcb-util-xrm
-grnboost		  perl-class-load-xs		   py-prometheus-client 		    r-mass					    xcfun
-groff			  perl-clone			   py-prompt-toolkit			    r-matlab					    xclip
-gromacs 		  perl-clone-choose		   py-protobuf				    r-matr					    xclipboard
-grpc			  perl-compress-raw-bzip2	   py-psutil				    r-matrix					    xclock
-gsl			  perl-compress-raw-zlib	   py-psyclone				    r-matrixmodels				    xcmiscproto
-gslib			  perl-config-general		   py-psycopg2				    r-matrixstats				    xcmsdb
-gtk-doc 		  perl-contextual-return	   py-ptyprocess			    r-mclust					    xcompmgr
-gtkmm			  perl-cpan-meta-check		   py-pudb				    r-mcmcglmm					    xconsole
-gtkorvo-atl		  perl-data-dumper		   py-py				    r-mco					    xcursor-themes
-gtkorvo-cercs-env	  perl-data-optlist		   py-py-cpuinfo			    r-mda					    xcursorgen
-gtkorvo-dill		  perl-data-stag		   py-py2bit				    r-memoise					    xdbedizzy
-gtkorvo-enet		  perl-date-manip		   py-py2cairo				    r-mergemaid 				    xditview
-gtkplus 		  perl-db-file			   py-py2neo				    r-metap					    xdm
-gtksourceview		  perl-dbd-mysql		   py-py4j				    r-methylumi 				    xdmf3
-gts			  perl-dbd-pg			   py-pyani				    r-mgcv					    xdpyinfo
-guacamole-server	  perl-dbd-sqlite		   py-pyarrow				    r-mgraster					    xdriinfo
-guidance		  perl-dbi			   py-pyasn1				    r-mice					    xedit
-guile			  perl-devel-cycle		   py-pyasn1-modules			    r-mime					    xerces-c
-gunrock 		  perl-devel-globaldestruction	   py-pybedtools			    r-minfi					    xeus
-gurobi			  perl-devel-overloadinfo	   py-pybigwig				    r-miniui					    xev
-gzip			  perl-devel-stacktrace 	   py-pybind11				    r-minqa					    xextproto
-h5cpp			  perl-devel-symdump		   py-pybtex				    r-misc3d					    xeyes
-h5hut			  perl-digest-md5		   py-pybtex-docutils			    r-mitml					    xf86bigfontproto
-h5part			  perl-dist-checkconflicts	   py-pycairo				    r-mitools					    xf86dga
-h5utils 		  perl-encode-locale		   py-pycares				    r-mixtools					    xf86dgaproto
-h5z-zfp 		  perl-error			   py-pycbc				    r-mlbench					    xf86driproto
-hacckernels		  perl-eval-closure		   py-pychecker 			    r-mlinterfaces				    xf86miscproto
-hadoop			  perl-exception-class		   py-pycifrw				    r-mlr					    xf86rushproto
-hal			  perl-exporter-tiny		   py-pycmd				    r-mlrmbo					    xf86vidmodeproto
-halc			  perl-extutils-config		   py-pycodestyle			    r-mmwrweek					    xfd
-half			  perl-extutils-depends 	   py-pycosat				    r-mnormt					    xfindproxy
-hama			  perl-extutils-helpers 	   py-pycparser 			    r-modelmetrics				    xfontsel
-hapcut2 		  perl-extutils-installpaths	   py-pycrypto				    r-modelr					    xfs
-hapdip			  perl-extutils-makemaker	   py-pycuda				    r-modeltools				    xfsinfo
-haploview		  perl-extutils-pkgconfig	   py-pycurl				    r-mpm					    xfwp
-haproxy 		  perl-ffi-checklib		   py-pydatalog 			    r-msnbase					    xgamma
-harfbuzz		  perl-file-chdir		   py-pydeps				    r-multcomp					    xgboost
-harminv 		  perl-file-copy-recursive	   py-pydispatcher			    r-multicool 				    xgc
-hbase			  perl-file-homedir		   py-pydot				    r-multitaper				    xhmm
-hbm-dramsim2		  perl-file-listing		   py-pydot2				    r-multtest					    xhost
-hc			  perl-file-pushd		   py-pydotplus 			    r-munsell					    xineramaproto
-hcol			  perl-file-sharedir-install	   py-pydv				    r-mvtnorm					    xinit
-hcoll			  perl-file-slurp-tiny		   py-pyeda				    r-mzid					    xinput
-hdf			  perl-file-slurper		   py-pyelftools			    r-mzr					    xios
-hdf5			  perl-file-which		   py-pyepsg				    r-nanotime					    xkbcomp
-hdf5-blosc		  perl-font-ttf 		   py-pyface				    r-ncbit					    xkbdata
-healpix-cxx		  perl-forks			   py-pyfaidx				    r-ncdf4					    xkbevd
-heaptrack		  perl-gd			   py-pyfasta				    r-network					    xkbprint
-heffte			  perl-gdgraph			   py-pyfftw				    r-networkd3 				    xkbutils
-helics			  perl-gdgraph-histogram	   py-pyfits				    r-nimble					    xkeyboard-config
-help2man		  perl-gdtextutil		   py-pyflakes				    r-nleqslv					    xkill
-henson			  perl-graph			   py-pygdal				    r-nlme					    xload
-hepmc			  perl-graph-readwrite		   py-pygdbmi				    r-nloptr					    xlogo
-hepmc3			  perl-hash-merge		   py-pygelf				    r-nmf					    xlsatoms
-hepmcanalysis		  perl-html-parser		   py-pygit2				    r-nmof					    xlsclients
-heppdt			  perl-html-tagset		   py-pyglet				    r-nnet					    xlsfonts
-hic-pro 		  perl-http-cookies		   py-pygments				    r-nnls					    xmag
-highfive		  perl-http-daemon		   py-pygobject 			    r-nor1mix					    xman
-highwayhash		  perl-http-date		   py-pygpu				    r-nortest					    xmessage
-hiop			  perl-http-message		   py-pygresql				    r-np					    xmh
-hipsycl 		  perl-http-negotiate		   py-pygtk				    r-npsurv					    xmlf90
-hiredis 		  perl-inline			   py-pyheadtail			    r-numderiv					    xmlto
-hisat2			  perl-inline-c 		   py-pyinstrument			    r-oligoclasses				    xmodmap
-hisea			  perl-io-all			   py-pyinstrument-cext 		    r-openssl					    xmore
-hive			  perl-io-compress		   py-pyjwt				    r-openxlsx					    xorg-cf-files
-hmmer			  perl-io-html			   py-pyke				    r-optparse					    xorg-docs
-homer			  perl-io-prompt		   py-pykml				    r-ordinal					    xorg-gtest
-hoomd-blue		  perl-io-sessiondata		   py-pykwalify 			    r-org-hs-eg-db				    xorg-server
-hotspot 		  perl-io-socket-ssl		   py-pyliblzma 			    r-organismdbi				    xorg-sgml-doctools
-hpccg			  perl-io-string		   py-pylint				    r-packrat					    xphelloworld
-hpctoolkit		  perl-io-stringy		   py-pymatgen				    r-pacman					    xplor-nih
-hpcviewer		  perl-io-tty			   py-pymc3				    r-paleotree 				    xplsprinters
-hpgmg			  perl-ipc-run			   py-pymeeus				    r-pamr					    xpmem
-hpl			  perl-json			   py-pyminifier			    r-pan					    xpr
-hpx			  perl-libwww-perl		   py-pymol				    r-parallelmap				    xprehashprinterlist
-hpx5			  perl-libxml-perl		   py-pymongo				    r-paramhelpers				    xprop
-hsakmt			  perl-list-moreutils		   py-pymorph				    r-party					    xproto
-hsf-cmaketools		  perl-list-moreutils-xs	   py-pympler				    r-partykit					    xproxymanagementprotocol
-hssp			  perl-log-log4perl		   py-pymysql				    r-pathview					    xqilla
-hstr			  perl-logger-simple		   py-pynio				    r-pbapply					    xrandr
-htop			  perl-lwp-mediatypes		   py-pynn				    r-pbdzmq					    xrdb
-htslib			  perl-lwp-protocol-https	   py-pyodbc				    r-pbkrtest					    xrefresh
-http-get		  perl-mailtools		   py-pyomo				    r-pcamethods				    xrootd
-http-load		  perl-math-bezier		   py-pyopenssl 			    r-pcapp					    xrx
-http-parser		  perl-math-cdf 		   py-pypar				    r-permute					    xsbench
-http-ping		  perl-math-cephes		   py-pyparsing 			    r-pfam-db					    xscope
-http-post		  perl-math-matrixreal		   py-pypeflow				    r-phangorn					    xsd
-httpd			  perl-math-round		   py-pyperclip 			    r-phantompeakqualtools			    xsdk
-httperf 		  perl-math-vecstat		   py-pyperf				    r-philentropy				    xsdk-examples
-httpie			  perl-module-build		   py-pyprof2html			    r-phyloseq					    xsdktrilinos
-httpress		  perl-module-build-tiny	   py-pyproj				    r-phylostratr				    xset
-hub			  perl-module-implementation	   py-pyqi				    r-phytools					    xsetmode
-hugo			  perl-module-runtime		   py-pyqt4				    r-picante					    xsetpointer
-hunspell		  perl-module-runtime-conflicts    py-pyqt5				    r-pillar					    xsetroot
-hwloc			  perl-moose			   py-pyquaternion			    r-pkgbuild					    xsimd
-hybpiper		  perl-mozilla-ca		   py-pyrad				    r-pkgconfig 				    xsm
-hybridsim		  perl-mro-compat		   py-pyrosar				    r-pkgload					    xstdcmap
-hydra			  perl-namespace-clean		   py-pyrsistent			    r-pkgmaker					    xtensor
-hydrogen		  perl-net-http 		   py-pysam				    r-plogr					    xtensor-python
-hyperscan		  perl-net-scp-expect		   py-pyscaf				    r-plot3d					    xterm
-hyphy			  perl-net-ssleay		   py-pyserial				    r-plotly					    xtl
-hypre			  perl-number-format		   py-pyshp				    r-plotmo					    xtrans
-i3			  perl-object-insideout 	   py-pyside				    r-plotrix					    xtrap
-ibm-java		  perl-package-deprecationmanager  py-pyside2				    r-pls					    xts
-ibmisc			  perl-package-stash		   py-pysmartdl 			    r-plyr					    xvidtune
-iceauth 		  perl-package-stash-xs 	   py-pysocks				    r-pmcmr					    xvinfo
-icedtea 		  perl-padwalker		   py-pyspark				    r-png					    xwd
-icet			  perl-parallel-forkmanager	   py-pysqlite				    r-polspline 				    xwininfo
-ico			  perl-params-util		   py-pytailf				    r-polyclip					    xwud
-icu4c			  perl-params-validate		   py-pytest				    r-polynom					    xxhash
-id3lib			  perl-parse-recdescent 	   py-pytest-cache			    r-popgenome 				    xz
-idba			  perl-path-tiny		   py-pytest-check-links		    r-popvar					    yajl
-iegenlib		  perl-pdf-api2 		   py-pytest-cov			    r-powerlaw					    yambo
-ignite			  perl-pegex			   py-pytest-flake8			    r-prabclus					    yaml-cpp
-igraph			  perl-perl-unsafe-signals	   py-pytest-forked			    r-praise					    yara
-igv			  perl-perl-version		   py-pytest-httpbin			    r-preprocesscore				    yarn
-igvtools		  perl-perl4-corelibs		   py-pytest-isort			    r-prettyunits				    yasm
-ilmbase 		  perl-perl6-slurp		   py-pytest-mock			    r-processx					    yorick
-imagemagick		  perl-perlio-gzip		   py-pytest-mypy			    r-prodlim					    z3
-imake			  perl-perlio-utf8-strict	   py-pytest-pep8			    r-progress					    zfp
-imlib2			  perl-readonly 		   py-pytest-runner			    r-proj					    zfs
-imp			  perl-regexp-common		   py-pytest-xdist			    r-proj4					    zip
-impute2 		  perl-scalar-list-utils	   py-python-daemon			    r-promises					    zlib
-infernal		  perl-scalar-util-numeric	   py-python-dateutil			    r-protgenerics				    zoltan
-inputproto		  perl-set-intervaltree 	   py-python-editor			    r-proto					    zookeeper
-intel			  perl-set-intspan		   py-python-engineio			    r-proxy					    zookeeper-benchmark
-intel-daal		  perl-set-scalar		   py-python-gitlab			    r-pryr					    zsh
-intel-gpu-tools 	  perl-soap-lite		   py-python-igraph			    r-ps					    zstd
-intel-ipp		  perl-star-fusion		   py-python-jenkins			    r-pscbs					    zziplib
-intel-llvm		  perl-statistics-basic 	   py-python-ldap			    r-pspline
-intel-mkl		  perl-statistics-descriptive	   py-python-levenshtein		    r-psych
+==> 5063 packages.
+3proxy			   libisal				     py-cython				r-geor
+abduco			   libiscsi				     py-cyvcf2				r-geosphere
+abi-compliance-checker	   libjpeg				     py-d2to1				r-getopt
+abi-dumper		   libjpeg-turbo			     py-dask				r-getoptlong
+abinit			   libjson				     py-dataclasses			r-ggally
+abseil-cpp		   libjwt				     py-dateparser			r-ggbeeswarm
+abyss			   libkcapi				     py-dbf				r-ggbio
+accfft			   libkml				     py-dbfread 			r-ggdendro
+acct			   libksba				     py-deap				r-ggforce
+accumulo		   liblas				     py-decorator			r-ggjoy
+ace			   liblbxutil				     py-deeptools			r-ggmap
+ack			   liblockfile				     py-deeptoolsintervals		r-ggplot2
+acl			   libluv				     py-defusedxml			r-ggplotify
+acpica-tools		   libmad				     py-dendropy			r-ggpubr
+acpid			   libmatheval				     py-deprecated			r-ggraph
+activeharmony		   libmaxminddb 			     py-deprecation			r-ggrepel
+activemq		   libmesh				     py-descartes			r-ggridges
+acts			   libmetalink				     py-devlib				r-ggsci
+addrwatch		   libmicrohttpd			     py-dgl				r-ggsignif
+adept-utils		   libmmtf-cpp				     py-dill				r-ggvis
+adf			   libmng				     py-discover			r-gh
+adiak			   libmnl				     py-diskcache			r-gistr
+adios			   libmo-unpack 			     py-distributed			r-git2r
+adios2			   libmodbus				     py-distro				r-glimma
+adlbx			   libmonitor				     py-django				r-glmnet
+admixtools		   libnbc				     py-dlcpar				r-globaloptions
+adol-c			   libnet				     py-dnaio				r-globals
+advancecomp		   libnetfilter-conntrack		     py-docker				r-glue
+aegean			   libnetworkit 			     py-dockerpy-creds			r-gmodels
+aeskeyfind		   libnfnetlink 			     py-docopt				r-gmp
+aespipe 		   libnftnl				     py-docutils			r-go-db
+agrep			   libnl				     py-docutils-stubs			r-goftest
+aida			   libnotify				     py-dominate			r-gofuncr
+akantu			   libnova				     py-dotnetcore2			r-googlevis
+alan			   libnrm				     py-doxypy				r-goplot
+albany			   libnsl				     py-doxypypy			r-gosemsim
+albert			   libogg				     py-dp-gp-cluster			r-goseq
+alglib			   liboldx				     py-drmaa				r-gostats
+allpaths-lg		   libopts				     py-dryscrape			r-gower
+alluxio 		   libp11				     py-dxchange			r-gplots
+alps			   libpam				     py-dxfile				r-graph
+alquimia		   libpaper				     py-earthengine-api 		r-graphlayouts
+alsa-lib		   libpcap				     py-easybuild-easyblocks		r-grbase
+aluminum		   libpciaccess 			     py-easybuild-easyconfigs		r-gridbase
+ambari			   libpeas				     py-easybuild-framework		r-gridextra
+amber			   libpfm4				     py-ecdsa				r-gridgraphics
+amdblis 		   libpipeline				     py-ecos				r-gsa
+amdfftw 		   libplist				     py-edffile 			r-gsalib
+amdlibflame		   libpmemobj-cpp			     py-editdistance			r-gseabase
+amdscalapack		   libpng				     py-eg				r-gsl
+amg			   libproxy				     py-elasticsearch			r-gsodr
+amg2013 		   libpsl				     py-elephant			r-gss
+amgx			   libpthread-stubs			     py-emcee				r-gstat
+aml			   libquo				     py-empy				r-gsubfn
+amp			   librdkafka				     py-entrypoints			r-gtable
+ampliconnoise		   librelp				     py-enum34				r-gtools
+amrex			   librmm				     py-envisage			r-gtrellis
+amrvis			   librom				     py-ephem				r-gviz
+anaconda2		   librsb				     py-epydoc				r-gwmodel
+anaconda3		   librsvg				     py-espresso			r-haven
+andi			   librtlsdr				     py-espressopp			r-hdf5array
+angsd			   libsamplerate			     py-et-xmlfile			r-hdf5r
+ant			   libseccomp				     py-eventlet			r-hexbin
+antimony		   libsecret				     py-execnet 			r-hh
+antlr			   libsharp				     py-exodus-bundler			r-highr
+ants			   libshm				     py-extension-helpers		r-hmisc
+aocc			   libsigcpp				     py-extras				r-hms
+aoflagger		   libsigsegv				     py-fabric				r-hoardr
+aom			   libsm				     py-falcon				r-htmltable
+aomp			   libsndfile				     py-fallocate			r-htmltools
+apachetop		   libsodium				     py-fastaindex			r-htmlwidgets
+apcomp			   libspatialindex			     py-fastavro			r-httpcode
+ape			   libspatialite			     py-fastcache			r-httpuv
+aperture-photometry	   libspiro				     py-fastcluster			r-httr
+apex			   libsplash				     py-fastdtw 			r-hwriter
+apple-libunwind 	   libssh				     py-fasteners			r-hypergraph
+applewmproto		   libssh2				     py-fastrlock			r-ica
+appres			   libsvm				     py-faststructure			r-igraph
+apr			   libszip				     py-fenics-dijitso			r-illuminahumanmethylation450kanno-ilmn12-hg19
+apr-util		   libtar				     py-fenics-dolfinx			r-illuminaio
+aragorn 		   libtasn1				     py-fenics-ffcx			r-imager
+arbor			   libtermkey				     py-fenics-fiat			r-impute
+arborx			   libtheora				     py-fenics-ufl			r-influencer
+archer			   libtiff				     py-filelock			r-ini
+argobots		   libtirpc				     py-filemagic			r-inline
+argon2			   libtlx				     py-fiona				r-interactivedisplaybase
+argp-standalone 	   libtomlc99				     py-fiscalyear			r-intervals
+argtable		   libtommath				     py-fisher				r-inum
+aria2			   libtool				     py-fits-tools			r-ipred
+arm-forge		   libtree				     py-fixtures			r-iranges
+armadillo		   libuecc				     py-flake8				r-irdisplay
+arpack-ng		   libunistring 			     py-flake8-import-order		r-irkernel
+arrayfire		   libunwind				     py-flake8-polyfill 		r-irlba
+arrow			   libusb				     py-flask				r-isdparser
+asagi			   libusbmuxd				     py-flask-compress			r-iso
+ascent			   libuser				     py-flask-socketio			r-iterators
+asciidoc		   libuuid				     py-flexx				r-janitor
+asciidoc-py3		   libuv				     py-flye				r-jaspar2018
+asdcplib		   libvdwxc				     py-fn-py				r-jomo
+asdf-cxx		   libverto				     py-fortran-language-server 	r-jpeg
+aspa			   libvips				     py-fortranformat			r-jsonlite
+aspcud			   libvorbis				     py-fparser 			r-kegg-db
+aspect			   libvterm				     py-fprettify			r-kegggraph
+aspell			   libwebp				     py-freezegun			r-keggrest
+aspell6-de		   libwebsockets			     py-fsspec				r-kernlab
+aspell6-en		   libwindowswm 			     py-funcsigs			r-kernsmooth
+aspell6-es		   libx11				     py-functools32			r-kknn
+aspera-cli		   libxau				     py-fusepy				r-knitr
+assimp			   libxaw				     py-future				r-ks
+astra			   libxaw3d				     py-futures 			r-labeling
+astral			   libxc				     py-fypp				r-lambda-r
+astyle			   libxcb				     py-gast				r-laplacesdemon
+at-spi2-atk		   libxcomposite			     py-gcovr				r-lars
+at-spi2-core		   libxcrypt				     py-gdbgui				r-later
+atf			   libxcursor				     py-gdc-client			r-lattice
+athena			   libxdamage				     py-gee-asset-manager		r-latticeextra
+atk			   libxdmcp				     py-geeadd				r-lava
+atlas			   libxevie				     py-geeup				r-lazyeval
+atmi			   libxext				     py-genders 			r-ldheatmap
+atom-dft		   libxfixes				     py-geneimpacts			r-leaflet
+atompaw 		   libxfont				     py-genshi				r-leaps
+atop			   libxfont2				     py-gensim				r-learnbayes
+attr			   libxfontcache			     py-geoalchemy2			r-leiden
+audacious		   libxft				     py-geopandas			r-lfe
+audacity		   libxi				     py-gevent				r-lhs
+audit-userspace 	   libxinerama				     py-gf256				r-libcoin
+augustus		   libxkbcommon 			     py-git-review			r-limma
+authd			   libxkbfile				     py-gitdb				r-listenv
+authselect		   libxkbui				     py-gitpython			r-lme4
+autoconf		   libxml2				     py-gluoncv 			r-lmtest
+autoconf-archive	   libxmu				     py-gnuplot 			r-locfit
+autodock-gpu		   libxp				     py-goatools			r-log4r
+autodock-vina		   libxpm				     py-google				r-loo
+autofact		   libxpresent				     py-google-api-core 		r-lpsolve
+autogen 		   libxprintapputil			     py-google-api-python-client	r-lsei
+automaded		   libxprintutil			     py-google-auth			r-lubridate
+automake		   libxrandr				     py-google-auth-httplib2		r-lumi
+avizo			   libxrender				     py-google-auth-oauthlib		r-magic
+aws-parallelcluster	   libxres				     py-google-cloud-core		r-magick
+awscli			   libxscrnsaver			     py-google-cloud-storage		r-magrittr
+axel			   libxshmfence 			     py-google-pasta			r-makecdfenv
+axl			   libxslt				     py-google-resumable-media		r-maldiquant
+axom			   libxsmm				     py-googleapis-common-protos	r-manipulatewidget
+babelflow		   libxstream				     py-googledrivedownloader		r-mapplots
+babeltrace		   libxt				     py-gosam				r-mapproj
+backupninja		   libxtrap				     py-gpaw				r-maps
+bam-readcount		   libxtst				     py-gpustat 			r-maptools
+bamaddrg		   libxv				     py-gputil				r-markdown
+bamdst			   libxvmc				     py-gpy				r-mass
+bamtools		   libxxf86dga				     py-gpytorch			r-matlab
+bamutil 		   libxxf86misc 			     py-gql				r-matr
+bannergrab		   libxxf86vm				     py-graphql-core			r-matrix
+barrnap 		   libyaml				     py-graphviz			r-matrixmodels
+bart			   libyogrt				     py-greenlet			r-matrixstats
+bash			   libzip				     py-grequests			r-mclust
+bash-completion 	   libzmq				     py-griddataformats 		r-mcmcglmm
+bashtop 		   liggghts				     py-grpcio				r-mco
+bat			   lighttpd				     py-gsd				r-mda
+batctl			   ligra				     py-gsi				r-memoise
+bats			   likwid				     py-guidata 			r-mergemaid
+bazel			   linkphase3				     py-guiqwt				r-metap
+bbcp			   linsys-v				     py-h11				r-methylumi
+bbmap			   linux-headers			     py-h2				r-mgcv
+bc			   linux-pam				     py-h5glance			r-mgraster
+bcache			   listres				     py-h5py				r-mice
+bcftools		   lizard				     py-h5sh				r-mime
+bcl2fastq2		   lksctp-tools 			     py-hacking 			r-minfi
+bdftopcf		   llvm 				     py-hatchet 			r-miniui
+bdii			   llvm-amdgpu				     py-hdbscan 			r-minqa
+bdw-gc			   llvm-openmp				     py-hdfs				r-misc3d
+beagle			   llvm-openmp-ompt			     py-healpy				r-mitml
+beakerlib		   lm-sensors				     py-heapdict			r-mitools
+bear			   lmbench				     py-hepdata-validator		r-mixtools
+beast-tracer		   lmdb 				     py-hepunits			r-mlbench
+beast1			   lmod 				     py-hieroglyph			r-mlinterfaces
+beast2			   lndir				     py-hiredis 			r-mlr
+bedops			   log4c				     py-horovod 			r-mlrmbo
+bedtools2		   log4cplus				     py-hpack				r-mmwrweek
+beforelight		   log4cpp				     py-hpcbench			r-mnormt
+benchmark		   log4cxx				     py-hpccm				r-modelmetrics
+berkeley-db		   logrotate				     py-hstspreload			r-modelr
+bertini 		   logstash				     py-html2text			r-modeltools
+bgpdump 		   loki 				     py-html5lib			r-mpm
+bib2xhtml		   looptools				     py-htmlgen 			r-msnbase
+bigreqsproto		   lordec				     py-htseq				r-multcomp
+bind9			   lrslib				     py-httpbin 			r-multicool
+binutils		   lrzip				     py-httpcore			r-multitaper
+bioawk			   lsf					     py-httplib2			r-multtest
+biobloom		   lshw 				     py-httptools			r-munsell
+biopieces		   lsof 				     py-httpx				r-mvtnorm
+bird			   lsscsi				     py-humanfriendly			r-mzid
+bismark 		   ltp					     py-humanize			r-mzr
+bison			   ltr-retriever			     py-hvac				r-nanotime
+bitlbee 		   ltrace				     py-hyperframe			r-ncbit
+bitmap			   lua					     py-hypothesis			r-ncdf4
+bitsery 		   lua-bitlib				     py-ics				r-network
+blaspp			   lua-lpeg				     py-identify			r-networkd3
+blasr			   lua-luafilesystem			     py-idna				r-nimble
+blasr-libcpp		   lua-luajit				     py-idna-ssl			r-nleqslv
+blast-legacy		   lua-luaposix 			     py-illumina-utils			r-nlme
+blast-plus		   lua-mpack				     py-imageio 			r-nloptr
+blast2go		   lucene				     py-imagesize			r-nmf
+blat			   luit 				     py-iminuit 			r-nmof
+blaze			   lulesh				     py-immutables			r-nnet
+blis			   lumpy-sv				     py-importlib			r-nnls
+bliss			   lustre				     py-importlib-metadata		r-nor1mix
+blitz			   lvarray				     py-importlib-resources		r-nortest
+blktrace		   lvm2 				     py-inference-schema		r-np
+blogbench		   lwgrp				     py-inheritance			r-npsurv
+blt			   lwm2 				     py-iniparse			r-numderiv
+bmake			   lxc					     py-intervaltree			r-oligoclasses
+bmi			   lynx 				     py-invoke				r-openssl
+bml			   lz4					     py-ipaddress			r-openxlsx
+bohrium 		   lzma 				     py-ipdb				r-optparse
+boinc-client		   lzo					     py-ipykernel			r-ordinal
+bolt			   lzop 				     py-ipyparallel			r-org-hs-eg-db
+bonniepp		   m4					     py-ipython 			r-organismdbi
+bookleaf-cpp		   macsio				     py-ipython-cluster-helper		r-packrat
+boost			   mad-numdiff				     py-ipython-genutils		r-pacman
+boostmplcartesianproduct   madgraph5amc 			     py-ipywidgets			r-paleotree
+botan			   mafft				     py-irpf90				r-pamr
+bowtie			   magics				     py-isodate 			r-pan
+bowtie2 		   magma				     py-isort				r-parallelmap
+boxlib			   mahout				     py-itsdangerous			r-paramhelpers
+bpp-core		   makedepend				     py-jaraco-functools		r-party
+bpp-phyl		   maker				     py-javaproperties			r-partykit
+bpp-phyl-omics		   mallocmc				     py-jdatetime			r-pathview
+bpp-seq 		   maloc				     py-jdcal				r-pbapply
+bpp-seq-omics		   man-db				     py-jedi				r-pbdzmq
+bpp-suite		   manta				     py-jeepney 			r-pbkrtest
+bracken 		   mapnik				     py-jellyfish			r-pcamethods
+braker			   mapserver				     py-jinja2				r-pcapp
+branson 		   maq					     py-jinja2-time			r-permute
+breakdancer		   margo				     py-jmespath			r-pfam-db
+bref3			   mariadb				     py-joblib				r-phangorn
+breseq			   mariadb-c-client			     py-jplephem			r-phantompeakqualtools
+bridger 		   mark 				     py-jprops				r-philentropy
+brigand 		   masa 				     py-jpype1				r-phylobase
+brltty			   masurca				     py-jsmin				r-phyloseq
+brotli			   mathematica				     py-json-get			r-phylostratr
+brpc			   matio				     py-json5				r-phytools
+bsseeker2		   matlab				     py-jsondiff			r-picante
+bubblewrap		   maven				     py-jsonpatch			r-pillar
+bucky			   maverick				     py-jsonpickle			r-pkgbuild
+buddy			   mawk 				     py-jsonpointer			r-pkgconfig
+bumpversion		   mbdyn				     py-jsonref 			r-pkgload
+busco			   mbedtls				     py-jsonschema			r-pkgmaker
+busybox 		   mc					     py-junit-xml			r-plogr
+butter			   mcl					     py-jupyter 			r-plot3d
+butterflypack		   mcpp 				     py-jupyter-client			r-plotly
+bwa			   mcutils				     py-jupyter-console 		r-plotmo
+bwtool			   mdtest				     py-jupyter-core			r-plotrix
+byacc			   med					     py-jupyterhub			r-pls
+byobu			   meep 				     py-jupyterlab			r-plyr
+byte-unixbench		   mefit				     py-jupyterlab-pygments		r-pmcmr
+byteman 		   megadock				     py-jupyterlab-server		r-png
+bzip2			   megahit				     py-keras				r-polspline
+c			   memaxes				     py-keras-applications		r-polyclip
+c-ares			   memcached				     py-keras-preprocessing		r-polynom
+c-blosc 		   meme 				     py-kerberos			r-popgenome
+c-blosc2		   memkind				     py-kitchen 			r-popvar
+c-lime			   memsurfer				     py-kiwisolver			r-powerlaw
+cabana			   memtester				     py-kmodes				r-prabclus
+cachefilesd		   meraculous				     py-knack				r-praise
+caffe			   mercurial				     py-kombu				r-preprocesscore
+cairo			   mercury				     py-labours 			r-prettyunits
+cairomm 		   mesa 				     py-lark-parser			r-processx
+caliper 		   mesa-demos				     py-latexcodec			r-prodlim
+callpath		   mesa-glu				     py-lazy				r-progress
+camellia		   mesa18				     py-lazy-object-proxy		r-proj
+camp			   meshkit				     py-lazy-property			r-proj4
+camx			   meson				     py-lazyarray			r-promises
+canal			   mesquite				     py-leather 			r-protgenerics
+candle-benchmarks	   metabat				     py-libconf 			r-proto
+cantera 		   metall				     py-libensemble			r-proxy
+canu			   metaphysicl				     py-librosa 			r-pryr
+cap3			   metis				     py-lifelines			r-ps
+capnproto		   mfem 				     py-ligo-segments			r-pscbs
+capstone		   mg					     py-line-profiler			r-pspline
+cardioid		   mgis 				     py-linecache2			r-psych
+casacore		   microbiomeutil			     py-lit				r-ptw
+cask			   migraphx				     py-llvmlite			r-purrr
+casper			   migrate				     py-lmfit				r-qtl
+cassandra		   mii					     py-lmodule 			r-quadprog
+catalyst		   minced				     py-localcider			r-quantmod
+catch2			   mindthegap				     py-locket				r-quantreg
+cbc			   miniaero				     py-lockfile			r-quantro
+cbench			   miniamr				     py-logilab-common			r-qvalue
+cblas			   miniasm				     py-louie				r-r-cache
+cbtf			   miniconda2				     py-lru-dict			r-r-methodss3
+cbtf-argonavis		   miniconda3				     py-lscsoft-glue			r-r-oo
+cbtf-argonavis-gui	   minife				     py-luigi				r-r-utils
+cbtf-krell		   miniforge3				     py-lxml				r-r6
+cbtf-lanl		   minigan				     py-lz4				r-randomfields
+cc65			   minighost				     py-lzstring			r-randomfieldsutils
+ccache			   minigmg				     py-m2r				r-randomforest
+ccfits			   minimap2				     py-macholib			r-randomglm
+ccs-qcd 		   minimd				     py-machotools			r-ranger
+cctools 		   minio				     py-macs2				r-rann
+cdbfasta		   miniqmc				     py-maestrowf			r-rappdirs
+cdd			   minisign				     py-magic				r-raster
+cddlib			   minismac2d				     py-mako				r-rbgl
+cdecimal		   minitri				     py-markdown			r-rbokeh
+cdhit			   minivite				     py-markovify			r-rcmdcheck
+cdo			   minixyce				     py-markupsafe			r-rcolorbrewer
+ceed			   minizip				     py-matplotlib			r-rcpp
+cereal			   minuit				     py-mayavi				r-rcppannoy
+ceres-solver		   miopen-hip				     py-mccabe				r-rcpparmadillo
+cfitsio 		   miopen-opencl			     py-mdanalysis			r-rcppblaze
+cgal			   miopengemm				     py-mechanize			r-rcppcctz
+cgdb			   mira 				     py-memory-profiler 		r-rcppcnpy
+cgdcbxd 		   miranda				     py-merlin				r-rcppeigen
+cget			   mirdeep2				     py-metasv				r-rcpphnsw
+cgl			   mitofates				     py-methylcode			r-rcppparallel
+cgm			   mitos				     py-mg-rast-tools			r-rcppprogress
+cgns			   mivisionx				     py-mido				r-rcurl
+chai			   mixcr				     py-minrpc				r-rda
+changa			   mkfontdir				     py-misopy				r-rdpack
+channelflow		   mkfontscale				     py-mistune 			r-readbitmap
+chapel			   mlhka				     py-mixedhtseq			r-readr
+charliecloud		   mlocate				     py-mlperf-logging			r-readxl
+charmpp 		   mlperf-deepcam			     py-mlxtend 			r-recipes
+chatterbug		   mmg					     py-mmcv				r-registry
+check			   moab 				     py-mmtf-python			r-rematch
+chgcentre		   modern-wheel 			     py-mo-pack 			r-rematch2
+chill			   modylas				     py-mock				r-remotes
+chlorop 		   mofem-cephas 			     py-modred				r-reordercluster
+chombo			   mofem-fracture-module		     py-moltemplate			r-reportingtools
+chrony			   mofem-minimal-surface-equation	     py-monotonic			r-repr
+chrpath 		   mofem-users-modules			     py-monty				r-reprex
+cinch			   mokutil				     py-more-itertools			r-reshape
+circos			   molcas				     py-mpi4py				r-reshape2
+cistem			   molden				     py-mpld3				r-reticulate
+citcoms 		   mongo-c-driver			     py-mpmath				r-rex
+cityhash		   mongo-cxx-driver			     py-msal				r-rferns
+ck			   mongodb-async-driver 		     py-msal-extensions 		r-rgdal
+clamav			   mono 				     py-msgpack 			r-rgenoud
+clamr			   montage				     py-msrest				r-rgeos
+clapack 		   moosefs				     py-msrestazure			r-rgexf
+clara			   moreutils				     py-multi-key-dict			r-rgl
+claw			   mosh 				     py-multidict			r-rgooglemaps
+cleaveland4		   mothur				     py-multiprocess			r-rgraphviz
+cleverleaf		   motif				     py-multiqc 			r-rhdf5
+clfft			   motioncor2				     py-munch				r-rhdf5lib
+clhep			   mount-point-attributes		     py-murmurhash			r-rhmmer
+clinfo			   mozjs				     py-mx				r-rhtslib
+clingo			   mpark-variant			     py-myhdl				r-rinside
+cln			   mpc					     py-mypy				r-rio
+cloc			   mpdecimal				     py-mypy-extensions 		r-rjags
+cloog			   mpe2 				     py-mysql-connector-python		r-rjava
+cloverleaf		   mpest				     py-mysqlclient			r-rjson
+cloverleaf3d		   mpfr 				     py-mysqldb1			r-rjsonio
+clp			   mpi-bash				     py-natsort 			r-rlang
+clustal-omega		   mpich				     py-nbclient			r-rmariadb
+clustalw		   mpifileutils 			     py-nbconvert			r-rmarkdown
+cmake			   mpilander				     py-nbformat			r-rminer
+cmaq			   mpileaks				     py-nc-time-axis			r-rmpfr
+cmark			   mpip 				     py-ndg-httpsclient 		r-rmpi
+cminpack		   mpir 				     py-neo				r-rms
+cmocka			   mpix-launch-swift			     py-neobolt 			r-rmutil
+cmockery		   mpt					     py-neotime 			r-rmysql
+cmor			   mrbayes				     py-nest-asyncio			r-rnaseqmap
+cnmem			   mrbench				     py-nestle				r-rncl
+cnpy			   mrchem				     py-netcdf4 			r-rnexml
+cntk			   mrcpp				     py-netifaces			r-rngtools
+cntk1bitsgd		   mrnet				     py-netket				r-rnoaa
+cnvnator		   mrtrix3				     py-networkit			r-robust
+codar-cheetah		   mscgen				     py-networkx			r-robustbase
+code-server		   msgpack-c				     py-nltk				r-roc
+codec2			   mshadow				     py-nodeenv 			r-rocr
+codes			   msmc 				     py-nose				r-rodbc
+coevp			   msmc2				     py-nose-cov			r-rook
+cohmm			   mstk 				     py-nose2				r-rots
+coin3d			   mt-metis				     py-nosexcover			r-roxygen2
+coinhsl 		   multitail				     py-notebook			r-rpart
+coinutils		   multitime				     py-numba				r-rpart-plot
+collectd		   multiverso				     py-numcodecs			r-rpostgresql
+collier 		   mumax				     py-numexpr 			r-rprojroot
+colm			   mummer				     py-numexpr3			r-rrblup
+colordiff		   mummer4				     py-numpy				r-rrcov
+comd			   mumps				     py-numpydoc			r-rrpp
+comgr			   munge				     py-nvidia-ml-py			r-rsamtools
+commons-lang		   muparser				     py-nvidia-ml-py3			r-rsnns
+commons-lang3		   muscle				     py-oauth2client			r-rsolnp
+commons-logging 	   muse 				     py-oauthlib			r-rspectra
+compiz			   musl 				     py-olefile 			r-rsqlite
+compositeproto		   muster				     py-onnx				r-rstan
+conda4aarch64		   mutationpp				     py-ont-fast5-api			r-rstantools
+conduit 		   mvapich2				     py-opencensus			r-rstudioapi
+connect-proxy		   mvapich2-gdr 			     py-opencensus-context		r-rsvd
+conserver		   mvapich2x				     py-openpmd-validator		r-rtracklayer
+console-bridge		   mxm					     py-openpyxl			r-rtsne
+constype		   mxml 				     py-openslide-python		r-runit
+consul			   mxnet				     py-opentuner			r-rvcheck
+converge		   mysql				     py-opppy				r-rversions
+corenlp 		   nacos				     py-opt-einsum			r-rvest
+coreutils		   nag					     py-or-tools			r-rzmq
+corset			   nalu 				     py-ordereddict			r-s4vectors
+cosbench		   nalu-wind				     py-oset				r-samr
+cosma			   namd 				     py-osqp				r-sandwich
+cosmoflow-benchmark	   nano 				     py-overpy				r-scales
+cosmomc 		   nanoflann				     py-owslib				r-scater
+cosp2			   nanomsg				     py-packaging			r-scatterplot3d
+cotter			   nanopb				     py-palettable			r-scrime
+couchdb 		   nasm 				     py-pamela				r-sctransform
+cowsay			   nauty				     py-pandas				r-sdmtools
+cp2k			   nbdkit				     py-pandocfilters			r-segmented
+cpio			   ncbi-magicblast			     py-parameterized			r-selectr
+cpp-httplib		   ncbi-rmblastn			     py-paramiko			r-seqinr
+cppad			   ncbi-toolkit 			     py-paramz				r-seqlogo
+cppcheck		   nccl 				     py-parse				r-sessioninfo
+cppgsl			   nccl-tests				     py-parsedatetime			r-seurat
+cpprestsdk		   nccmp				     py-parso				r-sf
+cppunit 		   ncdu 				     py-partd				r-sfsmisc
+cppzmq			   ncftp				     py-particle			r-shape
+cpu-features		   ncl					     py-path-py 			r-shiny
+cpuinfo 		   nco					     py-pathlib 			r-shinydashboard
+cquery			   ncompress				     py-pathlib2			r-shinyfiles
+cracklib		   ncurses				     py-pathos				r-shortread
+cradl			   ncview				     py-pathspec			r-siggenes
+cram			   ndiff				     py-patsy				r-simpleaffy
+cray-libsci		   nek5000				     py-pauvre				r-singlecellexperiment
+cromwell		   nekbone				     py-pbr				r-sitmo
+cromwell-womtool	   nekcem				     py-pep8				r-sm
+cronie			   nektar				     py-pep8-naming			r-smoof
+cryptopp		   nektools				     py-performance			r-sn
+cryptsetup		   neo4j				     py-periodictable			r-snakecase
+csa-c			   neovim				     py-petastorm			r-snow
+cscope			   nest 				     py-petsc4py			r-snowfall
+csdp			   netcdf-c				     py-pexpect 			r-snprelate
+ctffind 		   netcdf-cxx				     py-phonopy 			r-snpstats
+ctpl			   netcdf-cxx4				     py-pickleshare			r-som
+ctre			   netcdf-fortran			     py-picrust 			r-somaticsignatures
+cub			   netdata				     py-pid				r-sourcetools
+cube			   netgauge				     py-pil				r-sp
+cubelib 		   netgen				     py-pillow				r-spacetime
+cubew			   netkit-ftp				     py-pillow-simd			r-spam
+cubist			   netlib-lapack			     py-pint				r-sparsem
+cuda			   netlib-scalapack			     py-pip				r-spatial
+cuda-memtest		   netlib-xblas 			     py-pipits				r-spatialeco
+cudnn			   netperf				     py-pispino 			r-spatialpack
+cufflinks		   nettle				     py-pkgconfig			r-spatialreg
+cunit			   neuron				     py-pkginfo 			r-spatstat
+cups			   newt 				     py-plac				r-spatstat-data
+curl			   nextflow				     py-planar				r-spatstat-utils
+cusz			   nfft 				     py-planet				r-spdata
+cvs			   nfs-ganesha				     py-plotly				r-spdep
+cxx			   nfs-utils				     py-pluggy				r-speedglm
+cxxopts 		   nghttp2				     py-ply				r-spem
+cyrus-sasl		   nginx				     py-pmw				r-splancs
+czmq			   ngmerge				     py-pomegranate			r-splitstackshape
+dakota			   ngmlr				     py-portalocker			r-sqldf
+daligner		   nicstat				     py-portend 			r-squarem
+damageproto		   nim					     py-poster				r-squash
+damaris 		   ninja				     py-pox				r-sseq
+damselfly		   ninja-fortran			     py-poyo				r-stabledist
+darshan-runtime 	   nix					     py-ppft				r-stanheaders
+darshan-util		   njet 				     py-pre-commit			r-stargazer
+dash			   nlcglib				     py-preshed 			r-statmod
+datamash		   nlohmann-json			     py-prettytable			r-statnet-common
+dataspaces		   nlohmann-json-schema-validator	     py-profilehooks			r-stringi
+datatransferkit 	   nlopt				     py-progress			r-stringr
+date			   nmap 				     py-progressbar2			r-strucchange
+dateutils		   nn-c 				     py-projectq			r-subplex
+davix			   nnvm 				     py-prometheus-client		r-summarizedexperiment
+dbcsr			   node-js				     py-prompt-toolkit			r-suppdists
+dbus			   notmuch				     py-protobuf			r-survey
+dbus-glib		   npb					     py-psutil				r-survival
+dbxtool 		   npm					     py-psyclone			r-sva
+dcap			   npth 				     py-psycopg2			r-sys
+dcmtk			   nrm					     py-ptyprocess			r-tarifx
+dd4hep			   ns-3-dev				     py-pudb				r-taxizedb
+ddd			   nseg 				     py-pure-eval			r-tclust
+dealii			   nsimd				     py-pure-sasl			r-teachingdemos
+dealii-parameter-gui	   nspr 				     py-py				r-tensor
+debbuild		   ntirpc				     py-py-cpuinfo			r-tensora
+decentralized-internet	   ntpoly				     py-py-spy				r-testit
+deconseq-standalone	   numactl				     py-py2bit				r-testthat
+dejagnu 		   numamma				     py-py2cairo			r-tfbstools
+delly2			   numap				     py-py2neo				r-tfmpvalue
+delphes 		   numdiff				     py-py4j				r-th-data
+delta			   nut					     py-py6s				r-threejs
+denovogear		   nvdimmsim				     py-pyani				r-tibble
+dftbplus		   nvhpc				     py-pyarrow 			r-tidycensus
+dftd3-lib		   nvptx-tools				     py-pyasn1				r-tidygraph
+dftfe			   nwchem				     py-pyasn1-modules			r-tidyr
+dhpmm-f 		   nyancat				     py-pybedtools			r-tidyselect
+dhtest			   ocaml				     py-pybigwig			r-tidyverse
+dia			   occa 				     py-pybind11			r-tiff
+dialign 		   oce					     py-pybtex				r-tigris
+dialign-tx		   oci-systemd-hook			     py-pybtex-docutils 		r-timedate
+diamond 		   ocl-icd				     py-pycairo 			r-tinytex
+diffmark		   oclgrind				     py-pycares 			r-tmixclust
+diffsplice		   oclint				     py-pycbc				r-topgo
+diffutils		   oclock				     py-pychecker			r-triebeard
+dihydrogen		   octave				     py-pycifrw 			r-trimcluster
+dimemas 		   octave-optim 			     py-pycmd				r-truncdist
+ding-libs		   octave-splines			     py-pycodestyle			r-truncnorm
+dire			   octave-struct			     py-pycosat 			r-trust
+direnv			   octopus				     py-pycparser			r-tseries
+discovar		   of-catalyst				     py-pycrypto			r-tsne
+discovardenovo		   of-precice				     py-pycuda				r-ttr
+disktype		   omega-h				     py-pycurl				r-tweenr
+dislin			   ompss				     py-pydatalog			r-txdb-hsapiens-ucsc-hg18-knowngene
+distcc			   ompt-openmp				     py-pydeps				r-txdb-hsapiens-ucsc-hg19-knowngene
+diy			   onednn				     py-pydispatcher			r-tximport
+dlpack			   oniguruma				     py-pydot				r-tximportdata
+dmd			   ont-albacore 			     py-pydot2				r-ucminf
+dmidecode		   opa-psm2				     py-pydotplus			r-udunits2
+dmlc-core		   opam 				     py-pydv				r-units
+dmtcp			   opari2				     py-pyeda				r-upsetr
+dmxproto		   open-iscsi				     py-pyelftools			r-urca
+dnsmap			   open-isns				     py-pyepsg				r-urltools
+dnsmasq 		   openbabel				     py-pyface				r-usethis
+dnstop			   openblas				     py-pyfaidx 			r-utf8
+dnstracer		   opencascade				     py-pyfasta 			r-uuid
+docbook-xml		   opencl-c-headers			     py-pyfftw				r-uwot
+docbook-xsl		   opencl-clhpp 			     py-pyfits				r-variantannotation
+dock			   opencl-headers			     py-pyflakes			r-varselrf
+dos2unix		   opencoarrays 			     py-pygdal				r-vcd
+dosfstools		   opencv				     py-pygdbmi 			r-vctrs
+dotconf 		   opendx				     py-pygelf				r-vegan
+dotnet-core-sdk 	   openexr				     py-pygit2				r-vfs
+double-conversion	   openfast				     py-pyglet				r-vgam
+doxygen 		   openfdtd				     py-pygments			r-vioplot
+dpdk			   openfoam				     py-pygments-pytest 		r-vipor
+draco			   openfoam-org 			     py-pygobject			r-viridis
+dracut			   openfst				     py-pygps				r-viridislite
+dramsim2		   opengl				     py-pygpu				r-visnetwork
+dray			   openglu				     py-pygresql			r-vsn
+dri2proto		   openimageio				     py-pygtk				r-watermelon
+dri3proto		   openipmi				     py-pyheadtail			r-webshot
+drill			   openjdk				     py-pyinstrument			r-wgcna
+dropwatch		   openjpeg				     py-pyinstrument-cext		r-whisker
+druid			   openkim-models			     py-pyjwt				r-withr
+ds			   openldap				     py-pyke				r-xde
+dsdp			   openloops				     py-pykml				r-xfun
+dsrc			   openmc				     py-pykwalify			r-xgboost
+dssp			   openmm				     py-pyliblzma			r-xlconnect
+dtcmp			   openmolcas				     py-pylint				r-xlconnectjars
+duperemove		   openmpi				     py-pymatgen			r-xlsx
+dyninst 		   openmx				     py-pymc3				r-xlsxjars
+dysco			   opennurbs				     py-pymeeus 			r-xmapbridge
+e2fsprogs		   openpa				     py-pyminifier			r-xml
+ea-utils		   openpbs				     py-pymol				r-xml2
+eagle			   openpmd-api				     py-pymongo 			r-xnomial
+earlyoom		   openresty				     py-pymorph 			r-xopen
+easybuild		   openscenegraph			     py-pympler 			r-xtable
+ebms			   openslide				     py-pymysql 			r-xts
+eccodes 		   openslp				     py-pynacl				r-xvector
+ecdsautils		   openspeedshop			     py-pynio				r-yaimpute
+ecflow			   openspeedshop-utils			     py-pynn				r-yaml
+eclipse-gcj-parser	   openssh				     py-pyodbc				r-yapsa
+ecos			   openssl				     py-pyomo				r-yaqcaffy
+ecp-io-sdk		   openstf				     py-pyopencl			r-yarn
+ecp-proxy-apps		   opensubdiv				     py-pyopenssl			r-zeallot
+ecp-viz-sdk		   opentsdb				     py-pypar				r-zip
+ed			   openwsman				     py-pyparsing			r-zlibbioc
+editline		   opium				     py-pypeflow			r-zoo
+editres 		   optional-lite			     py-pypeg2				r3d
+eem			   optipng				     py-pyperclip			rabbitmq
+efivar			   opus 				     py-pyperf				racon
+eigen			   orbit2				     py-pyprecice			raft
+elasticsearch		   orc					     py-pyprof2html			ragel
+elemental		   orca 				     py-pyproj				raja
+elfutils		   orfm 				     py-pyqi				ramulator
+elk			   orientdb				     py-pyqt4				randfold
+elmerfem		   orthofiller				     py-pyqt5				random123
+elpa			   orthofinder				     py-pyquaternion			randrproto
+elsd			   orthomcl				     py-pyrad				range-v3
+elsdc			   osi					     py-pyrosar 			rankstr
+elsi			   osmctools				     py-pyrsistent			rapidjson
+emacs			   osqp 				     py-pysam				rasdaemon
+ember			   osu-micro-benchmarks 		     py-pyscaf				ravel
+emboss			   otf					     py-pyscf				raxml
+embree			   otf2 				     py-pyserial			ray
+enca			   p11-kit				     py-pyshp				rccl
+enchant 		   p3dfft3				     py-pyside				rclone
+energyplus		   p4est				     py-pyside2 			rdc
+entrezdirect		   p7zip				     py-pysmartdl			rdma-core
+entt			   pacbio-daligner			     py-pysocks 			rdp-classifier
+environment-modules	   pacbio-damasker			     py-pysolar 			rdptools
+eospac			   pacbio-dazz-db			     py-pyspark 			re2
+eq-r			   pacbio-dextractor			     py-pysqlite			re2c
+er			   packmol				     py-pytailf 			readfq
+erfa			   pacvim				     py-pytest				readline
+erlang			   pagit				     py-pytest-cache			recon
+ermod			   pagmo				     py-pytest-check-links		recorder
+erne			   pal					     py-pytest-cov			recordproto
+es-shell		   paml 				     py-pytest-flake8			redis
+esmf			   panda				     py-pytest-forked			reditools
+espanso 		   pandaseq				     py-pytest-httpbin			redset
+essl			   pandoc				     py-pytest-isort			redundans
+etcd			   pango				     py-pytest-mock			reframe
+ethminer		   pangomm				     py-pytest-mypy			regcm
+ethtool 		   papi 				     py-pytest-pep8			relax
+etsf-io 		   papyrus				     py-pytest-runner			relion
+evemu			   paradiseo				     py-pytest-xdist			remhos
+everytrace		   parallel				     py-python-daemon			rempi
+everytrace-example	   parallel-netcdf			     py-python-dateutil 		rename
+evieext 		   parallelmergetree			     py-python-docs-theme		rendercheck
+evtgen			   paraver				     py-python-editor			renderproto
+exa			   paraview				     py-python-engineio 		repeatmasker
+exabayes		   parmetis				     py-python-fmask			repeatmodeler
+examinimd		   parmgridgen				     py-python-gitlab			repeatscout
+examl			   parquet-cpp				     py-python-igraph			resourceproto
+exampm			   parquet-format			     py-python-jenkins			revbayes
+exasp2			   parsimonator 			     py-python-json-logger		revocap-coupler
+exiv2			   parsplice				     py-python-ldap			revocap-refiner
+exmcutils		   partitionfinder			     py-python-levenshtein		rgb
+exodusii		   pasta				     py-python-logstash 		rhash
+exonerate		   patch				     py-python-lzo			rinetd
+exonerate-gff3		   patchelf				     py-python-magic			ripgrep
+expat			   patchutils				     py-python-mapnik			rivet
+expect			   pathfinder				     py-python-meep			rlwrap
+express 		   pax-utils				     py-python-memcached		rmats
+extrae			   pbbam				     py-python-oauth2			rmlab
+exuberant-ctags 	   pbmpi				     py-python-rapidjson		rna-seqc
+eztrace 		   pbsuite				     py-python-slugify			rnaz
+f2c			   pciutils				     py-python-socketio 		rng-tools
+f77-zmq 		   pcma 				     py-python-subunit			rngstreams
+f90cache		   pcre 				     py-python-swiftclient		rocalution
+fabtests		   pcre2				     py-python-utils			rocblas
+fairlogger		   pdf2svg				     py-pythonqwt			rocfft
+faiss			   pdftk				     py-pytimeparse			rocketmq
+fakechroot		   pdsh 				     py-pytools 			rocksdb
+falcon			   pdt					     py-pytorch-gradual-warmup-lr	rockstar
+fann			   pegtl				     py-pytz				rocm-bandwidth-test
+faodel			   pennant				     py-pyudev				rocm-clang-ocl
+fast-global-file-status    percept				     py-pyugrid 			rocm-cmake
+fasta			   percona-server			     py-pyutilib			rocm-dbgapi
+fastdb			   perfstubs				     py-pyvcf				rocm-debug-agent
+fastdfs 		   perl 				     py-pywavelets			rocm-device-libs
+fastjar 		   perl-acme-damn			     py-pywcs				rocm-gdb
+fastjet 		   perl-algorithm-diff			     py-pyyaml				rocm-opencl
+fastjson		   perl-alien-build			     py-pyzmq				rocm-smi
+fastmath		   perl-alien-libxml2			     py-qtawesome			rocm-smi-lib
+fastme			   perl-app-cmd 			     py-qtconsole			rocm-tensile
+fastp			   perl-array-utils			     py-qtpy				rocm-validation-suite
+fastphase		   perl-b-hooks-endofscope		     py-quantities			rocminfo
+fastq-screen		   perl-bio-searchio-hmmer		     py-quast				rocprim
+fastqc			   perl-bioperl 			     py-queryablelist			rocprofiler-dev
+fastqvalidator		   perl-bit-vector			     py-radical-utils			rocrand
+fasttext		   perl-cairo				     py-ranger-fm			rocsolver
+fasttransforms		   perl-capture-tiny			     py-rasterio			rocsparse
+fasttree		   perl-carp-clan			     py-ratelim 			rocthrust
+fastx-toolkit		   perl-cgi				     py-raven				roctracer-dev
+faust			   perl-class-data-inheritable		     py-ray				rodinia
+fca			   perl-class-inspector 		     py-rbtools 			root
+fcgi			   perl-class-load			     py-rdflib				rose
+fd-find 		   perl-class-load-xs			     py-readme-renderer 		ross
+fdupes			   perl-clone				     py-recommonmark			routino
+feh			   perl-clone-choose			     py-redis				rpcsvc-proto
+fenics			   perl-compress-raw-bzip2		     py-regex				rr
+fenics-dolfinx		   perl-compress-raw-zlib		     py-reportlab			rrdtool
+feq-parse		   perl-config-general			     py-repoze-lru			rsbench
+fermi			   perl-contextual-return		     py-reproject			rsem
+fermikit		   perl-cpan-meta-check 		     py-requests			rstart
+fermisciencetools	   perl-data-dumper			     py-requests-futures		rsync
+ferret			   perl-data-optlist			     py-requests-mock			rsyslog
+ffb			   perl-data-stag			     py-requests-oauthlib		rt-tests
+ffmpeg			   perl-date-manip			     py-requests-toolbelt		rtags
+ffr			   perl-db-file 			     py-resampy 			rtax
+ffsb			   perl-dbd-mysql			     py-restview			ruby
+fftw			   perl-dbd-pg				     py-resultsfile			ruby-asciidoctor
+fgsl			   perl-dbd-sqlite			     py-retrying			ruby-erubis
+figlet			   perl-dbi				     py-rfc3986 			ruby-gnuplot
+figtree 		   perl-devel-cycle			     py-rios				ruby-hpricot
+file			   perl-devel-globaldestruction 	     py-rise				ruby-mustache
+filebench		   perl-devel-overloadinfo		     py-rmm				ruby-narray
+filo			   perl-devel-stacktrace		     py-rnacocktail			ruby-rake
+filtlong		   perl-devel-symdump			     py-robotframework			ruby-rdiscount
+fimpute 		   perl-digest-md5			     py-rope				ruby-ronn
+find-circ		   perl-dist-checkconflicts		     py-rpy2				ruby-rubyinline
+findbugs		   perl-encode-locale			     py-rq				ruby-svn2git
+findutils		   perl-error				     py-rsa				ruby-terminal-table
+fio			   perl-eval-closure			     py-rseqc				ruby-thor
+fipscheck		   perl-exception-class 		     py-rtree				ruby-tmuxinator
+fish			   perl-exporter-tiny			     py-ruamel-ordereddict		ruby-unicode-display-width
+fixesproto		   perl-extutils-config 		     py-ruamel-yaml			ruby-xdg
+fj			   perl-extutils-depends		     py-ruamel-yaml-clib		ruby-zentest
+fjcontrib		   perl-extutils-helpers		     py-s3cmd				rust
+fl			   perl-extutils-installpaths		     py-s3transfer			rust-bindgen
+flac			   perl-extutils-makemaker		     py-sacremoses			sabre
+flann			   perl-extutils-pkgconfig		     py-saga-python			saga-gis
+flash			   perl-ffi-checklib			     py-sanic				sailfish
+flatbuffers		   perl-file-chdir			     py-scandir 			salmon
+flatcc			   perl-file-copy-recursive		     py-scientificpython		sambamba
+flcl			   perl-file-homedir			     py-scikit-build			samblaster
+flecsale		   perl-file-listing			     py-scikit-image			samrai
+flecsi			   perl-file-pushd			     py-scikit-learn			samtools
+flecsph 		   perl-file-sharedir-install		     py-scikit-optimize 		sandbox
+flex			   perl-file-slurp			     py-scipy				satsuma2
+flexiblas		   perl-file-slurp-tiny 		     py-scoop				savanna
+flibcpp 		   perl-file-slurper			     py-scp				saws
+flink			   perl-file-which			     py-scs				sblim-sfcc
+flint			   perl-font-ttf			     py-seaborn 			sbml
+flit			   perl-forks				     py-secretstorage			sbt
+fltk			   perl-gd				     py-selenium			scala
+flume			   perl-gdgraph 			     py-semantic-version		scalasca
+flux-core		   perl-gdgraph-histogram		     py-semver				scallop
+flux-sched		   perl-gdtextutil			     py-send2trash			scalpel
+fluxbox 		   perl-graph				     py-sentencepiece			scan-for-matches
+fmt			   perl-graph-readwrite 		     py-sentry-sdk			scantailor
+foam-extend		   perl-hash-merge			     py-seriate 			scipoptsuite
+folly			   perl-html-parser			     py-setproctitle			scons
+font-util		   perl-html-tagset			     py-setuptools			scorec-core
+fontcacheproto		   perl-http-cookies			     py-setuptools-git			scorep
+fontconfig		   perl-http-daemon			     py-setuptools-rust 		scotch
+fontsproto		   perl-http-date			     py-setuptools-scm			scr
+fonttosfnt		   perl-http-message			     py-setuptools-scm-git-archive	screen
+form			   perl-http-negotiate			     py-sfepy				scripts
+fortran 		   perl-inline				     py-sgp4				scrnsaverproto
+fortrilinos		   perl-inline-c			     py-sh				scs
+foundationdb		   perl-io-all				     py-shapely 			sctk
+fox			   perl-io-compress			     py-shiboken			sdl2
+fp16			   perl-io-html 			     py-shortuuid			sdl2-image
+fpc			   perl-io-prompt			     py-shroud				sdsl-lite
+fping			   perl-io-sessiondata			     py-simplegeneric			seacas
+fpocket 		   perl-io-socket-ssl			     py-simplejson			sed
+fqtrim			   perl-io-string			     py-simplekml			sensei
+fr-hit			   perl-io-stringy			     py-singledispatch			sentencepiece
+fraggenescan		   perl-io-tty				     py-sip				sentieon-genomics
+freebayes		   perl-ipc-run 			     py-six				seqan
+freeglut		   perl-json				     py-slepc4py			seqkit
+freeimage		   perl-libwww-perl			     py-slurm-pipeline			seqprep
+freeipmi		   perl-libxml-perl			     py-smart-open			seqtk
+freetype		   perl-list-moreutils			     py-smmap				serf
+freexl			   perl-list-moreutils-xs		     py-snappy				sessreg
+fribidi 		   perl-log-log4perl			     py-sncosmo 			setserial
+frontistr		   perl-logger-simple			     py-sniffio 			setxkbmap
+fseq			   perl-lwp-mediatypes			     py-snowballstemmer 		sfcgal
+fsl			   perl-lwp-protocol-https		     py-snuggs				sga
+fslsfonts		   perl-mailtools			     py-sonlib				sgpp
+fstobdf 		   perl-math-bezier			     py-sortedcontainers		shadow
+fstrack 		   perl-math-cdf			     py-soundfile			shapeit
+ftgl			   perl-math-cephes			     py-soupsieve			shapeit4
+fujitsu-mpi		   perl-math-matrixreal 		     py-spacy				shapelib
+fujitsu-ssl2		   perl-math-round			     py-spacy-models-en-core-web-sm	shared-mime-info
+funhpc			   perl-math-vecstat			     py-spacy-models-en-vectors-web-lg	shark
+fuse-overlayfs		   perl-module-build			     py-spatialist			shc
+fyba			   perl-module-build-tiny		     py-spatialite			shengbte
+fzf			   perl-module-implementation		     py-spdlog				shiny-server
+g4abla			   perl-module-runtime			     py-spectra 			shiro
+g4emlow 		   perl-module-runtime-conflicts	     py-spefile 			shocklibs
+g4ensdfstate		   perl-moose				     py-spglib				shoremap
+g4incl			   perl-mozilla-ca			     py-sphinx				shortbred
+g4ndl			   perl-mro-compat			     py-sphinx-bootstrap-theme		shortstack
+g4neutronxs		   perl-namespace-clean 		     py-sphinx-copybutton		showfont
+g4particlexs		   perl-net-http			     py-sphinx-gallery			shtools
+g4photonevaporation	   perl-net-scp-expect			     py-sphinx-rtd-theme		shuffile
+g4pii			   perl-net-ssleay			     py-sphinxautomodapi		sickle
+g4radioactivedecay	   perl-number-format			     py-sphinxcontrib-applehelp 	siesta
+g4realsurface		   perl-object-insideout		     py-sphinxcontrib-bibtex		signalp
+g4saiddata		   perl-package-deprecationmanager	     py-sphinxcontrib-devhelp		signify
+g4tendl 		   perl-package-stash			     py-sphinxcontrib-htmlhelp		silo
+gamess-ri-mp2-miniapp	   perl-package-stash-xs		     py-sphinxcontrib-issuetracker	simgrid
+gams			   perl-padwalker			     py-sphinxcontrib-jsmath		simmetrix-simmodsuite
+ganglia 		   perl-parallel-forkmanager		     py-sphinxcontrib-mermaid		simplemoc
+gapbs			   perl-params-util			     py-sphinxcontrib-programoutput	simul
+gapcloser		   perl-params-validate 		     py-sphinxcontrib-qthelp		simulationio
+gapfiller		   perl-parse-recdescent		     py-sphinxcontrib-serializinghtml	singularity
+gasnet			   perl-path-tiny			     py-sphinxcontrib-trio		singularity-legacy
+gate			   perl-pdf-api2			     py-sphinxcontrib-websupport	sio
+gatepet2stir		   perl-pegex				     py-spyder				sirius
+gatk			   perl-perl-unsafe-signals		     py-spykeutils			skilion-onedrive
+gaudi			   perl-perl-version			     py-sqlalchemy			skopeo
+gaussian		   perl-perl4-corelibs			     py-sqlalchemy-utils		sl
+gaussian-src		   perl-perl6-slurp			     py-sqlparse			slang
+gaussian-view		   perl-perlio-gzip			     py-srsly				slate
+gawk			   perl-perlio-utf8-strict		     py-sshtunnel			sleef
+gblocks 		   perl-readonly			     py-statsmodels			slepc
+gcc			   perl-regexp-common			     py-stdlib-list			slf4j
+gccmakedep		   perl-scalar-list-utils		     py-stestr				slider
+gccxml			   perl-scalar-util-numeric		     py-stevedore			sloccount
+gconf			   perl-set-intervaltree		     py-stopit				slurm
+gcta			   perl-set-intspan			     py-storm				smalt
+gdal			   perl-set-scalar			     py-stratify			smartdenovo
+gdb			   perl-soap-lite			     py-stsci-distutils 		smartmontools
+gdbm			   perl-star-fusion			     py-subprocess32			smof
+gdk-pixbuf		   perl-statistics-basic		     py-subrosa 			smproxy
+gdl			   perl-statistics-descriptive		     py-svgpathtools			snakemake
+gdrcopy 		   perl-statistics-pca			     py-svgwrite			snap
+geant4			   perl-sub-exporter			     py-symengine			snap-berkeley
+geant4-data		   perl-sub-exporter-progressive	     py-symfit				snap-korf
+geant4-vmc		   perl-sub-identify			     py-sympy				snappy
+gearshifft		   perl-sub-install			     py-syned				snbone
+gemmlowp		   perl-sub-name			     py-systemd-python			sniffles
+genemark-et		   perl-sub-uplevel			     py-tables				snpeff
+gengetopt		   perl-svg				     py-tabulate			snphylo
+genomefinisher		   perl-swissknife			     py-tap-py				snptest
+genometools		   perl-sys-sigaction			     py-tatsu				soapdenovo-trans
+genomeworks		   perl-task-weaken			     py-tblib				soapdenovo2
+genrich 		   perl-term-readline-gnu		     py-tempora 			soci
+geode			   perl-termreadkey			     py-tensorboard			sofa-c
+geoip			   perl-test-cleannamespaces		     py-tensorboard-plugin-wit		sollve
+geoip-api-c		   perl-test-deep			     py-tensorboardx			solr
+geopm			   perl-test-differences		     py-tensorflow			somatic-sniper
+geos			   perl-test-exception			     py-tensorflow-estimator		sonlib
+gettext 		   perl-test-fatal			     py-termcolor			sortmerna
+gflags			   perl-test-memory-cycle		     py-terminado			sosflow
+ghost			   perl-test-most			     py-testinfra			source-highlight
+ghostscript		   perl-test-needs			     py-testpath			sowing
+ghostscript-fonts	   perl-test-requires			     py-testrepository			sox
+giflib			   perl-test-requiresinternet		     py-testresources			spades
+ginac			   perl-test-warn			     py-testscenarios			span-lite
+ginkgo			   perl-test-warnings			     py-testtools			spark
+giraph			   perl-text-csv			     py-tetoolkit			sparse
+git			   perl-text-diff			     py-text-unidecode			sparsehash
+git-fat-git		   perl-text-format			     py-textblob			sparta
+git-imerge		   perl-text-simpletable		     py-texttable			spath
+git-lfs 		   perl-text-soundex			     py-tfdlpack			spdlog
+gitconddb		   perl-text-unidecode			     py-theano				spectrum-mpi
+gl2ps			   perl-time-hires			     py-thinc				speex
+glew			   perl-time-piece			     py-thirdorder			speexdsp
+glfmultiples		   perl-timedate			     py-threadpoolctl			spfft
+glfw			   perl-try-tiny			     py-tifffile			spglib
+glib			   perl-uri				     py-tinyarray			sph2pipe
+glib-networking 	   perl-want				     py-tokenizers			spherepack
+glibmm			   perl-www-robotrules			     py-toml				spindle
+glimmer 		   perl-xml-dom 			     py-tomlkit 			spiral
+glm			   perl-xml-dom-xpath			     py-tomopy				spla
+global			   perl-xml-filter-buffertext		     py-toolz				spm
+globalarrays		   perl-xml-libxml			     py-torch				spot
+glog			   perl-xml-libxslt			     py-torch-cluster			sprng
+gloo			   perl-xml-namespacesupport		     py-torch-geometric 		sqlite
+glpk			   perl-xml-parser			     py-torch-nvidia-apex		sqlite-jdbc
+glproto 		   perl-xml-parser-lite 		     py-torch-scatter			sqlitebrowser
+glusterfs		   perl-xml-quote			     py-torch-sparse			sqoop
+glvis			   perl-xml-regexp			     py-torch-spline-conv		squashfs
+gmake			   perl-xml-sax 			     py-torchaudio			squid
+gmap-gsnap		   perl-xml-sax-base			     py-torchfile			sratoolkit
+gmime			   perl-xml-sax-writer			     py-torchsummary			sse2neon
+gmodel			   perl-xml-simple			     py-torchtext			sshpass
+gmp			   perl-xml-twig			     py-torchvision			ssht
+gmsh			   perl-xml-writer			     py-tornado 			ssmtp
+gmt			   perl-xml-xpathengine 		     py-tox				sspace-longread
+gmtsar			   perl-yaml				     py-tpot				sspace-standard
+gnat			   perl-yaml-libyaml			     py-tqdm				sst-core
+gnome-common		   pestpp				     py-traceback2			sst-dumpi
+gnupg			   petsc				     py-traitlets			sst-elements
+gnuplot 		   pexsi				     py-traits				sst-macro
+gnuradio		   pfft 				     py-traitsui			sst-transports
+gnutls			   pflask				     py-transformers			stacks
+go			   pflotran				     py-treehash			staden-io-lib
+go-bootstrap		   pfunit				     py-tuiview 			star
+go-md2man		   pgdspider				     py-twine				star-ccm-plus
+gobject-introspection	   pgi					     py-twisted 			startup-notification
+goblin-hmc-sim		   phantompeakqualtools 		     py-typed-ast			stat
+googletest		   phast				     py-typesentry			stata
+gosam-contrib		   phasta				     py-typing				static-analysis-suite
+gotcha			   phist				     py-typing-extensions		stc
+gource			   phoenix				     py-tzlocal 			steps
+gpdb			   photos				     py-ujson				stinger
+gperf			   php					     py-umalqurra			storm
+gperftools		   phrap-crossmatch-swat		     py-umi-tools			stow
+gpgme			   phred				     py-uncertainties			strace
+gpi-2			   phylip				     py-unicycler			stream
+gplates 		   phylobayesmpi			     py-unidecode			strelka
+gprolog 		   phyluce				     py-unittest2			stress
+gpu-burn		   picard				     py-unittest2py3k			string-view-lite
+gqrx			   picsar				     py-update-checker			stringtie
+gr-osmosdr		   picsarlite				     py-uproot4 			structure
+grackle 		   pidx 				     py-uritemplate			strumpack
+gradle			   pig					     py-urllib3 			su2
+grads			   pigz 				     py-urwid				sublime-text
+grafana 		   pilon				     py-us				subread
+grandr			   pindel				     py-usgs				subversion
+graph500		   pinentry				     py-utils				suite-sparse
+graphblast		   pinfo				     py-uvloop				sumaclust
+graphicsmagick		   pipework				     py-uvw				sumo
+graphite2		   piranha				     py-uwsgi				sundials
+graphlib		   pism 				     py-vcf-kit 			superlu
+graphmap		   pixman				     py-vcversioner			superlu-dist
+graphviz		   pixz 				     py-vermin				superlu-mt
+grass			   pkg-config				     py-versioneer			supernova
+graylog2-server 	   pkgconf				     py-vine				sw4lite
+grep			   pktools				     py-virtualenv			swap-assembler
+grib-api		   planck-likelihood			     py-virtualenv-clone		swarm
+gridlab-d		   plasma				     py-virtualenvwrapper		swfft
+grnboost		   platypus				     py-visdom				swftools
+groff			   plink				     py-voluptuous			swiftsim
+gromacs 		   plink-ng				     py-vsc-base			swig
+grpc			   plplot				     py-vsc-install			swipl
+gsettings-desktop-schemas  plumed				     py-vsts				symengine
+gsl			   pmdk 				     py-vsts-cd-manager 		symlinks
+gslib			   pmgr-collective			     py-walinuxagent			sympol
+gtk-doc 		   pmix 				     py-wand				sysbench
+gtkmm			   pmlib				     py-wandb				syscalc
+gtkorvo-atl		   pnfft				     py-warlock 			sysfsutils
+gtkorvo-cercs-env	   pngquant				     py-wasabi				sysget
+gtkorvo-dill		   pngwriter				     py-watchdog			sysstat
+gtkorvo-enet		   pnmpi				     py-wcsaxes 			systemtap
+gtkplus 		   poamsa				     py-wcwidth 			sz
+gtksourceview		   pocl 				     py-weave				tabix
+gts			   podio				     py-webencodings			tajo
+guacamole-client	   polymake				     py-webkit-server			talass
+guacamole-server	   poplddecay				     py-weblogo 			talloc
+guidance		   poppler				     py-websocket-client		tangram
+guile			   poppler-data 			     py-websockets			tantan
+gunrock 		   popt 				     py-werkzeug			tar
+gurobi			   porta				     py-whatshap			targetp
+gzip			   portage				     py-wheel				task
+h2database		   portcullis				     py-whichcraft			taskd
+h5cpp			   postgis				     py-widgetsnbextension		taskflow
+h5hut			   postgresql				     py-workload-automation		tasmanian
+h5part			   powerapi				     py-wradlib 			tassel
+h5utils 		   powertop				     py-wrapt				tau
+h5z-zfp 		   ppl					     py-wub				tauola
+hacckernels		   pplacer				     py-wxmplot 			tbl2asn
+hackrf-host		   ppopen-appl-amr-fdm			     py-wxpython			tcl
+hadoop			   ppopen-appl-bem			     py-xarray				tcl-itcl
+hal			   ppopen-appl-bem-at			     py-xattr				tcl-tcllib
+halc			   ppopen-appl-dem-util 		     py-xdot				tcl-tclxml
+half			   ppopen-appl-fdm			     py-xenv				tclap
+hama			   ppopen-appl-fdm-at			     py-xlrd				tcoffee
+hapcut2 		   ppopen-appl-fem			     py-xlsxwriter			tcpdump
+hapdip			   ppopen-appl-fvm			     py-xlwt				tcptrace
+haploview		   ppopen-at				     py-xmlrunner			tcsh
+haproxy 		   ppopen-math-mp			     py-xmltodict			tdengine
+hardlink		   ppopen-math-vis			     py-xopen				tealeaf
+harfbuzz		   prank				     py-xpyb				teckit
+harminv 		   precice				     py-xvfbwrapper			tecplot
+hashcat 		   predixy				     py-yahmm				templight
+hazelcast		   premake-core 			     py-yajl				templight-tools
+hbase			   presentproto 			     py-yamlreader			tengine
+hbm-dramsim2		   preseq				     py-yapf				tensorflow-serving-client
+hc			   presto				     py-yarl				termcap
+hcol			   price				     py-yolk3k				tesseract
+hcoll			   primer3				     py-youtube-dl			testdfsio
+hdf			   prinseq-lite 			     py-yt				tetgen
+hdf5			   printproto				     py-ytopt				tethex
+hdf5-blosc		   prism				     py-zarr				texinfo
+hdfview 		   prmon				     py-zc-buildout			texlive
+healpix-cxx		   prng 				     py-zc-lockfile			texstudio
+heaptrack		   probconsrna				     py-zict				textparser
+heffte			   procps				     py-zipp				tfel
+helics			   procps-ng				     py-zope-event			the-platinum-searcher
+help2man		   prodigal				     py-zope-interface			the-silver-searcher
+henson			   profugusmc				     py-zxcvbn				thepeg
+hepmc			   proj 				     pythia6				thornado-mini
+hepmc3			   prokka				     pythia8				thrift
+hepmcanalysis		   prometheus				     python				thrust
+heppdt			   protobuf				     q-e-sirius 			tig
+heputils		   protobuf-c				     qbank				time
+hercules		   proxymngr				     qbox				timedatex
+herwig3 		   prrte				     qca				timemory
+herwigpp		   pruners-ninja			     qcachegrind			tinker
+hibench 		   ps-lite				     qd 				tinyxml
+hic-pro 		   psi4 				     qemu				tinyxml2
+highfive		   pslib				     qgis				tioga
+highwayhash		   psm					     qgraf				tippecanoe
+hiop			   psmc 				     qhull				tiptop
+hip			   pstreams				     qjson				tix
+hip-rocclr		   pugixml				     qmcpack				tixi
+hipblas 		   pulseaudio				     qmd-progress			tk
+hipcub			   pumi 				     qnnpack				tldd
+hipfort 		   pv					     qorts				tmalign
+hipify-clang		   pvm					     qperf				tmhmm
+hipsparse		   pxz					     qrupdate				tmux
+hipsycl 		   py-3to2				     qscintilla 			tomcat
+hiredis 		   py-4suite-xml			     qt 				tophat
+hisat2			   py-abipy				     qt-creator 			totalview
+hisea			   py-absl-py				     qtgraph				tpm2-tss
+hive			   py-accimage				     qthreads				tppred
+hmmer			   py-acme-tiny 			     qtkeychain 			tracer
+homer			   py-adal				     quantum-espresso			transabyss
+hoomd-blue		   py-adb-enhanced			     quartz				transdecoder
+hotspot 		   py-addict				     quicksilver			transposome
+hpcc			   py-adios				     quinoa				transrate
+hpccg			   py-advancedhtmlparser		     quota				transset
+hpcg			   py-aenum				     qwt				trapproto
+hpctoolkit		   py-affine				     qwtpolar				tree
+hpcviewer		   py-agate				     r					treelite
+hpgmg			   py-agate-dbf 			     r-a4				treesub
+hping			   py-agate-excel			     r-a4base				trf
+hpl			   py-agate-sql 			     r-a4classif			triangle
+hpx			   py-aiofiles				     r-a4core				trident
+hpx5			   py-aiohttp				     r-a4preproc			trilinos
+hsa-rocr-dev		   py-aioredis				     r-a4reporting			trilinos-catalyst-ioss-adapter
+hsakmt			   py-alabaster 			     r-abadata				trimal
+hsakmt-roct		   py-alembic				     r-abaenrichment			trimgalore
+hsf-cmaketools		   py-altgraph				     r-abind				trimmomatic
+hssp			   py-amqp				     r-absseq				trinity
+hstr			   py-ansible				     r-acde				trinotate
+htop			   py-antlr4-python3-runtime		     r-acepack				trnascan-se
+htslib			   py-apache-beam			     r-acgh				tskit
+http-get		   py-apache-libcloud			     r-acme				tulip
+http-load		   py-apex				     r-ada				turbine
+http-parser		   py-apipkg				     r-adabag				turbomole
+http-ping		   py-appdirs				     r-ade4				turnserver
+http-post		   py-applicationinsights		     r-adegenet 			tut
+httpd			   py-appnope				     r-adegraphics			twm
+httperf 		   py-apptools				     r-adephylo 			tycho2
+httpie			   py-apscheduler			     r-adespatial			typhon
+httping 		   py-archspec				     r-adgoftest			typhonio
+httpress		   py-argcomplete			     r-adsplit				uchardet
+hub			   py-argon2-cffi			     r-aer				ucx
+hudi			   py-argparse				     r-affxparser			udunits
+hugo			   py-args				     r-affy				ufo-core
+hunspell		   py-arrow				     r-affycomp 			ufo-filters
+hwloc			   py-arviz				     r-affycompatible			umap
+hybpiper		   py-asciitree 			     r-affycontam			umoci
+hybridsim		   py-asdf				     r-affycoretools			umpire
+hydra			   py-ase				     r-affydata 			unblur
+hydrogen		   py-asgiref				     r-affyexpress			uncrustify
+hyperscan		   py-asn1crypto			     r-affyilm				unibilium
+hyphy			   py-aspy-yaml 			     r-affyio				unifdef
+hypre			   py-asserts				     r-affypdnn 			unifyfs
+i3			   py-asteval				     r-affyplm				unison
+ibm-databroker		   py-astor				     r-affyqcreport			units
+ibm-java		   py-astpretty 			     r-affyrnadegradation		unittest-cpp
+ibmisc			   py-astroid				     r-agdex				universal-ctags
+icarus			   py-astropy				     r-agilp				unixodbc
+iceauth 		   py-astropy-healpix			     r-agimicrorna			unqlite
+icedtea 		   py-astropy-helpers			     r-aims				unrar
+icet			   py-astunparse			     r-aldex2				unuran
+ico			   py-async-generator			     r-allelicimbalance 		unzip
+icu4c			   py-async-timeout			     r-alpine				upcxx
+id3lib			   py-asyncio				     r-als				uqtk
+idba			   py-atomicwrites			     r-alsace				uriparser
+idl			   py-atropos				     r-altcdfenvs			usbutils
+iegenlib		   py-attrs				     r-amap				usearch
+ignite			   py-audioread 			     r-ampliqueso			userspace-rcu
+igraph			   py-autograd				     r-analysispageserver		utf8proc
+igv			   py-autograd-gamma			     r-anaquin				util-linux
+igvtools		   py-autopep8				     r-aneufinder			util-macros
+ilmbase 		   py-auxlib				     r-aneufinderdata			uuid
+imagemagick		   py-avro				     r-animation			uvw
+imake			   py-avro-json-serializer		     r-annaffy				valgrind
+imlib2			   py-avro-python3			     r-annotate 			vampirtrace
+imp			   py-awesome-slugify			     r-annotationdbi			vardictjava
+impute2 		   py-awkward1				     r-annotationfilter 		variorum
+infernal		   py-azote				     r-annotationforge			varnish-cache
+influxdb		   py-azure-batch			     r-annotationhub			varscan
+iniparser		   py-azure-cli 			     r-aod				vasp
+inputproto		   py-azure-cli-command-modules-nspkg	     r-ape				vbfnlo
+intel			   py-azure-cli-core			     r-argparse 			vc
+intel-daal		   py-azure-cli-nspkg			     r-aroma-light			vcftools
+intel-gpu-tools 	   py-azure-cli-telemetry		     r-askpass				vcsh
+intel-ipp		   py-azure-common			     r-assertthat			vdt
+intel-llvm		   py-azure-core			     r-backports			veccore
+intel-mkl		   py-azure-cosmos			     r-bamsignals			vecgeom
+intel-mpi		   py-azure-datalake-store		     r-base64				veclibfort
+intel-mpi-benchmarks	   py-azure-functions-devops-build	     r-base64enc			vegas2
+intel-oneapi-ccl	   py-azure-graphrbac			     r-bayesm				veloc
+intel-oneapi-compilers	   py-azure-identity			     r-bbmisc				velvet
+intel-oneapi-dal	   py-azure-keyvault			     r-beachmat 			velvetoptimiser
+intel-oneapi-dnn	   py-azure-keyvault-certificates	     r-beanplot 			verilator
+intel-oneapi-ipp	   py-azure-keyvault-keys		     r-beeswarm 			verrou
+intel-oneapi-ippcp	   py-azure-keyvault-nspkg		     r-bfast				vesta
+intel-oneapi-mkl	   py-azure-keyvault-secrets		     r-bfastspatial			vgm
+intel-oneapi-mpi	   py-azure-loganalytics		     r-bglr				videoproto
+intel-oneapi-tbb	   py-azure-mgmt-advisor		     r-bh				viennarna
+intel-oneapi-vpl	   py-azure-mgmt-apimanagement		     r-biasedurn			viewres
+intel-parallel-studio	   py-azure-mgmt-appconfiguration	     r-bibtex				vifi
+intel-pin		   py-azure-mgmt-applicationinsights	     r-bigalgebra			vigra
+intel-tbb		   py-azure-mgmt-authorization		     r-bigmemory			vim
+intel-xed		   py-azure-mgmt-batch			     r-bigmemory-sri			virtualgl
+interproscan		   py-azure-mgmt-batchai		     r-bindr				visit
+intltool		   py-azure-mgmt-billing		     r-bindrcpp 			vizglow
+ioapi			   py-azure-mgmt-botservice		     r-bio3d				vmatch
+ior			   py-azure-mgmt-cdn			     r-biobase				vmc
+iozone			   py-azure-mgmt-cognitiveservices	     r-biocfilecache			vmd
+ipcalc			   py-azure-mgmt-compute		     r-biocgenerics			volk
+iperf2			   py-azure-mgmt-consumption		     r-biocinstaller			voropp
+iperf3			   py-azure-mgmt-containerinstance	     r-biocmanager			votca-csg
+ipopt			   py-azure-mgmt-containerregistry	     r-biocneighbors			votca-csg-tutorials
+iproute2		   py-azure-mgmt-containerservice	     r-biocparallel			votca-csgapps
+iq-tree 		   py-azure-mgmt-core			     r-biocsingular			votca-ctp
+isaac			   py-azure-mgmt-cosmosdb		     r-biocstyle			votca-tools
+isaac-server		   py-azure-mgmt-datalake-analytics	     r-biom-utils			votca-xtp
+isc-dhcp		   py-azure-mgmt-datalake-store 	     r-biomart				vpfft
+isescan 		   py-azure-mgmt-datamigration		     r-biomartr 			vpic
+isl			   py-azure-mgmt-deploymentmanager	     r-biomformat			vsearch
+iso-codes		   py-azure-mgmt-devtestlabs		     r-biostrings			vsftpd
+ispc			   py-azure-mgmt-dns			     r-biovizbase			vt
+istio			   py-azure-mgmt-eventgrid		     r-bit				vtable-dumper
+itk			   py-azure-mgmt-eventhub		     r-bit64				vtk
+itstool 		   py-azure-mgmt-hdinsight		     r-bitops				vtk-h
+itsx			   py-azure-mgmt-imagebuilder		     r-blob				vtk-m
+iwyu			   py-azure-mgmt-iotcentral		     r-blockmodeling			vvtest
+jackcess		   py-azure-mgmt-iothub 		     r-bmp				wannier90
+jafka			   py-azure-mgmt-iothubprovisioningservices  r-bookdown 			warpx
+jags			   py-azure-mgmt-keyvault		     r-boot				watch
+jali			   py-azure-mgmt-kusto			     r-boruta				wayland
+jansi			   py-azure-mgmt-loganalytics		     r-brew				wcs
+jansi-native		   py-azure-mgmt-managedservices	     r-broom				wcslib
+jansson 		   py-azure-mgmt-managementgroups	     r-bsgenome 			webbench
+jasper			   py-azure-mgmt-maps			     r-bsgenome-hsapiens-ucsc-hg19	weechat
+jbigkit 		   py-azure-mgmt-marketplaceordering	     r-bsseq				weighttp
+jblob			   py-azure-mgmt-media			     r-bumphunter			wget
+jchronoss		   py-azure-mgmt-monitor		     r-c50				wgsim
+jdk			   py-azure-mgmt-msi			     r-cairo				which
+jellyfish		   py-azure-mgmt-netapp 		     r-callr				whizard
+jemalloc		   py-azure-mgmt-network		     r-car				windowswmproto
+jetty-project		   py-azure-mgmt-nspkg			     r-caracas				wireshark
+jhpcn-df		   py-azure-mgmt-policyinsights 	     r-cardata				wonton
+jimtcl			   py-azure-mgmt-privatedns		     r-caret				wordnet
+jline3			   py-azure-mgmt-rdbms			     r-caroline 			workrave
+jmol			   py-azure-mgmt-recoveryservices	     r-category 			wps
+jose			   py-azure-mgmt-recoveryservicesbackup      r-catools				wrf
+jpegoptim		   py-azure-mgmt-redhatopenshift	     r-cdcfluview			wrk
+jq			   py-azure-mgmt-redis			     r-cellranger			wsmancli
+json-c			   py-azure-mgmt-relay			     r-checkmate			wt
+json-cwx		   py-azure-mgmt-reservations		     r-checkpoint			wtdbg2
+json-fortran		   py-azure-mgmt-resource		     r-chemometrics			wxpropgrid
+json-glib		   py-azure-mgmt-search 		     r-chron				wxwidgets
+jsoncpp 		   py-azure-mgmt-security		     r-circlize 			x11perf
+jstorm			   py-azure-mgmt-servicebus		     r-class				xabclib
+jube			   py-azure-mgmt-servicefabric		     r-classint 			xapian-core
+judy			   py-azure-mgmt-signalr		     r-cli				xauth
+julea			   py-azure-mgmt-sql			     r-clipr				xbacklight
+julia			   py-azure-mgmt-sqlvirtualmachine	     r-clisymbols			xbiff
+junit4			   py-azure-mgmt-storage		     r-clue				xbitmaps
+k8			   py-azure-mgmt-trafficmanager 	     r-cluster				xbraid
+kafka			   py-azure-mgmt-web			     r-clustergeneration		xcalc
+kahip			   py-azure-multiapi-storage		     r-clusterprofiler			xcb-demo
+kaiju			   py-azure-nspkg			     r-cner				xcb-proto
+kaks-calculator 	   py-azure-storage-common		     r-coda				xcb-util
+kaldi			   py-azure-storage-nspkg		     r-codetools			xcb-util-cursor
+kallisto		   py-azureml-automl-core		     r-codex				xcb-util-errors
+karma			   py-azureml-core			     r-coin				xcb-util-image
+kassiopeia		   py-azureml-dataprep			     r-colorspace			xcb-util-keysyms
+kbd			   py-azureml-dataprep-native		     r-combinat 			xcb-util-renderutil
+kbproto 		   py-azureml-dataset-runtime		     r-commonmark			xcb-util-wm
+kcov			   py-azureml-pipeline			     r-complexheatmap			xcb-util-xrm
+kdiff3			   py-azureml-pipeline-core		     r-compositions			xcfun
+kea			   py-azureml-pipeline-steps		     r-condop				xclip
+kealib			   py-azureml-sdk			     r-construct			xclipboard
+keepalived		   py-azureml-telemetry 		     r-convevol 			xclock
+kentutils		   py-azureml-train			     r-copula				xcmiscproto
+keyutils		   py-azureml-train-automl-client	     r-corhmm				xcmsdb
+kibana			   py-azureml-train-core		     r-corpcor				xcompmgr
+kim-api 		   py-azureml-train-restclients-hyperdrive   r-corrplot 			xconsole
+kinesis 		   py-babel				     r-countrycode			xcursor-themes
+kitty			   py-backcall				     r-covr				xcursorgen
+kmergenie		   py-backports-abc			     r-cowplot				xdbedizzy
+kmod			   py-backports-functools-lru-cache	     r-crayon				xdelta
+knem			   py-backports-lzma			     r-crosstalk			xditview
+kokkos			   py-backports-shutil-get-terminal-size     r-crul				xdm
+kokkos-kernels		   py-backports-ssl-match-hostname	     r-ctc				xdmf3
+kokkos-kernels-legacy	   py-backports-tempfile		     r-cubature 			xdotool
+kokkos-legacy		   py-backports-weakref 		     r-cubist				xdpyinfo
+kokkos-nvcc-wrapper	   py-basemap				     r-curl				xdriinfo
+kraken			   py-basis-set-exchange		     r-dada2				xedit
+kraken2 		   py-bcbio-gff 			     r-data-table			xerces-c
+krb5			   py-bcolz				     r-dbi				xeus
+krims			   py-bcrypt				     r-dbplyr				xev
+kripke			   py-beautifulsoup4			     r-debugme				xextproto
+kubernetes		   py-billiard				     r-decipher 			xeyes
+kvasir-mpl		   py-binaryornot			     r-delayedarray			xf86bigfontproto
+kvtree			   py-bintrees				     r-delayedmatrixstats		xf86dga
+kylin			   py-binwalk				     r-deldir				xf86dgaproto
+ladot			   py-biom-format			     r-dendextend			xf86driproto
+laghos			   py-biomine				     r-deoptim				xf86miscproto
+lame			   py-biopandas 			     r-deoptimr 			xf86rushproto
+lammps			   py-biopython 			     r-desc				xf86vidmodeproto
+lapackpp		   py-bitarray				     r-deseq				xfd
+last			   py-bitstring 			     r-deseq2				xfindproxy
+lastz			   py-black				     r-desolve				xfontsel
+laszip			   py-bleach				     r-devtools 			xfs
+latte			   py-blessed				     r-diagrammer			xfsinfo
+launchmon		   py-blessings 			     r-dicekriging			xfsprogs
+lazyten 		   py-blinker				     r-dichromat			xfwp
+lbann			   py-blis				     r-diffusionmap			xgamma
+lbxproxy		   py-blosc				     r-digest				xgboost
+lbzip2			   py-bmap-tools			     r-diptest				xgc
+lcals			   py-bokeh				     r-dirichletmultinomial		xhmm
+lcio			   py-boltons				     r-dismo				xhost
+lcms			   py-boom-boot-manager 		     r-diversitree			xineramaproto
+lcov			   py-boto				     r-dnacopy				xinit
+ldak			   py-boto3				     r-do-db				xinput
+ldc			   py-botocore				     r-domc				xios
+ldc-bootstrap		   py-bottle				     r-doparallel			xkbcomp
+legion			   py-bottleneck			     r-dorng				xkbdata
+lemon			   py-breakseq2 			     r-dose				xkbevd
+leptonica		   py-breathe				     r-dosnow				xkbprint
+less			   py-brian				     r-dotcall64			xkbutils
+lesstif 		   py-brian2				     r-downloader			xkeyboard-config
+leveldb 		   py-brotlipy				     r-dplyr				xkill
+lftp			   py-bsddb3				     r-dqrng				xload
+lhapdf			   py-bx-python 			     r-dss				xlogo
+lhapdf5 		   py-bz2file				     r-dt				xlsatoms
+libaec			   py-cached-property			     r-dtw				xlsclients
+libaio			   py-cachetools			     r-dygraphs 			xlsfonts
+libapplewm		   py-cairocffi 			     r-dynamictreecut			xmag
+libarchive		   py-cantoolz				     r-e1071				xman
+libassuan		   py-cartopy				     r-earth				xmessage
+libatasmart		   py-catalogue 			     r-ecp				xmh
+libatomic-ops		   py-cclib				     r-edger				xmlf90
+libbacktrace		   py-cdat-lite 			     r-ellipse				xmlrpc-c
+libbeagle		   py-cdo				     r-ellipsis 			xmlto
+libbeato		   py-cdsapi				     r-emmli				xmodmap
+libbinio		   py-cekit				     r-energy				xmore
+libbsd			   py-celery				     r-enrichplot			xorg-cf-files
+libbson 		   py-certifi				     r-ensembldb			xorg-docs
+libbytesize		   py-certipy				     r-envstats 			xorg-gtest
+libc			   py-cf-units				     r-ergm				xorg-server
+libcanberra		   py-cffi				     r-europepmc			xorg-sgml-doctools
+libcap			   py-cfgv				     r-evaluate 			xphelloworld
+libcap-ng		   py-cftime				     r-evd				xplor-nih
+libceed 		   py-chai				     r-exactextractr			xplsprinters
+libcerf 		   py-chainer				     r-exomecopy			xpmem
+libcgroup		   py-chainmap				     r-exomedepth			xpr
+libcint 		   py-chalice				     r-expint				xprehashprinterlist
+libcircle		   py-chardet				     r-expm				xprop
+libconfig		   py-charm4py				     r-factoextra			xproto
+libconfuse		   py-checkm-genome			     r-factominer			xproxymanagementprotocol
+libcroco		   py-cheetah				     r-fansi				xqilla
+libctl			   py-cheroot				     r-farver				xrandr
+libcudf 		   py-cherrypy				     r-fastcluster			xrdb
+libcuml 		   py-chronyk				     r-fastmatch			xrefresh
+libcumlprims		   py-cinema-lib			     r-fdb-infiniummethylation-hg18	xrootd
+libdaemon		   py-click				     r-fdb-infiniummethylation-hg19	xrx
+libdap4 		   py-click-didyoumean			     r-ff				xsbench
+libdatrie		   py-click-plugins			     r-fftwtools			xscope
+libdivsufsort		   py-click-repl			     r-fgsea				xsd
+libdmx			   py-cligj				     r-fields				xsdk
+libdrm			   py-clint				     r-filehash 			xsdk-examples
+libdwarf		   py-clipboard 			     r-findpython			xsdktrilinos
+libeatmydata		   py-cloudpickle			     r-fit-models			xset
+libedit 		   py-clustershell			     r-fitdistrplus			xsetmode
+libelf			   py-cmake				     r-flashclust			xsetpointer
+libemos 		   py-cmake-format			     r-flexclust			xsetroot
+libepoxy		   py-cmocean				     r-flexmix				xsimd
+libestr 		   py-cnvkit				     r-fnn				xsm
+libev			   py-coapthon3 			     r-forcats				xstdcmap
+libevdev		   py-codecov				     r-foreach				xtensor
+libevent		   py-cogent				     r-forecast 			xtensor-python
+libevpath		   py-coilmq				     r-foreign				xterm
+libexif 		   py-colorama				     r-formatr				xtl
+libfabric		   py-coloredlogs			     r-formula				xtrans
+libfastcommon		   py-colorful				     r-fpc				xtrap
+libfastjson		   py-colorlog				     r-fracdiff 			xts
+libffi			   py-colormath 			     r-fs				xvidtune
+libffs			   py-colorpy				     r-futile-logger			xvinfo
+libfive 		   py-colorspacious			     r-futile-options			xwd
+libflame		   py-commonmark			     r-future				xwininfo
+libfontenc		   py-configargparse			     r-future-apply			xwud
+libfs			   py-configobj 			     r-gamlss				xxhash
+libfuse 		   py-configparser			     r-gamlss-data			xz
+libgcrypt		   py-contextlib2			     r-gamlss-dist			yajl
+libgd			   py-contextvars			     r-gbm				yambo
+libgeotiff		   py-convertdate			     r-gbrd				yaml-cpp
+libgit2 		   py-cookiecutter			     r-gcrma				yara
+libgpg-error		   py-counter				     r-gdalutils			yarn
+libgpuarray		   py-cov-core				     r-gdata				yasm
+libgridxc		   py-coverage				     r-gdsfmt				ycsb
+libgssglue		   py-cppheaderparser			     r-geiger				yoda
+libgtextutils		   py-crcmod				     r-genefilter			yorick
+libharu 		   py-crispresso			     r-genelendatabase			z-checker
+libhbaapi		   py-crossmap				     r-genemeta 			z3
+libhio			   py-cryptography			     r-geneplotter			zabbix
+libhugetlbfs		   py-cssselect 			     r-generics 			zfp
+libiberty		   py-csvkit				     r-genetics 			zfs
+libibumad		   py-cudf				     r-genie3				zip
+libical 		   py-cuml				     r-genomeinfodb			zipkin
+libice			   py-cupy				     r-genomeinfodbdata 		zlib
+libiconv		   py-current				     r-genomicalignments		zoltan
+libid3tag		   py-cutadapt				     r-genomicfeatures			zookeeper
+libidl			   py-cvxopt				     r-genomicranges			zookeeper-benchmark
+libidn2 		   py-cvxpy				     r-gensa				zsh
+libimagequant		   py-cycler				     r-geomorph 			zstd
+libimobiledevice	   py-cymem				     r-geonames 			zziplib
+libint			   py-cyordereddict			     r-geoquery

@@ -1,48 +1,52 @@
 $ spack find -d trilinos
 ==> 2 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-trilinos@12.18.1
-    boost@1.73.0
+trilinos@13.0.1
+    boost@1.74.0
 	bzip2@1.0.8
 	zlib@1.2.11
     glm@0.9.7.1
-    hdf5@1.10.6
-	openmpi@3.1.6
-	    hwloc@1.11.11
-		libpciaccess@0.13.5
-		libxml2@2.9.10
-		    libiconv@1.16
-		    xz@5.2.5
-		numactl@2.0.12
-    hypre@2.18.2
-	openblas@0.3.10
-    matio@1.5.13
-    metis@5.1.0
-    mumps@5.3.3
-	netlib-scalapack@2.1.0
-    netcdf-c@4.7.3
-    parmetis@4.0.3
-    suite-sparse@5.7.2
-
-trilinos@12.18.1
-    boost@1.73.0
-	bzip2@1.0.8
-	zlib@1.2.11
-    glm@0.9.7.1
-    hdf5@1.10.6
+    hdf5@1.10.7
 	mpich@3.3.2
 	    hwloc@2.2.0
-		libpciaccess@0.13.5
+		libpciaccess@0.16
 		libxml2@2.9.10
 		    libiconv@1.16
 		    xz@5.2.5
-    hypre@2.18.2
-	openblas@0.3.10
-    matio@1.5.13
+    hypre@2.20.0
+	openblas@0.3.12
+    matio@1.5.17
     metis@5.1.0
     mumps@5.3.3
 	netlib-scalapack@2.1.0
-    netcdf-c@4.7.3
+    netcdf-c@4.7.4
     parmetis@4.0.3
-    suite-sparse@5.7.2
+    suite-sparse@5.8.1
+	gmp@6.1.2
+	mpfr@4.0.2
+
+trilinos@13.0.1
+    boost@1.74.0
+	bzip2@1.0.8
+	zlib@1.2.11
+    glm@0.9.7.1
+    hdf5@1.10.7
+	openmpi@3.1.6
+	    hwloc@1.11.11
+		libpciaccess@0.16
+		libxml2@2.9.10
+		    libiconv@1.16
+		    xz@5.2.5
+		numactl@2.0.14
+    hypre@2.20.0
+	openblas@0.3.12
+    matio@1.5.17
+    metis@5.1.0
+    mumps@5.3.3
+	netlib-scalapack@2.1.0
+    netcdf-c@4.7.4
+    parmetis@4.0.3
+    suite-sparse@5.8.1
+	gmp@6.1.2
+	mpfr@4.0.2
 

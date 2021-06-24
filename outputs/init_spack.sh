@@ -3,7 +3,7 @@
 if [ ! -d ~/spack ]; then
     git clone https://github.com/spack/spack ~/spack
     cd ~/spack
-    git checkout releases/v0.16
+    git checkout ${tutorial_branch}
 else
     cd ~/spack
 fi
