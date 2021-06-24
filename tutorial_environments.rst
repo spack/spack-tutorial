@@ -775,7 +775,7 @@ decisions made during concretization.
 Now let's create a concrete environment, called ``concrete`` from
 the file:
 
-.. literalinclude:: outputs/environments/create-from-file-1.out
+.. literalinclude:: outputs/environments/create-from-file-2.out
    :language: console
    :emphasize-lines: 1
 
