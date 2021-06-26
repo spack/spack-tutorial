@@ -1,0 +1,29 @@
+name: build docs
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: recursive
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        sudo apt-get install graphviz
+        pip install --upgrade pip
+        pip install --upgrade -r requirements.txt
+    - name: Build docs
+      run: |
+        make clean --silent
+        make SPHINXOPTS=-W
