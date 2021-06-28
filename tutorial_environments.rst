@@ -91,7 +91,7 @@ list`` command:
    :emphasize-lines: 1
 
 
-Now let's **activate** our environment. You can use the ``spack env activate``
+Now let's **activate** our environment. You can use ``spack env activate``
 command:
 
 .. literalinclude:: outputs/environments/env-activate-1.out
