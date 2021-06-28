@@ -99,7 +99,7 @@ command:
    :emphasize-lines: 1
 
 
-We also automatically set up the ``spacktivate`` alias for short.
+You can also use the ``spacktivate`` alias for short.
 
 .. note::
    If you use the ``-p`` option for ``spack env activate``, Spack
