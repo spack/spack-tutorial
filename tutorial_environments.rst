@@ -132,7 +132,7 @@ If you *only* want to check what environment you are in, you can use
 If you want to leave this environment, you can use ``spack env deactivate``
 or the ``despacktivate`` alias for short.
 
-Now we can check the base Spack instance environment:
+After deactivating, we can see everything installed in this Spack instance:
 
 .. literalinclude:: outputs/environments/env-status-2.out
    :language: console
