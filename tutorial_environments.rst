@@ -629,7 +629,7 @@ in green.
 We can also see from the listing that the environment directory
 contains both of the environment files: ``spack.yaml`` and ``spack.lock``.
 This is because ``spack.lock`` was generated when we concretized
-our environment.
+the environment.
 
 If we ``cat`` the ``spack.yaml`` file, we'll see the same contents
 shown previously by ``spack config get``:
