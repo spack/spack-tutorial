@@ -734,7 +734,7 @@ it appears in the configuration file's spec list.
 
 .. note::
 
-   This command does not install the package in your environment.
+   `spack add` does not install the package in your environment.
    You'll need to run ``spack install`` for that.
 
 
