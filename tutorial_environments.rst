@@ -416,7 +416,7 @@ Let's see the effects of this change on our package using ``spack spec``:
    :emphasize-lines: 1
 
 Notice ``mpich`` is now the ``mpi`` dependency for our concretized
-spec. We also see all of its associated concrete dependencies.
+spec. We also see all of its concrete dependencies.
 
 At this point we only wanted to change the default ``mpi`` provider
 for packages that depend on ``mpi``. An environment can contain
