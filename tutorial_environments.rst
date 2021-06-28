@@ -401,8 +401,12 @@ to include the ``packages:all:providers:mpi:`` entry below:
 .. note::
 
    This setting only defines the **default** ``mpi`` provider.
-   You can override the provider in package specs. This topic
-   is covered in the :ref:`configuration tutorial <configs-tutorial>`.
+   You can still override the provider on the command line, e.g.,
+   with`spack install hdf5 ^openmpi`. 
+   
+   We introduce this here to show you how environment configuration
+   can affect concretization. Configuration options are covered in much
+   more detail in the :ref:`configuration tutorial <configs-tutorial>`.
 
 
 Let's see the effects of this change on our package using ``spack spec``:
