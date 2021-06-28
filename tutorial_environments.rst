@@ -129,8 +129,8 @@ If you *only* want to check what environment you are in, you can use
    :emphasize-lines: 1
 
 
-If you want to leave this environment, you can use ``spack env deactivate``.
-We also automatically set up the ``despacktivate`` alias for short.
+If you want to leave this environment, you can use ``spack env deactivate``
+or the ``despacktivate`` alias for short.
 
 Now we can check the base Spack instance environment:
 
