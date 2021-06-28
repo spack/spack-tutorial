@@ -490,7 +490,7 @@ We can demonstrate use of these environment settings by building a
 really simple MPI program.
 
 Let's create a program called ``mpi-hello.c`` that contains the following
-statements:
+code:
 
 .. code-block:: c
 
