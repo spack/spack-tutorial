@@ -8,5 +8,9 @@ $ cat spack.yaml
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  specs: [boost, trilinos, openmpi, hdf5@5.5.1]
+  specs:
+  - boost
+  - trilinos
+  - openmpi
+  - hdf5@5.5.1
   view: true
