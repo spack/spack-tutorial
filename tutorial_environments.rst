@@ -377,7 +377,7 @@ is just a ``spack:`` header and a list of the **root** ``specs``.
    is set to the path of your preferred text editor.
 
 Let's edit this file to *prefer* ``mpich`` as our ``mpi`` provider
-using ``spack edit config``.
+using ``spack config edit``.
 
 You should now have the above file open in your editor. Change it
 to include the ``packages:all:providers:mpi:`` entry below:
@@ -418,16 +418,10 @@ Let's see the effects of this change on our package using ``spack spec``:
 Notice ``mpich`` is now the ``mpi`` dependency for our concretized
 spec. We also see all of its concrete dependencies.
 
-At this point we only wanted to change the default ``mpi`` provider
-for packages that depend on ``mpi``. An environment can contain
-many other types of configuration, such as adding custom package
-repositories and customizing the installation location, compilers,
-and external packages (see :ref:`configuration section <configs-tutorial>`
-for more). Combinatorial environments can be defined (see
-:ref:`stacks <stacks-tutorial>`). Workflows for CI and software
-development, as described in the :ref:`developer workflows
-<developer-workflows-tutorial>` tutorial, can also be configured.
-More links are provided at the end of this tutorial section.
+We've only scratched the surface here by changing the default of
+the ``mpi`` provider for packages depending on ``mpi``. There
+are many other customizations you can make to an environment.
+Refer to the links at the end of this section for more information.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reconcretizing the environment
@@ -566,15 +560,15 @@ The two files represent two fundamental concepts:
 * ``spack.lock``: all fully *concrete* specs.
 
 
-You can think of environments as generalizations of specs for sets of
-packages, one abstract and the other concrete.
-
-Both environment files can be versioned in repositories, shared, and
-used to install the same set of software on different machines.
-
 These files are intended to be used by developers and administrators
 to manage the environments in a reproducible way. We will cover their
 re-use later.
+
+.. note::
+
+   Both environment files can be versioned in repositories, shared, and
+   used to install the same set of software by different users and on
+   other machines.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Managed versus independent environments
@@ -701,6 +695,7 @@ should now contain the following entries:
      - boost
      - trilinos
      - openmpi
+     view: true
 
 Now activate the environment and install the packages:
 
@@ -722,7 +717,7 @@ Spack supports tweaking an environment even after the initial specs
 are installed. You are free to add and remove specs just as you would
 outside of the environment using the command line interface as before.
 
-For example, lets add ``hdf5`` and look at our file:
+For example, let's add ``hdf5`` and look at our file:
 
 .. literalinclude:: outputs/environments/add-anonymous-1.out
    :language: console
@@ -734,11 +729,11 @@ it appears in the configuration file's spec list.
 
 .. note::
 
-   `spack add` does not install the package in your environment.
-   You'll need to run ``spack install`` for that.
+   You'll need to run ``spack install`` to install added packages
+   in your environment because ``spack add`` only adds it to the
+   configuraton.
 
-
-Now use ``spack remove`` to remove it from the environment:
+Now use ``spack remove`` to remove the spec from the configuration:
 
 .. literalinclude:: outputs/environments/remove-anonymous-1.out
    :language: console
@@ -815,12 +810,15 @@ Here we see that Spack created a managed environment with the name
 we provided.
 
 And, since it is a newly created environment, it does not have any
-specs yet as we can see from calling ``spack find``:
+*installed* specs yet as we can see from calling ``spack find``
+**after** activating the environment:
 
 .. literalinclude:: outputs/environments/find-env-abstract-1.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1-2
 
+Notice we have the same root specs as were listed in the ``spack.yaml``
+file.
 
 """"""""""""""""""""
 Using ``spack.lock``
@@ -831,14 +829,23 @@ original build. It can replicate the build because it contains the
 information for all the decisions made during concretization.
 
 Now let's create a concrete environment, called ``concrete``, from
-the file:
+the file again **after** activating the environment:
 
 .. literalinclude:: outputs/environments/create-from-file-2.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1-2
 
 Here we see that Spack again created a managed environment with the
-provided name. It will also be empty of specs until we add them.
+provided name.
+
+Since we created the environment from our ``spack.lock`` file,
+not only do we get the same root specs, all of the packages are 
+also installed in the environment as we can see from calling
+``spack find`` **after** activating the environment:
+
+.. literalinclude:: outputs/environments/find-env-concrete-1.out
+   :language: console
+   :emphasize-lines: 1-2
 
 .. note::
 
@@ -864,7 +871,7 @@ Setting up and building environments
 * `Spack stacks tutorial
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_:
   for configuring combinatorial environments (e.g., same packages across a
-  range of compilers)
+  list of compilers)
 * `Install-level parallel builds
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_:
   for how to launch ``spack install`` to build your environment in parallel
