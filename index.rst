@@ -39,7 +39,7 @@ Annual Meeting 2021. Virtual event. April 16, 2021.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/RlczUgwFCJg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/RlczUgwFCJg" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
 
 .. _live-demos:
 
