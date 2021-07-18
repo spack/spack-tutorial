@@ -73,7 +73,7 @@ aren't, run the following command:
 
 .. code-block:: console
 
-   $ . $SPACK_ROOT/share/spack/setup-env.sh
+   $ . ~/spack/share/spack/setup-env.sh
 
 or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
