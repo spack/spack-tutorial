@@ -73,7 +73,7 @@ aren't, run the following command:
 
 .. code-block:: console
 
-   $ . share/spack/setup-env.sh
+   $ . ~/spack/share/spack/setup-env.sh
 
 or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
@@ -119,7 +119,7 @@ run ``spack create`` with the URL:
    :emphasize-lines: 1
 
 You should now be in your text editor of choice, with the ``package.py``
-file open for editing. 
+file open for editing.
 
 Your ``package.py`` file should reside in the ``mpileaks`` subdirectory of
 your tutorial repository's ``packages`` directory, i.e.,
@@ -168,7 +168,7 @@ command:
    :language: console
    :emphasize-lines: 1,19
 
-It clearly did not build. The error indicates ``configure`` is unable 
+It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
 
 So let's start to customize the package to our software.
@@ -239,7 +239,7 @@ command will become more informative.
 .. note::
 
    More information on using ``Autotools`` packages is provided in
-   `AutotoolsPackage 
+   `AutotoolsPackage
    <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
    The full list of build systems known to Spack can be found at
@@ -397,7 +397,7 @@ And we get the same results as before. Unfortunately, the output
 does not provide any additional information that can help us with
 the build.
 
-Given this is a simple package built with ``configure`` and we know
+Given that this is a simple package built with ``configure`` and we know
 that installation directories need to be specified, we can use its
 help to see what command line options are available for the software.
 
@@ -487,7 +487,7 @@ as opposed to simply allowing them to be enabled or disabled.
    :emphasize-lines: 18-23
 
 According to the software's documentation (https://github.com/LLNL/mpileaks),
-the integer values for the ``--with-stack-start*`` options represent the
+the integer values for the ``--with-stack-start-*`` options represent the
 numbers of calls to shave off of the top of the stack traces for each
 language, effectively reducing the noise of internal mpileaks library function
 calls in generated traces.
@@ -519,7 +519,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :language: python
    :emphasize-lines: 15-16,28-33
 
-Notice the ``variant`` directive is translated into a ``variants`` dictionary
+Notice that the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
 by the entry's ``value`` property.
 

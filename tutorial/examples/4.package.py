@@ -34,7 +34,7 @@ class Mpileaks(AutotoolsPackage):
         if stackstart:
             args.extend([
                 '--with-stack-start-c={0}'.format(stackstart),
-                '--with-stack-start-fortran={0}'.format(stackstart)
+                '--with-stack-start-fortran={0}'.format(stackstart),
             ])
 
         return args
