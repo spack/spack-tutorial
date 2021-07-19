@@ -176,8 +176,12 @@ Using packages
 
 Environments provide a convenient way for using installed packages.
 Running ``spack env activate`` gives you everything in the environment
-on your ``PATH``. Otherwise, you would need to ``spack load`` or
-``module load`` a package to use it.
+on your ``PATH``. Otherwise, you would need to use `spack load
+<https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-load>`_
+or `module load
+<https://spack.readthedocs.io/en/latest/module_file_support.html>`_
+for each package in order to set up the environment for the package (and
+its dependencies).
 
 When you install packages into an environment, they are, by default,
 linked into a single prefix, or *view*. Activating the environment
