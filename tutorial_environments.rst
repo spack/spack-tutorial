@@ -829,7 +829,7 @@ original build. It can replicate the build because it contains the
 information for all the decisions made during concretization.
 
 Now let's create a concrete environment, called ``concrete``, from
-the file again **after** activating the environment:
+the file:
 
 .. literalinclude:: outputs/environments/create-from-file-2.out
    :language: console
@@ -840,7 +840,7 @@ provided name.
 
 Since we created the environment from our ``spack.lock`` file,
 not only do we get the same root specs, all of the packages are 
-also installed in the environment as we can see from calling
+installed in the environment as we can see from calling
 ``spack find`` **after** activating the environment:
 
 .. literalinclude:: outputs/environments/find-env-concrete-1.out
