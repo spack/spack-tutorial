@@ -30,8 +30,8 @@ Spack is used in practice.
 :download:`Download Slides <_static/slides/spack-pearc21-tutorial-slides.pdf>`.
 
 **Full citation:** Gregory Becker, Robert Blake, Massimiliano Culpo, Tammy Dahlgren, Adam Stewart,
-and Todd Gamblin. Managing HPC Software Complexity with Spack. ISC-HPC 2021. Virtual event. July
-19, 2021.
+and Todd Gamblin. Managing HPC Software Complexity with Spack. Practice & Experience in Advanced
+Research Computing (PEARC'21). Virtual event. July 19, 2021.
 
 .. _live-demos:
 
