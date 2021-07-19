@@ -179,6 +179,15 @@ Running ``spack env activate`` gives you everything in the environment
 on your ``PATH``. Otherwise, you would need to ``spack load`` or
 ``module load`` a package to use it.
 
+.. note::
+
+   Spack can be used to generate module files for HPC clusters.
+   More information can be found in the modules `documentation
+   <https://spack.readthedocs.io/en/latest/module_file_support.html>`_
+   and `tutorial
+   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_modules.html>`_.
+
+
 When you install packages into an environment, they are, by default,
 linked into a single prefix, or *view*. Activating the environment
 with ``spack env activate`` results in subdirectories from the view
