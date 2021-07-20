@@ -91,4 +91,5 @@ Full contents:
    tutorial_spack_scripting
    tutorial_modules
    tutorial_buildsystems
+   tutorial_testing
    tutorial_advanced_packaging
