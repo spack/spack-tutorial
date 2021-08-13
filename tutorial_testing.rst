@@ -65,7 +65,7 @@ just for this tutorial by entering the following command:
 
 .. literalinclude:: outputs/testing/repo-add.out
    :language: console
-   emphasize-lines: 1
+   :emphasize-lines: 1
 
 Doing this ensures changes we make here do not adversely affect other
 parts of the tutorial. You can find out more about repositories at
@@ -89,7 +89,7 @@ with the software's repository URL by entering:
 
 .. literalinclude:: outputs/testing/TBD-create.out
    :language: console
-   emphasize-lines: 1
+   :emphasize-lines: 1
 
 You should now be in your text editor of choice, with the ``package.py``
 file open for editing. Let's replace **all** of the templated contents
@@ -110,7 +110,7 @@ tests.  We'll do this by entering the ``spack install`` command:
 
 .. literalinclude:: outputs/testing/TBD-install-1.out
    :language: console
-   emphasize-lines: 1
+   :emphasize-lines: 1
 
 
 -------------------
