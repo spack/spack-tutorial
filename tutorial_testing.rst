@@ -125,19 +125,20 @@ Package test features
 ^^^^^^^^^^^^^^^^^^^^^
 
 * `Build-time tests
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_: sanity and installation phase checks
+* `Built-in installation phase tests
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#id22>`_: standard build-time test checks (when available)
 * `Stand-alone (or smoke) tests
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#stand-alone-or-smoke-tests>`_
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#stand-alone-or-smoke-tests>`_: re-using, customizing, and inheriting checks
 
 ^^^^^^^^^^^^^^
 Spack commands
 ^^^^^^^^^^^^^^
 
 * `spack test
-  <https://spack.readthedocs.io/en/latest/command_index.html#spack-test>`_
-
+  <https://spack.readthedocs.io/en/latest/command_index.html#spack-test>`_: stand-alone (or smoke test) availability and execution
 * `spack repo
-  <https://spack.readthedocs.io/en/latest/command_index.html#spack-test>`_
+  <https://spack.readthedocs.io/en/latest/command_index.html#spack-test>`_: tutorial sandbox
 
 -----------
 Cleaning up
