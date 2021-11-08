@@ -1,7 +1,7 @@
 .PHONY: all replay
 
 # name of the container we'll generate the tutorial outputs with
-container = spack/tutorial:ecp21-validation
+container = spack/tutorial-builder:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 
