@@ -10,7 +10,7 @@ pip install boto3
 example cache/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example cache/up-to-date "cd ~/spack"
 cd ~/spack
-example cache/up-to-date "git checkout releases/v0.16"
+example cache/up-to-date "git checkout releases/v0.17"
 example cache/up-to-date ". share/spack/setup-env.sh"
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"

@@ -95,10 +95,10 @@ example basics/find-px             "spack find -px"
 
 example basics/compilers           "spack compilers"
 
-example basics/install-gcc-8.3.0   "spack install gcc @8.3.0"
+example basics/install-gcc-8.4.0   "spack install gcc @8.4.0"
 
 example basics/find-p-gcc          "spack find -p gcc"
 
-example basics/compiler-add-location 'spack compiler add $(spack location -i gcc@8.3.0)'
+example basics/compiler-add-location 'spack compiler add $(spack location -i gcc@8.4.0)'
 
-example basics/compiler-remove       'spack compiler remove gcc@8.3.0'
+example basics/compiler-remove       'spack compiler remove gcc@8.4.0'
