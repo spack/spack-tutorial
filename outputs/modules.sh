@@ -20,10 +20,10 @@ spack uninstall -ay
 spack install lmod
 . $(spack location -i lmod)/lmod/lmod/init/bash
 . share/spack/setup-env.sh
-spack install gcc@8.3.0
+spack install gcc@8.4.0
 
-example -tee modules/spack-load-gcc "spack load gcc@8.3.0"
-spack load gcc@8.3.0
+example -tee modules/spack-load-gcc "spack load gcc@8.4.0"
+spack load gcc@8.4.0
 example      modules/spack-load-gcc "which gcc"
 
 example      modules/add-compiler   "spack compiler add"
@@ -42,7 +42,7 @@ spack install py-scipy ^openblas
 example -tee modules/module-avail-2 "module avail"
 
 gcc_hash=$(spack find --format {hash:7} gcc)
-gcc_module="gcc-8.3.0-gcc-7.5.0-${gcc_hash}"
+gcc_module="gcc-8.4.0-gcc-7.5.0-${gcc_hash}"
 example -tee modules/module-show-1  "module show $gcc_module"
 
 spack config add "modules:tcl:all:filter:environment_blacklist:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
