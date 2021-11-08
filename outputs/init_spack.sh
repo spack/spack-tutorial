@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. $project/init_vars.sh
+
 if [ ! -d ~/spack ]; then
     git clone https://github.com/spack/spack ~/spack
     cd ~/spack
@@ -10,8 +12,9 @@ fi
 
 . share/spack/setup-env.sh
 
-pip install boto3
-spack mirror add tutorial /mirror
+# install boto3 (pre-v0.17.0)
+##pip install boto3
+
+spack mirror add tutorial ${tutorial_mirror}
 spack buildcache keys --install --trust
-spack config add 'config:suppress_gpg_warnings:true'
-spack config add 'packages:all:target:[x86_64]'
+. $project/init_config.sh

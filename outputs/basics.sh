@@ -7,8 +7,8 @@ project=$(dirname "$0")
 # clean things up before starting this first script
 rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
 
-# install boto3
-pip3 install boto3
+## install boto3 (pre-v0.17.0)
+#pip3 install boto3
 
 # basic installation
 example basics/clone         "git clone https://github.com/spack/spack ~/spack"
@@ -21,7 +21,7 @@ example basics/source-setup  ". share/spack/setup-env.sh"
 
 # actually source the script (needs to be done in this shell)
 . share/spack/setup-env.sh
-spack config add "config:suppress_gpg_warnings:true"
+. $project/init_config.sh
 
 # spack list
 example basics/list            "spack list"
@@ -30,7 +30,7 @@ example basics/list-py         "spack list 'py-*'"
 # spack install
 example basics/zlib            "spack install zlib"
 
-example basics/mirror          "spack mirror add tutorial /mirror"
+example basics/mirror          "spack mirror add tutorial ${tutorial_mirror}"
 example basics/mirror          "spack buildcache keys --install --trust"
 
 example basics/zlib-clang      "spack install zlib %clang"

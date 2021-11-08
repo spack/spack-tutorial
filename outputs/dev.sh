@@ -5,18 +5,19 @@ project=$(dirname "$0")
 . $project/defs.sh
 
 rm -rf $raw_outputs/dev
-pip install boto3
+
+# install boto3 (pre-v0.17.0)
+##pip install boto3
 
 example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example dev/up-to-date "cd ~/spack"
 cd ~/spack
-example dev/up-to-date "git checkout releases/v0.17"
+example dev/up-to-date "git checkout ${tutorial_branch}"
 example dev/up-to-date ". share/spack/setup-env.sh"
 . share/spack/setup-env.sh
-spack config add "config:suppress_gpg_warnings:true"
-spack config add "packages:all:target:[x86_64]"
+. $project/init_config.sh
 
-example dev/up-to-date "spack mirror add tutorial /mirror"
+example dev/up-to-date "spack mirror add tutorial ${tutorial_mirror}"
 example dev/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
 
 example dev/setup-scr "cd ~"
