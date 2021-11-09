@@ -29,6 +29,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
         autoconf \
         build-essential \
+        bsdmainutils \
         ca-certificates \
         curl \
         clang-7 \
