@@ -1,7 +1,7 @@
 .PHONY: all replay
 
 # name of the container we'll generate the tutorial outputs with
-container = spack/tutorial-builder:latest
+container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 

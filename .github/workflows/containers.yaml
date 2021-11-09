@@ -21,7 +21,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix: 
-        # Each item contains
         # 0: image name, 
         # 1: Dockerfile
         dockerfile: [
