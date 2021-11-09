@@ -1,187 +1,150 @@
 $ spack find -ldf
-==> 42 installed packages
+==> 36 installed packages
 -- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
-iakkih5 tcl@8.6.11%clang
-qhllksc     zlib@1.2.8%clang
+yqtoq2e tcl@8.6.10%clang
+pdfmc5x     zlib@1.2.8%clang
 
-qhllksc zlib@1.2.8%clang
+pdfmc5x zlib@1.2.8%clang
 
-v3bjw7b zlib@1.2.11%clang
+5qffmms zlib@1.2.11%clang
 
 
 -- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
-z4ueaqd zlib@1.2.11%gcc
+qtrzwov zlib@1.2.11%gcc
 
 
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-7hurwa7 autoconf@2.69%gcc
-ybvezwz     m4@1.4.19%gcc
-g2vgcne 	libsigsegv@2.13%gcc
-672tzld     perl@5.34.0%gcc
-ue5lnfm 	berkeley-db@18.1.40%gcc
-55rtzz4 	bzip2@1.0.8%gcc
-oftaepj 	gdbm@1.19%gcc
-27u6g7p 	    readline@8.1%gcc
-d34lizg 		ncurses@6.2%gcc
-3rlgy7y 	zlib@1.2.11%gcc
+mm33a3o autoconf@2.69%gcc
+mkc3u4x     m4@1.4.18%gcc
+lbrx7ln 	libsigsegv@2.12%gcc
+zfdvt2j     perl@5.32.0%gcc
+4ihuiaz 	berkeley-db@18.1.40%gcc
+4av4gyw 	gdbm@1.18.1%gcc
+t54jzdy 	    readline@8.0%gcc
+crhlefo 		ncurses@6.2%gcc
 
-6rqxcsn automake@1.16.3%gcc
-672tzld     perl@5.34.0%gcc
-ue5lnfm 	berkeley-db@18.1.40%gcc
-55rtzz4 	bzip2@1.0.8%gcc
-oftaepj 	gdbm@1.19%gcc
-27u6g7p 	    readline@8.1%gcc
-d34lizg 		ncurses@6.2%gcc
-3rlgy7y 	zlib@1.2.11%gcc
+d2krmb5 automake@1.16.2%gcc
+zfdvt2j     perl@5.32.0%gcc
+4ihuiaz 	berkeley-db@18.1.40%gcc
+4av4gyw 	gdbm@1.18.1%gcc
+t54jzdy 	    readline@8.0%gcc
+crhlefo 		ncurses@6.2%gcc
 
-ue5lnfm berkeley-db@18.1.40%gcc
+4ihuiaz berkeley-db@18.1.40%gcc
 
-55rtzz4 bzip2@1.0.8%gcc
+hrv4dx5 findutils@4.6.0%gcc
 
-anj6kcx cmake@3.21.4%gcc
-d34lizg     ncurses@6.2%gcc
-lygx3cq     openssl@1.1.1l%gcc
-3rlgy7y 	zlib@1.2.11%gcc
+4av4gyw gdbm@1.18.1%gcc
+t54jzdy     readline@8.0%gcc
+crhlefo 	ncurses@6.2%gcc
 
-kg5jymj diffutils@3.8%gcc
-qi7dxj6     libiconv@1.16%gcc
+sldl7zx hdf5@1.10.7%gcc
+smoyzzo     zlib@1.2.11%gcc
 
-3susxc4 findutils@4.8.0%gcc
+vedchc5 hdf5@1.10.7%gcc
+pmsyupw     openmpi@3.1.6%gcc
+zqwfzhw 	hwloc@1.11.11%gcc
+bob4o5m 	    libpciaccess@0.16%gcc
+yn2r3wf 	    libxml2@2.9.10%gcc
+jearpk4 		libiconv@1.16%gcc
+komekkm 		xz@5.2.5%gcc
+smoyzzo 		zlib@1.2.11%gcc
+wbqbc5v 	    numactl@2.0.14%gcc
 
-oftaepj gdbm@1.19%gcc
-27u6g7p     readline@8.1%gcc
-d34lizg 	ncurses@6.2%gcc
+cq4k4cv hdf5@1.10.7%gcc
+vbelg5s     mpich@3.3.2%gcc
+a4cxlu7 	hwloc@2.2.0%gcc
+bob4o5m 	    libpciaccess@0.16%gcc
+yn2r3wf 	    libxml2@2.9.10%gcc
+jearpk4 		libiconv@1.16%gcc
+komekkm 		xz@5.2.5%gcc
+smoyzzo 		zlib@1.2.11%gcc
 
-5goewlh hdf5@1.10.7%gcc
-ucp6vz7     pkgconf@1.8.0%gcc
-3rlgy7y     zlib@1.2.11%gcc
+zqwfzhw hwloc@1.11.11%gcc
+bob4o5m     libpciaccess@0.16%gcc
+yn2r3wf     libxml2@2.9.10%gcc
+jearpk4 	libiconv@1.16%gcc
+komekkm 	xz@5.2.5%gcc
+smoyzzo 	zlib@1.2.11%gcc
+wbqbc5v     numactl@2.0.14%gcc
 
-vt7sza3 hdf5@1.10.7%gcc
-p5qicac     openmpi@4.1.1%gcc
-gedgnpg 	hwloc@2.6.0%gcc
-ryhmw2g 	    libpciaccess@0.16%gcc
-2hw4ddh 	    libxml2@2.9.12%gcc
-qi7dxj6 		libiconv@1.16%gcc
-nplaaps 		xz@5.2.5%gcc
-3rlgy7y 		zlib@1.2.11%gcc
-d34lizg 	    ncurses@6.2%gcc
-xai6pyc 	libevent@2.1.12%gcc
-lygx3cq 	    openssl@1.1.1l%gcc
-3opot4q 	numactl@2.0.14%gcc
-ux36qlb 	openssh@8.7p1%gcc
-3lzuqwn 	    libedit@3.1-20210216%gcc
-ucp6vz7     pkgconf@1.8.0%gcc
+a4cxlu7 hwloc@2.2.0%gcc
+bob4o5m     libpciaccess@0.16%gcc
+yn2r3wf     libxml2@2.9.10%gcc
+jearpk4 	libiconv@1.16%gcc
+komekkm 	xz@5.2.5%gcc
+smoyzzo 	zlib@1.2.11%gcc
 
-qbip6im hdf5@1.10.7%gcc
-idedbjn     mpich@3.4.2%gcc
-gedgnpg 	hwloc@2.6.0%gcc
-ryhmw2g 	    libpciaccess@0.16%gcc
-2hw4ddh 	    libxml2@2.9.12%gcc
-qi7dxj6 		libiconv@1.16%gcc
-nplaaps 		xz@5.2.5%gcc
-3rlgy7y 		zlib@1.2.11%gcc
-d34lizg 	    ncurses@6.2%gcc
-kwxupt5 	libfabric@1.13.2%gcc
-ucp6vz7     pkgconf@1.8.0%gcc
+jearpk4 libiconv@1.16%gcc
 
-gedgnpg hwloc@2.6.0%gcc
-ryhmw2g     libpciaccess@0.16%gcc
-2hw4ddh     libxml2@2.9.12%gcc
-qi7dxj6 	libiconv@1.16%gcc
-nplaaps 	xz@5.2.5%gcc
-3rlgy7y 	zlib@1.2.11%gcc
-d34lizg     ncurses@6.2%gcc
+bob4o5m libpciaccess@0.16%gcc
 
-3lzuqwn libedit@3.1-20210216%gcc
-d34lizg     ncurses@6.2%gcc
+lbrx7ln libsigsegv@2.12%gcc
 
-xai6pyc libevent@2.1.12%gcc
-lygx3cq     openssl@1.1.1l%gcc
-3rlgy7y 	zlib@1.2.11%gcc
+jdxbjft libtool@2.4.6%gcc
 
-kwxupt5 libfabric@1.13.2%gcc
+yn2r3wf libxml2@2.9.10%gcc
+jearpk4     libiconv@1.16%gcc
+komekkm     xz@5.2.5%gcc
+smoyzzo     zlib@1.2.11%gcc
 
-qi7dxj6 libiconv@1.16%gcc
+mkc3u4x m4@1.4.18%gcc
+lbrx7ln     libsigsegv@2.12%gcc
 
-ryhmw2g libpciaccess@0.16%gcc
+vbelg5s mpich@3.3.2%gcc
+a4cxlu7     hwloc@2.2.0%gcc
+bob4o5m 	libpciaccess@0.16%gcc
+yn2r3wf 	libxml2@2.9.10%gcc
+jearpk4 	    libiconv@1.16%gcc
+komekkm 	    xz@5.2.5%gcc
+smoyzzo 	    zlib@1.2.11%gcc
 
-g2vgcne libsigsegv@2.13%gcc
+crhlefo ncurses@6.2%gcc
 
-2kia6gf libtool@2.4.6%gcc
+wbqbc5v numactl@2.0.14%gcc
 
-2hw4ddh libxml2@2.9.12%gcc
-qi7dxj6     libiconv@1.16%gcc
-nplaaps     xz@5.2.5%gcc
-3rlgy7y     zlib@1.2.11%gcc
+pmsyupw openmpi@3.1.6%gcc
+zqwfzhw     hwloc@1.11.11%gcc
+bob4o5m 	libpciaccess@0.16%gcc
+yn2r3wf 	libxml2@2.9.10%gcc
+jearpk4 	    libiconv@1.16%gcc
+komekkm 	    xz@5.2.5%gcc
+smoyzzo 	    zlib@1.2.11%gcc
+wbqbc5v 	numactl@2.0.14%gcc
 
-ybvezwz m4@1.4.19%gcc
-g2vgcne     libsigsegv@2.13%gcc
+2nj3vxx patchelf@0.10%gcc
 
-idedbjn mpich@3.4.2%gcc
-gedgnpg     hwloc@2.6.0%gcc
-ryhmw2g 	libpciaccess@0.16%gcc
-2hw4ddh 	libxml2@2.9.12%gcc
-qi7dxj6 	    libiconv@1.16%gcc
-nplaaps 	    xz@5.2.5%gcc
-3rlgy7y 	    zlib@1.2.11%gcc
-d34lizg 	ncurses@6.2%gcc
-kwxupt5     libfabric@1.13.2%gcc
+zfdvt2j perl@5.32.0%gcc
+4ihuiaz     berkeley-db@18.1.40%gcc
+4av4gyw     gdbm@1.18.1%gcc
+t54jzdy 	readline@8.0%gcc
+crhlefo 	    ncurses@6.2%gcc
 
-d34lizg ncurses@6.2%gcc
+4sh6pym pkgconf@1.7.3%gcc
 
-3opot4q numactl@2.0.14%gcc
+t54jzdy readline@8.0%gcc
+crhlefo     ncurses@6.2%gcc
 
-p5qicac openmpi@4.1.1%gcc
-gedgnpg     hwloc@2.6.0%gcc
-ryhmw2g 	libpciaccess@0.16%gcc
-2hw4ddh 	libxml2@2.9.12%gcc
-qi7dxj6 	    libiconv@1.16%gcc
-nplaaps 	    xz@5.2.5%gcc
-3rlgy7y 	    zlib@1.2.11%gcc
-d34lizg 	ncurses@6.2%gcc
-xai6pyc     libevent@2.1.12%gcc
-lygx3cq 	openssl@1.1.1l%gcc
-3opot4q     numactl@2.0.14%gcc
-ux36qlb     openssh@8.7p1%gcc
-3lzuqwn 	libedit@3.1-20210216%gcc
+rtz7664 tcl@8.6.10%gcc
+smoyzzo     zlib@1.2.11%gcc
 
-ux36qlb openssh@8.7p1%gcc
-3lzuqwn     libedit@3.1-20210216%gcc
-d34lizg 	ncurses@6.2%gcc
-lygx3cq     openssl@1.1.1l%gcc
-3rlgy7y 	zlib@1.2.11%gcc
+m2hc42k tcl@8.6.10%gcc
+h6i53if     zlib@1.2.8%gcc  cppflags="-O3"
 
-lygx3cq openssl@1.1.1l%gcc
-3rlgy7y     zlib@1.2.11%gcc
+p46ba5q texinfo@6.5%gcc
+zfdvt2j     perl@5.32.0%gcc
+4ihuiaz 	berkeley-db@18.1.40%gcc
+4av4gyw 	gdbm@1.18.1%gcc
+t54jzdy 	    readline@8.0%gcc
+crhlefo 		ncurses@6.2%gcc
 
-2txxrad patchelf@0.13%gcc
+gs6ag7k util-macros@1.19.1%gcc
 
-672tzld perl@5.34.0%gcc
-ue5lnfm     berkeley-db@18.1.40%gcc
-55rtzz4     bzip2@1.0.8%gcc
-oftaepj     gdbm@1.19%gcc
-27u6g7p 	readline@8.1%gcc
-d34lizg 	    ncurses@6.2%gcc
-3rlgy7y     zlib@1.2.11%gcc
+komekkm xz@5.2.5%gcc
 
-ucp6vz7 pkgconf@1.8.0%gcc
+t4p5jnm zlib@1.2.8%gcc
 
-27u6g7p readline@8.1%gcc
-d34lizg     ncurses@6.2%gcc
+h6i53if zlib@1.2.8%gcc	cppflags="-O3"
 
-asjutit tcl@8.6.11%gcc
-5wzra4b     zlib@1.2.8%gcc  cppflags="-O3"
-
-oysrbht tcl@8.6.11%gcc
-3rlgy7y     zlib@1.2.11%gcc
-
-h5cf2g4 util-macros@1.19.3%gcc
-
-nplaaps xz@5.2.5%gcc
-
-4njczle zlib@1.2.8%gcc
-
-5wzra4b zlib@1.2.8%gcc	cppflags="-O3"
-
-3rlgy7y zlib@1.2.11%gcc
+smoyzzo zlib@1.2.11%gcc
 
