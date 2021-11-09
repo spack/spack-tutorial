@@ -26,7 +26,6 @@ jobs:
         # 1: target stage, 
         # 2: Dockerfile
         dockerfile: [
-          [tutorial-builder, builder, docker/Dockerfile],
           [tutorial, final, docker/Dockerfile]
         ]
     name: Build ${{ matrix.dockerfile[0] }}
