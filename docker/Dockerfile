@@ -57,7 +57,7 @@ RUN apt-get update -y && \
 COPY /packages.yaml /etc/spack/packages.yaml
 COPY /config.yaml /etc/spack/config.yaml
 
-FROM builder
+FROM builder AS final
 
 RUN useradd -ms /bin/bash spack && \
     chmod -R go+r /etc/spack
