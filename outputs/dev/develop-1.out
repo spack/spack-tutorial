@@ -1,12 +1,10 @@
-$ spack develop scr@2.0.0
-==> Configuring spec scr@2.0.0 for development at path scr
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
- ################################################################################################ 100.0%
-==> Updating view at /home/spack/devel-env/.spack-env/view
+$ spack develop scr@3.0rc2
+==> Configuring spec scr@3.0rc2 for development at path scr
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/4b/4b2a718af56b3683e428d25a2269c038e9452db734221d370e3023a491477fad.tar.gz
 $ grep -3 develop: spack.yaml
   packages:
     all:
       variants: ~fortran
   develop:
     scr:
-      spec: scr@2.0.0
+      spec: scr@3.0rc2
