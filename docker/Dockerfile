@@ -31,12 +31,12 @@ RUN apt-get update -y && \
         build-essential \
         ca-certificates \
         curl \
-        clang \
+        clang-7 \
         emacs \
         file \
-        g++ g++-6 g++-8 \
-        gcc gcc-6 gcc-8 \
-        gfortran gfortran-6 gfortran-8 \
+        g++ g++-6 \
+        gcc gcc-6 \
+        gfortran gfortran-6 \
         git \
         gnupg2 \
         iproute2 \
