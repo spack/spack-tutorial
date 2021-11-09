@@ -16,7 +16,7 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 
 # Download the buildcache 
 RUN mkdir /mirror
-RUN aws --no-sign-request s3 sync s3://spack-binaries-develop/tutorial /mirror
+RUN aws --debug --no-sign-request s3 sync s3://spack-binaries-develop/tutorial /mirror
 
 FROM ubuntu:18.04 as builder
 
