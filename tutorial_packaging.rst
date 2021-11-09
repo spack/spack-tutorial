@@ -219,7 +219,7 @@ Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,16,25,28,31,34
+   :emphasize-lines: 1-2,5-6,8,10,19,28,31,34,37
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
@@ -300,7 +300,7 @@ We now get a lot further when we try to build the software again with
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
-   :emphasize-lines: 1,215
+   :emphasize-lines: 1,148
 
 .. note::
 
@@ -528,7 +528,7 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1,41
+   :emphasize-lines: 1,93,382
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
