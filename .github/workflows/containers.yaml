@@ -23,10 +23,9 @@ jobs:
       matrix: 
         # Each item contains
         # 0: image name, 
-        # 1: target stage, 
-        # 2: Dockerfile
+        # 1: Dockerfile
         dockerfile: [
-          [tutorial, final, docker/Dockerfile]
+          [tutorial, docker/Dockerfile]
         ]
     name: Build ${{ matrix.dockerfile[0] }}
     steps:
@@ -45,11 +44,11 @@ jobs:
           versioned="${{matrix.dockerfile[0]}}:${GITHUB_REF##*/}"
           echo "versioned=${versioned}" >> $GITHUB_ENV
 
-      - name: Check ${{ matrix.dockerfile[2] }} Exists
+      - name: Check ${{ matrix.dockerfile[1] }} Exists
         run: |
-          printf "Preparing to build ${{ env.container }} from ${{ matrix.dockerfile[2] }}"
-          if [ ! -f "${{ matrix.dockerfile[2]}}" ]; then
-              printf "Dockerfile ${{ matrix.dockerfile[2]}} does not exist"
+          printf "Preparing to build ${{ env.container }} from ${{ matrix.dockerfile[1] }}"
+          if [ ! -f "${{ matrix.dockerfile[1]}}" ]; then
+              printf "Dockerfile ${{ matrix.dockerfile[1]}} does not exist"
               exit 1;
           fi
 
@@ -69,11 +68,10 @@ jobs:
       - name: Build & Deploy ${{ matrix.dockerfile[0] }}
         uses: docker/build-push-action@v2
         with:
-          file: ${{matrix.dockerfile[2]}}
+          file: ${{matrix.dockerfile[1]}}
           platforms: linux/amd64
           context: ./docker
           push: ${{ github.event_name != 'pull_request' }}
-          target: ${{ matrix.dockerfile[1] }}
           tags: |
             ghcr.io/spack/${{ env.container }}
             ghcr.io/spack/${{ env.versioned }}
