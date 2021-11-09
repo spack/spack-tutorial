@@ -1,11 +1,20 @@
-$ spack install tcl ^zlib@1.2.8 %clang
-==> Installing zlib-1.2.8-pdfmc5xxsopitln5y7wcirbmfz47o5tp
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/clang-6.0.0/zlib-1.2.8/linux-ubuntu18.04-x86_64-clang-6.0.0-zlib-1.2.8-pdfmc5xxsopitln5y7wcirbmfz47o5tp.spack
- ###################################################################################################################################################################### 100.0%
-==> Extracting zlib-1.2.8-pdfmc5xxsopitln5y7wcirbmfz47o5tp from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/clang-6.0.0/zlib-1.2.8-pdfmc5xxsopitln5y7wcirbmfz47o5tp
-==> Installing tcl-8.6.10-yqtoq2ezfg5v4xfhgdujilfxkcfjbjx7
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/clang-6.0.0/tcl-8.6.10/linux-ubuntu18.04-x86_64-clang-6.0.0-tcl-8.6.10-yqtoq2ezfg5v4xfhgdujilfxkcfjbjx7.spack
- ###################################################################################################################################################################### 100.0%
-==> Extracting tcl-8.6.10-yqtoq2ezfg5v4xfhgdujilfxkcfjbjx7 from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/clang-6.0.0/tcl-8.6.10-yqtoq2ezfg5v4xfhgdujilfxkcfjbjx7
+$ spack install tcl ^zlib @1.2.8 %clang
+==> Installing zlib-1.2.8-qhllkscjnvkwcskhf3w7zwqpkeyfnuom
+==> No binary for zlib-1.2.8-qhllkscjnvkwcskhf3w7zwqpkeyfnuom found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/36/36658cb768a54c1d4dec43c3116c27ed893e88b02ecfcb44f2166f9c0b7f2a0d.tar.gz
+==> No patches needed for zlib
+==> zlib: Executing phase: 'install'
+==> zlib: Successfully installed zlib-1.2.8-qhllkscjnvkwcskhf3w7zwqpkeyfnuom
+  Fetch: 3.73s.  Build: 3.02s.	Total: 6.74s.
+[+] /root/spack/opt/spack/linux-ubuntu18.04-x86_64/clang-6.0.0/zlib-1.2.8-qhllkscjnvkwcskhf3w7zwqpkeyfnuom
+==> Installing tcl-8.6.11-iakkih5oanotqveo74wmnuu6gj5ndmce
+==> No binary for tcl-8.6.11-iakkih5oanotqveo74wmnuu6gj5ndmce found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/8c/8c0486668586672c5693d7d95817cb05a18c5ecca2f40e2836b9578064088258.tar.gz
+==> No patches needed for tcl
+==> tcl: Executing phase: 'autoreconf'
+==> tcl: Executing phase: 'configure'
+==> tcl: Executing phase: 'build'
+==> tcl: Executing phase: 'install'
+==> tcl: Successfully installed tcl-8.6.11-iakkih5oanotqveo74wmnuu6gj5ndmce
+  Fetch: 8.18s.  Build: 1m 39.40s.  Total: 1m 47.58s.
+[+] /root/spack/opt/spack/linux-ubuntu18.04-x86_64/clang-6.0.0/tcl-8.6.11-iakkih5oanotqveo74wmnuu6gj5ndmce
