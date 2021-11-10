@@ -1,0 +1,76 @@
+name: Containers
+
+on:
+  workflow_dispatch:
+
+  pull_request:
+    branches:
+      - main
+
+  schedule:
+    - cron: '27 1 * * *'
+
+  release:
+    types: [published]
+
+jobs:
+  tutorial-images:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    strategy:
+      fail-fast: false
+      matrix: 
+        # 0: image name, 
+        # 1: Dockerfile
+        dockerfile: [
+          [tutorial, docker/Dockerfile]
+        ]
+    name: Build ${{ matrix.dockerfile[0] }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set Container Tag Normal (Nightly)
+        run: |
+          container="${{ matrix.dockerfile[0] }}:latest"
+          echo "container=${container}" >> $GITHUB_ENV
+          echo "versioned=${container}" >> $GITHUB_ENV
+
+      - name: Set Container Tag on Release
+        if: github.event_name == 'release'
+        run: |
+          versioned="${{matrix.dockerfile[0]}}:${GITHUB_REF##*/}"
+          echo "versioned=${versioned}" >> $GITHUB_ENV
+
+      - name: Check ${{ matrix.dockerfile[1] }} Exists
+        run: |
+          printf "Preparing to build ${{ env.container }} from ${{ matrix.dockerfile[1] }}"
+          if [ ! -f "${{ matrix.dockerfile[1]}}" ]; then
+              printf "Dockerfile ${{ matrix.dockerfile[1]}} does not exist"
+              exit 1;
+          fi
+
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Build & Deploy ${{ matrix.dockerfile[0] }}
+        uses: docker/build-push-action@v2
+        with:
+          file: ${{matrix.dockerfile[1]}}
+          platforms: linux/amd64
+          context: ./docker
+          push: ${{ github.event_name != 'pull_request' }}
+          tags: |
+            ghcr.io/spack/${{ env.container }}
+            ghcr.io/spack/${{ env.versioned }}
