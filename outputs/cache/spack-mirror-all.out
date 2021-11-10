@@ -1,107 +1,164 @@
-$ spack mirror create -d ~/mirror -a
+$ spack mirror create -d ~/mirror --all
 ==> Adding package autoconf@2.69 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package automake@1.16.2 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b2/b2f361094b410b4acbf4efba7337bdb786335ca09eb2518635a09fb7319ca5c1.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/ea/eaa3f69d927a853313a0b06e2117c51adab6377a2278549b05abc5df93643e16
+==> Fetching https://mirror.spack.io/_source-cache/archive/77/7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
+==> Fetching https://mirror.spack.io/_source-cache/archive/35/35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
+==> Fetching https://mirror.spack.io/_source-cache/archive/a4/a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+==> Adding package autoconf-archive@2019.01.06 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/17/17195c833098da79de5778ee90948f4c5d90ed1a0cf8391b4ab348e2ec511e3f.tar.xz
+==> Adding package automake@1.16.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ce/ce010788b51f64511a1e9bb2a1ec626037c6d0e7ede32c1c103611b9d3cba65f.tar.gz
+==> Adding package axl@0.5.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/9f/9f3bbb4de563896551bdb68e889ba93ea1984586961ad8c627ed766bff020acf.tar.gz
 ==> Adding package berkeley-db@18.1.40 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package cmake@3.18.4 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/59/597c61358e6a92ecbfad42a9b5321ddd801fc7e7eca08441307c9138382d4f77.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package dtcmp@1.1.1 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/dd/ddf3c57cbb83515e1b7e4111b8a83f832e66376b40eee5d8a5549dd7b8446bc6.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package gdbm@1.18.1 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/86/86e613527e5dba544e73208f42b78b7c022d4fa5a6d5498bf18c8d6f745b91dc.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Adding package bzip2@1.0.8 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Adding package cmake@3.21.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d9/d9570a95c215f4c9886dd0f0564ca4ef8d18c30750f157238ea12669c2985978.tar.gz
+==> Adding package curl@7.79.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d6/d607a677f473f79f96c964100327125a6204a39d835dc00dab7fc0129b959f42.tar.bz2
+==> Adding package diffutils@3.8 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
+==> Adding package dtcmp@1.1.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/90/90b32cadd0ff2f4fa7fc916f8dcfdbe6918e3e285e0292a2470772478ca0aab5.tar.gz
+==> Adding package er@0.1.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/54/543afc1c48bb2c67f48c32f6c9efcbf7bb27f2e622ff76f2c2ce5618c77aacfc.tar.gz
+==> Adding package expat@2.4.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/2f/2f9b6a580b94577b150a7d5617ad4643a4301a6616ff459307df3e225bcfbf40.tar.bz2
+==> Adding package gawk@5.1.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/cf/cf5fea4ac5665fd5171af4716baab2effc76306a9572988d5ba1078f196382bd.tar.xz
+==> Adding package gdbm@1.19 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/37/37ed12214122b972e18a0d94995039e57748191939ef74115b1d41d8811364bc.tar.gz
+==> Adding package gettext@0.21 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d2/d20fcbb537e02dcf1383197ba05bd0734ef7bf5db06bdb241eb69b7d16b73192.tar.xz
+==> Adding package glib@2.70.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/20/200d7df811c5ba634afbf109f14bb40ba7fde670e89389885da14e27c0840742.tar.xz
+==> Adding package gmp@6.2.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ea/eae9326beb4158c386e39a356818031bd28f3124cf915f8c5b1dc4c7a36b4d7c.tar.bz2
 ==> Adding package hdf5@1.10.7 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/7a/7a1a0a54371275ce2dfc5cd093775bb025c365846512961e7e5ceaecb437ef15.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/57/57cee5ff1992b4098eda079815c36fc2da9b10e00a9056df054f2384c4fc7523
-####################################################################################################################################################################### 100.0%
-==> Adding package hwloc@1.11.11 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/74/74329da3be1b25de8e98a712adb28b14e561889244bf3a8138afe91ab18e0b3a.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/7a/7a1a0a54371275ce2dfc5cd093775bb025c365846512961e7e5ceaecb437ef15.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/57/57cee5ff1992b4098eda079815c36fc2da9b10e00a9056df054f2384c4fc7523
+==> Adding package hwloc@2.6.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/9a/9aa7e768ed4fd429f488466a311ef2191054ea96ea1a68657bc06ffbb745e59f.tar.gz
+==> Adding package json-c@0.15 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/b8/b8d80a1ddb718b3ba7492916237bbf86609e9709fb007e7f7d4322f02341a4c6.tar.gz
 ==> Adding package json-cwx@0.12 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/3b/3bfae1f23eacba53ee130dbd1a6acf617af4627a9b4e4581d64b20a99b4e2b60.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bfae1f23eacba53ee130dbd1a6acf617af4627a9b4e4581d64b20a99b4e2b60.tar.gz
+==> Adding package kvtree@1.2.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/ec/ecd4b8bc479c33ab4f23fc764445a3bb353a1d15c208d011f5577a32c182477f.tar.gz
+==> Adding package libbsd@0.11.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ff/ff95cf8184151dacae4247832f8d4ea8800fa127dbd15033ecfe839f285b42a1.tar.xz
+==> Adding package libedit@3.1-20210216 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/22/2283f741d2aab935c8c52c04b57bf952d02c2c02e651172f8ac811f77b1fc77a.tar.gz
+==> Adding package libevent@2.1.12 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/92/92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb.tar.gz
+==> Adding package libffi@3.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/72/72fba7922703ddfa7a028d513ac15a85c8d54c8d67f55fa5a4802885dc652056.tar.gz
+==> Adding package libgcrypt@1.9.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/97/97ebe4f94e2f7e35b752194ce15a0f3c66324e0ff6af26659bbfb5ff2ec328fd.tar.bz2
+==> Adding package libgpg-error@1.42 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/fc/fc07e70f6c615f8c4f590a8e37a9b8dd2e2ca1e9408f8e60459c67452b925e23.tar.bz2
 ==> Adding package libiconv@1.16 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/e6/e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/e6/e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04.tar.gz
+==> Adding package libmd@1.0.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/5a/5a02097f95cc250a3f1001865e4dbba5f1d15554120f95693c0541923c52af4a.tar.xz
 ==> Adding package libpciaccess@0.16 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/84/84413553994aef0070cf420050aa5c0a51b1956b404920e21b81e96db6a61a27.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package libsigsegv@2.12 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/3a/3ae1af359eebaa4ffc5896a1aee3568c052c99879316a1ab57f8fe1789c390b6.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/84/84413553994aef0070cf420050aa5c0a51b1956b404920e21b81e96db6a61a27.tar.gz
+==> Adding package libsigsegv@2.13 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/be/be78ee4176b05f7c75ff03298d84874db90f4b6c9d5503f0da1226b3a3c48119.tar.gz
 ==> Adding package libtool@2.4.6 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/e3/e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package libxml2@2.9.10 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/aa/aafee193ffb8fe0c82d4afef6ef91972cbaf5feea100edc2f262750611b4be1f.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/e3/e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3.tar.gz
+==> Adding package libxml2@2.9.12 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/c8/c8d6681e38c56f172892c85ddc0852e1fd4b53b4209e7f4ebf17f7e2eae71d92.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
 ==> Adding package libyogrt@1.24 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/36/36695030e72b24b1f22bfcfe42bfd1d3c87f9c0eea5e94ce0120782581ea522f.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package lwgrp@1.0.3 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/20/20b2fc3908bfdf04d1c177f86e227a147214cd155c548b3dd75e54c78e1c1c47.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package m4@1.4.18 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/ab/ab2633921a5cd38e48797bf5521ad259bdc4b979078034a3b790d7fec5493fab.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/fc/fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/36/36695030e72b24b1f22bfcfe42bfd1d3c87f9c0eea5e94ce0120782581ea522f.tar.gz
+==> Adding package lwgrp@1.0.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0c933df7658660a0225f8e3a940eb2621efa4421397859417c8d90d906d4e90a.tar.gz
+==> Adding package lz4@1.9.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/03/030644df4611007ff7dc962d981f390361e6c97a34e5cbc393ddfbe019ffe2c1.tar.gz
+==> Adding package m4@1.4.19 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3be4a26d825ffdfda52a56fc43246456989a3630093cced3fbddf4771ee58a70.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/fc/fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8
+==> Fetching https://mirror.spack.io/_source-cache/archive/bf/bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89
+==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573
 ==> Adding package macsio@1.1 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
+==> Adding package meson@0.60.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/56/5672a560fc4094c88ca5b8be0487e099fe84357e5045f5aecf1113084800e6fd.tar.gz
+==> Adding package mpfr@4.1.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/fe/feced2d430dd5a97805fa289fed3fc8ff2b094c02d05287fd6133e7f1f0ec926.tar.bz2
+==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3f80b836948aa96f8d1cb9cc7f3f55973f19285482a96f9a4e1623d460bcccf0
+==> Fetching https://mirror.spack.io/_source-cache/archive/52/5230aab653fa8675fc05b5bdd3890e071e8df49a92a9d58c4284024affd27739
+==> Fetching https://mirror.spack.io/_source-cache/archive/7a/7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008
+==> Fetching https://mirror.spack.io/_source-cache/archive/1a/1ae14fb3a54ae8e0faed20801970255b279eee9e5ac624891ab5d29727f0bc04
+==> Fetching https://mirror.spack.io/_source-cache/archive/11/113705d5333ef0d0ad3eb136a85404ba6bd1cc524dece5ce902c536aa2e29903
+==> Fetching https://mirror.spack.io/_source-cache/archive/41/4152a780b3cc6e9643283e59093b43460196d0fea9302d8c93b2496f6679f4e4
+==> Fetching https://mirror.spack.io/_source-cache/archive/1b/1b9fdb515efb09a506a01e1eb307b1464455f5ca63d6c193db3a3da371ab3220
+==> Adding package munge@0.5.14 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/66/6606a218f18090fa1f702e3f6fb608073eb6aafed534cf7dd81b67b2e0d30640.tar.xz
 ==> Adding package ncurses@6.2 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/30/30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/30/30306e0c76e0f9f1f0de987cf1c82a5c21e1ce6568b9227f7da5b71cbea86c9d.tar.gz
+==> Adding package ninja@1.10.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ce/ce35865411f0490368a8fc383f29071de6690cbadc27704734978221f25e2bed.tar.gz
 ==> Adding package numactl@2.0.14 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/1e/1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package openmpi@3.1.6 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/50/50131d982ec2a516564d74d5616383178361c2f08fdd7d1202b80bdf66a0d279.tar.bz2
-####################################################################################################################################################################### 100.0%
-==> Adding package openssl@1.1.1h to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/5c/5c9ca8774bd7b03e5784f26ae9e9e6d749c9da2438545077e6b3d755a06595d9.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/1e/1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035.tar.gz
+==> Adding package openmpi@4.1.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/e2/e24f7a778bd11a71ad0c14587a7f5b00e68a71aa5623e2157bafee3d44c07cda.tar.bz2
+==> Adding package openssh@8.7p1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/7c/7ca34b8bb24ae9e50f33792b7091b3841d7e1b440ff57bc9fabddf01e2ed1e24.tar.gz
+==> Adding package openssl@1.1.1l to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0b/0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1.tar.gz
+==> Adding package pcre@8.44 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/19/19108658b23b3ec5058edc9f66ac545ea19f9537234be1ec62b714c84399366d.tar.bz2
 ==> Adding package pdsh@2.31 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/0e/0ee066ce395703285cf4f6cf00b54b7097d12457a4b1c146bc6f33d8ba73caa7.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package perl@5.32.0 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/ef/efeb1ce1f10824190ad1cadbcccf6fdb8a5d37007d0100d2d9ae5f2b5900c0b4.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/0e/0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac
-####################################################################################################################################################################### 100.0%
-==> Adding package pkgconf@1.7.3 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/b8/b846aea51cf696c3392a0ae58bef93e2e72f8e7073ca6ad1ed8b01c85871f9c0.tar.xz
-####################################################################################################################################################################### 100.0%
-==> Adding package readline@8.0 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/e3/e339f51971478d369f8a053a330a190781acb9864cf4c541060f12078948e461.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package scr@2.0.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0e/0ee066ce395703285cf4f6cf00b54b7097d12457a4b1c146bc6f33d8ba73caa7.tar.gz
+==> Fetching https://github.com/grondo/pdsh/archive/pdsh-2.31.tar.gz
+==> Adding package perl@5.34.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/55/551efc818b968b05216024fb0b727ef2ad4c100f8cb6b43fab615fa78ae5be9a.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/8c/8cf4302ca8b480c60ccdcaa29ec53d9d50a71d4baf469ac8c6fca00ca31e58a2
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bbd7d6f9933d80b9571533867b444c6f8f5a1ba0575bfba1fba4db9d885a71a
+==> Fetching https://mirror.spack.io/_source-cache/archive/0e/0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac
+==> Adding package pkgconf@1.8.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ef/ef9c7e61822b7cb8356e6e9e1dca58d9556f3200d78acab35e4347e9d4c2bbaf.tar.xz
+==> Adding package py-setuptools@58.2.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/2c/2c55bdb85d5bb460bd2e3b12052b677879cffcf46c0c688f2e5bf51d36001145.tar.gz
+==> Adding package python@3.8.12 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/31/316aa33f3b7707d041e73f246efedb297a70898c4b91f127f66dc8d80c596f1a.tgz
+==> Adding package rankstr@0.1.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/b6/b68239d67b2359ecc067cc354f86ccfbc8f02071e60d28ae0a2449f2e7f88001.tar.gz
+==> Adding package readline@8.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/f8/f8ceb4ee131e3232226a17f51b164afc46cd0b9e6cef344be87c65962cb82b02.tar.gz
+==> Adding package redset@0.1.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/ba/baa75de0d0d6de64ade50cff3d38ee89fd136ce69869182bdaefccf5be5d286d.tar.gz
+==> Adding package scr@3.0rc2 to mirror
+==> Adding package shuffile@0.1.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/9e/9e730cc8b7937517a9cffb08c031d9f5772306341c49d17b87b7f349d55a6d5e.tar.gz
 ==> Adding package silo@4.10.2 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/3a/3af87e5f0608a69849c00eb7c73b11f8422fa36903dd14610584506e7f68e638.tar.gz
-####################################################################################################################################################################### 100.0%
-==> Adding package util-macros@1.19.1 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/18/18d459400558f4ea99527bc9786c033965a3db45bf4c6a32eefdc07aa9e306a6.tar.bz2
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/3a/3af87e5f0608a69849c00eb7c73b11f8422fa36903dd14610584506e7f68e638.tgz
+==> Adding package slurm@21-08-1-1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/23/23321719101762b055a6b1da6ff4261f5e6c469bce038c6c23549840453862e7.tar.gz
+==> Adding package spath@0.1.0 to mirror
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2c/2cfc635b2384d3f92973c7aea173dabe47da112d308f5098e6636e4b2f4a704c.tar.gz
+==> Adding package sqlite@3.36.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/bd/bd90c3eb96bee996206b83be7065c9ce19aef38c3f4fb53073ada0d0b69bbce3.tar.gz
+==> Adding package tar@1.34 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/03/03d908cf5768cfe6b7ad588c921c6ed21acabfb2b79b788d1330453507647aed.tar.gz
+==> Adding package texinfo@6.5 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d3/d34272e4042c46186ddcd66bd5d980c0ca14ff734444686ccf8131f6ec8b1427.tar.gz
+==> Adding package util-linux-uuid@2.36.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/f5/f5dbe79057e7d68e1a46fc04083fc558b26a49499b1b3f50e4f4893150970463.tar.gz
+==> Adding package util-macros@1.19.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0f/0f812e6e9d2786ba8f54b960ee563c0663ddbe2434bf24ff193f5feab1f31971.tar.bz2
 ==> Adding package xz@5.2.5 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/51/5117f930900b341493827d63aa910ff5e011e0b994197c3b71c08a20228a42df.tar.bz2
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/51/5117f930900b341493827d63aa910ff5e011e0b994197c3b71c08a20228a42df.tar.bz2
 ==> Adding package zlib@1.2.11 to mirror
-==> Fetching https://spack-llnl-mirror.s3-us-west-2.amazonaws.com/_source-cache/archive/c3/c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1.tar.gz
-####################################################################################################################################################################### 100.0%
+==> Fetching https://mirror.spack.io/_source-cache/archive/c3/c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1.tar.gz
 ==> Successfully updated mirror in file:///home/spack/mirror
   Archive stats:
     1	 already present
-    30	 added
+    68	 added
     0	 failed to fetch.

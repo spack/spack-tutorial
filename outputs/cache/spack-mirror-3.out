@@ -1,23 +1,12 @@
 $ spack add bzip2
 ==> Adding bzip2 to environment /home/spack/cache-env
-==> Updating view at /home/spack/cache-env/.spack-env/view
 $ spack install
+==> Starting concretization
+==> Environment concretized in 0.61 seconds.
 ==> Concretized bzip2
- -   fvfpt26  bzip2@1.0.8%gcc@7.5.0+shared arch=linux-ubuntu18.04-x86_64
- -   otkkten	  ^diffutils@3.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  jearpk4	      ^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  55rtzz4  bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
+[+]  kg5jymj	  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+[+]  qi7dxj6	      ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
 
 ==> Installing environment /home/spack/cache-env
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-jearpk4xci4zc7dkrza4fufaqfkq7rfl
-==> Installing diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr.spack
-####################################################################################################################################################################### 100.0%
-==> Extracting diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.7-otkktenrrvcaf37a7zyeytmjuwsalvtr
-==> Installing bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8/linux-ubuntu18.04-x86_64-gcc-7.5.0-bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui.spack
-####################################################################################################################################################################### 100.0%
-==> Extracting bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-fvfpt26p5divvq6344vojyn64enojlui
-==> Updating view at /home/spack/cache-env/.spack-env/view
-==> Updating view at /home/spack/cache-env/.spack-env/view
+==> All of the packages are already installed
