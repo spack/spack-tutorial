@@ -7,8 +7,8 @@ project=$(dirname "$0")
 # clean things up before starting this first script
 rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
 
-## install boto3 (pre-v0.17.0)
-#pip3 install boto3
+# install boto3 (pre-v0.17.0)
+pip3 install boto3
 
 # basic installation
 example basics/clone         "git clone https://github.com/spack/spack ~/spack"

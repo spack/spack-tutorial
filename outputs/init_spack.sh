@@ -13,7 +13,7 @@ fi
 . share/spack/setup-env.sh
 
 # install boto3 (pre-v0.17.0)
-##pip install boto3
+pip3 install boto3
 
 spack mirror add tutorial ${tutorial_mirror}
 spack buildcache keys --install --trust

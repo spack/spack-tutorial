@@ -7,7 +7,7 @@ project=$(dirname "$0")
 rm -rf $raw_outputs/dev
 
 # install boto3 (pre-v0.17.0)
-##pip install boto3
+pip3 install boto3
 
 example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example dev/up-to-date "cd ~/spack"
