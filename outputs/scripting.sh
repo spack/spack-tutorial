@@ -41,11 +41,16 @@ EOF
 
 example scripting/find-exclude-1 "spack python find_exclude.py %gcc ^mpich"
 
-{ echo "#!/usr/bin/env spack python" & cat find_exclude.py; } | tee ${PROJECT}/raw/1.find_exclude.py.example find_exclude.py
+EXAMPLE1="${PROJECT}/raw/1.find_exclude.py.example"
+echo "#!/usr/bin/env spack python" > $EXAMPLE1
+cat find_exclude.py >> $EXAMPLE1
+cp $EXAMPLE1 find_exclude.py
 
 example scripting/find-exclude-2 "chmod u+x find_exclude.py"
 example scripting/find-exclude-2 "./find_exclude.py %gcc ^mpich"
 
-sed s'|spack python|spack-python|' find_exclude.py | tee  ${PROJECT}/raw/2.find_exclude.py.example find_exclude.py
+EXAMPLE2="${PROJECT}/raw/2.find_exclude.py.example"
+sed s'|spack python|spack-python|' find_exclude.py > $EXAMPLE2
+cp $EXAMPLE2 find_exclude.py
 
 example scripting/find-exclude-3 "./find_exclude.py %gcc ^mpich"
