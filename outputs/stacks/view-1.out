@@ -1,215 +1,35 @@
 $ spack concretize
-==> Updating view at views/default
-==> Updating view at views/full
+==> Updating view at /home/spack/code/views/default
 $ ls views/default
-TrilinosRepoVersion.txt  bin  etc  include  lib  share
+TrilinosRepoVersion.txt  bin  include  lib
 $ ls views/default/lib
-cmake					libboost_timer.so
-exodus2.py				libboost_timer.so.1.74.0
-exodus3.py				libboost_unit_test_framework-mt.a
-exomerge2.py				libboost_unit_test_framework-mt.so
-exomerge3.py				libboost_unit_test_framework-mt.so.1.74.0
-libIoex.so				libboost_unit_test_framework.a
-libIoex.so.13				libboost_unit_test_framework.so
-libIoex.so.13.0 			libboost_unit_test_framework.so.1.74.0
-libIogn.so				libboost_wave-mt.a
-libIogn.so.13				libboost_wave-mt.so
-libIogn.so.13.0 			libboost_wave-mt.so.1.74.0
-libIogs.so				libboost_wave.a
-libIogs.so.13				libboost_wave.so
-libIogs.so.13.0 			libboost_wave.so.1.74.0
-libIohb.so				libboost_wserialization-mt.a
-libIohb.so.13				libboost_wserialization-mt.so
-libIohb.so.13.0 			libboost_wserialization-mt.so.1.74.0
-libIonit.so				libboost_wserialization.a
-libIonit.so.13				libboost_wserialization.so
-libIonit.so.13.0			libboost_wserialization.so.1.74.0
-libIoss.so				libepetra.so
-libIoss.so.13				libepetra.so.13
-libIoss.so.13.0 			libepetra.so.13.0
-libIotr.so				libepetraext.so
-libIotr.so.13				libepetraext.so.13
-libIotr.so.13.0 			libepetraext.so.13.0
-libIovs.so				libexoIIv2for32.so
-libIovs.so.13				libexoIIv2for32.so.13
-libIovs.so.13.0 			libexoIIv2for32.so.13.0
-libModeLaplace.so			libexodus.so
-libModeLaplace.so.13			libexodus.so.13
-libModeLaplace.so.13.0			libexodus.so.13.0
-libamesos.so				libexodus_for.so
-libamesos.so.13 			libexodus_for.so.13
-libamesos.so.13.0			libexodus_for.so.13.0
-libamesos2.so				libgaleri-epetra.so
-libamesos2.so.13			libgaleri-epetra.so.13
-libamesos2.so.13.0			libgaleri-epetra.so.13.0
-libanasazi.so				libgaleri-xpetra.so
-libanasazi.so.13			libgaleri-xpetra.so.13
-libanasazi.so.13.0			libgaleri-xpetra.so.13.0
-libanasaziepetra.so			libgtest.so
-libanasaziepetra.so.13			libgtest.so.13
-libanasaziepetra.so.13.0		libgtest.so.13.0
-libanasazitpetra.so			libifpack.so
-libanasazitpetra.so.13			libifpack.so.13
-libanasazitpetra.so.13.0		libifpack.so.13.0
-libaprepro_lib.so			libifpack2.so
-libaprepro_lib.so.13			libifpack2.so.13
-libaprepro_lib.so.13.0			libifpack2.so.13.0
-libaztecoo.so				libio_info_lib.so
-libaztecoo.so.13			libio_info_lib.so.13
-libaztecoo.so.13.0			libio_info_lib.so.13.0
-libbelos.so				libkokkosalgorithms.so
-libbelos.so.13				libkokkosalgorithms.so.13
-libbelos.so.13.0			libkokkosalgorithms.so.13.0
-libbelosepetra.so			libkokkoscontainers.so
-libbelosepetra.so.13			libkokkoscontainers.so.13
-libbelosepetra.so.13.0			libkokkoscontainers.so.3.1.1
-libbelostpetra.so			libkokkoscore.so
-libbelostpetra.so.13			libkokkoscore.so.13
-libbelostpetra.so.13.0			libkokkoscore.so.3.1.1
-libbelosxpetra.so			libkokkoskernels.so
-libbelosxpetra.so.13			libkokkoskernels.so.13
-libbelosxpetra.so.13.0			libkokkoskernels.so.13.0
-libboost_atomic-mt.a			libkokkostsqr.so
-libboost_atomic-mt.so			libkokkostsqr.so.13
-libboost_atomic-mt.so.1.74.0		libkokkostsqr.so.13.0
-libboost_atomic.a			libmapvarlib.so
-libboost_atomic.so			libmapvarlib.so.13
-libboost_atomic.so.1.74.0		libmapvarlib.so.13.0
-libboost_chrono-mt.a			libml.so
-libboost_chrono-mt.so			libml.so.13
-libboost_chrono-mt.so.1.74.0		libml.so.13.0
-libboost_chrono.a			libmpi.a
-libboost_chrono.so			libmpi.so
-libboost_chrono.so.1.74.0		libmpi.so.40
-libboost_date_time-mt.a 		libmpi.so.40.10.4
-libboost_date_time-mt.so		libmpi_mpifh.a
-libboost_date_time-mt.so.1.74.0 	libmpi_mpifh.so
-libboost_date_time.a			libmpi_mpifh.so.40
-libboost_date_time.so			libmpi_mpifh.so.40.11.3
-libboost_date_time.so.1.74.0		libmpi_usempi_ignore_tkr.a
-libboost_exception-mt.a 		libmpi_usempi_ignore_tkr.so
-libboost_exception.a			libmpi_usempi_ignore_tkr.so.40
-libboost_filesystem-mt.a		libmpi_usempi_ignore_tkr.so.40.10.2
-libboost_filesystem-mt.so		libmpi_usempif08.a
-libboost_filesystem-mt.so.1.74.0	libmpi_usempif08.so
-libboost_filesystem.a			libmpi_usempif08.so.40
-libboost_filesystem.so			libmpi_usempif08.so.40.10.3
-libboost_filesystem.so.1.74.0		libmuelu-adapters.so
-libboost_graph-mt.a			libmuelu-adapters.so.13
-libboost_graph-mt.so			libmuelu-adapters.so.13.0
-libboost_graph-mt.so.1.74.0		libmuelu-interface.so
-libboost_graph.a			libmuelu-interface.so.13
-libboost_graph.so			libmuelu-interface.so.13.0
-libboost_graph.so.1.74.0		libmuelu.so
-libboost_iostreams-mt.a 		libmuelu.so.13
-libboost_iostreams-mt.so		libmuelu.so.13.0
-libboost_iostreams-mt.so.1.74.0 	libnemesis.so
-libboost_iostreams.a			libnemesis.so.13
-libboost_iostreams.so			libnemesis.so.13.0
-libboost_iostreams.so.1.74.0		libompitrace.a
-libboost_locale-mt.a			libompitrace.so
-libboost_locale-mt.so			libompitrace.so.40
-libboost_locale-mt.so.1.74.0		libompitrace.so.40.10.1
-libboost_locale.a			libopen-pal.a
-libboost_locale.so			libopen-pal.so
-libboost_locale.so.1.74.0		libopen-pal.so.40
-libboost_log-mt.a			libopen-pal.so.40.10.6
-libboost_log-mt.so			libopen-rte.a
-libboost_log-mt.so.1.74.0		libopen-rte.so
-libboost_log.a				libopen-rte.so.40
-libboost_log.so 			libopen-rte.so.40.10.5
-libboost_log.so.1.74.0			liboshmem.a
-libboost_log_setup-mt.a 		liboshmem.so
-libboost_log_setup-mt.so		liboshmem.so.40
-libboost_log_setup-mt.so.1.74.0 	liboshmem.so.40.10.2
-libboost_log_setup.a			libsacado.so
-libboost_log_setup.so			libsacado.so.13
-libboost_log_setup.so.1.74.0		libsacado.so.13.0
-libboost_math_c99-mt.a			libsupes.so
-libboost_math_c99-mt.so 		libsupes.so.13
-libboost_math_c99-mt.so.1.74.0		libsupes.so.13.0
-libboost_math_c99.a			libsuplib.so
-libboost_math_c99.so			libsuplib.so.13
-libboost_math_c99.so.1.74.0		libsuplib.so.13.0
-libboost_math_c99f-mt.a 		libsuplib_c.so
-libboost_math_c99f-mt.so		libsuplib_c.so.13
-libboost_math_c99f-mt.so.1.74.0 	libsuplib_c.so.13.0
-libboost_math_c99f.a			libsuplib_cpp.so
-libboost_math_c99f.so			libsuplib_cpp.so.13
-libboost_math_c99f.so.1.74.0		libsuplib_cpp.so.13.0
-libboost_math_c99l-mt.a 		libteuchoscomm.so
-libboost_math_c99l-mt.so		libteuchoscomm.so.13
-libboost_math_c99l-mt.so.1.74.0 	libteuchoscomm.so.13.0
-libboost_math_c99l.a			libteuchoscore.so
-libboost_math_c99l.so			libteuchoscore.so.13
-libboost_math_c99l.so.1.74.0		libteuchoscore.so.13.0
-libboost_math_tr1-mt.a			libteuchoskokkoscomm.so
-libboost_math_tr1-mt.so 		libteuchoskokkoscomm.so.13
-libboost_math_tr1-mt.so.1.74.0		libteuchoskokkoscomm.so.13.0
-libboost_math_tr1.a			libteuchoskokkoscompat.so
-libboost_math_tr1.so			libteuchoskokkoscompat.so.13
-libboost_math_tr1.so.1.74.0		libteuchoskokkoscompat.so.13.0
-libboost_math_tr1f-mt.a 		libteuchosnumerics.so
-libboost_math_tr1f-mt.so		libteuchosnumerics.so.13
-libboost_math_tr1f-mt.so.1.74.0 	libteuchosnumerics.so.13.0
-libboost_math_tr1f.a			libteuchosparameterlist.so
-libboost_math_tr1f.so			libteuchosparameterlist.so.13
-libboost_math_tr1f.so.1.74.0		libteuchosparameterlist.so.13.0
-libboost_math_tr1l-mt.a 		libteuchosparser.so
-libboost_math_tr1l-mt.so		libteuchosparser.so.13
-libboost_math_tr1l-mt.so.1.74.0 	libteuchosparser.so.13.0
-libboost_math_tr1l.a			libteuchosremainder.so
-libboost_math_tr1l.so			libteuchosremainder.so.13
-libboost_math_tr1l.so.1.74.0		libteuchosremainder.so.13.0
-libboost_prg_exec_monitor-mt.a		libtpetra.so
-libboost_prg_exec_monitor-mt.so 	libtpetra.so.13
-libboost_prg_exec_monitor-mt.so.1.74.0	libtpetra.so.13.0
-libboost_prg_exec_monitor.a		libtpetraclassic.so
-libboost_prg_exec_monitor.so		libtpetraclassic.so.13
-libboost_prg_exec_monitor.so.1.74.0	libtpetraclassic.so.13.0
-libboost_program_options-mt.a		libtpetraclassiclinalg.so
-libboost_program_options-mt.so		libtpetraclassiclinalg.so.13
-libboost_program_options-mt.so.1.74.0	libtpetraclassiclinalg.so.13.0
-libboost_program_options.a		libtpetraclassicnodeapi.so
-libboost_program_options.so		libtpetraclassicnodeapi.so.13
-libboost_program_options.so.1.74.0	libtpetraclassicnodeapi.so.13.0
-libboost_random-mt.a			libtpetraext.so
-libboost_random-mt.so			libtpetraext.so.13
-libboost_random-mt.so.1.74.0		libtpetraext.so.13.0
-libboost_random.a			libtpetrainout.so
-libboost_random.so			libtpetrainout.so.13
-libboost_random.so.1.74.0		libtpetrainout.so.13.0
-libboost_regex-mt.a			libtrilinosss.so
-libboost_regex-mt.so			libtrilinosss.so.13
-libboost_regex-mt.so.1.74.0		libtrilinosss.so.13.0
-libboost_regex.a			libtriutils.so
-libboost_regex.so			libtriutils.so.13
-libboost_regex.so.1.74.0		libtriutils.so.13.0
-libboost_serialization-mt.a		libxpetra-sup.so
-libboost_serialization-mt.so		libxpetra-sup.so.13
-libboost_serialization-mt.so.1.74.0	libxpetra-sup.so.13.0
-libboost_serialization.a		libxpetra.so
-libboost_serialization.so		libxpetra.so.13
-libboost_serialization.so.1.74.0	libxpetra.so.13.0
-libboost_system-mt.a			libzoltan.so
-libboost_system-mt.so			libzoltan.so.13
-libboost_system-mt.so.1.74.0		libzoltan.so.13.0
-libboost_system.a			libzoltan2.so
-libboost_system.so			libzoltan2.so.13
-libboost_system.so.1.74.0		libzoltan2.so.13.0
-libboost_test_exec_monitor-mt.a 	mpi.mod
-libboost_test_exec_monitor.a		mpi_ext.mod
-libboost_thread-mt.a			mpi_f08.mod
-libboost_thread-mt.so			mpi_f08_callbacks.mod
-libboost_thread-mt.so.1.74.0		mpi_f08_ext.mod
-libboost_thread.a			mpi_f08_interfaces.mod
-libboost_thread.so			mpi_f08_interfaces_callbacks.mod
-libboost_thread.so.1.74.0		mpi_f08_types.mod
-libboost_timer-mt.a			openmpi
-libboost_timer-mt.so			pkgconfig
-libboost_timer-mt.so.1.74.0		pmpi_f08_interfaces.mod
-libboost_timer.a
+cmake			  libbelostpetra.so	       libkokkoscontainers.so.13     libteuchoscomm.so.13.0	      libtpetraclassiclinalg.so
+libModeLaplace.so	  libbelostpetra.so.13	       libkokkoscontainers.so.3.1.1  libteuchoscore.so		      libtpetraclassiclinalg.so.13
+libModeLaplace.so.13	  libbelostpetra.so.13.0       libkokkoscore.so 	     libteuchoscore.so.13	      libtpetraclassiclinalg.so.13.0
+libModeLaplace.so.13.0	  libbelosxpetra.so	       libkokkoscore.so.13	     libteuchoscore.so.13.0	      libtpetraclassicnodeapi.so
+libamesos.so		  libbelosxpetra.so.13	       libkokkoscore.so.3.1.1	     libteuchoskokkoscomm.so	      libtpetraclassicnodeapi.so.13
+libamesos.so.13 	  libbelosxpetra.so.13.0       libkokkoskernels.so	     libteuchoskokkoscomm.so.13       libtpetraclassicnodeapi.so.13.0
+libamesos.so.13.0	  libepetra.so		       libkokkoskernels.so.13	     libteuchoskokkoscomm.so.13.0     libtpetraext.so
+libamesos2.so		  libepetra.so.13	       libkokkoskernels.so.13.0      libteuchoskokkoscompat.so	      libtpetraext.so.13
+libamesos2.so.13	  libepetra.so.13.0	       libkokkostsqr.so 	     libteuchoskokkoscompat.so.13     libtpetraext.so.13.0
+libamesos2.so.13.0	  libepetraext.so	       libkokkostsqr.so.13	     libteuchoskokkoscompat.so.13.0   libtpetrainout.so
+libanasazi.so		  libepetraext.so.13	       libkokkostsqr.so.13.0	     libteuchosnumerics.so	      libtpetrainout.so.13
+libanasazi.so.13	  libepetraext.so.13.0	       libml.so 		     libteuchosnumerics.so.13	      libtpetrainout.so.13.0
+libanasazi.so.13.0	  libgaleri-epetra.so	       libml.so.13		     libteuchosnumerics.so.13.0       libtrilinosss.so
+libanasaziepetra.so	  libgaleri-epetra.so.13       libml.so.13.0		     libteuchosparameterlist.so       libtrilinosss.so.13
+libanasaziepetra.so.13	  libgaleri-epetra.so.13.0     libmuelu-adapters.so	     libteuchosparameterlist.so.13    libtrilinosss.so.13.0
+libanasaziepetra.so.13.0  libgaleri-xpetra.so	       libmuelu-adapters.so.13	     libteuchosparameterlist.so.13.0  libtriutils.so
+libanasazitpetra.so	  libgaleri-xpetra.so.13       libmuelu-adapters.so.13.0     libteuchosparser.so	      libtriutils.so.13
+libanasazitpetra.so.13	  libgaleri-xpetra.so.13.0     libmuelu-interface.so	     libteuchosparser.so.13	      libtriutils.so.13.0
+libanasazitpetra.so.13.0  libifpack.so		       libmuelu-interface.so.13      libteuchosparser.so.13.0	      libxpetra-sup.so
+libaztecoo.so		  libifpack.so.13	       libmuelu-interface.so.13.0    libteuchosremainder.so	      libxpetra-sup.so.13
+libaztecoo.so.13	  libifpack.so.13.0	       libmuelu.so		     libteuchosremainder.so.13	      libxpetra-sup.so.13.0
+libaztecoo.so.13.0	  libifpack2.so 	       libmuelu.so.13		     libteuchosremainder.so.13.0      libxpetra.so
+libbelos.so		  libifpack2.so.13	       libmuelu.so.13.0 	     libtpetra.so		      libxpetra.so.13
+libbelos.so.13		  libifpack2.so.13.0	       libsacado.so		     libtpetra.so.13		      libxpetra.so.13.0
+libbelos.so.13.0	  libkokkosalgorithms.so       libsacado.so.13		     libtpetra.so.13.0
+libbelosepetra.so	  libkokkosalgorithms.so.13    libsacado.so.13.0	     libtpetraclassic.so
+libbelosepetra.so.13	  libkokkosalgorithms.so.13.0  libteuchoscomm.so	     libtpetraclassic.so.13
+libbelosepetra.so.13.0	  libkokkoscontainers.so       libteuchoscomm.so.13	     libtpetraclassic.so.13.0
 $ ls views/full
-boost  glm   hwloc     libpciaccess  metis  mumps     netlib-scalapack	openmpi   readline	xz
-bzip2  gmp   hypre     libxml2	     mpfr   ncurses   numactl		openssl   suite-sparse	zlib
-gdbm   hdf5  libiconv  matio	     mpich  netcdf-c  openblas		parmetis  trilinos
+bzip2  gdbm  hdf5  hwloc  libfabric  libiconv  libpciaccess  libxml2  mpich  ncurses  openblas	openssl  pkgconf  readline  trilinos  xz  zlib

@@ -1,3 +1,26 @@
 $ cd ~/code
 $ spack env activate .
+==> Error: `spack env activate` requires Spack's shell support.
+
+  To set up shell support, run the command below for your shell.
+
+  For bash/zsh/sh:
+    . /home/spack/spack/share/spack/setup-env.sh
+
+  For csh/tcsh:
+    source /home/spack/spack/share/spack/setup-env.csh
+
+  For fish:
+    source /home/spack/spack/share/spack/setup-env.fish
+
+  Or, if you do not want to use shell support, run one of these instead:
+
+      eval `spack env activate --sh   [...]`    bash/zsh/sh
+      eval `spack env activate --csh  [...]`    csh/tcsh
+      eval `spack env activate --fish [...]`    fish
+
+  If you have already set up Spack's shell support but still receive
+  this message, please make sure to call Spack via the `spack` command
+  without any path components (such as `bin/spack`).
+
 $ spack config edit
