@@ -7,14 +7,14 @@ $ spack install mpileaks
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.3-h5cf2g4fzeytdsypsm5gsb4h6saddfev
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiberty-2.33.1-xyikswvinkyckt3svm4b7w3lcasabvwq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tar-1.34-otlzkgdrugkhzebt75hwibn55g25owfg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tar-1.34-otlzkgdrugkhzebt75hwibn55g25owfg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-ybvezwzldr6ibw767ihpeoal625y76qb
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-2kia6gf4yz6k3vsdqlg5lmp6n5hplrxq
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21-2zkxpoqsacwadhe44zhd5hrozt344yfl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/boost-1.72.0-bqm6l5wtzu2ibefmgsviduihfnmldxud
@@ -26,9 +26,9 @@ $ spack install mpileaks
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libdwarf-20180129-rw3rmty37sq7xdzbd2cmhxzokisr4f42
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1l-lygx3cqqbvl5gkyvfkggphorm7xus2ih
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-7hurwa7ymeksnawbazxutf7k7qvjm772
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libevent-2.1.12-xai6pycqx4h6n2l7f676q3kwql5zjdaw
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.21.4-anj6kcxdxzhfufoypya56mmsmxlyucea
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libevent-2.1.12-xai6pycqx4h6n2l7f676q3kwql5zjdaw
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.3-6rqxcsn5r7kffecp45iumner6vnbbmho
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/intel-tbb-2020.3-uulrn53vo5qemlp6nkmeut3kfk3nwct7
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-3opot4q2nxdmogm7t5pt5wkhvapqex76
@@ -40,13 +40,10 @@ $ spack install mpileaks
 ==> No binary for mpileaks-1.0-oii5s4wcrg2p4rzmxwrrhvbjkm7cjcf4 found: installing from source
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
 ==> No patches needed for mpileaks
->>>>>>> 18591fa3e (Packaging updates for v0.17)
 ==> mpileaks: Executing phase: 'autoreconf'
 ==> mpileaks: Executing phase: 'configure'
 ==> mpileaks: Executing phase: 'build'
 ==> mpileaks: Executing phase: 'install'
-<<<<<<< HEAD
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-dx5qx6s2j7yhuilyvgd3laxakls2i2k7
-=======
 ==> mpileaks: Successfully installed mpileaks-1.0-oii5s4wcrg2p4rzmxwrrhvbjkm7cjcf4
-  Fetch: 0.00s.  Build: 12.31s.  Total: 12.32s.
+  Fetch: 0.00s.  Build: 12.11s.  Total: 12.11s.
+  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-oii5s4wcrg2p4rzmxwrrhvbjkm7cjcf4

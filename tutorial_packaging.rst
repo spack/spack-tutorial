@@ -166,7 +166,7 @@ command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,19
+   :emphasize-lines: 1,20
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -219,7 +219,7 @@ Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,19,28,31,34,37
+   :emphasize-lines: 1-2,5-6,8,10,19,28,31,34,37,40
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
@@ -227,11 +227,10 @@ information derived from the package:
 * it is an ``Autotools`` package;
 * it has the description, homepage, and maintainer(s) we provided;
 * it has the URL we gave the ``spack create`` command;
-* the preferred version was derived from the code; and
-* the default ``Autotools`` package installation phases are listed.
-
-There are different types of dependencies shown with values of ``None``
-because we must add them manually.
+* the preferred version was derived from the code;
+* the default ``Autotools`` package installation phases are listed;
+* the ``gnuconfig`` build dependency is inerhited from ``AutotoolsPackage``; and
+* both the link and run dependencies are ``None`` because we have not added any.
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -246,7 +245,7 @@ command will become more informative.
    `Build Systems
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
-Now we're read to start filling in the build recipe.
+Now we're ready to start filling in the build recipe.
 
 -------------------
 Adding Dependencies
@@ -300,7 +299,7 @@ We now get a lot further when we try to build the software again with
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
-   :emphasize-lines: 1,148
+   :emphasize-lines: 1,185,188
 
 .. note::
 
@@ -311,8 +310,8 @@ We see that Spack has now identified and built all of our dependencies.
 It found that the:
 
 * ``openmpi`` package will satisfy our ``mpi`` dependency;
-* ``callpath`` is a concrete dependency; and
-* ``adept-utils`` is a concrete dependency.
+* ``adept-utils`` is a concrete dependency; and
+* ``callpath`` is a concrete dependency.
 
 **But** we are still not able to build the package.
 
@@ -461,7 +460,7 @@ Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1,47,49
 
 Success!
 
@@ -528,7 +527,7 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1,93,382
+   :emphasize-lines: 1,45,331,333
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
