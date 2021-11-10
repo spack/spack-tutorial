@@ -9,7 +9,7 @@ rm -rf $raw_outputs/stacks
 . share/spack/setup-env.sh
 
 spack install zlib%clang
-spack install trilinos^mpich
+spack install trilinos+hdf5 ^mpich
 spack install openmpi
 
 mkdir -p ~/code
