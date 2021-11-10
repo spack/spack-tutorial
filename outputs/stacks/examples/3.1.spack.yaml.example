@@ -5,7 +5,7 @@
 spack:
   # named lists
   definitions:
-    - packages: [boost, trilinos]
+    - packages: [boost, trilinos+hdf5]
     - mpis: [mpich, mvapich2 fabrics=mrail]
     - compilers: ['%gcc', '%clang']
     - singleton_packages: [python, tcl]
