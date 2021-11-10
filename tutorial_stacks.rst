@@ -54,23 +54,13 @@ compiled with both ``gcc`` and ``clang``. Note that the compiler
 constraints are prefaced with the ``%`` sigil, as they would be on the
 command line.
 
-There are a couple special things to note about how constraints are
-resolved for matrices. Dependencies and variants can be used in a
-matrix regardless of whether they apply to every package in the
-matrix. Let's edit our file again.
+.. note::
 
-.. literalinclude:: outputs/stacks/examples/1.spack.yaml.example
-   :language: yaml
-   :emphasize-lines: 10
-
-What we will see here is that Spack applies the mpi constraints to
-boost and trilinos, which depend on mpi, and not to openmpi, which
-does not.
-
-.. literalinclude:: outputs/stacks/concretize-1.out
-   :language: console
-
-This allows us to construct our matrices in a more general manner.
+   The original concretizer allowed to use dependencies and variants
+   in a matrix regardless of whether they apply to every package in the
+   matrix. This cannot be done yet with clingo, since the algorithm 
+   employed previously relied on the iterative construction of the 
+   specs in the environment, but will be added back in future releases.
 
 We can also exclude some values from a matrix.
 
