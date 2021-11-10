@@ -17,7 +17,7 @@ example stacks/setup-0 "cd ~/code"
 cd ~/code
 
 cat $project/stacks/examples/0.spack.yaml.example > spack.yaml
-example stacks/setup-0 "spack env activate ."
+fake_example stacks/setup-0 "spack env activate ." ". /home/spack/spack/share/spack/setup-env.sh && spack env activate ."
 spack env activate .
 
 fake_example stacks/setup-0 "spack config edit" "/bin/true"
