@@ -10,8 +10,7 @@ fi
 
 raw_outputs="${PROJECT}/raw"
 
-# used by scripts
-tutorial_branch=releases/v0.17
+. $project/init_vars.sh
 
 example() {
     if [[ "$1" == "-tee" ]]; then
