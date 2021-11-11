@@ -224,15 +224,18 @@ Suppose ``myproject`` requires ``trilinos`` but we have another
 project that has it installed but no longer requires it.
 
 Start by creating a ``myproject2`` environment with the installed
-packages ``hdf5+hl`` and ``trilinos``:
+packages ``hdf5+hl`` and ``trilinos``. To ensure we're leveraging
+the tutorial build cache, let's explicitly constrain ``hdf5``'s
+``mpi`` dependency to ``mpich``.
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: console
    :emphasize-lines: 1,6-7,9,11
 
 
-Notice that root specs display *exactly* as we asked for them on the
-command line. In this case, ``hdf5`` shows the ``+hl`` requirement.
+Notice the root specs show the specs and variants as we asked for
+them on the command line. In this case, ``hdf5`` shows we enabled the
+``hl`` variant.
 
 Now we have two environments. The ``myproject`` environment has ``tcl``
 and ``trilinos`` while the ``myproject2`` environment has ``hdf5 +hl``
@@ -301,7 +304,7 @@ environment:
 
 .. literalinclude:: outputs/environments/add-1.out
    :language: console
-   :emphasize-lines: 1-2,5
+   :emphasize-lines: 1-2,4
 
 Now let's take a look at what happened using ``spack find``:
 
@@ -320,7 +323,7 @@ arguments:
 
 .. literalinclude:: outputs/environments/add-2.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1,48
 
 
 Spack concretizes the new root specs before ensuring that all
@@ -389,7 +392,7 @@ to include the ``packages:all:providers:mpi:`` entry below:
            mpi: [mpich]
 
      # add package specs to the `specs` list
-     specs: [tcl, trilinos, hdf5, gmp]
+     specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
 
 
 .. note::
@@ -462,9 +465,9 @@ implementation installed in our ``myproject`` environment, so
 
 
 As mentioned before, activating the environment sets a number of
-environment variables. That includes variables like ``CPATH``,
+environment variables. That includes variables like ``PATH``,
 ``LIBRARY_PATH``, and ``LD_LIBRARY_PATH``, which allows you to
-easily find package headers and libraries installed in the environment.
+easily find package executables and libraries installed in the environment.
 
 Let's look specifically at path-related environment variables using
 ``env | grep PATH``:
@@ -511,10 +514,10 @@ Let's build and run our program:
    :emphasize-lines: 1-2
 
 
-Notice that we did *not* need to pass any special arguments
-to the compiler, such as include paths or libraries. We also
-see that ``Hello world`` is output for each of the ranks and
-the version of ``zlib`` used to build the program is printed.
+Notice that we only needed to pass the include path to the
+compiler.
+We also see that ``Hello world`` is output for each of the ranks
+and the version of ``zlib`` used to build the program is printed.
 
 We can confirm the version of ``zlib`` used to build the program
 is in our environment using ``spack find``:
@@ -619,8 +622,8 @@ contains both of the environment files: ``spack.yaml`` and ``spack.lock``.
 This is because ``spack.lock`` was generated when we concretized
 the environment.
 
-If we ``cat`` the ``spack.yaml`` file, we'll see the same contents
-shown previously by ``spack config get``:
+If we ``cat`` the ``spack.yaml`` file, we'll see the same specs and view
+options previously shown by ``spack config get``:
 
 .. literalinclude:: outputs/environments/cat-config-1.out
    :language: console
@@ -672,7 +675,7 @@ We can confirm that it is not a managed environment by running
 and noting that the path does not appear in the output.
 
 Now let's add some specs to the environment. Suppose your project
-depends on ``boost``, ``trilinos``, and ``openmpi``. Add these
+depends on ``trilinos`` and ``openmpi``. Add these
 packages to the spec list using your favorite text editor. The
 dash syntax for a YAML list is used in our example. Your package
 should now contain the following entries:
@@ -686,7 +689,6 @@ should now contain the following entries:
    spack:
      # add package specs to the `specs` list
      specs:
-     - boost
      - trilinos
      - openmpi
      view: true
@@ -695,13 +697,13 @@ Now activate the environment and install the packages:
 
 .. literalinclude:: outputs/environments/install-anonymous-1.out
    :language: console
-   :emphasize-lines: 1-2
+   :emphasize-lines: 1-2,64-65
 
 
 Notice Spack concretized the specs before installing them and
 their dependencies. It also updated the environment's view. Since
 we already installed all these packages outside of the environment,
-their links were added to our environment.
+their links were simply added to it.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Updating an installed environment
@@ -715,7 +717,7 @@ For example, let's add ``hdf5`` and look at our file:
 
 .. literalinclude:: outputs/environments/add-anonymous-1.out
    :language: console
-   :emphasize-lines: 1,4
+   :emphasize-lines: 1,3
 
 
 Notice ``spack add`` added the package to our active environment and
@@ -731,7 +733,7 @@ Now use ``spack remove`` to remove the spec from the configuration:
 
 .. literalinclude:: outputs/environments/remove-anonymous-1.out
    :language: console
-   :emphasize-lines: 1,4
+   :emphasize-lines: 1,3
 
 and we see the spec *was* removed from the spec list of our
 environment.
@@ -763,9 +765,9 @@ Let's look at the top 30 lines of our current environment:
    :emphasize-lines: 1
 
 
-While it is still readable, it consists of nearly 2000 lines of
-of information representing the actual configurations for each
-of the environment's packages.
+While it is still readable, it consists of over 1300 lines of
+information representing the actual configurations for each of
+the environment's packages.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reproducing an environment

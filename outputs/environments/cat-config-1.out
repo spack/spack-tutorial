@@ -1,10 +1,12 @@
 $ cat spack.yaml
-  This is a Spack Environment file.
- 
-  It describes a set of packages to be installed, along with
-  configuration settings.
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
 spack:
-    add package specs to the `specs` list
-  specs: [tcl, trilinos, hdf5+hl, gmp]
+  packages:
+    all:
+      providers:
+        mpi: [mpich]
+  specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
   view: true
-
