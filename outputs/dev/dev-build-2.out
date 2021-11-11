@@ -29,10 +29,10 @@ $ spack dev-build --until configure --drop-in bash hwloc@master
 ==> hwloc: Executing phase: 'configure'
 ==> [2020-07-28-09:52:32.411527] '/home/spack/hwloc/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-master-umvxpk7m424rjq5f52bfzwwbrwj26b3p' '--disable-opencl' '--disable-cairo' '--disable-nvml' '--disable-gl' '--disable-cuda' '--enable-libxml2' '--disable-libudev' '--enable-pci' '--enable-shared'
 
-   
-    Configuring hwloc distribution tarball
-    Startup tests
-   
+  #
+  # Configuring hwloc distribution tarball
+  # Startup tests
+  #
 checking build system type... x86_64-pc-linux-gnu
 checking host system type... x86_64-pc-linux-gnu
 checking target system type... x86_64-pc-linux-gnu
@@ -151,9 +151,9 @@ checking for pkg-config... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/
 checking pkg-config is at least version 0.9.0... yes
 checking for X... no
 
-   
-    Configuring hwloc core
-   
+  #
+  # Configuring hwloc core
+  #
 checking hwloc building mode... standalone
 configure: hwloc builddir: /home/spack/hwloc
 configure: hwloc srcdir: /home/spack/hwloc
@@ -310,9 +310,9 @@ checking if plugin support is enabled... no
 checking components to build statically...  noos xml synthetic xml_nolibxml linux pci xml_libxml x86
 checking components to build as plugins...
 
-   
-    Configuring netloc core
-   
+  #
+  # Configuring netloc core
+  #
 checking for asprintf... yes
 checking if netloc supports this platform... yes
 checking for SCOTCH_archSub in -lscotch... no
@@ -322,9 +322,9 @@ checking for mpi.h... no
 checking for xz... yes
 checking for diff... /usr/bin/diff
 
-   
-    Configuring hwloc documentation
-   
+  #
+  # Configuring hwloc documentation
+  #
 checking if this is a developer build... yes
 checking for doxygen... no
 checking for pdflatex... no
@@ -339,9 +339,9 @@ checking if can build top-level README... no
 checking if will build doxygen docs... no
 checking if will install doxygen docs... no
 
-   
-    Configuring hwloc command line utilities
-   
+  #
+  # Configuring hwloc command line utilities
+  #
 checking X11/Xlib.h usability... no
 checking X11/Xlib.h presence... no
 checking for X11/Xlib.h... no
@@ -376,9 +376,9 @@ checking time.h presence... yes
 checking for time.h... yes
 checking for clock_gettime... yes
 
-   
-    Configuring tests
-   
+  #
+  # Configuring tests
+  #
 checking for pthread_self in -lpthread... yes
 checking for NUMA... no
 checking for numa_available in -lnuma... no
@@ -392,9 +392,9 @@ checking for bunzip2... bunzip2
 checking if CXX works... yes
 checking whether diff accepts -u... yes
 
-   
-    Performing final hwloc configuration
-   
+  #
+  # Performing final hwloc configuration
+  #
 checking that generated files are newer than configure... done
 configure: creating ./config.status
 config.status: creating Makefile
