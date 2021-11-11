@@ -250,8 +250,11 @@ command will become more informative.
    `AutotoolsPackage
    <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
-   Additional information on build systems and features are linked in the
-   `More Information` section at the end of this module.
+   The full list of build systems known to Spack can be found at
+   `Build Systems
+   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
+
+   Refer to the links at the end of this section for more information.
 
 Now we're ready to start filling in the build recipe.
 

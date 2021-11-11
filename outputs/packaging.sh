@@ -14,6 +14,8 @@ example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutori
 export EDITOR="bash -c exit 0"
 example packaging/create     "spack create https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
+example packaging/checksum-mpileaks-1  "spack checksum mpileaks 1.0"
+
 example packaging/install-mpileaks-1  "spack install mpileaks"
 
 cp ${PROJECT}/package-py-files/1.package.py $mpileaks_package_py
