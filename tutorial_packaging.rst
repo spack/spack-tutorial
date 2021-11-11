@@ -152,7 +152,16 @@ template:
    maintain a Spack package for their own software and or rely on software
    maintained by other people.
 
-We will fill in the provided placeholders as we:
+Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
+calculation, using the ``spack checksum`` command:
+
+.. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
+   :language: console
+   :emphasize-lines: 1,8
+
+Note the entire ``version`` directive is provided for your convenience.
+
+We will now fill in the provided placeholders as we:
 
 * document some information about this package;
 * add dependencies; and
@@ -632,9 +641,9 @@ Undo the work we've done here by entering the following commands:
    :language: console
    :emphasize-lines: 1,4,6
 
-----------------
+--------------------
 More information
-----------------
+--------------------
 
 This tutorial module only scratches the surface of defining Spack package
 recipes. The `Packaging Guide
@@ -643,17 +652,17 @@ thoroughly covers packaging topics.
 
 Additional information on key topics can be found at the links below.
 
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 Testing an installation
-^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Checking an installation
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
   for more information on adding tests that run at build-time and against an installation
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Customizing package-related environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Retrieving Library Information
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
@@ -662,9 +671,9 @@ Customizing package-related environments
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
   for customizing package and dependency build and run environments
 
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 Using other build systems
-^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Build Systems
   <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
@@ -673,10 +682,10 @@ Using other build systems
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
   for tutorials on common build systems
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Making a package externally discoverable
-   <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
-   for making a package discoverable with `spack external find`
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
+  for making a package discoverable using the ``spack external find`` command
