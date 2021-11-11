@@ -2,21 +2,19 @@ $ despacktivate         # short alias for `spack env deactivate`
 $ spack env status
 ==> No active environment
 $ spack find
-==> 63 installed packages
--- linux-ubuntu18.04-x86_64 / clang@6.0.0 -----------------------
+==> 45 installed packages
+-- linux-ubuntu18.04-x86_64 / clang@7.0.0 -----------------------
 zlib@1.2.11
 
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69		     hdf5@1.10.7	libxml2@2.9.10	netcdf-c@4.7.4		suite-sparse@5.8.1
-autoconf-archive@2019.01.06  hdf5@1.10.7	m4@1.4.18	netlib-scalapack@2.1.0	tcl@8.6.10
-automake@1.16.2 	     hdf5@1.10.7	matio@1.5.17	netlib-scalapack@2.1.0	tcl@8.6.10
-berkeley-db@18.1.40	     hdf5@1.10.7	matio@1.5.17	numactl@2.0.14		texinfo@6.5
-boost@1.74.0		     hwloc@1.11.11	metis@5.1.0	openblas@0.3.12 	trilinos@13.0.1
-bzip2@1.0.8		     hwloc@2.2.0	mpc@1.1.0	openmpi@3.1.6		util-macros@1.19.1
-cmake@3.18.4		     hypre@2.20.0	mpfr@3.1.6	openssl@1.1.1h		xz@5.2.5
-diffutils@3.7		     hypre@2.20.0	mpfr@4.0.2	parmetis@4.0.3		zlib@1.2.8
-findutils@4.6.0 	     isl@0.18		mpich@3.3.2	parmetis@4.0.3		zlib@1.2.8
-gcc@8.3.0		     libiconv@1.16	mumps@5.3.3	patchelf@0.10		zlib@1.2.11
-gdbm@1.18.1		     libpciaccess@0.16	mumps@5.3.3	perl@5.32.0
-glm@0.9.7.1		     libsigsegv@2.12	ncurses@6.2	pkgconf@1.7.3
-gmp@6.1.2		     libtool@2.4.6	netcdf-c@4.7.4	readline@8.0
+autoconf@2.69        hdf5@1.10.7           m4@1.4.19        perl@5.34.0
+automake@1.16.3      hdf5@1.10.7           mpc@1.1.0        pkgconf@1.8.0
+berkeley-db@18.1.40  hwloc@2.6.0           mpfr@3.1.6       readline@8.1
+bzip2@1.0.8          libedit@3.1-20210216  mpich@3.4.2      tcl@8.6.11
+cmake@3.21.4         libevent@2.1.12       ncurses@6.2      tcl@8.6.11
+diffutils@3.8        libfabric@1.13.2      numactl@2.0.14   trilinos@13.0.1
+findutils@4.8.0      libiconv@1.16         openblas@0.3.18  util-macros@1.19.3
+gcc@8.4.0            libpciaccess@0.16     openmpi@4.1.1    xz@5.2.5
+gdbm@1.19            libsigsegv@2.13       openssh@8.7p1    zlib@1.2.8
+gmp@6.2.1            libtool@2.4.6         openssl@1.1.1l   zlib@1.2.8
+hdf5@1.10.7          libxml2@2.9.12        patchelf@0.13    zlib@1.2.11

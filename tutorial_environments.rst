@@ -152,9 +152,9 @@ back to ``myproject`` and *install* a couple of packages; specifically,
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
-   :emphasize-lines: 1,2,4
+   :emphasize-lines: 1,2,4,36
 
-We see that ``tcl`` and all the dependencies of ``trilinos`` are
+We see that ``tcl`` and all of the dependencies of ``trilinos`` are
 already installed. Notice also that our environment's view gets updated.
 
 Now confirm the contents of the environment using ``spack find``:
