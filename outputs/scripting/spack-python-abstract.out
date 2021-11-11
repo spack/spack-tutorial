@@ -10,5 +10,5 @@
   SpecError: Spec version is not concrete: zlib arch=linux-None-ivybridge
   >>> s.versions
   [:]
-  >>> s.architecture
+  >>> str(s.architecture)
   linux-None-ivybridge
