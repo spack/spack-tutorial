@@ -49,9 +49,8 @@ We'll be writing code so it is assumed you have at least a
 **beginner's-level familiarity with Python**.
 
 Being a tutorial, this document can help you get started with packaging,
-but it is not intended to be complete. See Spack's `Packaging Guide
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
-for more complete documentation on this topic.
+but it is not intended to be complete. Links to additional information
+are provided at the bottom of this tutorial.
 The example code snippets used in this section can be found at
 https://github.com/spack/spack-tutorial under ``tutorial/examples``.
 
@@ -290,9 +289,8 @@ installed *before* it can build our package.
   with a package that *provides* the ``mpi`` interface, such as ``openmpi``
   or ``mvapich2``.
 
-  We call such packages **providers**. See the `Packaging Guide
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
-  for more information on virtual dependencies.
+  We call such packages **providers**. More information on virtual dependencies
+  can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
 We now get a lot further when we try to build the software again with
 ``spack install``.
@@ -556,9 +554,7 @@ property allows you to query information about the package build, such as:
 * what version of a package is being installed; and
 * what variants were specified (implicitly or explicitly).
 
-Full documentation can be found in the `Packaging Guide
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_,
-but examples of common queries are provided below.
+Examples of common queries are provided below.
 
 ~~~~~~~~~~~~~~~~~~~~~~
 Querying Spec Versions
