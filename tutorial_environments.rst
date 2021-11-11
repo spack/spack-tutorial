@@ -168,7 +168,7 @@ We now see that ``tcl`` and ``trilinos`` are **root specs** in
 our environment. That is because we explicitly asked for them to
 be installed, which makes them the **roots** of the combined graph
 of all packages in the environment. The other installed packages
-are present because they are dependencies.
+are present because they are dependencies of one or both of the roots.
 
 ^^^^^^^^^^^^^^
 Using packages
@@ -210,16 +210,6 @@ in your path:
 	% echo "hello world!"
 	hello world!
 	% exit
-
-Similarly, you can run Trilinos' programs. Let's see the path for
-and run ``algebra``:
-
-.. literalinclude:: outputs/environments/use-trilinos-1.out
-   :language: console
-   :emphasize-lines: 1,3
-
-
-Again, we see the executable under our environment's view.
 
 ^^^^^^^^^^^^^^^^^^^^^
 Uninstalling packages
