@@ -6,7 +6,7 @@ spack:
   # add package specs to the `specs` list
   specs:
     - matrix:
-        - [boost, trilinos, openmpi]
+        - [boost, trilinos+hdf5]
         - [^mpich, ^mvapich2 fabrics=mrail]
         - ['%gcc', '%clang']
 

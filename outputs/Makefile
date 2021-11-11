@@ -5,6 +5,8 @@ container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 
+section = basics
+
 all:
 	echo "Filtering raw outputs though col"
 	for raw in $(raw_output); do \
@@ -20,7 +22,7 @@ run:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
 		${container} \
-		/project/basics.sh
+		/project/${section}.sh
 
 interactive:
 	docker run --rm -it \
