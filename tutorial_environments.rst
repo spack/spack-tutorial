@@ -735,7 +735,7 @@ it appears in the configuration file's spec list.
 
    You'll need to run ``spack install`` to install added packages
    in your environment because ``spack add`` only adds it to the
-   configuraton.
+   configuration.
 
 Now use ``spack remove`` to remove the spec from the configuration:
 
