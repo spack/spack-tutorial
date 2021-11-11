@@ -185,6 +185,5 @@ all packages, including implicit dependencies, into the view. The
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
 
-Now we see only the root libraries in the default view: boost,
-trilinos, and openmpi. The rest are hidden, but are still available in
-the full view.
+Now we see only the root libraries in the default view.
+The rest are hidden, but are still available in the full view.
