@@ -4,16 +4,16 @@ for ii in $(spack find --format "yyy {version} /{hash}" |
 	    grep "yyy" |
 	    cut -f3 -d" ")
 do
-  spack buildcache create -af -d ~/mirror --only=package $ii
+  spack buildcache create --allow-root --force -d ~/mirror --only=package $ii
 done
 ==> Buildcache files will be output to file:///home/spack/mirror/build_cache
 gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-gpg: depth: 0  valid:	1  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 1u
-gpg: using "ABC74A4103675F76561A607E070F30B4CDF253A9" as default secret key for signing
+gpg: depth: 0  valid:	2  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 2u
+gpg: using "C0A952C3A72452C00128783995DED62473FE0770" as default secret key for signing
 ==> Buildcache files will be output to file:///home/spack/mirror/build_cache
-gpg: using "ABC74A4103675F76561A607E070F30B4CDF253A9" as default secret key for signing
+gpg: using "C0A952C3A72452C00128783995DED62473FE0770" as default secret key for signing
 ==> Buildcache files will be output to file:///home/spack/mirror/build_cache
-gpg: using "ABC74A4103675F76561A607E070F30B4CDF253A9" as default secret key for signing
+gpg: using "C0A952C3A72452C00128783995DED62473FE0770" as default secret key for signing
 ==> Buildcache files will be output to file:///home/spack/mirror/build_cache
-gpg: using "ABC74A4103675F76561A607E070F30B4CDF253A9" as default secret key for signing
+gpg: using "C0A952C3A72452C00128783995DED62473FE0770" as default secret key for signing
