@@ -112,8 +112,8 @@ This will open the :code:`AutotoolsPackage` file in your text editor.
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py
     :language: python
-    :emphasize-lines: 14,17,24-34
-    :lines: 55-77,242-260
+    :emphasize-lines: 9,12,25-35
+    :lines: 80-101,404-426
     :linenos:
 
 
@@ -211,8 +211,8 @@ Take note of the following:
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/makefile.py
    :language: python
-   :lines: 14,43-61,70-88
-   :emphasize-lines: 21,27,34
+   :emphasize-lines: 57,63,70
+   :lines: 16-90
    :linenos:
 
 Similar to :code:`Autotools`, :code:`MakefilePackage` class has properties
@@ -498,8 +498,8 @@ Let's look at these defaults in the :code:`CMakePackage` class in the :code:`_st
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/cmake.py
    :language: python
-   :lines: 102-147
-   :emphasize-lines: 10,18,24,36,37,38,44
+   :lines: 33-71,123-191
+   :emphasize-lines: 41,53
    :linenos:
 
 Some :code:`CMake` packages use different generators. Spack is able to support
@@ -698,7 +698,7 @@ We see the following:
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/python.py
    :language: python
-   :lines: 19,146-357
+   :lines: 24-71
    :linenos:
 
 Each of these methods have sensible defaults or they can be overridden.
