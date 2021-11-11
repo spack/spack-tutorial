@@ -1,7 +1,7 @@
 $ spack config add "config:install_tree:padded_length:128"
 $ spack install --no-cache
 ==> Starting concretization pool with 2 processes
-==> Environment concretized in 0.62 seconds.
+==> Environment concretized in 0.51 seconds.
 ==> Concretized bzip2
  -   55rtzz4  bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
  -   kg5jymj	  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
@@ -19,14 +19,14 @@ $ spack install --no-cache
 ==> libiconv: Executing phase: 'build'
 ==> libiconv: Executing phase: 'install'
 ==> libiconv: Successfully installed libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
-  Fetch: 0.78s.  Build: 27.33s.  Total: 28.10s.
+  Fetch: 0.75s.  Build: 25.54s.  Total: 26.30s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
 ==> Installing zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
 ==> Fetching https://mirror.spack.io/_source-cache/archive/c3/c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1.tar.gz
 ==> No patches needed for zlib
 ==> zlib: Executing phase: 'install'
 ==> zlib: Successfully installed zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
-  Fetch: 0.25s.  Build: 1.89s.	Total: 2.14s.
+  Fetch: 0.25s.  Build: 1.62s.	Total: 1.87s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
 ==> Installing diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
 ==> Fetching https://mirror.spack.io/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
@@ -36,13 +36,13 @@ $ spack install --no-cache
 ==> diffutils: Executing phase: 'build'
 ==> diffutils: Executing phase: 'install'
 ==> diffutils: Successfully installed diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
-  Fetch: 0.38s.  Build: 40.10s.  Total: 40.48s.
+  Fetch: 0.38s.  Build: 38.64s.  Total: 39.02s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
 ==> Installing bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
 ==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
 ==> Ran patch() for bzip2
 ==> bzip2: Executing phase: 'install'
 ==> bzip2: Successfully installed bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
-  Fetch: 0.26s.  Build: 1.84s.	Total: 2.10s.
+  Fetch: 0.26s.  Build: 1.81s.	Total: 2.07s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
 ==> Updating view at /home/spack/cache-binary/.spack-env/view

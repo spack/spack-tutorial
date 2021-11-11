@@ -45,10 +45,10 @@ example cache/spack-mirror-config "spack mirror add mymirror ~/mirror"
 example cache/spack-mirror-all "spack mirror create -d ~/mirror --all"
 
 example cache/spack-mirror-permissions "umask 750"
-example cache/spack-mirror-permissions "chmod -R g+rS ~/mirror"
+example cache/spack-mirror-permissions "chmod -R g+rs ~/mirror"
 example cache/spack-mirror-permissions "chgrp -R spack ~/mirror"
 
-example cache/spack-mirror-3 "spack add bzip2"
+example cache/spack-mirror-3 "spack add unzip"
 example cache/spack-mirror-3 "spack install"
 
 example cache/spack-mirror-4 "spack mirror create -d ~/mirror --all"

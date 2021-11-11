@@ -102,12 +102,12 @@ external internet.
 
 If you need to add more sources to the mirror, you can re-run the
 command you used to create the mirror. For example, assume we want to
-add bzip2 to our environment.
+add ``unzip`` to our environment.
 
 .. literalinclude:: outputs/cache/spack-mirror-3.out
    :language: console
 
-Now that we've added bzip2, we need to update the mirror.
+Now that we've added ``unzip``, we need to update the mirror.
 
 .. literalinclude:: outputs/cache/spack-mirror-4.out
    :language: console

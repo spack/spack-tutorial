@@ -64,6 +64,8 @@ $ spack mirror create -d ~/mirror --all
 ==> Adding package sqlite@3.36.0 to mirror
 ==> Adding package tar@1.34 to mirror
 ==> Adding package texinfo@6.5 to mirror
+==> Adding package unzip@6.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/03/036d96991646d0449ed0aa952e4fbe21b476ce994abc276e49d30e686708bd37.tar.gz
 ==> Adding package util-linux-uuid@2.36.2 to mirror
 ==> Adding package util-macros@1.19.3 to mirror
 ==> Adding package xz@5.2.5 to mirror
@@ -71,5 +73,5 @@ $ spack mirror create -d ~/mirror --all
 ==> Successfully updated mirror in file:///home/spack/mirror
   Archive stats:
     69	 already present
-    0	 added
+    1	 added
     0	 failed to fetch.

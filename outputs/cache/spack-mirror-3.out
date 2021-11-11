@@ -1,12 +1,14 @@
-$ spack add bzip2
-==> Adding bzip2 to environment /home/spack/cache-env
+$ spack add unzip
+==> Adding unzip to environment /home/spack/cache-env
 $ spack install
 ==> Starting concretization
-==> Environment concretized in 0.61 seconds.
-==> Concretized bzip2
-[+]  55rtzz4  bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
-[+]  kg5jymj	  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  qi7dxj6	      ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
+==> Environment concretized in 0.51 seconds.
+==> Concretized unzip
+ -   a23m5gl  unzip@6.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
 
 ==> Installing environment /home/spack/cache-env
-==> All of the packages are already installed
+==> Installing unzip-6.0-a23m5gldaggzi5saqfp47g2yw42wr7gi
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/unzip-6.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-unzip-6.0-a23m5gldaggzi5saqfp47g2yw42wr7gi.spack
+==> Extracting unzip-6.0-a23m5gldaggzi5saqfp47g2yw42wr7gi from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/unzip-6.0-a23m5gldaggzi5saqfp47g2yw42wr7gi
+==> Updating view at /home/spack/cache-env/.spack-env/view
