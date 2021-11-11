@@ -219,18 +219,19 @@ Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,19,28,31,34,37,40
+   :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
 
 * it is an ``Autotools`` package;
 * it has the description, homepage, and maintainer(s) we provided;
+* it is not externally detectable;
 * it has the URL we gave the ``spack create`` command;
 * the preferred version was derived from the code;
 * the default ``Autotools`` package installation phases are listed;
-* the ``gnuconfig`` build dependency is inerhited from ``AutotoolsPackage``; and
-* both the link and run dependencies are ``None`` because we have not added any.
+* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``; and
+* both the link and run dependencies are ``None`` at this point.
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -241,9 +242,8 @@ command will become more informative.
    `AutotoolsPackage
    <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
-   The full list of build systems known to Spack can be found at
-   `Build Systems
-   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
+   Additional information on build systems and features are linked in the
+   `More Information` section at the end of this module.
 
 Now we're ready to start filling in the build recipe.
 
@@ -635,3 +635,52 @@ Undo the work we've done here by entering the following commands:
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
    :emphasize-lines: 1,4,6
+
+----------------
+More information
+----------------
+
+This tutorial module only scratches the surface of defining Spack package
+recipes. The `Packaging Guide
+<https://spack.readthedocs.io/en/latest/packaging_guide.html#>`_ more
+thoroughly covers packaging topics.
+
+Additional information on key topics can be found at the links below.
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Testing an installation
+^^^^^^^^^^^^^^^^^^^^^^^
+
+* `Checking an installation
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+  for more information on adding tests that run at build-time and against an installation
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Customizing package-related environments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* `Retrieving Library Information
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
+  for supporting unique configuration options needed to locate libraries
+* `Modifying a Package's Build Environment
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
+  for customizing package and dependency build and run environments
+
+^^^^^^^^^^^^^^^^^^^^^^^^^
+Using other build systems
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* `Build Systems
+  <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
+  for the full list of built-in build systems
+* `Spack Package Build Systems tutorial
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
+  for tutorials on common build systems
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Making a package externally detectable
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* `Making a package externally discoverable
+   <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
+   for making a package discoverable with `spack external find`
