@@ -1,31 +1,31 @@
 $ head -30 spack.lock
 {
- "_meta": {
-  "file-type": "spack-lockfile",
-  "lockfile-version": 2
- },
- "roots": [
-  {
-   "hash": "iwji2vty6m7hp27zbzufewdhq6pty3fx",
-   "spec": "boost"
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 3,
+    "specfile-version": 2
   },
-  {
-   "hash": "246z4kkzk6vsg2ot3rzlz5jwwimxj63g",
-   "spec": "trilinos"
-  },
-  {
-   "hash": "7o7eidaryeh72cizcbpvvjnq7ojjya6f",
-   "spec": "openmpi"
-  }
- ],
- "concrete_specs": {
-  "iwji2vty6m7hp27zbzufewdhq6pty3fx": {
-   "boost": {
-    "version": "1.74.0",
-    "arch": {
-     "platform": "linux",
-     "platform_os": "ubuntu18.04",
-     "target": "x86_64"
+  "roots": [
+    {
+      "hash": "veqx73nqly6dlpgvlsocnjen62yg4vcv",
+      "spec": "trilinos"
     },
-    "compiler": {
-     "name": "gcc",
+    {
+      "hash": "ennvlumre33kbk4skc5mvulmmgodhpfu",
+      "spec": "openmpi"
+    }
+  ],
+  "concrete_specs": {
+    "veqx73nqly6dlpgvlsocnjen62yg4vcv": {
+      "name": "trilinos",
+      "version": "13.0.1",
+      "arch": {
+	"platform": "linux",
+	"platform_os": "ubuntu18.04",
+	"target": "x86_64"
+      },
+      "compiler": {
+	"name": "gcc",
+	"version": "7.5.0"
+      },
+      "namespace": "builtin",

@@ -13,8 +13,8 @@ $ spack install trilinos
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-ybvezwzldr6ibw767ihpeoal625y76qb
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-2kia6gf4yz6k3vsdqlg5lmp6n5hplrxq
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19-oftaepjelizkam37ezxwkuw27clnosqn
@@ -24,9 +24,9 @@ $ spack install trilinos
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1l-lygx3cqqbvl5gkyvfkggphorm7xus2ih
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-7hurwa7ymeksnawbazxutf7k7qvjm772
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.21.4-anj6kcxdxzhfufoypya56mmsmxlyucea
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libevent-2.1.12-xai6pycqx4h6n2l7f676q3kwql5zjdaw
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.21.4-anj6kcxdxzhfufoypya56mmsmxlyucea
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.3-6rqxcsn5r7kffecp45iumner6vnbbmho
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-3opot4q2nxdmogm7t5pt5wkhvapqex76
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv
@@ -35,3 +35,14 @@ $ spack install trilinos
 ==> Extracting trilinos-13.0.1-ewdfcj372echxrfaujjtpcnc3ccsezjt from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1-ewdfcj372echxrfaujjtpcnc3ccsezjt
 ==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
+$ spack find
+==> In environment myproject
+==> Root specs
+tcl  trilinos
+
+==> 30 installed packages
+-- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+autoconf@2.69	     cmake@3.21.4   libedit@3.1-20210216  libsigsegv@2.13  ncurses@6.2	    openssh@8.7p1   readline@8.1	xz@5.2.5
+automake@1.16.3      diffutils@3.8  libevent@2.1.12	  libtool@2.4.6    numactl@2.0.14   openssl@1.1.1l  tcl@8.6.11		zlib@1.2.11
+berkeley-db@18.1.40  gdbm@1.19	    libiconv@1.16	  libxml2@2.9.12   openblas@0.3.18  perl@5.34.0     trilinos@13.0.1
+bzip2@1.0.8	     hwloc@2.6.0    libpciaccess@0.16	  m4@1.4.19	   openmpi@4.1.1    pkgconf@1.8.0   util-macros@1.19.3

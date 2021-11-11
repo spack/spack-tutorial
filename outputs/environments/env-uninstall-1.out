@@ -4,7 +4,7 @@ y
 ==> The following packages will be uninstalled:
 
     -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-    qmjbxf2 trilinos@13.0.1
+    ewdfcj3 trilinos@13.0.1
 
 ==> Do you want to proceed? [y/N] ==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 $ spack find
@@ -12,9 +12,8 @@ $ spack find
 ==> Root specs
 hdf5 +hl
 
-==> 21 installed packages
+==> 24 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	     hdf5@1.10.7	libsigsegv@2.12  ncurses@6.2	 pkgconf@1.7.3	     zlib@1.2.11
-automake@1.16.2      hwloc@1.11.11	libtool@2.4.6	 numactl@2.0.14  readline@8.0
-berkeley-db@18.1.40  libiconv@1.16	libxml2@2.9.10	 openmpi@3.1.6	 util-macros@1.19.1
-gdbm@1.18.1	     libpciaccess@0.16	m4@1.4.18	 perl@5.32.0	 xz@5.2.5
+berkeley-db@18.1.40  diffutils@3.8    hdf5@1.10.7	libiconv@1.16	   libtool@2.4.6   mpich@3.4.2	   perl@5.34.0	  util-macros@1.19.3
+bzip2@1.0.8	     findutils@4.8.0  hwloc@2.6.0	libpciaccess@0.16  libxml2@2.9.12  ncurses@6.2	   pkgconf@1.8.0  xz@5.2.5
+cmake@3.21.4	     gdbm@1.19	      libfabric@1.13.2	libsigsegv@2.13    m4@1.4.19	   openssl@1.1.1l  readline@8.1   zlib@1.2.11
