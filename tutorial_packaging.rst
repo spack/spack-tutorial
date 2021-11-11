@@ -49,9 +49,8 @@ We'll be writing code so it is assumed you have at least a
 **beginner's-level familiarity with Python**.
 
 Being a tutorial, this document can help you get started with packaging,
-but it is not intended to be complete. See Spack's `Packaging Guide
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
-for more complete documentation on this topic.
+but it is not intended to be complete. Links to additional information
+are provided at the bottom of this tutorial.
 The example code snippets used in this section can be found at
 https://github.com/spack/spack-tutorial under ``tutorial/examples``.
 
@@ -153,7 +152,16 @@ template:
    maintain a Spack package for their own software and or rely on software
    maintained by other people.
 
-We will fill in the provided placeholders as we:
+Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
+calculation, using the ``spack checksum`` command:
+
+.. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
+   :language: console
+   :emphasize-lines: 1,8
+
+Note the entire ``version`` directive is provided for your convenience.
+
+We will now fill in the provided placeholders as we:
 
 * document some information about this package;
 * add dependencies; and
@@ -166,7 +174,7 @@ command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,19
+   :emphasize-lines: 1,20
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -219,19 +227,19 @@ Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,16,25,28,31,34
+   :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
 
 * it is an ``Autotools`` package;
 * it has the description, homepage, and maintainer(s) we provided;
+* it is not externally detectable;
 * it has the URL we gave the ``spack create`` command;
-* the preferred version was derived from the code; and
-* the default ``Autotools`` package installation phases are listed.
-
-There are different types of dependencies shown with values of ``None``
-because we must add them manually.
+* the preferred version was derived from the code;
+* the default ``Autotools`` package installation phases are listed;
+* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``; and
+* both the link and run dependencies are ``None`` at this point.
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -246,7 +254,9 @@ command will become more informative.
    `Build Systems
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
-Now we're read to start filling in the build recipe.
+   Refer to the links at the end of this section for more information.
+
+Now we're ready to start filling in the build recipe.
 
 -------------------
 Adding Dependencies
@@ -291,16 +301,15 @@ installed *before* it can build our package.
   with a package that *provides* the ``mpi`` interface, such as ``openmpi``
   or ``mvapich2``.
 
-  We call such packages **providers**. See the `Packaging Guide
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_
-  for more information on virtual dependencies.
+  We call such packages **providers**. More information on virtual dependencies
+  can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
 We now get a lot further when we try to build the software again with
 ``spack install``.
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
-   :emphasize-lines: 1,215
+   :emphasize-lines: 1,185,188
 
 .. note::
 
@@ -311,8 +320,8 @@ We see that Spack has now identified and built all of our dependencies.
 It found that the:
 
 * ``openmpi`` package will satisfy our ``mpi`` dependency;
-* ``callpath`` is a concrete dependency; and
-* ``adept-utils`` is a concrete dependency.
+* ``adept-utils`` is a concrete dependency; and
+* ``callpath`` is a concrete dependency.
 
 **But** we are still not able to build the package.
 
@@ -461,7 +470,7 @@ Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1,47,49
 
 Success!
 
@@ -528,7 +537,7 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1,41
+   :emphasize-lines: 1,45,331,333
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
@@ -557,9 +566,7 @@ property allows you to query information about the package build, such as:
 * what version of a package is being installed; and
 * what variants were specified (implicitly or explicitly).
 
-Full documentation can be found in the `Packaging Guide
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#packaging-guide>`_,
-but examples of common queries are provided below.
+Examples of common queries are provided below.
 
 ~~~~~~~~~~~~~~~~~~~~~~
 Querying Spec Versions
@@ -636,3 +643,52 @@ Undo the work we've done here by entering the following commands:
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
    :emphasize-lines: 1,4,6
+
+--------------------
+More information
+--------------------
+
+This tutorial module only scratches the surface of defining Spack package
+recipes. The `Packaging Guide
+<https://spack.readthedocs.io/en/latest/packaging_guide.html#>`_ more
+thoroughly covers packaging topics.
+
+Additional information on key topics can be found at the links below.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Testing an installation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Checking an installation
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+  for more information on adding tests that run at build-time and against an installation
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Customizing package-related environments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Retrieving Library Information
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
+  for supporting unique configuration options needed to locate libraries
+* `Modifying a Package's Build Environment
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
+  for customizing package and dependency build and run environments
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+Using other build systems
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Build Systems
+  <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
+  for the full list of built-in build systems
+* `Spack Package Build Systems tutorial
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
+  for tutorials on common build systems
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Making a package externally detectable
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Making a package externally discoverable
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
+  for making a package discoverable using the ``spack external find`` command
