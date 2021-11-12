@@ -427,7 +427,7 @@ file.
 
 .. literalinclude:: _spack_root/etc/spack/defaults/packages.yaml
    :language: yaml
-   :emphasize-lines: 18,37
+   :emphasize-lines: 18,41
 
 
 This sets the default preferences for compilers and for providers of
