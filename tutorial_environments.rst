@@ -18,8 +18,8 @@ commands:
 * `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
 * `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
 
-Customizing Spack's installation with configuration files, like
-`packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
+.. Customizing Spack's installation with configuration files, like 
+   `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
 This section of the tutorial introduces **Spack Environments**, which
 allow you to work with independent groups of packages separately. The
