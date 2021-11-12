@@ -28,7 +28,7 @@ Installing Spack
 ----------------
 
 Spack works out of the box. Simply clone Spack and get going. We will
-clone Spack and immediately checkout the most recent release, v0.16.
+clone Spack and immediately checkout the most recent release, v0.17.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -158,7 +158,7 @@ top-level package, we can also specify about a dependency using ``^``.
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
 of our optimized installation of zlib (``cppflags="-O3"``) began with
-``h6i53if``. We can now explicitly build with that package without typing
+``5wz``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like Git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
@@ -373,7 +373,7 @@ will learn how to configure compilers by hand for special cases. Spack
 also has tools to add compilers, and compilers built with Spack can be
 added to the configuration.
 
-.. literalinclude:: outputs/basics/install-gcc-8.3.0.out
+.. literalinclude:: outputs/basics/install-gcc-8.4.0.out
    :language: console
 
 .. literalinclude:: outputs/basics/find-p-gcc.out
@@ -381,7 +381,7 @@ added to the configuration.
 
 We can add GCC to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-``gcc@8.3.0``. To avoid having to copy and paste GCC's path, we can use
+``gcc@8.4.0``. To avoid having to copy and paste GCC's path, we can use
 ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
