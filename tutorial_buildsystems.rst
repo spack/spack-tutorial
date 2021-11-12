@@ -112,7 +112,7 @@ This will open the :code:`AutotoolsPackage` file in your text editor.
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py
     :language: python
-    :emphasize-lines: 9,12,25-35
+    :emphasize-lines: 3,6,25-35
     :lines: 80-101,404-426
     :linenos:
 
@@ -499,7 +499,7 @@ Let's look at these defaults in the :code:`CMakePackage` class in the :code:`_st
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/cmake.py
    :language: python
    :lines: 33-71,123-191
-   :emphasize-lines: 41,53
+   :emphasize-lines: 61,71
    :linenos:
 
 Some :code:`CMake` packages use different generators. Spack is able to support
