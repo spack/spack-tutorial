@@ -207,10 +207,10 @@ active environment):
 
    compilers:
    - compiler:
-       spec: clang@6.0.0
+       spec: clang@7.0.0
        paths:
-         cc: /usr/bin/clang-6.0
-         cxx: /usr/bin/clang++-6.0
+         cc: /usr/bin/clang-7
+         cxx: /usr/bin/clang++-7
          f77:
          fc:
        flags: {}
@@ -223,9 +223,9 @@ active environment):
        spec: gcc@6.5.0
        paths:
          cc: /usr/bin/gcc-6
-         cxx:
-         f77:
-         fc:
+         cxx: /usr/bin/g++-6
+         f77: usr/bin/gfortran-6
+         fc: usr/bin/gfortran-6
        flags: {}
        operating_system: ubuntu18.04
        target: x86_64
@@ -235,10 +235,10 @@ active environment):
    - compiler:
        spec: gcc@7.5.0
        paths:
-         cc: /usr/bin/gcc-7
-         cxx: /usr/bin/g++-7
-         f77: /usr/bin/gfortran-7
-         fc: /usr/bin/gfortran-7
+         cc: /usr/bin/gcc
+         cxx: /usr/bin/g++
+         f77: /usr/bin/gfortran
+         fc: /usr/bin/gfortran
        flags: {}
        operating_system: ubuntu18.04
        target: x86_64
@@ -256,12 +256,12 @@ to the ``compilers.yaml`` file:
    :emphasize-lines: 2,6-7
 
    - compiler:
-       spec: clang@6.0.0-gfortran
+       spec: clang@7.0.0-gfortran
        paths:
-         cc: /usr/bin/clang-6.0
-         cxx: /usr/bin/clang++-6.0
-         f77: /usr/bin/gfortran-7
-         fc: /usr/bin/gfortran-7
+         cc: /usr/bin/clang-7
+         cxx: /usr/bin/clang++-7
+         f77: /usr/bin/gfortran
+         fc: /usr/bin/gfortran
        flags: {}
        operating_system: ubuntu18.04
        target: x86_64
@@ -289,7 +289,7 @@ We can verify that our new compiler works by invoking it now:
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@6.0.0-gfortran
+   $ spack install --no-cache zlib %clang@7.0.0-gfortran
    ...
 
 
@@ -301,7 +301,7 @@ since it is already available in our binary cache:
 
    $ spack install cmake %gcc@7.5.0
    ...
-   $ spack install --no-cache json-fortran %clang@6.0.0-gfortran ^cmake%gcc@7.5.0
+   $ spack install --no-cache json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
    ...
 
 
@@ -323,12 +323,12 @@ Let's open our compilers configuration file again and add a compiler flag:
    :emphasize-lines: 8-9
 
    - compiler:
-       spec: clang@6.0.0-gfortran
+       spec: clang@7.0.0-gfortran
        paths:
-         cc: /usr/bin/clang-6.0
-         cxx: /usr/bin/clang++-6.0
-         f77: /usr/bin/gfortran-7
-         fc: /usr/bin/gfortran-7
+         cc: /usr/bin/clang-7
+         cxx: /usr/bin/clang++-7
+         f77: /usr/bin/gfortran
+         fc: /usr/bin/gfortran
        flags:
          cppflags: -g
        operating_system: ubuntu18.04
@@ -437,7 +437,7 @@ MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
    :language: console
-   :emphasize-lines: 9
+   :emphasize-lines: 21
 
 
 Let's override these default preferences in an environment. When you
@@ -479,7 +479,7 @@ overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
    :language: console
-   :emphasize-lines: 9
+   :emphasize-lines: 21
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -509,7 +509,7 @@ We can check the effect of this command with ``spack spec hdf5`` again.
 
 .. literalinclude:: outputs/config/2.prefs.out
    :language: console
-   :emphasize-lines: 8,13,23,29
+   :emphasize-lines: 8,14,23
 
 
 So far we have only made global changes to the package preferences. As
@@ -602,7 +602,7 @@ specify it on the command line, or we can tell Spack that it's
 not allowed to build its own zlib. We'll go with the latter.
 
 .. code-block:: yaml
-   :emphasize-lines: 12
+   :emphasize-lines: 16
 
    spack:
      specs: []
@@ -632,52 +632,12 @@ This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
-.. code-block:: yaml
-   :emphasize-lines: 17-21
-
-   spack:
-     specs: []
-     view: true
-     packages:
-       all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
-         variants: ~shared
-       hdf5:
-         variants: ~mpi
-       zlib:
-         externals:
-         - spec: zlib@1.2.8%gcc@7.5.0
-           prefix: /usr
-         buildable: false
-       mpich:
-         externals:
-         - spec: mpich@3.3%gcc@7.5.0
-           prefix: /usr
-         buildable: false
-
-
-If we concretize ``hdf5+mpi`` with this configuration file, we will just
-build with an alternate MPI implementation.
-
-.. literalinclude:: outputs/config/3.externals.out
-   :language: console
-   :emphasize-lines: 9
-
-We have only expressed a preference for MPICH over other MPI
-implementations, and Spack will happily build with one we haven't
-forbidden it from building. We could resolve this by requesting
-``hdf5+mpi%clang^mpich`` explicitly, or we can configure Spack not to
-use any other MPI implementation. Since we're focused on
-configurations here and the former can get tedious, we'll need to
-modify our ``packages`` configuration again.
-
-While we're at it, we can configure HDF5 to build with MPI by default
-again.
+To express that we don't want any other MPI installed we can use the 
+virtual ``mpi`` package as a key. Since we're at it, we can configure 
+HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
-   :emphasize-lines: 19-20
+   :emphasize-lines: 15-20
 
    spack:
      specs: []
@@ -700,13 +660,12 @@ again.
        mpi:
          buildable: false
 
-
 Now that we have configured Spack not to build any possible provider
 for MPI, we can try again.
 
-.. literalinclude:: outputs/config/4.externals.out
+.. literalinclude:: outputs/config/3.externals.out
    :language: console
-   :emphasize-lines: 9
+   :emphasize-lines: 12
 
 
 By configuring most of our package preferences in ``packages.yaml``,
