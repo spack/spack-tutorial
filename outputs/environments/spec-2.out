@@ -5,27 +5,26 @@ hypre
 
 Concretized
 --------------------------------
-hypre@2.20.0%gcc@7.5.0~complex~debug~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist patches=6e3336b1d62155f6350dfe42b0f9ea25d4fa0af60c7e540959139deb93a26059 arch=linux-ubuntu18.04-x86_64
-    ^mpich@3.3.2%gcc@7.5.0~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch3 netmod=tcp patches=eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
-	^autoconf@2.69%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	    ^m4@1.4.18%gcc@7.5.0+sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
-		^libsigsegv@2.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	    ^perl@5.32.0%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-		^berkeley-db@18.1.40%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-		^gdbm@1.18.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-		    ^readline@8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-			^ncurses@6.2%gcc@7.5.0~symlinks+termlib arch=linux-ubuntu18.04-x86_64
-			    ^pkgconf@1.7.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	^automake@1.16.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	^findutils@4.6.0%gcc@7.5.0 patches=84b916c0bf8c51b7e7b28417692f0ad3e7030d1f3c248ba77c42ede5c1c5d11e,bd9e4e5cc280f9753ae14956c4e4aa17fe7a210f55dd6c84aa60b12d106d47a2 arch=linux-ubuntu18.04-x86_64
-	    ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	    ^texinfo@6.5%gcc@7.5.0 patches=12f6edb0c6b270b8c8dba2ce17998c580db01182d871ee32b7b6e4129bd1d23a,1732115f651cff98989cb0215d8f64da5e0f7911ebf0c13b064920f088f2ffe1 arch=linux-ubuntu18.04-x86_64
-	^hwloc@2.2.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci+shared arch=linux-ubuntu18.04-x86_64
-	    ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-		^util-macros@1.19.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-	    ^libxml2@2.9.10%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
-		^libiconv@1.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-		^xz@5.2.5%gcc@7.5.0~pic arch=linux-ubuntu18.04-x86_64
-		^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
-    ^openblas@0.3.12%gcc@7.5.0~consistent_fpcsr~ilp64+pic+shared threads=none arch=linux-ubuntu18.04-x86_64
-
+hypre@2.23.0%gcc@7.5.0~complex~cuda~debug+fortran~int64~internal-superlu~mixedint+mpi~openmp+shared~superlu-dist~unified-memory cuda_arch=none arch=linux-ubuntu18.04-x86_64
+    ^mpich@3.4.2%gcc@7.5.0~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu18.04-x86_64
+        ^findutils@4.8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+        ^hwloc@2.6.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu18.04-x86_64
+            ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+                ^libtool@2.4.6%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+                    ^m4@1.4.19%gcc@7.5.0+sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-ubuntu18.04-x86_64
+                        ^libsigsegv@2.13%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+                ^pkgconf@1.8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+                ^util-macros@1.19.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+            ^libxml2@2.9.12%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
+                ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
+                ^xz@5.2.5%gcc@7.5.0~pic libs=shared,static arch=linux-ubuntu18.04-x86_64
+                ^zlib@1.2.11%gcc@7.5.0+optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+            ^ncurses@6.2%gcc@7.5.0~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
+        ^libfabric@1.13.2%gcc@7.5.0~debug~kdreg fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
+    ^openblas@0.3.18%gcc@7.5.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared threads=none arch=linux-ubuntu18.04-x86_64
+        ^perl@5.34.0%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+            ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-ubuntu18.04-x86_64
+            ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
+                ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+            ^gdbm@1.19%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
+                ^readline@8.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64

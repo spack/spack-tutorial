@@ -1,7 +1,5 @@
 $ spack env activate myproject
-$ spack add hdf5+hl
-==> Adding hdf5+hl to environment myproject
-==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
+$ spack add hdf5+hl ^mpich
+==> Adding hdf5+hl ^mpich to environment myproject
 $ spack add gmp
 ==> Adding gmp to environment myproject
-==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view

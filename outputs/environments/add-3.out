@@ -1,16 +1,12 @@
 $ spack find
 ==> In environment myproject
 ==> Root specs
-gmp   hdf5 +hl	tcl   trilinos
+gmp  hdf5 +hl  tcl  trilinos
 
-==> 41 installed packages
+==> 35 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69		     glm@0.9.7.1	libxml2@2.9.10		numactl@2.0.14	    tcl@8.6.10
-autoconf-archive@2019.01.06  gmp@6.1.2		m4@1.4.18		openblas@0.3.12     trilinos@13.0.1
-automake@1.16.2 	     hdf5@1.10.7	matio@1.5.17		openmpi@3.1.6	    util-macros@1.19.1
-berkeley-db@18.1.40	     hwloc@1.11.11	metis@5.1.0		openssl@1.1.1h	    xz@5.2.5
-boost@1.74.0		     hypre@2.20.0	mpfr@4.0.2		parmetis@4.0.3	    zlib@1.2.11
-bzip2@1.0.8		     libiconv@1.16	mumps@5.3.3		perl@5.32.0
-cmake@3.18.4		     libpciaccess@0.16	ncurses@6.2		pkgconf@1.7.3
-diffutils@3.7		     libsigsegv@2.12	netcdf-c@4.7.4		readline@8.0
-gdbm@1.18.1		     libtool@2.4.6	netlib-scalapack@2.1.0	suite-sparse@5.8.1
+autoconf@2.69	     diffutils@3.8    hwloc@2.6.0	    libpciaccess@0.16  mpich@3.4.2	openssh@8.7p1	tcl@8.6.11
+automake@1.16.3      findutils@4.8.0  libedit@3.1-20210216  libsigsegv@2.13    ncurses@6.2	openssl@1.1.1l	trilinos@13.0.1
+berkeley-db@18.1.40  gdbm@1.19	      libevent@2.1.12	    libtool@2.4.6      numactl@2.0.14	perl@5.34.0	util-macros@1.19.3
+bzip2@1.0.8	     gmp@6.2.1	      libfabric@1.13.2	    libxml2@2.9.12     openblas@0.3.18	pkgconf@1.8.0	xz@5.2.5
+cmake@3.21.4	     hdf5@1.10.7      libiconv@1.16	    m4@1.4.19	       openmpi@4.1.1	readline@8.1	zlib@1.2.11

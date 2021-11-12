@@ -8,6 +8,8 @@ rm -rf $raw_outputs/environments
 . $project/init_spack.sh
 
 . ~/spack/share/spack/setup-env.sh
+spack install zlib
+spack uninstall -y zlib
 
 example environments/find-no-env-1   "spack find"
 
@@ -42,7 +44,7 @@ example environments/use-trilinos-1  "algebra"
 example environments/env-create-2    "spack env create myproject2"
 example -tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
-example environments/env-create-2    "spack install hdf5+hl"
+example environments/env-create-2    "spack install hdf5+hl ^mpich"
 example environments/env-create-2    "spack install trilinos"
 example environments/env-create-2    "spack find"
 
@@ -56,7 +58,7 @@ example -tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
 
-example environments/add-1           "spack add hdf5+hl"
+example environments/add-1           "spack add hdf5+hl ^mpich"
 example environments/add-1           "spack add gmp"
 example environments/add-1           "spack find"
 
@@ -123,7 +125,6 @@ example environments/anonymous-create-2 "cat spack.yaml"
 example -tee environments/install-anonymous-1 "spack env activate ."
 spack env activate .
 # mock a hand-edit from before we activated
-spack add boost
 spack add trilinos
 spack add openmpi
 example environments/install-anonymous-1 "spack install"

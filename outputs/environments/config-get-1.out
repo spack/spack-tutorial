@@ -5,5 +5,6 @@ $ spack config get
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  specs: [tcl, trilinos, hdf5+hl, gmp]
+  specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
   view: true
+

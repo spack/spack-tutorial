@@ -4,7 +4,7 @@ $ spack env create myproject2
 ==> You can activate this environment with:
 ==>   spack env activate myproject2
 $ spack env activate myproject2
-$ spack install hdf5+hl
+$ spack install hdf5+hl ^mpich
 ==> All of the packages are already installed
 $ spack install trilinos
 ==> All of the packages are already installed
@@ -13,13 +13,10 @@ $ spack find
 ==> Root specs
 hdf5 +hl  trilinos
 
-==> 40 installed packages
+==> 33 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69		     gdbm@1.18.1	libsigsegv@2.12  ncurses@6.2		 perl@5.32.0
-autoconf-archive@2019.01.06  glm@0.9.7.1	libtool@2.4.6	 netcdf-c@4.7.4 	 pkgconf@1.7.3
-automake@1.16.2 	     gmp@6.1.2		libxml2@2.9.10	 netlib-scalapack@2.1.0  readline@8.0
-berkeley-db@18.1.40	     hdf5@1.10.7	m4@1.4.18	 numactl@2.0.14 	 suite-sparse@5.8.1
-boost@1.74.0		     hwloc@1.11.11	matio@1.5.17	 openblas@0.3.12	 trilinos@13.0.1
-bzip2@1.0.8		     hypre@2.20.0	metis@5.1.0	 openmpi@3.1.6		 util-macros@1.19.1
-cmake@3.18.4		     libiconv@1.16	mpfr@4.0.2	 openssl@1.1.1h 	 xz@5.2.5
-diffutils@3.7		     libpciaccess@0.16	mumps@5.3.3	 parmetis@4.0.3 	 zlib@1.2.11
+autoconf@2.69	     diffutils@3.8    libedit@3.1-20210216  libsigsegv@2.13  ncurses@6.2      openssl@1.1.1l   util-macros@1.19.3
+automake@1.16.3      findutils@4.8.0  libevent@2.1.12	    libtool@2.4.6    numactl@2.0.14   perl@5.34.0      xz@5.2.5
+berkeley-db@18.1.40  gdbm@1.19	      libfabric@1.13.2	    libxml2@2.9.12   openblas@0.3.18  pkgconf@1.8.0    zlib@1.2.11
+bzip2@1.0.8	     hdf5@1.10.7      libiconv@1.16	    m4@1.4.19	     openmpi@4.1.1    readline@8.1
+cmake@3.21.4	     hwloc@2.6.0      libpciaccess@0.16     mpich@3.4.2      openssh@8.7p1    trilinos@13.0.1
