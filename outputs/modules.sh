@@ -45,7 +45,7 @@ gcc_hash=$(spack find --format {hash:7} gcc)
 gcc_module="gcc-8.4.0-gcc-7.5.0-${gcc_hash}"
 example -tee modules/module-show-1  "module show $gcc_module"
 
-spack config add "modules:tcl:all:filter:environment_blacklist:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
+spack config add "modules:tcl:all:filter:environment_blacklist:['LD_LIBRARY_PATH']"
 
 echo "y
 " | example  modules/tcl-refresh-1      "spack module tcl refresh"

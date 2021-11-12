@@ -82,15 +82,15 @@ Add a new compiler
 The second step is to build a recent compiler. On first use, Spack
 scans the environment and automatically locates the compiler(s)
 already available on the system. For this tutorial, however, we want
-to use ``gcc@8.3.0``.
+to use ``gcc@8.4.0``.
 
 
 .. code-block:: console
 
-  $ spack install gcc@8.3.0
+  $ spack install gcc@8.4.0
 
 
-You can get this in your environment using ``spack load gcc@8.3.0``:
+You can get this in your environment using ``spack load gcc@8.4.0``:
 
 .. literalinclude:: outputs/modules/spack-load-gcc.out
    :language: console
@@ -134,15 +134,15 @@ tells you what a module will do when loaded:
 
    $ module show zlib
    ----------------------------------------------------------------------------------------------------------------------------------------------
-      /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib/1.2.11-gcc-8.3.0:
+      /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib/1.2.11-gcc-8.4.0:
    ----------------------------------------------------------------------------------------------------------------------------------------------
    whatis("A free, general-purpose, legally unencumbered lossless data-compression library. ")
    conflict("zlib")
-   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/share/man")
-   prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib")
-   prepend_path("INCLUDE","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/include")
-   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib/pkgconfig")
-   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/")
+   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/share/man")
+   prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib")
+   prepend_path("INCLUDE","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/include")
+   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib/pkgconfig")
+   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/")
    help([[A free, general-purpose, legally unencumbered lossless data-compression
    library.
    ]])
@@ -155,7 +155,7 @@ tells you what a module will do when loaded:
 
    $ module load zlib
    $ echo $LD_LIBRARY_PATH
-   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib
+   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib
 
 and to undo the modifications, you can use ``module unload``:
 
@@ -287,11 +287,10 @@ by the module file according to the default prefix inspection rules.
 Filter unwanted modifications to the environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now consider the case that your site has decided that ``C_INCLUDE_PATH``,
-``CPLUS_INCLUDE_PATH``, and ``LIBRARY_PATH`` modifications should not be
-present in module files. What you can do to abide by the rules is to
-create a configuration file ``${SPACK_ROOT}/etc/spack/modules.yaml`` with
-the following content:
+Now consider the case that your site has decided that ``LD_LIBRARY_PATH``
+modifications should not be present in module files. What you can do to 
+abide by the rules is to create a configuration file 
+``${SPACK_ROOT}/etc/spack/modules.yaml`` with the following content:
 
 .. code-block:: yaml
 
@@ -300,9 +299,7 @@ the following content:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
 
 Next you should regenerate all the module files:
 
@@ -336,9 +333,7 @@ To do this you should add a ``blacklist`` keyword to ``${SPACK_ROOT}/etc/spack/m
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
 
 and regenerate the module files. This time we'll pass the option
 ``--delete-tree`` so that Spack will delete the existing module tree and
@@ -353,7 +348,7 @@ directory.
 
 
 if you look closely you'll see though that we went too far in
-blacklisting modules: the module for ``gcc@8.3.0`` disappeared as it was
+blacklisting modules: the module for ``gcc@8.4.0`` disappeared as it was
 bootstrapped with ``gcc@7.5.0``. To specify exceptions to the blacklist
 rules you can use ``whitelist``:
 
@@ -369,16 +364,14 @@ rules you can use ``whitelist``:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
 
 ``whitelist`` rules always have precedence over ``blacklist`` rules. If you regenerate the modules again:
 
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
 
-you'll see that now the module for ``gcc@8.3.0`` has reappeared:
+you'll see that now the module for ``gcc@8.4.0`` has reappeared:
 
 .. literalinclude:: outputs/modules/module-avail-4.out
    :language: console
@@ -400,9 +393,7 @@ packages. In this case you only need to add the following line:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
 
 to ``modules.yaml`` and regenerate the module file tree as above.
 
@@ -428,9 +419,7 @@ use the ``hash_length`` keyword in the configuration file:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
 
 If you try to regenerate the module files now you will get an error:
 
@@ -449,7 +438,7 @@ The problem here is that without the hashes the four different flavors of
 the names are formatted to differentiate them:
 
 .. code-block:: yaml
-  :emphasize-lines: 9-10,16-19
+  :emphasize-lines: 9-10,14-17
 
   modules:
     tcl:
@@ -463,9 +452,7 @@ the names are formatted to differentiate them:
           - '{name}'
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
       projections:
         all:               '{name}/{version}-{compiler.name}-{compiler.version}'
         netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
@@ -502,7 +489,7 @@ is installed. You can achieve this with Spack by adding an
 ``environment`` directive to the configuration file:
 
 .. code-block:: yaml
-  :emphasize-lines: 17-19
+  :emphasize-lines: 15-17
 
   modules:
     tcl:
@@ -517,9 +504,7 @@ is installed. You can achieve this with Spack by adding an
           - '{name}'
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -553,7 +538,7 @@ only certain packages. You can for instance apply modifications to the
 ``openmpi`` module as follows:
 
 .. code-block:: yaml
-  :emphasize-lines: 20-24
+  :emphasize-lines: 18-22
 
   modules:
     tcl:
@@ -568,9 +553,7 @@ only certain packages. You can for instance apply modifications to the
           - '{name}'
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -603,7 +586,7 @@ modules that load their dependencies by adding the ``autoload``
 directive and assigning it the value ``direct``:
 
 .. code-block:: yaml
-  :emphasize-lines: 3,38,39
+  :emphasize-lines: 3,36,37
 
   modules:
     tcl:
@@ -619,9 +602,7 @@ directive and assigning it the value ``direct``:
           - '{name}'
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -706,7 +687,7 @@ There are just a few steps needed to adapt the ``modules.yaml`` file we used pre
 After these modifications your configuration file should look like:
 
 .. code-block:: yaml
-  :emphasize-lines: 2-8,28-30
+  :emphasize-lines: 2-8,26-28
 
   modules:
     enable::
@@ -724,9 +705,7 @@ After these modifications your configuration file should look like:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -858,9 +837,7 @@ remove the remaining suffix projection for ``lapack``:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -1000,7 +977,7 @@ need to use the new custom template. For the sake of illustration let's assume
 it's ``netlib-scalapack``:
 
 .. code-block:: yaml
-  :emphasize-lines: 30-31
+  :emphasize-lines: 28-29
 
   modules:
     enable::
@@ -1020,9 +997,7 @@ it's ``netlib-scalapack``:
       all:
         filter:
           environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "LD_LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -1046,7 +1021,7 @@ we'll find the following at the end of each ``netlib-scalapack`` module file:
 .. code-block:: lua
 
   -- Access is granted only to specific groups
-  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
+  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
       LmodError (
           "You don't have the necessary rights to run \"netlib-scalapack\".\n\n",
           "\tPlease write an e-mail to 1234@foo.com if you need further information on how to get access to it.\n"
@@ -1060,13 +1035,13 @@ the right e-mail address where to ask for it!
 Restore settings for future sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For future sections of the tutorial, we will not use the ``gcc@8.3.0``
+For future sections of the tutorial, we will not use the ``gcc@8.4.0``
 compiler. Since it is currently the default compiler (our current
 defualt is the most recent version of gcc available), we will remove
 it now.
 
 .. code-block:: console
 
-  $ spack compiler rm gcc@8.3.0
+  $ spack compiler rm gcc@8.4.0
 
 This will ensure the rest of the tutorial goes smoothly for you.

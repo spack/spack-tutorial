@@ -1,24 +1,10 @@
 $ module load py-numpy netlib-scalapack
-
-Activating Modules:
-  1) netlib-scalapack/2.1.0
-
 $ module load mpich
 
-Lmod is automatically replacing "openmpi/3.1.6" with "mpich/3.3.2".
+Lmod is automatically replacing "openmpi/4.1.1-rfhkogr" with "mpich/3.4.2-c3rfusd".
 
 
-Due to MODULEPATH changes, the following have been reloaded:
-  1) netlib-scalapack/2.1.0
+The following have been reloaded with a version change:
+  1) netlib-scalapack/2.1.0-vn6evn3 => netlib-scalapack/2.1.0-3pmc4ni
 
 $ module load netlib-lapack
-
-Lmod is automatically replacing "openblas/0.3.10" with "netlib-lapack/3.8.0".
-
-
-Inactive Modules:
-  1) py-numpy
-
-Due to MODULEPATH changes, the following have been reloaded:
-  1) netlib-scalapack/2.1.0
-

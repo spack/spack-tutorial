@@ -1,17 +1,35 @@
 $ module load gcc
 $ module avail
 
-------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.3.0 --------------------------------------
-   autoconf/2.69      gdbm/1.18.1	    libpciaccess/0.13.5    netlib-lapack/3.8.0	  pkgconf/1.7.3 	      readline/8.0
-   automake/1.16.2    gettext/0.20.2	    libsigsegv/2.12	   numactl/2.0.12	  py-cython/0.29.16	      sqlite/3.31.1
-   bzip2/1.0.8	      hwloc/1.11.11	    libtool/2.4.6	   openblas/0.3.10	  py-numpy/1.19.0-openblas    tar/1.32
-   cmake/3.17.3       hwloc/2.2.0    (D)    libxml2/2.9.10	   openmpi/3.1.6	  py-pybind11/2.5.0	      texinfo/6.5
-   diffutils/3.7      libbsd/0.10.0	    m4/1.4.18		   openssl/1.1.1g	  py-scipy/1.5.0-openblas     util-macros/1.19.1
-   expat/2.2.9	      libffi/3.3	    mpich/3.3.2 	   patchelf/0.10	  py-setuptools/46.1.3	      xz/5.2.5
-   findutils/4.6.0    libiconv/1.16	    ncurses/6.2 	   perl/5.30.3		  python/3.7.7		      zlib/1.2.11
+------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.4.0 --------------------------------------------
+   autoconf/2.69-qm3nvyb	       libffi/3.3-iyftha4		  openssl/1.1.1l-tb7u46o       (D)    py-scipy/1.7.1-cjztfbj
+   automake/1.16.3-xckkzys	       libiconv/1.16-ipdmndb		  patchelf/0.13-4whtuew        (D)    py-setuptools-scm/6.3.2-77cui6w
+   berkeley-db/18.1.40-r6763sk	       libmd/1.0.3-4wy7gwo	   (D)	  perl/5.34.0-xfmnfdo		      py-setuptools/57.4.0-6clnf27
+   bzip2/1.0.8-yximcga		       libpciaccess/0.16-pm2rlie	  pkgconf/1.8.0-p42cwgk        (D)    py-tomli/1.2.1-e5jsl4e
+   cmake/3.21.4-xbedhus 	       libsigsegv/2.13-hz5i4ed	   (D)	  py-beniget/0.4.1-evq2gvb	      python/3.8.12-kqi37zb
+   diffutils/3.8-mmumzt6	(D)    libtool/2.4.6-zbfl3f4		  py-cython/0.29.24-csphxpz	      readline/8.1-a4whibf
+   expat/2.4.1-ns4sfw7		(D)    libxml2/2.9.12-mfeevfv		  py-gast/0.5.2-l6nrtqb 	      sqlite/3.36.0-ja2oxx6
+   findutils/4.8.0-h62dyf3	       m4/1.4.19-rjpsys2		  py-numpy/1.21.3-5bfjv5j	      tar/1.34-65c3tgr		      (D)
+   gdbm/1.19-pmu3ip3		       mpich/3.4.2-c3rfusd		  py-packaging/21.0-fqjiww6	      util-linux-uuid/2.36.2-ikmmddm
+   gettext/0.21-cmcxw5p 	       ncurses/6.2-lsxsz3z	   (D)	  py-pip/21.1.2-62ckzar 	      util-macros/1.19.3-cjjvvv2
+   hwloc/2.6.0-racc2cf		       netlib-lapack/3.9.1-qzprmvu	  py-ply/3.11-7kgrvml		      xz/5.2.5-dvjlvsj
+   libbsd/0.11.3-n7mkukh	(D)    numactl/2.0.14-7hnjdpn		  py-pybind11/2.6.2-oylbygf	      zlib/1.2.11-uaeoadv
+   libedit/3.1-20210216-3cezqux        openblas/0.3.18-3oa4yhe		  py-pyparsing/2.4.7-bsfylgy
+   libevent/2.1.12-tzlbffp	       openmpi/4.1.1-rfhkogr		  py-pytest-runner/5.1-hlloasf
+   libfabric/1.13.2-hbq5ylc	       openssh/8.7p1-fl7wruo		  py-pythran/0.9.12-hbywhjo
 
----------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------
-   gcc/8.3.0 (L)
+---------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------------
+   autoconf/2.69-7hurwa7       (D)    gmp/6.2.1-7kpzyzg 		  lua-luafilesystem/1_7_0_2-poebykb	   perl/5.34.0-672tzld	 (D)
+   automake/1.16.3-6rqxcsn     (D)    libbsd/0.11.3-j5lylsy		  lua-luaposix/35.0-teavedp		   pkgconf/1.8.0-ucp6vz7
+   berkeley-db/18.1.40-ue5lnfm (D)    libedit/3.1-20210216-3lzuqwn (D)	  lua/5.3.5-caid57i			   readline/8.1-27u6g7p  (D)
+   bzip2/1.0.8-55rtzz4	       (D)    libiconv/1.16-qi7dxj6	   (D)	  m4/1.4.19-ybvezwz		    (D)    tar/1.34-otlzkgd
+   curl/7.79.0-5qolphz		      libidn2/2.3.0-7h63lbt		  mpc/1.1.0-tjv2csr			   tcl/8.6.11-oysrbht
+   diffutils/3.8-kg5jymj	      libmd/1.0.3-aq7ydx6		  mpfr/3.1.6-z7hztfv			   unzip/6.0-a23m5gl
+   expat/2.4.1-j3i7qne		      libsigsegv/2.13-g2vgcne		  ncurses/6.2-d34lizg			   xz/5.2.5-nplaaps	 (D)
+   gcc/8.4.0-jmhauhy	       (L)    libtool/2.4.6-2kia6gf	   (D)	  openssh/8.7p1-ux36qlb 	    (D)    zlib/1.2.11-3rlgy7y	 (D)
+   gdbm/1.19-oftaepj	       (D)    libunistring/0.9.10-ajfayci	  openssl/1.1.1l-lygx3cq
+   gettext/0.21-2zkxpoq        (D)    libxml2/2.9.12-2hw4ddh	   (D)	  patchelf/0.13-2txxrad
+   git/2.31.1-4donkdi		      lmod/8.5.6-gn5qq6e		  pcre2/10.36-ccx353b
 
   Where:
    D:  Default Module
