@@ -1,17 +1,17 @@
-$ spack spec json-fortran%clang@6.0.0-gfortran
+$ spack spec json-fortran%clang@7.0.0-gfortran
 Input spec
 --------------------------------
-json-fortran%clang@6.0.0-gfortran
+json-fortran%clang@7.0.0-gfortran
 
 Concretized
 --------------------------------
-json-fortran@7.1.0%clang@6.0.0-gfortran cppflags="-g" ~ipo build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
-    ^cmake@3.18.4%clang@6.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt patches=bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d arch=linux-ubuntu18.04-x86_64
-        ^ncurses@6.2%clang@6.0.0-gfortran cppflags="-g" ~symlinks+termlib arch=linux-ubuntu18.04-x86_64
-            ^pkgconf@1.7.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-        ^openssl@1.1.1h%clang@6.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
-            ^perl@5.32.0%clang@6.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                ^berkeley-db@18.1.40%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                    ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-            ^zlib@1.2.11%clang@6.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+json-fortran@7.1.0%clang@7.0.0-gfortran cppflags="-g" ~ipo build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+    ^cmake@3.18.4%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt patches=bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d arch=linux-ubuntu18.04-x86_64
+        ^ncurses@6.2%clang@7.0.0-gfortran cppflags="-g" ~symlinks+termlib arch=linux-ubuntu18.04-x86_64
+            ^pkgconf@1.7.3%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+        ^openssl@1.1.1h%clang@7.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
+            ^perl@5.32.0%clang@7.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                ^berkeley-db@18.1.40%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                ^gdbm@1.18.1%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                    ^readline@8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+            ^zlib@1.2.11%clang@7.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64

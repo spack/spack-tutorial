@@ -1,28 +1,13 @@
-$ spack spec hdf5+mpi %clang
+$ spack spec hdf5 %clang
 Input spec
 --------------------------------
-hdf5%clang+mpi
+hdf5%clang
 
 Concretized
 --------------------------------
-hdf5@1.10.7%clang@6.0.0-gfortran cppflags="-g" ~cxx~debug~fortran~hl~java+mpi+pic+shared~szip~threadsafe api=none arch=linux-ubuntu18.04-x86_64
-    ^openmpi@3.1.6%clang@6.0.0-gfortran cppflags="-g" ~atomics~cuda~cxx~cxx_exceptions+gpfs~java~legacylaunchers~lustre~memchecker~pmi~singularity~sqlite3+static~thread_multiple+vt+wrapper-rpath fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
-        ^hwloc@1.11.11%clang@6.0.0-gfortran cppflags="-g" ~cairo~cuda~gl~libudev+libxml2~netloc~nvml+pci~shared arch=linux-ubuntu18.04-x86_64
-            ^libpciaccess@0.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^libtool@2.4.6%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                    ^m4@1.4.18%clang@6.0.0-gfortran cppflags="-g" +sigsegv patches=3877ab548f88597ab2327a2230ee048d2d07ace1062efe81fc92e91b7f39cd00,fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8 arch=linux-ubuntu18.04-x86_64
-                        ^libsigsegv@2.12%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^pkgconf@1.7.3%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^util-macros@1.19.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-            ^libxml2@2.9.10%clang@6.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
-                ^libiconv@1.16%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^xz@5.2.5%clang@6.0.0-gfortran cppflags="-g" ~pic arch=linux-ubuntu18.04-x86_64
-                ^zlib@1.2.8%gcc@7.5.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
-            ^numactl@2.0.14%clang@6.0.0-gfortran cppflags="-g"  patches=4e1d78cbbb85de625bad28705e748856033eaafab92a66dffd383a3d7e00cc94 arch=linux-ubuntu18.04-x86_64
-                ^autoconf@2.69%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                    ^perl@5.32.0%clang@6.0.0-gfortran cppflags="-g" +cpanm~shared+threads arch=linux-ubuntu18.04-x86_64
-                        ^berkeley-db@18.1.40%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                        ^gdbm@1.18.1%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                            ^readline@8.0%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                                ^ncurses@6.2%clang@6.0.0-gfortran cppflags="-g" ~symlinks+termlib arch=linux-ubuntu18.04-x86_64
-                ^automake@1.16.2%clang@6.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+hdf5@1.10.7%clang@7.0.0-gfortran cppflags="-g" ~cxx~fortran~hl~ipo~java+mpi~shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+    ^cmake@3.21.4%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses~openssl+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
+        ^ncurses@6.2%clang@7.0.0-gfortran cppflags="-g" ~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
+            ^pkgconf@1.8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+    ^mpich@3.3%gcc@7.5.0~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch4 netmod=ofi patches=c7d4ecf865dccff5b764d9c66b6a470d11b0b1a5b4f7ad1ffa61079ad6b5dede,eb982de3366d48cbc55eb5e0df43373a45d9f51df208abf0835a72dc6c0b4774 pmi=pmi arch=linux-ubuntu18.04-x86_64
+    ^zlib@1.2.8%gcc@7.5.0+optimize+pic~shared arch=linux-ubuntu18.04-x86_64
