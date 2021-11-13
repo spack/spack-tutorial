@@ -103,7 +103,7 @@ int main(int argc, char **argv) {
   MPI_Finalize();
 }
 EOF
-example environments/use-mpi-1       "mpicc ./mpi-hello.c"
+example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib)/include'
 example environments/use-mpi-1       "mpirun -n 4 ./a.out"
 
 example -tee environments/filenames-1     "spack cd -e myproject"
