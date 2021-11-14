@@ -52,8 +52,6 @@ echo "y
 " | example environments/env-uninstall-1 "spack uninstall trilinos"
 example environments/env-uninstall-1 "spack find"
 
-example -tee environments/env-swap-1      "despacktivate"
-spack env deactivate
 example -tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
@@ -77,6 +75,7 @@ spack config add packages:all:providers:mpi:[mpich]
 example environments/spec-2          "spack spec hypre"
 
 example environments/concretize-f-1 "spack concretize --force"
+spack install
 
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
