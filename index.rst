@@ -10,7 +10,7 @@ Tutorial: Spack 101
 ===================
 
 This is a full-day introduction to Spack with lectures and live demos. It was last presented at
-`Supercomputing 2021 -<https://sc21.supercomputing.org/>`_ on November 14, 2021.
+`Supercomputing 2021 <https://sc21.supercomputing.org/>`_ on November 14, 2021.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
