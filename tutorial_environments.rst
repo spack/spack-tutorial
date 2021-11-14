@@ -18,7 +18,7 @@ commands:
 * `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
 * `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
 
-.. Customizing Spack's installation with configuration files, like 
+.. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
 This section of the tutorial introduces **Spack Environments**, which
@@ -43,7 +43,7 @@ environments allow you to readily:
 
 This tutorial introduces the basics of creating and using environments,
 then explains how to expand, configure, and build software in them.
-We will start with the command line interface then cover editing key
+We will start with the command line interface, then cover editing key
 environment file directly. We will describe the difference between
 Spack-managed and independent environments, then finish with a section
 on reproducible builds.
@@ -78,7 +78,7 @@ called ``myproject``:
    :emphasize-lines: 1
 
 
-An environment is like a virtualized ``spack`` instance that you can
+An environment is like a virtualized Spack instance that you can
 use to aggregate package installations for a project or other purpose.
 It has an associated *view*, which is a single prefix where all packages
 from the environment are linked.
@@ -186,7 +186,7 @@ its dependencies).
 When you install packages into an environment, they are, by default,
 linked into a single prefix, or *view*. Activating the environment
 with ``spack env activate`` results in subdirectories from the view
-being added to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH``
+being added to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH``,
 and other environment variables. This makes the environment easier to use.
 
 Let's try it out. We just installed ``tcl`` into our ``myproject``
@@ -246,7 +246,7 @@ contents of the environment:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
    :language: console
-   :emphasize-lines: 1,10
+   :emphasize-lines: 1,11
 
 
 The result is that the environment now has only one root spec, ``hdf5
@@ -258,7 +258,7 @@ in that environment.
 
 .. literalinclude:: outputs/environments/env-swap-1.out
    :language: console
-   :emphasize-lines: 1-3
+   :emphasize-lines: 1-2
 
 
 Phew! We see that ``myproject`` still has ``trilinos`` as a root
@@ -292,7 +292,7 @@ large build of many packages in parallel by taking advantage of
 Spack's `install-level build parallelism
 <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
-This section focused on two ways to add specs to the environment before
+This section focuses on two ways to add specs to the environment before
 installing them.
 
 ^^^^^^^^^^^^^
@@ -399,8 +399,8 @@ to include the ``packages:all:providers:mpi:`` entry below:
 
    This setting only defines the **default** ``mpi`` provider.
    You can still override the provider on the command line, e.g.,
-   with`spack install hdf5 ^openmpi`. 
-   
+   with ``spack install hdf5 ^openmpi``.
+
    We introduce this here to show you how environment configuration
    can affect concretization. Configuration options are covered in much
    more detail in the :ref:`configuration tutorial <configs-tutorial>`.
@@ -420,13 +420,13 @@ the ``mpi`` provider for packages depending on ``mpi``. There
 are many other customizations you can make to an environment.
 Refer to the links at the end of this section for more information.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Reconcretizing the environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Re-concretizing the environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may need to re-install packages in the environment after making
 significant changes to the configuration, such as changing virtual
-providers. This can be accomplished by forcing Spack to reconcretize
+providers. This can be accomplished by forcing Spack to re-concretize
 the environment and re-install the specs.
 
 For example, the packages installed in our ``myproject`` environment
@@ -445,6 +445,10 @@ all the environment's specs:
 All the specs are now concrete **and** ready to be installed with
 ``mpich`` as the MPI implementation. You can now re-run ``spack
 install`` to finish the process.
+
+.. code-block:: console
+
+   $ spack install
 
 ------------------------
 Building in environments
@@ -537,7 +541,7 @@ similar to `Python venv <https://docs.python.org/3/library/venv.html>`_
 and `Conda environments
 <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_). The goal is to ensure packages in one environment
 are kept separate from those of another. These environments can
-be managed by spack or independent. In either case, their environment
+be managed by Spack or independent. In either case, their environment
 files can be used to reproduce builds by other users and on other machines.
 Since those files are key to reproducing builds, let's start with them.
 
@@ -571,7 +575,7 @@ re-use later.
 Managed versus independent environments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Environments are either spack-managed or independent. Both types
+Environments are either Spack-managed or independent. Both types
 of environments are defined by their environment files. So far
 we have only created managed environments. This section describes
 their differences.
@@ -581,7 +585,7 @@ They are automatically created in the ``var/spack/environments``
 subdirectory and can be referenced by their names.
 
 *Independent environments* can be created in one of two ways. First,
-the Spack's environment file(s) can be placed in any directory
+the Spack environment file(s) can be placed in any directory
 (other than ``var/spack/environments``). Alternatively, you can
 use ``spack env create -d <directory>`` to specify the directory
 (``<directory>``) in which the files should reside. Independent
@@ -604,7 +608,7 @@ can change to the directory containing the file using ``spack cd``:
    :emphasize-lines: 1-2,4
 
 
-Notice ``myproject`` is a subdirectory of ``var/spack/environments``
+Notice that ``myproject`` is a subdirectory of ``var/spack/environments``
 within the Spack installation making it a *managed* environment.
 Consequently, it can be referenced by name. It will also show up
 when running ``spack env list``:
@@ -647,7 +651,7 @@ project:
    :emphasize-lines: 1-4
 
 
-Notice the command shows Spack created the environment, updated
+Notice that the command shows Spack created the environment, updated
 the view, and printed the command needed to activate it. As we
 can see in the activation command, since the environment is independent,
 it must be referenced by its directory path.
@@ -660,7 +664,7 @@ directory contents and looking at the configuration file:
    :emphasize-lines: 1,3
 
 
-Notice Spack created a ``spack.yaml`` file in the *code* directory.
+Notice that Spack created a ``spack.yaml`` file in the *code* directory.
 Also note that the configuration file has an empty spec list (i.e.,
 ``[]``). That list is intended to contain only the *root specs* of
 the environment.
@@ -700,7 +704,7 @@ Now activate the environment and install the packages:
    :emphasize-lines: 1-2,64-65
 
 
-Notice Spack concretized the specs before installing them and
+Notice that Spack concretized the specs before installing them and
 their dependencies. It also updated the environment's view. Since
 we already installed all these packages outside of the environment,
 their links were simply added to it.
@@ -720,7 +724,7 @@ For example, let's add ``hdf5`` and look at our file:
    :emphasize-lines: 1,3
 
 
-Notice ``spack add`` added the package to our active environment and
+Notice that ``spack add`` added the package to our active environment and
 it appears in the configuration file's spec list.
 
 .. note::
@@ -735,7 +739,7 @@ Now use ``spack remove`` to remove the spec from the configuration:
    :language: console
    :emphasize-lines: 1,3
 
-and we see the spec *was* removed from the spec list of our
+and we see that the spec *was* removed from the spec list of our
 environment.
 
 .. note::
@@ -813,7 +817,7 @@ And, since it is a newly created environment, it does not have any
    :language: console
    :emphasize-lines: 1-2
 
-Notice we have the same root specs as were listed in the ``spack.yaml``
+Notice that we have the same root specs as were listed in the ``spack.yaml``
 file.
 
 """"""""""""""""""""
@@ -835,7 +839,7 @@ Here we see that Spack again created a managed environment with the
 provided name.
 
 Since we created the environment from our ``spack.lock`` file,
-not only do we get the same root specs, all of the packages are 
+not only do we get the same root specs, all of the packages are
 installed in the environment as we can see from calling
 ``spack find`` **after** activating the environment:
 
