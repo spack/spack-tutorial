@@ -10,16 +10,16 @@ Basic Installation Tutorial
 =========================================
 
 This tutorial will guide you through the process of installing
-software using Spack. We will first cover the `spack install` command,
+software using Spack. We will first cover the ``spack install`` command,
 focusing on the power of the spec syntax and the flexibility it gives
-to users. We will also cover the `spack find` command for viewing
-installed packages and the `spack uninstall` command. Finally, we will
-touch on how Spack manages compilers, especially as it relates to
-using Spack-built compilers within Spack. We will include full output
-from all of the commands demonstrated, although we will frequently
-call attention to only small portions of that output (or merely to the
-fact that it succeeded). The provided output is all from an AWS
-instance running Ubuntu 18.04.
+to users. We will also cover the ``spack find`` command for viewing
+installed packages and the ``spack uninstall`` command for uninstalling
+them. Finally, we will touch on how Spack manages compilers,
+especially as it relates to using Spack-built compilers within Spack.
+We will include full output from all of the commands demonstrated,
+although we will frequently call attention to only small portions of
+that output (or merely to the fact that it succeeded). The provided
+output is all from an AWS instance running Ubuntu 18.04.
 
 .. _basics-tutorial-install:
 
@@ -27,8 +27,8 @@ instance running Ubuntu 18.04.
 Installing Spack
 ----------------
 
-Spack works out of the box. Simply clone Spack and get going. We will
-clone Spack and immediately checkout the most recent release, v0.17.
+Spack works out of the box. Simply clone Spack to get going. We will
+clone Spack and immediately check out the most recent release, v0.17.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -36,7 +36,7 @@ clone Spack and immediately checkout the most recent release, v0.17.
 .. literalinclude:: outputs/basics/checkout.out
    :language: console
 
-Next, add Spack to your path. Spack has some nice command line
+Next, add Spack to your path. Spack has some nice command-line
 integration tools, so instead of simply appending to your ``PATH``
 variable, source the Spack setup script.
 
@@ -91,7 +91,7 @@ You'll learn more about configuring Spack later in the tutorial, but
 for now you will be able to install the rest of the packages in the
 tutorial from a binary cache using the same ``spack install``
 command. By default this will install the binary cached version if it
-exists and fall back on installing from source.
+exists and fall back on installing from source if it does not.
 
 Spack's spec syntax is the interface by which we can request specific
 configurations of the package. The ``%`` sigil is used to specify
@@ -135,6 +135,9 @@ shows the hash of each package, and the ``-f`` flag shows any non-empty
 compiler flags of those packages.
 
 .. literalinclude:: outputs/basics/find.out
+   :language: console
+
+.. literalinclude:: outputs/basics/find-lf.out
    :language: console
 
 Spack generates a hash for each spec. This hash is a function of the full
@@ -183,11 +186,11 @@ we install it "out of the box," it will build with OpenMPI.
    :language: console
 
 Spack packages can also have build options, called variants. Boolean
-variants can be specified using the ``+`` and ``~`` or ``-``
-sigils. There are two sigils for ``False`` to avoid conflicts with
-shell parsing in different situations. Variants (boolean or otherwise)
-can also be specified using the same syntax as compiler flags.  Here
-we can install HDF5 without MPI support.
+variants can be specified using the ``+`` (enable) and ``~`` or ``-``
+(disable) sigils. There are two sigils for "disable" to avoid conflicts
+with shell parsing in different situations. Variants (boolean or
+otherwise) can also be specified using the same syntax as compiler flags.
+Here we can install HDF5 without MPI support.
 
 .. literalinclude:: outputs/basics/hdf5-no-mpi.out
    :language: console
@@ -202,7 +205,7 @@ an MPI dependency. For example, we can build HDF5 with MPI support
 provided by MPICH by specifying a dependency on ``mpich``. Spack also
 supports versioning of virtual dependencies. A package can depend on the
 MPI interface at version 3, and provider packages specify what version of
-the interface *they* provide. The partial spec ``^mpi@3`` can be safisfied
+the interface *they* provide. The partial spec ``^mpi@3`` can be satisfied
 by any of several providers.
 
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
@@ -225,10 +228,10 @@ You may also have noticed that there are some packages shown in the
 ``spack find -d`` output that we didn't install explicitly. These are
 dependencies that were installed implicitly. A few packages installed
 implicitly are not shown as dependencies in the ``spack find -d``
-output. These are build dependencies. For example, ``libpciaccess`` is a
-dependency of openmpi and requires ``m4`` to build. Spack will build ``m4`` as
-part of the installation of ``openmpi``, but it does not become a part of
-the DAG because it is not linked in at run time. Spack handles build
+output. These are build dependencies. For example, ``hdf5`` requires
+``cmake`` to build. Spack will build ``cmake`` as part of the
+installation of ``hdf5``, but it does not become a part of the DAG
+because it is not linked in at run time. Spack handles build
 dependencies differently because of their different (less strict)
 consistency requirements. It is entirely possible to have two packages
 using different versions of a dependency to build, which obviously cannot
@@ -236,8 +239,8 @@ be done with linked dependencies.
 
 HDF5 is more complicated than our basic example of zlib and
 Tcl, but it's still within the realm of software that an experienced
-HPC user could reasonably expect to install given a bit of time. Now
-let's look at an even more complicated package.
+HPC user could reasonably expect to manually install given a bit of time.
+Now let's look at an even more complicated package.
 
 .. literalinclude:: outputs/basics/trilinos.out
    :language: console
@@ -351,7 +354,7 @@ return every package which was built with ``cppflags="-O3"``.
 The ``find`` command can also show which packages were installed
 explicitly (rather than pulled in as a dependency) using the ``-x``
 flag. The ``-X`` flag shows implicit installs only. The ``find`` command can
-also show the path to which a spack package was installed using the ``-p``
+also show the path to which a Spack package was installed using the ``-p``
 flag.
 
 .. literalinclude:: outputs/basics/find-px.out

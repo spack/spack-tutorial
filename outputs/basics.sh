@@ -11,7 +11,7 @@ rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
 pip3 install boto3
 
 # basic installation
-example basics/clone         "git clone https://github.com/spack/spack ~/spack"
+example basics/clone         "git clone https://github.com/spack/spack.git ~/spack"
 
 example basics/checkout      "cd ~/spack"
 cd ~/spack
