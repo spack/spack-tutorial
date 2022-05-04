@@ -11,31 +11,32 @@
 Package Testing Tutorial
 =========================
 
-This tutorial walks you through the steps for adding and running Spack
-package tests during and after the software installation process.
+Once you have a recipe in a Spack package that can successfully build
+your software (see `Package Creation
+<https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html>`_),
+it's time to consider how people who use your package can gain confidence
+that the software works. The package already encapsulates the installation
+process, so it can do the same for testing.
 
-A package that *appears* to install successfully may not actually be
-installed correctly or continue to work indefinitely. There are a number
-of possible reasons. For example, the installation process may not have
-fully installed the software. The installed software may not work. Or the
-software may work right after it is installed but, due to system changes,
-it stops working days, weeks, or months later. So Spack provides features
-for `checking installed software
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html>`_.
+Just because `spack install` completes without reporting errors does
+not necessarily mean the software installed correctly or will continue
+to work indefinitely. How can that be true? There are a number of possible
+reasons, including:
 
-Recall from `Package Creation
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_packaging.html>`_
-that Spack packages are installation scripts, or recipes, for building
-software. As such, they are well suited for also encapsulating recipes
-for testing.
+* the installation process may not have fully installed the software;
+* the installed software may not work; or
+* the software may work right after it is installed but, due to system
+  changes, stop working weeks or months later.
 
-Tests can be performed at two phases in the life of an installed
-package: build-time and stand-alone. `**Build-time** tests
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_
-run as part of the package installation process. `**Stand-alone** tests
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#stand-alone-or-smoke-tests>`_
-run at any point after the software is installed. We will cover
-adding both to a simple package.
+Spack provides several features for `checking installed software
+<https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+
+* sanity checks of installed files and or directories;
+* post-installation phase checks; and
+* stand-alone (or smoke) tests.
+
+This tutorial walks you through the steps for adding these types of
+tests to your package and running them.
 
 ---------------
 Getting started
