@@ -11,7 +11,7 @@ fi
 raw_outputs="${PROJECT}/raw"
 
 # used by scripts
-tutorial_branch=releases/v0.17
+tutorial_branch=releases/v0.18
 
 example() {
     if [[ "$1" == "-tee" ]]; then
