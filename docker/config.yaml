@@ -1,2 +1,6 @@
 config:
   suppress_gpg_warnings: true
+  # This is needed to be able to use zlib@1.2.11
+  # or earlier as of v0.18.0
+  deprecated: true
+
