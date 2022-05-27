@@ -1,7 +1,7 @@
 FROM ubuntu:18.04 AS stage
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    REMOTE_BUILDCACHE_URL="s3://spack-binaries/tutorial"
+    REMOTE_BUILDCACHE_URL="s3://spack-binaries/releases/v0.18/tutorial"
 
 # Install AWS cli
 RUN apt-get update -y && \
@@ -16,7 +16,9 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 
 # Download the buildcache 
 RUN mkdir /mirror
-RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/tutorial /mirror
+RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/releases/v0.18/tutorial /mirror
+RUN rm -rf /mirror/buid_cache/_pgp
+RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/releases/v0.18/build_cache/_pgp /mirror/build_cache/_pgp
 
 FROM ubuntu:18.04 as builder
 
