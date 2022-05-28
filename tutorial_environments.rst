@@ -152,7 +152,7 @@ back to ``myproject`` and *install* a couple of packages; specifically,
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
-   :emphasize-lines: 1,2,5,41
+   :emphasize-lines: 1,2,5,40
 
 We see that ``tcl`` and all of the dependencies of ``trilinos`` are
 already installed. Notice also that our environment's view gets updated.
@@ -344,14 +344,6 @@ An environment is more than just a list of root specs. It includes
 environment is activated. So far, ``myproject`` relies on configuration
 defaults that can be overridden. Here we'll look at how to add specs
 and ensure all the packages depending on ``mpi`` build with ``mpich``.
-
-Running ``spack spec`` shows that concretization looks the same as it
-does outside the environment:
-
-.. literalinclude:: outputs/environments/spec-1.out
-   :language: console
-   :emphasize-lines: 1
-
 We can customize the selection of the ``mpi`` provider using
 `concretization preferences
 <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_
@@ -406,15 +398,6 @@ to include the ``packages:all:providers:mpi:`` entry below:
    more detail in the :ref:`configuration tutorial <configs-tutorial>`.
 
 
-Let's see the effects of this change on our package using ``spack spec``:
-
-.. literalinclude:: outputs/environments/spec-2.out
-   :language: console
-   :emphasize-lines: 1
-
-Notice ``mpich`` is now the ``mpi`` dependency for our concretized
-spec. We also see all of its concrete dependencies.
-
 We've only scratched the surface here by changing the default of
 the ``mpi`` provider for packages depending on ``mpi``. There
 are many other customizations you can make to an environment.
@@ -434,7 +417,7 @@ are now out of sync with our new configuration since we already
 installed part of the environment with ``openmpi``. Suppose we want
 to install everything in ``myproject`` with ``mpich``.
 
-Let's run ``spack concretize --force`` to make Spack re-concretize
+Let's run ``spack concretize --force --fresh`` to make Spack re-concretize
 all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
@@ -443,12 +426,7 @@ all the environment's specs:
 
 
 All the specs are now concrete **and** ready to be installed with
-``mpich`` as the MPI implementation. You can now re-run ``spack
-install`` to finish the process.
-
-.. code-block:: console
-
-   $ spack install
+``mpich`` as the MPI implementation.
 
 ------------------------
 Building in environments
