@@ -1,22 +1,24 @@
 $ spack env create myproject2
-==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 ==> Created environment 'myproject2' in /home/spack/spack/var/spack/environments/myproject2
 ==> You can activate this environment with:
 ==>   spack env activate myproject2
 $ spack env activate myproject2
 $ spack install hdf5+hl ^mpich
 ==> All of the packages are already installed
+==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 $ spack install trilinos
 ==> All of the packages are already installed
+==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 $ spack find
 ==> In environment myproject2
 ==> Root specs
 hdf5 +hl  trilinos
 
-==> 33 installed packages
+==> 46 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	     diffutils@3.8    libedit@3.1-20210216  libsigsegv@2.13  ncurses@6.2      openssl@1.1.1l   util-macros@1.19.3
-automake@1.16.3      findutils@4.8.0  libevent@2.1.12	    libtool@2.4.6    numactl@2.0.14   perl@5.34.0      xz@5.2.5
-berkeley-db@18.1.40  gdbm@1.19	      libfabric@1.13.2	    libxml2@2.9.12   openblas@0.3.18  pkgconf@1.8.0    zlib@1.2.11
-bzip2@1.0.8	     hdf5@1.10.7      libiconv@1.16	    m4@1.4.19	     openmpi@4.1.1    readline@8.1
-cmake@3.21.4	     hwloc@2.6.0      libpciaccess@0.16     mpich@3.4.2      openssh@8.7p1    trilinos@13.0.1
+autoconf@2.69	     expat@2.4.8      libbsd@0.11.5	    libmd@1.0.4        mpich@4.0.2	openssl@1.1.1o	readline@8.1		xz@5.2.5
+automake@1.16.5      findutils@4.9.0  libedit@3.1-20210216  libpciaccess@0.16  ncurses@6.2	perl@5.34.1	sqlite@3.38.5		yaksa@0.2
+berkeley-db@18.1.40  gdbm@1.19	      libevent@2.1.12	    libsigsegv@2.13    numactl@2.0.14	pigz@2.7	tar@1.34		zlib@1.2.12
+bzip2@1.0.8	     gettext@0.21     libfabric@1.14.1	    libtool@2.4.7      openblas@0.3.20	pkgconf@1.8.0	trilinos@13.0.1 	zstd@1.5.2
+cmake@3.23.1	     hdf5@1.12.2      libffi@3.4.2	    libxml2@2.9.13     openmpi@4.1.3	pmix@4.1.2	util-linux-uuid@2.37.4
+diffutils@3.8	     hwloc@2.7.1      libiconv@1.16	    m4@1.4.19	       openssh@9.0p1	python@3.9.12	util-macros@1.19.3
