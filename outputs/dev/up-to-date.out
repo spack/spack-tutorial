@@ -1,15 +1,15 @@
 $ git clone https://github.com/spack/spack ~/spack
 Cloning into '/home/spack/spack'...
-remote: Enumerating objects: 326472, done.K
-remote: Counting objects: 100% (763/763), done.K
-remote: Compressing objects: 100% (322/322), done.K
-remote:nTotale3264729(delta4339),2reused4703.(delta|317),2pack-reused 325709K
-Receiving objects: 100% (326472/326472), 135.60 MiB | 4.43 MiB/s, done.
-Resolving deltas: 100% (141505/141505), done.
+remote: Enumerating objects: 387383, done.K
+remote: Counting objects: 100% (3586/3586), done.K
+remote: Compressing objects: 100% (3189/3189), done.K
+remote:nTotale3873839(delta7437),8reused4500.(delta|357),5pack-reused 383797K
+Receiving objects: 100% (387383/387383), 175.88 MiB | 2.02 MiB/s, done.
+Resolving deltas: 100% (163847/163847), done.
 $ cd ~/spack
-$ git checkout releases/v0.17
-Branch 'releases/v0.17' set up to track remote branch 'releases/v0.17' from 'origin'.
-Switched to a new branch 'releases/v0.17'
+$ git checkout releases/v0.18
+Branch 'releases/v0.18' set up to track remote branch 'releases/v0.18' from 'origin'.
+Switched to a new branch 'releases/v0.18'
 $ . share/spack/setup-env.sh
 $ spack mirror add tutorial /mirror
 $ spack buildcache keys --install --trust

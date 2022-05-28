@@ -10,8 +10,9 @@ pip install boto3
 example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example dev/up-to-date "cd ~/spack"
 cd ~/spack
-example dev/up-to-date "git checkout releases/v0.17"
+example dev/up-to-date "git checkout releases/v0.18"
 example dev/up-to-date ". share/spack/setup-env.sh"
+
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"
 spack config add "packages:all:target:[x86_64]"
