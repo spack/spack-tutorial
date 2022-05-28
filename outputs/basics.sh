@@ -39,14 +39,14 @@ example basics/versions-zlib   "spack versions zlib"
 example basics/zlib-1.2.8      "spack install zlib@1.2.8"
 example basics/zlib-gcc-6.5.0  "spack install zlib %gcc@6.5.0"
 
-example basics/zlib-O3         "spack install zlib @1.2.8 cppflags=-O3"
+example basics/zlib-O3         "spack install zlib@1.2.8 cppflags=-O3"
 
 example basics/find            "spack find"
 example basics/find-lf         "spack find -lf"
 
 example basics/tcl             "spack install tcl"
 
-example basics/tcl-zlib-clang  "spack install tcl ^zlib @1.2.8 %clang"
+example basics/tcl-zlib-clang  "spack install tcl ^zlib@1.2.8 %clang"
 
 zlib_hash=$(spack find --format "{hash:3}" zlib cppflags=-O3)
 example basics/tcl-zlib-hash   "spack install tcl ^/${zlib_hash}"
