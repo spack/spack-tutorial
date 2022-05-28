@@ -145,8 +145,10 @@ provenance of the package, so any change to the spec affects the
 hash. Spack uses this value to compare specs and to generate unique
 installation directories for every combinatorial version. As we move into
 more complicated packages with software dependencies, we can see that
-Spack reuses existing packages to satisfy a dependency only when the
-existing package's hash matches the desired spec.
+Spack reuses existing packages to satisfy a dependency. By default, Spack
+tries hard to reuse existing installations as dependencies, either from a local
+store or from configured remote buildcaches. This minimizes unwanted rebuilds
+of common dependencies, in particular if you update Spack frequently.
 
 .. literalinclude:: outputs/basics/tcl.out
    :language: console
