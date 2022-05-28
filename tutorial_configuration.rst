@@ -449,6 +449,7 @@ a section name):
 
    $ spack env create config-env
    $ spack env activate config-env
+   $ spack config add concretizer:reuse:false
    $ spack config edit
 
 
