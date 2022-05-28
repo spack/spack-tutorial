@@ -486,34 +486,7 @@ overrides the default settings just for these two items.
 Variant preferences
 ^^^^^^^^^^^^^^^^^^^
 
-The packages configuration file can also set variant preferences for
-package variants. For example, let's change our preferences to build all
-packages without shared libraries. We will accomplish this by turning
-off the ``shared`` variant on all packages that have one.
-
-.. code-block:: yaml
-   :emphasize-lines: 9
-
-   spack:
-     specs: []
-     view: true
-     packages:
-       all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
-         variants: ~shared
-
-
-We can check the effect of this command with ``spack spec hdf5`` again.
-
-.. literalinclude:: outputs/config/2.prefs.out
-   :language: console
-   :emphasize-lines: 8,14,23
-
-
-So far we have only made global changes to the package preferences. As
-we've seen throughout this tutorial, HDF5 builds with MPI enabled by
+As we've seen throughout this tutorial, HDF5 builds with MPI enabled by
 default in Spack. If we were working on a project that would routinely
 need serial HDF5, that might get annoying quickly, having to type
 ``hdf5~mpi`` all the time. Instead, we'll update our preferences for
@@ -530,7 +503,6 @@ HDF5.
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
 
@@ -570,7 +542,6 @@ this package and where it can be found:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
        zlib:
@@ -612,7 +583,6 @@ not allowed to build its own zlib. We'll go with the latter.
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
        zlib:
@@ -647,7 +617,6 @@ HDF5 to build with MPI by default again:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        zlib:
          externals:
          - spec: zlib@1.2.8%gcc@7.5.0
