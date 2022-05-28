@@ -1,6 +1,22 @@
 $ spack env create myproject2
+==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 ==> Created environment 'myproject2' in /home/spack/spack/var/spack/environments/myproject2
 ==> You can activate this environment with:
 ==>   spack env activate myproject2
 $ spack env activate myproject2
 $ spack install hdf5+hl ^mpich
+==> All of the packages are already installed
+$ spack install trilinos
+==> All of the packages are already installed
+$ spack find
+==> In environment myproject2
+==> Root specs
+hdf5 +hl  trilinos
+
+==> 33 installed packages
+-- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
+autoconf@2.69	     diffutils@3.8    libedit@3.1-20210216  libsigsegv@2.13  ncurses@6.2      openssl@1.1.1l   util-macros@1.19.3
+automake@1.16.3      findutils@4.8.0  libevent@2.1.12	    libtool@2.4.6    numactl@2.0.14   perl@5.34.0      xz@5.2.5
+berkeley-db@18.1.40  gdbm@1.19	      libfabric@1.13.2	    libxml2@2.9.12   openblas@0.3.18  pkgconf@1.8.0    zlib@1.2.11
+bzip2@1.0.8	     hdf5@1.10.7      libiconv@1.16	    m4@1.4.19	     openmpi@4.1.1    readline@8.1
+cmake@3.21.4	     hwloc@2.6.0      libpciaccess@0.16     mpich@3.4.2      openssh@8.7p1    trilinos@13.0.1

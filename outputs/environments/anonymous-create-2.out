@@ -1,13 +1,11 @@
 $ ls
 spack.yaml
 $ cat spack.yaml
-   This is a Spack Environment file.
-  
-   It describes a set of packages to be installed, along with
-   configuration settings.
+# This is a Spack Environment file.
+# 
+# It describes a set of packages to be installed, along with
+# configuration settings.
 spack:
-    add package specs to the `specs` list
+  # add package specs to the `specs` list
   specs: []
   view: true
-  concretizer:
-    unify: false

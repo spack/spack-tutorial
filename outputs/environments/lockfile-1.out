@@ -2,30 +2,30 @@ $ head -30 spack.lock
 {
   "_meta": {
     "file-type": "spack-lockfile",
-    "lockfile-version": 4,
-    "specfile-version": 3
+    "lockfile-version": 3,
+    "specfile-version": 2
   },
   "roots": [
     {
-      "hash": "6t2acz7flltuohbhadoelljcn6te2hm2",
+      "hash": "veqx73nqly6dlpgvlsocnjen62yg4vcv",
       "spec": "trilinos"
     },
     {
-      "hash": "jfxctqwar7wb65rn7wf5mot7m4jxmsey",
+      "hash": "ennvlumre33kbk4skc5mvulmmgodhpfu",
       "spec": "openmpi"
     }
   ],
   "concrete_specs": {
-    "6t2acz7flltuohbhadoelljcn6te2hm2": {
+    "veqx73nqly6dlpgvlsocnjen62yg4vcv": {
       "name": "trilinos",
       "version": "13.0.1",
       "arch": {
-	"platform": "linux",
-	"platform_os": "ubuntu18.04",
-	"target": "x86_64"
+        "platform": "linux",
+        "platform_os": "ubuntu18.04",
+        "target": "x86_64"
       },
       "compiler": {
-	"name": "gcc",
-	"version": "7.5.0"
+        "name": "gcc",
+        "version": "7.5.0"
       },
       "namespace": "builtin",

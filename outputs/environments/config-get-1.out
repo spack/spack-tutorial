@@ -1,12 +1,10 @@
 $ spack config get
-   This is a Spack Environment file.
-  
-   It describes a set of packages to be installed, along with
-   configuration settings.
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
 spack:
-    add package specs to the `specs` list
+  # add package specs to the `specs` list
   specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
   view: true
-  concretizer:
-    unify: false
 
