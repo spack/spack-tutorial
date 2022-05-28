@@ -152,7 +152,7 @@ back to ``myproject`` and *install* a couple of packages; specifically,
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
-   :emphasize-lines: 1,2,5,71
+   :emphasize-lines: 1,2,5,41
 
 We see that ``tcl`` and all of the dependencies of ``trilinos`` are
 already installed. Notice also that our environment's view gets updated.
