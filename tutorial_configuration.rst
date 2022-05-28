@@ -493,7 +493,7 @@ need serial HDF5, that might get annoying quickly, having to type
 HDF5.
 
 .. code-block:: yaml
-   :emphasize-lines: 10-11
+   :emphasize-lines: 9-10
 
    spack:
      specs: []
@@ -532,7 +532,7 @@ On these systems we have a pre-installed zlib. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 12-15
+   :emphasize-lines: 11-14
 
    spack:
      specs: []
@@ -573,7 +573,7 @@ specify it on the command line, or we can tell Spack that it's
 not allowed to build its own zlib. We'll go with the latter.
 
 .. code-block:: yaml
-   :emphasize-lines: 16
+   :emphasize-lines: 15
 
    spack:
      specs: []
@@ -607,7 +607,7 @@ virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
-   :emphasize-lines: 15-20
+   :emphasize-lines: 14-19
 
    spack:
      specs: []
