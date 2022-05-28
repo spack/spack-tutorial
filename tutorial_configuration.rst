@@ -29,6 +29,22 @@ the ``spack spec`` command to demonstrate how the configuration
 changes have affected Spack's concretization algorithm. The provided
 output is all from a server running Ubuntu version 18.04.
 
+-----------------------------------
+Configuration from the command line
+-----------------------------------
+
+One of the most convenient ways to set configuration options is
+through the command line. For the purpose of this tutorial section,
+we actually want to start out with that, as we need to tell Spack
+it should consider package preferences more important than reuse
+of available binaries:
+
+.. code-block:: yaml
+
+  $ spack config add concretizer:reuse:false
+
+Spack will set this option in your user configuration scope.
+
 .. _configs-tutorial-scopes:
 
 --------------------
@@ -486,41 +502,14 @@ overrides the default settings just for these two items.
 Variant preferences
 ^^^^^^^^^^^^^^^^^^^
 
-The packages configuration file can also set variant preferences for
-package variants. For example, let's change our preferences to build all
-packages without shared libraries. We will accomplish this by turning
-off the ``shared`` variant on all packages that have one.
-
-.. code-block:: yaml
-   :emphasize-lines: 9
-
-   spack:
-     specs: []
-     view: true
-     packages:
-       all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
-         variants: ~shared
-
-
-We can check the effect of this command with ``spack spec hdf5`` again.
-
-.. literalinclude:: outputs/config/2.prefs.out
-   :language: console
-   :emphasize-lines: 8,14,23
-
-
-So far we have only made global changes to the package preferences. As
-we've seen throughout this tutorial, HDF5 builds with MPI enabled by
+As we've seen throughout this tutorial, HDF5 builds with MPI enabled by
 default in Spack. If we were working on a project that would routinely
 need serial HDF5, that might get annoying quickly, having to type
 ``hdf5~mpi`` all the time. Instead, we'll update our preferences for
 HDF5.
 
 .. code-block:: yaml
-   :emphasize-lines: 10-11
+   :emphasize-lines: 9-10
 
    spack:
      specs: []
@@ -530,7 +519,6 @@ HDF5.
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
 
@@ -556,11 +544,11 @@ register externally installed packages. This works for many common
 build dependencies, but it's also important to know how to do this
 manually for packages that Spack cannot yet detect.
 
-On these systems we have a pre-installed zlib. Let's tell Spack about
+On these systems we have a pre-installed Perl. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 12-15
+   :emphasize-lines: 11-14
 
    spack:
      specs: []
@@ -570,17 +558,16 @@ this package and where it can be found:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
-       zlib:
+       perl:
          externals:
-         - spec: zlib@1.2.8%gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@7.5.0
            prefix: /usr
 
 
-Here, we've told Spack that zlib 1.2.8 is installed on our system.
-We've also told it the installation prefix where zlib can be found.
+Here, we've told Spack that Perl 5.26.1 is installed on our system.
+We've also told it the installation prefix where Perl can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
 
@@ -588,21 +575,21 @@ okay.
    :language: console
 
 
-You'll notice that Spack is now using the external zlib installation,
-but the compiler used to build zlib is now overriding our compiler
+You'll notice that Spack is now using the external Perl installation,
+but the compiler used to build Perl is now overriding our compiler
 preference of clang. If we explicitly specify Clang:
 
 .. literalinclude:: outputs/config/1.externals.out
    :language: console
 
-Spack concretizes to both HDF5 and zlib being built with Clang.
-This has a side-effect of rebuilding zlib. If we want to force
-Spack to use the system zlib, we have two choices. We can either
+Spack concretizes to both HDF5 and Perl being built with Clang.
+This has a side-effect of rebuilding Perl. If we want to force
+Spack to use the system Perl, we have two choices. We can either
 specify it on the command line, or we can tell Spack that it's
-not allowed to build its own zlib. We'll go with the latter.
+not allowed to build its own Perl. We'll go with the latter.
 
 .. code-block:: yaml
-   :emphasize-lines: 16
+   :emphasize-lines: 15
 
    spack:
      specs: []
@@ -612,17 +599,16 @@ not allowed to build its own zlib. We'll go with the latter.
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
        hdf5:
          variants: ~mpi
-       zlib:
+       perl:
          externals:
-         - spec: zlib@1.2.8%gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@7.5.0
            prefix: /usr
          buildable: false
 
 
-Now Spack will be forced to choose the external zlib.
+Now Spack will be forced to choose the external Perl.
 
 .. literalinclude:: outputs/config/2.externals.out
    :language: console
@@ -637,7 +623,7 @@ virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
-   :emphasize-lines: 15-20
+   :emphasize-lines: 14-19
 
    spack:
      specs: []
@@ -647,10 +633,9 @@ HDF5 to build with MPI by default again:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-         variants: ~shared
-       zlib:
+       perl:
          externals:
-         - spec: zlib@1.2.8%gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@7.5.0
            prefix: /usr
          buildable: false
        mpich:
@@ -665,7 +650,7 @@ for MPI, we can try again.
 
 .. literalinclude:: outputs/config/3.externals.out
    :language: console
-   :emphasize-lines: 12
+   :emphasize-lines: 15
 
 
 By configuring most of our package preferences in ``packages.yaml``,
@@ -782,13 +767,13 @@ node with 16 cores, this will look like:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
    ...
    ==> 'make' '-j16'
    ...
    ==> 'make' '-j16' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
+   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 
 
 As you can see, we are building with all 16 cores on the node. If you are
@@ -815,13 +800,13 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
    ...
    ==> 'make' '-j2'
    ...
    ==> 'make' '-j2' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-smoyzzo2qhzpn6mg6rd3l2p7b23enshg
+   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 
 
 Obviously, if you want to build everything in serial for whatever reason,
