@@ -152,7 +152,7 @@ back to ``myproject`` and *install* a couple of packages; specifically,
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
-   :emphasize-lines: 1,2,4,36
+   :emphasize-lines: 1,2,5,71
 
 We see that ``tcl`` and all of the dependencies of ``trilinos`` are
 already installed. Notice also that our environment's view gets updated.
@@ -230,7 +230,7 @@ the tutorial build cache, let's explicitly constrain ``hdf5``'s
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: console
-   :emphasize-lines: 1,6-7,9,11
+   :emphasize-lines: 1,5-6,9,12
 
 
 Notice the root specs show the specs and variants as we asked for
@@ -323,7 +323,7 @@ arguments:
 
 .. literalinclude:: outputs/environments/add-2.out
    :language: console
-   :emphasize-lines: 1,48
+   :emphasize-lines: 1,40,80
 
 
 Spack concretizes the new root specs before ensuring that all
@@ -701,7 +701,7 @@ Now activate the environment and install the packages:
 
 .. literalinclude:: outputs/environments/install-anonymous-1.out
    :language: console
-   :emphasize-lines: 1-2,64-65
+   :emphasize-lines: 1-2,66-68
 
 
 Notice that Spack concretized the specs before installing them and
