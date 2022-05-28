@@ -1,37 +1,103 @@
 $ spack install hdf5+hl+mpi ^mpich
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-ue5lnfmm3yaiwm2jha4pnbg2s4h7jaqb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
-==> Installing findutils-4.8.0-3susxc457xkcjnq2zuhcsmq7dygrsbiu
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/findutils-4.8.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-findutils-4.8.0-3susxc457xkcjnq2zuhcsmq7dygrsbiu.spack
-==> Extracting findutils-4.8.0-3susxc457xkcjnq2zuhcsmq7dygrsbiu from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/findutils-4.8.0-3susxc457xkcjnq2zuhcsmq7dygrsbiu
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.13-g2vgcnev7aspdihdmfbviefdbinclpy7
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.3-h5cf2g4fzeytdsypsm5gsb4h6saddfev
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti
-==> Installing libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.13.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm.spack
-==> Extracting libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-kg5jymjbqjurpq52nvycbddt5ia5uypy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-ybvezwzldr6ibw767ihpeoal625y76qb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-55rtzz4s6m4swr6x7exse22ucbmluwl3
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.6-2kia6gf4yz6k3vsdqlg5lmp6n5hplrxq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19-oftaepjelizkam37ezxwkuw27clnosqn
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1l-lygx3cqqbvl5gkyvfkggphorm7xus2ih
-==> Installing mpich-3.4.2-idedbjnr4e4ckjwwnuru5sydxdlrlojt
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-3.4.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpich-3.4.2-idedbjnr4e4ckjwwnuru5sydxdlrlojt.spack
-==> Extracting mpich-3.4.2-idedbjnr4e4ckjwwnuru5sydxdlrlojt from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-3.4.2-idedbjnr4e4ckjwwnuru5sydxdlrlojt
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.21.4-anj6kcxdxzhfufoypya56mmsmxlyucea
-==> Installing hdf5-1.10.7-qbip6imivdrn2fzofyniujqfxp4v5qrq
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.10.7-qbip6imivdrn2fzofyniujqfxp4v5qrq.spack
-==> Extracting hdf5-1.10.7-qbip6imivdrn2fzofyniujqfxp4v5qrq from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7-qbip6imivdrn2fzofyniujqfxp4v5qrq
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0-i5po27g2n6zrzxnhxdy2fnpaai7xsdaw
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-q6tqmmmitkatscuadcwn6ea32iscs55k
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+==> Installing findutils-4.9.0-bliztd7xzj5jwwvtxywu6cmr3hurdg7g
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-findutils-4.9.0-bliztd7xzj5jwwvtxywu6cmr3hurdg7g.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/findutils-4.9.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-findutils-4.9.0-bliztd7xzj5jwwvtxywu6cmr3hurdg7g.spack
+==> Extracting findutils-4.9.0-bliztd7xzj5jwwvtxywu6cmr3hurdg7g from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/findutils-4.9.0-bliztd7xzj5jwwvtxywu6cmr3hurdg7g
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.13-ubezeychw4iojr3tg6wbsnvp6s3s2qwd
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.3-vkk73ww5p7g4u6lpnay5hcclsckcihtt
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-olptpbsse74hpreilbfo4qmlqexihzye
+==> Installing libfabric-1.14.1-aeocsliasnj2v6ew43otburjccdzd3t3
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libfabric-1.14.1-aeocsliasnj2v6ew43otburjccdzd3t3.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.14.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-libfabric-1.14.1-aeocsliasnj2v6ew43otburjccdzd3t3.spack
+==> Extracting libfabric-1.14.1-aeocsliasnj2v6ew43otburjccdzd3t3 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.14.1-aeocsliasnj2v6ew43otburjccdzd3t3
+==> Installing libmd-1.0.4-llu53coteiredy5c6ofn56usb3uhoubq
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libmd-1.0.4-llu53coteiredy5c6ofn56usb3uhoubq.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libmd-1.0.4/linux-ubuntu18.04-x86_64-gcc-7.5.0-libmd-1.0.4-llu53coteiredy5c6ofn56usb3uhoubq.spack
+==> Extracting libmd-1.0.4-llu53coteiredy5c6ofn56usb3uhoubq from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libmd-1.0.4-llu53coteiredy5c6ofn56usb3uhoubq
+==> Installing zstd-1.5.2-w4beu34gabq6d5az524xpja7i5lrgh7w
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-zstd-1.5.2-w4beu34gabq6d5az524xpja7i5lrgh7w.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/zstd-1.5.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-zstd-1.5.2-w4beu34gabq6d5az524xpja7i5lrgh7w.spack
+==> Extracting zstd-1.5.2-w4beu34gabq6d5az524xpja7i5lrgh7w from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zstd-1.5.2-w4beu34gabq6d5az524xpja7i5lrgh7w
+==> Installing libffi-3.4.2-tkru6n3q7cytihfaayxe3r6zxjevfzvr
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libffi-3.4.2-tkru6n3q7cytihfaayxe3r6zxjevfzvr.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libffi-3.4.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-libffi-3.4.2-tkru6n3q7cytihfaayxe3r6zxjevfzvr.spack
+==> Extracting libffi-3.4.2-tkru6n3q7cytihfaayxe3r6zxjevfzvr from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libffi-3.4.2-tkru6n3q7cytihfaayxe3r6zxjevfzvr
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-frwzsc4jrou7efe7huyzeownqfjvsrfd
+==> Installing util-linux-uuid-2.37.4-7fulw7ltpkq3t6edfpx3yhqsikyuevi6
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-util-linux-uuid-2.37.4-7fulw7ltpkq3t6edfpx3yhqsikyuevi6.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-linux-uuid-2.37.4/linux-ubuntu18.04-x86_64-gcc-7.5.0-util-linux-uuid-2.37.4-7fulw7ltpkq3t6edfpx3yhqsikyuevi6.spack
+==> Extracting util-linux-uuid-2.37.4-7fulw7ltpkq3t6edfpx3yhqsikyuevi6 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-linux-uuid-2.37.4-7fulw7ltpkq3t6edfpx3yhqsikyuevi6
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
+==> Installing pigz-2.7-i74tgiq3mfpjl2zih7gdmaaxrspwpuph
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-pigz-2.7-i74tgiq3mfpjl2zih7gdmaaxrspwpuph.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/pigz-2.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-pigz-2.7-i74tgiq3mfpjl2zih7gdmaaxrspwpuph.spack
+==> Extracting pigz-2.7-i74tgiq3mfpjl2zih7gdmaaxrspwpuph from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pigz-2.7-i74tgiq3mfpjl2zih7gdmaaxrspwpuph
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-uadbn2a64h744jto2xqy6u2wmujcww6v
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.13-4run532u4c6iy5th5gkpgm26tr4vajc4
+==> Installing libbsd-0.11.5-zliunm4fyuu772mhwsxf46t7se5sssu5
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libbsd-0.11.5-zliunm4fyuu772mhwsxf46t7se5sssu5.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libbsd-0.11.5/linux-ubuntu18.04-x86_64-gcc-7.5.0-libbsd-0.11.5-zliunm4fyuu772mhwsxf46t7se5sssu5.spack
+==> Extracting libbsd-0.11.5-zliunm4fyuu772mhwsxf46t7se5sssu5 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libbsd-0.11.5-zliunm4fyuu772mhwsxf46t7se5sssu5
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-ls6erxwsj2ubsfzt4x5mblj6nrab5jkp
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.7-7fhdrxxizepvvkxrfaaizhzkwx2sjzbt
+==> Installing expat-2.4.8-5grv4owq6nvy77lqtfcngmvfywc7lzh7
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-expat-2.4.8-5grv4owq6nvy77lqtfcngmvfywc7lzh7.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/expat-2.4.8/linux-ubuntu18.04-x86_64-gcc-7.5.0-expat-2.4.8-5grv4owq6nvy77lqtfcngmvfywc7lzh7.spack
+==> Extracting expat-2.4.8-5grv4owq6nvy77lqtfcngmvfywc7lzh7 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/expat-2.4.8-5grv4owq6nvy77lqtfcngmvfywc7lzh7
+==> Installing sqlite-3.38.5-zbjzhlerhmb2liwt2zh4krac2i5hfftt
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-sqlite-3.38.5-zbjzhlerhmb2liwt2zh4krac2i5hfftt.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/sqlite-3.38.5/linux-ubuntu18.04-x86_64-gcc-7.5.0-sqlite-3.38.5-zbjzhlerhmb2liwt2zh4krac2i5hfftt.spack
+==> Extracting sqlite-3.38.5-zbjzhlerhmb2liwt2zh4krac2i5hfftt from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/sqlite-3.38.5-zbjzhlerhmb2liwt2zh4krac2i5hfftt
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19-xub4jsy5pz5qjf6vooropf2shkigy5pm
+==> Installing tar-1.34-3f62lojkrsldeu6yhdyvcucb37txnl53
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-tar-1.34-3f62lojkrsldeu6yhdyvcucb37txnl53.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/tar-1.34/linux-ubuntu18.04-x86_64-gcc-7.5.0-tar-1.34-3f62lojkrsldeu6yhdyvcucb37txnl53.spack
+==> Extracting tar-1.34-3f62lojkrsldeu6yhdyvcucb37txnl53 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tar-1.34-3f62lojkrsldeu6yhdyvcucb37txnl53
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-csp5gvqmwcmqsd4al5iafotfk5fqh3uf
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.1-pn5mteswujdkuong6mbqaush54rdas7c
+==> Installing gettext-0.21-wuasyuujhovdcl4ymsayv65phrx35bpf
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-gettext-0.21-wuasyuujhovdcl4ymsayv65phrx35bpf.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21/linux-ubuntu18.04-x86_64-gcc-7.5.0-gettext-0.21-wuasyuujhovdcl4ymsayv65phrx35bpf.spack
+==> Extracting gettext-0.21-wuasyuujhovdcl4ymsayv65phrx35bpf from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21-wuasyuujhovdcl4ymsayv65phrx35bpf
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.7.1-oixja6dnsnc4mydqswdya2nyt4rlcxpa
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-hlj3ujmrsu5gs7uhfdotozzg6ipys45b
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1o-hqlqpsnqoifap6mlkbr5fyxoaq3gynbk
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.5-6vk5ehdtjzgcvug6vuwh2mmkjhg2pn2z
+==> Installing python-3.9.12-t3ey2gas2y5iuiyitsjpthff55p55k3g
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-python-3.9.12-t3ey2gas2y5iuiyitsjpthff55p55k3g.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/python-3.9.12/linux-ubuntu18.04-x86_64-gcc-7.5.0-python-3.9.12-t3ey2gas2y5iuiyitsjpthff55p55k3g.spack
+==> Extracting python-3.9.12-t3ey2gas2y5iuiyitsjpthff55p55k3g from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/python-3.9.12-t3ey2gas2y5iuiyitsjpthff55p55k3g
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.23.1-tulqz4nxor764kgeij23tfap4ddgpgvh
+==> Installing yaksa-0.2-gcyym67wei3yuiqc6ksp2trfqmprw227
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-yaksa-0.2-gcyym67wei3yuiqc6ksp2trfqmprw227.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/yaksa-0.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-yaksa-0.2-gcyym67wei3yuiqc6ksp2trfqmprw227.spack
+==> Extracting yaksa-0.2-gcyym67wei3yuiqc6ksp2trfqmprw227 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/yaksa-0.2-gcyym67wei3yuiqc6ksp2trfqmprw227
+==> Installing mpich-4.0.2-merlslkviub4yswlbzlssjw7giodwjja
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpich-4.0.2-merlslkviub4yswlbzlssjw7giodwjja.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-4.0.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpich-4.0.2-merlslkviub4yswlbzlssjw7giodwjja.spack
+==> Extracting mpich-4.0.2-merlslkviub4yswlbzlssjw7giodwjja from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-4.0.2-merlslkviub4yswlbzlssjw7giodwjja
+==> Installing hdf5-1.12.2-e3cws2t4ibe2xo2ltmhvzvtvmh6et47k
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.12.2-e3cws2t4ibe2xo2ltmhvzvtvmh6et47k.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.12.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.12.2-e3cws2t4ibe2xo2ltmhvzvtvmh6et47k.spack
+==> Extracting hdf5-1.12.2-e3cws2t4ibe2xo2ltmhvzvtvmh6et47k from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.12.2-e3cws2t4ibe2xo2ltmhvzvtvmh6et47k

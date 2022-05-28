@@ -11,7 +11,7 @@ rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
 pip3 install boto3
 
 # basic installation
-example basics/clone         "git clone https://github.com/spack/spack.git ~/spack"
+example basics/clone         "git clone -c feature.manyFiles=true https://github.com/spack/spack.git ~/spack"
 
 example basics/checkout      "cd ~/spack"
 cd ~/spack
@@ -95,7 +95,7 @@ example basics/find-px             "spack find -px"
 
 example basics/compilers           "spack compilers"
 
-example basics/install-gcc-8.4.0   "spack install gcc @8.4.0"
+example basics/install-gcc-8.4.0   "spack install gcc@8.4.0"
 
 example basics/find-p-gcc          "spack find -p gcc"
 
