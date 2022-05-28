@@ -27,10 +27,10 @@ $ spack install
 ==> patchelf: Executing phase: 'build'
 ==> patchelf: Executing phase: 'install'
 ==> patchelf: Successfully installed patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75
-  Fetch: 1.22s.  Build: 12.88s.  Total: 14.10s.
+  Fetch: 0.27s.  Build: 8.35s.	Total: 8.62s.
 [+] /home/spack/.spack/bootstrap/store/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75
 ==> Starting concretization
-==> Environment concretized in 24.94 seconds.
+==> Environment concretized in 22.21 seconds.
 ==> Concretized macsio+scr
  -   lylk523  macsio@1.1%gcc@7.5.0~exodus~hdf5~ipo+mpi~pdb+scr+silo~szip~typhonio~zfp~zlib build_type=RelWithDebInfo patches=59479b9 arch=linux-ubuntu18.04-x86_64
  -   2cj3pok	  ^json-cwx@0.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
@@ -206,18 +206,18 @@ $ spack install
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12/linux-ubuntu18.04-x86_64-gcc-7.5.0-libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj.spack
 ==> Extracting libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
-==> Waiting for readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
-1FJ==> Installing readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg.spec.json
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg.spack
-==> Extracting readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 ==> Waiting for libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5
 1FJ==> Installing libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5.spec.json
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216/linux-ubuntu18.04-x86_64-gcc-7.5.0-libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5.spack
 ==> Extracting libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216-3lzuqwnyuelfhjrxpn45akh7huu3ifr5
+==> Waiting for readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
+1FJ==> Installing readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg.spack
+==> Extracting readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-27u6g7pchcquj67llpfzttc6n7e5pfjg
 ==> Waiting for libbsd-0.11.3-j5lylsyqvmdsqyeroekdwv2l7ayusg66
 1FJ==> Installing libbsd-0.11.3-j5lylsyqvmdsqyeroekdwv2l7ayusg66
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libbsd-0.11.3-j5lylsyqvmdsqyeroekdwv2l7ayusg66.spec.json
@@ -254,6 +254,12 @@ $ spack install
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21/linux-ubuntu18.04-x86_64-gcc-7.5.0-gettext-0.21-2zkxpoqsacwadhe44zhd5hrozt344yfl.spack
 ==> Extracting gettext-0.21-2zkxpoqsacwadhe44zhd5hrozt344yfl from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21-2zkxpoqsacwadhe44zhd5hrozt344yfl
+==> Waiting for openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
+1FJ==> Installing openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1/linux-ubuntu18.04-x86_64-gcc-7.5.0-openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy.spack
+==> Extracting openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
 ==> Waiting for sqlite-3.36.0-ckghzv6lpov23xcc2fchao54pehnzms5
 1FJ==> Installing sqlite-3.36.0-ckghzv6lpov23xcc2fchao54pehnzms5
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-sqlite-3.36.0-ckghzv6lpov23xcc2fchao54pehnzms5.spec.json
@@ -266,12 +272,6 @@ $ spack install
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19/linux-ubuntu18.04-x86_64-gcc-7.5.0-gdbm-1.19-oftaepjelizkam37ezxwkuw27clnosqn.spack
 ==> Extracting gdbm-1.19-oftaepjelizkam37ezxwkuw27clnosqn from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19-oftaepjelizkam37ezxwkuw27clnosqn
-==> Waiting for openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
-1FJ==> Installing openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy.spec.json
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1/linux-ubuntu18.04-x86_64-gcc-7.5.0-openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy.spack
-==> Extracting openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-8.7p1-ux36qlbxdga4c5oragb7o5r4y7bsgbpy
 ==> Waiting for expat-2.4.1-j3i7qneh3l4itds4i2fi4h3s43ywviln
 1FJ==> Installing expat-2.4.1-j3i7qneh3l4itds4i2fi4h3s43ywviln
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-expat-2.4.1-j3i7qneh3l4itds4i2fi4h3s43ywviln.spec.json
@@ -284,18 +284,18 @@ $ spack install
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/munge-0.5.14/linux-ubuntu18.04-x86_64-gcc-7.5.0-munge-0.5.14-h2wjv26l5fzghzgjh37s6itdwdsr3cj7.spack
 ==> Extracting munge-0.5.14-h2wjv26l5fzghzgjh37s6itdwdsr3cj7 from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/munge-0.5.14-h2wjv26l5fzghzgjh37s6itdwdsr3cj7
-==> Waiting for perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
-1FJ==> Installing perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv.spec.json
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv.spack
-==> Extracting perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
 ==> Waiting for openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv
 1FJ==> Installing openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv.spec.json
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv.spack
 ==> Extracting openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv from binary cache
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.1-p5qicacmcy72pjljd4lfdy66kavxp3tv
+==> Waiting for perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
+1FJ==> Installing perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv.spack
+==> Extracting perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.0-672tzldkvypvrxirrs5okvjrfvhxzyzv
 ==> Waiting for python-3.8.12-g2gj6mwslk2hfaalmye23emjrpgnxetb
 1FJ==> Installing python-3.8.12-g2gj6mwslk2hfaalmye23emjrpgnxetb
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-python-3.8.12-g2gj6mwslk2hfaalmye23emjrpgnxetb.spec.json

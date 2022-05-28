@@ -1,51 +1,100 @@
 $ spack env activate myproject
 $ spack install tcl
-==> All of the packages are already installed
+==> Waiting for zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
+1FJ==> Installing zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11/linux-ubuntu18.04-x86_64-gcc-7.5.0-zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd.spack
+==> Extracting zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
+==> Waiting for tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag
+1FJ==> Installing tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/tcl-8.6.11/linux-ubuntu18.04-x86_64-gcc-7.5.0-tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag.spack
+==> Extracting tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tcl-8.6.11-oysrbhtudfatk3qz655qxf52lpyy32ag
 ==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
 $ spack install trilinos
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0-i5po27g2n6zrzxnhxdy2fnpaai7xsdaw
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-q6tqmmmitkatscuadcwn6ea32iscs55k
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.13-ubezeychw4iojr3tg6wbsnvp6s3s2qwd
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.3-vkk73ww5p7g4u6lpnay5hcclsckcihtt
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-olptpbsse74hpreilbfo4qmlqexihzye
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-frwzsc4jrou7efe7huyzeownqfjvsrfd
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-uadbn2a64h744jto2xqy6u2wmujcww6v
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.13-4run532u4c6iy5th5gkpgm26tr4vajc4
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1-ls6erxwsj2ubsfzt4x5mblj6nrab5jkp
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216-zc56lv6gyjpfvi4tpdtmx5yb7ljfnlrb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.7-7fhdrxxizepvvkxrfaaizhzkwx2sjzbt
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.19-xub4jsy5pz5qjf6vooropf2shkigy5pm
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-csp5gvqmwcmqsd4al5iafotfk5fqh3uf
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.34.1-pn5mteswujdkuong6mbqaush54rdas7c
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.7.1-oixja6dnsnc4mydqswdya2nyt4rlcxpa
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-hlj3ujmrsu5gs7uhfdotozzg6ipys45b
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.20-dydujpzz2yqemiiboxdl2qb5e73wqesm
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1o-hqlqpsnqoifap6mlkbr5fyxoaq3gynbk
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.5-6vk5ehdtjzgcvug6vuwh2mmkjhg2pn2z
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.23.1-tulqz4nxor764kgeij23tfap4ddgpgvh
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-9.0p1-3ez3d3jtc4f7bph5suuzqebujp3gppwv
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libevent-2.1.12-hlnkgmrdcycqf65n6vrvoraq4dhddagv
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-wfnw532l74emh6rwx4mrvot3huyiq53t
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pmix-4.1.2-e4fax4744gqg222snd6da55c3xq3zu34
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.3-jfxctqwar7wb65rn7wf5mot7m4jxmsey
-==> Installing trilinos-13.0.1-6t2acz7flltuohbhadoelljcn6te2hm2
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-trilinos-13.0.1-6t2acz7flltuohbhadoelljcn6te2hm2.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-trilinos-13.0.1-6t2acz7flltuohbhadoelljcn6te2hm2.spack
-==> Extracting trilinos-13.0.1-6t2acz7flltuohbhadoelljcn6te2hm2 from binary cache
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1-6t2acz7flltuohbhadoelljcn6te2hm2
-==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
+==> Waiting for libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2
+1FJ==> Installing libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16/linux-ubuntu18.04-x86_64-gcc-7.5.0-libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2.spack
+==> Extracting libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2 from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-ryhmw2gqeeqclg65uuabqgsgpiac2nm2
+==> Waiting for libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
+1FJ==> Installing libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16/linux-ubuntu18.04-x86_64-gcc-7.5.0-libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig.spack
+==> Extracting libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-qi7dxj6rgdydno5mdjzyolz6applztig
+==> Waiting for xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti
+1FJ==> Installing xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5/linux-ubuntu18.04-x86_64-gcc-7.5.0-xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti.spack
+==> Extracting xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.5-nplaapsuxr5djslmxm6sdmaw2xl4d2ti
+==> Waiting for zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
+1FJ[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.11-3rlgy7ycxtoho44una6o3itgfjltkmpd
+==> Waiting for ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w
+1FJ==> Installing ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w.spack
+==> Extracting ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.2-d34lizgt45miuctn4cmx7quklvukdd2w
+==> Waiting for libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm
+1FJ==> Installing libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.13.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm.spack
+==> Extracting libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libfabric-1.13.2-kwxupt5mfxcdfnymkrjjavkjpkgjzgqm
+==> Waiting for pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po
+1FJ==> Installing pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po.spack
+==> Extracting pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0-ucp6vz7fe6ihtcmqav3vucwgqjwyw7po
+==> Waiting for openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl
+1FJ==> Installing openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.18/linux-ubuntu18.04-x86_64-gcc-7.5.0-openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl.spack
+==> Extracting openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openblas-0.3.18-euw6zdupnpuxk3z3fws2qi2n3kl74gsl
+==> Waiting for libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
+1FJ==> Installing libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12/linux-ubuntu18.04-x86_64-gcc-7.5.0-libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj.spack
+==> Extracting libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.9.12-2hw4ddh7dbtl3wcw5hrt4kk2fkwhfuzj
+==> Waiting for hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p
+1FJ==> Installing hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.6.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p.spack
+==> Extracting hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.6.0-gedgnpght7xquztmkhthmaid6lbhlz4p
+==> Waiting for mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk
+1FJ==> Installing mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-3.4.2/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk.spack
+==> Extracting mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpich-3.4.2-ao5utpe4kxzmlarrtjlokzixwgggl6dk
+==> Waiting for hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt
+1FJ==> Installing hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7/linux-ubuntu18.04-x86_64-gcc-7.5.0-hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt.spack
+==> Extracting hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt from binary cache
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hdf5-1.10.7-utkmhxmouhqh62rrmxa5y43e6mxqocpt
+==> Waiting for trilinos-13.0.1-4cmbxylhaqowsexclotejf24qumpvzab
+1FJ==> Installing trilinos-13.0.1-4cmbxylhaqowsexclotejf24qumpvzab
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-trilinos-13.0.1-4cmbxylhaqowsexclotejf24qumpvzab.spec.json
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/trilinos-13.0.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-trilinos-13.0.1-4cmbxylhaqowsexclotejf24qumpvzab.spack
+==> Extracting trilinos-13.0.1-4cmbxylhaqowsexclotejf24qumpvzab from binary cache
+Killed
 $ spack find
 ==> In environment myproject
 ==> Root specs
 tcl  trilinos
 
-==> 31 installed packages
+==> 13 installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	     cmake@3.23.1   libedit@3.1-20210216  libsigsegv@2.13  ncurses@6.2	    openssh@9.0p1   pmix@4.1.2	     util-macros@1.19.3
-automake@1.16.5      diffutils@3.8  libevent@2.1.12	  libtool@2.4.7    numactl@2.0.14   openssl@1.1.1o  readline@8.1     xz@5.2.5
-berkeley-db@18.1.40  gdbm@1.19	    libiconv@1.16	  libxml2@2.9.13   openblas@0.3.20  perl@5.34.1     tcl@8.6.12	     zlib@1.2.12
-bzip2@1.0.8	     hwloc@2.7.1    libpciaccess@0.16	  m4@1.4.19	   openmpi@4.1.3    pkgconf@1.8.0   trilinos@13.0.1
+hdf5@1.10.7	  libiconv@1.16      mpich@3.4.2      pkgconf@1.8.0  zlib@1.2.11
+hwloc@2.6.0	  libpciaccess@0.16  ncurses@6.2      tcl@8.6.11
+libfabric@1.13.2  libxml2@2.9.12     openblas@0.3.18  xz@5.2.5
