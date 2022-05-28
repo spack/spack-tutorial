@@ -6,12 +6,15 @@ json-fortran%clang@7.0.0-gfortran
 Concretized
 --------------------------------
 json-fortran@7.1.0%clang@7.0.0-gfortran cppflags="-g" ~ipo build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
-    ^cmake@3.18.4%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt patches=bf695e3febb222da2ed94b3beea600650e4318975da90e4a71d6f31a6d5d8c3d arch=linux-ubuntu18.04-x86_64
-        ^ncurses@6.2%clang@7.0.0-gfortran cppflags="-g" ~symlinks+termlib arch=linux-ubuntu18.04-x86_64
-            ^pkgconf@1.7.3%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-        ^openssl@1.1.1h%clang@7.0.0-gfortran cppflags="-g" +systemcerts arch=linux-ubuntu18.04-x86_64
-            ^perl@5.32.0%clang@7.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                ^berkeley-db@18.1.40%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^gdbm@1.18.1%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                    ^readline@8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-            ^zlib@1.2.11%clang@7.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
+    ^cmake@3.23.1%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
+        ^ncurses@6.2%clang@7.0.0-gfortran cppflags="-g" ~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
+            ^pkgconf@1.8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+        ^openssl@1.1.1o%clang@7.0.0-gfortran cppflags="-g" ~docs~shared certs=system arch=linux-ubuntu18.04-x86_64
+            ^perl@5.34.1%clang@7.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                ^berkeley-db@18.1.40%clang@7.0.0-gfortran cppflags="-g" +cxx~docs+stl patches=b231fcc arch=linux-ubuntu18.04-x86_64
+                ^bzip2@1.0.8%clang@7.0.0-gfortran cppflags="-g" ~debug~pic+shared arch=linux-ubuntu18.04-x86_64
+                    ^diffutils@3.8%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                        ^libiconv@1.16%clang@7.0.0-gfortran cppflags="-g"  libs=shared,static arch=linux-ubuntu18.04-x86_64
+                ^gdbm@1.19%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                    ^readline@8.1%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                ^zlib@1.2.12%clang@7.0.0-gfortran cppflags="-g" +optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64

@@ -5,27 +5,41 @@ hdf5
 
 Concretized
 --------------------------------
-hdf5@1.10.7%clang@7.0.0-gfortran cppflags="-g" ~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
-    ^cmake@3.21.4%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses+openssl+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
+hdf5@1.12.2%clang@7.0.0-gfortran cppflags="-g" ~cxx~fortran~hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
+    ^cmake@3.23.1%clang@7.0.0-gfortran cppflags="-g" ~doc+ncurses+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
         ^ncurses@6.2%clang@7.0.0-gfortran cppflags="-g" ~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
             ^pkgconf@1.8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-        ^openssl@1.1.1l%clang@7.0.0-gfortran cppflags="-g" ~docs certs=system arch=linux-ubuntu18.04-x86_64
-            ^perl@5.34.0%clang@7.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-                ^berkeley-db@18.1.40%clang@7.0.0-gfortran cppflags="-g" +cxx~docs+stl patches=b231fcc4d5cff05e5c3a4814f6a5af0e9a966428dc2176540d2c05aff41de522 arch=linux-ubuntu18.04-x86_64
+        ^openssl@1.1.1o%clang@7.0.0-gfortran cppflags="-g" ~docs~shared certs=system arch=linux-ubuntu18.04-x86_64
+            ^perl@5.34.1%clang@7.0.0-gfortran cppflags="-g" +cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
+                ^berkeley-db@18.1.40%clang@7.0.0-gfortran cppflags="-g" +cxx~docs+stl patches=b231fcc arch=linux-ubuntu18.04-x86_64
                 ^bzip2@1.0.8%clang@7.0.0-gfortran cppflags="-g" ~debug~pic+shared arch=linux-ubuntu18.04-x86_64
                     ^diffutils@3.8%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
                         ^libiconv@1.16%clang@7.0.0-gfortran cppflags="-g"  libs=shared,static arch=linux-ubuntu18.04-x86_64
                 ^gdbm@1.19%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
                     ^readline@8.1%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^zlib@1.2.11%clang@7.0.0-gfortran cppflags="-g" +optimize+pic+shared arch=linux-ubuntu18.04-x86_64
-    ^mpich@3.4.2%clang@7.0.0-gfortran cppflags="-g" ~argobots+fortran+hwloc+hydra+libxml2+pci+romio~slurm~verbs+wrapperrpath device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu18.04-x86_64
-        ^findutils@4.8.0%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-        ^hwloc@2.6.0%clang@7.0.0-gfortran cppflags="-g" ~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu18.04-x86_64
+                ^zlib@1.2.12%clang@7.0.0-gfortran cppflags="-g" +optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
+    ^mpich@4.0.2%clang@7.0.0-gfortran cppflags="-g" ~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu18.04-x86_64
+        ^findutils@4.9.0%clang@7.0.0-gfortran cppflags="-g"  patches=440b954 arch=linux-ubuntu18.04-x86_64
+        ^hwloc@2.7.1%clang@7.0.0-gfortran cppflags="-g" ~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu18.04-x86_64
             ^libpciaccess@0.16%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                ^libtool@2.4.6%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-                    ^m4@1.4.19%clang@7.0.0-gfortran cppflags="-g" +sigsegv patches=9dc5fbd0d5cb1037ab1e6d0ecc74a30df218d0a94bdd5a02759a97f62daca573,bfdffa7c2eb01021d5849b36972c069693654ad826c1a20b53534009a4ec7a89 arch=linux-ubuntu18.04-x86_64
+                ^libtool@2.4.7%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                    ^m4@1.4.19%clang@7.0.0-gfortran cppflags="-g" +sigsegv patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
                         ^libsigsegv@2.13%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
                 ^util-macros@1.19.3%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
-            ^libxml2@2.9.12%clang@7.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
+            ^libxml2@2.9.13%clang@7.0.0-gfortran cppflags="-g" ~python arch=linux-ubuntu18.04-x86_64
                 ^xz@5.2.5%clang@7.0.0-gfortran cppflags="-g" ~pic libs=shared,static arch=linux-ubuntu18.04-x86_64
-        ^libfabric@1.13.2%clang@7.0.0-gfortran cppflags="-g" ~debug~kdreg fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
+        ^libfabric@1.14.1%clang@7.0.0-gfortran cppflags="-g" ~debug~kdreg fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
+        ^yaksa@0.2%clang@7.0.0-gfortran cppflags="-g" ~cuda~rocm arch=linux-ubuntu18.04-x86_64
+            ^autoconf@2.69%clang@7.0.0-gfortran cppflags="-g"  patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
+            ^automake@1.16.5%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+            ^python@3.9.12%clang@7.0.0-gfortran cppflags="-g" +bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060 arch=linux-ubuntu18.04-x86_64
+                ^expat@2.4.8%clang@7.0.0-gfortran cppflags="-g" +libbsd arch=linux-ubuntu18.04-x86_64
+                    ^libbsd@0.11.5%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                        ^libmd@1.0.4%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                ^gettext@0.21%clang@7.0.0-gfortran cppflags="-g" +bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu18.04-x86_64
+                    ^tar@1.34%clang@7.0.0-gfortran cppflags="-g"  zip=pigz arch=linux-ubuntu18.04-x86_64
+                        ^pigz@2.7%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                        ^zstd@1.5.2%clang@7.0.0-gfortran cppflags="-g" +programs compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
+                ^libffi@3.4.2%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
+                ^sqlite@3.38.5%clang@7.0.0-gfortran cppflags="-g" +column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-ubuntu18.04-x86_64
+                ^util-linux-uuid@2.37.4%clang@7.0.0-gfortran cppflags="-g"  arch=linux-ubuntu18.04-x86_64
