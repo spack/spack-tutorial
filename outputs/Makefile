@@ -5,7 +5,7 @@ container = spack/tutorial:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 
-section = basics
+section = dev
 
 all:
 	echo "Filtering raw outputs though col"
