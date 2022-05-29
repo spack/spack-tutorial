@@ -9,10 +9,10 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was last presented as
-a virtual event at the 2021 `ECP Annual Meeting <http://ecpannualmeeting.com/>`_ on May
-2, 2022. The ECP event was a half-day tutorial, but there is a full day of material
-here.
+This is an introduction to Spack with lectures and live demos. It was
+last presented as a virtual event at `ISC-HPC 2022 <https://www.isc-hpc.com/>`_
+on May 29, 2022. The ISC event was a half-day tutorial, but there is a
+full day of material here.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -23,16 +23,16 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/ecp21-tutorial-slide-preview.png
-   :target: _static/slides/spack-ecp22-tutorial-slides.pdf
+   :target: _static/slides/spack-isc22-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-ecp22-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-isc22-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Richarda Butler, Tamara Dahlgren, and
-Todd Gamblin. Using Spack to Accelerate Developer Workflows ECP
-+Annual Meeting 2022. Virtual event. May 2, 2022.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn,
+and Harmen Stoppels. Managing HPC Software Complexity with Spack.
+ISC-HPC 2022. Hamburg, Germany. May 29, 2022.
 
 .. _live-demos:
 
