@@ -1,20 +1,19 @@
 $ module show openmpi
-----------------------------------------------------------------------------------------------------------------------------------------------
-   /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/openmpi/3.1.6-gcc-8.3.0:
-----------------------------------------------------------------------------------------------------------------------------------------------
-whatis("An open source Message Passing Interface implementation. ")
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+   /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/openmpi/4.1.3-gcc-8.4.0:
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+whatis("An open source Message Passing Interface implementation.")
 conflict("openmpi")
-prepend_path("PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/bin")
-prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/share/man")
-prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/lib")
-prepend_path("INCLUDE","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/include")
-prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/lib/pkgconfig")
-prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/")
-setenv("MPICC","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/bin/mpicc")
-setenv("MPICXX","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/bin/mpic++")
-setenv("MPIF77","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/bin/mpif77")
-setenv("MPIF90","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky/bin/mpif90")
-setenv("'OPENMPI_ROOT'","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/openmpi-3.1.6-4twpso3kn2f3z6oa527snqvn7fsridky")
+prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/lib")
+prepend_path("PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin")
+prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/share/man")
+prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/lib/pkgconfig")
+prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/")
+setenv("MPICC","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpicc")
+setenv("MPICXX","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpic++")
+setenv("MPIF77","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpif77")
+setenv("MPIF90","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpif90")
+setenv("'OPENMPI_ROOT'","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza")
 setenv("SLURM_MPI_TYPE","pmi2")
 setenv("OMPI_MCA_btl_openib_warn_default_git_prefix","0")
 help([[An open source Message Passing Interface implementation. The Open MPI

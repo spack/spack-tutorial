@@ -1,8 +1,19 @@
 $ module load openblas netlib-scalapack/2.1.0-openblas
+Lmod has detected the following error: The following module(s) are unknown: "netlib-scalapack/2.1.0-openblas"
+
+Please check the spelling or version number. Also try "module spider ..."
+It is also possible your cache file is out-of-date; it may help to try:
+  $ module --ignore_cache load "netlib-scalapack/2.1.0-openblas"
+
+Also make sure that all modulefiles written in TCL start with the string #%Module
+
+
+
 $ module list
 
 Currently Loaded Modules:
-  1) gcc/8.3.0	 2) mpich/3.3.2   3) openblas/0.3.10   4) netlib-scalapack/2.1.0-openblas
+  1) gcc/8.4.0		 3) libiconv/1.16   5) zlib/1.2.12	7) ncurses/6.2	 9) libfabric/1.14.1  11) mpich/4.0.2
+  2) libpciaccess/0.16	 4) xz/5.2.5	    6) libxml2/2.9.13	8) hwloc/2.7.1	10) yaksa/0.2
 
 
 

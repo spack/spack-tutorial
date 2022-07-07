@@ -45,49 +45,49 @@ gcc_hash=$(spack find --format {hash:7} gcc)
 gcc_module="gcc-8.4.0-gcc-7.5.0-${gcc_hash}"
 example -tee modules/module-show-1  "module show $gcc_module"
 
-spack config add "modules:tcl:all:filter:environment_blacklist:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
+spack config add "modules:default:tcl:all:filter:environment_blacklist:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
 
 echo "y
 " | example  modules/tcl-refresh-1      "spack module tcl refresh"
 example -tee modules/module-show-2      "module show $gcc_module"
 
 
-spack config add                        "modules:tcl:blacklist:['%gcc@7.5.0']"
+spack config add                        "modules:default:tcl:blacklist:['%gcc@7.5.0']"
 example      modules/tcl-refresh-2      "spack module tcl refresh --delete-tree -y"
 example -tee modules/module-avail-3     "module avail"
 
 
-spack config add                        "modules:tcl:whitelist:[gcc]"
+spack config add                        "modules:default:tcl:whitelist:[gcc]"
 example      modules/tcl-refresh-3      "spack module tcl refresh -y"
 example -tee modules/module-avail-4     "module avail $gcc_module"
 
 
-spack config add                        "modules:tcl:hash_length:0"
+spack config add                        "modules:default:tcl:hash_length:0"
 example modules/tcl-refresh-4           "spack module tcl refresh --delete-tree -y"
 
 
 # use new projections
-spack config add                        "modules:tcl:projections:all:'{name}/{version}-{compiler.name}-{compiler.version}'"
-spack config add                        "modules:tcl:projections:'netlib-scalapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'"
-spack config add                        "modules:tcl:projections:'^python^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
-spack config add                        "modules:tcl:all:conflict:['{name}']"
+spack config add                        "modules:default:tcl:projections:all:'{name}/{version}-{compiler.name}-{compiler.version}'"
+spack config add                        "modules:default:tcl:projections:'netlib-scalapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'"
+spack config add                        "modules:default:tcl:projections:'^python^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
+spack config add                        "modules:default:tcl:all:conflict:['{name}']"
 example      modules/tcl-refresh-5      "spack module tcl refresh --delete-tree -y"
 example -tee modules/module-avail-5     "module avail"
 
 
-spack config add                       "modules:tcl:all:environment:set:'{name}_ROOT':'{prefix}'"
+spack config add                       "modules:default:tcl:all:environment:set:'{name}_ROOT':'{prefix}'"
 example      modules/tcl-refresh-6     "spack module tcl refresh -y"
 example -tee modules/module-show-3     "module show gcc"
 
 
-spack config add                       "modules:tcl:openmpi:environment:set:SLURM_MPI_TYPE:pmi2"
-spack config add                       "modules:tcl:openmpi:environment:set:OMPI_MCA_btl_openib_warn_default_git_prefix:'0'"
+spack config add                       "modules:default:tcl:openmpi:environment:set:SLURM_MPI_TYPE:pmi2"
+spack config add                       "modules:default:tcl:openmpi:environment:set:OMPI_MCA_btl_openib_warn_default_git_prefix:'0'"
 example      modules/tcl-refresh-7     "spack module tcl refresh -y openmpi"
 example -tee modules/module-show-4     "module show openmpi"
 
 
-spack config add                       "modules:tcl:verbose:true"
-spack config add                       "modules:tcl:^python:autoload:direct"
+spack config add                       "modules:default:tcl:verbose:true"
+spack config add                       "modules:default:tcl:^python:autoload:direct"
 example      modules/tcl-refresh-8     "spack module tcl refresh -y ^python"
 example -tee modules/load-direct       "module load py-scipy"
 

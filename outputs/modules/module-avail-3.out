@@ -1,22 +1,32 @@
 $ module avail
 
------------------------------------------ /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------
-   autoconf-2.69-gcc-8.3.0-c7fxiuu	    libtool-2.4.6-gcc-8.3.0-too4ft7		pkgconf-1.7.3-gcc-8.3.0-oo4jobp
-   automake-1.16.2-gcc-8.3.0-25eawip	    libxml2-2.9.10-gcc-8.3.0-u5khonr		py-cython-0.29.16-gcc-8.3.0-mbnkbhv
-   bzip2-1.0.8-gcc-8.3.0-jx7bite	    m4-1.4.18-gcc-8.3.0-65odbgi 		py-numpy-1.19.0-gcc-8.3.0-3s3aj6y
-   cmake-3.17.3-gcc-8.3.0-7otuah5	    mpich-3.3.2-gcc-8.3.0-focol2k		py-pybind11-2.5.0-gcc-8.3.0-mjmujjo
-   diffutils-3.7-gcc-8.3.0-5fvw3jh	    ncurses-6.2-gcc-8.3.0-klfkayd		py-scipy-1.5.0-gcc-8.3.0-6f5vgp6
-   expat-2.2.9-gcc-8.3.0-xrk7vwz	    netlib-lapack-3.8.0-gcc-8.3.0-kbk7dg3	py-setuptools-46.1.3-gcc-8.3.0-4dcvntv
-   findutils-4.6.0-gcc-8.3.0-gxxeusv	    netlib-scalapack-2.1.0-gcc-8.3.0-h2amar2	python-3.7.7-gcc-8.3.0-4uojybm
-   gdbm-1.18.1-gcc-8.3.0-alz6ery	    netlib-scalapack-2.1.0-gcc-8.3.0-kt5c5on	readline-8.0-gcc-8.3.0-l33t67c
-   gettext-0.20.2-gcc-8.3.0-euuxtvr	    netlib-scalapack-2.1.0-gcc-8.3.0-qsewiuz	sqlite-3.31.1-gcc-8.3.0-vz4awtk
-   hwloc-1.11.11-gcc-8.3.0-lz2i2dd	    netlib-scalapack-2.1.0-gcc-8.3.0-uf4ynvq	tar-1.32-gcc-8.3.0-fk4qp4i
-   hwloc-2.2.0-gcc-8.3.0-4otoxex	    numactl-2.0.12-gcc-8.3.0-tusy4nf		texinfo-6.5-gcc-8.3.0-7t62l5t
-   libbsd-0.10.0-gcc-8.3.0-nr46ju6	    openblas-0.3.10-gcc-8.3.0-x32w5jn		util-macros-1.19.1-gcc-8.3.0-obeg5kx
-   libffi-3.3-gcc-8.3.0-lo4lv3d 	    openmpi-3.1.6-gcc-8.3.0-4twpso3		xz-5.2.5-gcc-8.3.0-72wq5od
-   libiconv-1.16-gcc-8.3.0-brkkjge	    openssl-1.1.1g-gcc-8.3.0-yygx7ht		zlib-1.2.11-gcc-8.3.0-2icaxiy
-   libpciaccess-0.13.5-gcc-8.3.0-rqqclxg    patchelf-0.10-gcc-8.3.0-35lyjgt
-   libsigsegv-2.12-gcc-8.3.0-oaiujfn	    perl-5.30.3-gcc-8.3.0-xmhlmqr
+----------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------------
+   autoconf-2.69-gcc-8.4.0-vtvkpes	     libxml2-2.9.13-gcc-8.4.0-ycmb6ld		 py-gast-0.5.3-gcc-8.4.0-5zmfno5
+   automake-1.16.5-gcc-8.4.0-62t26ck	     m4-1.4.19-gcc-8.4.0-cv6tp6u		 py-numpy-1.22.4-gcc-8.4.0-7wyqab4
+   berkeley-db-18.1.40-gcc-8.4.0-johvuo3     mpich-4.0.2-gcc-8.4.0-6vy27u3		 py-pip-21.3.1-gcc-8.4.0-hcixple
+   bzip2-1.0.8-gcc-8.4.0-jd4qgnl	     ncurses-6.2-gcc-8.4.0-o3zj6m3		 py-ply-3.11-gcc-8.4.0-a6oqnnp
+   cmake-3.23.1-gcc-8.4.0-ag23oxs	     netlib-lapack-3.10.1-gcc-8.4.0-tvolw2r	 py-pybind11-2.8.1-gcc-8.4.0-v2ltwp2
+   diffutils-3.8-gcc-8.4.0-3lphb6j	     netlib-scalapack-2.2.0-gcc-8.4.0-2wlv7e4	 py-pythran-0.11.0-gcc-8.4.0-uy2pjua
+   expat-2.4.8-gcc-8.4.0-gdftkwk	     netlib-scalapack-2.2.0-gcc-8.4.0-ck7ppoo	 py-scipy-1.8.1-gcc-8.4.0-bk4orou
+   findutils-4.9.0-gcc-8.4.0-hxs6igk	     netlib-scalapack-2.2.0-gcc-8.4.0-tacocwd	 py-setuptools-59.4.0-gcc-8.4.0-wovl75y
+   gdbm-1.19-gcc-8.4.0-eyzftkv		     netlib-scalapack-2.2.0-gcc-8.4.0-yxm6ejy	 py-wheel-0.37.0-gcc-8.4.0-6p3qaxv
+   gettext-0.21-gcc-8.4.0-yxcscic	     ninja-1.10.2-gcc-8.4.0-3igl6tj		 python-3.9.12-gcc-8.4.0-bxqohdj
+   hwloc-2.7.1-gcc-8.4.0-27dpmmo	     numactl-2.0.14-gcc-8.4.0-a3lmunk		 readline-8.1-gcc-8.4.0-lety7xd
+   libbsd-0.11.5-gcc-8.4.0-v2foqu3	     openblas-0.3.20-gcc-8.4.0-ew72qgy		 sqlite-3.38.5-gcc-8.4.0-fs4yqym
+   libedit-3.1-20210216-gcc-8.4.0-riidlo4    openmpi-4.1.3-gcc-8.4.0-c4md4py		 tar-1.34-gcc-8.4.0-auxqpps
+   libevent-2.1.12-gcc-8.4.0-vhrgro6	     openssh-9.0p1-gcc-8.4.0-2nsdyqm		 util-linux-uuid-2.37.4-gcc-8.4.0-sgf54vj
+   libfabric-1.14.1-gcc-8.4.0-sbpqoci	     openssl-1.1.1o-gcc-8.4.0-bj2jnt7		 util-macros-1.19.3-gcc-8.4.0-kf4wzxd
+   libffi-3.4.2-gcc-8.4.0-qqvp57p	     perl-5.34.1-gcc-8.4.0-yycipnr		 xz-5.2.5-gcc-8.4.0-zukecls
+   libiconv-1.16-gcc-8.4.0-nbhph73	     pigz-2.7-gcc-8.4.0-4ocehhg 		 yaksa-0.2-gcc-8.4.0-vx5fw3m
+   libmd-1.0.4-gcc-8.4.0-xr5qbzs	     pkgconf-1.8.0-gcc-8.4.0-ymaijtn		 zlib-1.2.12-gcc-8.4.0-rlo3go7
+   libpciaccess-0.16-gcc-8.4.0-4omfqev	     pmix-4.1.2-gcc-8.4.0-6ufltz3		 zstd-1.5.2-gcc-8.4.0-cdbbbci
+   libsigsegv-2.13-gcc-8.4.0-uqf72xt	     py-beniget-0.4.1-gcc-8.4.0-zolqn3v
+   libtool-2.4.7-gcc-8.4.0-r4hwigw	     py-cython-0.29.30-gcc-8.4.0-zwkgtqx
+
+If the avail list is too long consider trying:
+
+"module --default avail" or "ml -d av" to just list the default modules.
+"module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
