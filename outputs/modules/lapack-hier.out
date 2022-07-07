@@ -1,5 +1,19 @@
 $ module load gcc
+
+Lmod is automatically replacing "openblas/0.3.20" with "netlib-lapack/3.10.1".
+
+
+Inactive Modules:
+  1) netlib-scalapack/2.2.0-netlib-lapack     2) openblas
+
 $ module load openblas
+
+Lmod is automatically replacing "netlib-lapack/3.10.1" with "openblas/0.3.20".
+
+
+Activating Modules:
+  1) openblas/0.3.20
+
 $ module avail
 
 -------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openmpi/4.1.3-c4md4py/openblas/0.3.20-ew72qgy/gcc/8.4.0 ---------------------

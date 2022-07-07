@@ -121,8 +121,8 @@ example -tee modules/module-avail-8     "module load mpich"
 module load mpich
 example -tee modules/module-avail-8     "module avail"
 
-example -tee modules/module-load-openblas-scalapack    "module load openblas netlib-scalapack/2.1.0-openblas"
-module load openblas netlib-scalapack/2.1.0-openblas
+example -tee modules/module-load-openblas-scalapack    "module load openblas netlib-scalapack/2.2.0-openblas"
+module load openblas netlib-scalapack/2.2.0-openblas
 example -tee modules/module-load-openblas-scalapack    "module list"
 
 export LMOD_AUTO_SWAP=yes
@@ -133,8 +133,8 @@ module load openmpi
 
 example -tee modules/lapack-conflict    "module list"
 example -tee modules/lapack-conflict    "module avail"
-example -tee modules/lapack-conflict    "module load netlib-scalapack/2.1.0-netlib-lapack"
-module load netlib-scalapack/2.1.0-netlib-lapack
+example -tee modules/lapack-conflict    "module load netlib-scalapack/2.2.0-netlib-lapack"
+module load netlib-scalapack/2.2.0-netlib-lapack
 example -tee modules/lapack-conflict    "module list"
 
 
