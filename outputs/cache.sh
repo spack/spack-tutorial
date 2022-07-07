@@ -10,7 +10,7 @@ pip install boto3
 example cache/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example cache/up-to-date "cd ~/spack"
 cd ~/spack
-example cache/up-to-date "git checkout releases/v0.17"
+example cache/up-to-date "git checkout releases/v0.18"
 example cache/up-to-date ". share/spack/setup-env.sh"
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"
@@ -68,7 +68,7 @@ example cache/binary-cache-1 "spack add bzip2"
 example cache/binary-cache-1 "spack add zlib"
 
 example cache/binary-cache-2 'spack config add "config:install_tree:padded_length:128"'
-example cache/binary-cache-2 "spack install --no-cache"
+example cache/binary-cache-2 "spack install --fresh --no-cache"
 
 example cache/binary-cache-3 'spack gpg create "My Name" "<my.email@my.domain.com>"'
 
