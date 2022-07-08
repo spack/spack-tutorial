@@ -1,14 +1,14 @@
 $ spack config add "config:install_tree:padded_length:128"
-$ spack install --fresh --no-cache
+$ spack install --no-cache
 ==> Starting concretization pool with 2 processes
-==> Environment concretized in 0.53 seconds.
+==> Environment concretized in 1.23 seconds.
 ==> Concretized bzip2
  -   cyn2yam  bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
  -   k22pe4r	  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
  -   dr56jt4	      ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized zlib
-[+]  fntvsj6  zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
+ -   fntvsj6  zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
 
 ==> Installing environment /home/spack/cache-binary
 ==> Waiting for libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
@@ -20,8 +20,16 @@ $ spack install --fresh --no-cache
 ==> libiconv: Executing phase: 'build'
 ==> libiconv: Executing phase: 'install'
 ==> libiconv: Successfully installed libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-  Fetch: 0.05s.  Build: 23.65s.  Total: 23.70s.
+  Fetch: 0.02s.  Build: 22.62s.  Total: 22.64s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
+==> Waiting for zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+==> Installing zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/91/91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9.tar.gz
+==> Applied patch /home/spack/spack/var/spack/repos/builtin/packages/zlib/configure-cc.patch
+==> zlib: Executing phase: 'install'
+==> zlib: Successfully installed zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+  Fetch: 0.01s.  Build: 3.88s.	Total: 3.89s.
+[+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 ==> Waiting for diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
 ==> Installing diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
@@ -31,7 +39,7 @@ $ spack install --fresh --no-cache
 ==> diffutils: Executing phase: 'build'
 ==> diffutils: Executing phase: 'install'
 ==> diffutils: Successfully installed diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-  Fetch: 0.01s.  Build: 33.62s.  Total: 33.63s.
+  Fetch: 0.01s.  Build: 31.62s.  Total: 31.63s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
 ==> Waiting for bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
 ==> Installing bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
@@ -39,6 +47,6 @@ $ spack install --fresh --no-cache
 ==> Ran patch() for bzip2
 ==> bzip2: Executing phase: 'install'
 ==> bzip2: Successfully installed bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-  Fetch: 0.01s.  Build: 2.40s.	Total: 2.40s.
+  Fetch: 0.01s.  Build: 2.18s.	Total: 2.19s.
 [+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
 ==> Updating view at /home/spack/cache-binary/.spack-env/view

@@ -53,7 +53,6 @@ example cache/spack-mirror-3 "spack install"
 
 example cache/spack-mirror-4 "spack mirror create -d ~/mirror --all"
 
-
 example cache/trust "spack buildcache keys --install --trust --force"
 
 example cache/binary-cache-1 "cd ~"
@@ -68,7 +67,7 @@ example cache/binary-cache-1 "spack add bzip2"
 example cache/binary-cache-1 "spack add zlib"
 
 example cache/binary-cache-2 'spack config add "config:install_tree:padded_length:128"'
-example cache/binary-cache-2 "spack install --fresh --no-cache"
+example cache/binary-cache-2 "spack install --no-cache"
 
 example cache/binary-cache-3 'spack gpg create "My Name" "<my.email@my.domain.com>"'
 
@@ -84,3 +83,6 @@ for ii in $(spack find --format "yyy {version} /{hash}" |
 do
   spack buildcache create --allow-root --force -d ~/mirror --only=package $ii
 done'
+
+# Remove installations from customized prefix
+spack uninstall -ay
