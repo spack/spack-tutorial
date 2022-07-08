@@ -1,4 +1,4 @@
-.. Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+.. Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
    Spack Project Developers. See the top-level COPYRIGHT file for details.
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -23,18 +23,18 @@ What is a Spack Package?
 ------------------------
 
 Spack packages are installation scripts, which are essentially
-recipes for building the software.
+recipes for building software.
 
 They define properties and behavior of the build, such as:
 
 * where to find and how to retrieve the software;
 * its dependencies;
-* options for building the software from source; and
+* options for building from source; and
 * build commands.
 
-Once we've specified a package's recipe, users of our recipe can
-ask Spack to build the software with different features on any of
-the supported systems.
+Once we've specified a package's recipe, users can ask Spack to
+build the software with different features on any of the supported
+systems.
 
 -------
 Caveats
@@ -52,7 +52,7 @@ Being a tutorial, this document can help you get started with packaging,
 but it is not intended to be complete. Links to additional information
 are provided at the bottom of this tutorial.
 The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples``.
+https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
 
 ---------------
 Getting Started
@@ -110,8 +110,13 @@ the location of the package's source code and using it to:
 
 The ``mpileaks`` source code is available in a tarball in the
 software's repository (https://github.com/LLNL/mpileaks). Spack
-will look at the contents of the tarball and generate a package when we
-run ``spack create`` with the URL:
+will look at the contents of the tarball and generate a package
+when we run the create command with a URL. We are also going to
+provide a a unique name for the package to ensure it doesn't get
+confused with the built-in package that already exists in the
+build cache.
+
+Enter the following command:
 
 .. literalinclude:: outputs/packaging/create.out
    :language: console
@@ -120,9 +125,9 @@ run ``spack create`` with the URL:
 You should now be in your text editor of choice, with the ``package.py``
 file open for editing.
 
-Your ``package.py`` file should reside in the ``mpileaks`` subdirectory of
+Your ``package.py`` file should reside in the ``mympileaks`` subdirectory of
 your tutorial repository's ``packages`` directory, i.e.,
-``$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py``
+``$SPACK_ROOT/var/spack/repos/tutorial/packages/mympileaks/package.py``
 
 Take a moment to look over the file.
 
@@ -139,8 +144,8 @@ template:
 * shows a dependency directive example; and
 * provides a skeleton ``configure_args`` method.
 
-.. literalinclude:: tutorial/examples/0.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
+.. literalinclude:: tutorial/examples/packaging/0.package.py
+   :caption: mympileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
    :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
 
@@ -153,9 +158,10 @@ template:
    maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
-calculation, using the ``spack checksum`` command:
+calculation. Exit your editor to return to the command line and use the
+``spack checksum`` command:
 
-.. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
+.. literalinclude:: outputs/packaging/checksum-mympileaks-1.out
    :language: console
    :emphasize-lines: 1,8
 
@@ -167,14 +173,12 @@ We will now fill in the provided placeholders as we:
 * add dependencies; and
 * add the configuration arguments needed to build the package.
 
-For the moment, though, let's see what Spack does with the skeleton.
+For the moment, though, let's see what Spack does with the skeleton
+by trying to install the package using the ``spack install`` command:
 
-Exit your editor and try to build the package with the ``spack install``
-command:
-
-.. literalinclude:: outputs/packaging/install-mpileaks-1.out
+.. literalinclude:: outputs/packaging/install-mympileaks-1.out
    :language: console
-   :emphasize-lines: 1,20
+   :emphasize-lines: 1,36
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -187,17 +191,17 @@ Adding Package Documentation
 
 First let's fill in the documentation.
 
-Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the
+Bring mympileaks' ``package.py`` file back into your ``$EDITOR`` with the
 ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit mympileaks
 
 Let's make the following changes:
 
 * remove the instructions between dashed lines at the top;
-* replace the first ``FIXME`` comment with a description of ``mpileaks``
+* replace the first ``FIXME`` comment with a description of ``mympileaks``
   in the docstring;
 * replace the homepage property with the correct link; and
 * uncomment the ``maintainers`` property and add your GitHub user name.
@@ -206,15 +210,15 @@ Let's make the following changes:
 
    We will exclude the ``Copyright`` clause in the remainder of
    the package snippets here to reduce the length of the tutorial
-   documentation; however, it **should be retained** for published
+   documentation; however, it is **required** for published
    packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
 The resulting package should contain the following information:
 
-.. literalinclude:: tutorial/examples/1.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/1.package.py)
+.. literalinclude:: tutorial/examples/packaging/1.package.py
+   :caption: mympileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 5-6,8,11
@@ -223,9 +227,10 @@ At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
 for review.
 
-Let's enter the ``spack info`` command for the package:
+Let's enter the ``spack info`` command for the package, passing the `-a`
+option to see everything:
 
-.. literalinclude:: outputs/packaging/info-mpileaks.out
+.. literalinclude:: outputs/packaging/info-mympileaks.out
    :language: console
    :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40
 
@@ -275,18 +280,18 @@ in the software's repository (https://github.com/LLNL/mpileaks). The
    Luckily, all of these dependencies are built-in packages in Spack;
    otherwise, we would have to create packages for them as well.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with
+Bring mympileaks' ``package.py`` file back up in your ``$EDITOR`` with
 the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit mympileaks
 
 and add the dependencies by specifying them using the ``depends_on``
 directive as shown below:
 
-.. literalinclude:: tutorial/examples/2.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/2.package.py)
+.. literalinclude:: tutorial/examples/packaging/2.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-17
@@ -307,9 +312,9 @@ installed *before* it can build our package.
 We now get a lot further when we try to build the software again with
 ``spack install``.
 
-.. literalinclude:: outputs/packaging/install-mpileaks-2.out
+.. literalinclude:: outputs/packaging/install-mympileaks-2.out
    :language: console
-   :emphasize-lines: 1,185,188
+   :emphasize-lines: 1,226,229
 
 .. note::
 
@@ -329,7 +334,7 @@ It found that the:
 Debugging Package Builds
 ------------------------
 
-Our ``mpileaks`` package is still not building due to the ``adept-utils``
+Our ``mympileaks`` package is still not building due to the ``adept-utils``
 package's ``configure`` error. Experienced ``Autotools`` developers will
 likely already see the problem and its solution.
 
@@ -362,7 +367,7 @@ Most importantly, the last line is very clear: the installation path of the
 
    Spack automatically adds standard include and library directories
    to the compiler's search path *but* it is not uncommon for this
-   information to not get picked up. Some software, like ``mpileaks``,
+   information to not get picked up. Some software, like ``mympileaks``,
    requires the paths to be explicitly provided on the command line.
 
 So let's investigate further from the staged build directory.
@@ -378,7 +383,7 @@ Let's move to the build directory using the ``spack cd`` command:
 
 .. code-block:: console
 
-  $ spack cd mpileaks
+  $ spack cd mympileaks
 
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
@@ -389,10 +394,10 @@ Now let's ensure the environment is properly set up using the
 
 .. code-block:: console
 
-  $ spack build-env mpileaks bash
+  $ spack build-env mympileaks bash
 
 This command spawned a new shell containing the same environment
-that Spack used to build the ``mpileaks`` package. (Feel free to
+that Spack used to build the ``mympileaks`` package. (Feel free to
 substitute your favorite shell for ``bash``.)
 
 From here we can manually re-run the build using the ``configure``
@@ -447,18 +452,18 @@ So let's add the configuration arguments for specifying the paths to
 the two concrete dependencies in the ``configure_args`` method of our
 package.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with
+Bring mympileaks' ``package.py`` file back up in your ``$EDITOR`` with
 the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit mympileaks
 
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments
 in the ``configure_args`` method as follows:
 
-.. literalinclude:: tutorial/examples/3.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/3.package.py)
+.. literalinclude:: tutorial/examples/packaging/3.package.py
+   :caption: mympileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 20-23
@@ -468,9 +473,9 @@ method will automatically get passed to ``configure`` during the build.
 
 Now let's try the build again:
 
-.. literalinclude:: outputs/packaging/install-mpileaks-3.out
+.. literalinclude:: outputs/packaging/install-mympileaks-3.out
    :language: console
-   :emphasize-lines: 1,47,49
+   :emphasize-lines: 1,50,52
 
 Success!
 
@@ -486,7 +491,7 @@ Adding Variants
 What if we want to expose the software's optional features in the package?
 We can do this by adding build-time options using package *variants*.
 
-Recall from configure's help output for ``mpileaks`` that the software has
+Recall from configure's help output for ``mympileaks`` that the software has
 several optional features and packages that we could support in Spack.
 Two stand out for tutorial purposes because they both take integers,
 as opposed to simply allowing them to be enabled or disabled.
@@ -513,17 +518,17 @@ Let's add the variant to expect an ``int`` value with a default of
 ``configure_args`` to retrieve the value and add the corresponding
 configure arguments when a non-zero value is provided by the user.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with
+Bring mympileaks' ``package.py`` file back up in your ``$EDITOR`` with
 the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit mympileaks
 
 and add the ``variant`` directive and associated arguments as follows:
 
-.. literalinclude:: tutorial/examples/4.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/4.package.py)
+.. literalinclude:: tutorial/examples/packaging/4.package.py
+   :caption: mympileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-16,28-33
@@ -535,9 +540,9 @@ by the entry's ``value`` property.
 Now run the installation again with the ``--verbose`` install option -- to
 get more output during the build -- and the new ``stackstart`` package option:
 
-.. literalinclude:: outputs/packaging/install-mpileaks-4.out
+.. literalinclude:: outputs/packaging/install-mympileaks-4.out
    :language: console
-   :emphasize-lines: 1,45,331,333
+   :emphasize-lines: 1,48,334,336
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
@@ -575,7 +580,7 @@ Querying Spec Versions
 You can customize the build based on the version of the package, compiler,
 and dependencies. Examples of each are:
 
-* Am I building ``mpileaks`` version ``1.1`` or greater?
+* Am I building my package with version ``1.1`` or greater?
 
 .. code-block:: python
 
