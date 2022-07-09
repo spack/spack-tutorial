@@ -82,27 +82,37 @@ Add a new compiler
 The second step is to build a recent compiler. On first use, Spack
 scans the environment and automatically locates the compiler(s)
 already available on the system. For this tutorial, however, we want
-to use ``gcc@8.3.0``.
+to use ``gcc@8.4.0``.
 
 
 .. code-block:: console
 
-  $ spack install gcc@8.3.0
+  $ spack install gcc@8.4.0
 
 
-You can get this in your environment using ``spack load gcc@8.3.0``:
+You can get this in your environment using ``spack load gcc@8.4.0``:
 
 .. literalinclude:: outputs/modules/spack-load-gcc.out
    :language: console
 
-Now, ``gcc`` is in your ``PATH``, and you can add it to the list of
+Now, ``gcc`` is in your ``PATH``. You can add it to the list of
 compilers with ``spack compiler add``:
 
 .. literalinclude:: outputs/modules/add-compiler.out
    :language: console
 
+To check which compilers are available you can use ``spack compiler list``:
+	      
 .. literalinclude:: outputs/modules/list-compiler.out
    :language: console
+
+Finally, when you confirmed ``gcc@8.4.0`` is properly registered, clean the environment
+with ``spack unload``:
+
+.. code-block:: console
+
+   $ spack unload --all
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Build the software that will be used in the tutorial
@@ -132,17 +142,15 @@ tells you what a module will do when loaded:
 
 .. code-block:: console
 
-   $ module show zlib
-   ----------------------------------------------------------------------------------------------------------------------------------------------
-      /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib/1.2.11-gcc-8.3.0:
-   ----------------------------------------------------------------------------------------------------------------------------------------------
-   whatis("A free, general-purpose, legally unencumbered lossless data-compression library. ")
-   conflict("zlib")
-   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/share/man")
-   prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib")
-   prepend_path("INCLUDE","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/include")
-   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib/pkgconfig")
-   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/")
+   $ module show zlib-1.2.12-gcc-8.4.0-rlo3go7 
+   ----------------------------------------------------------------------------------------------------------------------------------------------------------
+      /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib-1.2.12-gcc-8.4.0-rlo3go7:
+   ----------------------------------------------------------------------------------------------------------------------------------------------------------
+   whatis("A free, general-purpose, legally unencumbered lossless data-compression library.")
+   prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib")
+   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/share/man")
+   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib/pkgconfig")
+   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/")
    help([[A free, general-purpose, legally unencumbered lossless data-compression
    library.
    ]])
@@ -153,9 +161,9 @@ tells you what a module will do when loaded:
 
 .. code-block:: console
 
-   $ module load zlib
+   $ module load zlib-1.2.12-gcc-8.4.0-rlo3go7
    $ echo $LD_LIBRARY_PATH
-   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/zlib-1.2.11-2icaxiyy5rrqdavfv7jbojdq36r6u37n/lib
+   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib
 
 and to undo the modifications, you can use ``module unload``:
 
@@ -287,8 +295,8 @@ by the module file according to the default prefix inspection rules.
 Filter unwanted modifications to the environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now consider the case that your site has decided that ``C_INCLUDE_PATH``,
-``CPLUS_INCLUDE_PATH``, and ``LIBRARY_PATH`` modifications should not be
+Now consider the case that your site has decided that ``CC``,
+``CXX``, ``FC`` and ``F77`` modifications should not be
 present in module files. What you can do to abide by the rules is to
 create a configuration file ``${SPACK_ROOT}/etc/spack/modules.yaml`` with
 the following content:
@@ -296,13 +304,15 @@ the following content:
 .. code-block:: yaml
 
   modules:
-    tcl:
-      all:
-        filter:
-          environment_blacklist:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+    default:
+      tcl:
+        all:
+          filter:
+            environment_blacklist:
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
 
 Next you should regenerate all the module files:
 
@@ -327,15 +337,16 @@ module files for anything that is compiled with ``gcc@7.5.0`` (the OS provided c
 To do this you should add a ``blacklist`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
 .. code-block:: yaml
-  :emphasize-lines: 3,4
+  :emphasize-lines: 4,5
 
   modules:
-    tcl:
-      blacklist:
+    default:
+      tcl:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -353,22 +364,23 @@ directory.
 
 
 if you look closely you'll see though that we went too far in
-blacklisting modules: the module for ``gcc@8.3.0`` disappeared as it was
+blacklisting modules: the module for ``gcc@8.4.0`` disappeared as it was
 bootstrapped with ``gcc@7.5.0``. To specify exceptions to the blacklist
 rules you can use ``whitelist``:
 
 .. code-block:: yaml
-  :emphasize-lines: 3,4
+  :emphasize-lines: 4,5
 
   modules:
-    tcl:
-      whitelist:
+    default:
+      tcl:
+        whitelist:
         -  gcc
-      blacklist:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -378,7 +390,7 @@ rules you can use ``whitelist``:
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
 
-you'll see that now the module for ``gcc@8.3.0`` has reappeared:
+you'll see that now the module for ``gcc@8.4.0`` has reappeared:
 
 .. literalinclude:: outputs/modules/module-avail-4.out
    :language: console
@@ -388,18 +400,19 @@ is to skip the generation of module files for implicitly installed
 packages. In this case you only need to add the following line:
 
 .. code-block:: yaml
-  :emphasize-lines: 3
+  :emphasize-lines: 4
 
   modules:
-    tcl:
-      blacklist_implicits: true
-      whitelist:
+    default:
+      tcl:
+        blacklist_implicits: true
+        whitelist:
         -  gcc
-      blacklist:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -416,18 +429,19 @@ To reduce the length of the hash or remove it altogether you can
 use the ``hash_length`` keyword in the configuration file:
 
 .. code-block:: yaml
-  :emphasize-lines: 3
+  :emphasize-lines: 4
 
   modules:
-    tcl:
-      hash_length: 0
-      whitelist:
+    default:
+      tcl:
+        hash_length: 0
+        whitelist:
         -  gcc
-      blacklist:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -449,27 +463,28 @@ The problem here is that without the hashes the four different flavors of
 the names are formatted to differentiate them:
 
 .. code-block:: yaml
-  :emphasize-lines: 9-10,16-19
+  :emphasize-lines: 10-11,17-20
 
   modules:
-    tcl:
-      hash_length: 0
-      whitelist:
+    default:
+      tcl:
+        hash_length: 0
+        whitelist:
         -  gcc
-      blacklist:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        conflict:
+        all:
+          conflict:
           - '{name}'
-        filter:
-          environment_blacklist:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-      projections:
-        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+        projections:
+          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 As you can see it is possible to specify rules that apply only to a
 restricted set of packages using `anonymous specs
@@ -502,31 +517,32 @@ is installed. You can achieve this with Spack by adding an
 ``environment`` directive to the configuration file:
 
 .. code-block:: yaml
-  :emphasize-lines: 17-19
+  :emphasize-lines: 18-20
 
   modules:
-    tcl:
-      hash_length: 0
-      naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-      whitelist:
+    default:
+      tcl:
+        hash_length: 0
+        naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
+        whitelist:
         -  gcc
-      blacklist:
+        blacklist:
         -  '%gcc@7.5.0'
-      all:
-        conflict:
+        all:
+          conflict:
           - '{name}'
-        filter:
-          environment_blacklist:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-      projections:
-        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        projections:
+          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 
 Under the hood Spack uses the :meth:`~spack.spec.Spec.format` API to substitute
@@ -553,36 +569,37 @@ only certain packages. You can for instance apply modifications to the
 ``openmpi`` module as follows:
 
 .. code-block:: yaml
-  :emphasize-lines: 20-24
+  :emphasize-lines: 21-25
 
   modules:
-    tcl:
-      hash_length: 0
-      naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-      whitelist:
+    default:
+      tcl:
+        hash_length: 0
+        naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
+        whitelist:
         - gcc
-      blacklist:
+        blacklist:
         - '%gcc@7.5.0'
-      all:
-        conflict:
+        all:
+          conflict:
           - '{name}'
-        filter:
-          environment_blacklist:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-      openmpi:
-        environment:
-          set:
-            SLURM_MPI_TYPE: pmi2
-            OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
-      projections:
-        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        openmpi:
+          environment:
+            set:
+              SLURM_MPI_TYPE: pmi2
+              OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
+        projections:
+          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 This time we will be more selective and regenerate only the ``openmpi`` module file:
 
@@ -603,47 +620,48 @@ modules that load their dependencies by adding the ``autoload``
 directive and assigning it the value ``direct``:
 
 .. code-block:: yaml
-  :emphasize-lines: 3,38,39
+  :emphasize-lines: 4,39,40
 
   modules:
-    tcl:
-      verbose: True
-      hash_length: 0
-      naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-      whitelist:
+    default:
+      tcl:
+        verbose: True
+        hash_length: 0
+        naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
+        whitelist:
         - gcc
-      blacklist:
+        blacklist:
         - '%gcc@7.5.0'
-      all:
-        conflict:
+        all:
+          conflict:
           - '{name}'
-        filter:
-          environment_blacklist:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-      gcc:
-        environment:
-          set:
-            CC: gcc
-            CXX: g++
-            FC: gfortran
-            F90: gfortran
-            F77: gfortran
-      openmpi:
-        environment:
-          set:
-            SLURM_MPI_TYPE: pmi2
-            OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
-      projections:
-        all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-        netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-        ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
-      ^python:
-        autoload:  direct
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        gcc:
+          environment:
+            set:
+              CC: gcc
+              CXX: g++
+              FC: gfortran
+              F90: gfortran
+              F77: gfortran
+        openmpi:
+          environment:
+            set:
+              SLURM_MPI_TYPE: pmi2
+              OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
+        projections:
+          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+        ^python:
+          autoload:  direct
 
 and regenerating the module files for every package that depends on ``python``:
 
@@ -706,38 +724,39 @@ There are just a few steps needed to adapt the ``modules.yaml`` file we used pre
 After these modifications your configuration file should look like:
 
 .. code-block:: yaml
-  :emphasize-lines: 2-8,28-30
+  :emphasize-lines: 3-9,29-31
 
   modules:
-    enable::
-      - lmod
-    lmod:
-      core_compilers:
+    default:
+      enable::
+        - lmod
+      lmod:
+        core_compilers:
         - 'gcc@7.5.0'
-      hierarchy:
+        hierarchy:
         - mpi
-      hash_length: 0
-      whitelist:
+        hash_length: 0
+        whitelist:
         - gcc
-      blacklist:
+        blacklist:
         - '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-      openmpi:
-        environment:
-          set:
-            SLURM_MPI_TYPE: pmi2
-            OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
-      projections:
-        all:          '{name}/{version}'
-        ^lapack:      '{name}/{version}-{^lapack.name}'
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        openmpi:
+          environment:
+            set:
+              SLURM_MPI_TYPE: pmi2
+              OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
+        projections:
+          all:          '{name}/{version}'
+          ^lapack:      '{name}/{version}-{^lapack.name}'
 
 
 .. note::
@@ -839,38 +858,39 @@ Coming back to our example, let's add ``lapack`` to the hierarchy and
 remove the remaining suffix projection for ``lapack``:
 
 .. code-block:: yaml
-  :emphasize-lines: 9
+  :emphasize-lines: 10
 
   modules:
-    enable::
+    default:
+      enable::
       - lmod
-    lmod:
-      core_compilers:
+      lmod:
+        core_compilers:
         - 'gcc@7.5.0'
-      hierarchy:
+        hierarchy:
         - mpi
         - lapack
-      hash_length: 0
-      whitelist:
+        hash_length: 0
+        whitelist:
         - gcc
-      blacklist:
+        blacklist:
         - '%gcc@7.5.0'
-      all:
-        filter:
-          environment_blacklist:
+        all:
+          filter:
+            environment_blacklist:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
-        environment:
-          set:
-            '{name}_ROOT': '{prefix}'
-      openmpi:
-        environment:
-          set:
-            SLURM_MPI_TYPE: pmi2
-            OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
-      projections:
-        all:          '{name}/{version}'
+          environment:
+            set:
+              '{name}_ROOT': '{prefix}'
+        openmpi:
+          environment:
+            set:
+              SLURM_MPI_TYPE: pmi2
+              OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
+        projections:
+          all:          '{name}/{version}'
 
 After module files have been regenerated as usual:
 
@@ -1046,7 +1066,7 @@ we'll find the following at the end of each ``netlib-scalapack`` module file:
 .. code-block:: lua
 
   -- Access is granted only to specific groups
-  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.3.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
+  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
       LmodError (
           "You don't have the necessary rights to run \"netlib-scalapack\".\n\n",
           "\tPlease write an e-mail to 1234@foo.com if you need further information on how to get access to it.\n"
@@ -1060,13 +1080,13 @@ the right e-mail address where to ask for it!
 Restore settings for future sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For future sections of the tutorial, we will not use the ``gcc@8.3.0``
+For future sections of the tutorial, we will not use the ``gcc@8.4.0``
 compiler. Since it is currently the default compiler (our current
 defualt is the most recent version of gcc available), we will remove
 it now.
 
 .. code-block:: console
 
-  $ spack compiler rm gcc@8.3.0
+  $ spack compiler rm gcc@8.4.0
 
 This will ensure the rest of the tutorial goes smoothly for you.

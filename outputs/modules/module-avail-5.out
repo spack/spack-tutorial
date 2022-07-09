@@ -1,25 +1,35 @@
 $ module avail
 
------------------------------------------ /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------
-   autoconf/2.69-gcc-8.3.0		libsigsegv/2.12-gcc-8.3.0				      perl/5.30.3-gcc-8.3.0
-   automake/1.16.2-gcc-8.3.0		libtool/2.4.6-gcc-8.3.0 				      pkgconf/1.7.3-gcc-8.3.0
-   bzip2/1.0.8-gcc-8.3.0		libxml2/2.9.10-gcc-8.3.0				      py-cython/0.29.16-gcc-8.3.0
-   cmake/3.17.3-gcc-8.3.0		m4/1.4.18-gcc-8.3.0					      py-numpy/1.19.0-gcc-8.3.0-openblas
-   diffutils/3.7-gcc-8.3.0		mpich/3.3.2-gcc-8.3.0					      py-pybind11/2.5.0-gcc-8.3.0
-   expat/2.2.9-gcc-8.3.0		ncurses/6.2-gcc-8.3.0					      py-scipy/1.5.0-gcc-8.3.0-openblas
-   findutils/4.6.0-gcc-8.3.0		netlib-lapack/3.8.0-gcc-8.3.0				      py-setuptools/46.1.3-gcc-8.3.0
-   gcc/8.3.0-gcc-7.5.0			netlib-scalapack/2.1.0-gcc-8.3.0-netlib-lapack-mpich	      python/3.7.7-gcc-8.3.0
-   gdbm/1.18.1-gcc-8.3.0		netlib-scalapack/2.1.0-gcc-8.3.0-netlib-lapack-openmpi	      readline/8.0-gcc-8.3.0
-   gettext/0.20.2-gcc-8.3.0		netlib-scalapack/2.1.0-gcc-8.3.0-openblas-mpich 	      sqlite/3.31.1-gcc-8.3.0
-   hwloc/1.11.11-gcc-8.3.0		netlib-scalapack/2.1.0-gcc-8.3.0-openblas-openmpi      (D)    tar/1.32-gcc-8.3.0
-   hwloc/2.2.0-gcc-8.3.0	 (D)	numactl/2.0.12-gcc-8.3.0				      texinfo/6.5-gcc-8.3.0
-   libbsd/0.10.0-gcc-8.3.0		openblas/0.3.10-gcc-8.3.0				      util-macros/1.19.1-gcc-8.3.0
-   libffi/3.3-gcc-8.3.0 		openmpi/3.1.6-gcc-8.3.0 				      xz/5.2.5-gcc-8.3.0
-   libiconv/1.16-gcc-8.3.0		openssl/1.1.1g-gcc-8.3.0				      zlib/1.2.11-gcc-8.3.0
-   libpciaccess/0.13.5-gcc-8.3.0	patchelf/0.10-gcc-8.3.0
+----------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------------
+   autoconf/2.69-gcc-8.4.0	     libtool/2.4.7-gcc-8.4.0					   py-cython/0.29.30-gcc-8.4.0
+   automake/1.16.5-gcc-8.4.0	     libxml2/2.9.13-gcc-8.4.0					   py-gast/0.5.3-gcc-8.4.0
+   berkeley-db/18.1.40-gcc-8.4.0     m4/1.4.19-gcc-8.4.0					   py-numpy/1.22.4-gcc-8.4.0-openblas
+   bzip2/1.0.8-gcc-8.4.0	     mpich/4.0.2-gcc-8.4.0					   py-pip/21.3.1-gcc-8.4.0
+   cmake/3.23.1-gcc-8.4.0	     ncurses/6.2-gcc-8.4.0					   py-ply/3.11-gcc-8.4.0
+   diffutils/3.8-gcc-8.4.0	     netlib-lapack/3.10.1-gcc-8.4.0				   py-pybind11/2.8.1-gcc-8.4.0
+   expat/2.4.8-gcc-8.4.0	     netlib-scalapack/2.2.0-gcc-8.4.0-netlib-lapack-mpich	   py-pythran/0.11.0-gcc-8.4.0-openblas
+   findutils/4.9.0-gcc-8.4.0	     netlib-scalapack/2.2.0-gcc-8.4.0-netlib-lapack-openmpi	   py-scipy/1.8.1-gcc-8.4.0-openblas
+   gcc/8.4.0-gcc-7.5.0		     netlib-scalapack/2.2.0-gcc-8.4.0-openblas-mpich		   py-setuptools/59.4.0-gcc-8.4.0
+   gdbm/1.19-gcc-8.4.0		     netlib-scalapack/2.2.0-gcc-8.4.0-openblas-openmpi	    (D)    py-wheel/0.37.0-gcc-8.4.0
+   gettext/0.21-gcc-8.4.0	     ninja/1.10.2-gcc-8.4.0					   python/3.9.12-gcc-8.4.0
+   hwloc/2.7.1-gcc-8.4.0	     numactl/2.0.14-gcc-8.4.0					   readline/8.1-gcc-8.4.0
+   libbsd/0.11.5-gcc-8.4.0	     openblas/0.3.20-gcc-8.4.0					   sqlite/3.38.5-gcc-8.4.0
+   libedit/3.1-20210216-gcc-8.4.0    openmpi/4.1.3-gcc-8.4.0					   tar/1.34-gcc-8.4.0
+   libevent/2.1.12-gcc-8.4.0	     openssh/9.0p1-gcc-8.4.0					   util-linux-uuid/2.37.4-gcc-8.4.0
+   libfabric/1.14.1-gcc-8.4.0	     openssl/1.1.1o-gcc-8.4.0					   util-macros/1.19.3-gcc-8.4.0
+   libffi/3.4.2-gcc-8.4.0	     perl/5.34.1-gcc-8.4.0					   xz/5.2.5-gcc-8.4.0
+   libiconv/1.16-gcc-8.4.0	     pigz/2.7-gcc-8.4.0 					   yaksa/0.2-gcc-8.4.0
+   libmd/1.0.4-gcc-8.4.0	     pkgconf/1.8.0-gcc-8.4.0					   zlib/1.2.12-gcc-8.4.0
+   libpciaccess/0.16-gcc-8.4.0	     pmix/4.1.2-gcc-8.4.0					   zstd/1.5.2-gcc-8.4.0
+   libsigsegv/2.13-gcc-8.4.0	     py-beniget/0.4.1-gcc-8.4.0
 
   Where:
    D:  Default Module
+
+If the avail list is too long consider trying:
+
+"module --default avail" or "ml -d av" to just list the default modules.
+"module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
 Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
