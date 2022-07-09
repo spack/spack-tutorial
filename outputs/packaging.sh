@@ -23,7 +23,7 @@ example packaging/info-mpileaks       "spack info -a mpileaks"
 
 spack uninstall -ay mpileaks
 cp ${PROJECT}/package-py-files/2.package.py $mpileaks_package_py
-example packaging/install-mpileaks-2  "spack install mpileaks"
+example packaging/install-mpileaks-2  "spack install --fresh mpileaks"
 
 stage_dir=$(spack location -s mpileaks)
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
@@ -34,10 +34,10 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 #echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env mpileaks bash"
 
 cp ${PROJECT}/package-py-files/3.package.py $mpileaks_package_py
-example packaging/install-mpileaks-3  "spack install mpileaks"
+example packaging/install-mpileaks-3  "spack install --fresh mpileaks"
 
 cp ${PROJECT}/package-py-files/4.package.py $mpileaks_package_py
-example packaging/install-mpileaks-4  "spack install --verbose mpileaks stackstart=4"
+example packaging/install-mpileaks-4  "spack install --fresh --verbose mpileaks stackstart=4"
 
 example packaging/cleanup  "spack uninstall -ay mpileaks"
 example packaging/cleanup  "spack repo remove tutorial"
