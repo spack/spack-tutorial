@@ -75,7 +75,7 @@ example      modules/tcl-refresh-5      "spack module tcl refresh --delete-tree 
 example -tee modules/module-avail-5     "module avail"
 
 
-spack config add                       "modules:default:tcl:all:environment:set:'{name}_ROOT':'{prefix}'"
+spack config add                       "modules:default:tcl:all:environment:set:\"{name}_ROOT\":\"{prefix}\""
 example      modules/tcl-refresh-6     "spack module tcl refresh -y"
 example -tee modules/module-show-3     "module show gcc"
 
