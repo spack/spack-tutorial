@@ -52,7 +52,7 @@ Being a tutorial, this document can help you get started with packaging,
 but it is not intended to be complete. Links to additional information
 are provided at the bottom of this tutorial.
 The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples``.
+https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
 
 ---------------
 Getting Started
@@ -139,8 +139,8 @@ template:
 * shows a dependency directive example; and
 * provides a skeleton ``configure_args`` method.
 
-.. literalinclude:: tutorial/examples/0.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
+.. literalinclude:: tutorial/examples/packaging/0.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
    :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
 
@@ -213,8 +213,8 @@ Now make the changes and additions to your ``package.py`` file.
 
 The resulting package should contain the following information:
 
-.. literalinclude:: tutorial/examples/1.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/1.package.py)
+.. literalinclude:: tutorial/examples/packaging/1.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 5-6,8,11
@@ -285,8 +285,8 @@ the ``spack edit`` command:
 and add the dependencies by specifying them using the ``depends_on``
 directive as shown below:
 
-.. literalinclude:: tutorial/examples/2.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/2.package.py)
+.. literalinclude:: tutorial/examples/packaging/2.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-17
@@ -457,8 +457,8 @@ the ``spack edit`` command:
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments
 in the ``configure_args`` method as follows:
 
-.. literalinclude:: tutorial/examples/3.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/3.package.py)
+.. literalinclude:: tutorial/examples/packaging/3.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 20-23
@@ -522,8 +522,8 @@ the ``spack edit`` command:
 
 and add the ``variant`` directive and associated arguments as follows:
 
-.. literalinclude:: tutorial/examples/4.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/4.package.py)
+.. literalinclude:: tutorial/examples/packaging/4.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-16,28-33
