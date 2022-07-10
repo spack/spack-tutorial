@@ -1,4 +1,4 @@
-.. Copyright 2013-2021 Lawrence Livermore National Security, LLC and other
+.. Copyright 2013-2022 Lawrence Livermore National Security, LLC and other
    Spack Project Developers. See the top-level COPYRIGHT file for details.
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
@@ -23,18 +23,18 @@ What is a Spack Package?
 ------------------------
 
 Spack packages are installation scripts, which are essentially
-recipes for building the software.
+recipes for building software.
 
 They define properties and behavior of the build, such as:
 
 * where to find and how to retrieve the software;
 * its dependencies;
-* options for building the software from source; and
+* options for building from source; and
 * build commands.
 
-Once we've specified a package's recipe, users of our recipe can
-ask Spack to build the software with different features on any of
-the supported systems.
+Once we've specified a package's recipe, users can ask Spack to
+build the software with different features on any of the supported
+systems.
 
 -------
 Caveats
@@ -52,7 +52,7 @@ Being a tutorial, this document can help you get started with packaging,
 but it is not intended to be complete. Links to additional information
 are provided at the bottom of this tutorial.
 The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples``.
+https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
 
 ---------------
 Getting Started
@@ -139,8 +139,8 @@ template:
 * shows a dependency directive example; and
 * provides a skeleton ``configure_args`` method.
 
-.. literalinclude:: tutorial/examples/0.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/0.package.py)
+.. literalinclude:: tutorial/examples/packaging/0.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
    :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
 
@@ -153,7 +153,8 @@ template:
    maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
-calculation, using the ``spack checksum`` command:
+calculation. Exit your editor to return to the command line and use the 
+``spack checksum`` command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
@@ -167,10 +168,8 @@ We will now fill in the provided placeholders as we:
 * add dependencies; and
 * add the configuration arguments needed to build the package.
 
-For the moment, though, let's see what Spack does with the skeleton.
-
-Exit your editor and try to build the package with the ``spack install``
-command:
+For the moment, though, let's see what Spack does with the skeleton
+by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
@@ -206,15 +205,15 @@ Let's make the following changes:
 
    We will exclude the ``Copyright`` clause in the remainder of
    the package snippets here to reduce the length of the tutorial
-   documentation; however, it **should be retained** for published
+   documentation; however, it **is required** for published
    packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
 The resulting package should contain the following information:
 
-.. literalinclude:: tutorial/examples/1.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/1.package.py)
+.. literalinclude:: tutorial/examples/packaging/1.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 5-6,8,11
@@ -223,11 +222,12 @@ At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
 for review.
 
-Let's enter the ``spack info`` command for the package:
+Let's enter the ``spack info`` command for the package, passing the `-a`
+option to show all of the available information:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40
+   :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40,46,49
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
@@ -238,8 +238,12 @@ information derived from the package:
 * it has the URL we gave the ``spack create`` command;
 * the preferred version was derived from the code;
 * the default ``Autotools`` package installation phases are listed;
-* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``; and
-* both the link and run dependencies are ``None`` at this point.
+* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
+* both the link and run dependencies are ``None`` at this point;
+* the ``Autotools`` ``check`` method will be called to check the build 
+  post-``build`` phase (tries to run ``make test`` and ``make check``) ; and
+* the ``Autotools`` ``installcheck`` method will be called to check the build 
+  post-``install`` phase (tries to run ``make installcheck``).
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -253,6 +257,9 @@ command will become more informative.
    The full list of build systems known to Spack can be found at
    `Build Systems
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
+
+   More information on the build-time tests can be found at 
+   `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
 
    Refer to the links at the end of this section for more information.
 
@@ -285,8 +292,8 @@ the ``spack edit`` command:
 and add the dependencies by specifying them using the ``depends_on``
 directive as shown below:
 
-.. literalinclude:: tutorial/examples/2.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/2.package.py)
+.. literalinclude:: tutorial/examples/packaging/2.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-17
@@ -304,12 +311,12 @@ installed *before* it can build our package.
   We call such packages **providers**. More information on virtual dependencies
   can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
-We now get a lot further when we try to build the software again with
-``spack install``.
+Now, since we don't want spack to grab the built-in ``mpileaks`` from the build
+cache, let's run this install with the ``--fresh``:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
-   :emphasize-lines: 1,185,188
+   :emphasize-lines: 1,226,229
 
 .. note::
 
@@ -349,7 +356,7 @@ failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
-   :emphasize-lines: 1,30
+   :emphasize-lines: 1,29
 
 In this case the error conveniently appears on the last line of the
 log *and* the output from `spack install`.
@@ -382,7 +389,9 @@ Let's move to the build directory using the ``spack cd`` command:
 
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
-build.
+build. If not, you can ``cd`` into the directory above that contained
+the ``spack-build-out.txt`` file then into it's ``spack-src`` 
+subdirectory.
 
 Now let's ensure the environment is properly set up using the
 ``spack build-env`` command:
@@ -395,12 +404,17 @@ This command spawned a new shell containing the same environment
 that Spack used to build the ``mpileaks`` package. (Feel free to
 substitute your favorite shell for ``bash``.)
 
+.. note::
+
+   If you are running using an AWS instance, you'll want to
+   substitute your home directory for ``/home/spack`` below.
+
 From here we can manually re-run the build using the ``configure``
 command:
 
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
-   :emphasize-lines: 1,27
+   :emphasize-lines: 1,52
 
 And we get the same results as before. Unfortunately, the output
 does not provide any additional information that can help us with
@@ -457,8 +471,8 @@ the ``spack edit`` command:
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments
 in the ``configure_args`` method as follows:
 
-.. literalinclude:: tutorial/examples/3.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/3.package.py)
+.. literalinclude:: tutorial/examples/packaging/3.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 20-23
@@ -466,11 +480,11 @@ in the ``configure_args`` method as follows:
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
 
-Now let's try the build again:
+Now let's try the build again, remembering to use the ``--fresh`` option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,47,49
+   :emphasize-lines: 1,50,52
 
 Success!
 
@@ -522,8 +536,8 @@ the ``spack edit`` command:
 
 and add the ``variant`` directive and associated arguments as follows:
 
-.. literalinclude:: tutorial/examples/4.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/4.package.py)
+.. literalinclude:: tutorial/examples/packaging/4.package.py
+   :caption: mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-16,28-33
@@ -537,7 +551,7 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1,45,331,333
+   :emphasize-lines: 1,48,333,335
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
@@ -575,7 +589,7 @@ Querying Spec Versions
 You can customize the build based on the version of the package, compiler,
 and dependencies. Examples of each are:
 
-* Am I building ``mpileaks`` version ``1.1`` or greater?
+* Am I building my package with version ``1.1`` or greater?
 
 .. code-block:: python
 
