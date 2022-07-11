@@ -7,9 +7,9 @@
 
 .. _binary-cache-tutorial:
 
-============================
-Mirror Tutorial
-============================
+==================================
+Mirrors and Binary Caches Tutorial
+==================================
 
 This tutorial will guide you through the process of setting up a
 source mirror with a binary cache. Source mirrors and binary caches
