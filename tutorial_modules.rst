@@ -66,7 +66,7 @@ our module path.
 
 .. code-block:: console
 
-  $ . share/spack/setup-env.sh
+  $ . spack/share/spack/setup-env.sh
 
 .. FIXME: this needs bootstrap support for ``lmod``
 
