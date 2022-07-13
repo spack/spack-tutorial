@@ -52,12 +52,12 @@ echo "y
 example -tee modules/module-show-2      "module show $gcc_module"
 
 
-spack config add                        "modules:default:tcl:blacklist:['%gcc@7.5.0']"
+spack config add                        "modules:default:tcl:exclude:['%gcc@7.5.0']"
 example      modules/tcl-refresh-2      "spack module tcl refresh --delete-tree -y"
 example -tee modules/module-avail-3     "module avail"
 
 
-spack config add                        "modules:default:tcl:whitelist:[gcc]"
+spack config add                        "modules:default:tcl:include:[gcc]"
 example      modules/tcl-refresh-3      "spack module tcl refresh -y"
 example -tee modules/module-avail-4     "module avail $gcc_module"
 

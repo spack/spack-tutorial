@@ -102,7 +102,7 @@ compilers with ``spack compiler add``:
    :language: console
 
 To check which compilers are available you can use ``spack compiler list``:
-	      
+
 .. literalinclude:: outputs/modules/list-compiler.out
    :language: console
 
@@ -142,7 +142,7 @@ tells you what a module will do when loaded:
 
 .. code-block:: console
 
-   $ module show zlib-1.2.12-gcc-8.4.0-rlo3go7 
+   $ module show zlib-1.2.12-gcc-8.4.0-rlo3go7
    ----------------------------------------------------------------------------------------------------------------------------------------------------------
       /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib-1.2.12-gcc-8.4.0-rlo3go7:
    ----------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -308,7 +308,7 @@ the following content:
       tcl:
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "CC"
             - "CXX"
             - "FC"
@@ -334,7 +334,7 @@ is only needed as an intermediate step when building a newer stack.
 Let's try to prevent the generation of
 module files for anything that is compiled with ``gcc@7.5.0`` (the OS provided compiler).
 
-To do this you should add a ``blacklist`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
+To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
 .. code-block:: yaml
   :emphasize-lines: 4,5
@@ -342,11 +342,11 @@ To do this you should add a ``blacklist`` keyword to ``${SPACK_ROOT}/etc/spack/m
   modules:
     default:
       tcl:
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -364,9 +364,9 @@ directory.
 
 
 if you look closely you'll see though that we went too far in
-blacklisting modules: the module for ``gcc@8.4.0`` disappeared as it was
-bootstrapped with ``gcc@7.5.0``. To specify exceptions to the blacklist
-rules you can use ``whitelist``:
+excluding modules: the module for ``gcc@8.4.0`` disappeared as it was
+bootstrapped with ``gcc@7.5.0``. To specify exceptions to the ``exclude``
+rules you can use ``include``:
 
 .. code-block:: yaml
   :emphasize-lines: 4,5
@@ -374,18 +374,18 @@ rules you can use ``whitelist``:
   modules:
     default:
       tcl:
-        whitelist:
+        include:
         -  gcc
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
 
-``whitelist`` rules always have precedence over ``blacklist`` rules. If you regenerate the modules again:
+``include`` rules always have precedence over ``exclude`` rules. If you regenerate the modules again:
 
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
@@ -405,14 +405,14 @@ packages. In this case you only need to add the following line:
   modules:
     default:
       tcl:
-        blacklist_implicits: true
-        whitelist:
+        exclude_implicits: true
+        include:
         -  gcc
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -435,13 +435,13 @@ use the ``hash_length`` keyword in the configuration file:
     default:
       tcl:
         hash_length: 0
-        whitelist:
+        include:
         -  gcc
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -469,15 +469,15 @@ the names are formatted to differentiate them:
     default:
       tcl:
         hash_length: 0
-        whitelist:
+        include:
         -  gcc
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           conflict:
           - '{name}'
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -524,15 +524,15 @@ is installed. You can achieve this with Spack by adding an
       tcl:
         hash_length: 0
         naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-        whitelist:
+        include:
         -  gcc
-        blacklist:
+        exclude:
         -  '%gcc@7.5.0'
         all:
           conflict:
           - '{name}'
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -576,15 +576,15 @@ only certain packages. You can for instance apply modifications to the
       tcl:
         hash_length: 0
         naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-        whitelist:
+        include:
         - gcc
-        blacklist:
+        exclude:
         - '%gcc@7.5.0'
         all:
           conflict:
           - '{name}'
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -628,15 +628,15 @@ directive and assigning it the value ``direct``:
         verbose: True
         hash_length: 0
         naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
-        whitelist:
+        include:
         - gcc
-        blacklist:
+        exclude:
         - '%gcc@7.5.0'
         all:
           conflict:
           - '{name}'
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -736,13 +736,13 @@ After these modifications your configuration file should look like:
         hierarchy:
         - mpi
         hash_length: 0
-        whitelist:
+        include:
         - gcc
-        blacklist:
+        exclude:
         - '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -871,13 +871,13 @@ remove the remaining suffix projection for ``lapack``:
         - mpi
         - lapack
         hash_length: 0
-        whitelist:
+        include:
         - gcc
-        blacklist:
+        exclude:
         - '%gcc@7.5.0'
         all:
           filter:
-            environment_blacklist:
+            exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
@@ -1032,14 +1032,14 @@ it's ``netlib-scalapack``:
         - mpi
         - lapack
       hash_length: 0
-      whitelist:
+      include:
         - gcc
-      blacklist:
+      exclude:
         - '%gcc@7.5.0'
         - readline
       all:
         filter:
-          environment_blacklist:
+          exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"
