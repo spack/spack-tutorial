@@ -8,9 +8,9 @@ modules:
       hierarchy:
         - mpi
       hash_length: 0
-      whitelist:
+      include:
         - gcc
-      blacklist:
+      exclude:
         - '%gcc@7.5.0'
       all:
         filter:
