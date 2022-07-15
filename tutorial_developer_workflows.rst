@@ -208,7 +208,7 @@ rebuild ``scr`` and any other package that depends on ``scr``.
 Here, the build failed as expected. We can look at the output for the
 build in ``scr/spack-build-out.txt`` to find out why, or we can
 launch a shell directly with the appropriate environment variables to
-figure out what went wrong by using ``spack build-env scr@2.0 --
+figure out what went wrong by using ``spack build-env scr@3.0-rc2 --
 bash``.  If that's too much to remember, then sourcing
 ``scr/spack-build-env.txt`` will also set all the appropriate
 environment variables so we can diagnose the build ourselves. Now
