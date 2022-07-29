@@ -11,12 +11,12 @@
 Environments Tutorial
 =====================
 
-We've covered how to install, remove, and list packages with Spack using the
-commands:
+We've covered how to manage your spack installation, or instance, by
+highlighting three core commands:
 
 * `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages;
 * `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
-* `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
+* `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to query installed packages.
 
 .. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
@@ -26,8 +26,8 @@ allow you to work with independent groups of packages separately. The
 goal is to provide users with *virtual environments* similar to those
 supported by other commonly used tools (e.g., `Python venv
 <https://docs.python.org/3/library/venv.html>`_) while allowing
-common installations to be seamlessly shared. They are also intended
-to be easily shared and re-used by others and across systems.
+common installations to be seamlessly shared. Spack environments are also
+intended to be easily shared and re-used by others and across systems.
 
 Administering properly configured software involving lots of packages
 and/or varying configuration requirements (e.g., different implementations
@@ -42,15 +42,20 @@ environments allow you to readily:
 * much more.
 
 This tutorial introduces the basics of creating and using environments,
-then explains how to expand, configure, and build software in them.
+then explains how to add, remove, configure, and build software in them.
 We will start with the command line interface, then cover editing key
 environment file directly. We will describe the difference between
-Spack-managed and independent environments, then finish with a section
-on reproducible builds.
+Spack-managed and independent environments within the context of
+reproducible builds.
 
 -------------------
 Environment Basics
 -------------------
+
+An environment is like a virtualized Spack instance that you can
+use to aggregate package installations for a project or other purposes.
+It has an associated *view*, which is a single prefix where all packages
+in the environment link to those in the Spack instance.
 
 Let's look at the output of ``spack find`` at this point in the tutorial.
 
@@ -77,11 +82,6 @@ called ``myproject``:
    :language: console
    :emphasize-lines: 1
 
-
-An environment is like a virtualized Spack instance that you can
-use to aggregate package installations for a project or other purpose.
-It has an associated *view*, which is a single prefix where all packages
-from the environment are linked.
 
 You can see the environments we've created so far using the ``spack env
 list`` command:
@@ -246,7 +246,7 @@ contents of the environment:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
    :language: console
-   :emphasize-lines: 1,11
+   :emphasize-lines: 1,10
 
 
 The result is that the environment now has only one root spec, ``hdf5
@@ -422,7 +422,7 @@ all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
-   :emphasize-lines: 1
+   :emphasize-lines: 1,30
 
 
 All the specs are now concrete **and** ready to be installed with
@@ -674,6 +674,8 @@ should now contain the following entries:
      - trilinos
      - openmpi
      view: true
+     concretizer:
+       unify: false
 
 Now activate the environment and install the packages:
 
