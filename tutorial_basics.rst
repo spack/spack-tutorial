@@ -367,7 +367,7 @@ Customizing Compilers
 ---------------------
 
 Spack manages a list of available compilers on the system, detected
-automatically from from the user's ``PATH`` variable. The ``spack
+automatically from the user's ``PATH`` variable. The ``spack
 compilers`` command is an alias for the command ``spack compiler list``.
 
 .. literalinclude:: outputs/basics/compilers.out
