@@ -11,19 +11,21 @@
 Package Creation Tutorial
 =========================
 
-This tutorial walks you through the steps for creating and
-debugging a simple Spack package. We will develop and debug
-a package using an iterative approach in order to gain more
-experience with additional Spack commands. For consistency,
-we will create the package for ``mpileaks``, which is an MPI
-debugging tool.
+We've covered how to install and use built-in packages, now we'll
+takl about how to create one of your own.
+
+This tutorial walks you through the steps for creating, building
+and debugging a simple Spack package. We will use an iterative
+approach to gain more experience with additional Spack commands.
+For consistency, we will create our own package for ``mpileaks``,
+which is an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
 ------------------------
 
 Spack packages are installation scripts, which are essentially
-recipes for building software.
+recipes for building (and testing) software.
 
 They define properties and behavior of the build, such as:
 
@@ -32,34 +34,26 @@ They define properties and behavior of the build, such as:
 * options for building from source; and
 * build commands.
 
-Once we've specified a package's recipe, users can ask Spack to
-build the software with different features on any of the supported
+Once we've specified a package's recipe and added it to Spack,
+other people can build the software on any of the supported
 systems.
 
--------
-Caveats
--------
+.. note::
 
-This tutorial assumes you have a working version of Spack installed.
-Refer to the `Getting Started
-<https://spack.readthedocs.io/en/latest/getting_started.html#getting-started>`_
-guide for information on how to install Spack.
+   We'll be writing code so it is assumed you have at least a
+   **beginner's-level familiarity with Python**.
 
-We'll be writing code so it is assumed you have at least a
-**beginner's-level familiarity with Python**.
-
-Being a tutorial, this document can help you get started with packaging,
-but it is not intended to be complete. Links to additional information
-are provided at the bottom of this tutorial.
-The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
+As a tutorial we are providing a very basic guide to help you get
+started with packaging. Links to additional information are given
+at the end of this tutorial. Example code snippets used in this
+section can also be found at https://github.com/spack/spack-tutorial
+under ``tutorial/examples/packaging``.
 
 ---------------
 Getting Started
 ---------------
 
-Before we get started, you need to confirm you have three environment
-variables set as follows:
+This tutorial segment requires the following environment variables:
 
 * ``SPACK_ROOT``: consisting of the path to your Spack installation;
 * ``PATH``: including ``$SPACK_ROOT/bin`` (so calls to the ``spack`` command
@@ -67,40 +61,44 @@ variables set as follows:
 * ``EDITOR``: containing the path of your preferred text editor (so Spack can
   run it when we modify the package).
 
-The first two variables are automatically set by ``setup-env.sh`` so, if they
-aren't, run the following command:
+The first two are automatically set by ``~/spack/share/spack/setup-env.sh``
+(or the equivalent for your preferred shell, e.g., ``csh``, ``fish``).
 
-.. code-block:: console
-
-   $ . ~/spack/share/spack/setup-env.sh
-
-or the equivalent for your shell (e.g., ``csh``, ``fish``).
-
-In order to avoid modifying your Spack installation with the package we
-are creating, add a **package repository** just for this tutorial by
+In order to avoid modifying your Spack installation's built-in ``mpileaks``
+package, add a **package repository** just for this tutorial by
 entering the following command:
 
 .. literalinclude:: outputs/packaging/repo-add.out
    :language: console
+   :emphasize-lines: 1
 
 Doing this ensures changes we make here do not adversely affect other
 parts of the tutorial. You can find out more about repositories at
 `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_.
 
+You can check which repositories are configured using the ``spack repo list``
+command.
+
+.. literalinclude:: outputs/packaging/repo-list.out
+   :language: console
+   :emphasize-lines: 1
+
 -------------------------
 Creating the Package File
 -------------------------
 
-Suppose you want to install software that depends on mpileaks but found
+Suppose you want to install software that depends on ``mpileaks`` but found
 Spack did not already have a built-in package for it. This means you are
 going to have to create one.
 
-Spack's *create* command builds a new package from a template by taking
-the location of the package's source code and using it to:
+Spack's *create* command builds a new package from a template based on
+the arguments you supply. If you provide the URL for an archive file,
+spack will: 
 
 * fetch the code;
+* inspect the file;
 * create a package skeleton; and
-* open the file up in your editor of choice.
+* open the package up in your editor of choice.
 
 .. note::
 
@@ -142,15 +140,15 @@ template:
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
+   :emphasize-lines: 6-21,26,27,29-30,33-35,39-40,43-44
 
 .. note::
 
    The ``maintainers`` field is a comma-separated list of GitHub user
-   names for those people who are willing to be notified when a change
-   is made to the package. This information is useful for developers who
-   maintain a Spack package for their own software and or rely on software
-   maintained by other people.
+   names. The accounts listed do not have to be developers or experts
+   of the software; rather, they are signing up to be notified if the
+   package is modified so they are given a chance to comment before
+   the changes are merged into the repository.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
 calculation. Exit your editor to return to the command line and use the 
@@ -162,21 +160,16 @@ calculation. Exit your editor to return to the command line and use the
 
 Note the entire ``version`` directive is provided for your convenience.
 
-We will now fill in the provided placeholders as we:
-
-* document some information about this package;
-* add dependencies; and
-* add the configuration arguments needed to build the package.
-
-For the moment, though, let's see what Spack does with the skeleton
-by trying to install the package using the ``spack install`` command:
+Before we remove boiler plate and fill in placeholders, let's see what
+Spack does with the skeleton by trying to install the package using the
+``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
    :emphasize-lines: 1,20
 
-It clearly did not build. The error indicates ``configure`` is unable
-to find the installation location of a dependency.
+The software clearly did not build. The error indicates ``configure``
+is unable to find the installation location of a dependency.
 
 So let's start to customize the package to our software.
 
@@ -205,8 +198,8 @@ Let's make the following changes:
 
    We will exclude the ``Copyright`` clause in the remainder of
    the package snippets here to reduce the length of the tutorial
-   documentation; however, it **is required** for published
-   packages.
+   documentation; however, it and the ``SPDX-License-Identifier``
+   **are required** for published packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
@@ -389,20 +382,21 @@ Let's move to the build directory using the ``spack cd`` command:
 
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
-build. If not, you can ``cd`` into the directory above that contained
-the ``spack-build-out.txt`` file then into it's ``spack-src`` 
-subdirectory.
+build. 
+
+.. note::
+
+   If the command did not take you to the stage directory, you can
+   ``cd`` into it using the path to the ``spack-build-out.txt`` file
+   *plus* the ``spack-src`` subdirectory.
 
 Now let's ensure the environment is properly set up using the
-``spack build-env`` command:
+``spack build-env`` command, which spawns a new shell containing
+the same environment Spack used to build the ``mpileaks`` package:
 
 .. code-block:: console
 
   $ spack build-env mpileaks bash
-
-This command spawned a new shell containing the same environment
-that Spack used to build the ``mpileaks`` package. (Feel free to
-substitute your favorite shell for ``bash``.)
 
 .. note::
 
