@@ -44,9 +44,9 @@ environments allow you to readily:
 This tutorial introduces the basics of creating and using environments,
 then explains how to add, remove, configure, and build software in them.
 We will start with the command line interface, then cover editing key
-environment file directly. We will describe the difference between
-Spack-managed and independent environments within the context of
-reproducible builds.
+environment file directly. We will finish with a discussion of reproducible
+builds, including the difference between Spack-managed and independent
+environments.
 
 -------------------
 Environment Basics
