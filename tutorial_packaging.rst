@@ -12,7 +12,7 @@ Package Creation Tutorial
 =========================
 
 We've covered how to install and use built-in packages, now we'll
-takl about how to create one of your own.
+talk about how to create one of your own.
 
 This tutorial walks you through the steps for creating, building
 and debugging a simple Spack package. We will use an iterative
