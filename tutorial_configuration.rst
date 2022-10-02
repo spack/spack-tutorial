@@ -294,7 +294,8 @@ compiler for both specifications of Fortran. We've also changed the
 ``spec`` entry for this compiler. The ``spec`` entry is effectively the
 name of the compiler for Spack. It consists of a name and a version
 number, separated by the ``@`` sigil. The name must be one of the supported
-compiler names in Spack (arm, cce, clang, fj, gcc, intel, nag, pgi, xl, xl_r).
+compiler names in Spack (aocc, apple-clang, arm, cce, clang, dpcpp, fj,
+gcc, intel, msvc, nag, nvhpc, oneapi, pgi, rocmcc, xl, xl_r).
 The version number can be an arbitrary string of alphanumeric characters,
 as well as ``-``, ``.``, and ``_``. The ``target`` and ``operating_system``
 sections we leave unchanged. These sections specify when Spack can use
