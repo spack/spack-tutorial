@@ -367,8 +367,18 @@ We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 Advanced compiler configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are three fields of the compiler configuration entry that we
+There are four fields of the compiler configuration entry that we
 have not yet talked about.
+
+The ``target`` field of the compiler defines the cpu architecture **family**
+that the compiler supports.
+
+.. code-block:: yaml
+
+   - compiler:
+       ...
+       target: ppc64le
+       ...
 
 The ``modules`` field of the compiler is used primarily on Cray systems,
 but can be useful on any system that has compilers that are only
