@@ -533,6 +533,54 @@ Now hdf5 will concretize without an MPI dependency by default.
 In general, every attribute that we can set for all packages we can
 set separately for an individual package.
 
+^^^^^^^^^^^^^^^^^^^^^^^
+Applying required specs
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The prior sections apply preferences. Spack can ignore these preferences
+when concretizing if they would create a conflict. In some cases, this
+can lead to unexpected results. If you want to be sure that a preference
+is applied, it should be replaced with a requirement: you can add a
+`require` subsection for a specific package:
+
+.. code-block:: yaml
+
+   spack:
+     specs: []
+     packages:
+       hdf5:
+         # This replaces "variants" specified in the prior section
+         require: ~mpi
+       openmpi:
+         # Always build @master with %gcc, allow other versions to
+         # use other compilers
+         require:
+         - one_of: [@master%gcc, @:4]
+     view: true
+
+Any spec needing `hdf5` in this environment would have to build it with
+`~mpi`, and Spack would report an error if it could not arrange this.
+
+You can apply requirements to `all`, and also to a virtual package in
+order to force a specific provider.
+
+.. code-block:: yaml
+
+    packages:
+      all:
+        # Every package must build with %clang
+        require: '%clang'
+      cmake:
+        # This overrides the requirements from "all", so CMake in this
+        # case is the one exception to the above rule
+        require: '%gcc'
+      mpi:
+        require: mvapich2
+      mvapich2:
+        # This combines with the requirements for "mpi" (unlike
+        # requirements for "cmake" and "all")
+        require: ~cuda
+
 ^^^^^^^^^^^^^^^^^
 External packages
 ^^^^^^^^^^^^^^^^^
