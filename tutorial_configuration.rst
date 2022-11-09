@@ -618,8 +618,8 @@ This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
-To express that we don't want any other MPI installed we can use the 
-virtual ``mpi`` package as a key. Since we're at it, we can configure 
+To express that we don't want any other MPI installed we can use the
+virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
@@ -685,21 +685,6 @@ the software. We can do this like so:
 
 Now, only members of the ``fluid_dynamics`` group can use any
 ``converge`` installations.
-
-At this point we want to discard the configuration changes we made
-in this tutorial section, so we can deactivate the environment:
-
-.. code-block:: console
-
-   $ spack env deactivate
-
-
-.. warning::
-
-   If you do not deactivate the ``config-env`` environment, then
-   specs will be concretized differently in later tutorial sections
-   and your results will not match.
-
 
 -----------------
 High-level Config
@@ -826,3 +811,21 @@ of Spack's main documentation.
 For examples of how other sites configure Spack, see
 https://github.com/spack/spack-configs. If you use Spack at your site
 and want to share your config files, feel free to submit a pull request!
+
+-----------------------------------------
+Cleaning up for the next tutorial section
+-----------------------------------------
+
+At this point we want to discard the configuration changes we made
+in this tutorial section, so we can deactivate the environment:
+
+.. code-block:: console
+
+   $ spack env deactivate
+
+
+.. warning::
+
+   If you do not deactivate the ``config-env`` environment, then
+   specs will be concretized differently in later tutorial sections
+   and your results will not match.
