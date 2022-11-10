@@ -550,12 +550,12 @@ is applied, it should be replaced with a requirement: you can add a
      packages:
        hdf5:
          # This replaces "variants" specified in the prior section
-         require: ~mpi
+         require: "~mpi"
        openmpi:
          # Always build @master with %gcc, allow other versions to
          # use other compilers
          require:
-         - one_of: [@master%gcc, @:4]
+         - one_of: ["@master%gcc", "@:4"]
      view: true
 
 Any spec needing `hdf5` in this environment would have to build it with
@@ -569,17 +569,17 @@ order to force a specific provider.
     packages:
       all:
         # Every package must build with %clang
-        require: '%clang'
+        require: "%clang"
       cmake:
         # This overrides the requirements from "all", so CMake in this
         # case is the one exception to the above rule
-        require: '%gcc'
+        require: "%gcc"
       mpi:
         require: mvapich2
       mvapich2:
         # This combines with the requirements for "mpi" (unlike
         # requirements for "cmake" and "all")
-        require: ~cuda
+        require: "~cuda"
 
 ^^^^^^^^^^^^^^^^^
 External packages
