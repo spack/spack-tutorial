@@ -644,7 +644,75 @@ built-in packages that can serve as examples to guide the development
 of your package. You can find these packages in
 ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
 
-Good Luck!
+----------------------
+Multiple build systems
+----------------------
+
+There are cases where a software actively supports two build systems, or changes
+build systems as it evolves, or needs different build systems on different platforms.
+Spack allows you to write a single, neat, recipe for these cases too. It will only
+require a slight change in the recipe's structure, if compared to what we have seen
+so far.
+
+Let's take as an example ``uncrustify``, which is a source code beautifier. This
+software used to build with ``autotools`` until version 0.63, and then switched build system
+to ``cmake`` at version 0.64.
+
+Compared to previous recipes in this tutorial, in this case we need ``Uncrustify`` to
+inherit from both ``CMakePackage`` and ``AutotoolsPackage``. We also need to specify
+explicitly the ``build_system`` directive, and we might add conditional dependencies in case
+they are needed:
+
+.. code-block:: python
+
+   class Uncrustify(CMakePackage, AutotoolsPackage):
+       """Source Code Beautifier for C, C++, C#, ObjectiveC, Java, and others."""
+
+       homepage = "http://uncrustify.sourceforge.net/"
+       git = "https://github.com/uncrustify/uncrustify"
+       url = "https://sourceforge.net/projects/uncrustify/files/uncrustify/uncrustify-0.69/uncrustify-0.69.tar.gz"
+
+       version("0.64", commit="1d7d97")
+       version("0.63", commit="44ce0f")
+
+       build_system(
+           conditional("cmake", when="@0.64:"),
+           conditional("autotools", when="@:0.63"),
+           default="cmake",
+       )
+   
+       with when("build_system=autotools"):
+           depends_on("automake", type="build")
+           depends_on("autoconf", type="build")
+           depends_on("libtool", type="build", when="@0.63")
+
+We didn't mention it so far, but each spec has a ``build_system`` variant, that specifies
+the build system it uses. In most cases that variant has a single allowed value, inherited from the
+corresponding base package - so, usually, you don't have to think about it.
+
+When your package supports more than one build system though, you have to explicitly declare which ones are
+allowed and under which conditions. In the example above it's ``cmake`` for version 0.64 and higher and
+``autotools`` for version 0.63 and lower.
+
+The ``build_system`` variant can also be used to declare other properties which are conditional on the build
+system being selected. For instance above we declared that, if using ``autotools``, we also need ``automake``,
+``autoconf`` and ``libtool`` as dependencies.
+
+The other relevant difference, compared to the previous recipes we have seen so far, is that the code prescribing
+the installation procedure will live into two separate classes:
+
+.. code-block:: python
+
+   class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
+      def cmake_args(self):
+          pass
+
+   class AutotoolsBuilder(spack.build_systems.autotools.AutotoolsBuilder):
+      def configure_args(self):
+          pass
+
+Depending on the ``spec``, and more specifically on the value of the ``build_system`` directive, a ``builder``
+object will be instantiated from one of the two classes when an installation is requested from a user.
 
 -----------
 Cleaning Up
@@ -698,6 +766,15 @@ Using other build systems
 * `Spack Package Build Systems tutorial
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
   for tutorials on common build systems
+* `Multiple Build Systems
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
+  for a reference on coding packages with multiple build systems
+* `Package Class Architecture
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
+  to have more insight on the inner working of ``Package`` and ``Builder`` classes.
+* `The GDAL Package
+  <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
+  to have an example of a complex package which extends Python and supports two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
