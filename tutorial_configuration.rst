@@ -217,7 +217,8 @@ We will start by opening the compilers configuration file:
 
 We start with no active environment, so this will open a
 ``compilers.yaml`` file for editing (you can also do this with an
-active environment):
+active environment - for this tutorial the environment should set
+`unify: false`):
 
 .. code-block:: yaml
 
@@ -483,12 +484,15 @@ a section name):
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
 
+For this tutorial, `unify` should be set to `false`.
 
 Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
@@ -514,6 +518,8 @@ HDF5.
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
@@ -596,11 +602,13 @@ On these systems we have a pre-installed Perl. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 11-14
+   :emphasize-lines: 13-16
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
@@ -637,11 +645,13 @@ specify it on the command line, or we can tell Spack that it's
 not allowed to build its own Perl. We'll go with the latter.
 
 .. code-block:: yaml
-   :emphasize-lines: 15
+   :emphasize-lines: 17
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
@@ -671,11 +681,13 @@ virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
-   :emphasize-lines: 14-19
+   :emphasize-lines: 16-21
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
