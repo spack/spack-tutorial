@@ -56,8 +56,8 @@ example stacks/view-0       "ls views/default"
 example stacks/view-0       "ls views/default/lib"
 example stacks/view-0       "ls views/full"
 example stacks/view-0       "ls views/full/zlib"
-example stacks/view-0       "ls views/full/zlib/zlib-1.2.11-gcc-7.5.0"
-example stacks/view-0       "ls views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib"
+example stacks/view-0       "ls views/full/zlib/zlib-1.2.13-gcc-7.5.0"
+example stacks/view-0       "ls views/full/zlib/zlib-1.2.13-gcc-7.5.0/lib"
 
 cat $project/stacks/examples/6.spack.yaml.example > spack.yaml
 
