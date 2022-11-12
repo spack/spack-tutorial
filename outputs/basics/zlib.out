@@ -1,27 +1,16 @@
 $ spack install zlib
 ==> Bootstrapping clingo from pre-built binaries
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.2/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-dzhvhynye4z7oalowdcy5zt25lej3m2n.spec.json
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.2/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-dzhvhynye4z7oalowdcy5zt25lej3m2n.spack
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spack
 ==> Installing "clingo-bootstrap@spack%gcc@10.2.1~docs~ipo+python+static_libstdcpp build_type=Release arch=linux-centos7-x86_64" from a buildcache
-==> Warning: This binary package uses a deprecated layout, and support for it will eventually be removed from spack.
-==> Bootstrapping patchelf from pre-built binaries
-==> Bootstrapping patchelf@0.13.1:0.13.99 %gcc target=x86_64 from sources
-==> Installing patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75
-==> No binary for patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75 found: installing from source
-==> Fetching https://mirror.spack.io/_source-cache/archive/08/08c0237e89be74d61ddf8f6ff218439cdd62af572d568fb38913b53e222831de.tar.gz
-==> No patches needed for patchelf
-==> patchelf: Executing phase: 'autoreconf'
-==> patchelf: Executing phase: 'configure'
-==> patchelf: Executing phase: 'build'
-==> patchelf: Executing phase: 'install'
-==> patchelf: Successfully installed patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75
-  Fetch: 0.03s.  Build: 6.19s.	Total: 6.22s.
-[+] /home/spack/.spack/bootstrap/store/linux-ubuntu18.04-x86_64/gcc-7.5.0/patchelf-0.13.1-krpxctdud7tcekzjoh2vb4orqwrfqs75
-==> Installing zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-==> No binary for zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs found: installing from source
-==> Fetching https://mirror.spack.io/_source-cache/archive/91/91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9.tar.gz
-==> Applied patch /home/spack/spack/var/spack/repos/builtin/packages/zlib/configure-cc.patch
+==> Waiting for zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> Installing zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> No binary for zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6 found: installing from source
+==> Fetching https://zlib.net/fossils/zlib-1.2.13.tar.gz
+==> No patches needed for zlib
+==> zlib: Executing phase: 'edit'
+==> zlib: Executing phase: 'build'
 ==> zlib: Executing phase: 'install'
-==> zlib: Successfully installed zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-  Fetch: 0.05s.  Build: 0.98s.	Total: 1.03s.
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+==> zlib: Successfully installed zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+  Fetch: 1.32s.  Build: 18.19s.  Total: 19.51s.
+[+] /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
