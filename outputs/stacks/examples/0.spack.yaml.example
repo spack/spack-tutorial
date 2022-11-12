@@ -9,4 +9,6 @@ spack:
         - [boost, trilinos+hdf5]
         - ['%gcc', '%clang']
 
-  view: False
+  view: false
+  concretizer:
+    unify: false

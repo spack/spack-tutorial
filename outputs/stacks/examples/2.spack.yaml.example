@@ -12,4 +12,6 @@ spack:
       exclude:
         - '%clang ^mvapich2'
 
-  view: False
+  view: false
+  concretizer:
+    unify: false

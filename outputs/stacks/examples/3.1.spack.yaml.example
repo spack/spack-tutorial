@@ -20,3 +20,5 @@ spack:
     - $singleton_packages
 
   view: false
+  concretizer:
+    unify: false

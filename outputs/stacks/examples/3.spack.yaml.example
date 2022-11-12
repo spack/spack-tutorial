@@ -18,3 +18,5 @@ spack:
         - '%clang ^mvapich2'
 
   view: false
+  concretizer:
+    unify: false

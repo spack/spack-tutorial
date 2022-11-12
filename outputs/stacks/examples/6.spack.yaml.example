@@ -32,3 +32,6 @@ spack:
       projections:
         ^mpi: '{name}/{name}-{version}-{^mpi.name}-{^mpi.version}-{compiler.name}-{compiler.version}'
         all: '{name}/{name}-{version}-{compiler.name}-{compiler.version}'
+
+  concretizer:
+    unify: false
