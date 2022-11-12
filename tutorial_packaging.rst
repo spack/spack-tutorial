@@ -651,7 +651,7 @@ Multiple build systems
 There are cases where a software actively supports two build systems, or changes
 build systems as it evolves, or needs different build systems on different platforms.
 Spack allows you to write a single, neat, recipe for these cases too. It will only
-require a slight change in the recipe's structure, if compared to what we have seen
+require a slight change in the recipe's structure compared to what we have seen
 so far.
 
 Let's take as an example ``uncrustify``, which is a source code beautifier. This
@@ -670,7 +670,6 @@ they are needed:
 
        homepage = "http://uncrustify.sourceforge.net/"
        git = "https://github.com/uncrustify/uncrustify"
-       url = "https://sourceforge.net/projects/uncrustify/files/uncrustify/uncrustify-0.69/uncrustify-0.69.tar.gz"
 
        version("0.64", commit="1d7d97")
        version("0.63", commit="44ce0f")
@@ -681,10 +680,8 @@ they are needed:
            default="cmake",
        )
    
-       with when("build_system=autotools"):
-           depends_on("automake", type="build")
-           depends_on("autoconf", type="build")
-           depends_on("libtool", type="build", when="@0.63")
+       with when("build_system=cmake"):
+           depends_on("cmake@3.18:", type="build")
 
 We didn't mention it so far, but each spec has a ``build_system`` variant, that specifies
 the build system it uses. In most cases that variant has a single allowed value, inherited from the
