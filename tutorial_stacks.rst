@@ -40,6 +40,12 @@ again.
 For now, we'll avoid the view directive. We'll come back to this
 later.
 
+Notice that we have to change the concretizer configuration here. By
+default, environments co-concretize all specs to be compatible, but
+that's simply impossible in an environment with multiple specs for
+each package. For now, we set the concretizer unification to
+``false`` to allow all of these builds in one environment.
+
 This would lead to a lot of install time, so for the sake of time
 we'll just concretize and look at the concrete specs for the rest of
 this section.
@@ -61,6 +67,34 @@ command line.
    matrix. This cannot be done yet with clingo, since the algorithm 
    employed previously relied on the iterative construction of the 
    specs in the environment, but will be added back in future releases.
+
+This environment is actually too unconstrained for many use
+cases. Here, we see ``trilinos`` depending on one version of ``hdf5``,
+and ``hdf5`` installed at a different version. This would lead to
+problems for an application linking against this software stack.
+
+In most software stacks, the installs for a given compiler and MPI
+combination are intended to be used together, and therefore need their
+dependencies should be constrianed together. For this use case, we use
+the ``unify: when_possible`` configuration for the concretizer. This
+will cause Spack to allow deviations based on the specific abstract
+specs we requested, but otherwise minimize the proliferation of
+duplicate specs in the environment.
+
+.. literalinclude:: outputs/stacks/examples/1.spack.yaml.example
+   :language: yaml
+   :emphasize-lines: 10
+
+What we will see here is that Spack applies the ``hdf5`` constraint to
+``trilinos``, because that unification is possible, but does not
+combine the compiler constraints for ``trilinos%gcc`` and
+``trilinos%clang``, as those conflict.
+
+.. literalinclude:: outputs/stacks/concretize-1.out
+   :language: console
+
+This allows us to deploy software that will satisfy the expectations
+of HPC users.
 
 We can also exclude some values from a matrix.
 
