@@ -18,6 +18,9 @@ all:
 		sed -i~ 's/==>[^ ]/==> /;s/\#/ /' $$dir/*.out; \
 	done
 
+run-local:
+	${PWD}/${section}.sh
+
 run:
 	docker run --rm -it \
 		--mount type=bind,source=${PWD},target=/project \
