@@ -8,9 +8,8 @@ rm -rf $raw_outputs/packaging
 . $project/init_spack.sh
 mpileaks_package_py=$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py
 
-#cd ~/spack && git checkout hotfix/namespace && cd -
-
 example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutorial/"
+example packaging/repo-add   "spack config add concretizer:enable_node_namespace:true"
 
 # make the editor automatically exit
 export EDITOR="bash -c exit 0"
@@ -43,4 +42,5 @@ example packaging/install-mpileaks-4  "spack install --verbose tutorial.mpileaks
 
 example packaging/cleanup  "spack uninstall -ay mpileaks"
 example packaging/cleanup  "spack repo remove tutorial"
+example packaging/cleanup  "spack config remove concretizer:enable_node_namespace:true"
 example packaging/cleanup  "rm -rf \$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks"
