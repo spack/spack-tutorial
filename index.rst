@@ -9,11 +9,11 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was last
-presented as a virtual event at LLNL's 2022 `RADIUSS on AWS Tutorial Series
-<https://software.llnl.gov/radiuss/event/2022/07/07/radiuss-on-aws/>`_ August
-1-2, 2022. There is a full day of material here, along with extra sections
-beyond what was presented at the RADIUSS tutorial.
+This is an introduction to Spack with lectures and live demos. It was last presented as
+a virtual event at SC22 as `Managing HPC Software Complexity with Spack
+<https://sc22.supercomputing.org/presentation/?id=tut156&sess=sess222/>`_ November
+13, 2022. There is a full day of material here, along with extra sections beyond what
+was presented at the SC22 tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -23,17 +23,17 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/ecp21-tutorial-slide-preview.png
-   :target: _static/slides/spack-radiuss22-tutorial-slides.pdf
+.. image:: tutorial/images/sc22-tutorial-slide-preview.png
+   :target: _static/slides/spack-sc22-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-radiuss22-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-sc22-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Richarda Butler, Tamara Dahlgren, and Todd Gamblin.
-Managing HPC Software Complexity with Spack. LLNL RADIUSS on AWS Tutorial Series.
-Virtual Event. August 1-2, 2022.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Tamara Dahlgren,
+Adam J. Stewart, and Harmen Stoppels. Managing HPC Software Complexity with Spack.
+Supercomputing 2022 (SC'22). Dallas, TX, November 13, 2022.
 
 .. _live-demos:
 
