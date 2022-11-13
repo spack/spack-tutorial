@@ -42,12 +42,8 @@ example environments/env-install-1        "spack install"
 example environments/find-env-2           "spack find"
 
 example environments/use-tcl-1       "which tclsh"
-# don't change tclsh example
 
-example environments/use-trilinos-1  "which algebra"
-example environments/use-trilinos-1  "algebra"
-
-example environments/env-create-2    "spack env create myproject2"
+example environments/env-create-2         "spack env create myproject2"
 example -tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
 example environments/env-create-2    "spack add scr trilinos"
@@ -65,21 +61,14 @@ example -tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
 
-
-
-
-example environments/spec-1          "spack spec hypre"
-
 example environments/config-get-1    "spack config get"
 
 # The file is edited by hand here
 # We mock that by using `spack config add`
 spack config add packages:all:providers:mpi:[mpich]
 
-example environments/spec-2          "spack spec hypre"
-
-example environments/concretize-f-1 "spack concretize --force"
-spack install
+example environments/concretize-f-1 "spack concretize --force --fresh"
+# spack install
 
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"

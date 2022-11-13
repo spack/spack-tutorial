@@ -287,9 +287,9 @@ spec. Spack uses reference counting to ensure that we don't remove
    no longer needed by any environments or their package dependencies.
 
 
--------------------------------
-The ``spack.yaml`` file
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Shorthand for ``add`` and ``remove``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We've seen how to use ``add`` and ``remove`` to add and remove roots from
 an environment, and we've seen how to ``install`` all of the roots
@@ -308,13 +308,15 @@ of an environment at once:
 * If you have a number of specs that can be installed together,
   adding them first and installing them together enables them to
   share dependencies and reduces total installation time.
+
 * You can launch all builds in parallel by taking advantage of
   Spack's `install-level build parallelism
 <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
-^^^^^^^^^^^^^^^^^^^^^
-Environments as files
-^^^^^^^^^^^^^^^^^^^^^
+
+-----------------------
+The ``spack.yaml`` file
+-----------------------
 
 An environment is more than just a list of root specs. It includes
 *configuration* settings that affect the way Spack behaves when the
@@ -335,25 +337,32 @@ Let's start by looking at the configuration of our environment using
 The output shows the special ``spack.yaml`` configuration file that Spack
 uses to store the environment configuration.
 
-There are several important parts:
+There are several important parts of this file:
 
-* ``specs:``: the list of roots we added with ``add``
+* ``specs:``: the list of specs to install
 * ``view:``: this controls whether the environment has a *view*. You can
   set it to ``false`` to disable view generation.
 * ``concretizer:unify:``: This controls how the specs in the environment
-  are concretized. ``true`, the default,  means that they are concretized
-  *together*, so that there is only one version of  any package in the
-  environment.
+  are concretized. 
 
-We'll cover ``unify:false`` and ``unify:when_possible`` later in the
-Stacks tutorial.
+The ``specs`` list should look familiar; these are the specs we've been
+modifying with ``spack add``.
+  
+``concretizer:unify:true``, the default, means that they are concretized
+*together*, so that there is only one version of any package in the
+environment. We'll cover ``unify:false`` and ``unify:when_possible`` later,
+in the Stacks tutorial.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Editing environment configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
    Before proceeding, make sure your ``EDITOR`` environment variable
    is set to the path of your preferred text editor.
-
-Let's edit this file to *prefer* ``mpich`` as our ``mpi`` provider
+   
+Let's edit ``spack.yaml`` to *prefer* ``mpich`` as our ``mpi`` provider
 using ``spack config edit``.
 
 You should now have the above file open in your editor. Change it
@@ -372,14 +381,14 @@ to include the ``packages:all:providers:mpi:`` entry below:
            mpi: [mpich]
 
      # add package specs to the `specs` list
-     specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
+     specs: [tcl, trilinos]
 
 
 .. note::
 
    This setting only defines the **default** ``mpi`` provider.
    You can still override the provider on the command line, e.g.,
-   with ``spack install hdf5 ^openmpi``.
+   with ``spack install trilinos ^openmpi``.
 
    We introduce this here to show you how environment configuration
    can affect concretization. Configuration options are covered in much

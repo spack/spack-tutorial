@@ -1,107 +1,48 @@
 $ spack concretize --force --fresh
-==> Starting concretization pool with 4 processes
-==> Environment concretized in 19.00 seconds.
 ==> Concretized tcl
-[+]  6m3sqvr  tcl@8.6.12%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  fntvsj6      ^zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
+[+]  v63n6wx  tcl@8.6.12%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  2hfr5rb	  ^zlib@1.2.13%gcc@7.5.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized trilinos
- -   otna7uz  trilinos@13.0.1%gcc@7.5.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest~hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_type=RelWithDebInfo cxxstd=14 gotype=long_long arch=linux-ubuntu18.04-x86_64
-[+]  tulqz4n      ^cmake@3.23.1%gcc@7.5.0~doc+ncurses+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
-[+]  frwzsc4          ^ncurses@6.2%gcc@7.5.0~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
-[+]  i5po27g              ^pkgconf@1.8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  hqlqpsn          ^openssl@1.1.1o%gcc@7.5.0~docs~shared certs=system arch=linux-ubuntu18.04-x86_64
-[+]  pn5mtes              ^perl@5.34.1%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-[+]  q6tqmmm                  ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl patches=b231fcc arch=linux-ubuntu18.04-x86_64
-[+]  cyn2yam                  ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
-[+]  k22pe4r                      ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  dr56jt4                          ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  xub4jsy                  ^gdbm@1.19%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  ls6erxw                      ^readline@8.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  fntvsj6                  ^zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
-[+]  oixja6d      ^hwloc@2.7.1%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu18.04-x86_64
-[+]  csp5gvq          ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  7fhdrxx              ^libtool@2.4.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  uadbn2a                  ^m4@1.4.19%gcc@7.5.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
-[+]  ubezeyc                      ^libsigsegv@2.13%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  vkk73ww              ^util-macros@1.19.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  4run532          ^libxml2@2.9.13%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
-[+]  olptpbs              ^xz@5.2.5%gcc@7.5.0~pic libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  merlslk      ^mpich@4.0.2%gcc@7.5.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu18.04-x86_64
-[+]  bliztd7          ^findutils@4.9.0%gcc@7.5.0 patches=440b954 arch=linux-ubuntu18.04-x86_64
-[+]  aeocsli          ^libfabric@1.14.1%gcc@7.5.0~debug~kdreg fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
-[+]  gcyym67          ^yaksa@0.2%gcc@7.5.0~cuda~rocm arch=linux-ubuntu18.04-x86_64
-[+]  hlj3ujm              ^autoconf@2.69%gcc@7.5.0 patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
-[+]  6vk5ehd              ^automake@1.16.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  t3ey2ga              ^python@3.9.12%gcc@7.5.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060 arch=linux-ubuntu18.04-x86_64
-[+]  5grv4ow                  ^expat@2.4.8%gcc@7.5.0+libbsd arch=linux-ubuntu18.04-x86_64
-[+]  zliunm4                      ^libbsd@0.11.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  llu53co                          ^libmd@1.0.4%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  wuasyuu                  ^gettext@0.21%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu18.04-x86_64
-[+]  3f62loj                      ^tar@1.34%gcc@7.5.0 zip=pigz arch=linux-ubuntu18.04-x86_64
-[+]  i74tgiq                          ^pigz@2.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  w4beu34                          ^zstd@1.5.2%gcc@7.5.0+programs compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  tkru6n3                  ^libffi@3.4.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  zbjzhle                  ^sqlite@3.38.5%gcc@7.5.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-ubuntu18.04-x86_64
-[+]  7fulw7l                  ^util-linux-uuid@2.37.4%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  dydujpz      ^openblas@0.3.20%gcc@7.5.0~bignuma~consistent_fpcsr~ilp64+locking+pic+shared symbol_suffix=none threads=none arch=linux-ubuntu18.04-x86_64
+ -   penzjd3  trilinos@13.0.1%gcc@7.5.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest~hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=RelWithDebInfo cxxstd=14 gotype=long_long arch=linux-ubuntu18.04-x86_64
+ -   stszbns	  ^cmake@3.24.3%gcc@7.5.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu18.04-x86_64
+[+]  zcuawli	      ^ncurses@6.3%gcc@7.5.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu18.04-x86_64
+ -   yr4z2pt	      ^openssl@1.1.1s%gcc@7.5.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu18.04-x86_64
+[+]  aurd37j		  ^ca-certificates-mozilla@2022-10-11%gcc@7.5.0 build_system=generic arch=linux-ubuntu18.04-x86_64
+[+]  2hfr5rb		  ^zlib@1.2.13%gcc@7.5.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu18.04-x86_64
+[+]  5yywrk2	  ^hwloc@2.8.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
+[+]  p7f5n6q	      ^libpciaccess@0.16%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  bdxu4wn		  ^libtool@2.4.7%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  ao5w53r		  ^util-macros@1.19.3%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  4aq5aj2	      ^libxml2@2.10.1%gcc@7.5.0~python build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  ltvovvv		  ^libiconv@1.16%gcc@7.5.0 build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
+[+]  nrwxyth		  ^xz@5.2.7%gcc@7.5.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
+[+]  k2lfw6f	      ^pkgconf@1.8.0%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+ -   vbkcftf	  ^mpich@4.0.2%gcc@7.5.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath build_system=autotools datatype-engine=auto device=ch4 netmod=ofi patches=d4c0e99 pmi=pmi arch=linux-ubuntu18.04-x86_64
+[+]  fxoomyc	      ^findutils@4.9.0%gcc@7.5.0 build_system=autotools patches=440b954 arch=linux-ubuntu18.04-x86_64
+[+]  u2kjaxd	      ^libfabric@1.16.1%gcc@7.5.0~debug~kdreg build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
+ -   tlfr5qw	      ^yaksa@0.2%gcc@7.5.0~cuda~rocm build_system=autotools arch=linux-ubuntu18.04-x86_64
+ -   btoteei		  ^autoconf@2.69%gcc@7.5.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
+ -   rxjqnjw		  ^automake@1.16.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  z7d5q4f		  ^m4@1.4.19%gcc@7.5.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
+[+]  c3uhkcj		      ^diffutils@3.8%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  e262sf6		      ^libsigsegv@2.13%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+ -   cyf55fe		  ^python@3.10.8%gcc@7.5.0+bz2+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib build_system=generic patches=0d98e93,7d40923,f2fd060 arch=linux-ubuntu18.04-x86_64
+[+]  j5k5nzg		      ^expat@2.4.8%gcc@7.5.0+libbsd build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  qieib3t			  ^libbsd@0.11.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  miq3rrs			      ^libmd@1.0.4%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  hj6szik		      ^gettext@0.21.1%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  kawegoy			  ^tar@1.34%gcc@7.5.0 build_system=autotools zip=pigz arch=linux-ubuntu18.04-x86_64
+[+]  wod35ny			      ^pigz@2.7%gcc@7.5.0 build_system=makefile arch=linux-ubuntu18.04-x86_64
+[+]  fprmzmo			      ^zstd@1.5.2%gcc@7.5.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
+[+]  qzq4b7h		      ^libffi@3.4.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  kgyvtw5		      ^readline@8.1.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  vmf7qax		      ^sqlite@3.39.4%gcc@7.5.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  eayyoxj		      ^util-linux-uuid@2.38.1%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+ -   3db4ryr	  ^openblas@0.3.21%gcc@7.5.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile patches=d3d9b15 symbol_suffix=none threads=none arch=linux-ubuntu18.04-x86_64
+ -   eydiwim	      ^perl@5.36.0%gcc@7.5.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu18.04-x86_64
+[+]  53fb72w		  ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu18.04-x86_64
+[+]  cxcreln		  ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared build_system=generic arch=linux-ubuntu18.04-x86_64
+[+]  cpmynty		  ^gdbm@1.23%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 
-==> Concretized hdf5+hl ^mpich
-[+]  e3cws2t  hdf5@1.12.2%gcc@7.5.0~cxx~fortran+hl~ipo~java+mpi+shared~szip~threadsafe+tools api=default build_type=RelWithDebInfo arch=linux-ubuntu18.04-x86_64
-[+]  tulqz4n      ^cmake@3.23.1%gcc@7.5.0~doc+ncurses+ownlibs~qt build_type=Release arch=linux-ubuntu18.04-x86_64
-[+]  frwzsc4          ^ncurses@6.2%gcc@7.5.0~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
-[+]  i5po27g              ^pkgconf@1.8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  hqlqpsn          ^openssl@1.1.1o%gcc@7.5.0~docs~shared certs=system arch=linux-ubuntu18.04-x86_64
-[+]  pn5mtes              ^perl@5.34.1%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-[+]  q6tqmmm                  ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl patches=b231fcc arch=linux-ubuntu18.04-x86_64
-[+]  cyn2yam                  ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
-[+]  k22pe4r                      ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  dr56jt4                          ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  xub4jsy                  ^gdbm@1.19%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  ls6erxw                      ^readline@8.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  fntvsj6                  ^zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
-[+]  merlslk      ^mpich@4.0.2%gcc@7.5.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu18.04-x86_64
-[+]  bliztd7          ^findutils@4.9.0%gcc@7.5.0 patches=440b954 arch=linux-ubuntu18.04-x86_64
-[+]  oixja6d          ^hwloc@2.7.1%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~opencl+pci~rocm+shared arch=linux-ubuntu18.04-x86_64
-[+]  csp5gvq              ^libpciaccess@0.16%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  7fhdrxx                  ^libtool@2.4.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  uadbn2a                      ^m4@1.4.19%gcc@7.5.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
-[+]  ubezeyc                          ^libsigsegv@2.13%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  vkk73ww                  ^util-macros@1.19.3%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  4run532              ^libxml2@2.9.13%gcc@7.5.0~python arch=linux-ubuntu18.04-x86_64
-[+]  olptpbs                  ^xz@5.2.5%gcc@7.5.0~pic libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  aeocsli          ^libfabric@1.14.1%gcc@7.5.0~debug~kdreg fabrics=sockets,tcp,udp arch=linux-ubuntu18.04-x86_64
-[+]  gcyym67          ^yaksa@0.2%gcc@7.5.0~cuda~rocm arch=linux-ubuntu18.04-x86_64
-[+]  hlj3ujm              ^autoconf@2.69%gcc@7.5.0 patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
-[+]  6vk5ehd              ^automake@1.16.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  t3ey2ga              ^python@3.9.12%gcc@7.5.0+bz2+ctypes+dbm~debug+ensurepip+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tix~tkinter~ucs4+uuid+zlib patches=0d98e93,4c24573,f2fd060 arch=linux-ubuntu18.04-x86_64
-[+]  5grv4ow                  ^expat@2.4.8%gcc@7.5.0+libbsd arch=linux-ubuntu18.04-x86_64
-[+]  zliunm4                      ^libbsd@0.11.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  llu53co                          ^libmd@1.0.4%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  wuasyuu                  ^gettext@0.21%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz arch=linux-ubuntu18.04-x86_64
-[+]  3f62loj                      ^tar@1.34%gcc@7.5.0 zip=pigz arch=linux-ubuntu18.04-x86_64
-[+]  i74tgiq                          ^pigz@2.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  w4beu34                          ^zstd@1.5.2%gcc@7.5.0+programs compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  tkru6n3                  ^libffi@3.4.2%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  zbjzhle                  ^sqlite@3.38.5%gcc@7.5.0+column_metadata+dynamic_extensions+fts~functions+rtree arch=linux-ubuntu18.04-x86_64
-[+]  7fulw7l                  ^util-linux-uuid@2.37.4%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-
-==> Concretized gmp
-[+]  lf7yoxu  gmp@6.2.1%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  hlj3ujm      ^autoconf@2.69%gcc@7.5.0 patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
-[+]  uadbn2a          ^m4@1.4.19%gcc@7.5.0+sigsegv patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
-[+]  ubezeyc              ^libsigsegv@2.13%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  pn5mtes          ^perl@5.34.1%gcc@7.5.0+cpanm+shared+threads arch=linux-ubuntu18.04-x86_64
-[+]  q6tqmmm              ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl patches=b231fcc arch=linux-ubuntu18.04-x86_64
-[+]  cyn2yam              ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
-[+]  k22pe4r                  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  dr56jt4                      ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
-[+]  xub4jsy              ^gdbm@1.19%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  ls6erxw                  ^readline@8.1%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  frwzsc4                      ^ncurses@6.2%gcc@7.5.0~symlinks+termlib abi=none arch=linux-ubuntu18.04-x86_64
-[+]  i5po27g                          ^pkgconf@1.8.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  fntvsj6              ^zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
-[+]  6vk5ehd      ^automake@1.16.5%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-[+]  7fhdrxx      ^libtool@2.4.7%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
-
-==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
+==> Updating view at /home/spack7/spack/var/spack/environments/myproject/.spack-env/view
