@@ -173,7 +173,7 @@ by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,20
+   :emphasize-lines: 1,19
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -310,11 +310,10 @@ installed *before* it can build our package.
   can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
 Now, since we don't want spack to grab the built-in ``mpileaks`` from the build
-cache, let's run this install with the ``--fresh``:
+cache, let's specify the repository we want ``mpileaks`` to be located:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
-   :emphasize-lines: 1,226,229
 
 .. note::
 
@@ -354,7 +353,7 @@ failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
-   :emphasize-lines: 1,29
+   :emphasize-lines: 1,33
 
 In this case the error conveniently appears on the last line of the
 log *and* the output from `spack install`.
@@ -478,11 +477,11 @@ in the ``configure_args`` method as follows:
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
 
-Now let's try the build again, remembering to use the ``--fresh`` option:
+Now let's try the build again, remembering to use the ``tutorial`` namespace:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,50,52
+   :emphasize-lines: 1,84,86
 
 Success!
 
@@ -549,7 +548,7 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1,48,333,335
+   :emphasize-lines: 1
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
@@ -718,7 +717,7 @@ Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
-   :emphasize-lines: 1,4,6
+   :emphasize-lines: 1,4,6-7
 
 --------------------
 More information

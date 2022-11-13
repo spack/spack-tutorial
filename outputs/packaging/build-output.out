@@ -1,32 +1,33 @@
-$ cat /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-build-out.txt
+$ cat /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-build-out.txt
 ==> mpileaks: Executing phase: 'autoreconf'
 ==> mpileaks: Executing phase: 'configure'
-==> [2022-11-13-10:11:26.419059] FILTER FILE: /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2022-11-13-10:11:26.442601] FILTER FILE: /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2022-11-13-10:11:26.465435] FILTER FILE: /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2022-11-13-10:11:26.490607] '/tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure' '--prefix=/home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24'
+==> [2022-11-13-13:24:25.694897] FILTER FILE: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2022-11-13-13:24:25.727394] FILTER FILE: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2022-11-13-13:24:25.763526] FILTER FILE: /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2022-11-13-13:24:25.793483] '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-hmia6vjwtceiojwfohgjpsrbgzz3ks24'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
 checking for a thread-safe mkdir -p... /bin/mkdir -p
-checking for gawk... gawk
+checking for gawk... no
+checking for mawk... mawk
 checking whether make sets $(MAKE)... yes
-checking for gcc... /home/spack1/spack/lib/spack/env/gcc/gcc
+checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
 checking for C compiler default output file name... a.out
 checking whether the C compiler works... yes
 checking whether we are cross compiling... no
 checking for suffix of executables...
 checking for suffix of object files... o
 checking whether we are using the GNU C compiler... yes
-checking whether /home/spack1/spack/lib/spack/env/gcc/gcc accepts -g... yes
-checking for /home/spack1/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
+checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
 checking for style of include used by make... GNU
-checking dependency style of /home/spack1/spack/lib/spack/env/gcc/gcc... gcc3
-checking whether /home/spack1/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
+checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
 checking whether we are using the GNU C++ compiler... yes
-checking whether /home/spack1/spack/lib/spack/env/gcc/g++ accepts -g... yes
-checking dependency style of /home/spack1/spack/lib/spack/env/gcc/g++... gcc3
-checking for /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc... /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc
-Checking whether /home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc responds to '-showme:compile'... yes
+checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+checking for /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc
+Checking whether /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-ilnrdw5772nw64ac6bkassqbmi7h2hgq/bin/mpicc responds to '-showme:compile'... yes
 configure: error: unable to locate adept-utils installation

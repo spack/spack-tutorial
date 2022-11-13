@@ -1,8 +1,4 @@
 $ spack install tutorial.mpileaks
-==> Bootstrapping clingo from pre-built binaries
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spec.json
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spack
-==> Installing "clingo-bootstrap@spack%gcc@10.2.1~docs~ipo+python+static_libstdcpp build_type=Release arch=linux-centos7-x86_64" from a buildcache
 ==> Waiting for mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill
 ==> Installing mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill
 ==> No binary for mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill found: installing from source
@@ -11,18 +7,17 @@ $ spack install tutorial.mpileaks
 ==> mpileaks: Executing phase: 'autoreconf'
 ==> mpileaks: Executing phase: 'configure'
 ==> Error: ProcessError: Command exited with status 1:
-    '/tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-src/configure' '--prefix=/home/spack1/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill'
+    '/tmp/spack/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill'
 
 1 error found in build log:
-     32    checking for mpipgcc... no
-     33    Checking whether not-found responds to '-showme:compile'... no
-     34    Checking whether not-found responds to '-showme'... no
-     35    Checking whether not-found responds to '-compile-info'... no
-     36    Checking whether not-found responds to '-show'... no
-     37    /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-src/configure: line 4
-	   931: Echo: command not found
-  >> 38    configure: error: unable to locate adept-utils installation
+     33    checking for mpipgcc... no
+     34    Checking whether not-found responds to '-showme:compile'... no
+     35    Checking whether not-found responds to '-showme'... no
+     36    Checking whether not-found responds to '-compile-info'... no
+     37    Checking whether not-found responds to '-show'... no
+     38    /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-src/configure: line 4931: Echo: command not found
+  >> 39    configure: error: unable to locate adept-utils installation
 
 See build log for details:
-  /tmp/spack1/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-build-out.txt
+  /tmp/spack/spack-stage/spack-stage-mpileaks-1.0-h4kc6ag2u4jpueirxjwgj6lc2cmlnill/spack-build-out.txt
 
