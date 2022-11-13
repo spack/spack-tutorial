@@ -1,6 +1,7 @@
 $ spack uninstall -ay mpileaks
-==> Successfully uninstalled mpileaks@1.0%gcc@7.5.0 stackstart=4 arch=linux-ubuntu18.04-x86_64/lj6vmd4
-==> Successfully uninstalled mpileaks@1.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64/phmdwmo
+==> Successfully uninstalled mpileaks@1.0%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64/phh2fvz
+==> Successfully uninstalled mpileaks@1.0%gcc@7.5.0 build_system=autotools stackstart=4 arch=linux-ubuntu18.04-x86_64/7mnox2q
 $ spack repo remove tutorial
 ==> Removed repository /home/spack/spack/var/spack/repos/tutorial with namespace 'tutorial'.
-$ rm -rf /home/spack/spack/var/spack/repos/tutorial/packages/mpileaks
+$ spack config remove concretizer:enable_node_namespace:true
+$ rm -rf $SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks

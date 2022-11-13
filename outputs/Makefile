@@ -5,7 +5,7 @@ container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 
-section = basics
+section = packaging
 
 all:
 	echo "Filtering raw outputs though col"
