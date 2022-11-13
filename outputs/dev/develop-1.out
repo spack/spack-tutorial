@@ -1,10 +1,10 @@
-$ spack develop scr@3.0rc2
-==> Configuring spec scr@3.0rc2 for development at path scr
-==> Fetching https://mirror.spack.io/_source-cache/archive/4b/4b2a718af56b3683e428d25a2269c038e9452db734221d370e3023a491477fad.tar.gz
+$ spack develop scr@2.0.0
+==> Configuring spec scr@2.0.0 for development at path scr
+==> Fetching https://mirror.spack.io/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
 $ grep -3 develop: spack.yaml
   packages:
     all:
       variants: ~fortran
   develop:
     scr:
-      spec: scr@3.0rc2
+      spec: scr@2.0.0
