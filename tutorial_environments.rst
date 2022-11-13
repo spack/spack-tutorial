@@ -25,7 +25,7 @@ This section of the tutorial introduces **Spack Environments**, which allow you
 to work with independent groups of packages separately, in a reproducible way.
 In some ways, Spack environments are similar to *virtual environments* in other
 systems (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_),
-but they are based around file formats (`spack.yaml` and `spack.lock`) that can
+but they are based around file formats (``spack.yaml`` and ``spack.lock``) that can
 be shared easily and re-used by others across systems.
 
 Administering properly configured software involving lots of packages
@@ -55,7 +55,6 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 
 .. literalinclude:: outputs/environments/find-no-env-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 This is a complete, but cluttered list of the installed packages and
@@ -74,7 +73,6 @@ called ``myproject``:
 
 .. literalinclude:: outputs/environments/env-create-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 An environment is like a virtualized Spack instance that you can
@@ -87,7 +85,6 @@ list`` command:
 
 .. literalinclude:: outputs/environments/env-list-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 Now let's **activate** our environment. You can use ``spack env activate``
@@ -95,7 +92,6 @@ command:
 
 .. literalinclude:: outputs/environments/env-activate-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 You can also use the ``spacktivate`` alias for short.
@@ -112,7 +108,6 @@ does not contain any installed packages.
 
 .. literalinclude:: outputs/environments/find-env-1.out
    :language: console
-   :emphasize-lines: 1
 
 The output from ``spack find`` is now *slightly* different. It tells
 you that you're in the ``myproject`` environment, so there is no need
@@ -125,7 +120,6 @@ If you *only* want to check what environment you are in, you can use
 
 .. literalinclude:: outputs/environments/env-status-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 If you want to leave this environment, you can use ``spack env deactivate``
@@ -135,7 +129,6 @@ After deactivating, we can see everything installed in this Spack instance:
 
 .. literalinclude:: outputs/environments/env-status-2.out
    :language: console
-   :emphasize-lines: 1,2,4
 
 
 Notice that we are no longer in an environment and all our packages
@@ -181,7 +174,6 @@ Now confirm the contents of the environment using ``spack find``:
 
 .. literalinclude:: outputs/environments/find-env-2.out
    :language: console
-   :emphasize-lines: 1
 
 We can see that the roots and all their dependencies have been installed.
 
@@ -211,7 +203,6 @@ You can see the path to ``tclsh`` using ``which``:
 
 .. literalinclude:: outputs/environments/use-tcl-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 Notice its path includes the name of our environment *and* a ``view``
@@ -244,7 +235,6 @@ packages ``scr`` and ``trilinos``.
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: console
-   :emphasize-lines: 1,5-6,9,12
 
 
 Now we have two environments. The ``myproject`` environment has ``tcl``
@@ -256,7 +246,6 @@ contents of the environment:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
    :language: console
-   :emphasize-lines: 1,11
 
 
 We can see that ``trilinos`` no longer appears in the list of installed specs.
@@ -274,7 +263,6 @@ let's switch back to confirm that it is still installed in that environment.
 
 .. literalinclude:: outputs/environments/env-swap-1.out
    :language: console
-   :emphasize-lines: 1-2
 
 
 Phew! We see that ``myproject`` still has ``trilinos`` as a root
@@ -331,6 +319,7 @@ Let's start by looking at the configuration of our environment using
 
 .. literalinclude:: outputs/environments/config-get-1.out
    :language: console
+   :emphasize-lines: 8-11
 
 The output shows the special ``spack.yaml`` configuration file that Spack
 uses to store the environment configuration.
@@ -367,6 +356,7 @@ You should now have the above file open in your editor. Change it
 to include the ``packages:all:providers:mpi:`` entry below:
 
 .. code-block:: yaml
+   :emphasize-lines: 9
 
    # This is a Spack Environment file.
    #
@@ -417,7 +407,6 @@ all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 All the specs are now concrete **and** ready to be installed with
@@ -438,7 +427,6 @@ implementation installed in our ``myproject`` environment, so
 
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
-   :emphasize-lines: 1,3
 
 
 As mentioned before, activating the environment sets a number of
@@ -451,7 +439,6 @@ Let's look specifically at path-related environment variables using
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 We can demonstrate use of these environment settings by building a
@@ -488,7 +475,6 @@ Let's build and run our program:
 
 .. literalinclude:: outputs/environments/use-mpi-1.out
    :language: console
-   :emphasize-lines: 1-2
 
 
 Notice that we only needed to pass the include path to the
@@ -501,7 +487,6 @@ is in our environment using ``spack find``:
 
 .. literalinclude:: outputs/environments/myproject-zlib-1.out
    :language: console
-   :emphasize-lines: 1
 
 Note that the reported version *does* match that of our installation.
 
@@ -578,7 +563,6 @@ can change to the directory containing the file using ``spack cd``:
 
 .. literalinclude:: outputs/environments/filenames-1.out
    :language: console
-   :emphasize-lines: 1-2,4
 
 
 Notice that ``myproject`` is a subdirectory of ``var/spack/environments``
@@ -588,7 +572,6 @@ when running ``spack env list``:
 
 .. literalinclude:: outputs/environments/env-list-2.out
    :language: console
-   :emphasize-lines: 1
 
 
 You can see that ``myproject`` is active because it is highlighted
@@ -604,7 +587,6 @@ options previously shown by ``spack config get``:
 
 .. literalinclude:: outputs/environments/cat-config-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -621,7 +603,6 @@ project:
 
 .. literalinclude:: outputs/environments/anonymous-create-1.out
    :language: console
-   :emphasize-lines: 1-4
 
 
 Notice that the command shows Spack created the environment, updated
@@ -634,7 +615,6 @@ directory contents and looking at the configuration file:
 
 .. literalinclude:: outputs/environments/anonymous-create-2.out
    :language: console
-   :emphasize-lines: 1,3
 
 
 Notice that Spack created a ``spack.yaml`` file in the *code* directory.
@@ -647,7 +627,6 @@ We can confirm that it is not a managed environment by running
 
 .. literalinclude:: outputs/environments/env-list-2.out
    :language: console
-   :emphasize-lines: 1
 
 and noting that the path does not appear in the output.
 
@@ -674,7 +653,6 @@ Now activate the environment and install the packages:
 
 .. literalinclude:: outputs/environments/install-anonymous-1.out
    :language: console
-   :emphasize-lines: 1-2,66-68
 
 
 Notice that Spack concretized the specs before installing them and
@@ -694,7 +672,6 @@ For example, let's add ``hdf5`` and look at our file:
 
 .. literalinclude:: outputs/environments/add-anonymous-1.out
    :language: console
-   :emphasize-lines: 1,3
 
 
 Notice that ``spack add`` added the package to our active environment and
@@ -710,7 +687,6 @@ Now use ``spack remove`` to remove the spec from the configuration:
 
 .. literalinclude:: outputs/environments/remove-anonymous-1.out
    :language: console
-   :emphasize-lines: 1,3
 
 and we see that the spec *was* removed from the spec list of our
 environment.
@@ -739,7 +715,6 @@ Let's look at the top 30 lines of our current environment:
 
 .. literalinclude:: outputs/environments/lockfile-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 While it is still readable, it consists of over 1300 lines of
@@ -776,7 +751,6 @@ the file that we'll call ``abstract``:
 
 .. literalinclude:: outputs/environments/create-from-file-1.out
    :language: console
-   :emphasize-lines: 1
 
 
 Here we see that Spack created a managed environment with the name
@@ -788,7 +762,6 @@ And, since it is a newly created environment, it does not have any
 
 .. literalinclude:: outputs/environments/find-env-abstract-1.out
    :language: console
-   :emphasize-lines: 1-2
 
 Notice that we have the same root specs as were listed in the ``spack.yaml``
 file.
@@ -806,7 +779,6 @@ the file:
 
 .. literalinclude:: outputs/environments/create-from-file-2.out
    :language: console
-   :emphasize-lines: 1-2
 
 Here we see that Spack again created a managed environment with the
 provided name.
@@ -818,7 +790,6 @@ installed in the environment as we can see from calling
 
 .. literalinclude:: outputs/environments/find-env-concrete-1.out
    :language: console
-   :emphasize-lines: 1-2
 
 .. note::
 
