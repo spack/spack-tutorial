@@ -10,7 +10,7 @@ pip install boto3
 example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example dev/up-to-date "cd ~/spack"
 cd ~/spack
-example dev/up-to-date "git checkout releases/v0.18"
+example dev/up-to-date "git checkout releases/v0.19"
 example dev/up-to-date ". share/spack/setup-env.sh"
 
 . share/spack/setup-env.sh
@@ -18,7 +18,7 @@ spack config add "config:suppress_gpg_warnings:true"
 spack config add "packages:all:target:[x86_64]"
 
 example dev/up-to-date "spack mirror add tutorial /mirror"
-example dev/up-to-date "spack buildcache keys --install --trust"
+example dev/up-to-date "spack gpg trust share/spack/keys/tutorial.pub"
 
 example dev/setup-scr "cd ~"
 cd ~
@@ -33,7 +33,7 @@ example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example dev/setup-scr "spack add macsio+scr"
 example dev/setup-scr "spack install"
 
-example dev/develop-1 "spack develop scr@3.0rc2"
+example dev/develop-1 "spack develop scr@2.0.0"
 example dev/develop-1 "grep -3 develop: spack.yaml"
 
 example dev/develop-conc "spack concretize -f"

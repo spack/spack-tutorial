@@ -1,74 +1,42 @@
 $ spack concretize
-==> Updating view at /home/spack/code/views/default
-==> Updating view at /home/spack/code/views/full
+==> Updating view at /home/spack1/code/views/default
 $ ls views/default
-TrilinosRepoVersion.txt  bin  etc  include  lib  man  sbin  share
+bin  etc  include  lib	libexec  man  sbin  share
 $ ls views/default/lib
-cmake			  libform.a			libkokkoscore.so	    libncurses++w_g.a		    libteuchosparameterlist.so
-engines-1.1		  libform.so			libkokkoscore.so.13	    libncurses.a		    libteuchosparameterlist.so.13
-libModeLaplace.so	  libform.so.6			libkokkoscore.so.3.1.1	    libncurses.so		    libteuchosparameterlist.so.13.0
-libModeLaplace.so.13	  libform.so.6.2		libkokkoskernels.so	    libncurses.so.6		    libteuchosparser.so
-libModeLaplace.so.13.0	  libform_g.a			libkokkoskernels.so.13	    libncurses.so.6.2		    libteuchosparser.so.13
-libamesos.so		  libformw.a			libkokkoskernels.so.13.0    libncurses_g.a		    libteuchosparser.so.13.0
-libamesos.so.13 	  libformw.so			libkokkostsqr.so	    libncursesw.a		    libteuchosremainder.so
-libamesos.so.13.0	  libformw.so.6 		libkokkostsqr.so.13	    libncursesw.so		    libteuchosremainder.so.13
-libamesos2.so		  libformw.so.6.2		libkokkostsqr.so.13.0	    libncursesw.so.6		    libteuchosremainder.so.13.0
-libamesos2.so.13	  libformw_g.a			liblzma.a		    libncursesw.so.6.2		    libtinfo.a
-libamesos2.so.13.0	  libgaleri-epetra.so		liblzma.so		    libncursesw_g.a		    libtinfo.so
-libanasazi.so		  libgaleri-epetra.so.13	liblzma.so.5		    libopa.so			    libtinfo.so.6
-libanasazi.so.13	  libgaleri-epetra.so.13.0	liblzma.so.5.2.5	    libopenblas-r0.3.18.a	    libtinfo.so.6.2
-libanasazi.so.13.0	  libgaleri-xpetra.so		libmenu.a		    libopenblas-r0.3.18.so	    libtinfo_g.a
-libanasaziepetra.so	  libgaleri-xpetra.so.13	libmenu.so		    libopenblas.a		    libtinfow.a
-libanasaziepetra.so.13	  libgaleri-xpetra.so.13.0	libmenu.so.6		    libopenblas.so		    libtinfow.so
-libanasaziepetra.so.13.0  libgdbm.a			libmenu.so.6.2		    libopenblas.so.0		    libtinfow.so.6
-libanasazitpetra.so	  libgdbm.so			libmenu_g.a		    libpanel.a			    libtinfow.so.6.2
-libanasazitpetra.so.13	  libgdbm.so.6			libmenuw.a		    libpanel.so 		    libtinfow_g.a
-libanasazitpetra.so.13.0  libgdbm.so.6.0.0		libmenuw.so		    libpanel.so.6		    libtpetra.so
-libaztecoo.so		  libgdbm_compat.a		libmenuw.so.6		    libpanel.so.6.2		    libtpetra.so.13
-libaztecoo.so.13	  libgdbm_compat.so		libmenuw.so.6.2 	    libpanel_g.a		    libtpetra.so.13.0
-libaztecoo.so.13.0	  libgdbm_compat.so.4		libmenuw_g.a		    libpanelw.a 		    libtpetraclassic.so
-libbelos.so		  libgdbm_compat.so.4.0.0	libml.so		    libpanelw.so		    libtpetraclassic.so.13
-libbelos.so.13		  libhdf5.a			libml.so.13		    libpanelw.so.6		    libtpetraclassic.so.13.0
-libbelos.so.13.0	  libhdf5.settings		libml.so.13.0		    libpanelw.so.6.2		    libtpetraclassiclinalg.so
-libbelosepetra.so	  libhdf5.so			libmpi.a		    libpanelw_g.a		    libtpetraclassiclinalg.so.13
-libbelosepetra.so.13	  libhdf5.so.103		libmpi.so		    libpciaccess.a		    libtpetraclassiclinalg.so.13.0
-libbelosepetra.so.13.0	  libhdf5.so.103.3.0		libmpi.so.12		    libpciaccess.so		    libtpetraclassicnodeapi.so
-libbelostpetra.so	  libhdf5_hl.a			libmpi.so.12.1.11	    libpciaccess.so.0		    libtpetraclassicnodeapi.so.13
-libbelostpetra.so.13	  libhdf5_hl.so 		libmpich.so		    libpciaccess.so.0.11.1	    libtpetraclassicnodeapi.so.13.0
-libbelostpetra.so.13.0	  libhdf5_hl.so.100		libmpichcxx.so		    libpkgconf.a		    libtpetraext.so
-libbelosxpetra.so	  libhdf5_hl.so.100.1.4 	libmpichf90.so		    libpkgconf.so		    libtpetraext.so.13
-libbelosxpetra.so.13	  libhdf5_tools.a		libmpicxx.a		    libpkgconf.so.3		    libtpetraext.so.13.0
-libbelosxpetra.so.13.0	  libhdf5_tools.so		libmpicxx.so		    libpkgconf.so.3.0.0 	    libtpetrainout.so
-libbz2.a		  libhdf5_tools.so.102		libmpicxx.so.12 	    libreadline.a		    libtpetrainout.so.13
-libbz2.so		  libhdf5_tools.so.102.0.0	libmpicxx.so.12.1.11	    libreadline.so		    libtpetrainout.so.13.0
-libbz2.so.1		  libhistory.a			libmpifort.a		    libreadline.so.8		    libtrilinosss.so
-libbz2.so.1.0		  libhistory.so 		libmpifort.so		    libreadline.so.8.1		    libtrilinosss.so.13
-libbz2.so.1.0.8 	  libhistory.so.8		libmpifort.so.12	    libsacado.so		    libtrilinosss.so.13.0
-libcharset.a		  libhistory.so.8.1		libmpifort.so.12.1.11	    libsacado.so.13		    libtriutils.so
-libcharset.so		  libhwloc.so			libmpl.so		    libsacado.so.13.0		    libtriutils.so.13
-libcharset.so.1 	  libhwloc.so.15		libmuelu-adapters.so	    libssl.a			    libtriutils.so.13.0
-libcharset.so.1.0.0	  libhwloc.so.15.5.1		libmuelu-adapters.so.13     libssl.so			    libxml2.a
-libcrypto.a		  libiconv.a			libmuelu-adapters.so.13.0   libssl.so.1.1		    libxml2.so
-libcrypto.so		  libiconv.so			libmuelu-interface.so	    libteuchoscomm.so		    libxml2.so.2
-libcrypto.so.1.1	  libiconv.so.2 		libmuelu-interface.so.13    libteuchoscomm.so.13	    libxml2.so.2.9.12
-libcurses.a		  libiconv.so.2.6.1		libmuelu-interface.so.13.0  libteuchoscomm.so.13.0	    libxpetra-sup.so
-libcurses.so		  libifpack.so			libmuelu.so		    libteuchoscore.so		    libxpetra-sup.so.13
-libepetra.so		  libifpack.so.13		libmuelu.so.13		    libteuchoscore.so.13	    libxpetra-sup.so.13.0
-libepetra.so.13 	  libifpack.so.13.0		libmuelu.so.13.0	    libteuchoscore.so.13.0	    libxpetra.so
-libepetra.so.13.0	  libifpack2.so 		libncurses++.a		    libteuchoskokkoscomm.so	    libxpetra.so.13
-libepetraext.so 	  libifpack2.so.13		libncurses++.so 	    libteuchoskokkoscomm.so.13	    libxpetra.so.13.0
-libepetraext.so.13	  libifpack2.so.13.0		libncurses++.so.6	    libteuchoskokkoscomm.so.13.0    libz.a
-libepetraext.so.13.0	  libkokkosalgorithms.so	libncurses++.so.6.2	    libteuchoskokkoscompat.so	    libz.so
-libfabric.a		  libkokkosalgorithms.so.13	libncurses++_g.a	    libteuchoskokkoscompat.so.13    libz.so.1
-libfabric.so		  libkokkosalgorithms.so.13.0	libncurses++w.a 	    libteuchoskokkoscompat.so.13.0  libz.so.1.2.11
-libfabric.so.1		  libkokkoscontainers.so	libncurses++w.so	    libteuchosnumerics.so	    pkgconfig
-libfabric.so.1.16.2	  libkokkoscontainers.so.13	libncurses++w.so.6	    libteuchosnumerics.so.13	    terminfo
-libfmpich.so		  libkokkoscontainers.so.3.1.1	libncurses++w.so.6.2	    libteuchosnumerics.so.13.0	    xml2Conf.sh
+cmake		      libexpat.so.1	   libgdbm_compat.so.4.0.0  liblzma.so.5	 libmpifort.so		 libopenblas.so 	 libsqlite3.so		libxml2.so.2.10.1
+engines-1.1	      libexpat.so.1.8.8    libgettextlib-0.21.1.so  liblzma.so.5.2.7	 libmpifort.so.12	 libopenblas.so.0	 libsqlite3.so.0	libyaksa.a
+gettext 	      libfabric.a	   libgettextlib.a	    libmd.a		 libmpifort.so.12.2.2	 libpanel.a		 libsqlite3.so.0.8.6	libyaksa.so
+itcl4.2.2	      libfabric.so	   libgettextlib.so	    libmd.so		 libmpl.so		 libpanel.so		 libssl.a		libyaksa.so.0
+libasprintf.a	      libfabric.so.1	   libgettextpo.a	    libmd.so.0		 libncurses++.a 	 libpanel.so.6		 libssl.so		libyaksa.so.0.0.0
+libasprintf.so	      libfabric.so.1.19.1  libgettextpo.so	    libmd.so.0.0.5	 libncurses++.so	 libpanel.so.6.3	 libssl.so.1.1		libz.a
+libasprintf.so.0      libffi.a		   libgettextpo.so.0	    libmenu.a		 libncurses++.so.6	 libpanel_g.a		 libtcl8.6.so		libz.so
+libasprintf.so.0.0.0  libffi.so 	   libgettextpo.so.0.5.8    libmenu.so		 libncurses++.so.6.3	 libpanelw.a		 libtclstub8.6.a	libz.so.1
+libbsd-ctor.a	      libffi.so.8	   libgettextsrc-0.21.1.so  libmenu.so.6	 libncurses++_g.a	 libpanelw.so		 libtextstyle.a 	libz.so.1.2.13
+libbsd.a	      libffi.so.8.1.0	   libgettextsrc.so	    libmenu.so.6.3	 libncurses++w.a	 libpanelw.so.6 	 libtextstyle.so	libzstd.a
+libbsd.so	      libfmpich.so	   libhistory.a 	    libmenu_g.a 	 libncurses++w.so	 libpanelw.so.6.3	 libtextstyle.so.0	libzstd.so
+libbsd.so.0	      libform.a 	   libhistory.so	    libmenuw.a		 libncurses++w.so.6	 libpanelw_g.a		 libtextstyle.so.0.1.2	libzstd.so.1
+libbsd.so.0.11.5      libform.so	   libhistory.so.8	    libmenuw.so 	 libncurses++w.so.6.3	 libpciaccess.a 	 libtinfo.a		libzstd.so.1.5.2
+libbz2.a	      libform.so.6	   libhistory.so.8.1	    libmenuw.so.6	 libncurses++w_g.a	 libpciaccess.so	 libtinfo.so		pkgconfig
+libbz2.so	      libform.so.6.3	   libhwloc.a		    libmenuw.so.6.3	 libncurses.a		 libpciaccess.so.0	 libtinfo.so.6		python3.10
+libbz2.so.1	      libform_g.a	   libhwloc.so		    libmenuw_g.a	 libncurses.so		 libpciaccess.so.0.11.1  libtinfo.so.6.3	sqlite3.36.0
+libbz2.so.1.0	      libformw.a	   libhwloc.so.15	    libmpi.a		 libncurses.so.6	 libpkgconf.a		 libtinfo_g.a		tcl8
+libbz2.so.1.0.8       libformw.so	   libhwloc.so.15.6.0	    libmpi.so		 libncurses.so.6.3	 libpkgconf.so		 libtinfow.a		tcl8.6
+libcharset.a	      libformw.so.6	   libiconv.a		    libmpi.so.12	 libncurses_g.a 	 libpkgconf.so.3	 libtinfow.so		tclConfig.sh
+libcharset.so	      libformw.so.6.3	   libiconv.so		    libmpi.so.12.2.2	 libncursesw.a		 libpkgconf.so.3.0.0	 libtinfow.so.6 	tclooConfig.sh
+libcharset.so.1       libformw_g.a	   libiconv.so.2	    libmpich.so 	 libncursesw.so 	 libpython3.10.so	 libtinfow.so.6.3	tdbc1.1.3
+libcharset.so.1.0.0   libgdbm.a 	   libiconv.so.2.6.1	    libmpichcxx.so	 libncursesw.so.6	 libpython3.10.so.1.0	 libtinfow_g.a		tdbcmysql1.1.3
+libcrypto.a	      libgdbm.so	   libintl.a		    libmpichf90.so	 libncursesw.so.6.3	 libpython3.so		 libuuid.a		tdbcodbc1.1.3
+libcrypto.so	      libgdbm.so.6	   libintl.so		    libmpicxx.a 	 libncursesw_g.a	 libreadline.a		 libuuid.so		tdbcpostgres1.1.3
+libcrypto.so.1.1      libgdbm.so.6.0.0	   libintl.so.8 	    libmpicxx.so	 libopa.so		 libreadline.so 	 libuuid.so.1		terminfo
+libcurses.so	      libgdbm_compat.a	   libintl.so.8.3.0	    libmpicxx.so.12	 libopenblas-r0.3.21.a	 libreadline.so.8	 libuuid.so.1.3.0	thread2.8.7
+libexpat.a	      libgdbm_compat.so    liblzma.a		    libmpicxx.so.12.2.2  libopenblas-r0.3.21.so  libreadline.so.8.1	 libxml2.so
+libexpat.so	      libgdbm_compat.so.4  liblzma.so		    libmpifort.a	 libopenblas.a		 libsqlite3.a		 libxml2.so.2
 $ ls views/full
-bzip2  gdbm  hdf5  hwloc  libfabric  libiconv  libpciaccess  libxml2  mpich  ncurses  openblas	openssl  pkgconf  readline  trilinos  xz  zlib
+bzip2  gdbm	hwloc	libfabric  libiconv  libpciaccess  mpich    openblas  pigz     python	 sqlite  tcl		  xz	 zlib
+expat  gettext	libbsd	libffi	   libmd     libxml2	   ncurses  openssl   pkgconf  readline  tar	 util-linux-uuid  yaksa  zstd
 $ ls views/full/zlib
-zlib-1.2.11-clang-7.0.0  zlib-1.2.11-gcc-7.5.0
+zlib-1.2.13-clang-7.0.0  zlib-1.2.13-gcc-7.5.0
 $ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0
-include  lib  share
+ls: cannot access 'views/full/zlib/zlib-1.2.11-gcc-7.5.0': No such file or directory
 $ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib
-libz.a	libz.so  libz.so.1  libz.so.1.2.11  pkgconfig
+ls: cannot access 'views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib': No such file or directory
