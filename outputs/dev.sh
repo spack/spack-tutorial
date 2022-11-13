@@ -33,7 +33,7 @@ example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example dev/setup-scr "spack add macsio+scr"
 example dev/setup-scr "spack install"
 
-example dev/develop-1 "spack develop scr@3.0rc2"
+example dev/develop-1 "spack develop scr@2.0.0"
 example dev/develop-1 "grep -3 develop: spack.yaml"
 
 example dev/develop-conc "spack concretize -f"
