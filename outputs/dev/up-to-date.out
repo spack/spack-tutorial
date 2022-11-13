@@ -1,20 +1,14 @@
 $ git clone https://github.com/spack/spack ~/spack
-Cloning into '/home/spack/spack'...
-remote: Enumerating objects: 387383, done.K
-remote: Counting objects: 100% (3586/3586), done.K
-remote: Compressing objects: 100% (3189/3189), done.K
-remote:nTotale3873839(delta7437),8reused4500.(delta|357),5pack-reused 383797K
-Receiving objects: 100% (387383/387383), 175.88 MiB | 2.02 MiB/s, done.
-Resolving deltas: 100% (163847/163847), done.
+fatal: destination path '/home/spack1/spack' already exists and is not an empty directory.
 $ cd ~/spack
-$ git checkout releases/v0.18
-Branch 'releases/v0.18' set up to track remote branch 'releases/v0.18' from 'origin'.
-Switched to a new branch 'releases/v0.18'
+$ git checkout releases/v0.19
+Already on 'releases/v0.19'
+Your branch is up to date with 'origin/releases/v0.19'.
 $ . share/spack/setup-env.sh
 $ spack mirror add tutorial /mirror
-$ spack buildcache keys --install --trust
-==> Fetching file:///mirror/build_cache/_pgp/8990E06AC18B52C31C9914C79328D01DE7FB5587.pub
-gpg: key 9328D01DE7FB5587: public key "Spack Build Pipeline (Demo Key) <key@spack.demo>" imported
+==> Error: Mirror with name tutorial already exists.
+$ spack gpg trust share/spack/keys/tutorial.pub
+gpg: key A8E0CA3C1C2ADA2F: 7 signatures not checked due to missing keys
+gpg: key A8E0CA3C1C2ADA2F: "Spack Project Official Binaries <maintainers@spack.io>" not changed
 gpg: Total number processed: 1
-gpg:		   imported: 1
-gpg: inserting ownertrust of 6
+gpg:		  unchanged: 1

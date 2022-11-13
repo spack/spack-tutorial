@@ -108,7 +108,7 @@ scopes listed above has two *sub-scopes*: platform-specific and
 platform-independent. For example, compiler settings can be stored
 in the following locations:
 
-#. ``environment-root-dir/spack.yaml``
+#. ``$ENVIRONMENT_ROOT/spack.yaml``
 #. ``~/.spack/<platform>/compilers.yaml``
 #. ``~/.spack/compilers.yaml``
 #. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
@@ -127,7 +127,7 @@ YAML Format
 
 Spack configurations are nested YAML dictionaries with a specified
 schema. The configuration is organized into sections based on theme
-(e.g. a 'compilers' section) and the highest-level keys of the dictionary
+(e.g., a 'compilers' section) and the highest-level keys of the dictionary
 specify the section. Spack generally maintains a separate file for
 each section, although environments keep them together (in
 ``spack.yaml``).
@@ -162,7 +162,7 @@ configuration file as follows:
 
 This ensures that no other compilers are used, as the user configuration
 scope is the last scope searched and the ``compilers::`` line replaces
-all previous configuration files information. If the same
+information from all previous configuration files. If the same
 configuration file had a single colon instead of the double colon, it
 would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
@@ -315,9 +315,9 @@ since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install cmake %gcc@7.5.0
+   $ spack install --reuse cmake %gcc@7.5.0
    ...
-   $ spack install --no-cache json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
+   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
    ...
 
 
@@ -520,7 +520,7 @@ HDF5.
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
 
 
 Now hdf5 will concretize without an MPI dependency by default.
@@ -559,7 +559,7 @@ this package and where it can be found:
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
        perl:
          externals:
          - spec: perl@5.26.1 %gcc@7.5.0
@@ -600,7 +600,7 @@ not allowed to build its own Perl. We'll go with the latter.
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
        perl:
          externals:
          - spec: perl@5.26.1 %gcc@7.5.0
@@ -618,8 +618,8 @@ This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
-To express that we don't want any other MPI installed we can use the 
-virtual ``mpi`` package as a key. Since we're at it, we can configure 
+To express that we don't want any other MPI installed we can use the
+virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
