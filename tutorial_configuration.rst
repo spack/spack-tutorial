@@ -489,6 +489,7 @@ a section name):
          providers:
            mpi: [mpich, openmpi]
 
+
 Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
 
