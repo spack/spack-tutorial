@@ -421,7 +421,7 @@ in them as if they were installed on the system. In this section
 we will take advantage of that feature.
 
 Suppose you want to compile some MPI programs. We have an MPI
-implementation installed in our ``myproject`` environment, so
+implementation installed in our ``myproject2`` environment, so
 ``mpicc`` is available in our path. We can confirm this using
 ``which``:
 
