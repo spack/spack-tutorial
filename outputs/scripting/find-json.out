@@ -2,7 +2,7 @@ $ spack find --json zlib
 [
   {
     "name": "zlib",
-    "version": "1.2.12",
+    "version": "1.2.13",
     "arch": {
       "platform": "linux",
       "platform_os": "ubuntu18.04",
@@ -14,10 +14,8 @@ $ spack find --json zlib
     },
     "namespace": "builtin",
     "parameters": {
+      "build_system": "makefile",
       "optimize": true,
-      "patches": [
-	"0d38234384870bfd34dfcb738a9083952656f0c766a0f5990b1893076b084b76"
-      ],
       "pic": true,
       "shared": true,
       "cflags": [],
@@ -27,14 +25,12 @@ $ spack find --json zlib
       "ldflags": [],
       "ldlibs": []
     },
-    "patches": [
-      "0d38234384870bfd34dfcb738a9083952656f0c766a0f5990b1893076b084b76"
-    ],
-    "hash": "3svypjaie5farii5zcgm6yfu43la2ixs"
+    "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
+    "hash": "fdbomoa6xopqvfi4a7jvad27yinnw47a"
   },
   {
     "name": "zlib",
-    "version": "1.2.12",
+    "version": "1.2.13",
     "arch": {
       "platform": "linux",
       "platform_os": "ubuntu18.04",
@@ -46,10 +42,8 @@ $ spack find --json zlib
     },
     "namespace": "builtin",
     "parameters": {
+      "build_system": "makefile",
       "optimize": true,
-      "patches": [
-	"0d38234384870bfd34dfcb738a9083952656f0c766a0f5990b1893076b084b76"
-      ],
       "pic": true,
       "shared": true,
       "cflags": [],
@@ -59,8 +53,6 @@ $ spack find --json zlib
       "ldflags": [],
       "ldlibs": []
     },
-    "patches": [
-      "0d38234384870bfd34dfcb738a9083952656f0c766a0f5990b1893076b084b76"
-    ],
-    "hash": "fntvsj6xevbz5gyq7kfa4xg7oxnaolxs"
+    "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
+    "hash": "2hfr5rbzefrxf6t6kv4trbsl63puaza6"
   }
