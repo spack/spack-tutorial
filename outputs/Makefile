@@ -19,7 +19,7 @@ all:
 	done
 
 run-local:
-	./${section}.sh
+	${PWD}/${section}.sh
 
 run:
 	docker run --rm -it \
