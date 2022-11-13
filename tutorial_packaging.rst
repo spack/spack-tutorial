@@ -153,7 +153,7 @@ template:
    maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
-calculation. Exit your editor to return to the command line and use the 
+calculation. Exit your editor to return to the command line and use the
 ``spack checksum`` command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
@@ -240,9 +240,9 @@ information derived from the package:
 * the default ``Autotools`` package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
 * both the link and run dependencies are ``None`` at this point;
-* the ``Autotools`` ``check`` method will be called to check the build 
+* the ``Autotools`` ``check`` method will be called to check the build
   post-``build`` phase (tries to run ``make test`` and ``make check``) ; and
-* the ``Autotools`` ``installcheck`` method will be called to check the build 
+* the ``Autotools`` ``installcheck`` method will be called to check the build
   post-``install`` phase (tries to run ``make installcheck``).
 
 As we fill in more information about the package, the ``spack info``
@@ -258,7 +258,7 @@ command will become more informative.
    `Build Systems
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
-   More information on the build-time tests can be found at 
+   More information on the build-time tests can be found at
    `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
 
    Refer to the links at the end of this section for more information.
@@ -390,7 +390,7 @@ Let's move to the build directory using the ``spack cd`` command:
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
 build. If not, you can ``cd`` into the directory above that contained
-the ``spack-build-out.txt`` file then into it's ``spack-src`` 
+the ``spack-build-out.txt`` file then into it's ``spack-src``
 subdirectory.
 
 Now let's ensure the environment is properly set up using the
@@ -645,23 +645,23 @@ of your package. You can find these packages in
 ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
 
 ----------------------
-Multiple build systems
+Multiple Build Systems
 ----------------------
 
-There are cases where a software actively supports two build systems, or changes
+There are cases where software actively supports two build systems, or changes
 build systems as it evolves, or needs different build systems on different platforms.
-Spack allows you to write a single, neat, recipe for these cases too. It will only
+Spack allows you to write a single, neat recipe for these cases too. It will only
 require a slight change in the recipe's structure compared to what we have seen
 so far.
 
-Let's take as an example ``uncrustify``, which is a source code beautifier. This
-software used to build with ``autotools`` until version 0.63, and then switched build system
+Let's take ``uncrustify``, a source code beautifier, as an example. This software
+used to build with ``autotools`` until version 0.63, and then switched build systems
 to ``cmake`` at version 0.64.
 
 Compared to previous recipes in this tutorial, in this case we need ``Uncrustify`` to
-inherit from both ``CMakePackage`` and ``AutotoolsPackage``. We also need to specify
-explicitly the ``build_system`` directive, and we might add conditional dependencies in case
-they are needed:
+inherit from both ``CMakePackage`` and ``AutotoolsPackage``. We also need to explicitly
+specify the ``build_system`` directive, and add conditional dependencies based on
+build system:
 
 .. code-block:: python
 
@@ -679,11 +679,11 @@ they are needed:
            conditional("autotools", when="@:0.63"),
            default="cmake",
        )
-   
+
        with when("build_system=cmake"):
            depends_on("cmake@3.18:", type="build")
 
-We didn't mention it so far, but each spec has a ``build_system`` variant, that specifies
+We didn't mention it so far, but each spec has a ``build_system`` variant that specifies
 the build system it uses. In most cases that variant has a single allowed value, inherited from the
 corresponding base package - so, usually, you don't have to think about it.
 
@@ -692,8 +692,7 @@ allowed and under which conditions. In the example above it's ``cmake`` for vers
 ``autotools`` for version 0.63 and lower.
 
 The ``build_system`` variant can also be used to declare other properties which are conditional on the build
-system being selected. For instance above we declared that, if using ``autotools``, we also need ``automake``,
-``autoconf`` and ``libtool`` as dependencies.
+system being selected. For instance, above we declare that when using ``cmake``, CMake 3.18+ is required.
 
 The other relevant difference, compared to the previous recipes we have seen so far, is that the code prescribing
 the installation procedure will live into two separate classes:
@@ -765,13 +764,13 @@ Using other build systems
   for tutorials on common build systems
 * `Multiple Build Systems
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
-  for a reference on coding packages with multiple build systems
+  for a reference on writing packages with multiple build systems
 * `Package Class Architecture
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
-  to have more insight on the inner working of ``Package`` and ``Builder`` classes.
+  for more insight on the inner workings of ``Package`` and ``Builder`` classes.
 * `The GDAL Package
   <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
-  to have an example of a complex package which extends Python and supports two build systems.
+  for an example of a complex package which extends Python and supports two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
