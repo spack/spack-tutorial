@@ -21,13 +21,12 @@ commands:
 .. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
-This section of the tutorial introduces **Spack Environments**, which
-allow you to work with independent groups of packages separately. The
-goal is to provide users with *virtual environments* similar to those
-supported by other commonly used tools (e.g., `Python venv
-<https://docs.python.org/3/library/venv.html>`_) while allowing
-common installations to be seamlessly shared. They are also intended
-to be easily shared and re-used by others and across systems.
+This section of the tutorial introduces **Spack Environments**, which allow you
+to work with independent groups of packages separately, in a reproducible way.
+In some ways, Spack environments are similar to *virtual environments* in other
+systems (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_),
+but they are based around file formats (`spack.yaml` and `spack.lock`) that can
+be shared easily and re-used by others across systems.
 
 Administering properly configured software involving lots of packages
 and/or varying configuration requirements (e.g., different implementations
@@ -147,15 +146,36 @@ Installing packages
 ^^^^^^^^^^^^^^^^^^^
 
 Now that we understand how creation and activation work, let's go
-back to ``myproject`` and *install* a couple of packages; specifically,
+back to ``myproject`` and *install* a couple of packages, specifically,
 ``tcl`` and ``trilinos``.
+
+Try the usual install command first:
+
+.. literalinclude:: outputs/environments/env-fail-install-1.out
+   :language: console
+
+Environments are special in that you must *add* specs to them before installing.
+``spack add`` allows us to do queue up several specs to be installed together.
+Let's try it:
+
+.. literalinclude:: outputs/environments/env-add-1.out
+   :language: console
+
+Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in this
+environment.  That is because we explicitly asked for them to
+be installed, so they are the **roots** of the combined graph
+of all packages we'll install.
+
+Now, let's install:
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
-   :emphasize-lines: 1,2,5,40
 
-We see that ``tcl`` and all of the dependencies of ``trilinos`` are
-already installed. Notice also that our environment's view gets updated.
+
+We see that ``tcl`` and the dependencies of ``trilinos`` are
+already installed, and that ``trilinos`` was newly installed.
+We also see that the environment's view was updated
+to include the new installations.
 
 Now confirm the contents of the environment using ``spack find``:
 
@@ -163,12 +183,8 @@ Now confirm the contents of the environment using ``spack find``:
    :language: console
    :emphasize-lines: 1
 
+We can see that the roots and all their dependencies have been installed.
 
-We now see that ``tcl`` and ``trilinos`` are **root specs** in
-our environment. That is because we explicitly asked for them to
-be installed, which makes them the **roots** of the combined graph
-of all packages in the environment. The other installed packages
-are present because they are dependencies of one or both of the roots.
 
 ^^^^^^^^^^^^^^
 Using packages
@@ -224,21 +240,15 @@ Suppose ``myproject`` requires ``trilinos`` but we have another
 project that has it installed but no longer requires it.
 
 Start by creating a ``myproject2`` environment with the installed
-packages ``hdf5+hl`` and ``trilinos``. To ensure we're leveraging
-the tutorial build cache, let's explicitly constrain ``hdf5``'s
-``mpi`` dependency to ``mpich``.
+packages ``scr`` and ``trilinos``.
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: console
    :emphasize-lines: 1,5-6,9,12
 
 
-Notice the root specs show the specs and variants as we asked for
-them on the command line. In this case, ``hdf5`` shows we enabled the
-``hl`` variant.
-
 Now we have two environments. The ``myproject`` environment has ``tcl``
-and ``trilinos`` while the ``myproject2`` environment has ``hdf5 +hl``
+and ``trilinos`` while the ``myproject2`` environment has ``scr``
 and ``trilinos``.
 
 Now let's uninstall ``trilinos`` from ``myproject2`` and review the
@@ -249,12 +259,18 @@ contents of the environment:
    :emphasize-lines: 1,11
 
 
-The result is that the environment now has only one root spec, ``hdf5
-+hl``, and contains fewer dependencies.
+We can see that ``trilinos`` no longer appears in the list of installed specs.
+However, it *is* still listed as a root in the environment. If we want to remove
+it from the roots list we need to use ``spack remove``:
 
-However, we know ``trilinos`` is still needed for the ``myproject``
-environment. So let's switch back to confirm that it is still installed
-in that environment.
+.. literalinclude:: outputs/environments/env-remove-1.out
+   :language: console
+
+Now, it is no longer a root and will need to be re-added before being installed
+as part of this environment.
+
+We know ``trilinos`` is still needed for the ``myproject`` environment, so
+let's switch back to confirm that it is still installed in that environment.
 
 .. literalinclude:: outputs/environments/env-swap-1.out
    :language: console
@@ -262,8 +278,8 @@ in that environment.
 
 
 Phew! We see that ``myproject`` still has ``trilinos`` as a root
-spec. Spack uses reference counting to know that ``trilinos`` is
-still installed for ``myproject``.
+spec. Spack uses reference counting to ensure that we don't remove
+``trilinos`` when it is still needed by ``myproject``.
 
 .. note::
 
@@ -272,72 +288,33 @@ still installed for ``myproject``.
 
 
 -------------------------------
-Dealing with Many Specs at Once
+The ``spack.yaml`` file
 -------------------------------
 
-So far we have used ``install`` and ``uninstall`` for processing
-individual packages. Since environments define sets of packages,
-their specs *can* be added to the environment before they are
-installed together. Specs can be added at the command line or
-entered directly in the environment configuration file.
+We've seen how to use ``add`` and ``remove`` to add and remove roots from
+an environment, and we've seen how to ``install`` all of the roots
+at once, and how to ``uninstall`` particular packages.
 
-Whole environments can be installed at once by adding specs to
-the environment before installing them. Individual packages can
-still be added and removed from the environment as it evolves.
+It may seem tedious to have to ``add`` then ``install`` (or
+``uninstall`` then ``remove``) every spec in an environment. You can
+combine these steps into single commands if you want:
 
-There are a couple of advantages of processing all the specs
-of an environment at once. First, we don't have to write a custom
-installation script outside of Spack. Second, we can launch a
-large build of many packages in parallel by taking advantage of
-Spack's `install-level build parallelism
+* ``spack install --add``: add and install a package
+* ``spack uninstall --remove``  uninstall and remove a package
+
+However, there are are advantages to processing all the specs
+of an environment at once:
+
+* If you have a number of specs that can be installed together,
+  adding them first and installing them together enables them to
+  share dependencies and reduces total installation time.
+* You can launch all builds in parallel by taking advantage of
+  Spack's `install-level build parallelism
 <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
-This section focuses on two ways to add specs to the environment before
-installing them.
-
-^^^^^^^^^^^^^
-Adding specs
-^^^^^^^^^^^^^
-
-Let's start by *adding* a couple of specs to our ``myproject``
-environment:
-
-.. literalinclude:: outputs/environments/add-1.out
-   :language: console
-   :emphasize-lines: 1-2,4
-
-Now let's take a look at what happened using ``spack find``:
-
-.. literalinclude:: outputs/environments/find-1.out
-   :language: console
-   :emphasize-lines: 1
-
-Notice the two specs we added, ``hdf5 +hl`` and ``gmp``, are now
-listed as **root specs**. They are not actually installed in the
-environment yet because ``spack add`` only adds *roots* to the
-environment.
-
-*All* of the yet-to-be-installed packages can be installed in an
-active environment by simply running ``spack install`` with no
-arguments:
-
-.. literalinclude:: outputs/environments/add-2.out
-   :language: console
-   :emphasize-lines: 1,40,80
-
-
-Spack concretizes the new root specs before ensuring that all
-the associated packages are installed. You can confirm this using
-``spack find``:
-
-.. literalinclude:: outputs/environments/add-3.out
-   :language: console
-   :emphasize-lines: 1
-
-
-^^^^^^^^^^^^^^^^^
-Configuring specs
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
+Environments as files
+^^^^^^^^^^^^^^^^^^^^^
 
 An environment is more than just a list of root specs. It includes
 *configuration* settings that affect the way Spack behaves when the
@@ -354,11 +331,22 @@ Let's start by looking at the configuration of our environment using
 
 .. literalinclude:: outputs/environments/config-get-1.out
    :language: console
-   :emphasize-lines: 1
 
-The output shows the special YAML configuration format that Spack
-uses to store the environment configuration. Currently, the file
-is just a ``spack:`` header and a list of the **root** ``specs``.
+The output shows the special ``spack.yaml`` configuration file that Spack
+uses to store the environment configuration.
+
+There are several important parts:
+
+* ``specs:``: the list of roots we added with ``add``
+* ``view:``: this controls whether the environment has a *view*. You can
+  set it to ``false`` to disable view generation.
+* ``concretizer:unify:``: This controls how the specs in the environment
+  are concretized. ``true`, the default,  means that they are concretized
+  *together*, so that there is only one version of  any package in the
+  environment.
+
+We'll cover ``unify:false`` and ``unify:when_possible`` later in the
+Stacks tutorial.
 
 .. note::
 
