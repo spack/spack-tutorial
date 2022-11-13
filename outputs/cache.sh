@@ -10,7 +10,7 @@ pip install boto3
 example cache/up-to-date "git clone https://github.com/spack/spack ~/spack"
 example cache/up-to-date "cd ~/spack"
 cd ~/spack
-example cache/up-to-date "git checkout releases/v0.18"
+example cache/up-to-date "git checkout releases/v0.19"
 example cache/up-to-date ". share/spack/setup-env.sh"
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"
@@ -75,14 +75,9 @@ example cache/binary-cache-3 'mkdir ~/private_gpg_backup'
 example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup'
 example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/pubring.* ~/mirror'
 
-example cache/binary-cache-4 '
-for ii in $(spack find --format "yyy {version} /{hash}" |
-            grep -v -E "^(develop^master)" |
-            grep "yyy" |
-            cut -f3 -d" ")
-do
-  spack buildcache create --allow-root --force -d ~/mirror --only=package $ii
-done'
+example cache/binary-cache-4 'spack buildcache create --allow-root --force -d ~/mirror --only=package $(spack find --format /{hash})'
 
 # Remove installations from customized prefix
 spack uninstall -ay
+
+example cache/bootstrap-1 'spack bootstrap mirror --binary-packages ~/mirror'

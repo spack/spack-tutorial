@@ -1,0 +1,12 @@
+$ spack bootstrap mirror --binary-packages ~/mirror
+==> Adding "clingo-bootstrap@spack+python %gcc target=x86_64" and dependencies to the mirror at /home/spack1/mirror/bootstrap_cache
+==> Adding "gnupg@2.3: %gcc target=x86_64" and dependencies to the mirror at /home/spack1/mirror/bootstrap_cache
+==> Adding "patchelf@0.13.1: %gcc target=x86_64" and dependencies to the mirror at /home/spack1/mirror/bootstrap_cache
+==> Adding "gnuconfig" and dependencies to the mirror at /home/spack1/mirror/bootstrap_cache
+==> Adding binary packages from "https://github.com/spack/spack-bootstrap-mirrors/releases/download/v0.4/bootstrap-buildcache.tar.gz" to the mirror at /home/spack1/mirror/bootstrap_cache
+
+To register the mirror on the platform where it's supposed to be used, move "/home/spack1/mirror" to its final location and run the following command(s):
+
+  % spack bootstrap add --trust local-sources <final-path>/metadata/sources
+  % spack bootstrap add --trust local-binaries <final-path>/metadata/binaries
+

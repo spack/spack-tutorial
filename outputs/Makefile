@@ -5,7 +5,7 @@ container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
 subdirs = basics environments packaging environments stacks dev scripting
 
-section = dev
+section = cache
 
 all:
 	echo "Filtering raw outputs though col"
@@ -17,6 +17,9 @@ all:
 	for dir in $(subdirs); do \
 		sed -i~ 's/==>[^ ]/==> /;s/\#/ /' $$dir/*.out; \
 	done
+
+run-local:
+	${PWD}/${section}.sh
 
 run:
 	docker run --rm -it \
