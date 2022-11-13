@@ -153,7 +153,7 @@ template:
    maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
-calculation. Exit your editor to return to the command line and use the 
+calculation. Exit your editor to return to the command line and use the
 ``spack checksum`` command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
@@ -240,9 +240,9 @@ information derived from the package:
 * the default ``Autotools`` package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
 * both the link and run dependencies are ``None`` at this point;
-* the ``Autotools`` ``check`` method will be called to check the build 
+* the ``Autotools`` ``check`` method will be called to check the build
   post-``build`` phase (tries to run ``make test`` and ``make check``) ; and
-* the ``Autotools`` ``installcheck`` method will be called to check the build 
+* the ``Autotools`` ``installcheck`` method will be called to check the build
   post-``install`` phase (tries to run ``make installcheck``).
 
 As we fill in more information about the package, the ``spack info``
@@ -258,7 +258,7 @@ command will become more informative.
    `Build Systems
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
-   More information on the build-time tests can be found at 
+   More information on the build-time tests can be found at
    `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
 
    Refer to the links at the end of this section for more information.
@@ -390,7 +390,7 @@ Let's move to the build directory using the ``spack cd`` command:
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
 build. If not, you can ``cd`` into the directory above that contained
-the ``spack-build-out.txt`` file then into it's ``spack-src`` 
+the ``spack-build-out.txt`` file then into it's ``spack-src``
 subdirectory.
 
 Now let's ensure the environment is properly set up using the
@@ -644,7 +644,71 @@ built-in packages that can serve as examples to guide the development
 of your package. You can find these packages in
 ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
 
-Good Luck!
+----------------------
+Multiple Build Systems
+----------------------
+
+There are cases where software actively supports two build systems, or changes
+build systems as it evolves, or needs different build systems on different platforms.
+Spack allows you to write a single, neat recipe for these cases too. It will only
+require a slight change in the recipe's structure compared to what we have seen
+so far.
+
+Let's take ``uncrustify``, a source code beautifier, as an example. This software
+used to build with ``autotools`` until version 0.63, and then switched build systems
+to ``cmake`` at version 0.64.
+
+Compared to previous recipes in this tutorial, in this case we need ``Uncrustify`` to
+inherit from both ``CMakePackage`` and ``AutotoolsPackage``. We also need to explicitly
+specify the ``build_system`` directive, and add conditional dependencies based on
+build system:
+
+.. code-block:: python
+
+   class Uncrustify(CMakePackage, AutotoolsPackage):
+       """Source Code Beautifier for C, C++, C#, ObjectiveC, Java, and others."""
+
+       homepage = "http://uncrustify.sourceforge.net/"
+       git = "https://github.com/uncrustify/uncrustify"
+
+       version("0.64", commit="1d7d97")
+       version("0.63", commit="44ce0f")
+
+       build_system(
+           conditional("cmake", when="@0.64:"),
+           conditional("autotools", when="@:0.63"),
+           default="cmake",
+       )
+
+       with when("build_system=cmake"):
+           depends_on("cmake@3.18:", type="build")
+
+We didn't mention it so far, but each spec has a ``build_system`` variant that specifies
+the build system it uses. In most cases that variant has a single allowed value, inherited from the
+corresponding base package - so, usually, you don't have to think about it.
+
+When your package supports more than one build system though, you have to explicitly declare which ones are
+allowed and under which conditions. In the example above it's ``cmake`` for version 0.64 and higher and
+``autotools`` for version 0.63 and lower.
+
+The ``build_system`` variant can also be used to declare other properties which are conditional on the build
+system being selected. For instance, above we declare that when using ``cmake``, CMake 3.18+ is required.
+
+The other relevant difference, compared to the previous recipes we have seen so far, is that the code prescribing
+the installation procedure will live into two separate classes:
+
+.. code-block:: python
+
+   class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
+      def cmake_args(self):
+          pass
+
+   class AutotoolsBuilder(spack.build_systems.autotools.AutotoolsBuilder):
+      def configure_args(self):
+          pass
+
+Depending on the ``spec``, and more specifically on the value of the ``build_system`` directive, a ``builder``
+object will be instantiated from one of the two classes when an installation is requested from a user.
 
 -----------
 Cleaning Up
@@ -698,6 +762,15 @@ Using other build systems
 * `Spack Package Build Systems tutorial
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
   for tutorials on common build systems
+* `Multiple Build Systems
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
+  for a reference on writing packages with multiple build systems
+* `Package Class Architecture
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
+  for more insight on the inner workings of ``Package`` and ``Builder`` classes.
+* `The GDAL Package
+  <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
+  for an example of a complex package which extends Python and supports two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
