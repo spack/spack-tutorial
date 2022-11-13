@@ -309,9 +309,7 @@ of an environment at once:
   adding them first and installing them together enables them to
   share dependencies and reduces total installation time.
 
-* You can launch all builds in parallel by taking advantage of
-  Spack's `install-level build parallelism
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
+* You can launch all builds in parallel by taking advantage of Spack's `install-level build parallelism <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
 
 -----------------------
@@ -343,11 +341,11 @@ There are several important parts of this file:
 * ``view:``: this controls whether the environment has a *view*. You can
   set it to ``false`` to disable view generation.
 * ``concretizer:unify:``: This controls how the specs in the environment
-  are concretized. 
+  are concretized.
 
 The ``specs`` list should look familiar; these are the specs we've been
 modifying with ``spack add``.
-  
+
 ``concretizer:unify:true``, the default, means that they are concretized
 *together*, so that there is only one version of any package in the
 environment. We'll cover ``unify:false`` and ``unify:when_possible`` later,
@@ -361,7 +359,7 @@ Editing environment configuration
 
    Before proceeding, make sure your ``EDITOR`` environment variable
    is set to the path of your preferred text editor.
-   
+
 Let's edit ``spack.yaml`` to *prefer* ``mpich`` as our ``mpi`` provider
 using ``spack config edit``.
 
