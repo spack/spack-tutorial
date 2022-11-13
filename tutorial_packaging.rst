@@ -222,8 +222,7 @@ At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
 for review.
 
-Let's enter the ``spack info`` command for the package, passing the `-a`
-option to show all of the available information:
+Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
