@@ -180,8 +180,10 @@ steps:
 
   * Search all text files to replace the package builder's path with
     your specific local installation path.
-  * Use ``patchelf`` to replace all the RPATHs in your binaries to
-    point to your specific local installation path.
+  * Modify all the RPATHs in your binaries to point to your specific
+    local installation path. This uses ``patchelf`` if the new path is
+    longer than the old path, but otherwise uses a faster
+    implementation in python.
   * Search all binaries to replace hard-coded C strings of the package
     builder's path with your specific local installation path.
 
@@ -207,10 +209,9 @@ We follow the same steps we used for the source mirror -- making an
 environment, creating the source mirror, and building the packages to
 a spack installation with our padded path. To upload a spec to a
 binary cache, simply use the command ``spack buildcache
-create --only=package spec``. We use this here in a for loop to create
-binary packages for every non-external package in our environment. We
-do this by writing a find command that will return a hash of each spec
-in this environment and filtering out the external packages.
+create --only=package spec``. Here we use the ``spack find --format``
+command that we will discuss in more detail in the Scripting section
+of the tutorial to operate on all specs in the environment.
 
 .. literalinclude::  outputs/cache/binary-cache-4.out
    :language: console
@@ -240,6 +241,27 @@ Together, this means download all the keys on the binary cache and
 trust them. Have your users run the above command on a new spack
 instance before they initiate a build.
 
+---------------------
+Bootstrapping Mirrors
+---------------------
+
+In order to run Spack on an airgapped system or aywhere else without
+internet access, you also need to install clingo as a dependency of
+the concretizer. While you can always install clingo through your
+favorite method, we like to think Spack is your favorite install
+mechanism for everything, and we have convenient ways to bootstrap
+clingo on airgapped systems.
+
+Spack can prepare a bootstrap mirror for either source or binary
+mirror for bootstrapping via the ``spack bootstrap mirror``
+command. We will focus on binary bootstrapping for this tutorial.
+
+.. literalinclude:: outputs/cache/bootstrap-1.out
+   :language: console
+
+Using the instructions printed from Spack, you can register the new
+bootstrap sources on the airgapped system.
+
 -------------
 Cache Summary
 -------------
@@ -248,4 +270,6 @@ If you're using spack within a development team, consider setting up
 source mirrors with binary caches. Source mirrors will let you
 replicate a spack environment on a machine without external internet
 access, and binary mirrors free you from the burden of recompiling
-everything from scratch and save you development time.
+everything from scratch and save you development time. Spack mirrors
+also provide the mechanism to bring Spack's internal dependencies over
+to any machine without external internet access.

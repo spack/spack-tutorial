@@ -1,52 +1,44 @@
 $ spack config add "config:install_tree:padded_length:128"
 $ spack install --no-cache
-==> Starting concretization pool with 2 processes
-==> Environment concretized in 1.23 seconds.
-==> Concretized bzip2
- -   cyn2yam  bzip2@1.0.8%gcc@7.5.0~debug~pic+shared arch=linux-ubuntu18.04-x86_64
- -   k22pe4r	  ^diffutils@3.8%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64
- -   dr56jt4	      ^libiconv@1.16%gcc@7.5.0 libs=shared,static arch=linux-ubuntu18.04-x86_64
-
-==> Concretized zlib
- -   fntvsj6  zlib@1.2.12%gcc@7.5.0+optimize+pic+shared patches=0d38234 arch=linux-ubuntu18.04-x86_64
-
-==> Installing environment /home/spack/cache-binary
-==> Waiting for libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-==> Installing libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/e6/e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04.tar.gz
+==> Installing environment /home/spack1/cache-binary
+==> Waiting for libiconv-1.16-ltvovvvjgmlvy4m2pn365cy6p5dysajq
+==> Installing libiconv-1.16-ltvovvvjgmlvy4m2pn365cy6p5dysajq
+==> Using cached archive: /home/spack1/spack/var/spack/cache/_source-cache/archive/e6/e6a1b1b589654277ee790cce3734f07876ac4ccfaecbee8afa0b649cf529cc04.tar.gz
 ==> No patches needed for libiconv
 ==> libiconv: Executing phase: 'autoreconf'
 ==> libiconv: Executing phase: 'configure'
 ==> libiconv: Executing phase: 'build'
 ==> libiconv: Executing phase: 'install'
-==> libiconv: Successfully installed libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-  Fetch: 0.02s.  Build: 22.62s.  Total: 22.64s.
-[+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-dr56jt456uiebij2mkueldmejdxftigc
-==> Waiting for zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-==> Installing zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/91/91844808532e5ce316b3c010929493c0244f3d37593afd6de04f71821d5136d9.tar.gz
-==> Applied patch /home/spack/spack/var/spack/repos/builtin/packages/zlib/configure-cc.patch
+==> libiconv: Successfully installed libiconv-1.16-ltvovvvjgmlvy4m2pn365cy6p5dysajq
+  Fetch: 0.02s.  Build: 18.03s.  Total: 18.05s.
+[+] /home/spack1/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-ltvovvvjgmlvy4m2pn365cy6p5dysajq
+==> Waiting for zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> Installing zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> Using cached archive: /home/spack1/spack/var/spack/cache/_source-cache/archive/b3/b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30.tar.gz
+==> No patches needed for zlib
+==> zlib: Executing phase: 'edit'
+==> zlib: Executing phase: 'build'
 ==> zlib: Executing phase: 'install'
-==> zlib: Successfully installed zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-  Fetch: 0.01s.  Build: 3.88s.	Total: 3.89s.
-[+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
-==> Waiting for diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-==> Installing diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
+==> zlib: Successfully installed zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+  Fetch: 0.01s.  Build: 1.89s.	Total: 1.90s.
+[+] /home/spack1/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> Waiting for diffutils-3.8-c3uhkcjt7tagz2djrd6r2b6b3c2tia3s
+==> Installing diffutils-3.8-c3uhkcjt7tagz2djrd6r2b6b3c2tia3s
+==> Using cached archive: /home/spack1/spack/var/spack/cache/_source-cache/archive/a6/a6bdd7d1b31266d11c4f4de6c1b748d4607ab0231af5188fc2533d0ae2438fec.tar.xz
 ==> No patches needed for diffutils
 ==> diffutils: Executing phase: 'autoreconf'
 ==> diffutils: Executing phase: 'configure'
 ==> diffutils: Executing phase: 'build'
 ==> diffutils: Executing phase: 'install'
-==> diffutils: Successfully installed diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-  Fetch: 0.01s.  Build: 31.62s.  Total: 31.63s.
-[+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-k22pe4rhr7yllf5pojl75veh5gkjdglq
-==> Waiting for bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-==> Installing bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> diffutils: Successfully installed diffutils-3.8-c3uhkcjt7tagz2djrd6r2b6b3c2tia3s
+  Fetch: 0.01s.  Build: 25.94s.  Total: 25.95s.
+[+] /home/spack1/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-c3uhkcjt7tagz2djrd6r2b6b3c2tia3s
+==> Waiting for bzip2-1.0.8-cxcrelnw64jh6lvhzb6pfar7nijv6us6
+==> Installing bzip2-1.0.8-cxcrelnw64jh6lvhzb6pfar7nijv6us6
+==> Using cached archive: /home/spack1/spack/var/spack/cache/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
 ==> Ran patch() for bzip2
 ==> bzip2: Executing phase: 'install'
-==> bzip2: Successfully installed bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-  Fetch: 0.01s.  Build: 2.18s.	Total: 2.19s.
-[+] /home/spack/spack/opt/spack/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeholder__/__spack_path_placeh/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cyn2yamiu26ofxwgxzxbioreuwigzl6f
-==> Updating view at /home/spack/cache-binary/.spack-env/view
+==> bzip2: Successfully installed bzip2-1.0.8-cxcrelnw64jh6lvhzb6pfar7nijv6us6
+  Fetch: 0.01s.  Build: 1.82s.	Total: 1.83s.
+[+] /home/spack1/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cxcrelnw64jh6lvhzb6pfar7nijv6us6
+==> Updating view at /home/spack1/cache-binary/.spack-env/view

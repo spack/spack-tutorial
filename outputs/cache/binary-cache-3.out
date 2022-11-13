@@ -1,7 +1,8 @@
 $ spack gpg create "My Name" "<my.email@my.domain.com>"
-gpg: key 718DD98D63235873 marked as ultimately trusted
-gpg: directory '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d' created
-gpg: revocation certificate stored as '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d/A74BD2559C7EAFFF1B48ECAC718DD98D63235873.rev'
+gpg: key 275CEB7579A7C93D marked as ultimately trusted
+gpg: directory '/home/spack1/spack/opt/spack/gpg/openpgp-revocs.d' created
+gpg: revocation certificate stored as '/home/spack1/spack/opt/spack/gpg/openpgp-revocs.d/9573D38E4D51534C2663AAAB275CEB7579A7C93D.rev'
 $ mkdir ~/private_gpg_backup
+mkdir: cannot create directory ‘/home/spack1/private_gpg_backup’: File exists
 $ cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup
 $ cp ~/spack/opt/spack/gpg/pubring.* ~/mirror
