@@ -1,15 +1,9 @@
-$ spack uninstall trilinos
-
-==> Will not uninstall trilinos@13.0.1%gcc@7.5.0/lrg5jy2
-It is used by the following other environments:
-    myproject
-
-==> Error: There are still dependents.
-  use `spack env remove` to remove from environments
+$ spack remove trilinos
+==> Removing trilinos from environment myproject2
 $ spack find
 ==> In environment myproject2
 ==> Root specs
-scr  trilinos
+scr
 
 ==> Installed packages
 -- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------

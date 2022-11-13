@@ -31,40 +31,35 @@ example environments/env-status-2    "spack find"
 
 example -tee environments/env-install-1   "spack env activate myproject"
 spack env activate myproject
-example environments/env-install-1   "spack install tcl"
-example environments/env-install-1   "spack install trilinos"
-example environments/env-install-1   "spack find"
+example environments/env-fail-install-1   "spack install tcl"
+
+example environments/env-add-1            "spack add tcl"
+example environments/env-add-1            "spack add trilinos"
+example environments/env-add-1            "spack find"
+
+example environments/env-install-1        "spack install"
+
+example environments/find-env-2           "spack find"
 
 example environments/use-tcl-1       "which tclsh"
-# don't change tclsh example
 
-example environments/use-trilinos-1  "which algebra"
-example environments/use-trilinos-1  "algebra"
-
-example environments/env-create-2    "spack env create myproject2"
+example environments/env-create-2         "spack env create myproject2"
 example -tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
-example environments/env-create-2    "spack install hdf5+hl ^mpich"
-example environments/env-create-2    "spack install trilinos"
+example environments/env-create-2    "spack add scr trilinos"
+example environments/env-create-2    "spack install"
 example environments/env-create-2    "spack find"
 
 echo "y
 " | example environments/env-uninstall-1 "spack uninstall trilinos"
 example environments/env-uninstall-1 "spack find"
 
+example environments/env-remove-1    "spack remove trilinos"
+example environments/env-remove-1    "spack find"
+
 example -tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
-
-example environments/add-1           "spack add hdf5+hl ^mpich"
-example environments/add-1           "spack add gmp"
-example environments/add-1           "spack find"
-
-example environments/add-2           "spack install"
-
-example environments/add-3           "spack find"
-
-example environments/spec-1          "spack spec hypre"
 
 example environments/config-get-1    "spack config get"
 
@@ -72,11 +67,11 @@ example environments/config-get-1    "spack config get"
 # We mock that by using `spack config add`
 spack config add packages:all:providers:mpi:[mpich]
 
-example environments/spec-2          "spack spec hypre"
+example environments/concretize-f-1 "spack concretize --force --fresh"
+# spack install
 
-example environments/concretize-f-1 "spack concretize --force"
-spack install
-
+example -tee environments/env-swap-1      "spack env activate myproject2"
+spack env activate myproject2
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
 

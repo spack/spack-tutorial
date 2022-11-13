@@ -2,4 +2,8 @@ $ spack env create abstract spack.yaml
 ==> Created environment 'abstract' in /home/spack/spack/var/spack/environments/abstract
 ==> You can activate this environment with:
 ==>   spack env activate abstract
-
+$ spack env create concrete spack.lock
+==> Updating view at /home/spack/spack/var/spack/environments/concrete/.spack-env/view
+==> Created environment 'concrete' in /home/spack/spack/var/spack/environments/concrete
+==> You can activate this environment with:
+==>   spack env activate concrete
