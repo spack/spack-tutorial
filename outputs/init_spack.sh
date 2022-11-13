@@ -9,9 +9,10 @@ else
 fi
 
 . share/spack/setup-env.sh
+spack tutorial -y
+spack bootstrap now
 
 pip install boto3
 spack mirror add tutorial /mirror
-spack buildcache keys --install --trust
 spack config add 'config:suppress_gpg_warnings:true'
 spack config add 'packages:all:target:[x86_64]'

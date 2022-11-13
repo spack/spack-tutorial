@@ -70,6 +70,8 @@ spack config add packages:all:providers:mpi:[mpich]
 example environments/concretize-f-1 "spack concretize --force --fresh"
 # spack install
 
+example -tee environments/env-swap-1      "spack env activate myproject2"
+spack env activate myproject2
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
 
