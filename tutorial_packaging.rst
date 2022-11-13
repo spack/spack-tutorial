@@ -226,7 +226,6 @@ Let's enter the ``spack info`` command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
-   :emphasize-lines: 1-2,5-6,8,10,13,19,28,31,34,37,40,46,49
 
 Take a moment to look over the output. You should see the following
 information derived from the package:
