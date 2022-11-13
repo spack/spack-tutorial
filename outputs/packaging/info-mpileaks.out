@@ -1,4 +1,4 @@
-$ spack info -a mpileaks
+$ spack info mpileaks
 AutotoolsPackage:   mpileaks
 
 Description:
@@ -7,28 +7,20 @@ Description:
 
 Homepage: https://github.com/LLNL/mpileaks
 
-Maintainers: @adamjstewart
-
-Externally Detectable: 
-    False
-
-Tags: 
-    None
-
-Preferred version:  
+Preferred version:
     1.0    https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
 
-Safe versions:  
+Safe versions:
     1.0    https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
 
-Deprecated versions:  
+Deprecated versions:
     None
 
 Variants:
-    None
+    Name [Default]		When	Allowed values	  Description
+    ========================	====	==============	  ======================================
 
-Installation Phases:
-    autoreconf    configure    build    install
+    build_system [autotools]	--	autotools	  Build systems supported by the package
 
 Build Dependencies:
     gnuconfig
@@ -39,14 +31,3 @@ Link Dependencies:
 Run Dependencies:
     None
 
-Virtual Packages: 
-    None
-
-Available Build Phase Test Methods:
-    check
-
-Available Install Phase Test Methods:
-    installcheck
-
-Stand-Alone/Smoke Test Methods:
-    None

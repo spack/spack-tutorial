@@ -1,4 +1,4 @@
-$ spack create https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
+$ spack create --skip-editor https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
 ==> This looks like a URL for mpileaks
 ==> Found 1 version of mpileaks:
 
@@ -7,4 +7,4 @@ $ spack create https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-
 ==> Fetching https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz
 ==> This package looks like it uses the autotools build system
 ==> Created template for mpileaks package
-==> Created package file: /home/spack/spack/var/spack/repos/tutorial/packages/mpileaks/package.py
+==> Created package file: /home/spack1/spack/var/spack/repos/tutorial/packages/mpileaks/package.py
