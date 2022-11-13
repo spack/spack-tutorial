@@ -108,7 +108,7 @@ scopes listed above has two *sub-scopes*: platform-specific and
 platform-independent. For example, compiler settings can be stored
 in the following locations:
 
-#. ``environment-root-dir/spack.yaml``
+#. ``$ENVIRONMENT_ROOT/spack.yaml``
 #. ``~/.spack/<platform>/compilers.yaml``
 #. ``~/.spack/compilers.yaml``
 #. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
@@ -127,7 +127,7 @@ YAML Format
 
 Spack configurations are nested YAML dictionaries with a specified
 schema. The configuration is organized into sections based on theme
-(e.g. a 'compilers' section) and the highest-level keys of the dictionary
+(e.g., a 'compilers' section) and the highest-level keys of the dictionary
 specify the section. Spack generally maintains a separate file for
 each section, although environments keep them together (in
 ``spack.yaml``).
@@ -162,7 +162,7 @@ configuration file as follows:
 
 This ensures that no other compilers are used, as the user configuration
 scope is the last scope searched and the ``compilers::`` line replaces
-all previous configuration files information. If the same
+information from all previous configuration files. If the same
 configuration file had a single colon instead of the double colon, it
 would add the GCC version 7.5.0 compiler to whatever other compilers
 were listed in other configuration files.
@@ -217,8 +217,7 @@ We will start by opening the compilers configuration file:
 
 We start with no active environment, so this will open a
 ``compilers.yaml`` file for editing (you can also do this with an
-active environment - for this tutorial the environment should set
-`unify: false`):
+active environment):
 
 .. code-block:: yaml
 
@@ -316,9 +315,9 @@ since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install cmake %gcc@7.5.0
+   $ spack install --reuse cmake %gcc@7.5.0
    ...
-   $ spack install --no-cache json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
+   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
    ...
 
 
@@ -484,15 +483,11 @@ a section name):
    spack:
      specs: []
      view: true
-     concretizer:
-       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-
-For this tutorial, `unify` should be set to `false`.
 
 Because of the configuration scoping we discussed earlier, this
 overrides the default settings just for these two items.
@@ -518,15 +513,13 @@ HDF5.
    spack:
      specs: []
      view: true
-     concretizer:
-       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
 
 
 Now hdf5 will concretize without an MPI dependency by default.
@@ -538,54 +531,6 @@ Now hdf5 will concretize without an MPI dependency by default.
 
 In general, every attribute that we can set for all packages we can
 set separately for an individual package.
-
-^^^^^^^^^^^^^^^^^^^^^^^
-Applying required specs
-^^^^^^^^^^^^^^^^^^^^^^^
-
-The prior sections apply preferences. Spack can ignore these preferences
-when concretizing if they would create a conflict. In some cases, this
-can lead to unexpected results. If you want to be sure that a preference
-is applied, it should be replaced with a requirement: you can add a
-`require` subsection for a specific package:
-
-.. code-block:: yaml
-
-   spack:
-     specs: []
-     packages:
-       hdf5:
-         # This replaces "variants" specified in the prior section
-         require: "~mpi"
-       openmpi:
-         # Always build @master with %gcc, allow other versions to
-         # use other compilers
-         require:
-         - one_of: ["@master%gcc", "@:4"]
-     view: true
-
-Any spec needing `hdf5` in this environment would have to build it with
-`~mpi`, and Spack would report an error if it could not arrange this.
-
-You can apply requirements to `all`, and also to a virtual package in
-order to force a specific provider.
-
-.. code-block:: yaml
-
-    packages:
-      all:
-        # Every package must build with %clang
-        require: "%clang"
-      cmake:
-        # This overrides the requirements from "all", so CMake in this
-        # case is the one exception to the above rule
-        require: "%gcc"
-      mpi:
-        require: mvapich2
-      mvapich2:
-        # This combines with the requirements for "mpi" (unlike
-        # requirements for "cmake" and "all")
-        require: "~cuda"
 
 ^^^^^^^^^^^^^^^^^
 External packages
@@ -602,20 +547,18 @@ On these systems we have a pre-installed Perl. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 13-16
+   :emphasize-lines: 11-14
 
    spack:
      specs: []
      view: true
-     concretizer:
-       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
        perl:
          externals:
          - spec: perl@5.26.1 %gcc@7.5.0
@@ -645,20 +588,18 @@ specify it on the command line, or we can tell Spack that it's
 not allowed to build its own Perl. We'll go with the latter.
 
 .. code-block:: yaml
-   :emphasize-lines: 17
+   :emphasize-lines: 15
 
    spack:
      specs: []
      view: true
-     concretizer:
-       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         variants: ~mpi
+         require: ~mpi
        perl:
          externals:
          - spec: perl@5.26.1 %gcc@7.5.0
@@ -681,13 +622,11 @@ virtual ``mpi`` package as a key. Since we're at it, we can configure
 HDF5 to build with MPI by default again:
 
 .. code-block:: yaml
-   :emphasize-lines: 16-21
+   :emphasize-lines: 14-19
 
    spack:
      specs: []
      view: true
-     concretizer:
-       unify: false
      packages:
        all:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
@@ -745,6 +684,21 @@ the software. We can do this like so:
 
 Now, only members of the ``fluid_dynamics`` group can use any
 ``converge`` installations.
+
+At this point we want to discard the configuration changes we made
+in this tutorial section, so we can deactivate the environment:
+
+.. code-block:: console
+
+   $ spack env deactivate
+
+
+.. warning::
+
+   If you do not deactivate the ``config-env`` environment, then
+   specs will be concretized differently in later tutorial sections
+   and your results will not match.
+
 
 -----------------
 High-level Config
@@ -871,21 +825,3 @@ of Spack's main documentation.
 For examples of how other sites configure Spack, see
 https://github.com/spack/spack-configs. If you use Spack at your site
 and want to share your config files, feel free to submit a pull request!
-
------------------------------------------
-Cleaning up for the next tutorial section
------------------------------------------
-
-At this point we want to discard the configuration changes we made
-in this tutorial section, so we can deactivate the environment:
-
-.. code-block:: console
-
-   $ spack env deactivate
-
-
-.. warning::
-
-   If you do not deactivate the ``config-env`` environment, then
-   specs will be concretized differently in later tutorial sections
-   and your results will not match.
