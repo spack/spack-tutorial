@@ -35,8 +35,8 @@ $ ls views/full
 bzip2  gdbm	hwloc	libfabric  libiconv  libpciaccess  mpich    openblas  pigz     python	 sqlite  tcl		  xz	 zlib
 expat  gettext	libbsd	libffi	   libmd     libxml2	   ncurses  openssl   pkgconf  readline  tar	 util-linux-uuid  yaksa  zstd
 $ ls views/full/zlib
-zlib-1.2.13-clang-7.0.0  zlib-1.2.13-gcc-7.5.0
-$ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0
-ls: cannot access 'views/full/zlib/zlib-1.2.11-gcc-7.5.0': No such file or directory
-$ ls views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib
-ls: cannot access 'views/full/zlib/zlib-1.2.11-gcc-7.5.0/lib': No such file or directory
+zlib-1.2.13-gcc-7.5.0
+$ ls views/full/zlib/zlib-1.2.13-gcc-7.5.0
+include  lib  share
+$ ls views/full/zlib/zlib-1.2.13-gcc-7.5.0/lib
+libz.a  libz.so  libz.so.1  libz.so.1.2.13  pkgconfig
