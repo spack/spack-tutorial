@@ -47,10 +47,10 @@ following methods to run through the scripts:
      <https://aws.amazon.com/>`_, so that users who are unfamiliar with
      Docker can simply log into a VPM to do the demo exercises.
 
-  2. We also provide the `spack/tutorial <https://hub.docker.com/r/spack/tutorial>`_
-     container image on Docker Hub that you can use to do the tutorial on your local
-     machine. You can invoke ``docker run -it spack/tutorial`` to start using the
-     container.
+  2. We also provide the `spack/tutorial <https://ghcr.io/spack/tutorial>`_
+     container image that you can use to do the tutorial on your local
+     machine. You can invoke ``docker run -it ghcr.io/spack/tutorial`` to
+     start using the container.
 
 You should now be ready to run through our demo scripts:
 
