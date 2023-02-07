@@ -13,21 +13,17 @@ all:
 		out=$$(echo $$raw | sed 's.raw/..'); \
 		cat $$raw | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp > $$out; \
 	done
-	echo "Removing spurious = and # characters"
-	for dir in $(subdirs); do \
-		sed -i~ 's/==>[^ ]/==> /;s/\#/ /' $$dir/*.out; \
-	done
 
 run-local:
-	${PWD}/${section}.sh
+	$(CURDIR)/${section}.sh
 
 run:
 	docker run --rm -it \
-		--mount type=bind,source=${PWD},target=/project \
+		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
 		/project/${section}.sh
 
 interactive:
 	docker run --rm -it \
-		--mount type=bind,source=${PWD},target=/project \
+		--mount type=bind,source=$(CURDIR),target=/project \
 		${container}

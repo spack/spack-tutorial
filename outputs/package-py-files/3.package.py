@@ -6,7 +6,7 @@
 from spack import *
 
 
-class Mpileaks(AutotoolsPackage):
+class TutorialMpileaks(AutotoolsPackage):
     """Tool to detect and report MPI objects like MPI_Requests and
     MPI_Datatypes."""
 
