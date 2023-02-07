@@ -946,7 +946,7 @@ are also permitted in the template language:
 
 .. literalinclude:: _spack_root/share/spack/templates/modules/modulefile.lua
   :language: jinja
-  :lines: 73-88
+  :lines: 73-87
 
 The locations where Spack looks for templates are specified
 in ``config.yaml``:
