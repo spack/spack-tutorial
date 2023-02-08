@@ -1,5 +1,9 @@
 # Makefile for Sphinx documentation
-#
+
+# Put spack environment view in PATH
+ifneq ($(wildcard view/bin),)
+	export PATH := $(CURDIR)/view/bin:$(PATH)
+endif
 
 # You can set these variables from the command line.
 SPHINXOPTS    = -W
