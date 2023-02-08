@@ -166,12 +166,15 @@ downloaded into a subdirectory of the environment. You can change the
 location of this source directory by modifying the ``path:`` attribute
 of the develop configuration in the environment.
 
-There are a two gotchas with the spack develop command
+There are a few gotchas with the spack develop command
 
 * You need to manually specify the package version when specifying a
   package as a dev package. Spack needs to know the version of the dev
   package so it can supply the correct flags for the package's build
   system.
+* You need to also add the right spec with ``spack add <package>`` on to 
+  the ``spack.yaml`` environments file. This is because the spack develop
+  only adds the  ``dev_path=`` attribute to the spec and not the spec itself.  
 * You'll need to re-concretize the environment so that the version
   number and the ``dev_path=`` attributes are properly added to the
   cached spec in ``spack.lock``.
