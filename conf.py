@@ -309,3 +309,9 @@ texinfo_documents = [
 
 # How to display URL addresses: 'footnote', 'no', or 'inline'.
 #texinfo_show_urls = 'footnote'
+
+
+copybutton_only_copy_prompt_lines = True
+copybutton_prompt_text = r"$"
+copybutton_exclude = '.linenos'
+copybutton_copy_empty_lines = False
