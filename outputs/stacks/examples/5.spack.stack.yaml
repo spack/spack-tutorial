@@ -1,0 +1,44 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  definitions:
+    - mpis: [mpich]
+    - mpis: [openmpi]
+      when: 'env.get("SPACK_STACK_USE_OPENMPI", "") == "1"'
+    - lapacks: [^openblas, ^netlib-lapack]
+    - compilers: ["%gcc@8.4.0"]
+    - mpi_packages: [netlib-scalapack]
+    - serial_packages: [py-scipy]
+
+  specs:
+  - gcc@8.4.0%gcc@7.5.0
+  - matrix:
+    - [$mpi_packages]
+    - [$^mpis]
+    - [$lapacks]
+    - [$compilers]
+  - matrix:
+    - [$serial_packages]
+    - [$lapacks]
+    - [$compilers]
+    exclude:
+    - "py-scipy ^netlib-lapack"
+  view: false
+  concretizer:
+    unify: false
+  compilers:
+  - compiler:
+      spec: gcc@8.4.0
+      paths:
+        cc: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e/bin/gcc
+        cxx: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e/bin/g++
+        f77: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e/bin/gfortran
+        fc: /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e/bin/gfortran
+      flags: {}
+      operating_system: ubuntu18.04
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []

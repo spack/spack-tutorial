@@ -1,3 +1,9 @@
-$ cd ~/code
+$ mkdir -p ~/stacks && cd ~/stacks
+$ spack env create -d .
+==> Created environment in /home/spack/stacks
+==> You can activate this environment with:
+==>   spack env activate /home/spack/stacks
 $ spack env activate .
+$ spack add gcc@8.4.0 %gcc@7.5.0
+==> Adding gcc@8.4.0%gcc@7.5.0 to environment /home/spack/stacks
 $ spack config edit
