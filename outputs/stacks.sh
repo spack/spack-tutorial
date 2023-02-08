@@ -61,3 +61,26 @@ example stacks/view-1       "spack concretize"
 example stacks/view-1       "ls views/default"
 example stacks/view-1       "ls views/default/lib"
 example stacks/view-1       "ls views/full"
+
+example stacks/modules-0 "spack add lmod%gcc@7.5.0"
+example stacks/modules-0 "spack concretize"
+example stacks/modules-0 "spack install"
+
+. $(spack location -i lmod)/lmod/lmod/init/bash
+
+example -tee stacks/modules-1 "module --version"
+
+cat $project/stacks/examples/8.spack.stack.yaml > spack.yaml
+spack module lmod refresh -y
+module use $PWD/modules/linux-ubuntu18.04-x86_64/Core
+
+example -tee stacks/modules-2 "module av"
+
+example -tee stacks/modules-3 "module load gcc"
+example stacks/modules-3 "which gcc"
+example stacks/modules-3 "gcc --version"
+example -tee stacks/modules-3 "module av"
+example -tee stacks/modules-3 "module unload gcc"
+
+cat $project/stacks/examples/9.spack.stack.yaml > spack.yaml
+example stacks/modules-4 "spack module lmod refresh --delete-tree -y"

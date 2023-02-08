@@ -238,3 +238,86 @@ all packages, including implicit dependencies, into the view. The
 
 Now we see only the root libraries in the default view.
 The rest are hidden, but are still available in the full view.
+
+------------
+Module files
+------------
+
+Module files are another very popular way to let your end users profit from
+the software you installed. Here we'll  show how you can incorporate the configuration
+to generate LMod hierarchical module files within the same environment used to
+install the software.
+
+.. note::
+
+   A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
+   There we discuss the general architecture of module file generation in Spack and we highlight
+   differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
+
+Let's start by adding ``lmod`` to the software installed with the system compiler:
+
+.. code-block:: console
+
+   $ spack add lmod%gcc@7.5.0
+   $ spack concretize
+   $ spack install
+
+Once that is done, let's add the ``module`` command to our shell like this:
+
+.. code-block:: console
+
+   $ . $(spack location -i lmod)/lmod/lmod/init/bash
+
+If everything worked out correctly you should now have the module command available in you shell:
+
+.. literalinclude:: outputs/stacks/modules-1.out
+   :language: console
+
+The next step is to add some basic configuration to our ``spack.yaml`` to generate module files:
+
+.. literalinclude:: outputs/stacks/examples/8.spack.stack.yaml
+   :language: yaml
+   :emphasize-lines: 45-54
+
+In these few lines of additional configuration we told Spack to generate ``lmod`` module files
+in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
+
+We can generate the module files and use them with the following commands:
+
+.. code-block:: console
+
+   $ spack module lmod refresh -y
+   $ module use $PWD/modules/linux-ubuntu18.04-x86_64/Core
+
+Now we should be able to see the module files that have been generated:
+
+.. literalinclude:: outputs/stacks/modules-2.out
+   :language: console
+
+The sets of modules is already usable, and the hierarchy already works. For instance we can
+load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot more
+modules available - all the ones compiled with ``gcc@8.4.0``:
+
+.. literalinclude:: outputs/stacks/modules-3.out
+   :language: console
+
+There are a few issues though. For once, we have a lot of modules generated from dependencies
+of ``gcc`` that are cluttering the view, and won't likely be needed directly by users. Then, module
+names contain hashes, which go against users being able to reuse the same script in similar, but
+not equal, environments.
+
+Also, some of the modules might need to set custom environment variables, which are specific to
+the deployment aspects that don't enter the hash - for instance a policy at the deploying site.
+
+To address all these needs we can complicate out ``modules`` configuration a bit more:
+
+.. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
+   :language: yaml
+   :emphasize-lines: 55-70
+
+Let's regenerate the modules once again:
+
+.. literalinclude:: outputs/stacks/modules-4.out
+   :language: console
+
+Now we have a set of module files without hashes, with a correct hierarchy, and with all our custom modifications.
