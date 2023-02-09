@@ -16,6 +16,10 @@ raw_outputs="${PROJECT}/raw"
 # used by scripts
 tutorial_branch=releases/v0.19
 
+print_status() {
+    printf "\n%b: %s\n\n" "\033[1;35m$1\033[0m" "$2"
+}
+
 die_with_error() {
     printf "%b: %s\n" "\033[1;31mFAILED\033[0m" "$@"
     exit 1
@@ -53,6 +57,9 @@ example() {
 
     # print the command to the file
     cmd="$1"
+
+    print_status running "$cmd"
+
     echo "$ $cmd" &>> "$filename"
 
     if [ "$tee" == "1" ]; then
@@ -101,7 +108,7 @@ fake_example(){
     fi
 
     # print command to stdout to help debugging
-    echo "$cmd"
+    print_status running "$cmd"
 
     # get the command's output
     $cmd | tee -a "$filename"
