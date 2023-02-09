@@ -8,7 +8,7 @@ project="$(dirname "$0")"
 rm -rf "$raw_outputs" ~/spack ~/.spack ~/.gnupg
 
 # install boto3
-pip3 install boto3
+pip3 install --quiet boto3
 
 # basic installation
 example basics/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"

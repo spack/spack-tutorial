@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ ! -d ~/spack ]; then
-    git clone "--branch=$tutorial_branch" --depth=100 https://github.com/spack/spack ~/spack
+    git clone --quiet "--branch=$tutorial_branch" --depth=100 https://github.com/spack/spack ~/spack
 fi
 
 cd ~/spack || exit
@@ -9,6 +9,6 @@ cd ~/spack || exit
 spack tutorial -y
 spack bootstrap now
 
-pip install boto3
+pip install --quiet boto3
 spack config add 'config:suppress_gpg_warnings:true'
 spack config add 'packages:all:target:[x86_64]'
