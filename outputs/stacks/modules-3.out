@@ -1,23 +1,34 @@
 $ module load gcc
 $ which gcc
-/usr/bin/gcc
+/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e/bin/gcc
 $ gcc --version
-gcc (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
-Copyright (C) 2017 Free Software Foundation, Inc.
+gcc (Spack GCC) 8.4.0
+Copyright (C) 2018 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $ module av
 
------------------------------------------ /home/spack/stacks/modules/linux-ubuntu18.04-x86_64/Core ------------------------------------------
-   autoconf/2.69-btoteei			 gcc/8.4.0-uobbegc		    lua-luaposix/35.0-3edic26	 pkgconf/1.8.0-k2lfw6f
-   automake/1.16.5-rxjqnjw			 gdbm/1.23-cpmynty		    lua/5.4.4-ewawei4		 readline/8.1.2-kgyvtw5
-   berkeley-db/18.1.40-53fb72w			 gmp/6.2.1-iowhen4		    m4/1.4.19-z7d5q4f		 tcl/8.6.12-v63n6wx
-   bzip2/1.0.8-cxcreln				 libiconv/1.16-ltvovvv		    mpc/1.1.0-l5bs2ru		 texinfo/6.5-hdyi7fu
-   ca-certificates-mozilla/2022-10-11-aurd37j	 libsigsegv/2.13-e262sf6	    mpfr/3.1.6-3brr36e		 unzip/6.0-pqjekjj
-   curl/7.85.0-wc2juod				 libtool/2.4.7-bdxu4wn		    ncurses/6.3-zcuawli		 zlib/1.2.13-2hfr5rb
-   diffutils/3.8-c3uhkcj			 lmod/8.7.2-4jrozw5		    openssl/1.1.1s-yr4z2pt
-   gawk/5.1.1-dco3nzd				 lua-luafilesystem/1_8_0-6snuuy6    perl/5.36.0-eydiwim
+--------------------------------------------------------------------------------------------------------- /home/spack/stacks/modules/linux-ubuntu18.04-x86_64/gcc/8.4.0 ---------------------------------------------------------------------------------------------------------
+   autoconf/2.69-3ur6efa		      (D)    findutils/4.9.0-ye45pox		 libffi/3.4.2-pfw5zcj		  ncurses/6.3-pm3k5t4		      pigz/2.7-x4i7we6		   py-setuptools/59.4.0-uh4z6vn 	 yaksa/0.2-ohap5mv
+   automake/1.16.5-ltwno6t			     gdbm/1.23-6dpdzlt		  (D)	 libiconv/1.16-faxyug5		  netlib-lapack/3.10.1-d75mbpb	      pkgconf/1.8.0-db44f6t	   py-wheel/0.37.1-htlk6hg		 zlib/1.2.13-qaq2asl
+   berkeley-db/18.1.40-gfnsus4			     gettext/0.21.1-lxoekir		 libmd/1.0.4-mbjxxpr		  ninja/1.11.1-ctiucvr		      pmix/4.1.2-alwqqyv	   python/3.10.8-4ots64k		 zstd/1.5.2-2b73tir
+   bison/3.8.2-mne2r6i				     hwloc/2.8.0-76vxdwi		 libpciaccess/0.16-ygwuejw	  numactl/2.0.14-qo6lo2m	      py-beniget/0.4.1-6fg7x2e	   readline/8.1.2-vrvkcpj	  (D)
+   bzip2/1.0.8-h2cyuuc			      (D)    krb5/1.19.3-lbq4bnu		 libsigsegv/2.13-hzetpcu   (D)	  openblas/0.3.21-62oqts5	      py-cython/0.29.32-g5hd5bt    sqlite/3.39.4-e373hd3
+   ca-certificates-mozilla/2022-10-11-tug2vtk (D)    libbsd/0.11.5-p666k37		 libtool/2.4.7-uejcu2m	   (D)	  openmpi/4.1.4-cnq37ia 	      py-gast/0.5.3-hthzien	   tar/1.34-vkidral
+   cmake/3.24.3-3oinxkn 			     libedit/3.1-20210216-zl6rdlr	 libxml2/2.10.1-rsueryu 	  openssh/9.1p1-bu2y2rn 	      py-pip/22.2.2-gdv6477	   util-linux-uuid/2.38.1-72abeix
+   diffutils/3.8-42nykx7		      (D)    libevent/2.1.12-zlkggwb		 m4/1.4.19-64hyzlr	   (D)	  openssl/1.1.1s-4h2attb       (D)    py-ply/3.11-i3li6qu	   util-macros/1.19.3-caquoxb
+   expat/2.4.8-ecxz4tu				     libfabric/1.16.1-zmoqcfm		 mpich/4.0.2-dehzhtf		  perl/5.36.0-oxh2v73	       (D)    py-pybind11/2.8.1-pzlkf5u    xz/5.2.7-yalo3gm
+
+----------------------------------------------------------------------------------------------------------- /home/spack/stacks/modules/linux-ubuntu18.04-x86_64/Core ------------------------------------------------------------------------------------------------------------
+   autoconf/2.69-btoteei	      ca-certificates-mozilla/2022-10-11-aurd37j    gcc/8.4.0-uobbegc	  (L)	 libsigsegv/2.13-e262sf6	    lua-luaposix/35.0-3edic26	     mpfr/3.1.6-3brr36e     (L)    pkgconf/1.8.0-k2lfw6f  (D)	 unzip/6.0-pqjekjj
+   automake/1.16.5-rxjqnjw     (D)    curl/7.85.0-wc2juod			    gdbm/1.23-cpmynty		 libtool/2.4.7-bdxu4wn		    lua/5.4.4-ewawei4		     ncurses/6.3-zcuawli    (D)    readline/8.1.2-kgyvtw5	 zlib/1.2.13-2hfr5rb (L,D)
+   berkeley-db/18.1.40-53fb72w (D)    diffutils/3.8-c3uhkcj			    gmp/6.2.1-iowhen4	  (L)	 lmod/8.7.2-4jrozw5		    m4/1.4.19-z7d5q4f		     openssl/1.1.1s-yr4z2pt	   tcl/8.6.12-v63n6wx
+   bzip2/1.0.8-cxcreln		      gawk/5.1.1-dco3nzd			    libiconv/1.16-ltvovvv (D)	 lua-luafilesystem/1_8_0-6snuuy6    mpc/1.1.0-l5bs2ru	      (L)    perl/5.36.0-eydiwim	   texinfo/6.5-hdyi7fu
+
+  Where:
+   D:  Default Module
+   L:  Module is loaded
 
 If the avail list is too long consider trying:
 
@@ -29,6 +40,3 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching a
 
 
 $ module unload gcc
-
-Note: the module "gcc" cannot be unloaded because it was not loaded.
-
