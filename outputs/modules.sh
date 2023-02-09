@@ -47,8 +47,7 @@ example --tee modules/module-show-1  "module show $gcc_module"
 
 spack config add "modules:default:tcl:all:filter:environment_blacklist:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
 
-echo "y
-" | example  modules/tcl-refresh-1      "spack module tcl refresh"
+printf "y\n" | example  modules/tcl-refresh-1      "spack module tcl refresh"
 example --tee modules/module-show-2      "module show $gcc_module"
 
 
