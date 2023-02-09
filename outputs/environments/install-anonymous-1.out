@@ -1,10 +1,10 @@
 $ spack env activate .
 $ spack install
 ==> Concretized trilinos
-[+]  lrg5jy2  trilinos@13.0.1%gcc@7.5.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest~hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=RelWithDebInfo cxxstd=14 gotype=long_long arch=linux-ubuntu18.04-x86_64
-[+]  jrlhw77	  ^cmake@3.24.3%gcc@7.5.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu18.04-x86_64
+[+]  brfmaty  trilinos@13.0.1%gcc@7.5.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest~hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=RelWithDebInfo cxxstd=14 gotype=long_long arch=linux-ubuntu18.04-x86_64
+[+]  stszbns	  ^cmake@3.24.3%gcc@7.5.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu18.04-x86_64
 [+]  zcuawli	      ^ncurses@6.3%gcc@7.5.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  uwlw4wr	      ^openssl@1.1.1s%gcc@7.5.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu18.04-x86_64
+[+]  yr4z2pt	      ^openssl@1.1.1s%gcc@7.5.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu18.04-x86_64
 [+]  aurd37j		  ^ca-certificates-mozilla@2022-10-11%gcc@7.5.0 build_system=generic arch=linux-ubuntu18.04-x86_64
 [+]  5yywrk2	  ^hwloc@2.8.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  p7f5n6q	      ^libpciaccess@0.16%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
@@ -14,33 +14,33 @@ $ spack install
 [+]  ltvovvv		  ^libiconv@1.16%gcc@7.5.0 build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  nrwxyth		  ^xz@5.2.7%gcc@7.5.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  k2lfw6f	      ^pkgconf@1.8.0%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  4svpf4l	  ^openblas@0.3.21%gcc@7.5.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile patches=d3d9b15 symbol_suffix=none threads=none arch=linux-ubuntu18.04-x86_64
-[+]  4ebutg2	      ^perl@5.36.0%gcc@7.5.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu18.04-x86_64
+[+]  3db4ryr	  ^openblas@0.3.21%gcc@7.5.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile patches=d3d9b15 symbol_suffix=none threads=none arch=linux-ubuntu18.04-x86_64
+[+]  eydiwim	      ^perl@5.36.0%gcc@7.5.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu18.04-x86_64
 [+]  53fb72w		  ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu18.04-x86_64
 [+]  cxcreln		  ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared build_system=generic arch=linux-ubuntu18.04-x86_64
 [+]  c3uhkcj		      ^diffutils@3.8%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  cpmynty		  ^gdbm@1.23%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  kgyvtw5		      ^readline@8.1.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  ilnrdw5	  ^openmpi@4.1.4%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
-[+]  l566d6c	      ^numactl@2.0.14%gcc@7.5.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu18.04-x86_64
-[+]  qdpipdf		  ^autoconf@2.69%gcc@7.5.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
-[+]  l7j5vdr		  ^automake@1.16.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  mfxvu5f	  ^openmpi@4.1.4%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
+[+]  qbwqmk6	      ^numactl@2.0.14%gcc@7.5.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu18.04-x86_64
+[+]  btoteei		  ^autoconf@2.69%gcc@7.5.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
+[+]  rxjqnjw		  ^automake@1.16.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  z7d5q4f		  ^m4@1.4.19%gcc@7.5.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
 [+]  e262sf6		      ^libsigsegv@2.13%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  e4esedl	      ^openssh@9.1p1%gcc@7.5.0+gssapi build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  oc246vi		  ^krb5@1.19.3%gcc@7.5.0+shared build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  kxbisdg		      ^bison@3.8.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  xevso22	      ^openssh@9.1p1%gcc@7.5.0+gssapi build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  y6ek4vz		  ^krb5@1.19.3%gcc@7.5.0+shared build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  wobmzgv		      ^bison@3.8.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  hj6szik		      ^gettext@0.21.1%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  kawegoy			  ^tar@1.34%gcc@7.5.0 build_system=autotools zip=pigz arch=linux-ubuntu18.04-x86_64
 [+]  wod35ny			      ^pigz@2.7%gcc@7.5.0 build_system=makefile arch=linux-ubuntu18.04-x86_64
 [+]  fprmzmo			      ^zstd@1.5.2%gcc@7.5.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  6pzeykr		  ^libedit@3.1-20210216%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  optdpo7	      ^pmix@4.1.2%gcc@7.5.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  ule2pil		  ^libevent@2.1.12%gcc@7.5.0+openssl build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  76ul6un	      ^pmix@4.1.2%gcc@7.5.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  nblr6w4		  ^libevent@2.1.12%gcc@7.5.0+openssl build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  2hfr5rb	      ^zlib@1.2.13%gcc@7.5.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu18.04-x86_64
 
 ==> Concretized openmpi
-[+]  ilnrdw5  openmpi@4.1.4%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
+[+]  mfxvu5f  openmpi@4.1.4%gcc@7.5.0~atomics~cuda~cxx~cxx_exceptions~gpfs~internal-hwloc~java~legacylaunchers~lustre~memchecker+romio+rsh~singularity+static+vt+wrapper-rpath build_system=autotools fabrics=none schedulers=none arch=linux-ubuntu18.04-x86_64
 [+]  5yywrk2	  ^hwloc@2.8.0%gcc@7.5.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  p7f5n6q	      ^libpciaccess@0.16%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  ao5w53r		  ^util-macros@1.19.3%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
@@ -48,31 +48,31 @@ $ spack install
 [+]  ltvovvv		  ^libiconv@1.16%gcc@7.5.0 build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  nrwxyth		  ^xz@5.2.7%gcc@7.5.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  zcuawli	      ^ncurses@6.3%gcc@7.5.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  l566d6c	  ^numactl@2.0.14%gcc@7.5.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu18.04-x86_64
-[+]  qdpipdf	      ^autoconf@2.69%gcc@7.5.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
-[+]  l7j5vdr	      ^automake@1.16.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  qbwqmk6	  ^numactl@2.0.14%gcc@7.5.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu18.04-x86_64
+[+]  btoteei	      ^autoconf@2.69%gcc@7.5.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu18.04-x86_64
+[+]  rxjqnjw	      ^automake@1.16.5%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  bdxu4wn	      ^libtool@2.4.7%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  z7d5q4f	      ^m4@1.4.19%gcc@7.5.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu18.04-x86_64
 [+]  c3uhkcj		  ^diffutils@3.8%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  e262sf6		  ^libsigsegv@2.13%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  e4esedl	  ^openssh@9.1p1%gcc@7.5.0+gssapi build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  oc246vi	      ^krb5@1.19.3%gcc@7.5.0+shared build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  kxbisdg		  ^bison@3.8.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  xevso22	  ^openssh@9.1p1%gcc@7.5.0+gssapi build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  y6ek4vz	      ^krb5@1.19.3%gcc@7.5.0+shared build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  wobmzgv		  ^bison@3.8.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  hj6szik		  ^gettext@0.21.1%gcc@7.5.0+bzip2+curses+git~libunistring+libxml2+tar+xz build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  kawegoy		      ^tar@1.34%gcc@7.5.0 build_system=autotools zip=pigz arch=linux-ubuntu18.04-x86_64
 [+]  wod35ny			  ^pigz@2.7%gcc@7.5.0 build_system=makefile arch=linux-ubuntu18.04-x86_64
 [+]  fprmzmo			  ^zstd@1.5.2%gcc@7.5.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu18.04-x86_64
 [+]  6pzeykr	      ^libedit@3.1-20210216%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  uwlw4wr	      ^openssl@1.1.1s%gcc@7.5.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu18.04-x86_64
+[+]  yr4z2pt	      ^openssl@1.1.1s%gcc@7.5.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu18.04-x86_64
 [+]  aurd37j		  ^ca-certificates-mozilla@2022-10-11%gcc@7.5.0 build_system=generic arch=linux-ubuntu18.04-x86_64
-[+]  4ebutg2	  ^perl@5.36.0%gcc@7.5.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu18.04-x86_64
+[+]  eydiwim	  ^perl@5.36.0%gcc@7.5.0+cpanm+shared+threads build_system=generic arch=linux-ubuntu18.04-x86_64
 [+]  53fb72w	      ^berkeley-db@18.1.40%gcc@7.5.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu18.04-x86_64
 [+]  cxcreln	      ^bzip2@1.0.8%gcc@7.5.0~debug~pic+shared build_system=generic arch=linux-ubuntu18.04-x86_64
 [+]  cpmynty	      ^gdbm@1.23%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  kgyvtw5		  ^readline@8.1.2%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  k2lfw6f	  ^pkgconf@1.8.0%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  optdpo7	  ^pmix@4.1.2%gcc@7.5.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu18.04-x86_64
-[+]  ule2pil	      ^libevent@2.1.12%gcc@7.5.0+openssl build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  76ul6un	  ^pmix@4.1.2%gcc@7.5.0~docs+pmi_backwards_compatibility~restful build_system=autotools arch=linux-ubuntu18.04-x86_64
+[+]  nblr6w4	      ^libevent@2.1.12%gcc@7.5.0+openssl build_system=autotools arch=linux-ubuntu18.04-x86_64
 [+]  2hfr5rb	  ^zlib@1.2.13%gcc@7.5.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu18.04-x86_64
 
 ==> Installing environment /home/spack/code

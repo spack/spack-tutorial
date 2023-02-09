@@ -2,9 +2,9 @@ $ spack module tcl refresh --delete-tree -y
 ==> Error: Name clashes detected in module files:
 
 file: /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/netlib-scalapack-2.2.0-gcc-8.4.0
-spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
-spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
-spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
-spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
+spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_system=cmake build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
+spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_system=cmake build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
+spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_system=cmake build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
+spec: netlib-scalapack@2.2.0%gcc@8.4.0~ipo~pic+shared build_system=cmake build_type=Release patches=072b006,1c9ce5f arch=linux-ubuntu18.04-x86_64
 
 ==> Error: Operation aborted

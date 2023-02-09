@@ -1,19 +1,18 @@
 $ module show openmpi
-----------------------------------------------------------------------------------------------------------------------------------------------------------
-   /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/openmpi/4.1.3-gcc-8.4.0:
-----------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------
+   /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/openmpi/4.1.4-gcc-8.4.0:
+-----------------------------------------------------------------------------------------------------------------------------------------
 whatis("An open source Message Passing Interface implementation.")
 conflict("openmpi")
-prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/lib")
-prepend_path("PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin")
-prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/share/man")
-prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/lib/pkgconfig")
-prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/")
-setenv("MPICC","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpicc")
-setenv("MPICXX","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpic++")
-setenv("MPIF77","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpif77")
-setenv("MPIF90","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza/bin/mpif90")
-setenv("'OPENMPI_ROOT'","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.3-c4md4pybhcksh7fvpi32fm4lysvoqjza")
+prepend_path("PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/bin")
+prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/share/man")
+prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/lib/pkgconfig")
+prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/.")
+setenv("MPICC","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/bin/mpicc")
+setenv("MPICXX","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/bin/mpic++")
+setenv("MPIF77","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/bin/mpif77")
+setenv("MPIF90","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq/bin/mpif90")
+setenv("OPENMPI_ROOT","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/openmpi-4.1.4-cnq37ia4lu75epxegwxb2f2p2i5jd7cq")
 setenv("SLURM_MPI_TYPE","pmi2")
 setenv("OMPI_MCA_btl_openib_warn_default_git_prefix","0")
 help([[An open source Message Passing Interface implementation. The Open MPI

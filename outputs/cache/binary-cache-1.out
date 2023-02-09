@@ -1,14 +1,12 @@
 $ cd ~
 $ mkdir cache-binary
-mkdir: cannot create directory ‘cache-binary’: File exists
 $ cd cache-binary
 $ spack env create -d .
-==> Updating view at /home/spack1/cache-binary/.spack-env/view
-==> Created environment in /home/spack1/cache-binary
+==> Created environment in /home/spack/cache-binary
 ==> You can activate this environment with:
-==>   spack env activate /home/spack1/cache-binary
+==>   spack env activate /home/spack/cache-binary
 $ spacktivate .
 $ spack add bzip2
-==> Package bzip2 was already added to /home/spack1/cache-binary
+==> Adding bzip2 to environment /home/spack/cache-binary
 $ spack add zlib
-==> Package zlib was already added to /home/spack1/cache-binary
+==> Adding zlib to environment /home/spack/cache-binary
