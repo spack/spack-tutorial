@@ -16,15 +16,15 @@ example packaging/create     "spack create --name tutorial-mpileaks https://gith
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
-example packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
+example --ignore-errors packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
 cp ${PROJECT}/package-py-files/1.package.py $mpileaks_package_py
 example packaging/info-mpileaks       "spack info tutorial-mpileaks"
 
 cp ${PROJECT}/package-py-files/2.package.py $mpileaks_package_py
-example packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
+example --ignore-errors packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
 
-stage_dir=$(spack location -s tutorial-mpileaks)
+stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
 #prefix=$(spack python -c \
@@ -32,10 +32,10 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 #spack cd tutorial-mpileaks
 #echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env tutorial-mpileaks -- bash"
 
-cp ${PROJECT}/package-py-files/3.package.py $mpileaks_package_py
+cp "${PROJECT}/package-py-files/3.package.py" $mpileaks_package_py
 example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
 
-cp ${PROJECT}/package-py-files/4.package.py $mpileaks_package_py
+cp "${PROJECT}/package-py-files/4.package.py" $mpileaks_package_py
 example packaging/install-mpileaks-4  "spack install --verbose tutorial-mpileaks stackstart=4"
 
 example packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
