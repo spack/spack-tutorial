@@ -44,7 +44,7 @@ export EDITOR=true
 fake_example dev/edit-1 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\);|\1|' scr/src/scr_copy.c | head -n 70
 
-example dev/develop-3 "spack install"
+example --ignore-errors dev/develop-3 "spack install"
 
 fake_example dev/develop-4 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\)|\1;|' scr/src/scr_copy.c | head -n 70
