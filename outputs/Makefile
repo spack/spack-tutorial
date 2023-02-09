@@ -6,7 +6,7 @@ DOCKER=docker
 # name of the container we'll generate the tutorial outputs with
 container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
-subdirs = basics environments packaging stacks dev scripting
+subdirs = basics cache dev environments modules packaging scripting stacks
 run_targets = $(addprefix run-,$(subdirs))
 
 # Entrypoint
@@ -23,8 +23,6 @@ $(addprefix local-run-,$(subdirs)):
 	$(CURDIR)/$(@:local-run-%=%).sh
 
 $(run_targets): run-%: %.sh init_spack.sh defs.sh
-
-$(run_targets):
 	$(DOCKER) run --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
