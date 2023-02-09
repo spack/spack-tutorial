@@ -1,31 +1,19 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
-. $project/defs.sh
+project="$(dirname "$0")"
+. "$project/defs.sh"
 
-rm -rf $raw_outputs/cache
-pip install boto3
-
-example cache/up-to-date "git clone https://github.com/spack/spack ~/spack"
-example cache/up-to-date "cd ~/spack"
-cd ~/spack
-example cache/up-to-date "git checkout releases/v0.19"
-example cache/up-to-date ". share/spack/setup-env.sh"
-. share/spack/setup-env.sh
-spack config add "config:suppress_gpg_warnings:true"
-spack config add "packages:all:target:[x86_64]"
-
-example cache/up-to-date "spack mirror add tutorial /mirror"
-example cache/up-to-date "spack buildcache keys -it"
+rm -rf "${raw_outputs:?}/cache"
+. "$project/init_spack.sh"
 
 example cache/mirror-list-0 "spack mirror list"
 
 example cache/setup-scr "cd ~"
-cd ~
+cd ~ || exit
 example cache/setup-scr "mkdir cache-env"
 example cache/setup-scr "cd cache-env"
-cd cache-env
+cd cache-env || exit
 example cache/setup-scr "spack env create -d ."
 fake_example cache/setup-scr "spacktivate ." "spack env activate ."
 spack env activate .
@@ -56,10 +44,10 @@ example cache/spack-mirror-4 "spack mirror create -d ~/mirror --all"
 example cache/trust "spack buildcache keys --install --trust --force"
 
 example cache/binary-cache-1 "cd ~"
-cd ~
+cd ~ || exit
 example cache/binary-cache-1 "mkdir cache-binary"
 example cache/binary-cache-1 "cd cache-binary"
-cd cache-binary
+cd cache-binary || exit
 example cache/binary-cache-1 "spack env create -d ."
 fake_example cache/binary-cache-1 "spacktivate ." "spack env activate ."
 spack env activate .

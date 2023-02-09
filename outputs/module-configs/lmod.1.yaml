@@ -14,7 +14,7 @@ modules:
         - '%gcc@7.5.0'
       all:
         filter:
-          environment_blacklist:
+          exclude_env_vars:
             - "C_INCLUDE_PATH"
             - "CPLUS_INCLUDE_PATH"
             - "LIBRARY_PATH"

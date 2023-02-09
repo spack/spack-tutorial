@@ -3,7 +3,7 @@
    If you have not done the prior sections, you'll need to set Spack up
    like this::
 
-       git clone --branch=releases/v0.19 https://github.com/spack/spack
+       git clone --depth=100 --branch=releases/v0.19 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
        spack tutorial
 
