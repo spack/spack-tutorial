@@ -18,7 +18,9 @@ RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2
 RUN mkdir /mirror
 RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/v0.19.0/tutorial /mirror
 RUN rm -rf /mirror/buid_cache/_pgp
-RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/v0.19.0/build_cache/_pgp /mirror/build_cache/_pgp
+# TODO: Get the keys from aws as soon as they're fixed
+# RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/v0.19.0/build_cache/_pgp /mirror/build_cache/_pgp
+COPY tutorial.pub /mirror/build_cache/_pgp/tutorial.pub
 
 FROM ubuntu:18.04 as builder
 
