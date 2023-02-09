@@ -320,4 +320,7 @@ Let's regenerate the modules once again:
 .. literalinclude:: outputs/stacks/modules-4.out
    :language: console
 
-Now we have a set of module files without hashes, with a correct hierarchy, and with all our custom modifications.
+Now we have a set of module files without hashes, with a correct hierarchy, and with all our custom modifications:
+
+.. literalinclude:: outputs/stacks/modules-5.out
+   :language: console
