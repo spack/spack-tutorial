@@ -58,7 +58,7 @@ example() {
     # print the command to the file
     cmd="$1"
 
-    print_status running "$cmd"
+    print_status "[$filename]" "$cmd"
 
     echo "$ $cmd" &>> "$filename"
 
@@ -108,7 +108,7 @@ fake_example(){
     fi
 
     # print command to stdout to help debugging
-    print_status running "$cmd"
+    print_status "[$filename]" "$cmd"
 
     # get the command's output
     $cmd | tee -a "$filename"
