@@ -1,4 +1,4 @@
-.PHONY: all replay
+.PHONY: all replay run clean
 
 # For those who need `make "DOCKER=sudo docker"`
 DOCKER=docker
@@ -21,13 +21,18 @@ $(addprefix run-local-,$(subdirs)):
 
 run: $(run_targets)
 
+run-%: %.sh
+
 $(run_targets):
-	$(DOCKER) run --rm -it \
+	$(DOCKER) run --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
-		/project/$(@:run-%=%).sh
+		/project/$(@:run-%=%).sh && touch $@
 
 interactive:
 	$(DOCKER) run --rm -it \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container}
+
+clean:
+	rm -f $(run_targets)
