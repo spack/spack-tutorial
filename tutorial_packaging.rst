@@ -717,7 +717,7 @@ Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
-   :emphasize-lines: 1,4,6-7
+   :emphasize-lines: 1,4,6
 
 --------------------
 More information
