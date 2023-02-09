@@ -19,10 +19,10 @@ update-outputs:
 		cat $$raw | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp > $$out; \
 	done
 
-$(addprefix run-local-,$(subdirs)):
-	$(CURDIR)/$(@:run-local-%=%).sh
+$(addprefix local-run-,$(subdirs)):
+	$(CURDIR)/$(@:local-run-%=%).sh
 
-run-%: %.sh
+$(run_targets): run-%: %.sh init_spack.sh defs.sh
 
 $(run_targets):
 	$(DOCKER) run --rm -t \
