@@ -4,11 +4,11 @@
 set -ueo pipefail
 
 # if in a container, put stuff in the bindmounted
-# /project directory (see Makefile).  Otherwise use ${PWD}
+# /project directory (see Makefile).  Otherwise use $PWD
 if [ -d /project ]; then
     PROJECT=/project
 else
-    PROJECT="${PWD}"
+    PROJECT="$PWD"
 fi
 
 raw_outputs="${PROJECT}/raw"
@@ -62,9 +62,9 @@ example() {
 
     echo "$ $cmd" &>> "$filename"
 
-    if [ "$tee" == "1" ]; then
+    if [ "$tee" = "1" ]; then
         # Don't use despacktivate alias (and strip comment)
-        if [[ "$cmd" == despacktivate* ]]; then
+        if [ "$cmd" != "${cmd#despacktivate}" ]; then
             cmd="spack env deactivate"
         fi
         # get the command's output
@@ -103,7 +103,7 @@ fake_example(){
     cmd="$1"
 
     # Don't use despacktivate alias (and strip comment)
-    if [[ "$cmd" == despacktivate* ]]; then
+    if [ "$cmd" != "${cmd#despacktivate}" ]; then
         cmd="spack env deactivate"
     fi
 
