@@ -31,7 +31,7 @@ example environments/env-status-2    "spack find"
 
 example --tee environments/env-install-1   "spack env activate myproject"
 spack env activate myproject
-example environments/env-fail-install-1   "spack install tcl"
+example --ignore-errors environments/env-fail-install-1   "spack install tcl"
 
 example environments/env-add-1            "spack add tcl"
 example environments/env-add-1            "spack add trilinos"
