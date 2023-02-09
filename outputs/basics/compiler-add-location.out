@@ -1,5 +1,5 @@
-$ spack compiler add $(spack location -i gcc@8.4.0)
-==> Added 1 new compiler to /home/spack1/.spack/linux/compilers.yaml
+$ spack compiler add "$(spack location -i gcc@8.4.0)"
+==> Added 1 new compiler to /home/spack/.spack/linux/compilers.yaml
     gcc@8.4.0
 ==> Compilers are defined in the following files:
-    /home/spack1/.spack/linux/compilers.yaml
+    /home/spack/.spack/linux/compilers.yaml

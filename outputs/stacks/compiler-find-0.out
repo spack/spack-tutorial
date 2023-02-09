@@ -1,6 +1,6 @@
 $ spack location -i gcc
 /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e
-$ spack compiler find /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e
+$ spack compiler find "$(spack location -i gcc)"
 ==> Added 1 new compiler to /home/spack/stacks/spack.yaml
     gcc@8.4.0
 ==> Compilers are defined in the following files:

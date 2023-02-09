@@ -1,5 +1,5 @@
 $ spack buildcache create --allow-root --force -d ~/mirror --only=package $(spack find --format /{hash})
-==> Pushing binary packages to file:///home/spack1/mirror/build_cache
+==> Pushing binary packages to file:///home/spack/mirror/build_cache
 gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-gpg: depth: 0  valid:	2  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 2u
+gpg: depth: 0  valid:	3  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 3u
