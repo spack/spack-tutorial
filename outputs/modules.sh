@@ -62,7 +62,7 @@ example --tee modules/module-avail-4     "module avail $gcc_module"
 
 
 spack config add                        "modules:default:tcl:hash_length:0"
-example modules/tcl-refresh-4           "spack module tcl refresh --delete-tree -y"
+example --ignore-errors modules/tcl-refresh-4           "spack module tcl refresh --delete-tree -y"
 
 
 # use new projections
