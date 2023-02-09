@@ -107,7 +107,6 @@ example environments/filenames-1     "ls"
 example environments/anonymous-create-1 "cd"
 cd || exit
 example environments/anonymous-create-1 "mkdir code"
-mkdir code
 example environments/anonymous-create-1 "cd code"
 cd code || exit
 example environments/anonymous-create-1 "spack env create -d ."
