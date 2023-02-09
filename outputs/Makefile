@@ -1,4 +1,4 @@
-.PHONY: all replay run clean
+.PHONY: run update-outputs interactive clean
 
 # For those who need `make "DOCKER=sudo docker"`
 DOCKER=docker
@@ -9,7 +9,10 @@ raw_output = raw/*/*.out
 subdirs = basics environments packaging stacks dev scripting
 run_targets = $(addprefix run-,$(subdirs))
 
-all:
+# Entrypoint
+run: $(run_targets)
+
+update-outputs:
 	echo "Filtering raw outputs though col"
 	for raw in $(raw_output); do \
 		out=$$(echo $$raw | sed 's.raw/..'); \
@@ -18,8 +21,6 @@ all:
 
 $(addprefix run-local-,$(subdirs)):
 	$(CURDIR)/$(@:run-local-%=%).sh
-
-run: $(run_targets)
 
 run-%: %.sh
 
