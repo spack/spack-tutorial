@@ -46,7 +46,7 @@ example() {
     filename="$raw_outputs/$1.out"
     shift
 
-    parent=$(dirname "$filename")
+    parent="$(dirname "$filename")"
     mkdir -p "$parent"
 
     if [ "$#" -ne 1 ]; then die_with_error "Expected command '$*' to be quoted/literal"; fi
@@ -85,7 +85,7 @@ fake_example(){
     fake_cmd="$1"
     shift
 
-    parent=$(dirname "$filename")
+    parent="$(dirname "$filename")"
     mkdir -p "$parent"
 
     # print the command to the file

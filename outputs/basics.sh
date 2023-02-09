@@ -11,17 +11,14 @@ rm -rf "$raw_outputs" ~/spack ~/.spack ~/.gnupg
 pip3 install boto3
 
 # basic installation
-example basics/clone         "git clone https://github.com/spack/spack.git ~/spack"
+example basics/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
+example basics/clone           "cd ~/spack"
 
-example basics/checkout      "cd ~/spack"
 cd ~/spack || exit
-example basics/checkout      "git checkout ${tutorial_branch}"
-
-example basics/source-setup  ". share/spack/setup-env.sh"
-
-# actually source the script (needs to be done in this shell)
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"
+
+example basics/source-setup    ". share/spack/setup-env.sh"
 
 # spack list
 example basics/list            "spack list"
@@ -31,7 +28,7 @@ example basics/list-py         "spack list 'py-*'"
 example basics/zlib            "spack install zlib"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
-example basics/mirror          "spack buildcache keys --install --trust"
+example basics/mirror          'spack gpg trust "$(find ~/spack -name tutorial.pub)"'
 
 example basics/zlib-clang      "spack install zlib %clang"
 
@@ -78,14 +75,14 @@ echo y | example basics/uninstall-zlib  "spack uninstall zlib %gcc@6.5.0"
 
 example basics/find-lf-zlib    "spack find -lf zlib"
 
-zlib_hash=$(spack find --format "{hash:3}" zlib@1.2.8 %clang)
-example basics/uninstall-needed "spack uninstall zlib/${zlib_hash}"
-echo y | example basics/uninstall-r-needed "spack uninstall -R zlib/${zlib_hash}"
+zlib_hash="$(spack find --format '{hash:3}' zlib@1.2.8 %clang)"
+example --ignore-errors basics/uninstall-needed "spack uninstall zlib/$zlib_hash"
+echo y | example basics/uninstall-r-needed "spack uninstall -R zlib/$zlib_hash"
 
-example basics/uninstall-ambiguous "spack uninstall trilinos"
+example --ignore-errors basics/uninstall-ambiguous "spack uninstall trilinos"
 
-trilinos_hash=$(spack find --format "{hash:3}" trilinos ^openmpi)
-echo y | example basics/uninstall-specific  "spack uninstall /${trilinos_hash}"
+trilinos_hash="$(spack find --format '{hash:3}' trilinos ^openmpi)"
+echo y | example basics/uninstall-specific  "spack uninstall /$trilinos_hash"
 
 example basics/find-dep-mpich      "spack find ^mpich"
 
@@ -99,6 +96,6 @@ example basics/install-gcc-8.4.0   "spack install gcc@8.4.0"
 
 example basics/find-p-gcc          "spack find -p gcc"
 
-example basics/compiler-add-location 'spack compiler add $(spack location -i gcc@8.4.0)'
+example basics/compiler-add-location 'spack compiler add "$(spack location -i gcc@8.4.0)"'
 
 example basics/compiler-remove       'spack compiler remove gcc@8.4.0'

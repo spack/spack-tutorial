@@ -1,9 +1,8 @@
 #!/bin/bash
 
 if [ ! -d ~/spack ]; then
-    git clone https://github.com/spack/spack ~/spack
+    git clone --branch=$tutorial_branch --depth=100 https://github.com/spack/spack ~/spack
     cd ~/spack || exit
-    git checkout "${tutorial_branch}"
 else
     cd ~/spack || exit
 fi

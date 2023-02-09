@@ -24,7 +24,7 @@ example environments/find-env-1      "spack find"
 
 example environments/env-status-1    "spack env status"
 
-example --tee environments/env-status-2    "despacktivate    # short alias for `spack env deactivate`"
+example --tee environments/env-status-2    "despacktivate    # short alias for 'spack env deactivate'"
 spack env deactivate
 example environments/env-status-2    "spack env status"
 example environments/env-status-2    "spack find"
