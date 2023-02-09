@@ -50,8 +50,7 @@ example environments/env-create-2    "spack add scr trilinos"
 example environments/env-create-2    "spack install"
 example environments/env-create-2    "spack find"
 
-echo "y
-" | example environments/env-uninstall-1 "spack uninstall trilinos"
+printf "y\n" | example --ignore-errors environments/env-uninstall-1 "spack uninstall trilinos"
 example environments/env-uninstall-1 "spack find"
 
 example environments/env-remove-1    "spack remove trilinos"
