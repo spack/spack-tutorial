@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
-. $project/defs.sh
+project="$(dirname "$0")"
+. "$project/defs.sh"
 
 # clean things up before starting this first script
-rm -rf $raw_outputs ~/spack ~/.spack ~/.gnupg
+rm -rf "$raw_outputs" ~/spack ~/.spack ~/.gnupg
 
 # install boto3
 pip3 install boto3
@@ -14,7 +14,7 @@ pip3 install boto3
 example basics/clone         "git clone https://github.com/spack/spack.git ~/spack"
 
 example basics/checkout      "cd ~/spack"
-cd ~/spack
+cd ~/spack || exit
 example basics/checkout      "git checkout ${tutorial_branch}"
 
 example basics/source-setup  ". share/spack/setup-env.sh"

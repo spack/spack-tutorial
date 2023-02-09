@@ -2,10 +2,10 @@
 
 # Source definitions
 project=$(dirname "$0")
-. $project/defs.sh
+. "$project/defs.sh"
 
-rm -rf $raw_outputs/environments
-. $project/init_spack.sh
+rm -rf "${raw_outputs:?}/environments"
+. "$project/init_spack.sh"
 
 . ~/spack/share/spack/setup-env.sh
 spack install zlib
@@ -106,11 +106,11 @@ example environments/filenames-1     "pwd"
 example environments/filenames-1     "ls"
 
 example environments/anonymous-create-1 "cd"
-cd
+cd || exit
 example environments/anonymous-create-1 "mkdir code"
 mkdir code
 example environments/anonymous-create-1 "cd code"
-cd code
+cd code || exit
 example environments/anonymous-create-1 "spack env create -d ."
 
 example environments/anonymous-create-2 "ls"

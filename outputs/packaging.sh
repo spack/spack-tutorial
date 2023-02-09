@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
+project="$(dirname "$0")"
 . $project/defs.sh
 
-rm -rf $raw_outputs/packaging
-. $project/init_spack.sh
-mpileaks_package_py=$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py
+rm -rf "${raw_outputs:?}/packaging"
+. "$project/init_spack.sh"
+mpileaks_package_py="$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py"
 
 example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutorial/"
 

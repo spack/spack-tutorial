@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
-. $project/defs.sh
+project="$(dirname "$0")"
+. "$project/defs.sh"
 
-rm -rf $raw_outputs/scripting
-. $project/init_spack.sh
+rm -rf "${raw_outputs:?}/scripting"
+. "$project/init_spack.sh"
 
 spack install gcc@8.4.0
-spack compiler find `spack location -i gcc@8.4.0`
+spack compiler find "$(spack location -i gcc@8.4.0)"
 
 example scripting/setup           "spack uninstall -ay"
 example scripting/setup           "spack compiler rm gcc@8.4.0"

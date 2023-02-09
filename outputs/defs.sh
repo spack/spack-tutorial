@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -o pipefail
+set -u
 
 # if in a container, put stuff in the bindmounted
 # /project directory (see Makefile).  Otherwise use ${PWD}

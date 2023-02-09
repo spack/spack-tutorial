@@ -2,10 +2,10 @@
 
 if [ ! -d ~/spack ]; then
     git clone https://github.com/spack/spack ~/spack
-    cd ~/spack
-    git checkout ${tutorial_branch}
+    cd ~/spack || exit
+    git checkout "${tutorial_branch}"
 else
-    cd ~/spack
+    cd ~/spack || exit
 fi
 
 . share/spack/setup-env.sh

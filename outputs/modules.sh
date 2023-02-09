@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
-. $project/defs.sh
+project="$(dirname "$0")"
+. "$project/defs.sh"
 
-rm -rf $raw_outputs/modules
-. $project/init_spack.sh
+rm -rf "${raw_outputs:?}/modules"
+. "$project/init_spack.sh"
 
 # reinit modules
 rm -f ~/.spack/modules.yaml ~/.spack/linux/modules.yaml
@@ -18,7 +18,7 @@ spack module tcl refresh -y
 spack uninstall -ay
 
 spack install lmod
-. $(spack location -i lmod)/lmod/lmod/init/bash
+. "$(spack location -i lmod)/lmod/lmod/init/bash"
 . share/spack/setup-env.sh
 spack install gcc@8.4.0
 
@@ -41,7 +41,7 @@ spack install py-scipy ^openblas
 
 example --tee modules/module-avail-2 "module avail"
 
-gcc_hash=$(spack find --format {hash:7} gcc)
+gcc_hash="$(spack find --format '{hash:7}' gcc)"
 gcc_module="gcc-8.4.0-gcc-7.5.0-${gcc_hash}"
 example --tee modules/module-show-1  "module show $gcc_module"
 

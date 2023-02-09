@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # Source definitions
-project=$(dirname "$0")
-. $project/defs.sh
+project="$(dirname "$0")"
+. "$project/defs.sh"
 
-rm -rf $raw_outputs/stacks
-. $project/init_spack.sh
+rm -rf "${raw_outputs:?}/stacks"
+. "$project/init_spack.sh"
 . share/spack/setup-env.sh
 
 example stacks/setup-0 "mkdir -p ~/stacks && cd ~/stacks"
-mkdir -p ~/stacks && cd ~/stacks
+mkdir -p ~/stacks && cd ~/stacks || exit
 spack compiler find
 
 example stacks/setup-0 "spack env create -d ."
@@ -18,7 +18,7 @@ fake_example stacks/setup-0 "spack env activate ." ". /home/spack/spack/share/sp
 spack env activate .
 example stacks/setup-0 "spack add gcc@8.4.0 %gcc@7.5.0"
 
-cat $project/stacks/examples/0.spack.stack.yaml > spack.yaml
+cat "$project/stacks/examples/0.spack.stack.yaml" > spack.yaml
 
 fake_example stacks/setup-0 "spack config edit" "/bin/true"
 
@@ -66,7 +66,7 @@ example stacks/modules-0 "spack add lmod%gcc@7.5.0"
 example stacks/modules-0 "spack concretize"
 example stacks/modules-0 "spack install"
 
-. $(spack location -i lmod)/lmod/lmod/init/bash
+. "$(spack location -i lmod)/lmod/lmod/init/bash"
 
 example --tee stacks/modules-1 "module --version"
 
