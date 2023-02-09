@@ -1,7 +1,7 @@
 #!/bin/bash
 
-set -o pipefail
-set -u
+# Exit on undefined variables, errors and let piped commands errors bubble up.
+set -ueo pipefail
 
 # if in a container, put stuff in the bindmounted
 # /project directory (see Makefile).  Otherwise use ${PWD}
