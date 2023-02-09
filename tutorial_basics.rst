@@ -33,9 +33,6 @@ clone Spack and immediately check out the most recent release, v0.19.
 .. literalinclude:: outputs/basics/clone.out
    :language: console
 
-.. literalinclude:: outputs/basics/checkout.out
-   :language: console
-
 Next, add Spack to your path. Spack has some nice command-line
 integration tools, so instead of simply appending to your ``PATH``
 variable, source the Spack setup script.

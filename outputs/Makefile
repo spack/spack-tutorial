@@ -1,11 +1,13 @@
 .PHONY: all replay
 
+# For those who need `make "DOCKER=sudo docker"`
+DOCKER=docker
+
 # name of the container we'll generate the tutorial outputs with
 container = ghcr.io/spack/tutorial:latest
 raw_output = raw/*/*.out
-subdirs = basics environments packaging environments stacks dev scripting
-
-section = packaging
+subdirs = basics environments packaging stacks dev scripting
+run_targets = $(addprefix run-,$(subdirs))
 
 all:
 	echo "Filtering raw outputs though col"
@@ -14,16 +16,18 @@ all:
 		cat $$raw | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp > $$out; \
 	done
 
-run-local:
-	$(CURDIR)/${section}.sh
+$(addprefix run-local-,$(subdirs)):
+	$(CURDIR)/$(@:run-local-%=%).sh
 
-run:
-	docker run --rm -it \
+run: $(run_targets)
+
+$(run_targets):
+	$(DOCKER) run --rm -it \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
-		/project/${section}.sh
+		/project/$(@:run-%=%).sh
 
 interactive:
-	docker run --rm -it \
+	$(DOCKER) run --rm -it \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container}
