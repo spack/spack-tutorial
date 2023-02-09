@@ -7,10 +7,9 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/dev"
 pip install boto3
 
-example dev/up-to-date "git clone https://github.com/spack/spack ~/spack"
+example dev/up-to-date "git clone --depth 100 --branch=releases/v0.19 https://github.com/spack/spack ~/spack"
 example dev/up-to-date "cd ~/spack"
 cd ~/spack || exit
-example dev/up-to-date "git checkout releases/v0.19"
 example dev/up-to-date ". share/spack/setup-env.sh"
 
 . share/spack/setup-env.sh
