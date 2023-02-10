@@ -120,9 +120,9 @@ run ``spack create`` with the URL:
 You should now be in your text editor of choice, with the ``package.py``
 file open for editing.
 
-Your ``package.py`` file should reside in the ``mpileaks`` subdirectory of
-your tutorial repository's ``packages`` directory, i.e.,
-``$SPACK_ROOT/var/spack/repos/tutorial/packages/mpileaks/package.py``
+Your ``package.py`` file should reside in the ``tutorial-mpileaks``
+subdirectory of your tutorial repository's ``packages`` directory, i.e.,
+``$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py``
 
 Take a moment to look over the file.
 
@@ -140,7 +140,7 @@ template:
 * provides a skeleton ``configure_args`` method.
 
 .. literalinclude:: tutorial/examples/packaging/0.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
    :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
 
@@ -191,7 +191,7 @@ Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit tutorial-mpileaks
 
 Let's make the following changes:
 
@@ -285,13 +285,13 @@ the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit tutorial-mpileaks
 
 and add the dependencies by specifying them using the ``depends_on``
 directive as shown below:
 
 .. literalinclude:: tutorial/examples/packaging/2.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-17
@@ -333,9 +333,10 @@ It found that the:
 Debugging Package Builds
 ------------------------
 
-Our ``mpileaks`` package is still not building due to the ``adept-utils``
-package's ``configure`` error. Experienced ``Autotools`` developers will
-likely already see the problem and its solution.
+Our ``tutorial-mpileaks`` package is still not building due to the
+``adept-utils`` package's ``configure`` error. Experienced
+``Autotools`` developers will likely already see the problem and
+its solution.
 
 But let's take this opportunity to use Spack features to investigate
 the problem. Our options for proceeding are:
@@ -382,7 +383,7 @@ Let's move to the build directory using the ``spack cd`` command:
 
 .. code-block:: console
 
-  $ spack cd mpileaks
+  $ spack cd tutorial-mpileaks
 
 You should now be in the appropriate stage directory since this
 command moves us into the working directory of the last attempted
@@ -395,11 +396,11 @@ Now let's ensure the environment is properly set up using the
 
 .. code-block:: console
 
-  $ spack build-env mpileaks bash
+  $ spack build-env tutorial-mpileaks bash
 
 This command spawned a new shell containing the same environment
-that Spack used to build the ``mpileaks`` package. (Feel free to
-substitute your favorite shell for ``bash``.)
+that Spack used to build the ``tutorial-mpileaks`` package. (Feel
+free to substitute your favorite shell for ``bash``.)
 
 .. note::
 
@@ -463,13 +464,13 @@ the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit tutorial-mpileaks
 
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments
 in the ``configure_args`` method as follows:
 
 .. literalinclude:: tutorial/examples/packaging/3.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 20-23
@@ -497,9 +498,9 @@ Adding Variants
 What if we want to expose the software's optional features in the package?
 We can do this by adding build-time options using package *variants*.
 
-Recall from configure's help output for ``mpileaks`` that the software has
-several optional features and packages that we could support in Spack.
-Two stand out for tutorial purposes because they both take integers,
+Recall from configure's help output for ``tutorial-mpileaks`` that the
+software has several optional features and packages that we could support
+in Spack. Two stand out for tutorial purposes because they both take integers,
 as opposed to simply allowing them to be enabled or disabled.
 
 .. literalinclude:: outputs/packaging/configure-build-options.out
@@ -529,12 +530,12 @@ the ``spack edit`` command:
 
 .. code-block:: console
 
-   $ spack edit mpileaks
+   $ spack edit tutorial-mpileaks
 
 and add the ``variant`` directive and associated arguments as follows:
 
 .. literalinclude:: tutorial/examples/packaging/4.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
    :emphasize-lines: 15-16,28-33
