@@ -338,10 +338,10 @@ return every package which was built with ``cppflags="-O3"``.
    :language: console
 
 The ``find`` command can also show which packages were installed
-explicitly (rather than pulled in as a dependency) using the ``-x``
-flag. The ``-X`` flag shows implicit installs only. The ``find`` command can
-also show the path to which a Spack package was installed using the ``-p``
-flag.
+explicitly (rather than pulled in as a dependency) using the lowercase
+``-x`` flag. The uppercase ``-X`` flag shows implicit installs only.
+The ``find`` command can also show the path to which a Spack package
+was installed using the ``-p`` flag.
 
 .. literalinclude:: outputs/basics/find-px.out
    :language: console
