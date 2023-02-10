@@ -19,7 +19,7 @@ especially as it relates to using Spack-built compilers within Spack.
 We will include full output from all of the commands demonstrated,
 although we will frequently call attention to only small portions of
 that output (or merely to the fact that it succeeded). The provided
-output is all from an AWS instance running Ubuntu 18.04.
+output is all from an Ubuntu 18.04 Docker image.
 
 .. _basics-tutorial-install:
 
