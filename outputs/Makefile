@@ -33,5 +33,8 @@ interactive:
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container}
 
+$(addprefix clean-,$(subdirs)):
+	rm -f $(@:clean-%=run-%) $(wildcard raw/$(@:clean-%=%)/*.out)
+
 clean:
 	rm -f $(run_targets) $(wildcard raw/*/*.out)
