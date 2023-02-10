@@ -19,7 +19,7 @@ especially as it relates to using Spack-built compilers within Spack.
 We will include full output from all of the commands demonstrated,
 although we will frequently call attention to only small portions of
 that output (or merely to the fact that it succeeded). The provided
-output is all from an AWS instance running Ubuntu 18.04.
+output is all from an Ubuntu 18.04 Docker image.
 
 .. _basics-tutorial-install:
 
@@ -34,7 +34,7 @@ clone Spack and immediately check out the most recent release, v0.19.
    :language: console
 
 Next, add Spack to your path. Spack has some nice command-line
-integration tools, so instead of simply appending to your ``PATH``
+integration tools, so instead of simply prepending to your ``PATH``
 variable, source the Spack setup script.
 
 .. code-block:: console
@@ -223,19 +223,6 @@ DAG as a graph.
 .. literalinclude:: outputs/basics/graph-hdf5.out
    :language: console
 
-You may also have noticed that there are some packages shown in the
-``spack find -d`` output that we didn't install explicitly. These are
-dependencies that were installed implicitly. A few packages installed
-implicitly are not shown as dependencies in the ``spack find -d``
-output. These are build dependencies. For example, ``hdf5`` requires
-``cmake`` to build. Spack will build ``cmake`` as part of the
-installation of ``hdf5``, but it does not become a part of the DAG
-because it is not linked in at run time. Spack handles build
-dependencies differently because of their different (less strict)
-consistency requirements. It is entirely possible to have two packages
-using different versions of a dependency to build, which obviously cannot
-be done with linked dependencies.
-
 HDF5 is more complicated than our basic example of zlib and
 Tcl, but it's still within the realm of software that an experienced
 HPC user could reasonably expect to manually install given a bit of time.
@@ -351,10 +338,10 @@ return every package which was built with ``cppflags="-O3"``.
    :language: console
 
 The ``find`` command can also show which packages were installed
-explicitly (rather than pulled in as a dependency) using the ``-x``
-flag. The ``-X`` flag shows implicit installs only. The ``find`` command can
-also show the path to which a Spack package was installed using the ``-p``
-flag.
+explicitly (rather than pulled in as a dependency) using the lowercase
+``-x`` flag. The uppercase ``-X`` flag shows implicit installs only.
+The ``find`` command can also show the path to which a Spack package
+was installed using the ``-p`` flag.
 
 .. literalinclude:: outputs/basics/find-px.out
    :language: console

@@ -25,16 +25,16 @@ $ spack install gcc@8.4.0
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.23-cpmyntybsnm3se7lfnvqosbiqzrcg2kq
 ==> Waiting for perl-5.36.0-eydiwimku2cctu6dsom3yvfxxjmqyr4w
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.36.0-eydiwimku2cctu6dsom3yvfxxjmqyr4w
-==> Waiting for autoconf-2.69-btoteeiz74epw4kulm7aecae4cxraxua
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-btoteeiz74epw4kulm7aecae4cxraxua
 ==> Waiting for texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4
 ==> Installing texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/texinfo-6.5/linux-ubuntu18.04-x86_64-gcc-7.5.0-texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4.spack
 ==> Extracting texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4 from binary cache
 ==> texinfo: Successfully installed texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4
-  Fetch: 0.10s.	 Build: 0.36s.	Total: 0.46s.
+  Fetch: 0.11s.	 Build: 0.38s.	Total: 0.49s.
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/texinfo-6.5-hdyi7fuh542t3qqvlg54vyuzde2pxdf4
+==> Waiting for autoconf-2.69-btoteeiz74epw4kulm7aecae4cxraxua
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-btoteeiz74epw4kulm7aecae4cxraxua
 ==> Waiting for automake-1.16.5-rxjqnjw5jkrbym5x4yshogm3f262crre
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.5-rxjqnjw5jkrbym5x4yshogm3f262crre
 ==> Waiting for gmp-6.2.1-iowhen4zynaexq7iy4m2hiifo5mrzbrd
@@ -43,7 +43,7 @@ $ spack install gcc@8.4.0
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.2.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-gmp-6.2.1-iowhen4zynaexq7iy4m2hiifo5mrzbrd.spack
 ==> Extracting gmp-6.2.1-iowhen4zynaexq7iy4m2hiifo5mrzbrd from binary cache
 ==> gmp: Successfully installed gmp-6.2.1-iowhen4zynaexq7iy4m2hiifo5mrzbrd
-  Fetch: 0.02s.	 Build: 0.26s.	Total: 0.28s.
+  Fetch: 0.02s.	 Build: 0.26s.	Total: 0.29s.
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gmp-6.2.1-iowhen4zynaexq7iy4m2hiifo5mrzbrd
 ==> Waiting for mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic
 ==> Installing mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic
@@ -51,29 +51,29 @@ $ spack install gcc@8.4.0
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-3.1.6/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic.spack
 ==> Extracting mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic from binary cache
 ==> mpfr: Successfully installed mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic
-  Fetch: 0.02s.	 Build: 0.28s.	Total: 0.30s.
+  Fetch: 0.02s.	 Build: 0.29s.	Total: 0.31s.
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpfr-3.1.6-3brr36efadvhnhtggkuoowsko3go7aic
-==> Waiting for mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
-==> Installing mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd.spack
-==> Extracting mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd from binary cache
-==> mpc: Successfully installed mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
-  Fetch: 0.01s.	 Build: 0.25s.	Total: 0.27s.
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
 ==> Waiting for gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr
 ==> Installing gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gawk-5.1.1/linux-ubuntu18.04-x86_64-gcc-7.5.0-gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr.spack
 ==> Extracting gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr from binary cache
 ==> gawk: Successfully installed gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr
-  Fetch: 0.02s.	 Build: 0.29s.	Total: 0.31s.
+  Fetch: 0.01s.	 Build: 0.29s.	Total: 0.30s.
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gawk-5.1.1-dco3nzdpwnlybuvy7ymfpxobgszskgfr
+==> Waiting for mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
+==> Installing mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd.spack
+==> Extracting mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd from binary cache
+==> mpc: Successfully installed mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
+  Fetch: 0.02s.	 Build: 0.24s.	Total: 0.26s.
+[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/mpc-1.1.0-l5bs2ru7ylkobccsbz7iw7w5akw7ycsd
 ==> Waiting for gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e
 ==> Installing gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0/linux-ubuntu18.04-x86_64-gcc-7.5.0-gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e.spack
 ==> Extracting gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e from binary cache
 ==> gcc: Successfully installed gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e
-  Fetch: 0.32s.	 Build: 7.34s.	Total: 7.66s.
+  Fetch: 0.34s.	 Build: 7.73s.	Total: 8.06s.
 [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gcc-8.4.0-uobbegc3e3qn7lktajfr53buov2vf72e

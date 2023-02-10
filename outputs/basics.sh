@@ -28,7 +28,7 @@ example basics/list-py         "spack list 'py-*'"
 example basics/zlib            "spack install zlib"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
-example basics/mirror          'spack gpg trust "$(find ~/spack -name tutorial.pub)"'
+example basics/mirror          "spack buildcache keys --install --trust"
 
 example basics/zlib-clang      "spack install zlib %clang"
 
@@ -71,15 +71,15 @@ example basics/find-d-tcl      "spack find -d tcl"
 
 example basics/find-zlib       "spack find zlib"
 
-echo y | example basics/uninstall-zlib  "spack uninstall zlib %gcc@6.5.0"
+example basics/uninstall-zlib  "spack uninstall -y zlib %gcc@6.5.0"
 
 example basics/find-lf-zlib    "spack find -lf zlib"
 
 zlib_hash="$(spack find --format '{hash:3}' zlib@1.2.8 %clang)"
-example --ignore-errors basics/uninstall-needed "spack uninstall zlib/$zlib_hash"
-echo y | example basics/uninstall-r-needed "spack uninstall -R zlib/$zlib_hash"
+example --expect-error basics/uninstall-needed "spack uninstall zlib/$zlib_hash"
+example basics/uninstall-r-needed "spack uninstall -y -R zlib/$zlib_hash"
 
-example --ignore-errors basics/uninstall-ambiguous "spack uninstall trilinos"
+example --expect-error basics/uninstall-ambiguous "spack uninstall trilinos"
 
 trilinos_hash="$(spack find --format '{hash:3}' trilinos ^openmpi)"
 echo y | example basics/uninstall-specific  "spack uninstall /$trilinos_hash"
