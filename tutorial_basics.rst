@@ -34,7 +34,7 @@ clone Spack and immediately check out the most recent release, v0.19.
    :language: console
 
 Next, add Spack to your path. Spack has some nice command-line
-integration tools, so instead of simply appending to your ``PATH``
+integration tools, so instead of simply prepending to your ``PATH``
 variable, source the Spack setup script.
 
 .. code-block:: console
