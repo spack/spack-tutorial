@@ -7,9 +7,19 @@ project=$(dirname "$0")
 rm -rf "${raw_outputs:?}/environments"
 . "$project/init_spack.sh"
 
-. ~/spack/share/spack/setup-env.sh
+# In the basics section a bunch of packages were already installed,
+# they are referenced here. Reinstall them so we can generate outputs
+# independently.
 spack install zlib
-spack uninstall -y zlib
+spack install zlib %clang
+spack install zlib@1.2.8
+spack install zlib@1.2.8 cppflags=-O3
+spack install tcl
+spack install tcl ^zlib cppflags=-O3
+spack install hdf5
+spack install hdf5~mpi
+spack install hdf5+hl+mpi ^mpich
+spack install trilinos +hdf5 ^hdf5+hl+mpi ^mpich
 
 example environments/find-no-env-1   "spack find"
 
