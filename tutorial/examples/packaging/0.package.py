@@ -11,11 +11,11 @@
 # next to all the things you'll want to change. Once you've handled
 # them, you can save this file and test your package like this:
 #
-#     spack install mpileaks
+#     spack install tutorial-mpileaks
 #
 # You can edit this file again by typing:
 #
-#     spack edit mpileaks
+#     spack edit tutorial-mpileaks
 #
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
@@ -23,7 +23,7 @@
 from spack import *
 
 
-class Mpileaks(AutotoolsPackage):
+class TutorialMpileaks(AutotoolsPackage):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
