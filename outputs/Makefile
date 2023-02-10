@@ -34,4 +34,4 @@ interactive:
 		${container}
 
 clean:
-	rm -f $(run_targets)
+	rm -f $(run_targets) $(wildcard raw/*/*.out)
