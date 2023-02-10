@@ -28,7 +28,7 @@ example basics/list-py         "spack list 'py-*'"
 example basics/zlib            "spack install zlib"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
-example basics/mirror          'spack gpg trust "$(find ~/spack -name tutorial.pub)"'
+example basics/mirror          "spack buildcache keys --install --trust"
 
 example basics/zlib-clang      "spack install zlib %clang"
 
