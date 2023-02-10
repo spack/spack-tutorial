@@ -8,7 +8,9 @@
 
        git clone --depth=100 --branch=releases/v0.19 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack tutorial
+       spack tutorial -y
+       spack bootstrap now
+       spack compiler find
 
    See the :ref:`basics-tutorial` for full details on setup. For more
    help, join us in the ``#tutorial`` channel on Slack -- get an
