@@ -44,7 +44,7 @@ They correspond to sections in the slides above.
 To run through the scripts, we provide the `spack/tutorial <https://ghcr.io/spack/tutorial>`_
 container image. You can invoke
 
-.. code-block::
+.. code-block:: console
 
    $ docker pull ghcr.io/spack/tutorial:cineca23
    $ docker run -it ghcr.io/spack/tutorial:cineca23
