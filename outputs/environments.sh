@@ -31,7 +31,7 @@ example environments/env-status-2    "spack find"
 
 example --tee environments/env-install-1   "spack env activate myproject"
 spack env activate myproject
-example --ignore-errors environments/env-fail-install-1   "spack install tcl"
+example --expect-error environments/env-fail-install-1   "spack install tcl"
 
 example environments/env-add-1            "spack add tcl"
 example environments/env-add-1            "spack add trilinos"
@@ -50,7 +50,7 @@ example environments/env-create-2    "spack add scr trilinos"
 example environments/env-create-2    "spack install"
 example environments/env-create-2    "spack find"
 
-printf "y\n" | example --ignore-errors environments/env-uninstall-1 "spack uninstall trilinos"
+example --expect-error environments/env-uninstall-1 "spack uninstall -y trilinos"
 example environments/env-uninstall-1 "spack find"
 
 example environments/env-remove-1    "spack remove trilinos"

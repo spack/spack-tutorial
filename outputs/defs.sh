@@ -27,15 +27,15 @@ die_with_error() {
 
 example() {
     tee=0
-    ignore_errors=0
+    expect_error=0
     while [ $# -ne 0 ]; do
         case "$1" in
             --tee)
                 tee=1
                 shift
                 ;;
-            --ignore-errors)
-                ignore_errors=1
+            --expect-error)
+                expect_error=1
                 shift
                 ;;
             -*)
@@ -53,7 +53,9 @@ example() {
     parent="$(dirname "$filename")"
     mkdir -p "$parent"
 
-    if [ "$#" -ne 1 ]; then die_with_error "Expected command '$*' to be quoted/literal"; fi
+    if [ "$#" -ne 1 ]; then
+        die_with_error "Expected command '$*' to be quoted/literal"
+    fi
 
     # print the command to the file
     cmd="$1"
@@ -69,11 +71,19 @@ example() {
         fi
         # get the command's output
         if ! $cmd 2>&1 | tee -a "$filename"; then
-            if [ "$ignore_errors" = "0" ]; then die_with_error "'$cmd' returned with error exit code. (Use --ignore-errors if errors are expected)"; fi
+            if [ "$expect_error" = "0" ]; then
+                die_with_error "'$cmd' returned with error exit code. (Use --expect-error if errors are expected)"
+            fi
+        elif [ "$expect_error" = "1" ]; then
+            die_with_error "'$cmd' returned with success exit code, but was expected to fail."
         fi
     else
         if ! script -eqa "$filename" -c "$cmd"; then
-            if [ "$ignore_errors" = "0" ]; then die_with_error "'$cmd' returned with error exit code. (Use --ignore-errors if errors are expected)"; fi
+            if [ "$expect_error" = "0" ]; then
+                die_with_error "'$cmd' returned with error exit code. (Use --expect-error if errors are expected)"
+            fi
+        elif [ "$expect_error" = "1" ]; then
+            die_with_error "'$cmd' returned with success exit code, but was expected to fail."
         fi
 
         # strip "script started/done" output from the file
@@ -98,7 +108,9 @@ fake_example(){
     # print the command to the file
     echo "$ $fake_cmd" &>> "$filename"
 
-    if [ "$#" -ne 1 ]; then die_with_error "Expected command '$*' to be quoted/literal"; fi
+    if [ "$#" -ne 1 ]; then
+        die_with_error "Expected command '$*' to be quoted/literal"
+    fi
 
     cmd="$1"
 
@@ -111,5 +123,7 @@ fake_example(){
     print_status "[$filename]" "$cmd"
 
     # get the command's output
-    $cmd | tee -a "$filename"
+    if ! $cmd | tee -a "$filename"; then
+        die_with_error "'$cmd' returned with error exit code."
+    fi
 }

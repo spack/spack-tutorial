@@ -16,13 +16,13 @@ example packaging/create     "spack create --name tutorial-mpileaks https://gith
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
-example --ignore-errors packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
+example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
 example packaging/info-mpileaks       "spack info tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/2.package.py" "$mpileaks_package_py"
-example --ignore-errors packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
+example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
 
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
