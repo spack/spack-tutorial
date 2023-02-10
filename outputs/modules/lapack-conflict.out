@@ -1,37 +1,27 @@
 $ module list
 
 Currently Loaded Modules:
-  1) gcc/8.4.0		 6) zlib/1.2.13	    11) bzip2/1.0.8	16) openssl/1.1.1s	  21) pmix/4.1.2
-  2) openblas/0.3.21	 7) libxml2/2.10.1  12) pigz/2.7	17) krb5/1.19.3		  22) openmpi/4.1.4
-  3) libpciaccess/0.16	 8) ncurses/6.3	    13) zstd/1.5.2	18) libedit/3.1-20210216  23) netlib-scalapack/2.2.0-openblas
-  4) libiconv/1.16	 9) hwloc/2.8.0	    14) tar/1.34	19) openssh/9.1p1
-  5) xz/5.2.7		10) numactl/2.0.14  15) gettext/0.21.1	20) libevent/2.1.12
+  1) gcc/8.4.0		 4) libiconv/1.16   7) libxml2/2.10.1  10) numactl/2.0.14  13) zstd/1.5.2      16) openssl/1.1.1s	 19) openssh/9.1p1    22) openmpi/4.1.4
+  2) openblas/0.3.21	 5) xz/5.2.7	    8) ncurses/6.3     11) bzip2/1.0.8	   14) tar/1.34	       17) krb5/1.19.3		 20) libevent/2.1.12  23) netlib-scalapack/2.2.0-openblas
+  3) libpciaccess/0.16	 6) zlib/1.2.13	    9) hwloc/2.8.0     12) pigz/2.7	   15) gettext/0.21.1  18) libedit/3.1-20210216	 21) pmix/4.1.2
 
 
 
 $ module avail
 
------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openmpi/4.1.4-cnq37ia/gcc/8.4.0 ------------------------
+-------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/openmpi/4.1.4-cnq37ia/gcc/8.4.0 --------------------------------------------------------------------------------
    netlib-scalapack/2.2.0-netlib-lapack	   netlib-scalapack/2.2.0-openblas (L,D)
 
------------------------------------ /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.4.0 -----------------------------------
-   autoconf/2.69			     libedit/3.1-20210216 (L)	 numactl/2.0.14		  (L)	 py-pybind11/2.8.1
-   automake/1.16.5			     libevent/2.1.12	  (L)	 openblas/0.3.21	  (L)	 py-pythran/0.11.0-openblas
-   berkeley-db/18.1.40			     libfabric/1.16.1		 openmpi/4.1.4		  (L)	 py-scipy/1.8.1-openblas
-   bison/3.8.2				     libffi/3.4.2		 openssh/9.1p1		  (L)	 py-setuptools/59.4.0
-   bzip2/1.0.8			      (L)    libiconv/1.16	  (L)	 openssl/1.1.1s		  (L)	 py-wheel/0.37.1
-   ca-certificates-mozilla/2022-10-11	     libmd/1.0.4		 perl/5.36.0			 python/3.10.8
-   cmake/3.24.3				     libpciaccess/0.16	  (L)	 pigz/2.7		  (L)	 readline/8.1.2
-   diffutils/3.8			     libsigsegv/2.13		 pkgconf/1.8.0			 sqlite/3.39.4
-   expat/2.4.8				     libtool/2.4.7		 pmix/4.1.2		  (L)	 tar/1.34		    (L)
-   findutils/4.9.0			     libxml2/2.10.1	  (L)	 py-beniget/0.4.1		 util-linux-uuid/2.38.1
-   gdbm/1.23				     m4/1.4.19			 py-cython/0.29.32		 util-macros/1.19.3
-   gettext/0.21.1		      (L)    mpich/4.0.2		 py-gast/0.5.3			 xz/5.2.7		    (L)
-   hwloc/2.8.0			      (L)    ncurses/6.3	  (L)	 py-numpy/1.23.4-openblas	 yaksa/0.2
-   krb5/1.19.3			      (L)    netlib-lapack/3.10.1	 py-pip/22.2.2			 zlib/1.2.13		    (L)
-   libbsd/0.11.5			     ninja/1.11.1		 py-ply/3.11			 zstd/1.5.2		    (L)
+------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.4.0 -------------------------------------------------------------------------------------------
+   autoconf/2.69			     diffutils/3.8	    libbsd/0.11.5		libpciaccess/0.16 (L)	 netlib-lapack/3.10.1	     perl/5.36.0	      py-numpy/1.23.4-openblas	    py-wheel/0.37.1		  xz/5.2.7    (L)
+   automake/1.16.5			     expat/2.4.8	    libedit/3.1-20210216 (L)	libsigsegv/2.13		 ninja/1.11.1		     pigz/2.7	       (L)    py-pip/22.2.2		    python/3.10.8		  yaksa/0.2
+   berkeley-db/18.1.40			     findutils/4.9.0	    libevent/2.1.12	 (L)	libtool/2.4.7		 numactl/2.0.14	      (L)    pkgconf/1.8.0	      py-ply/3.11		    readline/8.1.2		  zlib/1.2.13 (L)
+   bison/3.8.2				     gdbm/1.23		    libfabric/1.16.1		libxml2/2.10.1	  (L)	 openblas/0.3.21      (L)    pmix/4.1.2	       (L)    py-pybind11/2.8.1		    sqlite/3.39.4		  zstd/1.5.2  (L)
+   bzip2/1.0.8			      (L)    gettext/0.21.1  (L)    libffi/3.4.2		m4/1.4.19		 openmpi/4.1.4	      (L)    py-beniget/0.4.1	      py-pythran/0.11.0-openblas    tar/1.34		   (L)
+   ca-certificates-mozilla/2022-10-11	     hwloc/2.8.0     (L)    libiconv/1.16	 (L)	mpich/4.0.2		 openssh/9.1p1	      (L)    py-cython/0.29.32	      py-scipy/1.8.1-openblas	    util-linux-uuid/2.38.1
+   cmake/3.24.3				     krb5/1.19.3     (L)    libmd/1.0.4			ncurses/6.3	  (L)	 openssl/1.1.1s	      (L)    py-gast/0.5.3	      py-setuptools/59.4.0	    util-macros/1.19.3
 
-------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core --------------------------------------
+--------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------------------------------------------------------------
    gcc/8.4.0 (L)
 
   Where:
@@ -55,11 +45,9 @@ The following have been reloaded with a version change:
 $ module list
 
 Currently Loaded Modules:
-  1) gcc/8.4.0		 6) zlib/1.2.13	    11) bzip2/1.0.8	16) openssl/1.1.1s	  21) pmix/4.1.2
-  2) openblas/0.3.21	 7) libxml2/2.10.1  12) pigz/2.7	17) krb5/1.19.3		  22) openmpi/4.1.4
-  3) libpciaccess/0.16	 8) ncurses/6.3	    13) zstd/1.5.2	18) libedit/3.1-20210216  23) netlib-lapack/3.10.1
-  4) libiconv/1.16	 9) hwloc/2.8.0	    14) tar/1.34	19) openssh/9.1p1	  24) netlib-scalapack/2.2.0-netlib-lapack
-  5) xz/5.2.7		10) numactl/2.0.14  15) gettext/0.21.1	20) libevent/2.1.12
+  1) gcc/8.4.0		 4) libiconv/1.16   7) libxml2/2.10.1  10) numactl/2.0.14  13) zstd/1.5.2      16) openssl/1.1.1s	 19) openssh/9.1p1    22) openmpi/4.1.4
+  2) openblas/0.3.21	 5) xz/5.2.7	    8) ncurses/6.3     11) bzip2/1.0.8	   14) tar/1.34	       17) krb5/1.19.3		 20) libevent/2.1.12  23) netlib-lapack/3.10.1
+  3) libpciaccess/0.16	 6) zlib/1.2.13	    9) hwloc/2.8.0     12) pigz/2.7	   15) gettext/0.21.1  18) libedit/3.1-20210216	 21) pmix/4.1.2	      24) netlib-scalapack/2.2.0-netlib-lapack
 
 
 
