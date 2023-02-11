@@ -19,8 +19,7 @@ example scripting/find-format     'spack find --format "{name} {version} {hash:1
 
 example scripting/find-json       "spack find --json zlib"
 
-echo "exit()
-" | example scripting/spack-python-1  "spack python"
+printf "exit()\n" | example scripting/spack-python-1  "spack python"
 
 fake_example scripting/edit '$EDITOR find_exclude.py' "/bin/true"
 

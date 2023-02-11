@@ -120,7 +120,7 @@ Let's launch a Spack-aware python interpreter by entering:
 
 .. literalinclude:: outputs/scripting/spack-python-1.out
    :language: console
-   :emphasize-lines: 1,4
+   :emphasize-lines: 1,5
 
 Since we are in a python interpreter, use ``exit()`` to end
 the session and return to the terminal.
