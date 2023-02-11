@@ -37,7 +37,7 @@ using the following commands:
 
 .. literalinclude:: outputs/scripting/setup.out
    :language: console
-   :emphasize-lines: 1,3,24
+   :emphasize-lines: 1,27,29,282
 
 Now we are ready to use the Spack's ``find`` and ``python`` subcommands
 to query the installed packages.
@@ -120,7 +120,7 @@ Let's launch a Spack-aware python interpreter by entering:
 
 .. literalinclude:: outputs/scripting/spack-python-1.out
    :language: console
-   :emphasize-lines: 1,4
+   :emphasize-lines: 1,5
 
 Since we are in a python interpreter, use ``exit()`` to end
 the session and return to the terminal.

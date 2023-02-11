@@ -173,7 +173,7 @@ by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,19
+   :emphasize-lines: 1,18
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -482,7 +482,7 @@ Now let's try the build again, remembering to use the ``tutorial`` namespace:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,84,86
+   :emphasize-lines: 1,43,44
 
 Success!
 
