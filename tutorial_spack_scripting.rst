@@ -37,7 +37,7 @@ using the following commands:
 
 .. literalinclude:: outputs/scripting/setup.out
    :language: console
-   :emphasize-lines: 1,3,24
+   :emphasize-lines: 1,27,29,282
 
 Now we are ready to use the Spack's ``find`` and ``python`` subcommands
 to query the installed packages.
