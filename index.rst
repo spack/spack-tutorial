@@ -83,9 +83,9 @@ Full contents:
    tutorial_environments
    tutorial_configuration
    tutorial_packaging
-   tutorial_developer_workflows
    tutorial_binary_cache
    tutorial_stacks
+   tutorial_developer_workflows
    tutorial_spack_scripting
    tutorial_modules
    tutorial_buildsystems
