@@ -238,10 +238,6 @@ information derived from the package:
 * the default ``Autotools`` package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
 * both the link and run dependencies are ``None`` at this point;
-* the ``Autotools`` ``check`` method will be called to check the build
-  post-``build`` phase (tries to run ``make test`` and ``make check``) ; and
-* the ``Autotools`` ``installcheck`` method will be called to check the build
-  post-``install`` phase (tries to run ``make installcheck``).
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -309,8 +305,7 @@ installed *before* it can build our package.
   We call such packages **providers**. More information on virtual dependencies
   can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
-Now, since we don't want spack to grab the built-in ``mpileaks`` from the build
-cache, let's specify the repository we want ``mpileaks`` to be located:
+Let's check that dependencies are effectively built when we try to install ``tutorial-mpileaks``:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
    :language: console
@@ -478,7 +473,7 @@ in the ``configure_args`` method as follows:
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
 
-Now let's try the build again, remembering to use the ``tutorial`` namespace:
+Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
