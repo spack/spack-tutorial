@@ -238,10 +238,6 @@ information derived from the package:
 * the default ``Autotools`` package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
 * both the link and run dependencies are ``None`` at this point;
-* the ``Autotools`` ``check`` method will be called to check the build
-  post-``build`` phase (tries to run ``make test`` and ``make check``) ; and
-* the ``Autotools`` ``installcheck`` method will be called to check the build
-  post-``install`` phase (tries to run ``make installcheck``).
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
