@@ -138,4 +138,4 @@ example environments/add-anonymous-1     "spack remove hdf5"
 example environments/lockfile-1          "head -30 spack.lock"
 
 example environments/create-from-file-1  "spack env create abstract spack.yaml"
-example environments/create-from-file-1  "spack env create concrete spack.lock"
+example environments/create-from-file-2  "spack env create concrete spack.lock"
