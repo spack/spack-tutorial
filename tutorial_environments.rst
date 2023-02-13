@@ -194,7 +194,7 @@ its dependencies).
 When you install packages into an environment, they are, by default,
 linked into a single prefix, or *view*. Activating the environment
 with ``spack env activate`` results in subdirectories from the view
-being added to ``PATH``, ``LD_LIBRARY_PATH``, ``CMAKE_PREFIX_PATH``,
+being added to ``PATH``, ``MANPATH``, ``CMAKE_PREFIX_PATH``,
 and other environment variables. This makes the environment easier to use.
 
 Let's try it out. We just installed ``tcl`` into our ``myproject``
@@ -241,16 +241,16 @@ Now we have two environments. The ``myproject`` environment has ``tcl``
 and ``trilinos`` while the ``myproject2`` environment has ``scr``
 and ``trilinos``.
 
-Now let's uninstall ``trilinos`` from ``myproject2`` and review the
+Now let's try to uninstall ``trilinos`` from ``myproject2`` and review the
 contents of the environment:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
    :language: console
 
 
-We can see that ``trilinos`` no longer appears in the list of installed specs.
-However, it *is* still listed as a root in the environment. If we want to remove
-it from the roots list we need to use ``spack remove``:
+We can see that ``trilinos`` won't be uninstalled because it is still referenced
+in another environment managed by spack. If we want to remove it from the roots
+list we need to use ``spack remove``:
 
 .. literalinclude:: outputs/environments/env-remove-1.out
    :language: console
@@ -431,7 +431,7 @@ implementation installed in our ``myproject2`` environment, so
 
 As mentioned before, activating the environment sets a number of
 environment variables. That includes variables like ``PATH``,
-``LIBRARY_PATH``, and ``LD_LIBRARY_PATH``, which allows you to
+``MANPATH``, and ``CMAKE_PREFIX_PATH``, which allows you to
 easily find package executables and libraries installed in the environment.
 
 Let's look specifically at path-related environment variables using
