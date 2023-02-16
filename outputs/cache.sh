@@ -63,7 +63,7 @@ example cache/binary-cache-3 'mkdir ~/private_gpg_backup'
 example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup'
 example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/pubring.* ~/mirror'
 
-example cache/binary-cache-4 'spack buildcache create --allow-root --force -d ~/mirror --only=package $(spack find --format /{hash})'
+example cache/binary-cache-4 'spack buildcache create --allow-root ~/mirror'
 
 # Remove installations from customized prefix
 spack uninstall -ay

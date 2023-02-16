@@ -207,11 +207,8 @@ With this setup done, we're ready to fill a binary cache with binary
 packages. Binary packages are attached to an existing source mirror.
 We follow the same steps we used for the source mirror -- making an
 environment, creating the source mirror, and building the packages to
-a spack installation with our padded path. To upload a spec to a
-binary cache, simply use the command ``spack buildcache
-create --only=package spec``. Here we use the ``spack find --format``
-command that we will discuss in more detail in the Scripting section
-of the tutorial to operate on all specs in the environment.
+a spack installation with our padded path. To upload all specs in an
+environment to the binary cache, simply run the following command:
 
 .. literalinclude::  outputs/cache/binary-cache-4.out
    :language: console
