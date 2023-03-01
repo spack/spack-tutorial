@@ -1082,7 +1082,7 @@ Restore settings for future sections
 
 For future sections of the tutorial, we will not use the ``gcc@8.4.0``
 compiler. Since it is currently the default compiler (our current
-defualt is the most recent version of gcc available), we will remove
+default is the most recent version of gcc available), we will remove
 it now.
 
 .. code-block:: console
