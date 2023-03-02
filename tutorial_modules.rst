@@ -953,7 +953,7 @@ in ``config.yaml``:
 
 .. literalinclude:: _spack_root/etc/spack/defaults/config.yaml
   :language: yaml
-  :lines: 21-24
+  :lines: 32-35
 
 and can be extended by users to employ custom templates, as we'll see next.
 
