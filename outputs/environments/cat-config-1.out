@@ -8,5 +8,7 @@ spack:
     all:
       providers:
         mpi: [mpich]
-  specs: [tcl, trilinos, hdf5+hl ^mpich, gmp]
+  specs: [tcl, trilinos]
   view: true
+  concretizer:
+    unify: true

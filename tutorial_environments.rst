@@ -648,6 +648,8 @@ should now contain the following entries:
      - trilinos
      - openmpi
      view: true
+     concretizer:
+       unify: true
 
 Now activate the environment and install the packages:
 
@@ -717,7 +719,7 @@ Let's look at the top 30 lines of our current environment:
    :language: console
 
 
-While it is still readable, it consists of over 1300 lines of
+While it is still readable, it consists of over 1900 lines of
 information representing the actual configurations for each of
 the environment's packages.
 
