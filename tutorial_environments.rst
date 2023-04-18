@@ -625,7 +625,7 @@ the environment.
 We can confirm that it is not a managed environment by running
 ``spack env list``:
 
-.. literalinclude:: outputs/environments/env-list-2.out
+.. literalinclude:: outputs/environments/env-list-3.out
    :language: console
 
 and noting that the path does not appear in the output.

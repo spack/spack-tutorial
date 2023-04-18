@@ -39,7 +39,7 @@ spack env deactivate
 example environments/env-status-2    "spack env status"
 example environments/env-status-2    "spack find"
 
-example --tee environments/env-install-1   "spack env activate myproject"
+example --tee environments/env-fail-install-1   "spack env activate myproject"
 spack env activate myproject
 example --expect-error environments/env-fail-install-1   "spack install tcl"
 
@@ -79,7 +79,7 @@ spack config add packages:all:providers:mpi:[mpich]
 example environments/concretize-f-1 "spack concretize --force --fresh"
 # spack install
 
-example --tee environments/env-swap-1      "spack env activate myproject2"
+example --tee environments/show-mpicc-1      "spack env activate myproject2"
 spack env activate myproject2
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
@@ -109,10 +109,16 @@ EOF
 example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib)/include'
 example environments/use-mpi-1       "mpirun -n 4 ./a.out"
 
+example environments/myproject-zlib-1     "spack find zlib"
+
 example --tee environments/filenames-1     "spack cd -e myproject"
 spack cd -e myproject
 example environments/filenames-1     "pwd"
 example environments/filenames-1     "ls"
+
+example environments/env-list-2      "spack env list"
+
+example environments/cat-config-1 "cat spack.yaml"
 
 example environments/anonymous-create-1 "cd"
 cd || exit
@@ -124,6 +130,8 @@ example environments/anonymous-create-1 "spack env create -d ."
 example environments/anonymous-create-2 "ls"
 example environments/anonymous-create-2 "cat spack.yaml"
 
+example environments/env-list-3      "spack env list"
+
 example --tee environments/install-anonymous-1 "spack env activate ."
 spack env activate .
 # mock a hand-edit from before we activated
@@ -133,9 +141,20 @@ example environments/install-anonymous-1 "spack install"
 
 example environments/add-anonymous-1     "spack add hdf5@5.5.1"
 example environments/add-anonymous-1     "cat spack.yaml"
-example environments/add-anonymous-1     "spack remove hdf5"
+
+example environments/remove-anonymous-1     "spack remove hdf5"
+example environments/remove-anonymous-1     "cat spack.yaml"
 
 example environments/lockfile-1          "head -30 spack.lock"
 
 example environments/create-from-file-1  "spack env create abstract spack.yaml"
+
+example --tee environments/find-env-abstract-1   "spacktivate abstract"
+spack env activate abstract
+example environments/find-env-abstract-1   "spack find"
+
 example environments/create-from-file-2  "spack env create concrete spack.lock"
+
+example --tee environments/find-env-concrete-1   "spacktivate concrete"
+spack env activate concrete
+example environments/find-env-concrete-1   "spack find"
