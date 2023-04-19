@@ -553,13 +553,13 @@ environments are not named.
 Reviewing a managed environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We created our currently active environment, ``myproject``, earlier
-using ``spack env create myproject`` so let's mainly focus on its
-environment files in this section.
+We created the ``myproject`` environment earlier using ``spack env
+create myproject`` so let's mainly focus on its environment files
+in this section.
 
-Earlier, when we changed our environment's configuration using ``spack
+Earlier, when we changed the environment's configuration using ``spack
 config edit``, we were actually editing its ``spack.yaml`` file. We
-can change to the directory containing the file using ``spack cd``:
+can move to the directory containing the file using ``spack cd``:
 
 .. literalinclude:: outputs/environments/filenames-1.out
    :language: console
@@ -573,11 +573,9 @@ when running ``spack env list``:
 .. literalinclude:: outputs/environments/env-list-2.out
    :language: console
 
+which indicates the active environment by highlighting it in green.
 
-You can see that ``myproject`` is active because it is highlighted
-in green.
-
-We can also see from the listing that the environment directory
+We can also see from the listing above that the current environment directory
 contains both of the environment files: ``spack.yaml`` and ``spack.lock``.
 This is because ``spack.lock`` was generated when we concretized
 the environment.
@@ -625,7 +623,7 @@ the environment.
 We can confirm that it is not a managed environment by running
 ``spack env list``:
 
-.. literalinclude:: outputs/environments/env-list-2.out
+.. literalinclude:: outputs/environments/env-list-3.out
    :language: console
 
 and noting that the path does not appear in the output.
@@ -648,6 +646,8 @@ should now contain the following entries:
      - trilinos
      - openmpi
      view: true
+     concretizer:
+       unify: true
 
 Now activate the environment and install the packages:
 
@@ -717,7 +717,7 @@ Let's look at the top 30 lines of our current environment:
    :language: console
 
 
-While it is still readable, it consists of over 1300 lines of
+While it is still readable, it consists of over 1900 lines of
 information representing the actual configurations for each of
 the environment's packages.
 

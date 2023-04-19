@@ -6,8 +6,10 @@ $ cat spack.yaml
 #  It describes a set of packages to be installed, along with
 #  configuration settings.
 spack:
-    add package specs to the `specs` list
+  # add package specs to the `specs` list
   specs:
   - trilinos
   - openmpi
   view: true
+  concretizer:
+    unify: true
