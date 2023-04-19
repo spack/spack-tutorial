@@ -15,8 +15,8 @@ This tutorial walks you through the steps for creating and
 debugging a simple Spack package. We will develop and debug
 a package using an iterative approach in order to gain more
 experience with additional Spack commands. For consistency,
-we will create the package for ``mpileaks``, which is an MPI
-debugging tool.
+we will create the package for ``mpileaks`` (https://github.com/LLNL/mpileaks),
+which is an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
@@ -36,45 +36,9 @@ Once we've specified a package's recipe, users can ask Spack to
 build the software with different features on any of the supported
 systems.
 
--------
-Caveats
--------
-
-This tutorial assumes you have a working version of Spack installed.
-Refer to the `Getting Started
-<https://spack.readthedocs.io/en/latest/getting_started.html#getting-started>`_
-guide for information on how to install Spack.
-
-We'll be writing code so it is assumed you have at least a
-**beginner's-level familiarity with Python**.
-
-Being a tutorial, this document can help you get started with packaging,
-but it is not intended to be complete. Links to additional information
-are provided at the bottom of this tutorial.
-The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
-
 ---------------
 Getting Started
 ---------------
-
-Before we get started, you need to confirm you have three environment
-variables set as follows:
-
-* ``SPACK_ROOT``: consisting of the path to your Spack installation;
-* ``PATH``: including ``$SPACK_ROOT/bin`` (so calls to the ``spack`` command
-  work); and
-* ``EDITOR``: containing the path of your preferred text editor (so Spack can
-  run it when we modify the package).
-
-The first two variables are automatically set by ``setup-env.sh`` so, if they
-aren't, run the following command:
-
-.. code-block:: console
-
-   $ . ~/spack/share/spack/setup-env.sh
-
-or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
 In order to avoid modifying your Spack installation with the package we
 are creating, add a **package repository** just for this tutorial by
@@ -90,6 +54,12 @@ parts of the tutorial. You can find out more about repositories at
 -------------------------
 Creating the Package File
 -------------------------
+
+.. note::
+
+   Before proceeding, make sure your ``EDITOR`` environment variable
+   is set to the path of your preferred text editor.
+
 
 Suppose you want to install software that depends on mpileaks but found
 Spack did not already have a built-in package for it. This means you are
@@ -203,10 +173,9 @@ Let's make the following changes:
 
 .. note::
 
-   We will exclude the ``Copyright`` clause in the remainder of
-   the package snippets here to reduce the length of the tutorial
-   documentation; however, it **is required** for published
-   packages.
+   We will exclude the ``Copyright`` clause and license identifier in the
+   remainder of the package snippets here to reduce the length of the tutorial
+   documentation; however, the copyright **is required** for published packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
@@ -586,21 +555,21 @@ and dependencies. Examples of each are:
 
 .. code-block:: python
 
-   if self.spec.satisfies('@1.1:'):
+   if self.spec.satisfies("@1.1:"):
        # Do things needed for version 1.1 or newer
 
 * Am I building with a ``gcc`` version up to ``5.0``?
 
 .. code-block:: python
 
-   if self.spec.satisfies('%gcc@:5.0'):
+   if self.spec.satisfies("%gcc@:5.0"):
        # Add arguments specific to gcc's up to 5.0
 
 * Is my ``dyninst`` dependency at least version ``8.0``?
 
 .. code-block:: python
 
-   if self.spec['dyninst'].satisfies('@8.0:'):
+   if self.spec["dyninst"].satisfies("@8.0:"):
        # Use newest dyninst options
 
 ~~~~~~~~~~~~~~~~~~~
@@ -614,7 +583,7 @@ If the build has to be customized to the concrete version of an abstract
 
 .. code-block:: python
 
-   if self.spec['mpi'].name == 'openmpi':
+   if self.spec["mpi"].name == "openmpi":
        # Do openmpi things
 
 ~~~~~~~~~~~~~~~~~
@@ -628,7 +597,7 @@ the ``Spec`` itself, such as:
 
 .. code-block:: python
 
-   if '+debug' in self.spec:
+   if "+debug" in self.spec:
        # Add -g option to configure flags
 
 
