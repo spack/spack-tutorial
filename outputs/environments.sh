@@ -149,12 +149,12 @@ example environments/lockfile-1          "head -30 spack.lock"
 
 example environments/create-from-file-1  "spack env create abstract spack.yaml"
 
-example --tee environments/find-env-abstract-1   "spacktivate abstract"
+example --tee environments/find-env-abstract-1   "spack env activate abstract"
 spack env activate abstract
 example environments/find-env-abstract-1   "spack find"
 
 example environments/create-from-file-2  "spack env create concrete spack.lock"
 
-example --tee environments/find-env-concrete-1   "spacktivate concrete"
+example --tee environments/find-env-concrete-1   "spack env activate concrete"
 spack env activate concrete
 example environments/find-env-concrete-1   "spack find"
