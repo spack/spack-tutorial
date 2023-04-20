@@ -38,6 +38,13 @@ example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
 cp "$PROJECT/package-py-files/4.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-4  "spack install --verbose tutorial-mpileaks stackstart=4"
 
+example packaging/install-mpileaks-5  "spack uninstall -ay tutorial-mpileaks"
+cp "$PROJECT/package-py-files/5.package.py" "$mpileaks_package_py"
+example packaging/install-mpileaks-5  "spack install --test=root tutorial-mpileaks"
+
+cp "$PROJECT/package-py-files/6.package.py" "$mpileaks_package_py"
+example packaging/install-mpileaks-6  "spack install --test=root tutorial-mpileaks"
+
 example packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
 example packaging/cleanup  "spack repo remove tutorial"
 example packaging/cleanup  "rm -rf \$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks"

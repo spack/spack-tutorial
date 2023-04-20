@@ -23,7 +23,7 @@ What is a Spack Package?
 ------------------------
 
 Spack packages are installation scripts, which are essentially
-recipes for building software.
+recipes for building (and testing) software.
 
 They define properties and behavior of the build, such as:
 
@@ -31,6 +31,9 @@ They define properties and behavior of the build, such as:
 * its dependencies;
 * options for building from source; and
 * build commands.
+
+They can also define checks of the installed software that can
+be performed after the installation.
 
 Once we've specified a package's recipe, users can ask Spack to
 build the software with different features on any of the supported
@@ -519,18 +522,60 @@ Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
 ``Executing phase: 'configure'``.
 
-At this point we've covered how to create a package; update its
-documentation; add dependencies; and add variants to support
-builds with optional features.
+------------
+Adding tests
+------------
 
-What if you need to customize the build to reflect feature changes?
+The simplest tests we can add are sanity checks, which can be used to
+ensure the directories and files we expect to be installed for all
+versions of the package actually exist. If we look at a successful
+installation, we can see that the following directories will be installed:
+
+* bin
+* lib
+* share
+
+So let's add a simple sanity check to ensure they are present, BUT let's
+enter a typo to see what happens:
+
+.. literalinclude:: tutorial/examples/packaging/5.package.py
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
+   :lines: 6-
+   :language: python
+   :emphasize-lines: 12
+
+We'll need to uninstall the package so we can re-run it with tests enabled:
+
+.. literalinclude:: outputs/packaging/install-mpileaks-5.out
+   :language: console
+
+Notice the installation fails due to the missing prefix.
+
+Now let's fix the error and try again:
+
+.. literalinclude:: tutorial/examples/packaging/6.package.py
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
+   :lines: 6-
+   :language: python
+   :emphasize-lines: 12
+
+We'll need to uninstall the package so we can re-run it with tests enabled:
+
+.. literalinclude:: outputs/packaging/install-mpileaks-6.out
+   :language: console
+
+This is just scratching the surface of testing an installation. We could
+leverage the examples from this package to add post-install phase tests
+and or stand-lone tests. Refer to the links at the bottom for more
+information on checking an installation.
+
 
 ------------------------
 Querying the Spec Object
 ------------------------
 
-As packages evolve and are ported to different systems, the builds
-often need to be changed. This is where the package's ``Spec`` comes
+As packages evolve and are ported to different systems, build recipes
+often need to change as well. This is where the package's ``Spec`` comes
 in.
 
 So far we've looked at getting the paths for dependencies and values of
