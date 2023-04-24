@@ -15,15 +15,15 @@ This tutorial walks you through the steps for creating and
 debugging a simple Spack package. We will develop and debug
 a package using an iterative approach in order to gain more
 experience with additional Spack commands. For consistency,
-we will create the package for ``mpileaks``, which is an MPI
-debugging tool.
+we will create the package for ``mpileaks`` (https://github.com/LLNL/mpileaks),
+which is an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
 ------------------------
 
 Spack packages are installation scripts, which are essentially
-recipes for building software.
+recipes for building (and testing) software.
 
 They define properties and behavior of the build, such as:
 
@@ -32,49 +32,16 @@ They define properties and behavior of the build, such as:
 * options for building from source; and
 * build commands.
 
+They can also define checks of the installed software that can
+be performed after the installation.
+
 Once we've specified a package's recipe, users can ask Spack to
 build the software with different features on any of the supported
 systems.
 
--------
-Caveats
--------
-
-This tutorial assumes you have a working version of Spack installed.
-Refer to the `Getting Started
-<https://spack.readthedocs.io/en/latest/getting_started.html#getting-started>`_
-guide for information on how to install Spack.
-
-We'll be writing code so it is assumed you have at least a
-**beginner's-level familiarity with Python**.
-
-Being a tutorial, this document can help you get started with packaging,
-but it is not intended to be complete. Links to additional information
-are provided at the bottom of this tutorial.
-The example code snippets used in this section can be found at
-https://github.com/spack/spack-tutorial under ``tutorial/examples/packaging``.
-
 ---------------
 Getting Started
 ---------------
-
-Before we get started, you need to confirm you have three environment
-variables set as follows:
-
-* ``SPACK_ROOT``: consisting of the path to your Spack installation;
-* ``PATH``: including ``$SPACK_ROOT/bin`` (so calls to the ``spack`` command
-  work); and
-* ``EDITOR``: containing the path of your preferred text editor (so Spack can
-  run it when we modify the package).
-
-The first two variables are automatically set by ``setup-env.sh`` so, if they
-aren't, run the following command:
-
-.. code-block:: console
-
-   $ . ~/spack/share/spack/setup-env.sh
-
-or the equivalent for your shell (e.g., ``csh``, ``fish``).
 
 In order to avoid modifying your Spack installation with the package we
 are creating, add a **package repository** just for this tutorial by
@@ -90,6 +57,12 @@ parts of the tutorial. You can find out more about repositories at
 -------------------------
 Creating the Package File
 -------------------------
+
+.. note::
+
+   Before proceeding, make sure your ``EDITOR`` environment variable
+   is set to the path of your preferred text editor.
+
 
 Suppose you want to install software that depends on mpileaks but found
 Spack did not already have a built-in package for it. This means you are
@@ -203,10 +176,9 @@ Let's make the following changes:
 
 .. note::
 
-   We will exclude the ``Copyright`` clause in the remainder of
-   the package snippets here to reduce the length of the tutorial
-   documentation; however, it **is required** for published
-   packages.
+   We will exclude the ``Copyright`` clause and license identifier in the
+   remainder of the package snippets here to reduce the length of the tutorial
+   documentation; however, the copyright **is required** for published packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
@@ -550,18 +522,60 @@ Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
 ``Executing phase: 'configure'``.
 
-At this point we've covered how to create a package; update its
-documentation; add dependencies; and add variants to support
-builds with optional features.
+------------
+Adding tests
+------------
 
-What if you need to customize the build to reflect feature changes?
+The simplest tests we can add are sanity checks, which can be used to
+ensure the directories and files we expect to be installed for all
+versions of the package actually exist. If we look at a successful
+installation, we can see that the following directories will be installed:
+
+* bin
+* lib
+* share
+
+So let's add a simple sanity check to ensure they are present, BUT let's
+enter a typo to see what happens:
+
+.. literalinclude:: tutorial/examples/packaging/5.package.py
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
+   :lines: 6-
+   :language: python
+   :emphasize-lines: 12
+
+We'll need to uninstall the package so we can re-run it with tests enabled:
+
+.. literalinclude:: outputs/packaging/install-mpileaks-5.out
+   :language: console
+
+Notice the installation fails due to the missing prefix.
+
+Now let's fix the error and try again:
+
+.. literalinclude:: tutorial/examples/packaging/6.package.py
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
+   :lines: 6-
+   :language: python
+   :emphasize-lines: 12
+
+We'll need to uninstall the package so we can re-run it with tests enabled:
+
+.. literalinclude:: outputs/packaging/install-mpileaks-6.out
+   :language: console
+
+This is just scratching the surface of testing an installation. We could
+leverage the examples from this package to add post-install phase tests
+and or stand-lone tests. Refer to the links at the bottom for more
+information on checking an installation.
+
 
 ------------------------
 Querying the Spec Object
 ------------------------
 
-As packages evolve and are ported to different systems, the builds
-often need to be changed. This is where the package's ``Spec`` comes
+As packages evolve and are ported to different systems, build recipes
+often need to change as well. This is where the package's ``Spec`` comes
 in.
 
 So far we've looked at getting the paths for dependencies and values of
@@ -586,21 +600,21 @@ and dependencies. Examples of each are:
 
 .. code-block:: python
 
-   if self.spec.satisfies('@1.1:'):
+   if self.spec.satisfies("@1.1:"):
        # Do things needed for version 1.1 or newer
 
 * Am I building with a ``gcc`` version up to ``5.0``?
 
 .. code-block:: python
 
-   if self.spec.satisfies('%gcc@:5.0'):
+   if self.spec.satisfies("%gcc@:5.0"):
        # Add arguments specific to gcc's up to 5.0
 
 * Is my ``dyninst`` dependency at least version ``8.0``?
 
 .. code-block:: python
 
-   if self.spec['dyninst'].satisfies('@8.0:'):
+   if self.spec["dyninst"].satisfies("@8.0:"):
        # Use newest dyninst options
 
 ~~~~~~~~~~~~~~~~~~~
@@ -614,7 +628,7 @@ If the build has to be customized to the concrete version of an abstract
 
 .. code-block:: python
 
-   if self.spec['mpi'].name == 'openmpi':
+   if self.spec["mpi"].name == "openmpi":
        # Do openmpi things
 
 ~~~~~~~~~~~~~~~~~
@@ -628,7 +642,7 @@ the ``Spec`` itself, such as:
 
 .. code-block:: python
 
-   if '+debug' in self.spec:
+   if "+debug" in self.spec:
        # Add -g option to configure flags
 
 
