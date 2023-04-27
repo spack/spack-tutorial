@@ -523,7 +523,7 @@ command that appears at the end of the highlighted line after mpileaks'
 ``Executing phase: 'configure'``.
 
 ------------
-Adding tests
+Adding Tests
 ------------
 
 The simplest tests we can add are sanity checks, which can be used to
@@ -542,7 +542,7 @@ enter a typo to see what happens:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 12
+   :emphasize-lines: 13
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
@@ -557,7 +557,7 @@ Now let's fix the error and try again:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 12
+   :emphasize-lines: 13
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
