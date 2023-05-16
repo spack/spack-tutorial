@@ -32,6 +32,8 @@ RUN chmod -R go+r /mirror
 COPY /packages.yaml /etc/spack/packages.yaml
 COPY /config.yaml /etc/spack/config.yaml
 
+RUN apt-get remove -y gcc-12
+
 RUN useradd -ms /bin/bash spack && \
     chmod -R go+r /etc/spack
 
