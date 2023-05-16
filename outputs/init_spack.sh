@@ -8,7 +8,3 @@ cd ~/spack || exit
 . share/spack/setup-env.sh
 spack tutorial -y
 spack bootstrap now
-
-pip install --quiet boto3
-spack config add 'config:suppress_gpg_warnings:true'
-spack config add 'packages:all:target:[x86_64]'

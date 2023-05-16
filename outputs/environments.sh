@@ -13,9 +13,9 @@ rm -rf "${raw_outputs:?}/environments"
 spack install zlib \
               zlib %clang \
               zlib@1.2.8 \
-              zlib@1.2.8 cppflags=-O3 \
+              zlib@1.2.8 cflags=-O3 \
               tcl \
-              tcl ^zlib cppflags=-O3 \
+              tcl ^zlib cflags=-O3 \
               hdf5 \
               hdf5~mpi \
               hdf5+hl+mpi ^mpich \
