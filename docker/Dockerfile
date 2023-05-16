@@ -33,7 +33,11 @@ COPY /packages.yaml /etc/spack/packages.yaml
 COPY /config.yaml /etc/spack/config.yaml
 COPY /concretizer.yaml /etc/spack/concretizer.yaml
 
-RUN apt-get remove -y gcc-12
+RUN apt-get remove -y gcc-12 && \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends emacs bash-completion && \
+    apt-get -y autoremove --purge && \
+    apt-get clean
 
 RUN useradd -ms /bin/bash spack && \
     chmod -R go+r /etc/spack
