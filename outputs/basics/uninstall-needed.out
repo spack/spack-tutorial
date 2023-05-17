@@ -1,8 +1,12 @@
-$ spack uninstall zlib/2xc
-==> Will not uninstall zlib@1.2.8%clang@7.0.0/2xcmtth
-The following packages depend on it:
-    -- linux-ubuntu18.04-x86_64 / clang@7.0.0 -----------------------
-    36jwtbo tcl@8.6.12
+$ spack uninstall zlib/5dy
+==> Refusing to uninstall the following specs
+    -- linux-ubuntu22.04-x86_64_v3 / clang@=14.0.0 ------------------
+    5dydni4 zlib@1.2.8
+
+==> The following dependents are still installed:
+    -- linux-ubuntu22.04-x86_64_v3 / clang@=14.0.0 ------------------
+    vqerlyl tcl@8.6.12
 
 ==> Error: There are still dependents.
   use `spack uninstall --dependents` to remove dependents too
+  use `spack uninstall --force` to override

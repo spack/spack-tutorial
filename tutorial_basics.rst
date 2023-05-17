@@ -19,7 +19,7 @@ especially as it relates to using Spack-built compilers within Spack.
 We will include full output from all of the commands demonstrated,
 although we will frequently call attention to only small portions of
 that output (or merely to the fact that it succeeded). The provided
-output is all from an Ubuntu 18.04 Docker image.
+output is all from an Ubuntu 22.04 Docker image.
 
 .. _basics-tutorial-install:
 
@@ -28,7 +28,7 @@ Installing Spack
 ----------------
 
 Spack works out of the box. Simply clone Spack to get going. We will
-clone Spack and immediately check out the most recent release, v0.19.
+clone Spack and immediately check out the most recent release, v0.20.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -114,7 +114,7 @@ compilers.
 .. literalinclude:: outputs/basics/zlib-1.2.8.out
    :language: console
 
-.. literalinclude:: outputs/basics/zlib-gcc-6.5.0.out
+.. literalinclude:: outputs/basics/zlib-gcc-10.4.0.out
    :language: console
 
 The spec syntax also includes compiler flags. Spack accepts
@@ -362,7 +362,7 @@ will learn how to configure compilers by hand for special cases. Spack
 also has tools to add compilers, and compilers built with Spack can be
 added to the configuration.
 
-.. literalinclude:: outputs/basics/install-gcc-8.4.0.out
+.. literalinclude:: outputs/basics/install-gcc-12.1.0.out
    :language: console
 
 .. literalinclude:: outputs/basics/find-p-gcc.out
@@ -370,7 +370,7 @@ added to the configuration.
 
 We can add GCC to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-``gcc@8.4.0``. To avoid having to copy and paste GCC's path, we can use
+``gcc@12.1.0``. To avoid having to copy and paste GCC's path, we can use
 ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
