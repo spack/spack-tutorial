@@ -31,7 +31,7 @@ example basics/zlib-clang      "spack install zlib %clang"
 
 example basics/versions-zlib   "spack versions zlib"
 example basics/zlib-1.2.8      "spack install zlib@1.2.8"
-example basics/zlib-gcc-10.4.0  "spack install zlib %gcc@10.4.0"
+example basics/zlib-gcc-10.4.0  "spack install zlib %gcc@10"
 
 example basics/zlib-O3         "spack install zlib@1.2.8 cflags=-O3"
 
@@ -68,7 +68,7 @@ example basics/find-d-tcl      "spack find -d tcl"
 
 example basics/find-zlib       "spack find zlib"
 
-example basics/uninstall-zlib  "spack uninstall -y zlib %gcc@10.4.0"
+example basics/uninstall-zlib  "spack uninstall -y zlib %gcc@10"
 
 example basics/find-lf-zlib    "spack find -lf zlib"
 
@@ -89,10 +89,10 @@ example basics/find-px             "spack find -px"
 
 example basics/compilers           "spack compilers"
 
-example basics/install-gcc-12.1.0   "spack install gcc@12.1.0"
+example basics/install-gcc-12.1.0   "spack install gcc@12"
 
 example basics/find-p-gcc          "spack find -p gcc"
 
-example basics/compiler-add-location 'spack compiler add "$(spack location -i gcc@12.1.0)"'
+example basics/compiler-add-location 'spack compiler add "$(spack location -i gcc@12)"'
 
-example basics/compiler-remove       'spack compiler remove gcc@12.1.0'
+example basics/compiler-remove       'spack compiler remove gcc@12'
