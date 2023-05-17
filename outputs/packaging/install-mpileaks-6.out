@@ -1,55 +1,42 @@
-$ spack install tutorial-mpileaks
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/boost-1.72.0-ujhjgu2zonpa2gxluint57fl5v23i2ev
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pkgconf-1.8.0-k2lfw6fht6zvsfihvx3avihboi3uv455
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ca-certificates-mozilla-2022-10-11-aurd37jjebxaqzs73saip5v6hgfu3foj
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/berkeley-db-18.1.40-53fb72wziswrec6tkbjpowshkul2nsk4
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiconv-1.16-ltvovvvjgmlvy4m2pn365cy6p5dysajq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libsigsegv-2.13-e262sf6ptgnmyu7zkflzp3ycbdfqz7hf
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/util-macros-1.19.3-ao5w53rpwhgfruk2zrqcehlov5slestd
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/xz-5.2.7-nrwxythffgfumjv7skmgdjtxaunlmqau
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zstd-1.5.2-fprmzmoubdjdr663rprctp2tuqiv5apu
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libiberty-2.37-zm47sgeycvd3tajg3ixpva6d4n64swbj
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/ncurses-6.3-zcuawlif55qhuknvbk4jez7xjcxhnydf
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/diffutils-3.8-c3uhkcjt7tagz2djrd6r2b6b3c2tia3s
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pigz-2.7-wod35nye4qcrkbopr23zoy5qb3ywp3v3
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libxml2-2.10.1-4aq5aj2n5u2n3dbrb76pnhoil6tv3e4e
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/readline-8.1.2-kgyvtw5h6mi5nms32x3vzgbw32ymmfwa
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libedit-3.1-20210216-6pzeykrtvrkpbw6u3mq6likd4ktvah76
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bzip2-1.0.8-cxcrelnw64jh6lvhzb6pfar7nijv6us6
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/m4-1.4.19-z7d5q4f2qzxejx4xxdrj45q5gxur6q7b
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gdbm-1.23-cpmyntybsnm3se7lfnvqosbiqzrcg2kq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tar-1.34-kawegoyhusotpo5mlsqnjqf6ngrjyj2w
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libtool-2.4.7-bdxu4wnbhlmvj6sh5y7uynrldzepiilz
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/perl-5.36.0-eydiwimku2cctu6dsom3yvfxxjmqyr4w
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/gettext-0.21.1-hj6szikaqzdpxa36gk4w72m4czhwd6gu
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libpciaccess-0.16-p7f5n6q6kwnzq7syvqbslnotl72yxs23
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/autoconf-2.69-btoteeiz74epw4kulm7aecae4cxraxua
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssl-1.1.1s-yr4z2pt4jnp5fltumr2my3badazsarz2
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/bison-3.8.2-wobmzgvlc235muaaxwehzblkgcnhvwtn
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/elfutils-0.188-6zgpdw77llwjihnyt6aub2eji4oncol7
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/hwloc-2.8.0-5yywrk2zoib75deet4eu4ocxim2ldngq
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/automake-1.16.5-rxjqnjw5jkrbym5x4yshogm3f262crre
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/cmake-3.24.3-stszbnscxrtgzqrwmx2wfwsuntf47mpy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libevent-2.1.12-nblr6w4gwbdyhjz2z5lg5pseztxnb7gh
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/krb5-1.19.3-y6ek4vz7ntj6qw26jv2trb3ok4m5koxy
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/libdwarf-20180129-zzsoeov5q6isot24zaei32htsyme65kx
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/numactl-2.0.14-qbwqmk6qylskqtyrfuyfp36f465bxrrk
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/intel-tbb-2020.3-s4gwwbxg5aowksbqquhd7cfn2bpw7qgv
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/pmix-4.1.2-76ul6unbdppxalfkkxjqzoky7lu4jqpo
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openssh-9.1p1-xevso22q5f5fb2bqp5lhuutgvrqtiolo
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/dyninst-12.2.0-p5agglszh4ajwdur74fqztkbcrcsxwjf
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/openmpi-4.1.4-mfxvu5fnaac33f4pw25rjrojafbbupwb
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/adept-utils-1.0.1-v7ra4diio6yvl5ijom4ekcoldpe7747d
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/callpath-1.0.4-4hietixg47mkdt6izrg3zkoxzvd5c4ix
-==> Installing tutorial-mpileaks-1.0-qwid5sq6vsxwafavxujqkmlzdcq2acit
-==> No binary for tutorial-mpileaks-1.0-qwid5sq6vsxwafavxujqkmlzdcq2acit found: installing from source
+$ spack install --test=root tutorial-mpileaks
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/boost-1.72.0-psopbr7uxyw4cg3liuxmuph6fmmezh5y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libpciaccess-0.17-ajkyiz5txltunmwxkrwz3xs6ymqaafnf
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libiconv-1.17-7wr75cescbtfyjppbbvswfpurs3gtxyf
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/xz-5.4.1-4kpkw5anjs35mccxgsw24ooonnpk7pkx
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ncurses-6.4-4dokmxjlgawyprrnkewx3aiwppdbwbts
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/numactl-2.0.14-dwr5rmxxc4lav5ob4ylar5tu3rugjwkv
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zstd-1.5.5-qoo4rlopj4vqbc6k633cu3tzawtfjjvh
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libxcrypt-4.4.33-6oeb4y7sqnhpsqtr33bvbdsl2ekblcwz
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pkgconf-1.9.5-mh73nkpzo36xqeaagdrh3qppvmn6zdn6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/intel-tbb-2020.3-kmvj5elvjuf2gzfavh2fiomd4hp5hyht
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libiberty-2.40-qa5y7pmebosr4sgf3uc5dxagxjt43ksc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pigz-2.7-aln73eomrjghrlg6q2ida2rr4ylvg2cp
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libxml2-2.10.3-pcbenkircucqrjzgyud6xzgxfptjz6x6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libedit-3.1-20210216-3gz2afaph66ogjiulkaek2mksnpxhtwu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libevent-2.1.12-pmjxzdssnbkv25jedy5shyhzsnj26ins
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tar-1.34-e77cf6ahyuvzxeaojxrc5meo7cbwfbxo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/hwloc-2.9.1-h7l4t7laxg7kqchvcy42xtyev4kxjbti
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gettext-0.21.1-p4obvgx4436lyrtjhu3xvosfkyjpgi7o
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pmix-4.2.3-uh4fmi5i7bajcqtiuae7qaii7yha7lnp
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/krb5-1.20.1-a2oph6kjqh6feyfmkozogvu7ghzx2dfo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/elfutils-0.189-drq53ydwufjbingfsh57s2rpuxldkrgs
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssh-9.3p1-zhdviyjva24bkvbxlqnswcecrp5gjvv5
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/dyninst-12.3.0-2y33satxbszdnfvhuyskzcxvdouuanjc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libdwarf-20180129-3vvfk35vlnoypd655vjug35i55dtfrzu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openmpi-4.1.5-6rh6midoapu7noq62iqyhph3zdcr4pzl
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/adept-utils-1.0.1-ffnwmmwkilehdoxeog2mffa47yts6svu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/callpath-1.0.4-zbn6a2ojudfilvd7my53hpyncw36ex3g
+==> Installing tutorial-mpileaks-1.0-dv3dnqf5mmfsamm53byzvy2lo2rnih6z
+==> No binary for tutorial-mpileaks-1.0-dv3dnqf5mmfsamm53byzvy2lo2rnih6z found: installing from source
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
 ==> tutorial-mpileaks: Executing phase: 'configure'
 ==> tutorial-mpileaks: Executing phase: 'build'
 ==> tutorial-mpileaks: Executing phase: 'install'
-==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-qwid5sq6vsxwafavxujqkmlzdcq2acit
-  Fetch: 0.01s.  Build: 13.90s.  Total: 13.91s.
-  [+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/tutorial-mpileaks-1.0-qwid5sq6vsxwafavxujqkmlzdcq2acit
+==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-dv3dnqf5mmfsamm53byzvy2lo2rnih6z
+  Stage: 0.02s.  Autoreconf: 0.00s.  Configure: 6.44s.	Build: 6.02s.  Install: 0.38s.	Post-install: 0.06s.  Total: 13.23s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tutorial-mpileaks-1.0-dv3dnqf5mmfsamm53byzvy2lo2rnih6z
