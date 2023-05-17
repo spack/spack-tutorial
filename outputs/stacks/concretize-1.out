@@ -1,13 +1,14 @@
 $ spack find -l py-scipy
 ==> In environment /home/spack/stacks
 ==> Root specs
--- no arch / gcc@7.5.0 ------------------------------------------
-------- gcc@8.4.0%gcc@7.5.0
+-- no arch / gcc@11.3.0 -----------------------------------------
+------- gcc@12.1.0%gcc@11.3.0
 
--- no arch / gcc@8.4.0 ------------------------------------------
-------- netlib-scalapack%gcc@8.4.0  ------- netlib-scalapack%gcc@8.4.0	------- netlib-scalapack%gcc@8.4.0  ------- netlib-scalapack%gcc@8.4.0	------- py-scipy%gcc@8.4.0
+-- no arch / gcc@12.1.0 -----------------------------------------
+------- netlib-scalapack%gcc@12.1.0  ------- netlib-scalapack%gcc@12.1.0  ------- py-scipy%gcc@12.1.0
+------- netlib-scalapack%gcc@12.1.0  ------- netlib-scalapack%gcc@12.1.0
 
 ==> Installed packages
--- linux-ubuntu18.04-x86_64 / gcc@8.4.0 -------------------------
-oliuwzs py-scipy@1.8.1
+-- linux-ubuntu22.04-x86_64_v3 / gcc@=12.1.0 --------------------
+ol3w546 py-scipy@1.10.1
 ==> 1 installed package

@@ -20,6 +20,7 @@ example stacks/setup-0 "spack add gcc@12.1.0 %gcc@11.3.0"
 #cat "$project/stacks/examples/0.spack.stack.yaml" > spack.yaml
 
 example stacks/setup-0 "spack env view disable"
+fake_example stacks/setup-0 "spack config edit" "/bin/true"
 
 spack concretize
 spack install
@@ -33,7 +34,7 @@ example stacks/concretize-0 "spack install"
 example stacks/concretize-0 "spack find"
 
 cat "$project/stacks/examples/3.spack.stack.yaml" > spack.yaml
-spack concretize -f
+spack concretize
 spack install
 example stacks/concretize-1 "spack find -l py-scipy"
 

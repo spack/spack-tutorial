@@ -4,6 +4,7 @@ $ spack env create -d .
 ==> You can activate this environment with:
 ==>   spack env activate /home/spack/stacks
 $ spack env activate .
-$ spack add gcc@8.4.0 %gcc@7.5.0
-==> Adding gcc@8.4.0%gcc@7.5.0 to environment /home/spack/stacks
+$ spack add gcc@12.1.0 %gcc@11.3.0
+==> Adding gcc@12.1.0%gcc@11.3.0 to environment /home/spack/stacks
+$ spack env view disable
 $ spack config edit
