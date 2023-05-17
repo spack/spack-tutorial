@@ -79,17 +79,6 @@ the current environment to the specified directory.
 .. literalinclude:: outputs/cache/spack-mirror-all.out
    :language: console
 
-This directory can be shared between users on a shared filesystem and
-protected with typical unix file permissions. If you're making a spack
-mirror on a shared filesystem, remember to fix the file permissions
-every time you update the mirror, or update your
-`umask <https://man7.org/linux/man-pages/man2/umask.2.html>`_ settings
-so any new files you create have the appropriate permissions. Here you
-would replace the word ``spack`` to the appropriate unix group.
-
-.. literalinclude:: outputs/cache/spack-mirror-permissions.out
-   :language: console
-
 As long as spack can read from the mirror directory, spack will
 attempt to read source packages from the mirror instead of accessing
 the internet. This can be a huge boon for computers that can't access
@@ -203,26 +192,18 @@ re-used in the future.
 .. literalinclude:: outputs/cache/binary-cache-3.out
    :language: console
 
-With this setup done, we're ready to fill a binary cache with binary
-packages. Binary packages are attached to an existing source mirror.
-We follow the same steps we used for the source mirror -- making an
-environment, creating the source mirror, and building the packages to
-a spack installation with our padded path. To upload a spec to a
-binary cache, simply use the command ``spack buildcache
-create --only=package spec``. Here we use the ``spack find --format``
-command that we will discuss in more detail in the Scripting section
-of the tutorial to operate on all specs in the environment.
+With this setup done, we're ready to fill a buildcache with installed
+packages. The steps are very similar to creating a source mirror. To
+upload all specs in the environment to a buildcache, simply use the
+command ``spack buildcache push`` or equivalently
+``spack buildcache create``:
 
 .. literalinclude::  outputs/cache/binary-cache-4.out
    :language: console
 
 Voila, done! Our spack mirror has now been augmented with a binary
 cache.  This cache can be used on systems without external internet
-access, just like with a spack source mirror. As always, remember to
-update the file permissions after updating the mirror.
-
-.. literalinclude:: outputs/cache/spack-mirror-permissions.out
-   :language: console
+access, just like with a spack source mirror.
 
 Though it's outside the scope of this tutorial, spack mirrors and
 build caches can also be hosted over ``https://`` and ``s3://`` as
