@@ -178,7 +178,7 @@ Now confirm the contents of the environment using ``spack find``:
 We can see that the roots and all their dependencies have been installed.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an environemnt incrementally
+Creating an environment incrementally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 As a short-hand, you can use the ``install --add`` flag to accomplish
@@ -205,7 +205,7 @@ Do note however that incrementally creating an environment can give you differen
 package versions from an environment created all at once. We will cover this after
 we've discussed different concretization strategies.
 
-Further, there are two other advantages of concretizing and installing an environemnt
+Further, there are two other advantages of concretizing and installing an environment
 all at once:
 
 * If you have a number of specs that can be installed together,
