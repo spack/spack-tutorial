@@ -185,6 +185,7 @@ As a short-hand, you can use the ``install --add`` flag to accomplish
 the same thing in one step:
 
 .. code-block:: console
+
    $ spack install --add tcl trilinos
 
 This both adds the specs to the environment and installs them.
