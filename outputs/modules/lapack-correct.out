@@ -5,7 +5,7 @@ Activating Modules:
 
 $ module load mpich
 
-Lmod is automatically replacing "openmpi/4.1.4" with "mpich/4.0.2".
+Lmod is automatically replacing "openmpi/4.1.5" with "mpich/4.1.1".
 
 
 Due to MODULEPATH changes, the following have been reloaded:
@@ -13,11 +13,12 @@ Due to MODULEPATH changes, the following have been reloaded:
 
 $ module load netlib-lapack
 
-Lmod is automatically replacing "openblas/0.3.21" with "netlib-lapack/3.10.1".
+Lmod is automatically replacing "openblas/0.3.23" with "netlib-lapack/3.11.0".
 
 
 Inactive Modules:
-  1) expat/2.4.8     2) gdbm/1.23     3) libbsd/0.11.5	   4) libffi/3.4.2     5) libmd/1.0.4	  6) py-numpy	  7) py-setuptools/59.4.0     8) python/3.10.8	   9) readline/8.1.2	10) sqlite/3.39.4    11) util-linux-uuid/2.38.1
+  1) bzip2/1.0.8     3) gdbm/1.23	   5) libbsd/0.11.7	7) libmd/1.0.4		9) openssl/1.1.1t    11) py-numpy		 13) python/3.10.10    15) sqlite/3.40.1    17) util-linux-uuid/2.38.1
+  2) expat/2.5.0     4) gettext/0.21.1	   6) libffi/3.4.4	8) libxcrypt/4.4.33    10) pigz/2.7	     12) py-setuptools/63.4.3	 14) readline/8.2      16) tar/1.34	    18) zstd/1.5.5
 
 Due to MODULEPATH changes, the following have been reloaded:
   1) netlib-scalapack/2.2.0

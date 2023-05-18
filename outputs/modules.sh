@@ -10,6 +10,7 @@ rm -rf "${raw_outputs:?}/modules"
 # reinit modules
 rm -f ~/.spack/modules.yaml ~/.spack/linux/modules.yaml
 rm -f ~/.spack/compilers.yaml ~/.spack/linux/compilers.yaml
+spack config add "modules:default:enable:[tcl]"
 spack module tcl refresh -y
 
 #
@@ -18,12 +19,13 @@ spack module tcl refresh -y
 spack uninstall -ay
 
 spack install lmod
+
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
 . share/spack/setup-env.sh
-spack install gcc@8.4.0
+spack install gcc@12.1.0
 
-example --tee modules/spack-load-gcc "spack load gcc@8.4.0"
-spack load gcc@8.4.0
+example --tee modules/spack-load-gcc "spack load gcc@12.1.0"
+spack load gcc@12.1.0
 example      modules/spack-load-gcc "which gcc"
 
 example      modules/add-compiler   "spack compiler add"
@@ -42,7 +44,7 @@ spack install py-scipy ^openblas
 example --tee modules/module-avail-2 "module avail"
 
 gcc_hash="$(spack find --format '{hash:7}' gcc)"
-gcc_module="gcc-8.4.0-gcc-7.5.0-${gcc_hash}"
+gcc_module="gcc-12.1.0-gcc-11.3.0-${gcc_hash}"
 example --tee modules/module-show-1  "module show $gcc_module"
 
 spack config add "modules:default:tcl:all:filter:exclude_env_vars:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
@@ -51,7 +53,7 @@ example  modules/tcl-refresh-1          "spack module tcl refresh -y"
 example --tee modules/module-show-2     "module show $gcc_module"
 
 
-spack config add                        "modules:default:tcl:exclude:['%gcc@7.5.0']"
+spack config add                        "modules:default:tcl:exclude:['%gcc@11.3.0']"
 example      modules/tcl-refresh-2      "spack module tcl refresh --delete-tree -y"
 example --tee modules/module-avail-3    "module avail"
 
@@ -67,8 +69,8 @@ example --expect-error modules/tcl-refresh-4           "spack module tcl refresh
 
 # use new projections
 spack config add                        "modules:default:tcl:projections:all:'{name}/{version}-{compiler.name}-{compiler.version}'"
-spack config add                        "modules:default:tcl:projections:'netlib-scalapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'"
-spack config add                        "modules:default:tcl:projections:'^python^lapack':'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
+spack config add                        "modules:default:tcl:projections:netlib-scalapack:'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'"
+spack config add                        "modules:default:tcl:projections:^python^lapack:'{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'"
 spack config add                        "modules:default:tcl:all:conflict:['{name}']"
 example      modules/tcl-refresh-5      "spack module tcl refresh --delete-tree -y"
 example --tee modules/module-avail-5    "module avail"
@@ -106,8 +108,8 @@ example --tee modules/lmod-intro-conflict  "module list"
 cp "$PROJECT/module-configs/lmod.1.yaml" ~/.spack/modules.yaml
 example      modules/lmod-refresh-1     "spack module lmod refresh --delete-tree -y"
 module purge
-module unuse "$HOME/spack/share/spack/modules/linux-ubuntu18.04-x86_64"
-module use "$HOME/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core"
+module unuse "$HOME/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3"
+module use "$HOME/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core"
 example --tee modules/module-avail-6     "module avail"
 
 

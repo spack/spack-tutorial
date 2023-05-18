@@ -42,6 +42,13 @@ earlier in the tutorial:
 
   $ spack uninstall -ay
 
+and by enabling ``tcl`` module files, which are disabled by default since Spack v0.20:
+
+.. code-block:: console
+
+  $ spack config add "modules:default:enable:[tcl]"
+
+  
 ^^^^^^^^^^^^^^^^^^^
 Build a module tool
 ^^^^^^^^^^^^^^^^^^^
@@ -82,15 +89,15 @@ Add a new compiler
 The second step is to build a recent compiler. On first use, Spack
 scans the environment and automatically locates the compiler(s)
 already available on the system. For this tutorial, however, we want
-to use ``gcc@8.4.0``.
+to use ``gcc@12.1.0``.
 
 
 .. code-block:: console
 
-  $ spack install gcc@8.4.0
+  $ spack install gcc@12.1.0
 
 
-You can get this in your environment using ``spack load gcc@8.4.0``:
+You can get this in your environment using ``spack load gcc@12.1.0``:
 
 .. literalinclude:: outputs/modules/spack-load-gcc.out
    :language: console
@@ -106,7 +113,7 @@ To check which compilers are available you can use ``spack compiler list``:
 .. literalinclude:: outputs/modules/list-compiler.out
    :language: console
 
-Finally, when you confirmed ``gcc@8.4.0`` is properly registered, clean the environment
+Finally, when you confirmed ``gcc@12.1.0`` is properly registered, clean the environment
 with ``spack unload``:
 
 .. code-block:: console
@@ -142,35 +149,39 @@ tells you what a module will do when loaded:
 
 .. code-block:: console
 
-   $ module show zlib-1.2.12-gcc-8.4.0-rlo3go7
-   ----------------------------------------------------------------------------------------------------------------------------------------------------------
-      /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64/zlib-1.2.12-gcc-8.4.0-rlo3go7:
-   ----------------------------------------------------------------------------------------------------------------------------------------------------------
+   spack@a7c82535d8c9:~$ module show zlib-1.2.13-gcc-11.3.0-mntflxr 
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+      /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3/zlib-1.2.13-gcc-11.3.0-mntflxr:
+   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    whatis("A free, general-purpose, legally unencumbered lossless data-compression library.")
-   prepend_path("LD_LIBRARY_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib")
-   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/share/man")
-   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib/pkgconfig")
-   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/")
-   help([[A free, general-purpose, legally unencumbered lossless data-compression
-   library.
-   ]])
+   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/share/man")
+   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/lib/pkgconfig")
+   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/.")
+   help([[Name   : zlib
+   Version: 1.2.13
+   Target : x86_64_v3
 
-   $ echo $LD_LIBRARY_PATH
+   A free, general-purpose, legally unencumbered lossless data-compression
+   module.
+   ]])
+		
+   $ echo $PKG_CONFIG_PATH
 
 ``module load`` will execute all of the changes shown above:
 
 .. code-block:: console
 
-   $ module load zlib-1.2.12-gcc-8.4.0-rlo3go7
-   $ echo $LD_LIBRARY_PATH
-   /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/zlib-1.2.12-rlo3go7mpfwicumepslj4pth7z4t3a46/lib
+   spack@a7c82535d8c9:~$ module load gcc-12.1.0-gcc-11.3.0-s5e5zwr 
+   spack@a7c82535d8c9:~$ echo $PKG_CONFIG_PATH 
+   /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zstd-1.5.5-qoo4rlopj4vqbc6k633cu3tzawtfjjvh/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/mpfr-4.2.0-aiys7vci7zwuci5phi5yje7ql3des4jw/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gmp-6.2.1-7kxi3rr3qduvmao43tjigamo2eqdme4q/lib/pkgconfig
+
 
 and to undo the modifications, you can use ``module unload``:
 
 .. code-block:: console
 
    $ module unload zlib
-   $ echo $LD_LIBRARY_PATH
+   $ echo $PKG_CONFIG_PATH
 
    $
 
@@ -364,7 +375,7 @@ directory.
 
 
 if you look closely you'll see though that we went too far in
-excluding modules: the module for ``gcc@8.4.0`` disappeared as it was
+excluding modules: the module for ``gcc@12.1.0`` disappeared as it was
 bootstrapped with ``gcc@7.5.0``. To specify exceptions to the ``exclude``
 rules you can use ``include``:
 
@@ -390,7 +401,7 @@ rules you can use ``include``:
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
 
-you'll see that now the module for ``gcc@8.4.0`` has reappeared:
+you'll see that now the module for ``gcc@12.1.0`` has reappeared:
 
 .. literalinclude:: outputs/modules/module-avail-4.out
    :language: console
@@ -1066,7 +1077,7 @@ we'll find the following at the end of each ``netlib-scalapack`` module file:
 .. code-block:: lua
 
   -- Access is granted only to specific groups
-  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-8.4.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
+  if not isDir("/home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-12.1.0/netlib-scalapack-2.0.2-2p75lzqjbsnev7d2j2osgpkz7ib33oca") then
       LmodError (
           "You don't have the necessary rights to run \"netlib-scalapack\".\n\n",
           "\tPlease write an e-mail to 1234@foo.com if you need further information on how to get access to it.\n"
@@ -1080,13 +1091,13 @@ the right e-mail address where to ask for it!
 Restore settings for future sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For future sections of the tutorial, we will not use the ``gcc@8.4.0``
+For future sections of the tutorial, we will not use the ``gcc@12.1.0``
 compiler. Since it is currently the default compiler (our current
 default is the most recent version of gcc available), we will remove
 it now.
 
 .. code-block:: console
 
-  $ spack compiler rm gcc@8.4.0
+  $ spack compiler rm gcc@12.1.0
 
 This will ensure the rest of the tutorial goes smoothly for you.
