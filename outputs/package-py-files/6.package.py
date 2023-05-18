@@ -13,7 +13,7 @@ class TutorialMpileaks(AutotoolsPackage):
     homepage = "https://github.com/LLNL/mpileaks"
     url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
-    maintainers = ["adamjstewart"]
+    maintainers("adamjstewart")
 
     sanity_check_is_dir = ["bin", "lib", "share"]
 

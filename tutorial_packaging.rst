@@ -549,7 +549,7 @@ We'll need to uninstall the package so we can re-run it with tests enabled:
 .. literalinclude:: outputs/packaging/install-mpileaks-5.out
    :language: console
 
-Notice the installation fails due to the missing prefix.
+Notice the installation fails due to the missing directory.
 
 Now let's fix the error and try again:
 
