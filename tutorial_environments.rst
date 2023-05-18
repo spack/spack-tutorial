@@ -310,6 +310,8 @@ spec. Spack uses reference counting to ensure that we don't remove
    Trilinos would only have been uninstalled by Spack if it were
    no longer needed by any environments or their package dependencies.
 
+You can also uninstall a package and remove it from the environment
+in one go with ``spack uninstall --remove trilinos``.
 
 -----------------------
 The ``spack.yaml`` file
@@ -347,13 +349,13 @@ The ``specs`` list should look familiar; these are the specs we've been
 modifying with ``spack add``.
 
 ``concretizer:unify:true``, the default, means that they are concretized
-*together*, so that there is only one version of any package in the
+*together*, so that there is only one version of each package in the
 environment. Other options for ``unify`` are ``false`` and ``when_possible``.
 ``false`` means that the specs are concretized *independently*, so that
 there may be multiple versions of the same package in the environment.
-``when_possible`` means that Spack will try to reduce different flavors
-of the same package, but if that is not possible, it will allow multiple
-versions of the same package in the environment.
+``when_possible`` lies between those options. In this case, Spack will unify
+as many packages in the environment, but will not fail if it cannot unify
+all of them.
 
 .. note::
 
