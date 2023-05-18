@@ -2,6 +2,11 @@
 
 # Tools
 DOCKER := docker
+DOCKER_RUN_OPTS :=
+
+# Use this for Podman
+#DOCKER := podman
+#DOCKER_RUN_OPTS := --userns=keep-id --security-opt label=disable
 
 # Name of the container we'll generate the tutorial outputs with
 container := ghcr.io/spack/tutorial:latest
@@ -28,13 +33,13 @@ $(addprefix local-run-,$(sections)):
 	$(CURDIR)/$(@:local-run-%=%).sh
 
 $(run_targets): run-%: %.sh init_spack.sh defs.sh
-	$(DOCKER) run --rm -t \
+	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
 		/project/$(@:run-%=%).sh && touch $@
 
 interactive:
-	$(DOCKER) run --rm -it \
+	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -it \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container}
 
