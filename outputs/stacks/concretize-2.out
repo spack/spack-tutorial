@@ -1,6 +1,6 @@
 $ spack concretize -f
 ==> Starting concretization pool with 4 processes
-==> Environment concretized in 21.72 seconds.
+==> Environment concretized in 21.68 seconds.
 ==> Concretized gcc@=12.1.0%gcc@11.3.0
 [+]  s5e5zwr  gcc@12.1.0%gcc@11.3.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=cc6112d arch=linux-ubuntu22.04-x86_64_v3
 [+]  zdl3dic	  ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -189,23 +189,14 @@ netlib-scalapack@2.2.0	netlib-scalapack@2.2.0	py-scipy@1.10.1
 
 ==> Installed packages
 -- linux-ubuntu22.04-x86_64_v3 / gcc@=11.3.0 --------------------
-autoconf@2.69		     bzip2@1.0.8    gdbm@1.23	    libiconv@1.17    m4@1.4.19	  perl@5.36.0	 tar@1.34	zstd@1.5.5
-autoconf-archive@2023.02.20  diffutils@3.9  gettext@0.21.1  libsigsegv@2.14  mpc@1.3.1	  pigz@2.7	 texinfo@7.0.3
-automake@1.16.5 	     gawk@5.2.1     gmake@4.4.1     libtool@2.4.7    mpfr@4.2.0   pkgconf@1.9.5  xz@5.4.1
-berkeley-db@18.1.40	     gcc@12.1.0     gmp@6.2.1	    libxml2@2.10.3   ncurses@6.4  readline@8.2	 zlib@1.2.13
+autoconf@2.69		     automake@1.16.5	  bzip2@1.0.8	 gawk@5.2.1  gdbm@1.23	     gmake@4.4.1  libiconv@1.17    libtool@2.4.7   m4@1.4.19  mpfr@4.2.0   perl@5.36.0	pkgconf@1.9.5  tar@1.34       xz@5.4.1	   zstd@1.5.5
+autoconf-archive@2023.02.20  berkeley-db@18.1.40  diffutils@3.9  gcc@12.1.0  gettext@0.21.1  gmp@6.2.1	  libsigsegv@2.14  libxml2@2.10.3  mpc@1.3.1  ncurses@6.4  pigz@2.7	readline@8.2   texinfo@7.0.3  zlib@1.2.13
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@=12.1.0 --------------------
-autoconf@2.69			    libbsd@0.11.7      ncurses@6.4	       py-flit-core@3.7.1	    py-tomli@2.0.1
-automake@1.16.5 		    libfabric@1.18.0   netlib-lapack@3.11.0    py-gast@0.5.3		    py-wheel@0.37.1
-berkeley-db@18.1.40		    libffi@3.4.4       netlib-scalapack@2.2.0  py-meson-python@0.12.0	    python@3.10.10
-bzip2@1.0.8			    libiconv@1.17      netlib-scalapack@2.2.0  py-numpy@1.24.3		    re2c@2.2
-ca-certificates-mozilla@2023-01-10  libmd@1.0.4        ninja@1.11.1	       py-packaging@23.0	    readline@8.2
-cmake@3.26.3			    libpciaccess@0.17  openblas@0.3.23	       py-pip@23.0		    sqlite@3.40.1
-diffutils@3.9			    libsigsegv@2.14    openssl@1.1.1t	       py-ply@3.11		    tar@1.34
-expat@2.5.0			    libtool@2.4.7      perl@5.36.0	       py-pybind11@2.10.1	    util-linux-uuid@2.38.1
-findutils@4.9.0 		    libxcrypt@4.4.33   pigz@2.7 	       py-pyproject-hooks@1.0.0     util-macros@1.19.3
-gdbm@1.23			    libxml2@2.10.3     pkgconf@1.9.5	       py-pyproject-metadata@0.7.1  xz@5.4.1
-gettext@0.21.1			    m4@1.4.19	       py-beniget@0.4.1        py-pythran@0.12.0	    yaksa@0.2
-gmake@4.4.1			    meson@1.1.0        py-build@0.10.0	       py-scipy@1.10.1		    zlib@1.2.13
-hwloc@2.9.1			    mpich@4.1.1        py-cython@0.29.33       py-setuptools@63.4.3	    zstd@1.5.5
+autoconf@2.69			    diffutils@3.9    hwloc@2.9.1       libpciaccess@0.17  meson@1.1.0		  ninja@1.11.1	   py-beniget@0.4.1	   py-numpy@1.24.3	     py-pyproject-metadata@0.7.1  python@3.10.10	  util-macros@1.19.3
+automake@1.16.5 		    expat@2.5.0      libbsd@0.11.7     libsigsegv@2.14	  mpich@4.1.1		  openblas@0.3.23  py-build@0.10.0	   py-packaging@23.0	     py-pythran@0.12.0		  re2c@2.2		  xz@5.4.1
+berkeley-db@18.1.40		    findutils@4.9.0  libfabric@1.18.0  libtool@2.4.7	  ncurses@6.4		  openssl@1.1.1t   py-cython@0.29.33	   py-pip@23.0		     py-scipy@1.10.1		  readline@8.2		  yaksa@0.2
+bzip2@1.0.8			    gdbm@1.23	     libffi@3.4.4      libxcrypt@4.4.33   netlib-lapack@3.11.0	  perl@5.36.0	   py-flit-core@3.7.1	   py-ply@3.11		     py-setuptools@63.4.3	  sqlite@3.40.1 	  zlib@1.2.13
+ca-certificates-mozilla@2023-01-10  gettext@0.21.1   libiconv@1.17     libxml2@2.10.3	  netlib-scalapack@2.2.0  pigz@2.7	   py-gast@0.5.3	   py-pybind11@2.10.1	     py-tomli@2.0.1		  tar@1.34		  zstd@1.5.5
+cmake@3.26.3			    gmake@4.4.1      libmd@1.0.4       m4@1.4.19	  netlib-scalapack@2.2.0  pkgconf@1.9.5    py-meson-python@0.12.0  py-pyproject-hooks@1.0.0  py-wheel@0.37.1		  util-linux-uuid@2.38.1
 ==> 94 installed packages

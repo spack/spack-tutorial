@@ -66,7 +66,6 @@ example stacks/modules-0 "spack add lmod%gcc@11.3.0"
 example stacks/modules-0 "spack concretize"
 example stacks/modules-0 "spack install"
 
-chmod u+x "$(spack location -i lmod)/lmod/lmod/libexec/lmod"
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
 
 example --tee stacks/modules-1 "module --version"

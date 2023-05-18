@@ -2,7 +2,7 @@ $ spack add lmod%gcc@11.3.0
 ==> Adding lmod%gcc@11.3.0 to environment /home/spack/stacks
 $ spack concretize
 ==> Starting concretization
-==> Environment concretized in 15.17 seconds.
+==> Environment concretized in 16.08 seconds.
 ==> Concretized gcc@=12.1.0%gcc@11.3.0
 [+]  s5e5zwr  gcc@12.1.0%gcc@11.3.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran patches=cc6112d arch=linux-ubuntu22.04-x86_64_v3
 [+]  zdl3dic	  ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -256,39 +256,58 @@ $ spack concretize
 [+]  oboyaa5	      ^zlib@1.2.13%gcc@12.1.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Concretized lmod%gcc@11.3.0
- -   4gynms5  lmod@8.7.20%gcc@11.3.0+auto_swap~redirect build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   hrwwlqa  lmod@8.7.24%gcc@11.3.0+auto_swap~redirect build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   ekfwavo	  ^bc@1.07.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   yru5brp	      ^ed@1.4%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  tcpqkls	      ^texinfo@7.0.3%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  p4obvgx		  ^gettext@0.21.1%gcc@11.3.0+bzip2+curses+git~libunistring+libxml2+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  dca2qyg		      ^bzip2@1.0.8%gcc@11.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  zdl3dic			  ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  7wr75ce		      ^libiconv@1.17%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  pcbenki		      ^libxml2@2.10.3%gcc@11.3.0~python build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  e77cf6a		      ^tar@1.34%gcc@11.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
+[+]  aln73eo			  ^pigz@2.7%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+[+]  qoo4rlo			  ^zstd@1.5.5%gcc@11.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  4kpkw5a		      ^xz@5.4.1%gcc@11.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  j5tavds		  ^perl@5.36.0%gcc@11.3.0+cpanm+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  7sohpaz		      ^berkeley-db@18.1.40%gcc@11.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
+[+]  ba4juc3		      ^gdbm@1.23%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
  -   l5jkvce	  ^lua@5.4.4%gcc@11.3.0~pcfile+shared build_system=makefile fetcher=curl arch=linux-ubuntu22.04-x86_64_v3
  -   4cec7ab	      ^curl@8.0.1%gcc@11.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2~nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
  -   w2by2b2		  ^openssl@1.1.1t%gcc@11.3.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
  -   5pxkrf4		      ^ca-certificates-mozilla@2023-01-10%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  j5tavds		      ^perl@5.36.0%gcc@11.3.0+cpanm+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  7sohpaz			  ^berkeley-db@18.1.40%gcc@11.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  dca2qyg			  ^bzip2@1.0.8%gcc@11.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  zdl3dic			      ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  7wr75ce				  ^libiconv@1.17%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  ba4juc3			  ^gdbm@1.23%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  mh73nkp		  ^pkgconf@1.9.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  4dokmxj	      ^ncurses@6.4%gcc@11.3.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  tddm2ff	      ^readline@8.2%gcc@11.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
  -   ttovk4w	      ^unzip@6.0%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
  -   23tvtrc	  ^lua-luafilesystem@1_8_0%gcc@11.3.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
  -   zebno4c	  ^lua-luaposix@36.1%gcc@11.3.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
- -   niuov46	  ^tcl@8.6.12%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   6afnoet	  ^tcl@8.6.12%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  mntflxr	      ^zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Updating view at /home/spack/stacks/views/full
 $ spack install
+==> Installing ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ed-1.4/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y.spack
+==> Extracting ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y from binary cache
+==> ed: Successfully installed ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y
+  Search: 0.00s.  Fetch: 0.26s.  Install: 0.07s.  Total: 0.33s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ed-1.4-yru5brp3xycn7dnav6v5fzxqb7oi3j7y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libiconv-1.17-7wr75cescbtfyjppbbvswfpurs3gtxyf
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/xz-5.4.1-4kpkw5anjs35mccxgsw24ooonnpk7pkx
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ncurses-6.4-4dokmxjlgawyprrnkewx3aiwppdbwbts
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zstd-1.5.5-qoo4rlopj4vqbc6k633cu3tzawtfjjvh
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/berkeley-db-18.1.40-7sohpazzvalaxarn3pxs4du7qrcde7vf
 ==> Installing ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ca-certificates-mozilla-2023-01-10/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44.spack
 ==> Extracting ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44 from binary cache
 ==> ca-certificates-mozilla: Successfully installed ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44
-  Search: 0.00s.  Fetch: 0.25s.  Install: 0.04s.  Total: 0.29s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.09s.  Total: 0.10s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ca-certificates-mozilla-2023-01-10-5pxkrf4bc5g6uuwm4apyvbm3mhmokm44
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/berkeley-db-18.1.40-7sohpazzvalaxarn3pxs4du7qrcde7vf
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ncurses-6.4-4dokmxjlgawyprrnkewx3aiwppdbwbts
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pkgconf-1.9.5-mh73nkpzo36xqeaagdrh3qppvmn6zdn6
 ==> Installing unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat.spec.json.sig
@@ -297,29 +316,41 @@ $ spack install
 ==> unzip: Successfully installed unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
   Search: 0.00s.  Fetch: 0.01s.  Install: 0.04s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pigz-2.7-aln73eomrjghrlg6q2ida2rr4ylvg2cp
+==> Installing tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom.spack
+==> Extracting tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom from binary cache
+==> tcl: Successfully installed tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom
+  Search: 0.00s.  Fetch: 0.02s.  Install: 0.91s.  Total: 0.92s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tcl-8.6.12-6afnoetll6sylll3d64kqr2vcyyagkom
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/readline-8.2-tddm2ffpgbcwobqdzn57di2n7oeqxryv
-==> Installing tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov.spack
-==> Extracting tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov from binary cache
-==> tcl: Successfully installed tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov
-  Search: 0.00s.  Fetch: 0.02s.  Install: 0.87s.  Total: 0.89s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tcl-8.6.12-niuov46w64jhdlzrw3davh526iugjsov
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libxml2-2.10.3-pcbenkircucqrjzgyud6xzgxfptjz6x6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tar-1.34-e77cf6ahyuvzxeaojxrc5meo7cbwfbxo
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gdbm-1.23-ba4juc3qtagyyn5vkmuxzentr6qrtzmr
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gettext-0.21.1-p4obvgx4436lyrtjhu3xvosfkyjpgi7o
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/perl-5.36.0-j5tavdsri7znb4h7q57mu67bnx54p2fb
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/texinfo-7.0.3-tcpqklsvbozob5vqvf4nkc3z7rood77q
 ==> Installing openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1t/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu.spack
 ==> Extracting openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu from binary cache
 ==> openssl: Successfully installed openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.18s.  Total: 0.19s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.16s.  Total: 0.17s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu
+==> Installing bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bc-1.07.1/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj.spack
+==> Extracting bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj from binary cache
+==> bc: Successfully installed bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.06s.  Total: 0.07s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bc-1.07.1-ekfwavo3dnvtwwhmxyefexlgi4e2t2fj
 ==> Installing curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/curl-8.0.1/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe.spack
 ==> Extracting curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe from binary cache
 ==> curl: Successfully installed curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.13s.  Total: 0.14s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.20s.  Total: 0.21s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/curl-8.0.1-4cec7ab4dxhtyznes72yvafcidzq2bpe
 ==> Installing lua-5.4.4-l5jkvce4fxfp2cearqosvmxa5yq2d47r
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lua-5.4.4-l5jkvce4fxfp2cearqosvmxa5yq2d47r.spec.json.sig
@@ -333,20 +364,20 @@ $ spack install
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lua-luafilesystem-1_8_0/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lua-luafilesystem-1_8_0-23tvtrcilwajcz62kpqxklzbt3uux2rl.spack
 ==> Extracting lua-luafilesystem-1_8_0-23tvtrcilwajcz62kpqxklzbt3uux2rl from binary cache
 ==> lua-luafilesystem: Successfully installed lua-luafilesystem-1_8_0-23tvtrcilwajcz62kpqxklzbt3uux2rl
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.06s.  Total: 0.06s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.07s.  Total: 0.07s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lua-luafilesystem-1_8_0-23tvtrcilwajcz62kpqxklzbt3uux2rl
 ==> Installing lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lua-luaposix-36.1/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn.spack
 ==> Extracting lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn from binary cache
 ==> lua-luaposix: Successfully installed lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.08s.  Total: 0.09s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.11s.  Total: 0.11s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lua-luaposix-36.1-zebno4cvtrlt6yospuvvbtexhilku3xn
-==> Installing lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lmod-8.7.20/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm.spack
-==> Extracting lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm from binary cache
-==> lmod: Successfully installed lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.16s.  Total: 0.17s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lmod-8.7.20-4gynms5qkoa2i2vicpfjj2el5n7v64jm
+==> Installing lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lmod-8.7.24/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x.spack
+==> Extracting lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x from binary cache
+==> lmod: Successfully installed lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.13s.  Total: 0.14s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/lmod-8.7.24-hrwwlqasuqrkbfnqru6gikvzpwdjdf5x
 ==> Updating view at /home/spack/stacks/views/full
