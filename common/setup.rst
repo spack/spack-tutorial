@@ -2,11 +2,11 @@
 
    If you have not done the prior sections, you'll need to start the docker image::
 
-       docker run -it ghcr.io/spack/tutorial:cineca23
+       docker run -it ghcr.io/spack/tutorial:isc23
 
    and then set Spack up like this::
 
-       git clone --depth=100 --branch=releases/v0.19 https://github.com/spack/spack
+       git clone --depth=100 --branch=releases/v0.20 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
        spack tutorial -y
        spack bootstrap now
