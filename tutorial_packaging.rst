@@ -449,7 +449,7 @@ Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,43,44
+   :emphasize-lines: 1,30-31
 
 Success!
 
@@ -549,7 +549,7 @@ We'll need to uninstall the package so we can re-run it with tests enabled:
 .. literalinclude:: outputs/packaging/install-mpileaks-5.out
    :language: console
 
-Notice the installation fails due to the missing prefix.
+Notice the installation fails due to the missing directory.
 
 Now let's fix the error and try again:
 
@@ -727,7 +727,7 @@ Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
-   :emphasize-lines: 1,4,6
+   :emphasize-lines: 1,3,5
 
 --------------------
 More information

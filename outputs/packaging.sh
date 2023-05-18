@@ -40,7 +40,7 @@ example packaging/install-mpileaks-4  "spack install --verbose tutorial-mpileaks
 
 example packaging/install-mpileaks-5  "spack uninstall -ay tutorial-mpileaks"
 cp "$PROJECT/package-py-files/5.package.py" "$mpileaks_package_py"
-example packaging/install-mpileaks-5  "spack install --test=root tutorial-mpileaks"
+example --expect-error packaging/install-mpileaks-5  "spack install --test=root tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/6.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-6  "spack install --test=root tutorial-mpileaks"

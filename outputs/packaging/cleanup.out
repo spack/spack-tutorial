@@ -1,6 +1,5 @@
 $ spack uninstall -ay tutorial-mpileaks
-==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@7.5.0 build_system=autotools arch=linux-ubuntu18.04-x86_64/qqk3e4s
-==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@7.5.0 build_system=autotools stackstart=4 arch=linux-ubuntu18.04-x86_64/rvk7u6v
+==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@=11.3.0 build_system=autotools stackstart=0 arch=linux-ubuntu22.04-x86_64_v3/dv3dnqf
 $ spack repo remove tutorial
 ==> Removed repository /home/spack/spack/var/spack/repos/tutorial with namespace 'tutorial'.
 $ rm -rf $SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks
