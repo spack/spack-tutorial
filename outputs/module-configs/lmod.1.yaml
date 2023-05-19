@@ -4,14 +4,14 @@ modules:
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@=11.3.0'
+        - 'gcc@11'
       hierarchy:
         - mpi
       hash_length: 0
       include:
         - gcc
       exclude:
-        - '%gcc@=11.3.0'
+        - '%gcc@11.3.0'
       all:
         filter:
           exclude_env_vars:

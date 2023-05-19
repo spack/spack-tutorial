@@ -343,7 +343,7 @@ Prevent some module files from being generated
 Another common request at many sites is to avoid exposing software that
 is only needed as an intermediate step when building a newer stack.
 Let's try to prevent the generation of
-module files for anything that is compiled with ``gcc@7.5.0`` (the OS provided compiler).
+module files for anything that is compiled with ``gcc@11.3.0`` (the OS provided compiler).
 
 To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
@@ -354,7 +354,7 @@ To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/m
     default:
       tcl:
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -376,7 +376,7 @@ directory.
 
 if you look closely you'll see though that we went too far in
 excluding modules: the module for ``gcc@12.1.0`` disappeared as it was
-bootstrapped with ``gcc@7.5.0``. To specify exceptions to the ``exclude``
+bootstrapped with ``gcc@11.3.0``. To specify exceptions to the ``exclude``
 rules you can use ``include``:
 
 .. code-block:: yaml
@@ -388,7 +388,7 @@ rules you can use ``include``:
         include:
         -  gcc
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -420,7 +420,7 @@ packages. In this case you only need to add the following line:
         include:
         -  gcc
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -449,7 +449,7 @@ use the ``hash_length`` keyword in the configuration file:
         include:
         -  gcc
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -483,7 +483,7 @@ the names are formatted to differentiate them:
         include:
         -  gcc
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           conflict:
           - '{name}'
@@ -538,7 +538,7 @@ is installed. You can achieve this with Spack by adding an
         include:
         -  gcc
         exclude:
-        -  '%gcc@7.5.0'
+        -  '%gcc@11.3.0'
         all:
           conflict:
           - '{name}'
@@ -590,7 +590,7 @@ only certain packages. You can for instance apply modifications to the
         include:
         - gcc
         exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
         all:
           conflict:
           - '{name}'
@@ -642,7 +642,7 @@ directive and assigning it the value ``direct``:
         include:
         - gcc
         exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
         all:
           conflict:
           - '{name}'
@@ -743,14 +743,14 @@ After these modifications your configuration file should look like:
         - lmod
       lmod:
         core_compilers:
-        - 'gcc@7.5.0'
+        - 'gcc@11'
         hierarchy:
         - mpi
         hash_length: 0
         include:
         - gcc
         exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -877,7 +877,7 @@ remove the remaining suffix projection for ``lapack``:
       - lmod
       lmod:
         core_compilers:
-        - 'gcc@7.5.0'
+        - 'gcc@11'
         hierarchy:
         - mpi
         - lapack
@@ -885,7 +885,7 @@ remove the remaining suffix projection for ``lapack``:
         include:
         - gcc
         exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
         all:
           filter:
             exclude_env_vars:
@@ -1038,7 +1038,7 @@ it's ``netlib-scalapack``:
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@7.5.0'
+        - 'gcc@11'
       hierarchy:
         - mpi
         - lapack
@@ -1046,7 +1046,7 @@ it's ``netlib-scalapack``:
       include:
         - gcc
       exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
         - readline
       all:
         filter:
