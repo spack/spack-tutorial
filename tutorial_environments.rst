@@ -357,13 +357,6 @@ there may be multiple versions of the same package in the environment.
 as many packages in the environment, but will not fail if it cannot unify
 all of them.
 
-.. note::
-
-   When creating an environment incrementally using ``unify:true``,
-   concretization happens in a greedy fashion. The second spec you
-   add will not modify the first spec's concretization, which can
-   cause the second spec to be concretized to a suboptimal version.
-
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Editing environment configuration
@@ -436,6 +429,27 @@ all the environment's specs:
 
 All the specs are now concrete **and** ready to be installed with
 ``mpich`` as the MPI implementation.
+
+Re-concretization is sometimes also necessary when creating an
+environment *incrementally* with unification enabled. Spack makes
+sure that already concretized specs in the environment are not
+modified when adding something new.
+
+Adding and installing specs one by one leads to greedy
+concretization. When you first install ``python`` in an environment,
+Spack will pick a recent version for it. If you then add ``py-numpy``,
+it may be in conflict with the ``python`` version already installed,
+and fail to concretize:
+
+.. literalinclude:: outputs/environments/incremental-1.out
+   :language: console
+
+The solution is to re-concretize the environment as a whole,
+which causes ``python`` to downgrade to a version compatible
+with ``py-numpy``:
+
+.. literalinclude:: outputs/environments/incremental-2.out
+   :language: console
 
 ------------------------
 Building in environments
