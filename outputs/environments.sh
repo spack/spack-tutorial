@@ -82,7 +82,7 @@ example environments/concretize-f-1 "spack concretize --force --fresh"
 example environments/incremental-1 "spack env activate --temp"
 spack env activate --temp
 example environments/incremental-1 "spack install --add python"
-example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | less -n1"
+example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
 example environments/incremental-2 "spack add py-numpy@1.20"
 example environments/incremental-2 "spack concretize -f"
 spack env deactivate
