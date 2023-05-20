@@ -1,21 +1,28 @@
 $ spack uninstall -y trilinos
-==> Will not uninstall trilinos@13.0.1%gcc@7.5.0/brfmaty
-It is used by the following other environments:
+==> Refusing to uninstall the following specs
+    -- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
+    vcj3xxs trilinos@13.0.1
+
+==> The following environments still reference these specs:
     myproject
 
 ==> Error: There are still dependents.
-  use `spack env remove` to remove from environments
+  use `spack env remove` to remove environments
+  use `spack uninstall --force` to override
 $ spack find
 ==> In environment myproject2
 ==> Root specs
 scr  trilinos
 
 ==> Installed packages
--- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69		     ca-certificates-mozilla@2022-10-11	 gawk@5.1.1	 json-c@0.16	       libgcrypt@1.10.1	  libtool@2.4.7	  meson@0.63.3	  openblas@0.3.21  perl@5.36.0		 py-wheel@0.37.1  tar@1.34		  zlib@1.2.13
-autoconf-archive@2022.02.11  cmake@3.24.3			 gdbm@1.23	 krb5@1.19.3	       libgpg-error@1.46  libxml2@2.10.1  mpfr@4.1.0	  openmpi@4.1.4	   pigz@2.7		 python@3.10.8	  texinfo@6.5		  zstd@1.5.2
-automake@1.16.5		     curl@7.85.0			 gettext@0.21.1	 libbsd@0.11.5	       libiconv@1.16	  libyogrt@1.27	  munge@0.5.15	  openssh@9.1p1	   pkgconf@1.8.0	 readline@8.1.2	  trilinos@13.0.1
-berkeley-db@18.1.40	     diffutils@3.8			 glib@2.74.1	 libedit@3.1-20210216  libmd@1.0.4	  lwgrp@1.0.5	  ncurses@6.3	  openssl@1.1.1s   pmix@4.1.2		 scr@2.0.0	  util-linux-uuid@2.38.1
-bison@3.8.2		     dtcmp@1.1.4			 gmp@6.2.1	 libevent@2.1.12       libpciaccess@0.16  lz4@1.9.4	  ninja@1.11.1	  pcre2@10.39	   py-pip@22.2.2	 slurm@21-08-8-2  util-macros@1.19.3
-bzip2@1.0.8		     expat@2.4.8			 hwloc@2.8.0	 libffi@3.4.2	       libsigsegv@2.13	  m4@1.4.19	  numactl@2.0.14  pdsh@2.31	   py-setuptools@65.5.0	 sqlite@3.39.4	  xz@5.2.7
-==> 68 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
+autoconf@2.69			    diffutils@3.9   gmp@6.2.1		  libgpg-error@1.47  lwgrp@1.0.5     openblas@0.3.23  pmix@4.2.3	    sqlite@3.40.1
+autoconf-archive@2023.02.20	    dtcmp@1.1.4	    hwloc@2.9.1		  libiconv@1.17	     lz4@1.9.4	     openmpi@4.1.5    py-pip@23.0	    tar@1.34
+automake@1.16.5			    elfutils@0.189  json-c@0.16		  libmd@1.0.4	     m4@1.4.19	     openssh@9.3p1    py-setuptools@67.6.0  texinfo@7.0.3
+berkeley-db@18.1.40		    expat@2.5.0	    krb5@1.20.1		  libpciaccess@0.17  meson@1.1.0     openssl@1.1.1t   py-wheel@0.37.1	    trilinos@13.0.1
+bison@3.8.2			    gawk@5.2.1	    libbsd@0.11.7	  libsigsegv@2.14    mpfr@4.2.0	     pcre2@10.42      python@3.10.10	    util-linux-uuid@2.38.1
+bzip2@1.0.8			    gdbm@1.23	    libedit@3.1-20210216  libtool@2.4.7	     munge@0.5.15    pdsh@2.31	      re2c@2.2		    util-macros@1.19.3
+ca-certificates-mozilla@2023-01-10  gettext@0.21.1  libevent@2.1.12	  libxcrypt@4.4.33   ncurses@6.4     perl@5.36.0      readline@8.2	    xz@5.4.1
+cmake@3.26.3			    glib@2.76.1	    libffi@3.4.4	  libxml2@2.10.3     ninja@1.11.1    pigz@2.7	      scr@2.0.0		    zlib@1.2.13
+curl@8.0.1			    gmake@4.4.1	    libgcrypt@1.10.2	  libyogrt@1.33	     numactl@2.0.14  pkgconf@1.9.5    slurm@23-02-1-1	    zstd@1.5.5
+==> 72 installed packages

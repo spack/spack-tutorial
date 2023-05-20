@@ -1,5 +1,5 @@
 $ spack add hdf5@5.5.1
-==> Adding hdf5@5.5.1 to environment /home/spack/code
+==> Adding hdf5@5.5.1 to environment /users/hstoppel/code
 $ cat spack.yaml
 # This is a Spack Environment file.
 #
@@ -7,7 +7,10 @@ $ cat spack.yaml
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  specs: [trilinos, openmpi, hdf5@5.5.1]
+  specs:
+  - trilinos
+  - openmpi
+  - hdf5@5.5.1
   view: true
   concretizer:
     unify: true
