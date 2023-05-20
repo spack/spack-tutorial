@@ -1,3 +1,4 @@
-.rst-content div[class^="highlight"] pre {
+.rst-content div[class^="highlight"] div[class^="highlight"] {
+    overflow-y: auto;
     max-height: 700px;
 }
