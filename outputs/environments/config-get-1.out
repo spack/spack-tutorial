@@ -5,7 +5,9 @@ $ spack config get
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  specs: [tcl, trilinos]
+  specs:
+  - tcl
+  - trilinos
   view: true
   concretizer:
     unify: true
