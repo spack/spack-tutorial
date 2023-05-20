@@ -177,6 +177,42 @@ Now confirm the contents of the environment using ``spack find``:
 
 We can see that the roots and all their dependencies have been installed.
 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating an environment incrementally
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+As a short-hand, you can use the ``install --add`` flag to accomplish
+the same thing in one step:
+
+.. code-block:: console
+
+   $ spack install --add tcl trilinos
+
+This both adds the specs to the environment and installs them.
+
+You can also add and install specs to an environment incrementally. For example:
+
+.. code-block:: console
+
+   $ spack install --add tcl
+   $ spack install --add trilinos
+
+If you create environments incrementally, Spack ensures that already installed
+roots are not re-concretized. So, adding specs to an environment at a later point
+in time will not cause existing packages to rebuild.
+
+Do note however that incrementally creating an environment can give you different
+package versions from an environment created all at once. We will cover this after
+we've discussed different concretization strategies.
+
+Further, there are two other advantages of concretizing and installing an environment
+all at once:
+
+* If you have a number of specs that can be installed together,
+  adding them first and installing them together enables them to
+  share dependencies and reduces total installation time.
+
+* You can launch all builds in parallel by taking advantage of Spack's `install-level build parallelism <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
 ^^^^^^^^^^^^^^
 Using packages
@@ -274,31 +310,8 @@ spec. Spack uses reference counting to ensure that we don't remove
    Trilinos would only have been uninstalled by Spack if it were
    no longer needed by any environments or their package dependencies.
 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Shorthand for ``add`` and ``remove``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We've seen how to use ``add`` and ``remove`` to add and remove roots from
-an environment, and we've seen how to ``install`` all of the roots
-at once, and how to ``uninstall`` particular packages.
-
-It may seem tedious to have to ``add`` then ``install`` (or
-``uninstall`` then ``remove``) every spec in an environment. You can
-combine these steps into single commands if you want:
-
-* ``spack install --add``: add and install a package
-* ``spack uninstall --remove``  uninstall and remove a package
-
-However, there are are advantages to processing all the specs
-of an environment at once:
-
-* If you have a number of specs that can be installed together,
-  adding them first and installing them together enables them to
-  share dependencies and reduces total installation time.
-
-* You can launch all builds in parallel by taking advantage of Spack's `install-level build parallelism <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
-
+You can also uninstall a package and remove it from the environment
+in one go with ``spack uninstall --remove trilinos``.
 
 -----------------------
 The ``spack.yaml`` file
@@ -336,9 +349,14 @@ The ``specs`` list should look familiar; these are the specs we've been
 modifying with ``spack add``.
 
 ``concretizer:unify:true``, the default, means that they are concretized
-*together*, so that there is only one version of any package in the
-environment. We'll cover ``unify:false`` and ``unify:when_possible`` later,
-in the Stacks tutorial.
+*together*, so that there is only one version of each package in the
+environment. Other options for ``unify`` are ``false`` and ``when_possible``.
+``false`` means that the specs are concretized *independently*, so that
+there may be multiple versions of the same package in the environment.
+``when_possible`` lies between those options. In this case, Spack will unify
+as many packages in the environment, but will not fail if it cannot unify
+all of them.
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Editing environment configuration
@@ -411,6 +429,27 @@ all the environment's specs:
 
 All the specs are now concrete **and** ready to be installed with
 ``mpich`` as the MPI implementation.
+
+Re-concretization is sometimes also necessary when creating an
+environment *incrementally* with unification enabled. Spack makes
+sure that already concretized specs in the environment are not
+modified when adding something new.
+
+Adding and installing specs one by one leads to greedy
+concretization. When you first install ``python`` in an environment,
+Spack will pick a recent version for it. If you then add ``py-numpy``,
+it may be in conflict with the ``python`` version already installed,
+and fail to concretize:
+
+.. literalinclude:: outputs/environments/incremental-1.out
+   :language: console
+
+The solution is to re-concretize the environment as a whole,
+which causes ``python`` to downgrade to a version compatible
+with ``py-numpy``:
+
+.. literalinclude:: outputs/environments/incremental-2.out
+   :language: console
 
 ------------------------
 Building in environments
