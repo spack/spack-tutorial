@@ -5,7 +5,7 @@
 spack:
   # add package specs to the `specs` list
   specs:
-  - gcc@8.4.0%gcc@7.5.0
+  - gcc@=12.1.0%gcc@11.3.0
   view: false
   concretizer:
     unify: true
