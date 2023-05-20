@@ -1,12 +1,14 @@
-$ spack concretize --force --fresh
+$ spack concretize --force
 ==> Concretized trilinos
- -   37adglr  trilinos@13.0.1%gcc@11.3.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest~hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=Release cxxstd=14 generator=make gotype=long_long arch=linux-ubuntu22.04-x86_64_v3
+[+]  dgw2szm  trilinos@13.0.1%gcc@11.3.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest+hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=Release cxxstd=14 generator=make gotype=long_long arch=linux-ubuntu22.04-x86_64_v3
 [+]  ofsadgm	  ^cmake@3.26.3%gcc@11.3.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
 [+]  4dokmxj	      ^ncurses@6.4%gcc@11.3.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  w2by2b2	      ^openssl@1.1.1t%gcc@11.3.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
 [+]  5pxkrf4		  ^ca-certificates-mozilla@2023-01-10%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  mntflxr		  ^zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
 [+]  guaj3kb	  ^gmake@4.4.1%gcc@11.3.0~guile build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  qr4bdox	  ^hdf5@1.14.1-2%gcc@11.3.0~cxx~fortran+hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
+[+]  mh73nkp	      ^pkgconf@1.9.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  mntflxr	      ^zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
 [+]  h7l4t7l	  ^hwloc@2.9.1%gcc@11.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
 [+]  ajkyiz5	      ^libpciaccess@0.17%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  qkvj7am		  ^libtool@2.4.7%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -14,7 +16,6 @@ $ spack concretize --force --fresh
 [+]  pcbenki	      ^libxml2@2.10.3%gcc@11.3.0~python build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  7wr75ce		  ^libiconv@1.17%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
 [+]  4kpkw5a		  ^xz@5.4.1%gcc@11.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  mh73nkp	      ^pkgconf@1.9.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  3mapxl5	  ^mpich@4.1.1%gcc@11.3.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu22.04-x86_64_v3
 [+]  ek3dt7p	      ^findutils@4.9.0%gcc@11.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
 [+]  exb2qlz	      ^libfabric@1.18.0%gcc@11.3.0~debug~kdreg build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu22.04-x86_64_v3
