@@ -79,7 +79,7 @@ spack config add packages:all:providers:mpi:[mpich]
 example environments/concretize-f-1 "spack concretize --force --fresh"
 # spack install
 
-example environments/incremental-1 "spack env activate --temp"
+example --tee environments/incremental-1 "spack env activate --temp"
 spack env activate --temp
 example environments/incremental-1 "spack install --add python"
 example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
