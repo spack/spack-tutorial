@@ -1,14 +1,14 @@
-$ despacktivate	   # short alias for 'spack env deactivate'
+$ despacktivate    # short alias for 'spack env deactivate'
 $ spack env status
 ==> No active environment
 $ spack find
--- linux-ubuntu18.04-x86_64 / clang@7.0.0 -----------------------
+-- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
 zlib@1.2.13
 
--- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-autoconf@2.69	     ca-certificates-mozilla@2022-10-11	 gdbm@1.23	 hwloc@2.8.0	       libfabric@1.16.1	  libsigsegv@2.13  ncurses@6.3	    openssl@1.1.1s  python@3.10.8   tcl@8.6.12		    yaksa@0.2
-automake@1.16.5	     cmake@3.24.3			 gettext@0.21.1	 krb5@1.19.3	       libffi@3.4.2	  libtool@2.4.7	   numactl@2.0.14   perl@5.36.0	    readline@8.1.2  trilinos@13.0.1	    zlib@1.2.8
-berkeley-db@18.1.40  diffutils@3.8			 hdf5@1.12.2	 libbsd@0.11.5	       libiconv@1.16	  libxml2@2.10.1   openblas@0.3.21  pigz@2.7	    sqlite@3.39.4   util-linux-uuid@2.38.1  zlib@1.2.8
-bison@3.8.2	     expat@2.4.8			 hdf5@1.12.2	 libedit@3.1-20210216  libmd@1.0.4	  m4@1.4.19	   openmpi@4.1.4    pkgconf@1.8.0   tar@1.34	    util-macros@1.19.3	    zlib@1.2.13
-bzip2@1.0.8	     findutils@4.9.0			 hdf5@1.12.2	 libevent@2.1.12       libpciaccess@0.16  mpich@4.0.2	   openssh@9.1p1    pmix@4.1.2	    tcl@8.6.12	    xz@5.2.7		    zstd@1.5.2
-==> 56 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
+autoconf@2.69	     ca-certificates-mozilla@2023-01-10  gdbm@1.23	 hdf5@1.14.1-2	       libevent@2.1.12	 libpciaccess@0.17  m4@1.4.19	     openmpi@4.1.5   pkgconf@1.9.5   tar@1.34		     util-macros@1.19.3  zstd@1.5.5
+automake@1.16.5      cmake@3.26.3			 gettext@0.21.1  hwloc@2.9.1	       libfabric@1.18.0  libsigsegv@2.14    mpich@4.1.1      openssh@9.3p1   pmix@4.2.3      tcl@8.6.12 	     xz@5.4.1
+berkeley-db@18.1.40  diffutils@3.9			 gmake@4.4.1	 krb5@1.20.1	       libffi@3.4.4	 libtool@2.4.7	    ncurses@6.4      openssl@1.1.1t  python@3.10.10  tcl@8.6.12 	     yaksa@0.2
+bison@3.8.2	     expat@2.5.0			 hdf5@1.14.1-2	 libbsd@0.11.7	       libiconv@1.17	 libxcrypt@4.4.33   numactl@2.0.14   perl@5.36.0     readline@8.2    trilinos@13.0.1	     zlib@1.2.8
+bzip2@1.0.8	     findutils@4.9.0			 hdf5@1.14.1-2	 libedit@3.1-20210216  libmd@1.0.4	 libxml2@2.10.3     openblas@0.3.23  pigz@2.7	     sqlite@3.40.1   util-linux-uuid@2.38.1  zlib@1.2.13
+==> 57 installed packages
