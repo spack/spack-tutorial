@@ -332,7 +332,7 @@ Let's start by looking at the configuration of our environment using
 
 .. literalinclude:: outputs/environments/config-get-1.out
    :language: console
-   :emphasize-lines: 8-11
+   :emphasize-lines: 8-13
 
 The output shows the special ``spack.yaml`` configuration file that Spack
 uses to store the environment configuration.
