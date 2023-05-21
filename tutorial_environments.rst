@@ -367,11 +367,11 @@ Editing environment configuration
    Before proceeding, make sure your ``EDITOR`` environment variable
    is set to the path of your preferred text editor.
 
-Let's edit ``spack.yaml`` to *prefer* ``mpich`` as our ``mpi`` provider
+Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider
 using ``spack config edit``.
 
 You should now have the above file open in your editor. Change it
-to include the ``packages:all:providers:mpi:`` entry below:
+to include the ``packages:mpi:require`` entry below:
 
 .. code-block:: yaml
    :emphasize-lines: 9
@@ -382,9 +382,8 @@ to include the ``packages:all:providers:mpi:`` entry below:
    # configuration settings.
    spack:
      packages:
-       all:
-         providers:
-           mpi: [mpich]
+       mpi:
+         require: [mpich]
 
      # add package specs to the `specs` list
      specs: [tcl, trilinos]
@@ -392,18 +391,14 @@ to include the ``packages:all:providers:mpi:`` entry below:
 
 .. note::
 
-   This setting only defines the **default** ``mpi`` provider.
-   You can still override the provider on the command line, e.g.,
-   with ``spack install trilinos ^openmpi``.
-
    We introduce this here to show you how environment configuration
    can affect concretization. Configuration options are covered in much
    more detail in the :ref:`configuration tutorial <configs-tutorial>`.
 
 
-We've only scratched the surface here by changing the default of
-the ``mpi`` provider for packages depending on ``mpi``. There
-are many other customizations you can make to an environment.
+We've only scratched the surface here by requiring a specific
+``mpi`` provider for packages depending on ``mpi``. There are many
+other customizations you can make to an environment.
 Refer to the links at the end of this section for more information.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -420,8 +415,8 @@ are now out of sync with our new configuration since we already
 installed part of the environment with ``openmpi``. Suppose we want
 to install everything in ``myproject`` with ``mpich``.
 
-Let's run ``spack concretize --force --fresh`` to make Spack re-concretize
-all the environment's specs:
+Let's run ``spack concretize --force`` (or ``-f`` in short) to make
+Spack re-concretize all the environment's specs:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console

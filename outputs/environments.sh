@@ -74,9 +74,9 @@ example environments/config-get-1    "spack config get"
 
 # The file is edited by hand here
 # We mock that by using `spack config add`
-spack config add packages:all:providers:mpi:[mpich]
+spack config add packages:mpi:require:[mpich]
 
-example environments/concretize-f-1 "spack concretize --force --fresh"
+example environments/concretize-f-1 "spack concretize --force"
 # spack install
 
 example --tee environments/incremental-1 "spack env activate --temp"

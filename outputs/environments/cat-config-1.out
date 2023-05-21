@@ -12,6 +12,5 @@ spack:
   concretizer:
     unify: true
   packages:
-    all:
-      providers:
-	mpi: [mpich]
+    mpi:
+      require: [mpich]
