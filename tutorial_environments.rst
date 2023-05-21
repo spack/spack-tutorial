@@ -374,7 +374,7 @@ You should now have the above file open in your editor. Change it
 to include the ``packages:mpi:require`` entry below:
 
 .. code-block:: yaml
-   :emphasize-lines: 9
+   :emphasize-lines: 6-8
 
    # This is a Spack Environment file.
    #
