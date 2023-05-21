@@ -35,7 +35,7 @@ COPY /concretizer.yaml /etc/spack/concretizer.yaml
 
 RUN apt-get remove -y gcc-12 && \
     apt-get update -y && \
-    apt-get install -y --no-install-recommends emacs bash-completion && \
+    apt-get install -y --no-install-recommends emacs bash-completion less && \
     apt-get -y autoremove --purge && \
     apt-get clean
 
