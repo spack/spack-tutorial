@@ -9,11 +9,10 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was last presented as
-a hybrid event at CINECA as `Managing HPC Software Complexity with Spack
-<http://www.max-centre.eu/events/cineca-admires-event-spack>`_ February
-13, 2023. There is a full day of material here, along with extra sections beyond what
-was presented during the tutorial.
+This is an introduction to Spack with lectures and live demos. It was
+last presented as a virtual event at `ISC-HPC 2023 <https://www.isc-hpc.com/>`_
+on May 21, 2023. The ISC event was a half-day tutorial, but there is a
+full day of material here.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -24,15 +23,16 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/cineca23-tutorial-slide-preview.png
-   :target: _static/slides/spack-cineca23-tutorial-slides.pdf
+   :target: _static/slides/spack-isc23-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-cineca23-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-isc23-tutorial-slides.pdf>`.
 
-**Full citation:** Massimiliano Culpo and Harmen Stoppels. Managing HPC Software Complexity with Spack.
-CINECA - ADMIRE 2023. Casalecchio di Reno (BO), Italy, February 13, 2023.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn,
+and Harmen Stoppels. Managing HPC Software Complexity with Spack.
+ISC-HPC 2022. Hamburg, Germany. May 29, 2022.
 
 .. _live-demos:
 
@@ -46,8 +46,8 @@ container image. You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:cineca23
-   $ docker run -it ghcr.io/spack/tutorial:cineca23
+   $ docker pull ghcr.io/spack/tutorial:isc23
+   $ docker run -it ghcr.io/spack/tutorial:isc23
 
 to start using the container. You should now be ready to run through our demo scripts:
 
@@ -58,14 +58,14 @@ to start using the container. You should now be ready to run through our demo sc
   #. :ref:`binary-cache-tutorial`
   #. :ref:`stacks-tutorial`
   #. :ref:`developer-workflows-tutorial`
+  #. :ref:`modules-tutorial`
+  #. :ref:`spack-scripting-tutorial`
 
 Other sections from past tutorials are also available, although they may
 not be kept up-to-date as frequently:
 
-  #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
   #. :ref:`advanced-packaging-tutorial`
-  #. :ref:`spack-scripting-tutorial`
 
 Full contents:
 
