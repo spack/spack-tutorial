@@ -159,8 +159,8 @@ top-level package, we can also specify about a dependency using ``^``.
 
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
-of our optimized installation of zlib (``cppflags="-O3"``) began with
-``zqd``. We can now explicitly build with that package without typing
+of our optimized installation of zlib (``cflags="-O3"``) began with
+``iswfl``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like Git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
@@ -328,8 +328,8 @@ already covered in the :ref:`basics-tutorial-install` and
 The ``spack find`` command can accept what we call "anonymous specs."
 These are expressions in spec syntax that do not contain a package
 name. For example, ``spack find ^mpich`` will return every installed
-package that depends on MPICH, and ``spack find cppflags="-O3"`` will
-return every package which was built with ``cppflags="-O3"``.
+package that depends on MPICH, and ``spack find cflags="-O3"`` will
+return every package which was built with ``cflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
    :language: console
