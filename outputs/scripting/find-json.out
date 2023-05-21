@@ -5,12 +5,12 @@ $ spack find --json zlib
     "version": "1.2.13",
     "arch": {
       "platform": "linux",
-      "platform_os": "ubuntu18.04",
-      "target": "x86_64"
+      "platform_os": "ubuntu22.04",
+      "target": "x86_64_v3"
     },
     "compiler": {
       "name": "clang",
-      "version": "7.0.0"
+      "version": "14.0.0"
     },
     "namespace": "builtin",
     "parameters": {
@@ -25,20 +25,20 @@ $ spack find --json zlib
       "ldflags": [],
       "ldlibs": []
     },
-    "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
-    "hash": "fdbomoa6xopqvfi4a7jvad27yinnw47a"
+    "package_hash": "y6ahhnjjjsfh5dx2y7sci7fhthq5aolyl5dgwif57qqbtjxwdwbq====",
+    "hash": "gephbceg3rl2e77o46xyzlk5e4kd3gt3"
   },
   {
     "name": "zlib",
     "version": "1.2.13",
     "arch": {
       "platform": "linux",
-      "platform_os": "ubuntu18.04",
-      "target": "x86_64"
+      "platform_os": "ubuntu22.04",
+      "target": "x86_64_v3"
     },
     "compiler": {
       "name": "gcc",
-      "version": "7.5.0"
+      "version": "11.3.0"
     },
     "namespace": "builtin",
     "parameters": {
@@ -53,6 +53,6 @@ $ spack find --json zlib
       "ldflags": [],
       "ldlibs": []
     },
-    "package_hash": "ghj4qyx3sv3so5vpvnodld6r372mc6oqefofmoer3xbpq5tcwvca====",
-    "hash": "2hfr5rbzefrxf6t6kv4trbsl63puaza6"
+    "package_hash": "y6ahhnjjjsfh5dx2y7sci7fhthq5aolyl5dgwif57qqbtjxwdwbq====",
+    "hash": "mntflxrgekkm5lbpbl5r66lh2ieted4y"
   }
