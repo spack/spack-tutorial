@@ -1,8 +1,2 @@
-$ spack install zlib@1.2.8 cppflags=-O3
-==> Installing zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64-gcc-7.5.0-zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.8/linux-ubuntu18.04-x86_64-gcc-7.5.0-zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm.spack
-==> Extracting zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm from binary cache
-==> zlib: Successfully installed zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm
-  Fetch: 0.10s.	 Build: 0.23s.	Total: 0.32s.
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.8-zqdhyiyvjrx6lhddpgv4h2nsysowhjxm
+$ spack install zlib@1.2.8 cflags=-O3
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg

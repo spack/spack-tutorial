@@ -1,28 +1,26 @@
 $ spack find -ldf
--- linux-ubuntu18.04-x86_64 / clang@7.0.0 -----------------------
-36jwtbo tcl@8.6.12%clang
-2xcmtth	    zlib@1.2.8%clang
+-- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
+3ccofkd tcl@8.6.12%clang
+5dydni4     zlib@1.2.8%clang
 
-2xcmtth zlib@1.2.8%clang
+5dydni4 zlib@1.2.8%clang
 
-fdbomoa zlib@1.2.13%clang
-
-
--- linux-ubuntu18.04-x86_64 / gcc@6.5.0 -------------------------
-6izan4f zlib@1.2.13%gcc
+gephbce zlib@1.2.13%clang
 
 
--- linux-ubuntu18.04-x86_64 / gcc@7.5.0 -------------------------
-rakrbas tcl@8.6.12%gcc
-zqdhyiy	    zlib@1.2.8%gcc  cppflags="-O3"
+-- linux-ubuntu22.04-x86_64_v3 / gcc@10.4.0 ---------------------
+ozrll2g zlib@1.2.13%gcc
 
-v63n6wx tcl@8.6.12%gcc
-2hfr5rb	    zlib@1.2.13%gcc
 
-tolklcf zlib@1.2.8%gcc
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
+gzsqanr tcl@8.6.12%gcc
+iswfldx     zlib@1.2.8%gcc  cflags="-O3"
 
-zqdhyiy zlib@1.2.8%gcc	cppflags="-O3"
+niuov46 tcl@8.6.12%gcc
+mntflxr     zlib@1.2.13%gcc
 
-2hfr5rb zlib@1.2.13%gcc
+iswfldx zlib@1.2.8%gcc	cflags="-O3"
 
-==> 9 installed packages
+mntflxr zlib@1.2.13%gcc
+
+==> 8 installed packages

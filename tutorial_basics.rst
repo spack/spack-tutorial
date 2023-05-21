@@ -19,7 +19,7 @@ especially as it relates to using Spack-built compilers within Spack.
 We will include full output from all of the commands demonstrated,
 although we will frequently call attention to only small portions of
 that output (or merely to the fact that it succeeded). The provided
-output is all from an Ubuntu 18.04 Docker image.
+output is all from an Ubuntu 22.04 Docker image.
 
 .. _basics-tutorial-install:
 
@@ -28,7 +28,7 @@ Installing Spack
 ----------------
 
 Spack works out of the box. Simply clone Spack to get going. We will
-clone Spack and immediately check out the most recent release, v0.19.
+clone Spack and immediately check out the most recent release, v0.20.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -114,7 +114,7 @@ compilers.
 .. literalinclude:: outputs/basics/zlib-1.2.8.out
    :language: console
 
-.. literalinclude:: outputs/basics/zlib-gcc-6.5.0.out
+.. literalinclude:: outputs/basics/zlib-gcc-10.4.0.out
    :language: console
 
 The spec syntax also includes compiler flags. Spack accepts
@@ -159,8 +159,8 @@ top-level package, we can also specify about a dependency using ``^``.
 
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
-of our optimized installation of zlib (``cppflags="-O3"``) began with
-``zqd``. We can now explicitly build with that package without typing
+of our optimized installation of zlib (``cflags="-O3"``) began with
+``iswfl``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like Git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
@@ -328,8 +328,8 @@ already covered in the :ref:`basics-tutorial-install` and
 The ``spack find`` command can accept what we call "anonymous specs."
 These are expressions in spec syntax that do not contain a package
 name. For example, ``spack find ^mpich`` will return every installed
-package that depends on MPICH, and ``spack find cppflags="-O3"`` will
-return every package which was built with ``cppflags="-O3"``.
+package that depends on MPICH, and ``spack find cflags="-O3"`` will
+return every package which was built with ``cflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
    :language: console
@@ -362,7 +362,7 @@ will learn how to configure compilers by hand for special cases. Spack
 also has tools to add compilers, and compilers built with Spack can be
 added to the configuration.
 
-.. literalinclude:: outputs/basics/install-gcc-8.4.0.out
+.. literalinclude:: outputs/basics/install-gcc-12.1.0.out
    :language: console
 
 .. literalinclude:: outputs/basics/find-p-gcc.out
@@ -370,7 +370,7 @@ added to the configuration.
 
 We can add GCC to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-``gcc@8.4.0``. To avoid having to copy and paste GCC's path, we can use
+``gcc@12.1.0``. To avoid having to copy and paste GCC's path, we can use
 ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out

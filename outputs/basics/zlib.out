@@ -1,15 +1,11 @@
 $ spack install zlib
-==> Bootstrapping clingo from pre-built binaries
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spec.json
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.4/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-prqkzynv2nwko5mktitebgkeumuxkveu.spack
-==> Installing "clingo-bootstrap@spack%gcc@10.2.1~docs~ipo+python+static_libstdcpp build_type=Release arch=linux-centos7-x86_64" from a buildcache
-==> Installing zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
-==> No binary for zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6 found: installing from source
+==> Installing zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
+==> No binary for zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y found: installing from source
 ==> Fetching https://mirror.spack.io/_source-cache/archive/b3/b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30.tar.gz
 ==> No patches needed for zlib
 ==> zlib: Executing phase: 'edit'
 ==> zlib: Executing phase: 'build'
 ==> zlib: Executing phase: 'install'
-==> zlib: Successfully installed zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
-  Fetch: 0.34s.	 Build: 0.95s.	Total: 1.30s.
-[+] /home/spack/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.13-2hfr5rbzefrxf6t6kv4trbsl63puaza6
+==> zlib: Successfully installed zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
+  Stage: 0.28s.  Edit: 0.75s.  Build: 1.43s.  Install: 0.23s.  Post-install: 0.02s.  Total: 2.75s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
