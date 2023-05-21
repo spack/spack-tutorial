@@ -22,7 +22,7 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/cineca23-tutorial-slide-preview.png
+.. image:: tutorial/images/isc19-tutorial-slide-preview.png
    :target: _static/slides/spack-isc23-tutorial-slides.pdf
    :height: 72px
    :align: left
@@ -32,7 +32,7 @@ Spack is used in practice.
 
 **Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn,
 and Harmen Stoppels. Managing HPC Software Complexity with Spack.
-ISC-HPC 2022. Hamburg, Germany. May 29, 2022.
+ISC-HPC 2023. Hamburg, Germany. May 21, 2023.
 
 .. _live-demos:
 
