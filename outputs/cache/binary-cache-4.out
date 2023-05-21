@@ -1,5 +1,9 @@
-$ spack buildcache create --allow-root --force -d ~/mirror --only=package $(spack find --format /{hash})
-==> Pushing binary packages to file:///home/spack/mirror/build_cache
+$ spack buildcache push --allow-root ~/mirror
+==> Selected 4 specs to push to file:///home/spack/mirror
 gpg: checking the trustdb
 gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-gpg: depth: 0  valid:	2  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 2u
+gpg: depth: 0  valid:	3  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 3u
+==> [1/4] Pushed zlib@1.2.13/mntflxr
+==> [2/4] Pushed bzip2@1.0.8/dca2qyg
+==> [3/4] Pushed diffutils@3.9/zdl3dic
+==> [4/4] Pushed libiconv@1.17/7wr75ce
