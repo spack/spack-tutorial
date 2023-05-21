@@ -27,7 +27,7 @@ configuration file. For some, we will then demonstrate how the
 configuration affects the install command, and for others we will use
 the ``spack spec`` command to demonstrate how the configuration
 changes have affected Spack's concretization algorithm. The provided
-output is all from a server running Ubuntu version 18.04.
+output is all from a server running Ubuntu version 22.04.
 
 -----------------------------------
 Configuration from the command line
@@ -146,14 +146,14 @@ configuration file as follows:
 
    compilers::
    - compiler:
-       spec: gcc@7.5.0
+       spec: gcc@11.3.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
        flags: {}
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
@@ -164,7 +164,7 @@ This ensures that no other compilers are used, as the user configuration
 scope is the last scope searched and the ``compilers::`` line replaces
 information from all previous configuration files. If the same
 configuration file had a single colon instead of the double colon, it
-would add the GCC version 7.5.0 compiler to whatever other compilers
+would add the GCC version 11.3.0 compiler to whatever other compilers
 were listed in other configuration files.
 
 A configuration section appears nearly the same when managed in an
@@ -180,14 +180,14 @@ level underneath the top-level 'spack' key. For example the above
      view: true
      compilers::
      - compiler:
-         spec: gcc@7.5.0
+         spec: gcc@11.3.0
          paths:
            cc: /usr/bin/gcc
            cxx: /usr/bin/g++
            f77: /usr/bin/gfortran
            fc: /usr/bin/gfortran
          flags: {}
-         operating_system: ubuntu18.04
+         operating_system: ubuntu22.04
          target: x86_64
          modules: []
          environment: {}
@@ -230,7 +230,7 @@ active environment):
          f77:
          fc:
        flags: {}
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
@@ -243,20 +243,20 @@ active environment):
          f77: usr/bin/gfortran-6
          fc: usr/bin/gfortran-6
        flags: {}
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
        extra_rpaths: []
    - compiler:
-       spec: gcc@7.5.0
+       spec: gcc@11.3.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
        flags: {}
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
@@ -279,7 +279,7 @@ to the ``compilers.yaml`` file:
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
        flags: {}
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
@@ -311,14 +311,14 @@ We can verify that our new compiler works by invoking it now:
 
 
 This new compiler also works on Fortran codes. We'll show it by
-compiling a small package using as a build dependency ``cmake%gcc@7.5.0``
+compiling a small package using as a build dependency ``cmake%gcc@11.3.0``
 since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install --reuse cmake %gcc@7.5.0
+   $ spack install --reuse cmake %gcc@11.3.0
    ...
-   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@7.5.0
+   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@11.3.0
    ...
 
 
@@ -348,7 +348,7 @@ Let's open our compilers configuration file again and add a compiler flag:
          fc: /usr/bin/gfortran
        flags:
          cppflags: -g
-       operating_system: ubuntu18.04
+       operating_system: ubuntu22.04
        target: x86_64
        modules: []
        environment: {}
@@ -573,7 +573,7 @@ this package and where it can be found:
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@11.3.0
            prefix: /usr
 
 
@@ -614,7 +614,7 @@ not allowed to build its own Perl. We'll go with the latter.
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@11.3.0
            prefix: /usr
          buildable: false
 
@@ -646,12 +646,12 @@ HDF5 to build with MPI by default again:
            mpi: [mpich, openmpi]
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@7.5.0
+         - spec: perl@5.26.1 %gcc@11.3.0
            prefix: /usr
          buildable: false
        mpich:
          externals:
-         - spec: mpich@3.3%gcc@7.5.0
+         - spec: mpich@3.3%gcc@11.3.0
            prefix: /usr
        mpi:
          buildable: false
@@ -778,13 +778,13 @@ node with 16 cores, this will look like:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
    ...
    ==> 'make' '-j16'
    ...
    ==> 'make' '-j16' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+   [+] /home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 
 
 As you can see, we are building with all 16 cores on the node. If you are
@@ -811,13 +811,13 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
    ...
    ==> 'make' '-j2'
    ...
    ==> 'make' '-j2' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu18.04-x86_64/gcc-7.5.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+   [+] /home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 
 
 Obviously, if you want to build everything in serial for whatever reason,
