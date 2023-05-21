@@ -1,19 +1,21 @@
 $ module avail
 
----------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu18.04-x86_64 -----------------------------------------------------------------------------------------------
-   autoconf-2.69-gcc-8.4.0-3ur6efa			   krb5-1.19.3-gcc-8.4.0-lbq4bnu	     mpich-4.0.2-gcc-8.4.0-dehzhtf		 perl-5.36.0-gcc-8.4.0-oxh2v73		py-setuptools-59.4.0-gcc-8.4.0-uh4z6vn
-   automake-1.16.5-gcc-8.4.0-ltwno6t			   libbsd-0.11.5-gcc-8.4.0-p666k37	     ncurses-6.3-gcc-8.4.0-pm3k5t4		 pigz-2.7-gcc-8.4.0-x4i7we6		py-wheel-0.37.1-gcc-8.4.0-htlk6hg
-   berkeley-db-18.1.40-gcc-8.4.0-gfnsus4		   libedit-3.1-20210216-gcc-8.4.0-zl6rdlr    netlib-lapack-3.10.1-gcc-8.4.0-d75mbpb	 pkgconf-1.8.0-gcc-8.4.0-db44f6t	python-3.10.8-gcc-8.4.0-4ots64k
-   bison-3.8.2-gcc-8.4.0-mne2r6i			   libevent-2.1.12-gcc-8.4.0-zlkggwb	     netlib-scalapack-2.2.0-gcc-8.4.0-iuphysy	 pmix-4.1.2-gcc-8.4.0-alwqqyv		readline-8.1.2-gcc-8.4.0-vrvkcpj
-   bzip2-1.0.8-gcc-8.4.0-h2cyuuc			   libfabric-1.16.1-gcc-8.4.0-zmoqcfm	     netlib-scalapack-2.2.0-gcc-8.4.0-nuulbgb	 py-beniget-0.4.1-gcc-8.4.0-6fg7x2e	sqlite-3.39.4-gcc-8.4.0-e373hd3
-   ca-certificates-mozilla-2022-10-11-gcc-8.4.0-tug2vtk	   libffi-3.4.2-gcc-8.4.0-pfw5zcj	     netlib-scalapack-2.2.0-gcc-8.4.0-vae5gpb	 py-cython-0.29.32-gcc-8.4.0-g5hd5bt	tar-1.34-gcc-8.4.0-vkidral
-   cmake-3.24.3-gcc-8.4.0-3oinxkn			   libiconv-1.16-gcc-8.4.0-faxyug5	     netlib-scalapack-2.2.0-gcc-8.4.0-xqcf6y4	 py-gast-0.5.3-gcc-8.4.0-hthzien	util-linux-uuid-2.38.1-gcc-8.4.0-72abeix
-   diffutils-3.8-gcc-8.4.0-42nykx7			   libmd-1.0.4-gcc-8.4.0-mbjxxpr	     ninja-1.11.1-gcc-8.4.0-ctiucvr		 py-numpy-1.23.4-gcc-8.4.0-v7eeehl	util-macros-1.19.3-gcc-8.4.0-caquoxb
-   expat-2.4.8-gcc-8.4.0-ecxz4tu			   libpciaccess-0.16-gcc-8.4.0-ygwuejw	     numactl-2.0.14-gcc-8.4.0-qo6lo2m		 py-pip-22.2.2-gcc-8.4.0-gdv6477	xz-5.2.7-gcc-8.4.0-yalo3gm
-   findutils-4.9.0-gcc-8.4.0-ye45pox			   libsigsegv-2.13-gcc-8.4.0-hzetpcu	     openblas-0.3.21-gcc-8.4.0-62oqts5		 py-ply-3.11-gcc-8.4.0-i3li6qu		yaksa-0.2-gcc-8.4.0-ohap5mv
-   gdbm-1.23-gcc-8.4.0-6dpdzlt				   libtool-2.4.7-gcc-8.4.0-uejcu2m	     openmpi-4.1.4-gcc-8.4.0-cnq37ia		 py-pybind11-2.8.1-gcc-8.4.0-pzlkf5u	zlib-1.2.13-gcc-8.4.0-qaq2asl
-   gettext-0.21.1-gcc-8.4.0-lxoekir			   libxml2-2.10.1-gcc-8.4.0-rsueryu	     openssh-9.1p1-gcc-8.4.0-bu2y2rn		 py-pythran-0.11.0-gcc-8.4.0-t3pvyne	zstd-1.5.2-gcc-8.4.0-2b73tir
-   hwloc-2.8.0-gcc-8.4.0-76vxdwi			   m4-1.4.19-gcc-8.4.0-64hyzlr		     openssl-1.1.1s-gcc-8.4.0-4h2attb		 py-scipy-1.8.1-gcc-8.4.0-oliuwzs
+------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------------------------------------------------------------------------------------------------------
+   autoconf-2.69-gcc-12.1.0-mr5osqp			    libbsd-0.11.7-gcc-12.1.0-kqphoxb	       ncurses-6.4-gcc-12.1.0-yugzpgp		    pmix-4.2.3-gcc-12.1.0-ouqw26w		      py-scipy-1.10.1-gcc-12.1.0-ol3w546
+   automake-1.16.5-gcc-12.1.0-yyzuikk			    libedit-3.1-20210216-gcc-12.1.0-xkjcqre    netlib-lapack-3.11.0-gcc-12.1.0-fjlwowf	    py-beniget-0.4.1-gcc-12.1.0-s6swsfi 	      py-setuptools-63.4.3-gcc-12.1.0-wujb6fw
+   berkeley-db-18.1.40-gcc-12.1.0-vtjcxzc		    libevent-2.1.12-gcc-12.1.0-2y2whk4	       netlib-scalapack-2.2.0-gcc-12.1.0-75u5574    py-build-0.10.0-gcc-12.1.0-uhboysx		      py-tomli-2.0.1-gcc-12.1.0-ivq3gn7
+   bison-3.8.2-gcc-12.1.0-fjc7p57			    libfabric-1.18.0-gcc-12.1.0-er4rpyd        netlib-scalapack-2.2.0-gcc-12.1.0-ea7dxfb    py-cython-0.29.33-gcc-12.1.0-ny2lq6w	      py-wheel-0.37.1-gcc-12.1.0-kbelzwq
+   bzip2-1.0.8-gcc-12.1.0-ecute7q			    libffi-3.4.4-gcc-12.1.0-u2ztzc2	       netlib-scalapack-2.2.0-gcc-12.1.0-qmna5re    py-flit-core-3.7.1-gcc-12.1.0-ihmiu27	      python-3.10.10-gcc-12.1.0-nvcwpz4
+   ca-certificates-mozilla-2023-01-10-gcc-12.1.0-7u553me    libiconv-1.17-gcc-12.1.0-ojujfjj	       netlib-scalapack-2.2.0-gcc-12.1.0-yq5hsff    py-gast-0.5.3-gcc-12.1.0-xg26gxl		      re2c-2.2-gcc-12.1.0-622aruu
+   cmake-3.26.3-gcc-12.1.0-cb3vkyk			    libmd-1.0.4-gcc-12.1.0-a4ofctm	       ninja-1.11.1-gcc-12.1.0-2zgsglc		    py-meson-python-0.12.0-gcc-12.1.0-rosemhn	      readline-8.2-gcc-12.1.0-qypmr5g
+   diffutils-3.9-gcc-12.1.0-csiltjm			    libpciaccess-0.17-gcc-12.1.0-4voenez       numactl-2.0.14-gcc-12.1.0-45xq3wr	    py-numpy-1.24.3-gcc-12.1.0-54s3ofo		      sqlite-3.40.1-gcc-12.1.0-at2vwsu
+   expat-2.5.0-gcc-12.1.0-upevc4c			    libsigsegv-2.14-gcc-12.1.0-oyzxg5g	       openblas-0.3.23-gcc-12.1.0-5hvwk3g	    py-packaging-23.0-gcc-12.1.0-yoamuqz	      tar-1.34-gcc-12.1.0-2r7rutu
+   findutils-4.9.0-gcc-12.1.0-hgvmfon			    libtool-2.4.7-gcc-12.1.0-owrdqyk	       openmpi-4.1.5-gcc-12.1.0-ekmi64f 	    py-pip-23.0-gcc-12.1.0-khveatv		      util-linux-uuid-2.38.1-gcc-12.1.0-gbfbnoj
+   gdbm-1.23-gcc-12.1.0-febzyvz 			    libxcrypt-4.4.33-gcc-12.1.0-uq4wpnl        openssh-9.3p1-gcc-12.1.0-vu4ehmb 	    py-ply-3.11-gcc-12.1.0-ovxjh5h		      util-macros-1.19.3-gcc-12.1.0-imbmumc
+   gettext-0.21.1-gcc-12.1.0-7qnn3pi			    libxml2-2.10.3-gcc-12.1.0-sbbiixp	       openssl-1.1.1t-gcc-12.1.0-7dyvgor	    py-pybind11-2.10.1-gcc-12.1.0-2hmi7rq	      xz-5.4.1-gcc-12.1.0-dat54qr
+   gmake-4.4.1-gcc-12.1.0-74omm4b			    m4-1.4.19-gcc-12.1.0-s6ky5ld	       perl-5.36.0-gcc-12.1.0-fq7gb4a		    py-pyproject-hooks-1.0.0-gcc-12.1.0-udgbusq       yaksa-0.2-gcc-12.1.0-5mplopl
+   hwloc-2.9.1-gcc-12.1.0-sd6g5bq			    meson-1.1.0-gcc-12.1.0-s5rzrue	       pigz-2.7-gcc-12.1.0-i2azy7n		    py-pyproject-metadata-0.7.1-gcc-12.1.0-lrhcey2    zlib-1.2.13-gcc-12.1.0-oboyaa5
+   krb5-1.20.1-gcc-12.1.0-n5v3tug			    mpich-4.1.1-gcc-12.1.0-fb4tt65	       pkgconf-1.9.5-gcc-12.1.0-gbfssja 	    py-pythran-0.12.0-gcc-12.1.0-s6iwj3a	      zstd-1.5.5-gcc-12.1.0-a5p5yob
 
 If the avail list is too long consider trying:
 

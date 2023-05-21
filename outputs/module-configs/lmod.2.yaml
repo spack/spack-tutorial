@@ -4,7 +4,7 @@ modules:
       - lmod
     lmod:
       core_compilers:
-        - 'gcc@7.5.0'
+        - 'gcc@11'
       hierarchy:
         - mpi
         - lapack
@@ -12,7 +12,7 @@ modules:
       include:
         - gcc
       exclude:
-        - '%gcc@7.5.0'
+        - '%gcc@11.3.0'
       all:
         filter:
           exclude_env_vars:

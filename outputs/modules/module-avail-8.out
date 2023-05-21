@@ -1,20 +1,21 @@
 $ module load mpich
 $ module avail
 
---------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/mpich/4.0.2-dehzhtf/gcc/8.4.0 ---------------------------------------------------------------------------------
-   netlib-scalapack/2.2.0-netlib-lapack	   netlib-scalapack/2.2.0-openblas (D)
+------------------------------------------------------------------------------------------ /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/mpich/4.1.1-fb4tt65/gcc/12.1.0 -------------------------------------------------------------------------------------------
+   netlib-scalapack/2.2.0-netlib-lapack    netlib-scalapack/2.2.0-openblas (D)
 
-------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/gcc/8.4.0 -------------------------------------------------------------------------------------------
-   autoconf/2.69			 diffutils/3.8		libbsd/0.11.5		    libpciaccess/0.16 (L)    netlib-lapack/3.10.1    perl/5.36.0	  py-numpy/1.23.4-openblas	py-wheel/0.37.1		  xz/5.2.7    (L)
-   automake/1.16.5			 expat/2.4.8		libedit/3.1-20210216	    libsigsegv/2.13	     ninja/1.11.1	     pigz/2.7		  py-pip/22.2.2			python/3.10.8		  yaksa/0.2   (L)
-   berkeley-db/18.1.40			 findutils/4.9.0	libevent/2.1.12		    libtool/2.4.7	     numactl/2.0.14	     pkgconf/1.8.0	  py-ply/3.11			readline/8.1.2		  zlib/1.2.13 (L)
-   bison/3.8.2				 gdbm/1.23		libfabric/1.16.1     (L)    libxml2/2.10.1    (L)    openblas/0.3.21	     pmix/4.1.2		  py-pybind11/2.8.1		sqlite/3.39.4		  zstd/1.5.2
-   bzip2/1.0.8				 gettext/0.21.1		libffi/3.4.2		    m4/1.4.19		     openmpi/4.1.4	     py-beniget/0.4.1	  py-pythran/0.11.0-openblas	tar/1.34
-   ca-certificates-mozilla/2022-10-11	 hwloc/2.8.0	 (L)	libiconv/1.16	     (L)    mpich/4.0.2	      (L)    openssh/9.1p1	     py-cython/0.29.32	  py-scipy/1.8.1-openblas	util-linux-uuid/2.38.1
-   cmake/3.24.3				 krb5/1.19.3		libmd/1.0.4		    ncurses/6.3	      (L)    openssl/1.1.1s	     py-gast/0.5.3	  py-setuptools/59.4.0		util-macros/1.19.3
+---------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/gcc/12.1.0 -----------------------------------------------------------------------------------------------------
+   autoconf/2.69			 expat/2.5.0		libedit/3.1-20210216	    libtool/2.4.7		ninja/1.11.1	   pkgconf/1.9.5	     py-numpy/1.24.3-openblas	    py-scipy/1.10.1-openblas	tar/1.34
+   automake/1.16.5			 findutils/4.9.0	libevent/2.1.12 	    libxcrypt/4.4.33		numactl/2.0.14	   pmix/4.2.3		     py-packaging/23.0		    py-setuptools/63.4.3	util-linux-uuid/2.38.1
+   berkeley-db/18.1.40			 gdbm/1.23		libfabric/1.18.0     (L)    libxml2/2.10.3	 (L)	openblas/0.3.23    py-beniget/0.4.1	     py-pip/23.0		    py-tomli/2.0.1		util-macros/1.19.3
+   bison/3.8.2				 gettext/0.21.1 	libffi/3.4.4		    m4/1.4.19			openmpi/4.1.5	   py-build/0.10.0	     py-ply/3.11		    py-wheel/0.37.1		xz/5.4.1	       (L)
+   bzip2/1.0.8				 gmake/4.4.1		libiconv/1.17	     (L)    meson/1.1.0 		openssh/9.3p1	   py-cython/0.29.33	     py-pybind11/2.10.1 	    python/3.10.10		yaksa/0.2	       (L)
+   ca-certificates-mozilla/2023-01-10	 hwloc/2.9.1	 (L)	libmd/1.0.4		    mpich/4.1.1 	 (L)	openssl/1.1.1t	   py-flit-core/3.7.1	     py-pyproject-hooks/1.0.0	    re2c/2.2			zlib/1.2.13	       (L)
+   cmake/3.26.3 			 krb5/1.20.1		libpciaccess/0.17    (L)    ncurses/6.4 	 (L)	perl/5.36.0	   py-gast/0.5.3	     py-pyproject-metadata/0.7.1    readline/8.2		zstd/1.5.5
+   diffutils/3.9			 libbsd/0.11.7		libsigsegv/2.14 	    netlib-lapack/3.11.0	pigz/2.7	   py-meson-python/0.12.0    py-pythran/0.12.0-openblas     sqlite/3.40.1
 
---------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu18.04-x86_64/Core ----------------------------------------------------------------------------------------------
-   gcc/8.4.0 (L)
+------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core --------------------------------------------------------------------------------------------------------
+   gcc/12.1.0 (L)
 
   Where:
    D:  Default Module
