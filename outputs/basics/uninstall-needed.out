@@ -1,11 +1,11 @@
 $ spack uninstall zlib/5dy
 ==> Refusing to uninstall the following specs
-    -- linux-ubuntu22.04-x86_64_v3 / clang@=14.0.0 ------------------
+    -- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
     5dydni4 zlib@1.2.8
 
 ==> The following dependents are still installed:
-    -- linux-ubuntu22.04-x86_64_v3 / clang@=14.0.0 ------------------
-    vqerlyl tcl@8.6.12
+    -- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
+    3ccofkd tcl@8.6.12
 
 ==> Error: There are still dependents.
   use `spack uninstall --dependents` to remove dependents too
