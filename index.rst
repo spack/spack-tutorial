@@ -9,9 +9,10 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was
-last presented as a virtual event at `PEARC 2023 <https://pearc.acm.org/pearc23/>`_
-on July 24, 2023. The ISC event was a full-day tutorial.
+This is an introduction to Spack with lectures and live demos. It was last presented as
+a virtual event at the `2023 RADIUSS Tutorial Series
+<https://aws.amazon.com/blogs/hpc/call-for-participation-radiuss-tutorial-series-2023/>`_,
+August 8-9, 2023. The event was a full-day tutorial spread over two days.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -22,15 +23,16 @@ Spack is used in practice.
 .. rubric:: Slides
 
 .. image:: tutorial/images/isc19-tutorial-slide-preview.png
-   :target: _static/slides/spack-pearc23-tutorial-slides.pdf
+   :target: _static/slides/spack-radiuss23-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-pearc23-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-radiuss23-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin and Gregory Becker. Managing HPC Software Complexity
-with Spack. PEARC 2023. Portland, Oregon. July 24, 2023.
+**Full citation:** Gregory Becker, Richarda Butler, Tamara Dahlgren, and Todd Gamblin.
+Managing HPC Software Complexity with Spack. RADIUSS Tutorial Series 2023. Virtual
+event. August 8-9, 2023.
 
 .. _live-demos:
 
