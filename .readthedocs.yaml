@@ -22,6 +22,10 @@ sphinx:
   # Fail on all warnings to avoid broken references
   # fail_on_warning: true
 
+# We need to include the _spack_root submodule to get the logo image
+submodules:
+  include: all
+
 # Optionally build your docs in additional formats such as PDF and ePub
 # formats:
 #    - pdf
