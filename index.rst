@@ -43,13 +43,13 @@ The recording of the virtual event is available in two parts:
 .. raw:: html
 
    <p>
-     <table><tr><td>
-       Part 1<br/>
-       <iframe width="337" height="190" src="https://www.youtube.com/embed/KyfGdWnvpBY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-       </td><td>
-       Part 2<br/>
-       <iframe width="337" height="190" src="https://www.youtube.com/embed/uVoFL8B2N-s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr></table>
-
+   <ul>
+   <li>Part 1<br/>
+   <iframe width="380" height="214" src="https://www.youtube.com/embed/KyfGdWnvpBY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </li>
+   <li>Part 2<br/>
+   <iframe width="380" height="214" src="https://www.youtube.com/embed/uVoFL8B2N-s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+   </li>
    </p>
 
 .. _live-demos:
