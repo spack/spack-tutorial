@@ -34,6 +34,24 @@ Spack is used in practice.
 Managing HPC Software Complexity with Spack. RADIUSS Tutorial Series 2023. Virtual
 event. August 8-9, 2023.
 
+.. _video:
+
+.. rubric:: Video
+
+The recording of the virtual event is available in two parts:
+
+.. raw:: html
+
+   <p>
+     <table><tr><td>
+       Part 1<br/>
+       <iframe width="337" height="190" src="https://www.youtube.com/embed/KyfGdWnvpBY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+       </td><td>
+       Part 2<br/>
+       <iframe width="337" height="190" src="https://www.youtube.com/embed/uVoFL8B2N-s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></td></tr></table>
+
+   </p>
+
 .. _live-demos:
 
 .. rubric:: Live Demos
