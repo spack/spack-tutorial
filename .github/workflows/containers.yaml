@@ -65,7 +65,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build & Deploy ${{ matrix.dockerfile[0] }}
-        uses: docker/build-push-action@v4
+        uses: docker/build-push-action@v5
         with:
           file: ${{matrix.dockerfile[1]}}
           platforms: linux/amd64
