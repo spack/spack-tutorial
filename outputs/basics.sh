@@ -15,35 +15,35 @@ cd ~/spack || exit
 . share/spack/setup-env.sh
 spack config add "config:suppress_gpg_warnings:true"
 
-example basics/source-setup    ". share/spack/setup-env.sh"
+example basics/source-setup     ". share/spack/setup-env.sh"
 
 # spack list
 example basics/list            "spack list"
 example basics/list-py         "spack list 'py-*'"
 
 # spack install
-example basics/zlib            "spack install zlib"
+example basics/gmake           "spack install gmake"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
 example basics/mirror          "spack buildcache keys --install --trust"
 
-example basics/zlib-clang      "spack install zlib %clang"
+example basics/gmake-clang     "spack install gmake %clang"
 
-example basics/versions-zlib   "spack versions zlib"
-example basics/zlib-1.2.8      "spack install zlib@1.2.8"
-example basics/zlib-gcc-10.4.0  "spack install zlib %gcc@10"
+example basics/versions-gmake  "spack versions gmake"
+example basics/gmake-4.3       "spack install gmake@4.3"
+example basics/gmake-gcc-10    "spack install gmake %gcc@10"
 
-example basics/zlib-O3         "spack install zlib@1.2.8 cflags=-O3"
+example basics/gmake-O3        "spack install gmake@4.3 cflags=-O3"
 
 example basics/find            "spack find"
 example basics/find-lf         "spack find -lf"
 
 example basics/tcl             "spack install tcl"
 
-example basics/tcl-zlib-clang  "spack install tcl ^zlib@1.2.8 %clang"
+example basics/tcl-gmake-clang "spack install tcl ^gmake@4.3 %clang"
 
-zlib_hash=$(spack find --format "{hash:3}" zlib cflags=-O3)
-example basics/tcl-zlib-hash   "spack install tcl ^/${zlib_hash}"
+gmake_hash=$(spack find --format "{hash:3}" gmake cflags=-O3)
+example basics/tcl-gmake-hash  "spack install tcl ^/${gmake_hash}"
 
 example basics/find-ldf        "spack find -ldf"
 
@@ -66,15 +66,15 @@ example basics/graph-trilinos  "spack graph trilinos"
 
 example basics/find-d-tcl      "spack find -d tcl"
 
-example basics/find-zlib       "spack find zlib"
+example basics/find-gmake      "spack find gmake"
 
-example basics/uninstall-zlib  "spack uninstall -y zlib %gcc@10"
+example basics/uninstall-gmake "spack uninstall -y gmake %gcc@10"
 
-example basics/find-lf-zlib    "spack find -lf zlib"
+example basics/find-lf-gmake   "spack find -lf gmake"
 
-zlib_hash="$(spack find --format '{hash:3}' zlib@1.2.8 %clang)"
-example --expect-error basics/uninstall-needed "spack uninstall zlib/$zlib_hash"
-example basics/uninstall-r-needed "spack uninstall -y -R zlib/$zlib_hash"
+gmake_hash="$(spack find --format '{hash:3}' gmake@4.3 %clang)"
+example --expect-error basics/uninstall-needed "spack uninstall gmake/$gmake_hash"
+example basics/uninstall-r-needed "spack uninstall -y -R gmake/$gmake_hash"
 
 example --expect-error basics/uninstall-ambiguous "spack uninstall trilinos"
 
