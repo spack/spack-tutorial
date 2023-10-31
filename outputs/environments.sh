@@ -10,12 +10,12 @@ rm -rf "${raw_outputs:?}/environments"
 # In the basics section a bunch of packages were already installed,
 # they are referenced here. Reinstall them so we can generate outputs
 # independently.
-spack install zlib \
-              zlib %clang \
-              zlib@1.2.8 \
-              zlib@1.2.8 cflags=-O3 \
+spack install gmake \
+              gmake %clang \
+              gmake@4.3 \
+              gmake@4.3 cflags=-O3 \
               tcl \
-              tcl ^zlib cflags=-O3 \
+              tcl ^gmake cflags=-O3 \
               hdf5 \
               hdf5~mpi \
               hdf5+hl+mpi ^mpich \
@@ -114,10 +114,10 @@ int main(int argc, char **argv) {
   MPI_Finalize();
 }
 EOF
-example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib)/include'
+example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib-ng)/include'
 example environments/use-mpi-1       "mpirun -n 4 ./a.out"
 
-example environments/myproject-zlib-1     "spack find zlib"
+example environments/myproject-zlib-ng-1     "spack find zlib-ng"
 
 example --tee environments/filenames-1     "spack cd -e myproject"
 spack cd -e myproject

@@ -60,7 +60,7 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 This is a complete, but cluttered list of the installed packages and
 their dependencies. It contains packages built with both ``openmpi``
 and ``mpich``, as well as multiple variants of other packages, like
-``hdf5`` and ``zlib``. The query mechanism we learned about with
+``hdf5`` and ``zlib-ng``. The query mechanism we learned about with
 ``spack find`` can help, but it would be nice if we could start from
 a clean slate without losing what we've already installed.
 
@@ -519,7 +519,7 @@ and the version of ``zlib`` used to build the program is printed.
 We can confirm the version of ``zlib`` used to build the program
 is in our environment using ``spack find``:
 
-.. literalinclude:: outputs/environments/myproject-zlib-1.out
+.. literalinclude:: outputs/environments/myproject-zlib-ng-1.out
    :language: console
 
 Note that the reported version *does* match that of our installation.
