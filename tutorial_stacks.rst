@@ -258,7 +258,7 @@ Let's start by adding ``lmod`` to the software installed with the system compile
 
 .. code-block:: console
 
-   $ spack add lmod%gcc@11.4.0
+   $ spack add lmod%gcc@11
    $ spack concretize
    $ spack install
 
