@@ -22,10 +22,10 @@ spack install lmod
 
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
 . share/spack/setup-env.sh
-spack install gcc@12.1.0
+spack install gcc@12
 
-example --tee modules/spack-load-gcc "spack load gcc@12.1.0"
-spack load gcc@12.1.0
+example --tee modules/spack-load-gcc "spack load gcc@12"
+spack load gcc@12
 example      modules/spack-load-gcc "which gcc"
 
 example      modules/add-compiler   "spack compiler add"
@@ -44,7 +44,7 @@ spack install py-scipy ^openblas
 example --tee modules/module-avail-2 "module avail"
 
 gcc_hash="$(spack find --format '{hash:7}' gcc)"
-gcc_module="gcc-12.1.0-gcc-11.3.0-${gcc_hash}"
+gcc_module="gcc/12.3.0-gcc-11.4.0-${gcc_hash}"
 example --tee modules/module-show-1  "module show $gcc_module"
 
 spack config add "modules:default:tcl:all:filter:exclude_env_vars:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
@@ -53,7 +53,7 @@ example  modules/tcl-refresh-1          "spack module tcl refresh -y"
 example --tee modules/module-show-2     "module show $gcc_module"
 
 
-spack config add                        "modules:default:tcl:exclude:['%gcc@11.3.0']"
+spack config add                        "modules:default:tcl:exclude:['%gcc@11']"
 example      modules/tcl-refresh-2      "spack module tcl refresh --delete-tree -y"
 example --tee modules/module-avail-3    "module avail"
 

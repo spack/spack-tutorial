@@ -89,15 +89,15 @@ Add a new compiler
 The second step is to build a recent compiler. On first use, Spack
 scans the environment and automatically locates the compiler(s)
 already available on the system. For this tutorial, however, we want
-to use ``gcc@12.1.0``.
+to use ``gcc@12.3.0``.
 
 
 .. code-block:: console
 
-  $ spack install gcc@12.1.0
+  $ spack install gcc@12.3.0
 
 
-You can get this in your environment using ``spack load gcc@12.1.0``:
+You can get this in your environment using ``spack load gcc@12.3.0``:
 
 .. literalinclude:: outputs/modules/spack-load-gcc.out
    :language: console
@@ -113,7 +113,7 @@ To check which compilers are available you can use ``spack compiler list``:
 .. literalinclude:: outputs/modules/list-compiler.out
    :language: console
 
-Finally, when you confirmed ``gcc@12.1.0`` is properly registered, clean the environment
+Finally, when you confirmed ``gcc@12.3.0`` is properly registered, clean the environment
 with ``spack unload``:
 
 .. code-block:: console
@@ -343,7 +343,7 @@ Prevent some module files from being generated
 Another common request at many sites is to avoid exposing software that
 is only needed as an intermediate step when building a newer stack.
 Let's try to prevent the generation of
-module files for anything that is compiled with ``gcc@11.3.0`` (the OS provided compiler).
+module files for anything that is compiled with ``gcc@11.4.0`` (the OS provided compiler).
 
 To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
@@ -354,7 +354,7 @@ To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/m
     default:
       tcl:
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           filter:
             exclude_env_vars:
@@ -375,8 +375,8 @@ directory.
 
 
 if you look closely you'll see though that we went too far in
-excluding modules: the module for ``gcc@12.1.0`` disappeared as it was
-bootstrapped with ``gcc@11.3.0``. To specify exceptions to the ``exclude``
+excluding modules: the module for ``gcc@12.3.0`` disappeared as it was
+bootstrapped with ``gcc@11.4.0``. To specify exceptions to the ``exclude``
 rules you can use ``include``:
 
 .. code-block:: yaml
@@ -388,7 +388,7 @@ rules you can use ``include``:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           filter:
             exclude_env_vars:
@@ -401,7 +401,7 @@ rules you can use ``include``:
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
 
-you'll see that now the module for ``gcc@12.1.0`` has reappeared:
+you'll see that now the module for ``gcc@12.3.0`` has reappeared:
 
 .. literalinclude:: outputs/modules/module-avail-4.out
    :language: console
@@ -420,7 +420,7 @@ packages. In this case you only need to add the following line:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           filter:
             exclude_env_vars:
@@ -449,7 +449,7 @@ use the ``hash_length`` keyword in the configuration file:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           filter:
             exclude_env_vars:
@@ -483,7 +483,7 @@ the names are formatted to differentiate them:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           conflict:
           - '{name}'
@@ -538,7 +538,7 @@ is installed. You can achieve this with Spack by adding an
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.3.0'
+        -  '%gcc@11.4.0'
         all:
           conflict:
           - '{name}'
@@ -590,7 +590,7 @@ only certain packages. You can for instance apply modifications to the
         include:
         - gcc
         exclude:
-        - '%gcc@11.3.0'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -642,7 +642,7 @@ directive and assigning it the value ``direct``:
         include:
         - gcc
         exclude:
-        - '%gcc@11.3.0'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -750,7 +750,7 @@ After these modifications your configuration file should look like:
         include:
         - gcc
         exclude:
-        - '%gcc@11.3.0'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -885,7 +885,7 @@ remove the remaining suffix projection for ``lapack``:
         include:
         - gcc
         exclude:
-        - '%gcc@11.3.0'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -1046,7 +1046,7 @@ it's ``netlib-scalapack``:
       include:
         - gcc
       exclude:
-        - '%gcc@11.3.0'
+        - '%gcc@11'
         - readline
       all:
         filter:
@@ -1091,13 +1091,13 @@ the right e-mail address where to ask for it!
 Restore settings for future sections
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For future sections of the tutorial, we will not use the ``gcc@12.1.0``
+For future sections of the tutorial, we will not use the ``gcc@12.3.0``
 compiler. Since it is currently the default compiler (our current
 default is the most recent version of gcc available), we will remove
 it now.
 
 .. code-block:: console
 
-  $ spack compiler rm gcc@12.1.0
+  $ spack compiler rm gcc@12.3.0
 
 This will ensure the rest of the tutorial goes smoothly for you.

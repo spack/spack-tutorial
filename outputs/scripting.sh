@@ -7,11 +7,11 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/scripting"
 . "$project/init_spack.sh"
 
-spack install gcc@12.1.0
-spack compiler find "$(spack location -i gcc@12.1.0)"
+spack install gcc@12
+spack compiler find "$(spack location -i gcc@12)"
 
 example scripting/setup           "spack uninstall -ay"
-example scripting/setup           "spack compiler rm gcc@12.1.0"
+example scripting/setup           "spack compiler rm gcc@12"
 example scripting/setup           "spack install hdf5"
 example scripting/setup           "spack install zlib%clang"
 

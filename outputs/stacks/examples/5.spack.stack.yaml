@@ -13,7 +13,7 @@ spack:
     - serial_packages: [py-scipy]
 
   specs:
-  - gcc@=12.1.0%gcc@11.3.0
+  - gcc@12%gcc@11
   - matrix:
     - [$mpi_packages]
     - [$^mpis]
