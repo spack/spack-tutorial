@@ -62,7 +62,10 @@ example stacks/view-1       "ls views/default"
 example stacks/view-1       "ls views/default/lib"
 example stacks/view-1       "ls views/full"
 
-example stacks/modules-0 "spack add lmod%gcc@11"
+# Temporarily add 8.7.18 to spack
+EDITOR=true spack checksum --add-to-package lmod 8.7.18
+
+example stacks/modules-0 "spack add lmod@8.7.18 %gcc@11"
 example stacks/modules-0 "spack concretize"
 example stacks/modules-0 "spack install"
 
