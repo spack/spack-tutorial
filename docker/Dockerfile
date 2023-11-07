@@ -1,7 +1,7 @@
 FROM ubuntu:22.04 AS stage
 
 ENV DEBIAN_FRONTEND=noninteractive \
-    REMOTE_BUILDCACHE_URL="s3://spack-binaries/releases/v0.20/tutorial"
+    REMOTE_BUILDCACHE_URL="s3://spack-binaries/releases/v0.21/tutorial"
 
 # Install AWS cli
 RUN apt-get update -y && \
