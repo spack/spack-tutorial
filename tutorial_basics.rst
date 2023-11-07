@@ -370,7 +370,7 @@ added to the configuration.
 
 We can add GCC to Spack as an available compiler using the ``spack
 compiler add`` command. This will allow future packages to build with
-``gcc@12.1.0``. To avoid having to copy and paste GCC's path, we can use
+``gcc@12.3.0``. To avoid having to copy and paste GCC's path, we can use
 ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out

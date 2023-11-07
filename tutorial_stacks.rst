@@ -57,7 +57,7 @@ Finally, let's register it as a new compiler in the environment:
    :language: console
 
 Asking Spack to list the compilers we have available should confirm the
-presence of ``gcc@12.1.0``:
+presence of ``gcc@12.3.0``:
 
 .. literalinclude:: outputs/stacks/compiler-list-0.out
    :language: console
@@ -79,7 +79,7 @@ The manifest file at this point should look like:
 Install software against different MPIs and LAPACKs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's now try to install 4 different versions of ``netlib-scalapack``, compiled with ``gcc@12.1.0``
+Let's now try to install 4 different versions of ``netlib-scalapack``, compiled with ``gcc@12.3.0``
 and linked against different LAPACK and MPI providers. The simplest way to express a cross-product
 like this in Spack is through a matrix:
 
@@ -258,7 +258,7 @@ Let's start by adding ``lmod`` to the software installed with the system compile
 
 .. code-block:: console
 
-   $ spack add lmod%gcc@11.3.0
+   $ spack add lmod%gcc@11.4.0
    $ spack concretize
    $ spack install
 
@@ -296,7 +296,7 @@ Now we should be able to see the module files that have been generated:
 
 The sets of modules is already usable, and the hierarchy already works. For instance we can
 load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot more
-modules available - all the ones compiled with ``gcc@12.1.0``:
+modules available - all the ones compiled with ``gcc@12.3.0``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console

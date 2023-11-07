@@ -15,7 +15,7 @@ spack compiler find
 example stacks/setup-0 "spack env create -d ."
 fake_example stacks/setup-0 "spack env activate ." ". /home/spack/spack/share/spack/setup-env.sh && spack env activate ."
 spack env activate .
-example stacks/setup-0 "spack add gcc@12.1.0 %gcc@11.3.0"
+example stacks/setup-0 "spack add gcc@12 %gcc@11"
 
 #cat "$project/stacks/examples/0.spack.stack.yaml" > spack.yaml
 
@@ -53,7 +53,7 @@ example stacks/view-0       "spack concretize"
 example stacks/view-0       "ls views/default"
 example stacks/view-0       "ls views/default/lib"
 example stacks/view-0       "ls views/full"
-example stacks/view-0       "ls views/full/gcc-12.1.0"
+example stacks/view-0       "ls views/full/gcc-12.3.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > spack.yaml
 
@@ -62,7 +62,7 @@ example stacks/view-1       "ls views/default"
 example stacks/view-1       "ls views/default/lib"
 example stacks/view-1       "ls views/full"
 
-example stacks/modules-0 "spack add lmod%gcc@11.3.0"
+example stacks/modules-0 "spack add lmod%gcc@11"
 example stacks/modules-0 "spack concretize"
 example stacks/modules-0 "spack install"
 

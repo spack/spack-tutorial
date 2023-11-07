@@ -146,7 +146,7 @@ configuration file as follows:
 
    compilers::
    - compiler:
-       spec: gcc@11.3.0
+       spec: gcc@11.4.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
@@ -180,7 +180,7 @@ level underneath the top-level 'spack' key. For example the above
      view: true
      compilers::
      - compiler:
-         spec: gcc@11.3.0
+         spec: gcc@11.4.0
          paths:
            cc: /usr/bin/gcc
            cxx: /usr/bin/g++
@@ -249,7 +249,7 @@ active environment):
        environment: {}
        extra_rpaths: []
    - compiler:
-       spec: gcc@11.3.0
+       spec: gcc@11.4.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
@@ -311,14 +311,14 @@ We can verify that our new compiler works by invoking it now:
 
 
 This new compiler also works on Fortran codes. We'll show it by
-compiling a small package using as a build dependency ``cmake%gcc@11.3.0``
+compiling a small package using as a build dependency ``cmake%gcc@11.4.0``
 since it is already available in our binary cache:
 
 .. code-block:: console
 
-   $ spack install --reuse cmake %gcc@11.3.0
+   $ spack install --reuse cmake %gcc@11.4.0
    ...
-   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@11.3.0
+   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@11.4.0
    ...
 
 
@@ -573,7 +573,7 @@ this package and where it can be found:
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.3.0
+         - spec: perl@5.26.1 %gcc@11.4.0
            prefix: /usr
 
 
@@ -614,7 +614,7 @@ not allowed to build its own Perl. We'll go with the latter.
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.3.0
+         - spec: perl@5.26.1 %gcc@11.4.0
            prefix: /usr
          buildable: false
 
@@ -646,12 +646,12 @@ HDF5 to build with MPI by default again:
            mpi: [mpich, openmpi]
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.3.0
+         - spec: perl@5.26.1 %gcc@11.4.0
            prefix: /usr
          buildable: false
        mpich:
          externals:
-         - spec: mpich@3.3%gcc@11.3.0
+         - spec: mpich@3.3%gcc@11.4.0
            prefix: /usr
        mpi:
          buildable: false
