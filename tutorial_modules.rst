@@ -590,7 +590,7 @@ only certain packages. You can for instance apply modifications to the
         include:
         - gcc
         exclude:
-        - '%gcc@11.4.0'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -642,7 +642,7 @@ directive and assigning it the value ``direct``:
         include:
         - gcc
         exclude:
-        - '%gcc@11.4.0'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -750,7 +750,7 @@ After these modifications your configuration file should look like:
         include:
         - gcc
         exclude:
-        - '%gcc@11.4.0'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -885,7 +885,7 @@ remove the remaining suffix projection for ``lapack``:
         include:
         - gcc
         exclude:
-        - '%gcc@11.4.0'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -1046,7 +1046,7 @@ it's ``netlib-scalapack``:
       include:
         - gcc
       exclude:
-        - '%gcc@11.4.0'
+        - '%gcc@11'
         - readline
       all:
         filter:
