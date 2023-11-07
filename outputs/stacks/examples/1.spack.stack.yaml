@@ -5,18 +5,18 @@
 spack:
   # add package specs to the `specs` list
   specs:
-  - gcc@12.1.0%gcc@11.3.0
+  - gcc@12%gcc@11
   view: false
   concretizer:
     unify: true
   compilers:
   - compiler:
-      spec: gcc@=12.1.0
+      spec: gcc@=12.3.0
       paths:
-        cc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gcc-12.1.0-s5e5zwrzqozb5e6liaz3tjm6achptgzx/bin/gcc
-        cxx: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gcc-12.1.0-s5e5zwrzqozb5e6liaz3tjm6achptgzx/bin/g++
-        f77: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gcc-12.1.0-s5e5zwrzqozb5e6liaz3tjm6achptgzx/bin/gfortran
-        fc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gcc-12.1.0-s5e5zwrzqozb5e6liaz3tjm6achptgzx/bin/gfortran
+        cc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gcc
+        cxx: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/g++
+        f77: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran
+        fc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran
       flags: {}
       operating_system: ubuntu22.04
       target: x86_64
