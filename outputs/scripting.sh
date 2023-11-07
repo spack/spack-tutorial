@@ -29,10 +29,12 @@ import spack.store
 import spack.cmd
 import sys
 
+database = spack.store.STORE.db
+
 include_spec = Spec(sys.argv[1])
 exclude_spec = Spec(sys.argv[2])
 
-all_included = spack.store.db.query(include_spec)
+all_included = database.query(include_spec)
 result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
 
 spack.cmd.display_specs(result)
