@@ -26,7 +26,7 @@ The Spack tutorial container is built from another [repository](https://github.c
 ## Automatically generating command ouputs
 
 The tutorial `rst` files include output from Spack commands. This process is automated, and it is
-recommended to generate output. To regenerate the outputs, run:
+recommended to use this instead of running commands manually. To regenerate the outputs, run:
 
 ```shell
 make -C outputs -j <N>
