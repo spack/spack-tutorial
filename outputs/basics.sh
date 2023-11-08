@@ -22,28 +22,28 @@ example basics/list            "spack list"
 example basics/list-py         "spack list 'py-*'"
 
 # spack install
-example basics/gmake           "spack install gmake"
+example basics/gmake           "spack install zlib-ng"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
 example basics/mirror          "spack buildcache keys --install --trust"
 
-example basics/gmake-clang     "spack install gmake %clang"
+example basics/gmake-clang     "spack install zlib-ng %clang"
 
-example basics/versions-gmake  "spack versions gmake"
-example basics/gmake-4.3       "spack install gmake@4.3"
-example basics/gmake-gcc-10    "spack install gmake %gcc@10"
+example basics/versions-gmake  "spack versions zlib-ng"
+example basics/gmake-4.3       "spack install zlib-ng@2.0.7"
+example basics/gmake-gcc-10    "spack install zlib-ng %gcc@10"
 
-example basics/gmake-O3        "spack install gmake@4.3 cflags=-O3"
+example basics/gmake-O3        "spack install zlib-ng@2.0.7 cflags=-O3"
 
 example basics/find            "spack find"
 example basics/find-lf         "spack find -lf"
 
 example basics/tcl             "spack install tcl"
 
-example basics/tcl-gmake-clang "spack install tcl ^gmake@4.3 %clang"
+example basics/tcl-gmake-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 
-gmake_hash=$(spack find --format "{hash:3}" gmake cflags=-O3)
-example basics/tcl-gmake-hash  "spack install tcl ^/${gmake_hash}"
+zlib_ng_hash=$(spack find --format "{hash:3}" zlib-ng cflags=-O3)
+example basics/tcl-gmake-hash  "spack install tcl ^/${zlib_ng_hash}"
 
 example basics/find-ldf        "spack find -ldf"
 
@@ -66,15 +66,15 @@ example basics/graph-trilinos  "spack graph trilinos"
 
 example basics/find-d-tcl      "spack find -d tcl"
 
-example basics/find-gmake      "spack find gmake"
+example basics/find-gmake      "spack find zlib-ng"
 
-example basics/uninstall-gmake "spack uninstall -y gmake %gcc@10"
+example basics/uninstall-gmake "spack uninstall -y zlib-ng %gcc@10"
 
-example basics/find-lf-gmake   "spack find -lf gmake"
+example basics/find-lf-gmake   "spack find -lf zlib-ng"
 
-gmake_hash="$(spack find --format '{hash:3}' gmake@4.3 %clang)"
-example --expect-error basics/uninstall-needed "spack uninstall gmake/$gmake_hash"
-example basics/uninstall-r-needed "spack uninstall -y -R gmake/$gmake_hash"
+zlib_ng_hash="$(spack find --format '{hash:3}' zlib-ng@2.0.7 %clang)"
+example --expect-error basics/uninstall-needed "spack uninstall zlib-ng/$zlib_ng_hash"
+example basics/uninstall-r-needed "spack uninstall -y -R zlib-ng/$zlib_ng_hash"
 
 example --expect-error basics/uninstall-ambiguous "spack uninstall trilinos"
 
