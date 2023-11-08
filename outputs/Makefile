@@ -24,7 +24,7 @@ update-outputs: run
 	echo "Filtering raw outputs though col"
 	for raw in raw/*/*.out; do \
 		out=$$(echo $$raw | sed 's.raw/..'); \
-		cat $$raw | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
+		cat $$raw | perl -pe 's/\x1b]0;.+?\x07//g' | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
 	done
 
 run: $(run_targets)
