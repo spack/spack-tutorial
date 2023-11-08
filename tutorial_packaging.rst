@@ -131,7 +131,7 @@ calculation. Exit your editor to return to the command line and use the
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,8
+   :emphasize-lines: 1,5
 
 Note the entire ``version`` directive is provided for your convenience.
 

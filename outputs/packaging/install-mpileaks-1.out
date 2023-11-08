@@ -1,22 +1,31 @@
 $ spack install tutorial-mpileaks
-==> Installing tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk
-==> No binary for tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk found: installing from source
+==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/2]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7.spack
+==> Extracting gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 from binary cache
+==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Search: 0.00s.  Fetch: 0.09s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.14s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+==> Installing tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2 [2/2]
+==> No binary for tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2 found: installing from source
 ==> Fetching https://mirror.spack.io/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
 ==> tutorial-mpileaks: Executing phase: 'configure'
 ==> Error: ProcessError: Command exited with status 1:
-    '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk'
+    '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2'
 
 1 error found in build log:
-     33    checking for mpipgcc... no
-     34    Checking whether not-found responds to '-showme:compile'... no
-     35    Checking whether not-found responds to '-showme'... no
-     36    Checking whether not-found responds to '-compile-info'... no
-     37    Checking whether not-found responds to '-show'... no
-     38    /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk/spack-src/configure: line 4931: Echo: command not found
-  >> 39    configure: error: unable to locate adept-utils installation
+     35	   checking for mpipgcc... no
+     36	   Checking whether not-found responds to '-showme:compile'... no
+     37	   Checking whether not-found responds to '-showme'... no
+     38	   Checking whether not-found responds to '-compile-info'... no
+     39	   Checking whether not-found responds to '-show'... no
+     40	   /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-lxhhwqacj5p
+	   trs5vnfg4opmcffrfh7g2/spack-src/configure: line 4931: Echo: command
+	   not found
+  >> 41	   configure: error: unable to locate adept-utils installation
 
 See build log for details:
-  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ifg765dqmiwc5fcx4kl3kol2il4kw5gk/spack-build-out.txt
+  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2/spack-build-out.txt
 

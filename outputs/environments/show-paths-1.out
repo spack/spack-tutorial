@@ -1,6 +1,7 @@
 $ env | grep PATH=
-PKG_CONFIG_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/lib/pkgconfig:/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/share/pkgconfig:/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/lib64/pkgconfig
-ACLOCAL_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/share/aclocal
+LD_LIBRARY_PATH=.
+PKG_CONFIG_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/lib64/pkgconfig:/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/lib/pkgconfig:/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/share/pkgconfig:.
+ACLOCAL_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/share/aclocal:.
 PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/bin:/home/spack/spack/bin:/opt/spack/view/bin:/root/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 MANPATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/share/man:/home/spack/spack/var/spack/environments/myproject2/.spack-env/view/man:.:
-CMAKE_PREFIX_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view
+CMAKE_PREFIX_PATH=/home/spack/spack/var/spack/environments/myproject2/.spack-env/view:.

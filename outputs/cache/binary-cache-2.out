@@ -1,47 +1,56 @@
 $ spack config add "config:install_tree:padded_length:128"
 $ spack install --no-cache
-==> Concretized zlib
- -   mntflxr  zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-
 ==> Concretized bzip2
- -   dca2qyg  bzip2@1.0.8%gcc@11.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -   zdl3dic	  ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -   7wr75ce	      ^libiconv@1.17%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+ -   4oz3kpf  bzip2@1.0.8%gcc@11.4.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+ -   ueheij3	  ^diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   znvoani	      ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+ -   ivn4eq4	      ^libiconv@1.17%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
 
-==> Installing zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-==> Fetching https://mirror.spack.io/_source-cache/archive/b3/b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30.tar.gz
+==> Concretized zlib
+ -   gnpfvzj  zlib@1.3%gcc@11.4.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+ -   znvoani	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+
+==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/5]
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Stage: 0.17s.	 Install: 11.00s.  Post-install: 0.05s.	 Total: 11.26s
+[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+==> Installing zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2 [2/5]
+==> Fetching http://zlib.net/fossils/zlib-1.3.tar.gz
 ==> No patches needed for zlib
 ==> zlib: Executing phase: 'edit'
 ==> zlib: Executing phase: 'build'
 ==> zlib: Executing phase: 'install'
-==> zlib: Successfully installed zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-  Stage: 0.33s.  Edit: 0.54s.  Build: 1.44s.  Install: 0.19s.  Post-install: 0.04s.  Total: 2.57s
-[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-==> Installing libiconv-1.17-7wr75cescbtfyjppbbvswfpurs3gtxyf
-==> Fetching https://ftpmirror.gnu.org/libiconv/libiconv-1.17.tar.gz
+==> zlib: Successfully installed zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2
+  Stage: 3.12s.	 Edit: 0.34s.  Build: 0.51s.  Install: 0.07s.  Post-install: 0.03s.  Total: 4.13s
+[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2
+==> Installing libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2 [3/5]
+==> Fetching https://mirror.spack.io/_source-cache/archive/8f/8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313.tar.gz
 ==> No patches needed for libiconv
 ==> libiconv: Executing phase: 'autoreconf'
 ==> libiconv: Executing phase: 'configure'
 ==> libiconv: Executing phase: 'build'
 ==> libiconv: Executing phase: 'install'
-==> libiconv: Successfully installed libiconv-1.17-7wr75cescbtfyjppbbvswfpurs3gtxyf
-  Stage: 5.01s.  Autoreconf: 0.00s.  Configure: 15.58s.  Build: 10.31s.  Install: 0.92s.  Post-install: 0.06s.	Total: 31.94s
-[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/libiconv-1.17-7wr75cescbtfyjppbbvswfpurs3gtxyf
-==> Installing diffutils-3.9-zdl3dicv5j27w25e54v52bww5n3h4c74
-==> Fetching https://ftpmirror.gnu.org/diffutils/diffutils-3.9.tar.xz
+==> libiconv: Successfully installed libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
+  Stage: 0.22s.	 Autoreconf: 0.00s.  Configure: 11.30s.	 Build: 6.68s.	Install: 0.59s.	 Post-install: 0.06s.  Total: 18.92s
+[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
+==> Installing diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en [4/5]
+==> Fetching https://mirror.spack.io/_source-cache/archive/d8/d80d3be90a201868de83d78dad3413ad88160cc53bcc36eb9eaf7c20dbf023f1.tar.xz
 ==> No patches needed for diffutils
 ==> diffutils: Executing phase: 'autoreconf'
 ==> diffutils: Executing phase: 'configure'
 ==> diffutils: Executing phase: 'build'
 ==> diffutils: Executing phase: 'install'
-==> diffutils: Successfully installed diffutils-3.9-zdl3dicv5j27w25e54v52bww5n3h4c74
-  Stage: 3.79s.  Autoreconf: 0.00s.  Configure: 29.17s.  Build: 3.79s.	Install: 0.81s.  Post-install: 0.05s.  Total: 37.67s
-[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/diffutils-3.9-zdl3dicv5j27w25e54v52bww5n3h4c74
-==> Installing bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
+==> diffutils: Successfully installed diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en
+  Stage: 0.20s.	 Autoreconf: 0.00s.  Configure: 22.38s.	 Build: 1.48s.	Install: 0.55s.	 Post-install: 0.06s.  Total: 24.74s
+[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en
+==> Installing bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7 [5/5]
 ==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
 ==> Ran patch() for bzip2
 ==> bzip2: Executing phase: 'install'
-==> bzip2: Successfully installed bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
-  Stage: 0.32s.  Install: 2.37s.  Post-install: 0.04s.	Total: 2.75s
-[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/bzip2-1.0.8-dca2qygvz7nc6q6ci2ikw7ltc2v4pryo
+==> bzip2: Successfully installed bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
+  Stage: 0.08s.	 Install: 1.55s.  Post-install: 0.03s.	Total: 1.70s
+[+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
 ==> Updating view at /home/spack/cache-binary/.spack-env/view

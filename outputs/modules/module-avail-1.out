@@ -1,13 +1,47 @@
 $ module avail
 
-------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------------------------------------------------------------------------------------------------------
-   autoconf-2.69-gcc-11.3.0-t4nuen3			    curl-8.0.1-gcc-11.3.0-4cec7ab	 gmake-4.4.1-gcc-11.3.0-guaj3kb        lua-5.4.4-gcc-11.3.0-l5jkvce		     openssl-1.1.1t-gcc-11.3.0-w2by2b2	  texinfo-7.0.3-gcc-11.3.0-tcpqkls
-   autoconf-archive-2023.02.20-gcc-11.3.0-5wwl7c6	    diffutils-3.9-gcc-11.3.0-zdl3dic	 gmp-6.2.1-gcc-11.3.0-7kxi3rr	       lua-luafilesystem-1_8_0-gcc-11.3.0-23tvtrc    perl-5.36.0-gcc-11.3.0-j5tavds	  unzip-6.0-gcc-11.3.0-ttovk4w
-   automake-1.16.5-gcc-11.3.0-oa3w4kf			    ed-1.4-gcc-11.3.0-yru5brp		 libiconv-1.17-gcc-11.3.0-7wr75ce      lua-luaposix-36.1-gcc-11.3.0-zebno4c	     pigz-2.7-gcc-11.3.0-aln73eo	  xz-5.4.1-gcc-11.3.0-4kpkw5a
-   bc-1.07.1-gcc-11.3.0-ekfwavo 			    gawk-5.2.1-gcc-11.3.0-6lk2khk	 libsigsegv-2.14-gcc-11.3.0-okig24f    m4-1.4.19-gcc-11.3.0-llbjfk2		     pkgconf-1.9.5-gcc-11.3.0-mh73nkp	  zlib-1.2.13-gcc-11.3.0-mntflxr
-   berkeley-db-18.1.40-gcc-11.3.0-7sohpaz		    gcc-12.1.0-gcc-11.3.0-s5e5zwr	 libtool-2.4.7-gcc-11.3.0-qkvj7am      mpc-1.3.1-gcc-11.3.0-3qvnliw		     readline-8.2-gcc-11.3.0-tddm2ff	  zstd-1.5.5-gcc-11.3.0-qoo4rlo
-   bzip2-1.0.8-gcc-11.3.0-dca2qyg			    gdbm-1.23-gcc-11.3.0-ba4juc3	 libxml2-2.10.3-gcc-11.3.0-pcbenki     mpfr-4.2.0-gcc-11.3.0-aiys7vc		     tar-1.34-gcc-11.3.0-e77cf6a
-   ca-certificates-mozilla-2023-01-10-gcc-11.3.0-5pxkrf4    gettext-0.21.1-gcc-11.3.0-p4obvgx	 lmod-8.7.24-gcc-11.3.0-hrwwlqa        ncurses-6.4-gcc-11.3.0-4dokmxj		     tcl-8.6.12-gcc-11.3.0-6afnoet
+------ /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------
+   autoconf-archive/2023.02.20-gcc-11.4.0-4wbogd6
+   autoconf/2.69-gcc-11.4.0-mnfnoa5
+   automake/1.16.5-gcc-11.4.0-d3cncgl
+   bc/1.07.1-gcc-11.4.0-ra6efl5
+   berkeley-db/18.1.40-gcc-11.4.0-ku7makq
+   bzip2/1.0.8-gcc-11.4.0-4oz3kpf
+   ca-certificates-mozilla/2023-05-30-gcc-11.4.0-ct4al4u
+   curl/8.4.0-gcc-11.4.0-ijsmc3j
+   diffutils/3.9-gcc-11.4.0-ueheij3
+   ed/1.4-gcc-11.4.0-3kggq53
+   gawk/5.2.2-gcc-11.4.0-t4xydm4
+   gcc/12.3.0-gcc-11.4.0-chmemdi
+   gdbm/1.23-gcc-11.4.0-m626hzw
+   gettext/0.22.3-gcc-11.4.0-y26lmlo
+   gmake/4.4.1-gcc-11.4.0-znvoani
+   gmp/6.2.1-gcc-11.4.0-2fyiqrp
+   libiconv/1.17-gcc-11.4.0-ivn4eq4
+   libsigsegv/2.14-gcc-11.4.0-zuopqri
+   libtool/2.4.7-gcc-11.4.0-rgag55h
+   libxml2/2.10.3-gcc-11.4.0-67qoxbv
+   lmod/8.7.24-gcc-11.4.0-m6ki2sd
+   lua-luafilesystem/1.8.0-gcc-11.4.0-jw4gyrw
+   lua-luaposix/36.1-gcc-11.4.0-6rkzyvr
+   lua/5.4.4-gcc-11.4.0-paqrr2m
+   m4/1.4.19-gcc-11.4.0-jnv5nut
+   mpc/1.3.1-gcc-11.4.0-jueol5k
+   mpfr/4.2.0-gcc-11.4.0-qpadvjw
+   ncurses/6.4-gcc-11.4.0-qqlh6as
+   nghttp2/1.57.0-gcc-11.4.0-my64owh
+   openssl/3.1.3-gcc-11.4.0-35j7wvr
+   perl/5.38.0-gcc-11.4.0-dg34i2a
+   pigz/2.7-gcc-11.4.0-catlxmo
+   pkgconf/1.9.5-gcc-11.4.0-zjgtpdo
+   readline/8.2-gcc-11.4.0-xxgqlmj
+   tar/1.34-gcc-11.4.0-vdb3ozo
+   tcl/8.6.12-gcc-11.4.0-i2ympro
+   texinfo/7.0.3-gcc-11.4.0-km6pqxp
+   unzip/6.0-gcc-11.4.0-uy5dhue
+   xz/5.4.1-gcc-11.4.0-axxqoeq
+   zlib-ng/2.1.4-gcc-11.4.0-5xcetrv
+   zstd/1.5.5-gcc-11.4.0-jkznmrm
 
 If the avail list is too long consider trying:
 
@@ -15,6 +49,7 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching
+any of the "keys".
 
 

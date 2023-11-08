@@ -1,29 +1,125 @@
 $ module avail
 
-------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------------------------------------------------------------------------------------------------------
-   autoconf-2.69-gcc-11.3.0-t4nuen3			    gdbm-1.23-gcc-12.1.0-febzyvz	       libxml2-2.10.3-gcc-12.1.0-sbbiixp	     openssl-1.1.1t-gcc-11.3.0-w2by2b2		       py-scipy-1.10.1-gcc-12.1.0-ol3w546
-   autoconf-2.69-gcc-12.1.0-mr5osqp			    gettext-0.21.1-gcc-11.3.0-p4obvgx	       lmod-8.7.24-gcc-11.3.0-hrwwlqa		     openssl-1.1.1t-gcc-12.1.0-7dyvgor		       py-setuptools-63.4.3-gcc-12.1.0-wujb6fw
-   autoconf-archive-2023.02.20-gcc-11.3.0-5wwl7c6	    gettext-0.21.1-gcc-12.1.0-7qnn3pi	       lua-5.4.4-gcc-11.3.0-l5jkvce		     perl-5.36.0-gcc-11.3.0-j5tavds		       py-tomli-2.0.1-gcc-12.1.0-ivq3gn7
-   automake-1.16.5-gcc-11.3.0-oa3w4kf			    gmake-4.4.1-gcc-11.3.0-guaj3kb	       lua-luafilesystem-1_8_0-gcc-11.3.0-23tvtrc    perl-5.36.0-gcc-12.1.0-fq7gb4a		       py-wheel-0.37.1-gcc-12.1.0-kbelzwq
-   automake-1.16.5-gcc-12.1.0-yyzuikk			    gmake-4.4.1-gcc-12.1.0-74omm4b	       lua-luaposix-36.1-gcc-11.3.0-zebno4c	     pigz-2.7-gcc-11.3.0-aln73eo		       python-3.10.10-gcc-12.1.0-nvcwpz4
-   bc-1.07.1-gcc-11.3.0-ekfwavo 			    gmp-6.2.1-gcc-11.3.0-7kxi3rr	       m4-1.4.19-gcc-11.3.0-llbjfk2		     pigz-2.7-gcc-12.1.0-i2azy7n		       re2c-2.2-gcc-12.1.0-622aruu
-   berkeley-db-18.1.40-gcc-11.3.0-7sohpaz		    hwloc-2.9.1-gcc-12.1.0-sd6g5bq	       m4-1.4.19-gcc-12.1.0-s6ky5ld		     pkgconf-1.9.5-gcc-11.3.0-mh73nkp		       readline-8.2-gcc-11.3.0-tddm2ff
-   berkeley-db-18.1.40-gcc-12.1.0-vtjcxzc		    krb5-1.20.1-gcc-12.1.0-n5v3tug	       meson-1.1.0-gcc-12.1.0-s5rzrue		     pkgconf-1.9.5-gcc-12.1.0-gbfssja		       readline-8.2-gcc-12.1.0-qypmr5g
-   bison-3.8.2-gcc-12.1.0-fjc7p57			    libbsd-0.11.7-gcc-12.1.0-kqphoxb	       mpc-1.3.1-gcc-11.3.0-3qvnliw		     pmix-4.2.3-gcc-12.1.0-ouqw26w		       sqlite-3.40.1-gcc-12.1.0-at2vwsu
-   bzip2-1.0.8-gcc-11.3.0-dca2qyg			    libedit-3.1-20210216-gcc-12.1.0-xkjcqre    mpfr-4.2.0-gcc-11.3.0-aiys7vc		     py-beniget-0.4.1-gcc-12.1.0-s6swsfi	       tar-1.34-gcc-11.3.0-e77cf6a
-   bzip2-1.0.8-gcc-12.1.0-ecute7q			    libevent-2.1.12-gcc-12.1.0-2y2whk4	       mpich-4.1.1-gcc-12.1.0-fb4tt65		     py-build-0.10.0-gcc-12.1.0-uhboysx 	       tar-1.34-gcc-12.1.0-2r7rutu
-   ca-certificates-mozilla-2023-01-10-gcc-11.3.0-5pxkrf4    libfabric-1.18.0-gcc-12.1.0-er4rpyd        ncurses-6.4-gcc-11.3.0-4dokmxj		     py-cython-0.29.33-gcc-12.1.0-ny2lq6w	       tcl-8.6.12-gcc-11.3.0-6afnoet
-   ca-certificates-mozilla-2023-01-10-gcc-12.1.0-7u553me    libffi-3.4.4-gcc-12.1.0-u2ztzc2	       ncurses-6.4-gcc-12.1.0-yugzpgp		     py-flit-core-3.7.1-gcc-12.1.0-ihmiu27	       texinfo-7.0.3-gcc-11.3.0-tcpqkls
-   cmake-3.26.3-gcc-12.1.0-cb3vkyk			    libiconv-1.17-gcc-11.3.0-7wr75ce	       netlib-lapack-3.11.0-gcc-12.1.0-fjlwowf	     py-gast-0.5.3-gcc-12.1.0-xg26gxl		       unzip-6.0-gcc-11.3.0-ttovk4w
-   curl-8.0.1-gcc-11.3.0-4cec7ab			    libiconv-1.17-gcc-12.1.0-ojujfjj	       netlib-scalapack-2.2.0-gcc-12.1.0-75u5574     py-meson-python-0.12.0-gcc-12.1.0-rosemhn	       util-linux-uuid-2.38.1-gcc-12.1.0-gbfbnoj
-   diffutils-3.9-gcc-11.3.0-zdl3dic			    libmd-1.0.4-gcc-12.1.0-a4ofctm	       netlib-scalapack-2.2.0-gcc-12.1.0-ea7dxfb     py-numpy-1.24.3-gcc-12.1.0-54s3ofo 	       util-macros-1.19.3-gcc-12.1.0-imbmumc
-   diffutils-3.9-gcc-12.1.0-csiltjm			    libpciaccess-0.17-gcc-12.1.0-4voenez       netlib-scalapack-2.2.0-gcc-12.1.0-qmna5re     py-packaging-23.0-gcc-12.1.0-yoamuqz	       xz-5.4.1-gcc-11.3.0-4kpkw5a
-   ed-1.4-gcc-11.3.0-yru5brp				    libsigsegv-2.14-gcc-11.3.0-okig24f	       netlib-scalapack-2.2.0-gcc-12.1.0-yq5hsff     py-pip-23.0-gcc-12.1.0-khveatv		       xz-5.4.1-gcc-12.1.0-dat54qr
-   expat-2.5.0-gcc-12.1.0-upevc4c			    libsigsegv-2.14-gcc-12.1.0-oyzxg5g	       ninja-1.11.1-gcc-12.1.0-2zgsglc		     py-ply-3.11-gcc-12.1.0-ovxjh5h		       yaksa-0.2-gcc-12.1.0-5mplopl
-   findutils-4.9.0-gcc-12.1.0-hgvmfon			    libtool-2.4.7-gcc-11.3.0-qkvj7am	       numactl-2.0.14-gcc-12.1.0-45xq3wr	     py-pybind11-2.10.1-gcc-12.1.0-2hmi7rq	       zlib-1.2.13-gcc-11.3.0-mntflxr
-   gawk-5.2.1-gcc-11.3.0-6lk2khk			    libtool-2.4.7-gcc-12.1.0-owrdqyk	       openblas-0.3.23-gcc-12.1.0-5hvwk3g	     py-pyproject-hooks-1.0.0-gcc-12.1.0-udgbusq       zlib-1.2.13-gcc-12.1.0-oboyaa5
-   gcc-12.1.0-gcc-11.3.0-s5e5zwr			    libxcrypt-4.4.33-gcc-12.1.0-uq4wpnl        openmpi-4.1.5-gcc-12.1.0-ekmi64f 	     py-pyproject-metadata-0.7.1-gcc-12.1.0-lrhcey2    zstd-1.5.5-gcc-11.3.0-qoo4rlo
-   gdbm-1.23-gcc-11.3.0-ba4juc3 			    libxml2-2.10.3-gcc-11.3.0-pcbenki	       openssh-9.3p1-gcc-12.1.0-vu4ehmb 	     py-pythran-0.12.0-gcc-12.1.0-s6iwj3a	       zstd-1.5.5-gcc-12.1.0-a5p5yob
+------ /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------
+   amdblis/4.1-gcc-12.3.0-ywpdccr
+   autoconf-archive/2023.02.20-gcc-11.4.0-4wbogd6
+   autoconf/2.69-gcc-11.4.0-mnfnoa5
+   autoconf/2.69-gcc-12.3.0-kroqjku			 (D)
+   automake/1.16.5-gcc-11.4.0-d3cncgl
+   automake/1.16.5-gcc-12.3.0-dajnwux			 (D)
+   bc/1.07.1-gcc-11.4.0-ra6efl5
+   berkeley-db/18.1.40-gcc-11.4.0-ku7makq
+   berkeley-db/18.1.40-gcc-12.3.0-krlqpve		 (D)
+   bison/3.8.2-gcc-12.3.0-tr45sog
+   bzip2/1.0.8-gcc-11.4.0-4oz3kpf
+   bzip2/1.0.8-gcc-12.3.0-bbwtdnr			 (D)
+   ca-certificates-mozilla/2023-05-30-gcc-11.4.0-ct4al4u
+   ca-certificates-mozilla/2023-05-30-gcc-12.3.0-l7zpjxt (D)
+   cmake/3.27.7-gcc-12.3.0-dukasmm
+   curl/8.4.0-gcc-11.4.0-ijsmc3j
+   curl/8.4.0-gcc-12.3.0-u2ni6an			 (D)
+   diffutils/3.9-gcc-11.4.0-ueheij3
+   diffutils/3.9-gcc-12.3.0-sbfcnap			 (D)
+   ed/1.4-gcc-11.4.0-3kggq53
+   expat/2.5.0-gcc-12.3.0-grrt7ig
+   findutils/4.9.0-gcc-12.3.0-pdopgfr
+   gawk/5.2.2-gcc-11.4.0-t4xydm4
+   gcc/12.3.0-gcc-11.4.0-chmemdi
+   gdbm/1.23-gcc-11.4.0-m626hzw
+   gdbm/1.23-gcc-12.3.0-w66nich				 (D)
+   gettext/0.22.3-gcc-11.4.0-y26lmlo
+   gettext/0.22.3-gcc-12.3.0-y7ty4lo			 (D)
+   gmake/4.4.1-gcc-11.4.0-znvoani
+   gmake/4.4.1-gcc-12.3.0-6qiak7n			 (D)
+   gmp/6.2.1-gcc-11.4.0-2fyiqrp
+   hwloc/2.9.1-gcc-12.3.0-rvotk5a
+   krb5/1.20.1-gcc-12.3.0-5d6b7ng
+   libbsd/0.11.7-gcc-12.3.0-sygavnw
+   libedit/3.1-20210216-gcc-12.3.0-fm2rgwy
+   libevent/2.1.12-gcc-12.3.0-sasn7wh
+   libfabric/1.19.0-gcc-12.3.0-46fsov7
+   libffi/3.4.4-gcc-12.3.0-ecpriyn
+   libiconv/1.17-gcc-11.4.0-ivn4eq4
+   libiconv/1.17-gcc-12.3.0-a34xpad			 (D)
+   libmd/1.0.4-gcc-12.3.0-ivvykht
+   libpciaccess/0.17-gcc-12.3.0-el7pkf4
+   libsigsegv/2.14-gcc-11.4.0-zuopqri
+   libsigsegv/2.14-gcc-12.3.0-46vv5f3			 (D)
+   libtool/2.4.7-gcc-11.4.0-rgag55h
+   libtool/2.4.7-gcc-12.3.0-hvedpuf			 (D)
+   libxcrypt/4.4.35-gcc-12.3.0-guszc5m
+   libxml2/2.10.3-gcc-11.4.0-67qoxbv
+   libxml2/2.10.3-gcc-12.3.0-damyeos			 (D)
+   lmod/8.7.24-gcc-11.4.0-m6ki2sd
+   lua-luafilesystem/1.8.0-gcc-11.4.0-jw4gyrw
+   lua-luaposix/36.1-gcc-11.4.0-6rkzyvr
+   lua/5.4.4-gcc-11.4.0-paqrr2m
+   m4/1.4.19-gcc-11.4.0-jnv5nut
+   m4/1.4.19-gcc-12.3.0-oebiztm				 (D)
+   meson/1.2.2-gcc-12.3.0-htbkkj2
+   mpc/1.3.1-gcc-11.4.0-jueol5k
+   mpfr/4.2.0-gcc-11.4.0-qpadvjw
+   mpich/4.1.2-gcc-12.3.0-cxezwh7
+   ncurses/6.4-gcc-11.4.0-qqlh6as
+   ncurses/6.4-gcc-12.3.0-glwymee			 (D)
+   netlib-lapack/3.11.0-gcc-12.3.0-4uab534
+   netlib-scalapack/2.2.0-gcc-12.3.0-f4bc72j
+   netlib-scalapack/2.2.0-gcc-12.3.0-scllgbn
+   netlib-scalapack/2.2.0-gcc-12.3.0-3mwyatr
+   netlib-scalapack/2.2.0-gcc-12.3.0-22ffx3e		 (D)
+   nghttp2/1.57.0-gcc-11.4.0-my64owh
+   nghttp2/1.57.0-gcc-12.3.0-dvtfejq			 (D)
+   ninja/1.11.1-gcc-12.3.0-qf3fwcn
+   numactl/2.0.14-gcc-12.3.0-iiok6h4
+   openblas/0.3.24-gcc-12.3.0-qoggfi2
+   openmpi/4.1.6-gcc-12.3.0-fnistzv
+   openssh/9.5p1-gcc-12.3.0-6ksmdje
+   openssl/3.1.3-gcc-11.4.0-35j7wvr
+   openssl/3.1.3-gcc-12.3.0-v7jc5lq			 (D)
+   perl/5.38.0-gcc-11.4.0-dg34i2a
+   perl/5.38.0-gcc-12.3.0-hh6v2va			 (D)
+   pigz/2.7-gcc-11.4.0-catlxmo
+   pigz/2.7-gcc-12.3.0-m7r2rmw				 (D)
+   pkgconf/1.9.5-gcc-11.4.0-zjgtpdo
+   pkgconf/1.9.5-gcc-12.3.0-ccpwoda			 (D)
+   pmix/5.0.1-gcc-12.3.0-g2hfbjg
+   py-beniget/0.4.1-gcc-12.3.0-fizom4w
+   py-cython/0.29.36-gcc-12.3.0-ylumqbe
+   py-flit-core/3.9.0-gcc-12.3.0-nzh222k
+   py-gast/0.5.3-gcc-12.3.0-h7hu6wn
+   py-meson-python/0.13.1-gcc-12.3.0-6zbxyin
+   py-numpy/1.26.1-gcc-12.3.0-4rqb2wc
+   py-packaging/23.1-gcc-12.3.0-7rj6npn
+   py-pip/23.1.2-gcc-12.3.0-lvdwpa6
+   py-ply/3.11-gcc-12.3.0-x3c55tr
+   py-pybind11/2.11.0-gcc-12.3.0-bo5zrbu
+   py-pyproject-metadata/0.7.1-gcc-12.3.0-bw34ifa
+   py-pythran/0.12.2-gcc-12.3.0-7fwfpfj
+   py-scipy/1.11.3-gcc-12.3.0-b6ldv5o
+   py-setuptools/68.0.0-gcc-12.3.0-crc6iaj
+   py-wheel/0.41.2-gcc-12.3.0-zwngepq
+   python/3.11.6-gcc-12.3.0-oa7j22b
+   re2c/2.2-gcc-12.3.0-cw5qvcn
+   readline/8.2-gcc-11.4.0-xxgqlmj
+   readline/8.2-gcc-12.3.0-cz4lfdu			 (D)
+   sqlite/3.43.2-gcc-12.3.0-p3srvwu
+   tar/1.34-gcc-11.4.0-vdb3ozo
+   tar/1.34-gcc-12.3.0-waes7yx				 (D)
+   tcl/8.6.12-gcc-11.4.0-i2ympro
+   texinfo/7.0.3-gcc-11.4.0-km6pqxp
+   unzip/6.0-gcc-11.4.0-uy5dhue
+   util-linux-uuid/2.38.1-gcc-12.3.0-oagevhm
+   util-macros/1.19.3-gcc-12.3.0-t67cwmg
+   xz/5.4.1-gcc-11.4.0-axxqoeq
+   xz/5.4.1-gcc-12.3.0-taa3gkk				 (D)
+   yaksa/0.3-gcc-12.3.0-hmywdkq
+   zlib-ng/2.1.4-gcc-11.4.0-5xcetrv
+   zlib-ng/2.1.4-gcc-12.3.0-draqwfy			 (D)
+   zstd/1.5.5-gcc-11.4.0-jkznmrm
+   zstd/1.5.5-gcc-12.3.0-ngvd73i			 (D)
+
+  Where:
+   D:  Default Module
 
 If the avail list is too long consider trying:
 
@@ -31,6 +127,7 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching
+any of the "keys".
 
 

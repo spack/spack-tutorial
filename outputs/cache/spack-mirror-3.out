@@ -2,13 +2,15 @@ $ spack add unzip
 ==> Adding unzip to environment /home/spack/cache-env
 $ spack install
 ==> Concretized unzip
- -   ttovk4w  unzip@6.0%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+ -   uy5dhue  unzip@6.0%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+[+]  znvoani	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
 
-==> Installing unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/unzip-6.0/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat.spack
-==> Extracting unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat from binary cache
-==> unzip: Successfully installed unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
-  Search: 0.00s.  Fetch: 0.18s.  Install: 0.03s.  Total: 0.21s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/unzip-6.0-ttovk4wyxes7vg4alfh37oxg6rcggcat
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+==> Installing unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc [2/2]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc.spack
+==> Extracting unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc from binary cache
+==> unzip: Successfully installed unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc
+  Search: 0.00s.  Fetch: 0.14s.	 Install: 0.04s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.18s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0-uy5dhuenjwg5q3qs7fmjou2qnvc6kazc
 ==> Updating view at /home/spack/cache-env/.spack-env/view

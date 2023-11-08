@@ -1,19 +1,82 @@
 $ module avail
 
-------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------------------------------------------------------------------------------------------------------
-   autoconf/2.69-gcc-12.1.0			    gmake/4.4.1-gcc-12.1.0	       libxcrypt/4.4.33-gcc-12.1.0				      openblas/0.3.23-gcc-12.1.0       py-meson-python/0.12.0-gcc-12.1.0	 python/3.10.10-gcc-12.1.0
-   automake/1.16.5-gcc-12.1.0			    hwloc/2.9.1-gcc-12.1.0	       libxml2/2.10.3-gcc-12.1.0				      openmpi/4.1.5-gcc-12.1.0	       py-numpy/1.24.3-gcc-12.1.0-openblas	 re2c/2.2-gcc-12.1.0
-   berkeley-db/18.1.40-gcc-12.1.0		    krb5/1.20.1-gcc-12.1.0	       m4/1.4.19-gcc-12.1.0					      openssh/9.3p1-gcc-12.1.0	       py-packaging/23.0-gcc-12.1.0		 readline/8.2-gcc-12.1.0
-   bison/3.8.2-gcc-12.1.0			    libbsd/0.11.7-gcc-12.1.0	       meson/1.1.0-gcc-12.1.0					      openssl/1.1.1t-gcc-12.1.0        py-pip/23.0-gcc-12.1.0			 sqlite/3.40.1-gcc-12.1.0
-   bzip2/1.0.8-gcc-12.1.0			    libedit/3.1-20210216-gcc-12.1.0    mpich/4.1.1-gcc-12.1.0					      perl/5.36.0-gcc-12.1.0	       py-ply/3.11-gcc-12.1.0			 tar/1.34-gcc-12.1.0
-   ca-certificates-mozilla/2023-01-10-gcc-12.1.0    libevent/2.1.12-gcc-12.1.0	       ncurses/6.4-gcc-12.1.0					      pigz/2.7-gcc-12.1.0	       py-pybind11/2.10.1-gcc-12.1.0		 util-linux-uuid/2.38.1-gcc-12.1.0
-   cmake/3.26.3-gcc-12.1.0			    libfabric/1.18.0-gcc-12.1.0        netlib-lapack/3.11.0-gcc-12.1.0				      pkgconf/1.9.5-gcc-12.1.0	       py-pyproject-hooks/1.0.0-gcc-12.1.0	 util-macros/1.19.3-gcc-12.1.0
-   diffutils/3.9-gcc-12.1.0			    libffi/3.4.4-gcc-12.1.0	       netlib-scalapack/2.2.0-gcc-12.1.0-netlib-lapack-mpich	      pmix/4.2.3-gcc-12.1.0	       py-pyproject-metadata/0.7.1-gcc-12.1.0	 xz/5.4.1-gcc-12.1.0
-   expat/2.5.0-gcc-12.1.0			    libiconv/1.17-gcc-12.1.0	       netlib-scalapack/2.2.0-gcc-12.1.0-netlib-lapack-openmpi	      py-beniget/0.4.1-gcc-12.1.0      py-pythran/0.12.0-gcc-12.1.0-openblas	 yaksa/0.2-gcc-12.1.0
-   findutils/4.9.0-gcc-12.1.0			    libmd/1.0.4-gcc-12.1.0	       netlib-scalapack/2.2.0-gcc-12.1.0-openblas-mpich 	      py-build/0.10.0-gcc-12.1.0       py-scipy/1.10.1-gcc-12.1.0-openblas	 zlib/1.2.13-gcc-12.1.0
-   gcc/12.1.0-gcc-11.3.0			    libpciaccess/0.17-gcc-12.1.0       netlib-scalapack/2.2.0-gcc-12.1.0-openblas-openmpi      (D)    py-cython/0.29.33-gcc-12.1.0     py-setuptools/63.4.3-gcc-12.1.0		 zstd/1.5.5-gcc-12.1.0
-   gdbm/1.23-gcc-12.1.0 			    libsigsegv/2.14-gcc-12.1.0	       ninja/1.11.1-gcc-12.1.0					      py-flit-core/3.7.1-gcc-12.1.0    py-tomli/2.0.1-gcc-12.1.0
-   gettext/0.21.1-gcc-12.1.0			    libtool/2.4.7-gcc-12.1.0	       numactl/2.0.14-gcc-12.1.0				      py-gast/0.5.3-gcc-12.1.0	       py-wheel/0.37.1-gcc-12.1.0
+------ /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3 -------
+   amdblis/4.1-gcc-12.3.0-ywpdccr
+   autoconf/2.69-gcc-12.3.0-kroqjku
+   automake/1.16.5-gcc-12.3.0-dajnwux
+   berkeley-db/18.1.40-gcc-12.3.0-krlqpve
+   bison/3.8.2-gcc-12.3.0-tr45sog
+   bzip2/1.0.8-gcc-12.3.0-bbwtdnr
+   ca-certificates-mozilla/2023-05-30-gcc-12.3.0-l7zpjxt
+   cmake/3.27.7-gcc-12.3.0-dukasmm
+   curl/8.4.0-gcc-12.3.0-u2ni6an
+   diffutils/3.9-gcc-12.3.0-sbfcnap
+   expat/2.5.0-gcc-12.3.0-grrt7ig
+   findutils/4.9.0-gcc-12.3.0-pdopgfr
+   gcc/12.3.0-gcc-11.4.0
+   gdbm/1.23-gcc-12.3.0-w66nich
+   gettext/0.22.3-gcc-12.3.0-y7ty4lo
+   gmake/4.4.1-gcc-12.3.0-6qiak7n
+   hwloc/2.9.1-gcc-12.3.0-rvotk5a
+   krb5/1.20.1-gcc-12.3.0-5d6b7ng
+   libbsd/0.11.7-gcc-12.3.0-sygavnw
+   libedit/3.1-20210216-gcc-12.3.0-fm2rgwy
+   libevent/2.1.12-gcc-12.3.0-sasn7wh
+   libfabric/1.19.0-gcc-12.3.0-46fsov7
+   libffi/3.4.4-gcc-12.3.0-ecpriyn
+   libiconv/1.17-gcc-12.3.0-a34xpad
+   libmd/1.0.4-gcc-12.3.0-ivvykht
+   libpciaccess/0.17-gcc-12.3.0-el7pkf4
+   libsigsegv/2.14-gcc-12.3.0-46vv5f3
+   libtool/2.4.7-gcc-12.3.0-hvedpuf
+   libxcrypt/4.4.35-gcc-12.3.0-guszc5m
+   libxml2/2.10.3-gcc-12.3.0-damyeos
+   m4/1.4.19-gcc-12.3.0-oebiztm
+   meson/1.2.2-gcc-12.3.0-htbkkj2
+   mpich/4.1.2-gcc-12.3.0-cxezwh7
+   ncurses/6.4-gcc-12.3.0-glwymee
+   netlib-lapack/3.11.0-gcc-12.3.0-4uab534
+   netlib-scalapack/2.2.0-gcc-12.3.0-netlib-lapack-mpich
+   netlib-scalapack/2.2.0-gcc-12.3.0-netlib-lapack-openmpi
+   netlib-scalapack/2.2.0-gcc-12.3.0-openblas-mpich
+   netlib-scalapack/2.2.0-gcc-12.3.0-openblas-openmpi	   (D)
+   nghttp2/1.57.0-gcc-12.3.0-dvtfejq
+   ninja/1.11.1-gcc-12.3.0-qf3fwcn
+   numactl/2.0.14-gcc-12.3.0-iiok6h4
+   openblas/0.3.24-gcc-12.3.0-qoggfi2
+   openmpi/4.1.6-gcc-12.3.0-fnistzv
+   openssh/9.5p1-gcc-12.3.0-6ksmdje
+   openssl/3.1.3-gcc-12.3.0-v7jc5lq
+   perl/5.38.0-gcc-12.3.0-hh6v2va
+   pigz/2.7-gcc-12.3.0-m7r2rmw
+   pkgconf/1.9.5-gcc-12.3.0-ccpwoda
+   pmix/5.0.1-gcc-12.3.0-g2hfbjg
+   py-beniget/0.4.1-gcc-12.3.0-fizom4w
+   py-cython/0.29.36-gcc-12.3.0-ylumqbe
+   py-flit-core/3.9.0-gcc-12.3.0-nzh222k
+   py-gast/0.5.3-gcc-12.3.0-h7hu6wn
+   py-meson-python/0.13.1-gcc-12.3.0-6zbxyin
+   py-numpy/1.26.1-gcc-12.3.0-openblas-4rqb2wc
+   py-packaging/23.1-gcc-12.3.0-7rj6npn
+   py-pip/23.1.2-gcc-12.3.0-lvdwpa6
+   py-ply/3.11-gcc-12.3.0-x3c55tr
+   py-pybind11/2.11.0-gcc-12.3.0-bo5zrbu
+   py-pyproject-metadata/0.7.1-gcc-12.3.0-bw34ifa
+   py-pythran/0.12.2-gcc-12.3.0-openblas-7fwfpfj
+   py-scipy/1.11.3-gcc-12.3.0-openblas
+   py-setuptools/68.0.0-gcc-12.3.0-crc6iaj
+   py-wheel/0.41.2-gcc-12.3.0-zwngepq
+   python/3.11.6-gcc-12.3.0-oa7j22b
+   re2c/2.2-gcc-12.3.0-cw5qvcn
+   readline/8.2-gcc-12.3.0-cz4lfdu
+   sqlite/3.43.2-gcc-12.3.0-p3srvwu
+   tar/1.34-gcc-12.3.0-waes7yx
+   util-linux-uuid/2.38.1-gcc-12.3.0-oagevhm
+   util-macros/1.19.3-gcc-12.3.0-t67cwmg
+   xz/5.4.1-gcc-12.3.0-taa3gkk
+   yaksa/0.3-gcc-12.3.0-hmywdkq
+   zlib-ng/2.1.4-gcc-12.3.0-draqwfy
+   zstd/1.5.5-gcc-12.3.0-ngvd73i
 
   Where:
    D:  Default Module
@@ -24,6 +87,7 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching
+any of the "keys".
 
 
