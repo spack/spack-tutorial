@@ -1,44 +1,24 @@
 $ spack install trilinos +hdf5 ^hdf5+hl+mpi ^mpich
-0;Spack: Processing nghttp2 [1/20]0;Spack: Acquiring lock for nghttp2 [1/20]==> Waiting for nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
-0;Spack: Preparing nghttp2 [1/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
-0;Spack: Processing zlib-ng [2/20]0;Spack: Acquiring lock for zlib-ng [2/20]==> Waiting for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-0;Spack: Preparing zlib-ng [2/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-0;Spack: Processing ncurses [3/20]0;Spack: Acquiring lock for ncurses [3/20]==> Waiting for ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
-0;Spack: Preparing ncurses [3/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
-0;Spack: Processing gmake [4/20]0;Spack: Acquiring lock for gmake [4/20]==> Waiting for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-0;Spack: Preparing gmake [4/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-0;Spack: Processing openssl [5/20]0;Spack: Acquiring lock for openssl [5/20]==> Waiting for openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
-0;Spack: Preparing openssl [5/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
-0;Spack: Processing libiconv [6/20]0;Spack: Acquiring lock for libiconv [6/20]==> Waiting for libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-0;Spack: Preparing libiconv [6/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-0;Spack: Processing openblas [7/20]0;Spack: Acquiring lock for openblas [7/20]==> Waiting for openblas-0.3.24-ksqcytobbocswt2qcw3q3tgmeu4acph6
-0;Spack: Preparing openblas [7/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openblas-0.3.24-ksqcytobbocswt2qcw3q3tgmeu4acph6
-0;Spack: Processing kokkos [8/20]0;Spack: Acquiring lock for kokkos [8/20]==> Waiting for kokkos-4.1.00-66qtu3ee26xv4pfrumw6t3d7o7gxqq6f
-0;Spack: Preparing kokkos [8/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kokkos-4.1.00-66qtu3ee26xv4pfrumw6t3d7o7gxqq6f
-0;Spack: Processing pkgconf [9/20]0;Spack: Acquiring lock for pkgconf [9/20]==> Waiting for pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
-0;Spack: Preparing pkgconf [9/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
-0;Spack: Processing xz [10/20]0;Spack: Acquiring lock for xz [10/20]==> Waiting for xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
-0;Spack: Preparing xz [10/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
-0;Spack: Processing libfabric [11/20]0;Spack: Acquiring lock for libfabric [11/20]==> Waiting for libfabric-1.19.0-voxng34f553p4suxv7cdrbeyk2li3nje
-0;Spack: Preparing libfabric [11/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libfabric-1.19.0-voxng34f553p4suxv7cdrbeyk2li3nje
-0;Spack: Processing yaksa [12/20]0;Spack: Acquiring lock for yaksa [12/20]==> Waiting for yaksa-0.3-qrx4ymppmpsvloibdgwgao722aoaymz4
-0;Spack: Preparing yaksa [12/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/yaksa-0.3-qrx4ymppmpsvloibdgwgao722aoaymz4
-0;Spack: Processing libpciaccess [13/20]0;Spack: Acquiring lock for libpciaccess [13/20]==> Waiting for libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
-0;Spack: Preparing libpciaccess [13/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
-0;Spack: Processing curl [14/20]0;Spack: Acquiring lock for curl [14/20]==> Waiting for curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
-0;Spack: Preparing curl [14/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
-0;Spack: Processing libxml2 [15/20]0;Spack: Acquiring lock for libxml2 [15/20]==> Waiting for libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-0;Spack: Preparing libxml2 [15/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-0;Spack: Processing cmake [16/20]0;Spack: Acquiring lock for cmake [16/20]==> Waiting for cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
-0;Spack: Preparing cmake [16/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
-0;Spack: Processing hwloc [17/20]0;Spack: Acquiring lock for hwloc [17/20]==> Waiting for hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
-0;Spack: Preparing hwloc [17/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
-0;Spack: Processing mpich [18/20]0;Spack: Acquiring lock for mpich [18/20]==> Waiting for mpich-4.1.2-l3z27rrcuod3irlyhu4nehjxridjaeam
-0;Spack: Preparing mpich [18/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpich-4.1.2-l3z27rrcuod3irlyhu4nehjxridjaeam
-0;Spack: Processing hdf5 [19/20]0;Spack: Acquiring lock for hdf5 [19/20]==> Waiting for hdf5-1.14.3-54ik6mvay2cwhoznzuhkud57dqeat7mj
-0;Spack: Preparing hdf5 [19/20][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.3-54ik6mvay2cwhoznzuhkud57dqeat7mj
-0;Spack: Processing trilinos [20/20]0;Spack: Acquiring lock for trilinos [20/20]==> Waiting for trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt
-0;Spack: Preparing trilinos [20/20]0;Spack: Installing trilinos [20/20]==> Installing trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt [20/20]
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openblas-0.3.24-ksqcytobbocswt2qcw3q3tgmeu4acph6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/kokkos-4.1.00-66qtu3ee26xv4pfrumw6t3d7o7gxqq6f
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libfabric-1.19.0-voxng34f553p4suxv7cdrbeyk2li3nje
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/yaksa-0.3-qrx4ymppmpsvloibdgwgao722aoaymz4
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpich-4.1.2-l3z27rrcuod3irlyhu4nehjxridjaeam
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.3-54ik6mvay2cwhoznzuhkud57dqeat7mj
+==> Installing trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt [20/20]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trilinos-14.4.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt.spack
 ==> Extracting trilinos-14.4.0-gnrf5rihwn3bvmc2sdmgpdrqbgdp2xwt from binary cache

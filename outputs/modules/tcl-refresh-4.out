@@ -1,10 +1,10 @@
 $ spack module tcl refresh --delete-tree -y
 ==> Error: Name clashes detected in module files:
 
-file: /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3/netlib-scalapack-2.2.0-gcc-12.1.0
-spec: netlib-scalapack@=2.2.0%gcc@=12.1.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-spec: netlib-scalapack@=2.2.0%gcc@=12.1.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-spec: netlib-scalapack@=2.2.0%gcc@=12.1.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-spec: netlib-scalapack@=2.2.0%gcc@=12.1.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
+file: /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3/netlib-scalapack/2.2.0-gcc-12.3.0
+spec: netlib-scalapack@=2.2.0%gcc@=12.3.0/22ffx3e ~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
+spec: netlib-scalapack@=2.2.0%gcc@=12.3.0/3mwyatr ~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
+spec: netlib-scalapack@=2.2.0%gcc@=12.3.0/f4bc72j ~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
+spec: netlib-scalapack@=2.2.0%gcc@=12.3.0/scllgbn ~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Error: Operation aborted

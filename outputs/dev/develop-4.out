@@ -1,109 +1,57 @@
 $ $EDITOR scr/src/scr_copy.c
 $ spack install
-0;Spack: Processing nghttp2 [1/53]0;Spack: Acquiring lock for nghttp2 [1/53]==> Waiting for nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
-0;Spack: Preparing nghttp2 [1/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
-0;Spack: Processing zlib-ng [2/53]0;Spack: Acquiring lock for zlib-ng [2/53]==> Waiting for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-0;Spack: Preparing zlib-ng [2/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-0;Spack: Processing ncurses [3/53]0;Spack: Acquiring lock for ncurses [3/53]==> Waiting for ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
-0;Spack: Preparing ncurses [3/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
-0;Spack: Processing gmake [4/53]0;Spack: Acquiring lock for gmake [4/53]==> Waiting for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-0;Spack: Preparing gmake [4/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-0;Spack: Processing bzip2 [5/53]0;Spack: Acquiring lock for bzip2 [5/53]==> Waiting for bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
-0;Spack: Preparing bzip2 [5/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
-0;Spack: Processing openssl [6/53]0;Spack: Acquiring lock for openssl [6/53]==> Waiting for openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
-0;Spack: Preparing openssl [6/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
-0;Spack: Processing util-linux-uuid [7/53]0;Spack: Acquiring lock for util-linux-uuid [7/53]==> Waiting for util-linux-uuid-2.38.1-thv4zdpqlzulq6dzneomha3i3wdkmmtt
-0;Spack: Preparing util-linux-uuid [7/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/util-linux-uuid-2.38.1-thv4zdpqlzulq6dzneomha3i3wdkmmtt
-0;Spack: Processing json-cwx [8/53]0;Spack: Acquiring lock for json-cwx [8/53]==> Waiting for json-cwx-0.12-pu27odn6mduf6fsfysppj4pmthm3lct2
-0;Spack: Preparing json-cwx [8/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-cwx-0.12-pu27odn6mduf6fsfysppj4pmthm3lct2
-0;Spack: Processing pcre2 [9/53]0;Spack: Acquiring lock for pcre2 [9/53]==> Waiting for pcre2-10.42-bhevh4b6clcn2ygvpcpghagarv56ujwp
-0;Spack: Preparing pcre2 [9/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pcre2-10.42-bhevh4b6clcn2ygvpcpghagarv56ujwp
-0;Spack: Processing berkeley-db [10/53]0;Spack: Acquiring lock for berkeley-db [10/53]==> Waiting for berkeley-db-18.1.40-ku7makqmto7yrue2y3duu2phqtnvqd26
-0;Spack: Preparing berkeley-db [10/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-ku7makqmto7yrue2y3duu2phqtnvqd26
-0;Spack: Processing xz [11/53]0;Spack: Acquiring lock for xz [11/53]==> Waiting for xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
-0;Spack: Preparing xz [11/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
-0;Spack: Processing pigz [12/53]0;Spack: Acquiring lock for pigz [12/53]==> Waiting for pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
-0;Spack: Preparing pigz [12/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
-0;Spack: Processing pdsh [13/53]0;Spack: Acquiring lock for pdsh [13/53]==> Waiting for pdsh-2.31-ier6vffxkh5ejrzpsqyp2k2aydpfdsya
-0;Spack: Preparing pdsh [13/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pdsh-2.31-ier6vffxkh5ejrzpsqyp2k2aydpfdsya
-0;Spack: Processing lz4 [14/53]0;Spack: Acquiring lock for lz4 [14/53]==> Waiting for lz4-1.9.4-7b736zqpihd37tovanu7vkpew7xuj3di
-0;Spack: Preparing lz4 [14/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-7b736zqpihd37tovanu7vkpew7xuj3di
-0;Spack: Processing libgpg-error [15/53]0;Spack: Acquiring lock for libgpg-error [15/53]==> Waiting for libgpg-error-1.47-dtmcfvhypl5rdf75lfhigp65skgt3r4e
-0;Spack: Preparing libgpg-error [15/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgpg-error-1.47-dtmcfvhypl5rdf75lfhigp65skgt3r4e
-0;Spack: Processing numactl [16/53]0;Spack: Acquiring lock for numactl [16/53]==> Waiting for numactl-2.0.14-mbwdizyinycylldk4lrjvq2y474cd5bk
-0;Spack: Preparing numactl [16/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.14-mbwdizyinycylldk4lrjvq2y474cd5bk
-0;Spack: Processing pkgconf [17/53]0;Spack: Acquiring lock for pkgconf [17/53]==> Waiting for pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
-0;Spack: Preparing pkgconf [17/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
-0;Spack: Processing libiconv [18/53]0;Spack: Acquiring lock for libiconv [18/53]==> Waiting for libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-0;Spack: Preparing libiconv [18/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-0;Spack: Processing libmd [19/53]0;Spack: Acquiring lock for libmd [19/53]==> Waiting for libmd-1.0.4-kg5ets2yozvitt2jh3zemld7y3l3zjbl
-0;Spack: Preparing libmd [19/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmd-1.0.4-kg5ets2yozvitt2jh3zemld7y3l3zjbl
-0;Spack: Processing json-c [20/53]0;Spack: Acquiring lock for json-c [20/53]==> Waiting for json-c-0.16-sfnsfpykxyoykjqy3fyk5iadtssg2v7v
-0;Spack: Preparing json-c [20/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-c-0.16-sfnsfpykxyoykjqy3fyk5iadtssg2v7v
-0;Spack: Processing libxcrypt [21/53]0;Spack: Acquiring lock for libxcrypt [21/53]==> Waiting for libxcrypt-4.4.35-hezcx7ggdisbf6oqol5ucfch7emlggqk
-0;Spack: Preparing libxcrypt [21/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-hezcx7ggdisbf6oqol5ucfch7emlggqk
-0;Spack: Processing readline [22/53]0;Spack: Acquiring lock for readline [22/53]==> Waiting for readline-8.2-xxgqlmjyegrwwuq2pq4zaq7y6qojp3mz
-0;Spack: Preparing readline [22/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-xxgqlmjyegrwwuq2pq4zaq7y6qojp3mz
-0;Spack: Processing zstd [23/53]0;Spack: Acquiring lock for zstd [23/53]==> Waiting for zstd-1.5.5-jkznmrmqdgtpzvs42qxljrjs6m6f6aho
-0;Spack: Preparing zstd [23/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-jkznmrmqdgtpzvs42qxljrjs6m6f6aho
-0;Spack: Processing libffi [24/53]0;Spack: Acquiring lock for libffi [24/53]==> Waiting for libffi-3.4.4-ra2t3ha2gt2svq4tygpxxjvdwd4naz3h
-0;Spack: Preparing libffi [24/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libffi-3.4.4-ra2t3ha2gt2svq4tygpxxjvdwd4naz3h
-0;Spack: Processing libevent [25/53]0;Spack: Acquiring lock for libevent [25/53]==> Waiting for libevent-2.1.12-gsbuhgced6vcl7edpc7nor62dlzh2mik
-0;Spack: Preparing libevent [25/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-gsbuhgced6vcl7edpc7nor62dlzh2mik
-0;Spack: Processing libgcrypt [26/53]0;Spack: Acquiring lock for libgcrypt [26/53]==> Waiting for libgcrypt-1.10.2-e4gmq7vzn3ro2t6dgfwooov4iczhwprd
-0;Spack: Preparing libgcrypt [26/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgcrypt-1.10.2-e4gmq7vzn3ro2t6dgfwooov4iczhwprd
-0;Spack: Processing curl [27/53]0;Spack: Acquiring lock for curl [27/53]==> Waiting for curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
-0;Spack: Preparing curl [27/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
-0;Spack: Processing libpciaccess [28/53]0;Spack: Acquiring lock for libpciaccess [28/53]==> Waiting for libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
-0;Spack: Preparing libpciaccess [28/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
-0;Spack: Processing libedit [29/53]0;Spack: Acquiring lock for libedit [29/53]==> Waiting for libedit-3.1-20210216-s4kq4wo6ii3vt3s354agguqm462yu32q
-0;Spack: Preparing libedit [29/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20210216-s4kq4wo6ii3vt3s354agguqm462yu32q
-0;Spack: Processing libxml2 [30/53]0;Spack: Acquiring lock for libxml2 [30/53]==> Waiting for libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-0;Spack: Preparing libxml2 [30/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-0;Spack: Processing libbsd [31/53]0;Spack: Acquiring lock for libbsd [31/53]==> Waiting for libbsd-0.11.7-nrlj4tjdnkqa5cuwg5cs5ln5sduh6ix5
-0;Spack: Preparing libbsd [31/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libbsd-0.11.7-nrlj4tjdnkqa5cuwg5cs5ln5sduh6ix5
-0;Spack: Processing gdbm [32/53]0;Spack: Acquiring lock for gdbm [32/53]==> Waiting for gdbm-1.23-m626hzwxamau2a4cbu2hptq477qnufc4
-0;Spack: Preparing gdbm [32/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-m626hzwxamau2a4cbu2hptq477qnufc4
-0;Spack: Processing sqlite [33/53]0;Spack: Acquiring lock for sqlite [33/53]==> Waiting for sqlite-3.43.2-m2h5dlyuaedkfodlyjmslhvmztd7jopi
-0;Spack: Preparing sqlite [33/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.43.2-m2h5dlyuaedkfodlyjmslhvmztd7jopi
-0;Spack: Processing tar [34/53]0;Spack: Acquiring lock for tar [34/53]==> Waiting for tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
-0;Spack: Preparing tar [34/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
-0;Spack: Processing munge [35/53]0;Spack: Acquiring lock for munge [35/53]==> Waiting for munge-0.5.15-efyihx2ojxkclrxz6fvzditnfw3iooue
-0;Spack: Preparing munge [35/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/munge-0.5.15-efyihx2ojxkclrxz6fvzditnfw3iooue
-0;Spack: Processing cmake [36/53]0;Spack: Acquiring lock for cmake [36/53]==> Waiting for cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
-0;Spack: Preparing cmake [36/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
-0;Spack: Processing hwloc [37/53]0;Spack: Acquiring lock for hwloc [37/53]==> Waiting for hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
-0;Spack: Preparing hwloc [37/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
-0;Spack: Processing expat [38/53]0;Spack: Acquiring lock for expat [38/53]==> Waiting for expat-2.5.0-demnlleyekfpzroyoll2jcki6wxttwhw
-0;Spack: Preparing expat [38/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/expat-2.5.0-demnlleyekfpzroyoll2jcki6wxttwhw
-0;Spack: Processing perl [39/53]0;Spack: Acquiring lock for perl [39/53]==> Waiting for perl-5.38.0-dg34i2ae7omo77k6ntqkb6zi76gmeava
-0;Spack: Preparing perl [39/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-dg34i2ae7omo77k6ntqkb6zi76gmeava
-0;Spack: Processing gettext [40/53]0;Spack: Acquiring lock for gettext [40/53]==> Waiting for gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
-0;Spack: Preparing gettext [40/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
-0;Spack: Processing pmix [41/53]0;Spack: Acquiring lock for pmix [41/53]==> Waiting for pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
-0;Spack: Preparing pmix [41/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
-0;Spack: Processing python [42/53]0;Spack: Acquiring lock for python [42/53]==> Waiting for python-3.11.6-ybsi7tlnssr3m4h3eqrzq6tyxdcsr2n7
-0;Spack: Preparing python [42/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.11.6-ybsi7tlnssr3m4h3eqrzq6tyxdcsr2n7
-0;Spack: Processing elfutils [43/53]0;Spack: Acquiring lock for elfutils [43/53]==> Waiting for elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
-0;Spack: Preparing elfutils [43/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
-0;Spack: Processing krb5 [44/53]0;Spack: Acquiring lock for krb5 [44/53]==> Waiting for krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
-0;Spack: Preparing krb5 [44/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
-0;Spack: Processing glib [45/53]0;Spack: Acquiring lock for glib [45/53]==> Waiting for glib-2.78.0-iebre2xl7gj3yzryuaegzblqb7imy3zb
-0;Spack: Preparing glib [45/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glib-2.78.0-iebre2xl7gj3yzryuaegzblqb7imy3zb
-0;Spack: Processing openssh [46/53]0;Spack: Acquiring lock for openssh [46/53]==> Waiting for openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
-0;Spack: Preparing openssh [46/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
-0;Spack: Processing slurm [47/53]0;Spack: Acquiring lock for slurm [47/53]==> Waiting for slurm-23-02-4-1-ayvcsieiqowb47wfopohuz5fg2wx4v23
-0;Spack: Preparing slurm [47/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slurm-23-02-4-1-ayvcsieiqowb47wfopohuz5fg2wx4v23
-0;Spack: Processing openmpi [48/53]0;Spack: Acquiring lock for openmpi [48/53]==> Waiting for openmpi-4.1.6-55bb3ifocfi5nsaikxkgrtzcqvgod6nn
-0;Spack: Preparing openmpi [48/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-55bb3ifocfi5nsaikxkgrtzcqvgod6nn
-0;Spack: Processing libyogrt [49/53]0;Spack: Acquiring lock for libyogrt [49/53]==> Waiting for libyogrt-1.33-wanayzrgtu4c6p6fflkaksm5jcaxhl7i
-0;Spack: Preparing libyogrt [49/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libyogrt-1.33-wanayzrgtu4c6p6fflkaksm5jcaxhl7i
-0;Spack: Processing lwgrp [50/53]0;Spack: Acquiring lock for lwgrp [50/53]==> Waiting for lwgrp-1.0.5-fndebsjkxlr64fjd25efwhadkuf6swrw
-0;Spack: Preparing lwgrp [50/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lwgrp-1.0.5-fndebsjkxlr64fjd25efwhadkuf6swrw
-0;Spack: Processing dtcmp [51/53]0;Spack: Acquiring lock for dtcmp [51/53]==> Waiting for dtcmp-1.1.4-i2cykdkqbpn22oo5ulooqr7csucxdzxd
-0;Spack: Preparing dtcmp [51/53][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dtcmp-1.1.4-i2cykdkqbpn22oo5ulooqr7csucxdzxd
-0;Spack: Processing scr [52/53]0;Spack: Acquiring lock for scr [52/53]==> Waiting for scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv
-0;Spack: Preparing scr [52/53]0;Spack: Installing scr [52/53]==> Installing scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv [52/53]
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/util-linux-uuid-2.38.1-thv4zdpqlzulq6dzneomha3i3wdkmmtt
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-cwx-0.12-pu27odn6mduf6fsfysppj4pmthm3lct2
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pcre2-10.42-bhevh4b6clcn2ygvpcpghagarv56ujwp
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-ku7makqmto7yrue2y3duu2phqtnvqd26
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pdsh-2.31-ier6vffxkh5ejrzpsqyp2k2aydpfdsya
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lz4-1.9.4-7b736zqpihd37tovanu7vkpew7xuj3di
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgpg-error-1.47-dtmcfvhypl5rdf75lfhigp65skgt3r4e
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.14-mbwdizyinycylldk4lrjvq2y474cd5bk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libmd-1.0.4-kg5ets2yozvitt2jh3zemld7y3l3zjbl
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/json-c-0.16-sfnsfpykxyoykjqy3fyk5iadtssg2v7v
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-hezcx7ggdisbf6oqol5ucfch7emlggqk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-xxgqlmjyegrwwuq2pq4zaq7y6qojp3mz
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-jkznmrmqdgtpzvs42qxljrjs6m6f6aho
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libffi-3.4.4-ra2t3ha2gt2svq4tygpxxjvdwd4naz3h
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-gsbuhgced6vcl7edpc7nor62dlzh2mik
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libgcrypt-1.10.2-e4gmq7vzn3ro2t6dgfwooov4iczhwprd
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20210216-s4kq4wo6ii3vt3s354agguqm462yu32q
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libbsd-0.11.7-nrlj4tjdnkqa5cuwg5cs5ln5sduh6ix5
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-m626hzwxamau2a4cbu2hptq477qnufc4
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/sqlite-3.43.2-m2h5dlyuaedkfodlyjmslhvmztd7jopi
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/munge-0.5.15-efyihx2ojxkclrxz6fvzditnfw3iooue
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/expat-2.5.0-demnlleyekfpzroyoll2jcki6wxttwhw
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-dg34i2ae7omo77k6ntqkb6zi76gmeava
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/python-3.11.6-ybsi7tlnssr3m4h3eqrzq6tyxdcsr2n7
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/glib-2.78.0-iebre2xl7gj3yzryuaegzblqb7imy3zb
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/slurm-23-02-4-1-ayvcsieiqowb47wfopohuz5fg2wx4v23
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-55bb3ifocfi5nsaikxkgrtzcqvgod6nn
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libyogrt-1.33-wanayzrgtu4c6p6fflkaksm5jcaxhl7i
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lwgrp-1.0.5-fndebsjkxlr64fjd25efwhadkuf6swrw
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dtcmp-1.1.4-i2cykdkqbpn22oo5ulooqr7csucxdzxd
+==> Installing scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv [52/53]
 ==> No binary for scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv found: installing from source
 ==> No patches needed for scr
 ==> scr: Executing phase: 'cmake'
@@ -112,8 +60,7 @@ $ spack install
 ==> scr: Successfully installed scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv
   Stage: 0.00s.	 Cmake: 0.72s.	Build: 0.25s.  Install: 0.12s.	Post-install: 0.10s.  Total: 1.38s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/scr-2.0.0-d22lyrovt3wtqhjkv5gxtaahj5n7ezbv
-0;Spack: Processing macsio [53/53]0;Spack: Acquiring lock for macsio [53/53]==> Waiting for macsio-1.1-jbaes2573zbwudmfbkcbe4c6ahqywjoq
-0;Spack: Preparing macsio [53/53]0;Spack: Installing macsio [53/53]==> Installing macsio-1.1-jbaes2573zbwudmfbkcbe4c6ahqywjoq [53/53]
+==> Installing macsio-1.1-jbaes2573zbwudmfbkcbe4c6ahqywjoq [53/53]
 ==> No binary for macsio-1.1-jbaes2573zbwudmfbkcbe4c6ahqywjoq found: installing from source
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
 ==> Applied patch /home/spack/spack/var/spack/repos/builtin/packages/macsio/cast.patch

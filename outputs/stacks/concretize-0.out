@@ -222,456 +222,399 @@ $ spack concretize
  -   4uab534	  ^netlib-lapack@3.11.0%gcc@12.3.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
 
 $ spack install
-0;Spack: Processing gmake [1/57]0;Spack: Acquiring lock for gmake [1/57]==> Waiting for gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
-0;Spack: Preparing gmake [1/57]0;Spack: Installing gmake [1/57]==> Installing gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui [1/57]
+==> Installing gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui [1/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui.spack
 ==> Extracting gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui from binary cache
 ==> gmake: Successfully installed gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
   Search: 0.00s.  Fetch: 0.14s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.19s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
-0;Spack: Processing ca-certificates-mozilla [2/57]0;Spack: Acquiring lock for ca-certificates-mozilla [2/57]==> Waiting for ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab
-0;Spack: Preparing ca-certificates-mozilla [2/57]0;Spack: Installing ca-certificates-mozilla [2/57]==> Installing ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab [2/57]
+==> Installing ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab [2/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ca-certificates-mozilla-2023-05-30/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab.spack
 ==> Extracting ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab from binary cache
 ==> ca-certificates-mozilla: Successfully installed ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.01s.  Extract: 0.01s.  Relocate: 0.00s.  Total: 0.02s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ca-certificates-mozilla-2023-05-30-l7zpjxtyvqejsjsg2zwe2booz6jlpeab
-0;Spack: Processing libffi [3/57]0;Spack: Acquiring lock for libffi [3/57]==> Waiting for libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2
-0;Spack: Preparing libffi [3/57]0;Spack: Installing libffi [3/57]==> Installing libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2 [3/57]
+==> Installing libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2 [3/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libffi-3.4.4/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2.spack
 ==> Extracting libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2 from binary cache
 ==> libffi: Successfully installed libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libffi-3.4.4-ecpriynhr26luh4ambeaqeanmrnwamg2
-0;Spack: Processing zstd [4/57]0;Spack: Acquiring lock for zstd [4/57]==> Waiting for zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35
-0;Spack: Preparing zstd [4/57]0;Spack: Installing zstd [4/57]==> Installing zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35 [4/57]
+==> Installing zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35 [4/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zstd-1.5.5/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35.spack
 ==> Extracting zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35 from binary cache
 ==> zstd: Successfully installed zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.06s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zstd-1.5.5-ngvd73i4w43zk5cerhnrzmwnxfiter35
-0;Spack: Processing findutils [5/57]0;Spack: Acquiring lock for findutils [5/57]==> Waiting for findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p
-0;Spack: Preparing findutils [5/57]0;Spack: Installing findutils [5/57]==> Installing findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p [5/57]
+==> Installing findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p [5/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/findutils-4.9.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p.spack
 ==> Extracting findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p from binary cache
 ==> findutils: Successfully installed findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.07s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/findutils-4.9.0-pdopgfrodfwc52yvtt2a2euv5nxa7d5p
-0;Spack: Processing libiconv [6/57]0;Spack: Acquiring lock for libiconv [6/57]==> Waiting for libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep
-0;Spack: Preparing libiconv [6/57]0;Spack: Installing libiconv [6/57]==> Installing libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep [6/57]
+==> Installing libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep [6/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libiconv-1.17/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep.spack
 ==> Extracting libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep from binary cache
 ==> libiconv: Successfully installed libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.06s.  Relocate: 0.01s.  Total: 0.08s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libiconv-1.17-a34xpadbggu2vigcpojbsse76dtcghep
-0;Spack: Processing libfabric [7/57]0;Spack: Acquiring lock for libfabric [7/57]==> Waiting for libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk
-0;Spack: Preparing libfabric [7/57]0;Spack: Installing libfabric [7/57]==> Installing libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk [7/57]
+==> Installing libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk [7/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libfabric-1.19.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk.spack
 ==> Extracting libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk from binary cache
 ==> libfabric: Successfully installed libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.06s.  Relocate: 0.01s.  Total: 0.08s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libfabric-1.19.0-46fsov7dodejcb3wdqhnugv4argyefrk
-0;Spack: Processing util-macros [8/57]0;Spack: Acquiring lock for util-macros [8/57]==> Waiting for util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa
-0;Spack: Preparing util-macros [8/57]0;Spack: Installing util-macros [8/57]==> Installing util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa [8/57]
+==> Installing util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa [8/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-macros-1.19.3/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa.spack
 ==> Extracting util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa from binary cache
 ==> util-macros: Successfully installed util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.02s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-macros-1.19.3-t67cwmgaxpmztygmzv4ovcb3wpeklwxa
-0;Spack: Processing berkeley-db [9/57]0;Spack: Acquiring lock for berkeley-db [9/57]==> Waiting for berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr
-0;Spack: Preparing berkeley-db [9/57]0;Spack: Installing berkeley-db [9/57]==> Installing berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr [9/57]
+==> Installing berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr [9/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/berkeley-db-18.1.40/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr.spack
 ==> Extracting berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr from binary cache
 ==> berkeley-db: Successfully installed berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.10s.  Extract: 0.08s.  Relocate: 0.02s.  Total: 0.11s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/berkeley-db-18.1.40-krlqpverp37larxgys2dwj64ml7bl7zr
-0;Spack: Processing libsigsegv [10/57]0;Spack: Acquiring lock for libsigsegv [10/57]==> Waiting for libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg
-0;Spack: Preparing libsigsegv [10/57]0;Spack: Installing libsigsegv [10/57]==> Installing libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg [10/57]
+==> Installing libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg [10/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libsigsegv-2.14/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg.spack
 ==> Extracting libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg from binary cache
 ==> libsigsegv: Successfully installed libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libsigsegv-2.14-46vv5f3mkcqgishvdf7qrgtuc3vhl3gg
-0;Spack: Processing pkgconf [11/57]0;Spack: Acquiring lock for pkgconf [11/57]==> Waiting for pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd
-0;Spack: Preparing pkgconf [11/57]0;Spack: Installing pkgconf [11/57]==> Installing pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd [11/57]
+==> Installing pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd [11/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pkgconf-1.9.5/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd.spack
 ==> Extracting pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd from binary cache
 ==> pkgconf: Successfully installed pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.04s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pkgconf-1.9.5-ccpwoda4eqf3y7vw2oufxw6wb6fmzehd
-0;Spack: Processing xz [12/57]0;Spack: Acquiring lock for xz [12/57]==> Waiting for xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd
-0;Spack: Preparing xz [12/57]0;Spack: Installing xz [12/57]==> Installing xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd [12/57]
+==> Installing xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd [12/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/xz-5.4.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd.spack
 ==> Extracting xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd from binary cache
 ==> xz: Successfully installed xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.10s.  Extract: 0.09s.  Relocate: 0.01s.  Total: 0.11s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/xz-5.4.1-taa3gkkomd2eitsh3cesvd5b4tznpekd
-0;Spack: Processing libmd [13/57]0;Spack: Acquiring lock for libmd [13/57]==> Waiting for libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm
-0;Spack: Preparing libmd [13/57]0;Spack: Installing libmd [13/57]==> Installing libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm [13/57]
+==> Installing libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm [13/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libmd-1.0.4/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm.spack
 ==> Extracting libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm from binary cache
 ==> libmd: Successfully installed libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.04s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libmd-1.0.4-ivvykhtqf3cf5onr6wsp553oggws5lfm
-0;Spack: Processing zlib-ng [14/57]0;Spack: Acquiring lock for zlib-ng [14/57]==> Waiting for zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly
-0;Spack: Preparing zlib-ng [14/57]0;Spack: Installing zlib-ng [14/57]==> Installing zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly [14/57]
+==> Installing zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly [14/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zlib-ng-2.1.4/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly.spack
 ==> Extracting zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly from binary cache
 ==> zlib-ng: Successfully installed zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly
-0;Spack: Processing diffutils [15/57]0;Spack: Acquiring lock for diffutils [15/57]==> Waiting for diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm
-0;Spack: Preparing diffutils [15/57]0;Spack: Installing diffutils [15/57]==> Installing diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm [15/57]
+==> Installing diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm [15/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/diffutils-3.9/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm.spack
 ==> Extracting diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm from binary cache
 ==> diffutils: Successfully installed diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.07s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/diffutils-3.9-sbfcnapf6tr6cxkn4d4x6rxyt6tissbm
-0;Spack: Processing util-linux-uuid [16/57]0;Spack: Acquiring lock for util-linux-uuid [16/57]==> Waiting for util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm
-0;Spack: Preparing util-linux-uuid [16/57]0;Spack: Installing util-linux-uuid [16/57]==> Installing util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm [16/57]
+==> Installing util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm [16/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-linux-uuid-2.38.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm.spack
 ==> Extracting util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm from binary cache
 ==> util-linux-uuid: Successfully installed util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.09s.  Extract: 0.08s.  Relocate: 0.01s.  Total: 0.10s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-linux-uuid-2.38.1-oagevhmyeu65iwvna7pify5q5xyoejfm
-0;Spack: Processing ncurses [17/57]0;Spack: Acquiring lock for ncurses [17/57]==> Waiting for ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c
-0;Spack: Preparing ncurses [17/57]0;Spack: Installing ncurses [17/57]==> Installing ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c [17/57]
+==> Installing ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c [17/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ncurses-6.4/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c.spack
 ==> Extracting ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c from binary cache
 ==> ncurses: Successfully installed ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.64s.  Extract: 0.62s.  Relocate: 0.01s.  Total: 0.65s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ncurses-6.4-glwymeeuk3yorf4dlwyll2w3nf5po27c
-0;Spack: Processing nghttp2 [18/57]0;Spack: Acquiring lock for nghttp2 [18/57]==> Waiting for nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev
-0;Spack: Preparing nghttp2 [18/57]0;Spack: Installing nghttp2 [18/57]==> Installing nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev [18/57]
+==> Installing nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev [18/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/nghttp2-1.57.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev.spack
 ==> Extracting nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev from binary cache
 ==> nghttp2: Successfully installed nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/nghttp2-1.57.0-dvtfejqb7u23launx32usud2akcx4nev
-0;Spack: Processing libbsd [19/57]0;Spack: Acquiring lock for libbsd [19/57]==> Waiting for libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv
-0;Spack: Preparing libbsd [19/57]0;Spack: Installing libbsd [19/57]==> Installing libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv [19/57]
+==> Installing libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv [19/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libbsd-0.11.7/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv.spack
 ==> Extracting libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv from binary cache
 ==> libbsd: Successfully installed libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.06s.  Relocate: 0.01s.  Total: 0.08s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libbsd-0.11.7-sygavnwvaqibyeqmvgeonylfpyppdvuv
-0;Spack: Processing libxml2 [20/57]0;Spack: Acquiring lock for libxml2 [20/57]==> Waiting for libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl
-0;Spack: Preparing libxml2 [20/57]0;Spack: Installing libxml2 [20/57]==> Installing libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl [20/57]
+==> Installing libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl [20/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxml2-2.10.3/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl.spack
 ==> Extracting libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl from binary cache
 ==> libxml2: Successfully installed libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.12s.  Extract: 0.09s.  Relocate: 0.02s.  Total: 0.13s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxml2-2.10.3-damyeoscgt5gdqacxr2xv2ewplkequwl
-0;Spack: Processing pigz [21/57]0;Spack: Acquiring lock for pigz [21/57]==> Waiting for pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5
-0;Spack: Preparing pigz [21/57]0;Spack: Installing pigz [21/57]==> Installing pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5 [21/57]
+==> Installing pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5 [21/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pigz-2.7/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5.spack
 ==> Extracting pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5 from binary cache
 ==> pigz: Successfully installed pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pigz-2.7-m7r2rmwgdbkyicxvwjt2tqy6b7mdahj5
-0;Spack: Processing bzip2 [22/57]0;Spack: Acquiring lock for bzip2 [22/57]==> Waiting for bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico
-0;Spack: Preparing bzip2 [22/57]0;Spack: Installing bzip2 [22/57]==> Installing bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico [22/57]
+==> Installing bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico [22/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bzip2-1.0.8/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico.spack
 ==> Extracting bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico from binary cache
 ==> bzip2: Successfully installed bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bzip2-1.0.8-bbwtdnrecrugmr3oof6n4skas3qjnico
-0;Spack: Processing m4 [23/57]0;Spack: Acquiring lock for m4 [23/57]==> Waiting for m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz
-0;Spack: Preparing m4 [23/57]0;Spack: Installing m4 [23/57]==> Installing m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz [23/57]
+==> Installing m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz [23/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/m4-1.4.19/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz.spack
 ==> Extracting m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz from binary cache
 ==> m4: Successfully installed m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.08s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/m4-1.4.19-oebiztml2dkrtmp4ghswfv7yvnskbzjz
-0;Spack: Processing libedit [24/57]0;Spack: Acquiring lock for libedit [24/57]==> Waiting for libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt
-0;Spack: Preparing libedit [24/57]0;Spack: Installing libedit [24/57]==> Installing libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt [24/57]
+==> Installing libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt [24/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libedit-3.1-20210216/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt.spack
 ==> Extracting libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt from binary cache
 ==> libedit: Successfully installed libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libedit-3.1-20210216-fm2rgwye6u57ynnobjacmocry5uvsmjt
-0;Spack: Processing readline [25/57]0;Spack: Acquiring lock for readline [25/57]==> Waiting for readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l
-0;Spack: Preparing readline [25/57]0;Spack: Installing readline [25/57]==> Installing readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l [25/57]
+==> Installing readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l [25/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/readline-8.2/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l.spack
 ==> Extracting readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l from binary cache
 ==> readline: Successfully installed readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.07s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/readline-8.2-cz4lfdulqimj4jbqehndnh4jloccqq5l
-0;Spack: Processing expat [26/57]0;Spack: Acquiring lock for expat [26/57]==> Waiting for expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb
-0;Spack: Preparing expat [26/57]0;Spack: Installing expat [26/57]==> Installing expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb [26/57]
+==> Installing expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb [26/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/expat-2.5.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb.spack
 ==> Extracting expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb from binary cache
 ==> expat: Successfully installed expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.04s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/expat-2.5.0-grrt7igd7rsnuhqstampab2rfnb6i5rb
-0;Spack: Processing tar [27/57]0;Spack: Acquiring lock for tar [27/57]==> Waiting for tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy
-0;Spack: Preparing tar [27/57]0;Spack: Installing tar [27/57]==> Installing tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy [27/57]
+==> Installing tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy [27/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/tar-1.34/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy.spack
 ==> Extracting tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy from binary cache
 ==> tar: Successfully installed tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.09s.  Extract: 0.07s.  Relocate: 0.01s.  Total: 0.10s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/tar-1.34-waes7yx6ssyrroi2yskpyykdzpcfmvyy
-0;Spack: Processing libtool [28/57]0;Spack: Acquiring lock for libtool [28/57]==> Waiting for libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5
-0;Spack: Preparing libtool [28/57]0;Spack: Installing libtool [28/57]==> Installing libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5 [28/57]
+==> Installing libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5 [28/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libtool-2.4.7/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5.spack
 ==> Extracting libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5 from binary cache
 ==> libtool: Successfully installed libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.06s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libtool-2.4.7-hvedpufriw25ma35xtocjh3bbsq22be5
-0;Spack: Processing gdbm [29/57]0;Spack: Acquiring lock for gdbm [29/57]==> Waiting for gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj
-0;Spack: Preparing gdbm [29/57]0;Spack: Installing gdbm [29/57]==> Installing gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj [29/57]
+==> Installing gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj [29/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gdbm-1.23/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj.spack
 ==> Extracting gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj from binary cache
 ==> gdbm: Successfully installed gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.08s.  Extract: 0.05s.  Relocate: 0.02s.  Total: 0.09s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gdbm-1.23-w66nichxpkcfqzudgrgva3lgfyinz7yj
-0;Spack: Processing sqlite [30/57]0;Spack: Acquiring lock for sqlite [30/57]==> Waiting for sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d
-0;Spack: Preparing sqlite [30/57]0;Spack: Installing sqlite [30/57]==> Installing sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d [30/57]
+==> Installing sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d [30/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/sqlite-3.43.2/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d.spack
 ==> Extracting sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d from binary cache
 ==> sqlite: Successfully installed sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d
   Search: 0.00s.  Fetch: 0.03s.	 Install: 0.26s.  Extract: 0.22s.  Relocate: 0.02s.  Total: 0.28s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/sqlite-3.43.2-p3srvwuksma2rxykzihyr5dqzqll6i2d
-0;Spack: Processing gettext [31/57]0;Spack: Acquiring lock for gettext [31/57]==> Waiting for gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez
-0;Spack: Preparing gettext [31/57]0;Spack: Installing gettext [31/57]==> Installing gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez [31/57]
+==> Installing gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez [31/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gettext-0.22.3/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez.spack
 ==> Extracting gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez from binary cache
 ==> gettext: Successfully installed gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez
   Search: 0.00s.  Fetch: 0.03s.	 Install: 0.61s.  Extract: 0.57s.  Relocate: 0.03s.  Total: 0.64s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gettext-0.22.3-y7ty4lob4acmrfmb26qugn6pfo7npzez
-0;Spack: Processing libpciaccess [32/57]0;Spack: Acquiring lock for libpciaccess [32/57]==> Waiting for libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf
-0;Spack: Preparing libpciaccess [32/57]0;Spack: Installing libpciaccess [32/57]==> Installing libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf [32/57]
+==> Installing libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf [32/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libpciaccess-0.17/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf.spack
 ==> Extracting libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf from binary cache
 ==> libpciaccess: Successfully installed libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libpciaccess-0.17-el7pkf4hkksdm7uhvtpedjweizkqoxuf
-0;Spack: Processing perl [33/57]0;Spack: Acquiring lock for perl [33/57]==> Waiting for perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon
-0;Spack: Preparing perl [33/57]0;Spack: Installing perl [33/57]==> Installing perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon [33/57]
+==> Installing perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon [33/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/perl-5.38.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon.spack
 ==> Extracting perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon from binary cache
 ==> perl: Successfully installed perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon
   Search: 0.00s.  Fetch: 0.03s.	 Install: 0.75s.  Extract: 0.64s.  Relocate: 0.10s.  Total: 0.78s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/perl-5.38.0-hh6v2va6njnpb7rphauf47w336oiogon
-0;Spack: Processing hwloc [34/57]0;Spack: Acquiring lock for hwloc [34/57]==> Waiting for hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t
-0;Spack: Preparing hwloc [34/57]0;Spack: Installing hwloc [34/57]==> Installing hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t [34/57]
+==> Installing hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t [34/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/hwloc-2.9.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t.spack
 ==> Extracting hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t from binary cache
 ==> hwloc: Successfully installed hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.19s.  Extract: 0.17s.  Relocate: 0.02s.  Total: 0.21s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/hwloc-2.9.1-rvotk5aul6iynvdt2vcgx2dw7zz5mc6t
-0;Spack: Processing openblas [35/57]0;Spack: Acquiring lock for openblas [35/57]==> Waiting for openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq
-0;Spack: Preparing openblas [35/57]0;Spack: Installing openblas [35/57]==> Installing openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq [35/57]
+==> Installing openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq [35/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openblas-0.3.24/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq.spack
 ==> Extracting openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq from binary cache
 ==> openblas: Successfully installed openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq
   Search: 0.00s.  Fetch: 0.05s.	 Install: 0.67s.  Extract: 0.62s.  Relocate: 0.04s.  Total: 0.72s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openblas-0.3.24-qoggfi232esuqr63vxkalaqbezrey4yq
-0;Spack: Processing bison [36/57]0;Spack: Acquiring lock for bison [36/57]==> Waiting for bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn
-0;Spack: Preparing bison [36/57]0;Spack: Installing bison [36/57]==> Installing bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn [36/57]
+==> Installing bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn [36/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bison-3.8.2/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn.spack
 ==> Extracting bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn from binary cache
 ==> bison: Successfully installed bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.13s.  Extract: 0.10s.  Relocate: 0.02s.  Total: 0.14s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bison-3.8.2-tr45sog7k5gupnhpc2xlzy3ij2ywm2bn
-0;Spack: Processing autoconf [37/57]0;Spack: Acquiring lock for autoconf [37/57]==> Waiting for autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel
-0;Spack: Preparing autoconf [37/57]0;Spack: Installing autoconf [37/57]==> Installing autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel [37/57]
+==> Installing autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel [37/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/autoconf-2.69/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel.spack
 ==> Extracting autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel from binary cache
 ==> autoconf: Successfully installed autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.04s.  Relocate: 0.02s.  Total: 0.08s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/autoconf-2.69-kroqjkus74tyrbdkelt2ehlecbcbeqel
-0;Spack: Processing openssl [38/57]0;Spack: Acquiring lock for openssl [38/57]==> Waiting for openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3
-0;Spack: Preparing openssl [38/57]0;Spack: Installing openssl [38/57]==> Installing openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3 [38/57]
+==> Installing openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3 [38/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssl-3.1.3/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3.spack
 ==> Extracting openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3 from binary cache
 ==> openssl: Successfully installed openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.20s.  Extract: 0.18s.  Relocate: 0.01s.  Total: 0.23s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssl-3.1.3-v7jc5lqmddus6h3u2fuxjf4j3olk42k3
-0;Spack: Processing libxcrypt [39/57]0;Spack: Acquiring lock for libxcrypt [39/57]==> Waiting for libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv
-0;Spack: Preparing libxcrypt [39/57]0;Spack: Installing libxcrypt [39/57]==> Installing libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv [39/57]
+==> Installing libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv [39/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxcrypt-4.4.35/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv.spack
 ==> Extracting libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv from binary cache
 ==> libxcrypt: Successfully installed libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxcrypt-4.4.35-guszc5mbnrovusj5uewcgx6v2pkzzlnv
-0;Spack: Processing automake [40/57]0;Spack: Acquiring lock for automake [40/57]==> Waiting for automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb
-0;Spack: Preparing automake [40/57]0;Spack: Installing automake [40/57]==> Installing automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb [40/57]
+==> Installing automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb [40/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/automake-1.16.5/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb.spack
 ==> Extracting automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb from binary cache
 ==> automake: Successfully installed automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.08s.  Extract: 0.05s.  Relocate: 0.02s.  Total: 0.09s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/automake-1.16.5-dajnwuxitfc75fhqe5chvaweskc5jbmb
-0;Spack: Processing libevent [41/57]0;Spack: Acquiring lock for libevent [41/57]==> Waiting for libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa
-0;Spack: Preparing libevent [41/57]0;Spack: Installing libevent [41/57]==> Installing libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa [41/57]
+==> Installing libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa [41/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libevent-2.1.12/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa.spack
 ==> Extracting libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa from binary cache
 ==> libevent: Successfully installed libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.09s.  Extract: 0.07s.  Relocate: 0.01s.  Total: 0.10s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libevent-2.1.12-sasn7whubchuhck4ecfw3mvwpmb24qwa
-0;Spack: Processing krb5 [42/57]0;Spack: Acquiring lock for krb5 [42/57]==> Waiting for krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c
-0;Spack: Preparing krb5 [42/57]0;Spack: Installing krb5 [42/57]==> Installing krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c [42/57]
+==> Installing krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c [42/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/krb5-1.20.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c.spack
 ==> Extracting krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c from binary cache
 ==> krb5: Successfully installed krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.13s.  Extract: 0.09s.  Relocate: 0.03s.  Total: 0.14s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/krb5-1.20.1-5d6b7ngkpouty6ftw6tvdqanik7dif4c
-0;Spack: Processing curl [43/57]0;Spack: Acquiring lock for curl [43/57]==> Waiting for curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3
-0;Spack: Preparing curl [43/57]0;Spack: Installing curl [43/57]==> Installing curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3 [43/57]
+==> Installing curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3 [43/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/curl-8.4.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3.spack
 ==> Extracting curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3 from binary cache
 ==> curl: Successfully installed curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.14s.  Extract: 0.12s.  Relocate: 0.01s.  Total: 0.16s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/curl-8.4.0-u2ni6an3ks7jvnlibn6mgibj5ifmtmw3
-0;Spack: Processing python [44/57]0;Spack: Acquiring lock for python [44/57]==> Waiting for python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv
-0;Spack: Preparing python [44/57]0;Spack: Installing python [44/57]==> Installing python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv [44/57]
+==> Installing python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv [44/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-3.11.6/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv.spack
 ==> Extracting python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv from binary cache
 ==> python: Successfully installed python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv
   Search: 0.00s.  Fetch: 0.09s.	 Install: 3.27s.  Extract: 3.09s.  Relocate: 0.16s.  Total: 3.36s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-3.11.6-oa7j22bnidxyjpkcsxbop4sjozopmrmv
-0;Spack: Processing numactl [45/57]0;Spack: Acquiring lock for numactl [45/57]==> Waiting for numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw
-0;Spack: Preparing numactl [45/57]0;Spack: Installing numactl [45/57]==> Installing numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw [45/57]
+==> Installing numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw [45/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/numactl-2.0.14/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw.spack
 ==> Extracting numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw from binary cache
 ==> numactl: Successfully installed numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/numactl-2.0.14-iiok6h4mbdc56gdaqa2nw5azpcyzdpiw
-0;Spack: Processing pmix [46/57]0;Spack: Acquiring lock for pmix [46/57]==> Waiting for pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk
-0;Spack: Preparing pmix [46/57]0;Spack: Installing pmix [46/57]==> Installing pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk [46/57]
+==> Installing pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk [46/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pmix-5.0.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk.spack
 ==> Extracting pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk from binary cache
 ==> pmix: Successfully installed pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.20s.  Extract: 0.17s.  Relocate: 0.02s.  Total: 0.22s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pmix-5.0.1-g2hfbjgmhitmaz6see7lhv5qr6rhljpk
-0;Spack: Processing openssh [47/57]0;Spack: Acquiring lock for openssh [47/57]==> Waiting for openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp
-0;Spack: Preparing openssh [47/57]0;Spack: Installing openssh [47/57]==> Installing openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp [47/57]
+==> Installing openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp [47/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssh-9.5p1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp.spack
 ==> Extracting openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp from binary cache
 ==> openssh: Successfully installed openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.14s.  Extract: 0.09s.  Relocate: 0.04s.  Total: 0.16s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssh-9.5p1-6ksmdje7xd7dw5iu6prxjwokxrvnyuyp
-0;Spack: Processing cmake [48/57]0;Spack: Acquiring lock for cmake [48/57]==> Waiting for cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid
-0;Spack: Preparing cmake [48/57]0;Spack: Installing cmake [48/57]==> Installing cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid [48/57]
+==> Installing cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid [48/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/cmake-3.27.7/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid.spack
 ==> Extracting cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid from binary cache
 ==> cmake: Successfully installed cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid
   Search: 0.00s.  Fetch: 0.05s.	 Install: 1.15s.  Extract: 1.08s.  Relocate: 0.05s.  Total: 1.20s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/cmake-3.27.7-dukasmm7zdvl6uais3fqmyu67mdtnbid
-0;Spack: Processing yaksa [49/57]0;Spack: Acquiring lock for yaksa [49/57]==> Waiting for yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi
-0;Spack: Preparing yaksa [49/57]0;Spack: Installing yaksa [49/57]==> Installing yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi [49/57]
+==> Installing yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi [49/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/yaksa-0.3/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi.spack
 ==> Extracting yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi from binary cache
 ==> yaksa: Successfully installed yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi
   Search: 0.00s.  Fetch: 0.04s.	 Install: 0.62s.  Extract: 0.56s.  Relocate: 0.04s.  Total: 0.66s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/yaksa-0.3-hmywdkqlbecfoillw7d3ezj3ffrrsmdi
-0;Spack: Processing amdblis [50/57]0;Spack: Acquiring lock for amdblis [50/57]==> Waiting for amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd
-0;Spack: Preparing amdblis [50/57]0;Spack: Installing amdblis [50/57]==> Installing amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd [50/57]
+==> Installing amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd [50/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/amdblis-4.1/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd.spack
 ==> Extracting amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd from binary cache
 ==> amdblis: Successfully installed amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.14s.  Extract: 0.11s.  Relocate: 0.01s.  Total: 0.15s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/amdblis-4.1-ywpdccr3oqwuiviu6bw2zxxmoguuihbd
-0;Spack: Processing openmpi [51/57]0;Spack: Acquiring lock for openmpi [51/57]==> Waiting for openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi
-0;Spack: Preparing openmpi [51/57]0;Spack: Installing openmpi [51/57]==> Installing openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi [51/57]
+==> Installing openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi [51/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openmpi-4.1.6/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi.spack
 ==> Extracting openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi from binary cache
 ==> openmpi: Successfully installed openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.40s.  Extract: 0.35s.  Relocate: 0.03s.  Total: 0.42s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openmpi-4.1.6-fnistzv3uxtm2keezfvh4thtndtxsdpi
-0;Spack: Processing netlib-lapack [52/57]0;Spack: Acquiring lock for netlib-lapack [52/57]==> Waiting for netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks
-0;Spack: Preparing netlib-lapack [52/57]0;Spack: Installing netlib-lapack [52/57]==> Installing netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks [52/57]
+==> Installing netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks [52/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-lapack-3.11.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks.spack
 ==> Extracting netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks from binary cache
 ==> netlib-lapack: Successfully installed netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks
   Search: 0.00s.  Fetch: 0.06s.	 Install: 0.21s.  Extract: 0.16s.  Relocate: 0.02s.  Total: 0.27s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-lapack-3.11.0-4uab534ixaeyn5yls2cw2rzxkaauu4ks
-0;Spack: Processing mpich [53/57]0;Spack: Acquiring lock for mpich [53/57]==> Waiting for mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb
-0;Spack: Preparing mpich [53/57]0;Spack: Installing mpich [53/57]==> Installing mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb [53/57]
+==> Installing mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb [53/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/mpich-4.1.2/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb.spack
 ==> Extracting mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb from binary cache
 ==> mpich: Successfully installed mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb
   Search: 0.00s.  Fetch: 0.10s.	 Install: 0.99s.  Extract: 0.94s.  Relocate: 0.03s.  Total: 1.09s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/mpich-4.1.2-cxezwh7hyktdonzthd2nlfse7ekeqzwb
-0;Spack: Processing netlib-scalapack [54/57]0;Spack: Acquiring lock for netlib-scalapack [54/57]==> Waiting for netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3
-0;Spack: Preparing netlib-scalapack [54/57]0;Spack: Installing netlib-scalapack [54/57]==> Installing netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3 [54/57]
+==> Installing netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3 [54/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3.spack
 ==> Extracting netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3 from binary cache
 ==> netlib-scalapack: Successfully installed netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.18s.  Extract: 0.09s.  Relocate: 0.08s.  Total: 0.19s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-scllgbnlyaarvwqa2hll6junfpljzay3
-0;Spack: Processing netlib-scalapack [55/57]0;Spack: Acquiring lock for netlib-scalapack [55/57]==> Waiting for netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo
-0;Spack: Preparing netlib-scalapack [55/57]0;Spack: Installing netlib-scalapack [55/57]==> Installing netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo [55/57]
+==> Installing netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo [55/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo.spack
 ==> Extracting netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo from binary cache
 ==> netlib-scalapack: Successfully installed netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo
   Search: 0.00s.  Fetch: 0.02s.	 Install: 0.14s.  Extract: 0.09s.  Relocate: 0.03s.  Total: 0.15s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-22ffx3esooyx3zf6glxfuehag3pitozo
-0;Spack: Processing netlib-scalapack [56/57]0;Spack: Acquiring lock for netlib-scalapack [56/57]==> Waiting for netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m
-0;Spack: Preparing netlib-scalapack [56/57]0;Spack: Installing netlib-scalapack [56/57]==> Installing netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m [56/57]
+==> Installing netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m [56/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m.spack
 ==> Extracting netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m from binary cache
 ==> netlib-scalapack: Successfully installed netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.14s.  Extract: 0.10s.  Relocate: 0.02s.  Total: 0.15s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-f4bc72jbgrajbq34pfhnaenh4w7g3g6m
-0;Spack: Processing netlib-scalapack [57/57]0;Spack: Acquiring lock for netlib-scalapack [57/57]==> Waiting for netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w
-0;Spack: Preparing netlib-scalapack [57/57]0;Spack: Installing netlib-scalapack [57/57]==> Installing netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w [57/57]
+==> Installing netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w [57/57]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0/linux-ubuntu22.04-x86_64_v3-gcc-12.3.0-netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w.spack
 ==> Extracting netlib-scalapack-2.2.0-3mwyatrgnuzwxgxaghjvw6lusfut5n5w from binary cache
