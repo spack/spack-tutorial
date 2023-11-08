@@ -1,8 +1,17 @@
-$ spack install zlib %gcc@10
-==> Installing zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.4.0-zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.4.0/zlib-1.2.13/linux-ubuntu22.04-x86_64_v3-gcc-10.4.0-zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7.spack
-==> Extracting zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7 from binary cache
-==> zlib: Successfully installed zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7
-  Search: 0.00s.  Fetch: 0.11s.  Install: 0.02s.  Total: 0.14s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.4.0/zlib-1.2.13-ozrll2gkjz7mzihqruo4j2bquyrnwzn7
+$ spack install zlib-ng %gcc@10
+0;Spack: Processing gmake [1/2]0;Spack: Acquiring lock for gmake [1/2]==> Waiting for gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka
+0;Spack: Preparing gmake [1/2]0;Spack: Installing gmake [1/2]==> Installing gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka [1/2]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka.spack
+==> Extracting gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka from binary cache
+==> gmake: Successfully installed gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka
+  Search: 0.00s.  Fetch: 0.12s.	 Install: 0.07s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.19s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka
+0;Spack: Processing zlib-ng [2/2]0;Spack: Acquiring lock for zlib-ng [2/2]==> Waiting for zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv
+0;Spack: Preparing zlib-ng [2/2]0;Spack: Installing zlib-ng [2/2]==> Installing zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv [2/2]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.4/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv.spack
+==> Extracting zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv from binary cache
+==> zlib-ng: Successfully installed zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.04s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv

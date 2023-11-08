@@ -1,8 +1,11 @@
-$ spack install zlib@1.2.8
-==> Installing zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.8/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg.spack
-==> Extracting zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg from binary cache
-==> zlib: Successfully installed zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg
-  Search: 0.00s.  Fetch: 0.11s.  Install: 0.02s.  Total: 0.13s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.8-iswfldxa6vk6wnomcasfi57ynhpr5dxg
+$ spack install zlib-ng@2.0.7
+0;Spack: Processing gmake [1/2]0;Spack: Acquiring lock for gmake [1/2]==> Waiting for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Preparing gmake [1/2][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Processing zlib-ng [2/2]0;Spack: Acquiring lock for zlib-ng [2/2]==> Waiting for zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje
+0;Spack: Preparing zlib-ng [2/2]0;Spack: Installing zlib-ng [2/2]==> Installing zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje [2/2]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.0.7/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje.spack
+==> Extracting zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje from binary cache
+==> zlib-ng: Successfully installed zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje
+  Search: 0.00s.  Fetch: 0.09s.	 Install: 0.05s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.14s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.0.7-ffnsgi66pitfl3r6drsojucl66osakje

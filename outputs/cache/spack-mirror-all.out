@@ -1,198 +1,164 @@
 $ spack mirror create -d ~/mirror --all
-==> Adding package autoconf@2.69 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/ea/eaa3f69d927a853313a0b06e2117c51adab6377a2278549b05abc5df93643e16
-==> Fetching https://mirror.spack.io/_source-cache/archive/77/7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
-==> Fetching https://mirror.spack.io/_source-cache/archive/35/35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
-==> Fetching https://mirror.spack.io/_source-cache/archive/a4/a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
-==> Adding package autoconf-archive@2023.02.20 to mirror
-==> Fetching https://ftpmirror.gnu.org/autoconf-archive/autoconf-archive-2023.02.20.tar.xz
-==> Fetching https://mirror.spack.io/_source-cache/archive/13/139214f5104f699f868dc87a14378e1e694a3c2539efa0de6f878024f3d7c66d
-==> Adding package automake@1.16.5 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/07/07bd24ad08a64bc17250ce09ec56e921d6343903943e99ccf63bbf0705e34605.tar.gz
-==> Adding package berkeley-db@18.1.40 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
-==> Adding package bison@3.8.2 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/06/06c9e13bdf7eb24d4ceb6b59205a4f67c2c7e7213119644430fe82fbd14a0abb.tar.gz
-==> Adding package bzip2@1.0.8 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
-==> Adding package ca-certificates-mozilla@2023-01-10 to mirror
-==> Fetching https://curl.se/ca/cacert-2023-01-10.pem
-==> Adding package cmake@3.26.3 to mirror
-==> Fetching https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3.tar.gz
-==> Adding package curl@8.0.1 to mirror
-==> Fetching http://curl.haxx.se/download/curl-8.0.1.tar.bz2
-==> Adding package diffutils@3.9 to mirror
-==> Fetching https://ftpmirror.gnu.org/diffutils/diffutils-3.9.tar.xz
-==> Adding package dtcmp@1.1.4 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd83d8cecd68e13b78b68e88675cc5847cde06742b7740e140b98f4a08127dd3.tar.gz
-==> Adding package elfutils@0.189 to mirror
-==> Fetching https://sourceware.org/pub/elfutils/0.189/elfutils-0.189.tar.bz2
-==> Fetching https://mirror.spack.io/_source-cache/archive/d7/d786d49c28d7f0c8fc27bab39ca8714e5f4d128c7f09bb18533a8ec99b38dbf8
-==> Adding package expat@2.5.0 to mirror
-==> Fetching https://github.com/libexpat/libexpat/releases/download/R_2_5_0/expat-2.5.0.tar.bz2
-==> Adding package gawk@5.2.1 to mirror
-==> Fetching https://ftpmirror.gnu.org/gawk/gawk-5.2.1.tar.xz
-==> Adding package gdbm@1.23 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/74/74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd.tar.gz
-==> Adding package gettext@0.21.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/50/50dbc8f39797950aa2c98e939947c527e5ac9ebd2c1b99dd7b06ba33a6767ae6.tar.xz
-==> Adding package glib@2.76.1 to mirror
-==> Fetching https://download.gnome.org/sources/glib/2.76/glib-2.76.1.tar.xz
-==> Fetching https://gitlab.gnome.org/GNOME/glib/-/merge_requests/3368.diff
-==> Adding package gmake@4.4.1 to mirror
-==> Fetching https://ftpmirror.gnu.org/make/make-4.4.1.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/fe/fe5b60d091c33f169740df8cb718bf4259f84528b42435194ffe0dd5b79cd125
-==> Fetching https://mirror.spack.io/_source-cache/archive/ca/ca60bd9c1a1b35bc0dc58b6a4a19d5c2651f7a94a4b22b2c5ea001a1ca7a8a7f
-==> Adding package gmp@6.2.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/ea/eae9326beb4158c386e39a356818031bd28f3124cf915f8c5b1dc4c7a36b4d7c.tar.bz2
-==> Adding package hdf5@1.14.1-2 to mirror
-==> Fetching https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.1/src/hdf5-1.14.1-2.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/57/57cee5ff1992b4098eda079815c36fc2da9b10e00a9056df054f2384c4fc7523
-==> Adding package hwloc@2.9.1 to mirror
-==> Fetching https://download.open-mpi.org/release/hwloc/v2.9/hwloc-2.9.1.tar.gz
-==> Adding package json-c@0.16 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/8e/8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b.tar.gz
-==> Adding package json-cwx@0.12 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bfae1f23eacba53ee130dbd1a6acf617af4627a9b4e4581d64b20a99b4e2b60.tar.gz
-==> Adding package krb5@1.20.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/70/704aed49b19eb5a7178b34b2873620ec299db08752d6a8574f95d41879ab8851.tar.gz
-==> Adding package libbsd@0.11.7 to mirror
-==> Fetching https://libbsd.freedesktop.org/releases/libbsd-0.11.7.tar.xz
-==> Adding package libedit@3.1-20210216 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/22/2283f741d2aab935c8c52c04b57bf952d02c2c02e651172f8ac811f77b1fc77a.tar.gz
-==> Adding package libevent@2.1.12 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/92/92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb.tar.gz
-==> Adding package libffi@3.4.4 to mirror
-==> Fetching https://github.com/libffi/libffi/releases/download/v3.4.4/libffi-3.4.4.tar.gz
-==> Adding package libgcrypt@1.10.2 to mirror
-==> Fetching https://gnupg.org/ftp/gcrypt/libgcrypt/libgcrypt-1.10.2.tar.bz2
-==> Adding package libgpg-error@1.47 to mirror
-==> Fetching https://gnupg.org/ftp/gcrypt/libgpg-error/libgpg-error-1.47.tar.bz2
-==> Adding package libiconv@1.17 to mirror
-==> Fetching https://ftpmirror.gnu.org/libiconv/libiconv-1.17.tar.gz
-==> Adding package libmd@1.0.4 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/f5/f51c921042e34beddeded4b75557656559cf5b1f2448033b4c1eec11c07e530f.tar.xz
-==> Adding package libpciaccess@0.17 to mirror
-==> Fetching https://www.x.org/archive/individual/lib/libpciaccess-0.17.tar.gz
-==> Adding package libsigsegv@2.14 to mirror
-==> Fetching https://ftpmirror.gnu.org/libsigsegv/libsigsegv-2.14.tar.gz
-==> Adding package libtool@2.4.7 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/04/04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8.tar.gz
-==> Adding package libxcrypt@4.4.33 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/e8/e87acf9c652c573a4713d5582159f98f305d56ed5f754ce64f57d4194d6b3a6f.tar.xz
-==> Adding package libxml2@2.10.3 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/5d/5d2cc3d78bec3dbe212a9d7fa629ada25a7da928af432c93060ff5c17ee28a9c.tar.xz
-==> Fetching https://mirror.spack.io/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/3e/3e06d42596b105839648070a5921157fe284b932289ffdbfa304ddc3457e5637
-==> Adding package libyogrt@1.33 to mirror
-==> Fetching https://github.com/LLNL/libyogrt/releases/download/1.33/libyogrt-1.33.tar.gz
-==> Adding package lwgrp@1.0.5 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/16/16b579e13b8a5218f4fe1b8715f6aafb09133a0cefbcd6b2eaf73802955dee6b.tar.gz
-==> Adding package lz4@1.9.4 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/0b/0b0e3aa07c8c063ddf40b082bdf7e37a1562bda40a0ff5272957f3e987e0e54b.tar.gz
-==> Adding package m4@1.4.19 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3be4a26d825ffdfda52a56fc43246456989a3630093cced3fbddf4771ee58a70.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/fc/fc9b61654a3ba1a8d6cd78ce087e7c96366c290bc8d2c299f09828d793b853c8
 ==> Adding package macsio@1.1 to mirror
 ==> Fetching https://mirror.spack.io/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
-==> Adding package meson@1.1.0 to mirror
-==> Fetching https://github.com/mesonbuild/meson/archive/1.1.0.tar.gz
-==> Adding package mpfr@4.2.0 to mirror
-==> Fetching https://ftpmirror.gnu.org/mpfr/mpfr-4.2.0.tar.bz2
-==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3f80b836948aa96f8d1cb9cc7f3f55973f19285482a96f9a4e1623d460bcccf0
-==> Fetching https://mirror.spack.io/_source-cache/archive/52/5230aab653fa8675fc05b5bdd3890e071e8df49a92a9d58c4284024affd27739
-==> Fetching https://mirror.spack.io/_source-cache/archive/7a/7a6dd71bcda4803d6b89612706a17b8816e1acd5dd9bf1bec29cf748f3b60008
-==> Fetching https://mirror.spack.io/_source-cache/archive/1a/1ae14fb3a54ae8e0faed20801970255b279eee9e5ac624891ab5d29727f0bc04
-==> Fetching https://mirror.spack.io/_source-cache/archive/11/113705d5333ef0d0ad3eb136a85404ba6bd1cc524dece5ce902c536aa2e29903
-==> Fetching https://mirror.spack.io/_source-cache/archive/41/4152a780b3cc6e9643283e59093b43460196d0fea9302d8c93b2496f6679f4e4
-==> Fetching https://mirror.spack.io/_source-cache/archive/1b/1b9fdb515efb09a506a01e1eb307b1464455f5ca63d6c193db3a3da371ab3220
-==> Adding package munge@0.5.15 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3f979df117a34c74db8fe2835521044bdeb08e3b7d0f168ca97c3547f51da9ba.tar.xz
-==> Adding package ncurses@6.4 to mirror
-==> Fetching https://ftpmirror.gnu.org/ncurses/ncurses-6.4.tar.gz
-==> Adding package ninja@1.11.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/31/31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea.tar.gz
-==> Adding package numactl@2.0.14 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/1e/1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035.tar.gz
-==> Adding package openmpi@4.1.5 to mirror
-==> Fetching https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.5.tar.bz2
-==> Adding package openssh@9.3p1 to mirror
-==> Fetching https://mirrors.sonic.net/pub/OpenBSD/OpenSSH/portable/openssh-9.3p1.tar.gz
-==> Adding package openssl@1.1.1t to mirror
-==> Fetching http://www.openssl.org/source/openssl-1.1.1t.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3fdcf2d1e47c34f3a012f23306322c5a35cad55b180c9b6fb34537b55884645c
-==> Adding package pcre2@10.42 to mirror
-==> Fetching https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.42/pcre2-10.42.tar.bz2
-==> Adding package pdsh@2.31 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/0e/0ee066ce395703285cf4f6cf00b54b7097d12457a4b1c146bc6f33d8ba73caa7.tar.gz
-==> Adding package perl@5.36.0 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/e2/e26085af8ac396f62add8a533c3a0ea8c8497d836f0689347ac5abd7b7a4e00a.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
-==> Fetching https://mirror.spack.io/_source-cache/archive/8c/8cf4302ca8b480c60ccdcaa29ec53d9d50a71d4baf469ac8c6fca00ca31e58a2
-==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bbd7d6f9933d80b9571533867b444c6f8f5a1ba0575bfba1fba4db9d885a71a
-==> Fetching https://mirror.spack.io/_source-cache/archive/0e/0eac10ed90aeb0459ad8851f88081d439a4e41978e586ec743069e8b059370ac
-==> Adding package pigz@2.7 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/d2/d2045087dae5e9482158f1f1c0f21c7d3de6f7cdc7cc5848bdabda544e69aa58.tar.gz
+==> Adding package cmake@3.27.7 to mirror
+==> Fetching https://github.com/Kitware/CMake/releases/download/v3.27.7/cmake-3.27.7.tar.gz
+==> Adding package curl@8.4.0 to mirror
+==> Fetching http://curl.haxx.se/download/curl-8.4.0.tar.bz2
+==> Adding package gmake@4.4.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> Adding package nghttp2@1.57.0 to mirror
+==> Fetching https://github.com/nghttp2/nghttp2/releases/download/v1.57.0/nghttp2-1.57.0.tar.gz
 ==> Adding package pkgconf@1.9.5 to mirror
-==> Fetching https://distfiles.dereferenced.org/pkgconf/pkgconf-1.9.5.tar.xz
-==> Adding package pmix@4.2.3 to mirror
-==> Fetching https://github.com/pmix/pmix/releases/download/v4.2.3/pmix-4.2.3.tar.bz2
-==> Adding package py-pip@23.0 to mirror
-==> Fetching https://files.pythonhosted.org/packages/py3/p/pip/pip-23.0-py3-none-any.whl
-==> Adding package py-setuptools@67.6.0 to mirror
-==> Fetching https://files.pythonhosted.org/packages/py3/s/setuptools/setuptools-67.6.0-py3-none-any.whl
-==> Adding package py-wheel@0.37.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/4b/4bdcd7d840138086126cd09254dc6195fb4fc6f01c050a1d7236f2630db1d22a
-==> Adding package python@3.10.10 to mirror
-==> Fetching https://www.python.org/ftp/python/3.10.10/Python-3.10.10.tgz
-==> Adding package re2c@2.2 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/0f/0fc45e4130a8a555d68e230d1795de0216dfe99096b61b28e67c86dfd7d86bda.tar.xz
+==> Fetching https://mirror.spack.io/_source-cache/archive/1a/1ac1656debb27497563036f7bffc281490f83f9b8457c0d60bcfb638fb6b6171.tar.xz
+==> Adding package openssl@3.1.3 to mirror
+==> Fetching http://www.openssl.org/source/openssl-3.1.3.tar.gz
+==> Adding package ca-certificates-mozilla@2023-05-30 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/5f/5fadcae90aa4ae041150f8e2d26c37d980522cdb49f923fc1e1b5eb8d74e71ad
+==> Adding package perl@5.38.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/21/213ef58089d2f2c972ea353517dc60ec3656f050dcc027666e118b508423e517.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/9d/9da50e155df72bce55cb69f51f1dbb4b62d23740fb99f6178bb27f22ebdf8a46.tar.gz
+==> Adding package berkeley-db@18.1.40 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0c/0cecb2ef0c67b166de93732769abdeba0555086d51de1090df325e18ee8da9c8.tar.gz
+==> Adding package bzip2@1.0.8 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
+==> Adding package diffutils@3.9 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d8/d80d3be90a201868de83d78dad3413ad88160cc53bcc36eb9eaf7c20dbf023f1.tar.xz
+==> Adding package libiconv@1.17 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/8f/8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313.tar.gz
+==> Adding package gdbm@1.23 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/74/74b1081d21fff13ae4bd7c16e5d6e504a4c26f7cde1dca0d963a484174bbcacd.tar.gz
 ==> Adding package readline@8.2 to mirror
 ==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35.tar.gz
 ==> Fetching https://mirror.spack.io/_source-cache/archive/bb/bbf97f1ec40a929edab5aa81998c1e2ef435436c597754916e6a5868f273aff7
-==> Fetching https://mirror.spack.io/_source-cache/archive/68/682a465a68633650565c43d59f0b8cdf149c13a874682d3c20cb4af6709b9144
-==> Fetching https://mirror.spack.io/_source-cache/archive/e5/e55be055a68cb0719b0ccb5edc9a74edcc1d1f689e8a501525b3bc5ebad325dc
-==> Fetching https://mirror.spack.io/_source-cache/archive/d8/d8e5e98933cf5756f862243c0601cb69d3667bb33f2c7b751fe4e40b2c3fd069
-==> Fetching https://mirror.spack.io/_source-cache/archive/36/36b0febff1e560091ae7476026921f31b6d1dd4c918dcb7b741aa2dad1aec8f7
-==> Fetching https://mirror.spack.io/_source-cache/archive/94/94ddb2210b71eb5389c7756865d60e343666dfb722c85892f8226b26bb3eeaef
-==> Fetching https://mirror.spack.io/_source-cache/archive/b1/b1aa3d2a40eee2dea9708229740742e649c32bb8db13535ea78f8ac15377394c
-==> Fetching https://mirror.spack.io/_source-cache/archive/9a/9ac1b3ac2ec7b1bf0709af047f2d7d2a34ccde353684e57c6b47ebca77d7a376
-==> Fetching https://mirror.spack.io/_source-cache/archive/87/8747c92c35d5db32eae99af66f17b384abaca961653e185677f9c9a571ed2d58
-==> Fetching https://mirror.spack.io/_source-cache/archive/9e/9e43aa93378c7e9f7001d8174b1beb948deefa6799b6f581673f465b7d9d4780
-==> Fetching https://mirror.spack.io/_source-cache/archive/f9/f925683429f20973c552bff6702c74c58c2a38ff6e5cf305a8e847119c5a6b64
-==> Fetching https://mirror.spack.io/_source-cache/archive/ca/ca159c83706541c6bbe39129a33d63bbd76ac594303f67e4d35678711c51b753
-==> Fetching https://mirror.spack.io/_source-cache/archive/1a/1a79bbb6eaee750e0d6f7f3d059b30a45fc54e8e388a8e05e9c3ae598590146f
-==> Fetching https://mirror.spack.io/_source-cache/archive/39/39e304c7a526888f9e112e733848215736fb7b9d540729b9e31f3347b7a1e0a5
-==> Fetching https://mirror.spack.io/_source-cache/archive/ec/ec41bdd8b00fd884e847708513df41d51b1243cecb680189e31b7173d01ca52f
-==> Fetching https://mirror.spack.io/_source-cache/archive/45/4547b906fb2570866c21887807de5dee19838a60a1afb66385b272155e4355cc
-==> Fetching https://mirror.spack.io/_source-cache/archive/87/877788f9228d1a9907a4bcfe3d6dd0439c08d728949458b41208d9bf9060274b
-==> Fetching https://mirror.spack.io/_source-cache/archive/5c/5c237ab3c6c97c23cf52b2a118adc265b7fb411b57c93a5f7c221d50fafbe556
-==> Fetching https://mirror.spack.io/_source-cache/archive/4d/4d79b5a2adec3c2e8114cbd3d63c1771f7c6cf64035368624903d257014f5bea
-==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bc093cf526ceac23eb80256b0ec87fa1735540d659742107b6284d635c43787
-==> Adding package scr@2.0.0 to mirror
-==> Adding package silo@4.11 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab936c1f4fc158d9fdc4415965f7d9def7f4abeca596fe5a25bd8485654898ac.tar.gz
-==> Adding package slurm@23-02-1-1 to mirror
-==> Fetching https://github.com/SchedMD/slurm/archive/slurm-23-02-1-1.tar.gz
-==> Adding package sqlite@3.40.1 to mirror
-==> Fetching https://www.sqlite.org/2022/sqlite-autoconf-3400100.tar.gz
-==> Adding package tar@1.34 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/03/03d908cf5768cfe6b7ad588c921c6ed21acabfb2b79b788d1330453507647aed.tar.gz
-==> Adding package texinfo@7.0.3 to mirror
-==> Fetching https://ftpmirror.gnu.org/texinfo/texinfo-7.0.3.tar.gz
-==> Adding package util-linux-uuid@2.38.1 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/08/0820eb8eea90408047e3715424bc6be771417047f683950fecb4bdd2e2cbbc6e.tar.gz
+==> Adding package ncurses@6.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/69/6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159.tar.gz
+==> Adding package zlib-ng@2.1.4 to mirror
+==> Fetching https://github.com/zlib-ng/zlib-ng/archive/2.1.4.tar.gz
+==> Adding package json-cwx@0.12 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3bfae1f23eacba53ee130dbd1a6acf617af4627a9b4e4581d64b20a99b4e2b60.tar.gz
+==> Adding package autoconf@2.69 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/95/954bd69b391edc12d6a4a51a2dd1476543da5c6bbf05a95b59dc0dd6fd4c2969.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/77/7793209b33013dc0f81208718c68440c5aae80e7a1c4b8d336e382525af791a7
+==> Fetching https://mirror.spack.io/_source-cache/archive/35/35c449281546376449766f92d49fc121ca50e330e60fefcfc9be2af3253082c2
+==> Fetching https://mirror.spack.io/_source-cache/archive/a4/a49dd5bac3b62daa0ff688ab4d508d71dbd2f4f8d7e2a02321926346161bf3ee
+==> Adding package m4@1.4.19 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3be4a26d825ffdfda52a56fc43246456989a3630093cced3fbddf4771ee58a70.tar.gz
+==> Adding package libsigsegv@2.14 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/cd/cdac3941803364cf81a908499beb79c200ead60b6b5b40cad124fd1e06caa295.tar.gz
+==> Adding package automake@1.16.5 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/07/07bd24ad08a64bc17250ce09ec56e921d6343903943e99ccf63bbf0705e34605.tar.gz
+==> Adding package libtool@2.4.7 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/04/04e96c2404ea70c590c546eba4202a4e12722c640016c12b9b2f1ce3d481e9a8.tar.gz
+==> Adding package openmpi@4.1.6 to mirror
+==> Fetching https://download.open-mpi.org/release/open-mpi/v4.1/openmpi-4.1.6.tar.bz2
+==> Adding package hwloc@2.9.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/a4/a440e2299f7451dc10a57ddbfa3f116c2a6c4be1bb97c663edd3b9c7b3b3b4cf.tar.gz
+==> Adding package libpciaccess@0.17 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/bf/bf6985a77d2ecb00e2c79da3edfb26b909178ffca3f2e9d14ed0620259ab733b.tar.gz
 ==> Adding package util-macros@1.19.3 to mirror
 ==> Fetching https://mirror.spack.io/_source-cache/archive/0f/0f812e6e9d2786ba8f54b960ee563c0663ddbe2434bf24ff193f5feab1f31971.tar.bz2
+==> Adding package libxml2@2.10.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/5d/5d2cc3d78bec3dbe212a9d7fa629ada25a7da928af432c93060ff5c17ee28a9c.tar.xz
+==> Fetching https://mirror.spack.io/_source-cache/archive/96/96151685cec997e1f9f3387e3626d61e6284d4d6e66e0e440c209286c03e9cc7.tar.gz
 ==> Adding package xz@5.4.1 to mirror
-==> Fetching https://prdownloads.sourceforge.net/lzmautils/files/xz-5.4.1.tar.bz2
-==> Adding package zlib@1.2.13 to mirror
-==> Fetching https://mirror.spack.io/_source-cache/archive/b3/b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd172acb53867a68012f94c17389401b2f274a1aa5ae8f84cbfb8b7e383ea8d3.tar.bz2
+==> Adding package numactl@2.0.14 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/1e/1ee27abd07ff6ba140aaf9bc6379b37825e54496e01d6f7343330cf1a4487035.tar.gz
+==> Adding package openssh@9.5p1 to mirror
+==> Fetching https://mirrors.sonic.net/pub/OpenBSD/OpenSSH/portable/openssh-9.5p1.tar.gz
+==> Adding package krb5@1.20.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/70/704aed49b19eb5a7178b34b2873620ec299db08752d6a8574f95d41879ab8851.tar.gz
+==> Adding package bison@3.8.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/06/06c9e13bdf7eb24d4ceb6b59205a4f67c2c7e7213119644430fe82fbd14a0abb.tar.gz
+==> Adding package gettext@0.22.3 to mirror
+==> Fetching https://ftpmirror.gnu.org/gettext/gettext-0.22.3.tar.xz
+==> Adding package tar@1.34 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/03/03d908cf5768cfe6b7ad588c921c6ed21acabfb2b79b788d1330453507647aed.tar.gz
+==> Adding package pigz@2.7 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d2/d2045087dae5e9482158f1f1c0f21c7d3de6f7cdc7cc5848bdabda544e69aa58.tar.gz
 ==> Adding package zstd@1.5.5 to mirror
-==> Fetching https://github.com/facebook/zstd/archive/v1.5.5.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/98/98e9c3d949d1b924e28e01eccb7deed865eefebf25c2f21c702e5cd5b63b85e1.tar.gz
+==> Adding package findutils@4.9.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/a2/a2bfb8c09d436770edc59f50fa483e785b161a3b7b9d547573cb08065fd462fe.tar.xz
+==> Adding package libedit@3.1-20210216 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/22/2283f741d2aab935c8c52c04b57bf952d02c2c02e651172f8ac811f77b1fc77a.tar.gz
+==> Adding package libxcrypt@4.4.35 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/a8/a8c935505b55f1df0d17f8bfd59468c7c6709a1d31831b0f8e3e045ab8fd455d.tar.xz
+==> Adding package pmix@5.0.1 to mirror
+==> Fetching https://github.com/pmix/pmix/releases/download/v5.0.1/pmix-5.0.1.tar.bz2
+==> Adding package libevent@2.1.12 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/92/92e6de1be9ec176428fd2367677e61ceffc2ee1cb119035037a27d346b0403bb.tar.gz
+==> Adding package scr@2.0.0 to mirror
+==> Adding package dtcmp@1.1.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd83d8cecd68e13b78b68e88675cc5847cde06742b7740e140b98f4a08127dd3.tar.gz
+==> Adding package lwgrp@1.0.5 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/16/16b579e13b8a5218f4fe1b8715f6aafb09133a0cefbcd6b2eaf73802955dee6b.tar.gz
+==> Adding package libyogrt@1.33 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/79/797d20c49cdc4f6beae8660b4f41ba7ac13f7e93a0344b47f0bdc64f780d1398.tar.gz
+==> Adding package slurm@23-02-4-1 to mirror
+==> Fetching https://github.com/SchedMD/slurm/archive/slurm-23-02-4-1.tar.gz
+==> Adding package glib@2.78.0 to mirror
+==> Fetching https://download.gnome.org/sources/glib/2.78/glib-2.78.0.tar.xz
+==> Fetching https://gitlab.gnome.org/GNOME/glib/-/commit/bda87264372c006c94e21ffb8ff9c50ecb3e14bd.diff
+==> Adding package elfutils@0.189 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/39/39bd8f1a338e2b7cd4abc3ff11a0eddc6e690f69578a57478d8179b4148708c8.tar.bz2
+==> Adding package libffi@3.4.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/d6/d66c56ad259a82cf2a9dfc408b32bf5da52371500b84745f7fb8b645712df676.tar.gz
+==> Adding package meson@1.2.2 to mirror
+==> Fetching https://github.com/mesonbuild/meson/archive/1.2.2.tar.gz
+==> Adding package ninja@1.11.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/31/31747ae633213f1eda3842686f83c2aa1412e0f5691d1c14dbbcc67fe7400cea.tar.gz
+==> Adding package python@3.11.6 to mirror
+==> Fetching https://www.python.org/ftp/python/3.11.6/Python-3.11.6.tgz
+==> Adding package expat@2.5.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/6f/6f0e6e01f7b30025fa05c85fdad1e5d0ec7fd35d9f61b22f34998de11969ff67.tar.bz2
+==> Adding package libbsd@0.11.7 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/9b/9baa186059ebbf25c06308e9f991fda31f7183c0f24931826d83aa6abd8a0261.tar.xz
+==> Adding package libmd@1.0.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/f5/f51c921042e34beddeded4b75557656559cf5b1f2448033b4c1eec11c07e530f.tar.xz
+==> Adding package sqlite@3.43.2 to mirror
+==> Fetching https://www.sqlite.org/2023/sqlite-autoconf-3430200.tar.gz
+==> Adding package util-linux-uuid@2.38.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/08/0820eb8eea90408047e3715424bc6be771417047f683950fecb4bdd2e2cbbc6e.tar.gz
+==> Adding package re2c@2.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0f/0fc45e4130a8a555d68e230d1795de0216dfe99096b61b28e67c86dfd7d86bda.tar.xz
+==> Adding package py-pip@23.1.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3e/3ef6ac33239e4027d9a5598a381b9d30880a1477e50039db2eac6e8a8f6d1b18
+==> Adding package py-setuptools@68.0.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/11/11e52c67415a381d10d6b462ced9cfb97066179f0e871399e006c4ab101fc85f
+==> Adding package py-wheel@0.41.2 to mirror
+==> Fetching https://files.pythonhosted.org/packages/py3/w/wheel/wheel-0.41.2-py3-none-any.whl
+==> Adding package pcre2@10.42 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/8d/8d36cd8cb6ea2a4c2bb358ff6411b0c788633a2a45dabbf1aeb4b701d1b5e840.tar.bz2
+==> Adding package json-c@0.16 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/8e/8e45ac8f96ec7791eaf3bb7ee50e9c2100bbbc87b8d0f1d030c5ba8a0288d96b.tar.gz
+==> Adding package lz4@1.9.4 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0b/0b0e3aa07c8c063ddf40b082bdf7e37a1562bda40a0ff5272957f3e987e0e54b.tar.gz
+==> Adding package munge@0.5.15 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3f/3f979df117a34c74db8fe2835521044bdeb08e3b7d0f168ca97c3547f51da9ba.tar.xz
+==> Adding package libgcrypt@1.10.2 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3b/3b9c02a004b68c256add99701de00b383accccf37177e0d6c58289664cce0c03.tar.bz2
+==> Adding package libgpg-error@1.47 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/9e/9e3c670966b96ecc746c28c2c419541e3bcb787d1a73930f5e5f5e1bcbbb9bdb.tar.bz2
+==> Adding package gawk@5.2.2 to mirror
+==> Fetching https://ftpmirror.gnu.org/gawk/gawk-5.2.2.tar.xz
+==> Adding package gmp@6.2.1 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/ea/eae9326beb4158c386e39a356818031bd28f3124cf915f8c5b1dc4c7a36b4d7c.tar.bz2
+==> Adding package mpfr@4.2.0 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/69/691db39178e36fc460c046591e4b0f2a52c8f2b3ee6d750cc2eab25f1eaa999d.tar.bz2
+==> Adding package autoconf-archive@2023.02.20 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/71/71d4048479ae28f1f5794619c3d72df9c01df49b1c628ef85fde37596dc31a33.tar.xz
+==> Adding package texinfo@7.0.3 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/3c/3cc5706fb086b895e1dc2b407aade9f95a3a233ff856273e2b659b089f117683.tar.gz
+==> Adding package pdsh@2.31 to mirror
+==> Fetching https://mirror.spack.io/_source-cache/archive/0e/0ee066ce395703285cf4f6cf00b54b7097d12457a4b1c146bc6f33d8ba73caa7.tar.gz
+==> Adding package silo@4.11.1 to mirror
+==> Fetching https://github.com/LLNL/Silo/releases/download/4.11.1/silo-4.11.1.tar.xz
+==> Adding package hdf5@1.14.3 to mirror
+==> Fetching https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.14/hdf5-1.14.3/src/hdf5-1.14.3.tar.gz
 ==> Summary for mirror in /home/spack/mirror
 ==> Archive stats:
     1	 already present
-    73	 added
+    75	 added
     0	 failed to fetch.

@@ -1,6 +1,6 @@
 $ spack gpg create "My Name" "<my.email@my.domain.com>"
 gpg: directory '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d' created
-gpg: revocation certificate stored as '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d/F365BC2C9D6AFEDD0267B6080B904BCCF61D0E96.rev'
+gpg: revocation certificate stored as '/home/spack/spack/opt/spack/gpg/openpgp-revocs.d/79D64B20FAF70D47AAE403B827B723C87412BD23.rev'
 $ mkdir ~/private_gpg_backup
 $ cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup
 $ cp ~/spack/opt/spack/gpg/pubring.* ~/mirror

@@ -1,14 +1,25 @@
 $ spack install hdf5~mpi
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/ncurses-6.4-4dokmxjlgawyprrnkewx3aiwppdbwbts
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gmake-4.4.1-guaj3kbmbrdgqupr5u3zd42ga3kong7l
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/pkgconf-1.9.5-mh73nkpzo36xqeaagdrh3qppvmn6zdn6
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/openssl-1.1.1t-w2by2b2vepifq7xzrf527sjpw5mjluyu
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/cmake-3.26.3-ofsadgmnqqs6fuj3wyl6bnk7obprvonx
-==> Installing hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/hdf5-1.14.1-2/linux-ubuntu22.04-x86_64_v3-gcc-11.3.0-hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m.spack
-==> Extracting hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m from binary cache
-==> hdf5: Successfully installed hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m
-  Search: 0.00s.  Fetch: 0.19s.  Install: 0.79s.  Total: 0.98s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/hdf5-1.14.1-2-df3qdagq5a52t6kuzphv6pclgjg5cl2m
+0;Spack: Processing nghttp2 [1/9]0;Spack: Acquiring lock for nghttp2 [1/9]==> Waiting for nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
+0;Spack: Preparing nghttp2 [1/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-my64owhngq5r4nl2lpysh2skvrq3nlo5
+0;Spack: Processing zlib-ng [2/9]0;Spack: Acquiring lock for zlib-ng [2/9]==> Waiting for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+0;Spack: Preparing zlib-ng [2/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+0;Spack: Processing ncurses [3/9]0;Spack: Acquiring lock for ncurses [3/9]==> Waiting for ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
+0;Spack: Preparing ncurses [3/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
+0;Spack: Processing gmake [4/9]0;Spack: Acquiring lock for gmake [4/9]==> Waiting for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Preparing gmake [4/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Processing openssl [5/9]0;Spack: Acquiring lock for openssl [5/9]==> Waiting for openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
+0;Spack: Preparing openssl [5/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
+0;Spack: Processing pkgconf [6/9]0;Spack: Acquiring lock for pkgconf [6/9]==> Waiting for pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
+0;Spack: Preparing pkgconf [6/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-1.9.5-zjgtpdofa5acoyfs62cczvdj3gjngy3y
+0;Spack: Processing curl [7/9]0;Spack: Acquiring lock for curl [7/9]==> Waiting for curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
+0;Spack: Preparing curl [7/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.4.0-ijsmc3jx2cjmdy2svodqqkeimkooheod
+0;Spack: Processing cmake [8/9]0;Spack: Acquiring lock for cmake [8/9]==> Waiting for cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
+0;Spack: Preparing cmake [8/9][+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.27.7-kd6xihnhlzyfwafeilow6t2mvolyryor
+0;Spack: Processing hdf5 [9/9]0;Spack: Acquiring lock for hdf5 [9/9]==> Waiting for hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb
+0;Spack: Preparing hdf5 [9/9]0;Spack: Installing hdf5 [9/9]==> Installing hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb [9/9]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.3/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb.spack
+==> Extracting hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb from binary cache
+==> hdf5: Successfully installed hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb
+  Search: 0.00s.  Fetch: 0.14s.	 Install: 0.85s.  Extract: 0.78s.  Relocate: 0.05s.  Total: 0.99s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.3-scxtjf3337ivhhuegqzfrpzvls7c5qbb

@@ -1,10 +1,13 @@
 $ spack find -d trilinos
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
-trilinos@13.0.1
-    cmake@3.26.3
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
+trilinos@14.4.0
+    cmake@3.27.7
+	curl@8.4.0
+	    nghttp2@1.57.0
+	    openssl@3.1.3
+		ca-certificates-mozilla@2023-05-30
 	ncurses@6.4
-	openssl@1.1.1t
-	    ca-certificates-mozilla@2023-01-10
+	zlib-ng@2.1.4
     gmake@4.4.1
     hwloc@2.9.1
 	libpciaccess@0.17
@@ -14,41 +17,44 @@ trilinos@13.0.1
 	    libiconv@1.17
 	    xz@5.4.1
 	pkgconf@1.9.5
-    openblas@0.3.23
-	perl@5.36.0
+    kokkos@4.1.00
+    openblas@0.3.24
+	perl@5.38.0
 	    berkeley-db@18.1.40
 	    bzip2@1.0.8
 		diffutils@3.9
 	    gdbm@1.23
 		readline@8.2
-    openmpi@4.1.5
+    openmpi@4.1.6
 	numactl@2.0.14
 	    autoconf@2.69
 	    automake@1.16.5
 	    m4@1.4.19
 		libsigsegv@2.14
-	openssh@9.3p1
+	openssh@9.5p1
 	    krb5@1.20.1
 		bison@3.8.2
-		gettext@0.21.1
+		findutils@4.9.0
+		gettext@0.22.3
 		    tar@1.34
 			pigz@2.7
 			zstd@1.5.5
 	    libedit@3.1-20210216
-	    libxcrypt@4.4.33
-	pmix@4.2.3
+	    libxcrypt@4.4.35
+	pmix@5.0.1
 	    libevent@2.1.12
-	zlib@1.2.13
 
-trilinos@13.0.1
-    cmake@3.26.3
+trilinos@14.4.0
+    cmake@3.27.7
+	curl@8.4.0
+	    nghttp2@1.57.0
+	    openssl@3.1.3
+		ca-certificates-mozilla@2023-05-30
 	ncurses@6.4
-	openssl@1.1.1t
-	    ca-certificates-mozilla@2023-01-10
+	zlib-ng@2.1.4
     gmake@4.4.1
-    hdf5@1.14.1-2
+    hdf5@1.14.3
 	pkgconf@1.9.5
-	zlib@1.2.13
     hwloc@2.9.1
 	libpciaccess@0.17
 	    libtool@2.4.7
@@ -56,30 +62,31 @@ trilinos@13.0.1
 	libxml2@2.10.3
 	    libiconv@1.17
 	    xz@5.4.1
-    mpich@4.1.1
+    kokkos@4.1.00
+    mpich@4.1.2
 	findutils@4.9.0
-	libfabric@1.18.0
-	yaksa@0.2
+	libfabric@1.19.0
+	yaksa@0.3
 	    autoconf@2.69
 	    automake@1.16.5
 	    m4@1.4.19
 		diffutils@3.9
 		libsigsegv@2.14
-	    python@3.10.10
+	    python@3.11.6
 		expat@2.5.0
 		    libbsd@0.11.7
 			libmd@1.0.4
-		gettext@0.21.1
+		gettext@0.22.3
 		    tar@1.34
 			pigz@2.7
 			zstd@1.5.5
 		libffi@3.4.4
-		libxcrypt@4.4.33
+		libxcrypt@4.4.35
 		readline@8.2
-		sqlite@3.40.1
+		sqlite@3.43.2
 		util-linux-uuid@2.38.1
-    openblas@0.3.23
-	perl@5.36.0
+    openblas@0.3.24
+	perl@5.38.0
 	    berkeley-db@18.1.40
 	    bzip2@1.0.8
 	    gdbm@1.23

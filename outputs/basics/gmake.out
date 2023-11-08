@@ -1,11 +1,22 @@
-$ spack install zlib
-==> Installing zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-==> No binary for zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y found: installing from source
-==> Fetching https://mirror.spack.io/_source-cache/archive/b3/b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30.tar.gz
-==> No patches needed for zlib
-==> zlib: Executing phase: 'edit'
-==> zlib: Executing phase: 'build'
-==> zlib: Executing phase: 'install'
-==> zlib: Successfully installed zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
-  Stage: 0.28s.  Edit: 0.75s.  Build: 1.43s.  Install: 0.23s.  Post-install: 0.02s.  Total: 2.75s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y
+$ spack install zlib-ng
+0;Spack: Processing gmake [1/2]0;Spack: Acquiring lock for gmake [1/2]==> Waiting for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Preparing gmake [1/2]0;Spack: Installing gmake [1/2]==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/2]
+==> No binary for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Stage: 0.19s.	 Install: 11.75s.  Post-install: 0.03s.	 Total: 12.00s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+0;Spack: Processing zlib-ng [2/2]0;Spack: Acquiring lock for zlib-ng [2/2]==> Waiting for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+0;Spack: Preparing zlib-ng [2/2]0;Spack: Installing zlib-ng [2/2]==> Installing zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh [2/2]
+==> No binary for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh found: installing from source
+==> Fetching https://github.com/zlib-ng/zlib-ng/archive/2.1.4.tar.gz
+==> No patches needed for zlib-ng
+==> zlib-ng: Executing phase: 'autoreconf'
+==> zlib-ng: Executing phase: 'configure'
+==> zlib-ng: Executing phase: 'build'
+==> zlib-ng: Executing phase: 'install'
+==> zlib-ng: Successfully installed zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+  Stage: 2.23s.	 Autoreconf: 0.00s.  Configure: 3.41s.	Build: 2.02s.  Install: 0.06s.	Post-install: 0.03s.  Total: 7.83s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh

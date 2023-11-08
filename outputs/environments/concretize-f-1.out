@@ -1,51 +1,55 @@
 $ spack concretize --force
 ==> Concretized trilinos
-[+]  dgw2szm  trilinos@13.0.1%gcc@11.3.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest+hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=Release cxxstd=14 generator=make gotype=long_long arch=linux-ubuntu22.04-x86_64_v3
-[+]  ofsadgm	  ^cmake@3.26.3%gcc@11.3.0~doc+ncurses+ownlibs~qt build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  4dokmxj	      ^ncurses@6.4%gcc@11.3.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  w2by2b2	      ^openssl@1.1.1t%gcc@11.3.0~docs~shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  5pxkrf4		  ^ca-certificates-mozilla@2023-01-10%gcc@11.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  guaj3kb	  ^gmake@4.4.1%gcc@11.3.0~guile build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  qr4bdox	  ^hdf5@1.14.1-2%gcc@11.3.0~cxx~fortran+hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
-[+]  mh73nkp	      ^pkgconf@1.9.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  mntflxr	      ^zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  h7l4t7l	  ^hwloc@2.9.1%gcc@11.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  ajkyiz5	      ^libpciaccess@0.17%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  qkvj7am		  ^libtool@2.4.7%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  pmmxgx4		  ^util-macros@1.19.3%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  pcbenki	      ^libxml2@2.10.3%gcc@11.3.0~python build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  7wr75ce		  ^libiconv@1.17%gcc@11.3.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  4kpkw5a		  ^xz@5.4.1%gcc@11.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  3mapxl5	  ^mpich@4.1.1%gcc@11.3.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~two_level_namespace~vci~verbs+wrapperrpath build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu22.04-x86_64_v3
-[+]  ek3dt7p	      ^findutils@4.9.0%gcc@11.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  exb2qlz	      ^libfabric@1.18.0%gcc@11.3.0~debug~kdreg build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu22.04-x86_64_v3
-[+]  zcymzur	      ^yaksa@0.2%gcc@11.3.0~cuda~rocm build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  t4nuen3		  ^autoconf@2.69%gcc@11.3.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu22.04-x86_64_v3
-[+]  oa3w4kf		  ^automake@1.16.5%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  llbjfk2		  ^m4@1.4.19%gcc@11.3.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  zdl3dic		      ^diffutils@3.9%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  okig24f		      ^libsigsegv@2.14%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  wd4batz		  ^python@3.10.10%gcc@11.3.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=0d98e93,7d40923,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ctxzisf		      ^expat@2.5.0%gcc@11.3.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  rr7ondv			  ^libbsd@0.11.7%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ksnahtg			      ^libmd@1.0.4%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  p4obvgx		      ^gettext@0.21.1%gcc@11.3.0+bzip2+curses+git~libunistring+libxml2+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  e77cf6a			  ^tar@1.34%gcc@11.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  aln73eo			      ^pigz@2.7%gcc@11.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  qoo4rlo			      ^zstd@1.5.5%gcc@11.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  t7yjn4d		      ^libffi@3.4.4%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  6oeb4y7		      ^libxcrypt@4.4.33%gcc@11.3.0~obsolete_api build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  tddm2ff		      ^readline@8.2%gcc@11.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ismbqj3		      ^sqlite@3.40.1%gcc@11.3.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lyay7bs		      ^util-linux-uuid@2.38.1%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  eaq3ss4	  ^openblas@0.3.23%gcc@11.3.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  j5tavds	      ^perl@5.36.0%gcc@11.3.0+cpanm+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  7sohpaz		  ^berkeley-db@18.1.40%gcc@11.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  dca2qyg		  ^bzip2@1.0.8%gcc@11.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ba4juc3		  ^gdbm@1.23%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  gnrf5ri  trilinos@14.4.0%gcc@11.4.0~adelus~adios2+amesos+amesos2+anasazi+aztec~basker+belos~boost~chaco~complex~cuda~cuda_rdc~debug~dtk+epetra+epetraext~epetraextbtf~epetraextexperimental~epetraextgraphreorderings~exodus+explicit_template_instantiation~float+fortran~gtest+hdf5~hypre+ifpack+ifpack2~intrepid~intrepid2~ipo~isorropia+kokkos~mesquite~minitensor+ml+mpi+muelu~mumps~nox~openmp~panzer~phalanx~piro~python~rocm~rocm_rdc~rol~rythmos+sacado~scorec~shards+shared~shylu~stk~stokhos~stratimikos~strumpack~suite-sparse~superlu~superlu-dist~teko~tempus~test~thyra+tpetra~trilinoscouplings~wrapper~x11~zoltan~zoltan2 build_system=cmake build_type=Release cxxstd=17 generator=make gotype=long_long arch=linux-ubuntu22.04-x86_64_v3
+[+]  kd6xihn	  ^cmake@3.27.7%gcc@11.4.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
+[+]  ijsmc3j	      ^curl@8.4.0%gcc@11.4.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
+[+]  my64owh		  ^nghttp2@1.57.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  35j7wvr		  ^openssl@3.1.3%gcc@11.4.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
+[+]  ct4al4u		      ^ca-certificates-mozilla@2023-05-30%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  qqlh6as	      ^ncurses@6.4%gcc@11.4.0~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  5xcetrv	      ^zlib-ng@2.1.4%gcc@11.4.0+compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  znvoani	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  54ik6mv	  ^hdf5@1.14.3%gcc@11.4.0~cxx~fortran+hl~ipo~java~map+mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
+[+]  zjgtpdo	      ^pkgconf@1.9.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  dyrsjed	  ^hwloc@2.9.1%gcc@11.4.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  af4bqq6	      ^libpciaccess@0.17%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  rgag55h		  ^libtool@2.4.7%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  b7j7735		  ^util-macros@1.19.3%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  67qoxbv	      ^libxml2@2.10.3%gcc@11.4.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  ivn4eq4		  ^libiconv@1.17%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  axxqoeq		  ^xz@5.4.1%gcc@11.4.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  66qtu3e	  ^kokkos@4.1.00%gcc@11.4.0~aggressive_vectorization~compiler_warnings~cuda~debug~debug_bounds_check~debug_dualview_modify_check~deprecated_code~examples~hpx~hpx_async_dispatch~hwloc~ipo~memkind~numactl~openmp~openmptarget~pic~rocm+serial+shared~sycl~tests~threads~tuning~wrapper build_system=cmake build_type=Release cxxstd=17 generator=make intel_gpu_arch=none arch=linux-ubuntu22.04-x86_64_v3
+[+]  l3z27rr	  ^mpich@4.1.2%gcc@11.4.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~vci~verbs+wrapperrpath build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=pmi arch=linux-ubuntu22.04-x86_64_v3
+[+]  cws3eft	      ^findutils@4.9.0%gcc@11.4.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
+[+]  voxng34	      ^libfabric@1.19.0%gcc@11.4.0~debug~kdreg build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu22.04-x86_64_v3
+[+]  qrx4ymp	      ^yaksa@0.3%gcc@11.4.0~cuda~rocm build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  mnfnoa5		  ^autoconf@2.69%gcc@11.4.0 build_system=autotools patches=35c4492,7793209,a49dd5b arch=linux-ubuntu22.04-x86_64_v3
+[+]  d3cncgl		  ^automake@1.16.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  jnv5nut		  ^m4@1.4.19%gcc@11.4.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
+[+]  ueheij3		      ^diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  zuopqri		      ^libsigsegv@2.14%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  ybsi7tl		  ^python@3.11.6%gcc@11.4.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
+[+]  demnlle		      ^expat@2.5.0%gcc@11.4.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  nrlj4tj			  ^libbsd@0.11.7%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  kg5ets2			      ^libmd@1.0.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  y26lmlo		      ^gettext@0.22.3%gcc@11.4.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  vdb3ozo			  ^tar@1.34%gcc@11.4.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
+[+]  catlxmo			      ^pigz@2.7%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+[+]  jkznmrm			      ^zstd@1.5.5%gcc@11.4.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  ra2t3ha		      ^libffi@3.4.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  hezcx7g		      ^libxcrypt@4.4.35%gcc@11.4.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
+[+]  xxgqlmj		      ^readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
+[+]  m2h5dly		      ^sqlite@3.43.2%gcc@11.4.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  thv4zdp		      ^util-linux-uuid@2.38.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  ksqcyto	  ^openblas@0.3.24%gcc@11.4.0~bignuma~consistent_fpcsr+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3
+[+]  dg34i2a	      ^perl@5.38.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
+[+]  ku7makq		  ^berkeley-db@18.1.40%gcc@11.4.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
+[+]  4oz3kpf		  ^bzip2@1.0.8%gcc@11.4.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  m626hzw		  ^gdbm@1.23%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Concretized tcl
-[+]  6afnoet  tcl@8.6.12%gcc@11.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  mntflxr	  ^zlib@1.2.13%gcc@11.3.0+optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+[+]  i2ympro  tcl@8.6.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  znvoani	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  5xcetrv	  ^zlib-ng@2.1.4%gcc@11.4.0+compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view

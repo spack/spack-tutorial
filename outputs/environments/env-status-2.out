@@ -1,15 +1,40 @@
-$ despacktivate    # short alias for 'spack env deactivate'
+$ despacktivate	   # short alias for 'spack env deactivate'
 $ spack env status
 ==> No active environment
 $ spack find
 -- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
-zlib@1.2.13
+gmake@4.4.1  zlib-ng@2.1.4
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.3.0 ---------------------
-autoconf@2.69			    cmake@3.26.3     gmake@4.4.1    libbsd@0.11.7	  libmd@1.0.4	     m4@1.4.19	      openssh@9.3p1   python@3.10.10  trilinos@13.0.1	      zlib@1.2.13
-automake@1.16.5 		    diffutils@3.9    hdf5@1.14.1-2  libedit@3.1-20210216  libpciaccess@0.17  mpich@4.1.1      openssl@1.1.1t  readline@8.2    util-linux-uuid@2.38.1  zstd@1.5.5
-berkeley-db@18.1.40		    expat@2.5.0      hdf5@1.14.1-2  libevent@2.1.12	  libsigsegv@2.14    ncurses@6.4      perl@5.36.0     sqlite@3.40.1   util-macros@1.19.3
-bison@3.8.2			    findutils@4.9.0  hdf5@1.14.1-2  libfabric@1.18.0	  libtool@2.4.7      numactl@2.0.14   pigz@2.7	      tar@1.34	      xz@5.4.1
-bzip2@1.0.8			    gdbm@1.23	     hwloc@2.9.1    libffi@3.4.4	  libxcrypt@4.4.33   openblas@0.3.23  pkgconf@1.9.5   tcl@8.6.12      yaksa@0.2
-ca-certificates-mozilla@2023-01-10  gettext@0.21.1   krb5@1.20.1    libiconv@1.17	  libxml2@2.10.3     openmpi@4.1.5    pmix@4.2.3      tcl@8.6.12      zlib@1.2.8
-==> 57 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
+autoconf@2.69			    libxcrypt@4.4.35
+automake@1.16.5			    libxml2@2.10.3
+berkeley-db@18.1.40		    m4@1.4.19
+bison@3.8.2			    mpich@4.1.2
+bzip2@1.0.8			    ncurses@6.4
+ca-certificates-mozilla@2023-05-30  nghttp2@1.57.0
+cmake@3.27.7			    numactl@2.0.14
+curl@8.4.0			    openblas@0.3.24
+diffutils@3.9			    openmpi@4.1.6
+expat@2.5.0			    openssh@9.5p1
+findutils@4.9.0			    openssl@3.1.3
+gdbm@1.23			    perl@5.38.0
+gettext@0.22.3			    pigz@2.7
+gmake@4.3			    pkgconf@1.9.5
+gmake@4.4.1			    pmix@5.0.1
+hdf5@1.14.3			    python@3.11.6
+hdf5@1.14.3			    readline@8.2
+hdf5@1.14.3			    sqlite@3.43.2
+hwloc@2.9.1			    tar@1.34
+kokkos@4.1.00			    tcl@8.6.12
+krb5@1.20.1			    tcl@8.6.12
+libbsd@0.11.7			    trilinos@14.4.0
+libedit@3.1-20210216		    util-linux-uuid@2.38.1
+libevent@2.1.12			    util-macros@1.19.3
+libfabric@1.19.0		    xz@5.4.1
+libffi@3.4.4			    yaksa@0.3
+libiconv@1.17			    zlib-ng@2.0.7
+libmd@1.0.4			    zlib-ng@2.0.7
+libpciaccess@0.17		    zlib-ng@2.1.4
+libsigsegv@2.14			    zlib-ng@2.1.4
+libtool@2.4.7			    zstd@1.5.5
+==> 64 installed packages
