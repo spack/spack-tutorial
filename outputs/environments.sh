@@ -10,12 +10,12 @@ rm -rf "${raw_outputs:?}/environments"
 # In the basics section a bunch of packages were already installed,
 # they are referenced here. Reinstall them so we can generate outputs
 # independently.
-spack install gmake \
-              gmake %clang \
-              gmake@4.3 \
-              gmake@4.3 cflags=-O3 \
+spack install zlib-ng \
+              zlib-ng %clang \
+              zlib-ng@2.0.7 \
+              zlib-ng@2.0.7 cflags=-O3 \
               tcl \
-              tcl ^gmake cflags=-O3 \
+              tcl ^zlib-ng cflags=-O3 \
               hdf5 \
               hdf5~mpi \
               hdf5+hl+mpi ^mpich \
