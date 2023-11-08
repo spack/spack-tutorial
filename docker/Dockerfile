@@ -32,7 +32,7 @@ COPY /concretizer.yaml /etc/spack/concretizer.yaml
 
 RUN DEBIAN_FRONTEND=noninteractive apt-get remove -y gcc-12 && \
     apt-get update -y && \
-    apt-get install -y --no-install-recommends emacs bash-completion less && \
+    apt-get install -y --no-install-recommends emacs bash-completion less jq && \
     apt-get -y autoremove --purge && \
     apt-get clean
 
