@@ -21,7 +21,28 @@ This tutorial covers basic to advanced usage, packaging, developer features, and
 
 ## Updating the tutorial container
 
-The spack tutorial container is built from another [repository](https://github.com/spack/spack-tutorial-container) by an automated process.  For instructions on how to create an updated version of the tutorial container, see these [instructions](https://github.com/spack/spack-tutorial-container/blob/master/UPDATING.md).  For a general description of the automated process used to build the tutorial container, read the [description](https://github.com/spack/spack-tutorial-container/blob/master/DESCRIPTION.md).
+The Spack tutorial container is built from another [repository](https://github.com/spack/spack-tutorial-container) by an automated process.  For instructions on how to create an updated version of the tutorial container, see these [instructions](https://github.com/spack/spack-tutorial-container/blob/master/UPDATING.md).  For a general description of the automated process used to build the tutorial container, read the [description](https://github.com/spack/spack-tutorial-container/blob/master/DESCRIPTION.md).
+
+## Automatically generating command ouputs
+
+The tutorial `rst` files include output from Spack commands. This process is automated, and it is
+recommended to generate output. To regenerate the outputs, run:
+
+```shell
+make -C outputs -j <N>
+```
+
+This generates the outputs by running a Docker image.
+
+In case you're using a different container runtime, or if you have to change how `docker` is run,
+adjust the `DOCKER` and/or `DOCKER_RUN_OPTS` variables in the file `outputs/Make.user`:
+
+```shell
+echo 'DOCKER=sudo docker' > outputs/Make.user
+make -C outputs -j <N>
+```
+
+**NOTE**: outputs depend on your terminal size. Keep a fixed terminal size to avoid large diffs.
 
 ## License
 
