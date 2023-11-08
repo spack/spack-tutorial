@@ -9,7 +9,7 @@ DOCKER_RUN_OPTS :=
 #DOCKER_RUN_OPTS := --userns=keep-id --security-opt label=disable
 
 # Name of the container we'll generate the tutorial outputs with
-container := ghcr.io/spack/tutorial:latest@sha256:ec45bd8391b210e3989dbad5135eab2034503e31ede74b5d785818aba61d90ec
+container := ghcr.io/spack/tutorial:latest@sha256:c067f3d3520396c4ebe70533b6f0f3a91ae23440ec03ca26f87f178c2ddeb2a5
 
 # Sections to build
 sections := basics cache dev environments modules packaging scripting stacks
