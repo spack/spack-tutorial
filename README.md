@@ -21,7 +21,15 @@ This tutorial covers basic to advanced usage, packaging, developer features, and
 
 ## Updating the tutorial container
 
-The Spack tutorial container is built from another [repository](https://github.com/spack/spack-tutorial-container) by an automated process.  For instructions on how to create an updated version of the tutorial container, see these [instructions](https://github.com/spack/spack-tutorial-container/blob/master/UPDATING.md).  For a general description of the automated process used to build the tutorial container, read the [description](https://github.com/spack/spack-tutorial-container/blob/master/DESCRIPTION.md).
+The Spack tutorial container is automatically built from [repository](docker/Dockerfile) by [this GitHub action](.github/workflows/containers.yaml). The latest version is available at
+
+```
+ghcr.io/spack/tutorial:latest
+```
+
+and is rebuilt on a schedule. It can also be [triggered manually](https://github.com/spack/spack-tutorial/actions).
+
+The tutorial image builds on top of the container image that runs in Spack CI, which is built in a different repository at [spack/gitlab-runners](https://github.com/spack/gitlab-runners/)
 
 ## Automatically generating command ouputs
 
