@@ -34,13 +34,22 @@ The tutorial image builds on top of the container image that runs in Spack CI, w
 ## Automatically generating command ouputs
 
 The tutorial `rst` files include output from Spack commands. This process is automated, and it is
-recommended to use this instead of running commands manually. To regenerate the outputs, run:
+recommended not to run commands manually.
+
+**Note:** as a preliminary step, check your terminal width. All current outputs
+are generated on a fixed terminal width **94**; deviating from that can cause
+unnecessarily large diffs:
+
+```console
+$ tput cols
+94
+```
+
+To regenerate the outputs, run:
 
 ```shell
 make -C outputs -j <N>
 ```
-
-**NOTE**: to avoid large diffs, stick to a fixed terminal width of **80x24**.
 
 This runs each `outputs/<section>.sh` script in parallel in a container, and collects outputs in
 `outputs/raw/*`. When all complete succesfully, the outputs are post-processed and put in
