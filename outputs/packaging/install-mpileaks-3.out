@@ -14,19 +14,19 @@ $ spack install tutorial-mpileaks
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41-duir6ffkanf7hwkjwgjyrvoh2nxikw3q
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.1.3-35j7wvrf3jovxokjkzdrpv265sfrjwga
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20210216-s4kq4wo6ii3vt3s354agguqm462yu32q
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-gsbuhgced6vcl7edpc7nor62dlzh2mik
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-20180129-qabscwjrgqm5u7yvckt32xf54x3wp7nk
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-12.3.0-iarivsqzjxv635xtdeehj3ehnq5goziu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-55bb3ifocfi5nsaikxkgrtzcqvgod6nn
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-4nqimqzj5wce556pwwikj77dyfgqxiif
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-4ml5a5xqujjf63samhrc77xznxvr6anq
@@ -39,5 +39,5 @@ $ spack install tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'build'
 ==> tutorial-mpileaks: Executing phase: 'install'
 ==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-uwh6ebfoz6kek7zspcr672ynj4lib6nt
-  Stage: 0.01s.	 Autoreconf: 0.00s.  Configure: 4.58s.	Build: 3.82s.  Install: 0.26s.	Post-install: 0.11s.  Total: 9.16s
+  Stage: 0.01s.	 Autoreconf: 0.00s.  Configure: 5.43s.	Build: 3.59s.  Install: 0.19s.	Post-install: 0.07s.  Total: 9.58s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-uwh6ebfoz6kek7zspcr672ynj4lib6nt
