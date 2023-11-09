@@ -463,7 +463,7 @@ The problem here is that without the hashes the four different flavors of
 the names are formatted to differentiate them:
 
 .. code-block:: yaml
-  :emphasize-lines: 11-12,18-21
+  :emphasize-lines: 10-11,18-21
 
   modules:
     default:
@@ -491,10 +491,10 @@ the names are formatted to differentiate them:
 As you can see it is possible to specify rules that apply only to a
 restricted set of packages using `anonymous specs
 <https://spack.readthedocs.io/en/latest/module_file_support.html#anonymous-specs>`_
-like ``^mpi^lapack``. Here we declare a conflict between any two modules
+like ``^python^lapack``. Here we declare a conflict between any two modules
 with the same name, so they cannot be loaded together. We also format the
-names of modules according to compiler, compiler version, and MPI version
-using the `spec format syntax
+names of modules according to compiler, compiler version, and MPI provider
+name using the `spec format syntax
 <https://spack.readthedocs.io/en/latest/spack.html?highlight=spec%20format#spack.spec.Spec.format>`_.
 This allows us to match specs by their dependencies, and format them
 based on their DAGs.
@@ -631,7 +631,7 @@ directive and assigning it the value ``direct``:
   modules:
     default:
       tcl:
-        verbose: True
+        verbose: true
         hash_length: 0
         naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
         include:
@@ -673,7 +673,7 @@ and will contain code to autoload all the dependencies:
    :language: console
 
 In case messages are unwanted during the autoload procedure, it will be
-sufficient to omit the line setting ``verbose: True`` in the configuration file above.
+sufficient to omit the line setting ``verbose: true`` in the configuration file above.
 
 -------------------------
 Hierarchical Module Files
