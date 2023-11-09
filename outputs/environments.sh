@@ -115,7 +115,7 @@ int main(int argc, char **argv) {
 }
 EOF
 example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib-ng)/include'
-example environments/use-mpi-1       "mpirun -n $(nproc) ./a.out"
+example environments/use-mpi-1       "mpirun -n 2 ./a.out"
 
 example environments/myproject-zlib-ng-1     "spack find zlib-ng"
 
