@@ -10,13 +10,120 @@ warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 $ module av
 
 -------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 --------
-   mpich/4.1.2-cxezwh7		   openblas/0.3.24-qoggfi2
-   netlib-lapack/3.11.0-4uab534	   openmpi/4.1.6-fnistzv
+   amdblis/4.1-ywpdccr
+   autoconf/2.69-kroqjku
+   automake/1.16.5-dajnwux		      (D)
+   berkeley-db/18.1.40-krlqpve
+   bison/3.8.2-tr45sog
+   bzip2/1.0.8-bbwtdnr
+   ca-certificates-mozilla/2023-05-30-l7zpjxt (D)
+   cmake/3.27.7-dukasmm
+   curl/8.4.0-u2ni6an			      (D)
+   diffutils/3.9-sbfcnap
+   expat/2.5.0-grrt7ig
+   findutils/4.9.0-pdopgfr
+   gdbm/1.23-w66nich			      (D)
+   gettext/0.22.3-y7ty4lo
+   gmake/4.4.1-6qiak7n
+   hwloc/2.9.1-rvotk5a
+   krb5/1.20.1-5d6b7ng
+   libbsd/0.11.7-sygavnw
+   libedit/3.1-20210216-fm2rgwy
+   libevent/2.1.12-sasn7wh
+   libfabric/1.19.0-46fsov7
+   libffi/3.4.4-ecpriyn
+   libiconv/1.17-a34xpad
+   libmd/1.0.4-ivvykht
+   libpciaccess/0.17-el7pkf4
+   libsigsegv/2.14-46vv5f3
+   libtool/2.4.7-hvedpuf
+   libxcrypt/4.4.35-guszc5m
+   libxml2/2.10.3-damyeos
+   m4/1.4.19-oebiztm			      (D)
+   meson/1.2.2-htbkkj2
+   mpich/4.1.2-cxezwh7
+   ncurses/6.4-glwymee
+   netlib-lapack/3.11.0-4uab534
+   nghttp2/1.57.0-dvtfejq
+   ninja/1.11.1-qf3fwcn
+   numactl/2.0.14-iiok6h4
+   openblas/0.3.24-qoggfi2
+   openmpi/4.1.6-fnistzv
+   openssh/9.5p1-6ksmdje
+   openssl/3.1.3-v7jc5lq
+   perl/5.38.0-hh6v2va			      (D)
+   pigz/2.7-m7r2rmw			      (D)
+   pkgconf/1.9.5-ccpwoda
+   pmix/5.0.1-g2hfbjg
+   py-beniget/0.4.1-fizom4w
+   py-cython/0.29.36-ylumqbe
+   py-flit-core/3.9.0-nzh222k
+   py-gast/0.5.3-h7hu6wn
+   py-meson-python/0.13.1-6zbxyin
+   py-packaging/23.1-7rj6npn
+   py-pip/23.1.2-lvdwpa6
+   py-ply/3.11-x3c55tr
+   py-pybind11/2.11.0-bo5zrbu
+   py-pyproject-metadata/0.7.1-bw34ifa
+   py-setuptools/68.0.0-crc6iaj
+   py-wheel/0.41.2-zwngepq
+   python/3.11.6-oa7j22b
+   re2c/2.2-cw5qvcn
+   readline/8.2-cz4lfdu
+   sqlite/3.43.2-p3srvwu
+   tar/1.34-waes7yx			      (D)
+   util-linux-uuid/2.38.1-oagevhm
+   util-macros/1.19.3-t67cwmg
+   xz/5.4.1-taa3gkk			      (D)
+   yaksa/0.3-hmywdkq
+   zlib-ng/2.1.4-draqwfy
+   zstd/1.5.5-ngvd73i			      (D)
 
 ----------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core -----------
-   gcc/12.3.0-chmemdi (L)    lmod/8.7.18-nczrps4
+   autoconf-archive/2023.02.20-4wbogd6
+   autoconf/2.69-mnfnoa5		      (D)
+   automake/1.16.5-d3cncgl
+   bc/1.07.1-ra6efl5
+   berkeley-db/18.1.40-ku7makq		      (D)
+   bzip2/1.0.8-4oz3kpf			      (D)
+   ca-certificates-mozilla/2023-05-30-ct4al4u
+   curl/8.4.0-ijsmc3j
+   diffutils/3.9-ueheij3		      (D)
+   ed/1.4-3kggq53
+   gawk/5.2.2-t4xydm4
+   gcc/12.3.0-chmemdi			      (L)
+   gdbm/1.23-m626hzw
+   gettext/0.22.3-y26lmlo		      (D)
+   gmake/4.4.1-znvoani			      (D)
+   gmp/6.2.1-2fyiqrp			      (L)
+   libiconv/1.17-ivn4eq4		      (D)
+   libsigsegv/2.14-zuopqri		      (D)
+   libtool/2.4.7-rgag55h		      (D)
+   libxml2/2.10.3-67qoxbv		      (D)
+   lmod/8.7.18-nczrps4
+   lua-luafilesystem/1.8.0-jw4gyrw
+   lua-luaposix/36.1-6rkzyvr
+   lua/5.4.4-paqrr2m
+   m4/1.4.19-jnv5nut
+   mpc/1.3.1-jueol5k			      (L)
+   mpfr/4.2.0-qpadvjw			      (L)
+   ncurses/6.4-qqlh6as			      (D)
+   nghttp2/1.57.0-my64owh		      (D)
+   openssl/3.1.3-35j7wvr		      (D)
+   perl/5.38.0-dg34i2a
+   pigz/2.7-catlxmo
+   pkgconf/1.9.5-zjgtpdo		      (D)
+   readline/8.2-xxgqlmj			      (D)
+   tar/1.34-vdb3ozo
+   tcl/8.6.12-i2ympro
+   texinfo/7.0.3-km6pqxp
+   unzip/6.0-uy5dhue
+   xz/5.4.1-axxqoeq
+   zlib-ng/2.1.4-5xcetrv		      (L,D)
+   zstd/1.5.5-jkznmrm			      (L)
 
   Where:
+   D:  Default Module
    L:  Module is loaded
 
 If the avail list is too long consider trying:

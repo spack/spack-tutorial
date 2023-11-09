@@ -1,22 +1,68 @@
 $ module load gcc
 $ module load openmpi openblas netlib-scalapack py-scipy
--------------------------------------------------------------------------------
-The following dependent module(s) are not currently loaded: zlib-ng/2.1.4-5xcetrv (required by: gcc/12.3.0), zstd/1.5.5-jkznmrm (required by: gcc/12.3.0)
--------------------------------------------------------------------------------
-
-The following have been reloaded with a version change:
-  1) zlib-ng/2.1.4-5xcetrv => zlib-ng/2.1.4-draqwfy
-  2) zstd/1.5.5-jkznmrm => zstd/1.5.5-ngvd73i
-
 $ module av
 
 -------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 --------
-   mpich/4.1.2	  netlib-lapack/3.11.0	  openblas/0.3.24    openmpi/4.1.6
+   amdblis/4.1				     nghttp2/1.57.0		 (D)
+   autoconf/2.69		      (D)    ninja/1.11.1
+   automake/1.16.5		      (D)    numactl/2.0.14
+   berkeley-db/18.1.40		      (D)    openblas/0.3.24
+   bison/3.8.2				     openmpi/4.1.6
+   bzip2/1.0.8			      (D)    openssh/9.5p1
+   ca-certificates-mozilla/2023-05-30 (D)    openssl/3.1.3		 (D)
+   cmake/3.27.7				     perl/5.38.0		 (D)
+   curl/8.4.0			      (D)    pigz/2.7			 (D)
+   diffutils/3.9		      (D)    pkgconf/1.9.5		 (D)
+   expat/2.5.0				     pmix/5.0.1
+   findutils/4.9.0			     py-beniget/0.4.1
+   gdbm/1.23			      (D)    py-cython/0.29.36
+   gettext/0.22.3		      (D)    py-flit-core/3.9.0
+   gmake/4.4.1			      (D)    py-gast/0.5.3
+   hwloc/2.9.1				     py-meson-python/0.13.1
+   krb5/1.20.1				     py-packaging/23.1
+   libbsd/0.11.7			     py-pip/23.1.2
+   libedit/3.1-20210216			     py-ply/3.11
+   libevent/2.1.12			     py-pybind11/2.11.0
+   libfabric/1.19.0			     py-pyproject-metadata/0.7.1
+   libffi/3.4.4				     py-setuptools/68.0.0
+   libiconv/1.17		      (D)    py-wheel/0.41.2
+   libmd/1.0.4				     python/3.11.6
+   libpciaccess/0.17			     re2c/2.2
+   libsigsegv/2.14		      (D)    readline/8.2		 (D)
+   libtool/2.4.7		      (D)    sqlite/3.43.2
+   libxcrypt/4.4.35			     tar/1.34			 (D)
+   libxml2/2.10.3		      (D)    util-linux-uuid/2.38.1
+   m4/1.4.19			      (D)    util-macros/1.19.3
+   meson/1.2.2				     xz/5.4.1			 (D)
+   mpich/4.1.2				     yaksa/0.3
+   ncurses/6.4			      (D)    zlib-ng/2.1.4		 (L,D)
+   netlib-lapack/3.11.0			     zstd/1.5.5			 (L,D)
 
 ----------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core -----------
-   gcc/12.3.0 (L)    lmod/8.7.18
+   autoconf-archive/2023.02.20		     lua-luafilesystem/1.8.0
+   autoconf/2.69			     lua-luaposix/36.1
+   automake/1.16.5			     lua/5.4.4
+   bc/1.07.1				     m4/1.4.19
+   berkeley-db/18.1.40			     mpc/1.3.1		     (L)
+   bzip2/1.0.8				     mpfr/4.2.0		     (L)
+   ca-certificates-mozilla/2023-05-30	     ncurses/6.4
+   curl/8.4.0				     nghttp2/1.57.0
+   diffutils/3.9			     openssl/3.1.3
+   ed/1.4				     perl/5.38.0
+   gawk/5.2.2				     pigz/2.7
+   gcc/12.3.0			      (L)    pkgconf/1.9.5
+   gdbm/1.23				     readline/8.2
+   gettext/0.22.3			     tar/1.34
+   gmake/4.4.1				     tcl/8.6.12
+   gmp/6.2.1			      (L)    texinfo/7.0.3
+   libiconv/1.17			     unzip/6.0
+   libsigsegv/2.14			     xz/5.4.1
+   libtool/2.4.7			     zlib-ng/2.1.4
+   libxml2/2.10.3			     zstd/1.5.5
+   lmod/8.7.18
 
   Where:
+   D:  Default Module
    L:  Module is loaded
 
 If the avail list is too long consider trying:
@@ -33,9 +79,6 @@ $ module load mpich
 
 Lmod is automatically replacing "openmpi/4.1.6" with "mpich/4.1.2".
 
--------------------------------------------------------------------------------
-The following dependent module(s) are not currently loaded: zlib-ng/2.1.4-5xcetrv (required by: gcc/12.3.0), zstd/1.5.5-jkznmrm (required by: gcc/12.3.0)
--------------------------------------------------------------------------------
 
 Due to MODULEPATH changes, the following have been reloaded:
   1) netlib-scalapack/2.2.0
@@ -44,9 +87,6 @@ $ module load netlib-lapack
 
 Lmod is automatically replacing "openblas/0.3.24" with "netlib-lapack/3.11.0".
 
--------------------------------------------------------------------------------
-The following dependent module(s) are not currently loaded: zlib-ng/2.1.4-5xcetrv (required by: gcc/12.3.0), zstd/1.5.5-jkznmrm (required by: gcc/12.3.0)
--------------------------------------------------------------------------------
 
 Due to MODULEPATH changes, the following have been reloaded:
   1) netlib-scalapack/2.2.0
