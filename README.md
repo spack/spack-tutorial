@@ -40,17 +40,26 @@ recommended to use this instead of running commands manually. To regenerate the 
 make -C outputs -j <N>
 ```
 
-This generates the outputs by running a Docker image.
+**NOTE**: to avoid large diffs, stick to a fixed terminal width of **80x24**.
 
-In case you're using a different container runtime, or if you have to change how `docker` is run,
-adjust the `DOCKER` and/or `DOCKER_RUN_OPTS` variables in the file `outputs/Make.user`:
+This runs each `outputs/<section>.sh` script in parallel in a container, and collects outputs in
+`outputs/raw/*`. When all complete succesfully, the outputs are post-processed and put in
+`outputs/`.
 
-```shell
-echo 'DOCKER=sudo docker' > outputs/Make.user
-make -C outputs -j <N>
+In case you want to restrict to particular sections, or if you need to modify the container
+executable and flags, specify those as variables in `outputs/Make.user`:
+
+```makefile
+sections := basics scripting
+DOCKER := sudo docker
 ```
 
-**NOTE**: outputs depend on your terminal size. Keep a fixed terminal size to avoid large diffs.
+- `make` will regenerate the relevant outputs when `outputs/<section>.sh` files are modified.
+
+- To start from scratch, run `make clean`
+
+- `make run-<tab>` can also be used to regenerate a particular section, but notice it will only
+  create raw outputs.
 
 ## License
 
