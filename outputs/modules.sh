@@ -7,7 +7,7 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/modules"
 . "$project/init_spack.sh"
 
-cd ~/spack ; git apply /project/modules.patch ; cd -
+git -C ~/spack apply /project/modules.patch
 
 # reinit modules
 rm -f ~/.spack/modules.yaml ~/.spack/linux/modules.yaml
