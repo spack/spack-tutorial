@@ -7,6 +7,8 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/modules"
 . "$project/init_spack.sh"
 
+cd ~/spack ; git apply /project/modules.patch ; cd -
+
 # reinit modules
 rm -f ~/.spack/modules.yaml ~/.spack/linux/modules.yaml
 rm -f ~/.spack/compilers.yaml ~/.spack/linux/compilers.yaml
@@ -18,11 +20,21 @@ spack module tcl refresh -y
 #
 spack uninstall -ay
 
+#spack install environment-modules
 spack install lmod
 
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
 . share/spack/setup-env.sh
 spack install gcc@12
+
+example --tee modules/what-are-modules-1  "module show gcc"
+example --tee modules/what-are-modules-2  "which gcc"
+example --tee modules/what-are-modules-2  "module load gcc"
+module load gcc
+example --tee modules/what-are-modules-2  "which gcc"
+example --tee modules/what-are-modules-3  "module unload gcc"
+module unload gcc
+example --tee modules/what-are-modules-3  "which gcc"
 
 example --tee modules/spack-load-gcc "spack load gcc@12"
 spack load gcc@12
@@ -30,6 +42,9 @@ example      modules/spack-load-gcc "which gcc"
 
 example      modules/add-compiler   "spack compiler add"
 example      modules/list-compiler  "spack compiler list"
+
+
+# FIXME: Add output for what are module files
 
 example      modules/show-loaded    "spack find --loaded"
 example --tee modules/module-avail-1 "module avail"
@@ -45,12 +60,12 @@ example --tee modules/module-avail-2 "module avail"
 
 gcc_hash="$(spack find --format '{hash:7}' gcc)"
 gcc_module="gcc/12.3.0-gcc-11.4.0-${gcc_hash}"
-example --tee modules/module-show-1  "module show $gcc_module"
+example --tee modules/module-show-1  "module show gcc"
 
-spack config add "modules:default:tcl:all:filter:exclude_env_vars:['C_INCLUDE_PATH', 'CPLUS_INCLUDE_PATH', 'LIBRARY_PATH']"
+spack config add "modules:default:tcl:all:filter:exclude_env_vars:['CC', 'CXX', 'F77', 'FC']"
 
 example  modules/tcl-refresh-1          "spack module tcl refresh -y"
-example --tee modules/module-show-2     "module show $gcc_module"
+example --tee modules/module-show-2     "module show gcc"
 
 
 spack config add                        "modules:default:tcl:exclude:['%gcc@11']"
@@ -60,7 +75,7 @@ example --tee modules/module-avail-3    "module avail"
 
 spack config add                        "modules:default:tcl:include:[gcc]"
 example      modules/tcl-refresh-3      "spack module tcl refresh -y"
-example --tee modules/module-avail-4    "module avail $gcc_module"
+example --tee modules/module-avail-4    "module avail gcc/"
 
 
 spack config add                        "modules:default:tcl:hash_length:0"
@@ -76,7 +91,7 @@ example      modules/tcl-refresh-5      "spack module tcl refresh --delete-tree 
 example --tee modules/module-avail-5    "module avail"
 
 
-spack config add                        "modules:default:tcl:all:environment:set:\"{name}_ROOT\":\"{prefix}\""
+spack config add                        'modules:default:tcl:all:environment:set:\"{name}_ROOT\":\"{prefix}\"'
 example      modules/tcl-refresh-6      "spack module tcl refresh -y"
 example --tee modules/module-show-3     "module show gcc"
 

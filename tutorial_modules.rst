@@ -147,43 +147,21 @@ needed to run an application or use a library. The ``module`` command is
 used to interpret and execute module files. For example, ``module show``
 tells you what a module will do when loaded:
 
-.. code-block:: console
+.. literalinclude:: outputs/modules/what-are-modules-1.out
+   :language: console
 
-   spack@a7c82535d8c9:~$ module show zlib-1.2.13-gcc-11.3.0-mntflxr 
-   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-      /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3/zlib-1.2.13-gcc-11.3.0-mntflxr:
-   -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-   whatis("A free, general-purpose, legally unencumbered lossless data-compression library.")
-   prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/share/man")
-   prepend_path("PKG_CONFIG_PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/lib/pkgconfig")
-   prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/.")
-   help([[Name   : zlib
-   Version: 1.2.13
-   Target : x86_64_v3
-
-   A free, general-purpose, legally unencumbered lossless data-compression
-   module.
-   ]])
-		
-   $ echo $PKG_CONFIG_PATH
 
 ``module load`` will execute all of the changes shown above:
 
-.. code-block:: console
-
-   spack@a7c82535d8c9:~$ module load gcc-12.1.0-gcc-11.3.0-s5e5zwr 
-   spack@a7c82535d8c9:~$ echo $PKG_CONFIG_PATH 
-   /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zstd-1.5.5-qoo4rlopj4vqbc6k633cu3tzawtfjjvh/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/zlib-1.2.13-mntflxrgekkm5lbpbl5r66lh2ieted4y/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/mpfr-4.2.0-aiys7vci7zwuci5phi5yje7ql3des4jw/lib/pkgconfig:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.3.0/gmp-6.2.1-7kxi3rr3qduvmao43tjigamo2eqdme4q/lib/pkgconfig
+.. literalinclude:: outputs/modules/what-are-modules-2.out
+   :language: console
 
 
 and to undo the modifications, you can use ``module unload``:
 
-.. code-block:: console
+.. literalinclude:: outputs/modules/what-are-modules-3.out
+   :language: console
 
-   $ module unload zlib
-   $ echo $PKG_CONFIG_PATH
-
-   $
 
 ^^^^^^^^^^^^^^
 Module Systems
@@ -325,6 +303,12 @@ the following content:
             - "FC"
             - "F77"
 
+This can be done either editing the configuration manually, or directly from the command line:
+
+.. code-block:: console
+
+   $ spack config add "modules:default:tcl:all:filter:exclude_env_vars:['CC', 'CXX', 'F77', 'FC']"
+	      
 Next you should regenerate all the module files:
 
 .. literalinclude:: outputs/modules/tcl-refresh-1.out
@@ -343,7 +327,7 @@ Prevent some module files from being generated
 Another common request at many sites is to avoid exposing software that
 is only needed as an intermediate step when building a newer stack.
 Let's try to prevent the generation of
-module files for anything that is compiled with ``gcc@11.4.0`` (the OS provided compiler).
+module files for anything that is compiled with ``gcc@11`` (the OS provided compiler).
 
 To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
@@ -354,13 +338,15 @@ To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/m
     default:
       tcl:
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
+
 
 and regenerate the module files. This time we'll pass the option
 ``--delete-tree`` so that Spack will delete the existing module tree and
@@ -376,7 +362,7 @@ directory.
 
 if you look closely you'll see though that we went too far in
 excluding modules: the module for ``gcc@12.3.0`` disappeared as it was
-bootstrapped with ``gcc@11.4.0``. To specify exceptions to the ``exclude``
+bootstrapped with ``gcc@11``. To specify exceptions to the ``exclude``
 rules you can use ``include``:
 
 .. code-block:: yaml
@@ -388,13 +374,14 @@ rules you can use ``include``:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
 
 ``include`` rules always have precedence over ``exclude`` rules. If you regenerate the modules again:
 
@@ -420,13 +407,14 @@ packages. In this case you only need to add the following line:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
 
 to ``modules.yaml`` and regenerate the module file tree as above.
 
@@ -449,13 +437,14 @@ use the ``hash_length`` keyword in the configuration file:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
 
 If you try to regenerate the module files now you will get an error:
 
@@ -474,7 +463,7 @@ The problem here is that without the hashes the four different flavors of
 the names are formatted to differentiate them:
 
 .. code-block:: yaml
-  :emphasize-lines: 10-11,17-20
+  :emphasize-lines: 11-12,18-21
 
   modules:
     default:
@@ -483,15 +472,17 @@ the names are formatted to differentiate them:
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           conflict:
           - '{name}'
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
+
         projections:
           all:               '{name}/{version}-{compiler.name}-{compiler.version}'
           netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
@@ -528,7 +519,7 @@ is installed. You can achieve this with Spack by adding an
 ``environment`` directive to the configuration file:
 
 .. code-block:: yaml
-  :emphasize-lines: 18-20
+  :emphasize-lines: 19-21
 
   modules:
     default:
@@ -538,15 +529,16 @@ is installed. You can achieve this with Spack by adding an
         include:
         -  gcc
         exclude:
-        -  '%gcc@11.4.0'
+        -  '%gcc@11'
         all:
           conflict:
           - '{name}'
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
           environment:
             set:
               '{name}_ROOT': '{prefix}'
@@ -580,7 +572,7 @@ only certain packages. You can for instance apply modifications to the
 ``openmpi`` module as follows:
 
 .. code-block:: yaml
-  :emphasize-lines: 21-25
+  :emphasize-lines: 22-26
 
   modules:
     default:
@@ -596,9 +588,10 @@ only certain packages. You can for instance apply modifications to the
           - '{name}'
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
           environment:
             set:
               '{name}_ROOT': '{prefix}'
@@ -621,6 +614,8 @@ This time we will be more selective and regenerate only the ``openmpi`` module f
    :language: console
 
 
+.. FIXME: remove this?
+	      
 ^^^^^^^^^^^^^^^^^^^^^
 Autoload dependencies
 ^^^^^^^^^^^^^^^^^^^^^
@@ -631,7 +626,7 @@ modules that load their dependencies by adding the ``autoload``
 directive and assigning it the value ``direct``:
 
 .. code-block:: yaml
-  :emphasize-lines: 4,39,40
+  :emphasize-lines: 4,32,33
 
   modules:
     default:
@@ -648,20 +643,13 @@ directive and assigning it the value ``direct``:
           - '{name}'
           filter:
             exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+            - "CC"
+            - "CXX"
+            - "FC"
+            - "F77"
           environment:
             set:
               '{name}_ROOT': '{prefix}'
-        gcc:
-          environment:
-            set:
-              CC: gcc
-              CXX: g++
-              FC: gfortran
-              F90: gfortran
-              F77: gfortran
         openmpi:
           environment:
             set:

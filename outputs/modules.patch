@@ -1,0 +1,23 @@
+diff --git a/lib/spack/spack/config.py b/lib/spack/spack/config.py
+index cd1be71c9d..a8259104f5 100644
+--- a/lib/spack/spack/config.py
++++ b/lib/spack/spack/config.py
+@@ -1275,12 +1275,12 @@ def process_config_path(path):
+         quote = "['\"]"
+         not_quote = "[^'\"]"
+ 
+-        if re.match(f"^{quote}", path):
+-            m = re.match(rf"^({quote}{not_quote}+{quote})$", path)
+-            if not m:
+-                raise ValueError("Quotes indicate value, but there are additional path entries")
+-            result.append(m.group(1))
+-            break
++        # if re.match(f"^{quote}", path):
++        #     m = re.match(rf"^({quote}{not_quote}+{quote})$", path)
++        #     if not m:
++        #         raise ValueError("Quotes indicate value, but there are additional path entries")
++        #     result.append(m.group(1))
++        #     break
+ 
+     return result
+ 
