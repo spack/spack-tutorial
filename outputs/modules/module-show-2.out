@@ -1,7 +1,7 @@
-$ module show gcc/12.3.0-gcc-11.4.0-chmemdi
-----------------------------------------------------------------------------
+$ module show gcc
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
    /home/spack/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3/gcc/12.3.0-gcc-11.4.0-chmemdi:
-----------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 whatis("The GNU Compiler Collection includes front ends for C, C++, Objective-C, Fortran, Ada, and Go, as well as libraries for these languages.")
 depends_on("gmp/6.2.1-gcc-11.4.0-2fyiqrp")
 depends_on("mpc/1.3.1-gcc-11.4.0-jueol5k")
@@ -11,10 +11,6 @@ depends_on("zstd/1.5.5-gcc-11.4.0-jkznmrm")
 prepend_path("PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin")
 prepend_path("MANPATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/share/man")
 prepend_path("CMAKE_PREFIX_PATH","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/.")
-setenv("CC","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gcc")
-setenv("CXX","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/g++")
-setenv("FC","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran")
-setenv("F77","/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran")
 append_path("MANPATH","")
 help([[Name   : gcc
 Version: 12.3.0
