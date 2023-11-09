@@ -13,7 +13,7 @@ jobs:
     - name: Run
       run: |
         chmod -R a+w outputs
-        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94"
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24"
 
     - name: Create pull request
       run: gh pr create -B main -H regenerate-outputs --title "Regenerate outputs" --body "Automated update"
