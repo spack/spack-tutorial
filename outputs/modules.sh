@@ -7,6 +7,7 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/modules"
 . "$project/init_spack.sh"
 
+# Workaround for #40944 present in Spack v0.21.0
 git -C ~/spack apply /project/modules.patch
 
 # reinit modules
