@@ -20,7 +20,6 @@ spack module tcl refresh -y
 #
 spack uninstall -ay
 
-#spack install environment-modules
 spack install lmod
 
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
