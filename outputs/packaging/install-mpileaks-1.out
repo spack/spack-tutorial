@@ -4,7 +4,7 @@ $ spack install tutorial-mpileaks
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7.spack
 ==> Extracting gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 from binary cache
 ==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-  Search: 0.00s.  Fetch: 0.10s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.15s
+  Search: 0.00s.  Fetch: 0.08s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.13s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
 ==> Installing tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2 [2/2]
 ==> No binary for tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcffrfh7g2 found: installing from source
@@ -21,9 +21,8 @@ $ spack install tutorial-mpileaks
      37	   Checking whether not-found responds to '-showme'... no
      38	   Checking whether not-found responds to '-compile-info'... no
      39	   Checking whether not-found responds to '-show'... no
-     40	   /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-lxhhwqacj5p
-	   trs5vnfg4opmcffrfh7g2/spack-src/configure: line 4931: Echo: command
-	   not found
+     40	   /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-lxhhwqacj5ptrs5vnfg4opmcf
+	   frfh7g2/spack-src/configure: line 4931: Echo: command not found
   >> 41	   configure: error: unable to locate adept-utils installation
 
 See build log for details:

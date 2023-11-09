@@ -16,27 +16,63 @@ Activating Modules:
 
 $ module avail
 
------------------------------------------------------------------------------ /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openmpi/4.1.6-fnistzv/openblas/0.3.24-qoggfi2/gcc/12.3.0 ------------------------------------------------------------------------------
+---- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openmpi/4.1.6-fnistzv/openblas/0.3.24-qoggfi2/gcc/12.3.0 ----
    netlib-scalapack/2.2.0
 
----------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openblas/0.3.24-qoggfi2/gcc/12.3.0 -----------------------------------------------------------------------------------------
-   py-numpy/1.26.1    py-pythran/0.12.2    py-scipy/1.11.3
+---- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openblas/0.3.24-qoggfi2/gcc/12.3.0 ----
+   py-numpy/1.26.1    py-pythran/0.12.2	   py-scipy/1.11.3
 
----------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/gcc/12.3.0 -----------------------------------------------------------------------------------------------------
-   amdblis/4.1			      (L)      curl/8.4.0      (D)	krb5/1.20.1	     (L)      libpciaccess/0.17 (L)	 ncurses/6.4	      (L,D)    openssl/3.1.3	  (L,D)    py-gast/0.5.3		  py-wheel/0.41.2		  xz/5.4.1	(L,D)
-   autoconf/2.69		      (D)      diffutils/3.9   (D)	libbsd/0.11.7	     (L)      libsigsegv/2.14	(D)	 netlib-lapack/3.11.0	       perl/5.38.0	  (D)	   py-meson-python/0.13.1	  python/3.11.6 	 (L)	  yaksa/0.3
-   automake/1.16.5		      (D)      expat/2.5.0     (L)	libedit/3.1-20210216 (L)      libtool/2.4.7	(D)	 nghttp2/1.57.0       (D)      pigz/2.7 	  (L,D)    py-packaging/23.1		  re2c/2.2			  zlib-ng/2.1.4 (L,D)
-   berkeley-db/18.1.40		      (D)      findutils/4.9.0		libevent/2.1.12      (L)      libxcrypt/4.4.35	(L)	 ninja/1.11.1		       pkgconf/1.9.5	  (D)	   py-pip/23.1.2		  readline/8.2		 (L,D)	  zstd/1.5.5	(L,D)
-   bison/3.8.2				       gdbm/1.23       (L,D)	libfabric/1.19.0	      libxml2/2.10.3	(L,D)	 numactl/2.0.14       (L)      pmix/5.0.1	  (L)	   py-ply/3.11			  sqlite/3.43.2 	 (L)
-   bzip2/1.0.8			      (L,D)    gettext/0.22.3  (L,D)	libffi/3.4.4	     (L)      m4/1.4.19 	(D)	 openblas/0.3.24      (L)      py-beniget/0.4.1 	   py-pybind11/2.11.0		  tar/1.34		 (L,D)
-   ca-certificates-mozilla/2023-05-30 (D)      gmake/4.4.1     (D)	libiconv/1.17	     (L,D)    meson/1.2.2		 openmpi/4.1.6	      (L)      py-cython/0.29.36	   py-pyproject-metadata/0.7.1	  util-linux-uuid/2.38.1 (L)
-   cmake/3.27.7 			       hwloc/2.9.1     (L)	libmd/1.0.4	     (L)      mpich/4.1.2		 openssh/9.5p1	      (L)      py-flit-core/3.9.0	   py-setuptools/68.0.0 	  util-macros/1.19.3
+----------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/gcc/12.3.0 -----------
+   amdblis/4.1			      (L)      nghttp2/1.57.0		   (D)
+   autoconf/2.69		      (D)      ninja/1.11.1
+   automake/1.16.5		      (D)      numactl/2.0.14		   (L)
+   berkeley-db/18.1.40		      (D)      openblas/0.3.24		   (L)
+   bison/3.8.2				       openmpi/4.1.6		   (L)
+   bzip2/1.0.8			      (L,D)    openssh/9.5p1		   (L)
+   ca-certificates-mozilla/2023-05-30 (D)      openssl/3.1.3		   (L,D)
+   cmake/3.27.7				       perl/5.38.0		   (D)
+   curl/8.4.0			      (D)      pigz/2.7			   (L,D)
+   diffutils/3.9		      (D)      pkgconf/1.9.5		   (D)
+   expat/2.5.0			      (L)      pmix/5.0.1		   (L)
+   findutils/4.9.0			       py-beniget/0.4.1
+   gdbm/1.23			      (L,D)    py-cython/0.29.36
+   gettext/0.22.3		      (L,D)    py-flit-core/3.9.0
+   gmake/4.4.1			      (D)      py-gast/0.5.3
+   hwloc/2.9.1			      (L)      py-meson-python/0.13.1
+   krb5/1.20.1			      (L)      py-packaging/23.1
+   libbsd/0.11.7		      (L)      py-pip/23.1.2
+   libedit/3.1-20210216		      (L)      py-ply/3.11
+   libevent/2.1.12		      (L)      py-pybind11/2.11.0
+   libfabric/1.19.0			       py-pyproject-metadata/0.7.1
+   libffi/3.4.4			      (L)      py-setuptools/68.0.0
+   libiconv/1.17		      (L,D)    py-wheel/0.41.2
+   libmd/1.0.4			      (L)      python/3.11.6		   (L)
+   libpciaccess/0.17		      (L)      re2c/2.2
+   libsigsegv/2.14		      (D)      readline/8.2		   (L,D)
+   libtool/2.4.7		      (D)      sqlite/3.43.2		   (L)
+   libxcrypt/4.4.35		      (L)      tar/1.34			   (L,D)
+   libxml2/2.10.3		      (L,D)    util-linux-uuid/2.38.1	   (L)
+   m4/1.4.19			      (D)      util-macros/1.19.3
+   meson/1.2.2				       xz/5.4.1			   (L,D)
+   mpich/4.1.2				       yaksa/0.3
+   ncurses/6.4			      (L,D)    zlib-ng/2.1.4		   (L,D)
+   netlib-lapack/3.11.0			       zstd/1.5.5		   (L,D)
 
-------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core --------------------------------------------------------------------------------------------------------
-   autoconf-archive/2023.02.20	  berkeley-db/18.1.40			diffutils/3.9	     gdbm/1.23		   libiconv/1.17      lmod/8.7.24		 m4/1.4.19	    nghttp2/1.57.0    pkgconf/1.9.5    texinfo/7.0.3	zstd/1.5.5
-   autoconf/2.69		  bzip2/1.0.8				ed/1.4		     gettext/0.22.3	   libsigsegv/2.14    lua-luafilesystem/1.8.0	 mpc/1.3.1   (L)    openssl/3.1.3     readline/8.2     unzip/6.0
-   automake/1.16.5		  ca-certificates-mozilla/2023-05-30	gawk/5.2.2	     gmake/4.4.1	   libtool/2.4.7      lua-luaposix/36.1 	 mpfr/4.2.0  (L)    perl/5.38.0       tar/1.34	       xz/5.4.1
-   bc/1.07.1			  curl/8.4.0				gcc/12.3.0    (L)    gmp/6.2.1	    (L)    libxml2/2.10.3     lua/5.4.4 		 ncurses/6.4	    pigz/2.7	      tcl/8.6.12       zlib-ng/2.1.4
+-------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core --------------
+   autoconf-archive/2023.02.20		     gmake/4.4.1		    nghttp2/1.57.0
+   autoconf/2.69			     gmp/6.2.1		     (L)    openssl/3.1.3
+   automake/1.16.5			     libiconv/1.17		    perl/5.38.0
+   bc/1.07.1				     libsigsegv/2.14		    pigz/2.7
+   berkeley-db/18.1.40			     libtool/2.4.7		    pkgconf/1.9.5
+   bzip2/1.0.8				     libxml2/2.10.3		    readline/8.2
+   ca-certificates-mozilla/2023-05-30	     lmod/8.7.24		    tar/1.34
+   curl/8.4.0				     lua-luafilesystem/1.8.0	    tcl/8.6.12
+   diffutils/3.9			     lua-luaposix/36.1		    texinfo/7.0.3
+   ed/1.4				     lua/5.4.4			    unzip/6.0
+   gawk/5.2.2				     m4/1.4.19			    xz/5.4.1
+   gcc/12.3.0			      (L)    mpc/1.3.1		     (L)    zlib-ng/2.1.4
+   gdbm/1.23				     mpfr/4.2.0		     (L)    zstd/1.5.5
+   gettext/0.22.3			     ncurses/6.4
 
   Where:
    D:  Default Module
@@ -48,33 +84,70 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the
+"keys".
 
 
 $ module load openmpi
 $ module avail
 
------------------------------------------------------------------------------ /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openmpi/4.1.6-fnistzv/openblas/0.3.24-qoggfi2/gcc/12.3.0 ------------------------------------------------------------------------------
+---- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openmpi/4.1.6-fnistzv/openblas/0.3.24-qoggfi2/gcc/12.3.0 ----
    netlib-scalapack/2.2.0
 
----------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openblas/0.3.24-qoggfi2/gcc/12.3.0 -----------------------------------------------------------------------------------------
-   py-numpy/1.26.1    py-pythran/0.12.2    py-scipy/1.11.3
+---- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/openblas/0.3.24-qoggfi2/gcc/12.3.0 ----
+   py-numpy/1.26.1    py-pythran/0.12.2	   py-scipy/1.11.3
 
----------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/gcc/12.3.0 -----------------------------------------------------------------------------------------------------
-   amdblis/4.1			      (L)      curl/8.4.0      (D)	krb5/1.20.1	     (L)      libpciaccess/0.17 (L)	 ncurses/6.4	      (L,D)    openssl/3.1.3	  (L,D)    py-gast/0.5.3		  py-wheel/0.41.2		  xz/5.4.1	(L,D)
-   autoconf/2.69		      (D)      diffutils/3.9   (D)	libbsd/0.11.7	     (L)      libsigsegv/2.14	(D)	 netlib-lapack/3.11.0	       perl/5.38.0	  (D)	   py-meson-python/0.13.1	  python/3.11.6 	 (L)	  yaksa/0.3
-   automake/1.16.5		      (D)      expat/2.5.0     (L)	libedit/3.1-20210216 (L)      libtool/2.4.7	(D)	 nghttp2/1.57.0       (D)      pigz/2.7 	  (L,D)    py-packaging/23.1		  re2c/2.2			  zlib-ng/2.1.4 (L,D)
-   berkeley-db/18.1.40		      (D)      findutils/4.9.0		libevent/2.1.12      (L)      libxcrypt/4.4.35	(L)	 ninja/1.11.1		       pkgconf/1.9.5	  (D)	   py-pip/23.1.2		  readline/8.2		 (L,D)	  zstd/1.5.5	(L,D)
-   bison/3.8.2				       gdbm/1.23       (L,D)	libfabric/1.19.0	      libxml2/2.10.3	(L,D)	 numactl/2.0.14       (L)      pmix/5.0.1	  (L)	   py-ply/3.11			  sqlite/3.43.2 	 (L)
-   bzip2/1.0.8			      (L,D)    gettext/0.22.3  (L,D)	libffi/3.4.4	     (L)      m4/1.4.19 	(D)	 openblas/0.3.24      (L)      py-beniget/0.4.1 	   py-pybind11/2.11.0		  tar/1.34		 (L,D)
-   ca-certificates-mozilla/2023-05-30 (D)      gmake/4.4.1     (D)	libiconv/1.17	     (L,D)    meson/1.2.2		 openmpi/4.1.6	      (L)      py-cython/0.29.36	   py-pyproject-metadata/0.7.1	  util-linux-uuid/2.38.1 (L)
-   cmake/3.27.7 			       hwloc/2.9.1     (L)	libmd/1.0.4	     (L)      mpich/4.1.2		 openssh/9.5p1	      (L)      py-flit-core/3.9.0	   py-setuptools/68.0.0 	  util-macros/1.19.3
+----------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/gcc/12.3.0 -----------
+   amdblis/4.1			      (L)      nghttp2/1.57.0		   (D)
+   autoconf/2.69		      (D)      ninja/1.11.1
+   automake/1.16.5		      (D)      numactl/2.0.14		   (L)
+   berkeley-db/18.1.40		      (D)      openblas/0.3.24		   (L)
+   bison/3.8.2				       openmpi/4.1.6		   (L)
+   bzip2/1.0.8			      (L,D)    openssh/9.5p1		   (L)
+   ca-certificates-mozilla/2023-05-30 (D)      openssl/3.1.3		   (L,D)
+   cmake/3.27.7				       perl/5.38.0		   (D)
+   curl/8.4.0			      (D)      pigz/2.7			   (L,D)
+   diffutils/3.9		      (D)      pkgconf/1.9.5		   (D)
+   expat/2.5.0			      (L)      pmix/5.0.1		   (L)
+   findutils/4.9.0			       py-beniget/0.4.1
+   gdbm/1.23			      (L,D)    py-cython/0.29.36
+   gettext/0.22.3		      (L,D)    py-flit-core/3.9.0
+   gmake/4.4.1			      (D)      py-gast/0.5.3
+   hwloc/2.9.1			      (L)      py-meson-python/0.13.1
+   krb5/1.20.1			      (L)      py-packaging/23.1
+   libbsd/0.11.7		      (L)      py-pip/23.1.2
+   libedit/3.1-20210216		      (L)      py-ply/3.11
+   libevent/2.1.12		      (L)      py-pybind11/2.11.0
+   libfabric/1.19.0			       py-pyproject-metadata/0.7.1
+   libffi/3.4.4			      (L)      py-setuptools/68.0.0
+   libiconv/1.17		      (L,D)    py-wheel/0.41.2
+   libmd/1.0.4			      (L)      python/3.11.6		   (L)
+   libpciaccess/0.17		      (L)      re2c/2.2
+   libsigsegv/2.14		      (D)      readline/8.2		   (L,D)
+   libtool/2.4.7		      (D)      sqlite/3.43.2		   (L)
+   libxcrypt/4.4.35		      (L)      tar/1.34			   (L,D)
+   libxml2/2.10.3		      (L,D)    util-linux-uuid/2.38.1	   (L)
+   m4/1.4.19			      (D)      util-macros/1.19.3
+   meson/1.2.2				       xz/5.4.1			   (L,D)
+   mpich/4.1.2				       yaksa/0.3
+   ncurses/6.4			      (L,D)    zlib-ng/2.1.4		   (L,D)
+   netlib-lapack/3.11.0			       zstd/1.5.5		   (L,D)
 
-------------------------------------------------------------------------------------------------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core --------------------------------------------------------------------------------------------------------
-   autoconf-archive/2023.02.20	  berkeley-db/18.1.40			diffutils/3.9	     gdbm/1.23		   libiconv/1.17      lmod/8.7.24		 m4/1.4.19	    nghttp2/1.57.0    pkgconf/1.9.5    texinfo/7.0.3	zstd/1.5.5
-   autoconf/2.69		  bzip2/1.0.8				ed/1.4		     gettext/0.22.3	   libsigsegv/2.14    lua-luafilesystem/1.8.0	 mpc/1.3.1   (L)    openssl/3.1.3     readline/8.2     unzip/6.0
-   automake/1.16.5		  ca-certificates-mozilla/2023-05-30	gawk/5.2.2	     gmake/4.4.1	   libtool/2.4.7      lua-luaposix/36.1 	 mpfr/4.2.0  (L)    perl/5.38.0       tar/1.34	       xz/5.4.1
-   bc/1.07.1			  curl/8.4.0				gcc/12.3.0    (L)    gmp/6.2.1	    (L)    libxml2/2.10.3     lua/5.4.4 		 ncurses/6.4	    pigz/2.7	      tcl/8.6.12       zlib-ng/2.1.4
+-------------- /home/spack/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core --------------
+   autoconf-archive/2023.02.20		     gmake/4.4.1		    nghttp2/1.57.0
+   autoconf/2.69			     gmp/6.2.1		     (L)    openssl/3.1.3
+   automake/1.16.5			     libiconv/1.17		    perl/5.38.0
+   bc/1.07.1				     libsigsegv/2.14		    pigz/2.7
+   berkeley-db/18.1.40			     libtool/2.4.7		    pkgconf/1.9.5
+   bzip2/1.0.8				     libxml2/2.10.3		    readline/8.2
+   ca-certificates-mozilla/2023-05-30	     lmod/8.7.24		    tar/1.34
+   curl/8.4.0				     lua-luafilesystem/1.8.0	    tcl/8.6.12
+   diffutils/3.9			     lua-luaposix/36.1		    texinfo/7.0.3
+   ed/1.4				     lua/5.4.4			    unzip/6.0
+   gawk/5.2.2				     m4/1.4.19			    xz/5.4.1
+   gcc/12.3.0			      (L)    mpc/1.3.1		     (L)    zlib-ng/2.1.4
+   gdbm/1.23				     mpfr/4.2.0		     (L)    zstd/1.5.5
+   gettext/0.22.3			     ncurses/6.4
 
   Where:
    D:  Default Module
@@ -86,6 +159,7 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the
+"keys".
 
 

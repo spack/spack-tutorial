@@ -15,16 +15,16 @@ $ spack install --no-cache
 ==> No patches needed for gmake
 ==> gmake: Executing phase: 'install'
 ==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-  Stage: 0.15s.	 Install: 10.57s.  Post-install: 0.03s.	 Total: 10.77s
+  Stage: 0.14s.	 Install: 12.02s.  Post-install: 0.04s.	 Total: 12.24s
 [+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
 ==> Installing zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2 [2/5]
-==> Fetching http://zlib.net/fossils/zlib-1.3.tar.gz
+==> Fetching https://mirror.spack.io/_source-cache/archive/ff/ff0ba4c292013dbc27530b3a81e1f9a813cd39de01ca5e0f8bf355702efa593e.tar.gz
 ==> No patches needed for zlib
 ==> zlib: Executing phase: 'edit'
 ==> zlib: Executing phase: 'build'
 ==> zlib: Executing phase: 'install'
 ==> zlib: Successfully installed zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2
-  Stage: 3.10s.	 Edit: 0.32s.  Build: 0.51s.  Install: 0.07s.  Post-install: 0.03s.  Total: 4.08s
+  Stage: 0.13s.	 Edit: 0.34s.  Build: 0.63s.  Install: 0.07s.  Post-install: 0.03s.  Total: 1.26s
 [+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-1.3-gnpfvzjsqubwjx3zny4dp7hkafztp2o2
 ==> Installing libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2 [3/5]
 ==> Fetching https://mirror.spack.io/_source-cache/archive/8f/8f74213b56238c85a50a5329f77e06198771e70dd9a739779f4c02f65d971313.tar.gz
@@ -34,7 +34,7 @@ $ spack install --no-cache
 ==> libiconv: Executing phase: 'build'
 ==> libiconv: Executing phase: 'install'
 ==> libiconv: Successfully installed libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-  Stage: 0.21s.	 Autoreconf: 0.00s.  Configure: 11.27s.	 Build: 6.84s.	Install: 0.62s.	 Post-install: 0.06s.  Total: 19.08s
+  Stage: 0.23s.	 Autoreconf: 0.00s.  Configure: 11.93s.	 Build: 7.45s.	Install: 0.67s.	 Post-install: 0.07s.  Total: 20.46s
 [+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
 ==> Installing diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en [4/5]
 ==> Fetching https://mirror.spack.io/_source-cache/archive/d8/d80d3be90a201868de83d78dad3413ad88160cc53bcc36eb9eaf7c20dbf023f1.tar.xz
@@ -44,13 +44,13 @@ $ spack install --no-cache
 ==> diffutils: Executing phase: 'build'
 ==> diffutils: Executing phase: 'install'
 ==> diffutils: Successfully installed diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en
-  Stage: 0.20s.	 Autoreconf: 0.00s.  Configure: 21.59s.	 Build: 1.53s.	Install: 0.53s.	 Post-install: 0.06s.  Total: 23.99s
+  Stage: 0.20s.	 Autoreconf: 0.00s.  Configure: 22.79s.	 Build: 1.64s.	Install: 0.55s.	 Post-install: 0.06s.  Total: 25.33s
 [+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en
 ==> Installing bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7 [5/5]
 ==> Fetching https://mirror.spack.io/_source-cache/archive/ab/ab5a03176ee106d3f0fa90e381da478ddae405918153cca248e682cd0c4a2269.tar.gz
 ==> Ran patch() for bzip2
 ==> bzip2: Executing phase: 'install'
 ==> bzip2: Successfully installed bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
-  Stage: 0.09s.	 Install: 1.57s.  Post-install: 0.03s.	Total: 1.72s
+  Stage: 4.67s.	 Install: 1.67s.  Post-install: 0.03s.	Total: 6.40s
 [+] /home/spack/spack/opt/spack/[padded-to-128-chars]/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
 ==> Updating view at /home/spack/cache-binary/.spack-env/view

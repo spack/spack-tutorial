@@ -1,6 +1,6 @@
 $ spack concretize -f
 ==> Starting concretization pool with 4 processes
-==> Environment concretized in 24.40 seconds
+==> Environment concretized in 26.64 seconds
 ==> Concretized gcc@12%gcc@11
 [+]  chmemdi  gcc@12.3.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran arch=linux-ubuntu22.04-x86_64_v3
 [+]  ueheij3	  ^diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -194,47 +194,34 @@ netlib-scalapack@2.2.0	netlib-scalapack@2.2.0	py-scipy@1.11.3
 
 ==> Installed packages
 -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-autoconf@2.69		     gdbm@1.23	      m4@1.4.19	     tar@1.34
-autoconf-archive@2023.02.20  gettext@0.22.3   mpc@1.3.1	     texinfo@7.0.3
-automake@1.16.5		     gmake@4.4.1      mpfr@4.2.0     xz@5.4.1
-berkeley-db@18.1.40	     gmp@6.2.1	      ncurses@6.4    zlib-ng@2.1.4
-bzip2@1.0.8		     libiconv@1.17    perl@5.38.0    zstd@1.5.5
-diffutils@3.9		     libsigsegv@2.14  pigz@2.7
-gawk@5.2.2		     libtool@2.4.7    pkgconf@1.9.5
-gcc@12.3.0		     libxml2@2.10.3   readline@8.2
+autoconf@2.69		     gawk@5.2.2	     libiconv@1.17    mpfr@4.2.0     tar@1.34
+autoconf-archive@2023.02.20  gcc@12.3.0	     libsigsegv@2.14  ncurses@6.4    texinfo@7.0.3
+automake@1.16.5		     gdbm@1.23	     libtool@2.4.7    perl@5.38.0    xz@5.4.1
+berkeley-db@18.1.40	     gettext@0.22.3  libxml2@2.10.3   pigz@2.7	     zlib-ng@2.1.4
+bzip2@1.0.8		     gmake@4.4.1     m4@1.4.19	      pkgconf@1.9.5  zstd@1.5.5
+diffutils@3.9		     gmp@6.2.1	     mpc@1.3.1	      readline@8.2
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-amdblis@4.1			    ninja@1.11.1
-autoconf@2.69			    openblas@0.3.24
-automake@1.16.5			    openssl@3.1.3
-berkeley-db@18.1.40		    perl@5.38.0
-bzip2@1.0.8			    pigz@2.7
-ca-certificates-mozilla@2023-05-30  pkgconf@1.9.5
-cmake@3.27.7			    py-beniget@0.4.1
-curl@8.4.0			    py-cython@0.29.36
-diffutils@3.9			    py-flit-core@3.9.0
-expat@2.5.0			    py-gast@0.5.3
-findutils@4.9.0			    py-meson-python@0.13.1
-gdbm@1.23			    py-numpy@1.26.1
-gettext@0.22.3			    py-packaging@23.1
-gmake@4.4.1			    py-pip@23.1.2
-hwloc@2.9.1			    py-ply@3.11
-libbsd@0.11.7			    py-pybind11@2.11.0
-libfabric@1.19.0		    py-pyproject-metadata@0.7.1
-libffi@3.4.4			    py-pythran@0.12.2
-libiconv@1.17			    py-scipy@1.11.3
-libmd@1.0.4			    py-setuptools@68.0.0
-libpciaccess@0.17		    py-wheel@0.41.2
-libsigsegv@2.14			    python@3.11.6
-libtool@2.4.7			    re2c@2.2
-libxcrypt@4.4.35		    readline@8.2
-libxml2@2.10.3			    sqlite@3.43.2
-m4@1.4.19			    tar@1.34
-meson@1.2.2			    util-linux-uuid@2.38.1
-mpich@4.1.2			    util-macros@1.19.3
-ncurses@6.4			    xz@5.4.1
-netlib-lapack@3.11.0		    yaksa@0.3
-netlib-scalapack@2.2.0		    zlib-ng@2.1.4
-netlib-scalapack@2.2.0		    zstd@1.5.5
-nghttp2@1.57.0
+amdblis@4.1			    libtool@2.4.7	    py-numpy@1.26.1
+autoconf@2.69			    libxcrypt@4.4.35	    py-packaging@23.1
+automake@1.16.5			    libxml2@2.10.3	    py-pip@23.1.2
+berkeley-db@18.1.40		    m4@1.4.19		    py-ply@3.11
+bzip2@1.0.8			    meson@1.2.2		    py-pybind11@2.11.0
+ca-certificates-mozilla@2023-05-30  mpich@4.1.2		    py-pyproject-metadata@0.7.1
+cmake@3.27.7			    ncurses@6.4		    py-pythran@0.12.2
+curl@8.4.0			    netlib-lapack@3.11.0    py-scipy@1.11.3
+diffutils@3.9			    netlib-scalapack@2.2.0  py-setuptools@68.0.0
+expat@2.5.0			    netlib-scalapack@2.2.0  py-wheel@0.41.2
+findutils@4.9.0			    nghttp2@1.57.0	    python@3.11.6
+gdbm@1.23			    ninja@1.11.1	    re2c@2.2
+gettext@0.22.3			    openblas@0.3.24	    readline@8.2
+gmake@4.4.1			    openssl@3.1.3	    sqlite@3.43.2
+hwloc@2.9.1			    perl@5.38.0		    tar@1.34
+libbsd@0.11.7			    pigz@2.7		    util-linux-uuid@2.38.1
+libfabric@1.19.0		    pkgconf@1.9.5	    util-macros@1.19.3
+libffi@3.4.4			    py-beniget@0.4.1	    xz@5.4.1
+libiconv@1.17			    py-cython@0.29.36	    yaksa@0.3
+libmd@1.0.4			    py-flit-core@3.9.0	    zlib-ng@2.1.4
+libpciaccess@0.17		    py-gast@0.5.3	    zstd@1.5.5
+libsigsegv@2.14			    py-meson-python@0.13.1
 ==> 94 installed packages

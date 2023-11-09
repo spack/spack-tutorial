@@ -170,8 +170,6 @@ libmenu.so
 $ ls views/full
 gcc-11.4.0  gcc-12.3.0
 $ ls views/full/gcc-12.3.0
-bin	 libexec			     openmpi-4.1.6-openblas-0.3.24
-etc	 man				     sbin
-include	 mpich-4.1.2-netlib-lapack-3.11.0    share
-lib	 mpich-4.1.2-openblas-0.3.24	     var
-lib64	 openmpi-4.1.6-netlib-lapack-3.11.0
+bin	 lib	  man				    openmpi-4.1.6-netlib-lapack-3.11.0	share
+etc	 lib64	  mpich-4.1.2-netlib-lapack-3.11.0  openmpi-4.1.6-openblas-0.3.24	var
+include	 libexec  mpich-4.1.2-openblas-0.3.24	    sbin
