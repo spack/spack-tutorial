@@ -43,9 +43,6 @@ example      modules/spack-load-gcc "which gcc"
 example      modules/add-compiler   "spack compiler add"
 example      modules/list-compiler  "spack compiler list"
 
-
-# FIXME: Add output for what are module files
-
 example      modules/show-loaded    "spack find --loaded"
 example --tee modules/module-avail-1 "module avail"
 
