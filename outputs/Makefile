@@ -1,12 +1,17 @@
 .PHONY: update-outputs run interactive clean
 
 # Tools
-DOCKER := docker
-DOCKER_RUN_OPTS :=
+#DOCKER := docker
+#DOCKER_RUN_OPTS :=
 
 # Use this for Podman
 #DOCKER := podman
 #DOCKER_RUN_OPTS := --userns=keep-id --security-opt label=disable
+
+# Use this for Finch
+DOCKER := finch
+DOCKER_RUN_OPTS := --platform=amd64
+
 
 # Name of the container we'll generate the tutorial outputs with
 container := ghcr.io/spack/tutorial:latest@sha256:c067f3d3520396c4ebe70533b6f0f3a91ae23440ec03ca26f87f178c2ddeb2a5
