@@ -26,4 +26,4 @@ jobs:
     - name: Build docs
       run: |
         make clean --silent
-        make SPHINXOPTS=-W
+        make SPHINXOPTS="-W -D graphviz_output_format=png"
