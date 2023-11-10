@@ -1,1 +1,1 @@
-$ head -30 spack.lock
+$ head -30 <(jq < spack.lock)
