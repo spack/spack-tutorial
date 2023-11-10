@@ -11,7 +11,7 @@ example cache/mirror-list-0 "spack mirror list"
 
 example cache/setup-scr "cd ~"
 cd ~ || exit
-example cache/setup-scr "spack env create -d cach-env"
+example cache/setup-scr "spack env create -d cache-env"
 example cache/setup-scr "cd cache-env"
 cd cache-env || exit
 fake_example cache/setup-scr "spacktivate ." "spack env activate ."
