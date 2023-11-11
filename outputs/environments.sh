@@ -153,7 +153,7 @@ example environments/add-anonymous-1     "cat spack.yaml"
 example environments/remove-anonymous-1     "spack remove hdf5"
 example environments/remove-anonymous-1     "cat spack.yaml"
 
-example environments/lockfile-1          "head -30 <(jq < spack.lock)"
+example environments/lockfile-1          "jq < spack.lock | head -30"
 
 example environments/create-from-file-1  "spack env create abstract spack.yaml"
 
