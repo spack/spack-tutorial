@@ -2,7 +2,7 @@
 
    If you have not done the prior sections, you'll need to start the docker image::
 
-       docker run -it ghcr.io/spack/tutorial:isc23
+       docker run -it ghcr.io/spack/tutorial:latest
 
    and then set Spack up like this::
 
