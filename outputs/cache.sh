@@ -11,10 +11,9 @@ example cache/mirror-list-0 "spack mirror list"
 
 example cache/setup-scr "cd ~"
 cd ~ || exit
-example cache/setup-scr "mkdir cache-env"
+example cache/setup-scr "spack env create -d cache-env"
 example cache/setup-scr "cd cache-env"
 cd cache-env || exit
-example cache/setup-scr "spack env create -d ."
 fake_example cache/setup-scr "spacktivate ." "spack env activate ."
 spack env activate .
 example cache/setup-scr "# for now, disable fortran support in all packages"
