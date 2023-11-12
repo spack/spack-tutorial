@@ -48,7 +48,7 @@ and by enabling ``tcl`` module files, which are disabled by default since Spack 
 
   $ spack config add "modules:default:enable:[tcl]"
 
-  
+
 ^^^^^^^^^^^^^^^^^^^
 Build a module tool
 ^^^^^^^^^^^^^^^^^^^
@@ -308,7 +308,7 @@ This can be done either editing the configuration manually, or directly from the
 .. code-block:: console
 
    $ spack config add "modules:default:tcl:all:filter:exclude_env_vars:['CC', 'CXX', 'F77', 'FC']"
-	      
+
 Next you should regenerate all the module files:
 
 .. literalinclude:: outputs/modules/tcl-refresh-1.out
@@ -482,7 +482,6 @@ the names are formatted to differentiate them:
             - "CXX"
             - "FC"
             - "F77"
-
         projections:
           all:               '{name}/{version}-{compiler.name}-{compiler.version}'
           netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
@@ -615,7 +614,7 @@ This time we will be more selective and regenerate only the ``openmpi`` module f
 
 
 .. FIXME: remove this?
-	      
+
 ^^^^^^^^^^^^^^^^^^^^^
 Autoload dependencies
 ^^^^^^^^^^^^^^^^^^^^^
