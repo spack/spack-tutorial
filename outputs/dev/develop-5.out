@@ -1,7 +1,6 @@
 $ spack develop macsio@1.1
 ==> Configuring spec macsio@=1.1 for development at path macsio
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/a8/a86249b0f10647c0b631773db69568388094605ec1a0af149d9e61e95e6961ec.tar.gz
-
 $ spack concretize -f
 ==> Concretized macsio+scr
  -   gnucz5p  macsio@1.1%gcc@11.4.0~exodus~hdf5~ipo+mpi~pdb+scr~silo~szip~typhonio~zfp~zlib build_system=cmake build_type=Release dev_path=/home/spack/devel-env/macsio generator=make patches=59479b9 arch=linux-ubuntu22.04-x86_64_v3
@@ -80,4 +79,3 @@ $ spack concretize -f
 [+]  ier6vff	      ^pdsh@2.31%gcc@11.4.0+ssh+static_modules build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Updating view at /home/spack/devel-env/.spack-env/view
-

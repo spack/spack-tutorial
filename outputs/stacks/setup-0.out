@@ -1,14 +1,10 @@
 $ mkdir -p ~/stacks && cd ~/stacks
-
 $ spack env create -d .
 ==> Created environment in /home/spack/stacks
 ==> You can activate this environment with:
 ==>   spack env activate /home/spack/stacks
-
 $ spack env activate .
 $ spack add gcc@12 %gcc@11
 ==> Adding gcc@12%gcc@11 to environment /home/spack/stacks
-
 $ spack env view disable
-
 $ spack config edit

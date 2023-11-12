@@ -1,8 +1,7 @@
 $ export SPACK_STACK_USE_OPENMPI=1
-
 $ spack concretize -f
 ==> Starting concretization pool with 6 processes
-==> Environment concretized in 28.85 seconds
+==> Environment concretized in 30.74 seconds
 ==> Concretized gcc@12%gcc@11
 [+]  chmemdi  gcc@12.3.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages=c,c++,fortran arch=linux-ubuntu22.04-x86_64_v3
 [+]  ueheij3	  ^diffutils@3.9%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -274,7 +273,6 @@ $ spack concretize -f
 [+]  taa3gkk	      ^xz@5.4.1%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
 [+]  draqwfy	      ^zlib-ng@2.1.4%gcc@12.3.0+compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
-
 $ spack find -c
 ==> In environment /home/spack/stacks
 ==> Root specs
@@ -329,4 +327,3 @@ libiconv@1.17			    pkgconf@1.9.5	    yaksa@0.3
 libmd@1.0.4			    pmix@5.0.1		    zlib-ng@2.1.4
 libpciaccess@0.17		    py-beniget@0.4.1	    zstd@1.5.5
 ==> 104 installed packages
-

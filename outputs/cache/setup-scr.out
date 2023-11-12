@@ -1,20 +1,14 @@
 $ cd ~
-
 $ spack env create -d cache-env
 ==> Created environment in /home/spack/cache-env
 ==> You can activate this environment with:
 ==>   spack env activate /home/spack/cache-env
-
 $ cd cache-env
-
 $ spacktivate .
 $ # for now, disable fortran support in all packages
-
 $ spack config add "packages:all:variants: ~fortran"
-
 $ spack add macsio+scr
 ==> Adding macsio+scr to environment /home/spack/cache-env
-
 $ spack install
 ==> Concretized macsio+scr
 [+]  4kxa45f  macsio@1.1%gcc@11.4.0~exodus~hdf5~ipo+mpi+pdb+scr~silo~szip~typhonio~zfp~zlib build_system=cmake build_type=Release generator=make patches=59479b9 arch=linux-ubuntu22.04-x86_64_v3
@@ -95,4 +89,3 @@ $ spack install
 [+]  xxgqlmj	      ^readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
 
 ==> All of the packages are already installed
-
