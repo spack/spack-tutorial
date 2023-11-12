@@ -58,7 +58,7 @@ Package
 
 We've already seen examples of a :code:`Package` class in our walkthrough for writing
 package files, so we won't be spending much time with them here. Briefly,
-the Package class allows for abitrary control over the build process, whereas
+the Package class allows for arbitrary control over the build process, whereas
 subclasses rely on certain patterns (e.g. :code:`configure` :code:`make`
 :code:`make install`) to be useful. :code:`Package` classes are particularly useful
 for packages that have a non-conventional way of being built since the packager
@@ -125,7 +125,7 @@ then we can append to our :code:`build_targets` property:
 
     build_targets = ["foo"]
 
-Which is similiar to invoking make in our Package
+Which is similar to invoking make in our Package
 
 .. code-block:: python
 

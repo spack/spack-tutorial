@@ -225,7 +225,7 @@ instance before they initiate a build.
 Bootstrapping Mirrors
 ---------------------
 
-In order to run Spack on an airgapped system, or aywhere else without
+In order to run Spack on an airgapped system, or anywhere else without
 internet access, you also need to install ``clingo`` as a dependency
 (``clingo`` is used by spack's concretizer). While you can always
 install clingo through your favorite method, we like to think Spack
