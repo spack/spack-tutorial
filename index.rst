@@ -95,5 +95,4 @@ Full contents:
    tutorial_developer_workflows
    tutorial_spack_scripting
    tutorial_modules
-   tutorial_buildsystems
    tutorial_advanced_packaging
