@@ -111,8 +111,8 @@ This will open the :code:`AutotoolsPackage` file in your text editor.
 
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py
-    :emphasize-lines: 2,4,22-31
-    :lines: 140-160,597-615
+    :emphasize-lines: 2,4,12-21
+    :lines: 138-158,589-617
     :linenos:
 
 
@@ -210,8 +210,8 @@ Take note of the following:
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/makefile.py
    :language: python
-   :emphasize-lines: 61,65,70
-   :lines: 35-109
+   :emphasize-lines: 60,64,69
+   :lines: 40-111
    :linenos:
 
 Similar to :code:`Autotools`, :code:`MakefilePackage` class has properties
@@ -497,8 +497,8 @@ Let's look at these defaults in the :code:`CMakePackage` class in the :code:`_st
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/cmake.py
    :language: python
-   :lines: 217-271
-   :emphasize-lines: 5,14
+   :lines: 167-300
+   :emphasize-lines: 87,96
    :linenos:
 
 Some :code:`CMake` packages use different generators. Spack is able to support
@@ -639,68 +639,18 @@ so we override the :code:`install()` method to do it for us:
 PythonPackage
 --------------
 
-Python extensions and modules are built differently from source than most
-applications. Python uses a :code:`setup.py` script to install Python modules.
-The script consists of a call to :code:`setup()` which provides the information
-required to build a module to Distutils. If you're familiar with pip or
-easy_install, setup.py does the same thing.
-
+Python extensions and modules are built differently from source than most applications.
 These modules are usually installed using the following line:
 
 .. code-block:: console
 
-    $ python setup.py install
-
-There are also a list of commands and phases that you can call. To see the full
-list you can run:
-
-.. code-block:: console
-
-    $ python setup.py --help-commands
-    Standard commands:
-        build             build everything needed to install
-        build_py          "build" pure Python modules (copy to build directory)
-        build_ext         build C/C++ extensions (compile/link to build directory)
-        build_clib        build C/C++ libraries used by Python extensions
-        build_scripts     "build" scripts (copy and fixup #! line)
-        clean             (no description available)
-        install           install everything from build directory
-        install_lib       install all Python modules (extensions and pure Python)
-        install_headers   install C/C++ header files
-        install_scripts   install scripts (Python or otherwise)
-        install_data      install data files
-        sdist             create a source distribution (tarball, zip file, etc.)
-        register          register the distribution with the Python package index
-        bdist             create a built (binary) distribution
-        bdist_dumb        create a "dumb" built distribution
-        bdist_rpm         create an RPM distribution
-        bdist_wininst     create an executable installer for MS Windows
-        upload            upload binary package to PyPI
-        check             perform some checks on the package
+    $ pip install .
 
 
 We can write package files for Python packages using the :code:`Package` class,
 but the class brings with it a lot of methods that are useless for Python packages.
 Instead, Spack has a :code:`PythonPackage` subclass that allows packagers
-of Python modules to be able to invoke :code:`setup.py` and use :code:`Distutils`,
-which is much more familiar to a typical python user.
-
-To see the defaults that Spack has for each a methods, we will take a look
-at the :code:`PythonPackage` class:
-
-.. code-block:: console
-
-    $ spack edit --build-system python
-
-We see the following:
-
-
-.. literalinclude:: _spack_root/lib/spack/spack/build_systems/python.py
-   :language: python
-   :lines: 176-204,273-290
-   :linenos:
-
-Each of these methods have sensible defaults or they can be overridden.
+of Python modules to be able to invoke :code:`pip`.
 
 We will write a package file for Pandas_:
 

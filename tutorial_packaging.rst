@@ -321,7 +321,7 @@ failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
-   :emphasize-lines: 1,33
+   :emphasize-lines: 1,35
 
 In this case the error conveniently appears on the last line of the
 log *and* the output from `spack install`.
@@ -449,7 +449,7 @@ Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,30-31
+   :emphasize-lines: 1,31-32
 
 Success!
 
@@ -727,7 +727,6 @@ Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
    :language: console
-   :emphasize-lines: 1,3,5
 
 --------------------
 More information

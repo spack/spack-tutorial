@@ -464,7 +464,7 @@ MPICH over OpenMPI. Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
    :language: console
-   :emphasize-lines: 21
+   :emphasize-lines: 16
 
 
 Let's override these default preferences in an environment. When you
@@ -506,7 +506,7 @@ overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
    :language: console
-   :emphasize-lines: 21
+   :emphasize-lines: 18
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -674,10 +674,10 @@ Notice that we still haven't build ``hdf5`` with our external
 
       1. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
       2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-           required because conflict applies to spec ^mpich@4.0:4.0.3 
-             required because hdf5%clang+mpi requested from CLI 
-           required because conflict is triggered when +mpi 
-             required because hdf5%clang+mpi requested from CLI 
+           required because conflict applies to spec ^mpich@4.0:4.0.3
+             required because hdf5%clang+mpi requested from CLI
+           required because conflict is triggered when +mpi
+             required because hdf5%clang+mpi requested from CLI
 
 In this case, we cannot use the external mpich. The version is
 incompatible with ``hdf5``. At this point, the best option is to give
