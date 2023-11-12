@@ -12,7 +12,7 @@ DOCKER_RUN_OPTS :=
 container := ghcr.io/spack/tutorial:latest@sha256:c067f3d3520396c4ebe70533b6f0f3a91ae23440ec03ca26f87f178c2ddeb2a5
 
 # Sections to build
-sections := basics cache config dev environments modules packaging scripting stacks
+sections := basics cache dev environments modules packaging scripting stacks
 
 # Allow users to override variables (e.g. DOCKER := sudo docker)
 -include Make.user
