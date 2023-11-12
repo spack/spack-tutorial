@@ -223,10 +223,10 @@ active environment):
 
    compilers:
    - compiler:
-       spec: clang@7.0.0
+       spec: clang@=14.0.0
        paths:
-         cc: /usr/bin/clang-7
-         cxx: /usr/bin/clang++-7
+         cc: /usr/bin/clang
+         cxx: /usr/bin/clang++
          f77:
          fc:
        flags: {}
@@ -236,12 +236,12 @@ active environment):
        environment: {}
        extra_rpaths: []
    - compiler:
-       spec: gcc@6.5.0
+       spec: gcc@=10.5.0
        paths:
-         cc: /usr/bin/gcc-6
-         cxx: /usr/bin/g++-6
-         f77: usr/bin/gfortran-6
-         fc: usr/bin/gfortran-6
+         cc: /usr/bin/gcc-10
+         cxx: /usr/bin/g++-10
+         f77: usr/bin/gfortran-10
+         fc: usr/bin/gfortran-10
        flags: {}
        operating_system: ubuntu22.04
        target: x86_64
@@ -249,7 +249,7 @@ active environment):
        environment: {}
        extra_rpaths: []
    - compiler:
-       spec: gcc@11.4.0
+       spec: gcc@=11.4.0
        paths:
          cc: /usr/bin/gcc
          cxx: /usr/bin/g++
@@ -272,10 +272,10 @@ to the ``compilers.yaml`` file:
    :emphasize-lines: 2,6-7
 
    - compiler:
-       spec: clang@7.0.0-gfortran
+       spec: clang@=14.0.0-gfortran
        paths:
-         cc: /usr/bin/clang-7
-         cxx: /usr/bin/clang++-7
+         cc: /usr/bin/clang
+         cxx: /usr/bin/clang++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
        flags: {}
@@ -306,7 +306,7 @@ We can verify that our new compiler works by invoking it now:
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@7.0.0-gfortran
+   $ spack install --no-cache zlib %clang@14.0.0-gfortran
    ...
 
 
@@ -318,7 +318,7 @@ since it is already available in our binary cache:
 
    $ spack install --reuse cmake %gcc@11.4.0
    ...
-   $ spack install --no-cache --reuse json-fortran %clang@7.0.0-gfortran ^cmake%gcc@11.4.0
+   $ spack install --no-cache --reuse json-fortran %clang@=14.0.0-gfortran ^cmake%gcc@11.4.0
    ...
 
 
@@ -340,10 +340,10 @@ Let's open our compilers configuration file again and add a compiler flag:
    :emphasize-lines: 8-9
 
    - compiler:
-       spec: clang@7.0.0-gfortran
+       spec: clang@=14.0.0-gfortran
        paths:
-         cc: /usr/bin/clang-7
-         cxx: /usr/bin/clang++-7
+         cc: /usr/bin/clang
+         cxx: /usr/bin/clang++
          f77: /usr/bin/gfortran
          fc: /usr/bin/gfortran
        flags:
@@ -573,11 +573,11 @@ this package and where it can be found:
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.4.0
+         - spec: perl@5.34.0 %gcc@11.4.0
            prefix: /usr
 
 
-Here, we've told Spack that Perl 5.26.1 is installed on our system.
+Here, we've told Spack that Perl 5.34.0 is installed on our system.
 We've also told it the installation prefix where Perl can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
@@ -614,7 +614,7 @@ not allowed to build its own Perl. We'll go with the latter.
          require: ~mpi
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.4.0
+         - spec: perl@5.34.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
 
@@ -646,12 +646,12 @@ HDF5 to build with MPI by default again:
            mpi: [mpich, openmpi]
        perl:
          externals:
-         - spec: perl@5.26.1 %gcc@11.4.0
+         - spec: perl@5.34.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
        mpich:
          externals:
-         - spec: mpich@3.3%gcc@11.4.0
+         - spec: mpich@4.0%gcc@11.4.0
            prefix: /usr
        mpi:
          buildable: false
@@ -663,6 +663,26 @@ for MPI, we can try again.
    :language: console
    :emphasize-lines: 15
 
+Notice that we still haven't build ``hdf5`` with our external
+``mpich``. The concretizer has instead turned off ``mpi`` support in
+``hdf5``. To debug this, we will force Spack to use ``hdf5+mpi``.
+
+.. code-block:: console
+
+   $ spack spec hdf5%clang+mpi
+   ==> Error: concretization failed for the following reasons:
+
+      1. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
+      2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
+           required because conflict applies to spec ^mpich@4.0:4.0.3 
+             required because hdf5%clang+mpi requested from CLI 
+           required because conflict is triggered when +mpi 
+             required because hdf5%clang+mpi requested from CLI 
+
+In this case, we cannot use the external mpich. The version is
+incompatible with ``hdf5``. At this point, the best option is to give
+up and let Spack build ``mpi`` for us. The alternative is to try to
+find a version of ``hdf5`` which doesn't have this conflict.
 
 By configuring most of our package preferences in ``packages.yaml``,
 we can cut down on the amount of work we need to do when specifying
@@ -804,20 +824,20 @@ number of cores our build uses, set ``build_jobs`` like so:
      build_jobs: 2
 
 
-If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
+If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 
 .. code-block:: console
 
-   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
+   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib-ng
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04...
    ...
    ==> 'make' '-j2'
    ...
    ==> 'make' '-j2' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+   [+] /home/user/spack/opt/spack/linux-ubuntu22.04...
 
 
 Obviously, if you want to build everything in serial for whatever reason,
