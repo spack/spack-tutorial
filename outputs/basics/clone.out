@@ -1,14 +1,10 @@
 $ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
-fatal: destination path '/home/ubuntu/spack' already exists and is not an empty directory.
-
-$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
-Cloning into '/home/ubuntu/spack'...
+Cloning into '/home/spack/spack'...
 remote: Enumerating objects: 20108, done.K
 remote: Counting objects: 100% (20108/20108), done.K
-remote: Compressing objects: 100% (11146/11146), done.K
-Receiving objects: 100% (20108/20108), 13.38MMiB||116.49MMiB/s, done.
-remote: Total 20108 (delta 2223), reused 13202 (delta 1594), pack-reused 0K
-Resolving deltas: 100% (2223/2223), done.
-
+remote: Compressing objects: 100% (11087/11087), done.K
+remote:nTotale20108 (delta92238),1reused.13668B(delta81653),spack-reused 0K
+Receiving objects: 100% (20108/20108), 13.37MMiB||120.02MMiB/s, done.
+Resolving deltas: 100% (2238/2238), done.
+Updating files: 100% (10999/10999), done.
 $ cd ~/spack
-

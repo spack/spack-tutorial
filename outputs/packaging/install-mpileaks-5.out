@@ -1,6 +1,6 @@
 $ spack uninstall -ay tutorial-mpileaks
-==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@11.4.0 build_system=autotools stackstart=4 arch=linux-ubuntu22.04-x86_64_v3/fltgzl6
-==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/uwh6ebf
+==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3/r7ipios
+==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@11.4.0 build_system=autotools stackstart=4 arch=linux-ubuntu22.04-x86_64_v3/kxobzrm
 $ spack install --test=root tutorial-mpileaks
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0-mxnvckahgnzim3vtymzk5kydav6fukfd
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-af4bqq6hwe23ojn7i3o2n7ws2b7wu64m
@@ -20,21 +20,21 @@ $ spack install --test=root tutorial-mpileaks
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20210216-s4kq4wo6ii3vt3s354agguqm462yu32q
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-gsbuhgced6vcl7edpc7nor62dlzh2mik
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-wpvxxkafb3j7uc465iekvpyhew3brhl7
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-dyrsjedv3fxwdi3sutxieq2rcz4etdib
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-rb3cnni4wscnsh4yhc7ew3q3g3ki6jcx
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-fhkyvm3nsv5cjxhfszdx2y3rieh274vn
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-tjiqlymlbmjxyyvwlkumu4qq65nuqr3w
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-20180129-qabscwjrgqm5u7yvckt32xf54x3wp7nk
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-12.3.0-iarivsqzjxv635xtdeehj3ehnq5goziu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.189-xnvt4jsw4zbkvyp5w4zayfavuoe2e7px
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.5p1-zjwxy3znkrc3yslkm3eoyewet5bxacjc
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-55bb3ifocfi5nsaikxkgrtzcqvgod6nn
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-4nqimqzj5wce556pwwikj77dyfgqxiif
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-4ml5a5xqujjf63samhrc77xznxvr6anq
-==> Installing tutorial-mpileaks-1.0-mueapszjvoyv66g2s2ynu33rbdqmhpv6 [32/32]
-==> No binary for tutorial-mpileaks-1.0-mueapszjvoyv66g2s2ynu33rbdqmhpv6 found: installing from source
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-12.3.0-iarivsqzjxv635xtdeehj3ehnq5goziu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-20180129-qabscwjrgqm5u7yvckt32xf54x3wp7nk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-z4iqm7nipxsdam3chio7r74ob3cznoof
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-7eg5nni7e4hexm3yfm4cw3pqsajxrvrf
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-v4cgrxkr3s2236rgo7zs7neunc7udklz
+==> Installing tutorial-mpileaks-1.0-qnuzy32kfzxzr5fkszdxiy5agdwq4mdq [32/32]
+==> No binary for tutorial-mpileaks-1.0-qnuzy32kfzxzr5fkszdxiy5agdwq4mdq found: installing from source
 ==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
@@ -43,8 +43,8 @@ $ spack install --test=root tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'install'
 ==> Error: InstallError: Install failed for tutorial-mpileaks. No such directory in prefix: shar
 See build log for details:
-  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-mueapszjvoyv66g2s2ynu33rbdqmhpv6/spack-build-out.txt
+  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-qnuzy32kfzxzr5fkszdxiy5agdwq4mdq/spack-build-out.txt
 
 See test log for details:
-  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-mueapszjvoyv66g2s2ynu33rbdqmhpv6/install-time-test-log.txt
+  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-qnuzy32kfzxzr5fkszdxiy5agdwq4mdq/install-time-test-log.txt
 

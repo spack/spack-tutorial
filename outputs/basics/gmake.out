@@ -1,16 +1,9 @@
 $ spack install gmake
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
-==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
-==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
-==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
 ==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/1]
 ==> No binary for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 found: installing from source
 ==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
 ==> No patches needed for gmake
 ==> gmake: Executing phase: 'install'
 ==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-  Stage: 0.18s.	 Install: 11.32s.  Post-install: 0.02s.	 Total: 11.54s
-[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-
+  Stage: 0.19s.	 Install: 12.22s.  Post-install: 0.02s.	 Total: 12.46s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7

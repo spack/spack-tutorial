@@ -1,19 +1,9 @@
 $ spack mirror add tutorial /mirror
-
 $ spack buildcache keys --install --trust
-gpg: key F85815B32355CB19: public key "e4s-uo-spack-01" imported
-gpg: Total number processed: 1
-gpg:		   imported: 1
-gpg: inserting ownertrust of 6
-gpg: key A8E0CA3C1C2ADA2F: 5 signatures not checked due to missing keys
+==> Fetching file:///mirror/build_cache/_pgp/spack-public-binary-key.pub
+gpg: key A8E0CA3C1C2ADA2F: 7 signatures not checked due to missing keys
 gpg: key A8E0CA3C1C2ADA2F: public key "Spack Project Official Binaries <maintainers@spack.io>" imported
 gpg: Total number processed: 1
 gpg:		   imported: 1
-gpg: marginals needed: 3  completes needed: 1  trust model: pgp
-gpg: depth: 0  valid:	1  signed:   0	trust: 0-, 0q, 0n, 0m, 0f, 1u
+gpg: no ultimately trusted keys found
 gpg: inserting ownertrust of 6
-gpg: key BC86F6FB94429164: public key "Spack CI Key <maintainers@spack.io>" imported
-gpg: Total number processed: 1
-gpg:		   imported: 1
-gpg: inserting ownertrust of 6
-
