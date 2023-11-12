@@ -1,10 +1,64 @@
-$ git clone --depth=100 --branch=releases/v0.21.0 https://github.com/spack/spack.git ~/spack
-Cloning into '/home/spack/spack'...
-remote: Enumerating objects: 20043, done.K
-remote: Counting objects: 100% (20043/20043), done.K
-remote: Compressing objects: 100% (11095/11095), done.K
-Receiving objects: 100% (20043/20043), 13.36MMiB||116.50MMiB/s, done.
-remote: Total 20043 (delta 2173), reused 13168 (delta 1591), pack-reused 0K
-Resolving deltas: 100% (2173/2173), done.
-Updating files: 100% (10996/10996), done.
+$ git clone --depth=100 --branch=backports/v0.21.0 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+warning: Could not find remote branch backports/v0.21.0 to clone.
+fatal: Remote branch backports/v0.21.0 not found in upstream origin
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+remote: Enumerating objects: 20108, done.K
+remote: Counting objects: 100% (20108/20108), done.K
+remote: Compressing objects: 100% (11087/11087), done.K
+remote:nTotale20108 (delta92238),1reused113668i(delta.1653),/pack-reused 0K
+Receiving objects: 100% (20108/20108), 13.37 MiB | 23.45 MiB/s, done.
+Resolving deltas: 100% (2238/2238), done.
 $ cd ~/spack
+$ git clone --depth=100 --branch=backports/v0.21.0 https://github.com/spack/spack.git ~/spack
+fatal: destination path '/home/ubuntu/spack' already exists and is not an empty directory.
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+fatal: destination path '/home/ubuntu/spack' already exists and is not an empty directory.
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+remote: Enumerating objects: 20108, done.K
+remote: Counting objects: 100% (20108/20108), done.K
+remote: Compressing objects: 100% (11146/11146), done.K
+remote:nTotale20108 (delta92223),1reused.13202B(delta31594), pack-reused 0K
+Receiving objects: 100% (20108/20108), 13.38MMiB||910.59iMiB/s, done.
+Resolving deltas: 100% (2223/2223), done.
+
+$ cd ~/spack
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+remote: Enumerating objects: 20108, done.K
+remote: Counting objects: 100% (20108/20108), done.K
+remote: Compressing objects: 100% (11146/11146), done.K
+remote:nTotale20108 (delta92223),1reused.13202B(delta81594),spack-reused 0K
+Receiving objects: 100% (20108/20108), 13.38MMiB||116.43MMiB/s, done.
+Resolving deltas: 100% (2223/2223), done.
+
+$ cd ~/spack
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+remote: Enumerating objects: 20108, done.K
+remote: Counting objects: 100% (20108/20108), done.K
+remote: Compressing objects: 100% (11181/11181), done.K
+Receiving objects: 100% (20108/20108), 13.38 MiB | 20.13 MiB/s, done.
+remote: Total 20108 (delta 2220), reused 13184 (delta 1559), pack-reused 0K
+Resolving deltas: 100% (2220/2220), done.
+
+$ cd ~/spack
+
+$ git clone --depth=100 --branch=releases/v0.21 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/ubuntu/spack'...
+remote: Enumerating objects: 20108, done.K
+remote: Counting objects: 100% (20108/20108), done.K
+remote: Compressing objects: 100% (11146/11146), done.K
+remote:nTotale20108 (delta92223),1reused.13202B(delta51594),spack-reused 0K
+Receiving objects: 100% (20108/20108), 13.38MMiB||115.06MMiB/s, done.
+Resolving deltas: 100% (2223/2223), done.
+
+$ cd ~/spack
+

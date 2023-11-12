@@ -1,12 +1,76 @@
 $ spack install zlib-ng
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
+==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
+==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
+==> Installing gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui [1/2]
+==> No binary for gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
+  Stage: 0.41s.	 Install: 12.88s.  Post-install: 0.02s.	 Total: 13.33s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
+==> Installing zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly [2/2]
+==> No binary for zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/a0/a0293475e6a44a3f6c045229fe50f69dc0eebc62a42405a51f19d46a5541e77a.tar.gz
+==> No patches needed for zlib-ng
+==> zlib-ng: Executing phase: 'autoreconf'
+==> zlib-ng: Executing phase: 'configure'
+==> zlib-ng: Executing phase: 'build'
+==> zlib-ng: Executing phase: 'install'
+==> zlib-ng: Successfully installed zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly
+  Stage: 0.40s.	 Autoreconf: 0.00s.  Configure: 4.11s.	Build: 14.52s.	Install: 0.40s.	 Post-install: 0.02s.  Total: 19.51s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zlib-ng-2.1.4-draqwfyptyn4fteh6kh635ivtjp3r6ly
+$ spack install gmake
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
+==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
+==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
+==> Installing gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui [1/1]
+==> No binary for gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
+  Stage: 0.17s.	 Install: 12.74s.  Post-install: 0.02s.	 Total: 12.95s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gmake-4.4.1-6qiak7nnzdxg4dik4mcwrwvy24bsovui
+
+$ spack install gmake
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
+==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
+==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
+==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/1]
+==> No binary for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Stage: 0.17s.	 Install: 11.68s.  Post-install: 0.02s.	 Total: 11.89s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+
+$ spack install zlib-ng
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
+==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
+==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
 ==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/2]
 ==> No binary for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 found: installing from source
 ==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
 ==> No patches needed for gmake
 ==> gmake: Executing phase: 'install'
 ==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-  Stage: 0.18s.	 Install: 11.94s.  Post-install: 0.02s.	 Total: 12.16s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Stage: 0.16s.	 Install: 11.36s.  Post-install: 0.02s.	 Total: 11.56s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
 ==> Installing zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh [2/2]
 ==> No binary for zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh found: installing from source
 ==> Fetching https://mirror.spack.io/_source-cache/archive/a0/a0293475e6a44a3f6c045229fe50f69dc0eebc62a42405a51f19d46a5541e77a.tar.gz
@@ -16,5 +80,22 @@ $ spack install zlib-ng
 ==> zlib-ng: Executing phase: 'build'
 ==> zlib-ng: Executing phase: 'install'
 ==> zlib-ng: Successfully installed zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-  Stage: 0.17s.	 Autoreconf: 0.00s.  Configure: 4.01s.	Build: 2.36s.  Install: 0.16s.	Post-install: 0.03s.  Total: 6.82s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+  Stage: 0.15s.	 Autoreconf: 0.00s.  Configure: 3.22s.	Build: 11.29s.	Install: 0.44s.	 Post-install: 0.02s.  Total: 15.18s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
+
+$ spack install gmake
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/patchelf-0.18.0/linux-centos7-x86_64-gcc-10.2.1-patchelf-0.18.0-afv7arjarb7nzmlh7c5slkfxykybuqce.spack
+==> Installing "patchelf@=0.18.0%gcc@=10.2.1 ldflags="-static-libstdc++ -static-libgcc"	 build_system=autotools arch=linux-centos7-x86_64" from a buildcache
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spec.json
+==> Fetching https://mirror.spack.io/bootstrap/github-actions/v0.5/build_cache/linux-centos7-x86_64/gcc-10.2.1/clingo-bootstrap-spack/linux-centos7-x86_64-gcc-10.2.1-clingo-bootstrap-spack-smkmkb5xqz4v2f7tl22g4e2ghamglox5.spack
+==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
+==> Installing gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 [1/1]
+==> No binary for gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7 found: installing from source
+==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
+==> No patches needed for gmake
+==> gmake: Executing phase: 'install'
+==> gmake: Successfully installed gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+  Stage: 0.24s.	 Install: 11.27s.  Post-install: 0.02s.	 Total: 11.55s
+[+] /home/ubuntu/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
+

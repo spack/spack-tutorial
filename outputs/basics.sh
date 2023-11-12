@@ -24,7 +24,7 @@ example basics/list            "spack list"
 example basics/list-py         "spack list 'py-*'"
 
 # spack install
-example basics/gmake           "spack install zlib-ng"
+example basics/gmake           "spack install gmake"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
 example basics/mirror          "spack buildcache keys --install --trust"
