@@ -62,15 +62,15 @@ to start using the container. You should now be ready to run through our demo sc
   #. :ref:`environments-tutorial`
   #. :ref:`configs-tutorial`
   #. :ref:`packaging-tutorial`
-  #. :ref:`binary-cache-tutorial`
   #. :ref:`stacks-tutorial`
   #. :ref:`developer-workflows-tutorial`
-  #. :ref:`modules-tutorial`
+  #. :ref:`binary-cache-tutorial`
   #. :ref:`spack-scripting-tutorial`
 
 Other sections from past tutorials are also available, although they may
 not be kept up-to-date as frequently:
 
+  #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
   #. :ref:`advanced-packaging-tutorial`
 
