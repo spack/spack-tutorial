@@ -1,6 +1,7 @@
 $ spack develop scr@2.0.0
 ==> Configuring spec scr@=2.0.0 for development at path scr
 ==> Fetching https://mirror.spack.io/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
+
 $ grep -3 develop: spack.yaml
       modules: []
       environment: {}
@@ -8,3 +9,4 @@ $ grep -3 develop: spack.yaml
   develop:
     scr:
       spec: scr@=2.0.0
+

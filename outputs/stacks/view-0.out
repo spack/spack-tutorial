@@ -1,8 +1,10 @@
 $ spack concretize
 ==> Updating view at /home/spack/stacks/views/default
 ==> Updating view at /home/spack/stacks/views/full
+
 $ ls views/default
 bin  etc  include  lib	lib64  libexec	man  sbin  share  var
+
 $ ls views/default/lib
 cmake				libmenu.so.6
 gettext				libmenu.so.6.4
@@ -167,9 +169,12 @@ libmd.so.0			pmpi_f08_interfaces.mod
 libmd.so.0.0.5			python3.11
 libmenu.a			terminfo
 libmenu.so
+
 $ ls views/full
 gcc-11.4.0  gcc-12.3.0
+
 $ ls views/full/gcc-12.3.0
 bin	 lib	  man				    openmpi-4.1.6-netlib-lapack-3.11.0	share
 etc	 lib64	  mpich-4.1.2-netlib-lapack-3.11.0  openmpi-4.1.6-openblas-0.3.24	var
 include	 libexec  mpich-4.1.2-openblas-0.3.24	    sbin
+

@@ -1,1 +1,32 @@
 $ jq < spack.lock | head -30
+{
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 5,
+    "specfile-version": 4
+  },
+  "spack": {
+    "version": "0.21.0",
+    "type": "git",
+    "commit": "65d3221a9c436e77af9e802e543c71bd702ff4e2"
+  },
+  "roots": [
+    {
+      "hash": "z4iqm7nipxsdam3chio7r74ob3cznoof",
+      "spec": "openmpi"
+    },
+    {
+      "hash": "46nzgyjf7brdinl7hi5iyyinm6au54mz",
+      "spec": "trilinos"
+    }
+  ],
+  "concrete_specs": {
+    "z4iqm7nipxsdam3chio7r74ob3cznoof": {
+      "name": "openmpi",
+      "version": "4.1.6",
+      "arch": {
+	"platform": "linux",
+	"platform_os": "ubuntu22.04",
+	"target": "x86_64_v3"
+      },
+

@@ -1,5 +1,6 @@
 $ spack add hdf5@5.5.1
 ==> Adding hdf5@5.5.1 to environment /home/spack/code
+
 $ cat spack.yaml
 # This is a Spack Environment file.
 #
@@ -14,3 +15,4 @@ spack:
   view: true
   concretizer:
     unify: true
+

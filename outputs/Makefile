@@ -14,7 +14,7 @@ DOCKER_RUN_OPTS :=
 
 
 # Name of the container we'll generate the tutorial outputs with
-container := ghcr.io/spack/tutorial:latest@sha256:c067f3d3520396c4ebe70533b6f0f3a91ae23440ec03ca26f87f178c2ddeb2a5
+container := ghcr.io/spack/tutorial:latest@sha256:e6b13f0a5ab7b7a7ff6695c712ec882bc1bec4228f98e24697c8e0ced3a49b55
 
 # Sections to build
 sections := basics cache dev environments modules packaging scripting stacks
@@ -25,7 +25,7 @@ sections := basics cache dev environments modules packaging scripting stacks
 run_targets := $(addprefix run-,$(sections))
 
 # Entrypoint
-update-outputs: # run
+update-outputs: run
 	echo "Filtering raw outputs though col"
 	for raw in raw/*/*.out; do \
 		out=$$(echo $$raw | sed 's.raw/..'); \

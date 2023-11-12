@@ -1,7 +1,7 @@
 $ spack uninstall -y trilinos
 ==> Refusing to uninstall the following specs
     -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-    rdmsnnt trilinos@14.4.0
+    46nzgyj trilinos@14.4.0
 
 ==> The following environments still reference these specs:
     myproject
@@ -9,6 +9,7 @@ $ spack uninstall -y trilinos
 ==> Error: There are still dependents.
   use `spack env remove` to remove environments
   use `spack uninstall --force` to override
+
 $ spack find
 ==> In environment myproject2
 ==> Root specs
@@ -42,3 +43,4 @@ kokkos@4.1.00			    numactl@2.0.14	  xz@5.4.1
 krb5@1.20.1			    openblas@0.3.24	  zlib-ng@2.1.4
 libbsd@0.11.7			    openmpi@4.1.6	  zstd@1.5.5
 ==> 75 installed packages
+

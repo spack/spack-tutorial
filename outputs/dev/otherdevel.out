@@ -1,10 +1,16 @@
 $ cd ~
+
 $ mkdir devel-other
+
 $ cd devel-other
+
 $ cp ../devel-env/spack.yaml .
+
 $ spacktivate .
 $ spack develop
 ==> Spec scr@=2.0.0 already configured for development
 ==> Spec macsio@=1.1 already configured for development
+
 $ ls
 spack.yaml
+

@@ -1,5 +1,5 @@
 $ spack env activate --temp
-==> Created and activated temporary environment in /tmp/spack-ihjwre3f
+==> Created and activated temporary environment in /tmp/spack-37huzpr_
 $ spack install --add python
 ==> Concretized python
 [+]  ybsi7tl  python@3.11.6%gcc@11.4.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
@@ -31,6 +31,8 @@ $ spack install --add python
 [+]  5xcetrv	  ^zlib-ng@2.1.4%gcc@11.4.0+compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
 ==> All of the packages are already installed
-==> Updating view at /tmp/spack-smz7paaf/.spack-env/view
+==> Updating view at /tmp/spack-chj6b84z/.spack-env/view
+
 $ spack install --add py-numpy@1.20 2>&1 | tail -n1
     internal_error("version weights must exist and be unique"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
+
