@@ -21,13 +21,13 @@ installation path. Together, these two features can speed up builds
 when using spack within a larger development team.
 
 We will use the filesystem for the mirrors in this tutorial, but
-mirrors can also be setup on web servers or s3 buckets -- any URL that
-``curl`` can access can be setup as a Spack mirror.
+mirrors can also be setup on web servers, in s3 buckets or even in [OCI
+registries](https://spack.readthedocs.io/en/latest/binary_caches.html#oci-docker-v2-registries-as-build-cache).
 
 By default, Spack comes configured with a source mirror in the cloud
 to increase download reliability. We've also already set up a mirror
-in this tutorial for binary caches. We can see these mirrors are
-configured
+in this tutorial for binary caches. We can see how these mirrors are
+configured:
 
 .. literalinclude:: outputs/cache/mirror-list-0.out
    :language: console
@@ -40,13 +40,13 @@ When you run ``spack install``, spack goes out to the internet to grab
 the source code to build your packages. This works fine on most
 clusters, but what do you do if the cluster in question doesn't have
 access to the outside internet? This could happen for a variety of
-reasons. Maybe you're building on a compute node that isn't connected
-to the greater internet, or maybe even the whole cluster has been
-isolated from the internet.
+reasons. Maybe you're building on a compute node that can't connect
+to the internet, or maybe the whole cluster has been isolated from
+the internet.
 
-Spack has an easy answer to this -- setting up a source mirror. When you
+Spack has a solution for this -- setting up a source mirror. When you
 use a source mirror, spack checks the mirror for the source code
-before going to the outside internet.
+before trying to download it from a remote location.
 
 Building a source mirror is easy. Let's start with the same simple
 environment. First, let's build our software on a computer with
@@ -110,34 +110,33 @@ to build your team's dependencies.
 Setting up a binary cache mirror
 --------------------------------
 
-If you're going to be setting up a team to use spack as part of their
+If your team is setting spack as part of their
 development practice, you'll run up against the biggest disadvantage
-to using spack: building all your packages from scratch is
+of using spack: building all your packages from scratch is
 slow. Recompiling the software dependencies for a large project can
 take hours to complete. If every developer is rebuilding their own
 software stack, that leads to a massive waste of computational
 resources and a loss of developer productivity.
 
-Spack has two ways to help alleviate this problem: chained spack
+Spack has two ways to mitigate this problem: chained spack
 instances and spack binary caches. For now, we're going to discuss
-spack binary caches as a way of solving this issue.
+binary caches as a way of solving this issue.
 
 A spack binary cache is made up of spack binary packages.  Each spack
 binary package, ending with a ``*.spack`` extension, is a tarball of an
-installed spack package signed with a gpg signature. When you install
-a package from a mirror with a binary cache, spack
+installed spack package signed with a [gpg signature](https://www.gnupg.org).
+When you install a package from a mirror with a binary cache, spack
 
 * Checks to see if there is a spack binary package that exactly
   matches the hash of the spec you want to build.
 * If a binary package is found, spack checks to see if the signature
-  on the spack binary package is trusted. If the signature isn't
-  trusted or no package was found, spack builds the package from
-  source.
+  on the binary package is trusted. If the signature isn't trusted,
+  or if no package was found, spack builds the package from source.
 * If the signature is trusted, then spack unzips and relocates the
-  spack package.
+  binary package.
 
-For the user, spack binary caches are transparent to use. This is a
-clear departure from systems like conda, where you need to chose
+For the user, using spack binary caches is transparent. This is a
+clear departure from systems like conda, where you need to choose
 separate workflows for binary and source packages. We've already
 demonstrated using spack binary caches earlier in the tutorial when we
 set up spack to use a binary mirror. As a reminder, we ran:
@@ -183,7 +182,7 @@ compilation problems with some software packages. If the user's
 install path is too long, spack will give you a warning. All scripts
 and and RPATHs will still be properly relocated, but C strings within
 any binaries will not be modified. Depending on the package, this may
-cause problems when you try and use the software.
+cause problems when you try to use the software.
 
 We also need to create a gpg key to sign all our packages. You should
 back up the secret and public keys to a secure place so they can be
@@ -206,11 +205,11 @@ cache.  This cache can be used on systems without external internet
 access, just like with a spack source mirror.
 
 Though it's outside the scope of this tutorial, spack mirrors and
-build caches can also be hosted over ``https://`` and ``s3://`` as
-well. Consult the spack documentation for more information on how to
-do this.
+build caches can also be hosted over ``https://``, ``s3://``, and
+``oci://``, as well. Consult the spack documentation for more
+information on how to do this.
 
-Before a user can use this binary cache, they will need to make sure
+Before someone can use this binary cache, they will need to make sure
 that they trust all the packages listed in the binary cache. If you're
 sharing files between trusted users on a filesystem, you can do this
 with the following command:
@@ -226,12 +225,12 @@ instance before they initiate a build.
 Bootstrapping Mirrors
 ---------------------
 
-In order to run Spack on an airgapped system or aywhere else without
-internet access, you also need to install clingo as a dependency of
-the concretizer. While you can always install clingo through your
-favorite method, we like to think Spack is your favorite install
-mechanism for everything, and we have convenient ways to bootstrap
-clingo on airgapped systems.
+In order to run Spack on an airgapped system, or aywhere else without
+internet access, you also need to install ``clingo`` as a dependency
+(``clingo`` is used by spack's concretizer). While you can always
+install clingo through your favorite method, we like to think Spack
+is your favorite install mechanism for everything, and we have
+convenient ways to bootstrap clingo on airgapped systems.
 
 Spack can prepare a bootstrap mirror for either source or binary
 mirror for bootstrapping via the ``spack bootstrap mirror``
