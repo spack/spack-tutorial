@@ -1,16 +1,16 @@
 .PHONY: update-outputs run interactive clean
 
 # Tools
-#DOCKER := docker
-#DOCKER_RUN_OPTS :=
+DOCKER := docker
+DOCKER_RUN_OPTS :=
 
 # Use this for Podman
 #DOCKER := podman
 #DOCKER_RUN_OPTS := --userns=keep-id --security-opt label=disable
 
 # Use this for Finch
-DOCKER := finch
-DOCKER_RUN_OPTS := --platform=amd64
+#DOCKER := finch
+#DOCKER_RUN_OPTS := --platform=amd64
 
 
 # Name of the container we'll generate the tutorial outputs with
