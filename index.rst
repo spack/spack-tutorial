@@ -9,10 +9,10 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was last presented as
-a virtual event at the `2023 RADIUSS Tutorial Series
-<https://aws.amazon.com/blogs/hpc/call-for-participation-radiuss-tutorial-series-2023/>`_,
-August 8-9, 2023. The event was a full-day tutorial spread over two days.
+This is an introduction to Spack with lectures and live demos. It was last presented at
+the `Supercomputing 2023 Conference
+<https://sc23.conference-program.com/presentation/?id=tut162&sess=sess226>`_, November
+12, 2023. The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -22,35 +22,24 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc19-tutorial-slide-preview.png
-   :target: _static/slides/spack-radiuss23-tutorial-slides.pdf
+.. image:: tutorial/images/sc23-tutorial-slide-preview.png
+   :target: _static/slides/spack-sc23-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-radiuss23-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-sc23-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Richarda Butler, Tamara Dahlgren, and Todd Gamblin.
-Managing HPC Software Complexity with Spack. RADIUSS Tutorial Series 2023. Virtual
-event. August 8-9, 2023.
+**Full citation:** Todd Gamblin, Gregory Becker, Richarda Butler, Massimiliano Culpo,
+Tamara Dahlgren, Adam Stewart, Luke Peyralans, and Alec Scott. Managing HPC Software
+Complexity with Spack. Supercomputing 2023 (SC23), Denver, CO. November 12 2023.
 
 .. _video:
 
 .. rubric:: Video
 
-The recording of the virtual event is available in two parts:
-
-.. raw:: html
-
-   <p>
-   <ul>
-   <li>Part 1<br/>
-   <iframe width="380" height="214" src="https://www.youtube.com/embed/KyfGdWnvpBY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </li>
-   <li>Part 2<br/>
-   <iframe width="380" height="214" src="https://www.youtube.com/embed/uVoFL8B2N-s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-   </li>
-   </p>
+For the last video of this tutorial, see the `AWS/RADIUSS 2023 version
+<https://spack-tutorial.readthedocs.io/en/radiuss23/>`_
 
 .. _live-demos:
 
