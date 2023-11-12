@@ -20,9 +20,9 @@ binary caches allow you to install pre-compiled binaries to your spack
 installation path. Together, these two features can speed up builds
 when using spack within a larger development team.
 
-We will use the filesystem for the mirrors in this tutorial, but
-mirrors can also be setup on web servers, in s3 buckets or even in [OCI
-registries](https://spack.readthedocs.io/en/latest/binary_caches.html#oci-docker-v2-registries-as-build-cache).
+We will use the filesystem for the mirrors in this tutorial, but mirrors can also be
+setup on web servers, in s3 buckets or even in `OCI registries
+<https://spack.readthedocs.io/en/latest/binary_caches.html#oci-docker-v2-registries-as-build-cache>`_.
 
 By default, Spack comes configured with a source mirror in the cloud
 to increase download reliability. We've also already set up a mirror
@@ -124,7 +124,7 @@ binary caches as a way of solving this issue.
 
 A spack binary cache is made up of spack binary packages.  Each spack
 binary package, ending with a ``*.spack`` extension, is a tarball of an
-installed spack package signed with a [gpg signature](https://www.gnupg.org).
+installed spack package signed with a `gpg signature <https://www.gnupg.org>`_.
 When you install a package from a mirror with a binary cache, spack
 
 * Checks to see if there is a spack binary package that exactly
