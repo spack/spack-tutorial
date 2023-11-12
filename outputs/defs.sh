@@ -14,7 +14,7 @@ fi
 raw_outputs="${PROJECT}/raw"
 
 # used by scripts
-tutorial_branch=backports/v0.21.0
+tutorial_branch=releases/v0.21
 
 print_status() {
     printf "\n%b: %s\n\n" "\033[1;35m$1\033[0m" "$2"
@@ -88,7 +88,7 @@ example() {
 
         # strip "script started/done" output from the file
         grep -v '^Script started\|^Script done' "$filename" > "${filename}.tmp"
-        sed -i~ '$d' "${filename}.tmp"
+#        sed -i~ '$d' "${filename}.tmp"
         mv "${filename}.tmp" "$filename"
     fi
 }

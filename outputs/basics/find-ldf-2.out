@@ -2,7 +2,7 @@ $ spack find -ldf
 -- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
 d54pflh gmake@4.4.1%clang
 
-yfxprlc tcl@8.6.12%clang
+keocaqa tcl@8.6.12%clang
 d54pflh	    gmake@4.4.1%clang
 amkpmim	    zlib-ng@2.0.7%clang
 
@@ -147,6 +147,8 @@ vdb3ozo	    tar@1.34%gcc
 catlxmo		pigz@2.7%gcc
 jkznmrm		zstd@1.5.5%gcc
 axxqoeq	    xz@5.4.1%gcc
+
+su6fmm3 gmake@4.3%gcc  cflags="-O3"
 
 znvoani gmake@4.4.1%gcc
 
@@ -615,13 +617,13 @@ catlxmo	    pigz@2.7%gcc
 axxqoeq	    xz@5.4.1%gcc
 jkznmrm	    zstd@1.5.5%gcc
 
-c6jzopy tcl@8.6.12%gcc
+qfb3pvm tcl@8.6.12%gcc
 znvoani	    gmake@4.4.1%gcc
 npuw4up	    zlib-ng@2.0.7%gcc  cflags="-O3"
 
-i2ympro tcl@8.6.12%gcc
-znvoani	    gmake@4.4.1%gcc
-5xcetrv	    zlib-ng@2.1.4%gcc
+4c6akdp tcl@8.6.12%gcc
+su6fmm3	    gmake@4.3%gcc  cflags="-O3"
+3n6ntrb	    zlib-ng@2.1.4%gcc
 
 thv4zdp util-linux-uuid@2.38.1%gcc
 znvoani	    gmake@4.4.1%gcc
@@ -676,7 +678,11 @@ znvoani	    gmake@4.4.1%gcc
 5xcetrv zlib-ng@2.1.4%gcc
 znvoani	    gmake@4.4.1%gcc
 
+3n6ntrb zlib-ng@2.1.4%gcc
+su6fmm3	    gmake@4.3%gcc  cflags="-O3"
+
 jkznmrm zstd@1.5.5%gcc
 znvoani	    gmake@4.4.1%gcc
 
-==> 63 installed packages
+==> 65 installed packages
+

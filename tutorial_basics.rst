@@ -94,7 +94,7 @@ Spack's spec syntax is the interface by which we can request specific
 configurations of the package. The ``%`` sigil is used to specify
 compilers.
 
-.. literalinclude:: outputs/basics/gmake-clang.out
+.. literalinclude:: outputs/basics/zlib-clang.out
    :language: console
 
 Note that this installation is located separately from the previous
@@ -103,18 +103,18 @@ allows Spack to support arbitrarily versioned software.
 
 You can check for particular versions before requesting them. We will
 use the ``spack versions`` command to see the available versions, and then
-install a different version of ``gmake``.
+install a different version of ``zlib-ng``.
 
-.. literalinclude:: outputs/basics/versions-gmake.out
+.. literalinclude:: outputs/basics/versions-zlib.out
    :language: console
 
 The ``@`` sigil is used to specify versions, both of packages and of
 compilers.
 
-.. literalinclude:: outputs/basics/gmake-4.3.out
+.. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: console
 
-.. literalinclude:: outputs/basics/gmake-gcc-10.out
+.. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: console
 
 The spec syntax also includes compiler flags. Spack accepts
@@ -123,7 +123,7 @@ The spec syntax also includes compiler flags. Spack accepts
 the command line if they include spaces. These values are injected
 into the compile line automatically by the Spack compiler wrappers.
 
-.. literalinclude:: outputs/basics/gmake-O3.out
+.. literalinclude:: outputs/basics/zlib-O3.out
    :language: console
 
 The ``spack find`` command is used to query installed packages. Note that
@@ -154,12 +154,12 @@ Dependencies can be explicitly requested using the ``^`` sigil. Note that
 the spec syntax is recursive. Anything we could specify about the
 top-level package, we can also specify about a dependency using ``^``.
 
-.. literalinclude:: outputs/basics/tcl-gmake-clang.out
+.. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: console
 
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
-of our optimized installation of gmake (``cflags="-O3"``) began with
+of our optimized installation of zlib-ng (``cflags="-O3"``) began with
 ``iswfl``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like Git, you do not need to specify an *entire* hash on the
@@ -167,7 +167,7 @@ command line.  You can specify just enough digits to identify a hash
 uniquely.  If a hash prefix is ambiguous (i.e., two or more installed
 packages share the prefix) then Spack will report an error.
 
-.. literalinclude:: outputs/basics/tcl-gmake-hash.out
+.. literalinclude:: outputs/basics/tcl-zlib-hash.out
    :language: console
 
 The ``spack find`` command can also take a ``-d`` flag, which can show
@@ -223,7 +223,7 @@ DAG as a graph.
 .. literalinclude:: outputs/basics/graph-hdf5.out
    :language: console
 
-HDF5 is more complicated than our basic example of gmake and
+HDF5 is more complicated than our basic example of zlib-ng and
 Tcl, but it's still within the realm of software that an experienced
 HPC user could reasonably expect to manually install given a bit of time.
 Now let's look at an even more complicated package.
@@ -278,22 +278,22 @@ complicated packages. The output can be changed to the Graphviz
 Uninstalling Packages
 ---------------------
 
-Earlier we installed many configurations each of gmake and Tcl. Now we
+Earlier we installed many configurations each of zlib-ng and Tcl. Now we
 will go through and uninstall some of those packages that we didn't
 really need.
 
 .. literalinclude:: outputs/basics/find-d-tcl.out
    :language: console
 
-.. literalinclude:: outputs/basics/find-gmake.out
+.. literalinclude:: outputs/basics/find-zlib.out
    :language: console
 
 We can uninstall packages by spec using the same syntax as install.
 
-.. literalinclude:: outputs/basics/uninstall-gmake.out
+.. literalinclude:: outputs/basics/uninstall-zlib.out
    :language: console
 
-.. literalinclude:: outputs/basics/find-lf-gmake.out
+.. literalinclude:: outputs/basics/find-lf-zlib.out
    :language: console
 
 We can also uninstall packages by referring only to their hash.
