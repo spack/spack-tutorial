@@ -26,4 +26,8 @@ jobs:
     - name: Build docs
       run: |
         make clean --silent
-        make SPHINXOPTS="-W -D graphviz_output_format=png"
+        make SPHINXOPTS="-W"
+    - uses: actions/upload-artifact@a8a3f3ad30e3422c9c7b888a15615d19a852ae32
+      with:
+        name: html
+        path: _build/html/
