@@ -521,7 +521,7 @@ that you want. Options include:
 With these options you can specify whether you want your executable to have
 the debug version only, release version or the release with debug information.
 Release executables tend to be more optimized than Debug. In Spack, we set
-the default as RelWithDebInfo unless otherwise specified through a variant.
+the default as Release unless otherwise specified through a variant.
 
 Spack then automatically sets up the :code:`-DCMAKE_INSTALL_PREFIX` path,
 appends the build type (:code:`RelWithDebInfo` default), and then specifies a verbose
