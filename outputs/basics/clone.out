@@ -2,8 +2,26 @@ $ git clone --depth=100 --branch=backports/v0.22.0 https://github.com/spack/spac
 Cloning into '/home/spack/spack'...
 remote: Enumerating objects: 21325, done.K
 remote: Counting objects: 100% (21325/21325), done.K
-remote: Compressing objects: 100% (11557/11557), done.K
-remote:nTotale21325 (delta02387),3reused316049i(delta71875),spack-reused 0K
-Receiving objects: 100% (21325/21325), 14.07 MiB | 8.74 MiB/s, done.
-Resolving deltas: 100% (2387/2387), done.
+remote: Compressing objects: 100% (11563/11563), done.K
+remote:nTotale21325 (delta02386),3reused.16056B(delta91869),spack-reused 0K
+Receiving objects: 100% (21325/21325), 14.07MMiB||118.88MMiB/s, done.
+Resolving deltas: 100% (2386/2386), done.
+$ cd ~/spack
+$ git clone --depth=100 --branch=backports/v0.22.0 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/spack/spack'...
+remote: Enumerating objects: 21325, done.K
+remote: Counting objects: 100% (21325/21325), done.K
+remote: Compressing objects: 100% (11560/11560), done.K
+remote:nTotale21325 (delta02384),3reused.16067B(delta81872),spack-reused 0K
+Receiving objects: 100% (21325/21325), 14.07MMiB||121.19MMiB/s, done.
+Resolving deltas: 100% (2384/2384), done.
+$ cd ~/spack
+$ git clone --depth=100 --branch=backports/v0.22.0 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/spack/spack'...
+remote: Enumerating objects: 21325, done.K
+remote: Counting objects: 100% (21325/21325), done.K
+remote: Compressing objects: 100% (11563/11563), done.K
+remote:nTotale21325 (delta02386),3reused316056i(delta.1869),/pack-reused 0K
+Receiving objects: 100% (21325/21325), 14.07 MiB | 13.71 MiB/s, done.
+Resolving deltas: 100% (2386/2386), done.
 $ cd ~/spack
