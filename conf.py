@@ -16,30 +16,27 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-
 import sys
 import os
-import re
-import subprocess
-from glob import glob
+
+from sphinx.domains.python import PythonDomain
 
 # -- Spack customizations -----------------------------------------------------
 # Add the Spack bin directory to the path so that we can use its output in docs.
 os.environ['SPACK_ROOT'] = os.path.abspath('_spack_root')
-os.environ['PATH'] += "%s%s" % (os.pathsep, os.path.abspath('_spack_root/bin'))
+os.environ['PATH'] += f"{os.pathsep}{os.path.abspath('_spack_root/bin')}"
 
-# Set an environment variable so that colify will print output like it would to
-# a terminal.
+# Set an environment variable so that colify will print output like it would to a terminal.
 os.environ['COLIFY_SIZE'] = '25x120'
 os.environ['COLUMNS'] = '120'
 
 # Enable todo items
 todo_include_todos = True
 
+
 #
 # Disable duplicate cross-reference warnings.
 #
-from sphinx.domains.python import PythonDomain
 class PatchedPythonDomain(PythonDomain):
     def resolve_xref(self, env, fromdocname, builder, typ, target, node, contnode):
         if 'refspecific' in node:
@@ -47,11 +44,12 @@ class PatchedPythonDomain(PythonDomain):
         return super(PatchedPythonDomain, self).resolve_xref(
             env, fromdocname, builder, typ, target, node, contnode)
 
+
 def setup(sphinx):
     sphinx.add_domain(PatchedPythonDomain, override=True)
 
-# -- General configuration -----------------------------------------------------
 
+# -- General configuration -----------------------------------------------------
 # If your documentation needs a minimal Sphinx version, state it here.
 needs_sphinx = '1.8'
 
@@ -69,7 +67,6 @@ graphviz_dot_args = [
 # Get nice vector graphics
 graphviz_output_format = "svg"
 
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -84,7 +81,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Spack Tutorial'
-copyright = u'2013-2023, Lawrence Livermore National Laboratory.'
+copyright = u'2013-2024, Lawrence Livermore National Laboratory.'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -133,24 +130,8 @@ exclude_patterns = ['_build', '_spack_root', 'view', '._view']
 
 # The name of the Pygments (syntax highlighting) style to use.
 # We use our own extension of the default style with a few modifications
-from pygments.style import Style
-from pygments.styles.default import DefaultStyle
-from pygments.token import Generic, Comment, Text
-
-class SpackStyle(DefaultStyle):
-    styles = DefaultStyle.styles.copy()
-    background_color       = "#f4f4f8"
-    styles[Generic.Output] = "#355"
-    styles[Generic.Prompt] = "bold #346ec9"
-
-import pkg_resources
-dist = pkg_resources.Distribution(__file__)
-sys.path.append('.')  # make 'conf' module findable
-ep = pkg_resources.EntryPoint.parse('spack = conf:SpackStyle', dist=dist)
-dist._ep_map = {'pygments.styles': {'plugin1': ep}}
-pkg_resources.working_set.add(dist)
-
-pygments_style = 'spack'
+sys.path.append('./_pygments')  # make 'conf' module findable
+pygments_style = 'style.SpackStyle'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
