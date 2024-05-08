@@ -11,27 +11,38 @@
 Stacks Tutorial
 ===============
 
-So far, we've talked about Spack environments in the context of a
-unified user environment or development environment. But environments
-in Spack have much broader capabilities. In this tutorial we will
-consider how to use a specialized sort of Spack environment, that we
-call a Spack stack, to manage large deployments of software using
-Spack.
+So far, we've talked about Spack environments in the context of a unified user environment.
+But environments in Spack have much broader capabilities. In this tutorial we will consider
+how to use Spack environments to manage large deployments of software.
 
--------------
-Spec matrices
--------------
+What usually differs between a typical environment for a single user, and an environment used
+to manage large deployments, is that in the latter case we often have a set of packages we want
+to install across a wide range of MPIs, LAPACKs or compilers.
 
-In a typical Spack environment for a single user, a simple list of
-specs is sufficient. For software deployment, however, we often have a
-set of packages we want to install across a wide range of MPIs or compilers.
-In the following we'll mimic the creation of a software stack using different
-libraries for LAPACK and MPI and a compiler for the software which is more
-recent than the one provided by the system.
+In the following we'll mimic the creation of a software stack built onto a cross-product of
+different LAPACK and MPI libraries, with a compiler that is more recent than the one provided
+by the host system.
 
-^^^^^^^^^^^^^^^^^^
+In the first part we'll focus on how to properly configure and install the software we want.
+We'll learn how to pin certain requirements, and how to write a cross product of specs in a
+compact, and expressive, way.
+
+Then we'll consider how the software we install might be consumed by our users, and see the
+two main mechanisms that Spack provides for that: views and module files.
+
+.. note::
+
+   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your
+   preferred editor, for instance:
+
+   .. code-block:: console
+
+      $ export EDITOR=emacs
+
+------------------
 Setup the compiler
-^^^^^^^^^^^^^^^^^^
+------------------
+
 
 Let's create a new independent environment and setup the compiler we want to use to build
 our stack:
@@ -74,6 +85,12 @@ The manifest file at this point should look like:
    an iterative process. This requires either to install the compiler first - like done here,
    or to use more than one environment. An example of the latter approach can be
    found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
+
+
+-------------
+Spec matrices
+-------------
+
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Install software against different MPIs and LAPACKs
