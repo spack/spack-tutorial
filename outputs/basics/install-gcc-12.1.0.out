@@ -1,71 +1,103 @@
 $ spack install gcc@12
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-ivn4eq42mmvco5l3drcxjzbmpto5nfi2
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-znvoaniggvauzxv4yobchqt4g7tyjuc7
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-4oz3kpfibmlvfizzivudj7pnzm2w7ce7
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.1-axxqoeqv4lckdxrkvdp6f376ndmade4c
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-ku7makqmto7yrue2y3duu2phqtnvqd26
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-rgag55hxbjmkoqpx4gnr2golz2zfyvnt
-==> Installing autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s [7/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-archive-2023.02.20/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s.spack
-==> Extracting autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s from binary cache
-==> autoconf-archive: Successfully installed autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s
-  Search: 0.00s.  Fetch: 0.08s.	 Install: 0.14s.  Extract: 0.12s.  Relocate: 0.00s.  Total: 0.22s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-archive-2023.02.20-4wbogd6h4jop5ktv44amjnwgadxs4x7s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.4-5xcetrvs3fzd7k27dw5duyxitnsy4uvh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.9-ueheij3wbhepmelnkti3jsglzzknb4en
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-zuopqrik4y7vhqq2isjnr6mbixyks4uk
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.4-qqlh6asufg6vhjnkbhwxl3jmocyolykt
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.5-jkznmrmqdgtpzvs42qxljrjs6m6f6aho
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-67qoxbv3pyyep745wytvlgnnosn6pwnr
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.7-catlxmodt7sirns2di5pod576omq32hk
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-jnv5nut43juhm7esjn3tvxas6m67zbx4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-xxgqlmjyegrwwuq2pq4zaq7y6qojp3mz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-vdb3ozocdu73c4gl45gnzcjgscfye6mg
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-m626hzwxamau2a4cbu2hptq477qnufc4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.3-y26lmloj3u6romzd6j3xdfiib7gnkbga
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-dg34i2ae7omo77k6ntqkb6zi76gmeava
-==> Installing texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo [21/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo.spack
-==> Extracting texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo from binary cache
-==> texinfo: Successfully installed texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.19s.  Extract: 0.16s.  Relocate: 0.03s.  Total: 0.21s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-km6pqxpokzzltdfmos6imx5ema426pbo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.69-mnfnoa5qnshe7gdq7gnlkwowqxyrymia
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-d3cncglfvi2mpx7ytpfqnleyc233qcej
-==> Installing gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q [24/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q.spack
-==> Extracting gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q from binary cache
-==> gmp: Successfully installed gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.06s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-2fyiqrpectdqmzxrocihc3d6liwcog7q
-==> Installing mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2 [25/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2.spack
-==> Extracting mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2 from binary cache
-==> mpfr: Successfully installed mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.10s.  Extract: 0.08s.  Relocate: 0.01s.  Total: 0.11s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.0-qpadvjwbtznek4qmw4juuzibprsy6hq2
-==> Installing mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive [26/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive.spack
-==> Extracting mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive from binary cache
-==> mpc: Successfully installed mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.05s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-jueol5ka7fjf36klccht5uhmdlc5hive
-==> Installing gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw [27/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gawk-5.2.2/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw.spack
-==> Extracting gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw from binary cache
-==> gawk: Successfully installed gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.09s.  Extract: 0.06s.  Relocate: 0.02s.  Total: 0.10s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gawk-5.2.2-t4xydm4ppyli6uphcmirv4kov6qhtamw
-==> Installing gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw [28/28]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw.spack
-==> Extracting gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw from binary cache
-==> gcc: Successfully installed gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw
-  Search: 0.00s.  Fetch: 0.69s.	 Install: 12.14s.  Extract: 10.85s.  Relocate: 1.28s.  Total: 12.84s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw
+[+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
+==> 1;mWaiting for gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
+==> 1;mWaiting for zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr
+==> 1;mWaiting for gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
+==> 1;mWaiting for libsigsegv-2.14-jwy3fyzf5vk74lvkdpa6uf4rqlvfz7my
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-jwy3fyzf5vk74lvkdpa6uf4rqlvfz7my
+==> 1;mWaiting for autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x
+==> 1;mInstalling autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x 1;m[6/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-archive-2023.02.20/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x.spack
+==> Extracting autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x from binary cache
+==> autoconf-archive: Successfully installed autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x
+  Search: 0.00s.  Fetch: 0.22s.  Install: 0.22s.  Extract: 0.17s.  Relocate: 0.01s.  Total: 0.44s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-archive-2023.02.20-rq5jepflkcjrdarashhdmody3xoweq3x
+==> 1;mWaiting for xz-5.4.6-syttnntihi6n463mupmgl5e7kp5izxkz
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-syttnntihi6n463mupmgl5e7kp5izxkz
+==> 1;mWaiting for bzip2-1.0.8-qmy6dpipkzgotxrxqwxlnfsj5vbzkbcc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-qmy6dpipkzgotxrxqwxlnfsj5vbzkbcc
+==> 1;mWaiting for berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel
+==> 1;mWaiting for findutils-4.9.0-v4yzc2wwg33pu64bs64rfhu6k4nb3r33
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-v4yzc2wwg33pu64bs64rfhu6k4nb3r33
+==> 1;mWaiting for diffutils-3.10-mhzfdlk4s72qc2lndxqz4v6tcxkis5ez
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.10-mhzfdlk4s72qc2lndxqz4v6tcxkis5ez
+==> 1;mWaiting for ncurses-6.5-gk4xs2idegfiwoyaikamyhxkjrruxtxa
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-gk4xs2idegfiwoyaikamyhxkjrruxtxa
+==> 1;mWaiting for zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
+==> 1;mWaiting for libtool-2.4.7-lop7htuzty2qpcu6own5hdvs6evoa2bg
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-lop7htuzty2qpcu6own5hdvs6evoa2bg
+==> 1;mWaiting for m4-1.4.19-7d6p4sfrp4viryzbg5nxd2nsgm46d6x2
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-7d6p4sfrp4viryzbg5nxd2nsgm46d6x2
+==> 1;mWaiting for readline-8.2-cb6x34ku73pjh3f4t7rmpthnxuumw25x
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-cb6x34ku73pjh3f4t7rmpthnxuumw25x
+==> 1;mWaiting for libxml2-2.10.3-jv5es2yg6on55zdsb5xyvvg7xvqh6h4e
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-jv5es2yg6on55zdsb5xyvvg7xvqh6h4e
+==> 1;mWaiting for pigz-2.8-gk55zt73c5ekv3iogqn4lo4r66tuzv5z
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-gk55zt73c5ekv3iogqn4lo4r66tuzv5z
+==> 1;mWaiting for gdbm-1.23-ohbrdtphnhbycgd6p3btrxzjbtkwiqn6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-ohbrdtphnhbycgd6p3btrxzjbtkwiqn6
+==> 1;mWaiting for tar-1.34-wx4xfdnr4uzmlkbzpeuizbduh4e5klhj
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-wx4xfdnr4uzmlkbzpeuizbduh4e5klhj
+==> 1;mWaiting for perl-5.38.0-uliw6spxatqyj5bjxwtf6ckndktozqqo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-uliw6spxatqyj5bjxwtf6ckndktozqqo
+==> 1;mWaiting for gettext-0.22.5-eux6e6vvrk7uz4tx3vmjkyonhnvhseeu
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-eux6e6vvrk7uz4tx3vmjkyonhnvhseeu
+==> 1;mWaiting for autoconf-2.72-ljmgup2xu5fzbqhilaeonlgfasmo5hhh
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-ljmgup2xu5fzbqhilaeonlgfasmo5hhh
+==> 1;mWaiting for texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s
+==> 1;mInstalling texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s 1;m[24/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s.spack
+==> Extracting texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s from binary cache
+==> texinfo: Successfully installed texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.27s.  Extract: 0.19s.  Relocate: 0.06s.  Total: 0.28s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s
+==> 1;mWaiting for automake-1.16.5-p742yhmxrgeohdxdmiduznbou2rnf3bt
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-p742yhmxrgeohdxdmiduznbou2rnf3bt
+==> 1;mWaiting for gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq
+==> 1;mInstalling gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq 1;m[26/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq.spack
+==> Extracting gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq from binary cache
+==> gmp: Successfully installed gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.08s.  Extract: 0.05s.  Relocate: 0.02s.  Total: 0.09s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq
+==> 1;mWaiting for mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h
+==> 1;mInstalling mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h 1;m[27/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h.spack
+==> Extracting mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h from binary cache
+==> mpfr: Successfully installed mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.14s.  Extract: 0.10s.  Relocate: 0.02s.  Total: 0.15s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h
+==> 1;mWaiting for mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz
+==> 1;mInstalling mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz 1;m[28/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz.spack
+==> Extracting mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz from binary cache
+==> mpc: Successfully installed mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.09s.  Extract: 0.03s.  Relocate: 0.04s.  Total: 0.09s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz
+==> 1;mWaiting for gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3
+==> 1;mInstalling gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3 1;m[29/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gawk-5.3.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3.spack
+==> Extracting gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3 from binary cache
+==> gawk: Successfully installed gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.15s.  Extract: 0.08s.  Relocate: 0.04s.  Total: 0.16s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gawk-5.3.0-3duehf4iefmj7rfyv52adv2x4yahvwm3
+==> 1;mWaiting for gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh
+==> 1;mInstalling gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh 1;m[30/30]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh.spack
+==> Extracting gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh from binary cache
+==> Wrote new spec file to /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/lib/gcc/x86_64-pc-linux-gnu/12.3.0/specs
+==> gcc: Successfully installed gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh
+  Search: 0.00s.  Fetch: 0.39s.  Install: 16.89s.  Extract: 15.02s.  Relocate: 1.82s.  Total: 17.28s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh
