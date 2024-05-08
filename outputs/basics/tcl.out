@@ -10,7 +10,7 @@ $ spack install tcl
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4.spack
 ==> Extracting zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4 from binary cache
 ==> zlib-ng: Successfully installed zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-  Search: 0.00s.  Fetch: 0.23s.  Install: 0.12s.  Extract: 0.07s.  Relocate: 0.04s.  Total: 0.35s
+  Search: 0.00s.  Fetch: 0.19s.  Install: 0.08s.  Extract: 0.06s.  Relocate: 0.01s.  Total: 0.28s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
 ==> 1;mWaiting for tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
 ==> 1;mInstalling tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu 1;m[5/5]
@@ -18,49 +18,5 @@ $ spack install tcl
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spack
 ==> Extracting tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu from binary cache
 ==> tcl: Successfully installed tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-  Search: 0.00s.  Fetch: 0.02s.  Install: 1.33s.  Extract: 1.19s.  Relocate: 0.12s.  Total: 1.35s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-$ spack install tcl
-[+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-==> 1;mWaiting for gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-==> 1;mWaiting for gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-==> 1;mWaiting for zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-==> 1;mInstalling zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4 1;m[4/5]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4.spack
-==> Extracting zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4 from binary cache
-==> zlib-ng: Successfully installed zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-  Search: 0.00s.  Fetch: 0.21s.  Install: 0.09s.  Extract: 0.06s.  Relocate: 0.02s.  Total: 0.30s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-==> 1;mWaiting for tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-==> 1;mInstalling tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu 1;m[5/5]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spack
-==> Extracting tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu from binary cache
-==> tcl: Successfully installed tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-  Search: 0.00s.  Fetch: 0.02s.  Install: 1.33s.  Extract: 1.21s.  Relocate: 0.12s.  Total: 1.35s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-$ spack install tcl
-[+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-==> 1;mWaiting for gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-==> 1;mWaiting for gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-==> 1;mWaiting for zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-==> 1;mInstalling zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4 1;m[4/5]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4.spack
-==> Extracting zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4 from binary cache
-==> zlib-ng: Successfully installed zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-  Search: 0.00s.  Fetch: 0.23s.  Install: 0.11s.  Extract: 0.06s.  Relocate: 0.03s.  Total: 0.33s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-==> 1;mWaiting for tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-==> 1;mInstalling tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu 1;m[5/5]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spack
-==> Extracting tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu from binary cache
-==> tcl: Successfully installed tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-  Search: 0.00s.  Fetch: 0.02s.  Install: 1.25s.  Extract: 1.12s.  Relocate: 0.12s.  Total: 1.28s
+  Search: 0.00s.  Fetch: 0.02s.  Install: 1.23s.  Extract: 1.11s.  Relocate: 0.12s.  Total: 1.25s
 [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
