@@ -7,6 +7,8 @@ project="$(dirname "$0")"
 # clean things up before starting this first script
 # rm -rf "$raw_outputs" ~/spack ~/.spack ~/.gnupg
 
+export SPACK_COLOR=never
+
 # basic installation
 example basics/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
 example basics/clone           "cd ~/spack"
