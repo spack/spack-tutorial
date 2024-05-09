@@ -1,6 +1,6 @@
 $ spack concretize
 ==> Starting concretization pool with 2 processes
-==> Environment concretized in 37.79 seconds
+==> Environment concretized in 37.77 seconds
 ==> Concretized gcc@12%gcc@11
 [+]  hc3fmfi  gcc@12.3.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages='c,c++,fortran' arch=linux-ubuntu22.04-x86_64_v3
 [+]  mhzfdlk	  ^diffutils@3.10%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
@@ -281,7 +281,7 @@ $ spack concretize
  -   p6vzj63	  ^python-venv@1.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
 
 ==> Concretized py-scipy%gcc@12 ^netlib-lapack
- -   gchqgja  py-scipy@1.13.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
+ -   arwcuqh  py-scipy@1.13.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
 [+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
 [e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 [+]  vvhuv65	  ^netlib-lapack@3.11.0%gcc@12.3.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
@@ -300,12 +300,12 @@ $ spack concretize
  -   5kcqkc6	      ^py-pyproject-metadata@0.7.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
  -   rzruklu		  ^py-packaging@23.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
  -   vioo2gj		      ^py-flit-core@3.9.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
- -   veofvbh	  ^py-numpy@1.26.4%gcc@12.3.0 build_system=python_pip patches=873745d arch=linux-ubuntu22.04-x86_64_v3
+ -   lf5ml2y	  ^py-numpy@1.26.4%gcc@12.3.0 build_system=python_pip patches=873745d arch=linux-ubuntu22.04-x86_64_v3
  -   uc7d3fn	  ^py-pip@23.1.2%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
  -   ts4hcnh	  ^py-pybind11@2.12.0%gcc@12.3.0~ipo build_system=cmake build_type=Release generator=ninja arch=linux-ubuntu22.04-x86_64_v3
  -   53tomx2	      ^ninja@1.11.1%gcc@12.3.0+re2c build_system=generic arch=linux-ubuntu22.04-x86_64_v3
  -   mfbo7dd		  ^re2c@2.2%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -   roib6u4	  ^py-pythran@0.15.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
+ -   pztxizz	  ^py-pythran@0.15.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
  -   54x2nx3	      ^py-beniget@0.4.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
  -   qeywms6	      ^py-gast@0.5.4%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
  -   yyr4tu6	      ^py-ply@3.11%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3

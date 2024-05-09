@@ -84,41 +84,40 @@ example stacks/view-1       "ls ~/stacks/views/default"
 example stacks/view-1       "ls ~/stacks/views/default/lib"
 example stacks/view-1       "ls ~/stacks/views/full"
 
-#example stacks/modules-0 "spack add lmod@8.7.18 %gcc@11"
-#example stacks/modules-0 "spack concretize"
-#example stacks/modules-0 "spack install"
-#
-#. "$(spack location -i lmod)/lmod/lmod/init/bash"
-#
-#example --tee stacks/modules-1 "module --version"
-#
-#cat "$project/stacks/examples/8.spack.stack.yaml" > spack.yaml
-#spack module lmod refresh -y
-#module use "$PWD/modules/linux-ubuntu22.04-x86_64/Core"
-#
-#example --tee stacks/modules-2 "module av"
-#
-#example --tee stacks/modules-3 "module load gcc"
-#module load gcc
-#example stacks/modules-3 "which gcc"
-#example stacks/modules-3 "gcc --version"
-#example --tee stacks/modules-3 "module av"
-#
-#example --tee stacks/modules-3 "module unload gcc"
-#module unload gcc
-#
-#cat "$project/stacks/examples/9.spack.stack.yaml" > spack.yaml
-#example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
-#
-#example --tee stacks/modules-5 "module load gcc"
-#module load gcc
-#example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
-#example --tee stacks/modules-5 "module av"
-#module load openmpi openblas netlib-scalapack
-#example --tee stacks/modules-5 "module load mpich"
-#module load mpich
-#example --tee stacks/modules-5 "module load netlib-lapack"
-#module load netlib-lapack
-#example --tee stacks/modules-5 "module purge"
-#module purge
-#
+example stacks/modules-0 "spack add lmod@8.7.18 %gcc@11"
+example stacks/modules-0 "spack concretize"
+example stacks/modules-0 "spack install"
+
+. "$(spack location -i lmod)/lmod/lmod/init/bash"
+
+example --tee stacks/modules-1 "module --version"
+
+cat "$project/stacks/examples/8.spack.stack.yaml" > ~/stacks/spack.yaml
+spack module lmod refresh -y
+module use "$HOME/stacks/modules/linux-ubuntu22.04-x86_64/Core"
+
+example --tee stacks/modules-2 "module av"
+
+example --tee stacks/modules-3 "module load gcc"
+module load gcc
+example stacks/modules-3 "which gcc"
+example stacks/modules-3 "gcc --version"
+example --tee stacks/modules-3 "module av"
+
+example --tee stacks/modules-3 "module unload gcc"
+module unload gcc
+
+cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
+
+example --tee stacks/modules-5 "module load gcc"
+module load gcc
+example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
+example --tee stacks/modules-5 "module av"
+module load openmpi openblas netlib-scalapack
+example --tee stacks/modules-5 "module load mpich"
+module load mpich
+example --tee stacks/modules-5 "module load netlib-lapack"
+module load netlib-lapack
+example --tee stacks/modules-5 "module purge"
+module purge
