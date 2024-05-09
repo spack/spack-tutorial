@@ -40,26 +40,35 @@ example stacks/unify-3 "spack concretize"
 example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^openmpi"
 example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^mpich"
 
-cat "$project/stacks/examples/2.spack.stack.yaml" > spack.yaml
+cat "$project/stacks/examples/2.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-0 "spack concretize"
 example stacks/concretize-0 "spack install"
 
 example stacks/concretize-01 "spack find"
 
-#cat "$project/stacks/examples/3.spack.stack.yaml" > spack.yaml
-#spack concretize
-#spack install
-#example stacks/concretize-1 "spack find -l py-scipy"
-#
-#cat "$project/stacks/examples/5.spack.stack.yaml" > spack.yaml
-#example stacks/concretize-2 "spack concretize -f"
-#example stacks/concretize-2 "spack find -c"
-#
-#example stacks/concretize-3 "export SPACK_STACK_USE_OPENMPI=1"
-#export SPACK_STACK_USE_OPENMPI=1
-#example stacks/concretize-3 "spack concretize -f"
-#example stacks/concretize-3 "spack find -c"
-#
+cat "$project/stacks/examples/3.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/concretize-1 "spack concretize"
+example stacks/concretize-1 "spack find -l"
+
+cat "$project/stacks/examples/4.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/concretize-2 "spack concretize"
+
+cat "$project/stacks/examples/4bis.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/concretize-3 "spack concretize"
+example stacks/concretize-3 "spack install"
+
+example stacks/concretize-4 "spack find -ld py-scipy"
+
+cat "$project/stacks/examples/5.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/concretize-5 "spack concretize"
+example stacks/concretize-5 "spack find -cl netlib-scalapack"
+
+example stacks/concretize-6 "export SPACK_STACK_USE_OPENMPI=1"
+export SPACK_STACK_USE_OPENMPI=1
+fake_example stacks/concretize-6 "spack concretize" "/bin/true"
+spack concretize
+example stacks/concretize-6 "spack find -cl netlib-scalapack"
+
 #cat "$project/stacks/examples/6.spack.stack.yaml" > spack.yaml
 #
 #example stacks/view-0       "spack concretize"

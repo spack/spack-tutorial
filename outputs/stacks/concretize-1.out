@@ -1,14 +1,56 @@
-$ spack find -l py-scipy
+$ spack concretize
+$ spack find -l
 ==> In environment /home/spack/stacks
-==> Root specs
+==> 5 root specs
 -- no arch / gcc@11 ---------------------------------------------
-------- gcc@12%gcc@11
+[+] hc3fmfi gcc@12%gcc@11
 
 -- no arch / gcc@12 ---------------------------------------------
-------- netlib-scalapack%gcc@12	  ------- netlib-scalapack%gcc@12   ------- py-scipy%gcc@12
-------- netlib-scalapack%gcc@12	  ------- netlib-scalapack%gcc@12
+[+] q7ooqre netlib-scalapack%gcc@12  [+] cknsmak netlib-scalapack%gcc@12
+[+] bhtne2a netlib-scalapack%gcc@12  [+] 4kiidhc netlib-scalapack%gcc@12
 
 ==> Installed packages
+-- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
+ljmgup2 autoconf@2.72		     eux6e6v gettext@0.22.5   uliw6sp perl@5.38.0
+rq5jepf autoconf-archive@2023.02.20  a7drdl4 glibc@2.35       gk55zt7 pigz@2.8
+p742yhm automake@1.16.5 	     qfrotcc gmake@4.4.1      h3x3l7s pkgconf@2.2.0
+br27jq6 berkeley-db@18.1.40	     5znqdnf gmp@6.2.1	      cb6x34k readline@8.2
+qmy6dpi bzip2@1.0.8		     jwy3fyz libsigsegv@2.14  wx4xfdn tar@1.34
+mhzfdlk diffutils@3.10		     lop7htu libtool@2.4.7    y6pez2a texinfo@7.0.3
+v4yzc2w findutils@4.9.0 	     jv5es2y libxml2@2.10.3   syttnnt xz@5.4.6
+3duehf4 gawk@5.3.0		     7d6p4sf m4@1.4.19	      xqtp62n zlib-ng@2.1.6
+hc3fmfi gcc@12.3.0		     t7z22ep mpc@1.3.1	      ew3aaos zstd@1.5.6
+f47qm6q gcc-runtime@11.4.0	     c42jb45 mpfr@4.2.1
+ohbrdtp gdbm@1.23		     gk4xs2i ncurses@6.5
+
 -- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-b6ldv5o py-scipy@1.11.3
-==> 1 installed package
+xyma4ep amdblis@4.2			    upw4yvr libxml2@2.10.3
+so7orfs autoconf@2.72			    lvqszzi m4@1.4.19
+sssghcu automake@1.16.5 		    kkrar7t mpich@4.2.1
+wekshz6 berkeley-db@18.1.40		    bu5gu2m ncurses@6.5
+nleqxiv bison@3.8.2			    vvhuv65 netlib-lapack@3.11.0
+q4g6mhd bzip2@1.0.8			    q7ooqre netlib-scalapack@2.2.0
+a2gxp4h ca-certificates-mozilla@2023-05-30  4kiidhc netlib-scalapack@2.2.0
+636pa3o cmake@3.27.9			    bhtne2a netlib-scalapack@2.2.0
+7du7zou curl@8.7.1			    cknsmak netlib-scalapack@2.2.0
+6qrh24v diffutils@3.10			    tmufr6s nghttp2@1.57.0
+syod3as expat@2.6.2			    ycvznwt numactl@2.0.14
+lu6imec findutils@4.9.0 		    eyhwdj2 openblas@0.3.26
+hbicyv7 gcc-runtime@12.3.0		    itcqz6x openmpi@5.0.3
+e6zxtqt gdbm@1.23			    witkwii openssh@9.7p1
+x2uvezl gettext@0.22.5			    oxocupu openssl@3.3.0
+gkoh6ax glibc@2.35			    ucv4k3y perl@5.38.0
+3eefcyu gmake@4.4.1			    7lweqai pigz@2.8
+ui75hni hwloc@2.9.1			    2t42aln pkgconf@2.2.0
+nn5dx4c krb5@1.20.1			    dsrozes pmix@5.0.1
+h3xlyij libbsd@0.12.1			    ciwhyra python@3.11.7
+ri7efzb libedit@3.1-20230828		    lhm6hsy readline@8.2
+3jhmflq libevent@2.1.12 		    q5uuhah sqlite@3.43.2
+rgjhj7a libfabric@1.21.0		    ddxcrg5 tar@1.34
+cl63ri3 libffi@3.4.6			    ofkdrzu util-linux-uuid@2.38.1
+ri2ny52 libmd@1.0.4			    5ir45vn util-macros@1.19.3
+zf3qbx3 libpciaccess@0.17		    f7j6s4z xz@5.4.6
+y3txxwv libsigsegv@2.14 		    pztnzd3 yaksa@0.3
+h3qfbro libtool@2.4.7			    klmqckv zlib-ng@2.1.6
+m7la4pp libxcrypt@4.4.35		    vvj7472 zstd@1.5.6
+==> 89 installed packages

@@ -223,61 +223,60 @@ As we can see we have our four variations of ``netlib-scalapack`` installed.
 Reusable definitions
 ^^^^^^^^^^^^^^^^^^^^
 
-Finally, we can also exclude some values from a matrix:
+So far, we have seen how we can use spec matrices to generate cross-product specs
+from rows containing a list of constraints. A common situation you will encounter
+with large deployments is the necessity to add multiple matrices to the list of specs,
+that possibly share some of those rows.
+
+To reduce the amount of duplication needed in the manifest file, and thus the maintenance
+burden for people maintaining it, Spack allows to *define* lists of constraints under
+the ``definitions`` attribute, and expand them later when needed.
+Let's rewrite our manifest in that sense:
 
 .. literalinclude:: outputs/stacks/examples/3.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 14-19
+   :emphasize-lines: 6-10,14-18
 
-Here we constructed a list with both ``py-scipy ^netlib-lapack`` and ``py-scipy ^openblas``,
-and excluded the former from the final output. This example might seem a bit silly right now,
-where we have a single spec, but it can be really useful to keep configuration file tidy
-in presence of multiple root specs or when reusing named lists (as we'll see next).
-
-Let's concretize the environment and install the specs once again:
-
-.. code-block:: console
-
-   $ spack concretize -f
-   $ spack install
-
-At this point the environment contains only ``py-scipy ^openblas``. Let's verify it:
+And check that re-concretizing won't change the environment:
 
 .. literalinclude:: outputs/stacks/concretize-1.out
    :language: console
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Named lists in spack environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Spack also allows for named lists in environments. We can use these
-lists to clean up our example above. These named lists are defined in
-the ``definitions`` key of the ``spack.yaml`` file. Our lists today
-will be simple lists of packages or constraints, but in more
-complicated examples the named lists can include matrices as well.
-Let's clean up our file a bit now:
+Now we can use those definitions to add e.g. serial packages built against the LAPACK libraries.
+Let's try to do that by using ``py-scypy`` as an example:
 
 .. literalinclude:: outputs/stacks/examples/4.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 6-11
+   :emphasize-lines: 11,20-23
 
-This syntax may take some time getting used to. Specifically, matrices and
-references to named lists are always "splatted" into their current
-position, rather than included as a list object in yaml. This may seem
-counterintuitive, but it becomes important when we look to combine lists.
+.. literalinclude:: outputs/stacks/concretize-2.out
+   :language: console
 
-Notice that the ``mpi`` constraints can be declared as packages and then applied
-as dependencies using the ``$^`` syntax. The same is true for compilers (using ``$%``),
-so we're showing both syntaxes here.
+Another ability that is often useful, is that of excluding specific entries from a cross-product matrix.
+We can do that with the ``exclude`` keyword, in the same item as the ``matrix``. Let's try to remove
+``py-scipy ^netlib-lapack`` from our matrix:
+
+.. literalinclude:: outputs/stacks/examples/4bis.spack.stack.yaml
+   :language: yaml
+   :emphasize-lines: 24-25
+
+Let's concretize the environment and install the specs once again:
+
+.. literalinclude:: outputs/stacks/concretize-3.out
+   :language: console
+
+At this point the environment contains only ``py-scipy ^openblas``. Let's verify it:
+
+.. literalinclude:: outputs/stacks/concretize-4.out
+   :language: console
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Conditional definitions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Spec list definitions can also be conditioned on a ``when``
-clause. The ``when`` clause is a python conditional that is evaluated
-in a restricted environment. The variables available in ``when``
-clauses are:
+Spec list definitions can also be conditioned on a ``when`` clause. The ``when`` clause
+is a python conditional that is evaluated in a restricted environment. The variables
+available in ``when`` clauses are:
 
 ================= ===========
 variable name     value
@@ -299,23 +298,31 @@ environment variable is set. To do so we could write the following ``spack.yaml`
    :language: yaml
    :emphasize-lines: 7-9
 
-Named lists in the Spack stack are concatenated, so we can define our MPI list
+Different definitions of lists with the same name are concatenated, so we can define our MPI list
 in one place unconditionally, and then conditionally append one or more values to it.
 
 Let's first check what happens when we concretize and don't set any environment variable:
 
-.. literalinclude:: outputs/stacks/concretize-2.out
+.. literalinclude:: outputs/stacks/concretize-5.out
    :language: console
 
 As we expected now we are only using ``mpich`` as an MPI provider. To get ``openmpi`` back
 we just need to set the appropriate environment variable:
 
-.. literalinclude:: outputs/stacks/concretize-3.out
+.. literalinclude:: outputs/stacks/concretize-6.out
    :language: console
 
-----------------
+.. TODO: create a mirror of the software stack, version spack.yaml and lockfile etc.
+
+-----------------------------------
+Make the software stack easy to use
+-----------------------------------
+
+
+
+^^^^^^^^^^^^^^^^
 View descriptors
-----------------
+^^^^^^^^^^^^^^^^
 
 We told Spack not to create a view for this stack earlier because
 simple views won't work with stacks. We've been concretizing multiple
@@ -350,9 +357,9 @@ all packages, including implicit dependencies, into the view. The
 Now we see only the root libraries in the default view.
 The rest are hidden, but are still available in the full view.
 
-------------
+^^^^^^^^^^^^
 Module files
-------------
+^^^^^^^^^^^^
 
 Module files are another very popular way to let your end users profit from
 the software you installed. Here we'll  show how you can incorporate the configuration
