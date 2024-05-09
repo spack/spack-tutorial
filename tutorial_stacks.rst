@@ -99,47 +99,129 @@ The manifest file at this point looks like:
 
 We are ready to build more software with our newly installed GCC!
 
--------------
+------------------------
+Install a software stack
+------------------------
+
+Now that we have a compiler ready, the next objective is to build software with it.
+We'll start by trying to add different versions of ``netlib-scalapack``, linked against
+different MPI implementations:
+
+.. literalinclude:: outputs/stacks/unify-0.out
+   :language: console
+
+If we try to concretize the environment, we'll get an error:
+
+.. literalinclude:: outputs/stacks/unify-1.out
+   :language: console
+
+The error message is quite verbose, and admittedly complicated, but at the end it gives
+a useful hint:
+
+.. code-block::
+
+   You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
+
+Let's see what that means.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Tuning concretizer options for a stack
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Whenever we concretize an environment with more than one root spec, we can configure Spack to be more
+or less strict with duplicate nodes in the sub-DAG obtained by following link and run edges starting
+from the roots. We usually call this sub-DAG the *root unification set*.
+
+A diagram might help to better visualize the concept:
+
+.. image:: _static/images/stacks-unify.svg
+
+The image above represents the current environment, with our three root specs highlighted by a thicker
+dashed line. Any node that could be reached following a link or run edge is part of the root unification
+set. Pure build dependencies might fall outside of it.
+
+The config option determining which nodes are allowed to be in the root unification set is ``concretizer:unify``.
+Let's check its value:
+
+.. literalinclude:: outputs/stacks/unify-2.out
+   :language: console
+
+``concretizer:unify:true`` means that only a single configuration for each package can be present. This value
+is good for single project environments, since it ensures we can construct a view of all the software, with the
+usual structure expected on a Unix-ish system, and without risks of collisions between installations.
+
+Clearly, we can't respect this requirement, since our roots already contain two different configurations of
+``netlib-scalapack``. Let's set the value to ``false``, and try to re-concretize:
+
+.. literalinclude:: outputs/stacks/unify-3.out
+   :language: console
+
+This time concretization succeeded. Setting ``concretizer:unify:false`` is effectively concretizing each root
+spec on its own, and then merging the results into the environment. This allows us to have the duplicates we need.
+
+.. note::
+
+   If the environment is expected to have only a few duplicate nodes, then there's another value we might consider:
+
+   .. code-block:: console
+
+      $ spack config add concretizer:unify:when_possible
+
+   With this option Spack will try to unify the environment in an eager way, solving it in multiple rounds.
+   The concretization at round ``n`` will contain all the specs that could not be unified at round ``n-1``,
+   and will consider all the specs from previous rounds for reuse.
+
+^^^^^^^^^^^^^
 Spec matrices
--------------
+^^^^^^^^^^^^^
 
+Let's expand our stack further and consider also linking against different LAPACK providers. We could, of
+course, add new specs explicitly:
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Install software against different MPIs and LAPACKs
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. literalinclude:: outputs/stacks/unify-4.out
+   :language: console
 
-Let's now try to install 4 different versions of ``netlib-scalapack``, compiled with ``gcc@12.3.0``
-and linked against different LAPACK and MPI providers. The simplest way to express a cross-product
-like this in Spack is through a matrix:
-
-.. code-block:: console
-
-   $ spack config edit
+This way of proceeding, though, will become very tedious as soon as more software is requested. The best
+way to express a cross-product like this in Spack is instead through a matrix:
 
 .. literalinclude:: outputs/stacks/examples/2.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 9-13,16
+   :emphasize-lines: 9-13
 
-Notice that we have to change the concretizer configuration here. By
-default, environments co-concretize all specs to be compatible, but
-that's simply impossible in an environment with multiple specs for
-each package. We set the concretizer unification to ``false`` to allow all
-of these builds in one environment:
+Matrices will expand to the cross-product of their rows, so this matrix:
+
+.. code-block:: yaml
+
+   - matrix:
+    - ["netlib-scalapack"]
+    - ["^openmpi", "^mpich"]
+    - ["^openblas", "^netlib-lapack"]
+    - ["%gcc@12"]
+
+is equivalent to this list of specs:
+
+.. code-block:: yaml
+
+   - "netlib-scalapack %gcc@12 ^openblas ^openmpi"
+   - "netlib-scalapack %gcc@12 ^openblas ^mpich"
+   - "netlib-scalapack %gcc@12 ^netlib-lapack ^openmpi"
+   - "netlib-scalapack %gcc@12 ^netlib-lapack ^mpich"
+
+We are now ready to concretize and install the environment:
 
 .. literalinclude:: outputs/stacks/concretize-0.out
    :language: console
 
-The matrix operation does exactly what it looks like it does. It performs
-the cross-product of the spec constraints appearing in the lists. This
-allows us to deploy software that will satisfy the expectations of HPC users.
+Let's double check which specs we have installed so far:
 
-.. note::
+.. literalinclude:: outputs/stacks/concretize-01.out
+   :language: console
 
-   Depending on the use case, for software deployment we can set concretizer
-   unification either to ``false`` or to ``when_possible``. The latter option
-   will cause Spack to allow deviations based on the specific abstract specs
-   we requested, but otherwise minimize the proliferation of duplicate specs
-   in the environment.
+As we can see we have our four variations of ``netlib-scalapack`` installed.
+
+^^^^^^^^^^^^^^^^^^^^
+Reusable definitions
+^^^^^^^^^^^^^^^^^^^^
 
 Finally, we can also exclude some values from a matrix:
 

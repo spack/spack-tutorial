@@ -26,12 +26,26 @@ example stacks/compiler-find-0 'spack compiler find "$(spack location -i gcc)"'
 example stacks/compiler-find-1 "spack location -i gcc"
 
 example stacks/compiler-list-0 "spack compiler list"
-#
-#cat "$project/stacks/examples/2.spack.stack.yaml" > spack.yaml
-#example stacks/concretize-0 "spack concretize"
-#example stacks/concretize-0 "spack install"
-#example stacks/concretize-0 "spack find"
-#
+
+example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^openmpi"
+example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^mpich"
+
+example --expect-error stacks/unify-1 "spack concretize"
+
+example stacks/unify-2 "spack config get concretizer | grep unify"
+
+example stacks/unify-3 "spack config add concretizer:unify:false"
+example stacks/unify-3 "spack concretize"
+
+example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^openmpi"
+example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^mpich"
+
+cat "$project/stacks/examples/2.spack.stack.yaml" > spack.yaml
+example stacks/concretize-0 "spack concretize"
+example stacks/concretize-0 "spack install"
+
+example stacks/concretize-01 "spack find"
+
 #cat "$project/stacks/examples/3.spack.stack.yaml" > spack.yaml
 #spack concretize
 #spack install
