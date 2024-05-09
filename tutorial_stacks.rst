@@ -43,49 +43,61 @@ two main mechanisms that Spack provides for that: views and module files.
 Setup the compiler
 ------------------
 
+The first step to build our stack is to setup the compiler we want to use later.
+This is, currently, an iterative process that can be done in two ways:
 
-Let's create a new independent environment and setup the compiler we want to use to build
-our stack:
+ 1. Install the compiler first, then register it in the environment
+ 2. Use a second environment just for the compiler
+
+In the following we'll use the first approach. For people interested, an example
+of the latter approach can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
+
+Let's start by creating an environment in a directory of our choice:
 
 .. literalinclude:: outputs/stacks/setup-0.out
    :language: console
+
+Now we can add from the command line a new compiler. We'll also disable the generation of views
+for the time being, as we'll come back to this topic later in the tutorial:
+
+.. literalinclude:: outputs/stacks/setup-1.out
+   :language: console
+
+What you should see on screen now is the following ``spack.yaml`` file:
 
 .. literalinclude:: outputs/stacks/examples/0.spack.stack.yaml
    :language: yaml
    :emphasize-lines: 9
 
-For now, we'll avoid the view directive. We'll come back to this later. Let's
-concretize and install our compiler:
+The next step is to concretize and install our compiler:
 
-.. code-block:: console
-
-   $ spack concretize -f
-   $ spack install
+.. literalinclude:: outputs/stacks/setup-2.out
+   :language: console
 
 Finally, let's register it as a new compiler in the environment:
 
 .. literalinclude:: outputs/stacks/compiler-find-0.out
    :language: console
 
-Asking Spack to list the compilers we have available should confirm the
-presence of ``gcc@12.3.0``:
+The ``spack location -i`` command returns the installation
+prefix for the spec being queried:
+
+.. literalinclude:: outputs/stacks/compiler-find-1.out
+   :language: console
+
+This might be useful in general when scripting Spack commands, as the
+example above shows. Listing the compilers now shows the presence
+of ``gcc@12.3.0``:
 
 .. literalinclude:: outputs/stacks/compiler-list-0.out
    :language: console
 
-The manifest file at this point should look like:
+The manifest file at this point looks like:
 
 .. literalinclude:: outputs/stacks/examples/1.spack.stack.yaml
    :language: yaml
 
-
-.. note::
-
-   Setting up a Spack installed compiler for reuse in the same environment is, currently,
-   an iterative process. This requires either to install the compiler first - like done here,
-   or to use more than one environment. An example of the latter approach can be
-   found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
-
+We are ready to build more software with our newly installed GCC!
 
 -------------
 Spec matrices
