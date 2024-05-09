@@ -73,6 +73,14 @@ software, simply type ``spack install <package_name>``.
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
 
+You will see Spack installed ``gmake``, ``gcc-runtime``, and
+``glibc``. The ``glibc`` and ``gcc-runtime`` packages are
+automatically tracked by Spack to manage consistency requirements
+among compiler runtimes. These do not represent separate installs from
+source, but represent aspects of the compiler Spack used for the
+install. For the rest of this section, we will ignore these components
+and focus on the rest of the install.
+
 Spack can install software either from source or from a binary
 cache. Packages in the binary cache are signed with GPG for
 security. For the tutorial we have prepared a binary cache so you
