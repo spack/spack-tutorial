@@ -3,7 +3,6 @@
 # It describes a set of packages to be installed, along with
 # configuration settings.
 spack:
-  # add package specs to the `specs` list
   specs:
   - gcc@12%gcc@11
   view: false
@@ -13,10 +12,10 @@ spack:
   - compiler:
       spec: gcc@=12.3.0
       paths:
-        cc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gcc
-        cxx: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/g++
-        f77: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran
-        fc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-chmemdiqoycjlxz2myvdxqzt5don54uw/bin/gfortran
+        cc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gcc
+        cxx: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/g++
+        f77: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gfortran
+        fc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gfortran
       flags: {}
       operating_system: ubuntu22.04
       target: x86_64

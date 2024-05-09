@@ -1,0 +1,83 @@
+$ spack find -ld py-scipy
+==> In environment /home/spack/stacks
+==> 6 root specs
+-- no arch / gcc@11 ---------------------------------------------
+[+] hc3fmfi gcc@12%gcc@11
+
+
+-- no arch / gcc@12 ---------------------------------------------
+[+] q7ooqre netlib-scalapack%gcc@12
+     -	------- mpich
+     -	------- netlib-lapack
+
+[+] bhtne2a netlib-scalapack%gcc@12
+     -	------- mpich
+     -	------- openblas
+
+[+] cknsmak netlib-scalapack%gcc@12
+     -	------- netlib-lapack
+     -	------- openmpi
+
+[+] 4kiidhc netlib-scalapack%gcc@12
+     -	------- openblas
+     -	------- openmpi
+
+[+] 3accefe py-scipy%gcc@12
+     -	------- openblas
+
+
+==> Installed packages
+-- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
+3accefe py-scipy@1.13.0
+hbicyv7     gcc-runtime@12.3.0
+gkoh6ax     glibc@2.35
+eyhwdj2     openblas@0.3.26
+3eefcyu 	gmake@4.4.1
+ucv4k3y 	perl@5.38.0
+wekshz6 	    berkeley-db@18.1.40
+2t42aln     pkgconf@2.2.0
+bsef5cj     py-cython@3.0.8
+7iqxefn 	py-setuptools@69.2.0
+ol54hmz     py-meson-python@0.15.0
+the5myj 	meson@1.3.2
+5kcqkc6 	py-pyproject-metadata@0.7.1
+rzruklu 	    py-packaging@23.1
+vioo2gj 		py-flit-core@3.9.0
+lmjalxf     py-numpy@1.26.4
+uc7d3fn     py-pip@23.1.2
+ts4hcnh     py-pybind11@2.12.0
+636pa3o 	cmake@3.27.9
+7du7zou 	    curl@8.7.1
+tmufr6s 		nghttp2@1.57.0
+53tomx2 	ninja@1.11.1
+mfbo7dd 	    re2c@2.2
+yb2yrlm     py-pythran@0.15.0
+54x2nx3 	py-beniget@0.4.1
+qeywms6 	py-gast@0.5.4
+yyr4tu6 	py-ply@3.11
+aqfgdmf     py-wheel@0.41.2
+ciwhyra     python@3.11.7
+q4g6mhd 	bzip2@1.0.8
+6qrh24v 	    diffutils@3.10
+syod3as 	expat@2.6.2
+h3xlyij 	    libbsd@0.12.1
+ri2ny52 		libmd@1.0.4
+e6zxtqt 	gdbm@1.23
+x2uvezl 	gettext@0.22.5
+upw4yvr 	    libxml2@2.10.3
+ddxcrg5 	    tar@1.34
+7lweqai 		pigz@2.8
+vvj7472 		zstd@1.5.6
+cl63ri3 	libffi@3.4.6
+m7la4pp 	libxcrypt@4.4.35
+bu5gu2m 	ncurses@6.5
+oxocupu 	openssl@3.3.0
+a2gxp4h 	    ca-certificates-mozilla@2023-05-30
+lhm6hsy 	readline@8.2
+q5uuhah 	sqlite@3.43.2
+ofkdrzu 	util-linux-uuid@2.38.1
+f7j6s4z 	xz@5.4.6
+klmqckv 	zlib-ng@2.1.6
+p6vzj63     python-venv@1.0
+
+==> 1 installed package

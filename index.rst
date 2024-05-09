@@ -84,7 +84,7 @@ Full contents:
 
 .. toctree::
    :maxdepth: 3
-   :caption: Tutorial (ISC24)
+   :caption: Tutorial
 
    tutorial_basics
    tutorial_environments

@@ -4,9 +4,7 @@
 # configuration settings.
 spack:
   definitions:
-    - mpis: [mpich]
-    - mpis: [openmpi]
-      when: 'env.get("SPACK_STACK_USE_OPENMPI", "") == "1"'
+    - mpis: [ openmpi, mpich ]
     - lapacks: [ openblas, netlib-lapack ]
     - compilers: [ "gcc@12" ]
     - mpi_packages: [ netlib-scalapack ]
@@ -24,7 +22,7 @@ spack:
     - [$^lapacks]
     - [$%compilers]
     exclude:
-    - "py-scipy ^netlib-lapack"
+      - "py-scipy ^netlib-lapack"
   view: false
   concretizer:
     unify: false
