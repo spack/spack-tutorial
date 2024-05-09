@@ -33,7 +33,7 @@ recent than the one provided by the system.
 Setup the compiler
 ^^^^^^^^^^^^^^^^^^
 
-Let's create a new anonymous environment and setup the compiler we want to use to build
+Let's create a new independent environment and setup the compiler we want to use to build
 our stack:
 
 .. literalinclude:: outputs/stacks/setup-0.out

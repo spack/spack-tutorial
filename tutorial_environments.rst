@@ -633,7 +633,7 @@ as environment-based software releases and CI/CD.
 Let's create an *independent* environment from scratch for a simple
 project:
 
-.. literalinclude:: outputs/environments/anonymous-create-1.out
+.. literalinclude:: outputs/environments/independent-create-1.out
    :language: console
 
 
@@ -645,7 +645,7 @@ it must be referenced by its directory path.
 Let's see what really happened with this command by listing the
 directory contents and looking at the configuration file:
 
-.. literalinclude:: outputs/environments/anonymous-create-2.out
+.. literalinclude:: outputs/environments/independent-create-2.out
    :language: console
 
 
@@ -685,7 +685,7 @@ should now contain the following entries:
 
 Now activate the environment and install the packages:
 
-.. literalinclude:: outputs/environments/install-anonymous-1.out
+.. literalinclude:: outputs/environments/install-independent-1.out
    :language: console
 
 
@@ -704,7 +704,7 @@ outside of the environment using the command line interface as before.
 
 For example, let's add ``hdf5`` and look at our file:
 
-.. literalinclude:: outputs/environments/add-anonymous-1.out
+.. literalinclude:: outputs/environments/add-independent-1.out
    :language: console
 
 
@@ -719,7 +719,7 @@ it appears in the configuration file's spec list.
 
 Now use ``spack remove`` to remove the spec from the configuration:
 
-.. literalinclude:: outputs/environments/remove-anonymous-1.out
+.. literalinclude:: outputs/environments/remove-independent-1.out
    :language: console
 
 and we see that the spec *was* removed from the spec list of our

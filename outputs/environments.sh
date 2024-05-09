@@ -128,30 +128,30 @@ example environments/env-list-2      "spack env list"
 
 example environments/cat-config-1 "cat spack.yaml"
 
-example environments/anonymous-create-1 "cd"
+example environments/independent-create-1 "cd"
 cd || exit
-example environments/anonymous-create-1 "mkdir code"
-example environments/anonymous-create-1 "cd code"
+example environments/independent-create-1 "mkdir code"
+example environments/independent-create-1 "cd code"
 cd code || exit
-example environments/anonymous-create-1 "spack env create -d ."
+example environments/independent-create-1 "spack env create -d ."
 
-example environments/anonymous-create-2 "ls"
-example environments/anonymous-create-2 "cat spack.yaml"
+example environments/independent-create-2 "ls"
+example environments/independent-create-2 "cat spack.yaml"
 
 example environments/env-list-3      "spack env list"
 
-example --tee environments/install-anonymous-1 "spack env activate ."
+example --tee environments/install-independent-1 "spack env activate ."
 spack env activate .
 # mock a hand-edit from before we activated
 spack add trilinos
 spack add openmpi
-example environments/install-anonymous-1 "spack install"
+example environments/install-independent-1 "spack install"
 
-example environments/add-anonymous-1     "spack add hdf5@5.5.1"
-example environments/add-anonymous-1     "cat spack.yaml"
+example environments/add-independent-1     "spack add hdf5@5.5.1"
+example environments/add-independent-1     "cat spack.yaml"
 
-example environments/remove-anonymous-1     "spack remove hdf5"
-example environments/remove-anonymous-1     "cat spack.yaml"
+example environments/remove-independent-1     "spack remove hdf5"
+example environments/remove-independent-1     "cat spack.yaml"
 
 example environments/lockfile-1          "jq < spack.lock | head -30"
 
