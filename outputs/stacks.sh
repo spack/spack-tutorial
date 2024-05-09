@@ -69,21 +69,21 @@ fake_example stacks/concretize-6 "spack concretize" "/bin/true"
 spack concretize
 example stacks/concretize-6 "spack find -cl netlib-scalapack"
 
-#cat "$project/stacks/examples/6.spack.stack.yaml" > spack.yaml
-#
-#example stacks/view-0       "spack concretize"
-#example stacks/view-0       "ls views/default"
-#example stacks/view-0       "ls views/default/lib"
-#example stacks/view-0       "ls views/full"
-#example stacks/view-0       "ls views/full/gcc-12.3.0"
-#
-#cat "$project/stacks/examples/7.spack.stack.yaml" > spack.yaml
-#
-#example stacks/view-1       "spack concretize"
-#example stacks/view-1       "ls views/default"
-#example stacks/view-1       "ls views/default/lib"
-#example stacks/view-1       "ls views/full"
-#
+cat "$project/stacks/examples/6.spack.stack.yaml" > ~/stacks/spack.yaml
+
+example stacks/view-0       "spack concretize"
+example stacks/view-0       "ls ~/stacks/views/default"
+example stacks/view-0       "ls ~/stacks/views/default/lib"
+example stacks/view-0       "ls ~/stacks/views/full"
+example stacks/view-0       "ls ~/stacks/views/full/gcc-12.3.0"
+
+cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
+
+example stacks/view-1       "spack concretize"
+example stacks/view-1       "ls ~/stacks/views/default"
+example stacks/view-1       "ls ~/stacks/views/default/lib"
+example stacks/view-1       "ls ~/stacks/views/full"
+
 #example stacks/modules-0 "spack add lmod@8.7.18 %gcc@11"
 #example stacks/modules-0 "spack concretize"
 #example stacks/modules-0 "spack install"

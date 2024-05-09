@@ -318,44 +318,53 @@ we just need to set the appropriate environment variable:
 Make the software stack easy to use
 -----------------------------------
 
-
+Now that the software stack has been installed, we need to focus on how it can be used by our customers.
+We'll first see how we can configure views to project a subset of the specs we installed onto a
+filesystem folder with the usual Unix structure. Then we'll have a similar discussion for module files.
+Which of the two approaches is better depends strongly on the use case at hand.
 
 ^^^^^^^^^^^^^^^^
 View descriptors
 ^^^^^^^^^^^^^^^^
 
-We told Spack not to create a view for this stack earlier because
-simple views won't work with stacks. We've been concretizing multiple
-packages of the same name -- they will conflict if linked into the
-same view.
+At the beginning, we configured Spack not to create a view for this stack because simple views won't work
+with stacks. We've been concretizing multiple packages of the same name, and they would conflict if linked
+into the same view.
 
-To work around this, we will use a view descriptor. This allows us to
-define how each package is linked into the view, which packages are
-linked into the view, or both. Let's edit our ``spack.yaml`` file again.
+What we can do is create *multiple views*, using view descriptors. This would allows us to define which
+packages are linked into the view, and how. Let's edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 28-38
+   :emphasize-lines: 44-54
 
-When we'll concretize again we'll see packages linked into the view:
+In the configuration above we created two views, named ``default`` and ``full``.
+The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on
+either ``mpich`` or ``netlib-lapack``. As we can see, we can both *include* and *exclude* specs using
+constrains.
+
+The ``full`` view contains a more complex projection, so to put each spec into an appropriate
+subdirectory, according to the first constraint that the spec matches. ``all`` is the default
+projection, and has always the lowest priority, independent of the order in which it appears. To avoid
+confusion, we advise to always keep it last in projections.
+
+Let's concretize to regenerate the views, and check their structure:
 
 .. literalinclude:: outputs/stacks/view-0.out
    :language: console
 
-The view descriptor also contains a ``link`` key, which is either
-"all" or "roots". The default behavior, as we have seen, is to link
-all packages, including implicit dependencies, into the view. The
-"roots" option links only root packages into the view.
+The view descriptor also contains a ``link`` key, which is either "all" or "roots". The default
+behavior, as we have seen, is to link all packages, including implicit dependencies, into the view.
+The "roots" option links only root packages into the view.
 
 .. literalinclude:: outputs/stacks/examples/7.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 33
+   :emphasize-lines: 49
 
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
 
-Now we see only the root libraries in the default view.
-The rest are hidden, but are still available in the full view.
+Now we see only the root libraries in the default view. The rest are hidden, but are still available in the full view.
 
 ^^^^^^^^^^^^
 Module files
