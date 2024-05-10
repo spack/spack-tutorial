@@ -67,7 +67,7 @@ What you should see on screen now is the following ``spack.yaml`` file:
 
 .. literalinclude:: outputs/stacks/examples/0.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 9
+   :emphasize-lines: 8
 
 The next step is to concretize and install our compiler:
 
