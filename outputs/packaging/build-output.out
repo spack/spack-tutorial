@@ -1,12 +1,12 @@
-$ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-build-out.txt
+$ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-build-out.txt
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2023-11-12-09:25:36.753161] Find (recursive): /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src ['configure']
-==> [2023-11-12-09:25:36.754030] Find complete: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src ['configure']
-==> [2023-11-12-09:25:36.754344] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2023-11-12-09:25:36.777358] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2023-11-12-09:25:36.799398] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2023-11-12-09:25:36.822103] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-ld6dflzj5vwcfnx7nhprmrogn5yfi2pd'
+==> [2024-05-10-07:55:37.828998] Find (recursive): /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src ['configure']
+==> [2024-05-10-07:55:37.830319] Find complete: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src ['configure']
+==> [2024-05-10-07:55:37.830792] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2024-05-10-07:55:37.864095] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2024-05-10-07:55:37.895505] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2024-05-10-07:55:37.917173] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
@@ -30,6 +30,6 @@ checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c an
 checking whether we are using the GNU C++ compiler... yes
 checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
 checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-checking for /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-z4iqm7nipxsdam3chio7r74ob3cznoof/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-z4iqm7nipxsdam3chio7r74ob3cznoof/bin/mpicc
-Checking whether /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-4.1.6-z4iqm7nipxsdam3chio7r74ob3cznoof/bin/mpicc responds to '-showme:compile'... yes
+checking for /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc
+Checking whether /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc responds to '-showme:compile'... yes
 configure: error: unable to locate adept-utils installation

@@ -8,6 +8,8 @@ rm -rf "${raw_outputs:?}/packaging"
 . "$project/init_spack.sh"
 mpileaks_package_py="$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py"
 
+export SPACK_COLOR=never
+
 example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutorial/"
 
 # make the editor automatically exit
