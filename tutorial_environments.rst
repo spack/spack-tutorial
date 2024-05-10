@@ -331,7 +331,6 @@ Let's start by looking at the configuration of our environment using
 ``spack config get``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
-   :language: console
    :emphasize-lines: 8-13
 
 The output shows the special ``spack.yaml`` configuration file that Spack

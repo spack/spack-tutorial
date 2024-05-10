@@ -11,17 +11,18 @@
 Binary Caches Tutorial
 ==================================
 
-In this section of the tutorial we will be focused on sharing Spack-built
-binaries with other users. Build caches are a way to 
+In this section of the tutorial you will learn how to share Spack built binaries
+across machines and users using build caches.
 
-What we will showcase is primarily how to set up a binary cache on top of
-an **OCI container registry** like Docker Hub or Github Packages. Spack
-supports other storage backends, like the filesystem, S3, and Google Cloud
-Storage, but OCI build caches have a few interesting properties that make
-them worth exploring further.
+We will explore a few concepts that apply to all types of build caches, but the
+focus is primarily on **OCI container registries** like Docker Hub or Github Packages
+as a storage backend for binary caches. Spack supports a range of storage backends,
+like an ordinary filesystem, S3, and Google Cloud Storage, but OCI build caches
+have a few interesting properties that make them worth exploring more in depth.
 
-Before we configure a build cache, let's install a somewhat non-trivial package
-in a new environment:
+Before we configure a build cache, let's install the ``julia`` package, which is
+an interesting example because it has some non-trivial dependencies like ``llvm``,
+and features an interactive REPL that we can use to verify that the installation works.
 
 .. code-block:: console
 
@@ -30,8 +31,7 @@ in a new environment:
    $ spack -e . add julia
    $ spack -e . install
 
-This should install ``julia`` with all of its dependencies such as ``llvm`` from
-the builtin binary cache. Let's see if it works by running the julia REPL:
+Let's run the ``julia`` REPL 
 
 .. code-block:: console
 
@@ -40,8 +40,8 @@ the builtin binary cache. Let's see if it works by running the julia REPL:
    2
 
 Now we'd like to share these executables with other users. First we will focus
-on sharing the binaries with other Spack users, but later we will see how
-users completely unfamiliar with Spack can easily use the binaries too.
+on sharing the binaries with other *Spack* users, and later we will see how
+users completely unfamiliar with Spack can easily use the applications too.
 
 ------------------------------------------------
 Setting up an OCI build cache on GitHub Packages
@@ -119,10 +119,11 @@ looks very similar to a container image --- we will get to that in a bit.
 
 .. note ::
 
-   The package is ``private`` by default, which means you need the token to access it. We want to
-   make it public so that anyone can access it. This can be done by going to GitHub Packages from
-   your GitHub account, selecting the package, go to ``package settings``, and change the
-   visibilty to ``public`` in the ``Danger Zone`` section. A direct URL for this page is
+   Binaries pushed to GitHub packages are ``private`` by default, which means you need a token
+   to download them. You can change the visibility to ``public`` by going to GitHub Packages
+   from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``,
+   and change the visibilty to ``public`` in the ``Danger Zone`` section. This page can also
+   be directly accessed by going to
 
    .. code-block:: text
 
@@ -133,6 +134,8 @@ looks very similar to a container image --- we will get to that in a bit.
 Installing from the build cache
 -------------------------------
 
+We will now verify that the build cache works by reinstalling ``julia``.
+
 Let's make sure that we *only* use the build cache that we just created, and not the
 builtin one that is configured for the tutorial. The easiest way to do this is to
 override the ``mirrors`` config section in the environment by using a double colon
@@ -142,7 +145,6 @@ in the ``spack.yaml`` file:
 
    spack:
      specs:
-     - vim
      - julia
      mirrors::  # <- note the double colon
         my-mirror:
@@ -152,23 +154,20 @@ in the ``spack.yaml`` file:
            - <token>
            signed: false
 
-If we now reinstall all binaries, we'll see that Spack automatically fetches them
-from the GitHub registry:
+An "overwrite install" should be enough to show that the build cache is used:
 
 .. code-block:: console
 
-   $ spack -e . uninstall --all
-   $ spack -e . install
-   ==> Installing gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd [2/68]
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:b272a2193fa03472b85f731bdf24a04c8d9d0553cf9457f0ed9c896988ad16ff
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:fedc2c76e472372caf8f04976e75e81b511ed7a7b1c4501bf5c90fe978728169
-   ==> Extracting gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd from binary cache
-   ==> gcc-runtime: Successfully installed gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-   ...
+   $ spack -e . install --overwrite julia
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:3c6809073fcea76083838f603509f10bd006c4d20f49f9644c66e3e9e730da7a
+   ==> Extracting julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl from binary cache
+   [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl
 
 Two blobs are fetched for each spec: a metadata file and the actual binary package. If you've
 used ``docker pull`` or other container runtimes before, these types of hashes may look
-familiar. There are no human readable file names, files are addressed by their content hash.
+familiar. OCI registries are content addressed, which means that we see hashes like these
+instead of human-readable file names.
 
 ------------------------------------
 Reuse of binaries from a build cache
@@ -197,6 +196,35 @@ to avoid a separate step.
    will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
    For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
    first, as the build cache is self-contained.
+
+----------
+Relocation
+----------
+
+Spack is different from many package managers in that it lets users choose where to install
+packages. This makes Spack very flexible, as users can install packages in their home directory
+and do not need root privileges. The downside is that sharing binaries is more complicated,
+as binaries may contain hard-coded, absolute paths to machine specific locations, which have
+to be adjusted when binaries are installed on a different machine.
+
+Fortunately Spack handles this automatically upon install from a binary cache. But when you
+build binaries that are intended to be shared, there is one thing you have to keep in mind:
+Spack can relocate hard-coded paths in binaries *provided that the target prefix is shorter
+than the prefix used during the build*.
+
+The reason is that binaries typically embed these absolute paths in string tables, which is
+a list of null terminated strings, to which the program stores offsets. That means we can
+only modify strings in-place, and if the new path is longer than the old one, we would
+overwrite the next string in the table.
+
+To maximize the chances of successful relocation, you should build your binaries in a
+relative long path. Fortunately Spack can automatically pad paths to make them longer,
+using the following command:
+
+.. code-block:: console
+
+   $ spack -e . config add config:install_tree:padded_length:256
+
   
 ----------------------------------
 Creating runnable container images
