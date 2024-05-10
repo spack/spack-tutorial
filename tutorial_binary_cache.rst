@@ -8,248 +8,283 @@
 .. _binary-cache-tutorial:
 
 ==================================
-Mirrors and Binary Caches Tutorial
+Binary Caches Tutorial
 ==================================
 
-This tutorial will guide you through the process of setting up a
-source mirror with a binary cache. Source mirrors and binary caches
-are extremely useful when using spack on a machine without internet
-access. Source mirrors allow you to fetch source code from a directory
-on your filesystem instead of accessing the outside internet, and
-binary caches allow you to install pre-compiled binaries to your spack
-installation path. Together, these two features can speed up builds
-when using spack within a larger development team.
+In this section of the tutorial we will be focused on sharing Spack-built
+binaries with other users. Build caches are a way to 
 
-We will use the filesystem for the mirrors in this tutorial, but mirrors can also be
-setup on web servers, in s3 buckets or even in `OCI registries
-<https://spack.readthedocs.io/en/latest/binary_caches.html#oci-docker-v2-registries-as-build-cache>`_.
+What we will showcase is primarily how to set up a binary cache on top of
+an **OCI container registry** like Docker Hub or Github Packages. Spack
+supports other storage backends, like the filesystem, S3, and Google Cloud
+Storage, but OCI build caches have a few interesting properties that make
+them worth exploring further.
 
-By default, Spack comes configured with a source mirror in the cloud
-to increase download reliability. We've also already set up a mirror
-in this tutorial for binary caches. We can see how these mirrors are
-configured:
+Before we configure a build cache, let's install a somewhat non-trivial package
+in a new environment:
 
-.. literalinclude:: outputs/cache/mirror-list-0.out
-   :language: console
+.. code-block:: console
 
---------------------------------
-Setting up a source cache mirror
---------------------------------
+   $ mkdir ~/myenv && cd ~/myenv
+   $ spack env create --with-view view .
+   $ spack -e . add julia
+   $ spack -e . install
 
-When you run ``spack install``, spack goes out to the internet to grab
-the source code to build your packages. This works fine on most
-clusters, but what do you do if the cluster in question doesn't have
-access to the outside internet? This could happen for a variety of
-reasons. Maybe you're building on a compute node that can't connect
-to the internet, or maybe the whole cluster has been isolated from
-the internet.
+This should install ``julia`` with all of its dependencies such as ``llvm`` from
+the builtin binary cache. Let's see if it works by running the julia REPL:
 
-Spack has a solution for this -- setting up a source mirror. When you
-use a source mirror, spack checks the mirror for the source code
-before trying to download it from a remote location.
+.. code-block:: console
 
-Building a source mirror is easy. Let's start with the same simple
-environment. First, let's build our software on a computer with
-external internet access.
+   $ ./view/bin/julia
+   julia> 1 + 1
+   2
 
-.. literalinclude:: outputs/cache/setup-scr.out
-   :language: console
+Now we'd like to share these executables with other users. First we will focus
+on sharing the binaries with other Spack users, but later we will see how
+users completely unfamiliar with Spack can easily use the binaries too.
 
-Once we've created and installed this environment, we can easily
-upload source code needed to reproduce this build to a mirror.  The
-following command both creates the mirror and uploads the source code
-for the ``scr`` package included in our environment. The ``-d`` flag
-(short for ``--directory``) tells spack where to place the mirrored
-source code files.
+------------------------------------------------
+Setting up an OCI build cache on GitHub Packages
+------------------------------------------------
 
-.. literalinclude:: outputs/cache/spack-mirror-single.out
-   :language: console
+For this tutorial we will be using GitHub Packages as an OCI registry, since
+most people have a GitHub account and it's easy to use.
 
-We can configure spack to use this source mirror by adding
-a few lines to your ``spack.yaml`` file.
+First go to `<https://github.com/settings/tokens>`_ to generate a Personal access
+token with ``write:packages`` permissions. Copy this token.
 
-.. literalinclude:: outputs/cache/spack-mirror-config.out
-   :language: console
+Next, we will add this token to the mirror config section of the Spack environment:
 
-Manually uploading every package in an environment can be
-tedious. Luckily, when run within an environment, ``spack mirror
-create`` with the ``--all`` flag will upload every source used to build
-the current environment to the specified directory.
+.. code-block:: console
 
-.. literalinclude:: outputs/cache/spack-mirror-all.out
-   :language: console
+   $ spack -e . mirror add \
+     --oci-username <user> \
+     --oci-password <token> \
+     --unsigned \
+     my-mirror \
+     oci://ghcr.io/<user>/buildcache
 
-As long as spack can read from the mirror directory, spack will
-attempt to read source packages from the mirror instead of accessing
-the internet. This can be a huge boon for computers that can't access
-the external internet but can access a shared filesystem. If you need
-to use spack on a system that is isolated from the external internet,
-you must bundle the whole spack mirror directory and unbundle it on
-the isolated system. From there, you follow the same steps to use the
-spack mirror as you would on any computer that can't access the
-external internet.
 
-If you need to add more sources to the mirror, you can re-run the
-command you used to create the mirror. For example, assume we want to
-add ``unzip`` to our environment.
+.. note ::
 
-.. literalinclude:: outputs/cache/spack-mirror-3.out
-   :language: console
+   We talk about mirrors and build caches almost interchangeably, because every build
+   cache is a binary mirror. Source mirrors exist too, which we will not cover in this
+   tutorial.
 
-Now that we've added ``unzip``, we need to update the mirror.
 
-.. literalinclude:: outputs/cache/spack-mirror-4.out
-   :language: console
+Your ``spack.yaml`` file should now contain the following:
 
-Spack will skip uploading source code packages that are already
-included in the spack mirror. Mirrors can be shared across different
-environments, meaning one mirror can house all the source code needed
-to build your team's dependencies.
+.. code-block:: yaml
 
---------------------------------
-Setting up a binary cache mirror
---------------------------------
+   spack:
+     specs:
+     - julia
+     mirrors:
+        my-mirror:
+           url: oci://ghcr.io/<user>/buildcache
+           access_pair:
+           - <user>
+           - <token>
+           signed: false
 
-If your team is setting spack as part of their
-development practice, you'll run up against the biggest disadvantage
-of using spack: building all your packages from scratch is
-slow. Recompiling the software dependencies for a large project can
-take hours to complete. If every developer is rebuilding their own
-software stack, that leads to a massive waste of computational
-resources and a loss of developer productivity.
+Let's push ``julia`` and its dependencies to the build cache
 
-Spack has two ways to mitigate this problem: chained spack
-instances and spack binary caches. For now, we're going to discuss
-binary caches as a way of solving this issue.
+.. code-block:: console
 
-A spack binary cache is made up of spack binary packages.  Each spack
-binary package, ending with a ``*.spack`` extension, is a tarball of an
-installed spack package signed with a `gpg signature <https://www.gnupg.org>`_.
-When you install a package from a mirror with a binary cache, spack
+   $ spack -e . buildcache push my-mirror
 
-* Checks to see if there is a spack binary package that exactly
-  matches the hash of the spec you want to build.
-* If a binary package is found, spack checks to see if the signature
-  on the binary package is trusted. If the signature isn't trusted,
-  or if no package was found, spack builds the package from source.
-* If the signature is trusted, then spack unzips and relocates the
-  binary package.
+which outputs
 
-For the user, using spack binary caches is transparent. This is a
-clear departure from systems like conda, where you need to choose
-separate workflows for binary and source packages. We've already
-demonstrated using spack binary caches earlier in the tutorial when we
-set up spack to use a binary mirror. As a reminder, we ran:
+.. code-block:: text
 
-.. literalinclude:: outputs/basics/mirror.out
-   :language: console
+   ==> Selected 66 specs to push to oci://ghcr.io/<user>/buildcache
+   ==> Checking for existing specs in the buildcache
+   ==> 66 specs need to be pushed to ghcr.io/<user>/buildcache
+   ==> Uploaded sha256:d8d9a5f1fa443e27deea66e0994c7c53e2a4a618372b01a43499008ff6b5badb (0.83s, 0.11 MB/s)
+   ...
+   ==> Uploading manifests
+   ==> Uploaded sha256:cdd443ede8f2ae2a8025f5c46a4da85c4ff003b82e68cbfc4536492fc01de053 (0.64s, 0.02 MB/s)
+   ...
+   ==> Pushed zstd@1.5.6/ew3aaos to ghcr.io/<user>/buildcache:zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr.spack
+   ...
+   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-Building a spack binary cache has some gotchas, but is almost as easy
-as building a source mirror. We'll start by making a new environment
-for ourselves.  Since we're intending to publish to a binary cache,
-we'll need to compile all these packages ourselves.  This can take
-some time, so we'll make a new environment with some packages that
-compile quickly.
+The location of the pushed package
 
-.. literalinclude:: outputs/cache/binary-cache-1.out
-   :language: console
+.. code-block:: text
 
-Before we build anything, we need to modify the following line in our
-spack configuration file. Then, just to be sure, we'll initiate a
-build of this environment and force ourselves to not use any cache.
+   ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-.. literalinclude:: outputs/cache/binary-cache-2.out
-   :language: console
+looks very similar to a container image --- we will get to that in a bit.
 
-This configuration change ensures that spack installs all our packages
-to a path that is at least 128 characters. We need this change because
-of how spack relocates packages. Relocation consists of the following
-steps:
+.. note ::
 
-  * Search all text files to replace the package builder's path with
-    your specific local installation path.
-  * Modify all the RPATHs in your binaries to point to your specific
-    local installation path. This uses ``patchelf`` if the new path is
-    longer than the old path, but otherwise uses a faster
-    implementation in python.
-  * Search all binaries to replace hard-coded C strings of the package
-    builder's path with your specific local installation path.
+   The package is ``private`` by default, which means you need the token to access it. We want to
+   make it public so that anyone can access it. This can be done by going to GitHub Packages from
+   your GitHub account, selecting the package, go to ``package settings``, and change the
+   visibilty to ``public`` in the ``Danger Zone`` section. A direct URL for this page is
 
-Adding padding ensures that any paths hard-coded as C strings in our
-binaries will be large enough to hold our user's eventual install
-path. We advise picking 128 because longer strings occasionally cause
-compilation problems with some software packages. If the user's
-install path is too long, spack will give you a warning. All scripts
-and and RPATHs will still be properly relocated, but C strings within
-any binaries will not be modified. Depending on the package, this may
-cause problems when you try to use the software.
+   .. code-block:: text
 
-We also need to create a gpg key to sign all our packages. You should
-back up the secret and public keys to a secure place so they can be
-re-used in the future.
+      https://github.com/users/<user>/packages/container/buildcache/settings
 
-.. literalinclude:: outputs/cache/binary-cache-3.out
-   :language: console
 
-With this setup done, we're ready to fill a buildcache with installed
-packages. The steps are very similar to creating a source mirror. To
-upload all specs in the environment to a buildcache, simply use the
-command ``spack buildcache push`` or equivalently
-``spack buildcache create``:
+-------------------------------
+Installing from the build cache
+-------------------------------
 
-.. literalinclude::  outputs/cache/binary-cache-4.out
-   :language: console
+Let's make sure that we *only* use the build cache that we just created, and not the
+builtin one that is configured for the tutorial. The easiest way to do this is to
+override the ``mirrors`` config section in the environment by using a double colon
+in the ``spack.yaml`` file:
 
-Voila, done! Our spack mirror has now been augmented with a binary
-cache.  This cache can be used on systems without external internet
-access, just like with a spack source mirror.
+.. code-block:: yaml
 
-Though it's outside the scope of this tutorial, spack mirrors and
-build caches can also be hosted over ``https://``, ``s3://``, and
-``oci://``, as well. Consult the spack documentation for more
-information on how to do this.
+   spack:
+     specs:
+     - vim
+     - julia
+     mirrors::  # <- note the double colon
+        my-mirror:
+           url: oci://ghcr.io/<user>/buildcache
+           access_pair:
+           - <user>
+           - <token>
+           signed: false
 
-Before someone can use this binary cache, they will need to make sure
-that they trust all the packages listed in the binary cache. If you're
-sharing files between trusted users on a filesystem, you can do this
-with the following command:
+If we now reinstall all binaries, we'll see that Spack automatically fetches them
+from the GitHub registry:
 
-.. literalinclude:: outputs/cache/trust.out
-   :language: console
+.. code-block:: console
 
-Together, this means download all the keys on the binary cache and
-trust them. Have your users run the above command on a new spack
-instance before they initiate a build.
+   $ spack -e . uninstall --all
+   $ spack -e . install
+   ==> Installing gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd [2/68]
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:b272a2193fa03472b85f731bdf24a04c8d9d0553cf9457f0ed9c896988ad16ff
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:fedc2c76e472372caf8f04976e75e81b511ed7a7b1c4501bf5c90fe978728169
+   ==> Extracting gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd from binary cache
+   ==> gcc-runtime: Successfully installed gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
+   ...
 
----------------------
-Bootstrapping Mirrors
----------------------
+Two blobs are fetched for each spec: a metadata file and the actual binary package. If you've
+used ``docker pull`` or other container runtimes before, these types of hashes may look
+familiar. There are no human readable file names, files are addressed by their content hash.
 
-In order to run Spack on an airgapped system, or anywhere else without
-internet access, you also need to install ``clingo`` as a dependency
-(``clingo`` is used by spack's concretizer). While you can always
-install clingo through your favorite method, we like to think Spack
-is your favorite install mechanism for everything, and we have
-convenient ways to bootstrap clingo on airgapped systems.
+------------------------------------
+Reuse of binaries from a build cache
+------------------------------------
 
-Spack can prepare a bootstrap mirror for either source or binary
-mirror for bootstrapping via the ``spack bootstrap mirror``
-command. We will focus on binary bootstrapping for this tutorial.
+Spack's concretizer optimizes for **reuse**. This means that it will avoid source builds if it
+can use specs for which binaries are readily available.
 
-.. literalinclude:: outputs/cache/bootstrap-1.out
-   :language: console
+In the previous example we managed to install packages from our build cache, but we did not
+concretize our environment again. Users on other machines with different distributions will have
+to concretize, and therefore we should make sure that the build cache is indexed so that the
+concretizer can take it into account. This can be done by running
 
-Using the instructions printed from Spack, you can register the new
-bootstrap sources on the airgapped system.
+.. code-block:: console
 
--------------
-Cache Summary
--------------
+   $ spack -e . buildcache update-index
 
-If you're using spack within a development team, consider setting up
-source mirrors with binary caches. Source mirrors will let you
-replicate a spack environment on a machine without external internet
-access, and binary mirrors free you from the burden of recompiling
-everything from scratch and save you development time. Spack mirrors
-also provide the mechanism to bring Spack's internal dependencies over
-to any machine without external internet access.
+This operation can take a while for large build caches, since it fetches all metatadata of
+available packages. For convenience you can also run ``spack buildcache push --update-index ...``
+to avoid a separate step.
+
+
+.. note::
+
+   As of Spack 0.22, build caches can be used across different Linux distros. The concretizer
+   will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
+   For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
+   first, as the build cache is self-contained.
+  
+----------------------------------
+Creating runnable container images
+----------------------------------
+
+The build cache we have created uses an OCI registry, which is the same technology that is used
+to store container images. So far we have used this build cache as any other build cache: the
+concretizer can use it to avoid source builds, and ``spack install`` will fetch binaries from it.
+
+However, we can also use this build cache to share binaries directly as runnable container images.
+
+We can already attempt to run the image associated with the ``julia`` package that we have
+pushed earlier:
+
+.. code-block:: console
+
+   $ docker run ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack julia
+   exec /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl/bin/julia: no such file or directory
+
+but immediately we see it fails. The reason is that one crucial part is missing, and that is a
+``glibc``, which Spack always treats as an external package.
+
+To fix this, we force push to the registry again, but this time we specify a base image with a
+recent version of ``glibc``, for example from ``ubuntu:24.04``:
+
+.. code-block:: console
+
+   $ spack -e . buildcache push --force --base-image ubuntu:24.04 my-mirror
+   ...
+   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+
+Now let's pull this image again and run it:
+
+.. code-block:: console
+
+   $ docker pull ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker run ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   root@f53920f8695a:/# julia
+   julia> 1 + 1
+   2
+
+This time it works! The minimal ``ubuntu:24.04`` image provides us not only with ``glibc``, but
+also other utilities like a shell.
+
+Notice that you can use any base image of choice, like ``fedora`` or ``rockylinux``. The only
+constraint is that it has a ``libc`` compatible with the external in the Spack built the binaries.
+Spack does not validate this.
+
+--------------------------------------
+Spack environments as container images
+--------------------------------------
+
+The previous container image is a good start, but it would be nice to add some more utilities to
+the image. If you've paid attention, Spack generates exactly one container image for each package
+it pushed to the OCI registry. All these images share their layers: every Spack package corresponds
+to a layer in each image.
+
+Because Spack installs every pacakge into a unique prefix, it is incredibly easy for us to compose
+multiple packages into a single image.
+
+Let's add a simple text editor like ``vim`` to our previous environment next to ``julia``, so that
+we could both edit and run Julia code:
+
+.. code-block:: console
+
+   $ spack -e . add vim
+   $ spack -e . install
+
+This time we push to the OCI registry, but also pass ``--tag julia-and-vim`` to instruct Spack
+to create an image for the environment as a whole, with a human-readable tag:
+
+   $ spack -e . buildcache push --base-image ubuntu:24.04 --tag julia-and-vim my-mirror
+   ==> Tagged ghcr.io/<user>/buildcache:julia-and-vim
+
+Now let's run a container from this image:
+
+.. code-block:: console
+
+   $ docker run -it --rm ghcr.io/<user>/buildcache:julia-and-vim
+   root@f53920f8695a:/# vim ~/example.jl  # create a new file with some Julia code 
+   root@f53920f8695a:/# julia ~/example.jl  # and run it
+
+-------
+Summary
+-------
+
+In this tutorial we have created a build cache on top of an OCI registry, which can be used
+
+* to ``spack install julia vim`` on machines without source builds
+* to automatically create container images for individual packages while pushing to the cache
+* to create container images for multiple packages at once
