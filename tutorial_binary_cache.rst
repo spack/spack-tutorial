@@ -278,23 +278,28 @@ Spack environments as container images
 --------------------------------------
 
 The previous container image is a good start, but it would be nice to add some more utilities to
-the image. If you've paid attention, Spack generates exactly one container image for each package
-it pushed to the OCI registry. All these images share their layers: every Spack package corresponds
-to a layer in each image.
+the image. If you've paid attention to the output of some of the commands we have run so far,
+you may have noticed that Spack generates exactly one image tag for each package it pushes to
+the registry. Every Spack package corresponds to a single layer in each image, and the layers
+are shared across the different image tags.
 
-Because Spack installs every pacakge into a unique prefix, it is incredibly easy for us to compose
-multiple packages into a single image.
+Because Spack installs every package into a unique prefix, it is incredibly easy to compose
+multiple packages into a container image. In contrast to Docker images built from commands
+in a ``Dockerfile`` where each command is run in order, Spack package layers are independent,
+and can in principle be combined in any order.
 
 Let's add a simple text editor like ``vim`` to our previous environment next to ``julia``, so that
 we could both edit and run Julia code:
 
 .. code-block:: console
 
-   $ spack -e . add vim
-   $ spack -e . install
+   $ spack -e . install --add vim
 
 This time we push to the OCI registry, but also pass ``--tag julia-and-vim`` to instruct Spack
 to create an image for the environment as a whole, with a human-readable tag:
+
+
+.. code-block:: console
 
    $ spack -e . buildcache push --base-image ubuntu:24.04 --tag julia-and-vim my-mirror
    ==> Tagged ghcr.io/<user>/buildcache:julia-and-vim
