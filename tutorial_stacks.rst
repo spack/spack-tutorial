@@ -67,7 +67,7 @@ What you should see on screen now is the following ``spack.yaml`` file:
 
 .. literalinclude:: outputs/stacks/examples/0.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 9
+   :emphasize-lines: 8
 
 The next step is to concretize and install our compiler:
 
@@ -186,7 +186,7 @@ way to express a cross-product like this in Spack is instead through a matrix:
 
 .. literalinclude:: outputs/stacks/examples/2.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 9-13
+   :emphasize-lines: 8-12
 
 Matrices will expand to the cross-product of their rows, so this matrix:
 
@@ -312,7 +312,48 @@ we just need to set the appropriate environment variable:
 .. literalinclude:: outputs/stacks/concretize-6.out
    :language: console
 
-.. TODO: create a mirror of the software stack, version spack.yaml and lockfile etc.
+There is no need to install this time, since all the specs were still in the store.
+
+^^^^^^^^^^^^^^^^^^^^^
+Other useful features
+^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes it might be useful to create a local source mirror for the specs installed in an environment. If the
+environment is active, this is as simple as:
+
+.. code-block:: console
+
+   $ spack mirror create --all -d ./stacks-mirror
+
+This command fetches all the tarballs for the packages in the ``spack.lock`` file, and puts them in the directory
+passed as argument. Later you can move this mirror to e.g. an air-gapped machine and:
+
+.. code-block:: console
+
+   $ spack mirror add <name> <stacks-mirror>
+
+to be able to re-build the specs from sources. If instead you want to create a buildcache you can:
+
+.. code-block:: console
+
+   $ spack gpg create <name> <e-mail>
+   $ spack buildcache push ./mirror
+
+In that case, don't forget to set an appropriate value for the padding of the install tree,
+see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_
+in our documentation.
+
+By default, Spack installs one package at a time, using the ``-j`` option where it can. If you are installing a large
+environment, and have at disposal a beefy build node, you might need to start more installations in parallel to make an
+optimal use of the resources. This can be done by creating a ``depfile``, when the environment is active:
+
+.. code-block:: console
+
+   $ spack env depfile -o Makefile
+
+The result is a makefile that starts multiple Spack instances, and the resources are shared through the GNU jobserver.
+More information of this feature can be found `in our documentation <https://spack.readthedocs.io/en/latest/environments.html#generating-depfiles-from-environments>`_.
+This might cut down your build time by a fair amount, if you build frequently from sources.
 
 -----------------------------------
 Make the software stack easy to use
@@ -353,9 +394,9 @@ Let's concretize to regenerate the views, and check their structure:
 .. literalinclude:: outputs/stacks/view-0.out
    :language: console
 
-The view descriptor also contains a ``link`` key, which is either "all" or "roots". The default
-behavior, as we have seen, is to link all packages, including implicit dependencies, into the view.
-The "roots" option links only root packages into the view.
+The view descriptor also contains a ``link`` key. The default behavior, as we have seen, is to link all
+packages, including implicit link and run dependencies, into the view. If we set the option to "roots",
+Spack links only the root packages into the view.
 
 .. literalinclude:: outputs/stacks/examples/7.spack.stack.yaml
    :language: yaml
@@ -365,23 +406,20 @@ The "roots" option links only root packages into the view.
    :language: console
 
 Now we see only the root libraries in the default view. The rest are hidden, but are still available in the full view.
+The complete documentation on view can be found `here <https://spack.readthedocs.io/en/latest/environments.html#filesystem-views>`_.
 
 ^^^^^^^^^^^^
 Module files
 ^^^^^^^^^^^^
 
-Module files are another very popular way to let your end users profit from
-the software you installed. Here we'll  show how you can incorporate the configuration
-to generate LMod hierarchical module files within the same environment used to
-install the software.
+Module files are another very popular way to use software on HPC systems. In this section
+we'll show how to configure and generate a hierarchical module structure, suitable for ``lmod``.
 
-.. note::
+A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
+There we discuss the general architecture of module file generation in Spack and we highlight
+differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
 
-   A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
-   There we discuss the general architecture of module file generation in Spack and we highlight
-   differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
-
-Let's start by adding ``lmod`` to the software installed with the system compiler:
+So, let's start by adding ``lmod`` to the software installed with the system compiler:
 
 .. code-block:: console
 
@@ -414,7 +452,7 @@ We can generate the module files and use them with the following commands:
 .. code-block:: console
 
    $ spack module lmod refresh -y
-   $ module use $PWD/modules/linux-ubuntu22.04-x86_64/Core
+   $ module use $PWD/stacks/modules/linux-ubuntu22.04-x86_64/Core
 
 Now we should be able to see the module files that have been generated:
 
@@ -451,3 +489,14 @@ Now we have a set of module files without hashes, with a correct hierarchy, and 
 
 .. literalinclude:: outputs/stacks/modules-5.out
    :language: console
+
+This concludes the quick tour of module file generation, and the tutorial on stacks.
+
+-------
+Summary
+-------
+
+In this tutorial, we configured Spack to install a stack of software built on a cross-product of different
+MPI and LAPACK libraries. We used the spec matrix syntax to express in a compact way the specs to be installed,
+and spec list definitions to reuse the same matrix rows in different places. Then, we discussed how to make the
+software easy to use, leveraging either filesystem views or module files.
