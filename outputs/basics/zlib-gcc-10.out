@@ -1,15 +1,23 @@
 $ spack install zlib-ng %gcc@10
-==> Installing gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka [1/2]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka.spack
-==> Extracting gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka from binary cache
-==> gmake: Successfully installed gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka
-  Search: 0.00s.  Fetch: 0.10s.	 Install: 0.06s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.16s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1-gexmwfhpiumjrmlkqrsusomjc5cpa2ka
-==> Installing zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv [2/2]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.4/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv.spack
-==> Extracting zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv from binary cache
-==> zlib-ng: Successfully installed zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.05s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.4-tm2or5eemtuselxphhipremogmszohrv
+[+] /usr (external glibc-2.35-tcngwuvjectyn7o74ymmyeqhll2enure)
+==> Installing gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn [2/4]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gcc-runtime-10.5.0/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn.spack
+==> Extracting gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn from binary cache
+==> gcc-runtime: Successfully installed gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn
+  Search: 0.00s.  Fetch: 0.21s.  Install: 0.35s.  Extract: 0.30s.  Relocate: 0.04s.  Total: 0.56s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gcc-runtime-10.5.0-gio4whbqck7yhcyvu6xi32m42hwunetn
+==> Installing gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa [3/4]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa.spack
+==> Extracting gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa from binary cache
+==> gmake: Successfully installed gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa
+  Search: 0.00s.  Fetch: 0.02s.  Install: 0.04s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.06s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/gmake-4.4.1-t7egtllnkryi5b6prou3brwxbf5rttxa
+==> Installing zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l [4/4]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.6/linux-ubuntu22.04-x86_64_v3-gcc-10.5.0-zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l.spack
+==> Extracting zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l from binary cache
+==> zlib-ng: Successfully installed zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l
+  Search: 0.00s.  Fetch: 0.01s.  Install: 0.05s.  Extract: 0.01s.  Relocate: 0.03s.  Total: 0.06s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-10.5.0/zlib-ng-2.1.6-2wtyhbql33lcbihphdxwddookvagof6l
