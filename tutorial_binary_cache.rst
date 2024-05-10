@@ -322,7 +322,7 @@ or other runtimes to create a container image.
 
 This would trigger a multi-stage build, where the first stage would install Spack itself,
 compilers and the environment, and the second stage would copy the installed environment
-into a smaller image. For those familiar with ``Dockerfile``s, it would structurally look
+into a smaller image. For those familiar with ``Dockerfile`` syntax, it would structurally look
 like this:
 
 .. code-block:: Dockerfile
