@@ -307,6 +307,42 @@ Now let's run a container from this image:
    root@f53920f8695a:/# vim ~/example.jl  # create a new file with some Julia code 
    root@f53920f8695a:/# julia ~/example.jl  # and run it
 
+------------------------------------
+Do I need ``docker`` or ``buildah``?
+------------------------------------
+
+In older versions of Spack it was common practice to generate a ``Dockerfile`` from a
+Spack environment using the ``spack containerize`` command, and then use ``docker build``
+or other runtimes to create a container image.
+
+This would trigger a multi-stage build, where the first stage would install Spack itself,
+compilers and the environment, and the second stage would copy the installed environment
+into a smaller image. For those familiar with ``Dockerfile``s, it would structurally look
+like this:
+
+.. code-block:: Dockerfile
+
+   FROM <base image> AS build
+   COPY spack.yaml /root/env/spack.yaml
+   RUN spack -e /root/env install
+
+   FROM <base image>
+   COPY --from=build /opt/spack/opt /opt/spack/opt
+
+This approach is still valid, and the ``spack containerize`` command continues to exist, but it
+has a few downsides:
+
+* When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning
+  that all dependencies that did install successfully are lost. Troubleshooting the build
+  typically means starting from scratch in ``docker run`` or on the host system.
+* In certain CI environments, it is not possible to use ``docker build``. For example, the
+  CI script itself may already run in a docker container, and running ``docker build`` *safely*
+  inside a container is tricky.
+
+The approach presented in this tutorial (``spack install`` followed by
+``spack buildcache push registry``) decouples the build process from image creation, and does
+not force a container runtime nor a build environment on the user.
+
 -------
 Summary
 -------
