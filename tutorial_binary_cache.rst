@@ -283,8 +283,8 @@ Now let's run a container from this image:
 Summary
 -------
 
-In this tutorial we have created a build cache on top of an OCI registry, which could be used
+In this tutorial we have created a build cache on top of an OCI registry, which can be used
 
 * to ``spack install julia vim`` on machines without source builds
-* to create container images for each individual package with a base image of choice
-* to create container images for entire Spack environments
+* to automatically create container images for individual packages while pushing to the cache
+* to create container images for multiple packages at once
