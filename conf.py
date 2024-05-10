@@ -59,7 +59,6 @@ extensions = [
     'sphinx.ext.graphviz',
     'sphinx.ext.todo',
     'sphinx_copybutton',
-    'sphinx_tabs.tabs',
 ]
 
 # Set default graphviz options
