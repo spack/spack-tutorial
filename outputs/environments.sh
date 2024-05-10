@@ -7,6 +7,8 @@ project=$(dirname "$0")
 rm -rf "${raw_outputs:?}/environments"
 . "$project/init_spack.sh"
 
+export SPACK_COLOR=never
+
 # In the basics section a bunch of packages were already installed,
 # they are referenced here. Reinstall them so we can generate outputs
 # independently.
