@@ -380,7 +380,7 @@ Spack also provides a basic GitHub Action to already provide you with a binary c
          uses: spack/setup-spack@v2
        - run: spack install python  # uses a shared build cache
 
-and the `setup-spack readme <https://github.com/spack/setup-spack>` shows you how to cache further
+and the `setup-spack readme <https://github.com/spack/setup-spack>`_ shows you how to cache further
 binaries that are not in the shared build cache.
 
 -------
