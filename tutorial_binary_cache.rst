@@ -239,7 +239,7 @@ Now let's pull this image again and run it:
 .. code-block:: console
 
    $ docker pull ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
-   $ docker run ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker run -it --rm ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
    root@f53920f8695a:/# julia
    julia> 1 + 1
    2
