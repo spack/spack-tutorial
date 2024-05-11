@@ -322,9 +322,10 @@ has a few downsides:
   CI script itself may already run in a docker container, and running ``docker build`` *safely*
   inside a container is tricky.
 
-The approach presented in this tutorial (``spack install`` followed by
-``spack buildcache push registry``) decouples the build process from image creation, and does
-not force a container runtime nor a build environment on the user.
+The takeaway is that Spack decouples the steps that ``docker build`` combines:
+build isolation, running the build, and creating an image. You can run
+``spack install`` on your host machine or in a container, and run
+``spack buildcache push`` separately to create an image.
 
 ----------
 Relocation
