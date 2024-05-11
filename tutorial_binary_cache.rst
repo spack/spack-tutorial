@@ -195,7 +195,14 @@ to avoid a separate step.
    As of Spack 0.22, build caches can be used across different Linux distros. The concretizer
    will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
    For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
-   first, as the build cache is self-contained.
+   first, as the build cache contains the compiler runtime libraries as a separate package.
+
+After an index is created, it's possible to list the available packages in the build cache:
+
+.. code-block:: console
+
+   $ spack -e . buildcache list
+
 
 ----------
 Relocation
