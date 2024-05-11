@@ -360,6 +360,28 @@ using the following command:
 
    $ spack -e . config add config:install_tree:padded_length:256
 
+------------------------
+Using build caches in CI
+------------------------
+
+Build caches are a great way to speed up CI pipelines. Both GitHub Actions and Gitlab CI
+support container registries, and this tutorial should give you a good starting point to
+leverage them.
+
+Spack also provides a basic GitHub Action to already provide you with a binary cache:
+
+```yaml
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - name: Set up Spack
+      uses: spack/setup-spack@v2
+    - run: spack install python  # uses a shared build cache
+
+and the `setup-spack readme <https://github.com/spack/setup-spack>` shows you how to cache further
+binaries that are not in the shared build cache.
+
 -------
 Summary
 -------
