@@ -203,35 +203,6 @@ After an index is created, it's possible to list the available packages in the b
 
    $ spack -e . buildcache list --allarch
 
-
-----------
-Relocation
-----------
-
-Spack is different from many package managers in that it lets users choose where to install
-packages. This makes Spack very flexible, as users can install packages in their home directory
-and do not need root privileges. The downside is that sharing binaries is more complicated,
-as binaries may contain hard-coded, absolute paths to machine specific locations, which have
-to be adjusted when binaries are installed on a different machine.
-
-Fortunately Spack handles this automatically upon install from a binary cache. But when you
-build binaries that are intended to be shared, there is one thing you have to keep in mind:
-Spack can relocate hard-coded paths in binaries *provided that the target prefix is shorter
-than the prefix used during the build*.
-
-The reason is that binaries typically embed these absolute paths in string tables, which is
-a list of null terminated strings, to which the program stores offsets. That means we can
-only modify strings in-place, and if the new path is longer than the old one, we would
-overwrite the next string in the table.
-
-To maximize the chances of successful relocation, you should build your binaries in a
-relative long path. Fortunately Spack can automatically pad paths to make them longer,
-using the following command:
-
-.. code-block:: console
-
-   $ spack -e . config add config:install_tree:padded_length:256
-
   
 ----------------------------------
 Creating runnable container images
@@ -354,6 +325,34 @@ has a few downsides:
 The approach presented in this tutorial (``spack install`` followed by
 ``spack buildcache push registry``) decouples the build process from image creation, and does
 not force a container runtime nor a build environment on the user.
+
+----------
+Relocation
+----------
+
+Spack is different from many package managers in that it lets users choose where to install
+packages. This makes Spack very flexible, as users can install packages in their home directory
+and do not need root privileges. The downside is that sharing binaries is more complicated,
+as binaries may contain hard-coded, absolute paths to machine specific locations, which have
+to be adjusted when binaries are installed on a different machine.
+
+Fortunately Spack handles this automatically upon install from a binary cache. But when you
+build binaries that are intended to be shared, there is one thing you have to keep in mind:
+Spack can relocate hard-coded paths in binaries *provided that the target prefix is shorter
+than the prefix used during the build*.
+
+The reason is that binaries typically embed these absolute paths in string tables, which is
+a list of null terminated strings, to which the program stores offsets. That means we can
+only modify strings in-place, and if the new path is longer than the old one, we would
+overwrite the next string in the table.
+
+To maximize the chances of successful relocation, you should build your binaries in a
+relative long path. Fortunately Spack can automatically pad paths to make them longer,
+using the following command:
+
+.. code-block:: console
+
+   $ spack -e . config add config:install_tree:padded_length:256
 
 -------
 Summary
