@@ -183,7 +183,7 @@ concretizer can take it into account. This can be done by running
 
 .. code-block:: console
 
-   $ spack -e . buildcache update-index
+   $ spack -e . buildcache update-index my-mirror
 
 This operation can take a while for large build caches, since it fetches all metatadata of
 available packages. For convenience you can also run ``spack buildcache push --update-index ...``
@@ -201,7 +201,7 @@ After an index is created, it's possible to list the available packages in the b
 
 .. code-block:: console
 
-   $ spack -e . buildcache list
+   $ spack -e . buildcache list --allarch
 
 
 ----------
