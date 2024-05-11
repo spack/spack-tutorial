@@ -61,7 +61,7 @@ Creating the Package File
 .. note::
 
    Before proceeding, make sure your ``EDITOR`` environment variable
-   is set to the path of your preferred text editor.
+   is set to the name or path of your preferred text editor.
 
 
 Suppose you want to install software that depends on mpileaks but found
@@ -104,7 +104,7 @@ template:
 
 * provides instructions for how to contribute your package to
   the Spack repository;
-* indicates the software is built with ``Autotools``;
+* indicates that the software is built with Autotools;
 * provides a docstring template;
 * provides an example homepage URL;
 * shows how to specify a list of package maintainers;
@@ -122,7 +122,7 @@ template:
    The ``maintainers`` field is a comma-separated list of GitHub user
    names for those people who are willing to be notified when a change
    is made to the package. This information is useful for developers who
-   maintain a Spack package for their own software and or rely on software
+   maintain a Spack package for their own software and/or rely on software
    maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256``
@@ -146,18 +146,18 @@ by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,18
+   :emphasize-lines: 1,34
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
 
-So let's start to customize the package to our software.
+So let's start to customize the package for our software.
 
 ----------------------------
 Adding Package Documentation
 ----------------------------
 
-First let's fill in the documentation.
+First, let's fill in the documentation.
 
 Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the
 ``spack edit`` command:
@@ -172,7 +172,7 @@ Let's make the following changes:
 * replace the first ``FIXME`` comment with a description of ``mpileaks``
   in the docstring;
 * replace the homepage property with the correct link; and
-* uncomment the ``maintainers`` property and add your GitHub user name.
+* uncomment the ``maintainers`` directive and add your GitHub user name.
 
 .. note::
 
@@ -202,12 +202,12 @@ Let's enter the ``spack info`` command for the package:
 Take a moment to look over the output. You should see the following
 information derived from the package:
 
-* it is an ``Autotools`` package;
+* it is an Autotools package;
 * it has the description, homepage, and maintainer(s) we provided;
 * it is not externally detectable;
 * it has the URL we gave the ``spack create`` command;
 * the preferred version was derived from the code;
-* the default ``Autotools`` package installation phases are listed;
+* the default Autotools package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
 * both the link and run dependencies are ``None`` at this point;
 
@@ -216,7 +216,7 @@ command will become more informative.
 
 .. note::
 
-   More information on using ``Autotools`` packages is provided in
+   More information on using Autotools packages is provided in
    `AutotoolsPackage
    <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
@@ -288,9 +288,9 @@ Let's check that dependencies are effectively built when we try to install ``tut
    you don't already have an MPI installed or configured in Spack.
 
 We see that Spack has now identified and built all of our dependencies.
-It found that the:
+It found that:
 
-* ``openmpi`` package will satisfy our ``mpi`` dependency;
+* the ``openmpi`` package will satisfy our ``mpi`` dependency;
 * ``adept-utils`` is a concrete dependency; and
 * ``callpath`` is a concrete dependency.
 
@@ -302,7 +302,7 @@ Debugging Package Builds
 
 Our ``tutorial-mpileaks`` package is still not building due to the
 ``adept-utils`` package's ``configure`` error. Experienced
-``Autotools`` developers will likely already see the problem and
+Autotools developers will likely already see the problem and
 its solution.
 
 But let's take this opportunity to use Spack features to investigate
@@ -566,7 +566,7 @@ We'll need to uninstall the package so we can re-run it with tests enabled:
 
 This is just scratching the surface of testing an installation. We could
 leverage the examples from this package to add post-install phase tests
-and or stand-lone tests. Refer to the links at the bottom for more
+and/or stand-lone tests. Refer to the links at the bottom for more
 information on checking an installation.
 
 
@@ -662,8 +662,8 @@ require a slight change in the recipe's structure compared to what we have seen
 so far.
 
 Let's take ``uncrustify``, a source code beautifier, as an example. This software
-used to build with ``autotools`` until version 0.63, and then switched build systems
-to ``cmake`` at version 0.64.
+used to build with Autotools until version 0.63, and then switched build systems
+to CMake at version 0.64.
 
 Compared to previous recipes in this tutorial, in this case we need ``Uncrustify`` to
 inherit from both ``CMakePackage`` and ``AutotoolsPackage``. We also need to explicitly
@@ -714,7 +714,7 @@ the installation procedure will live into two separate classes:
       def configure_args(self):
           pass
 
-Depending on the ``spec``, and more specifically on the value of the ``build_system`` directive, a ``builder``
+Depending on the ``spec``, and more specifically on the value of the ``build_system`` directive, a ``Builder``
 object will be instantiated from one of the two classes when an installation is requested from a user.
 
 -----------
