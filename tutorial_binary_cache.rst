@@ -370,14 +370,15 @@ leverage them.
 
 Spack also provides a basic GitHub Action to already provide you with a binary cache:
 
-```yaml
-jobs:
-  build:
-    runs-on: ubuntu-22.04
-    steps:
-    - name: Set up Spack
-      uses: spack/setup-spack@v2
-    - run: spack install python  # uses a shared build cache
+.. code-block:: yaml
+
+   jobs:
+     build:
+       runs-on: ubuntu-22.04
+       steps:
+       - name: Set up Spack
+         uses: spack/setup-spack@v2
+       - run: spack install python  # uses a shared build cache
 
 and the `setup-spack readme <https://github.com/spack/setup-spack>` shows you how to cache further
 binaries that are not in the shared build cache.
