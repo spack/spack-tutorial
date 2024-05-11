@@ -58,11 +58,11 @@ Next, we will add this token to the mirror config section of the Spack environme
 .. code-block:: console
 
    $ spack -e . mirror add \
-     --oci-username <user> \
-     --oci-password <token> \
-     --unsigned \
-     my-mirror \
-     oci://ghcr.io/<user>/buildcache
+       --oci-username <user> \
+       --oci-password <token> \
+       --unsigned \
+       my-mirror \
+       oci://ghcr.io/<user>/buildcache
 
 
 .. note ::
