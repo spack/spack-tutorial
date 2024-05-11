@@ -267,7 +267,12 @@ in a ``Dockerfile`` where each command is run in order, Spack package layers are
 and can in principle be combined in any order.
 
 Let's add a simple text editor like ``vim`` to our previous environment next to ``julia``, so that
-we could both edit and run Julia code:
+we could both edit and run Julia code.
+
+.. note::
+
+   You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid
+   a source build of ``vim`` --- but a source build should be quick.
 
 .. code-block:: console
 
