@@ -28,7 +28,7 @@ Spack is used in practice.
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-sc23-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-isc24-tutorial-slides.pdf>`.
 
 **Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn, Adam
 Stewart, and Harmen Stoppels. Managing HPC Software Complexity with Spack. ISC-HPC 2024 (ISC24),
