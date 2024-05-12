@@ -113,6 +113,7 @@ int main(int argc, char **argv) {
 
   if (rank == 0) {
     printf("zlib version: %s\n", ZLIB_VERSION);
+    printf("zlib-ng version: %s\n", ZLIBNG_VERSION);
   }
 
   MPI_Finalize();
