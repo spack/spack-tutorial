@@ -14,6 +14,7 @@ class TutorialMpileaks(AutotoolsPackage):
     url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
     maintainers("adamjstewart")
+    license("BSD-3-Clause", checked_by="adamjstewart")
 
     version("1.0", sha256="2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825")
 

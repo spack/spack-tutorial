@@ -16,6 +16,7 @@ class TutorialMpileaks(AutotoolsPackage):
     maintainers("adamjstewart")
 
     version("1.0", sha256="2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825")
+    license("BSD-3-Clause", checked_by="adamjstewart")
 
     depends_on("mpi")
     depends_on("adept-utils")

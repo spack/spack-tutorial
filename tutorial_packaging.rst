@@ -88,7 +88,6 @@ run ``spack create`` with the URL:
 
 .. literalinclude:: outputs/packaging/create.out
    :language: console
-   :emphasize-lines: 1
 
 You should now be in your text editor of choice, with the ``package.py``
 file open for editing.
@@ -115,7 +114,6 @@ template:
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 26,27,29-30,33-35,39-40,43-44
 
 .. note::
 
@@ -131,7 +129,6 @@ calculation. Exit your editor to return to the command line and use the
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,5
 
 Note the entire ``version`` directive is provided for your convenience.
 
@@ -146,7 +143,6 @@ by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
-   :emphasize-lines: 1,34
 
 It clearly did not build. The error indicates ``configure`` is unable
 to find the installation location of a dependency.
@@ -173,6 +169,7 @@ Let's make the following changes:
   in the docstring;
 * replace the homepage property with the correct link; and
 * uncomment the ``maintainers`` directive and add your GitHub user name.
+* add the license of the project and your GitHub user name.
 
 .. note::
 
@@ -188,7 +185,6 @@ The resulting package should contain the following information:
    :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 5-6,8,11
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
@@ -209,7 +205,8 @@ information derived from the package:
 * the preferred version was derived from the code;
 * the default Autotools package installation phases are listed;
 * the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
-* both the link and run dependencies are ``None`` at this point;
+* both the link and run dependencies are ``None`` at this point; and
+* it uses the 3-clause BSD license.
 
 As we fill in more information about the package, the ``spack info``
 command will become more informative.
@@ -262,7 +259,6 @@ directive as shown below:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 15-17
 
 Adding dependencies tells Spack that it must ensure these packages are
 installed *before* it can build our package.
@@ -321,7 +317,6 @@ failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
-   :emphasize-lines: 1,35
 
 In this case the error conveniently appears on the last line of the
 log *and* the output from `spack install`.
@@ -379,7 +374,6 @@ command:
 
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
-   :emphasize-lines: 1,52
 
 And we get the same results as before. Unfortunately, the output
 does not provide any additional information that can help us with
@@ -391,7 +385,6 @@ help to see what command line options are available for the software.
 
 .. literalinclude:: outputs/packaging/configure-help.out
    :language: console
-   :emphasize-lines: 1,80-81
 
 Note that you can specify the paths for the two concrete dependencies
 with the following options:
@@ -440,7 +433,6 @@ in the ``configure_args`` method as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 20-23
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
@@ -449,7 +441,6 @@ Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
    :language: console
-   :emphasize-lines: 1,31-32
 
 Success!
 
@@ -472,7 +463,6 @@ as opposed to simply allowing them to be enabled or disabled.
 
 .. literalinclude:: outputs/packaging/configure-build-options.out
    :language: console
-   :emphasize-lines: 18-23
 
 According to the software's documentation (https://github.com/LLNL/mpileaks),
 the integer values for the ``--with-stack-start-*`` options represent the
@@ -505,7 +495,6 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 15-16,28-33
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
@@ -516,7 +505,6 @@ get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
-   :emphasize-lines: 1
 
 Notice the addition of the two stack start arguments in the configure
 command that appears at the end of the highlighted line after mpileaks'
@@ -542,7 +530,6 @@ enter a typo to see what happens:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 13
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
@@ -557,7 +544,6 @@ Now let's fix the error and try again:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 13
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
