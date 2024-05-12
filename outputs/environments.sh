@@ -67,6 +67,8 @@ example environments/env-uninstall-1 "spack find"
 
 example environments/env-remove-1    "spack remove trilinos"
 example environments/env-remove-1    "spack find"
+example environments/env-remove-1    "spack concretize --force"
+example environments/env-remove-1    "spack find"
 
 example --tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
