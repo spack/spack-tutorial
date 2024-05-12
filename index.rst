@@ -10,9 +10,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
-the `Supercomputing 2023 Conference
-<https://sc23.conference-program.com/presentation/?id=tut162&sess=sess226>`_, November
-12, 2023. The event was a full-day tutorial.
+the `ISC-HPC 2024 Conference <https://https://www.isc-hpc.com>`_, May 12, 2023. The
+event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
