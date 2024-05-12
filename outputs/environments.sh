@@ -67,6 +67,8 @@ example environments/env-uninstall-1 "spack find"
 
 example environments/env-remove-1    "spack remove trilinos"
 example environments/env-remove-1    "spack find"
+example environments/env-remove-1    "spack concretize"
+example environments/env-remove-1    "spack find"
 
 example --tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
@@ -111,6 +113,7 @@ int main(int argc, char **argv) {
 
   if (rank == 0) {
     printf("zlib version: %s\n", ZLIB_VERSION);
+    printf("zlib-ng version: %s\n", ZLIBNG_VERSION);
   }
 
   MPI_Finalize();

@@ -1,5 +1,6 @@
 $ mpicc ./mpi-hello.c -I$(spack location -i zlib-ng)/include
 $ mpirun -n 2 ./a.out
-Hello world from rank 1
 Hello world from rank 0
 zlib version: 1.3.0.zlib-ng
+zlib-ng version: 2.1.6
+Hello world from rank 1

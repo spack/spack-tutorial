@@ -291,8 +291,10 @@ list we need to use ``spack remove``:
 .. literalinclude:: outputs/environments/env-remove-1.out
    :language: console
 
-Now, it is no longer a root and will need to be re-added before being installed
-as part of this environment.
+When the spec is first removed, we see that it is no longer a root but
+is still present in the installed specs. Once we reconcretize, the
+vestigial spec is removed. Now, it is no longer a root and will need
+to be re-added before being installed as part of this environment.
 
 We know ``trilinos`` is still needed for the ``myproject`` environment, so
 let's switch back to confirm that it is still installed in that environment.
@@ -495,6 +497,7 @@ code:
 
 	  if (rank == 0) {
 	    printf("zlib version: %s\n", ZLIB_VERSION);
+            printf("zlib-ng version: %s\n", ZLIBNG_VERSION);
 	  }
 
 	  MPI_Finalize();
