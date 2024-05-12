@@ -22,23 +22,23 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/sc23-tutorial-slide-preview.png
-   :target: _static/slides/spack-sc23-tutorial-slides.pdf
+.. image:: tutorial/images/isc24-tutorial-slide-preview.png
+   :target: _static/slides/spack-isc24-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
 :download:`Download Slides <_static/slides/spack-sc23-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Richarda Butler, Massimiliano Culpo,
-Tamara Dahlgren, Adam Stewart, Luke Peyralans, and Alec Scott. Managing HPC Software
-Complexity with Spack. Supercomputing 2023 (SC23), Denver, CO. November 12 2023.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn, Adam
+Stewart, and Harmen Stoppels. Managing HPC Software Complexity with Spack. ISC-HPC 2024 (ISC24),
+Hamburg, Germany. May 12, 2024.
 
 .. _video:
 
 .. rubric:: Video
 
-For the last video of this tutorial, see the `AWS/RADIUSS 2023 version
+For the last video of a Spack tutorial like this one, see the `AWS/RADIUSS 2023 version
 <https://spack-tutorial.readthedocs.io/en/radiuss23/>`_
 
 .. _live-demos:
