@@ -114,6 +114,7 @@ template:
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
+   :emphasize-lines: 26,27,29-30,33-35,37-40,44-45,48-49
 
 .. note::
 
@@ -185,6 +186,7 @@ The resulting package should contain the following information:
    :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 5-6,8,11-12
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
@@ -259,6 +261,7 @@ directive as shown below:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 16-18
 
 Adding dependencies tells Spack that it must ensure these packages are
 installed *before* it can build our package.
@@ -385,6 +388,7 @@ help to see what command line options are available for the software.
 
 .. literalinclude:: outputs/packaging/configure-help.out
    :language: console
+   :emphasize-lines: 80-81
 
 Note that you can specify the paths for the two concrete dependencies
 with the following options:
@@ -433,6 +437,7 @@ in the ``configure_args`` method as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 21-24
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
@@ -463,6 +468,7 @@ as opposed to simply allowing them to be enabled or disabled.
 
 .. literalinclude:: outputs/packaging/configure-build-options.out
    :language: console
+   :emphasize-lines: 18-23
 
 According to the software's documentation (https://github.com/LLNL/mpileaks),
 the integer values for the ``--with-stack-start-*`` options represent the
@@ -495,6 +501,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 16-17,29-34
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
@@ -530,6 +537,7 @@ enter a typo to see what happens:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 14
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
@@ -544,6 +552,7 @@ Now let's fix the error and try again:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
    :lines: 6-
    :language: python
+   :emphasize-lines: 14
 
 We'll need to uninstall the package so we can re-run it with tests enabled:
 
