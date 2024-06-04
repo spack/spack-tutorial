@@ -1,7 +1,7 @@
 .PHONY: update-outputs run interactive clean
 
 # Tools
-DOCKER := docker
+DOCKER := nerdctl
 DOCKER_RUN_OPTS :=
 
 # Use this for Podman
