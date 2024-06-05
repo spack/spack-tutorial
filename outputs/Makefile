@@ -1,7 +1,7 @@
 .PHONY: update-outputs run interactive clean
 
 # Tools
-DOCKER := nerdctl
+DOCKER := docker
 DOCKER_RUN_OPTS :=
 
 # Use this for Podman
@@ -17,7 +17,7 @@ DOCKER_RUN_OPTS :=
 container := ghcr.io/spack/tutorial:latest@sha256:417900cce4592159456050a91d844fc9e81fcb01125a55555092fa450ce59a67
 
 # Sections to build
-sections := basics cache dev environments modules packaging scripting stacks
+sections := environments
 
 # Allow users to override variables (e.g. DOCKER := sudo docker)
 -include Make.user

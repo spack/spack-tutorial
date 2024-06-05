@@ -57,17 +57,17 @@ container image. You can invoke
 
 to start using the container. You should now be ready to run through our demo scripts:
 
-  #. :ref:`basics-tutorial`
   #. :ref:`environments-tutorial`
   #. :ref:`binary-cache-tutorial`
-  #. :ref:`stacks-tutorial`
   #. :ref:`packaging-tutorial`
 
 Other sections from past tutorials are also available, although they may
 not be kept up-to-date as frequently:
 
+  #. :ref:`basics-tutorial`
   #. :ref:`configs-tutorial`
   #. :ref:`developer-workflows-tutorial`
+  #. :ref:`stacks-tutorial`
   #. :ref:`spack-scripting-tutorial`
   #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
@@ -85,18 +85,18 @@ Full contents:
    :maxdepth: 3
    :caption: Tutorial
 
-   tutorial_basics
    tutorial_environments
    tutorial_binary_cache
-   tutorial_stacks
    tutorial_packaging
 
 .. toctree::
    :maxdepth: 3
    :caption: Additional sections
 
+   tutorial_basics
    tutorial_configuration
    tutorial_developer_workflows
+   tutorial_stacks
    tutorial_spack_scripting
    tutorial_modules
    tutorial_buildsystems

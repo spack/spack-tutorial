@@ -3,35 +3,25 @@
 
    SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-.. include:: common/setup.rst
-
 .. _environments-tutorial:
 
 =====================
 Environments Tutorial
 =====================
 
-We've covered how to install, remove, and list packages with Spack using the
-commands:
+In this tutorial we'll go end-to-end from installing Spack, to create a **Spack environment**,
+install software in it, and finally, reproduce the same environment at a different location. 
+We'll discuss relevant features of Spack along the way, as soon as they are used.
 
-* `spack install <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-install>`_ to install packages;
-* `spack uninstall <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-uninstall>`_ to remove them; and
-* `spack find <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-find>`_ to look at and query what is installed.
-
-.. Customizing Spack's installation with configuration files, like
-   `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
-
-This section of the tutorial introduces **Spack Environments**, which allow you
-to work with independent groups of packages separately, in a reproducible way.
-In some ways, Spack environments are similar to *virtual environments* in other
-systems (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_),
-but they are based around file formats (``spack.yaml`` and ``spack.lock``) that can
-be shared easily and re-used by others across systems.
+**Spack Environments** allow you to work with independent groups of packages separately, in a reproducible way.
+To some extent, Spack environments are similar to `virtual environments <https://docs.python.org/3/library/venv.html>`_
+or `profiles <https://guix.gnu.org/cookbook/en/html_node/Guix-Profiles-in-Practice.html>`_ in other systems.
+They are based around file formats (``spack.yaml`` and ``spack.lock``) that can be shared easily and re-used 
+by others across systems.
 
 Administering properly configured software involving lots of packages
-and/or varying configuration requirements (e.g., different implementations
-of ``mpi``) for multiple projects and efforts can be overwhelming. Spack
-environments allow you to readily:
+and/or varying configuration requirements for multiple projects can be 
+overwhelming. Spack environments allow you to readily:
 
 * establish standard software requirements for your project(s);
 * set up run environments for users;
@@ -40,45 +30,177 @@ environments allow you to readily:
 * reproduce builds (approximately or exactly) on other machines; and
 * much more.
 
-This tutorial introduces the basics of creating and using environments,
-then explains how to expand, configure, and build software in them.
-We will start with the command line interface, then cover editing key
-environment file directly. We will describe the difference between
-Spack-managed and independent environments, then finish with a section
-on reproducible builds.
+.. This tutorial introduces the basics of creating and using environments,
+.. then explains how to expand, configure, and build software in them.
+.. We will start with the command line interface, then cover editing key
+.. environment file directly. We will describe the difference between
+.. Spack-managed and independent environments, then finish with a section
+.. on reproducible builds.
+
+----------------------
+Get started with Spack
+----------------------
+
+Spack works out of the box, and doesn't require daemons running, or root privileges to be installed. 
+Simply clone Spack to get going. We will clone Spack and immediately check out the 
+most recent release, v0.22.
+
+.. literalinclude:: outputs/environments/clone.out
+   :language: console
+
+Next, we'll add Spack to our path. Spack has some nice command-line
+integration tools, so instead of simply prepending to our ``PATH``
+variable, let's source the Spack setup script:
+
+.. code-block:: console
+
+  $ . share/spack/setup-env.sh
+
+Installing a package is now as simple as writing ``spack install <packagename>``:
+
+.. literalinclude:: outputs/environments/gmake.out
+   :language: console
+
+Don't worry if this command seems to take a long time. The first command ever executed after 
+a fresh installation of Spack computes a few file caches for later reuse. This takes around 
+a minute on slow filesystems. Later commands will be faster.
+
+Let's take the opportunity of this first installation to show some key concepts of Spack.
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+Hashes and Spack's store
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spack generates a hash for each configuration to be installed. This hash is a function of the full
+provenance of the installation, including:
+
+1. The dependency graph, including all of its node and edge attributes
+2. The ``package.py`` recipe used to perform the build
+
+*Any change to the spec or to the recipes used to build the software affects the hash*. 
+
+Spack uses this value to compare specs and to *generate unique installation directories* for every 
+combinatorial version. Let's install a different version of ``gmake`` alongside the 
+one we just installed:
+
+.. literalinclude:: outputs/environments/gmake-1.out
+   :language: console
+
+and verify that by querying installed packages using ``spack find`` to get the installation 
+``prefix`` for ``gmake``:
+
+.. literalinclude:: outputs/environments/find-gmake.out
+   :language: console
+
+*Software is installed in isolation, and different configurations of the same software can coexist with each other.*
+
+These concepts (hashing configurations and installing components in isolation) are typical of *functional package managers*,
+and not unique to Spack. A good reference, for people interested, is Eelco Dolstra's Ph.D. thesis:
+
+- `The Purely Functional Software Deployment Model <https://edolstra.github.io/pubs/phd-thesis.pdf>`_. 
+
+What differentiate Spack from other functional package managers is that the store is not located in a central system folder
+for all users, but instead is within the Spack installation by default. 
+
+*Using Spack doesn't require at any time more privileges than just those of your user*.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Spec syntax and concretization
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Spack has a unique syntax to express constraints on a configuration to be installed:
+
+.. code-block:: console
+
+   $ # Install a specific version by appending @
+   $ spack install hdf5@1.10.1
+
+   $ # Specify a compiler with %
+   $ spack install hdf5@1.10.1 %gcc@11
+
+   $ # Enable compile-time options with +
+   $ spack install hdf5@1.10.1 +szip
+
+   $ # Recurse on dependencies with ^
+   $ spack install hdf5 ^zlib %gcc@11
+
+A distinctive feature of Spack is that recipes for a given software are *parametrized* according to 
+this syntax. To get an idea of that we can inspect a moderately complex package like ``hdf5``:
+
+.. code-block:: console
+
+   $ spack edit hdf5
+
+Each recipe contains:
+
+1. Metadata to express which constraints are valid under which condition
+2. Conditional build actions, based on the current configuration
+
+Spack uses a solver, `clingo <https://github.com/potassco/clingo>`_, to resolve constraints 
+from user requirements and packages. We call *concretization* the process of obtaining an 
+optimal, hashed configuration from the whole set of input requirements.
+
+*Concretization allows a lot of flexibility in tweaking software configuration, while retaining
+the ability to hash the installed component.*
+
+^^^^^^^^^^^^^^^^^^^^^^^^
+The ``.spack`` directory
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Whenever spack builds software from sources, it also stores information about the build in a ``.spack``
+directory within the installation ``prefix``:
+
+.. literalinclude:: outputs/environments/ls-dot-spack.out
+   :language: console
+
+Among other things, you can find:
+
+1. A dump of the build environment in ``spack-build-env.txt``
+2. The compressed build log in ``spack-build-out.txt.gz``
+3. The JSON representation of the concrete spec to be built in ``spec.json``
+4. The recipes used to build the software under ``repos``
+
+*Information in this directory can be used to trace provenance and debug installations, if need be.*
+
+^^^^^^^^^^^^^^^^^^
+Libc and compilers
+^^^^^^^^^^^^^^^^^^
+
+At the moment, Spack doesn't own" the libc used to deploy software, and treats compiler toolchains
+as node attributes. This will change in future versions, but for the time being Spack uses packages 
+like ``glibc`` and ``gcc-runtime`` packages to manage consistency requirements among runtimes. 
+
+These do not represent separate installs from source, but represent aspects of the compiler Spack used for the
+install. For the rest of this section, we will ignore these components and focus on the rest of the install.
+
+^^^^^^^^^^^^^
+Binary caches
+^^^^^^^^^^^^^
+
+*Spack can install software either from source or from a binary cache*. 
+
+Packages in the binary cache are signed with GPG for
+security. For the tutorial we have prepared a binary cache so you
+don't have to wait on slow compilation from source. To be able to
+install from the binary cache, we will need to configure Spack with
+the location of the binary cache and trust the GPG key that the binary
+cache was signed with:
+
+.. literalinclude:: outputs/environments/mirror.out
+   :language: console
+
 
 -------------------
 Environment Basics
 -------------------
 
-Let's look at the output of ``spack find`` at this point in the tutorial.
+*Spack environments are a way to aggregate package installations for a project or other purpose*.
 
-.. literalinclude:: outputs/environments/find-no-env-1.out
-   :language: console
-
-
-This is a complete, but cluttered list of the installed packages and
-their dependencies. It contains packages built with both ``openmpi``
-and ``mpich``, as well as multiple variants of other packages, like
-``hdf5`` and ``zlib-ng``. The query mechanism we learned about with
-``spack find`` can help, but it would be nice if we could start from
-a clean slate without losing what we've already installed.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating and activating environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The ``spack env`` command can help. Let's create a new environment
-called ``myproject``:
+It has by default an associated *view*, which is a single prefix where all packages
+from the environment are linked. Let's create a new environment called ``myproject``:
 
 .. literalinclude:: outputs/environments/env-create-1.out
    :language: console
-
-
-An environment is like a virtualized Spack instance that you can
-use to aggregate package installations for a project or other purpose.
-It has an associated *view*, which is a single prefix where all packages
-from the environment are linked.
 
 You can see the environments we've created so far using the ``spack env
 list`` command:
