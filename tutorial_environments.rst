@@ -166,12 +166,11 @@ Among other things, you can find:
 Libc and compilers
 ^^^^^^^^^^^^^^^^^^
 
-At the moment, Spack doesn't own" the libc used to deploy software, and treats compiler toolchains
-as node attributes. This will change in future versions, but for the time being Spack uses packages 
-like ``glibc`` and ``gcc-runtime`` packages to manage consistency requirements among runtimes. 
+*Spack doesn't own the libc used to deploy software, and treats compiler toolchains as node attributes*.
 
-These do not represent separate installs from source, but represent aspects of the compiler Spack used for the
-install. For the rest of this section, we will ignore these components and focus on the rest of the install.
+This will change in future versions, but for the time being Spack uses packages like ``glibc`` and 
+``gcc-runtime`` to manage consistency requirements among different runtimes. For the rest of this section,
+we will ignore these components and focus on the rest of the install.
 
 ^^^^^^^^^^^^^
 Binary caches
@@ -196,7 +195,7 @@ Environment Basics
 
 *Spack environments are a way to aggregate package installations for a project or other purpose*.
 
-It has by default an associated *view*, which is a single prefix where all packages
+They have by default an associated *view*, which is a single prefix where all packages
 from the environment are linked. Let's create a new environment called ``myproject``:
 
 .. literalinclude:: outputs/environments/env-create-1.out
