@@ -10,7 +10,7 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
-the `ISC-HPC 2024 Conference <https://https://www.isc-hpc.com>`_, May 12, 2023. The
+the `ACM-REP 2024 Conference <https://acm-rep.github.io/2024/>`_, June 18, 2024. The
 event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
@@ -21,17 +21,17 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc24-tutorial-slide-preview.png
-   :target: _static/slides/spack-isc24-tutorial-slides.pdf
+.. image:: tutorial/images/acmrep24-tutorial-slide-preview.png
+   :target: _static/slides/spack-acmrep24-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-isc24-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-acmrep24-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Michael Kuhn, Adam
-Stewart, and Harmen Stoppels. Managing HPC Software Complexity with Spack. ISC-HPC 2024 (ISC24),
-Hamburg, Germany. May 12, 2024.
+**Full citation:** Todd Gamblin, Gregory Becker, Massimiliano Culpo, Adam
+Stewart, and Harmen Stoppels. Managing HPC Software Complexity with Spack. ACM-REP 2024,
+Rennes, France. June 18, 2024.
 
 .. _video:
 
