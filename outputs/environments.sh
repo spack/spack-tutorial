@@ -5,23 +5,37 @@ project=$(dirname "$0")
 . "$project/defs.sh"
 
 rm -rf "${raw_outputs:?}/environments"
-. "$project/init_spack.sh"
 
 export SPACK_COLOR=never
 
-# In the basics section a bunch of packages were already installed,
-# they are referenced here. Reinstall them so we can generate outputs
-# independently.
-spack install zlib-ng \
-              zlib-ng %clang \
-              zlib-ng@2.0.7 \
-              zlib-ng@2.0.7 cflags=-O3 \
-              tcl \
-              tcl ^zlib-ng cflags=-O3 \
-              hdf5 \
-              hdf5~mpi \
-              hdf5+hl+mpi ^mpich \
-              trilinos +hdf5 ^hdf5+hl+mpi ^mpich
+####
+# Introduction for "basic" installation
+####
+example environments/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
+example environments/clone           "cd ~/spack"
+
+cd ~/spack || exit
+export SPACK_ROOT=~/spack
+
+. share/spack/setup-env.sh
+spack config add "config:suppress_gpg_warnings:true"
+
+example environments/source-setup     ". share/spack/setup-env.sh"
+
+example environments/gmake      "spack install gmake"
+
+example environments/gmake-1    "spack install gmake@4.3"
+
+example environments/find-gmake "spack find -p gmake"
+
+example environments/ls-dot-spack 'ls "$(spack location -i gmake@4.4)/.spack"'
+
+example environments/mirror     "spack mirror add tutorial /mirror"
+example environments/mirror     "spack buildcache keys --install --trust"
+
+####
+# Usual Environment output
+####
 
 example environments/find-no-env-1   "spack find"
 
