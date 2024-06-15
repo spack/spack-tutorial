@@ -11,7 +11,7 @@ Tutorial: Spack 101
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
 the `ACM-REP 2024 Conference <https://acm-rep.github.io/2024/>`_, June 18, 2024. The
-event was a full-day tutorial.
+event was a half-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
