@@ -286,9 +286,7 @@ Now, let's install:
    :language: console
 
 
-We see that ``tcl`` and the dependencies of ``trilinos`` are
-already installed, and that ``trilinos`` was newly installed.
-We also see that the environment's view was updated
+Note that, at the end, the environment's view was updated
 to include the new installations.
 
 Now confirm the contents of the environment using ``spack find``:
@@ -440,9 +438,11 @@ in one go with ``spack uninstall --remove trilinos``.
 The ``spack.yaml`` file
 -----------------------
 
-An environment is more than just a list of root specs. It includes
-*configuration* settings that affect the way Spack behaves when the
-environment is activated. So far, ``myproject`` relies on configuration
+*An environment is more than just a list of root specs. It includes
+configuration settings that affect the way Spack behaves when the
+environment is activated.*
+
+So far, ``myproject`` relies on configuration
 defaults that can be overridden. Here we'll look at how to add specs
 and ensure all the packages depending on ``mpi`` build with ``mpich``.
 We can customize the selection of the ``mpi`` provider using
@@ -572,9 +572,8 @@ with ``py-numpy``:
 Building in environments
 ------------------------
 
-Activated environments allow you to invoke any programs installed
-in them as if they were installed on the system. In this section
-we will take advantage of that feature.
+*Activated environments allow you to invoke any programs installed
+in them as if they were installed on the system.* 
 
 Suppose you want to compile some MPI programs. We have an MPI
 implementation installed in our ``myproject2`` environment, so
@@ -651,14 +650,7 @@ Note that the reported version *does* match that of our installation.
 Reproducing builds
 ------------------
 
-Spack environments provide users with *virtual environments*
-similar to `Python venv <https://docs.python.org/3/library/venv.html>`_
-and `Conda environments
-<https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_). The goal is to ensure packages in one environment
-are kept separate from those of another. These environments can
-be managed by Spack or independent. In either case, their environment
-files can be used to reproduce builds by other users and on other machines.
-Since those files are key to reproducing builds, let's start with them.
+*Environment files can be used to reproduce builds by other users and on other machines.*
 
 ^^^^^^^^^^^^^^^^^
 Environment files
