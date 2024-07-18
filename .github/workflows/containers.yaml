@@ -20,14 +20,21 @@ jobs:
       packages: write
     strategy:
       fail-fast: false
-      matrix: 
-        # 0: image name, 
+      matrix:
+        # 0: image name,
         # 1: Dockerfile
         dockerfile: [
           [tutorial, docker/Dockerfile]
         ]
     name: Build ${{ matrix.dockerfile[0] }}
     steps:
+      - name: Make space for build
+        run: |
+          sudo apt-get remove -y '^llvm-.*'
+          sudo apt-get remove -y '^dotnet-.*'
+          sudo apt-get autoremove -y
+          rm -rf /usr/share/dotnet/
+
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
 
@@ -63,7 +70,7 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
-      
+
       - name: Build & Deploy ${{ matrix.dockerfile[0] }}
         uses: docker/build-push-action@1a162644f9a7e87d8f4b053101d1d9a712edc18c
         with:
