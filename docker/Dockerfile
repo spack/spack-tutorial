@@ -7,7 +7,7 @@ RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     awscli \
     bash-completion \
-    mg \
+    emacs \
     jq \
     less \
     vim
