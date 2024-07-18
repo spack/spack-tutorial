@@ -13,11 +13,9 @@ RUN apt-get update -y && \
 RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
     unzip awscliv2.zip && ./aws/install && aws --version
 
-# Download the buildcache 
+# Download the buildcache
 RUN mkdir /mirror
-RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/releases/v0.22/tutorial /mirror
-# RUN aws --region us-east-1 --no-sign-request s3 sync s3://spack-binaries/releases/v0.22/build_cache/_pgp /mirror/build_cache/_pgp
-# COPY tutorial.pub /mirror/build_cache/_pgp/78F3726939CA1B94893B66E8BC86F6FB94429164.pub
+RUN aws --region us-east-1 --no-sign-request s3 sync --only-show-errors s3://spack-binaries/releases/v0.22/tutorial /mirror
 
 FROM ghcr.io/spack/tutorial-ubuntu-22.04:v2023-10-30
 
