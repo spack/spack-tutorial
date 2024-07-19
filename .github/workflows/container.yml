@@ -9,7 +9,6 @@ jobs:
     permissions:
       packages: write
 
-    name:
     steps:
       - name: Remove pre-installed apps to make space for build
         run: |
@@ -43,3 +42,5 @@ jobs:
           context: "{{defaultContext}}:container"
           platforms: linux/amd64
           push: ${{ github.event_name != 'pull_request' }}
+          cache-from: type=registry,ref=ghcr.io/spack/tutorial:buildcache
+          cache-to: ${{ github.ref == 'refs/heads/main' && 'type=registry,ref=ghcr.io/spack/tutorial:buildcache,mode=max' || '' }}

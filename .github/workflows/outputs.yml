@@ -3,19 +3,27 @@ on:
   workflow_call:
 
 jobs:
-  generate-outputs:
+  re-generate:
     runs-on: ubuntu-latest
-    name: Generate ouputs
+
+    permissions:
+      contents: write
+
     steps:
     - name: Checkout
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      with:
+        ref: ${{ github.head_ref }}
 
-    - name: Run
+    - name: Re-generate Outputs from Tutorial Scripts
       run: |
         chmod -R a+w outputs
         make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24"
 
-    - name: Create pull request
-      run: gh pr create -B main -H regenerate-outputs --title "Regenerate outputs" --body "Automated update"
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    - name: Push Modified Files to Branch
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Update generated outputs"
+        git push
