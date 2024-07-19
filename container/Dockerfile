@@ -1,4 +1,4 @@
-FROM ghcr.io/spack/tutorial-ubuntu-22.04:v2023-10-30
+FROM ghcr.io/spack/tutorial-ubuntu-22.04:v2024-05-07
 
 ENV DEBIAN_FRONTEND=noninteractive
 

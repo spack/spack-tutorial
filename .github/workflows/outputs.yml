@@ -10,6 +10,13 @@ jobs:
       contents: write
 
     steps:
+    - name: Remove pre-installed apps to make space for build
+      run: |
+        sudo apt-get remove -y '^llvm-.*'
+        sudo apt-get remove -y '^dotnet-.*'
+        sudo apt-get autoremove -y
+        rm -rf /usr/share/dotnet/
+
     - name: Checkout (Push)
       if: github.event_name != 'pull_request'
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
@@ -26,12 +33,17 @@ jobs:
     - name: Re-generate outputs from tutorial scripts
       run: |
         chmod -R a+w outputs
-        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24"
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24" container=ghcr.io/spack/tutorial:latest
+
+    - name: Show diff of modified files
+      run: |
+        git diff HEAD .
 
     - name: Push modified files to branch
+      if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork ) || github.event_name != 'pull_request'
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add .
-        git commit -m "Update generated outputs"
+        git commit -m "Update generated outputs on behalf of [@${{ github.actor }}]"
         git push

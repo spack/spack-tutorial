@@ -14,8 +14,16 @@ jobs:
         run: |
           sudo apt-get remove -y '^llvm-.*'
           sudo apt-get remove -y '^dotnet-.*'
+          sudo apt-get remove -y 'php.*'
+          sudo apt-get remove -y '^mongodb-.*'
+          sudo apt-get remove -y '^mysql-.*'
           sudo apt-get autoremove -y
-          rm -rf /usr/share/dotnet/
+          sudo apt-get clean
+          sudo rm -rf /usr/share/dotnet/
+          sudo rm -rf /usr/local/share/powershell
+          sudo rm -rf /usr/local/share/chromium
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/local/lib/node_modules
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@5927c834f5b4fdf503fca6f4c7eccda82949e1ee
@@ -38,9 +46,21 @@ jobs:
 
       - name: Build & Push
         uses: docker/build-push-action@1ca370b3a9802c92e886402e0dd88098a2533b12
+        env:
+          DOCKER_BUILD_SUMMARY: false
+          DOCKER_BUILD_RECORD_UPLOAD: false
         with:
           context: "{{defaultContext}}:container"
           platforms: linux/amd64
-          push: ${{ github.event_name != 'pull_request' }}
           cache-from: type=registry,ref=ghcr.io/spack/tutorial:buildcache
           cache-to: ${{ github.ref == 'refs/heads/main' && 'type=registry,ref=ghcr.io/spack/tutorial:buildcache,mode=max' || '' }}
+          outputs: ${{ github.event_name == 'pull_request' && 'type=docker,dest=/tmp/tutorial-container.tar' || 'type=registry' }}
+
+      - name: Upload container as artifact for PRs
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v2
+        with:
+          name: tutorial-container
+          path: /tmp/tutorial-container.tar
+          retention-days: 1
+          compression-level: 9
