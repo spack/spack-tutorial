@@ -54,11 +54,11 @@ jobs:
           platforms: linux/amd64
           cache-from: type=registry,ref=ghcr.io/spack/tutorial:buildcache
           cache-to: ${{ github.ref == 'refs/heads/main' && 'type=registry,ref=ghcr.io/spack/tutorial:buildcache,mode=max' || '' }}
-          outputs: ${{ github.event_name == 'pull_request' && 'type=docker,dest=/tmp/tutorial-container.tar' || 'type=registry' }}
+          outputs: ${{ github.ref != 'refs/heads/main' && 'type=docker,dest=/tmp/tutorial-container.tar' || 'type=registry' }}
 
       - name: Upload container as artifact for PRs
         if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@0b2256b8c012f0828dc542b3febcab082c67f72b
         with:
           name: tutorial-container
           path: /tmp/tutorial-container.tar
