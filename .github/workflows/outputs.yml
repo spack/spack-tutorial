@@ -1,6 +1,6 @@
 name: Generate outputs
-
-on: workflow_dispatch
+on:
+  workflow_call:
 
 jobs:
   generate-outputs:
