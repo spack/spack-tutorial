@@ -1,0 +1,52 @@
+name: ci
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - '*'
+
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ci-${{github.ref}}-${{github.event.pull_request.number || github.run_number}}
+  cancel-in-progress: true
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: read
+    outputs:
+      container: ${{ steps.filter.outputs.container }}
+      outputs: ${{ steps.filter.outputs.outputs }}
+
+    steps:
+      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # @v2
+        if: ${{ github.event_name == 'push' }}
+        with:
+          fetch-depth: 0
+
+        # For pull requests it's not necessary to checkout the code
+      - uses: dorny/paths-filter@de90cc6fb38fc0963ad72b210f1f284cd68cea36
+        id: filter
+        with:
+          filters: |
+            container:
+              - '.github/**'
+              - 'container/**'
+            outputs:
+              - '.github/**'
+              - 'outputs/**.sh'
+
+  container:
+    if: ${{ needs.changes.outputs.container == 'true' }}
+    needs: changes
+    uses: ./.github/workflows/container.yml
+
+  outputs:
+    if: ${{ needs.changes.outputs.outputs == 'true' }}
+    needs: [ changes, container ]
+    uses: ./.github/workflows/outputs.yml

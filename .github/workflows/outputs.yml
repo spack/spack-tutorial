@@ -1,0 +1,64 @@
+name: Generate outputs
+on:
+  workflow_call:
+
+jobs:
+  re-generate:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+    - name: Remove pre-installed apps to make space for build
+      run: |
+        sudo apt-get remove -y '^llvm-.*'
+        sudo apt-get remove -y '^dotnet-.*'
+        sudo apt-get autoremove -y
+        sudo rm -rf /usr/share/dotnet/
+        sudo docker system prune -af
+
+    - name: Checkout (Push)
+      if: github.event_name != 'pull_request'
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      with:
+        ref: ${{ github.head_ref }}
+
+    - name: Checkout (PR)
+      if: github.event_name == 'pull_request'
+      uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
+      with:
+        ref: ${{ github.event.pull_request.head.ref }}
+        repository: ${{ github.event.pull_request.head.repo.full_name }}
+
+    - name: Download container from artifact if PR
+      if: github.event_name == 'pull_request'
+      uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
+      with:
+        name: tutorial-container
+        path: /tmp
+
+    - name: Import container from PR artifact
+      if: github.event_name == 'pull_request'
+      run: |
+        docker load --input /tmp/tutorial-container.tar
+        docker tag $(docker image ls -q) ghcr.io/spack/tutorial:latest
+        docker image ls -a
+
+    - name: Re-generate outputs from tutorial scripts
+      run: |
+        chmod -R a+w outputs
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24" container=ghcr.io/spack/tutorial
+
+    - name: Show diff of modified files
+      run: |
+        git diff HEAD .
+
+    - name: Push modified files to branch
+      if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork ) || github.event_name != 'pull_request'
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add .
+        git commit -m "Update generated outputs on behalf of [@${{ github.actor }}]"
+        git push
