@@ -42,13 +42,12 @@ jobs:
       if: github.event_name == 'pull_request'
       run: |
         docker load --input /tmp/tutorial-container.tar
-        docker tag $(docker image ls -q) ghcr.io/spack/tutorial:latest
         docker image ls -a
 
     - name: Re-generate outputs from tutorial scripts
       run: |
         chmod -R a+w outputs
-        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e LINES=24" container=ghcr.io/spack/tutorial
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="--tty -e COLUMNS=94 -e LINES=24" container=ghcr.io/spack/tutorial
 
     - name: Show diff of modified files
       run: |
