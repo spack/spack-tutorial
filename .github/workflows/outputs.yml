@@ -47,7 +47,7 @@ jobs:
     - name: Re-generate outputs from tutorial scripts
       run: |
         chmod -R a+w outputs
-        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="--tty -e COLUMNS=94 -e LINES=24" container=ghcr.io/spack/tutorial
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94" container=ghcr.io/spack/tutorial
 
     - name: Show diff of modified files
       run: |
