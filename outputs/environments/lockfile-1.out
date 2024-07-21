@@ -6,24 +6,24 @@ $ jq < spack.lock | head -30
     "specfile-version": 4
   },
   "spack": {
-    "version": "0.22.0",
+    "version": "0.22.1",
     "type": "git",
-    "commit": "5fe93fee1eec46a0750bd340198bffcb92ff9eec"
+    "commit": "d66dce2d668a6234504594661506cdd1eaca4adc"
   },
   "roots": [
     {
-      "hash": "kzonshw6wgio6do6gj5vk5kkhoxt2kal",
-      "spec": "openmpi"
+      "hash": "ptpjbrqyfa6vyhjhjpdqgmraefxd5cdi",
+      "spec": "trilinos"
     },
     {
-      "hash": "jlxw43juyunkrzjxsmzsoocykongu57a",
-      "spec": "trilinos"
+      "hash": "zysb7lhm2ra6jlov73zsyn5ik6tb6off",
+      "spec": "openmpi"
     }
   ],
   "concrete_specs": {
-    "kzonshw6wgio6do6gj5vk5kkhoxt2kal": {
-      "name": "openmpi",
-      "version": "5.0.3",
+    "ptpjbrqyfa6vyhjhjpdqgmraefxd5cdi": {
+      "name": "trilinos",
+      "version": "15.1.1",
       "arch": {
 	"platform": "linux",
 	"platform_os": "ubuntu22.04",
