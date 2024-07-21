@@ -89,8 +89,8 @@ spack:
   packages:
     all:
       target: [x86_64_v3]
+      compiler: [gcc, clang, oneapi, xl, nag, fj, aocc]
       providers:
-	iconv: [glibc, musl, libiconv]
 	awk: [gawk]
 	armci: [armcimpi]
 	blas: [openblas, amdblis]
@@ -105,16 +105,16 @@ spack:
 	glu: [mesa-glu, openglu]
 	golang: [go, gcc]
 	go-or-gccgo-bootstrap: [go-bootstrap, gcc]
+	iconv: [libiconv]
 	ipp: [intel-oneapi-ipp]
 	java: [openjdk, jdk, ibm-java]
 	jpeg: [libjpeg-turbo, libjpeg]
 	lapack: [openblas, amdlibflame]
 	libc: [glibc, musl]
 	libgfortran: [gcc-runtime]
-	libglx: [mesa+glx, mesa18+glx]
+	libglx: [mesa+glx]
 	libifcore: [intel-oneapi-runtime]
 	libllvm: [llvm]
-	libosmesa: [mesa+osmesa, mesa18+osmesa]
 	lua-lang: [lua, lua-luajit-openresty, lua-luajit]
 	luajit: [lua-luajit-openresty, lua-luajit]
 	mariadb-client: [mariadb-c-client, mariadb]
@@ -139,10 +139,11 @@ spack:
 	yacc: [bison, byacc]
 	ziglang: [zig]
 	zlib-api: [zlib-ng+compat, zlib]
-      compiler: [gcc, clang, oneapi, xl, nag, fj, aocc]
       permissions:
 	read: world
 	write: user
+    iconv:
+      require: [libiconv]
   modules:
     prefix_inspections:
       ./bin:
@@ -253,7 +254,7 @@ spack:
       containerise: containerize
       rm: remove
     debug: false
-    build_jobs: 8
+    build_jobs: 4
   upstreams: {}
   bootstrap:
     enable: true

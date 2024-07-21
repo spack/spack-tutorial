@@ -41,8 +41,14 @@ jobs:
 
       - name: Generate Container Metadata
         uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81
+        id: metadata
         with:
           images: ghcr.io/spack/tutorial
+          tags: |
+            # set latest tag for default branch
+            type=raw,value=latest
+            # set tag if spawned by a tag
+            type=raw,value={{tag}}
 
       - name: Build & Push
         uses: docker/build-push-action@1ca370b3a9802c92e886402e0dd88098a2533b12
@@ -52,6 +58,7 @@ jobs:
         with:
           context: "{{defaultContext}}:container"
           platforms: linux/amd64
+          tags: ${{ steps.metadata.outputs.tags }}
           cache-from: type=registry,ref=ghcr.io/spack/tutorial:buildcache
           cache-to: ${{ github.ref == 'refs/heads/main' && 'type=registry,ref=ghcr.io/spack/tutorial:buildcache,mode=max' || '' }}
           outputs: ${{ github.ref != 'refs/heads/main' && 'type=docker,dest=/tmp/tutorial-container.tar' || 'type=registry' }}

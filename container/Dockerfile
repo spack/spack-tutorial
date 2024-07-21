@@ -12,6 +12,9 @@ RUN apt-get update -y && \
     less \
     vim
 
+# Remove GCC 12 from container
+RUN apt-get remove -y gcc-12
+
 # Download the buildcache
 RUN mkdir /mirror
 RUN aws --region us-east-1 --no-sign-request s3 sync --only-show-errors s3://spack-binaries/releases/v0.22/tutorial /mirror
