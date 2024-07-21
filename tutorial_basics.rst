@@ -68,7 +68,11 @@ Installing Packages
 -------------------
 
 Installing a package with Spack is very simple. To install a piece of
-software, simply type ``spack install <package_name>``.
+software, simply type
+
+.. code-block:: console
+
+  $ spack install <package_name>
 
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
