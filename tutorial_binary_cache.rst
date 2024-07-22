@@ -31,7 +31,7 @@ and features an interactive REPL that we can use to verify that the installation
    $ spack -e . add julia
    $ spack -e . install
 
-Let's run the ``julia`` REPL 
+Let's run the ``julia`` REPL
 
 .. code-block:: console
 
@@ -62,7 +62,7 @@ Next, we will add this token to the mirror config section of the Spack environme
        --oci-password <token> \
        --unsigned \
        my-mirror \
-       oci://ghcr.io/<user>/buildcache
+       oci://ghcr.io/<github_user>/buildcache-${USER}-${HOSTNAME}
 
 
 .. note ::
@@ -81,7 +81,7 @@ Your ``spack.yaml`` file should now contain the following:
      - julia
      mirrors:
         my-mirror:
-           url: oci://ghcr.io/<user>/buildcache
+           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
            access_pair:
            - <user>
            - <token>
@@ -97,23 +97,23 @@ which outputs
 
 .. code-block:: text
 
-   ==> Selected 66 specs to push to oci://ghcr.io/<user>/buildcache
+   ==> Selected 66 specs to push to oci://ghcr.io/<github_user>/buildcache-<user>-<host>
    ==> Checking for existing specs in the buildcache
-   ==> 66 specs need to be pushed to ghcr.io/<user>/buildcache
+   ==> 66 specs need to be pushed to ghcr.io/<github_user>/buildcache-<user>-<host>
    ==> Uploaded sha256:d8d9a5f1fa443e27deea66e0994c7c53e2a4a618372b01a43499008ff6b5badb (0.83s, 0.11 MB/s)
    ...
    ==> Uploading manifests
    ==> Uploaded sha256:cdd443ede8f2ae2a8025f5c46a4da85c4ff003b82e68cbfc4536492fc01de053 (0.64s, 0.02 MB/s)
    ...
-   ==> Pushed zstd@1.5.6/ew3aaos to ghcr.io/<user>/buildcache:zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr.spack
+   ==> Pushed zstd@1.5.6/ew3aaos to ghcr.io/<user>/buildcache-<user>-<host>:zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr.spack
    ...
-   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
 The location of the pushed package
 
 .. code-block:: text
 
-   ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
 looks very similar to a container image --- we will get to that in a bit.
 
@@ -148,7 +148,7 @@ in the ``spack.yaml`` file:
      - julia
      mirrors::  # <- note the double colon
         my-mirror:
-           url: oci://ghcr.io/<user>/buildcache
+           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
            access_pair:
            - <user>
            - <token>
@@ -159,8 +159,8 @@ An "overwrite install" should be enough to show that the build cache is used:
 .. code-block:: console
 
    $ spack -e . install --overwrite julia
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache/blobs/sha256:3c6809073fcea76083838f603509f10bd006c4d20f49f9644c66e3e9e730da7a
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache-<user>-<host>/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
+   ==> Fetching https://ghcr.io/v2/<user>/buildcache-<user>-<host>/blobs/sha256:3c6809073fcea76083838f603509f10bd006c4d20f49f9644c66e3e9e730da7a
    ==> Extracting julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl from binary cache
    [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl
 
@@ -203,7 +203,7 @@ After an index is created, it's possible to list the available packages in the b
 
    $ spack -e . buildcache list --allarch
 
-  
+
 ----------------------------------
 Creating runnable container images
 ----------------------------------
@@ -219,7 +219,7 @@ pushed earlier:
 
 .. code-block:: console
 
-   $ docker run ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack julia
+   $ docker run ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack julia
    exec /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl/bin/julia: no such file or directory
 
 but immediately we see it fails. The reason is that one crucial part is missing, and that is a
@@ -238,8 +238,8 @@ Now let's pull this image again and run it:
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
-   $ docker run -it --rm ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker pull ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker run -it --rm ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
    root@f53920f8695a:/# julia
    julia> 1 + 1
    2
@@ -291,8 +291,8 @@ Now let's run a container from this image:
 
 .. code-block:: console
 
-   $ docker run -it --rm ghcr.io/<user>/buildcache:julia-and-vim
-   root@f53920f8695a:/# vim ~/example.jl  # create a new file with some Julia code 
+   $ docker run -it --rm ghcr.io/<github_user>/buildcache-<user>-<host>:julia-and-vim
+   root@f53920f8695a:/# vim ~/example.jl  # create a new file with some Julia code
    root@f53920f8695a:/# julia ~/example.jl  # and run it
 
 ------------------------------------
