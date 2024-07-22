@@ -60,16 +60,16 @@ to start using the container. You should now be ready to run through our demo sc
 
   #. :ref:`basics-tutorial`
   #. :ref:`environments-tutorial`
-  #. :ref:`binary-cache-tutorial`
-  #. :ref:`stacks-tutorial`
+  #. :ref:`configs-tutorial`
   #. :ref:`packaging-tutorial`
+  #. :ref:`stacks-tutorial`
+  #. :ref:`developer-workflows-tutorial`
+  #. :ref:`binary-cache-tutorial`
+  #. :ref:`spack-scripting-tutorial`
 
 Other sections from past tutorials are also available, although they may
 not be kept up-to-date as frequently:
 
-  #. :ref:`configs-tutorial`
-  #. :ref:`developer-workflows-tutorial`
-  #. :ref:`spack-scripting-tutorial`
   #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
   #. :ref:`advanced-packaging-tutorial`
@@ -88,17 +88,17 @@ Full contents:
 
    tutorial_basics
    tutorial_environments
-   tutorial_binary_cache
-   tutorial_stacks
+   tutorial_configuration
    tutorial_packaging
+   tutorial_stacks
+   tutorial_developer_workflows
+   tutorial_binary_cache
+   tutorial_spack_scripting
 
 .. toctree::
    :maxdepth: 3
    :caption: Additional sections
 
-   tutorial_configuration
-   tutorial_developer_workflows
-   tutorial_spack_scripting
    tutorial_modules
    tutorial_buildsystems
    tutorial_advanced_packaging

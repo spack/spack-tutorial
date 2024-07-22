@@ -202,7 +202,6 @@ information derived from the package:
 
 * it is an Autotools package;
 * it has the description, homepage, and maintainer(s) we provided;
-* it is not externally detectable;
 * it has the URL we gave the ``spack create`` command;
 * the preferred version was derived from the code;
 * the default Autotools package installation phases are listed;
@@ -554,7 +553,7 @@ Now let's fix the error and try again:
    :language: python
    :emphasize-lines: 14
 
-We'll need to uninstall the package so we can re-run it with tests enabled:
+Installing again we can see we've fixed the problem.
 
 .. literalinclude:: outputs/packaging/install-mpileaks-6.out
    :language: console
