@@ -726,7 +726,7 @@ Here is the completed :code:`Pandas` script:
 
 It is quite important to declare all the dependencies of a Python package.
 Spack can "activate" Python packages to prevent the user from having to
-load each dependency module explictly. If a dependency is missed, Spack will
+load each dependency module explicitly. If a dependency is missed, Spack will
 be unable to properly activate the package and it will cause an issue. To
 learn more about extensions go to `spack extensions <https://spack.readthedocs.io/en/latest/basic_usage.html#cmd-spack-extensions>`_.
 

@@ -381,11 +381,12 @@ that the compiler supports.
        target: ppc64le
        ...
 
-The ``modules`` field of the compiler is used primarily on Cray systems,
-but can be useful on any system that has compilers that are only
-useful when a particular module is loaded. Any modules in the
-``modules`` field of the compiler configuration will be loaded as part
-of the build environment for packages using that compiler:
+The ``modules`` field of the compiler was originally designed to
+support older Cray systems, but can be useful on any system that has
+compilers that are only usable when a particular module is loaded. Any
+modules in the ``modules`` field of the compiler configuration will be
+loaded as part of the build environment for packages using that
+compiler:
 
 .. code-block:: yaml
 
@@ -629,9 +630,18 @@ This gets slightly more complicated with virtual dependencies. Suppose
 we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
+Instead of manually configuring an external for MPICH like we did for
+``perl`` we will use the ``spack external find`` command. For packages
+that support this option, this is a useful way to avoid typos and get
+more accurate external specs.
+
+.. literalinclude:: outputs/config/0.external_find.out
+   :language: console
+
 To express that we don't want any other MPI installed we can use the
-virtual ``mpi`` package as a key. Since we're at it, we can configure
-HDF5 to build with MPI by default again:
+virtual ``mpi`` package as a key. While we're editing the
+``spack.yaml`` file, make sure to configure HDF5 to be able to build
+with MPI again:
 
 .. code-block:: yaml
    :emphasize-lines: 14-19
@@ -651,7 +661,7 @@ HDF5 to build with MPI by default again:
          buildable: false
        mpich:
          externals:
-         - spec: mpich@4.0%gcc@11.4.0
+         - spec: mpich@4.0+hydra device=ch4 netmod=ofi
            prefix: /usr
        mpi:
          buildable: false
@@ -842,6 +852,17 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 
 Obviously, if you want to build everything in serial for whatever reason,
 you would set ``build_jobs`` to 1.
+
+Last we'll unset ``concretizer:reuse:false`` since we'll want to
+enable concretizer reuse for the rest of this tutorial.
+
+.. code-block:: yaml
+
+  $ spack config rm concretizer:reuse
+
+.. warning::
+
+   If you do not do this step, the rest of the tutorial will not reuse binaries!
 
 ----------
 Conclusion

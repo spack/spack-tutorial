@@ -11,7 +11,7 @@ class TutorialMpileaks(AutotoolsPackage):
     MPI_Datatypes."""
 
     homepage = "https://github.com/LLNL/mpileaks"
-    url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
+    url = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
     maintainers("adamjstewart")
 
@@ -24,8 +24,8 @@ class TutorialMpileaks(AutotoolsPackage):
 
     def configure_args(self):
         args = [
-            "--with-adept-utils={0}".format(self.spec["adept-utils"].prefix),
-            "--with-callpath={0}".format(self.spec["callpath"].prefix),
+            f"--with-adept-utils={self.spec['adept-utils'].prefix}",
+            f"--with-callpath={self.spec['callpath'].prefix}",
         ]
 
         return args

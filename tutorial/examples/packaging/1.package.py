@@ -11,7 +11,7 @@ class TutorialMpileaks(AutotoolsPackage):
     MPI_Datatypes."""
 
     homepage = "https://github.com/LLNL/mpileaks"
-    url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
+    url = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
     maintainers("adamjstewart")
     license("BSD-3-Clause", checked_by="adamjstewart")

@@ -27,7 +27,6 @@ class Callpath(CMakePackage):
 
         if self.spec.satisfies("^dyninst@9.3.0:"):
             std_flag = self.compiler.cxx_flag
-            args.append("-DCMAKE_CXX_FLAGS='{0}' -fpermissive'".format(
-                std_flag))
+            args.append(f"-DCMAKE_CXX_FLAGS='{std_flag}' -fpermissive'")
 
         return args

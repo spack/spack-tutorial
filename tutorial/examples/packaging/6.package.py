@@ -11,7 +11,7 @@ class TutorialMpileaks(AutotoolsPackage):
     MPI_Datatypes."""
 
     homepage = "https://github.com/LLNL/mpileaks"
-    url      = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
+    url = "https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
     maintainers("adamjstewart")
     license("BSD-3-Clause", checked_by="adamjstewart")
@@ -29,15 +29,15 @@ class TutorialMpileaks(AutotoolsPackage):
 
     def configure_args(self):
         args = [
-            "--with-adept-utils={0}".format(self.spec["adept-utils"].prefix),
-            "--with-callpath={0}".format(self.spec["callpath"].prefix),
+            f"--with-adept-utils={self.spec['adept-utils'].prefix}",
+            f"--with-callpath={self.spec['callpath'].prefix}",
         ]
 
         stackstart = int(self.spec.variants["stackstart"].value)
         if stackstart:
             args.extend([
-                "--with-stack-start-c={0}".format(stackstart),
-                "--with-stack-start-fortran={0}".format(stackstart),
+                f"--with-stack-start-c={stackstart}",
+                f"--with-stack-start-fortran={stackstart}",
             ])
 
         return args

@@ -27,6 +27,6 @@ class Mpileaks(AutotoolsPackage):
         args = ["--with-adept-utils=" + spec['adept-utils'].prefix,
                 "--with-callpath=" + spec['callpath'].prefix]
         if stackstart:
-            args.extend(['--with-stack-start-c=%s' % stackstart,
-                         '--with-stack-start-fortran=%s' % stackstart])
+            args.extend([f'--with-stack-start-c={stackstart}',
+                         f'--with-stack-start-fortran={stackstart}'])
         return args
