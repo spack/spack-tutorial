@@ -43,11 +43,11 @@ jobs:
               - 'outputs/**.sh'
 
   container:
-    if: ${{ needs.changes.outputs.container == 'true' }}
+    if: ${{ needs.changes.outputs.container == 'true' || startsWith(github.ref, 'refs/tags/') }}
     needs: changes
     uses: ./.github/workflows/container.yml
 
   outputs:
-    if: ${{ needs.changes.outputs.outputs == 'true' }}
+    if: ${{ needs.changes.outputs.outputs == 'true' || startsWith(github.ref, 'refs/tags/') }}
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
