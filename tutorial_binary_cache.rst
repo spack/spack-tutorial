@@ -122,7 +122,7 @@ looks very similar to a container image --- we will get to that in a bit.
    Binaries pushed to GitHub packages are ``private`` by default, which means you need a token
    to download them. You can change the visibility to ``public`` by going to GitHub Packages
    from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``,
-   and change the visibilty to ``public`` in the ``Danger Zone`` section. This page can also
+   and change the visibility to ``public`` in the ``Danger Zone`` section. This page can also
    be directly accessed by going to
 
    .. code-block:: text
@@ -185,7 +185,7 @@ concretizer can take it into account. This can be done by running
 
    $ spack -e . buildcache update-index my-mirror
 
-This operation can take a while for large build caches, since it fetches all metatadata of
+This operation can take a while for large build caches, since it fetches all metadata of
 available packages. For convenience you can also run ``spack buildcache push --update-index ...``
 to avoid a separate step.
 

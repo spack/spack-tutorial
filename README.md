@@ -31,7 +31,7 @@ and is rebuilt on a schedule. It can also be [triggered manually](https://github
 
 The tutorial image builds on top of the container image that runs in Spack CI, which is built in a different repository at [spack/gitlab-runners](https://github.com/spack/gitlab-runners/)
 
-## Automatically generating command ouputs
+## Automatically generating command outputs
 
 The tutorial `rst` files include output from Spack commands. This process is automated, and it is
 recommended not to run commands manually.
@@ -52,7 +52,7 @@ make -C outputs -j <N>
 ```
 
 This runs each `outputs/<section>.sh` script in parallel in a container, and collects outputs in
-`outputs/raw/*`. When all complete succesfully, the outputs are post-processed and put in
+`outputs/raw/*`. When all complete successfully, the outputs are post-processed and put in
 `outputs/`.
 
 In case you want to restrict to particular sections, or if you need to modify the container

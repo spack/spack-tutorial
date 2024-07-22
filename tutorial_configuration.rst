@@ -383,7 +383,7 @@ that the compiler supports.
 
 The ``modules`` field of the compiler was originally designed to
 support older Cray systems, but can be useful on any system that has
-compilers that are only useable when a particular module is loaded. Any
+compilers that are only usable when a particular module is loaded. Any
 modules in the ``modules`` field of the compiler configuration will be
 loaded as part of the build environment for packages using that
 compiler:

@@ -557,7 +557,7 @@ The two files represent two fundamental concepts:
 
 These files are intended to be used by developers and administrators
 to manage the environments in a reproducible way. We will cover their
-re-use later.
+reuse later.
 
 .. note::
 

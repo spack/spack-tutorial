@@ -211,7 +211,7 @@ Let's exit the interpreter to take us back to the command line:
 
    >>> exit()
 
-before generalizing the functionality for re-use.
+before generalizing the functionality for reuse.
 
 ^^^^^^^^^^^^^
 Using scripts
