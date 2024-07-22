@@ -162,7 +162,7 @@ Notice that the concretized spec now:
 
 - has a ``version``;
 - has a single entry in its ``versions`` list; and
-- the operating system is now ``ubuntu18.04``.
+- the operating system is now ``ubuntu22.04``.
 
 It is not necessary to store the intermediate abstract spec -- you can
 use the ``.concretized()`` method as shorthand:
@@ -177,7 +177,7 @@ Querying the Spack database
 
 Even more powerful queries are available when we look at the information
 stored in the Spack database. The ``Database`` object in Spack is in the
-``spack.store.db`` variable. We'll interact with it mainly through the
+``spack.store.STORE.db`` variable. We'll interact with it mainly through the
 ``query()`` method. Let's see the documentation available for ``query()``
 using python's built-in ``help()`` function:
 

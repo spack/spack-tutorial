@@ -43,7 +43,7 @@ EOF
 example scripting/find-exclude-1 "spack python find_exclude.py %gcc ^mpich"
 
 EXAMPLE1="$PROJECT/raw/1.find_exclude.py.example"
-echo "#!/usr/bin/env spack-python" > "$EXAMPLE1"
+echo "#!/usr/bin/env spack python" > "$EXAMPLE1"
 cat find_exclude.py >> "$EXAMPLE1"
 cp "$EXAMPLE1" find_exclude.py
 
