@@ -843,6 +843,14 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 Obviously, if you want to build everything in serial for whatever reason,
 you would set ``build_jobs`` to 1.
 
+Last we'll unset ``concretizer:reuse:false`` since we'll want to
+enable concretizer reuse for the rest of this tutorial.
+
+.. code-block:: yaml
+
+  $ spack config rm concretizer:reuse
+
+
 ----------
 Conclusion
 ----------
