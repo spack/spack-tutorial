@@ -33,4 +33,4 @@ class Bowtie(MakefilePackage):
 
     @property
     def install_targets(self):
-        return ['prefix={0}'.format(self.prefix), 'install']
+        return [f'prefix={self.prefix}', 'install']
