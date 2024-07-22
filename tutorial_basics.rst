@@ -174,7 +174,7 @@ top-level package, we can also specify about a dependency using ``^``.
 Packages can also be referred to from the command line by their package
 hash. Using the ``spack find -lf`` command earlier we saw that the hash
 of our optimized installation of zlib-ng (``cflags="-O3"``) began with
-``npuw4up``. We can now explicitly build with that package without typing
+``6bhcy77``. We can now explicitly build with that package without typing
 the entire spec, by using the ``/`` sigil to refer to it by hash. As with
 other tools like Git, you do not need to specify an *entire* hash on the
 command line.  You can specify just enough digits to identify a hash
