@@ -22,13 +22,13 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc24-tutorial-slide-preview.png
-   :target: _static/slides/spack-isc24-tutorial-slides.pdf
+.. image:: tutorial/images/hpcic24-tutorial-slide-preview.png
+   :target: _static/slides/spack-hpcic24-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-pearc24-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-hpcic24-tutorial-slides.pdf>`.
 
 **Full citation:** Todd Gamblin, Gregory Becker, Alec Scott.
 Managing HPC Software Complexity with Spack.
