@@ -10,9 +10,9 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
-the `PEARC24 Conference
-<https://web.cvent.com/event/f318e73c-2230-432a-a044-b75625020543/websitePage:afd80266-008e-414b-9f94-2fd9b4dd1924?session=d0fb54b7-0598-44c8-a89c-7ff414d510f4>`_, July
-22, 2024. The event was a full-day tutorial.
+the `HPCIC 2024 HPC Tutorials
+<https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials>`_, August 6th, 2024. The event was
+two online half-day tutorials.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -30,9 +30,10 @@ Spack is used in practice.
 
 :download:`Download Slides <_static/slides/spack-pearc24-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Alec Scott. Managing HPC Software Complexity with Spack.
-Practice and Experience in Advanced Research Computing 2024 (PEARC24),
-Providence, Rhode Island. July 22, 2024.
+**Full citation:** Todd Gamblin, Gregory Becker, Alec Scott.
+Managing HPC Software Complexity with Spack.
+HPCIC Tutorials 2024,
+Livermore, California. July 22, 2024.
 
 .. _video:
 
