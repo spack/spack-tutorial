@@ -57,9 +57,10 @@ Next, we will add this token to the mirror config section of the Spack environme
 
 .. code-block:: console
 
+   $ export MY_OCI_TOKEN=<token>
    $ spack -e . mirror add \
        --oci-username <user> \
-       --oci-password <token> \
+       --oci-password-variable MY_OCI_TOKEN \
        --unsigned \
        my-mirror \
        oci://ghcr.io/<github_user>/buildcache-${USER}-${HOSTNAME}
@@ -83,8 +84,8 @@ Your ``spack.yaml`` file should now contain the following:
         my-mirror:
            url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
            access_pair:
-           - <user>
-           - <token>
+              id: <user>
+              secret_variable: MY_OCI_TOKEN
            signed: false
 
 Let's push ``julia`` and its dependencies to the build cache
@@ -150,8 +151,8 @@ in the ``spack.yaml`` file:
         my-mirror:
            url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
            access_pair:
-           - <user>
-           - <token>
+              id: <user>
+              secret_variable: MY_OCI_TOKEN
            signed: false
 
 An "overwrite install" should be enough to show that the build cache is used:
