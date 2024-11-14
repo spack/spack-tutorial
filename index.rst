@@ -10,9 +10,9 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
-the `HPCIC 2024 HPC Tutorials
-<https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials>`_, August 6th, 2024. The event was
-two online half-day tutorials.
+the `SC24
+<https://sc24.conference-program.com/presentation/?id=tut182&sess=sess422>`_, November 18th, 2024.
+The event was a full day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -22,24 +22,24 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/hpcic24-tutorial-slide-preview.png
-   :target: _static/slides/spack-hpcic24-tutorial-slides.pdf
+.. image:: tutorial/images/sc24-tutorial-slide-preview.png
+   :target: _static/slides/spack-sc24-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-hpcic24-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-sc24-tutorial-slides.pdf>`.
 
 **Full citation:** Todd Gamblin, Gregory Becker, Alec Scott.
 Managing HPC Software Complexity with Spack.
-HPCIC Tutorials 2024,
-Livermore, California. July 22, 2024.
+Supercomputing 2024 (SC24), Atlanta, GA.
+November 18, 2024.
 
 .. _video:
 
 .. rubric:: Video
 
-The recording of the virtual event is available in two parts:
+A recording of our previous virtual tutorial is available in two parts:
 
 .. raw:: html
 
@@ -65,8 +65,8 @@ container image. You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:hpcic24
-   $ docker run -it ghcr.io/spack/tutorial:hpcic24
+   $ docker pull ghcr.io/spack/tutorial:sc24
+   $ docker run -it ghcr.io/spack/tutorial:sc24
 
 to start using the container. You should now be ready to run through our demo scripts:
 
