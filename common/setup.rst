@@ -6,7 +6,7 @@
 
    and then set Spack up like this::
 
-       git clone --depth=100 --branch=releases/v0.22 https://github.com/spack/spack
+       git clone --depth=100 --branch=releases/v0.23 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
        spack tutorial -y
        spack bootstrap now
