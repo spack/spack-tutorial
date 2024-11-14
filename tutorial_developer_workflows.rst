@@ -168,10 +168,15 @@ of the develop configuration in the environment.
 
 There are a few gotchas with the spack develop command
 
-* You need to manually specify the package version when specifying a
+* You often specify the package version manually when specifying a
   package as a dev package. Spack needs to know the version of the dev
   package so it can supply the correct flags for the package's build
-  system.
+  system. If a version is not supplied then spack will take the maximum version
+  defined in the package where ``[numeric versions] < stable < [main/master] < develop``.
+..
+  Are we trying to say if it is not in the graph already? this is confusing to me. If
+  if you've concretized then you shouldn't need to spack add a dependency
+  testing this in the tutorial container to confirm and it is not the case
 * You need to also add the right spec with ``spack add <package>`` on to 
   the ``spack.yaml`` environments file. This is because the spack develop
   only adds the  ``dev_path=`` attribute to the spec and not the spec itself.  
