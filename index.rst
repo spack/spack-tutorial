@@ -53,8 +53,8 @@ container image. You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:hpcic24
-   $ docker run -it ghcr.io/spack/tutorial:hpcic24
+   $ docker pull ghcr.io/spack/tutorial:sc24
+   $ docker run -it ghcr.io/spack/tutorial:sc24
 
 to start using the container. You should now be ready to run through our demo scripts:
 
