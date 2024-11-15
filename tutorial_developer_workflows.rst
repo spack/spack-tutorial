@@ -333,7 +333,7 @@ development builds.  There are many instances where developers want to see how
 a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``,
 ``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
 
-As long as the develop spec is generic enough to cover the variations developers can
+As long as the develop spec is generic enough to cover the spec variations, developers can
 achieve builds of both cases from a single ``spack install``. 
 
 .. literalinclude:: outputs/dev/combinatorics.out
