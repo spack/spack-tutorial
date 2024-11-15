@@ -321,7 +321,7 @@ that is not necessary when tightly iterating between build and testing a package
 .. literalinclude:: outputs/dev/navigation-and-build-env.out
    :language: console
 
-Working with the build environment and along with spack navigation features
+Working with the build environment along with spack navigation features
 provides a nice way to iterate quickly and navigate through the hash heavy
 spack directory structures.
 
