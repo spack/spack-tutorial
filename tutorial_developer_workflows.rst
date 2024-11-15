@@ -339,7 +339,7 @@ achieve builds of both cases from a single ``spack install``.
 .. literalinclude:: outputs/dev/combinatorics.out
    :language: console
 
-While we won't build out this example it illustrates how the ``dev_path`` for
+While we won't build out this example, it illustrates how the ``dev_path`` for
 ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
 Now if we want to do most of our incremental builds using the ``Release`` build
