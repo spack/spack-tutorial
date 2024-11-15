@@ -172,14 +172,13 @@ There are a few gotchas with the spack develop command
   package as a dev package. Spack needs to know the version of the dev
   package so it can supply the correct flags for the package's build
   system. If a version is not supplied then spack will take the maximum version
-  defined in the package where ``[numeric versions] < stable < [main/master] < develop``.
-..
-  Are we trying to say if it is not in the graph already? this is confusing to me. If
-  if you've concretized then you shouldn't need to spack add a dependency
-  testing this in the tutorial container to confirm and it is not the case
-* You need to also add the right spec with ``spack add <package>`` on to 
-  the ``spack.yaml`` environments file. This is because the spack develop
-  only adds the  ``dev_path=`` attribute to the spec and not the spec itself.  
+  defined in the package where where `infinity versions https://spack.readthedocs.io/en/latest/packaging_guide.html#version-comparison`_ like ``develop`` and ``main``
+  have a higher value than the numeric versions.
+* You want to ensure right spec is the software graph that will satisfy the develop spec.
+  ``spack add <package>`` with the matching version you want to develop is a way to ensure
+  the develop spec is satisfied.the ``spack.yaml`` environments file. This is because 
+  develop specs are not concretization constraints but rather a criteria for adding
+  the ``dev_path=`` variant to existing spec.
 * You'll need to re-concretize the environment so that the version
   number and the ``dev_path=`` attributes are properly added to the
   cached spec in ``spack.lock``.
@@ -281,3 +280,76 @@ together. Within a development environment, ``spack install`` works
 similar to ``make`` in that it will check file times to rebuild the
 minimum number of spack packages necessary to reflect the changes to
 your build.
+
+-------------------
+Optional: Tips and Tricks
+-------------------
+
+This section will cover some additional features that are useful additions
+to the core tutorial above. Many of these items are very useful to specific
+projects and developers. A list of the options for the ``spack develop`` can
+be viewed below:
+
+.. literalinclude:: outputs/dev/optional-intro.out
+   :language: console
+
+Source Code Management
+----------
+
+``spack develop`` allows users to manipulate the source code locations
+The default behavior is to let spack manage its location and cloning operations,
+but software developers often want more control over these.
+
+The source directory can be set with the ``--path`` argument when calling ``spack develop``.
+If this directory already exists then ``spack develop`` will not attempt to fetch the code 
+for you. This allows developers to pre-clone the software or use preferred paths as they wish.
+
+.. literalinclude:: outputs/dev/setting-src-path.out
+   :language: console
+
+Navigation and the Build Environment
+----------
+
+Diving into the build environment was introduced previously in this tutorial with the
+``spack build-env scr -- bash``. This is a helpful function because it allows you 
+to run commands inside the build environment.  This can be combined with the ``spack cd``
+command to provide a more streamlined development experience when iterating on a
+single package.  ``spack install`` has additional overhead and interaction with the filesystem
+that is not necessary when tightly iterating between build and testing a package.
+
+
+.. literalinclude:: outputs/dev/navigation-and-build-env.out
+   :language: console
+
+Working with the build environment and along with spack navigation features
+provides a nice way to iterate quickly and navigate through the hash heavy
+spack directory structures.
+
+Combinatorics
+------------
+
+The final note we will look at in this tutorial will be the power of combinatoric
+development builds.  There are many instances where developers want to see how
+a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``,
+``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
+
+As long as the develop spec is generic enough to cover the variations developers can
+achieve builds of both cases from a single ``spack install``. 
+
+.. literalinclude:: outputs/dev/combinatorics.out
+   :language: console
+
+While we won't build out this example it illustrates how the ``dev_path`` for
+``build_type=Release`` and ``build_type=Debug`` points to the same source code.
+
+Now if we want to do most of our incremental builds using the ``Release`` build
+and periodically check the results using the ``Debug`` build we can combine the
+workflow from the previous example: dive into the ``Release`` versions build
+environment using ``spack build-env scr build_type=Release -- bash`` and 
+navigate with ``spack cd -b scr build_type=Release``. Note that since there
+are two ``scr`` specs in the environment we must distinguish which one we
+want for these commands. When we are ready to check our changes for  the debug
+build we can exit out of the build environment subshell,
+re-run ``spack install`` to rebuild everything, and then inspect the debug build
+through our method of choice.
+everything.
