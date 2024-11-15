@@ -342,7 +342,7 @@ achieve builds of both cases from a single ``spack install``.
 While we won't build out this example, it illustrates how the ``dev_path`` for
 ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
-Now if we want to do most of our incremental builds using the ``Release`` build
+Now if we want to do most of our incremental work using the ``Release`` build
 and periodically check the results using the ``Debug`` build we can combine the
 workflow from the previous example: dive into the ``Release`` versions build
 environment using ``spack build-env scr build_type=Release -- bash`` and 
