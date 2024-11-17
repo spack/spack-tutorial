@@ -10,7 +10,7 @@ project="$(dirname "$0")"
 export SPACK_COLOR=never
 
 # basic installation
-example basics/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
+example basics/clone           "git clone --depth=2 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
 example basics/clone           "cd ~/spack"
 
 cd ~/spack || exit
