@@ -37,7 +37,7 @@ two main mechanisms that Spack provides for that: views and module files.
 
    .. code-block:: console
 
-      $ export EDITOR=emacs
+      $ export EDITOR='emacs -nw'
 
 ------------------
 Setup the compiler
