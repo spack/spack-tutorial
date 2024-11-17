@@ -13,7 +13,30 @@ Configuration Tutorial
 
 This tutorial will guide you through various configuration options
 that allow you to customize Spack's behavior with respect to
-software installation. We will first cover the configuration file
+software installation. Configurations options are divided into several
+different sections which are listed in the table below.
+
+.. list-table:: Spack Configuration Sections
+   :widths: 25 50
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - compilers.yaml
+   * - concretizer.yaml
+   * - config.yaml
+   * - mirrors.yaml
+   * - packages.yaml
+   * - repos.yaml
+
+The principle goals of this section of the tutorial are:
+
+1. Introduce the configuration hierarchy
+2. Demonstrate how to manipulate configurations
+3. Show how to configure compilers
+4. Demonstrate how to utilize packages that are installed outside of spack
+
+We will first cover the configuration file
 hierarchy. Then, we will cover configuration options for compilers,
 focusing on how they can be used to extend Spack's compiler auto-detection.
 Next, we will cover the packages configuration file, focusing on
