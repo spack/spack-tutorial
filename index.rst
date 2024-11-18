@@ -10,9 +10,9 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos. It was last presented at
-the `HPCIC 2024 HPC Tutorials
-<https://hpcic.llnl.gov/tutorials/2024-hpc-tutorials>`_, August 6th, 2024. The event was
-two online half-day tutorials.
+the `Supercomputing 2024 Conference
+<https://sc24.conference-program.com/presentation/?id=tut182&sess=sess422>`_, November
+18, 2024. The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site,
 or you can just skip ahead and read the live demo scripts to see how
@@ -22,36 +22,24 @@ Spack is used in practice.
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/hpcic24-tutorial-slide-preview.png
-   :target: _static/slides/spack-hpcic24-tutorial-slides.pdf
+.. image:: tutorial/images/sc24-tutorial-slide-preview.png
+   :target: _static/slides/spack-sc24-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-hpcic24-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-sc24-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Gregory Becker, Alec Scott.
+**Full citation:** Todd Gamblin, Gregory Becker, Alec Scott, Phil Sakievich, and Luke Peyralans.
 Managing HPC Software Complexity with Spack.
-HPCIC Tutorials 2024,
-Livermore, California. July 22, 2024.
+Supercomputing 2024 (SC24), Atlanta, GA, November 18, 2024.
 
 .. _video:
 
 .. rubric:: Video
 
-The recording of the virtual event is available in two parts:
-
-.. raw:: html
-
-   <p>
-   <ul>
-   <li>Part 1<br/>
-   <iframe width="380" height="214" src="https://www.youtube.com/embed/SShzurXZr4w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   </li>
-   <li>Part 2<br/>
-   <iframe width="380" height="214" src="https://www.youtube.com/embed/fhijfzbVCH8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-   </li>
-   </p>
+For the last recorded video of this tutorial, see the `HPCIC Tutorial 2024 version
+<https://spack-tutorial.readthedocs.io/en/hpcic24/>`_.
 
 .. _live-demos:
 
