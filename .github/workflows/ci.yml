@@ -58,4 +58,4 @@ jobs:
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
     with:
-      container: ${{ needs.changes.outputs.container == 'true' }}
+      container_artifact: ${{ needs.changes.outputs.container == 'true' }}
