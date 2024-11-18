@@ -38,7 +38,7 @@ A partial list of some key configuration sections is provided below.
 
 The full list of sections can be viewed with ``spack config list``.
 For further education we encourage you to explore the spack
-`documentation on configuration files https://spack.readthedocs.io/en/latest/configuration.html#configuration-files`_.
+`documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
 
 The principle goals of this section of the tutorial are:
 
