@@ -55,8 +55,10 @@ example dev/wrapup "spack undevelop scr macsio"
 
 example dev/optional-intro "spack develop --help"
 
-example dev/setting-src-path '# skips cloning if the directory exists'
-example dev/setting-src-path 'mkdir $SPACK_ENV/code'
+example dev/setting-src-path '# pre-clone the source code and then point spack develop to it'
+example dev/setting-src-path '# note that we can clone into any repo/branch combination desired'
+example dev/setting-src-path 'git clone https://github.com/llnl/scr.git $SPACK_ENV/code'
+example dev/setting-src-path '# note that with `--path` the code directory and package name can be different'
 example dev/setting-src-path 'spack develop --path $SPACK_ENV/code scr@2.0.0'
 
 example dev/navigation-and-build-env "spack build-env scr -- bash"

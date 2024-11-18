@@ -310,13 +310,17 @@ for you. This allows developers to pre-clone the software or use preferred paths
 Navigation and the Build Environment
 ----------
 
-Diving into the build environment was introduced previously in this tutorial with the
+Diving into the build environment was introduced previously in this section with the
 ``spack build-env scr -- bash``. This is a helpful function because it allows you 
-to run commands inside the build environment.  This can be combined with the ``spack cd``
-command to provide a more streamlined development experience when iterating on a
-single package.  ``spack install`` has additional overhead and interaction with the filesystem
+to run commands inside the build environment.  In the packages section of the tutorial
+this was combined with ``spack cd`` to produce a manual build outside of Spack's automated
+Process.
+We feel it is important to re-highlight this combination for the development section 
+since the ``spack build-env && spack cd`` combination provide streamlined development
+experience when iterating on a single package.
+``spack install`` has additional overhead and interaction with the filesystem
 that is not necessary when tightly iterating between build and testing a package.
-
+An example workflow is provided below.
 
 .. literalinclude:: outputs/dev/navigation-and-build-env.out
    :language: console
@@ -333,8 +337,8 @@ development builds.  There are many instances where developers want to see how
 a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``,
 ``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
 
-As long as the develop spec is generic enough to cover the variations developers can
-achieve builds of both cases from a single ``spack install``. 
+Developers can achieve builds of both cases from a single ``spack install`` as 
+long as the develop spec is generic enough to cover the packages' spec variations
 
 .. literalinclude:: outputs/dev/combinatorics.out
    :language: console
@@ -350,6 +354,5 @@ navigate with ``spack cd -b scr build_type=Release``. Note that since there
 are two ``scr`` specs in the environment we must distinguish which one we
 want for these commands. When we are ready to check our changes for  the debug
 build we can exit out of the build environment subshell,
-re-run ``spack install`` to rebuild everything, and then inspect the debug build
+rerun ``spack install`` to rebuild everything, and then inspect the debug build
 through our method of choice.
-everything.
