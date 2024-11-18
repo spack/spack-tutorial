@@ -48,6 +48,11 @@ jobs:
     uses: ./.github/workflows/container.yml
 
   outputs:
-    if: ${{ needs.changes.outputs.outputs == 'true' || startsWith(github.ref, 'refs/tags/') }}
+    if: |
+      always()
+      && contains(needs.*.result, 'success')
+      && !contains(needs.*.result, 'failure')
+      && (needs.changes.outputs.outputs == 'true'
+      || startsWith(github.ref, 'refs/tags/'))
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
