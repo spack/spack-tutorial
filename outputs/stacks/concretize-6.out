@@ -1,26 +1,15 @@
 $ export SPACK_STACK_USE_OPENMPI=1
 $ spack concretize
 $ spack find -cl netlib-scalapack
-==> In environment /home/spack/stacks
+==> In environment /home/spack5/stacks
 ==> 6 root specs
 -- no arch / gcc@11 ---------------------------------------------
-[+] hc3fmfi gcc@12%gcc@11
+[+] jjgfqpd gcc@12%gcc@11
 
 -- no arch / gcc@12 ---------------------------------------------
-[+] q7ooqre netlib-scalapack%gcc@12  [+] 4kiidhc netlib-scalapack%gcc@12
-[+] bhtne2a netlib-scalapack%gcc@12  [+] 3accefe py-scipy%gcc@12
-[+] cknsmak netlib-scalapack%gcc@12
-
-==> Concretized roots
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-hc3fmfi gcc@12.3.0
+[+] bx3g36n netlib-scalapack%gcc@12  [+] me353po netlib-scalapack%gcc@12  [+] 5fvq6fg netlib-scalapack%gcc@12  [+] wpymlkh netlib-scalapack%gcc@12  [+] g53zrs6 py-scipy%gcc@12
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-q7ooqre netlib-scalapack@2.2.0	bhtne2a netlib-scalapack@2.2.0	3accefe py-scipy@1.13.0
-4kiidhc netlib-scalapack@2.2.0	cknsmak netlib-scalapack@2.2.0
-
-==> Installed packages
--- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-q7ooqre netlib-scalapack@2.2.0	bhtne2a netlib-scalapack@2.2.0
-4kiidhc netlib-scalapack@2.2.0	cknsmak netlib-scalapack@2.2.0
+[+]  me353po netlib-scalapack@2.2.0  [+]  wpymlkh netlib-scalapack@2.2.0  [+]  5fvq6fg netlib-scalapack@2.2.0  [+]  bx3g36n netlib-scalapack@2.2.0
 ==> 4 installed packages
+==> 0 concretized packages to be installed

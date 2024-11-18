@@ -84,7 +84,7 @@ spack:
   definitions: {}
   develop: {}
   mirrors:
-    tutorial: /mirror
+    tutorial: file:///mirror
     spack-public:
       binary: false
       url: https://mirror.spack.io
@@ -200,6 +200,7 @@ spack:
 	- mpi
   config:
     suppress_gpg_warnings: true
+    deprecated: true
     install_tree:
       root: $spack/opt/spack
       projections:
@@ -229,7 +230,6 @@ spack:
     verify_ssl: true
     ssl_certs: $SSL_CERT_FILE
     checksum: true
-    deprecated: false
     dirty: false
     build_language: C
     locks: true
@@ -268,7 +268,7 @@ spack:
       containerise: containerize
       rm: remove
     debug: false
-    build_jobs: 4
+    build_jobs: 16
   upstreams: {}
   bootstrap:
     enable: true
