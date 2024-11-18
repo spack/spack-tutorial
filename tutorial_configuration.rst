@@ -96,7 +96,7 @@ applied.
    $ spack config blame concretizer
 
 Notice that the reference file on for this option is now different.
-This is because spack this option in your user configuration scope which is 
+This is because spack set this option in your user configuration scope; 
 the default scope in this context.
 It is important to note that the ``spack config`` commands accepts an optional
 ``--scope`` flag so we can be more precise in the configuration  process. 
