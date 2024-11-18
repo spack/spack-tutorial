@@ -315,12 +315,11 @@ Diving into the build environment was introduced previously in the packaging sec
 to run commands inside the build environment.  In the packages section of the tutorial
 this was combined with ``spack cd`` to produce a manual build outside of Spack's automated
 Process.
-We feel it is important to re-highlight this combination for the development section 
-since the ``spack build-env && spack cd`` combination provide streamlined development
-experience when iterating on a single package.
-``spack install`` has additional overhead and interaction with the filesystem
-that is not necessary when tightly iterating between build and testing a package.
-An example workflow is provided below.
+This command is particularly useful in developer environments -- it allows developers a streamlined
+workflow when iterating on a single package without the overhead of the ``spack install`` command.
+The additional features of the install command are unnecessary when tightly iterating between building
+ and testing a particular package. For example, the workflow modifying ``scr`` that we just went through
+ can be simplified to:
 
 .. literalinclude:: outputs/dev/navigation-and-build-env.out
    :language: console
