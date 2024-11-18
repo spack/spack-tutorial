@@ -16,25 +16,5 @@ $ spack install gmake
 ==> No patches needed for gmake
 ==> gmake: Executing phase: 'install'
 ==> gmake: Successfully installed gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
-  Stage: 0.12s.	 Install: 11.57s.  Post-install: 0.01s.	 Total: 11.73s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
-$ spack install gmake
-==> Fetching https://ghcr.io/v2/spack/bootstrap-buildcache-v1/blobs/sha256:8d2764eefa443c29c7c9120079e3bbe7576bbc496b15843ad18d18892338a5ba
-==> Fetching https://ghcr.io/v2/spack/bootstrap-buildcache-v1/blobs/sha256:a4abec667660307ad5cff0a616d6651e187cc7b1386fd8cd4b6b288a01614076
-==> Installing "clingo-bootstrap@=spack%gcc@=10.2.1~docs+ipo+optimized+python+static_libstdcpp build_system=cmake build_type=Release generator=make patches=bebb819,ec99431 arch=linux-centos7-x86_64" from a buildcache
-[+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-==> Installing gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2 [2/3]
-==> No binary for gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2 found: installing from source
-==> No patches needed for gcc-runtime
-==> gcc-runtime: Executing phase: 'install'
-==> gcc-runtime: Successfully installed gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
-  Stage: 0.00s.	 Install: 0.05s.  Post-install: 0.04s.	Total: 0.12s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
-==> Installing gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom [3/3]
-==> No binary for gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom found: installing from source
-==> Fetching https://mirror.spack.io/_source-cache/archive/dd/dd16fb1d67bfab79a72f5e8390735c49e3e8e70b4945a15ab1f81ddb78658fb3.tar.gz
-==> No patches needed for gmake
-==> gmake: Executing phase: 'install'
-==> gmake: Successfully installed gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
-  Stage: 0.09s.	 Install: 11.51s.  Post-install: 0.01s.	 Total: 11.65s
+  Stage: 0.10s.	 Install: 11.58s.  Post-install: 0.01s.	 Total: 11.72s
 [+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
