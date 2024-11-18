@@ -93,7 +93,7 @@ Full contents:
    tutorial_stacks
    tutorial_developer_workflows
    tutorial_binary_cache
-   tutorial_spack_scripting
+   tutorial_scripting
 
 .. toctree::
    :maxdepth: 3
