@@ -9,25 +9,3 @@ $ spack uninstall trilinos
     b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
     c) use `spack uninstall --all` to uninstall ALL matching specs.
 
-$ spack uninstall trilinos
-==> Error: trilinos matches multiple packages:
-
-    -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-    ney6hmm trilinos@16.0.0  63sfm7p trilinos@16.0.0
-
-==> Error: You can either:
-    a) use a more specific spec, or
-    b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
-    c) use `spack uninstall --all` to uninstall ALL matching specs.
-
-$ spack uninstall trilinos
-==> Error: trilinos matches multiple packages:
-
-    -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-    ney6hmm trilinos@16.0.0  63sfm7p trilinos@16.0.0
-
-==> Error: You can either:
-    a) use a more specific spec, or
-    b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
-    c) use `spack uninstall --all` to uninstall ALL matching specs.
-

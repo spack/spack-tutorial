@@ -1,6 +1,6 @@
 $ cat /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-build-out.txt
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
-==> [2024-11-18-08:09:56.204748] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoreconf' '--install' '--verbose' '--force'
+==> [2024-11-18-13:21:50.837843] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoreconf' '--install' '--verbose' '--force'
 autoreconf: export WARNINGS=
 autoreconf: Entering directory '.'
 autoreconf: configure.ac: not using Gettext
@@ -43,12 +43,12 @@ autoreconf: 'config/config.sub' is updated
 autoreconf: 'config/config.guess' is updated
 autoreconf: Leaving directory '.'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2024-11-18-08:10:00.261316] Find (max depth = None): ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
-==> [2024-11-18-08:10:00.262236] Find complete: ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
-==> [2024-11-18-08:10:00.262520] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2024-11-18-08:10:00.284517] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2024-11-18-08:10:00.309371] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2024-11-18-08:10:00.334643] '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b'
+==> [2024-11-18-13:21:54.922531] Find (max depth = None): ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
+==> [2024-11-18-13:21:54.923514] Find complete: ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
+==> [2024-11-18-13:21:54.923798] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2024-11-18-13:21:54.945259] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2024-11-18-13:21:54.967899] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2024-11-18-13:21:54.991332] '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c

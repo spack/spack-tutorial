@@ -43,19 +43,6 @@ spack:
       automatic: false
   compilers:
   - compiler:
-      spec: clang@=14.0.0
-      paths:
-	cc: /usr/bin/clang
-	cxx: /usr/bin/clang++
-	f77: null
-	fc: null
-      flags: {}
-      operating_system: ubuntu22.04
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
       spec: gcc@=10.5.0
       paths:
 	cc: /usr/bin/gcc-10
@@ -75,6 +62,19 @@ spack:
 	cxx: /usr/bin/g++
 	f77: /usr/bin/gfortran
 	fc: /usr/bin/gfortran
+      flags: {}
+      operating_system: ubuntu22.04
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: clang@=14.0.0
+      paths:
+	cc: /usr/bin/clang
+	cxx: /usr/bin/clang++
+	f77: null
+	fc: null
       flags: {}
       operating_system: ubuntu22.04
       target: x86_64
