@@ -98,8 +98,8 @@ applied.
 Notice that the reference file on for this option is now different.
 This is because spack set this option in your user configuration scope; 
 the default scope in this context.
-It is important to note that the ``spack config`` commands accepts an optional
-``--scope`` flag so we can be more precise in the configuration  process. 
+It is important to note that the ``spack config`` command accepts an optional
+``--scope`` flag so we can be more precise in the configuration process. 
 This will make more sense after the next section which provides 
 the definition of spack's configuration scopes and their hierarchy.
 
