@@ -9,29 +9,29 @@ rm -rf "${raw_outputs:?}/environments"
 export SPACK_COLOR=never
 
 ####
-# Introduction for "basic" installation
+# Introduction for "basic" installation if basics section not being used
 ####
-example environments/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
-example environments/clone           "cd ~/spack"
+#example environments/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
+#example environments/clone           "cd ~/spack"
 
-cd ~/spack || exit
-export SPACK_ROOT=~/spack
+#cd ~/spack || exit
+#export SPACK_ROOT=~/spack
 
-. share/spack/setup-env.sh
-spack config add "config:suppress_gpg_warnings:true"
+#. share/spack/setup-env.sh
+#spack config add "config:suppress_gpg_warnings:true"
 
-example environments/source-setup     ". share/spack/setup-env.sh"
+#example environments/source-setup     ". share/spack/setup-env.sh"
 
-example environments/gmake      "spack install gmake"
+#example environments/gmake      "spack install gmake"
 
-example environments/gmake-1    "spack install gmake@4.3"
+#example environments/gmake-1    "spack install gmake@4.3"
 
-example environments/find-gmake "spack find -p gmake"
+#example environments/find-gmake "spack find -p gmake"
 
-example environments/ls-dot-spack 'ls "$(spack location -i gmake@4.4)/.spack"'
+#example environments/ls-dot-spack 'ls "$(spack location -i gmake@4.4)/.spack"'
 
-example environments/mirror     "spack mirror add tutorial /mirror"
-example environments/mirror     "spack buildcache keys --install --trust"
+#example environments/mirror     "spack mirror add tutorial /mirror"
+#example environments/mirror     "spack buildcache keys --install --trust"
 
 ####
 # Usual Environment output
