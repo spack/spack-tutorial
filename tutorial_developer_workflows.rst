@@ -280,3 +280,106 @@ together. Within a development environment, ``spack install`` works
 similar to ``make`` in that it will check file times to rebuild the
 minimum number of spack packages necessary to reflect the changes to
 your build.
+
+-------------------
+Optional: Tips and Tricks
+-------------------
+
+This section will cover some additional features that are useful additions
+to the core tutorial above. Many of these items are very useful to specific
+projects and developers. A list of the options for the ``spack develop`` can
+be viewed below:
+
+.. code-block:: console
+
+   $ spack develop --help
+
+Source Code Management
+----------
+
+``spack develop`` allows users to manipulate the source code locations
+The default behavior is to let spack manage its location and cloning operations,
+but software developers often want more control over these.
+
+The source directory can be set with the ``--path`` argument when calling ``spack develop``.
+If this directory already exists then ``spack develop`` will not attempt to fetch the code 
+for you. This allows developers to pre-clone the software or use preferred paths as they wish.
+
+.. code-block:: console
+
+   # pre-clone the source code and then point spack develop to it
+   # note that we can clone into any repo/branch combination desired
+   $ git clone https://github.com/llnl/scr.git $SPACK_ENV/code
+   # note that with `--path` the code directory and package name can be different
+   $ spack develop --path $SPACK_ENV/code scr@3.1.0
+   $ spack concretize -f
+
+Navigation and the Build Environment
+----------
+
+Diving into the build environment was introduced previously in the packaging section with the
+``spack build-env scr -- bash`` command. This is a helpful function because it allows you 
+to run commands inside the build environment.  In the packages section of the tutorial
+this was combined with ``spack cd`` to produce a manual build outside of Spack's automated
+Process.
+This command is particularly useful in developer environments -- it allows developers a streamlined
+workflow when iterating on a single package without the overhead of the ``spack install`` command.
+The additional features of the install command are unnecessary when tightly iterating between building
+ and testing a particular package. For example, the workflow modifying ``scr`` that we just went through
+ can be simplified to:
+
+ .. code-block:: console
+
+    $ spack build-env scr -- bash
+    # Shell wrappers didn't propagate to the subshell
+    $ source $SPACK_ROOT/share/spack/setup-env.sh
+    # Let's look at navigation features
+    $ spack cd --help
+    $ spack cd -c scr
+    $ touch src/scr_copy.c
+    $ spack cd -b scr
+    # Let's look at what's here
+    $ ls
+    # Build and run tests
+    $ make -j2
+    $ make test
+    $ exit
+
+Working with the build environment and along with spack navigation features
+provides a nice way to iterate quickly and navigate through the hash heavy
+spack directory structures.
+
+Combinatorics
+------------
+
+The final note we will look at in this tutorial will be the power of combinatoric
+development builds.  There are many instances where developers want to see how
+a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``,
+``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
+
+Developers can achieve builds of both cases from a single ``spack install`` as 
+long as the develop spec is generic enough to cover the packages' spec variations
+
+.. code-block:: console
+
+   # First we have to allow repeat specs in the environment
+   $ spack config add concretizer:unify:false
+   # Next we need to specify the specs we want ('==' propagates the variant to deps)
+   $ spack change macsio build_type==Release
+   $ spack add macsio+scr build_type==Debug
+   # Inspect the graph for multiple dev_path=
+   $ spack concretize -f
+
+While we won't build out this example it illustrates how the ``dev_path`` for
+``build_type=Release`` and ``build_type=Debug`` points to the same source code.
+
+Now if we want to do most of our incremental builds using the ``Release`` build
+and periodically check the results using the ``Debug`` build we can combine the
+workflow from the previous example: dive into the ``Release`` versions build
+environment using ``spack build-env scr build_type=Release -- bash`` and 
+navigate with ``spack cd -b scr build_type=Release``. Note that since there
+are two ``scr`` specs in the environment we must distinguish which one we
+want for these commands. When we are ready to check our changes for  the debug
+build we can exit out of the build environment subshell,
+rerun ``spack install`` to rebuild everything, and then inspect the debug build
+through our method of choice.
