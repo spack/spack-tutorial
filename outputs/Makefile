@@ -48,7 +48,7 @@ local-%: %.sh init_spack.sh defs.sh
 run:
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project -w /project \
-		${container} make local
+		${container} "make local"
 
 interactive:
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -it \
