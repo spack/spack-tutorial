@@ -260,7 +260,7 @@ directive as shown below:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 26-28
+   :emphasize-lines: 25-27
 
 Adding dependencies tells Spack that it must ensure these packages are
 installed *before* it can build our package.
@@ -436,7 +436,7 @@ in the ``configure_args`` method as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 21-24
+   :emphasize-lines: 31-34
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
@@ -500,7 +500,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 16-17,29-34
+   :emphasize-lines: 16-21,44-51
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed

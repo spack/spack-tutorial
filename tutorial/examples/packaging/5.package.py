@@ -14,9 +14,9 @@ class TutorialMpileaks(AutotoolsPackage):
 
     maintainers("alecbcs")
 
-    sanity_check_is_dir = ["bin", "lib", "shar"]
-
     license("BSD", checked_by="alecbcs")
+
+    sanity_check_is_dir = ["bin", "lib", "shar"]
 
     version("1.0", sha256="24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9")
 
