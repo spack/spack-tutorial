@@ -152,7 +152,7 @@ Development iteration cycles
 Let's assume that scr has a bug, and we'd like to patch scr to find
 out what the problem is.  First, we tell spack that we'd like to check
 out the version of scr that we want to work on. In this case, it will
-be the 2.0.0 release that we want to write a patch for:
+be the 3.1.0 release that we want to write a patch for:
 
 .. literalinclude:: outputs/dev/develop-1.out
    :language: console

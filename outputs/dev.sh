@@ -20,7 +20,7 @@ example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example dev/setup-scr "spack add macsio+scr"
 example dev/setup-scr "spack install"
 
-example dev/develop-1 "spack develop scr@2.0.0"
+example dev/develop-1 "spack develop scr@3.1.0"
 example dev/develop-1 "grep -3 develop: spack.yaml"
 
 example dev/develop-conc "spack concretize -f"
@@ -37,7 +37,8 @@ fake_example dev/develop-4 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\)|\1;|' scr/src/scr_copy.c | head -n 70
 example dev/develop-4 "spack install"
 
-example dev/develop-5 "spack develop macsio@1.1"
+example dev/develop-5 "# This time let's leave off the version"
+example dev/develop-5 "spack develop macsio"
 example dev/develop-5 "spack concretize -f"
 
 example dev/otherdevel "cd ~"
@@ -59,7 +60,7 @@ example dev/setting-src-path '# pre-clone the source code and then point spack d
 example dev/setting-src-path '# note that we can clone into any repo/branch combination desired'
 example dev/setting-src-path 'git clone https://github.com/llnl/scr.git $SPACK_ENV/code'
 example dev/setting-src-path '# note that with `--path` the code directory and package name can be different'
-example dev/setting-src-path 'spack develop --path $SPACK_ENV/code scr@2.0.0'
+example dev/setting-src-path 'spack develop --path $SPACK_ENV/code scr@3.1.0'
 
 example dev/navigation-and-build-env "spack build-env scr -- bash"
 example dev/navigation-and-build-env "# Let's look at navigation features"
