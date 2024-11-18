@@ -436,7 +436,7 @@ in the ``configure_args`` method as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 31-34
+   :emphasize-lines: 32-36
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the
 method will automatically get passed to ``configure`` during the build.
@@ -500,7 +500,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 16-21,44-51
+   :emphasize-lines: 16-21,45-52
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary
 in ``self.spec``. Also note that the value provided by the user is accessed
