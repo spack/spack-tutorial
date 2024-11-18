@@ -610,7 +610,7 @@ register externally installed packages. This works for many common
 build dependencies, but it's also important to know how to do this
 manually for packages that Spack cannot yet detect.
 
-On these systems we have a pre-installed Perl. Let's tell Spack about
+On these systems we have a pre-installed curl. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
@@ -626,14 +626,14 @@ this package and where it can be found:
            mpi: [mpich, openmpi]
        hdf5:
          require: ~mpi
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
 
 
-Here, we've told Spack that Perl 5.34.0 is installed on our system.
-We've also told it the installation prefix where Perl can be found.
+Here, we've told Spack that Curl 7.81.0 is installed on our system.
+We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
 
@@ -641,18 +641,18 @@ okay.
    :language: console
 
 
-You'll notice that Spack is now using the external Perl installation,
-but the compiler used to build Perl is now overriding our compiler
+You'll notice that Spack is now using the external Curl installation,
+but the compiler used to build Curl is now overriding our compiler
 preference of clang. If we explicitly specify Clang:
 
 .. literalinclude:: outputs/config/1.externals.out
    :language: console
 
-Spack concretizes to both HDF5 and Perl being built with Clang.
-This has a side-effect of rebuilding Perl. If we want to force
-Spack to use the system Perl, we have two choices. We can either
+Spack concretizes to both HDF5 and Curl being built with Clang.
+This has a side-effect of rebuilding Curl. If we want to force
+Spack to use the system Curl, we have two choices. We can either
 specify it on the command line, or we can tell Spack that it's
-not allowed to build its own Perl. We'll go with the latter.
+not allowed to build its own Curl. We'll go with the latter.
 
 .. code-block:: yaml
    :emphasize-lines: 15
@@ -667,14 +667,14 @@ not allowed to build its own Perl. We'll go with the latter.
            mpi: [mpich, openmpi]
        hdf5:
          require: ~mpi
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@5.34.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
 
 
-Now Spack will be forced to choose the external Perl.
+Now Spack will be forced to choose the external Curl.
 
 .. literalinclude:: outputs/config/2.externals.out
    :language: console
@@ -685,7 +685,7 @@ we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
 Instead of manually configuring an external for MPICH like we did for
-``perl`` we will use the ``spack external find`` command. For packages
+Curl we will use the ``spack external find`` command. For packages
 that support this option, this is a useful way to avoid typos and get
 more accurate external specs.
 
@@ -708,9 +708,9 @@ with MPI again:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
        mpich:
