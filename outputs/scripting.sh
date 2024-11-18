@@ -6,18 +6,19 @@ project="$(dirname "$0")"
 
 rm -rf "${raw_outputs:?}/scripting"
 . "$project/init_spack.sh"
+. share/spack/setup-env.sh
 
-spack install gcc@12
-spack compiler find "$(spack location -i gcc@12)"
+# spack install gcc@12
+# spack compiler find "$(spack location -i gcc@12)"
 
-example scripting/setup           "spack uninstall -ay"
-example scripting/setup           "spack compiler rm gcc@12"
-example scripting/setup           "spack install hdf5"
-example scripting/setup           "spack install zlib%clang"
+# example scripting/setup           "spack uninstall -ay"
+# example scripting/setup           "spack compiler rm gcc@12"
+# example scripting/setup           "spack install hdf5"
+# example scripting/setup           "spack install zlib%clang"
 
 example scripting/find-format     'spack find --format "{name} {version} {hash:10}"'
 
-example scripting/find-json       "spack find --json zlib"
+example scripting/find-json       "spack find --json zlib-ng"
 
 printf "exit()\n" | example scripting/spack-python-1  "spack python"
 
@@ -48,7 +49,7 @@ cat find_exclude.py >> "$EXAMPLE1"
 cp "$EXAMPLE1" find_exclude.py
 
 example scripting/find-exclude-2 "chmod u+x find_exclude.py"
-example scripting/find-exclude-2 "./find_exclude.py %gcc ^mpich"
+example --expect-error scripting/find-exclude-2 "./find_exclude.py %gcc ^mpich"
 
 EXAMPLE2="$PROJECT/raw/2.find_exclude.py.example"
 sed s'|spack python|spack-python|' find_exclude.py > "$EXAMPLE2"

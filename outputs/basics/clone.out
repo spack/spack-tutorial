@@ -40,3 +40,27 @@ Receiving objects: 100% (20970/20970), 14.78MMiB||119.78MMiB/s, done.
 remote: Total 20970 (delta 1797), reused 14162 (delta 1504), pack-reused 0 (from 0)K
 Resolving deltas: 100% (1797/1797), done.
 $ cd ~/spack
+$ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
+fatal: destination path '/home/spack5/spack' already exists and is not an empty directory.
+
+$ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/spack5/spack'...
+remote: Enumerating objects: 20970, done.K
+remote: Counting objects: 100% (20970/20970), done.K
+remote: Compressing objects: 100% (11452/11452), done.K
+remote:nTotale20970 (delta01797),9reused.14162B(delta81504), pack-reused 0 (from 0)K
+Receiving objects: 100% (20970/20970), 14.78MMiB||817.56iMiB/s, done.
+Resolving deltas: 100% (1797/1797), done.
+$ cd ~/spack
+$ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
+fatal: destination path '/home/spack5/spack' already exists and is not an empty directory.
+
+$ git clone --depth=2 --branch=releases/v0.23 https://github.com/spack/spack.git ~/spack
+Cloning into '/home/spack5/spack'...
+remote: Enumerating objects: 20970, done.K
+remote: Counting objects: 100% (20970/20970), done.K
+remote: Compressing objects: 100% (11467/11467), done.K
+Receiving objects: 100% (20970/20970), 14.78 MiB | 23.40 MiB/s, done.
+remote: Total 20970 (delta 1785), reused 14006 (delta 1489), pack-reused 0 (from 0)K
+Resolving deltas: 100% (1785/1785), done.
+$ cd ~/spack

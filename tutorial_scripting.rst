@@ -69,7 +69,7 @@ tools like ``sort`` or ``uniq``.
 
 Alternatively, you can get a serialized version of Spec objects in
 the `JSON` format using the ``--json`` option. For example, you can
-get attributes for all installations of ``zlib`` by entering:
+get attributes for all installations of ``zlib-ng`` by entering:
 
 .. literalinclude:: outputs/scripting/find-json.out
    :language: console
