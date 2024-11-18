@@ -40,14 +40,14 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
     - name: Download container from artifact if PR
-      if: github.event_name == 'pull_request'
+      if: github.event_name == 'pull_request' && needs.container.result == 'success'
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
       with:
         name: tutorial-container
         path: /tmp
 
     - name: Import container from PR artifact
-      if: github.event_name == 'pull_request'
+      if: github.event_name == 'pull_request' && needs.container.result == 'success'
       run: |
         docker load --input /tmp/tutorial-container.tar
         docker image ls -a
@@ -62,7 +62,7 @@ jobs:
         git diff HEAD .
 
     - name: Push modified files to branch
-      if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork ) || github.event_name != 'pull_request'
+      if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork )
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
