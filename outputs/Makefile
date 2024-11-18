@@ -32,11 +32,6 @@ update-outputs: run
 		cat $$raw | perl -pe 's/\x1b]0;.+?\x07//g' | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
 	done
 
-run:
-	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
-		--mount type=bind,source=$(CURDIR),target=/project \
-		${container} make -f /project/Makefile local
-
 local: local-scripting
 local-scripting: local-dev scripting.sh
 #local-cache: local-dev cache.sh
@@ -50,9 +45,14 @@ local-basics: basics.sh init_spack.sh defs.sh
 local-%: %.sh init_spack.sh defs.sh
 	$(CURDIR)/$(@:local-%=%).sh
 
+run:
+	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
+		--mount type=bind,source=$(CURDIR),target=/project -w /project \
+		${container} make local
+
 interactive:
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -it \
-		--mount type=bind,source=$(CURDIR),target=/project \
+		--mount type=bind,source=$(CURDIR),target=/project -w /project \
 		${container}
 
 $(addprefix clean-,$(sections)):
