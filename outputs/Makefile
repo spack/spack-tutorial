@@ -35,8 +35,7 @@ update-outputs: run
 run:
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project \
-		${container} \
-		make -f /project/Makefile local
+		${container} make -f /project/Makefile local
 
 local: local-scripting
 local-scripting: local-dev scripting.sh

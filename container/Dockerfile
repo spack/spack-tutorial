@@ -32,4 +32,4 @@ USER spack
 
 WORKDIR /home/spack
 
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
