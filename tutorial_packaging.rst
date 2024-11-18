@@ -114,7 +114,7 @@ template:
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 26,27,29-30,33-35,37-40,44-45,48-49
+   :emphasize-lines: 26,27,29-30,33-35,37-40,53-54,61-62
 
 .. note::
 
