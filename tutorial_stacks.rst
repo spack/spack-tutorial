@@ -245,20 +245,13 @@ And check that re-concretizing won't change the environment:
 Now we can use those definitions to add e.g. serial packages built against the LAPACK libraries.
 Let's try to do that by using ``py-scypy`` as an example:
 
-.. literalinclude:: outputs/stacks/examples/4.spack.stack.yaml
-   :language: yaml
-   :emphasize-lines: 11,20-23
-
-.. literalinclude:: outputs/stacks/concretize-2.out
-   :language: console
-
 Another ability that is often useful, is that of excluding specific entries from a cross-product matrix.
 We can do that with the ``exclude`` keyword, in the same item as the ``matrix``. Let's try to remove
 ``py-scipy ^netlib-lapack`` from our matrix:
 
 .. literalinclude:: outputs/stacks/examples/4bis.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 24-25
+   :emphasize-lines: 11,20-25
 
 Let's concretize the environment and install the specs once again:
 

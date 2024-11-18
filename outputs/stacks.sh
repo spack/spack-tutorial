@@ -50,9 +50,6 @@ cat "$project/stacks/examples/3.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-1 "spack concretize"
 example stacks/concretize-1 "spack find -l"
 
-cat "$project/stacks/examples/4.spack.stack.yaml" > ~/stacks/spack.yaml
-example stacks/concretize-2 "spack concretize"
-
 cat "$project/stacks/examples/4bis.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-3 "spack concretize"
 example stacks/concretize-3 "spack install"
