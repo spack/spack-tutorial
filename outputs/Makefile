@@ -32,7 +32,7 @@ update-outputs: run
 		cat $$raw | perl -pe 's/\x1b]0;.+?\x07//g' | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
 	done
 
-run: $(run_targets)
+run: run-scripting
 
 run-scripting: run-cache
 run-cache: run-dev
@@ -45,7 +45,7 @@ run-basics: basics.sh init_spack.sh defs.sh
 $(addprefix local-run-,$(sections)):
 	$(CURDIR)/$(@:local-run-%=%).sh
 
-$(run_targets): run-%: %.sh init_spack.sh defs.sh
+run-%: %.sh init_spack.sh defs.sh
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
 		--mount type=bind,source=$(CURDIR),target=/project \
 		${container} \
