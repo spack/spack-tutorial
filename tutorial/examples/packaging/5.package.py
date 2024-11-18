@@ -20,7 +20,12 @@ class TutorialMpileaks(AutotoolsPackage):
 
     version("1.0", sha256="24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9")
 
-    variant("stackstart", values=int, default=0, description="Specify the number of stack frames to truncate")
+    variant(
+        "stackstart",
+        values=int,
+        default=0,
+        description="Specify the number of stack frames to truncate",
+    )
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
@@ -46,9 +51,11 @@ class TutorialMpileaks(AutotoolsPackage):
 
         stackstart = int(self.spec.variants["stackstart"].value)
         if stackstart:
-            args.extend([
-                f"--with-stack-start-c={stackstart}",
-                f"--with-stack-start-fortran={stackstart}",
-            ])
+            args.extend(
+                [
+                    f"--with-stack-start-c={stackstart}",
+                    f"--with-stack-start-fortran={stackstart}",
+                ]
+            )
 
         return args

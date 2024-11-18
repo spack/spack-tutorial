@@ -39,9 +39,7 @@ class TutorialMpileaks(AutotoolsPackage):
     # the license, set checked_by to your Github username.
     license("UNKNOWN", checked_by="github_user1")
 
-    version(
-        "1.0", sha256="24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9"
-    )
+    version("1.0", sha256="24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9")
 
     depends_on("c", type="build")
     depends_on("cxx", type="build")
