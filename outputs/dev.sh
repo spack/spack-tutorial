@@ -61,26 +61,27 @@ example dev/setting-src-path '# note that we can clone into any repo/branch comb
 example dev/setting-src-path 'git clone https://github.com/llnl/scr.git $SPACK_ENV/code'
 example dev/setting-src-path '# note that with `--path` the code directory and package name can be different'
 example dev/setting-src-path 'spack develop --path $SPACK_ENV/code scr@3.1.0'
+example dev/setting-src-path 'spack concretize -f'
 
 example dev/navigation-and-build-env "spack build-env scr -- bash"
+example dev/navigation-and-build-env "# Shell wrappers didn't propagate to the subshell"
+example dev/navigation-and-build-env "source $SPACK_ROOT/share/spack/setup-env.sh"
 example dev/navigation-and-build-env "# Let's look at navigation features"
 example dev/navigation-and-build-env "spack cd --help"
 example dev/navigation-and-build-env "spack cd -c scr"
-example dev/navigation-and-build-env "# Let's see where we are"
-fake_example dev/navigation-and-build-env "pwd"
 example dev/navigation-and-build-env "touch src/scr_copy.c"
 example dev/navigation-and-build-env "spack cd -b scr"
-example dev/navigation-and-build-env "# Let's see where we are now and look at what's here"
-fake_example dev/navigation-and-build-env "pwd"
+example dev/navigation-and-build-env "# Let's look at what's here"
 example dev/navigation-and-build-env "ls"
+example dev/navigation-and-build-env "# Build and run tests"
 example dev/navigation-and-build-env "make -j2"
-example dev/navigation-and-build-env "# could run unit-tests i.e. ./unittest --gtest_filter=*foo*"
+example dev/navigation-and-build-env "make test"
 example dev/navigation-and-build-env "exit"
 
 example dev/combinatorics "# First we have to allow repeat specs in the environment"
 example dev/combinatorics "spack config add concretizer:unify:false"
 example dev/combinatorics "# Next we need to specify the specs we want ('==' propagates the variant to deps)"
 example dev/combinatorics "spack change macsio build_type==Release"
-example dev/combinatorics "spack add macsio build_type==Debug"
+example dev/combinatorics "spack add macsio+scr build_type==Debug"
 example dev/combinatorics "# Inspect the graph for multiple dev_path="
 example dev/combinatorics "spack concretize -f"
