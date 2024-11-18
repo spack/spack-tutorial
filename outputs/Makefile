@@ -34,6 +34,14 @@ update-outputs: run
 
 run: $(run_targets)
 
+run-scripting: run-cache
+run-cache: run-dev
+run-dev: run-packaging
+run-packaging: run-stacks
+run-stacks: run-environments
+run-environments: run-basics
+run-basics: basics.sh init_spack.sh defs.sh
+
 $(addprefix local-run-,$(sections)):
 	$(CURDIR)/$(@:local-run-%=%).sh
 
