@@ -41,6 +41,7 @@ jobs:
               - '.github/**'
               - 'container/**'
               - 'outputs/**.sh'
+              - 'outputs/Makefile'
 
   container:
     if: ${{ needs.changes.outputs.container == 'true' || startsWith(github.ref, 'refs/tags/') }}
