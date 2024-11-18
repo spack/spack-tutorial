@@ -310,8 +310,8 @@ for you. This allows developers to pre-clone the software or use preferred paths
 Navigation and the Build Environment
 ----------
 
-Diving into the build environment was introduced previously in this section with the
-``spack build-env scr -- bash``. This is a helpful function because it allows you 
+Diving into the build environment was introduced previously in the packaging section with the
+``spack build-env scr -- bash`` command. This is a helpful function because it allows you 
 to run commands inside the build environment.  In the packages section of the tutorial
 this was combined with ``spack cd`` to produce a manual build outside of Spack's automated
 Process.
