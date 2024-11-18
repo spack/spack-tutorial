@@ -14,7 +14,7 @@ DOCKER_RUN_OPTS :=
 
 
 # Name of the container we'll generate the tutorial outputs with
-container := ghcr.io/spack/tutorial:latest@sha256:417900cce4592159456050a91d844fc9e81fcb01125a55555092fa450ce59a67
+container := ghcr.io/spack/tutorial:latest@sha256:09098a50655d7b300d324077f2b987d16ac6374fe37911b50692a564a2711a68
 
 # Sections to build
 sections := environments
