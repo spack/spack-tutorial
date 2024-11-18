@@ -14,7 +14,7 @@ example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutori
 
 # make the editor automatically exit
 export EDITOR=true
-example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
+example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
