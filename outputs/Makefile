@@ -14,7 +14,7 @@ DOCKER_RUN_OPTS :=
 
 
 # Name of the container we'll generate the tutorial outputs with
-container := ghcr.io/spack/tutorial:latest@sha256:417900cce4592159456050a91d844fc9e81fcb01125a55555092fa450ce59a67
+container := ghcr.io/spack/tutorial:latest
 
 # Sections to build
 sections := environments
@@ -32,33 +32,24 @@ update-outputs: run
 		cat $$raw | perl -pe 's/\x1b]0;.+?\x07//g' | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
 	done
 
-run: run-scripting
-
-run-scripting: run-cache scripting.sh
-run-cache: run-dev cache.sh
-run-dev: run-packaging dev.sh
-run-packaging: run-stacks packaging.sh
-run-stacks: run-environments stacks.sh
-run-environments: run-basics environments.sh
-run-basics: basics.sh init_spack.sh defs.sh
+run:
+	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
+		--mount type=bind,source=$(CURDIR),target=/project \
+		${container} \
+		make -f /project/Makefile local
 
 local: local-scripting
-local-scripting: local-cache scripting.sh
-local-cache: local-dev cache.sh
+local-scripting: local-dev scripting.sh
+#local-cache: local-dev cache.sh
 local-dev: local-packaging dev.sh
 local-packaging: local-stacks packaging.sh
 local-stacks: local-environments stacks.sh
+# local-config: local-environments config.sh # coming soon^TM
 local-environments: local-basics environments.sh
 local-basics: basics.sh init_spack.sh defs.sh
 
 local-%: %.sh init_spack.sh defs.sh
 	$(CURDIR)/$(@:local-%=%).sh
-
-run-%: %.sh init_spack.sh defs.sh
-	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -t \
-		--mount type=bind,source=$(CURDIR),target=/project \
-		${container} \
-		/project/$(@:run-%=%).sh && touch $@
 
 interactive:
 	$(DOCKER) run $(DOCKER_RUN_OPTS) --rm -it \
