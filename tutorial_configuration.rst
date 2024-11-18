@@ -51,17 +51,10 @@ and ``packages`` configuration sections in this portion of the tutorial.
 
 We will explain this by first covering how to manipulate configurations from
 the command line and then show how this impacts the configuration file
-hierarchy. 
-
-..
-I think this can be abreviated. working on it. I think I would prefer to intoduce config blame and then config add
-Then, we will cover configuration options for compilers,
-focusing on how they can be used to extend Spack's compiler auto-detection.
-Next, we will cover the packages configuration file, focusing on
-how it can be used to override default build options as well as
-specify external package installations to use. Finally, we will
-briefly touch on the config configuration file, which manages more
-high-level Spack configuration options.
+hierarchy. We will then move into compiler and package configurations to help
+you develop skills for getting the builds you want on your system.  Finally,
+we will give some brief attention to more generalized spack configurations 
+in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full
 configuration file. For some, we will then demonstrate how the
@@ -74,17 +67,41 @@ output is all from a server running Ubuntu version 22.04.
 Configuration from the command line
 -----------------------------------
 
-One of the most convenient ways to set configuration options is
-through the command line. For the purpose of this tutorial section,
-we actually want to start out with that, as we need to tell Spack
-it should consider package preferences more important than reuse
-of available binaries:
+You can run ``spack config blame [section]`` at any point in time to see what
+your current configuration is. If you omit the section then spack will dump all
+the configurations settings to your screen.  Let's go ahead and run this for the 
+``concretizer`` section.
 
-.. code-block:: yaml
+.. code-block:: console
+
+   $ spack config blame concretizer
+
+Notice that the ``spack:concretizer:reuse`` option is defaulted to ``true``.
+For this section we'd actually like to turn reuse off so that when we demonstrate
+package configuration our preferences are weighted higher than available binaries
+for the concretizer solution selection procedure.
+
+One of the most convenient ways to set configuration options is
+through the command line.
+
+.. code-block:: console
 
   $ spack config add concretizer:reuse:false
 
-Spack will set this option in your user configuration scope.
+If we rerun ``spack config blame concretizer`` we can see that the change was 
+applied.  
+
+.. code-block:: console
+
+   $ spack config blame concretizer
+
+Notice that the reference file on for this option is now different.
+This is because spack this option in your user configuration scope which is 
+the default scope in this context.
+It is important to note that the ``spack config`` commands accepts an optional
+``--scope`` flag so we can be more precise in the configuration  process. 
+This will make more sense after the next section which provides 
+the definition of spack's configuration scopes and their hierarchy.
 
 .. _configs-tutorial-scopes:
 
@@ -134,10 +151,6 @@ development and another for production preferences.
 
 Settings specified on the command line have precedence over all
 other configuration scopes.
-
-You can also use ``spack config blame <config>`` for displaying
-the effective configuration. Spack will show from which scopes
-the configuration has been assembled.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Platform-specific scopes
