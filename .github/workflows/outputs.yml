@@ -1,6 +1,10 @@
 name: Generate outputs
 on:
   workflow_call:
+    inputs:
+      container:
+        required: true
+        type: boolean
 
 jobs:
   re-generate:
@@ -39,15 +43,15 @@ jobs:
         ref: ${{ github.event.pull_request.head.ref }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
-    - name: Download container from artifact if PR
-      if: github.event_name == 'pull_request' && needs.container.result == 'success'
+    - name: Download container if was previously created
+      if: github.event_name == 'pull_request' && inputs.container
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
       with:
         name: tutorial-container
         path: /tmp
 
     - name: Import container from PR artifact
-      if: github.event_name == 'pull_request' && needs.container.result == 'success'
+      if: github.event_name == 'pull_request' && inputs.container
       run: |
         docker load --input /tmp/tutorial-container.tar
         docker image ls -a

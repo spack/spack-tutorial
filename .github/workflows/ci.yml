@@ -57,3 +57,5 @@ jobs:
       || startsWith(github.ref, 'refs/tags/'))
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
+    with:
+      container: ${{ needs.changes.outputs.container == 'true' }}
