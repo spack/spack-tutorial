@@ -174,7 +174,7 @@ There are a few gotchas with the spack develop command
   system. If a version is not supplied then spack will take the maximum version
   defined in the package where where `infinity versions https://spack.readthedocs.io/en/latest/packaging_guide.html#version-comparison`_ like ``develop`` and ``main``
   have a higher value than the numeric versions.
-* You want to ensure right spec is the software graph that will satisfy the develop spec.
+* You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
   ``spack add <package>`` with the matching version you want to develop is a way to ensure
   the develop spec is satisfied.the ``spack.yaml`` environments file. This is because 
   develop specs are not concretization constraints but rather a criteria for adding
