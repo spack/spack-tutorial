@@ -13,14 +13,48 @@ Configuration Tutorial
 
 This tutorial will guide you through various configuration options
 that allow you to customize Spack's behavior with respect to
-software installation. We will first cover the configuration file
-hierarchy. Then, we will cover configuration options for compilers,
-focusing on how they can be used to extend Spack's compiler auto-detection.
-Next, we will cover the packages configuration file, focusing on
-how it can be used to override default build options as well as
-specify external package installations to use. Finally, we will
-briefly touch on the config configuration file, which manages more
-high-level Spack configuration options.
+software installation.
+There are many different configuration sections.
+A partial list of some key configuration sections is provided below.
+
+.. list-table:: Spack Configuration Sections
+   :widths: 15 55
+   :header-rows: 1
+
+   * - Name
+     - Description
+   * - config
+     - General settings (install location, number of build jobs, etc)
+   * - concretizer
+     - Specializaiton of the concretizer behavior (reuse, unification, etc)
+   * - compilers
+     - Define the compilers that Spack can use (required and system specific)
+   * - mirrors
+     - Locations where spack can look for stashed source or binary distributions 
+   * - packages
+     - Specific settings and rules for packages
+   * - modules
+     - Naming, location and additional configuration of Spack generated modules
+
+The full list of sections can be viewed with ``spack config list``.
+For further education we encourage you to explore the spack
+`documentation on configuration files https://spack.readthedocs.io/en/latest/configuration.html#configuration-files`_.
+
+The principle goals of this section of the tutorial are:
+
+1. Introduce the configuration sections and scope hierarchy
+2. Demonstrate how to manipulate configurations
+3. Show how to configure system assets with spack (compilers and packages)
+
+As such we will primarily focus on the ``compilers``
+and ``packages`` configuration sections in this portion of the tutorial. 
+
+We will explain this by first covering how to manipulate configurations from
+the command line and then show how this impacts the configuration file
+hierarchy. We will then move into compiler and package configurations to help
+you develop skills for getting the builds you want on your system.  Finally,
+we will give some brief attention to more generalized spack configurations 
+in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full
 configuration file. For some, we will then demonstrate how the
@@ -33,17 +67,41 @@ output is all from a server running Ubuntu version 22.04.
 Configuration from the command line
 -----------------------------------
 
-One of the most convenient ways to set configuration options is
-through the command line. For the purpose of this tutorial section,
-we actually want to start out with that, as we need to tell Spack
-it should consider package preferences more important than reuse
-of available binaries:
+You can run ``spack config blame [section]`` at any point in time to see what
+your current configuration is. If you omit the section then spack will dump all
+the configurations settings to your screen.  Let's go ahead and run this for the 
+``concretizer`` section.
 
-.. code-block:: yaml
+.. code-block:: console
+
+   $ spack config blame concretizer
+
+Notice that the ``spack:concretizer:reuse`` option is defaulted to ``true``.
+For this section we'd actually like to turn reuse off so that when we demonstrate
+package configuration our preferences are weighted higher than available binaries
+for the concretizer solution selection procedure.
+
+One of the most convenient ways to set configuration options is
+through the command line.
+
+.. code-block:: console
 
   $ spack config add concretizer:reuse:false
 
-Spack will set this option in your user configuration scope.
+If we rerun ``spack config blame concretizer`` we can see that the change was 
+applied.  
+
+.. code-block:: console
+
+   $ spack config blame concretizer
+
+Notice that the reference file on for this option is now different.
+This indicates the scope where the configuration was set in, and we will
+discuss how spack chooses the default scope shortly.
+For now, it is important to note that the ``spack config`` command accepts an
+optional ``--scope`` flag so we can be more precise in the configuration process. 
+This will make more sense after the next section which provides 
+the definition of spack's configuration scopes and their hierarchy.
 
 .. _configs-tutorial-scopes:
 
@@ -93,10 +151,6 @@ development and another for production preferences.
 
 Settings specified on the command line have precedence over all
 other configuration scopes.
-
-You can also use ``spack config blame <config>`` for displaying
-the effective configuration. Spack will show from which scopes
-the configuration has been assembled.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Platform-specific scopes
@@ -556,7 +610,7 @@ register externally installed packages. This works for many common
 build dependencies, but it's also important to know how to do this
 manually for packages that Spack cannot yet detect.
 
-On these systems we have a pre-installed Perl. Let's tell Spack about
+On these systems we have a pre-installed curl. Let's tell Spack about
 this package and where it can be found:
 
 .. code-block:: yaml
@@ -572,14 +626,14 @@ this package and where it can be found:
            mpi: [mpich, openmpi]
        hdf5:
          require: ~mpi
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
 
 
-Here, we've told Spack that Perl 5.34.0 is installed on our system.
-We've also told it the installation prefix where Perl can be found.
+Here, we've told Spack that Curl 7.81.0 is installed on our system.
+We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's
 okay.
 
@@ -587,18 +641,18 @@ okay.
    :language: console
 
 
-You'll notice that Spack is now using the external Perl installation,
-but the compiler used to build Perl is now overriding our compiler
+You'll notice that Spack is now using the external Curl installation,
+but the compiler used to build Curl is now overriding our compiler
 preference of clang. If we explicitly specify Clang:
 
 .. literalinclude:: outputs/config/1.externals.out
    :language: console
 
-Spack concretizes to both HDF5 and Perl being built with Clang.
-This has a side-effect of rebuilding Perl. If we want to force
-Spack to use the system Perl, we have two choices. We can either
+Spack concretizes to both HDF5 and Curl being built with Clang.
+This has a side-effect of rebuilding Curl. If we want to force
+Spack to use the system Curl, we have two choices. We can either
 specify it on the command line, or we can tell Spack that it's
-not allowed to build its own Perl. We'll go with the latter.
+not allowed to build its own Curl. We'll go with the latter.
 
 .. code-block:: yaml
    :emphasize-lines: 15
@@ -613,14 +667,14 @@ not allowed to build its own Perl. We'll go with the latter.
            mpi: [mpich, openmpi]
        hdf5:
          require: ~mpi
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@5.34.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
 
 
-Now Spack will be forced to choose the external Perl.
+Now Spack will be forced to choose the external Curl.
 
 .. literalinclude:: outputs/config/2.externals.out
    :language: console
@@ -631,7 +685,7 @@ we don't want to build our own MPI, but we now want a parallel version
 of HDF5. Well, fortunately we have MPICH installed on these systems.
 
 Instead of manually configuring an external for MPICH like we did for
-``perl`` we will use the ``spack external find`` command. For packages
+Curl we will use the ``spack external find`` command. For packages
 that support this option, this is a useful way to avoid typos and get
 more accurate external specs.
 
@@ -654,9 +708,9 @@ with MPI again:
          compiler: [clang, gcc, intel, pgi, xl, nag, fj]
          providers:
            mpi: [mpich, openmpi]
-       perl:
+       curl:
          externals:
-         - spec: perl@5.34.0 %gcc@11.4.0
+         - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
        mpich:

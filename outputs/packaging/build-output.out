@@ -1,35 +1,78 @@
-$ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-build-out.txt
+$ cat /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-build-out.txt
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
+==> [2024-11-18-08:09:56.204748] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoreconf' '--install' '--verbose' '--force'
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoconf --force
+configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
+configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
+/tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
+aclocal.m4:745: AM_CONFIG_HEADER is expanded from...
+configure.ac:9: the top level
+configure.ac:38: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
+configure.ac:38: You should run autoupdate.
+m4/libtool.m4:100: AC_PROG_LIBTOOL is expanded from...
+configure.ac:38: the top level
+configure.ac:47: warning: The macro 'AC_HEADER_STDC' is obsolete.
+configure.ac:47: You should run autoupdate.
+/tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
+configure.ac:47: the top level
+autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:26: installing 'config/compile'
+configure.ac:19: installing 'config/missing'
+src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+src/Makefile.am: installing 'config/depcomp'
+autoreconf: 'config/install-sh' is updated
+autoreconf: 'config/config.sub' is updated
+autoreconf: 'config/config.guess' is updated
+autoreconf: Leaving directory '.'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2024-05-12-12:37:11.217253] Find (recursive): /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src ['configure']
-==> [2024-05-12-12:37:11.218326] Find complete: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src ['configure']
-==> [2024-05-12-12:37:11.218769] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2024-05-12-12:37:11.255931] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2024-05-12-12:37:11.287855] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2024-05-12-12:37:11.309576] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-33dnbhaym6a5uwp7ezxi5r4ukhxc5r2m'
+==> [2024-11-18-08:10:00.261316] Find (max depth = None): ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
+==> [2024-11-18-08:10:00.262236] Find complete: ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src'] ['configure']
+==> [2024-11-18-08:10:00.262520] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2024-11-18-08:10:00.284517] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2024-11-18-08:10:00.309371] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2024-11-18-08:10:00.334643] '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
-checking for gawk... no
-checking for mawk... mawk
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
 checking whether make sets $(MAKE)... yes
-checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
-checking for C compiler default output file name... a.out
+checking whether make supports nested variables... yes
+checking for gcc... /home/spack5/spack/lib/spack/env/gcc/gcc
 checking whether the C compiler works... yes
-checking whether we are cross compiling... no
+checking for C compiler default output file name... a.out
 checking for suffix of executables...
+checking whether we are cross compiling... no
 checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
-checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
-checking for style of include used by make... GNU
-checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
-checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
-checking whether we are using the GNU C++ compiler... yes
-checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
-checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-checking for /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc
-Checking whether /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc responds to '-showme:compile'... yes
+checking whether the compiler supports GNU C... yes
+checking whether /home/spack5/spack/lib/spack/env/gcc/gcc accepts -g... yes
+checking for /home/spack5/spack/lib/spack/env/gcc/gcc option to enable C11 features... none needed
+checking whether /home/spack5/spack/lib/spack/env/gcc/gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of /home/spack5/spack/lib/spack/env/gcc/gcc... gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether /home/spack5/spack/lib/spack/env/gcc/g++ accepts -g... yes
+checking for /home/spack5/spack/lib/spack/env/gcc/g++ option to enable C++11 features... none needed
+checking dependency style of /home/spack5/spack/lib/spack/env/gcc/g++... gcc3
+checking for /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc... /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc
+Checking whether /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc responds to '-showme:compile'... yes
 configure: error: unable to locate adept-utils installation

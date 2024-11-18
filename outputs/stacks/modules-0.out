@@ -1,472 +1,162 @@
 $ spack add lmod@8.7.18 %gcc@11
-==> Adding lmod@8.7.18%gcc@11 to environment /home/spack/stacks
+==> Adding lmod@8.7.18%gcc@11 to environment /home/spack5/stacks
 $ spack concretize
-==> Starting concretization
-==> Environment concretized in 6.14 seconds
-==> Concretized gcc@12%gcc@11
-[+]  hc3fmfi  gcc@12.3.0%gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages='c,c++,fortran' arch=linux-ubuntu22.04-x86_64_v3
-[+]  mhzfdlk	  ^diffutils@3.10%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3duehf4	  ^gawk@5.3.0%gcc@11.4.0~nls build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  jwy3fyz	      ^libsigsegv@2.14%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  cb6x34k	      ^readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  f47qm6q	  ^gcc-runtime@11.4.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+==> Concretized 1 spec:
+ -   saucmo6  lmod@8.7.18%gcc@11.4.0+auto_swap~redirect build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   jasonju	  ^bc@1.07.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   p72c4zc	      ^ed@1.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  ljsbwjc	      ^texinfo@7.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  bexdfw2		  ^gettext@0.22.5%gcc@11.4.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  ewqc7cx		      ^bzip2@1.0.8%gcc@11.4.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  bsga3no		      ^libiconv@1.17%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  wozcmyn		      ^libxml2@2.13.4%gcc@11.4.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  mmv6i4n		      ^tar@1.34%gcc@11.4.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
+[+]  pcwnu2w			  ^pigz@2.8%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
+[+]  t7h6imj			  ^zstd@1.5.6%gcc@11.4.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  2fvrfr6		      ^xz@5.4.6%gcc@11.4.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  cwpt5ec		  ^perl@5.40.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  cexlioh		      ^berkeley-db@18.1.40%gcc@11.4.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
+[+]  jj2atvs		      ^gdbm@1.23%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  hshzy76	  ^gcc-runtime@11.4.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
 [e]  a7drdl4	  ^glibc@2.35%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  qfrotcc	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  5znqdnf	  ^gmp@6.2.1%gcc@11.4.0+cxx build_system=autotools libs=shared,static patches=69ad2e2 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ljmgup2	      ^autoconf@2.72%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  p742yhm	      ^automake@1.16.5%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  7d6p4sf	      ^m4@1.4.19%gcc@11.4.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  lop7htu	  ^libtool@2.4.7%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  v4yzc2w	      ^findutils@4.9.0%gcc@11.4.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  t7z22ep	  ^mpc@1.3.1%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  c42jb45	  ^mpfr@4.2.1%gcc@11.4.0 build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  rq5jepf	      ^autoconf-archive@2023.02.20%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  uliw6sp	  ^perl@5.38.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  br27jq6	      ^berkeley-db@18.1.40%gcc@11.4.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  qmy6dpi	      ^bzip2@1.0.8%gcc@11.4.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ohbrdtp	      ^gdbm@1.23%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  y6pez2a	  ^texinfo@7.0.3%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  eux6e6v	      ^gettext@0.22.5%gcc@11.4.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  jv5es2y		  ^libxml2@2.10.3%gcc@11.4.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  wx4xfdn		  ^tar@1.34%gcc@11.4.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  gk55zt7		      ^pigz@2.8%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  syttnnt		  ^xz@5.4.6%gcc@11.4.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  gk4xs2i	      ^ncurses@6.5%gcc@11.4.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3x3l7s		  ^pkgconf@2.2.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  xqtp62n	  ^zlib-ng@2.1.6%gcc@11.4.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ew3aaos	  ^zstd@1.5.6%gcc@11.4.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
+[+]  srkzfjr	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+ -   qcxkktp	  ^lua@5.4.6%gcc@11.4.0+shared build_system=makefile fetcher=curl arch=linux-ubuntu22.04-x86_64_v3
+[+]  fpywomo	      ^curl@8.10.1%gcc@11.4.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
+[+]  t2qkug7		  ^nghttp2@1.63.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  lljulvx		      ^diffutils@3.10%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  5gigqgw		  ^openssl@3.4.0%gcc@11.4.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
+[+]  t2brqss		      ^ca-certificates-mozilla@2023-05-30%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+[+]  oplsmxr		  ^pkgconf@2.2.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  rvg7j6b	      ^ncurses@6.5%gcc@11.4.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
+[+]  aylebxv	      ^readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
+ -   akxwy4w	      ^unzip@6.0%gcc@11.4.0 build_system=makefile patches=881d2ed,f6f6236 arch=linux-ubuntu22.04-x86_64_v3
+ -   4lpeywj	  ^lua-luafilesystem@1.8.0%gcc@11.4.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
+ -   hdnpce3	  ^lua-luaposix@36.1%gcc@11.4.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
+[+]  v64tnmr	      ^libxcrypt@4.4.35%gcc@11.4.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
+[+]  w4gwr4e	  ^tcl@8.6.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+[+]  fhud6vq	      ^zlib-ng@2.2.1%gcc@11.4.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
 
-==> Concretized netlib-scalapack%gcc@12 ^mpich ^openblas
-[+]  bhtne2a  netlib-scalapack@2.2.0%gcc@12.3.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-[+]  636pa3o	  ^cmake@3.27.9%gcc@12.3.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  7du7zou	      ^curl@8.7.1%gcc@12.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
-[+]  tmufr6s		  ^nghttp2@1.57.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  6qrh24v		      ^diffutils@3.10%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  oxocupu		  ^openssl@3.3.0%gcc@12.3.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  a2gxp4h		      ^ca-certificates-mozilla@2023-05-30%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  bu5gu2m	      ^ncurses@6.5%gcc@12.3.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  klmqckv	      ^zlib-ng@2.1.6%gcc@12.3.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3eefcyu	  ^gmake@4.4.1%gcc@12.3.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  kkrar7t	  ^mpich@4.2.1%gcc@12.3.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~vci~verbs+wrapperrpath~xpmem build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=default arch=linux-ubuntu22.04-x86_64_v3
-[+]  lu6imec	      ^findutils@4.9.0%gcc@12.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ui75hni	      ^hwloc@2.9.1%gcc@12.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  rgjhj7a	      ^libfabric@1.21.0%gcc@12.3.0~debug~kdreg~uring build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu22.04-x86_64_v3
-[+]  zf3qbx3	      ^libpciaccess@0.17%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3qfbro		  ^libtool@2.4.7%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  5ir45vn		  ^util-macros@1.19.3%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  upw4yvr	      ^libxml2@2.10.3%gcc@12.3.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f7j6s4z		  ^xz@5.4.6%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  2t42aln	      ^pkgconf@2.2.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  pztnzd3	      ^yaksa@0.3%gcc@12.3.0~cuda~rocm build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  so7orfs		  ^autoconf@2.72%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  sssghcu		  ^automake@1.16.5%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lvqszzi		  ^m4@1.4.19%gcc@12.3.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  y3txxwv		      ^libsigsegv@2.14%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ciwhyra		  ^python@3.11.7%gcc@12.3.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
-[+]  syod3as		      ^expat@2.6.2%gcc@12.3.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3xlyij			  ^libbsd@0.12.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri2ny52			      ^libmd@1.0.4%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  x2uvezl		      ^gettext@0.22.5%gcc@12.3.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ddxcrg5			  ^tar@1.34%gcc@12.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  7lweqai			      ^pigz@2.8%gcc@12.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvj7472			      ^zstd@1.5.6%gcc@12.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  cl63ri3		      ^libffi@3.4.6%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  m7la4pp		      ^libxcrypt@4.4.35%gcc@12.3.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
-[+]  lhm6hsy		      ^readline@8.2%gcc@12.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q5uuhah		      ^sqlite@3.43.2%gcc@12.3.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ofkdrzu		      ^util-linux-uuid@2.38.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  eyhwdj2	  ^openblas@0.3.26%gcc@12.3.0~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  ucv4k3y	      ^perl@5.38.0%gcc@12.3.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  wekshz6		  ^berkeley-db@18.1.40%gcc@12.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  q4g6mhd		  ^bzip2@1.0.8%gcc@12.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  e6zxtqt		  ^gdbm@1.23%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-
-==> Concretized netlib-scalapack%gcc@12 ^mpich ^netlib-lapack
-[+]  q7ooqre  netlib-scalapack@2.2.0%gcc@12.3.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-[+]  xyma4ep	  ^amdblis@4.2%gcc@12.3.0~aocl_gemm+blas+cblas~ilp64~logging+suphandling~tracing build_system=makefile libs=shared,static threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  ciwhyra	      ^python@3.11.7%gcc@12.3.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q4g6mhd		  ^bzip2@1.0.8%gcc@12.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  6qrh24v		      ^diffutils@3.10%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  syod3as		  ^expat@2.6.2%gcc@12.3.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3xlyij		      ^libbsd@0.12.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri2ny52			  ^libmd@1.0.4%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  e6zxtqt		  ^gdbm@1.23%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  x2uvezl		  ^gettext@0.22.5%gcc@12.3.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ddxcrg5		      ^tar@1.34%gcc@12.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  7lweqai			  ^pigz@2.8%gcc@12.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvj7472			  ^zstd@1.5.6%gcc@12.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  cl63ri3		  ^libffi@3.4.6%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  m7la4pp		  ^libxcrypt@4.4.35%gcc@12.3.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
-[+]  oxocupu		  ^openssl@3.3.0%gcc@12.3.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  a2gxp4h		      ^ca-certificates-mozilla@2023-05-30%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  lhm6hsy		  ^readline@8.2%gcc@12.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q5uuhah		  ^sqlite@3.43.2%gcc@12.3.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ofkdrzu		  ^util-linux-uuid@2.38.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f7j6s4z		  ^xz@5.4.6%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  636pa3o	  ^cmake@3.27.9%gcc@12.3.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  7du7zou	      ^curl@8.7.1%gcc@12.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
-[+]  tmufr6s		  ^nghttp2@1.57.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ucv4k3y		  ^perl@5.38.0%gcc@12.3.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  wekshz6		      ^berkeley-db@18.1.40%gcc@12.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  bu5gu2m	      ^ncurses@6.5%gcc@12.3.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  klmqckv	      ^zlib-ng@2.1.6%gcc@12.3.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3eefcyu	  ^gmake@4.4.1%gcc@12.3.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  kkrar7t	  ^mpich@4.2.1%gcc@12.3.0~argobots~cuda+fortran+hwloc+hydra+libxml2+pci~rocm+romio~slurm~vci~verbs+wrapperrpath~xpmem build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=default arch=linux-ubuntu22.04-x86_64_v3
-[+]  lu6imec	      ^findutils@4.9.0%gcc@12.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ui75hni	      ^hwloc@2.9.1%gcc@12.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  rgjhj7a	      ^libfabric@1.21.0%gcc@12.3.0~debug~kdreg~uring build_system=autotools fabrics=sockets,tcp,udp arch=linux-ubuntu22.04-x86_64_v3
-[+]  zf3qbx3	      ^libpciaccess@0.17%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3qfbro		  ^libtool@2.4.7%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  5ir45vn		  ^util-macros@1.19.3%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  upw4yvr	      ^libxml2@2.10.3%gcc@12.3.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  2t42aln	      ^pkgconf@2.2.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  pztnzd3	      ^yaksa@0.3%gcc@12.3.0~cuda~rocm build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  so7orfs		  ^autoconf@2.72%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  sssghcu		  ^automake@1.16.5%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lvqszzi		  ^m4@1.4.19%gcc@12.3.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  y3txxwv		      ^libsigsegv@2.14%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvhuv65	  ^netlib-lapack@3.11.0%gcc@12.3.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
-
-==> Concretized py-scipy%gcc@12 ^openblas
-[+]  3accefe  py-scipy@1.13.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  eyhwdj2	  ^openblas@0.3.26%gcc@12.3.0~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  3eefcyu	      ^gmake@4.4.1%gcc@12.3.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ucv4k3y	      ^perl@5.38.0%gcc@12.3.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  wekshz6		  ^berkeley-db@18.1.40%gcc@12.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  2t42aln	  ^pkgconf@2.2.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  bsef5cj	  ^py-cython@3.0.8%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  7iqxefn	      ^py-setuptools@69.2.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ol54hmz	  ^py-meson-python@0.15.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  the5myj	      ^meson@1.3.2%gcc@12.3.0 build_system=python_pip patches=0f0b1bd arch=linux-ubuntu22.04-x86_64_v3
-[+]  5kcqkc6	      ^py-pyproject-metadata@0.7.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  rzruklu		  ^py-packaging@23.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  vioo2gj		      ^py-flit-core@3.9.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  lmjalxf	  ^py-numpy@1.26.4%gcc@12.3.0 build_system=python_pip patches=873745d arch=linux-ubuntu22.04-x86_64_v3
-[+]  uc7d3fn	  ^py-pip@23.1.2%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ts4hcnh	  ^py-pybind11@2.12.0%gcc@12.3.0~ipo build_system=cmake build_type=Release generator=ninja arch=linux-ubuntu22.04-x86_64_v3
-[+]  636pa3o	      ^cmake@3.27.9%gcc@12.3.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  7du7zou		  ^curl@8.7.1%gcc@12.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
-[+]  tmufr6s		      ^nghttp2@1.57.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  53tomx2	      ^ninja@1.11.1%gcc@12.3.0+re2c build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  mfbo7dd		  ^re2c@2.2%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  yb2yrlm	  ^py-pythran@0.15.0%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  54x2nx3	      ^py-beniget@0.4.1%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  qeywms6	      ^py-gast@0.5.4%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  yyr4tu6	      ^py-ply@3.11%gcc@12.3.0 build_system=python_pip arch=linux-ubuntu22.04-x86_64_v3
-[+]  aqfgdmf	  ^py-wheel@0.41.2%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  ciwhyra	  ^python@3.11.7%gcc@12.3.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q4g6mhd	      ^bzip2@1.0.8%gcc@12.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  6qrh24v		  ^diffutils@3.10%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  syod3as	      ^expat@2.6.2%gcc@12.3.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3xlyij		  ^libbsd@0.12.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri2ny52		      ^libmd@1.0.4%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  e6zxtqt	      ^gdbm@1.23%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  x2uvezl	      ^gettext@0.22.5%gcc@12.3.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  upw4yvr		  ^libxml2@2.10.3%gcc@12.3.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ddxcrg5		  ^tar@1.34%gcc@12.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  7lweqai		      ^pigz@2.8%gcc@12.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvj7472		      ^zstd@1.5.6%gcc@12.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  cl63ri3	      ^libffi@3.4.6%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  m7la4pp	      ^libxcrypt@4.4.35%gcc@12.3.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
-[+]  bu5gu2m	      ^ncurses@6.5%gcc@12.3.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  oxocupu	      ^openssl@3.3.0%gcc@12.3.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  a2gxp4h		  ^ca-certificates-mozilla@2023-05-30%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  lhm6hsy	      ^readline@8.2%gcc@12.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q5uuhah	      ^sqlite@3.43.2%gcc@12.3.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ofkdrzu	      ^util-linux-uuid@2.38.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f7j6s4z	      ^xz@5.4.6%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  klmqckv	      ^zlib-ng@2.1.6%gcc@12.3.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  p6vzj63	  ^python-venv@1.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-
-==> Concretized netlib-scalapack%gcc@12 ^openblas ^openmpi
-[+]  4kiidhc  netlib-scalapack@2.2.0%gcc@12.3.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-[+]  636pa3o	  ^cmake@3.27.9%gcc@12.3.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  7du7zou	      ^curl@8.7.1%gcc@12.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
-[+]  tmufr6s		  ^nghttp2@1.57.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  6qrh24v		      ^diffutils@3.10%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  oxocupu		  ^openssl@3.3.0%gcc@12.3.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  a2gxp4h		      ^ca-certificates-mozilla@2023-05-30%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  bu5gu2m	      ^ncurses@6.5%gcc@12.3.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  klmqckv	      ^zlib-ng@2.1.6%gcc@12.3.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3eefcyu	  ^gmake@4.4.1%gcc@12.3.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  eyhwdj2	  ^openblas@0.3.26%gcc@12.3.0~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared build_system=makefile symbol_suffix=none threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  ucv4k3y	      ^perl@5.38.0%gcc@12.3.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  wekshz6		  ^berkeley-db@18.1.40%gcc@12.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  q4g6mhd		  ^bzip2@1.0.8%gcc@12.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  e6zxtqt		  ^gdbm@1.23%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lhm6hsy		      ^readline@8.2%gcc@12.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  itcqz6x	  ^openmpi@5.0.3%gcc@12.3.0~atomics~cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools fabrics=none romio-filesystem=none schedulers=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  so7orfs	      ^autoconf@2.72%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lvqszzi		  ^m4@1.4.19%gcc@12.3.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  y3txxwv		      ^libsigsegv@2.14%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  sssghcu	      ^automake@1.16.5%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ui75hni	      ^hwloc@2.9.1%gcc@12.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  zf3qbx3		  ^libpciaccess@0.17%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  5ir45vn		      ^util-macros@1.19.3%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  upw4yvr		  ^libxml2@2.10.3%gcc@12.3.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f7j6s4z		      ^xz@5.4.6%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  3jhmflq	      ^libevent@2.1.12%gcc@12.3.0+openssl build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3qfbro	      ^libtool@2.4.7%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lu6imec		  ^findutils@4.9.0%gcc@12.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ycvznwt	      ^numactl@2.0.14%gcc@12.3.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu22.04-x86_64_v3
-[+]  witkwii	      ^openssh@9.7p1%gcc@12.3.0+gssapi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  nn5dx4c		  ^krb5@1.20.1%gcc@12.3.0+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  nleqxiv		      ^bison@3.8.2%gcc@12.3.0~color build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  x2uvezl		      ^gettext@0.22.5%gcc@12.3.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ddxcrg5			  ^tar@1.34%gcc@12.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  7lweqai			      ^pigz@2.8%gcc@12.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvj7472			      ^zstd@1.5.6%gcc@12.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri7efzb		  ^libedit@3.1-20230828%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  m7la4pp		  ^libxcrypt@4.4.35%gcc@12.3.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
-[+]  2t42aln	      ^pkgconf@2.2.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  dsrozes	      ^pmix@5.0.1%gcc@12.3.0~docs+pmi_backwards_compatibility~python~restful build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-
-==> Concretized netlib-scalapack%gcc@12 ^netlib-lapack ^openmpi
-[+]  cknsmak  netlib-scalapack@2.2.0%gcc@12.3.0~ipo~pic+shared build_system=cmake build_type=Release generator=make patches=072b006,1c9ce5f,244a9aa arch=linux-ubuntu22.04-x86_64_v3
-[+]  xyma4ep	  ^amdblis@4.2%gcc@12.3.0~aocl_gemm+blas+cblas~ilp64~logging+suphandling~tracing build_system=makefile libs=shared,static threads=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  ciwhyra	      ^python@3.11.7%gcc@12.3.0+bz2+crypt+ctypes+dbm~debug+libxml2+lzma~nis~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib build_system=generic patches=13fa8bf,b0615b2,ebdca64,f2fd060 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q4g6mhd		  ^bzip2@1.0.8%gcc@12.3.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  6qrh24v		      ^diffutils@3.10%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  syod3as		  ^expat@2.6.2%gcc@12.3.0+libbsd build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3xlyij		      ^libbsd@0.12.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri2ny52			  ^libmd@1.0.4%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  e6zxtqt		  ^gdbm@1.23%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  x2uvezl		  ^gettext@0.22.5%gcc@12.3.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ddxcrg5		      ^tar@1.34%gcc@12.3.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  7lweqai			  ^pigz@2.8%gcc@12.3.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvj7472			  ^zstd@1.5.6%gcc@12.3.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  cl63ri3		  ^libffi@3.4.6%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  m7la4pp		  ^libxcrypt@4.4.35%gcc@12.3.0~obsolete_api build_system=autotools patches=4885da3 arch=linux-ubuntu22.04-x86_64_v3
-[+]  oxocupu		  ^openssl@3.3.0%gcc@12.3.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
-[+]  a2gxp4h		      ^ca-certificates-mozilla@2023-05-30%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  lhm6hsy		  ^readline@8.2%gcc@12.3.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  q5uuhah		  ^sqlite@3.43.2%gcc@12.3.0+column_metadata+dynamic_extensions+fts~functions+rtree build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ofkdrzu		  ^util-linux-uuid@2.38.1%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f7j6s4z		  ^xz@5.4.6%gcc@12.3.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  636pa3o	  ^cmake@3.27.9%gcc@12.3.0~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
-[+]  7du7zou	      ^curl@8.7.1%gcc@12.3.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
-[+]  tmufr6s		  ^nghttp2@1.57.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  bu5gu2m	      ^ncurses@6.5%gcc@12.3.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  klmqckv	      ^zlib-ng@2.1.6%gcc@12.3.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  hbicyv7	  ^gcc-runtime@12.3.0%gcc@12.3.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  gkoh6ax	  ^glibc@2.35%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3eefcyu	  ^gmake@4.4.1%gcc@12.3.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  vvhuv65	  ^netlib-lapack@3.11.0%gcc@12.3.0~external-blas~ipo+lapacke+shared~xblas build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
-[+]  itcqz6x	  ^openmpi@5.0.3%gcc@12.3.0~atomics~cuda~gpfs~internal-hwloc~internal-libevent~internal-pmix~java~legacylaunchers~lustre~memchecker~openshmem~orterunprefix~romio+rsh~static+vt+wrapper-rpath build_system=autotools fabrics=none romio-filesystem=none schedulers=none arch=linux-ubuntu22.04-x86_64_v3
-[+]  so7orfs	      ^autoconf@2.72%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lvqszzi		  ^m4@1.4.19%gcc@12.3.0+sigsegv build_system=autotools patches=9dc5fbd,bfdffa7 arch=linux-ubuntu22.04-x86_64_v3
-[+]  y3txxwv		      ^libsigsegv@2.14%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  sssghcu	      ^automake@1.16.5%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ui75hni	      ^hwloc@2.9.1%gcc@12.3.0~cairo~cuda~gl~libudev+libxml2~netloc~nvml~oneapi-level-zero~opencl+pci~rocm build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  zf3qbx3		  ^libpciaccess@0.17%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  5ir45vn		      ^util-macros@1.19.3%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  upw4yvr		  ^libxml2@2.10.3%gcc@12.3.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  3jhmflq	      ^libevent@2.1.12%gcc@12.3.0+openssl build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3qfbro	      ^libtool@2.4.7%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  lu6imec		  ^findutils@4.9.0%gcc@12.3.0 build_system=autotools patches=440b954 arch=linux-ubuntu22.04-x86_64_v3
-[+]  ycvznwt	      ^numactl@2.0.14%gcc@12.3.0 build_system=autotools patches=4e1d78c,62fc8a8,ff37630 arch=linux-ubuntu22.04-x86_64_v3
-[+]  witkwii	      ^openssh@9.7p1%gcc@12.3.0+gssapi build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  nn5dx4c		  ^krb5@1.20.1%gcc@12.3.0+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  nleqxiv		      ^bison@3.8.2%gcc@12.3.0~color build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ri7efzb		  ^libedit@3.1-20230828%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  ucv4k3y	      ^perl@5.38.0%gcc@12.3.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  wekshz6		  ^berkeley-db@18.1.40%gcc@12.3.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  2t42aln	      ^pkgconf@2.2.0%gcc@12.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  dsrozes	      ^pmix@5.0.1%gcc@12.3.0~docs+pmi_backwards_compatibility~python~restful build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-
-==> Concretized lmod@8.7.18%gcc@11
- -   ujyntp7  lmod@8.7.18%gcc@11.4.0+auto_swap~redirect build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -   acfejrq	  ^bc@1.07.1%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -   oyfml4o	      ^ed@1.4%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  y6pez2a	      ^texinfo@7.0.3%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  eux6e6v		  ^gettext@0.22.5%gcc@11.4.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  qmy6dpi		      ^bzip2@1.0.8%gcc@11.4.0~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  jv5es2y		      ^libxml2@2.10.3%gcc@11.4.0+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  wx4xfdn		      ^tar@1.34%gcc@11.4.0 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3
-[+]  gk55zt7			  ^pigz@2.8%gcc@11.4.0 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3
-[+]  ew3aaos			  ^zstd@1.5.6%gcc@11.4.0+programs build_system=makefile compression=none libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  syttnnt		      ^xz@5.4.6%gcc@11.4.0~pic build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
-[+]  uliw6sp		  ^perl@5.38.0%gcc@11.4.0+cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
-[+]  br27jq6		      ^berkeley-db@18.1.40%gcc@11.4.0+cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
-[+]  ohbrdtp		      ^gdbm@1.23%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  f47qm6q	  ^gcc-runtime@11.4.0%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  a7drdl4	  ^glibc@2.35%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  qfrotcc	  ^gmake@4.4.1%gcc@11.4.0~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -   447hnr7	  ^lua@5.4.6%gcc@11.4.0~pcfile+shared build_system=makefile fetcher=curl arch=linux-ubuntu22.04-x86_64_v3
- -   cc6xd2h	      ^curl@8.7.1%gcc@11.4.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
- -   pn6bnmh		  ^nghttp2@1.57.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  mhzfdlk		      ^diffutils@3.10%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -   vunusyx		  ^openssl@3.3.0%gcc@11.4.0~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
- -   yw5x67u		      ^ca-certificates-mozilla@2023-05-30%gcc@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  h3x3l7s		  ^pkgconf@2.2.0%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  gk4xs2i	      ^ncurses@6.5%gcc@11.4.0~symlinks+termlib abi=none build_system=autotools patches=7a351bc arch=linux-ubuntu22.04-x86_64_v3
-[+]  cb6x34k	      ^readline@8.2%gcc@11.4.0 build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
- -   x2mt7jq	      ^unzip@6.0%gcc@11.4.0 build_system=makefile patches=f6f6236 arch=linux-ubuntu22.04-x86_64_v3
- -   bjznamf	  ^lua-luafilesystem@1.8.0%gcc@11.4.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
- -   2cfap64	  ^lua-luaposix@36.1%gcc@11.4.0 build_system=lua arch=linux-ubuntu22.04-x86_64_v3
- -   dpakck4	  ^tcl@8.6.12%gcc@11.4.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  xqtp62n	      ^zlib-ng@2.1.6%gcc@11.4.0+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-
-==> Updating view at /home/spack/stacks/views/full
+==> Updating view at /home/spack5/stacks/views/full
 $ spack install
 [+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
 [+] /usr (external glibc-2.35-gkoh6axllpo5u5oc3rv2vglpxcr22dbx)
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gcc-runtime-12.3.0-hbicyv7pq7z2eyfldrbt55wfcvxaukc3
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.2.1-5znqdnf25vtk4ec5s7mk4zkz6i6cz3gq
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-br27jq6mkoumsbtdldgzcm3lw5zqjvel
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-gk4xs2idegfiwoyaikamyhxkjrruxtxa
-==> Installing ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf [8/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ca-certificates-mozilla-2023-05-30/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf.spack
-==> Extracting ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf from binary cache
-==> ca-certificates-mozilla: Successfully installed ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf
-  Search: 0.00s.  Fetch: 0.20s.  Install: 0.10s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.30s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ca-certificates-mozilla-2023-05-30-yw5x67uxvt6sapin6ft4cxfnwljusmbf
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-2.2.0-h3x3l7sed4l2efuskhaldi6ilmkoyeaa
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libmd-1.0.4-ri2ny52pg4ahlm7jy2atvjse6luuuiz4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-linux-uuid-2.38.1-ofkdrzuvkp4tf7padmchhfituyokkq5h
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/xz-5.4.6-f7j6s4z7xrbfnxmgb5qixyrqxmmrwcwn
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/yaksa-0.3-pztnzd3urexub53x2ij7z5qfuhja543t
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-lapack-3.11.0-vvhuv65pezkputxcebe6h6flwzqxfaeu
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/numactl-2.0.14-ycvznwt35tod4zbvvzj7sb4gdsscy2ng
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zstd-1.5.6-vvj7472czu7jtqvlqllnfezk2vfoweip
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libpciaccess-0.17-zf3qbx3nkqy25w5u52p4bl7huggvffhh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ncurses-6.5-bu5gu2m6qwvetojkljnbmnhfoajohix2
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openblas-0.3.26-eyhwdj22xauke5xatcyaupny4ubjk6cx
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zlib-ng-2.1.6-klmqckvaegntcydjnzuir2dw5edpkayt
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libfabric-1.21.0-rgjhj7a75nfc6qpulv5dka3blplnsgfj
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bzip2-1.0.8-q4g6mhdrn33n2qg77honoz3tyxclahfj
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxcrypt-4.4.35-m7la4pps42vujgacrwtzjdsuzqxpvdct
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libffi-3.4.6-cl63ri3k2kc5beigbruwikb2yfb7d7mv
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.1-c42jb452v4vwgf63vu3jwhqfru24xq6h
-==> Installing ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux [27/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux.spack
-==> Extracting ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux from binary cache
-==> ed: Successfully installed ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.05s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.06s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-oyfml4oxbte6twcvhodp7tucn5bylxux
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-cb6x34ku73pjh3f4t7rmpthnxuumw25x
-==> Installing unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul [29/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul.spack
-==> Extracting unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul from binary cache
-==> unzip: Successfully installed unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.05s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.06s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0-x2mt7jq5rerpzmzswejbpprttbukeaul
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/diffutils-3.10-mhzfdlk4s72qc2lndxqz4v6tcxkis5ez
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-syttnntihi6n463mupmgl5e7kp5izxkz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libbsd-0.12.1-h3xlyijm4wqek5mcuegdojo43hlnge5h
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libedit-3.1-20230828-ri7efzbikhinpicqfxzbjrlmzfuv5vj5
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/readline-8.2-lhm6hsyxxnsajkkfuienim5kmort3mu4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pigz-2.8-7lweqaiatauhwnaectyns4pcbrasztvs
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssl-3.3.0-oxocupunm3vzco5oxj6qv4iutfufe4ko
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxml2-2.10.3-upw4yvrsfhq2n4px45kectz7skvjmbnc
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-t7z22epcb4ifdqdft6juyncq7pjlvffz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-ohbrdtphnhbycgd6p3btrxzjbtkwiqn6
-==> Installing nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i [42/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i.spack
-==> Extracting nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i from binary cache
-==> nghttp2: Successfully installed nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.08s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.09s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.57.0-pn6bnmhdnu3jaiukkhvak4dbvzez4d7i
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-qmy6dpipkzgotxrxqwxlnfsj5vbzkbcc
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-gk55zt73c5ekv3iogqn4lo4r66tuzv5z
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-jv5es2yg6on55zdsb5xyvvg7xvqh6h4e
-==> Installing tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu [46/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu.spack
-==> Extracting tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu from binary cache
-==> tcl: Successfully installed tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-  Search: 0.00s.  Fetch: 0.02s.  Install: 1.26s.  Extract: 1.12s.  Relocate: 0.12s.  Total: 1.28s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-dpakck4vt2fme3lnoqyqmmzttko5j3cu
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/expat-2.6.2-syod3asijkoxtqx7w2izig4waiztpekg
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gdbm-1.23-e6zxtqti4vpfgnqfvd7qtnlbet3mf3hz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/sqlite-3.43.2-q5uuhah4t4gbkqf7fj7lynqjzuyl2ejt
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/tar-1.34-ddxcrg5kldvvfwroiz7ehxye3kubihkp
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libevent-2.1.12-3jhmflq4elhweikwwbgsfz3buglfia6s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/hwloc-2.9.1-ui75hniwfymwtl5onuo7oual2bipsaoy
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.38.0-uliw6spxatqyj5bjxwtf6ckndktozqqo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-wx4xfdnr4uzmlkbzpeuizbduh4e5klhj
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gettext-0.22.5-x2uvezlojx3cucddz2o6nmj76yx62lzt
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/mpich-4.2.1-kkrar7tr4glw5goquycxkkwabl2fetif
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pmix-5.0.1-dsrozesmhppnjw4ny3trvm6htxnaoy23
-==> Installing openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij [59/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.3.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij.spack
-==> Extracting openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij from binary cache
-==> openssl: Successfully installed openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.31s.  Extract: 0.23s.  Relocate: 0.05s.  Total: 0.33s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-eux6e6vvrk7uz4tx3vmjkyonhnvhseeu
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/krb5-1.20.1-nn5dx4ck26gs2njcaffnngxfvdj6ckgp
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-3.11.7-ciwhyra3czawlhxao2u6yjy2ijcx2huk
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-bhtne2aam7ihsn23uuewqs2m5pzvausz
-==> Installing curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc [64/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.7.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc.spack
-==> Extracting curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc from binary cache
-==> curl: Successfully installed curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.23s.  Extract: 0.14s.  Relocate: 0.02s.  Total: 0.24s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.7.1-cc6xd2h6vihed63v7gavflnhgxty3pwc
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.0.3-y6pez2asfozl3agjwfjkak2wcysgx72s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssh-9.7p1-witkwiivhfe72fra7l6ksotd4tx7qamv
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-venv-1.0-p6vzj63lcqsnwxs3tl2l3b4rcxsq6ani
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/amdblis-4.2-xyma4ep55l3wcddfrz3bsvdlshuovy36
-==> Installing lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg [69/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-5.4.6/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg.spack
-==> Extracting lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg from binary cache
-==> lua: Successfully installed lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.16s.  Extract: 0.07s.  Relocate: 0.06s.  Total: 0.17s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-5.4.6-447hnr7nif7medr5duaf2noku3civexg
-==> Installing bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3 [70/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bc-1.07.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3.spack
-==> Extracting bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3 from binary cache
-==> bc: Successfully installed bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.10s.  Extract: 0.03s.  Relocate: 0.04s.  Total: 0.10s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bc-1.07.1-acfejrqzukr5is6qjfnzjbjetvcpzkr3
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openmpi-5.0.3-itcqz6xotn2rgb4iduwdoqhxfj2xmsa2
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-pybind11-2.12.0-ts4hcnhho5vbifbepuipaaycxitlsceb
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-numpy-1.26.4-lmjalxfvb3flso2dtk76gvmucslaawdx
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-q7ooqrekk5yhe2hzqxyvjochuofuxuhu
-==> Installing lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn [75/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luaposix-36.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn.spack
-==> Extracting lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn from binary cache
-==> lua-luaposix: Successfully installed lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.10s.  Extract: 0.04s.  Relocate: 0.03s.  Total: 0.11s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luaposix-36.1-2cfap64fg4dbf4ndhjxmw3y7r5av7zvn
-==> Installing lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga [76/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luafilesystem-1.8.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga.spack
-==> Extracting lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga from binary cache
-==> lua-luafilesystem: Successfully installed lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.09s.  Extract: 0.01s.  Relocate: 0.04s.  Total: 0.09s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luafilesystem-1.8.0-bjznamfd6267ezlt3qa27xra55emeuga
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-4kiidhc6wrekajdiq2dli7utmoe2bgct
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-cknsmake4lkgx25usduvtmq2hqc7zaq6
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-scipy-1.13.0-3accefewudj4noexr4x3zwvuvffdhtkl
-==> Installing lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo [80/80]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lmod-8.7.18/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo.spack
-==> Extracting lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo from binary cache
-==> lmod: Successfully installed lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.16s.  Extract: 0.06s.  Relocate: 0.07s.  Total: 0.17s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lmod-8.7.18-ujyntp7nb5hycdeglfici4qfkpnwgrjo
-==> Updating view at /home/spack/stacks/views/full
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gcc-runtime-12.3.0-w5nlv2kp2nkiplculgdgli277r62gdzv
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/ncurses-6.5-uajmsrcnwwu2a7vc5jooaihbsmywt3sq
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/numactl-2.0.18-n4nt7lopsr6oxmo42tw2nqfbjwtnkzqm
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libfabric-1.22.0-pvefo63fafyyn7g6p2ccniaikw7nchi4
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxcrypt-4.4.35-apxktfacu5pzihl72vkehndvgzoqrsgq
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zlib-ng-2.2.1-i4mwsvmsv2z7ecaoz3iyozp6dykzrqj7
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libpciaccess-0.17-ybxtd2t7kr5453br7gsy66phfkjp7zmf
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/zstd-1.5.6-yk3lkd4xdugjxxom2e3fuafzg2ppbnn6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libffi-3.4.6-4ga47g7tj4b6yma6jgigk574sb5iq2rz
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libiconv-1.17-gdtmvyudykikcpn3q7izewostyxnstys
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/util-linux-uuid-2.40.2-64aencak6bn7sijcaki5p5bgqgylmxzh
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libmd-1.0.4-cpmq5mdiri557vmofyrser77ghcdaykn
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/bzip2-1.0.8-j3fd4z5i2t5bs5tqtjykksiarh623jkh
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/yaksa-0.3-ferxascsq35y5jrtdxc4m6w7vq5i5g6o
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openblas-0.3.28-aliqr5t6k2tzder6t7j6rvvabjqagkph
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-lapack-3.11.0-nn52q3blozedtfiwwdeyvint2pbkjybn
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/xz-5.4.6-ifvv7czmuxhion5acm5zlyfqkugbuaya
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.4.0-5gigqgwld4jgaxb46pzeavxuicamdgvw
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-pcwnu2wfae7nfv5isb3kcl7otav2m5zy
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-cexliohp6aqckxeq4bqy5wrmxzyrfzqc
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-rvg7j6bmergf3is4yoacm5sgsi7l4tvm
+==> Installing ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb [28/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb.spack
+==> Extracting ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb from binary cache
+==> ed: Successfully installed ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb
+  Search: 0.00s.  Fetch: 0.15s.	 Install: 0.09s.  Extract: 0.04s.  Relocate: 0.01s.  Total: 0.29s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ed-1.4-p72c4zcdrxesxhegcraax3k22bbeymhb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.63.0-t2qkug7u7irxunnirgisvdu4mdoerrxt
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-t7h6imj35ruac562vr7snzvli2h2tzup
+==> Installing unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb [31/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb.spack
+==> Extracting unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb from binary cache
+==> unzip: Successfully installed unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.07s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/unzip-6.0-akxwy4wvo4wtx7y65ggf56dazdavwmeb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-bsga3novxptycgb4bpv4mldtq3f5m7mj
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmp-6.3.0-5webgyazi3rpemdmmhbip4glviaeet2l
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-w4gwr4ezmenbvt7u5zdyjdkfzapsz5lt
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-2fvrfr67ahyx5vqg6hyd3dachcl3nl2k
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-v64tnmrjg7o5beyhae6x42vqlcxzdon6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libedit-3.1-20240808-ht5niwqaryv67wtxh2x7lkchhrweybuu
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/readline-8.2-tb7zvufjv2zsr4br7chc5uextvcydde6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssl-3.4.0-i5fmca4xdydwelmicbx3wanqiiqrf554
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pigz-2.8-zgwe2uay3twlpxzxwnp3sw7n5fgwysht
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libbsd-0.12.2-3oqufcrjxa46foi3gsamsffbcmc6nhhn
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libxml2-2.13.4-4fawd6mhagkgk5lvgp67szz5gi4nhkrl
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-aylebxvheua4djgtfzzqi2ialcjt5mw7
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.10.1-fpywomo74ruadasuelzpvql7zj6rufeo
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpfr-4.2.1-mdfsfjykvyaknc5yzul4l25aip3rugoe
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.13.4-wozcmyn2bivorr7geiwavaqeosmwmaow
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-mmv6i4naeg746pk2xpypdpejwvypmegb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gdbm-1.23-ttyuhau65qtwjzely7v6tkbnu33mrxeg
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/sqlite-3.46.0-b63y5mxrvtgp35ruiertnxzrnwzoxk44
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/libevent-2.1.12-nftqerg3734tw6jlwe5nsjrg373ublgi
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/tar-1.34-j5dljnv4mc5mviozu4ouxfl4r276ftst
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/expat-2.6.4-vlatljjv2t62qt7s5paquxtvpvail4tl
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/hwloc-2.11.1-2fvcggi3gqewbovwkprpcvppiiexsyxh
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n
+==> Installing lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb [55/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-5.4.6/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb.spack
+==> Extracting lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb from binary cache
+==> lua: Successfully installed lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.11s.  Extract: 0.05s.  Relocate: 0.02s.  Total: 0.12s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-5.4.6-qcxkktpc5lofb6aitzkrsrhkkfwlxgvb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/mpc-1.3.1-qoauga4bfx37v3lynpeoi4rcy2nw2ek5
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-bexdfw2vfc64r6u72mqestm6olahfr6e
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/gettext-0.22.5-jbitwptksuwvgydlf2jhljxiu4ku2z7o
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/pmix-5.0.3-t7gzekhpropf62jjhntf7l2zjbcumqre
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/mpich-4.2.3-ezes42nge7p2vj6tyaqg5y4dhhxzhzij
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi
+==> Installing lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm [62/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luaposix-36.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm.spack
+==> Extracting lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm from binary cache
+==> lua-luaposix: Successfully installed lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.10s.  Extract: 0.03s.  Relocate: 0.03s.  Total: 0.10s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luaposix-36.1-hdnpce3ademdmvzk4ugp332axuismjsm
+==> Installing lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli [63/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luafilesystem-1.8.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli.spack
+==> Extracting lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli from binary cache
+==> lua-luafilesystem: Successfully installed lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.01s.  Relocate: 0.02s.  Total: 0.07s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lua-luafilesystem-1.8.0-4lpeywju4ba2lg4k6ykzapr3xwv75yli
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-3.11.9-67g7nw4psfbgmbrswwsfotgmws4gxdm4
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/krb5-1.21.3-frb66wnvsav46slm5v44war7q7uqszf6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-me353pomglevvhbry6mehg7ctzcnneap
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-bx3g36nfqncvgsc63nfz7ekbzam5c2gf
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-jjgfqpdmihb2cq5ca7txia5oshruq56q
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/texinfo-7.1-ljsbwjcqdljqyti3tpb2xx5keapatoul
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/python-venv-1.0-pt3p7pdrinwfcc7wsvr6pdflqcwju4v2
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openssh-9.9p1-3jdzvdmyxcyc6k2rh6p3anmik4zrloik
+==> Installing bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa [72/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bc-1.07.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa.spack
+==> Extracting bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa from binary cache
+==> bc: Successfully installed bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.08s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bc-1.07.1-jasonjuuhs7lgkf5ojybu2sxxalclmxa
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-numpy-2.1.2-ckezggl7xcir66fx4sh65la532l3y6gq
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-pybind11-2.13.5-bdx5tpnvwzacodn2u4mkjzra5pb6swo2
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/openmpi-5.0.5-suepxfzmhyr4ewe3xorze6ftrvr46fna
+==> Installing lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo [76/79]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lmod-8.7.18/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo.spack
+==> Extracting lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo from binary cache
+==> lmod: Successfully installed lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.15s.  Extract: 0.05s.  Relocate: 0.06s.  Total: 0.15s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/lmod-8.7.18-saucmo6quzpib5ft6jez2x7xamvqzngo
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/py-scipy-1.14.1-g53zrs6vomtrzwxheb7r5tmiij6u7a2j
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-wpymlkhhvzdj3cu3spayvjvzh5kqv4jo
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-12.3.0/netlib-scalapack-2.2.0-5fvq6fgjhaihmeoipzgrpf4tcxc427km
+==> Updating view at /home/spack5/stacks/views/full

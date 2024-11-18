@@ -1,121 +1,178 @@
 $ spack install --verbose tutorial-mpileaks stackstart=4
 [+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0-jwovt2o6oqll4zutrrwbo2ezyreewtr5
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.1.6-xqtp62nft6pt5slbdljucwnkl5fxd6x4
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-2.2.0-h3x3l7sed4l2efuskhaldi6ilmkoyeaa
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41-npyb6xv5oww2fxymv7qhlm46sfmv63pw
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-qwi6aof3wwuahmefzsrnvhristv2zglh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-syttnntihi6n463mupmgl5e7kp5izxkz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-qmy6dpipkzgotxrxqwxlnfsj5vbzkbcc
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.14-oece2d6cta5zgxcbziturcqsugvbehjg
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-gk55zt73c5ekv3iogqn4lo4r66tuzv5z
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.10.3-jv5es2yg6on55zdsb5xyvvg7xvqh6h4e
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-gk4xs2idegfiwoyaikamyhxkjrruxtxa
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.3.0-vunusyxizia47xitgoyd7ck73s3gppij
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-esgx75jgr6iu4dkcw566yvz4tmx33ljz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-wx4xfdnr4uzmlkbzpeuizbduh4e5klhj
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20230828-swglgxeckeajkjp4b7d66fbsyn6hjsdh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-uv2twd5kir57zlvu4ntf3cffa2lad47g
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.9.1-ujih6ikevwjglzswfu4wf7eimac2pvsh
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-eux6e6vvrk7uz4tx3vmjkyonhnvhseeu
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.1-bzewb3i2g5m4lv2jq3prq6nqvzrpdilw
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-tbb-2021.9.0-ucz3jsxsjee6oj3id56xjzkxjbx7ple5
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.20.1-kqbte2e4fgnkv2m2zwcagwgkiluqlkdn
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.190-mn77wznxbwaxb7mwm34rjjlsg3xzwuog
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.7p1-iiuja4vvxdkrnzipyeyvzpxiqln2o2sd
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-20180129-3ybjurs2wa6kwiqggrvs573tkx3wdsif
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-13.0.0-rf22klz3gg2aggvfkypfk2e55oigyhly
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo
-==> Installing tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq [33/33]
-==> No binary for tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq found: installing from source
-==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-2fvrfr67ahyx5vqg6hyd3dachcl3nl2k
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-pcwnu2wfae7nfv5isb3kcl7otav2m5zy
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.18-euqyy3hu6d7yiuf67q6xgmiwtlgfkanp
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-2sbkhchnzzj4a43ykj5jkwctwjc6b7lm
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-omw5cc44g5qrphf7aqyjpdpmw2b3tr4i
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-rvg7j6bmergf3is4yoacm5sgsi7l4tvm
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-v64tnmrjg7o5beyhae6x42vqlcxzdon6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-2.2.0-oplsmxryrcg6ackisqtpszdarzch6a6t
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-ea6qziv7obmf5fq3mxy42rhxptoiwfb6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.4.0-5gigqgwld4jgaxb46pzeavxuicamdgvw
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-bsga3novxptycgb4bpv4mldtq3f5m7mj
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-cexliohp6aqckxeq4bqy5wrmxzyrfzqc
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-t7h6imj35ruac562vr7snzvli2h2tzup
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-tt3byemiknxgeuaadpxrltepvic7xsms
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-aylebxvheua4djgtfzzqi2ialcjt5mw7
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20240808-nhrbcomj5lgnql2itckj7py3hi6wuz5d
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-qaspjyq5yqcso6yatgyhvm7j632ez7md
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-xbwxobi4cjizcuch7ukmi4igoosktbma
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.13.4-wozcmyn2bivorr7geiwavaqeosmwmaow
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-mmv6i4naeg746pk2xpypdpejwvypmegb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.11.1-fwtuzgpmp2dy3udiekh6nwnbcld22kmk
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-bexdfw2vfc64r6u72mqestm6olahfr6e
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.3-5wqqmswtibbhuilr356mzviq4flzdc3z
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.191-zw2tlkv4255rxzdcnziuyodhjcnk7arp
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.21.3-pq3as37xnogsfkivav3r6phgtsuwhjlb
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-awgfaon3dsdj54pighglmrv7gnex7jko
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.9p1-wz7w27t54u5lcphpvtwvv43vmhwmqwkn
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j
+==> Installing tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet [44/44]
+==> No binary for tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet found: installing from source
+==> Using cached archive: /home/spack5/spack/var/spack/cache/_source-cache/archive/24/24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
+==> [2024-11-18-08:11:48.653619] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoreconf' '--install' '--verbose' '--force'
+autoreconf: export WARNINGS=
+autoreconf: Entering directory '.'
+autoreconf: configure.ac: not using Gettext
+autoreconf: running: aclocal --force -I m4
+autoreconf: configure.ac: tracing
+autoreconf: running: libtoolize --copy --force
+libtoolize: putting auxiliary files in AC_CONFIG_AUX_DIR, 'config'.
+libtoolize: copying file 'config/ltmain.sh'
+libtoolize: putting macros in AC_CONFIG_MACRO_DIRS, 'm4'.
+libtoolize: copying file 'm4/libtool.m4'
+libtoolize: copying file 'm4/ltoptions.m4'
+libtoolize: copying file 'm4/ltsugar.m4'
+libtoolize: copying file 'm4/ltversion.m4'
+libtoolize: copying file 'm4/lt~obsolete.m4'
+autoreconf: configure.ac: not using Intltool
+autoreconf: configure.ac: not using Gtkdoc
+autoreconf: running: aclocal --force -I m4
+autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoconf --force
+configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
+configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
+/tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
+aclocal.m4:745: AM_CONFIG_HEADER is expanded from...
+configure.ac:9: the top level
+configure.ac:38: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
+configure.ac:38: You should run autoupdate.
+m4/libtool.m4:100: AC_PROG_LIBTOOL is expanded from...
+configure.ac:38: the top level
+configure.ac:47: warning: The macro 'AC_HEADER_STDC' is obsolete.
+configure.ac:47: You should run autoupdate.
+/tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
+configure.ac:47: the top level
+autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoheader --force
+autoreconf: running: automake --add-missing --copy --force-missing
+configure.ac:26: installing 'config/compile'
+configure.ac:19: installing 'config/missing'
+src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+src/Makefile.am: installing 'config/depcomp'
+autoreconf: 'config/install-sh' is updated
+autoreconf: 'config/config.sub' is updated
+autoreconf: 'config/config.guess' is updated
+autoreconf: Leaving directory '.'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2024-05-12-12:38:37.943963] Find (recursive): /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src ['configure']
-==> [2024-05-12-12:38:37.945142] Find complete: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src ['configure']
-==> [2024-05-12-12:38:37.945614] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2024-05-12-12:38:37.987016] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2024-05-12-12:38:38.020628] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2024-05-12-12:38:38.043191] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq' '--with-adept-utils=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz' '--with-callpath=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo' '--with-stack-start-c=4' '--with-stack-start-fortran=4'
+==> [2024-11-18-08:11:52.710481] Find (max depth = None): ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'] ['configure']
+==> [2024-11-18-08:11:52.711441] Find complete: ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'] ['configure']
+==> [2024-11-18-08:11:52.711729] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2024-11-18-08:11:52.733263] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2024-11-18-08:11:52.756605] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2024-11-18-08:11:52.781057] '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet' '--with-adept-utils=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55' '--with-callpath=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j' '--with-stack-start-c=4' '--with-stack-start-fortran=4'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
 checking whether build environment is sane... yes
-checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
-checking for gawk... no
-checking for mawk... mawk
+checking for a race-free mkdir -p... /usr/bin/mkdir -p
+checking for gawk... gawk
 checking whether make sets $(MAKE)... yes
-checking for gcc... /home/spack/spack/lib/spack/env/gcc/gcc
-checking for C compiler default output file name... a.out
+checking whether make supports nested variables... yes
+checking for gcc... /home/spack5/spack/lib/spack/env/gcc/gcc
 checking whether the C compiler works... yes
-checking whether we are cross compiling... no
+checking for C compiler default output file name... a.out
 checking for suffix of executables...
+checking whether we are cross compiling... no
 checking for suffix of object files... o
-checking whether we are using the GNU C compiler... yes
-checking whether /home/spack/spack/lib/spack/env/gcc/gcc accepts -g... yes
-checking for /home/spack/spack/lib/spack/env/gcc/gcc option to accept ISO C89... none needed
-checking for style of include used by make... GNU
-checking dependency style of /home/spack/spack/lib/spack/env/gcc/gcc... gcc3
-checking whether /home/spack/spack/lib/spack/env/gcc/gcc and cc understand -c and -o together... yes
-checking whether we are using the GNU C++ compiler... yes
-checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
-checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
-checking for /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc
-Checking whether /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin/mpicc responds to '-showme:compile'... yes
-checking for adept-utils installation... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz
-checking for libcallpath installation... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo
-checking build system type... x86_64-unknown-linux-gnu
-checking host system type... x86_64-unknown-linux-gnu
+checking whether the compiler supports GNU C... yes
+checking whether /home/spack5/spack/lib/spack/env/gcc/gcc accepts -g... yes
+checking for /home/spack5/spack/lib/spack/env/gcc/gcc option to enable C11 features... none needed
+checking whether /home/spack5/spack/lib/spack/env/gcc/gcc understands -c and -o together... yes
+checking whether make supports the include directive... yes (GNU style)
+checking dependency style of /home/spack5/spack/lib/spack/env/gcc/gcc... gcc3
+checking whether the compiler supports GNU C++... yes
+checking whether /home/spack5/spack/lib/spack/env/gcc/g++ accepts -g... yes
+checking for /home/spack5/spack/lib/spack/env/gcc/g++ option to enable C++11 features... none needed
+checking dependency style of /home/spack5/spack/lib/spack/env/gcc/g++... gcc3
+checking for /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc... /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc
+Checking whether /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc responds to '-showme:compile'... yes
+checking for adept-utils installation... /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55
+checking for libcallpath installation... /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
 checking for a sed that does not truncate output... /usr/bin/sed
 checking for grep that handles long lines and -e... /usr/bin/grep
 checking for egrep... /usr/bin/grep -E
 checking for fgrep... /usr/bin/grep -F
-checking for ld used by /home/spack/spack/lib/spack/env/gcc/gcc... /home/spack/spack/lib/spack/env/ld
-checking if the linker (/home/spack/spack/lib/spack/env/ld) is GNU ld... yes
+checking for ld used by /home/spack5/spack/lib/spack/env/gcc/gcc... /home/spack5/spack/lib/spack/env/ld
+checking if the linker (/home/spack5/spack/lib/spack/env/ld) is GNU ld... yes
 checking for BSD- or MS-compatible name lister (nm)... /usr/bin/nm -B
 checking the name lister (/usr/bin/nm -B) interface... BSD nm
 checking whether ln -s works... yes
 checking the maximum length of command line arguments... 1572864
-checking whether the shell understands some XSI constructs... yes
-checking whether the shell understands "+="... yes
-checking for /home/spack/spack/lib/spack/env/ld option to reload object files... -r
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /home/spack5/spack/lib/spack/env/ld option to reload object files... -r
+checking for file... file
 checking for objdump... objdump
 checking how to recognize dependent libraries... pass_all
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
 checking for ar... ar
+checking for archiver @FILE support... @
 checking for strip... strip
 checking for ranlib... ranlib
-checking command to parse /usr/bin/nm -B output from /home/spack/spack/lib/spack/env/gcc/gcc object... ok
-/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/configure: line 7163: /usr/bin/file: No such file or directory
-checking how to run the C preprocessor... /home/spack/spack/lib/spack/env/gcc/gcc -E
-checking for ANSI C header files... yes
-checking for sys/types.h... yes
-checking for sys/stat.h... yes
+checking command to parse /usr/bin/nm -B output from /home/spack5/spack/lib/spack/env/gcc/gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for stdio.h... yes
 checking for stdlib.h... yes
 checking for string.h... yes
-checking for memory.h... yes
-checking for strings.h... yes
 checking for inttypes.h... yes
 checking for stdint.h... yes
+checking for strings.h... yes
+checking for sys/stat.h... yes
+checking for sys/types.h... yes
 checking for unistd.h... yes
 checking for dlfcn.h... yes
-checking whether we are using the GNU C++ compiler... (cached) yes
-checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... (cached) yes
-checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... (cached) gcc3
-checking how to run the C++ preprocessor... /home/spack/spack/lib/spack/env/gcc/g++ -E
 checking for objdir... .libs
-checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -fno-rtti -fno-exceptions... no
-checking for /home/spack/spack/lib/spack/env/gcc/gcc option to produce PIC... -fPIC -DPIC
-checking if /home/spack/spack/lib/spack/env/gcc/gcc PIC flag -fPIC -DPIC works... yes
-checking if /home/spack/spack/lib/spack/env/gcc/gcc static flag -static works... yes
-checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... yes
-checking if /home/spack/spack/lib/spack/env/gcc/gcc supports -c -o file.o... (cached) yes
-checking whether the /home/spack/spack/lib/spack/env/gcc/gcc linker (/home/spack/spack/lib/spack/env/ld) supports shared libraries... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/gcc supports -fno-rtti -fno-exceptions... no
+checking for /home/spack5/spack/lib/spack/env/gcc/gcc option to produce PIC... -fPIC -DPIC
+checking if /home/spack5/spack/lib/spack/env/gcc/gcc PIC flag -fPIC -DPIC works... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/gcc static flag -static works... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/gcc supports -c -o file.o... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/gcc supports -c -o file.o... (cached) yes
+checking whether the /home/spack5/spack/lib/spack/env/gcc/gcc linker (/home/spack5/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
 checking whether -lc should be explicitly linked in... no
 checking dynamic linker characteristics... GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
@@ -123,19 +180,21 @@ checking whether stripping libraries is possible... yes
 checking if libtool supports shared libraries... yes
 checking whether to build shared libraries... yes
 checking whether to build static libraries... yes
-checking for ld used by /home/spack/spack/lib/spack/env/gcc/g++... /home/spack/spack/lib/spack/env/ld
-checking if the linker (/home/spack/spack/lib/spack/env/ld) is GNU ld... yes
-checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld) supports shared libraries... yes
-checking for /home/spack/spack/lib/spack/env/gcc/g++ option to produce PIC... -fPIC -DPIC
-checking if /home/spack/spack/lib/spack/env/gcc/g++ PIC flag -fPIC -DPIC works... yes
-checking if /home/spack/spack/lib/spack/env/gcc/g++ static flag -static works... yes
-checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... yes
-checking if /home/spack/spack/lib/spack/env/gcc/g++ supports -c -o file.o... (cached) yes
-checking whether the /home/spack/spack/lib/spack/env/gcc/g++ linker (/home/spack/spack/lib/spack/env/ld) supports shared libraries... yes
-checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to run the C++ preprocessor... /home/spack5/spack/lib/spack/env/gcc/g++ -E
+checking for ld used by /home/spack5/spack/lib/spack/env/gcc/g++... /home/spack5/spack/lib/spack/env/ld -m elf_x86_64
+checking if the linker (/home/spack5/spack/lib/spack/env/ld -m elf_x86_64) is GNU ld... yes
+checking whether the /home/spack5/spack/lib/spack/env/gcc/g++ linker (/home/spack5/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking for /home/spack5/spack/lib/spack/env/gcc/g++ option to produce PIC... -fPIC -DPIC
+checking if /home/spack5/spack/lib/spack/env/gcc/g++ PIC flag -fPIC -DPIC works... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/g++ static flag -static works... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/g++ supports -c -o file.o... yes
+checking if /home/spack5/spack/lib/spack/env/gcc/g++ supports -c -o file.o... (cached) yes
+checking whether the /home/spack5/spack/lib/spack/env/gcc/g++ linker (/home/spack5/spack/lib/spack/env/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
 checking how to hardcode library paths into programs... immediate
-checking for ANSI C header files... (cached) yes
+checking for egrep... (cached) /usr/bin/grep -E
 checking whether byte ordering is bigendian... no
+checking that generated files are newer than configure... done
 configure: creating ./config.status
 config.status: creating Makefile
 config.status: creating src/Makefile
@@ -146,202 +205,205 @@ config.status: creating scripts/srun-mpileaksf
 config.status: creating config/config.h
 config.status: executing depfiles commands
 config.status: executing libtool commands
-==> [2024-05-12-12:38:44.032985] Find (recursive): /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src ['libtool']
-==> [2024-05-12-12:38:44.033546] Find complete: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src ['libtool']
-==> [2024-05-12-12:38:44.033743] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/libtool [replacing "^wl=""$"]
-==> [2024-05-12-12:38:44.044307] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/libtool [replacing "^pic_flag=""$"]
-==> [2024-05-12-12:38:44.061538] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/libtool [replacing "^pic_flag=""$"]
-==> [2024-05-12-12:38:44.100533] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/libtool [replacing "^pic_flag=""$"]
-==> [2024-05-12-12:38:44.134214] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/libtool [replacing "^pic_flag=""$"]
+==> [2024-11-18-08:11:55.713130] Find (max depth = None): ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'] ['libtool']
+==> [2024-11-18-08:11:55.713657] Find complete: ['/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'] ['libtool']
+==> [2024-11-18-08:11:55.713820] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/libtool [replacing "^wl=""$"]
+==> [2024-11-18-08:11:55.727609] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/libtool [replacing "^pic_flag=""$"]
+==> [2024-11-18-08:11:55.734807] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/libtool [replacing "^pic_flag=""$"]
+==> [2024-11-18-08:11:55.780177] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/libtool [replacing "^pic_flag=""$"]
+==> [2024-11-18-08:11:55.826796] FILTER FILE: /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/libtool [replacing "^pic_flag=""$"]
 ==> tutorial-mpileaks: Executing phase: 'build'
-==> [2024-05-12-12:38:44.193988] 'make' '-j8' 'V=1'
+==> [2024-11-18-08:11:55.899813] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom/bin/make' '-j16' 'V=1'
+make[1]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
 Making all in scripts
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
 Making all in src
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c -o mpileaks.lo mpileaks.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c -o comm.lo comm.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c -o datatype.lo datatype.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c -o errhandler.lo errhandler.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c -o fileio.lo fileio.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c -o group.lo group.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c -o info.lo info.cpp
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c -o keyval.lo keyval.cpp
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c datatype.cpp	-fPIC -DPIC -o .libs/datatype.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c info.cpp  -fPIC -DPIC -o .libs/info.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c comm.cpp  -fPIC -DPIC -o .libs/comm.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c mpileaks.cpp	-fPIC -DPIC -o .libs/mpileaks.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c fileio.cpp  -fPIC -DPIC -o .libs/fileio.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c group.cpp  -fPIC -DPIC -o .libs/group.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c keyval.cpp  -fPIC -DPIC -o .libs/keyval.o
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c errhandler.cpp  -fPIC -DPIC -o .libs/errhandler.o
-errhandler.cpp: In function 'int MPI_Errhandler_create(void (*)(ompi_communicator_t**, int*, ...), ompi_errhandler_t**)':
-errhandler.cpp:33:34: warning: 'int PMPI_Errhandler_create(void (*)(ompi_communicator_t**, int*, ...), ompi_errhandler_t**)' is deprecated: PMPI_Errhandler_create was removed in MPI-3.0.  Use PMPI_Comm_create_errhandler instead.  continuing... [-Wdeprecated-declarations]
-   33 |   int rc = PMPI_Errhandler_create(function, eh);
-      | 	   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
-In file included from errhandler.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3129:20: note: declared here
- 3129 | OMPI_DECLSPEC  int PMPI_Errhandler_create(MPI_Handler_function *function,
-      | 		   ^~~~~~~~~~~~~~~~~~~~~~
-errhandler.cpp: In function 'int MPI_Errhandler_get(MPI_Comm, ompi_errhandler_t**)':
-errhandler.cpp:40:31: warning: 'int PMPI_Errhandler_get(MPI_Comm, ompi_errhandler_t**)' is deprecated: PMPI_Errhandler_get was removed in MPI-3.0.  Use PMPI_Comm_get_errhandler instead.  continuing... [-Wdeprecated-declarations]
-   40 |   int rc = PMPI_Errhandler_get(comm, eh);
-      | 	   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
-In file included from errhandler.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3134:20: note: declared here
- 3134 | OMPI_DECLSPEC  int PMPI_Errhandler_get(MPI_Comm comm, MPI_Errhandler *errhandler)
-      | 		   ^~~~~~~~~~~~~~~~~~~
-datatype.cpp: In function 'int MPI_Type_hvector(int, int, MPI_Aint, MPI_Datatype, ompi_datatype_t**)':
-datatype.cpp:60:29: warning: 'int PMPI_Type_hvector(int, int, MPI_Aint, MPI_Datatype, ompi_datatype_t**)' is deprecated: PMPI_Type_hvector was removed in MPI-3.0.  Use PMPI_Type_create_hvector instead.  continuing... [-Wdeprecated-declarations]
-   60 |   int rc = PMPI_Type_hvector(count, blocklength, stride, oldtype, newtype);
-      | 	   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from datatype.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3155:20: note: declared here
- 3155 | OMPI_DECLSPEC  int PMPI_Type_hvector(int count, int blocklength, MPI_Aint stride,
-      | 		   ^~~~~~~~~~~~~~~~~
-datatype.cpp: In function 'int MPI_Type_hindexed(int, int*, MPI_Aint*, MPI_Datatype, ompi_datatype_t**)':
-datatype.cpp:78:30: warning: 'int PMPI_Type_hindexed(int, int*, MPI_Aint*, MPI_Datatype, ompi_datatype_t**)' is deprecated: PMPI_Type_hindexed was removed in MPI-3.0.	Use PMPI_Type_create_hindexed instead.	continuing... [-Wdeprecated-declarations]
-   78 |   int rc = PMPI_Type_hindexed(count, array_of_blocklengths, array_of_displacements,
-      | 	   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   79 | 			      oldtype, newtype);
-      | 			      ~~~~~~~~~~~~~~~~~
-In file included from datatype.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3148:20: note: declared here
- 3148 | OMPI_DECLSPEC  int PMPI_Type_hindexed(int count, int array_of_blocklengths[],
-      | 		   ^~~~~~~~~~~~~~~~~~
-datatype.cpp: In function 'int MPI_Type_struct(int, int*, MPI_Aint*, ompi_datatype_t**, ompi_datatype_t**)':
-datatype.cpp:88:28: warning: 'int PMPI_Type_struct(int, int*, MPI_Aint*, ompi_datatype_t**, ompi_datatype_t**)' is deprecated: PMPI_Type_struct was removed in MPI-3.0.  Use PMPI_Type_create_struct instead.  continuing... [-Wdeprecated-declarations]
-   88 |   int rc = PMPI_Type_struct(count, array_of_blocklengths, array_of_displacements,
-      | 	   ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-   89 | 			    array_of_types, newtype);
-      | 			    ~~~~~~~~~~~~~~~~~~~~~~~~
-In file included from datatype.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3167:20: note: declared here
- 3167 | OMPI_DECLSPEC  int PMPI_Type_struct(int count, int array_of_blocklengths[],
-      | 		   ^~~~~~~~~~~~~~~~
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c -o mpileaks.lo mpileaks.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c -o comm.lo comm.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c -o datatype.lo datatype.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c -o errhandler.lo errhandler.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c -o fileio.lo fileio.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c -o group.lo group.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c -o info.lo info.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c -o keyval.lo keyval.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c -o mem.lo mem.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c -o op.lo op.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c -o request.lo request.cpp
+/bin/bash ../libtool  --tag=CXX	  --mode=compile /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include    -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c -o win.lo win.cpp
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c mpileaks.cpp  -fPIC -DPIC -o .libs/mpileaks.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c op.cpp	 -fPIC -DPIC -o .libs/op.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c info.cpp  -fPIC -DPIC -o .libs/info.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c group.cpp  -fPIC -DPIC -o .libs/group.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c comm.cpp  -fPIC -DPIC -o .libs/comm.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c datatype.cpp  -fPIC -DPIC -o .libs/datatype.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c fileio.cpp  -fPIC -DPIC -o .libs/fileio.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c mem.cpp  -fPIC -DPIC -o .libs/mem.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c request.cpp	-fPIC -DPIC -o .libs/request.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c errhandler.cpp	 -fPIC -DPIC -o .libs/errhandler.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c keyval.cpp  -fPIC -DPIC -o .libs/keyval.o
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c win.cpp  -fPIC -DPIC -o .libs/win.o
 keyval.cpp: In function 'int MPI_Keyval_create(int (*)(MPI_Comm, int, void*, void*, void*, int*), int (*)(MPI_Comm, int, void*, void*), int*, void*)':
 keyval.cpp:38:30: warning: 'int PMPI_Keyval_create(int (*)(MPI_Comm, int, void*, void*, void*, int*), int (*)(MPI_Comm, int, void*, void*), int*, void*)' is deprecated: PMPI_Keyval_create was deprecated in MPI-2.0; use PMPI_Comm_create_keyval instead. [-Wdeprecated-declarations]
-   38 |   int rc = PMPI_Keyval_create(copy_fn, delete_fn, keyval, extra_state);
-      | 	   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   38 |	  int rc = PMPI_Keyval_create(copy_fn, delete_fn, keyval, extra_state);
+      |		   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 In file included from keyval.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3062:20: note: declared here
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3062:20: note: declared here
  3062 | OMPI_DECLSPEC  int PMPI_Keyval_create(MPI_Copy_function *copy_fn,
-      | 		   ^~~~~~~~~~~~~~~~~~
+      |			   ^~~~~~~~~~~~~~~~~~
 keyval.cpp: In function 'int MPI_Keyval_free(int*)':
 keyval.cpp:93:28: warning: 'int PMPI_Keyval_free(int*)' is deprecated: PMPI_Keyval_free was deprecated in MPI-2.0; PMPI_Comm_free_keyval instead. [-Wdeprecated-declarations]
-   93 |   int rc = PMPI_Keyval_free(keyval);
-      | 	   ~~~~~~~~~~~~~~~~^~~~~~~~
+   93 |	  int rc = PMPI_Keyval_free(keyval);
+      |		   ~~~~~~~~~~~~~~~~^~~~~~~~
 In file included from keyval.cpp:10:
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include/mpi.h:3068:20: note: declared here
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3068:20: note: declared here
  3068 | OMPI_DECLSPEC  int PMPI_Keyval_free(int *keyval)
-      | 		   ^~~~~~~~~~~~~~~~
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c info.cpp -o info.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c fileio.cpp -o fileio.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c errhandler.cpp -o errhandler.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c group.cpp -o group.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c mpileaks.cpp -o mpileaks.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c keyval.cpp -o keyval.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c datatype.cpp -o datatype.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c comm.cpp -o comm.o >/dev/null 2>&1
-mv -f .deps/fileio.Tpo .deps/fileio.Plo
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c -o mem.lo mem.cpp
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c mem.cpp  -fPIC -DPIC -o .libs/mem.o
+      |			   ^~~~~~~~~~~~~~~~
+datatype.cpp: In function 'int MPI_Type_hvector(int, int, MPI_Aint, MPI_Datatype, ompi_datatype_t**)':
+datatype.cpp:60:29: warning: 'int PMPI_Type_hvector(int, int, MPI_Aint, MPI_Datatype, ompi_datatype_t**)' is deprecated: PMPI_Type_hvector was removed in MPI-3.0.  Use PMPI_Type_create_hvector instead.  continuing... [-Wdeprecated-declarations]
+   60 |	  int rc = PMPI_Type_hvector(count, blocklength, stride, oldtype, newtype);
+      |		   ~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from datatype.cpp:10:
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3155:20: note: declared here
+ 3155 | OMPI_DECLSPEC  int PMPI_Type_hvector(int count, int blocklength, MPI_Aint stride,
+      |			   ^~~~~~~~~~~~~~~~~
+errhandler.cpp: In function 'int MPI_Errhandler_create(void (*)(ompi_communicator_t**, int*, ...), ompi_errhandler_t**)':
+errhandler.cpp:33:34: warning: 'int PMPI_Errhandler_create(void (*)(ompi_communicator_t**, int*, ...), ompi_errhandler_t**)' is deprecated: PMPI_Errhandler_create was removed in MPI-3.0.  Use PMPI_Comm_create_errhandler instead.  continuing... [-Wdeprecated-declarations]
+   33 |	  int rc = PMPI_Errhandler_create(function, eh);
+      |		   ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~
+datatype.cpp: In function 'int MPI_Type_hindexed(int, int*, MPI_Aint*, MPI_Datatype, ompi_datatype_t**)':
+datatype.cpp:78:30: warning: 'int PMPI_Type_hindexed(int, int*, MPI_Aint*, MPI_Datatype, ompi_datatype_t**)' is deprecated: PMPI_Type_hindexed was removed in MPI-3.0.	Use PMPI_Type_create_hindexed instead.	continuing... [-Wdeprecated-declarations]
+   78 |	  int rc = PMPI_Type_hindexed(count, array_of_blocklengths, array_of_displacements,
+      |		   ~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   79 |				      oldtype, newtype);
+      |				      ~~~~~~~~~~~~~~~~~
+In file included from datatype.cpp:10:
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3148:20: note: declared here
+ 3148 | OMPI_DECLSPEC  int PMPI_Type_hindexed(int count, int array_of_blocklengths[],
+      |			   ^~~~~~~~~~~~~~~~~~
+datatype.cpp: In function 'int MPI_Type_struct(int, int*, MPI_Aint*, ompi_datatype_t**, ompi_datatype_t**)':
+datatype.cpp:88:28: warning: 'int PMPI_Type_struct(int, int*, MPI_Aint*, ompi_datatype_t**, ompi_datatype_t**)' is deprecated: PMPI_Type_struct was removed in MPI-3.0.	 Use PMPI_Type_create_struct instead.  continuing... [-Wdeprecated-declarations]
+   88 |	  int rc = PMPI_Type_struct(count, array_of_blocklengths, array_of_displacements,
+      |		   ~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+   89 |				    array_of_types, newtype);
+      |				    ~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from datatype.cpp:10:
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3167:20: note: declared here
+ 3167 | OMPI_DECLSPEC  int PMPI_Type_struct(int count, int array_of_blocklengths[],
+      |			   ^~~~~~~~~~~~~~~~
+In file included from errhandler.cpp:10:
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3129:20: note: declared here
+ 3129 | OMPI_DECLSPEC  int PMPI_Errhandler_create(MPI_Handler_function *function,
+      |			   ^~~~~~~~~~~~~~~~~~~~~~
+errhandler.cpp: In function 'int MPI_Errhandler_get(MPI_Comm, ompi_errhandler_t**)':
+errhandler.cpp:40:31: warning: 'int PMPI_Errhandler_get(MPI_Comm, ompi_errhandler_t**)' is deprecated: PMPI_Errhandler_get was removed in MPI-3.0.  Use PMPI_Comm_get_errhandler instead.  continuing... [-Wdeprecated-declarations]
+   40 |	  int rc = PMPI_Errhandler_get(comm, eh);
+      |		   ~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+In file included from errhandler.cpp:10:
+/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include/mpi.h:3134:20: note: declared here
+ 3134 | OMPI_DECLSPEC  int PMPI_Errhandler_get(MPI_Comm comm, MPI_Errhandler *errhandler)
+      |			   ^~~~~~~~~~~~~~~~~~~
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c win.cpp -o win.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT info.lo -MD -MP -MF .deps/info.Tpo -c info.cpp -o info.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT keyval.lo -MD -MP -MF .deps/keyval.Tpo -c keyval.cpp -o keyval.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT comm.lo -MD -MP -MF .deps/comm.Tpo -c comm.cpp -o comm.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c mem.cpp -o mem.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c op.cpp -o op.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT fileio.lo -MD -MP -MF .deps/fileio.Tpo -c fileio.cpp -o fileio.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT errhandler.lo -MD -MP -MF .deps/errhandler.Tpo -c errhandler.cpp -o errhandler.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT group.lo -MD -MP -MF .deps/group.Tpo -c group.cpp -o group.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT datatype.lo -MD -MP -MF .deps/datatype.Tpo -c datatype.cpp -o datatype.o >/dev/null 2>&1
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT mpileaks.lo -MD -MP -MF .deps/mpileaks.Tpo -c mpileaks.cpp -o mpileaks.o >/dev/null 2>&1
 mv -f .deps/info.Tpo .deps/info.Plo
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c -o op.lo op.cpp
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c op.cpp  -fPIC -DPIC -o .libs/op.o
-mv -f .deps/errhandler.Tpo .deps/errhandler.Plo
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c -o request.lo request.cpp
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c request.cpp  -fPIC -DPIC -o .libs/request.o
-mv -f .deps/keyval.Tpo .deps/keyval.Plo
-mv -f .deps/group.Tpo .deps/group.Plo
-/bin/bash ../libtool --tag=CXX	 --mode=compile /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config   -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include    -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c -o win.lo win.cpp
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c win.cpp  -fPIC -DPIC -o .libs/win.o
-mv -f .deps/mpileaks.Tpo .deps/mpileaks.Plo
-mv -f .deps/datatype.Tpo .deps/datatype.Plo
-mv -f .deps/comm.Tpo .deps/comm.Plo
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT mem.lo -MD -MP -MF .deps/mem.Tpo -c mem.cpp -o mem.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT op.lo -MD -MP -MF .deps/op.Tpo -c op.cpp -o op.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT win.lo -MD -MP -MF .deps/win.Tpo -c win.cpp -o win.o >/dev/null 2>&1
-libtool: compile:  /home/spack/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/include -I/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/include -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c request.cpp -o request.o >/dev/null 2>&1
-mv -f .deps/mem.Tpo .deps/mem.Plo
-mv -f .deps/op.Tpo .deps/op.Plo
+libtool: compile:  /home/spack5/spack/lib/spack/env/gcc/g++ -DHAVE_CONFIG_H -I. -I../config -DHAVE_CONFIG_H -I. -I../config -I../src -I../config -g -O2 -I/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/include -I/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/include -g -O2 -MT request.lo -MD -MP -MF .deps/request.Tpo -c request.cpp -o request.o >/dev/null 2>&1
 mv -f .deps/win.Tpo .deps/win.Plo
+mv -f .deps/comm.Tpo .deps/comm.Plo
+mv -f .deps/keyval.Tpo .deps/keyval.Plo
+mv -f .deps/op.Tpo .deps/op.Plo
+mv -f .deps/mem.Tpo .deps/mem.Plo
+mv -f .deps/datatype.Tpo .deps/datatype.Plo
+mv -f .deps/group.Tpo .deps/group.Plo
+mv -f .deps/fileio.Tpo .deps/fileio.Plo
+mv -f .deps/mpileaks.Tpo .deps/mpileaks.Plo
+mv -f .deps/errhandler.Tpo .deps/errhandler.Plo
 mv -f .deps/request.Tpo .deps/request.Plo
-/bin/bash ../libtool --tag=CXX	 --mode=link /home/spack/spack/lib/spack/env/gcc/g++  -g -O2 -avoid-version  -o libmpileaks.la -rpath /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib mpileaks.lo comm.lo datatype.lo errhandler.lo fileio.lo group.lo info.lo keyval.lo mem.lo op.lo request.lo win.lo -L/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/lib -ladept_cutils -ladept_timing -ladept_utils -L/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/lib -lcallpath
-libtool: link: /home/spack/spack/lib/spack/env/gcc/g++ -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o  .libs/mpileaks.o .libs/comm.o .libs/datatype.o .libs/errhandler.o .libs/fileio.o .libs/group.o .libs/info.o .libs/keyval.o .libs/mem.o .libs/op.o .libs/request.o .libs/win.o	 -L/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-6pn6kaqw6zmqvvsrbd7xqpxjovwmvahz/lib -ladept_cutils -ladept_timing -ladept_utils -L/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/lib -lcallpath -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o	 -Wl,-soname -Wl,libmpileaks.so -o .libs/libmpileaks.so
-libtool: link: ar cru .libs/libmpileaks.a  mpileaks.o comm.o datatype.o errhandler.o fileio.o group.o info.o keyval.o mem.o op.o request.o win.o
-ar: `u' modifier ignored since `D' is the default (see `U')
+/bin/bash ../libtool  --tag=CXX	  --mode=link /home/spack5/spack/lib/spack/env/gcc/g++	-g -O2 -avoid-version  -o libmpileaks.la -rpath /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib mpileaks.lo comm.lo datatype.lo errhandler.lo fileio.lo group.lo info.lo keyval.lo mem.lo op.lo request.lo win.lo -L/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/lib -ladept_cutils -ladept_timing -ladept_utils -L/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/lib -lcallpath
+libtool: link: /home/spack5/spack/lib/spack/env/gcc/g++	 -fPIC -DPIC -shared -nostdlib /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o /usr/lib/gcc/x86_64-linux-gnu/11/crtbeginS.o  .libs/mpileaks.o .libs/comm.o .libs/datatype.o .libs/errhandler.o .libs/fileio.o .libs/group.o .libs/info.o .libs/keyval.o .libs/mem.o .libs/op.o .libs/request.o .libs/win.o   -L/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55/lib -ladept_cutils -ladept_timing -ladept_utils -L/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/lib -lcallpath -L/usr/lib/gcc/x86_64-linux-gnu/11 -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/11/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/11/../../.. -lstdc++ -lm -lc -lgcc_s /usr/lib/gcc/x86_64-linux-gnu/11/crtendS.o /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crtn.o  -g -O2	-Wl,-soname -Wl,libmpileaks.so -o .libs/libmpileaks.so
+libtool: link: ar cr .libs/libmpileaks.a  mpileaks.o comm.o datatype.o errhandler.o fileio.o group.o info.o keyval.o mem.o op.o request.o win.o
 libtool: link: ranlib .libs/libmpileaks.a
 libtool: link: ( cd ".libs" && rm -f "libmpileaks.la" && ln -s "../libmpileaks.la" "libmpileaks.la" )
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
 Making all in examples
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[1]: Nothing to be done for 'all'.
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
-make[1]: Nothing to be done for 'all-am'.
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[2]: Nothing to be done for 'all-am'.
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[1]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
 ==> tutorial-mpileaks: Executing phase: 'install'
-==> [2024-05-12-12:38:50.164947] 'make' '-j8' 'install'
+==> [2024-11-18-08:11:59.444975] '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom/bin/make' '-j16' 'install'
+make[1]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
 Making install in scripts
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
-make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
-test -z "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/bin" || /usr/bin/mkdir -p "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/bin"
-make[2]: Nothing to be done for 'install-data-am'.
- /usr/bin/install -c srun-mpileaks srun-mpileaksf '/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/bin'
-make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/scripts'
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
+make[3]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
+make[3]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/bin'
+ /usr/bin/install -c srun-mpileaks srun-mpileaksf '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/bin'
+make[3]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/scripts'
 Making install in src
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
-make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
-test -z "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib" || /usr/bin/mkdir -p "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib"
-make[2]: Nothing to be done for 'install-data-am'.
- /bin/bash ../libtool	--mode=install /usr/bin/install -c   libmpileaks.la '/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib'
-libtool: install: /usr/bin/install -c .libs/libmpileaks.so /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib/libmpileaks.so
-libtool: install: /usr/bin/install -c .libs/libmpileaks.lai /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib/libmpileaks.la
-libtool: install: /usr/bin/install -c .libs/libmpileaks.a /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib/libmpileaks.a
-libtool: install: chmod 644 /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib/libmpileaks.a
-libtool: install: ranlib /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib/libmpileaks.a
-libtool: finish: PATH="/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-6qtkbjpwlnf7wozzy52mzrad55rtduoo/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.3-kzonshw6wgio6do6gj5vk5kkhoxt2kal/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.7p1-iiuja4vvxdkrnzipyeyvzpxiqln2o2sd/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-gk55zt73c5ekv3iogqn4lo4r66tuzv5z/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-qmy6dpipkzgotxrxqwxlnfsj5vbzkbcc/bin:/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-syttnntihi6n463mupmgl5e7kp5izxkz/bin:/home/spack/spack/lib/spack/env/gcc:/home/spack/spack/lib/spack/env/case-insensitive:/home/spack/spack/lib/spack/env:/home/spack/spack/bin:/opt/spack/view/bin:/root/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/sbin" ldconfig -n /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
+make[3]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
+make[3]: Nothing to be done for 'install-data-am'.
+ /usr/bin/mkdir -p '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib'
+ /bin/bash ../libtool	--mode=install /usr/bin/install -c   libmpileaks.la '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib'
+libtool: install: /usr/bin/install -c .libs/libmpileaks.so /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib/libmpileaks.so
+libtool: install: /usr/bin/install -c .libs/libmpileaks.lai /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib/libmpileaks.la
+libtool: install: /usr/bin/install -c .libs/libmpileaks.a /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib/libmpileaks.a
+libtool: install: chmod 644 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib/libmpileaks.a
+libtool: install: ranlib /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib/libmpileaks.a
+libtool: finish: PATH="/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-tt3byemiknxgeuaadpxrltepvic7xsms/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-2sbkhchnzzj4a43ykj5jkwctwjc6b7lm/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-awgfaon3dsdj54pighglmrv7gnex7jko/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-qaspjyq5yqcso6yatgyhvm7j632ez7md/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.9p1-wz7w27t54u5lcphpvtwvv43vmhwmqwkn/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-mmv6i4naeg746pk2xpypdpejwvypmegb/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-t7h6imj35ruac562vr7snzvli2h2tzup/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-pcwnu2wfae7nfv5isb3kcl7otav2m5zy/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto/bin:/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-2fvrfr67ahyx5vqg6hyd3dachcl3nl2k/bin:/home/spack5/spack/lib/spack/env/gcc:/home/spack5/spack/lib/spack/env/case-insensitive:/home/spack5/spack/lib/spack/env:/home/spack5/spack/bin:/home/spack5/stacks/views/default/bin:/home/spack5/spack/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/sbin" ldconfig -n /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib
 ----------------------------------------------------------------------
 Libraries have been installed in:
-   /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/lib
+   /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/lib
 
 If you ever happen to want to link against installed libraries
 in a given directory, LIBDIR, you must either use libtool, and
-specify the full pathname of the library, or use the `-LLIBDIR'
+specify the full pathname of the library, or use the '-LLIBDIR'
 flag during linking and do at least one of the following:
-   - add LIBDIR to the `LD_LIBRARY_PATH' environment variable
+   - add LIBDIR to the 'LD_LIBRARY_PATH' environment variable
      during execution
-   - add LIBDIR to the `LD_RUN_PATH' environment variable
+   - add LIBDIR to the 'LD_RUN_PATH' environment variable
      during linking
-   - use the `-Wl,-rpath -Wl,LIBDIR' linker flag
-   - have your system administrator add LIBDIR to `/etc/ld.so.conf'
+   - use the '-Wl,-rpath -Wl,LIBDIR' linker flag
+   - have your system administrator add LIBDIR to '/etc/ld.so.conf'
 
 See any operating system documentation about shared libraries for
 more information, such as the ld(1) and ld.so(8) manual pages.
 ----------------------------------------------------------------------
-make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/src'
+make[3]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/src'
 Making install in examples
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[2]: Nothing to be done for 'install-exec-am'.
-test -z "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks/examples" || /usr/bin/mkdir -p "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks/examples"
- /usr/bin/install -c -m 644 tests.c mpiPing_leaky.f '/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks/examples'
-make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src/examples'
-make[1]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
-make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
-make[2]: Nothing to be done for 'install-exec-am'.
-test -z "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks" || /usr/bin/mkdir -p "/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks"
- /usr/bin/install -c -m 644 README '/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/share/mpileaks'
-make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
-make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq/spack-src'
-==> [2024-05-12-12:38:50.387484] Find (recursive): /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq ['*.la']
-==> [2024-05-12-12:38:50.388533] Find complete: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq ['*.la']
-==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq
-  Stage: 0.01s.  Autoreconf: 0.00s.  Configure: 6.22s.	Build: 5.93s.  Install: 0.23s.	Post-install: 0.10s.  Total: 12.80s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pun5iqbmjo6jjwmnswkp7sssgved7asq
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[3]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/share/mpileaks/examples'
+ /usr/bin/install -c -m 644 tests.c mpiPing_leaky.f '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/share/mpileaks/examples'
+make[3]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src/examples'
+make[2]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[3]: Entering directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[3]: Nothing to be done for 'install-exec-am'.
+ /usr/bin/mkdir -p '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/share/mpileaks'
+ /usr/bin/install -c -m 644 README '/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/share/mpileaks'
+make[3]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[2]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+make[1]: Leaving directory '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet/spack-src'
+==> [2024-11-18-08:11:59.645441] Find (max depth = None): ['/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet'] ['*.la']
+==> [2024-11-18-08:11:59.646133] Find complete: ['/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet'] ['*.la']
+==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet
+  Stage: 0.01s.	 Autoreconf: 4.03s.  Configure: 3.16s.	Build: 3.52s.  Install: 0.20s.	Post-install: 0.08s.  Total: 11.24s
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-tqy66l7jhykqziuadgo6voikqcqgblet

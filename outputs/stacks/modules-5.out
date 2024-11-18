@@ -2,36 +2,25 @@ $ module load gcc
 $ module load openmpi openblas netlib-scalapack py-scipy
 $ module av
 
---------------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 ---------------
-   amdblis/4.2				 libmd/1.0.4		 py-flit-core/3.9.0
-   autoconf/2.72			 libpciaccess/0.17	 py-gast/0.5.4
-   automake/1.16.5			 libsigsegv/2.14	 py-meson-python/0.15.0
-   berkeley-db/18.1.40			 libtool/2.4.7		 py-packaging/23.1
-   bison/3.8.2				 libxcrypt/4.4.35	 py-pip/23.1.2
-   bzip2/1.0.8				 libxml2/2.10.3 	 py-ply/3.11
-   ca-certificates-mozilla/2023-05-30	 m4/1.4.19		 py-pybind11/2.12.0
-   cmake/3.27.9 			 meson/1.3.2		 py-pyproject-metadata/0.7.1
-   curl/8.7.1				 mpich/4.2.1		 py-setuptools/69.2.0
-   diffutils/3.10			 ncurses/6.5		 py-wheel/0.41.2
-   expat/2.6.2				 netlib-lapack/3.11.0	 python-venv/1.0
-   findutils/4.9.0			 nghttp2/1.57.0 	 python/3.11.7
-   gcc-runtime/12.3.0			 ninja/1.11.1		 re2c/2.2
-   gdbm/1.23				 numactl/2.0.14 	 readline/8.2
-   gettext/0.22.5			 openblas/0.3.26	 sqlite/3.43.2
-   glibc/2.35				 openmpi/5.0.3		 tar/1.34
-   gmake/4.4.1				 openssh/9.7p1		 util-linux-uuid/2.38.1
-   hwloc/2.9.1				 openssl/3.3.0		 util-macros/1.19.3
-   krb5/1.20.1				 perl/5.38.0		 xz/5.4.6
-   libbsd/0.12.1			 pigz/2.8		 yaksa/0.3
-   libedit/3.1-20230828 		 pkgconf/2.2.0		 zlib-ng/2.1.6
-   libevent/2.1.12			 pmix/5.0.1		 zstd/1.5.6
-   libfabric/1.21.0			 py-beniget/0.4.1
-   libffi/3.4.6 			 py-cython/3.0.8
+------------------------------------------------------------- /home/spack5/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 -------------------------------------------------------------
+   autoconf/2.72			 gdbm/1.23		 libmd/1.0.4		 ninja/1.12.1	     py-flit-core/3.9.0		    python/3.13.0	   (D)
+   automake/1.16.5			 gettext/0.22.5		 libpciaccess/0.17	 numactl/2.0.18	     py-gast/0.5.4		    re2c/3.1
+   berkeley-db/18.1.40			 glibc/2.35		 libsigsegv/2.14	 openblas/0.3.28     py-meson-python/0.16.0	    readline/8.2
+   bison/3.8.2				 gmake/4.4.1		 libtool/2.4.7		 openmpi/5.0.5	     py-packaging/24.1		    sqlite/3.46.0
+   bzip2/1.0.8				 hwloc/2.11.1		 libxcrypt/4.4.35	 openssh/9.9p1	     py-pip/23.1.2		    tar/1.34
+   ca-certificates-mozilla/2023-05-30	 krb5/1.21.3		 libxml2/2.13.4		 openssl/3.4.0	     py-ply/3.11		    util-linux-uuid/2.40.2
+   cmake/3.30.5				 libbsd/0.12.2		 m4/1.4.19		 perl/5.40.0	     py-pybind11/2.13.5		    util-macros/1.20.1
+   curl/8.10.1				 libedit/3.1-20240808	 meson/1.5.1		 pigz/2.8	     py-pyproject-metadata/0.7.1    xz/5.4.6
+   diffutils/3.10			 libevent/2.1.12	 mpich/4.2.3		 pkgconf/2.2.0	     py-setuptools/69.2.0	    yaksa/0.3
+   expat/2.6.4				 libfabric/1.22.0	 ncurses/6.5		 pmix/5.0.3	     py-wheel/0.41.2		    zlib-ng/2.2.1
+   findutils/4.9.0			 libffi/3.4.6		 netlib-lapack/3.11.0	 py-beniget/0.4.1    python-venv/1.0		    zstd/1.5.6
+   gcc-runtime/12.3.0			 libiconv/1.17		 nghttp2/1.63.0		 py-cython/3.0.11    python/3.11.9
 
------------------- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core ------------------
+---------------------------------------------------------------- /home/spack5/stacks/modules/linux-ubuntu22.04-x86_64/Core ----------------------------------------------------------------
    gcc/12.3.0 (L)
 
   Where:
+   D:  Default Module
    L:  Module is loaded
 
 If the avail list is too long consider trying:
@@ -40,13 +29,12 @@ If the avail list is too long consider trying:
 "module overview" or "ml ov" to display the number of modules for each name.
 
 Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the
-"keys".
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
 $ module load mpich
 
-Lmod is automatically replacing "openmpi/5.0.3" with "mpich/4.2.1".
+Lmod is automatically replacing "openmpi/5.0.5" with "mpich/4.2.3".
 
 
 Due to MODULEPATH changes, the following have been reloaded:
@@ -54,7 +42,7 @@ Due to MODULEPATH changes, the following have been reloaded:
 
 $ module load netlib-lapack
 
-Lmod is automatically replacing "openblas/0.3.26" with "netlib-lapack/3.11.0".
+Lmod is automatically replacing "openblas/0.3.28" with "netlib-lapack/3.11.0".
 
 
 Due to MODULEPATH changes, the following have been reloaded:

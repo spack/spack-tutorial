@@ -1,38 +1,69 @@
 $ spack install tutorial-mpileaks
 [+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-==> Installing gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd [2/4]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd.spack
-==> Extracting gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd from binary cache
-==> gcc-runtime: Successfully installed gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-  Search: 0.00s.  Fetch: 0.22s.  Install: 0.34s.  Extract: 0.30s.  Relocate: 0.04s.  Total: 0.57s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-f47qm6qeplqyahc4zhfpfdnf5mo6gxvd
-==> Installing gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo [3/4]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo.spack
-==> Extracting gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo from binary cache
-==> gmake: Successfully installed gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-  Search: 0.00s.  Fetch: 0.01s.  Install: 0.05s.  Extract: 0.02s.  Relocate: 0.03s.  Total: 0.06s
-[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-qfrotccvbyovembcoto3jajc3vuvcejo
-==> Installing tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr2nfuflz [4/4]
-==> No binary for tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr2nfuflz found: installing from source
-==> Fetching https://mirror.spack.io/_source-cache/archive/2e/2e34cc4505556d1c1f085758e26f2f8eea0972db9382f051b2dcfb1d7d9e1825.tar.gz
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-cexliohp6aqckxeq4bqy5wrmxzyrfzqc
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-2sbkhchnzzj4a43ykj5jkwctwjc6b7lm
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-ea6qziv7obmf5fq3mxy42rhxptoiwfb6
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-rvg7j6bmergf3is4yoacm5sgsi7l4tvm
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-tt3byemiknxgeuaadpxrltepvic7xsms
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-qaspjyq5yqcso6yatgyhvm7j632ez7md
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-aylebxvheua4djgtfzzqi2ialcjt5mw7
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-awgfaon3dsdj54pighglmrv7gnex7jko
+[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw
+==> Installing tutorial-mpileaks-1.0-bszhijneomzrlxbof4ba5yyfx44pvgrn [17/17]
+==> No binary for tutorial-mpileaks-1.0-bszhijneomzrlxbof4ba5yyfx44pvgrn found: installing from source
+==> Fetching https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
 ==> tutorial-mpileaks: Executing phase: 'configure'
 ==> Error: ProcessError: Command exited with status 1:
-    '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr2nfuflz/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr2nfuflz'
+    '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-bszhijneomzrlxbof4ba5yyfx44pvgrn/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-bszhijneomzrlxbof4ba5yyfx44pvgrn'
 
-1 error found in build log:
-     35    checking for mpipgcc... no
-     36    Checking whether not-found responds to '-showme:compile'... no
-     37    Checking whether not-found responds to '-showme'... no
-     38    Checking whether not-found responds to '-compile-info'... no
-     39    Checking whether not-found responds to '-show'... no
-     40    /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr
-	   2nfuflz/spack-src/configure: line 4931: Echo: command not found
-  >> 41    configure: error: unable to locate adept-utils installation
+13 errors found in build log:
+     16	   libtoolize: copying file 'm4/lt~obsolete.m4'
+     17	   autoreconf: configure.ac: not using Intltool
+     18	   autoreconf: configure.ac: not using Gtkdoc
+     19	   autoreconf: running: aclocal --force -I m4
+     20	   autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoconf --force
+     21	   configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
+  >> 22	   configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
+  >> 23	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
+  >> 24	   aclocal.m4:745: AM_CONFIG_HEADER is expanded from...
+  >> 25	   configure.ac:9: the top level
+     26	   configure.ac:38: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
+  >> 27	   configure.ac:38: You should run autoupdate.
+  >> 28	   m4/libtool.m4:100: AC_PROG_LIBTOOL is expanded from...
+  >> 29	   configure.ac:38: the top level
+     30	   configure.ac:47: warning: The macro 'AC_HEADER_STDC' is obsolete.
+  >> 31	   configure.ac:47: You should run autoupdate.
+  >> 32	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
+  >> 33	   configure.ac:47: the top level
+     34	   autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoheader --force
+     35	   autoreconf: running: automake --add-missing --copy --force-missing
+  >> 36	   configure.ac:26: installing 'config/compile'
+  >> 37	   configure.ac:19: installing 'config/missing'
+     38	   src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+     39	   src/Makefile.am: installing 'config/depcomp'
+     40	   autoreconf: 'config/install-sh' is updated
+     41	   autoreconf: 'config/config.sub' is updated
+     42	   autoreconf: 'config/config.guess' is updated
+     43	   autoreconf: Leaving directory '.'
+
+     ...
+
+     73	   checking for /home/spack5/spack/lib/spack/env/gcc/g++ option to enable C++11 features... none needed
+     74	   checking dependency style of /home/spack5/spack/lib/spack/env/gcc/g++... gcc3
+     75	   checking for mpicc... /usr/bin/mpicc
+     76	   Checking whether /usr/bin/mpicc responds to '-showme:compile'... no
+     77	   Checking whether /usr/bin/mpicc responds to '-showme'... no
+     78	   Checking whether /usr/bin/mpicc responds to '-compile-info'... yes
+  >> 79	   configure: error: unable to locate adept-utils installation
 
 See build log for details:
-  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-pzflhfrljrkux3siwkha5wqvr2nfuflz/spack-build-out.txt
+  /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-bszhijneomzrlxbof4ba5yyfx44pvgrn/spack-build-out.txt
 

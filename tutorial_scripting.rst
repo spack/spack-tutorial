@@ -24,24 +24,6 @@ Since Spack has an extensive API, we'll only scratch the surface here.
 We'll give you enough information to start writing your own scripts and
 to find what you need, with a little digging.
 
------------------------
-Setting up the tutorial
------------------------
-
-Before proceeding, let's ensure the outputs for this segment are reasonable.
-Since you may have a lot of packages installed from earlier sections of the
-tutorial, we want to perform a little cleanup.
-
-Let's remove ``gcc@8.3.0`` and re-install ``hdf5`` and ``zlib@clang``
-using the following commands:
-
-.. literalinclude:: outputs/scripting/setup.out
-   :language: console
-   :emphasize-lines: 1,31,33,321
-
-Now we are ready to use the Spack's ``find`` and ``python`` subcommands
-to query the installed packages.
-
 -----------------------------
 Scripting with ``spack find``
 -----------------------------
