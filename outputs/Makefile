@@ -25,7 +25,7 @@ sections := environments
 run_targets := $(addprefix run-,$(sections))
 
 # Entrypoint
-update-outputs: #run
+update-outputs: run
 	echo "Filtering raw outputs though col"
 	for raw in raw/*/*.out; do \
 		out=$$(echo $$raw | sed 's.raw/..'); \
