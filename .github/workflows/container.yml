@@ -60,9 +60,9 @@ jobs:
           platforms: linux/amd64
           tags: ${{ steps.metadata.outputs.tags }}
           cache-from: type=registry,ref=ghcr.io/spack/tutorial:buildcache
-          cache-to: ${{ github.ref.name == github.event.repository.default_branch
+          cache-to: ${{ github.ref_name == github.event.repository.default_branch
                       && 'type=registry,ref=ghcr.io/spack/tutorial:buildcache,mode=max' || '' }}
-          outputs: ${{ (github.ref.name == github.event.repository.default_branch || startsWith(github.ref, 'refs/tags/'))
+          outputs: ${{ (github.ref_name == github.event.repository.default_branch || startsWith(github.ref, 'refs/tags/'))
                       && 'type=registry' || 'type=docker,dest=/tmp/tutorial-container.tar' }}
 
       - name: Upload container as artifact for PRs
