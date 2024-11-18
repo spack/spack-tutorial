@@ -28,7 +28,7 @@ A partial list of some key configuration sections is provided below.
    * - concretizer
      - Specializaiton of the concretizer behavior (reuse, unification, etc)
    * - compilers
-     - Definie the compilers that spack can use (required and system specific)
+     - Define the compilers that Spack can use (required and system specific)
    * - mirrors
      - Locations where spack can look for stashed source or binary distributions 
    * - packages
