@@ -14,20 +14,8 @@ Configuration Tutorial
 This tutorial will guide you through various configuration options
 that allow you to customize Spack's behavior with respect to
 software installation.
-The principle goals of this section of the tutorial are:
-
-1. Introduce the configuration hierarchy
-2. Demonstrate how to manipulate configurations
-3. Show how to configure system assets with spack (compilers and packages)
-
-As such we will primarily focus on bold sections in the following list: ``compilers``
-and ``packages``. 
-This is a partial list of the configurations and the full list can be viewed
-by running ``spack config list``.
-For further education we encourage you to explore the spack
-`documentation on configuration files https://spack.readthedocs.io/en/latest/configuration.html#configuration-files`_.
-
-``spack config list``.
+There are many different configuration sections.
+A partial list of some key configuration sections is provided below.
 
 .. list-table:: Spack Configuration Sections
    :widths: 15 55
@@ -39,18 +27,27 @@ For further education we encourage you to explore the spack
      - General settings (install location, number of build jobs, etc)
    * - concretizer
      - Specializaiton of the concretizer behavior (reuse, unification, etc)
-   * - **compilers**
+   * - compilers
      - Definie the compilers that spack can use (required and system specific)
    * - mirrors
      - Locations where spack can look for stashed source or binary distributions 
-   * - repos
-     - Collections of package definitions
-   * - **packages**
+   * - packages
      - Specific settings and rules for packages
    * - modules
      - Naming, location and additional configuration of Spack generated modules
-   * - upstreams
-     - Additional spack installations to chain to 
+
+The full list of sections can be viewed with ``spack config list``.
+For further education we encourage you to explore the spack
+`documentation on configuration files https://spack.readthedocs.io/en/latest/configuration.html#configuration-files`_.
+
+The principle goals of this section of the tutorial are:
+
+1. Introduce the configuration sections and scope hierarchy
+2. Demonstrate how to manipulate configurations
+3. Show how to configure system assets with spack (compilers and packages)
+
+As such we will primarily focus on the ``compilers``
+and ``packages`` configuration sections in this portion of the tutorial. 
 
 If at any point in time you wish to see what the configuration settings are 
 for these section you can run ``spack config blame [section]``.  If no
