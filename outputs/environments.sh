@@ -8,6 +8,9 @@ rm -rf "${raw_outputs:?}/environments"
 
 export SPACK_COLOR=never
 
+. "$project/init_spack.sh"
+. share/spack/setup-env.sh
+
 ####
 # Introduction for "basic" installation if basics section not being used
 ####
