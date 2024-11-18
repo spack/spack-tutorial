@@ -186,7 +186,7 @@ The resulting package should contain the following information:
    :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 5-6,8,11-12
+   :emphasize-lines: 5,7,10,12
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software but the information is now available
@@ -260,7 +260,7 @@ directive as shown below:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 6-
    :language: python
-   :emphasize-lines: 16-18
+   :emphasize-lines: 26-28
 
 Adding dependencies tells Spack that it must ensure these packages are
 installed *before* it can build our package.
