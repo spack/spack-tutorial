@@ -93,13 +93,19 @@ command:
 .. literalinclude:: outputs/environments/env-activate-1.out
    :language: console
 
-
-You can also use the ``spacktivate`` alias for short.
-
 .. note::
    If you use the ``-p`` option for ``spack env activate``, Spack
    will prepend the environment name to the prompt. This is a handy
    way to be reminded if and which environment you are in.
+
+You can also use the shorter ``spacktivate`` alias for ``spack env activate``.
+
+.. note::
+   Alias behavior may vary depending on the shell interpreter used. In Bash,
+   use of aliases requires the shell option ``expand_aliases`` to be set.
+   This option is set by default, but it is not set in non-interactive shells,
+   e.g., when executing a Bash script. In a Bash script, ``expand_aliases``
+   can be set with the command ``shopt -s expand_aliases``.
 
 
 Once you activate an environment, ``spack find`` only shows what is
