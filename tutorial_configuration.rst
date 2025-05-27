@@ -26,18 +26,18 @@ A partial list of some key configuration sections is provided below.
    * - config
      - General settings (install location, number of build jobs, etc)
    * - concretizer
-     - Specializaiton of the concretizer behavior (reuse, unification, etc)
+     - Specialization of the concretizer behavior (reuse, unification, etc.)
    * - compilers
      - Define the compilers that Spack can use (required and system specific)
    * - mirrors
-     - Locations where spack can look for stashed source or binary distributions 
+     - Locations where Spack can look for stashed source or binary distributions
    * - packages
      - Specific settings and rules for packages
    * - modules
      - Naming, location and additional configuration of Spack generated modules
 
 The full list of sections can be viewed with ``spack config list``.
-For further education we encourage you to explore the spack
+For further education, we encourage you to explore the Spack
 `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
 
 The principle goals of this section of the tutorial are:
@@ -46,14 +46,14 @@ The principle goals of this section of the tutorial are:
 2. Demonstrate how to manipulate configurations
 3. Show how to configure system assets with spack (compilers and packages)
 
-As such we will primarily focus on the ``compilers``
-and ``packages`` configuration sections in this portion of the tutorial. 
+As such, we will primarily focus on the ``compilers``
+and ``packages`` configuration sections in this portion of the tutorial.
 
 We will explain this by first covering how to manipulate configurations from
 the command line and then show how this impacts the configuration file
 hierarchy. We will then move into compiler and package configurations to help
-you develop skills for getting the builds you want on your system.  Finally,
-we will give some brief attention to more generalized spack configurations 
+you develop skills for getting the builds you want on your system. Finally,
+we will give some brief attention to more generalized Spack configurations
 in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full
@@ -67,9 +67,9 @@ output is all from a server running Ubuntu version 22.04.
 Configuration from the command line
 -----------------------------------
 
-You can run ``spack config blame [section]`` at any point in time to see what
-your current configuration is. If you omit the section then spack will dump all
-the configurations settings to your screen.  Let's go ahead and run this for the 
+You can run ``spack config blame <section>`` at any point in time to see what
+your current configuration is for that `<section>`. If you omit the section, then Spack
+will show all configuration settings. Let's go ahead and run this for the
 ``concretizer`` section.
 
 .. code-block:: console
@@ -89,19 +89,20 @@ through the command line.
   $ spack config add concretizer:reuse:false
 
 If we rerun ``spack config blame concretizer`` we can see that the change was 
-applied.  
+applied.
 
 .. code-block:: console
 
    $ spack config blame concretizer
 
-Notice that the reference file on for this option is now different.
-This indicates the scope where the configuration was set in, and we will
-discuss how spack chooses the default scope shortly.
+Notice that the reference file for this option is now different.
+This indicates the scope where the configuration was set, and we will
+discuss how Spack chooses the default scope shortly.
 For now, it is important to note that the ``spack config`` command accepts an
-optional ``--scope`` flag so we can be more precise in the configuration process. 
-This will make more sense after the next section which provides 
-the definition of spack's configuration scopes and their hierarchy.
+optional ``--scope`` flag (e.g., ``--scope user``, ``--scope site``) so we can
+be more precise in the configuration process. This will make more sense after
+the next section, which provides the definition of Spack's configuration scopes
+and their hierarchy.
 
 .. _configs-tutorial-scopes:
 
@@ -123,7 +124,7 @@ Environment    In environment base directory (in ``spack.yaml``)
 Custom         Custom directory, specified with ``--config-scope``
 User           ``~/.spack/``
 Site           ``$SPACK_ROOT/etc/spack/``
-System         ``/etc/spack/``
+System         ``/etc/spack`` (or ``/etc/spack.d`` for multiple files)
 Defaults       ``$SPACK_ROOT/etc/spack/defaults/``
 ============   ===================================================
 
@@ -156,24 +157,23 @@ other configuration scopes.
 Platform-specific scopes
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Some facilities manage multiple platforms from a single shared
-file system. In order to handle this, each of the configuration
-scopes listed above has two *sub-scopes*: platform-specific and
-platform-independent. For example, compiler settings can be stored
-in the following locations:
+Some facilities manage multiple platforms (e.g., different OS versions or CPU architectures)
+from a single shared file system. Spack allows platform-specific configurations
+within most scopes. For a given configuration section (like `compilers`),
+Spack will look for a platform-specific file (e.g., `compilers.yaml` inside a
+directory named after the platform, like `~/.spack/cray-cnl7-haswell/compilers.yaml`)
+before looking for a platform-independent file in the same scope (e.g., `~/.spack/compilers.yaml`).
+This means that within a particular scope (like `user`), the platform-specific configuration
+takes precedence.
 
-#. ``$ENVIRONMENT_ROOT/spack.yaml``
-#. ``~/.spack/<platform>/compilers.yaml``
-#. ``~/.spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
-#. ``/etc/spack/<platform>/compilers.yaml``
-#. ``/etc/spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
+For example, for the `user` scope (`~/.spack`), Spack would consider:
+1. `~/.spack/<platform>/compilers.yaml` (platform-specific, highest precedence within user scope)
+2. `~/.spack/compilers.yaml` (platform-independent)
 
-These files are listed in decreasing order of precedence, so files in
-``~/.spack/<platform>`` will override settings in ``~/.spack``.
+This platform-specific lookup occurs within each of the configurable scopes (User, Site, System, Defaults).
+Environment configurations (`spack.yaml`) are typically platform-agnostic as defined, but Spack
+can be made aware of platform-specific environments if needed (e.g., by using different environment files
+or by including platform-specific logic within package files).
 
 -----------
 YAML Format
@@ -294,8 +294,8 @@ active environment):
        paths:
          cc: /usr/bin/gcc-10
          cxx: /usr/bin/g++-10
-         f77: usr/bin/gfortran-10
-         fc: usr/bin/gfortran-10
+         f77: /usr/bin/gfortran-10
+         fc: /usr/bin/gfortran-10
        flags: {}
        operating_system: ubuntu22.04
        target: x86_64
@@ -356,23 +356,23 @@ sections we leave unchanged. These sections specify when Spack can use
 different compilers, and are primarily useful for configuration files that
 will be used across multiple systems.
 
-We can verify that our new compiler works by invoking it now:
+We can verify that our new compiler works by invoking it now (Spack will build `zlib` if a binary isn't found for this exact compiler spec):
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@14.0.0-gfortran
+   $ spack install zlib %clang@14.0.0-gfortran
    ...
 
 
 This new compiler also works on Fortran codes. We'll show it by
-compiling a small package using as a build dependency ``cmake%gcc@11.4.0``
-since it is already available in our binary cache:
+compiling a small package, using a pre-existing `cmake` built with `gcc@11.4.0`
+(if available in a binary cache or already installed) to speed up the process:
 
 .. code-block:: console
 
-   $ spack install --reuse cmake %gcc@11.4.0
+   $ spack install cmake %gcc@11.4.0  # Ensure cmake is available
    ...
-   $ spack install --no-cache --reuse json-fortran %clang@=14.0.0-gfortran ^cmake%gcc@11.4.0
+   $ spack install json-fortran %clang@=14.0.0-gfortran ^cmake%gcc@11.4.0
    ...
 
 
@@ -710,7 +710,8 @@ with MPI again:
            mpi: [mpich, openmpi]
        curl:
          externals:
-         - spec: curl@7.81.0 %gcc@11.4.0
+       # This should match the version identified on the system, e.g., 7.81.0
+       - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
        mpich:
@@ -838,9 +839,10 @@ from this file system with the following ``config.yaml``:
    `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
 
 
-On systems with compilers that absolutely *require* environment variables
-like ``LD_LIBRARY_PATH``, it is possible to prevent Spack from cleaning
-the build environment with the ``dirty`` setting:
+On systems with compilers that absolutely *require* certain environment variables
+(like ``LD_LIBRARY_PATH``, though this is generally discouraged for builds),
+it is possible to prevent Spack from cleaning most of the build environment
+with the ``dirty`` setting:
 
 .. code-block:: yaml
 
@@ -859,7 +861,7 @@ node with 16 cores, this will look like:
 
 .. code-block:: console
 
-   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
+   $ spack install --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
    ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
@@ -888,11 +890,12 @@ number of cores our build uses, set ``build_jobs`` like so:
      build_jobs: 2
 
 
-If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
+If we uninstall and reinstall `zlib`, we see that it now uses only 2 cores:
 
 .. code-block:: console
 
-   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib-ng
+   $ spack uninstall --yes-to-all zlib # First uninstall the previous version
+   $ spack install --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
    ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04...
@@ -907,10 +910,12 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 Obviously, if you want to build everything in serial for whatever reason,
 you would set ``build_jobs`` to 1.
 
-Last we'll unset ``concretizer:reuse:false`` since we'll want to
-enable concretizer reuse for the rest of this tutorial.
+Lastly, we'll remove the `concretizer:reuse:false` setting from our user scope
+configuration, as we'll want to enable concretizer reuse for the rest of this
+tutorial. This command removes the setting from the default configuration scope
+(which is `user` if not specified and if a user-level config file exists for it).
 
-.. code-block:: yaml
+.. code-block:: console
 
   $ spack config rm concretizer:reuse
 

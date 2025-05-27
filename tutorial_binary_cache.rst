@@ -11,14 +11,15 @@
 Binary Caches Tutorial
 ==================================
 
-In this section of the tutorial you will learn how to share Spack built binaries
+In this section of the tutorial, you will learn how to share Spack-built binaries
 across machines and users using build caches.
 
 We will explore a few concepts that apply to all types of build caches, but the
-focus is primarily on **OCI container registries** like Docker Hub or Github Packages
+focus is primarily on **OCI container registries** (like Docker Hub or GitHub Packages)
 as a storage backend for binary caches. Spack supports a range of storage backends,
-like an ordinary filesystem, S3, and Google Cloud Storage, but OCI build caches
-have a few interesting properties that make them worth exploring more in depth.
+such as an ordinary filesystem, Amazon S3, and Google Cloud Storage, but OCI
+build caches have a few interesting properties that make them worth exploring more
+in-depth.
 
 Before we configure a build cache, let's install the ``julia`` package, which is
 an interesting example because it has some non-trivial dependencies like ``llvm``,
@@ -50,20 +51,24 @@ Setting up an OCI build cache on GitHub Packages
 For this tutorial we will be using GitHub Packages as an OCI registry, since
 most people have a GitHub account and it's easy to use.
 
-First go to `<https://github.com/settings/tokens>`_ to generate a Personal access
-token with ``write:packages`` permissions. Copy this token.
+First, go to `<https://github.com/settings/tokens>`_ to generate a Personal Access
+Token (classic) with ``write:packages`` permissions. Copy this token.
 
-Next, we will add this token to the mirror config section of the Spack environment:
+Next, we will add this token to the mirrors configuration for the Spack environment.
+Replace `<your-github-username>` with your GitHub username and
+`<your-github-username-or-org>` with your GitHub username or an organization
+where you have permissions to create packages. The build cache name,
+`buildcache-${USER}-${HOSTNAME}`, is a suggestion; you can choose your own.
 
 .. code-block:: console
 
-   $ export MY_OCI_TOKEN=<token>
+   $ export MY_OCI_TOKEN=<paste-your-token-here>
    $ spack -e . mirror add \
-       --oci-username <user> \
+       --oci-username <your-github-username> \
        --oci-password-variable MY_OCI_TOKEN \
        --unsigned \
        my-mirror \
-       oci://ghcr.io/<github_user>/buildcache-${USER}-${HOSTNAME}
+       oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
 
 
 .. note ::
@@ -82,53 +87,59 @@ Your ``spack.yaml`` file should now contain the following:
      - julia
      mirrors:
         my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+           # The URL should match what you used in `spack mirror add`
+           url: oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
            access_pair:
-              id: <user>
+              # This should be your GitHub username
+              id: <your-github-username>
               secret_variable: MY_OCI_TOKEN
            signed: false
 
-Let's push ``julia`` and its dependencies to the build cache
+Let's push ``julia`` and its dependencies to the build cache. The output will
+reflect the OCI URL you configured.
 
 .. code-block:: console
 
    $ spack -e . buildcache push my-mirror
 
-which outputs
+which outputs something like:
 
 .. code-block:: text
 
-   ==> Selected 66 specs to push to oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+   ==> Selected 66 specs to push to oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
    ==> Checking for existing specs in the buildcache
-   ==> 66 specs need to be pushed to ghcr.io/<github_user>/buildcache-<user>-<host>
+   ==> 66 specs need to be pushed to ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
    ==> Uploaded sha256:d8d9a5f1fa443e27deea66e0994c7c53e2a4a618372b01a43499008ff6b5badb (0.83s, 0.11 MB/s)
    ...
    ==> Uploading manifests
    ==> Uploaded sha256:cdd443ede8f2ae2a8025f5c46a4da85c4ff003b82e68cbfc4536492fc01de053 (0.64s, 0.02 MB/s)
    ...
-   ==> Pushed zstd@1.5.6/ew3aaos to ghcr.io/<user>/buildcache-<user>-<host>:zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr.spack
+   ==> Pushed zstd@1.5.6/ew3aaos to ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:zstd-1.5.6-ew3aaosbmf3ts2ylqgi4c6enfmf3m5dr.spack
    ...
-   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-The location of the pushed package
+The location of the pushed package, when referred to as a Docker-style image, will be:
 
 .. code-block:: text
 
-   ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
 looks very similar to a container image --- we will get to that in a bit.
 
 .. note ::
 
-   Binaries pushed to GitHub packages are ``private`` by default, which means you need a token
-   to download them. You can change the visibility to ``public`` by going to GitHub Packages
-   from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``,
-   and change the visibility to ``public`` in the ``Danger Zone`` section. This page can also
-   be directly accessed by going to
+   Binaries pushed to GitHub Packages are ``private`` by default, which means you (or others)
+   need a token to download them. You can change the visibility to ``public`` by navigating
+   to your package on GitHub Packages (usually under your profile or organization page,
+   then "Packages"). Select your build cache (e.g., `buildcache-${USER}-${HOSTNAME}`), go to
+   its "Package settings", and change the visibility to ``public`` in the "Danger Zone" section.
+   The direct URL is typically:
 
    .. code-block:: text
 
-      https://github.com/users/<user>/packages/container/buildcache/settings
+      https://github.com/users/<your-github-username>/packages/container/<your-buildcache-name>/settings
+      # or for an organization:
+      # https://github.com/orgs/<your-org-name>/packages/container/<your-buildcache-name>/settings
 
 
 -------------------------------
@@ -149,19 +160,21 @@ in the ``spack.yaml`` file:
      - julia
      mirrors::  # <- note the double colon
         my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+           # Ensure this URL matches the one you configured
+           url: oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
            access_pair:
-              id: <user>
-              secret_variable: MY_OCI_TOKEN
+              # This should be your GitHub username
+              id: <your-github-username>
+              secret_variable: MY_OCI_TOKEN # Or remove access_pair if the cache is public
            signed: false
 
-An "overwrite install" should be enough to show that the build cache is used:
+An "overwrite install" should be enough to show that the build cache is used (output will vary based on your specific configuration):
 
 .. code-block:: console
 
    $ spack -e . install --overwrite julia
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache-<user>-<host>/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
-   ==> Fetching https://ghcr.io/v2/<user>/buildcache-<user>-<host>/blobs/sha256:3c6809073fcea76083838f603509f10bd006c4d20f49f9644c66e3e9e730da7a
+   ==> Fetching https://ghcr.io/v2/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
+   ==> Fetching https://ghcr.io/v2/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}/blobs/sha256:3c6809073fcea76083838f603509f10bd006c4d20f49f9644c66e3e9e730da7a
    ==> Extracting julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl from binary cache
    [+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl
 
@@ -194,9 +207,10 @@ to avoid a separate step.
 .. note::
 
    As of Spack 0.22, build caches can be used across different Linux distros. The concretizer
-   will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
-   For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
-   first, as the build cache contains the compiler runtime libraries as a separate package.
+   will reuse specs that have a host-compatible ``libc`` dependency (e.g., from ``glibc`` or ``musl``).
+   For packages compiled with ``gcc`` (and a few other compilers), users do not have to install these
+   compilers first on the target machine, as the build cache can provide the necessary compiler
+   runtime libraries as a separate package dependency.
 
 After an index is created, it's possible to list the available packages in the build cache:
 
@@ -216,31 +230,33 @@ concretizer can use it to avoid source builds, and ``spack install`` will fetch 
 However, we can also use this build cache to share binaries directly as runnable container images.
 
 We can already attempt to run the image associated with the ``julia`` package that we have
-pushed earlier:
+pushed earlier (substitute your actual image path):
 
 .. code-block:: console
 
-   $ docker run ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack julia
+   $ docker run ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack julia
    exec /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl/bin/julia: no such file or directory
 
-but immediately we see it fails. The reason is that one crucial part is missing, and that is a
-``glibc``, which Spack always treats as an external package.
+But immediately we see it fails. The reason is that one crucial part is missing: a
+compatible C standard library (like ``glibc``), which Spack usually treats as an
+external package provided by the host system. Container images need this to be part
+of the image itself.
 
-To fix this, we force push to the registry again, but this time we specify a base image with a
-recent version of ``glibc``, for example from ``ubuntu:24.04``:
+To fix this, we force-push to the registry again, but this time we specify a base image that
+provides a compatible C standard library, for example, ``ubuntu:24.04`` (which includes ``glibc``):
 
 .. code-block:: console
 
    $ spack -e . buildcache push --force --base-image ubuntu:24.04 my-mirror
    ...
-   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-Now let's pull this image again and run it:
+Now let's pull this image again and run it (substitute your actual image path):
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
-   $ docker run -it --rm ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker pull ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
+   $ docker run -it --rm ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
    root@f53920f8695a:/# julia
    julia> 1 + 1
    2
@@ -248,9 +264,11 @@ Now let's pull this image again and run it:
 This time it works! The minimal ``ubuntu:24.04`` image provides us not only with ``glibc``, but
 also other utilities like a shell.
 
-Notice that you can use any base image of choice, like ``fedora`` or ``rockylinux``. The only
-constraint is that it has a ``libc`` compatible with the external in the Spack built the binaries.
-Spack does not validate this.
+Notice that you can use any base image of your choice, like ``fedora`` or ``rockylinux``. The main
+constraint is that it has a C standard library (e.g., ``libc.so.6`` from ``glibc``) that is
+binary-compatible with the one Spack assumed when building the binaries (often the one from the
+build host or a ``target="<distro@version>"` spec). Spack does not currently validate this
+compatibility automatically when pushing with a base image.
 
 --------------------------------------
 Spack environments as container images
@@ -279,20 +297,21 @@ we could both edit and run Julia code.
 
    $ spack -e . install --add vim
 
-This time we push to the OCI registry, but also pass ``--tag julia-and-vim`` to instruct Spack
-to create an image for the environment as a whole, with a human-readable tag:
+This time, when we push to the OCI registry, we also pass ``--tag julia-and-vim`` to instruct
+Spack to create an additional image tag for the environment as a whole, with a more
+human-readable name:
 
 
 .. code-block:: console
 
    $ spack -e . buildcache push --base-image ubuntu:24.04 --tag julia-and-vim my-mirror
-   ==> Tagged ghcr.io/<user>/buildcache:julia-and-vim
+   ==> Tagged ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-and-vim
 
-Now let's run a container from this image:
+Now let's run a container from this new image tag (substitute your actual image path):
 
 .. code-block:: console
 
-   $ docker run -it --rm ghcr.io/<github_user>/buildcache-<user>-<host>:julia-and-vim
+   $ docker run -it --rm ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}:julia-and-vim
    root@f53920f8695a:/# vim ~/example.jl  # create a new file with some Julia code
    root@f53920f8695a:/# julia ~/example.jl  # and run it
 
@@ -323,10 +342,10 @@ has a few downsides:
 
 * When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning
   that all dependencies that did install successfully are lost. Troubleshooting the build
-  typically means starting from scratch in ``docker run`` or on the host system.
-* In certain CI environments, it is not possible to use ``docker build``. For example, the
-  CI script itself may already run in a docker container, and running ``docker build`` *safely*
-  inside a container is tricky.
+  typically means starting from scratch either within a ``docker run`` session or on the host system.
+* In certain CI environments, it is not possible to use ``docker build`` directly. For example, the
+  CI script itself may already run in a Docker container, and running ``docker build`` *safely*
+  inside another container (Docker-in-Docker) is tricky.
 
 The takeaway is that Spack decouples the steps that ``docker build`` combines:
 build isolation, running the build, and creating an image. You can run
@@ -340,8 +359,8 @@ Relocation
 Spack is different from many package managers in that it lets users choose where to install
 packages. This makes Spack very flexible, as users can install packages in their home directory
 and do not need root privileges. The downside is that sharing binaries is more complicated,
-as binaries may contain hard-coded, absolute paths to machine specific locations, which have
-to be adjusted when binaries are installed on a different machine.
+as binaries may contain hard-coded, absolute paths to machine-specific locations, which have
+to be adjusted when these binaries are installed on a different machine or in a different path.
 
 Fortunately Spack handles this automatically upon install from a binary cache. But when you
 build binaries that are intended to be shared, there is one thing you have to keep in mind:
@@ -354,8 +373,8 @@ only modify strings in-place, and if the new path is longer than the old one, we
 overwrite the next string in the table.
 
 To maximize the chances of successful relocation, you should build your binaries in a
-relative long path. Fortunately Spack can automatically pad paths to make them longer,
-using the following command:
+relatively long path. Fortunately, Spack can automatically pad paths to make them longer,
+using the following command for your environment:
 
 .. code-block:: console
 
@@ -365,11 +384,11 @@ using the following command:
 Using build caches in CI
 ------------------------
 
-Build caches are a great way to speed up CI pipelines. Both GitHub Actions and Gitlab CI
+Build caches are a great way to speed up CI pipelines. Both GitHub Actions and GitLab CI
 support container registries, and this tutorial should give you a good starting point to
 leverage them.
 
-Spack also provides a basic GitHub Action to already provide you with a binary cache:
+Spack also provides a basic GitHub Action that already provides you with a binary cache:
 
 .. code-block:: yaml
 
@@ -390,6 +409,6 @@ Summary
 
 In this tutorial we have created a build cache on top of an OCI registry, which can be used
 
-* to ``spack install julia vim`` on machines without source builds
-* to automatically create container images for individual packages while pushing to the cache
-* to create container images for multiple packages at once
+* to run ``spack install julia vim`` on machines and have Spack fetch pre-built binaries instead of building from source.
+* to automatically create container images for individual packages when pushing to the cache.
+* to create container images for entire Spack environments (multiple packages) at once.
