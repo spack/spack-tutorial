@@ -24,30 +24,30 @@ A partial list of some key configuration sections is provided below.
    * - config
      - General settings (install location, number of build jobs, etc)
    * - concretizer
-     - Specializaiton of the concretizer behavior (reuse, unification, etc)
+     - Specialization of the concretizer behavior (reuse, unification, etc)
    * - compilers
      - Define the compilers that Spack can use (required and system specific)
    * - mirrors
-     - Locations where spack can look for stashed source or binary distributions 
+     - Locations where Spack can look for stashed source or binary distributions
    * - packages
      - Specific settings and rules for packages
    * - modules
      - Naming, location and additional configuration of Spack generated modules
 
 The full list of sections can be viewed with ``spack config list``.
-For further education we encourage you to explore the spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
+For more details, we encourage you to explore the Spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
 
-The principle goals of this section of the tutorial are:
+The principal goals of this section of the tutorial are:
 
 1. Introduce the configuration sections and scope hierarchy
 2. Demonstrate how to manipulate configurations
-3. Show how to configure system assets with spack (compilers and packages)
+3. Show how to configure system assets with Spack (compilers and packages)
 
-As such we will primarily focus on the ``compilers`` and ``packages`` configuration sections in this portion of the tutorial.
+As such, we will primarily focus on the ``compilers`` and ``packages`` configuration sections in this portion of the tutorial.
 
 We will explain this by first covering how to manipulate configurations from the command line and then show how this impacts the configuration file hierarchy.
 We will then move into compiler and package configurations to help you develop skills for getting the builds you want on your system.
-Finally, we will give some brief attention to more generalized spack configurations in the ``config`` section.
+Finally, we will give some brief attention to more generalized Spack configurations in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full configuration file.
 For some, we will then demonstrate how the configuration affects the install command, and for others we will use the ``spack spec`` command to demonstrate how the configuration changes have affected Spack's concretization algorithm.
@@ -58,7 +58,7 @@ Configuration from the command line
 -----------------------------------
 
 You can run ``spack config blame [section]`` at any point in time to see what your current configuration is.
-If you omit the section then spack will dump all the configurations settings to your screen.
+If you omit the section, Spack will show all configuration settings.
 Let's go ahead and run this for the ``concretizer`` section.
 
 .. code-block:: console
@@ -80,10 +80,10 @@ If we rerun ``spack config blame concretizer`` we can see that the change was ap
 
    $ spack config blame concretizer
 
-Notice that the reference file on for this option is now different.
-This indicates the scope where the configuration was set in, and we will discuss how spack chooses the default scope shortly.
+Notice that the reference file for this option is now different.
+This indicates the scope where the configuration was set, and we will discuss how Spack chooses the default scope shortly.
 For now, it is important to note that the ``spack config`` command accepts an optional ``--scope`` flag so we can be more precise in the configuration process.
-This will make more sense after the next section which provides the definition of spack's configuration scopes and their hierarchy.
+This will make more sense after the next section, which provides the definition of Spack's configuration scopes and their hierarchy.
 
 .. _configs-tutorial-scopes:
 
@@ -131,14 +131,14 @@ Some facilities manage multiple platforms from a single shared file system.
 In order to handle this, each of the configuration scopes listed above has two *sub-scopes*: platform-specific and platform-independent.
 For example, compiler settings can be stored in the following locations:
 
-#. ``$ENVIRONMENT_ROOT/spack.yaml``
-#. ``~/.spack/<platform>/compilers.yaml``
-#. ``~/.spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
+#. ``$ENVIRONMENT_ROOT/spack.yaml`` 
+#. ``~/.spack/<platform>/compilers.yaml`` 
+#. ``~/.spack/compilers.yaml`` 
+#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml`` 
+#. ``$SPACK_ROOT/etc/spack/compilers.yaml`` 
 #. ``/etc/spack/<platform>/compilers.yaml``
-#. ``/etc/spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
+#. ``/etc/spack/compilers.yaml`` 
+#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml`` 
 #. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
 
 These files are listed in decreasing order of precedence, so files in ``~/.spack/<platform>`` will override settings in ``~/.spack``.
@@ -243,8 +243,8 @@ We start with no active environment, so this will open a ``compilers.yaml`` file
        paths:
          cc: /usr/bin/gcc-10
          cxx: /usr/bin/g++-10
-         f77: usr/bin/gfortran-10
-         fc: usr/bin/gfortran-10
+         f77: /usr/bin/gfortran-10
+         fc: /usr/bin/gfortran-10
        flags: {}
        operating_system: ubuntu22.04
        target: x86_64
@@ -308,7 +308,7 @@ We can verify that our new compiler works by invoking it now:
 
 
 This new compiler also works on Fortran codes.
-We'll show it by compiling a small package using as a build dependency ``cmake%gcc@11.4.0`` since it is already available in our binary cache:
+We'll show it by compiling a small package using ``cmake%gcc@11.4.0`` as a build dependency since it is already available in our binary cache:
 
 .. code-block:: console
 
@@ -793,7 +793,7 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 
 Obviously, if you want to build everything in serial for whatever reason, you would set ``build_jobs`` to 1.
 
-Last we'll unset ``concretizer:reuse:false`` since we'll want to enable concretizer reuse for the rest of this tutorial.
+Last, we'll unset ``concretizer:reuse:false``, as we'll want to enable concretizer reuse for the rest of this tutorial.
 
 .. code-block:: yaml
 
