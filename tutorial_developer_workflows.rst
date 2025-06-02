@@ -333,12 +333,12 @@ The additional features of the install command are unnecessary when tightly iter
     $ spack build-env scr -- bash
     # Shell wrappers didn't propagate to the subshell
     $ source $SPACK_ROOT/share/spack/setup-env.sh
-    # Let's look at navigation features
+    # Lets look at navigation features
     $ spack cd --help
     $ spack cd -c scr
     $ touch src/scr_copy.c
     $ spack cd -b scr
-    # Let's look at what's here
+    # Lets look at whats here
     $ ls
     # Build and run tests
     $ make -j2
