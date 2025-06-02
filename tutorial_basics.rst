@@ -171,8 +171,9 @@ If we install it "out of the box," it will build with OpenMPI.
    :language: console
 
 Spack packages can also have build options, called variants.
-Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
-There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
+Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-``
+(disable) sigils. There are two sigils for "disable" to avoid conflicts
+with shell parsing in different situations.
 Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
 Here we can install HDF5 without MPI support.
 

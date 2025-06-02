@@ -411,7 +411,9 @@ If you try to regenerate the module files now you will get an error:
 .. note::
    We try to check for errors up front!
 
-In Spack we check for errors upfront whenever possible, so don't worry about your module files: as a name clash was detected nothing has been changed on disk.
+   In Spack we check for errors upfront whenever possible, so don't worry
+   about your module files: as a name clash was detected nothing has been
+   changed on disk.
 
 The problem here is that without the hashes the four different flavors of ``netlib-scalapack`` map to the same module file name.
 We can change how the names are formatted to differentiate them:
@@ -453,7 +455,8 @@ This allows us to match specs by their dependencies, and format them based on th
    :language: console
 
 .. note::
-The ``conflict`` directive is Tcl-specific and can't be used in the ``lmod`` section of the configuration file.
+   The ``conflict`` directive is Tcl-specific and can't be used in the
+   ``lmod`` section of the configuration file.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Add custom environment modifications
@@ -495,7 +498,11 @@ You can achieve this with Spack by adding an ``environment`` directive to the co
 Under the hood Spack uses the :meth:`~spack.spec.Spec.format` API to substitute tokens in either environment variable names or values.
 There are two caveats though:
 
-- The set of allowed tokens in variable names is restricted to ``name``, ``version``, ``compiler``, ``compiler.name``, ``compiler.version``, ``architecture`` - Any token expanded in a variable name is made uppercase, but other than that case sensitivity is preserved
+- The set of allowed tokens in variable names is restricted to
+  ``name``, ``version``, ``compiler``, ``compiler.name``,
+  ``compiler.version``, ``architecture``
+- Any token expanded in a variable name is made uppercase, but other than that
+  case sensitivity is preserved
 
 Regenerating the module files results in something like:
 
@@ -628,7 +635,8 @@ This layout is quite simple to deploy, but you can see from the above snippet th
 
 Even if ``conflicts`` directives are carefully placed in module files, they:
 
-- won't enforce a consistent environment, but will just report an error - need constant updates, for instance as soon as a new compiler or MPI library is installed
+  - won't enforce a consistent environment, but will just report an error
+  - need constant updates, for instance as soon as a new compiler or MPI library is installed
 
 `Hierarchical module files <http://lmod.readthedocs.io/en/latest/080_hierarchy.html>`_ try to overcome these shortcomings by showing at start-up only a restricted view of what is available on the system: more specifically only the software that has been installed with OS provided compilers.
 Among this software there will be other - usually more recent - compilers that, once loaded, will prepend new directories to ``MODULEPATH`` unlocking all the software that was compiled with them.
@@ -641,7 +649,11 @@ Core/Compiler/MPI
 The most widely used hierarchy is the so called ``Core/Compiler/MPI`` where, on top of the compilers, different MPI libraries also unlock software linked to them.
 There are just a few steps needed to adapt the ``modules.yaml`` file we used previously:
 
-#. enable the ``lmod`` file generator #. change the ``tcl`` tag to ``lmod`` #. remove the ``tcl`` specific ``conflict`` directive #. declare which compilers are considered ``core_compilers`` #. remove the ``mpi`` related suffixes in projections (as they will be substituted by hierarchies)
+  #. enable the ``lmod`` file generator
+  #. change the ``tcl`` tag to ``lmod``
+  #. remove the ``tcl`` specific ``conflict`` directive
+  #. declare which compilers are considered ``core_compilers``
+  #. remove the ``mpi`` related suffixes in projections (as they will be substituted by hierarchies)
 
 After these modifications your configuration file should look like:
 
@@ -682,7 +694,11 @@ After these modifications your configuration file should look like:
 
 
 .. note::
-Double colon in configuration files The double colon after ``enable`` is intentional and it serves the purpose of overriding the default list of enabled generators so that only ``lmod`` will be active (see `Overriding entire sections <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for more details).
+  Double colon in configuration files
+    The double colon after ``enable`` is intentional and it serves the
+    purpose of overriding the default list of enabled generators so
+    that only ``lmod`` will be active (see `Overriding entire sections <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for more
+    details).
 
 The directive ``core_compilers`` accepts a list of compilers.
 Everything built using these compilers will create a module in the ``Core`` part of the hierarchy, which is the entry point for hierarchical module files.
@@ -746,11 +762,10 @@ Hierarchies that are deeper than ``Core``/``Compiler``/``MPI`` are probably stil
 
 For instance, having both ``MPI`` and ``LAPACK`` in the hierarchy means we must classify software into one of four categories:
 
-#.
-Software that doesn't depend on ``MPI`` or ``LAPACK`` #.
-Software that depends only on ``MPI`` #.
-Software that depends only on ``LAPACK`` #.
-Software that depends on both
+  #. Software that doesn't depend on ``MPI`` or ``LAPACK``
+  #. Software that depends only on ``MPI``
+  #. Software that depends only on ``LAPACK``
+  #. Software that depends on both
 
 to decide when to show it to the user.
 The situation becomes more involved as the number of virtual dependencies in the hierarchy increases.

@@ -29,11 +29,16 @@ Package Class Hierarchy
 
         node [
             shape = "record"
-] edge [
+        ]
+        edge [
             arrowhead = "empty"
         ]
 
-PackageBase -> Package [dir=back] PackageBase -> MakefilePackage [dir=back] PackageBase -> AutotoolsPackage [dir=back] PackageBase -> CMakePackage [dir=back] PackageBase -> PythonPackage [dir=back]
+        PackageBase -> Package [dir=back]
+        PackageBase -> MakefilePackage [dir=back]
+        PackageBase -> AutotoolsPackage [dir=back]
+        PackageBase -> CMakePackage [dir=back]
+        PackageBase -> PythonPackage [dir=back]
     }
 
 The above diagram gives a high level view of the class hierarchy and how each package relates.
@@ -90,8 +95,8 @@ Let's take a quick look at some the internals of the :code:`Autotools` class:
 This will open the :code:`AutotoolsPackage` file in your text editor.
 
 .. note::
-The examples showing code for these classes is abridged to avoid having long examples.
-We only show what is relevant to the packager.
+    The examples showing code for these classes is abridged to avoid having
+    long examples. We only show what is relevant to the packager.
 
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py

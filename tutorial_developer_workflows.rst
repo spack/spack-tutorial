@@ -40,14 +40,97 @@ Spack ends up building the entire development tree below, and links everything t
 
 .. graphviz::
 
-digraph G { labelloc = "b" rankdir = "TB" ranksep = "1" edge[
+    digraph G {
+      labelloc = "b"
+      rankdir = "TB"
+      ranksep = "1"
+      edge[
          penwidth=4  ]
       node[
-fontname=Monaco, penwidth=4, fontsize=24, margin=.2, shape=box, fillcolor=lightblue, style="rounded,filled"  ]
+         fontname=Monaco,
+         penwidth=4,
+         fontsize=24,
+         margin=.2,
+         shape=box,
+         fillcolor=lightblue,
+         style="rounded,filled"  ]
 
-"4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" [label="pkgconf"] "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" [label="json-cwx"] "4ihuiazsglf22f3pntq5hc4kyszqzexn" [label="berkeley-db"] "jearpk4xci4zc7dkrza4fufaqfkq7rfl" [label="libiconv"] "d2krmb5gweivlnztcymhklzsqbrpatt6" [label="automake"] "gs6ag7ktdoiirb62t7bcagjw62szrrg2" [label="util-macros"] "yn2r3wfhiilelyulh5toteicdtxjhw7d" [label="libxml2"] "lbrx7lnfz46ukewxbhxnucmx76g23c6q" [label="libsigsegv"] "bob4o5m3uku6vtdil5imasprgy775zg7" [label="libpciaccess"] "pmsyupw6w3gql4loaor25gfumlmvkl25" [label="openmpi"] "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" [label="m4"] "jdxbjftheiotj6solpomva7dowrhlerl" [label="libtool"] "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" [label="autoconf"] "zfdvt2jjuaees43ffrrtphqs2ky3o22t" [label="perl"] "t54jzdy2jj4snltjazlm3br2urcilc6v" [label="readline"] "4av4gywgpaspkhy3dvbb62nulqogtzbb" [label="gdbm"] "crhlefo3dv7lmsv5pf4icsy4gepkdorm" [label="ncurses"] "bltycqwh5oofai4f6o42q4uuj4w5zb3j" [label="cmake"] "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" [label="hwloc"] "vedchc5aoqyu3ydbp346qrbpe6kg46rq" [label="hdf5"] "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" [label="numactl"] "komekkmyciga3kl24edjmredhj3uyt7v" [label="xz"] "es377uqsqougfc67jyg7yfjyyuukin52" [label="openssl"] "vfrf7asfclt7epufnoxibfqbkntbk5k3" [label="silo"] "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" [label="zlib"] "sz72vygmht66khd5aa4kihz5alg4nrbm" [label="macsio"]
+      "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" [label="pkgconf"]
+      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" [label="json-cwx"]
+      "4ihuiazsglf22f3pntq5hc4kyszqzexn" [label="berkeley-db"]
+      "jearpk4xci4zc7dkrza4fufaqfkq7rfl" [label="libiconv"]
+      "d2krmb5gweivlnztcymhklzsqbrpatt6" [label="automake"]
+      "gs6ag7ktdoiirb62t7bcagjw62szrrg2" [label="util-macros"]
+      "yn2r3wfhiilelyulh5toteicdtxjhw7d" [label="libxml2"]
+      "lbrx7lnfz46ukewxbhxnucmx76g23c6q" [label="libsigsegv"]
+      "bob4o5m3uku6vtdil5imasprgy775zg7" [label="libpciaccess"]
+      "pmsyupw6w3gql4loaor25gfumlmvkl25" [label="openmpi"]
+      "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" [label="m4"]
+      "jdxbjftheiotj6solpomva7dowrhlerl" [label="libtool"]
+      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" [label="autoconf"]
+      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" [label="perl"]
+      "t54jzdy2jj4snltjazlm3br2urcilc6v" [label="readline"]
+      "4av4gywgpaspkhy3dvbb62nulqogtzbb" [label="gdbm"]
+      "crhlefo3dv7lmsv5pf4icsy4gepkdorm" [label="ncurses"]
+      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" [label="cmake"]
+      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" [label="hwloc"]
+      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" [label="hdf5"]
+      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" [label="numactl"]
+      "komekkmyciga3kl24edjmredhj3uyt7v" [label="xz"]
+      "es377uqsqougfc67jyg7yfjyyuukin52" [label="openssl"]
+      "vfrf7asfclt7epufnoxibfqbkntbk5k3" [label="silo"]
+      "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" [label="zlib"]
+      "sz72vygmht66khd5aa4kihz5alg4nrbm" [label="macsio"]
 
-"wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "jdxbjftheiotj6solpomva7dowrhlerl" "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "vfrf7asfclt7epufnoxibfqbkntbk5k3" "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "t54jzdy2jj4snltjazlm3br2urcilc6v" "crhlefo3dv7lmsv5pf4icsy4gepkdorm" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "pmsyupw6w3gql4loaor25gfumlmvkl25" "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6" "es377uqsqougfc67jyg7yfjyyuukin52" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm" "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t" "es377uqsqougfc67jyg7yfjyyuukin52" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t" "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "jdxbjftheiotj6solpomva7dowrhlerl" "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" -> "lbrx7lnfz46ukewxbhxnucmx76g23c6q" "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "es377uqsqougfc67jyg7yfjyyuukin52" "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6" "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4av4gywgpaspkhy3dvbb62nulqogtzbb" "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "pmsyupw6w3gql4loaor25gfumlmvkl25" "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" "bob4o5m3uku6vtdil5imasprgy775zg7" -> "jdxbjftheiotj6solpomva7dowrhlerl" "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "komekkmyciga3kl24edjmredhj3uyt7v" "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "vedchc5aoqyu3ydbp346qrbpe6kg46rq" "bob4o5m3uku6vtdil5imasprgy775zg7" -> "gs6ag7ktdoiirb62t7bcagjw62szrrg2" "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t" "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4ihuiazsglf22f3pntq5hc4kyszqzexn" "bob4o5m3uku6vtdil5imasprgy775zg7" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "pmsyupw6w3gql4loaor25gfumlmvkl25" "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "bob4o5m3uku6vtdil5imasprgy775zg7" "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "jearpk4xci4zc7dkrza4fufaqfkq7rfl" "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "bltycqwh5oofai4f6o42q4uuj4w5zb3j" "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" "t54jzdy2jj4snltjazlm3br2urcilc6v" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm" "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" "4av4gywgpaspkhy3dvbb62nulqogtzbb" -> "t54jzdy2jj4snltjazlm3br2urcilc6v" "jdxbjftheiotj6solpomva7dowrhlerl" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "yn2r3wfhiilelyulh5toteicdtxjhw7d" "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" }
+      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "jdxbjftheiotj6solpomva7dowrhlerl"
+      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
+      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "vfrf7asfclt7epufnoxibfqbkntbk5k3"
+      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "t54jzdy2jj4snltjazlm3br2urcilc6v"
+      "crhlefo3dv7lmsv5pf4icsy4gepkdorm" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
+      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
+      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
+      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh"
+      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6"
+      "es377uqsqougfc67jyg7yfjyyuukin52" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
+      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm"
+      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
+      "es377uqsqougfc67jyg7yfjyyuukin52" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
+      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "jdxbjftheiotj6solpomva7dowrhlerl"
+      "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" -> "lbrx7lnfz46ukewxbhxnucmx76g23c6q"
+      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "es377uqsqougfc67jyg7yfjyyuukin52"
+      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
+      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6"
+      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4av4gywgpaspkhy3dvbb62nulqogtzbb"
+      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
+      "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
+      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "jdxbjftheiotj6solpomva7dowrhlerl"
+      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "komekkmyciga3kl24edjmredhj3uyt7v"
+      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
+      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
+      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "vedchc5aoqyu3ydbp346qrbpe6kg46rq"
+      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "gs6ag7ktdoiirb62t7bcagjw62szrrg2"
+      "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
+      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
+      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
+      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4ihuiazsglf22f3pntq5hc4kyszqzexn"
+      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
+      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
+      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "bob4o5m3uku6vtdil5imasprgy775zg7"
+      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "jearpk4xci4zc7dkrza4fufaqfkq7rfl"
+      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "bltycqwh5oofai4f6o42q4uuj4w5zb3j"
+      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh"
+      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh"
+      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
+      "t54jzdy2jj4snltjazlm3br2urcilc6v" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm"
+      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu"
+      "4av4gywgpaspkhy3dvbb62nulqogtzbb" -> "t54jzdy2jj4snltjazlm3br2urcilc6v"
+      "jdxbjftheiotj6solpomva7dowrhlerl" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
+      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
+      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
+      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "yn2r3wfhiilelyulh5toteicdtxjhw7d"
+      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
+      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
+    }
 
 Now we are ready to begin work on the actual application.
 
@@ -71,14 +154,19 @@ You can change the location of this source directory by modifying the ``path:`` 
 There are a few gotchas with the spack develop command
 
 * You often specify the package version manually when specifying a
-package as a dev package.
-Spack needs to know the version of the dev package so it can supply the correct flags for the package's build system.
-If a version is not supplied then spack will take the maximum version defined in the package where where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
+  package as a dev package. Spack needs to know the version of the dev
+  package so it can supply the correct flags for the package's build
+  system. If a version is not supplied then spack will take the maximum version
+  defined in the package where where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide.html#version-comparison>`_ like ``develop`` and ``main``
+  have a higher value than the numeric versions.
 * You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
-``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied.the ``spack.yaml`` environments file.
-This is because develop specs are not concretization constraints but rather a criteria for adding the ``dev_path=`` variant to existing spec.
+  ``spack add <package>`` with the matching version you want to develop is a way to ensure
+  the develop spec is satisfied.the ``spack.yaml`` environments file. This is because 
+  develop specs are not concretization constraints but rather a criteria for adding
+  the ``dev_path=`` variant to existing spec.
 * You'll need to re-concretize the environment so that the version
-number and the ``dev_path=`` attributes are properly added to the cached spec in ``spack.lock``.
+  number and the ``dev_path=`` attributes are properly added to the
+  cached spec in ``spack.lock``.
 
 .. literalinclude:: outputs/dev/develop-conc.out
    :language: console
@@ -120,7 +208,15 @@ Taking advantage of iterative builds with spack requires cooperation from your b
 When spack performs a rebuild on a development package, it reruns all the build stages for your package without cleaning the source and build directories to a pristine state.
 If your build system can take advantage of the previously compiled object files then you'll end up with an iterative build.
 
-- If your package just uses make, you also should get iterative builds for free when running ``spack develop``. - If your package uses cmake with the typical ``cmake`` / ``build`` / ``install`` build stages, you'll get iterative builds for free with spack because cmake doesn’t modify the filetime on the ``CMakeCache.txt`` file if your cmake flags haven't changed. - If your package uses autoconf, then rerunning the typical ``autoreconf`` stage typically modifies the filetime of ``config.h``, which can trigger a cascade of rebuilding.
+- If your package just uses make, you also should get iterative builds
+  for free when running ``spack develop``.
+- If your package uses cmake with the typical ``cmake`` / ``build`` /
+  ``install`` build stages, you'll get iterative builds for free with
+  spack because cmake doesn’t modify the filetime on the
+  ``CMakeCache.txt`` file if your cmake flags haven't changed.
+- If your package uses autoconf, then rerunning the typical
+  ``autoreconf`` stage typically modifies the filetime of
+  ``config.h``, which can trigger a cascade of rebuilding.
 
 Multiple packages can also be marked as develop.
 If we were co-developing ``macsio``, we could run

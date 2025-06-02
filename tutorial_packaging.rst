@@ -50,7 +50,8 @@ Creating the Package File
 
 .. note::
 
-Before proceeding, make sure your ``EDITOR`` environment variable is set to the name or path of your preferred text editor.
+   Before proceeding, make sure your ``EDITOR`` environment variable
+   is set to the name or path of your preferred text editor.
 
 
 Suppose you want to install software that depends on mpileaks but found Spack did not already have a built-in package for it.
@@ -64,7 +65,9 @@ Spack's *create* command builds a new package from a template by taking the loca
 
 .. note::
 
-An example of creating a package from software with more available versions can be found at `Creating and Editing Packages <https://spack.readthedocs.io/en/latest/packaging_guide.html#creating-editing-packages>`_.
+   An example of creating a package from software with more available
+   versions can be found at `Creating and Editing Packages
+   <https://spack.readthedocs.io/en/latest/packaging_guide.html#creating-editing-packages>`_.
 
 The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
@@ -97,8 +100,11 @@ As we can see from the skeleton contents, shown below, the Spack template:
 
 .. note::
 
-The ``maintainers`` field is a comma-separated list of GitHub user names for those people who are willing to be notified when a change is made to the package.
-This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by other people.
+   The ``maintainers`` field is a comma-separated list of GitHub user
+   names for those people who are willing to be notified when a change
+   is made to the package. This information is useful for developers who
+   maintain a Spack package for their own software and/or rely on software
+   maintained by other people.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256`` calculation.
 Exit your editor to return to the command line and use the ``spack checksum`` command:
@@ -147,7 +153,9 @@ Let's make the following changes:
 
 .. note::
 
-We will exclude the ``Copyright`` clause and license identifier in the remainder of the package snippets here to reduce the length of the tutorial documentation; however, the copyright **is required** for published packages.
+   We will exclude the ``Copyright`` clause and license identifier in the
+   remainder of the package snippets here to reduce the length of the tutorial
+   documentation; however, the copyright **is required** for published packages.
 
 Now make the changes and additions to your ``package.py`` file.
 
@@ -183,11 +191,16 @@ As we fill in more information about the package, the ``spack info`` command wil
 
 .. note::
 
-More information on using Autotools packages is provided in `AutotoolsPackage <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
+   More information on using Autotools packages is provided in
+   `AutotoolsPackage
+   <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
-The full list of build systems known to Spack can be found at `Build Systems <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
+   The full list of build systems known to Spack can be found at
+   `Build Systems
+   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
-More information on the build-time tests can be found at `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
+   More information on the build-time tests can be found at
+   `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
 
    Refer to the links at the end of this section for more information.
 
@@ -206,7 +219,8 @@ The ``mpileaks`` software relies on three third-party libraries:
 
 .. note::
 
-Luckily, all of these dependencies are built-in packages in Spack; otherwise, we would have to create packages for them as well.
+   Luckily, all of these dependencies are built-in packages in Spack;
+   otherwise, we would have to create packages for them as well.
 
 Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
 
@@ -226,11 +240,13 @@ Adding dependencies tells Spack that it must ensure these packages are installed
 
 .. note::
 
-The ``mpi`` dependency is different from the other two in that it is a *virtual dependency*.
-That means Spack must satisfy the dependency with a package that *provides* the ``mpi`` interface, such as ``openmpi`` or ``mvapich2``.
+  The ``mpi`` dependency is different from the other two in that it is
+  a *virtual dependency*. That means Spack must satisfy the dependency
+  with a package that *provides* the ``mpi`` interface, such as ``openmpi``
+  or ``mvapich2``.
 
-We call such packages **providers**.
-More information on virtual dependencies can be found in the *Packaging Guide* linked at the bottom of this tutorial.
+  We call such packages **providers**. More information on virtual dependencies
+  can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
 Let's check that dependencies are effectively built when we try to install ``tutorial-mpileaks``:
 
@@ -239,7 +255,8 @@ Let's check that dependencies are effectively built when we try to install ``tut
 
 .. note::
 
-This command may take a while to run and may produce more output if you don't already have an MPI installed or configured in Spack.
+   This command may take a while to run and may produce more output if
+   you don't already have an MPI installed or configured in Spack.
 
 We see that Spack has now identified and built all of our dependencies.
 It found that:
@@ -279,8 +296,10 @@ Most importantly, the last line is very clear: the installation path of the ``ad
 
 .. note::
 
-Spack automatically adds standard include and library directories to the compiler's search path *but* it is not uncommon for this information to not get picked up.
-Some software, like ``mpileaks``, requires the paths to be explicitly provided on the command line.
+   Spack automatically adds standard include and library directories
+   to the compiler's search path *but* it is not uncommon for this
+   information to not get picked up. Some software, like ``mpileaks``,
+   requires the paths to be explicitly provided on the command line.
 
 So let's investigate further from the staged build directory.
 
@@ -309,7 +328,8 @@ This command spawned a new shell containing the same environment that Spack used
 
 .. note::
 
-If you are running using an AWS instance, you'll want to substitute your home directory for ``/home/spack`` below.
+   If you are running using an AWS instance, you'll want to
+   substitute your home directory for ``/home/spack`` below.
 
 From here we can manually re-run the build using the ``configure`` command:
 
@@ -346,8 +366,9 @@ Specifying Configure Arguments
 We now know which options we need to pass to ``configure``, but how do we know where to find the installation paths for the package's dependencies from within the ``package.py`` file?
 
 Fortunately, we can query the package's concrete ``Spec`` instance.
-The ``self.spec`` property holds the package's directed acyclic graph (DAG) of its dependencies.
-Each dependency's ``Spec``, accessed by name, has a ``prefix`` property containing its installation path.
+The ``self.spec`` property holds the package's directed acyclic graph
+(DAG) of its dependencies. Each dependency's ``Spec``, accessed by name,
+has a ``prefix`` property containing its installation path.
 
 So let's add the configuration arguments for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
 
@@ -631,35 +652,44 @@ Testing an installation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Checking an installation
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_: for more information on adding tests that run at build-time and against an installation
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+  for more information on adding tests that run at build-time and against an installation
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Customizing package-related environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Retrieving Library Information
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_: for supporting unique configuration options needed to locate libraries
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
+  for supporting unique configuration options needed to locate libraries
 * `Modifying a Package's Build Environment
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_: for customizing package and dependency build and run environments
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
+  for customizing package and dependency build and run environments
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Using other build systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Build Systems
-<https://spack.readthedocs.io/en/latest/build_systems.html>`_: for the full list of built-in build systems
+  <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
+  for the full list of built-in build systems
 * `Spack Package Build Systems tutorial
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_: for tutorials on common build systems
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
+  for tutorials on common build systems
 * `Multiple Build Systems
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_: for a reference on writing packages with multiple build systems
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
+  for a reference on writing packages with multiple build systems
 * `Package Class Architecture
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_: for more insight on the inner workings of ``Package`` and ``Builder`` classes.
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
+  for more insight on the inner workings of ``Package`` and ``Builder`` classes.
 * `The GDAL Package
-<https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_: for an example of a complex package which extends Python and supports two build systems.
+  <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
+  for an example of a complex package which extends Python and supports two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Making a package externally discoverable
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_: for making a package discoverable using the ``spack external find`` command
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
+  for making a package discoverable using the ``spack external find`` command

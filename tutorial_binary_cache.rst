@@ -177,9 +177,10 @@ For convenience you can also run ``spack buildcache push --update-index ...`` to
 
 .. note::
 
-As of Spack 0.22, build caches can be used across different Linux distros.
-The concretizer will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
-For packages compiled with ``gcc`` (and a few others), users do not have to install compilers first, as the build cache contains the compiler runtime libraries as a separate package.
+   As of Spack 0.22, build caches can be used across different Linux distros. The concretizer
+   will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
+   For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
+   first, as the build cache contains the compiler runtime libraries as a separate package.
 
 After an index is created, it's possible to list the available packages in the build cache:
 
@@ -247,7 +248,8 @@ Let's add a simple text editor like ``vim`` to our previous environment next to 
 
 .. note::
 
-You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid a source build of ``vim`` --- but a source build should be quick.
+   You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid
+   a source build of ``vim`` --- but a source build should be quick.
 
 .. code-block:: console
 
@@ -290,10 +292,11 @@ For those familiar with ``Dockerfile`` syntax, it would structurally look like t
 This approach is still valid, and the ``spack containerize`` command continues to exist, but it has a few downsides:
 
 * When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning
-that all dependencies that did install successfully are lost.
-Troubleshooting the build typically means starting from scratch in ``docker run`` or on the host system.
+  that all dependencies that did install successfully are lost. Troubleshooting the build
+  typically means starting from scratch in ``docker run`` or on the host system.
 * In certain CI environments, it is not possible to use ``docker build``. For example, the
-CI script itself may already run in a docker container, and running ``docker build`` *safely* inside a container is tricky.
+  CI script itself may already run in a docker container, and running ``docker build`` *safely*
+  inside a container is tricky.
 
 The takeaway is that Spack decouples the steps that ``docker build`` combines: build isolation, running the build, and creating an image.
 You can run ``spack install`` on your host machine or in a container, and run ``spack buildcache push`` separately to create an image.

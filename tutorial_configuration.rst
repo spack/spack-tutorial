@@ -16,7 +16,8 @@ There are many different configuration sections.
 A partial list of some key configuration sections is provided below.
 
 .. list-table:: Spack Configuration Sections
-:widths: 15 55 :header-rows: 1
+   :widths: 15 55
+   :header-rows: 1
 
    * - Name
      - Description
@@ -94,7 +95,17 @@ Depending on your use case, you may want to provide configuration settings commo
 Spack provides six configuration *scopes* to handle this customization.
 These scopes, in order of decreasing priority, are:
 
-============   =================================================== Scope          Directory ============   =================================================== Command-line   N/A Environment    In environment base directory (in ``spack.yaml``) Custom         Custom directory, specified with ``--config-scope`` User           ``~/.spack/`` Site           ``$SPACK_ROOT/etc/spack/`` System         ``/etc/spack/`` Defaults       ``$SPACK_ROOT/etc/spack/defaults/`` ============   ===================================================
+============   ===================================================
+Scope          Directory
+============   ===================================================
+Command-line   N/A
+Environment    In environment base directory (in ``spack.yaml``)
+Custom         Custom directory, specified with ``--config-scope``
+User           ``~/.spack/``
+Site           ``$SPACK_ROOT/etc/spack/``
+System         ``/etc/spack/``
+Defaults       ``$SPACK_ROOT/etc/spack/defaults/``
+============   ===================================================
 
 Spack's default configuration settings reside in ``$SPACK_ROOT/etc/spack/defaults``.
 These are useful for reference, but should never be directly edited.
@@ -120,7 +131,15 @@ Some facilities manage multiple platforms from a single shared file system.
 In order to handle this, each of the configuration scopes listed above has two *sub-scopes*: platform-specific and platform-independent.
 For example, compiler settings can be stored in the following locations:
 
-#. ``$ENVIRONMENT_ROOT/spack.yaml`` #. ``~/.spack/<platform>/compilers.yaml`` #. ``~/.spack/compilers.yaml`` #. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml`` #. ``$SPACK_ROOT/etc/spack/compilers.yaml`` #. ``/etc/spack/<platform>/compilers.yaml`` #. ``/etc/spack/compilers.yaml`` #. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml`` #. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
+#. ``$ENVIRONMENT_ROOT/spack.yaml``
+#. ``~/.spack/<platform>/compilers.yaml``
+#. ``~/.spack/compilers.yaml``
+#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
+#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
+#. ``/etc/spack/<platform>/compilers.yaml``
+#. ``/etc/spack/compilers.yaml``
+#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
+#. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
 
 These files are listed in decreasing order of precedence, so files in ``~/.spack/<platform>`` will override settings in ``~/.spack``.
 
@@ -435,7 +454,12 @@ When you have an activated environment, you can edit the associated configuratio
 
 .. warning::
 
-You will get exactly the same effects if you make these changes without using an environment, but you must delete the associated ``packages.yaml`` file after the config tutorial or the commands you run in later tutorial sections will not produce the same output (because they weren't run with the configuration changes made here)
+   You will get exactly the same effects if you make these changes
+   without using an environment, but you must delete the
+   associated ``packages.yaml`` file after the config tutorial or
+   the commands you run in later tutorial sections will not
+   produce the same output (because they weren't run with the
+   configuration changes made here)
 
 
 .. code-block:: yaml
@@ -663,7 +687,9 @@ At this point we want to discard the configuration changes we made in this tutor
 
 .. warning::
 
-If you do not deactivate the ``config-env`` environment, then specs will be concretized differently in later tutorial sections and your results will not match.
+   If you do not deactivate the ``config-env`` environment, then
+   specs will be concretized differently in later tutorial sections
+   and your results will not match.
 
 
 -----------------
@@ -697,9 +723,12 @@ If you have a fast scratch file system, you can run builds from this file system
 
 .. note::
 
-It is important to distinguish the build stage directory from other directories in your scratch space to ensure ``spack clean`` does not inadvertently remove unrelated files.
-This can be accomplished by including a combination of ``spack`` and or ``stage`` in each path as shown in the default settings and documented examples.
-See `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
+   It is important to distinguish the build stage directory from other
+   directories in your scratch space to ensure ``spack clean`` does not
+   inadvertently remove unrelated files.  This can be accomplished by
+   including a combination of ``spack`` and or ``stage`` in each path
+   as shown in the default settings and documented examples.  See
+   `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
 
 
 On systems with compilers that absolutely *require* environment variables like ``LD_LIBRARY_PATH``, it is possible to prevent Spack from cleaning the build environment with the ``dirty`` setting:

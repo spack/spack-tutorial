@@ -75,7 +75,9 @@ Spack provides the ``spack python`` command to launch a python interpreter with 
 It uses the underlying python for the rest of its commands.
 So you can write scripts to:
 
-- run Spack commands; - explore abstract and concretized specs; and - directly access other internal components of Spack.
+- run Spack commands;
+- explore abstract and concretized specs; and
+- directly access other internal components of Spack.
 
 Let's launch a Spack-aware python interpreter by entering:
 
@@ -103,7 +105,10 @@ Let's open another python interpreter with ``spack python``, instantiate the ``z
 
 Notice that there are ``Spec`` properties and methods that are not accessible to abstract specs; specifically:
 
-- an exception -- ``SpecError`` -- is raised if we try to access its ``version``; - there are no associated ``versions``; and - the spec's operating system is ``None``.
+- an exception -- ``SpecError`` -- is raised if we try to access its
+  ``version``;
+- there are no associated ``versions``; and
+- the spec's operating system is ``None``.
 
 Now, without exiting the interpreter, let's concretize the spec and try again:
 
@@ -113,7 +118,9 @@ Now, without exiting the interpreter, let's concretize the spec and try again:
 
 Notice that the concretized spec now:
 
-- has a ``version``; - has a single entry in its ``versions`` list; and - the operating system is now ``ubuntu22.04``.
+- has a ``version``;
+- has a single entry in its ``versions`` list; and
+- the operating system is now ``ubuntu22.04``.
 
 It is not necessary to store the intermediate abstract spec -- you can use the ``.concretized()`` method as shorthand:
 

@@ -78,16 +78,18 @@ You can use ``spack env activate`` command:
    :language: console
 
 .. note::
-If you use the ``-p`` option for ``spack env activate``, Spack will prepend the environment name to the prompt.
-This is a handy way to be reminded if and which environment you are in.
+   If you use the ``-p`` option for ``spack env activate``, Spack
+   will prepend the environment name to the prompt. This is a handy
+   way to be reminded if and which environment you are in.
 
 You can also use the shorter ``spacktivate`` alias for ``spack env activate``.
 
 .. note::
-Alias behavior may vary depending on the shell interpreter used.
-In Bash, use of aliases requires the shell option ``expand_aliases`` to be set.
-This option is set by default, but it is not set in non-interactive shells, e.g., when executing a Bash script.
-In a Bash script, ``expand_aliases`` can be set with the command ``shopt -s expand_aliases``.
+   Alias behavior may vary depending on the shell interpreter used. In Bash,
+   use of aliases requires the shell option ``expand_aliases`` to be set.
+   This option is set by default, but it is not set in non-interactive shells,
+   e.g., when executing a Bash script. In a Bash script, ``expand_aliases``
+   can be set with the command ``shopt -s expand_aliases``.
 
 
 Once you activate an environment, ``spack find`` only shows what is in the current environment.
@@ -181,7 +183,8 @@ We will cover this after we've discussed different concretization strategies.
 Further, there are two other advantages of concretizing and installing an environment all at once:
 
 * If you have a number of specs that can be installed together,
-adding them first and installing them together enables them to share dependencies and reduces total installation time.
+  adding them first and installing them together enables them to
+  share dependencies and reduces total installation time.
 
 * You can launch all builds in parallel by taking advantage of Spack's `install-level build parallelism <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
 
@@ -263,7 +266,8 @@ Spack uses reference counting to ensure that we don't remove ``trilinos`` when i
 
 .. note::
 
-Trilinos would only have been uninstalled by Spack if it were no longer needed by any environments or their package dependencies.
+   Trilinos would only have been uninstalled by Spack if it were
+   no longer needed by any environments or their package dependencies.
 
 You can also uninstall a package and remove it from the environment in one go with ``spack uninstall --remove trilinos``.
 
@@ -305,7 +309,8 @@ Editing environment configuration
 
 .. note::
 
-Before proceeding, make sure your ``EDITOR`` environment variable is set to the path of your preferred text editor.
+   Before proceeding, make sure your ``EDITOR`` environment variable
+   is set to the path of your preferred text editor.
 
 Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider using ``spack config edit``.
 
@@ -330,8 +335,9 @@ Change it to include the ``packages:mpi:require`` entry below:
 
 .. note::
 
-We introduce this here to show you how environment configuration can affect concretization.
-Configuration options are covered in much more detail in the :ref:`configuration tutorial <configs-tutorial>`.
+   We introduce this here to show you how environment configuration
+   can affect concretization. Configuration options are covered in much
+   more detail in the :ref:`configuration tutorial <configs-tutorial>`.
 
 
 We've only scratched the surface here by requiring a specific ``mpi`` provider for packages depending on ``mpi``.
@@ -468,7 +474,9 @@ We will cover their reuse later.
 
 .. note::
 
-Both environment files can be versioned in repositories, shared, and used to install the same set of software by different users and on other machines.
+   Both environment files can be versioned in repositories, shared, and
+   used to install the same set of software by different users and on
+   other machines.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Managed versus independent environments
@@ -600,7 +608,9 @@ Notice that ``spack add`` added the package to our active environment and it app
 
 .. note::
 
-You'll need to run ``spack install`` to install added packages in your environment because ``spack add`` only adds it to the configuration.
+   You'll need to run ``spack install`` to install added packages
+   in your environment because ``spack add`` only adds it to the
+   configuration.
 
 Now use ``spack remove`` to remove the spec from the configuration:
 
@@ -611,7 +621,8 @@ and we see that the spec *was* removed from the spec list of our environment.
 
 .. note::
 
-You can also edit the ``spack.yaml`` file directly instead of using the ``spack add`` and ``spack remove`` commands.
+   You can also edit the ``spack.yaml`` file directly instead of
+   using the ``spack add`` and ``spack remove`` commands.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Reviewing ``spack.lock``
@@ -689,7 +700,8 @@ Since we created the environment from our ``spack.lock`` file, not only do we ge
 
 .. note::
 
-Use of ``spack.lock`` to reproduce a build (currently) requires you to be on the same type of machine.
+   Use of ``spack.lock`` to reproduce a build (currently) requires you
+   to be on the same type of machine.
 
 -------------------
 More information
@@ -705,24 +717,31 @@ Setting up and building environments
 * `Environments <https://spack.readthedocs.io/en/latest/environments.html>`_:
   reference docs
 * `Configuration tutorial
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_configuration.html>`_: for customizing your environment
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_configuration.html>`_:
+  for customizing your environment
 * `Spack stacks tutorial
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for configuring combinatorial environments (e.g., same packages across a list of compilers)
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_:
+  for configuring combinatorial environments (e.g., same packages across a
+  list of compilers)
 * `Install-level parallel builds
-<https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_: for how to launch ``spack install`` to build your environment in parallel
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_:
+  for how to launch ``spack install`` to build your environment in parallel
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Using environments
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 * `Developer workflows
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html>`_: for developing code in an environment
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html>`_:
+  for developing code in an environment
 * `GitLab CI pipelines with Spack environments
-<https://spack.readthedocs.io/en/latest/pipelines.html>`_: for using environments to generate CI pipelines
+  <https://spack.readthedocs.io/en/latest/pipelines.html>`_:
+  for using environments to generate CI pipelines
 * `Container Images <https://spack.readthedocs.io/en/latest/containers.html>`_:
   for creating containers from environments
 * `Spack stacks tutorial
-<https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for managing large deployments of software
+  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_:
+  for managing large deployments of software
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Finding examples of environments

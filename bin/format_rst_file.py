@@ -82,7 +82,9 @@ class RSTProcessor:
         result_lines = []
         in_code_block = False
         in_license_header = False
+        in_directive_block = False
         code_block_indent = 0
+        directive_indent = 0
 
         # Check if we start with a license header
         if lines and self._is_license_header_start(lines[0]):
@@ -98,6 +100,20 @@ class RSTProcessor:
                 if self._is_license_header_end(line, lines, i):
                     in_license_header = False
                 i += 1
+                continue
+
+            # Handle RST lists (process entire list at once)
+            if self._is_list_item(line):
+                list_lines, next_i = self._collect_list(lines, i)
+                result_lines.extend(list_lines)
+                i = next_i
+                continue
+
+            # Handle RST tables (process entire table at once)
+            if self._is_table_line(line):
+                table_lines, next_i = self._collect_table(lines, i)
+                result_lines.extend(table_lines)
+                i = next_i
                 continue
 
             # Handle code blocks
@@ -116,8 +132,24 @@ class RSTProcessor:
                     i += 1
                     continue
 
-            # Process regular content
-            if not in_code_block and not in_license_header:
+            # Handle RST directive blocks
+            if self._is_rst_directive_start(line):
+                in_directive_block = True
+                directive_indent = self._get_indent_level(line)
+                result_lines.append(line)
+                i += 1
+                continue
+
+            if in_directive_block:
+                if self._is_directive_block_end(line, directive_indent):
+                    in_directive_block = False
+                else:
+                    result_lines.append(line)
+                    i += 1
+                    continue
+
+            # Process regular content (only when not in special blocks)
+            if not in_code_block and not in_license_header and not in_directive_block:
                 paragraph_lines, next_i = self._collect_paragraph(lines, i)
                 processed_lines = self._process_paragraph(paragraph_lines)
                 result_lines.extend(processed_lines)
@@ -140,6 +172,151 @@ class RSTProcessor:
             and not lines[index + 1].strip().startswith("..")
         )
 
+    def _is_list_item(self, line: str) -> bool:
+        """Check if line is an RST list item."""
+        stripped = line.strip()
+        if not stripped:
+            return False
+
+        # RST list patterns
+        list_patterns = [
+            r"^\s*\*\s+",  # Bullet list: * item
+            r"^\s*\+\s+",  # Bullet list: + item
+            r"^\s*-\s+",  # Bullet list: - item
+            r"^\s*\d+\.\s+",  # Numbered list: 1. item
+            r"^\s*#\.\s+",  # Auto-numbered list: #. item
+            r"^\s*\([a-zA-Z0-9]+\)\s+",  # Parenthesized list: (a) item
+            r"^\s*[a-zA-Z]\.\s+",  # Letter list: a. item
+            r"^\s*[IVX]+\.\s+",  # Roman numeral list: I. item
+        ]
+
+        return any(re.match(pattern, line) for pattern in list_patterns)
+
+    def _collect_list(self, lines: List[str], start_idx: int) -> Tuple[List[str], int]:
+        """
+        Collect all lines that are part of an RST list.
+
+        Args:
+            lines: All lines in the document
+            start_idx: Starting index
+
+        Returns:
+            Tuple of (list_lines, next_index)
+        """
+        list_lines = []
+        i = start_idx
+        base_indent = self._get_indent_level(lines[start_idx])
+
+        while i < len(lines):
+            line = lines[i]
+
+            # If it's a list item at the same or deeper indentation, include it
+            if self._is_list_item(line):
+                current_indent = self._get_indent_level(line)
+                if current_indent >= base_indent:
+                    list_lines.append(line)
+                    i += 1
+                    continue
+                else:
+                    # List item at shallower indentation, end current list
+                    break
+
+            # If it's an empty line, check if the list continues
+            if not line.strip():
+                # Look ahead to see if list continues
+                if i + 1 < len(lines):
+                    next_line = lines[i + 1]
+                    if (
+                        self._is_list_item(next_line)
+                        and self._get_indent_level(next_line) >= base_indent
+                    ):
+                        list_lines.append(line)  # Include the empty line
+                        i += 1
+                        continue
+                    elif (
+                        next_line.strip()
+                        and self._get_indent_level(next_line) > base_indent
+                    ):
+                        # Continuation of list item content
+                        list_lines.append(line)
+                        i += 1
+                        continue
+                # Empty line and no more list content, end list
+                break
+
+            # If it's indented content (continuation of list item), include it
+            current_indent = self._get_indent_level(line)
+            if line.strip() and current_indent > base_indent:
+                list_lines.append(line)
+                i += 1
+                continue
+
+            # If it's not a list item, not empty, and not indented continuation, end list
+            break
+
+        return list_lines, i
+
+    def _is_table_line(self, line: str) -> bool:
+        """Check if line is part of an RST table."""
+        stripped = line.strip()
+        if not stripped:
+            return False
+
+        # Grid table patterns
+        # Lines made of =, -, +, and spaces (table borders)
+        if re.match(r"^[=\-+\s]+$", stripped) and len(stripped) > 3:
+            return True
+
+        # Simple table patterns (lines with multiple spaces that could be column separators)
+        # But be more conservative - look for patterns that are clearly tabular
+        if "   " in stripped and not stripped.startswith(".."):
+            # Check if it looks like a table row (has multiple column-like segments)
+            segments = [s.strip() for s in stripped.split("   ") if s.strip()]
+            if len(segments) >= 2:
+                return True
+
+        return False
+
+    def _collect_table(self, lines: List[str], start_idx: int) -> Tuple[List[str], int]:
+        """
+        Collect all lines that are part of an RST table.
+
+        Args:
+            lines: All lines in the document
+            start_idx: Starting index
+
+        Returns:
+            Tuple of (table_lines, next_index)
+        """
+        table_lines = []
+        i = start_idx
+
+        # Collect all consecutive table-related lines
+        while i < len(lines):
+            line = lines[i]
+
+            # If it's a table line, include it
+            if self._is_table_line(line):
+                table_lines.append(line)
+                i += 1
+                continue
+
+            # If it's an empty line, check if the next line is also a table line
+            if not line.strip():
+                # Look ahead to see if table continues
+                if i + 1 < len(lines) and self._is_table_line(lines[i + 1]):
+                    table_lines.append(line)  # Include the empty line
+                    i += 1
+                    continue
+                else:
+                    # Empty line and no more table content, end table
+                    break
+
+            # If it's not a table line and not empty, end table
+            break
+
+        return table_lines, i
+
     def _is_code_block_start(self, line: str) -> bool:
         """Check if line starts a code block."""
         return bool(re.match(r"^\s*\.\.\s+(code-block|literalinclude)::", line))
@@ -150,6 +327,48 @@ class RSTProcessor:
             return False
         current_indent = self._get_indent_level(line)
         return current_indent <= code_block_indent
+
+    def _is_rst_directive_start(self, line: str) -> bool:
+        """Check if line starts an RST directive that has indented content."""
+        # Match RST directives that typically have indented content
+        directive_patterns = [
+            r"^\s*\.\.\s+list-table::",
+            r"^\s*\.\.\s+table::",
+            r"^\s*\.\.\s+csv-table::",
+            r"^\s*\.\.\s+image::",
+            r"^\s*\.\.\s+figure::",
+            r"^\s*\.\.\s+note::",
+            r"^\s*\.\.\s+warning::",
+            r"^\s*\.\.\s+attention::",
+            r"^\s*\.\.\s+caution::",
+            r"^\s*\.\.\s+danger::",
+            r"^\s*\.\.\s+error::",
+            r"^\s*\.\.\s+hint::",
+            r"^\s*\.\.\s+important::",
+            r"^\s*\.\.\s+tip::",
+            r"^\s*\.\.\s+admonition::",
+            r"^\s*\.\.\s+sidebar::",
+            r"^\s*\.\.\s+topic::",
+            r"^\s*\.\.\s+rubric::",
+            r"^\s*\.\.\s+epigraph::",
+            r"^\s*\.\.\s+highlights::",
+            r"^\s*\.\.\s+pull-quote::",
+            r"^\s*\.\.\s+compound::",
+            r"^\s*\.\.\s+container::",
+            r"^\s*\.\.\s+raw::",
+            r"^\s*\.\.\s+include::",
+            r"^\s*\.\.\s+math::",
+            r"^\s*\.\.\s+\w+::",  # Generic directive pattern
+        ]
+
+        return any(re.match(pattern, line) for pattern in directive_patterns)
+
+    def _is_directive_block_end(self, line: str, directive_indent: int) -> bool:
+        """Check if directive block ends."""
+        if not line.strip():
+            return False
+        current_indent = self._get_indent_level(line)
+        return current_indent <= directive_indent
 
     def _get_indent_level(self, line: str) -> int:
         """Get the indentation level of a line."""
@@ -189,6 +408,8 @@ class RSTProcessor:
             if (
                 not line.strip()
                 or self._is_special_line(line)
+                or self._is_table_line(line)  # Stop at table lines
+                or self._is_list_item(line)  # Stop at list items
                 or abs(self._get_indent_level(line) - base_indent) > 2
             ):
                 break
@@ -200,12 +421,12 @@ class RSTProcessor:
 
     def _is_special_line(self, line: str) -> bool:
         """Check if a line is a special RST construct."""
+        stripped = line.strip()
+
         patterns = [
             r"^\.\.",  # RST directives
             r'^[=\-~^"#*+<>]{3,}$',  # RST headers
             r"^:",  # RST fields
-            r"^\s*\*\s",  # List items
-            r"^\s*\d+\.\s",  # Numbered lists
             r"^\s*\.\.\s+_",  # RST targets
         ]
 
@@ -308,6 +529,8 @@ def is_rst_file(file_path: Path) -> bool:
                     lines.append(line)
                 except StopIteration:
                     break
+
+        content = "".join(lines)
 
         # Look for common RST patterns
         rst_patterns = [

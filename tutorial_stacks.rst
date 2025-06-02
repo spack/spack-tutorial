@@ -26,7 +26,8 @@ Then we'll consider how the software we install might be consumed by our users, 
 
 .. note::
 
-Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your preferred editor, for instance:
+   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your
+   preferred editor, for instance:
 
    .. code-block:: console
 
@@ -155,8 +156,9 @@ This allows us to have the duplicates we need.
 
       $ spack config add concretizer:unify:when_possible
 
-With this option Spack will try to unify the environment in an eager way, solving it in multiple rounds.
-The concretization at round ``n`` will contain all the specs that could not be unified at round ``n-1``, and will consider all the specs from previous rounds for reuse.
+   With this option Spack will try to unify the environment in an eager way, solving it in multiple rounds.
+   The concretization at round ``n`` will contain all the specs that could not be unified at round ``n-1``,
+   and will consider all the specs from previous rounds for reuse.
 
 ^^^^^^^^^^^^^
 Spec matrices
@@ -254,7 +256,18 @@ Spec list definitions can also be conditioned on a ``when`` clause.
 The ``when`` clause is a python conditional that is evaluated in a restricted environment.
 The variables available in ``when`` clauses are:
 
-================= =========== variable name     value ================= =========== ``platform``      The spack platform name for this machine ``os``            The default spack os name and version string for this machine ``target``        The default spack target string for this machine ``architecture``  The default spack architecture string platform-os-target for this machine ``arch``          Alias for ``architecture`` ``env``           A dictionary representing the users environment variables ``re``            The python ``re`` module for regex ``hostname``      The hostname of this node ================= ===========
+================= ===========
+variable name     value
+================= ===========
+``platform``      The spack platform name for this machine
+``os``            The default spack os name and version string for this machine
+``target``        The default spack target string for this machine
+``architecture``  The default spack architecture string platform-os-target for this machine
+``arch``          Alias for ``architecture``
+``env``           A dictionary representing the users environment variables
+``re``            The python ``re`` module for regex
+``hostname``      The hostname of this node
+================= ===========
 
 Let's say we only want to limit to just use ``mpich``, unless the ``SPACK_STACK_USE_OPENMPI`` environment variable is set.
 To do so we could write the following ``spack.yaml``:

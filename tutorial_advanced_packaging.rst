@@ -23,7 +23,8 @@ Setup for the Tutorial
 
 .. note::
 
-We do not recommend doing this section of the tutorial in a production Spack instance.
+  We do not recommend doing this section of the tutorial in a
+  production Spack instance.
 
 The tutorial uses custom package definitions with missing sections that will be filled in during the tutorial.
 These package definitions are stored in a separate package repository, which can be enabled with:
@@ -53,10 +54,11 @@ Now, you are ready to set your preferred ``EDITOR`` and continue with the rest o
 
 .. note::
 
-Several of these packages depend on an MPI implementation.
-You can use OpenMPI if you install it from scratch, but this is slow (>10 min.).
-A binary cache of MPICH may be provided, in which case you can force the package to use it and install quickly.
-All tutorial examples with packages that depend on MPICH include the spec syntax for building with it.
+  Several of these packages depend on an MPI implementation. You can use
+  OpenMPI if you install it from scratch, but this is slow (>10 min.).
+  A binary cache of MPICH may be provided, in which case you can force
+  the package to use it and install quickly. All tutorial examples with
+  packages that depend on MPICH include the spec syntax for building with it.
 
 .. _adv_pkg_tutorial_start:
 
