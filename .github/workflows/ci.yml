@@ -52,7 +52,7 @@ jobs:
 
   outputs:
     if: |
-      always()
+      !cancelled()
       && contains(needs.*.result, 'success')
       && !contains(needs.*.result, 'failure')
       && (needs.changes.outputs.outputs == 'true'
