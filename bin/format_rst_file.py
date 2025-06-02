@@ -80,10 +80,8 @@ class RSTProcessor:
         """
         lines = content.split("\n")
         result_lines = []
-        in_code_block = False
         in_license_header = False
         in_directive_block = False
-        code_block_indent = 0
         directive_indent = 0
 
         # Check if we start with a license header
@@ -116,23 +114,7 @@ class RSTProcessor:
                 i = next_i
                 continue
 
-            # Handle code blocks
-            if self._is_code_block_start(line):
-                in_code_block = True
-                code_block_indent = self._get_indent_level(line)
-                result_lines.append(line)
-                i += 1
-                continue
-
-            if in_code_block:
-                if self._is_code_block_end(line, code_block_indent):
-                    in_code_block = False
-                else:
-                    result_lines.append(line)
-                    i += 1
-                    continue
-
-            # Handle RST directive blocks
+            # Handle RST directive blocks (including code blocks)
             if self._is_rst_directive_start(line):
                 in_directive_block = True
                 directive_indent = self._get_indent_level(line)
@@ -149,7 +131,7 @@ class RSTProcessor:
                     continue
 
             # Process regular content (only when not in special blocks)
-            if not in_code_block and not in_license_header and not in_directive_block:
+            if not in_license_header and not in_directive_block:
                 paragraph_lines, next_i = self._collect_paragraph(lines, i)
                 processed_lines = self._process_paragraph(paragraph_lines)
                 result_lines.extend(processed_lines)
@@ -317,51 +299,10 @@ class RSTProcessor:
 
         return table_lines, i
 
-    def _is_code_block_start(self, line: str) -> bool:
-        """Check if line starts a code block."""
-        return bool(re.match(r"^\s*\.\.\s+(code-block|literalinclude)::", line))
-
-    def _is_code_block_end(self, line: str, code_block_indent: int) -> bool:
-        """Check if code block ends."""
-        if not line.strip():
-            return False
-        current_indent = self._get_indent_level(line)
-        return current_indent <= code_block_indent
-
     def _is_rst_directive_start(self, line: str) -> bool:
         """Check if line starts an RST directive that has indented content."""
-        # Match RST directives that typically have indented content
-        directive_patterns = [
-            r"^\s*\.\.\s+list-table::",
-            r"^\s*\.\.\s+table::",
-            r"^\s*\.\.\s+csv-table::",
-            r"^\s*\.\.\s+image::",
-            r"^\s*\.\.\s+figure::",
-            r"^\s*\.\.\s+note::",
-            r"^\s*\.\.\s+warning::",
-            r"^\s*\.\.\s+attention::",
-            r"^\s*\.\.\s+caution::",
-            r"^\s*\.\.\s+danger::",
-            r"^\s*\.\.\s+error::",
-            r"^\s*\.\.\s+hint::",
-            r"^\s*\.\.\s+important::",
-            r"^\s*\.\.\s+tip::",
-            r"^\s*\.\.\s+admonition::",
-            r"^\s*\.\.\s+sidebar::",
-            r"^\s*\.\.\s+topic::",
-            r"^\s*\.\.\s+rubric::",
-            r"^\s*\.\.\s+epigraph::",
-            r"^\s*\.\.\s+highlights::",
-            r"^\s*\.\.\s+pull-quote::",
-            r"^\s*\.\.\s+compound::",
-            r"^\s*\.\.\s+container::",
-            r"^\s*\.\.\s+raw::",
-            r"^\s*\.\.\s+include::",
-            r"^\s*\.\.\s+math::",
-            r"^\s*\.\.\s+\w+::",  # Generic directive pattern
-        ]
-
-        return any(re.match(pattern, line) for pattern in directive_patterns)
+        # Match any RST directive pattern (allowing hyphens in directive names)
+        return bool(re.match(r"^\s*\.\.\s+[\w-]+::", line))
 
     def _is_directive_block_end(self, line: str, directive_indent: int) -> bool:
         """Check if directive block ends."""

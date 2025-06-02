@@ -156,9 +156,8 @@ This allows us to have the duplicates we need.
 
       $ spack config add concretizer:unify:when_possible
 
-   With this option Spack will try to unify the environment in an eager way, solving it in multiple rounds.
-   The concretization at round ``n`` will contain all the specs that could not be unified at round ``n-1``,
-   and will consider all the specs from previous rounds for reuse.
+With this option Spack will try to unify the environment in an eager way, solving it in multiple rounds.
+The concretization at round ``n`` will contain all the specs that could not be unified at round ``n-1``, and will consider all the specs from previous rounds for reuse.
 
 ^^^^^^^^^^^^^
 Spec matrices
