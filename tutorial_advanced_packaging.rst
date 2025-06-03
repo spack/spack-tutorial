@@ -74,7 +74,7 @@ Set environment variables in dependent packages at build-time
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Dependencies can set environment variables that are required when their dependents build.
-For example, when a package depends on a python extension like py-numpy, Spack's ``python`` package will add it to ``PYTHONPATH`` so it is available at build time; this is required because the default setup that spack does is not sufficient for python to import modules.
+For example, when a package depends on a python extension like py-numpy, Spack's ``python`` package will add it to ``PYTHONPATH`` so it is available at build time; this is required because the default setup that Spack does is not sufficient for python to import modules.
 
 To provide environment setup for a dependent, a package can implement the
 :py:func:`setup_dependent_build_environment
