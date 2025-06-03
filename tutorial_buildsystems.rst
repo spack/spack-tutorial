@@ -192,7 +192,7 @@ Take note of the following:
 
 .. literalinclude:: _spack_root/lib/spack/spack/build_systems/makefile.py
    :language: python
-   :emphasize-lines: 60,64,69
+   :emphasize-lines: 59,63,68
    :lines: 40-111
    :linenos:
 
@@ -642,7 +642,7 @@ Here are the relevant blocks for ``dateutil``:
     setup_requires = setuptools_scm
     install_requires = six >= 1.5
 
-These files indicate that ``dateutil`` depends on ``setuptools``, ``setuptools-scm``, ``wheel`, and `six`.
+These files indicate that ``dateutil`` depends on ``setuptools``, ``setuptools-scm``, ``wheel``, and `six`.
 
 Here's the completed package definition:
 
