@@ -677,10 +677,10 @@ Some examples include:
 
 ...and `many more <https://spack.readthedocs.io/en/latest/build_systems.html>`_!
 
-Each of these build system classes provides abstractions to simplify and standardize the process of writing package recipes.  
+Each of these build system classes provides abstractions to simplify and standardize the process of writing package recipes.
 They help manage common build logic and reduce duplication across packages in the same ecosystem.
 
 For packages that don't align well with any specific build system, Spack also provides a generic ``Package`` base class that gives full control over the build process.
 
-By now, you've seen how Spack aims to make packaging both simple and robust through its build system abstractions.  
+By now, you've seen how Spack aims to make packaging both simple and robust through its build system abstractions.
 To learn more, refer to the `Overview of the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.
