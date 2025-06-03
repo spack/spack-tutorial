@@ -301,31 +301,44 @@ Let's look at a couple of other examples and go through them:
 
 Some packages allow environment variables to be set and will honor them.
 Packages that use ``?=`` for assignment in their ``Makefile`` can be set using environment variables.
-In our ``esmf`` example we set two environment variables in our ``edit()`` method:
+In our ``esmf`` example we set two environment variables in our ``setup_build_environment()`` method:
 
 .. code-block:: python
 
-    def edit(self, spec, prefix):
+    def setup_build_environment(self, env: EnvironmentModifications) -> None:
+        spec = self.spec
+        # Installation instructions can be found at:
+        # http://www.earthsystemmodeling.org/esmf_releases/last_built/ESMF_usrdoc/node9.html
+
+        # Unset any environment variables that may influence the installation.
         for var in os.environ:
-            if var.startswith('ESMF_'):
-                os.environ.pop(var)
+            if var.startswith("ESMF_"):
+                env.unset(var)
 
         # More code ...
 
-        if self.compiler.name == 'gcc':
-            os.environ['ESMF_COMPILER'] = 'gfortran'
-        elif self.compiler.name == 'intel':
-            os.environ['ESMF_COMPILER'] = 'intel'
-        elif self.compiler.name == 'clang':
-            os.environ['ESMF_COMPILER'] = 'gfortranclang'
-        elif self.compiler.name == 'nag':
-            os.environ['ESMF_COMPILER'] = 'nag'
-        elif self.compiler.name == 'pgi':
-            os.environ['ESMF_COMPILER'] = 'pgi'
+        if spec["fortran"].name == "gcc" and spec["c"].name == "gcc":
+            gfortran_major_version = int(spec["fortran"].version[0])
+            env.set("ESMF_COMPILER", "gfortran")
+        elif self.pkg.compiler.name == "intel" or self.pkg.compiler.name == "oneapi":
+            env.set("ESMF_COMPILER", "intel")
+        elif spec["fortran"].name == "gcc" and spec["c"].name in ["clang", "apple-clang"]:
+            gfortran_major_version = int(spec["fortran"].version[0])
+            env.set("ESMF_COMPILER", "gfortranclang")
+        elif spec["fortran"].name == "llvm":
+            env.set("ESMF_COMPILER", "llvm")
+        elif self.pkg.compiler.name == "nag":
+            env.set("ESMF_COMPILER", "nag")
+        elif self.pkg.compiler.name == "nvhpc":
+            env.set("ESMF_COMPILER", "nvhpc")
+        elif self.pkg.compiler.name == "cce":
+            env.set("ESMF_COMPILER", "cce")
+        elif self.pkg.compiler.name == "aocc":
+            env.set("ESMF_COMPILER", "aocc")
         else:
-            msg  = "The compiler you are building with, "
-            msg += "'{0}', is not supported by ESMF."
-            raise InstallError(msg.format(self.compiler.name))
+            msg = "The compiler you are building with, "
+            msg += '"{0}", is not supported by ESMF.'
+            raise InstallError(msg.format(self.pkg.compiler.name))
 
 In this example, nothing was written directly to the Makefile. Instead, environment variables were set to override those defined within the Makefile.
 
@@ -605,7 +618,7 @@ We'll write a package file for requests_:
         [c]hecksum  [e]dit  [f]ilter  [a]sk each  [n]ew only  [r]estart  [q]uit
     action> c
     ..
-        
+
     ==> This package looks like it uses the python build system
     ==> Changing package name from requests to py-requests
     ==> Created template for py-requests package
