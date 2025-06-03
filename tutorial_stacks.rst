@@ -25,7 +25,7 @@ We'll consider how the software we install might be consumed by our users, and s
 
 .. note::
 
-   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your
+   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to our
    preferred editor, for instance:
 
    .. code-block:: console
@@ -56,7 +56,7 @@ We'll also disable the generation of views for the time being, as we'll come bac
 .. literalinclude:: outputs/stacks/setup-1.out
    :language: console
 
-What you should see on screen now is the following ``spack.yaml`` file:
+What we should see on screen now is the following ``spack.yaml`` file:
 
 .. literalinclude:: outputs/stacks/examples/0.spack.stack.yaml
    :language: yaml
@@ -67,7 +67,7 @@ The next step is to concretize and install our compiler:
 .. literalinclude:: outputs/stacks/setup-2.out
    :language: console
 
-Finally, let's register it as a new compiler in the environment:
+Finally, let us register it as a new compiler in the environment:
 
 .. literalinclude:: outputs/stacks/compiler-find-0.out
    :language: console
@@ -111,7 +111,7 @@ The error message is quite verbose and complicated, but it ultimately gives a us
 
    You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
 
-Let's examine what that means.
+Let us examine what that means.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tuning concretizer options for a stack
@@ -129,7 +129,7 @@ Any node that could be reached following a link or run edge is part of the root 
 Pure build dependencies might fall outside of it.
 
 The config option determining which nodes are allowed to be in the root unification set is ``concretizer:unify``.
-Let's check its value:
+Let us check its value:
 
 .. literalinclude:: outputs/stacks/unify-2.out
    :language: console
@@ -162,7 +162,7 @@ The concretization at round ``n`` will contain all the specs that could not be u
 Spec matrices
 ^^^^^^^^^^^^^
 
-Let's further expand our stack and consider also linking against different LAPACK providers.
+Let us further expand our stack and consider also linking against different LAPACK providers.
 We could, of course, add new specs explicitly:
 
 .. literalinclude:: outputs/stacks/unify-4.out
@@ -199,7 +199,7 @@ We are now ready to concretize and install the environment:
 .. literalinclude:: outputs/stacks/concretize-0.out
    :language: console
 
-Let's double check which specs we have installed:
+Let us double check which specs we have installed:
 
 .. literalinclude:: outputs/stacks/concretize-01.out
    :language: console
@@ -211,10 +211,10 @@ Reusable definitions
 ^^^^^^^^^^^^^^^^^^^^
 
 So far, we have seen how we can use spec matrices to generate cross-product specs from rows containing a list of constraints.
-A common situation you will encounter with large deployments is the necessity to add multiple matrices to the list of specs, that possibly share some of those rows.
+A common situation we will encounter with large deployments is the necessity to add multiple matrices to the list of specs, that possibly share some of those rows.
 
 To reduce the amount of duplication needed in the manifest file, and thus the maintenance burden for people maintaining it, Spack allows to *define* lists of constraints under the ``definitions`` attribute, and expand them later when needed.
-Let's rewrite our manifest accordingly:
+Let us rewrite our manifest accordingly:
 
 .. literalinclude:: outputs/stacks/examples/3.spack.stack.yaml
    :language: yaml
@@ -226,7 +226,7 @@ Check that re-concretizing won't change the environment:
    :language: console
 
 Now we can use those definitions to add e.g. serial packages built against the LAPACK libraries.
-Let's try to do that by using ``py-scipy`` as an example:
+Let us try to do that by using ``py-scipy`` as an example:
 
 Another useful ability is excluding specific entries from a cross-product matrix.
 We can do that with the ``exclude`` keyword, in the same item as the ``matrix``.
@@ -317,7 +317,7 @@ to be able to re-build the specs from sources. Alternatively, to create a buildc
 Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
 By default, Spack installs one package at a time, using the ``-j`` option where it can.
-If you are installing a large environment, and have at disposal a beefy build node, you might need to start more installations in parallel to make an optimal use of the resources.
+If we are installing a large environment, and have at disposal a beefy build node, we might need to start more installations in parallel to make an optimal use of the resources.
 This can be done by creating a ``depfile``, when the environment is active:
 
 .. code-block:: console
@@ -326,7 +326,7 @@ This can be done by creating a ``depfile``, when the environment is active:
 
 The result is a makefile that starts multiple Spack instances, and the resources are shared through the GNU jobserver.
 More information of this feature can be found `in our documentation <https://spack.readthedocs.io/en/latest/environments.html#generating-depfiles-from-environments>`_.
-This might cut down your build time by a fair amount, if you build frequently from sources.
+This might cut down our build time by a fair amount, if we build frequently from sources.
 
 -----------------------------------
 Make the software stack easy to use
@@ -389,7 +389,7 @@ In this section we'll show how to configure and generate a hierarchical module s
 A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
 There we discuss the general architecture of module file generation in Spack and we highlight differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
 
-Let's start by adding ``lmod`` to the software installed with the system compiler:
+Let us start by adding ``lmod`` to the software installed with the system compiler:
 
 .. code-block:: console
 
@@ -397,13 +397,13 @@ Let's start by adding ``lmod`` to the software installed with the system compile
    $ spack concretize
    $ spack install
 
-Once that is done, let's add the ``module`` command to our shell like this:
+Once that is done, let us add the ``module`` command to our shell like this:
 
 .. code-block:: console
 
    $ . $(spack location -i lmod)/lmod/lmod/init/bash
 
-If everything worked out correctly you should have the module command available in your shell:
+If everything worked out correctly we should have the module command available in our shell:
 
 .. literalinclude:: outputs/stacks/modules-1.out
    :language: console

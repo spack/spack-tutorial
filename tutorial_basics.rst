@@ -9,10 +9,10 @@ Basic Installation Tutorial
 =========================================
 
 This tutorial will guide you through the process of installing software using Spack.
-You will first cover the ``spack install`` command, focusing on the power of the spec syntax and the flexibility it gives to users.
-You will also cover the ``spack find`` command for viewing installed packages and the ``spack uninstall`` command for uninstalling them.
-Finally, you will touch on how Spack manages compilers, especially as it relates to using Spack-built compilers within Spack.
-Full output from all of the commands demonstrated will be included, although attention will frequently be called to only small portions of that output (or merely to the fact that it succeeded).
+We will first cover the ``spack install`` command, focusing on the power of the spec syntax and the flexibility it gives to users.
+We will also cover the ``spack find`` command for viewing installed packages and the ``spack uninstall`` command for uninstalling them.
+Finally, we will touch on how Spack manages compilers, especially as it relates to using Spack-built compilers within Spack.
+We will include full output from all of the commands demonstrated, although we will frequently call attention to only small portions of that output (or merely to the fact that it succeeded).
 The provided output is all from an Ubuntu 22.04 Docker image.
 
 .. _basics-tutorial-install:
@@ -23,7 +23,7 @@ Installing Spack
 
 Spack works out of the box.
 Simply clone Spack to get going.
-You will clone Spack and immediately check out the most recent release, v0.23.
+We will clone Spack and immediately check out the most recent release, v0.23.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -50,7 +50,7 @@ The ``spack list`` command shows available packages.
 
 The ``spack list`` command can also take a query string.
 Spack automatically adds wildcards to both ends of the string, or you can add your own wildcards.
-For example, you can view all available Python packages.
+For example, we can view all available Python packages.
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -67,7 +67,7 @@ To install a piece of software simply type,
 
   $ spack install <package_name>
 
-You can go ahead and install ``gmake``,
+Let's go ahead and install ``gmake``,
 
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
@@ -75,12 +75,12 @@ You can go ahead and install ``gmake``,
 You will see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
 They do not represent separate software builds from source, but are records of the system's compiler runtime components Spack used for the install.
-For the rest of this section, you will ignore these components and focus on the packages explicitly installed.
+For the rest of this section, we will ignore these components and focus on the packages explicitly installed.
 
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
 For the tutorial we have prepared a binary cache so you don't have to wait on slow compilation from source.
-To be able to install from the binary cache, you will need to configure Spack with the location of the binary cache and trust the GPG key that the binary cache was signed with.
+To be able to install from the binary cache, we will need to configure Spack with the location of the binary cache and trust the GPG key that the binary cache was signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
@@ -95,10 +95,10 @@ The ``%`` sigil is used to specify compilers.
    :language: console
 
 Note that this installation is located separately from the previous one.
-This will be discussed in more detail later, but this is part of what allows Spack to support many versions of software packages.
+We will discuss this in more detail later, but this is part of what allows Spack to support many versions of software packages.
 
 You can check for particular versions before requesting them.
-You will use the ``spack versions`` command to see the available versions, and then install a different version of ``zlib-ng``.
+We will use the ``spack versions`` command to see the available versions, and then install a different version of ``zlib-ng``.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: console
@@ -132,7 +132,7 @@ The ``-l`` flag shows the hash of each package, and the ``-f`` flag shows any no
 Spack generates a hash for each spec.
 This hash is a function of the full provenance of the package, so any change to the spec affects the hash.
 Spack uses this value to compare specs and to generate unique installation directories for every combinatorial version.
-As you move into more complicated packages with software dependencies, you can see that Spack reuses existing packages to satisfy a dependency.
+As we move into more complicated packages with software dependencies, we can see that Spack reuses existing packages to satisfy a dependency.
 By default, Spack tries hard to reuse existing installations as dependencies, either from a local store or from configured remote binary caches.
 This minimizes unwanted rebuilds of common dependencies, in particular if you update Spack frequently.
 
@@ -141,14 +141,14 @@ This minimizes unwanted rebuilds of common dependencies, in particular if you up
 
 Dependencies can be explicitly requested using the ``^`` sigil.
 Note that the spec syntax is recursive.
-Anything you could specify about the top-level package, you can also specify about a dependency using ``^``.
+Anything we could specify about the top-level package, we can also specify about a dependency using ``^``.
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: console
 
 Packages can also be referred to from the command line by their package hash.
-Using the ``spack find -lf`` command earlier you saw that the hash of our optimized installation of zlib-ng (``cflags="-O3"``) began with ``umrbkwv``.
-You can now explicitly build with that package without typing the entire spec, by using the ``/`` sigil to refer to it by hash.
+Using the ``spack find -lf`` command earlier we saw that the hash of our optimized installation of zlib-ng (``cflags="-O3"``) began with ``umrbkwv``.
+We can now explicitly build with that package without typing the entire spec, by using the ``/`` sigil to refer to it by hash.
 As with other tools like Git, you do not need to specify an *entire* hash on the command line.
 You can specify just enough digits to identify a hash uniquely.
 If a hash prefix is ambiguous (i.e., two or more installed packages share the prefix) then Spack will report an error.
@@ -162,9 +162,9 @@ Note that each package has a top-level entry, even if it also appears as a depen
 .. literalinclude:: outputs/basics/find-ldf.out
    :language: console
 
-You can now move on to slightly more complicated packages.
+Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
-If you install it with default settings it will build with OpenMPI.
+If we install it with default settings it will build with OpenMPI.
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: console
@@ -174,17 +174,17 @@ Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-``
 (disable) sigils. There are two sigils for "disable" to avoid conflicts
 with shell parsing in different situations.
 Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
-Here you can install HDF5 without MPI support.
+Here we can install HDF5 without MPI support.
 
 .. literalinclude:: outputs/basics/hdf5-no-mpi.out
    :language: console
 
-You might also want to install HDF5 with a different MPI implementation.
+We might also want to install HDF5 with a different MPI implementation.
 While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
 Spack handles these through "virtual dependencies." A package, such as HDF5, can depend on the ``mpi`` virtual package (the interface).
 Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the MPI interface.
 Any of these providers can be requested to satisfy an MPI dependency.
-For example, you can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
+For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
 Spack also supports versioning of virtual dependencies.
 A package can depend on the MPI interface at version 3 (e.g., ``hdf5 ^mpi@3``), and provider packages specify what version of the interface *they* provide.
 The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementation packages that provide MPI version 3.
@@ -192,20 +192,20 @@ The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementatio
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
    :language: console
 
-You can do a quick check in on what you have installed so far.
+We'll do a quick check in on what we have installed so far.
 
 .. literalinclude:: outputs/basics/find-ldf-2.out
    :language: console
 
 Spack models the dependencies of packages as a directed acyclic graph (DAG).
 The ``spack find -d`` command shows the tree representation of that graph.
-You can also use the ``spack graph`` command to view the entire DAG as a graph.
+We can also use the ``spack graph`` command to view the entire DAG as a graph.
 
 .. literalinclude:: outputs/basics/graph-hdf5.out
    :language: console
 
 HDF5 is more complicated than our basic example of zlib-ng and Tcl, but it's still within the realm of software that an experienced HPC user could reasonably expect to manually install given a bit of time.
-Now you can look at an even more complicated package.
+Now let's look at an even more complicated package.
 
 .. literalinclude:: outputs/basics/trilinos.out
    :language: console
@@ -213,21 +213,21 @@ Now you can look at an even more complicated package.
 Now we're starting to see the power of Spack.
 Trilinos in its default configuration has 23 direct dependencies, many of which have dependencies of their own.
 Installing more complex packages can take days or weeks even for an experienced user.
-Although a binary installation has been done for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
+Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
 
 Spack manages consistency of the entire DAG.
 Every MPI dependency will be satisfied by the same configuration of MPI, etc.
-If you install Trilinos again specifying a dependency on your previous HDF5 built with MPICH:
+If we install Trilinos again specifying a dependency on our previous HDF5 built with MPICH:
 
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
    :language: console
 
-You will see that every package in the Trilinos DAG that depends on MPI now uses MPICH.
+We see that every package in the Trilinos DAG that depends on MPI now uses MPICH.
 
 .. literalinclude:: outputs/basics/find-d-trilinos.out
    :language: console
 
-As discussed before, the ``spack find -d`` command shows the dependency information as a tree.
+As we discussed before, the ``spack find -d`` command shows the dependency information as a tree.
 While that is often sufficient, many complicated packages, including Trilinos, have dependencies that cannot be fully represented as a tree.
 Again, the ``spack graph`` command shows the full DAG of the dependency information.
 
@@ -250,7 +250,7 @@ Uninstalling Packages
 ---------------------
 
 Earlier we installed many configurations each of zlib-ng and Tcl.
-Now you will go through and uninstall some of those packages that you didn't really need.
+Now we will go through and uninstall some of those packages that we didn't really need.
 
 .. literalinclude:: outputs/basics/find-d-tcl.out
    :language: console
@@ -258,7 +258,7 @@ Now you will go through and uninstall some of those packages that you didn't rea
 .. literalinclude:: outputs/basics/find-zlib.out
    :language: console
 
-You can uninstall packages by spec using the same syntax as install.
+We can uninstall packages by spec using the same syntax as install.
 
 .. literalinclude:: outputs/basics/uninstall-zlib.out
    :language: console
@@ -266,9 +266,9 @@ You can uninstall packages by spec using the same syntax as install.
 .. literalinclude:: outputs/basics/find-lf-zlib.out
    :language: console
 
-You can also uninstall packages by referring only to their hash.
+We can also uninstall packages by referring only to their hash.
 
-You can use either the ``--force`` (or ``-f``) flag or the ``--dependents`` (or ``-R``) flag to remove packages that are required by another installed package.
+We can use either the ``--force`` (or ``-f``) flag or the ``--dependents`` (or ``-R``) flag to remove packages that are required by another installed package.
 Use ``--force`` to remove just the specified package, leaving dependents broken.
 Use ``--dependents`` to remove the specified package and all of its dependents.
 
@@ -291,10 +291,10 @@ The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an
 Advanced ``spack find`` Usage
 -----------------------------
 
-You will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and
+We will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and
 :ref:`basics-tutorial-uninstall` sections.
 
-The ``spack find`` command can accept what are called "anonymous specs." These are expressions in spec syntax that do not contain a package name.
+The ``spack find`` command can accept what we call "anonymous specs." These are expressions in spec syntax that do not contain a package name.
 For example, ``spack find ^mpich`` will return every installed package that depends on MPICH, and ``spack find cflags="-O3"`` will return every package which was built with ``cflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
@@ -330,14 +330,14 @@ Spack also has tools to add compilers, and compilers built with Spack can be add
 .. literalinclude:: outputs/basics/find-p-gcc.out
    :language: console
 
-You can add GCC to Spack as an available compiler using the ``spack compiler add`` command.
+We can add GCC to Spack as an available compiler using the ``spack compiler add`` command.
 This will allow future packages to build with ``gcc@12.3.0``.
-To avoid having to copy and paste GCC's path, you can use ``spack location -i`` to get the installation prefix.
+To avoid having to copy and paste GCC's path, we can use ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
    :language: console
 
-You can also remove compilers from your configuration using ``spack compiler remove <compiler_spec>``
+We can also remove compilers from our configuration using ``spack compiler remove <compiler_spec>``
 
 .. literalinclude:: outputs/basics/compiler-remove.out
    :language: console
