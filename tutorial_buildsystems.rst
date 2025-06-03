@@ -237,7 +237,7 @@ If we look inside, we see that ``CC`` and ``CXX`` point to our GNU compiler:
 
 .. note::
     As usual make sure you have shell support activated with Spack:
-        ``source /path/to/spack/share/spack/setup-env.sh``
+    ``source /path/to/spack/share/spack/setup-env.sh``
 
 .. code-block:: console
 
@@ -496,21 +496,11 @@ Let's try to recreate callpath_:
 
     $ spack create -f https://github.com/llnl/callpath/archive/v1.0.3.tar.gz
     ==> This looks like a URL for callpath
-    ==> Found 4 versions of callpath:
-
-    1.0.3  https://github.com/LLNL/callpath/archive/v1.0.3.tar.gz
-    1.0.2  https://github.com/LLNL/callpath/archive/v1.0.2.tar.gz
-    1.0.1  https://github.com/LLNL/callpath/archive/v1.0.1.tar.gz
-    1.0    https://github.com/LLNL/callpath/archive/v1.0.tar.gz
-
-    ==> How many would you like to checksum? (default is 1, q to abort) 1
-    ==> Downloading...
-    ==> Fetching https://github.com/LLNL/callpath/archive/v1.0.3.tar.gz
-    ######################################################################## 100.0%
-    ==> Checksummed 1 version of callpath
+    ==> Fetching https://github.com/llnl/callpath/archive/v1.0.3.tar.gz
+        [100%]   47.00 KB @  916.6 KB/s
     ==> This package looks like it uses the cmake build system
     ==> Created template for callpath package
-    ==> Created package file: /Users/mamelara/spack/var/spack/repos/builtin/packages/callpath/package.py
+    ==> Created package file: /home/spack/spack/var/spack/repos/spack_repo/builtin/packages/callpath/package.py
 
 
 which then produces the following template:
@@ -524,7 +514,7 @@ Again we fill in the details:
 .. literalinclude:: tutorial/examples/Cmake/1.package.py
    :language: python
    :linenos:
-   :emphasize-lines: 9,13,14,18,19,20,21,22,23
+   :emphasize-lines: 9,13,14,22,23,24,25,26,27
 
 As mentioned earlier, Spack's ``CMakePackage`` uses sensible defaults to reduce boilerplate and simplify writing package files for ``CMake``-based software.
 
@@ -534,7 +524,7 @@ We can return these options from ``cmake_args()`` like so:
 .. literalinclude:: tutorial/examples/Cmake/2.package.py
    :language: python
    :linenos:
-   :emphasize-lines: 26,30,31
+   :emphasize-lines: 30,34
 
 Now we can control our build options using ``cmake_args()``.
 If defaults are sufficient enough for the package, we can leave this method out.
@@ -596,22 +586,26 @@ We will write a package file for Pandas_:
 
 .. code-block:: console
 
-    $ spack create -f https://pypi.io/packages/source/p/pandas/pandas-0.19.0.tar.gz
+    $ spack create -t python -f https://pypi.io/packages/source/p/pandas/pandas-2.2.3.tar.gz
     ==> This looks like a URL for pandas
-    ==> Warning: Spack was unable to fetch url list due to a certificate verification problem. You can try running spack -k, which will not check SSL certificates. Use this at your own risk.
-    ==> Found 1 version of pandas:
+    ==> Selected 110 versions
+    ...
 
-    0.19.0  https://pypi.io/packages/source/p/pandas/pandas-0.19.0.tar.gz
+    ==> Enter number of versions to take, or use a command:
+        [c]hecksum  [e]dit  [f]ilter  [a]sk each  [n]ew only  [r]estart  [q]uit
+    action> 1
+    ==> Selected 1 of 110 versions
+    2.2.3     https://files.pythonhosted.org/packages/9c/d6/9f8431bacc2e19dca897724cd097b1bb224a6ad5433784a44b587c7c13af/pandas-2.2.3.tar.gz#sha256=4f18ba62b61d7e192368b84517265a99b4d7ee8912f8708660fb4a366cc82667
 
-    ==> How many would you like to checksum? (default is 1, q to abort) 1
-    ==> Downloading...
-    ==> Fetching https://pypi.io/packages/source/p/pandas/pandas-0.19.0.tar.gz
-    ######################################################################## 100.0%
-    ==> Checksummed 1 version of pandas
-    ==> This package looks like it uses the python build system
+    ==> Enter number of versions to take, or use a command:
+        [c]hecksum  [e]dit  [f]ilter  [a]sk each  [n]ew only  [r]estart  [q]uit
+    action> c
+    ==> Fetching https://files.pythonhosted.org/packages/9c/d6/9f8431bacc2e19dca897724cd097b1bb224a6ad5433784a44b587c7c13af/pandas-2.2.3.tar.gz#sha256=4f18ba62b61d7e192368b84517265a99b4d7ee8912f8708660fb4a366cc82667
+        [100%]    4.40 MB @   99.6 MB/s
+    ==> Using specified package template: 'python'
     ==> Changing package name from pandas to py-pandas
     ==> Created template for py-pandas package
-    ==> Created package file: /Users/mamelara/spack/var/spack/repos/builtin/packages/py-pandas/package.py
+    ==> Created package file: /home/spack/spack/var/spack/repos/spack_repo/builtin/packages/py_pandas/package.py
 
 And we are left with the following template:
 
@@ -671,18 +665,22 @@ From this example, you can see that building Python modules is made easy through
 Other Build Systems
 -------------------
 
-Although we won't get in depth with any of the other build systems that Spack supports, it is worth mentioning that Spack does provide subclasses for the following build systems:
+While we won't go in depth on the other build systems that Spack supports, it's worth noting that Spack provides support for many specialized build systems beyond the ones covered in this tutorial.
 
-1. ``IntelPackage``
-2. ``SconsPackage``
-3. ``WafPackage``
-4. ``RPackage``
-5. ``PerlPackage``
-6. ``QMakePackage``
+Some examples include:
 
+1. `RPackage <https://spack.readthedocs.io/en/latest/build_systems/rpackage.html>`_
+2. `MesonPackage <https://spack.readthedocs.io/en/latest/build_systems/mesonpackage.html>`_
+3. `PerlPackage <https://spack.readthedocs.io/en/latest/build_systems/perlpackage.html>`_
+4. `CUDAPackage <https://spack.readthedocs.io/en/latest/build_systems/cudapackage.html>`_
+5. `ROCmPackage <https://spack.readthedocs.io/en/latest/build_systems/rocmpackage.html>`_
 
-Each of these classes have their own abstractions to help assist in writing package files.
-For whatever doesn't fit nicely into the other build systems, you can use the ``Package`` class.
+...and `many more <https://spack.readthedocs.io/en/latest/build_systems.html>`_!
 
-Hopefully by now you can see how we aim to make packaging simple and robust through these classes.
-If you want to learn more about these build systems, check out `Implementing the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.
+Each of these build system classes provides abstractions to simplify and standardize the process of writing package recipes.  
+They help manage common build logic and reduce duplication across packages in the same ecosystem.
+
+For packages that don't align well with any specific build system, Spack also provides a generic ``Package`` base class that gives full control over the build process.
+
+By now, you've seen how Spack aims to make packaging both simple and robust through its build system abstractions.  
+To learn more, refer to the `Overview of the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.
