@@ -11,7 +11,7 @@
 Advanced Topics in Packaging
 ============================
 
-Spack tries to automatically configure packages with information from dependencies such that all you need to do is to list the dependencies (i.e., with the ``depends_on`` directive) and the build system (for example by deriving from :code:`CmakePackage`).
+Spack tries to automatically configure packages with information from dependencies such that all you need to do is to list the dependencies (i.e., with the ``depends_on`` directive) and the build system (for example by deriving from ``CmakePackage``).
 
 However, there are many special cases.
 Often you need to retrieve details about dependencies to set package-specific configuration options, or to define package-specific environment variables used by the package's build system.
@@ -369,7 +369,7 @@ Now we can finally install ``armadillo ^netlib-lapack ^mpich``:
     Fetch: 0.01s.  Build: 3.75s.  Total: 3.76s.
   [+] /usr/local/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/armadillo-8.100.1-sxmpu5an4dshnhickh6ykchyfda7jpyn
 
-Since each implementation of a virtual package is responsible for locating the libraries associated with the interfaces it provides, dependents do not need to include special-case logic for different implementations and for example need only ask for :code:`spec['blas'].libs`.
+Since each implementation of a virtual package is responsible for locating the libraries associated with the interfaces it provides, dependents do not need to include special-case logic for different implementations and for example need only ask for ``spec['blas'].libs``.
 
 ----------------------
 Other Packaging Topics
