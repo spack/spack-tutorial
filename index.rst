@@ -8,14 +8,11 @@
 Tutorial: Spack 101
 ===================
 
-This is an introduction to Spack with lectures and live demos. It was last presented at
-the `Supercomputing 2024 Conference
-<https://sc24.conference-program.com/presentation/?id=tut182&sess=sess422>`_, November
-18, 2024. The event was a full-day tutorial.
+This is an introduction to Spack with lectures and live demos.
+It was last presented at the `Supercomputing 2024 Conference <https://sc24.conference-program.com/presentation/?id=tut182&sess=sess422>`_, November 18, 2024.
+The event was a full-day tutorial.
 
-You can use these materials to teach a course on Spack at your own site,
-or you can just skip ahead and read the live demo scripts to see how
-Spack is used in practice.
+You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
 .. _slides:
 
@@ -37,8 +34,7 @@ Supercomputing 2024 (SC24), Atlanta, GA, November 18, 2024.
 
 .. rubric:: Video
 
-For the last recorded video of this tutorial, see the `HPCIC Tutorial 2024 version
-<https://spack-tutorial.readthedocs.io/en/hpcic24/>`_.
+For the last recorded video of this tutorial, see the `HPCIC Tutorial 2024 version <https://spack-tutorial.readthedocs.io/en/hpcic24/>`_.
 
 .. _live-demos:
 
@@ -47,8 +43,8 @@ For the last recorded video of this tutorial, see the `HPCIC Tutorial 2024 versi
 We provide scripts that take you step-by-step through basic Spack tasks.
 They correspond to sections in the slides above.
 
-To run through the scripts, we provide the `spack/tutorial <https://ghcr.io/spack/tutorial>`_
-container image. You can invoke
+To run through the scripts, we provide the `spack/tutorial <https://ghcr.io/spack/tutorial>`_ container image.
+You can invoke
 
 .. code-block:: console
 
@@ -66,8 +62,7 @@ to start using the container. You should now be ready to run through our demo sc
   #. :ref:`binary-cache-tutorial`
   #. :ref:`spack-scripting-tutorial`
 
-Other sections from past tutorials are also available, although they may
-not be kept up-to-date as frequently:
+Other sections from past tutorials are also available, although they may not be kept up-to-date as frequently:
 
   #. :ref:`modules-tutorial`
   #. :ref:`build-systems-tutorial`
