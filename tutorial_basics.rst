@@ -129,7 +129,8 @@ To help distinguish between them, we can add the ``-l`` flag to display each pac
 Additionally if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 We use the ``spack find`` command to query which packages are installed.
-Note that, with the default output, some packages may appear identical. To distinguish between them, we can use the ``-l`` flag to display the hash of each package.
+Note that, with the default output, some packages may appear identical.
+To distinguish between them, we can use the ``-l`` flag to display the hash of each package.
 Additionally, if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 .. literalinclude:: outputs/basics/find.out
