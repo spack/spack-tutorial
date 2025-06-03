@@ -1,34 +1,60 @@
-usage: spack spec [-hlLNtU] [-I | --no-install-status] [-y | -j | --format FORMAT] [-c {nodes,edges,paths}] [--reuse] [--fresh-roots] [--deprecated] ...
+spec expression syntax:
 
-show what would be installed, given a spec
+  package [constraints] [^dependency [constraints] ...]
 
-positional arguments:
-  specs                 one or more package specs
+  package                           any package from 'spack list', or
+  /hash                             unique prefix or full hash of
+                                    installed package
 
-options:
-  --format FORMAT       print concrete spec with the specified format string
-  --no-install-status   do not show install status annotations
-  -I, --install-status  show install status of packages
-                        [+] installed       [^] installed in an upstream
-                         -  not installed   [-] missing dep of installed package
-  -L, --very-long       show full dependency hashes as well as versions
-  -N, --namespaces      show fully qualified package names
-  -c, --cover {nodes,edges,paths}
-                        how extensively to traverse the DAG (default: nodes)
-  -h, --help            show this help message and exit
-  -j, --json            print concrete spec as JSON
-  -l, --long            show dependency hashes as well as versions
-  -t, --types           show dependency types
-  -y, --yaml            print concrete spec as YAML
+  constraints:
+    versions:
+      @version                      single version
+      @min:max                      version range (inclusive)
+      @min:                         version <min> or higher
+      @:max                         up to version <max> (inclusive)
+      @=version                     exact version
 
-concretizer arguments:
-  --deprecated          allow concretizer to select deprecated versions
-  --fresh-roots, --reuse-deps
-                        concretize with fresh roots and reused dependencies
-  --reuse               reuse installed packages/buildcaches when possible
-  -U, --fresh           do not reuse installed deps; build newest configuration
+    compilers:
+      %compiler                     build with <compiler>
+      %compiler@version             build with specific compiler version
+      %compiler@min:max             specific version range (see above)
 
-when an environment is active and no specs are provided, the environment root specs are used instead
+    compiler flags:
+      cflags="flags"                cppflags, cflags, cxxflags,
+                                    fflags, ldflags, ldlibs
+      ==                            propagate flags to package dependencies
 
-for further documentation regarding the spec syntax, see:
-    spack help --spec
+    variants:
+      +variant                      enable <variant>
+      -variant or ~variant          disable <variant>
+      variant=value                 set non-boolean <variant> to <value>
+      variant=value1,value2,value3  set multi-value <variant> values
+      ++, --, ~~, ==                propagate variants to package dependencies
+
+    architecture variants:
+      platform=platform             linux, darwin, freebsd, windows
+      os=operating_system           specific <operating_system>
+      target=target                 specific <target> processor
+      arch=platform-os-target       shortcut for all three above
+
+    dependencies:
+      ^dependency [constraints]     specify constraints on dependencies
+      ^/hash                        build with a specific installed
+                                    dependency
+
+  examples:
+      hdf5                          any hdf5 configuration
+      hdf5 @1.10.1                  hdf5 version 1.10.1
+      hdf5 @1.8:                    hdf5 1.8 or higher
+      hdf5 @1.8: %gcc               hdf5 1.8 or higher built with gcc
+      hdf5 +mpi                     hdf5 with mpi enabled
+      hdf5 ~mpi                     hdf5 with mpi disabled
+      hdf5 ++mpi                    hdf5 with mpi enabled and propagates
+      hdf5 ~~mpi                    hdf5 with mpi disabled and propagates
+      hdf5 +mpi ^mpich              hdf5 with mpi, using mpich
+      hdf5 +mpi ^openmpi@1.7        hdf5 with mpi, using openmpi 1.7
+      boxlib dim=2                  boxlib built for 2 dimensions
+      libdwarf %intel ^libelf%gcc
+          libdwarf, built with intel compiler, linked to libelf built with gcc
+      mvapich2 fabrics=psm,mrail,sock %gcc
+          mvapich2, built with gcc compiler, with support for multiple fabrics
