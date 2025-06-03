@@ -11,7 +11,7 @@
 Developer Workflows Tutorial
 ============================
 
-This tutorial will guide you through the process of using the ``spack develop`` command to develop software from local source code within a spack environment.
+This tutorial will guide you through the process of using the ``spack develop`` command to develop software from local source code within a Spack environment.
 With this command, Spack will manage your dependencies while you focus on testing changes to your library and/or application.
 
 
@@ -139,19 +139,19 @@ Development iteration cycles
 -----------------------------
 
 Let's assume that scr has a bug, and we'd like to patch scr to find out what the problem is.
-First, we tell spack that we'd like to check out the version of scr that we want to work on.
+First, we tell Spack that we'd like to check out the version of scr that we want to work on.
 In this case, it will be the 3.1.0 release that we want to write a patch for:
 
 .. literalinclude:: outputs/dev/develop-1.out
    :language: console
 
-The spack develop command marks the package as being a "development" package in the ``spack.yaml``.
+The ``spack develop`` command marks the package as being a "development" package in the ``spack.yaml``.
 This adds a special ``dev_path=`` attribute to the spec for the package, so Spack remembers where the source code for this package is located.
 The develop command also downloads/checks out the source code for the package.
 By default, the source code is downloaded into a subdirectory of the environment.
 You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment.
 
-There are a few gotchas with the spack develop command
+There are a few gotchas with the ``spack develop`` command
 
 * You often specify the package version manually when specifying a
   package as a dev package. Spack needs to know the version of the dev
@@ -233,7 +233,7 @@ For example, we'll make another development environment here.
 
 Here, ``spack develop`` with no arguments will check out or download the source code and place it in the appropriate places.
 
-When we're done developing, we simply tell spack that it no longer needs to keep a development version of the package.
+When we're done developing, we simply tell Spack that it no longer needs to keep a development version of the package.
 
 .. literalinclude:: outputs/dev/wrapup.out
    :language: console
@@ -328,3 +328,5 @@ While we won't build out this example it illustrates how the ``dev_path`` for ``
 Now if we want to do most of our incremental builds using the ``Release`` build and periodically check the results using the ``Debug`` build we can combine the workflow from the previous example: dive into the ``Release`` versions build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
 Note that since there are two ``scr`` specs in the environment we must distinguish which one we want for these commands.
 When we are ready to check our changes for the debug build, we can exit out of the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build through our method of choice.
+
+[end of tutorial_developer_workflows.rst]

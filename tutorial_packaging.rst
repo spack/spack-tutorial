@@ -692,3 +692,5 @@ Making a package externally detectable
 * `Making a package externally discoverable
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
   for making a package discoverable using the ``spack external find`` command
+
+[end of tutorial_packaging.rst]

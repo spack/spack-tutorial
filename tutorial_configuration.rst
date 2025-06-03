@@ -35,19 +35,19 @@ A partial list of some key configuration sections is provided below.
      - Naming, location and additional configuration of Spack generated modules
 
 The full list of sections can be viewed with ``spack config list``.
-For further education, we encourage you to explore the spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
+For further education, we encourage you to explore the Spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
 
 The principle goals of this section of the tutorial are:
 
 1. Introduce the configuration sections and scope hierarchy
 2. Demonstrate how to manipulate configurations
-3. Show how to configure system assets with spack (compilers and packages)
+3. Show how to configure system assets with Spack (compilers and packages)
 
 As such, we will primarily focus on the ``compilers`` and ``packages`` configuration sections in this portion of the tutorial.
 
 We will explain this by first covering how to manipulate configurations from the command line and then show how this impacts the configuration file hierarchy.
 We will then move into compiler and package configurations to help you develop skills for getting the builds you want on your system.
-Finally, we will give some brief attention to more generalized spack configurations in the ``config`` section.
+Finally, we will give some brief attention to more generalized Spack configurations in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full configuration file.
 For some, we will then demonstrate how the configuration affects the install command, and for others we will use the ``spack spec`` command to demonstrate how the configuration changes have affected Spack's concretization algorithm.
@@ -81,7 +81,7 @@ If we rerun ``spack config blame concretizer`` we can see that the change was ap
    $ spack config blame concretizer
 
 Notice that the reference file for this option is now different.
-This indicates the scope where the configuration was set in, and we will discuss how spack chooses the default scope shortly.
+This indicates the scope where the configuration was set in, and we will discuss how Spack chooses the default scope shortly.
 For now, it is important to note that the ``spack config`` command accepts an optional ``--scope`` flag so we can be more precise in the configuration process.
 This will make more sense after the next section which provides the definition of Spack's configuration scopes and their hierarchy.
 
@@ -485,7 +485,7 @@ Because of the configuration scoping we discussed earlier, this overrides the de
 Variant preferences
 ^^^^^^^^^^^^^^^^^^^
 
-As we've seen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
+As we'veseen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
 If we were working on a project that would routinely need serial HDF5, that might get annoying quickly, having to type ``hdf5~mpi`` all the time.
 Instead, we'll update our preferences for HDF5.
 
@@ -813,3 +813,5 @@ For more detailed documentation on Spack's many configuration settings, see `the
 
 For examples of how other sites configure Spack, see https://github.com/spack/spack-configs.
 If you use Spack at your site and want to share your config files, feel free to submit a pull request!
+
+[end of tutorial_configuration.rst]
