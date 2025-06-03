@@ -10,25 +10,25 @@
 # next to all the things you'll want to change. Once you've handled
 # them, you can save this file and test your package like this:
 #
-#     spack install py-pandas
+#     spack install py-python-dateutil
 #
 # You can edit this file again by typing:
 #
-#     spack edit py-pandas
+#     spack edit py-python-dateutil
 #
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
 
-from spack.package import *
 from spack_repo.builtin.build_systems.python import PythonPackage
+from spack.package import *
 
 
-class PyPandas(PythonPackage):
+class PyPythonDateutil(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.example.com"
-    pypi = "pandas/pandas-0.19.0.tar.gz"
+    pypi = "python-dateutil/python-dateutil-2.9.0.post0.tar.gz"
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
@@ -39,12 +39,7 @@ class PyPandas(PythonPackage):
     # the license, set checked_by to your Github username.
     license("UNKNOWN", checked_by="github_user1")
 
-    version(
-        "2.2.3",
-        sha256="4f18ba62b61d7e192368b84517265a99b4d7ee8912f8708660fb4a366cc82667",
-    )
-
-    depends_on("c", type="build")
+    version("2.9.0.post0", sha256="37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3")
 
     # FIXME: Only add the python/pip/wheel dependencies if you need specific versions
     # or need to change the dependency type. Generic python/pip/wheel dependencies are
@@ -68,3 +63,4 @@ class PyPandas(PythonPackage):
         # FIXME: If not needed, delete this function
         settings = {}
         return settings
+

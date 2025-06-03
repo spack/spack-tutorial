@@ -1,32 +1,21 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack import *
+from spack_repo.builtin.build_systems.python import PythonPackage
+from spack.package import *
 
 
-class PyPandas(PythonPackage):
-    """pandas is a Python package providing fast, flexible, and expressive
-       data structures designed to make working with relational or
-       labeled data both easy and intuitive. It aims to be the
-       fundamental high-level building block for doing practical, real
-       world data analysis in Python. Additionally, it has the broader
-       goal of becoming the most powerful and flexible open source data
-       analysis / manipulation tool available in any language.
-    """
-    homepage = "http://pandas.pydata.org/"
-    url = "https://pypi.io/packages/source/p/pandas/pandas-0.19.0.tar.gz"
+class PyPythonDateutil(PythonPackage):
+    """Extensions to the standard Python datetime module."""
 
-    version('0.19.0', 'bc9bb7188e510b5d44fbdd249698a2c3')
-    version('0.18.0', 'f143762cd7a59815e348adf4308d2cf6')
-    version('0.16.1', 'fac4f25748f9610a3e00e765474bdea8')
-    version('0.16.0', 'bfe311f05dc0c351f8955fbd1e296e73')
+    homepage = "https://dateutil.readthedocs.io/"
+    pypi = "python-dateutil/python-dateutil-2.9.0.post0.tar.gz"
 
-    depends_on('py-dateutil', type=('build', 'run'))
-    depends_on('py-numpy', type=('build', 'run'))
-    depends_on('py-setuptools', type='build')
-    depends_on('py-cython', type='build')
-    depends_on('py-pytz', type=('build', 'run'))
-    depends_on('py-numexpr', type=('build', 'run'))
-    depends_on('py-bottleneck', type=('build', 'run'))
+    version("2.9.0.post0", sha256="37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3")
+
+    depends_on("py-setuptools", type="build")
+    depends_on("py-setuptools-scm@:7", type="build")
+    depends_on("py-wheel", type="build")
+    depends_on("py-six", type=("build", "run"))
+
