@@ -23,7 +23,7 @@ We'll give you enough information to start writing your own scripts and to find 
 Scripting with ``spack find``
 -----------------------------
 
-So far, the output we've seen from ``spack find`` has been for human consumption.
+The output we've seen from ``spack find`` has been for human consumption.
 But you can take advantage of some advanced options of the command to generate machine-readable output suitable for piping to a script.
 
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -35,7 +35,7 @@ By default, we display them with some default attributes, like the ``@version`` 
 
 The ``--format`` argument allows you to display the specs however you choose, using custom format strings.
 Format strings let you specify the names of particular *parts* of the specs you want displayed.
-Let's see the first option in action.
+Let's examine the first option.
 
 Suppose you only want to display the *name*, *version*, and first ten (10) characters of the *hash* for every package installed in your Spack instance.
 You can generate that output with the following command:
@@ -73,7 +73,7 @@ What if we need to perform more advanced queries?
 
 Spack provides the ``spack python`` command to launch a python interpreter with Spack's python modules available to import.
 It uses the underlying python for the rest of its commands.
-So you can write scripts to:
+You can write scripts to:
 
 - run Spack commands;
 - explore abstract and concretized specs; and
@@ -85,13 +85,13 @@ Let's launch a Spack-aware python interpreter by entering:
    :language: console
    :emphasize-lines: 1,5
 
-Since we are in a python interpreter, use ``exit()`` to end the session and return to the terminal.
+As we are in a Python interpreter, use ``exit()`` to end the session and return to the terminal.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Accessing the ``Spec`` object
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now let's take a look at the internal representation of the Spack ``Spec``.
+Let's take a look at the internal representation of the Spack ``Spec``.
 As you already know, specs can be either *abstract* or *concrete*.
 The specs you've seen in ``package.py`` files (e.g., in the ``install()`` method) have been *concrete*, or fully specified.
 The specs you've typed on the command line have been *abstract*.
@@ -110,7 +110,7 @@ Notice that there are ``Spec`` properties and methods that are not accessible to
 - there are no associated ``versions``; and
 - the spec's operating system is ``None``.
 
-Now, without exiting the interpreter, let's concretize the spec and try again:
+Without exiting the interpreter, let's concretize the spec and try again:
 
 .. literalinclude:: outputs/scripting/spack-python-concrete.out
    :language: console
@@ -157,7 +157,7 @@ We will use the ``spack.cmd.display_specs`` for output to achieve the same print
 
 Now we have a powerful query not available through ``spack find``.
 
-Let's exit the interpreter to take us back to the command line:
+Exit the interpreter to return to the command line:
 
 .. code-block:: console
 
@@ -177,7 +177,7 @@ Open a file called ``find_exclude.py`` in your preferred editor and add the foll
 .. literalinclude:: outputs/scripting/0.find_exclude.py.example
    :language: python
 
-Notice we added importing and using the system package (``sys``) to access the first and second command line arguments.
+We added importing and using the system package (``sys``) to access the first and second command line arguments.
 
 Now we can run our new script by entering the following:
 
@@ -185,7 +185,7 @@ Now we can run our new script by entering the following:
    :language: console
    :emphasize-lines: 1
 
-This is *great* for us, as long as we remember to use Spack's ``python`` command to run it.
+This is beneficial for us, as long as we remember to use Spack's ``python`` command to run it.
 
 -------------------------------------
 Using the ``spack-python`` executable
@@ -194,7 +194,7 @@ Using the ``spack-python`` executable
 What if we want to make our script available for others to use without the hassle of having to remember to use ``spack python``?
 
 We can take advantage of the shebang line typically added as the first line of python executable files.
-But there is a catch, as we will soon see.
+There is a catch, as we will soon see.
 
 Open the ``find_exclude.py`` script we created above in your preferred editor and add the shebang line with ``spack python`` as the arguments to ``env``:
 
@@ -202,7 +202,7 @@ Open the ``find_exclude.py`` script we created above in your preferred editor an
    :language: python
    :emphasize-lines: 1
 
-Then exit our editor and add execute permissions to the script before running it as follows:
+Exit our editor and add execute permissions to the script before running it as follows:
 
 .. literalinclude:: outputs/scripting/find-exclude-2.out
    :language: console
@@ -217,16 +217,16 @@ Bring up the file in your editor again and change the ``env`` argument to ``spac
    :language: python
    :emphasize-lines: 1
 
-Exit your editor and let's run the script again:
+Exit your editor and run the script again:
 
 .. literalinclude:: outputs/scripting/find-exclude-3.out
    :language: console
    :emphasize-lines: 1
 
-Congratulations!  It will now work on any system with Spack installed.
+It will now work on any system with Spack installed.
 
 You now have the basic tools to create your own custom Spack queries and prototype ideas.
-We hope one day you'll contribute them back to Spack.
+We encourage you to contribute them back to Spack in the future.
 
 ..  LocalWords:  LLC Spack's APIs hdf zlib literalinclude json uniq jq
 ..  LocalWords:  docs concretized REPL API SpecError spec's py ubuntu

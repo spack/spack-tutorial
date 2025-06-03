@@ -11,18 +11,18 @@
 Stacks Tutorial
 ===============
 
-So far, we've talked about Spack environments in the context of a unified user environment.
+We've talked about Spack environments in the context of a unified user environment.
 But environments in Spack have much broader capabilities.
 In this tutorial we will consider how to use Spack environments to manage large deployments of software.
 
 What usually differs between a typical environment for a single user, and an environment used to manage large deployments, is that in the latter case we often have a set of packages we want to install across a wide range of MPIs, LAPACKs or compilers.
 
-In the following we'll mimic the creation of a software stack built onto a cross-product of different LAPACK and MPI libraries, with a compiler that is more recent than the one provided by the host system.
+Below, we'll mimic the creation of a software stack built onto a cross-product of different LAPACK and MPI libraries, with a compiler that is more recent than the one provided by the host system.
 
-In the first part we'll focus on how to properly configure and install the software we want.
+First, we'll focus on how to properly configure and install the software we want.
 We'll learn how to pin certain requirements, and how to write a cross product of specs in a compact, and expressive, way.
 
-Then we'll consider how the software we install might be consumed by our users, and see the two main mechanisms that Spack provides for that: views and module files.
+We'll consider how the software we install might be consumed by our users, and see the two main mechanisms that Spack provides for that: views and module files.
 
 .. note::
 
@@ -38,12 +38,12 @@ Setup the compiler
 ------------------
 
 The first step to build our stack is to setup the compiler we want to use later.
-This is, currently, an iterative process that can be done in two ways:
+This is currently an iterative process that can be done in two ways:
 
  1. Install the compiler first, then register it in the environment
  2. Use a second environment just for the compiler
 
-In the following we'll use the first approach.
+Below, we'll use the first approach.
 For people interested, an example of the latter approach can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
 
 Let's start by creating an environment in a directory of our choice:
@@ -51,7 +51,7 @@ Let's start by creating an environment in a directory of our choice:
 .. literalinclude:: outputs/stacks/setup-0.out
    :language: console
 
-Now we can add from the command line a new compiler.
+We can add from the command line a new compiler.
 We'll also disable the generation of views for the time being, as we'll come back to this topic later in the tutorial:
 
 .. literalinclude:: outputs/stacks/setup-1.out
@@ -106,13 +106,13 @@ If we try to concretize the environment, we'll get an error:
 .. literalinclude:: outputs/stacks/unify-1.out
    :language: console
 
-The error message is quite verbose, and admittedly complicated, but at the end it gives a useful hint:
+The error message is quite verbose and complicated, but it ultimately gives a useful hint:
 
 .. code-block::
 
    You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
 
-Let's see what that means.
+Let's examine what that means.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tuning concretizer options for a stack
@@ -121,7 +121,7 @@ Tuning concretizer options for a stack
 Whenever we concretize an environment with more than one root spec, we can configure Spack to be more or less strict with duplicate nodes in the sub-DAG obtained by following link and run edges starting from the roots.
 We usually call this sub-DAG the *root unification set*.
 
-A diagram might help to better visualize the concept:
+A diagram might help visualize the concept:
 
 .. image:: _static/images/stacks-unify.svg
 
@@ -138,8 +138,8 @@ Let's check its value:
 ``concretizer:unify:true`` means that only a single configuration for each package can be present.
 This value is good for single project environments, since it ensures we can construct a view of all the software, with the usual structure expected on a Unix-ish system, and without risks of collisions between installations.
 
-Clearly, we can't respect this requirement, since our roots already contain two different configurations of ``netlib-scalapack``.
-Let's set the value to ``false``, and try to re-concretize:
+We can't respect this requirement, as our roots already contain two different configurations of ``netlib-scalapack``.
+Set the value to ``false``, and try to re-concretize:
 
 .. literalinclude:: outputs/stacks/unify-3.out
    :language: console
@@ -163,13 +163,13 @@ The concretization at round ``n`` will contain all the specs that could not be u
 Spec matrices
 ^^^^^^^^^^^^^
 
-Let's expand our stack further and consider also linking against different LAPACK providers.
+Let's further expand our stack and consider also linking against different LAPACK providers.
 We could, of course, add new specs explicitly:
 
 .. literalinclude:: outputs/stacks/unify-4.out
    :language: console
 
-This way of proceeding, though, will become very tedious as soon as more software is requested.
+This way of proceeding, though, will become very tedious once more software is requested.
 The best way to express a cross-product like this in Spack is instead through a matrix:
 
 .. literalinclude:: outputs/stacks/examples/2.spack.stack.yaml
@@ -200,7 +200,7 @@ We are now ready to concretize and install the environment:
 .. literalinclude:: outputs/stacks/concretize-0.out
    :language: console
 
-Let's double check which specs we have installed so far:
+Let's double check which specs we have installed:
 
 .. literalinclude:: outputs/stacks/concretize-01.out
    :language: console
@@ -215,34 +215,34 @@ So far, we have seen how we can use spec matrices to generate cross-product spec
 A common situation you will encounter with large deployments is the necessity to add multiple matrices to the list of specs, that possibly share some of those rows.
 
 To reduce the amount of duplication needed in the manifest file, and thus the maintenance burden for people maintaining it, Spack allows to *define* lists of constraints under the ``definitions`` attribute, and expand them later when needed.
-Let's rewrite our manifest in that sense:
+Let's rewrite our manifest accordingly:
 
 .. literalinclude:: outputs/stacks/examples/3.spack.stack.yaml
    :language: yaml
    :emphasize-lines: 6-10,14-18
 
-And check that re-concretizing won't change the environment:
+Check that re-concretizing won't change the environment:
 
 .. literalinclude:: outputs/stacks/concretize-1.out
    :language: console
 
 Now we can use those definitions to add e.g. serial packages built against the LAPACK libraries.
-Let's try to do that by using ``py-scypy`` as an example:
+Let's try to do that by using ``py-scipy`` as an example:
 
-Another ability that is often useful, is that of excluding specific entries from a cross-product matrix.
+Another useful ability is excluding specific entries from a cross-product matrix.
 We can do that with the ``exclude`` keyword, in the same item as the ``matrix``.
-Let's try to remove ``py-scipy ^netlib-lapack`` from our matrix:
+Try to remove ``py-scipy ^netlib-lapack`` from our matrix:
 
 .. literalinclude:: outputs/stacks/examples/4bis.spack.stack.yaml
    :language: yaml
    :emphasize-lines: 11,20-25
 
-Let's concretize the environment and install the specs once again:
+Concretize the environment and install the specs again:
 
 .. literalinclude:: outputs/stacks/concretize-3.out
    :language: console
 
-At this point the environment contains only ``py-scipy ^openblas``. Let's verify it:
+At this point, the environment contains only ``py-scipy ^openblas``. Verify it:
 
 .. literalinclude:: outputs/stacks/concretize-4.out
    :language: console
@@ -268,7 +268,7 @@ variable name     value
 ``hostname``      The hostname of this node
 ================= ===========
 
-Let's say we only want to limit to just use ``mpich``, unless the ``SPACK_STACK_USE_OPENMPI`` environment variable is set.
+Suppose we want to limit usage to only ``mpich``, unless the ``SPACK_STACK_USE_OPENMPI`` environment variable is set.
 To do so we could write the following ``spack.yaml``:
 
 .. literalinclude:: outputs/stacks/examples/5.spack.stack.yaml
@@ -277,13 +277,13 @@ To do so we could write the following ``spack.yaml``:
 
 Different definitions of lists with the same name are concatenated, so we can define our MPI list in one place unconditionally, and then conditionally append one or more values to it.
 
-Let's first check what happens when we concretize and don't set any environment variable:
+First, check what happens when we concretize and don't set any environment variable:
 
 .. literalinclude:: outputs/stacks/concretize-5.out
    :language: console
 
-As we expected now we are only using ``mpich`` as an MPI provider.
-To get ``openmpi`` back we just need to set the appropriate environment variable:
+As we expected we are only using ``mpich`` as an MPI provider.
+To get ``openmpi`` back we need to set the appropriate environment variable:
 
 .. literalinclude:: outputs/stacks/concretize-6.out
    :language: console
@@ -308,14 +308,14 @@ Later you can move this mirror to e.g. an air-gapped machine and:
 
    $ spack mirror add <name> <stacks-mirror>
 
-to be able to re-build the specs from sources. If instead you want to create a buildcache you can:
+to be able to re-build the specs from sources. Alternatively, to create a buildcache you can:
 
 .. code-block:: console
 
    $ spack gpg create <name> <e-mail>
    $ spack buildcache push ./mirror
 
-In that case, don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
+Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
 By default, Spack installs one package at a time, using the ``-j`` option where it can.
 If you are installing a large environment, and have at disposal a beefy build node, you might need to start more installations in parallel to make an optimal use of the resources.
@@ -347,7 +347,7 @@ We've been concretizing multiple packages of the same name, and they would confl
 
 What we can do is create *multiple views*, using view descriptors.
 This would allows us to define which packages are linked into the view, and how.
-Let's edit our ``spack.yaml`` file again.
+Edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
@@ -355,12 +355,12 @@ Let's edit our ``spack.yaml`` file again.
 
 In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
-As we can see, we can both *include* and *exclude* specs using constrains.
+As we can see, we can both *include* and *exclude* specs using constraints.
 
 The ``full`` view contains a more complex projection, so to put each spec into an appropriate subdirectory, according to the first constraint that the spec matches. ``all`` is the default projection, and has always the lowest priority, independent of the order in which it appears.
-To avoid confusion, we advise to always keep it last in projections.
+To avoid confusion, we advise always keeping it last in projections.
 
-Let's concretize to regenerate the views, and check their structure:
+Concretize to regenerate the views, and check their structure:
 
 .. literalinclude:: outputs/stacks/view-0.out
    :language: console
@@ -378,7 +378,7 @@ If we set the option to "roots", Spack links only the root packages into the vie
 
 Now we see only the root libraries in the default view.
 The rest are hidden, but are still available in the full view.
-The complete documentation on view can be found `here <https://spack.readthedocs.io/en/latest/environments.html#filesystem-views>`_.
+The complete documentation on views can be found `here <https://spack.readthedocs.io/en/latest/environments.html#filesystem-views>`_.
 
 ^^^^^^^^^^^^
 Module files
@@ -390,7 +390,7 @@ In this section we'll show how to configure and generate a hierarchical module s
 A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
 There we discuss the general architecture of module file generation in Spack and we highlight differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
 
-So, let's start by adding ``lmod`` to the software installed with the system compiler:
+Let's start by adding ``lmod`` to the software installed with the system compiler:
 
 .. code-block:: console
 
@@ -404,7 +404,7 @@ Once that is done, let's add the ``module`` command to our shell like this:
 
    $ . $(spack location -i lmod)/lmod/lmod/init/bash
 
-If everything worked out correctly you should now have the module command available in you shell:
+If everything worked out correctly you should have the module command available in your shell:
 
 .. literalinclude:: outputs/stacks/modules-1.out
    :language: console
@@ -429,25 +429,25 @@ Now we should be able to see the module files that have been generated:
 .. literalinclude:: outputs/stacks/modules-2.out
    :language: console
 
-The sets of modules is already usable, and the hierarchy already works.
-For instance we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot more modules available - all the ones compiled with ``gcc@12.3.0``:
+The set of modules is already usable, and the hierarchy already works.
+For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12.3.0``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console
 
 There are a few issues though.
-For once, we have a lot of modules generated from dependencies of ``gcc`` that are cluttering the view, and won't likely be needed directly by users.
-Then, module names contain hashes, which go against users being able to reuse the same script in similar, but not equal, environments.
+For instance, we have a lot of modules generated from dependencies of ``gcc`` that are cluttering the view, and won't likely be needed directly by users.
+Then, module names contain hashes, which prevent users from being able to reuse the same script in similar, but not equal, environments.
 
-Also, some of the modules might need to set custom environment variables, which are specific to the deployment aspects that don't enter the hash - for instance a policy at the deploying site.
+Also, some of the modules might need to set custom environment variables, which are specific to the deployment aspects that are not part of the hash - for instance a policy at the deploying site.
 
-To address all these needs we can complicate out ``modules`` configuration a bit more:
+To address all these needs we can complicate our ``modules`` configuration a bit more:
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
    :emphasize-lines: 55-70
 
-Let's regenerate the modules once again:
+Regenerate the modules again:
 
 .. literalinclude:: outputs/stacks/modules-4.out
    :language: console
