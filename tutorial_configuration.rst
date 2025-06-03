@@ -10,7 +10,7 @@
 Configuration Tutorial
 ======================
 
-This tutorial will guide you through various configuration options that allow you to customize Spack's behavior with respect to software installation.
+This tutorial will guide us through various configuration options that allow us to customize Spack's behavior with respect to software installation.
 There are many different configuration sections.
 A partial list of some key configuration sections is provided below.
 
@@ -34,7 +34,7 @@ A partial list of some key configuration sections is provided below.
      - Naming, location and additional configuration of Spack generated modules
 
 The full list of sections can be viewed with ``spack config list``.
-For further education, we encourage you to explore the Spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
+For further education, we encourage exploration of the Spack `documentation on configuration files <https://spack.readthedocs.io/en/latest/configuration.html#configuration-files>`_.
 
 The principle goals of this section of the tutorial are:
 
@@ -45,7 +45,7 @@ The principle goals of this section of the tutorial are:
 As such, we will primarily focus on the ``compilers`` and ``packages`` configuration sections in this portion of the tutorial.
 
 We will explain this by first covering how to manipulate configurations from the command line and then show how this impacts the configuration file hierarchy.
-We will then move into compiler and package configurations to help you develop skills for getting the builds you want on your system.
+We will then move into compiler and package configurations to help develop skills for getting the builds we want on our system.
 Finally, we will give some brief attention to more generalized Spack configurations in the ``config`` section.
 
 For all of these features, we will demonstrate how we build up a full configuration file.
@@ -56,9 +56,9 @@ The provided output is all from a server running Ubuntu version 22.04.
 Configuration from the command line
 -----------------------------------
 
-You can run ``spack config blame [section]`` at any point in time to see what your current configuration is.
-If you omit the section, then spack will dump all the configurations settings to your screen.
-Let's go ahead and run this for the ``concretizer`` section.
+We can run ``spack config blame [section]`` at any point in time to see what our current configuration is.
+If we omit the section, then spack will dump all the configurations settings to our screen.
+We will go ahead and run this for the ``concretizer`` section.
 
 .. code-block:: console
 
@@ -90,7 +90,7 @@ This will make more sense after the next section which provides the definition o
 Configuration Scopes
 --------------------
 
-Depending on your use case, you may want to provide configuration settings common to everyone on your team, or you may want to set default behaviors specific to a single user account.
+Depending on our use case, we may want to provide configuration settings common to everyone on our team, or we may want to set default behaviors specific to a single user account.
 Spack provides six configuration *scopes* to handle this customization.
 These scopes, in order of decreasing priority, are:
 
@@ -111,11 +111,11 @@ These are useful for reference, but should never be directly edited.
 To override these settings, create new configuration files in any of the higher-priority configuration scopes.
 
 A particular cluster may have multiple Spack installations associated with different projects.
-To provide settings common to all Spack installations, put your configuration files in ``/etc/spack``.
-To provide settings specific to a particular Spack installation, you can use the ``$SPACK_ROOT/etc/spack`` directory.
+To provide settings common to all Spack installations, put our configuration files in ``/etc/spack``.
+To provide settings specific to a particular Spack installation, we can use the ``$SPACK_ROOT/etc/spack`` directory.
 
-For settings specific to a particular user, you will want to add configuration files to the ``~/.spack`` directory.
-When Spack first checked for compilers on your system, you may have noticed that it placed your compiler configuration in this directory.
+For settings specific to a particular user, we will want to add configuration files to the ``~/.spack`` directory.
+When Spack first checked for compilers on our system, we may have noticed that it placed our compiler configuration in this directory.
 
 Configuration settings can also be placed in a custom location, which is then specified on the command line via ``--config-scope``.
 An example use case is managing two sets of configurations, one for development and another for production preferences.
@@ -210,7 +210,7 @@ Compiler Configuration
 For most tasks, we can use Spack with the compilers auto-detected the first time Spack runs on a system.
 As discussed in the basic installation tutorial, we can also tell Spack where compilers are located using the ``spack compiler add`` command.
 However, in some circumstances, we want even more fine-grained control over the compilers available.
-This section will teach you how to exercise that control using the compilers configuration file.
+This section will teach us how to exercise that control using the compilers configuration file.
 
 We will start by opening the compilers configuration file:
 
@@ -219,7 +219,7 @@ We will start by opening the compilers configuration file:
    $ spack config edit compilers
 
 
-We start with no active environment, so this will open a ``compilers.yaml`` file for editing (you can also do this with an active environment):
+We start with no active environment, so this will open a ``compilers.yaml`` file for editing (we can also do this with an active environment):
 
 .. code-block:: yaml
 
@@ -286,7 +286,7 @@ We can do this by adding another entry to the ``compilers.yaml`` file:
        extra_rpaths: []
 
 
-Let's talk about the sections of this compiler entry that we've changed.
+We will talk about the sections of this compiler entry that we've changed.
 The biggest change we've made is to the ``paths`` section.
 This lists the paths to the compilers to use for each language/specification.
 In this case, we point to the Clang compiler for C/C++ and the gfortran compiler for both specifications of Fortran.
@@ -326,7 +326,7 @@ Spack provides configuration options for setting compiler flags every time a spe
 These flags become part of the package spec and therefore of the build provenance.
 As on the command line, the flags are set through the implicit build variables ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs``.
 
-Let's open our compilers configuration file again and add a compiler flag:
+We will open our compilers configuration file again and add a compiler flag:
 
 .. code-block:: yaml
    :emphasize-lines: 8-9
@@ -383,7 +383,7 @@ Any modules in the ``modules`` field of the compiler configuration will be loade
        ...
 
 The ``environment`` field of the compiler configuration is used for compilers that require environment variables to be set during build time.
-For example, if your Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server, you can set this in ``compilers.yaml`` as follows:
+For example, if our Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server, we can set this in ``compilers.yaml`` as follows:
 
 .. code-block:: yaml
 
@@ -441,8 +441,8 @@ Currently, we prefer GCC and OpenMPI.
    :emphasize-lines: 16
 
 
-Let's override these default preferences in an environment.
-When you have an activated environment, you can edit the associated configuration with ``spack config edit`` (you don't have to provide a section name):
+We will override these default preferences in an environment.
+When we have an activated environment, we can edit the associated configuration with ``spack config edit`` (we don't have to provide a section name):
 
 .. code-block:: console
 
@@ -453,10 +453,10 @@ When you have an activated environment, you can edit the associated configuratio
 
 .. warning::
 
-   You will get exactly the same effects if you make these changes
-   without using an environment, but you must delete the
+   We will get exactly the same effects if we make these changes
+   without using an environment, but we must delete the
    associated ``packages.yaml`` file after the config tutorial or
-   the commands you run in later tutorial sections will not
+   the commands we run in later tutorial sections will not
    produce the same output (because they weren't run with the
    configuration changes made here)
 
@@ -521,7 +521,7 @@ Spack has a ``spack external find`` command that can automatically discover and 
 This works for many common build dependencies, but it's also important to know how to do this manually for packages that Spack cannot yet detect.
 
 On these systems, we have a pre-installed curl.
-Let's tell Spack about this package and where it can be found:
+We will tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
    :emphasize-lines: 11-14
@@ -550,7 +550,7 @@ We don't know exactly which variants it was built with, but that's okay.
    :language: console
 
 
-You'll notice that Spack is now using the external Curl installation, but the compiler used to build Curl is now overriding our compiler preference of clang.
+We'll notice that Spack is now using the external Curl installation, but the compiler used to build Curl is now overriding our compiler preference of clang.
 If we explicitly specify Clang:
 
 .. literalinclude:: outputs/config/1.externals.out
@@ -653,16 +653,16 @@ The alternative is to try to find a version of ``hdf5`` which doesn't have this 
 
 By configuring most of our package preferences in ``packages.yaml``, we can cut down on the amount of work we need to do when specifying a spec on the command line.
 In addition to compiler and variant preferences, we can specify version preferences as well.
-Except for specifying dependencies via ``^``, anything that you can specify on the command line can be specified in ``packages.yaml`` with the exact same spec syntax.
+Except for specifying dependencies via ``^``, anything that we can specify on the command line can be specified in ``packages.yaml`` with the exact same spec syntax.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^
 Installation permissions
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``packages`` configuration also controls the default permissions to use when installing a package.
-You'll notice that by default, the installation prefix will be world-readable but only user-writable.
+We'll notice that by default, the installation prefix will be world-readable but only user-writable.
 
-Let's say we need to install ``converge``, a licensed software package.
+We will say we need to install ``converge``, a licensed software package.
 Since a specific research group, ``fluid_dynamics``, pays for this license, we want to ensure that only members of this group can access the software.
 We can do this like so:
 
@@ -697,7 +697,7 @@ High-level Config
 
 In addition to compiler and package settings, Spack allows customization of several high-level settings.
 These settings are managed in the ``config`` section (in ``config.yaml`` when stored as an individual file outside of an environment).
-You can see the default settings by running:
+We can see the default settings by running:
 
 .. code-block:: console
 
@@ -708,10 +708,10 @@ You can see the default settings by running:
    :language: yaml
 
 
-As you can see, many of the directories Spack uses can be customized.
-For example, you can tell Spack to install packages to a prefix outside of the ``$SPACK_ROOT`` hierarchy.
-Module files can be written to a central location if you are using multiple Spack instances.
-If you have a fast scratch file system, you can run builds from this file system with the following ``config.yaml``:
+As we can see, many of the directories Spack uses can be customized.
+For example, we can tell Spack to install packages to a prefix outside of the ``$SPACK_ROOT`` hierarchy.
+Module files can be written to a central location if we are using multiple Spack instances.
+If we have a fast scratch file system, we can run builds from this file system with the following ``config.yaml``:
 
 .. code-block:: yaml
 
@@ -758,9 +758,9 @@ For example, on a node with 16 cores, this will look like:
    [+] /home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
 
 
-As you can see, we are building with all 16 cores on the node.
-If you are on a shared login node, this can slow down the system for other users.
-If you have a strict ulimit or restriction on the number of available licenses, you may not be able to build at all with this many cores.
+As we can see, we are building with all 16 cores on the node.
+If we are on a shared login node, this can slow down the system for other users.
+If we have a strict ulimit or restriction on the number of available licenses, we may not be able to build at all with this many cores.
 To limit the number of cores our build uses, set ``build_jobs`` like so:
 
 .. code-block:: console
@@ -790,7 +790,7 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
    [+] /home/user/spack/opt/spack/linux-ubuntu22.04...
 
 
-Obviously, if you want to build everything in serial for whatever reason, you would set ``build_jobs`` to 1.
+Obviously, if we want to build everything in serial for whatever reason, we would set ``build_jobs`` to 1.
 
 Last, we'll unset ``concretizer:reuse:false`` since we'll want to enable concretizer reuse for the rest of this tutorial.
 
@@ -800,7 +800,7 @@ Last, we'll unset ``concretizer:reuse:false`` since we'll want to enable concret
 
 .. warning::
 
-   If you do not do this step, the rest of the tutorial will not reuse binaries!
+   If we do not do this step, the rest of the tutorial will not reuse binaries!
 
 ----------
 Conclusion
@@ -811,4 +811,4 @@ Spack has many more configuration files, including ``modules.yaml``, which will 
 For more detailed documentation on Spack's many configuration settings, see `the configuration section <https://spack.readthedocs.io/en/latest/configuration.html>`_ of Spack's main documentation.
 
 For examples of how other sites configure Spack, see https://github.com/spack/spack-configs.
-If you use Spack at your site and want to share your config files, feel free to submit a pull request!
+If we use Spack at our site and want to share our config files, feel free to submit a pull request!
