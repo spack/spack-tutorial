@@ -41,8 +41,8 @@ Package Class Hierarchy
     }
 
 The above diagram gives a high-level view of the class hierarchy and how each package relates.
-Each build system specific class inherits from the ``PackageBaseClass`` superclass.
-The bulk of the common work is done in this superclass which includes fetching, extracting to a staging directory and installing.
+Each build system specific class inherits from the ``PackageBase`` superclass.
+The bulk of the common work is done in this superclass which includes fetching, extracting to a staging directory and the install process.
 Each subclass then adds additional build-system-specific functionality.
 In the following sections, we will go over examples of how to utilize each subclass and see how powerful these abstractions are when packaging.
 
@@ -80,7 +80,7 @@ The ``AutotoolsPackage`` subclass aims to simplify writing package files for Aut
 4. ``install()``
 
 
-Each of these phases have sensible defaults.
+Each of these phases has sensible defaults.
 Let's take a quick look at some of the internals of the ``Autotools`` class:
 
 .. code-block:: console
@@ -103,7 +103,7 @@ This will open the ``AutotoolsPackage`` file in your text editor.
 
 Important to note are the highlighted lines.
 These properties allow the packager to set what build targets and install targets they want for their package.
-If, for example, we wanted to add as our build target ``foo`` then we can append to our ``build_targets`` property:
+If, for example, we wanted to add as our build target ``foo`` then we can append to our ``build_targets`` list:
 
 .. code-block:: python
 
@@ -151,7 +151,7 @@ In fact, the only thing that needs to be overridden is ``configure_args()``.
    :linenos:
 
 Since Spack's ``AutotoolsPackage`` takes care of setting the prefix for us, we can exclude that as an argument to ``configure``.
-Our package file looks simpler, and we don't not need to worry about whether we have properly included ``configure`` and ``make``.
+Our package file looks simpler, and we don't need to worry about whether we have properly included ``configure`` and ``make``.
 
 This version of the ``mpileaks`` package installs the same as the previous, but the ``AutotoolsPackage`` class lets us do it with a cleaner looking package file.
 
@@ -159,8 +159,8 @@ This version of the ``mpileaks`` package installs the same as the previous, but 
 Makefile
 -----------------
 
-Packages that utilize ``Make`` or a ``Makefile`` usually require you to edit a ``Makefile`` to set up platform and compiler specific variables.
-These packages are handled by the ``Makefile`` subclass which provides convenience methods to help write these types of packages.
+Packages that utilize ``Make`` or a ``Makefile`` usually require you to edit a ``Makefile`` to set up platform and compiler-specific variables.
+These packages are handled by the ``MakefilePackage`` subclass which provides convenience methods to help write these types of packages.
 
 A ``MakefilePackage`` build has three phases that can be overridden by the packager:
 
@@ -217,7 +217,7 @@ Once the fetching is completed, Spack will open up your text editor in the usual
    :language: python
    :linenos:
 
-Spack was successfully able to detect that ``Bowtie`` uses ``Make``.
+Spack was successfully able to detect that ``Bowtie`` uses ``Makefiles``.
 Let's add in the rest of our details for our package:
 
 .. literalinclude:: tutorial/examples/Makefile/1.package.py
@@ -225,8 +225,8 @@ Let's add in the rest of our details for our package:
    :emphasize-lines: 10,11,13,14,18,20
    :linenos:
 
-As we mentioned earlier, most packages using a ``Makefile`` have hard-coded variables that must be edited.
-These variables are fine if you happen to not care about setup or types of compilers used but Spack is designed to work with any compiler.
+As we mentioned earlier, most packages using a ``Makefile`` have hardcoded variables that must be edited.
+These variables are fine if you happen to not care about setup or types of compilers used, but Spack is designed to work with any compiler.
 The ``MakefilePackage`` subclass makes it easy to edit these ``Makefiles`` by having an ``edit()`` method that can be overridden.
 
 Let's take a look at the default ``Makefile`` that ``Bowtie`` provides.
@@ -275,7 +275,7 @@ Let's change the build and install phases of our package:
 
 Here we demonstrate another strategy that we can use to manipulate our package's build.
 We can provide command-line arguments to ``make()``.
-Since ``Bowtie`` can use ``tbb`` we can either add ``NO_TBB=1`` as a argument to prevent ``tbb`` support, or we can invoke ``make`` with no arguments if EBB is desired and found by its build system.
+Since ``Bowtie`` can use ``tbb`` we can either add ``NO_TBB=1`` as a argument to prevent ``tbb`` support, or we can invoke ``make`` with no arguments if TBB is desired and found by its build system.
 
 ``Bowtie`` requires our ``install_target`` to provide a path to the install directory.
 We can do this by providing ``prefix=`` as a command line argument to ``make()``.
@@ -472,7 +472,7 @@ Options include:
 
 With these options you can specify whether you want your executable to have the debug version only, release version or the release with debug information.
 Release executables tend to be more optimized than Debug versions.
-In Spack, we set the default as Release unless otherwise specified through a variant (e.g., ``build_type=Debug``).
+In Spack, we set the default as `Release` unless otherwise specified through a variant (e.g., ``build_type=Debug``).
 
 Spack then automatically sets up the ``-DCMAKE_INSTALL_PREFIX`` path, appends the build type (defaulting to ``RelWithDebInfo``), and enables a verbose ``Makefile`` output by default.
 
@@ -527,7 +527,7 @@ Again we fill in the details:
    :linenos:
    :emphasize-lines: 9,13,14,18,19,20,21,22,23
 
-As mentioned earlier, Spack's ``CMakePackage`` uses sensible defaults to reduce biolerplate and simplify writing package files for ``CMake``-based software.
+As mentioned earlier, Spack's ``CMakePackage`` uses sensible defaults to reduce boilerplate and simplify writing package files for ``CMake``-based software.
 
 In ``callpath``, we want to control options like ``CALLPATH_WALKER`` or add specific compiler flags.
 We can return these options from ``cmake_args()`` like so:
@@ -621,7 +621,7 @@ And we are left with the following template:
    :linenos:
 
 As you can see this is not any different than any package template that we have written.
-We have the choice of providing build options or using the sensible defaults
+We have the choice of providing build options or using the sensible defaults.
 
 Luckily for us, there is no need to provide build args.
 
@@ -683,7 +683,7 @@ Although we won't get in depth with any of the other build systems that Spack su
 
 
 Each of these classes have their own abstractions to help assist in writing package files.
-For whatever doesn't fit nicely into the other build-systems, you can use the ``Package`` class.
+For whatever doesn't fit nicely into the other build systems, you can use the ``Package`` class.
 
 Hopefully by now you can see how we aim to make packaging simple and robust through these classes.
 If you want to learn more about these build systems, check out `Implementing the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.
