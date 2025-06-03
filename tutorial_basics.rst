@@ -75,8 +75,8 @@ Let's go ahead and install ``gmake``,
 
 You will see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
-These do not represent separate installs from source, but represent aspects of the compiler Spack used for the install.
-For the rest of this section, we will ignore these components and focus on the rest of the install.
+They do not represent separate software builds from source, but are records of the system's compiler runtime components Spack used for the install.
+For the rest of this section, we will ignore these components and focus on the packages explicitly installed.
 
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
@@ -89,14 +89,14 @@ To be able to install from the binary cache, we will need to configure Spack wit
 You'll learn more about configuring Spack later in the tutorial, but for now you will be able to install the rest of the packages in the tutorial from a binary cache using the same ``spack install`` command.
 By default this will install the binary cached version if it exists and fall back on installing from source if it does not.
 
-Spack's spec syntax is the interface by which we can request specific configurations of the package.
+Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
 The ``%`` sigil is used to specify compilers.
 
 .. literalinclude:: outputs/basics/zlib-clang.out
    :language: console
 
 Note that this installation is located separately from the previous one.
-We will discuss this in more detail later, but this is part of what allows Spack to support arbitrarily versioned software.
+We will discuss this in more detail later, but this is part of what allows Spack to support many versions of software packages.
 
 You can check for particular versions before requesting them.
 We will use the ``spack versions`` command to see the available versions, and then install a different version of ``zlib-ng``.
@@ -115,7 +115,7 @@ The ``@`` sigil is used to specify versions, both of packages and of compilers.
 The spec syntax also includes compiler flags.
 Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` parameters.
 The values of these fields must be quoted on the command line if they include spaces.
-These values are injected into the compile line automatically by the Spack compiler wrappers.
+These values are injected into the compilation commands automatically by the Spack compiler wrappers.
 
 .. literalinclude:: outputs/basics/zlib-O3.out
    :language: console
@@ -134,7 +134,7 @@ Spack generates a hash for each spec.
 This hash is a function of the full provenance of the package, so any change to the spec affects the hash.
 Spack uses this value to compare specs and to generate unique installation directories for every combinatorial version.
 As we move into more complicated packages with software dependencies, we can see that Spack reuses existing packages to satisfy a dependency.
-By default, Spack tries hard to reuse existing installations as dependencies, either from a local store or from configured remote buildcaches.
+By default, Spack tries hard to reuse existing installations as dependencies, either from a local store or from configured remote binary caches.
 This minimizes unwanted rebuilds of common dependencies, in particular if you update Spack frequently.
 
 .. literalinclude:: outputs/basics/tcl.out
@@ -165,7 +165,7 @@ Note that each package has a top-level entry, even if it also appears as a depen
 
 Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
-If we install it "out of the box," it will build with OpenMPI.
+If we install it with default settings it will build with OpenMPI.
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: console
@@ -181,14 +181,14 @@ Here we can install HDF5 without MPI support.
    :language: console
 
 We might also want to install HDF5 with a different MPI implementation.
-While MPI is not a package itself, packages can depend on abstract interfaces like MPI.
-Spack handles these through "virtual dependencies." A package, such as HDF5, can depend on the MPI interface.
-Other packages (``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the MPI interface.
-Any of these providers can be requested for an MPI dependency.
-For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich``.
+While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
+Spack handles these through "virtual dependencies." A package, such as HDF5, can depend on the ``mpi`` virtual package (the interface).
+Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the MPI interface.
+Any of these providers can be requested to satisfy an MPI dependency.
+For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
 Spack also supports versioning of virtual dependencies.
-A package can depend on the MPI interface at version 3, and provider packages specify what version of the interface *they* provide.
-The partial spec ``^mpi@3`` can be satisfied by any of several providers.
+A package can depend on the MPI interface at version 3 (e.g., ``hdf5 ^mpi@3``), and provider packages specify what version of the interface *they* provide.
+The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementation packages that provide MPI version 3.
 
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
    :language: console
@@ -212,7 +212,7 @@ Now let's look at an even more complicated package.
    :language: console
 
 Now we're starting to see the power of Spack.
-Trilinos in its default configuration has 23 top level dependencies, many of which have dependencies of their own.
+Trilinos in its default configuration has 23 direct dependencies, many of which have dependencies of their own.
 Installing more complex packages can take days or weeks even for an experienced user.
 Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
 
@@ -269,7 +269,9 @@ We can uninstall packages by spec using the same syntax as install.
 
 We can also uninstall packages by referring only to their hash.
 
-We can use either ``-f`` (force) or ``-R`` (remove dependents as well) to remove packages that are required by another installed package.
+We can use either the ``--force`` (or ``-f``) flag or the ``--dependents`` (or ``-R``) flag to remove packages that are required by another installed package.
+Use ``--force`` to remove just the specified package, leaving dependents broken.
+Use ``--dependents`` to remove the specified package and all of its dependents.
 
 .. literalinclude:: outputs/basics/uninstall-needed.out
    :language: console
@@ -277,8 +279,8 @@ We can use either ``-f`` (force) or ``-R`` (remove dependents as well) to remove
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
    :language: console
 
-Spack will not uninstall packages that are not sufficiently specified.
-The ``-a`` (all) flag can be used to uninstall multiple packages at once.
+Spack will not uninstall packages that are not sufficiently specified specified (i.e., if the spec is ambiguous and matches multiple installed packages).
+The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an ambiguous spec.
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out
    :language: console
@@ -314,13 +316,13 @@ Customizing Compilers
 ---------------------
 
 Spack manages a list of available compilers on the system, detected automatically from the user's ``PATH`` variable.
-The ``spack compilers`` command is an alias for the command ``spack compiler list``.
+The ``spack compilers`` command is an alias for ``spack compiler list``.
 
 .. literalinclude:: outputs/basics/compilers.out
    :language: console
 
-The compilers are maintained in a YAML file.
-Later in the tutorial you will learn how to configure compilers by hand for special cases.
+The compilers are maintained in a YAML file (``compilers.yaml``).
+Later in the tutorial, you will learn how to configure compilers by hand for special cases.
 Spack also has tools to add compilers, and compilers built with Spack can be added to the configuration.
 
 .. literalinclude:: outputs/basics/install-gcc-12.1.0.out

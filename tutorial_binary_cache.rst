@@ -11,10 +11,10 @@
 Binary Caches Tutorial
 ==================================
 
-In this section of the tutorial you will learn how to share Spack built binaries across machines and users using build caches.
+In this section of the tutorial, you will learn how to share Spack-built binaries across machines and users using build caches.
 
-We will explore a few concepts that apply to all types of build caches, but the focus is primarily on **OCI container registries** like Docker Hub or Github Packages as a storage backend for binary caches.
-Spack supports a range of storage backends, like an ordinary filesystem, S3, and Google Cloud Storage, but OCI build caches have a few interesting properties that make them worth exploring more in depth.
+We will explore a few concepts that apply to all types of build caches, but the focus is primarily on **OCI container registries** (like Docker Hub or Github Packages) as a storage backend for binary caches.
+Spack supports a range of storage backends, such as an ordinary filesystem, Amazon S3, and Google Cloud Storage, but OCI build caches have a few interesting properties that make them worth exploring more in-depth.
 
 Before we configure a build cache, let's install the ``julia`` package, which is an interesting example because it has some non-trivial dependencies like ``llvm``, and features an interactive REPL that we can use to verify that the installation works.
 
@@ -42,20 +42,22 @@ Setting up an OCI build cache on GitHub Packages
 
 For this tutorial we will be using GitHub Packages as an OCI registry, since most people have a GitHub account and it's easy to use.
 
-First go to `<https://github.com/settings/tokens>`_ to generate a Personal access token with ``write:packages`` permissions.
+First, go to `<https://github.com/settings/tokens>`_ to generate a Personal Access Token (classic) with ``write:packages`` permissions.
 Copy this token.
 
-Next, we will add this token to the mirror config section of the Spack environment:
+Next, we will add this token to the mirror configuration section for the Spack environment.
+Replace `<your-github-username>` with your GitHub username and `<your-github-username-or-org>` with your GitHub username or an organization where you have permission to create packages.
+The build cache name, `buildcache-${USER}-${HOSTNAME}`, is a suggestion; you can choose your own.
 
 .. code-block:: console
 
-   $ export MY_OCI_TOKEN=<token>
+   $ export MY_OCI_TOKEN=<paste-your-token-here>
    $ spack -e . mirror add \
-       --oci-username <user> \
+       --oci-username <your-github-username> \
        --oci-password-variable MY_OCI_TOKEN \
        --unsigned \
        my-mirror \
-       oci://ghcr.io/<github_user>/buildcache-${USER}-${HOSTNAME}
+       oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
 
 
 .. note ::
@@ -101,7 +103,7 @@ which outputs
    ...
    ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-The location of the pushed package
+The location of the pushed package, when referred to as a OCI image, will be:
 
 .. code-block:: text
 
@@ -142,7 +144,7 @@ The easiest way to do this is to override the ``mirrors`` config section in the 
               secret_variable: MY_OCI_TOKEN
            signed: false
 
-An "overwrite install" should be enough to show that the build cache is used:
+An "overwrite install" should be enough to show that the build cache is used (output will vary based on your specific configuration):
 
 .. code-block:: console
 
@@ -177,10 +179,9 @@ For convenience you can also run ``spack buildcache push --update-index ...`` to
 
 .. note::
 
-   As of Spack 0.22, build caches can be used across different Linux distros. The concretizer
-   will reuse specs that have a host compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
-   For packages compiled with ``gcc`` (and a few others), users do not have to install compilers
-   first, as the build cache contains the compiler runtime libraries as a separate package.
+   As of Spack 0.22, build caches can be used across different Linux distros.
+   The concretizer will reuse specs that have a host-compatible ``libc`` dependency (e.g. ``glibc`` or ``musl``).
+   For packages compiled with ``gcc`` (and a few other compilers), users do not have to install compilers first, as the build cache contains the compiler runtime libraries as a separate package dependency.
 
 After an index is created, it's possible to list the available packages in the build cache:
 
@@ -255,7 +256,7 @@ Let's add a simple text editor like ``vim`` to our previous environment next to 
 
    $ spack -e . install --add vim
 
-This time we push to the OCI registry, but also pass ``--tag julia-and-vim`` to instruct Spack to create an image for the environment as a whole, with a human-readable tag:
+This time, when we push to the OCI registry, we also pass ``--tag julia-and-vim`` to instruct Spack to create an additional image tag for the environment as a whole, with a more human-readable name:
 
 
 .. code-block:: console
@@ -291,12 +292,8 @@ For those familiar with ``Dockerfile`` syntax, it would structurally look like t
 
 This approach is still valid, and the ``spack containerize`` command continues to exist, but it has a few downsides:
 
-* When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning
-  that all dependencies that did install successfully are lost. Troubleshooting the build
-  typically means starting from scratch in ``docker run`` or on the host system.
-* In certain CI environments, it is not possible to use ``docker build``. For example, the
-  CI script itself may already run in a docker container, and running ``docker build`` *safely*
-  inside a container is tricky.
+* When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning that all dependencies that did install successfully are lost. Troubleshooting the build typically means starting from scratch either within a ``docker run`` session or on the host system.
+* In certain CI environments, it is not possible to use ``docker build`` directly. For example, the CI script itself may already run in a Docker container, and running ``docker build`` *safely* inside a container (Docker-in-Docker) is tricky.
 
 The takeaway is that Spack decouples the steps that ``docker build`` combines: build isolation, running the build, and creating an image.
 You can run ``spack install`` on your host machine or in a container, and run ``spack buildcache push`` separately to create an image.
@@ -307,7 +304,7 @@ Relocation
 
 Spack is different from many package managers in that it lets users choose where to install packages.
 This makes Spack very flexible, as users can install packages in their home directory and do not need root privileges.
-The downside is that sharing binaries is more complicated, as binaries may contain hard-coded, absolute paths to machine specific locations, which have to be adjusted when binaries are installed on a different machine.
+The downside is that sharing binaries is more complicated, as binaries may contain hard-coded, absolute paths to machine specific locations, which have to be adjusted when these binaries are installed on a different machine or in a different path.
 
 Fortunately Spack handles this automatically upon install from a binary cache.
 But when you build binaries that are intended to be shared, there is one thing you have to keep in mind: Spack can relocate hard-coded paths in binaries *provided that the target prefix is shorter than the prefix used during the build*.
@@ -315,7 +312,7 @@ But when you build binaries that are intended to be shared, there is one thing y
 The reason is that binaries typically embed these absolute paths in string tables, which is a list of null terminated strings, to which the program stores offsets.
 That means we can only modify strings in-place, and if the new path is longer than the old one, we would overwrite the next string in the table.
 
-To maximize the chances of successful relocation, you should build your binaries in a relative long path.
+To maximize the chances of successful relocation, you should build your binaries in a relatively long path.
 Fortunately Spack can automatically pad paths to make them longer, using the following command:
 
 .. code-block:: console
@@ -327,9 +324,9 @@ Using build caches in CI
 ------------------------
 
 Build caches are a great way to speed up CI pipelines.
-Both GitHub Actions and Gitlab CI support container registries, and this tutorial should give you a good starting point to leverage them.
+Both GitHub Actions and GitLab CI support container registries, and this tutorial should give you a good starting point to leverage them.
 
-Spack also provides a basic GitHub Action to already provide you with a binary cache:
+Spack also provides a basic GitHub Action that already provides you with a binary cache:
 
 .. code-block:: yaml
 
@@ -349,6 +346,6 @@ Summary
 
 In this tutorial we have created a build cache on top of an OCI registry, which can be used
 
-* to ``spack install julia vim`` on machines without source builds
-* to automatically create container images for individual packages while pushing to the cache
-* to create container images for multiple packages at once
+* to run ``spack install julia vim`` on machines and have Spack fetch pre-built binaries instead of building from source.
+* to automatically create container images for individual packages when pushing to the cache.
+* to create container images for entire Spack environments (multiple packages) at once.
