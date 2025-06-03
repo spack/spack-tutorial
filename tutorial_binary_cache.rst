@@ -60,10 +60,10 @@ The build cache name, `buildcache-${USER}-${HOSTNAME}`, is a suggestion; you can
        oci://ghcr.io/<your-github-username-or-org>/buildcache-${USER}-${HOSTNAME}
 
 
-.. note ::
+.. note::
 
-We talk about mirrors and build caches almost interchangeably, because every build cache is a binary mirror.
-Source mirrors exist too, which we will not cover in this tutorial.
+   We talk about mirrors and build caches almost interchangeably, because every build cache is a binary mirror.
+   Source mirrors exist too, which we will not cover in this tutorial.
 
 
 Your ``spack.yaml`` file should now contain the following:
@@ -111,15 +111,15 @@ The location of the pushed package, when referred to as an OCI image, will be:
 
 look very similar to a container image --- we will get to that in a bit.
 
-.. note ::
+.. note::
 
-Binaries pushed to GitHub packages are ``private`` by default, which means you need a token to download them.
-You can change the visibility to ``public`` by going to GitHub Packages from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``, and change the visibility to ``public`` in the ``Danger Zone`` section.
-This page can also be directly accessed by going to
+   Binaries pushed to GitHub packages are ``private`` by default, which means you need a token to download them.
+   You can change the visibility to ``public`` by going to GitHub Packages from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``, and change the visibility to ``public`` in the ``Danger Zone`` section.
+   This page can also be directly accessed by going to
 
-   .. code-block:: text
+      .. code-block:: text
 
-      https://github.com/users/<user>/packages/container/buildcache/settings
+         https://github.com/users/<user>/packages/container/buildcache/settings
 
 
 -------------------------------
