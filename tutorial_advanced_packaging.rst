@@ -91,7 +91,7 @@ This section is focused on modifying the build-time environment represented by `
 :py:func:`setup_dependent_run_environment
 <spack.package.PackageBase.setup_dependent_run_environment>` function's ``env`` parameter, are included in Spack's automatically-generated module files.
 
-We can practice by editing the ``mpich`` package to set the ``MPICC`` environment variable in the build-time environment of dependent packages.
+You can practice by editing the ``mpich`` package to set the ``MPICC`` environment variable in the build-time environment of dependent packages.
 
 .. code-block:: console
 
@@ -113,7 +113,7 @@ Once you're finished, the method should look like this:
       spack_env.set('MPICH_F90', spack_fc)
       spack_env.set('MPICH_FC', spack_fc)
 
-At this point we can, for instance, install ``netlib-scalapack`` with ``mpich``:
+At this point you can, for instance, install ``netlib-scalapack`` with ``mpich``:
 
 .. code-block:: console
 
@@ -177,7 +177,7 @@ To contrast with ``qt``'s :py:func:`setup_dependent_build_environment <spack.pac
 
 It is not necessary to implement a ``setup_dependent_run_environment`` method for ``qt`` so one is not provided.
 
-Let's see how it works by completing the ``elpa`` package:
+You can see how it works by completing the ``elpa`` package:
 
 .. code-block:: console
 
@@ -301,7 +301,7 @@ Packages which don't follow this naming scheme must implement this function them
         )
 
 This issue is common for packages which implement an interface (i.e. virtual package providers in Spack).
-If we try to build another version of ``armadillo`` tied to ``netlib-lapack`` (``armadillo ^netlib-lapack ^mpich``) we'll notice that this time the installation won't complete:
+If you try to build another version of ``armadillo`` tied to ``netlib-lapack`` (``armadillo ^netlib-lapack ^mpich``) you'll notice that this time the installation won't complete:
 
 .. code-block:: console
 
@@ -331,14 +331,14 @@ If we try to build another version of ``armadillo`` tied to ``netlib-lapack`` (`
     /usr/local/var/spack/stage/arpack-ng-3.5.0-bloz7cqirpdxj33pg7uj32zs5likz2un/arpack-ng-3.5.0/spack-build-out.txt
 
 Unlike ``openblas`` which provides a library named ``libopenblas.so``, ``netlib-lapack`` provides ``liblapack.so``, so it needs to implement customized library search logic.
-Let's edit it:
+You can edit it:
 
 .. code-block:: console
 
   root@advanced-packaging-tutorial:/# spack edit netlib-lapack
 
 and follow the instructions in the ``# TUTORIAL:`` comment as before.
-What we need to implement is:
+What you need to implement is:
 
 .. code-block:: python
 
@@ -353,7 +353,7 @@ i.e., a property that returns the correct list of libraries for the LAPACK inter
 
 We use the name ``lapack_libs`` rather than ``libs`` because ``netlib-lapack`` can also provide ``blas``, and when it does it is provided as a separate library file.
 Using this name ensures that when dependents ask for ``lapack`` libraries, ``netlib-lapack`` will retrieve only the libraries associated with the ``lapack`` interface.
-Now we can finally install ``armadillo ^netlib-lapack ^mpich``:
+Now you can finally install ``armadillo ^netlib-lapack ^mpich``:
 
 .. code-block:: console
 
@@ -407,7 +407,7 @@ Extra query parameters
 An advanced feature of the Spec's build-interface protocol is the support for extra parameters after the subscript key.
 In fact, any of the keys used in the query can be followed by a comma-separated list of extra parameters which can be inspected by the package receiving the request to fine-tune a response.
 
-Let's look at an example and try to install ``netcdf ^mpich``:
+You can look at an example and try to install ``netcdf ^mpich``:
 
 .. code-block:: console
 
@@ -431,7 +431,7 @@ Let's look at an example and try to install ``netcdf ^mpich``:
     /usr/local/var/spack/stage/netcdf-4.4.1.1-gk2xxhbqijnrdwicawawcll4t3c7dvoj/netcdf-4.4.1.1/spack-build-out.txt
 
 We can see from the error that ``netcdf`` needs to know how to link the *high-level interface* of ``hdf5``, and thus passes the extra parameter ``hl`` after the request to retrieve it.
-Clearly the implementation in the ``hdf5`` package is not complete, and we need to fix it:
+Clearly the implementation in the ``hdf5`` package is not complete, and you need to fix it:
 
 .. code-block:: console
 
@@ -450,8 +450,8 @@ If you followed the instructions correctly, the code added to the ``lib`` proper
       libraries, root=self.prefix, shared=shared, recurse=True
   )
 
-where we highlighted the line retrieving the extra parameters.
-Now we can successfully complete the installation of ``netcdf ^mpich``:
+where the line retrieving the extra parameters is highlighted.
+Now you can successfully complete the installation of ``netcdf ^mpich``:
 
 .. code-block:: console
 
