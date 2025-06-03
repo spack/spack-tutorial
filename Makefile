@@ -91,7 +91,7 @@ clean:
 	-rm -rf $(BUILDDIR)/* $(APIDOC_FILES)
 
 format:
-	bin/format_rst_file.py tutorial_*.rst
+	bin/format_rst_file.py *.rst
 
 html:
 	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html

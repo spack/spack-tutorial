@@ -16,4 +16,4 @@ jobs:
 
       - name: Run RST Formatter
         run: |
-          bin/format_rst_file.py --check tutorial_*.rst
+          bin/format_rst_file.py --check *.rst
