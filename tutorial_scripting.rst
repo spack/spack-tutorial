@@ -56,7 +56,6 @@ For example, you can get attributes for all installations of ``zlib-ng`` by ente
 
 .. literalinclude:: outputs/scripting/find-json.out
    :language: console
-   :emphasize-lines: 1
 
 The ``spack find --json`` command gives you everything we know about the specs in a structured format.
 You can pipe its output to JSON filtering tools like ``jq`` to extract just the parts you want.
