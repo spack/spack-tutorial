@@ -1,5 +1,4 @@
-# Copyright 2013-2023 Lawrence Livermore National Security, LLC and other
-# Spack Project Developers. See the top-level COPYRIGHT file for details.
+# Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
@@ -83,7 +82,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Spack Tutorial'
-copyright = u'2013-2024, Lawrence Livermore National Laboratory.'
+copyright = u'Spack Project Developers'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
