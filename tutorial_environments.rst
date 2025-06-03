@@ -34,7 +34,7 @@ Spack environments allow you to readily:
 * much more.
 
 This tutorial introduces the basics of creating and using environments, then explains how to expand, configure, and build software in them.
-We will start with the command line interface, then cover editing key environment file directly.
+We will start with the command line interface, then cover editing key environment files directly.
 We will describe the difference between Spack-managed and independent environments, then finish with a section on reproducible builds.
 
 -------------------
@@ -130,7 +130,7 @@ Try the usual install command first:
 .. literalinclude:: outputs/environments/env-fail-install-1.out
    :language: console
 
-Environments are special in that you must *add* specs to them before installing. ``spack add`` allows us to do queue up several specs to be installed together.
+Environments are special in that you must *add* specs to them before installing. ``spack add`` allows us to queue up several specs to be installed together.
 Let's try it:
 
 .. literalinclude:: outputs/environments/env-add-1.out
@@ -177,7 +177,7 @@ You can also add and install specs to an environment incrementally. For example:
 If you create environments incrementally, Spack ensures that already installed roots are not re-concretized.
 So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
 
-Do note however that incrementally creating an environment can give you different package versions from an environment created all at once.
+Do note, however, that incrementally creating an environment can give you different package versions from an environment created all at once.
 We will cover this after we've discussed different concretization strategies.
 
 Further, there are two other advantages of concretizing and installing an environment all at once:
@@ -244,8 +244,8 @@ Now let's try to uninstall ``trilinos`` from ``myproject2`` and review the conte
    :language: console
 
 
-We can see that ``trilinos`` won't be uninstalled because it is still referenced in another environment managed by spack.
-If we want to remove it from the roots list we need to use ``spack remove``:
+We can see that ``trilinos`` won't be uninstalled because it is still referenced in another environment managed by Spack.
+If we want to remove it from the roots list, we need to use ``spack remove``:
 
 .. literalinclude:: outputs/environments/env-remove-1.out
    :language: console
@@ -299,7 +299,7 @@ There are several important parts of this file:
 The ``specs`` list should look familiar; these are the specs we've been modifying with ``spack add``.
 
 ``concretizer:unify:true``, the default, means that they are concretized *together*, so that there is only one version of each package in the environment.
-Other options for ``unify`` are ``false`` and ``when_possible``. ``false`` means that the specs are concretized *independently*, so that there may be multiple versions of the same package in the environment. ``when_possible`` lies between those options.
+Other options for ``unify`` are ``false`` and ``when_possible``. ``false`` means that the specs are concretized *independently*, so that there may be multiple versions of the same package in the environment. ``when_possible`` lies between these options.
 In this case, Spack will unify as many packages in the environment, but will not fail if it cannot unify all of them.
 
 
@@ -382,7 +382,7 @@ Building in environments
 ------------------------
 
 Activated environments allow you to invoke any programs installed in them as if they were installed on the system.
-In this section we will take advantage of that feature.
+In this section, we will take advantage of that feature.
 
 Suppose you want to compile some MPI programs.
 We have an MPI implementation installed in our ``myproject2`` environment, so ``mpicc`` is available in our path.
@@ -484,7 +484,7 @@ Managed versus independent environments
 
 Environments are either Spack-managed or independent.
 Both types of environments are defined by their environment files.
-So far we have only created managed environments.
+So far, we have only created managed environments.
 This section describes their differences.
 
 *Managed environments* are created using ``spack env create <name>``.
