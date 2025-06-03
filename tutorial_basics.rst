@@ -29,13 +29,13 @@ To get started, we simply clone the Spack repository and check out the latest re
    :language: console
 
 Next, we'll add Spack to our path.
-Spack has some nice command-line integration tools, so instead of simply prepending to our ``PATH`` variable, let's source the Spack setup script.
+Spack has some nice command-line integration tools, so instead of simply prepending to our ``PATH`` variable, we'll source the Spack setup script.
 
 .. code-block:: console
 
   $ . share/spack/setup-env.sh
 
-You're good to go!
+And now we're good to go!
 
 -----------------
 What is in Spack?
@@ -49,8 +49,8 @@ The ``spack list`` command shows available packages.
 
 
 The ``spack list`` command can also take a query string.
-Spack automatically adds wildcards to both ends of the string, or you can add your own wildcards.
-For example, we can view all available Python packages.
+Spack automatically adds wildcards to both ends of the string, or we can add our own wildcards for more advanced searches.
+For example, let's view all available Python packages.
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -61,7 +61,7 @@ Installing Packages
 -------------------
 
 Installing a package with Spack is very simple.
-To install a piece of software simply type,
+To install a software package type,
 
 .. code-block:: console
 
@@ -72,21 +72,21 @@ Let's go ahead and install ``gmake``,
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
 
-You will see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
+We see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
 They do not represent separate software builds from source, but are records of the system's compiler runtime components Spack used for the install.
-For the rest of this section, we will ignore these components and focus on the packages explicitly installed.
+For the rest of this section, we'll ignore these components and focus on the packages explicitly installed.
 
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
-For the tutorial we have prepared a binary cache so you don't have to wait on slow compilation from source.
-To be able to install from the binary cache, we will need to configure Spack with the location of the binary cache and trust the GPG key that the binary cache was signed with.
+For the tutorial we prepared a binary cache so we don't have to wait on slow compilation from source.
+To enable installation from the binary cache, we'll need to configure Spack with the location of the cache and trust the GPG key that the cache was signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-You'll learn more about configuring Spack later in the tutorial, but for now you will be able to install the rest of the packages in the tutorial from a binary cache using the same ``spack install`` command.
-By default this will install the binary cached version if it exists and fall back on installing from source if it does not.
+We'll learn more about configuring Spack later in the tutorial, but for now we will be able to install the rest of the packages in the tutorial from the cache using the same ``spack install`` command.
+By default this will install the binary cached version if it exists and fall back to install the package from source if it does not.
 
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
 The ``%`` sigil is used to specify compilers.
