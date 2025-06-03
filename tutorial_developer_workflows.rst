@@ -328,5 +328,3 @@ While we won't build out this example it illustrates how the ``dev_path`` for ``
 Now if we want to do most of our incremental builds using the ``Release`` build and periodically check the results using the ``Debug`` build we can combine the workflow from the previous example: dive into the ``Release`` versions build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
 Note that since there are two ``scr`` specs in the environment we must distinguish which one we want for these commands.
 When we are ready to check our changes for the debug build, we can exit out of the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build through our method of choice.
-
-[end of tutorial_developer_workflows.rst]

@@ -238,7 +238,7 @@ If we look inside, we see that ``CC`` and ``CXX`` point to our GNU compiler:
 
 .. note::
     As usual make sure you have shell support activated with Spack:
-        ``source /path/to/spack_root/share/spack/setup-env.sh``
+        ``source /path/to/spack/share/spack/setup-env.sh``
 
 .. code-block:: console
 

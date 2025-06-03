@@ -65,7 +65,7 @@ Now we can re-source the setup file, and Spack modules will be put in our module
 
 .. code-block:: console
 
-  $ . share/spack/setup-env.sh
+  $ . spack/share/spack/setup-env.sh
 
 .. FIXME: this needs bootstrap support for ``lmod``
 
@@ -987,5 +987,3 @@ Since it is currently the default compiler (our current default is the most rece
   $ spack compiler rm gcc@12.3.0
 
 This will ensure the rest of the tutorial goes smoothly for you.
-
-[end of tutorial_modules.rst]

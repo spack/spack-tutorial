@@ -813,5 +813,3 @@ For more detailed documentation on Spack's many configuration settings, see `the
 
 For examples of how other sites configure Spack, see https://github.com/spack/spack-configs.
 If you use Spack at your site and want to share your config files, feel free to submit a pull request!
-
-[end of tutorial_configuration.rst]
