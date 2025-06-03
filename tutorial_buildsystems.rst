@@ -583,33 +583,33 @@ Package definitions for Python packages can be written using the ``Package`` cla
 
 Spack provides a ``PythonPackage`` subclass to allow for easier installation of Python modules.
 
-We will write a package file for dateutil_:
+We'll write a package file for requests_:
 
-.. _dateutil: https://dateutil.readthedocs.io/en/stable/
+.. _requests: https://requests.readthedocs.io/en/latest/
 
 .. code-block:: console
 
-    $ spack create -f https://pypi.io/packages/source/p/python-dateutil/python-dateutil-2.9.0.post0.tar.gz
-    ==> This looks like a URL for python-dateutil
-    ==> Selected 26 versions
-    2.9.0.post0  https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz#sha256=37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3
-    ...
-    
+    $ spack create -f https://pypi.io/packages/source/p/requests/requests-2.32.3.tar.gz
+    ==> This looks like a URL for requests
+    ==> Selected 152 versions
+    2.32.3  https://files.pythonhosted.org/packages/63/70/2bf7780ad2d390a8d301ad0b550f1581eadbd9a20f896afe06353c2a2913/requests-2.32.3.tar.gz#sha256=55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760
+    ..
+
     ==> Enter number of versions to take, or use a command:
         [c]hecksum  [e]dit  [f]ilter  [a]sk each  [n]ew only  [r]estart  [q]uit
     action> 1
-    ==> Selected 1 of 26 versions
-    2.9.0.post0  https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz#sha256=37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3
+    ==> Selected 1 of 152 versions
+    ..
 
     ==> Enter number of versions to take, or use a command:
         [c]hecksum  [e]dit  [f]ilter  [a]sk each  [n]ew only  [r]estart  [q]uit
     action> c
-    ==> Fetching https://files.pythonhosted.org/packages/66/c0/0c8b6ad9f17a802ee498c46e004a0eb49bc148f2fd230864601a86dcf6db/python-dateutil-2.9.0.post0.tar.gz#sha256=37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3
-        [100%]  342.43 KB @   35.9 MB/s
+    ..
+        
     ==> This package looks like it uses the python build system
-    ==> Changing package name from python-dateutil to py-python-dateutil
-    ==> Created template for py-python-dateutil package
-    ==> Created package file: /home/spack/spack/var/spack/repos/spack_repo/builtin/packages/py_python_dateutil/package.py
+    ==> Changing package name from requests to py-requests
+    ==> Created template for py-requests package
+    ==> Created package file: /home/spack/spack/var/spack/repos/spack_repo/builtin/packages/py_requests/package.py
 
 
 Spack generates the following template:
@@ -620,39 +620,25 @@ Spack generates the following template:
 
 This is similar to other package templates; we have the choice to provide build options or use sensible defaults.
 
-Next, we'll need to find the dependencies for ``dateutil``.
+Next, we'll need to find the dependencies for ``requests``.
 Dependencies are usually listed in ``pyproject.toml``, ``setup.py``, ``setup.cfg``, or ``requirements.txt``.
 
-Here are the relevant blocks for ``dateutil``:
+Here's the relevant block for ``requests``:
 
 .. code-block:: python
-    # pyproject.toml
-    [build-system]
-    requires = [
-        "setuptools; python_version != '3.3'",
-        "setuptools<40.0; python_version == '3.3'",
-        "wheel",
-        "setuptools_scm<8.0"
-    ]
-
     # setup.cfg
 
-    [options]
-    zip_safe = True
-    setup_requires = setuptools_scm
-    install_requires = six >= 1.5
+    requires-dist =
+        certifi>=2017.4.17
+        charset_normalizer>=2,<4
+        idna>=2.5,<4
+        urllib3>=1.21.1,<3
 
-These files indicate that ``dateutil`` depends on ``setuptools``, ``setuptools-scm``, ``wheel``, and `six`.
-
-Here's the completed package definition:
+We now have our project dependencies! It's important to declare them for Python packages, as Spack won't be able to properly load your package without this information.
 
 .. literalinclude:: tutorial/examples/PyPackage/1.package.py
    :language: python
    :linenos:
-
-It's important to declare all dependencies of a Python package.
-Spack "activates" Python packages in order to avoid loading of each dependency explicitly.
-If a dependency is missing, Spack will be unable to properly activate the package.
 
 For more information about leveraging ``PythonPackage``, see the `docs <https://spack.readthedocs.io/en/latest/build_systems/pythonpackage.html>`_.
 

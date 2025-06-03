@@ -10,25 +10,25 @@
 # next to all the things you'll want to change. Once you've handled
 # them, you can save this file and test your package like this:
 #
-#     spack install py-python-dateutil
+#     spack install py-requests
 #
 # You can edit this file again by typing:
 #
-#     spack edit py-python-dateutil
+#     spack edit py-requests
 #
 # See the Spack documentation for more information on packaging.
 # ----------------------------------------------------------------------------
 
-from spack_repo.builtin.build_systems.python import PythonPackage
 from spack.package import *
+from spack_repo.builtin.build_systems.python import PythonPackage
 
 
-class PyPythonDateutil(PythonPackage):
+class PyRequests(PythonPackage):
     """FIXME: Put a proper description of your package here."""
 
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.example.com"
-    pypi = "python-dateutil/python-dateutil-2.9.0.post0.tar.gz"
+    pypi = "requests/requests-2.32.3.tar.gz"
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
@@ -39,7 +39,10 @@ class PyPythonDateutil(PythonPackage):
     # the license, set checked_by to your Github username.
     license("UNKNOWN", checked_by="github_user1")
 
-    version("2.9.0.post0", sha256="37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3")
+    version(
+        "2.32.3",
+        sha256="55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760",
+    )
 
     # FIXME: Only add the python/pip/wheel dependencies if you need specific versions
     # or need to change the dependency type. Generic python/pip/wheel dependencies are

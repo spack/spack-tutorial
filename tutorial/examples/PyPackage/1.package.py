@@ -2,20 +2,22 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
-from spack_repo.builtin.build_systems.python import PythonPackage
 from spack.package import *
+from spack_repo.builtin.build_systems.python import PythonPackage
 
 
-class PyPythonDateutil(PythonPackage):
-    """Extensions to the standard Python datetime module."""
+class PyRequests(PythonPackage):
+    """Python HTTP for Humans."""
 
-    homepage = "https://dateutil.readthedocs.io/"
-    pypi = "python-dateutil/python-dateutil-2.9.0.post0.tar.gz"
+    homepage = "https://requests.readthedocs.io"
+    pypi = "requests/requests-2.32.3.tar.gz"
 
-    version("2.9.0.post0", sha256="37dd54208da7e1cd875388217d5e00ebd4179249f90fb72437e91a35459a0ad3")
+    version("2.32.3", sha256="55365417734eb18255590a9ff9eb97e9e1da868d4ccd6402399eaf68af20a760")
 
     depends_on("py-setuptools", type="build")
-    depends_on("py-setuptools-scm@:7", type="build")
-    depends_on("py-wheel", type="build")
-    depends_on("py-six", type=("build", "run"))
+
+    depends_on("py-charset-normalizer", type=("build", "run"))
+    depends_on("py-idna", type=("build", "run"))
+    depends_on("py-urllib3", type=("build", "run"))
+    depends_on("py-certifi", type=("build", "run"))
 
