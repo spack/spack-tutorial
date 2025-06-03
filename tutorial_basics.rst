@@ -8,12 +8,13 @@
 Basic Installation Tutorial
 =========================================
 
-This tutorial will guide you through the process of installing software using Spack.
-We will first cover the ``spack install`` command, focusing on the power of the spec syntax and the flexibility it gives to users.
-We will also cover the ``spack find`` command for viewing installed packages and the ``spack uninstall`` command for uninstalling them.
-Finally, we will touch on how Spack manages compilers, especially as it relates to using Spack-built compilers within Spack.
-We will include full output from all of the commands demonstrated, although we will frequently call attention to only small portions of that output (or merely to the fact that it succeeded).
-The provided output is all from an Ubuntu 22.04 Docker image.
+This tutorial will provide a step-by-step guide for installing software with Spack.
+We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack’s spec syntax and the flexibility it offers users.
+Next, we will demonstrate how to use the ``spack find`` command to view installed packages, as well as the ``spack uninstall`` command to remove them.
+
+Additionally, we will discuss how Spack manages compilers, with a particular focus on using Spack-built compilers within the Spack environment.
+Throughout the tutorial, we will present complete command outputs; however, we will often emphasize only the most relevant sections or simply confirm successful execution.
+All examples and outputs are based on an Ubuntu 22.04 Docker image.
 
 .. _basics-tutorial-install:
 
@@ -21,15 +22,14 @@ The provided output is all from an Ubuntu 22.04 Docker image.
 Installing Spack
 ----------------
 
-Spack works out of the box.
-Simply clone Spack to get going.
-We will clone Spack and immediately check out the most recent release, v0.23.
+Spack is ready to use immediately after installation.
+To get started, we simply clone the Spack repository and check out the latest release, v1.0.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
 
-Next, add Spack to your path.
-Spack has some nice command line integration tools, so instead of simply prepending to your ``PATH`` variable, source the Spack setup script.
+Next, we'll add Spack to our path.
+Spack has some nice command-line integration tools, so instead of simply prepending to our ``PATH`` variable, let's source the Spack setup script.
 
 .. code-block:: console
 
