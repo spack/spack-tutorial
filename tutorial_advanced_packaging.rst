@@ -66,7 +66,7 @@ Now, you are ready to set your preferred ``EDITOR`` and continue with the rest o
 Modifying a Package's Build Environment
 ---------------------------------------
 
-Spack sets up several environment variables like ``PATH`` by default to aid in building a package, but many packages make use of environment variables which convey specific information about their dependencies (e.g., ``MPICC``).
+Spack sets up several environment variables like ``PATH`` by default to aid in building a package, but many packages make use of environment variables that convey specific information about their dependencies (e.g., ``MPICC``).
 This section covers how to update your Spack packages so that package-specific environment variables are defined at build-time.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -78,7 +78,7 @@ For example, when a package depends on a python extension like py-numpy, Spack's
 
 To provide environment setup for a dependent, a package can implement the
 :py:func:`setup_dependent_build_environment
-<spack.package.PackageBase.setup_dependent_build_environment>` and or :py:func:`setup_dependent_run_environment <spack.package.PackageBase.setup_dependent_run_environment>` functions.
+<spack.package.PackageBase.setup_dependent_build_environment>` and/or :py:func:`setup_dependent_run_environment <spack.package.PackageBase.setup_dependent_run_environment>` functions.
 These functions take as a parameter a :py:class:`EnvironmentModifications <spack.util.environment.EnvironmentModifications>` object, which includes convenience methods to update the environment.
 For example, an MPI implementation can set ``MPICC`` for build-time use for packages that depend on it:
 
@@ -379,9 +379,9 @@ Other Packaging Topics
 Attach attributes to other packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Build tools usually also provide a set of executables that can be used when another package is being installed.
+Build tools also usually provide a set of executables that can be used when another package is being installed.
 Spack gives you the opportunity to monkey-patch dependent modules and attach attributes to them.
-This helps make the packager experience as similar as possible to what would have been the manual installation of the same package.
+This helps make the packager's experience as similar as possible to what would have been the manual installation of the same package.
 
 An example here is the ``automake`` package, which overrides
 :py:func:`setup_dependent_package <spack.package.PackageBase.setup_dependent_package>`:

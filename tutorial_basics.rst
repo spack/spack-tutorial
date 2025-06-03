@@ -279,7 +279,7 @@ Use ``--dependents`` to remove the specified package and all of its dependents.
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
    :language: console
 
-Spack will not uninstall packages that are not sufficiently specified specified (i.e., if the spec is ambiguous and matches multiple installed packages).
+Spack will not uninstall packages that are not sufficiently specified (i.e., if the spec is ambiguous and matches multiple installed packages).
 The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an ambiguous spec.
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out

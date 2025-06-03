@@ -103,13 +103,13 @@ which outputs
    ...
    ==> Pushed julia@1.9.3/dfzhutf to ghcr.io/<user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-The location of the pushed package, when referred to as a OCI image, will be:
+The location of the pushed package, when referred to as an OCI image, will be:
 
 .. code-block:: text
 
    ghcr.io/<github_user>/buildcache-<user>-<host>:julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl.spack
 
-looks very similar to a container image --- we will get to that in a bit.
+look very similar to a container image --- we will get to that in a bit.
 
 .. note ::
 
@@ -207,7 +207,7 @@ We can already attempt to run the image associated with the ``julia`` package th
    exec /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/julia-1.9.3-dfzhutfh3s2ekaltdmujjn575eip5uhl/bin/julia: no such file or directory
 
 but immediately we see it fails.
-The reason is that one crucial part is missing, and that is a ``glibc``, which Spack always treats as an external package.
+The reason is that one crucial part is missing, and that is ``glibc``, which Spack always treats as an external package.
 
 To fix this, we force push to the registry again, but this time we specify a base image with a recent version of ``glibc``, for example from ``ubuntu:24.04``:
 
@@ -231,7 +231,7 @@ This time it works!
 The minimal ``ubuntu:24.04`` image provides us not only with ``glibc``, but also other utilities like a shell.
 
 Notice that you can use any base image of choice, like ``fedora`` or ``rockylinux``.
-The only constraint is that it has a ``libc`` compatible with the external in the Spack built the binaries.
+The only constraint is that it has a ``libc`` compatible with the external ``libc`` Spack used to build the binaries.
 Spack does not validate this.
 
 --------------------------------------
@@ -243,7 +243,7 @@ If you've paid attention to the output of some of the commands we have run so fa
 Every Spack package corresponds to a single layer in each image, and the layers are shared across the different image tags.
 
 Because Spack installs every package into a unique prefix, it is incredibly easy to compose multiple packages into a container image.
-In contrast to Docker images built from commands in a ``Dockerfile`` where each command is run in order, Spack package layers are independent, and can in principle be combined in any order.
+In contrast to Docker images built from commands in a ``Dockerfile`` where each command is run in sequence, Spack package layers are independent, and can in principle be combined in any order.
 
 Let's add a simple text editor like ``vim`` to our previous environment next to ``julia``, so that we could both edit and run Julia code.
 
@@ -309,7 +309,7 @@ The downside is that sharing binaries is more complicated, as binaries may conta
 Fortunately Spack handles this automatically upon install from a binary cache.
 But when you build binaries that are intended to be shared, there is one thing you have to keep in mind: Spack can relocate hard-coded paths in binaries *provided that the target prefix is shorter than the prefix used during the build*.
 
-The reason is that binaries typically embed these absolute paths in string tables, which is a list of null terminated strings, to which the program stores offsets.
+The reason is that binaries typically embed these absolute paths in string tables, which is a list of null-terminated strings, to which the program stores offsets.
 That means we can only modify strings in-place, and if the new path is longer than the old one, we would overwrite the next string in the table.
 
 To maximize the chances of successful relocation, you should build your binaries in a relatively long path.
