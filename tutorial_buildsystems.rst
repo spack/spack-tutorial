@@ -10,7 +10,7 @@
 Spack Package Build Systems
 ===========================
 
-After writing a few package template files, certain recurring patterns often become apparent.  
+After writing a few package template files, certain recurring patterns often become apparent.
 For example, an ``install()`` method may frequently include the following steps:
 
 - ``configure``
@@ -20,7 +20,7 @@ For example, an ``install()`` method may frequently include the following steps:
 
 It's also common to pass arguments such as ``"prefix=" + prefix`` to ``configure`` or ``cmake``.
 
-To avoid repeating this logic across packages, Spack provides specialized build system base classes that encapsulate these common patterns.  
+To avoid repeating this logic across packages, Spack provides specialized build system base classes that encapsulate these common patterns.
 These classes help reduce boilerplate while still offering fine-grained control over the build process when needed.
 
 In this section, we'll describe several of these build systems and show how they can be used to simplify and streamline package creation.
@@ -48,7 +48,7 @@ Package Class Hierarchy
         PackageBase -> PythonPackage [dir=back]
     }
 
-The diagram above provides a high-level view of the class hierarchy and how each package class relates to the others.  
+The diagram above provides a high-level view of the class hierarchy and how each package class relates to the others.
 Each build system specific class inherits from the ``PackageBase`` superclass.
 
 The bulk of the common functionality, such as fetching sources, extracting them into a staging directory, and managing the install process, is implemented in the superclass.
@@ -236,13 +236,13 @@ Let's add in the rest of the package's details:
    :emphasize-lines: 10,11,13,14,18,20
    :linenos:
 
-As previously mentioned, most packages that use a ``Makefile`` include hardcoded variables that must be edited.  
-While this setup may be sufficient for basic use cases, it is often inflexible, especially when different compilers or build configurations are required.  
+As previously mentioned, most packages that use a ``Makefile`` include hardcoded variables that must be edited.
+While this setup may be sufficient for basic use cases, it is often inflexible, especially when different compilers or build configurations are required.
 Spack is designed to support a wide range of compilers and platforms, and the ``MakefilePackage`` subclass helps accommodate that flexibility.
 
 The ``MakefilePackage`` class simplifies the process of editing ``Makefiles`` through its overridable ``edit()`` method, which provides a hook for making in-place changes before the build begins.
 
-As an example, consider the default ``Makefile`` provided with ``Bowtie``.  
+As an example, consider the default ``Makefile`` provided with ``Bowtie``.
 Inspecting its contents reveals that ``CC`` and ``CXX`` are hardcoded to the GNU compilers:
 
 .. code-block:: console
