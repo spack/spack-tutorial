@@ -30,3 +30,4 @@ class Mpileaks(AutotoolsPackage):
             args.extend([f'--with-stack-start-c={stackstart}',
                          f'--with-stack-start-fortran={stackstart}'])
         return args
+
