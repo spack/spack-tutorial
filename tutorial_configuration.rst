@@ -485,7 +485,7 @@ Because of the configuration scoping we discussed earlier, this overrides the de
 Variant preferences
 ^^^^^^^^^^^^^^^^^^^
 
-As we'veseen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
+As we've seen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
 If we were working on a project that would routinely need serial HDF5, that might get annoying quickly, having to type ``hdf5~mpi`` all the time.
 Instead, we'll update our preferences for HDF5.
 
