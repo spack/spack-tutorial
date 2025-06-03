@@ -10,11 +10,11 @@
 Advanced Topics in Packaging
 ============================
 
-Spack tries to automatically configure packages with information from dependencies such that all you need to do is to list the dependencies (i.e., with the ``depends_on`` directive) and the build system (for example by deriving from ``CmakePackage``).
+Spack tries to automatically configure packages with information from dependencies such that all we will need to do is to list the dependencies (i.e., with the ``depends_on`` directive) and the build system (for example by deriving from ``CmakePackage``).
 
 However, there are many special cases.
-Often you need to retrieve details about dependencies to set package-specific configuration options, or to define package-specific environment variables used by the package's build system.
-This tutorial covers how to retrieve build information from dependencies, and how you can automatically provide important information to dependents in your package.
+Often we will need to retrieve details about dependencies to set package-specific configuration options, or to define package-specific environment variables used by the package's build system.
+This tutorial covers how to retrieve build information from dependencies, and how we can automatically provide important information to dependents in your package.
 
 ----------------------
 Setup for the Tutorial
@@ -33,7 +33,7 @@ These package definitions are stored in a separate package repository, which can
   $ spack repo add --scope=site var/spack/repos/tutorial
 
 This section of the tutorial may also require a newer version of gcc.
-If you have not already installed gcc @7.2.0 and added it to your configuration, you can do so with:
+If we have not already installed gcc @7.2.0 and added it to your configuration, we can do so with:
 
 .. code-block:: console
 
@@ -41,7 +41,7 @@ If you have not already installed gcc @7.2.0 and added it to your configuration,
   $ spack compiler add --scope=site `spack location -i gcc@7.2.0 %gcc@5.4.0`
 
 If you are using the tutorial docker image, all dependency packages will have been installed.
-Otherwise, to install these packages you can use the following commands:
+Otherwise, to install these packages we can use the following commands:
 
 .. code-block:: console
 
@@ -49,13 +49,13 @@ Otherwise, to install these packages you can use the following commands:
   $ spack install netlib-lapack
   $ spack install mpich
 
-Now, you are ready to set your preferred ``EDITOR`` and continue with the rest of the tutorial.
+Now, we are ready to set our preferred ``EDITOR`` and continue with the rest of the tutorial.
 
 .. note::
 
-  Several of these packages depend on an MPI implementation. You can use
-  OpenMPI if you install it from scratch, but this is slow (>10 min.).
-  A binary cache of MPICH may be provided, in which case you can force
+  Several of these packages depend on an MPI implementation. We can use
+  OpenMPI if we install it from scratch, but this is slow (>10 min.).
+  A binary cache of MPICH may be provided, in which case we can force
   the package to use it and install quickly. All tutorial examples with
   packages that depend on MPICH include the spec syntax for building with it.
 
@@ -97,7 +97,7 @@ We can practice by editing the ``mpich`` package to set the ``MPICC`` environmen
 
   root@advanced-packaging-tutorial:/# spack edit mpich
 
-Once you're finished, the method should look like this:
+Once we're finished, the method should look like this:
 
 .. code-block:: python
 
@@ -113,7 +113,7 @@ Once you're finished, the method should look like this:
       spack_env.set('MPICH_F90', spack_fc)
       spack_env.set('MPICH_FC', spack_fc)
 
-At this point we can, for instance, install ``netlib-scalapack`` with ``mpich``:
+At this point, we will, for instance, install ``netlib-scalapack`` with ``mpich``:
 
 .. code-block:: console
 
@@ -198,7 +198,7 @@ In the end your method should look like:
       spack_env.append_flags('LDFLAGS', spec['lapack'].libs.search_flags)
       spack_env.append_flags('LIBS', spec['lapack'].libs.link_flags)
 
-At this point it's possible to proceed with the installation of ``elpa ^mpich``
+At this point, it's possible to proceed with the installation of ``elpa ^mpich``
 
 ------------------------------
 Retrieving Library Information
@@ -213,7 +213,7 @@ This section covers how to retrieve library information from dependencies and ho
 Accessing dependency libraries
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you need to access the libraries of a dependency, you can do so via the ``libs`` property of the spec, for example in the ``arpack-ng`` package:
+If we need to access the libraries of a dependency, we can do so via the ``libs`` property of the spec, for example in the ``arpack-ng`` package:
 
 .. code-block:: python
 
@@ -229,13 +229,13 @@ If you need to access the libraries of a dependency, you can do so via the ``lib
 Note that ``arpack-ng`` is querying virtual dependencies, which Spack automatically resolves to the installed implementation (e.g. ``openblas`` for ``blas``).
 
 We've started work on a package for ``armadillo``.
-You should open it, read through the comment that starts with ``# TUTORIAL:`` and complete the ``cmake_args`` section:
+We should open it, read through the comment that starts with ``# TUTORIAL:`` and complete the ``cmake_args`` section:
 
 .. code-block:: console
 
   root@advanced-packaging-tutorial:/# spack edit armadillo
 
-If you followed the instructions in the package, when you are finished your ``cmake_args`` method should look like:
+If we followed the instructions in the package, when we are finished our ``cmake_args`` method should look like:
 
 .. code-block:: python
 
@@ -256,10 +256,10 @@ If you followed the instructions in the package, when you are finished your ``cm
             '-DDETECT_HDF5={0}'.format('ON' if '+hdf5' in spec else 'OFF')
         ]
 
-As you can see, getting the list of libraries that your dependencies provide is as easy as accessing the their ``libs`` attribute.
-Furthermore, the interface remains the same whether you are querying regular or virtual dependencies.
+As we can see, getting the list of libraries that our dependencies provide is as easy as accessing the their ``libs`` attribute.
+Furthermore, the interface remains the same whether we are querying regular or virtual dependencies.
 
-At this point you can complete the installation of ``armadillo`` using ``openblas`` as a LAPACK provider (``armadillo ^openblas ^mpich``):
+At this point, we can complete the installation of ``armadillo`` using ``openblas`` as a LAPACK provider (``armadillo ^openblas ^mpich``):
 
 .. code-block:: console
 
@@ -280,7 +280,7 @@ At this point you can complete the installation of ``armadillo`` using ``openbla
     Fetch: 0.01s.  Build: 3.96s.  Total: 3.98s.
   [+] /usr/local/opt/spack/linux-ubuntu16.04-x86_64/gcc-5.4.0/armadillo-8.100.1-n2eojtazxbku6g4l5izucwwgnpwz77r4
 
-Hopefully the installation went fine and the code we added expanded to the right list of semicolon separated libraries (you are encouraged to open ``armadillo``'s build logs to double check).
+Hopefully the installation went fine and the code we added expanded to the right list of semicolon separated libraries (we are encouraged to open ``armadillo``'s build logs to double check).
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Providing libraries to dependents
@@ -338,7 +338,7 @@ Let's edit it:
   root@advanced-packaging-tutorial:/# spack edit netlib-lapack
 
 and follow the instructions in the ``# TUTORIAL:`` comment as before.
-What we need to implement is:
+What we will implement is:
 
 .. code-block:: python
 
@@ -353,7 +353,7 @@ i.e., a property that returns the correct list of libraries for the LAPACK inter
 
 We use the name ``lapack_libs`` rather than ``libs`` because ``netlib-lapack`` can also provide ``blas``, and when it does it is provided as a separate library file.
 Using this name ensures that when dependents ask for ``lapack`` libraries, ``netlib-lapack`` will retrieve only the libraries associated with the ``lapack`` interface.
-Now we can finally install ``armadillo ^netlib-lapack ^mpich``:
+Now we will finally install ``armadillo ^netlib-lapack ^mpich``:
 
 .. code-block:: console
 
@@ -379,8 +379,8 @@ Attach attributes to other packages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Build tools also usually provide a set of executables that can be used when another package is being installed.
-Spack gives you the opportunity to monkey-patch dependent modules and attach attributes to them.
-This helps make the packager's experience as similar as possible to what would have been the manual installation of the same package.
+Spack gives us the opportunity to monkey-patch dependent modules and attach attributes to them.
+This helps make our experience as similar as possible to what would have been the manual installation of the same package.
 
 An example here is the ``automake`` package, which overrides
 :py:func:`setup_dependent_package <spack.package.PackageBase.setup_dependent_package>`:
@@ -431,13 +431,13 @@ Let's look at an example and try to install ``netcdf ^mpich``:
     /usr/local/var/spack/stage/netcdf-4.4.1.1-gk2xxhbqijnrdwicawawcll4t3c7dvoj/netcdf-4.4.1.1/spack-build-out.txt
 
 We can see from the error that ``netcdf`` needs to know how to link the *high-level interface* of ``hdf5``, and thus passes the extra parameter ``hl`` after the request to retrieve it.
-Clearly the implementation in the ``hdf5`` package is not complete, and we need to fix it:
+Clearly the implementation in the ``hdf5`` package is not complete, and we will fix it:
 
 .. code-block:: console
 
   root@advanced-packaging-tutorial:/# spack edit hdf5
 
-If you followed the instructions correctly, the code added to the ``lib`` property should be similar to:
+If we followed the instructions correctly, the code added to the ``lib`` property should be similar to:
 
 .. code-block:: python
   :emphasize-lines: 1
@@ -451,7 +451,7 @@ If you followed the instructions correctly, the code added to the ``lib`` proper
   )
 
 where we highlighted the line retrieving the extra parameters.
-Now we can successfully complete the installation of ``netcdf ^mpich``:
+Now we will successfully complete the installation of ``netcdf ^mpich``:
 
 .. code-block:: console
 

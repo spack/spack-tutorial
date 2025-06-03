@@ -29,7 +29,7 @@ Setup for the Tutorial
 ----------------------
 
 To prepare for this tutorial we are going to install a small but representative set of software that includes different configurations of the same packages and some `external packages <https://spack.readthedocs.io/en/latest/build_settings.html#sec-external-packages>`_.
-To keep the installations manageable, we will start by uninstalling everything from earlier in the tutorial:
+To keep the installations manageable, let's start by uninstalling everything from earlier in the tutorial:
 
 .. code-block:: console
 
@@ -69,7 +69,7 @@ Now we can re-source the setup file, and Spack modules will be put in our module
 .. FIXME: this needs bootstrap support for ``lmod``
 
 .. FIXME: check the docs here, update them if necessary
-If we need to install Lmod or Environment Modules, we can refer to the documentation `here <https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules>`_.
+If you need to install Lmod or Environment Modules, you can refer to the documentation `here <https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules>`_.
 
 
 ^^^^^^^^^^^^^^^^^^
@@ -86,23 +86,23 @@ For this tutorial, however, we want to use ``gcc@12.3.0``.
   $ spack install gcc@12.3.0
 
 
-We can get this in our environment using ``spack load gcc@12.3.0``:
+You can get this in your environment using ``spack load gcc@12.3.0``:
 
 .. literalinclude:: outputs/modules/spack-load-gcc.out
    :language: console
 
-Now, ``gcc`` is in our ``PATH``.
-We can add it to the list of compilers with ``spack compiler add``:
+Now, ``gcc`` is in your ``PATH``.
+You can add it to the list of compilers with ``spack compiler add``:
 
 .. literalinclude:: outputs/modules/add-compiler.out
    :language: console
 
-To check which compilers are available we can use ``spack compiler list``:
+To check which compilers are available you can use ``spack compiler list``:
 
 .. literalinclude:: outputs/modules/list-compiler.out
    :language: console
 
-Finally, when we have confirmed ``gcc@12.3.0`` is properly registered, clean the environment with ``spack unload``:
+Finally, when you have confirmed ``gcc@12.3.0`` is properly registered, clean the environment with ``spack unload``:
 
 .. code-block:: console
 
@@ -129,10 +129,10 @@ Finally, we will use Spack to install the packages used in the examples:
 What are Module Files?
 ----------------------
 
-Module files are an easy way to modify our environment in a controlled manner during a shell session.
+Module files are an easy way to modify your environment in a controlled manner during a shell session.
 In general, they contain the information needed to run an application or use a library.
 The ``module`` command is used to interpret and execute module files.
-For example, ``module show`` tells us what a module will do when loaded:
+For example, ``module show`` tells you what a module will do when loaded:
 
 .. literalinclude:: outputs/modules/what-are-modules-1.out
    :language: console
@@ -144,7 +144,7 @@ For example, ``module show`` tells us what a module will do when loaded:
    :language: console
 
 
-and to undo the modifications, we can use ``module unload``:
+and to undo the modifications, you can use ``module unload``:
 
 .. literalinclude:: outputs/modules/what-are-modules-3.out
    :language: console
@@ -178,7 +178,7 @@ For further details we refer to its `documentation <https://modules.readthedocs.
 Lmod
 """"
 Lmod is a module system written in Lua, originally created  at the "Texas Advanced Computing Center" (TACC) by Robert McLay.
-We can get it with:
+You can get it with:
 
 .. code-block:: console
 
@@ -202,18 +202,18 @@ The following diagram provides a high-level view of the process:
 .. image:: module_file_generation.*
 
 Modules in Spack are generated using configuration files (``config.yaml`` and ``modules.yaml``), information from Spack's package recipes, and Jinja2 templates.
-Spack comes with `Jinja2 <http://jinja.pocoo.org/docs/2.9/>`_, an external template engine, so we do not need to install it ourselves.
+Spack comes with `Jinja2 <http://jinja.pocoo.org/docs/2.9/>`_, an external template engine, so you do not need to install it yourself.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 Modules vs ``spack load``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We may have noticed that we used ``spack load`` in the
+You may have noticed that we used ``spack load`` in the
 :ref:`module_file_tutorial_prerequisites` section above. This is a
 built-in mechanism of Spack's -- it's designed so that users on a cluster or a laptop can quickly get a package into their path, and it understands Spack's spec syntax.
 It does *not* require modules, as Spack needs to work regardless of whether modules are set up on the system.
 
-As we might expect, we can see what is loaded via ``spack load`` using ``spack find``:
+As you might expect, you can see what is loaded via ``spack load`` using ``spack find``:
 
 .. literalinclude:: outputs/modules/show-loaded.out
    :language: console
@@ -225,9 +225,9 @@ To see this, try:
 .. literalinclude:: outputs/modules/module-avail-1.out
    :language: console
 
-We can ``module load`` any of these.
+You can ``module load`` any of these.
 By default, Spack generates modules named by ``package-version-compiler-version-hash``, which is a bit hard to read.
-We'll show us how to customize this in the following sections.
+We'll show you how to customize this in the following sections.
 
 
 .. _module_file_tutorial_non_hierarchical:
@@ -236,13 +236,13 @@ We'll show us how to customize this in the following sections.
 Non-hierarchical Module Files
 -----------------------------
 
-If we have arrived at this point, we should have an environment that looks similar to:
+If you have arrived at this point, you should have an environment that looks similar to:
 
 .. literalinclude:: outputs/modules/module-avail-2.out
    :language: console
 
 The non-hierarchical module files that have been generated so far follow Spack's `default rules for module generation <https://spack.readthedocs.io/en/latest/module_file_support.html#modules-yaml>`_.
-Taking a look at the ``gcc`` module we'll see, for example:
+Taking a look at the ``gcc`` module you'll see, for example:
 
 .. literalinclude:: outputs/modules/module-show-1.out
    :language: console
@@ -253,8 +253,8 @@ As expected, a few environment variables representing paths will be modified by 
 Filter unwanted modifications to the environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now consider the case that our site has decided that ``CC``, ``CXX``, ``FC`` and ``F77`` modifications should not be present in module files.
-What we can do to abide by the rules is to create a configuration file ``${SPACK_ROOT}/etc/spack/modules.yaml`` with the following content:
+Now consider the case that your site has decided that ``CC``, ``CXX``, ``FC`` and ``F77`` modifications should not be present in module files.
+What you can do to abide by the rules is to create a configuration file ``${SPACK_ROOT}/etc/spack/modules.yaml`` with the following content:
 
 .. code-block:: yaml
 
@@ -275,12 +275,12 @@ This can be done either by editing the configuration manually or directly from t
 
    $ spack config add "modules:default:tcl:all:filter:exclude_env_vars:['CC', 'CXX', 'F77', 'FC']"
 
-Next we should regenerate all the module files:
+Next you should regenerate all the module files:
 
 .. literalinclude:: outputs/modules/tcl-refresh-1.out
    :language: console
 
-If we take a look now at the module for ``gcc`` we'll see that the unwanted paths have disappeared:
+If you take a look now at the module for ``gcc`` you'll see that the unwanted paths have disappeared:
 
 .. literalinclude:: outputs/modules/module-show-2.out
    :language: console
@@ -290,9 +290,9 @@ Prevent some module files from being generated
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Another common request at many sites is to avoid exposing software that is only needed as an intermediate step when building a newer stack.
-We will try to prevent the generation of module files for anything that is compiled with ``gcc@11`` (the OS provided compiler).
+Let's try to prevent the generation of module files for anything that is compiled with ``gcc@11`` (the OS provided compiler).
 
-To do this we should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
+To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/modules.yaml``:
 
 .. code-block:: yaml
   :emphasize-lines: 4,5
@@ -321,8 +321,8 @@ This time we'll pass the option ``--delete-tree`` so that Spack will delete the 
    :language: console
 
 
-if we look closely, we'll see, though, that we went too far in excluding modules: the module for ``gcc@12.3.0`` disappeared as it was bootstrapped with ``gcc@11``.
-To specify exceptions to the ``exclude`` rules we can use ``include``:
+if you look closely, you'll see, though, that we went too far in excluding modules: the module for ``gcc@12.3.0`` disappeared as it was bootstrapped with ``gcc@11``.
+To specify exceptions to the ``exclude`` rules you can use ``include``:
 
 .. code-block:: yaml
   :emphasize-lines: 4,5
@@ -342,18 +342,18 @@ To specify exceptions to the ``exclude`` rules we can use ``include``:
             - "FC"
             - "F77"
 
-``include`` rules always have precedence over ``exclude`` rules. If we regenerate the modules again:
+``include`` rules always have precedence over ``exclude`` rules. If you regenerate the modules again:
 
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
 
-we'll see that now the module for ``gcc@12.3.0`` has reappeared:
+you'll see that now the module for ``gcc@12.3.0`` has reappeared:
 
 .. literalinclude:: outputs/modules/module-avail-4.out
    :language: console
 
-An additional feature that we can leverage to unclutter the environment is to skip the generation of module files for implicitly installed packages.
-In this case we only need to add the following line:
+An additional feature that you can leverage to unclutter the environment is to skip the generation of module files for implicitly installed packages.
+In this case you only need to add the following line:
 
 .. code-block:: yaml
   :emphasize-lines: 4
@@ -381,7 +381,7 @@ Change module file naming
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The next step in making module files more user-friendly is to improve their naming scheme.
-To reduce the length of the hash or remove it altogether we can use the ``hash_length`` keyword in the configuration file:
+To reduce the length of the hash or remove it altogether you can use the ``hash_length`` keyword in the configuration file:
 
 .. code-block:: yaml
   :emphasize-lines: 4
@@ -402,7 +402,7 @@ To reduce the length of the hash or remove it altogether we can use the ``hash_l
             - "FC"
             - "F77"
 
-If we try to regenerate the module files now we will get an error:
+If you try to regenerate the module files now you will get an error:
 
 .. literalinclude:: outputs/modules/tcl-refresh-4.out
    :language: console
@@ -442,7 +442,7 @@ We can change how the names are formatted to differentiate them:
           netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
           ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
-As we can see, it is possible to specify rules that apply only to a restricted set of packages using `anonymous specs <https://spack.readthedocs.io/en/latest/module_file_support.html#anonymous-specs>`_ like ``^python^lapack``.
+As you can see, it is possible to specify rules that apply only to a restricted set of packages using `anonymous specs <https://spack.readthedocs.io/en/latest/module_file_support.html#anonymous-specs>`_ like ``^python^lapack``.
 Here we declare a conflict between any two modules with the same name, so they cannot be loaded together.
 We also format the names of modules according to compiler, compiler version, and MPI provider name using the `spec format syntax <https://spack.readthedocs.io/en/latest/spack.html?highlight=spec%20format#spack.spec.Spec.format>`_.
 This allows us to match specs by their dependencies, and format them based on their DAGs.
@@ -462,7 +462,7 @@ Add custom environment modifications
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 At many sites it is customary to set an environment variable in a package's module file that points to the folder in which the package is installed.
-We can achieve this with Spack by adding an ``environment`` directive to the configuration file:
+You can achieve this with Spack by adding an ``environment`` directive to the configuration file:
 
 .. code-block:: yaml
   :emphasize-lines: 19-21
@@ -511,10 +511,10 @@ Regenerating the module files results in something like:
 .. literalinclude:: outputs/modules/module-show-3.out
    :language: console
 
-As we can see, the ``gcc`` module has the environment variable ``GCC_ROOT`` set.
+As you can see, the ``gcc`` module has the environment variable ``GCC_ROOT`` set.
 
 Sometimes it's also useful to apply environment modifications selectively and target only certain packages.
-We can for instance apply modifications to the ``openmpi`` module as follows:
+You can for instance apply modifications to the ``openmpi`` module as follows:
 
 .. code-block:: yaml
   :emphasize-lines: 22-26
@@ -566,7 +566,7 @@ Autoload dependencies
 ^^^^^^^^^^^^^^^^^^^^^
 
 Spack can also generate module files that contain code to load the dependencies automatically.
-We can, for instance, generate python modules that load their dependencies by adding the ``autoload`` directive and assigning it the value ``direct``:
+You can, for instance, generate python modules that load their dependencies by adding the ``autoload`` directive and assigning it the value ``direct``:
 
 .. code-block:: yaml
   :emphasize-lines: 4,32,33
@@ -627,7 +627,7 @@ This results in a flat module structure where all the software is visible at the
 .. literalinclude:: outputs/modules/lmod-intro-avail.out
    :language: console
 
-This layout is quite simple to deploy, but we can see from the above snippet that nothing prevents users from loading incompatible sets of modules:
+This layout is quite simple to deploy, but you can see from the above snippet that nothing prevents users from loading incompatible sets of modules:
 
 .. literalinclude:: outputs/modules/lmod-intro-conflict.out
    :language: console
@@ -654,7 +654,7 @@ There are just a few steps needed to adapt the ``modules.yaml`` file we used pre
   #. declare which compilers are considered ``core_compilers``
   #. remove the ``mpi`` related suffixes in projections (as they will be substituted by hierarchies)
 
-After these modifications our configuration file should look like:
+After these modifications your configuration file should look like:
 
 .. code-block:: yaml
   :emphasize-lines: 3-9,29-31
@@ -727,8 +727,8 @@ Loading that we'll unlock the ``Compiler`` part of the hierarchy:
 .. literalinclude:: outputs/modules/module-avail-7.out
    :language: console
 
-The same holds true also for the ``MPI`` part, which we can enable by loading either ``mpich`` or ``openmpi``.
-We will start by loading ``mpich``:
+The same holds true also for the ``MPI`` part, which you can enable by loading either ``mpich`` or ``openmpi``.
+Let's start by loading ``mpich``:
 
 .. literalinclude:: outputs/modules/module-avail-8.out
    :language: console
@@ -772,7 +772,7 @@ The situation becomes more involved as the number of virtual dependencies in the
 We can take advantage of the DAG that Spack maintains for the installed software and solve this combinatorial problem in a clean and automated way.
 In some sense, Spack's ability to manage this combinatorial complexity makes deeper hierarchies feasible.
 
-Coming back to our example, we will add ``lapack`` to the hierarchy and remove the remaining suffix projection for ``lapack``:
+Coming back to our example, let's add ``lapack`` to the hierarchy and remove the remaining suffix projection for ``lapack``:
 
 .. code-block:: yaml
   :emphasize-lines: 10
@@ -832,7 +832,7 @@ Working with Templates
 ----------------------
 
 As briefly mentioned in the introduction, Spack uses `Jinja2 <http://jinja.pocoo.org/docs/2.9/>`_ to generate each individual module file.
-This means that we have all of its flexibility and power when it comes to customizing what gets generated!
+This means that you have all of its flexibility and power when it comes to customizing what gets generated!
 
 ^^^^^^^^^^^^^^^^^^^^^
 Module file templates
@@ -866,10 +866,10 @@ Extend the default templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's assume one of our software is protected by group membership: allowed users belong to the same Linux group, and access is granted at the group level.
-Wouldn't it be nice if people that are not yet entitled to use it could receive a helpful message at module load time that tells them who to contact in our organization to be inserted in the group?
+Wouldn't it be nice if people that are not yet entitled to use it could receive a helpful message at module load time that tells them who to contact in your organization to be inserted in the group?
 
 To automate the generation of module files with such site-specific behavior we'll start by extending the list of locations where Spack looks for module files.
-We will create the file ``${SPACK_ROOT}/etc/spack/config.yaml`` with the content:
+Let's create the file ``${SPACK_ROOT}/etc/spack/config.yaml`` with the content:
 
 .. code-block:: yaml
 
@@ -893,7 +893,7 @@ Next, we need to create our custom template extension in the folder listed above
   end
   {% endblock %}
 
-We will name this file ``group-restricted.lua``. The line:
+Let's name this file ``group-restricted.lua``. The line:
 
 .. code-block:: jinja
 
@@ -916,7 +916,7 @@ The section:
 
 overrides the ``footer`` block.
 Finally, we need to add a couple of lines in ``modules.yaml`` to tell Spack which specs need to use the new custom template.
-For the sake of illustration we will assume it's ``netlib-scalapack``:
+For the sake of illustration let's assume it's ``netlib-scalapack``:
 
 .. code-block:: yaml
   :emphasize-lines: 30-31
@@ -985,4 +985,4 @@ Since it is currently the default compiler (our current default is the most rece
 
   $ spack compiler rm gcc@12.3.0
 
-This will ensure the rest of the tutorial goes smoothly for us.
+This will ensure the rest of the tutorial goes smoothly for you.

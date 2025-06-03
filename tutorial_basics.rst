@@ -8,8 +8,8 @@
 Basic Installation Tutorial
 =========================================
 
-This tutorial will guide you through the process of installing software using Spack.
-We will first cover the ``spack install`` command, focusing on the power of the spec syntax and the flexibility it gives to users.
+This tutorial will guide us through the process of installing software using Spack.
+First, we will cover the ``spack install`` command, focusing on the power of the spec syntax and the flexibility it gives to users.
 We will also cover the ``spack find`` command for viewing installed packages and the ``spack uninstall`` command for uninstalling them.
 Finally, we will touch on how Spack manages compilers, especially as it relates to using Spack-built compilers within Spack.
 We will include full output from all of the commands demonstrated, although we will frequently call attention to only small portions of that output (or merely to the fact that it succeeded).
@@ -35,7 +35,7 @@ Spack has some nice command-line integration tools, so instead of simply prepend
 
   $ . share/spack/setup-env.sh
 
-You're good to go!
+We're good to go!
 
 -----------------
 What is in Spack?
@@ -72,20 +72,20 @@ Let's go ahead and install ``gmake``,
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
 
-You will see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
+We will see Spack installed ``gmake``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
 They do not represent separate software builds from source, but are records of the system's compiler runtime components Spack used for the install.
 For the rest of this section, we will ignore these components and focus on the packages explicitly installed.
 
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
-For the tutorial we have prepared a binary cache so you don't have to wait on slow compilation from source.
+For the tutorial we have prepared a binary cache so we don't have to wait on slow compilation from source.
 To be able to install from the binary cache, we will need to configure Spack with the location of the binary cache and trust the GPG key that the binary cache was signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-You'll learn more about configuring Spack later in the tutorial, but for now you will be able to install the rest of the packages in the tutorial from a binary cache using the same ``spack install`` command.
+We'll learn more about configuring Spack later in the tutorial, but for now we will be able to install the rest of the packages in the tutorial from a binary cache using the same ``spack install`` command.
 By default this will install the binary cached version if it exists and fall back on installing from source if it does not.
 
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
@@ -97,7 +97,7 @@ The ``%`` sigil is used to specify compilers.
 Note that this installation is located separately from the previous one.
 We will discuss this in more detail later, but this is part of what allows Spack to support many versions of software packages.
 
-You can check for particular versions before requesting them.
+We can check for particular versions before requesting them.
 We will use the ``spack versions`` command to see the available versions, and then install a different version of ``zlib-ng``.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
@@ -149,8 +149,8 @@ Anything we could specify about the top-level package, we can also specify about
 Packages can also be referred to from the command line by their package hash.
 Using the ``spack find -lf`` command earlier we saw that the hash of our optimized installation of zlib-ng (``cflags="-O3"``) began with ``umrbkwv``.
 We can now explicitly build with that package without typing the entire spec, by using the ``/`` sigil to refer to it by hash.
-As with other tools like Git, you do not need to specify an *entire* hash on the command line.
-You can specify just enough digits to identify a hash uniquely.
+As with other tools like Git, we do not need to specify an *entire* hash on the command line.
+We can specify just enough digits to identify a hash uniquely.
 If a hash prefix is ambiguous (i.e., two or more installed packages share the prefix) then Spack will report an error.
 
 .. literalinclude:: outputs/basics/tcl-zlib-hash.out
@@ -164,7 +164,7 @@ Note that each package has a top-level entry, even if it also appears as a depen
 
 Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
-If we install it with default settings it will build with OpenMPI.
+If we install it with default settings, it will build with OpenMPI.
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: console
@@ -192,7 +192,7 @@ The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementatio
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
    :language: console
 
-We'll do a quick check in on what we have installed so far.
+Let's do a quick check in on what we have installed so far.
 
 .. literalinclude:: outputs/basics/find-ldf-2.out
    :language: console
@@ -234,7 +234,7 @@ Again, the ``spack graph`` command shows the full DAG of the dependency informat
 .. literalinclude:: outputs/basics/graph-trilinos.out
    :language: console
 
-You can control how the output is displayed with a number of options.
+We can control how the output is displayed with a number of options.
 
 The ASCII output from ``spack graph`` can be difficult to parse for complicated packages.
 The output can be changed to the Graphviz ``.dot`` format using the ``--dot`` flag.
@@ -250,7 +250,7 @@ Uninstalling Packages
 ---------------------
 
 Earlier we installed many configurations each of zlib-ng and Tcl.
-Now we will go through and uninstall some of those packages that we didn't really need.
+Now, let's go through and uninstall some of those packages that we didn't really need.
 
 .. literalinclude:: outputs/basics/find-d-tcl.out
    :language: console
@@ -269,8 +269,8 @@ We can uninstall packages by spec using the same syntax as install.
 We can also uninstall packages by referring only to their hash.
 
 We can use either the ``--force`` (or ``-f``) flag or the ``--dependents`` (or ``-R``) flag to remove packages that are required by another installed package.
-Use ``--force`` to remove just the specified package, leaving dependents broken.
-Use ``--dependents`` to remove the specified package and all of its dependents.
+Let's use ``--force`` to remove just the specified package, leaving dependents broken.
+Let's use ``--dependents`` to remove the specified package and all of its dependents.
 
 .. literalinclude:: outputs/basics/uninstall-needed.out
    :language: console
@@ -291,7 +291,7 @@ The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an
 Advanced ``spack find`` Usage
 -----------------------------
 
-We will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and
+Let's go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and
 :ref:`basics-tutorial-uninstall` sections.
 
 The ``spack find`` command can accept what we call "anonymous specs." These are expressions in spec syntax that do not contain a package name.
@@ -321,7 +321,7 @@ The ``spack compilers`` command is an alias for ``spack compiler list``.
    :language: console
 
 The compilers are maintained in a YAML file (``compilers.yaml``).
-Later in the tutorial, you will learn how to configure compilers by hand for special cases.
+Later in the tutorial, we will learn how to configure compilers by hand for special cases.
 Spack also has tools to add compilers, and compilers built with Spack can be added to the configuration.
 
 .. literalinclude:: outputs/basics/install-gcc-12.1.0.out
@@ -332,7 +332,7 @@ Spack also has tools to add compilers, and compilers built with Spack can be add
 
 We can add GCC to Spack as an available compiler using the ``spack compiler add`` command.
 This will allow future packages to build with ``gcc@12.3.0``.
-To avoid having to copy and paste GCC's path, we can use ``spack location -i`` to get the installation prefix.
+To avoid having to copy and paste GCC's path, we will use ``spack location -i`` to get the installation prefix.
 
 .. literalinclude:: outputs/basics/compiler-add-location.out
    :language: console
