@@ -79,26 +79,30 @@ For the rest of this section, we'll ignore these components and focus on the pac
 
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
-For the tutorial we prepared a binary cache so we don't have to wait on slow compilation from source.
+For this tutorial, we've prepared a binary cache so we don't have to wait for slow compilation from source.
+
 To enable installation from the binary cache, we'll need to configure Spack with the location of the cache and trust the GPG key that the cache was signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-We'll learn more about configuring Spack later in the tutorial, but for now we will be able to install the rest of the packages in the tutorial from the cache using the same ``spack install`` command.
-By default this will install the binary cached version if it exists and fall back to install the package from source if it does not.
+We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages in the tutorial from the cache using the same ```spack install``` command.
+By default, this will install the binary cached version if it exists and fall back to installing the package from source if it does not.
 
+Now that we understand how Spack handles installations, let's explore how we can customize what gets installed.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
-The ``%`` sigil is used to specify compilers.
+The ``%`` sigil is used to specify direct dependencies like a package's compiler.
+For example, we can install zlib (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it on top of the clang compiler.
 
 .. literalinclude:: outputs/basics/zlib-clang.out
    :language: console
 
-Note that this installation is located separately from the previous one.
-We will discuss this in more detail later, but this is part of what allows Spack to support many versions of software packages.
+Notice that this installation is located separately from the previous one.
+We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-You can check for particular versions before requesting them.
-We will use the ``spack versions`` command to see the available versions, and then install a different version of ``zlib-ng``.
+Now that we've seen how Spack handles separate installations, let's explore this capability further by installing multiple versions of the same package.
+Before we install additional versions, we can check what versions are available to us using the ```spack versions``` command.
+Let's check what versions of zlib-ng are available, and then we'll install a different version to demonstrate Spack's flexibility in managing multiple package versions.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: console
@@ -111,17 +115,22 @@ The ``@`` sigil is used to specify versions, both of packages and of compilers.
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: console
 
-The spec syntax also includes compiler flags.
-Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` parameters.
-The values of these fields must be quoted on the command line if they include spaces.
-These values are injected into the compilation commands automatically by the Spack compiler wrappers.
+The spec syntax in Spack also supports compiler flags.
+We can specify parameters such as ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs``.
+If any of these values contain spaces, we'll need to enclose them in quotes on the command line.
+Spack’s compiler wrappers will automatically inject these flags into the appropriate compilation commands.
 
 .. literalinclude:: outputs/basics/zlib-O3.out
    :language: console
 
-The ``spack find`` command is used to query installed packages.
-Note that some packages appear identical with the default output.
-The ``-l`` flag shows the hash of each package, and the ``-f`` flag shows any non-empty compiler flags of those packages.
+After installing packages, we can use the ``spack find`` command to query which packages are installed.
+Notice that by default, some installed packages appear identical in the output.
+To help distinguish between them, we can add the ``-l`` flag to display each package’s unique hash.
+Additionally if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
+
+We use the ``spack find`` command to query which packages are installed.
+Note that, with the default output, some packages may appear identical. To distinguish between them, we can use the ``-l`` flag to display the hash of each package.
+Additionally, if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 .. literalinclude:: outputs/basics/find.out
    :language: console
@@ -129,29 +138,28 @@ The ``-l`` flag shows the hash of each package, and the ``-f`` flag shows any no
 .. literalinclude:: outputs/basics/find-lf.out
    :language: console
 
-Spack generates a hash for each spec.
-This hash is a function of the full provenance of the package, so any change to the spec affects the hash.
-Spack uses this value to compare specs and to generate unique installation directories for every combinatorial version.
-As we move into more complicated packages with software dependencies, we can see that Spack reuses existing packages to satisfy a dependency.
-By default, Spack tries hard to reuse existing installations as dependencies, either from a local store or from configured remote binary caches.
-This minimizes unwanted rebuilds of common dependencies, in particular if you update Spack frequently.
+Spack generates a unique hash for each spec we define.
+This hash reflects the complete provenance of the package, so any change to the spec—such as compiler version, build options, or dependencies—will result in a different hash.
+Spack uses these hashes both to compare specs and to create unique installation directories for every possible configuration.
+
+As we work with more complex packages that have multiple software dependencies, we will see that Spack efficiently reuses existing packages to satisfy dependency requirements.
+By default, Spack prioritizes reusing installations that already exist, whether they are stored locally or available from configured remote binary caches.
+This approach helps us avoid unnecessary rebuilds of common dependencies, which is especially valuable if we update Spack frequently.
 
 .. literalinclude:: outputs/basics/tcl.out
    :language: console
 
-Dependencies can be explicitly requested using the ``^`` sigil.
-Note that the spec syntax is recursive.
-Anything we could specify about the top-level package, we can also specify about a dependency using ``^``.
+When we need to specify dependencies explicitly, we use the ``^`` sigil in the spec syntax. The syntax is recursive, meaning that anything we can specify for the top-level package can also be specified for a dependency using ``^``. This allows us to precisely control the configuration of both packages and their dependencies.
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: console
 
-Packages can also be referred to from the command line by their package hash.
-Using the ``spack find -lf`` command earlier we saw that the hash of our optimized installation of zlib-ng (``cflags="-O3"``) began with ``umrbkwv``.
-We can now explicitly build with that package without typing the entire spec, by using the ``/`` sigil to refer to it by hash.
-As with other tools like Git, you do not need to specify an *entire* hash on the command line.
-You can specify just enough digits to identify a hash uniquely.
-If a hash prefix is ambiguous (i.e., two or more installed packages share the prefix) then Spack will report an error.
+We can also refer to packages from the command line by their package hash.
+Earlier, when we used the ``spack find -lf`` command, we saw that the hash for our optimized installation of zlib-ng (with ``cflags="-O3"``) began with ``umrbkwv``.
+Instead of typing out the entire spec, we can now build explicitly with that package by using the ``/`` sigil followed by its hash.
+
+Similar to tools like Git, we do not need to enter the entire hash on the command line—just enough digits to uniquely identify the package.
+If the prefix we provide matches more than one installed package, Spack will report an error and prompt us to be more specific.
 
 .. literalinclude:: outputs/basics/tcl-zlib-hash.out
    :language: console
