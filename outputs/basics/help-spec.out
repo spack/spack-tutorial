@@ -1,0 +1,34 @@
+usage: spack spec [-hlLNtU] [-I | --no-install-status] [-y | -j | --format FORMAT] [-c {nodes,edges,paths}] [--reuse] [--fresh-roots] [--deprecated] ...
+
+show what would be installed, given a spec
+
+positional arguments:
+  specs                 one or more package specs
+
+options:
+  --format FORMAT       print concrete spec with the specified format string
+  --no-install-status   do not show install status annotations
+  -I, --install-status  show install status of packages
+                        [+] installed       [^] installed in an upstream
+                         -  not installed   [-] missing dep of installed package
+  -L, --very-long       show full dependency hashes as well as versions
+  -N, --namespaces      show fully qualified package names
+  -c, --cover {nodes,edges,paths}
+                        how extensively to traverse the DAG (default: nodes)
+  -h, --help            show this help message and exit
+  -j, --json            print concrete spec as JSON
+  -l, --long            show dependency hashes as well as versions
+  -t, --types           show dependency types
+  -y, --yaml            print concrete spec as YAML
+
+concretizer arguments:
+  --deprecated          allow concretizer to select deprecated versions
+  --fresh-roots, --reuse-deps
+                        concretize with fresh roots and reused dependencies
+  --reuse               reuse installed packages/buildcaches when possible
+  -U, --fresh           do not reuse installed deps; build newest configuration
+
+when an environment is active and no specs are provided, the environment root specs are used instead
+
+for further documentation regarding the spec syntax, see:
+    spack help --spec

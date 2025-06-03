@@ -342,3 +342,10 @@ We can also remove compilers from our configuration using ``spack compiler remov
 
 .. literalinclude:: outputs/basics/compiler-remove.out
    :language: console
+
+.. note ::
+
+The spec syntax may be confusing for new users. Spack can provide information about commands you run frequently. For instance, ``spack help --spec``:
+
+   .. literalinclude:: outputs/basics/help-spec.out
+      :language: console
