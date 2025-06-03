@@ -749,5 +749,3 @@ Finding examples of environments
 
 * `Spack Stack Catalog <https://spack.github.io/spack-stack-catalog/>`_: for
   discovering environments that you can explore on GitHub
-
-[end of tutorial_environments.rst]
