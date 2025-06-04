@@ -45,7 +45,7 @@ You can generate that output with the following command:
 
 Note that ``name``, ``version``, and ``hash`` are attributes of Spack's internal ``Spec`` object and enclosing them in braces ensures they are output according to your format string.
 
-Using ``spack find --format`` allows you to retrieve just the information you need to do things like pipe the output to typical UNIX command-line tools like ``sort`` or ``uniq``.
+Using ``spack find --format`` allows you to retrieve just the information you need to do things like pipe the output to typical UNIX command line tools like ``sort`` or ``uniq``.
 
 ^^^^^^^^^^^^^^^^^^^^^
 ``spack find --json``
