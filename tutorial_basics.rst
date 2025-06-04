@@ -126,7 +126,7 @@ Spack’s compiler wrappers will automatically inject these flags into the appro
 After installing packages, we can use the ``spack find`` command to query which packages are installed.
 Notice that by default, some installed packages appear identical in the output.
 To help distinguish between them, we can add the ``-l`` flag to display each package’s unique hash.
-Additionally if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
+Additionally, if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 We use the ``spack find`` command to query which packages are installed.
 Note that, with the default output, some packages may appear identical.
