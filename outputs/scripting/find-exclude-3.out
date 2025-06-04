@@ -1,33 +1,8 @@
 $ ./find_exclude.py %gcc ^mpich
--- linux-ubuntu22.04-x86_64_v3 / gcc@10.5.0 ---------------------
-gcc-runtime@10.5.0  glibc@2.35	gmake@4.4.1
-
 -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-adept-utils@1.0.1		    dtcmp@1.1.5		gmp@6.3.0	      libffi@3.4.6	       lua-luaposix@36.1  openblas@0.3.28	python-venv@1.0	 texinfo@7.1
-autoconf@2.72			    dyninst@13.0.0	hdf5@1.14.5	      libgcrypt@1.11.0	       lwgrp@1.0.6	  openmpi@5.0.5		rankstr@0.4.0	 trilinos@16.0.0
-autoconf-archive@2023.02.20	    ed@1.4		hdf5@1.14.5	      libgpg-error@1.50	       lz4@1.10.0	  openssh@9.9p1		re2c@3.1	 unzip@6.0
-automake@1.16.5			    elfutils@0.191	hwloc@2.11.1	      libiberty@2.41	       m4@1.4.19	  openssl@3.4.0		readline@8.2	 util-linux-uuid@2.40.2
-axl@0.9.0			    er@0.5.0		intel-tbb@2021.12.0   libiconv@1.17	       macsio@1.1	  pcre2@10.44		redset@0.4.0	 util-macros@1.20.1
-bc@1.07.1			    expat@2.6.4		json-c@0.16	      libmd@1.0.4	       macsio@1.1	  pdsh@2.31		scr@2.0.0	 xz@5.4.6
-berkeley-db@18.1.40		    findutils@4.9.0	json-cwx@0.12	      libpciaccess@0.17	       meson@1.5.1	  perl@5.40.0		scr@3.1.0	 yaksa@0.3
-bison@3.8.2			    gawk@5.3.1		kokkos@4.3.01	      libsigsegv@2.14	       mpc@1.3.1	  pigz@2.8		shuffile@0.4.0	 zlib-ng@2.0.7
-boost@1.72.0			    gcc@12.3.0		krb5@1.21.3	      libtool@2.4.7	       mpfr@4.2.1	  pkgconf@2.2.0		silo@4.11.1	 zlib-ng@2.0.7
-bzip2@1.0.8			    gcc-runtime@11.4.0	kvtree@1.5.0	      libxcrypt@4.4.35	       mpich@4.2.3	  pmix@5.0.3		slurm@23-11-1-1	 zlib-ng@2.2.1
-ca-certificates-mozilla@2023-05-30  gdbm@1.23		libbsd@0.12.2	      libxml2@2.13.4	       munge@0.5.15	  py-pip@23.1.2		spath@0.4.0	 zstd@1.5.6
-callpath@1.0.4			    gettext@0.22.5	libdwarf@0.11.0	      libyogrt@1.35	       ncurses@6.5	  py-setuptools@69.2.0	sqlite@3.46.0
-cmake@3.30.5			    glib@2.78.3		libedit@3.1-20240808  lmod@8.7.18	       nghttp2@1.63.0	  py-wheel@0.41.2	tar@1.34
-curl@8.10.1			    glibc@2.35		libevent@2.1.12	      lua@5.4.6		       ninja@1.12.1	  python@3.11.9		tcl@8.6.12
-diffutils@3.10			    gmake@4.4.1		libfabric@1.22.0      lua-luafilesystem@1.8.0  numactl@2.0.18	  python@3.13.0		tcl@8.6.12
+automake@1.16.5      bzip2@1.0.8     expat@2.7.1       gettext@0.23.1  krb5@1.21.3           libffi@3.4.8   libmd@1.1.0      libunistring@1.2  m4@1.4.19       openssh@9.9p1  perl@5.40.0    python@3.13.2  tar@1.35              zlib-ng@2.2.4
+berkeley-db@18.1.40  curl@8.11.1     findutils@4.10.0  git@2.48.1      libbsd@0.12.2         libiconv@1.18  libsigsegv@2.14  libxcrypt@4.4.38  ncurses@6.5     openssl@3.4.1  pigz@2.8       readline@8.2   util-linux-uuid@2.41  zstd@1.5.7
+bison@3.8.2          diffutils@3.10  gdbm@1.23         gmake@4.4.1     libedit@3.1-20240808  libidn2@2.3.7  libtool@2.4.7    libxml2@2.13.5    nghttp2@1.65.0  pcre2@10.44    pkgconf@2.3.0  sqlite@3.46.0  xz@5.6.3
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-autoconf@2.72			    gcc-runtime@12.3.0	  libffi@3.4.6	     ncurses@6.5	     perl@5.40.0	     py-pip@23.1.2		  re2c@3.1
-automake@1.16.5			    gdbm@1.23		  libiconv@1.17	     netlib-lapack@3.11.0    pigz@2.8		     py-ply@3.11		  readline@8.2
-berkeley-db@18.1.40		    gettext@0.22.5	  libmd@1.0.4	     netlib-scalapack@2.2.0  pkgconf@2.2.0	     py-pybind11@2.13.5		  sqlite@3.46.0
-bison@3.8.2			    glibc@2.35		  libpciaccess@0.17  netlib-scalapack@2.2.0  pmix@5.0.3		     py-pyproject-metadata@0.7.1  tar@1.34
-bzip2@1.0.8			    gmake@4.4.1		  libsigsegv@2.14    nghttp2@1.63.0	     py-beniget@0.4.1	     py-pythran@0.16.1		  util-linux-uuid@2.40.2
-ca-certificates-mozilla@2023-05-30  hwloc@2.11.1	  libtool@2.4.7	     ninja@1.12.1	     py-cython@3.0.11	     py-scipy@1.14.1		  util-macros@1.20.1
-cmake@3.30.5			    krb5@1.21.3		  libxcrypt@4.4.35   numactl@2.0.18	     py-flit-core@3.9.0	     py-setuptools@69.2.0	  xz@5.4.6
-curl@8.10.1			    libbsd@0.12.2	  libxml2@2.13.4     openblas@0.3.28	     py-gast@0.5.4	     py-wheel@0.41.2		  yaksa@0.3
-diffutils@3.10			    libedit@3.1-20240808  m4@1.4.19	     openmpi@5.0.5	     py-meson-python@0.16.0  python@3.11.9		  zlib-ng@2.2.1
-expat@2.6.4			    libevent@2.1.12	  meson@1.5.1	     openssh@9.9p1	     py-numpy@2.1.2	     python@3.13.0		  zstd@1.5.6
-findutils@4.9.0			    libfabric@1.22.0	  mpich@4.2.3	     openssl@3.4.0	     py-packaging@24.1	     python-venv@1.0
+-- linux-ubuntu22.04-x86_64_v3 / no compiler --------------------
+gcc-runtime@11.4.0
