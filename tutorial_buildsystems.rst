@@ -114,7 +114,7 @@ Which is similar to invoking ``make`` in our Package
 
      make("foo")
 
-This is useful if we have packages that ignore environment variables and need a command-line argument.
+This is useful if we have packages that ignore environment variables and need a command line argument.
 
 Another thing to take note of is in the ``configure()`` method in ``AutotoolsPackage``.
 Here we see that the ``--prefix`` argument is already included since it is a common pattern amongst packages using ``Autotools``.
@@ -273,7 +273,7 @@ Let's change the build and install phases of our package:
    :linenos:
 
 Here we demonstrate another strategy that we can use to manipulate our package's build.
-We can provide command-line arguments to ``make()``.
+We can provide command line arguments to ``make()``.
 Since ``Bowtie`` can use ``tbb`` we can either add ``NO_TBB=1`` as a argument to prevent ``tbb`` support, or we can invoke ``make`` with no arguments if TBB is desired and found by its build system.
 
 ``Bowtie`` requires our ``install_target`` to provide a path to the install directory.

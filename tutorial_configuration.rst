@@ -27,7 +27,7 @@ A partial list of some key configuration sections is provided below.
    * - compilers
      - Define the compilers that Spack can use (required and system specific)
    * - Mirrors
-     - Locations where spack can look for stashed source or binary distributions 
+     - Locations where spack can look for stashed source or binary distributions
    * - Packages
      - Specific settings and rules for packages
    * - Modules
@@ -97,7 +97,7 @@ These scopes, in order of decreasing priority, are:
 ============   ===================================================
 Scope          Directory
 ============   ===================================================
-Command-line   N/A
+Command Line   N/A
 Environment    In environment base directory (in ``spack.yaml``)
 Custom         Custom directory, specified with ``--config-scope``
 User           ``~/.spack/``
