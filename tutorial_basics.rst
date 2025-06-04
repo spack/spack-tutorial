@@ -100,7 +100,7 @@ For example, we can install zlib (a commonly used compression library), but inst
 Notice that this installation is located separately from the previous one.
 We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-Now that we've seen how Spack handles separate installations, let's explore this capability further by installing multiple versions of the same package.
+Now that we've seen how Spack handles separate installations, let's explore this capability by installing multiple versions of the same package.
 Before we install additional versions, we can check what versions are available to us using the ```spack versions``` command.
 Let's check what versions of zlib-ng are available, and then we'll install a different version to demonstrate Spack's flexibility in managing multiple package versions.
 
