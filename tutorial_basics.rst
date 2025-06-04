@@ -61,7 +61,7 @@ Installing Packages
 -------------------
 
 Installing a package with Spack is very simple.
-To install a software package type,
+To install a software package, type:
 
 .. code-block:: console
 
