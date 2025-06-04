@@ -29,7 +29,7 @@ To get started, we simply clone the Spack repository and check out the latest re
    :language: console
 
 Next, we'll add Spack to our path.
-Spack has some nice command-line integration tools, so instead of simply prepending to our ``PATH`` variable, we'll source the Spack setup script.
+Spack has some nice command line integration tools, so instead of simply prepending to our ``PATH`` variable, we'll source the Spack setup script.
 
 .. code-block:: console
 
