@@ -86,7 +86,7 @@ To enable installation from the binary cache, we'll need to configure Spack with
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages in the tutorial from the cache using the same ```spack install``` command.
+We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages in the tutorial from the cache using the same ``spack install`` command.
 By default, this will install the binary cached version if it exists and fall back to installing the package from source if it does not.
 
 Now that we understand how Spack handles installations, let's explore how we can customize what gets installed.
@@ -101,7 +101,7 @@ Notice that this installation is located separately from the previous one.
 We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
 Now that we've seen how Spack handles separate installations, let's explore this capability by installing multiple versions of the same package.
-Before we install additional versions, we can check the versions available to us using the ```spack versions``` command.
+Before we install additional versions, we can check the versions available to us using the ``spack versions`` command.
 Let's check what versions of zlib-ng are available, and then we'll install a different version to demonstrate Spack's flexibility in managing multiple package versions.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
@@ -345,6 +345,11 @@ We can also remove compilers from our configuration using ``spack compiler remov
 
 .. literalinclude:: outputs/basics/compiler-remove.out
    :language: console
+
+.. tip::
+
+   Starting from Spack v1.0 it will be no longer necessary to add a Spack installed
+   compilers to configuration, in order to use them.
 
 .. note::
 
