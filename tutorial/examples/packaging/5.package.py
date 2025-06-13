@@ -12,9 +12,9 @@ class TutorialMpileaks(AutotoolsPackage):
     homepage = "https://github.com/LLNL/mpileaks"
     url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
-    maintainers("alecbcs")
+    maintainers("adamjstewart")
 
-    license("BSD", checked_by="alecbcs")
+    license("BSD", checked_by="adamjstewart")
 
     sanity_check_is_dir = ["bin", "lib", "shar"]
 
