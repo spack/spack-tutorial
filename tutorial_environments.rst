@@ -50,6 +50,7 @@ Spack environments solve this by letting you:
 ----------------------
 Goals of this Tutorial
 ----------------------
+
 This tutorial will teach you the fundamentals of creating and using Spack environments.
 We'll cover:
 1. Command line basics -- Creating and managing environments with Spack commands.
