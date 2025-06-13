@@ -20,7 +20,7 @@ So far in this tutorial, we've covered the basic commands for managing individua
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
 Now we'll explore Spack Environments --- a powerful feature that let's us manage collections of packages together in a documented and reproducible way.
-Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_ or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
+Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda Environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
 
 -------------------------------
 What Makes a Spack Environment?
