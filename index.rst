@@ -9,8 +9,7 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `ISC High Performance 25 Conference <https://isc-hpc.com/>`_
-June 13, 2025.
+It was last presented at the `ISC High Performance 25 Conference <https://isc-hpc.com/>`_ June 13, 2025.
 The event was a half-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
