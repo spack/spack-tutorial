@@ -10,7 +10,7 @@ Tutorial: Spack 101
 
 This is an introduction to Spack with lectures and live demos.
 It was last presented at the `ISC High Performance 25 Conference <https://isc-hpc.com/>`_
-June 13, 2024.
+June 13, 2025.
 The event was a half-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
@@ -29,7 +29,7 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 **Full citation:** Todd Gamblin, Alec Scott, Massimiliano Culpo, Adam Stewart, Harmen Stoppels, and Michael Kuhn.
 Managing HPC Software Complexity with Spack.
-ISC High Performance 2025 (ISC25), Hamburg, Germany, June 13, 2024.
+ISC High Performance 2025 (ISC25), Hamburg, Germany, June 13, 2025.
 
 .. _video:
 
