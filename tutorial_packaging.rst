@@ -12,7 +12,7 @@ Package Creation Tutorial
 
 This tutorial walks you through the steps for creating and debugging a simple Spack package.
 We will develop and debug a package using an iterative approach to gain more experience with additional Spack commands.
-For consistency, we will create the package for ``mpileaks`` (https://github.com/LLNL/mpileaks), which is an MPI debugging tool.
+For consistency, we will create a package for ``mpileaks`` (https://github.com/LLNL/mpileaks), an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
@@ -61,12 +61,6 @@ Spack's *create* command builds a new package from a template by taking the loca
 * fetch the code;
 * create a package skeleton; and
 * open the file in your editor of choice.
-
-.. note::
-
-   An example of creating a package from software with more available
-   versions can be found at `Creating and Editing Packages
-   <https://spack.readthedocs.io/en/latest/packaging_guide.html#creating-editing-packages>`_.
 
 The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
@@ -645,24 +639,24 @@ The `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.htm
 
 Additional information on key topics can be found at the links below.
 
-~~~~~~~~~~~~~~~~~~~~~~~
-Testing an installation
-~~~~~~~~~~~~~~~~~~~~~~~
-
-* `Checking an installation
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
-  for more information on adding tests that run at build-time and against an installation
-
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Customizing package-related environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Retrieving Library Information
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
-  for supporting unique configuration options needed to locate libraries
+  for supporting unique configuration options needed to locate libraries.
 * `Modifying a Package's Build Environment
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
-  for customizing package and dependency build and run environments
+  for customizing package and dependency build and run environments.
+
+~~~~~~~~~~~~~~~~~~~~~~~
+Testing an installation
+~~~~~~~~~~~~~~~~~~~~~~~
+
+* `Checking an installation
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+  for more information on adding tests that run at build-time and against an installation.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Using other build systems
@@ -670,13 +664,13 @@ Using other build systems
 
 * `Build Systems
   <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
-  for the full list of built-in build systems
+  for the full list of built-in build systems.
 * `Spack Package Build Systems tutorial
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
-  for tutorials on common build systems
+  for tutorials on common build systems.
 * `Multiple Build Systems
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
-  for a reference on writing packages with multiple build systems
+  for a reference on writing packages with multiple build systems.
 * `Package Class Architecture
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
   for more insight on the inner workings of ``Package`` and ``Builder`` classes.
@@ -690,4 +684,4 @@ Making a package externally detectable
 
 * `Making a package externally discoverable
   <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
-  for making a package discoverable using the ``spack external find`` command
+  for making a package discoverable using the ``spack external find`` command.
