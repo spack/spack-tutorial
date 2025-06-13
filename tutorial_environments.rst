@@ -91,7 +91,7 @@ To see all of our environments we've created so far we can run ``spack env list`
    Once we activate an environment it will show up highlighted in
    green in the list of environments.
 
-Now let's **activate** our environment by running the ``spack env activate`` command:
+Now let's **activate** our environment by running the ``spack env activate`` command or ``spacktivate`` alias:
 
 .. literalinclude:: outputs/environments/env-activate-1.out
    :language: console
@@ -122,7 +122,7 @@ While this detailed output is useful, if we *only* want to check what environmen
    :language: console
 
 
-To now exit out of this environment, we can use ``spack env deactivate``.
+To now exit out of this environment, we can use ``spack env deactivate`` or ``despacktivate`` if we're feeling fancy.
 
 After deactivating, we can see everything installed in this Spack instance:
 
