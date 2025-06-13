@@ -19,7 +19,7 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc25-tutorial-slide-preview.png
+.. image:: tutorial/images/isc25-tutorial-slide-preview.jpg
    :target: _static/slides/spack-isc25-tutorial-slides.pdf
    :height: 72px
    :align: left
