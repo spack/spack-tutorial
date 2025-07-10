@@ -77,7 +77,7 @@ You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and
 automatically tracked by Spack to manage consistency requirements
 among compiler runtimes. These do not represent separate software
 builds from source, but are records of the compiler runtime components
-Spack used for the install. For the rest of this section, we'llignore
+Spack used for the install. For the rest of this section, we'll ignore
 these components and focus on the packages explicitly installed and
 their listed dependencies.
 
