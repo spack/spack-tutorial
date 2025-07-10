@@ -273,7 +273,7 @@ Now let's look at an even more complicated package.
    :language: console
 
 Now we're starting to see the power of Spack.
-Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own
+Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
 Installing more complex packages can take days or weeks even for an experienced user.
 Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
 
