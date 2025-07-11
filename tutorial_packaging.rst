@@ -193,7 +193,7 @@ As we fill in more information about the package, the ``spack info`` command wil
    <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
    More information on the build-time tests can be found at
-   `<https://spack.readthedocs.io/en/latest/packaging_guide.html#build-time-tests>`_.
+   `<https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_.
 
    Refer to the links at the end of this section for more information.
 
@@ -655,7 +655,7 @@ Testing an installation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Checking an installation
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#checking-an-installation>`_:
+  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#checking-an-installation>`_:
   for more information on adding tests that run at build-time and against an installation.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -669,10 +669,10 @@ Using other build systems
   <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
   for tutorials on common build systems.
 * `Multiple Build Systems
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#multiple-build-systems>`_:
+  <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#multiple-build-systems>`_:
   for a reference on writing packages with multiple build systems.
 * `Package Class Architecture
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#package-class-architecture>`_:
+  <https://spack.readthedocs.io/en/latest/developer_guide.html#package-class-architecture>`_:
   for more insight on the inner workings of ``Package`` and ``Builder`` classes.
 * `The GDAL Package
   <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
@@ -683,5 +683,5 @@ Making a package externally detectable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 * `Making a package externally discoverable
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#making-a-package-discoverable-with-spack-external-find>`_:
+  <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#making-a-package-discoverable-with-spack-external-find>`_:
   for making a package discoverable using the ``spack external find`` command.

@@ -685,4 +685,4 @@ Each of these classes have their own abstractions to help assist in writing pack
 For whatever doesn't fit nicely into the other build systems, you can use the ``Package`` class.
 
 Hopefully by now you can see how we aim to make packaging simple and robust through these classes.
-If you want to learn more about these build systems, check out `Implementing the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide.html#installation-procedure>`_ in the Packaging Guide.
+If you want to learn more about these build systems, check out `Overview of the installation procedure <https://spack.readthedocs.io/en/latest/packaging_guide_build.html#installation-procedure>`_ in the Packaging Guide.
