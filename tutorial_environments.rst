@@ -197,7 +197,7 @@ So, adding specs to an environment at a later point in time will not cause exist
      share dependencies and reduces total installation time.
 
    * You can launch all builds in parallel by taking advantage of Spack's
-     `install-level build parallelism <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_.
+     `install-level build parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
 
 ^^^^^^^^^^^^^^
 Using Packages
@@ -750,7 +750,7 @@ Setting up and building environments
   for configuring combinatorial environments (e.g., same packages across a
   list of compilers)
 * `Install-level parallel builds
-  <https://spack.readthedocs.io/en/latest/packaging_guide.html#install-level-build-parallelism>`_:
+  <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_:
   for how to launch ``spack install`` to build your environment in parallel
 
 ^^^^^^^^^^^^^^^^^^^^^^^
