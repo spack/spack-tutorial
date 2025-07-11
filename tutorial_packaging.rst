@@ -635,7 +635,7 @@ More information
 --------------------
 
 This tutorial module only scratches the surface of defining Spack package recipes.
-The `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide.html#>`_ covers packaging topics more thoroughly.
+The `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#>`_ covers packaging topics more thoroughly.
 
 Additional information on key topics can be found at the links below.
 
