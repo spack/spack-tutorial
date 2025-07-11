@@ -72,34 +72,24 @@ Let's go ahead and install ``gmake``,
 .. literalinclude:: outputs/basics/gmake.out
    :language: console
 
-You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and
-``glibc``. The ``glibc`` and ``gcc-runtime`` packages are
-automatically tracked by Spack to manage consistency requirements
-among compiler runtimes. These do not represent separate software
-builds from source, but are records of the compiler runtime components
-Spack used for the install. For the rest of this section, we'll ignore
-these components and focus on the packages explicitly installed and
-their listed dependencies.
+You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
+The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
+These do not represent separate software builds from source, but are records of the compiler runtime components Spack used for the install.
+For the rest of this section, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
 
-The ``gcc`` package was found on the system and Spack used it because
-``gmake`` requires a compiler to build from source. Compilers are
-handled somewhat specially in Spack; Spack searches the ``PATH``
-environment variable for compilers automatically. We can run ``spack
-compiler list`` or simply ``spack compilers`` to show all the
-compilers Spack found.
+The ``gcc`` package was found on the system and Spack used it because ``gmake`` requires a compiler to build from source.
+Compilers are handled somewhat specially in Spack; Spack searches the ``PATH`` environment variable for compilers automatically.
+We can run ``spack compiler list`` or simply ``spack compilers`` to show all the compilers Spack found.
 
 .. literalinclude:: outputs/basics/compiler-list.out
    :language: console
 
-All compilers that Spack found will be configured as external packages
--- we'll talk more about externals in the "Spack Concepts" slides and
-in :ref:`Configuration Tutorial <configs-tutorial>` later on.
+All compilers that Spack found will be configured as external packages -- we'll talk more about externals in the "Spack Concepts" slides and in :ref:`Configuration Tutorial <configs-tutorial>` later on.
 
-Spack can install software either from source or from a binary
-cache. Packages in the binary cache are signed with GPG for
-security. For this tutorial we have prepared a binary cache so we
-don't have to wait for slow compilation from source. To enable installation from the binary cache, we'll need to configure Spack with
-the location of the cache and trust the GPG key that the binaries were signed with.
+Spack can install software either from source or from a binary cache.
+Packages in the binary cache are signed with GPG for security.
+For this tutorial we have prepared a binary cache so we don't have to wait for slow compilation from source.
+To enable installation from the binary cache, we'll need to configure Spack with the location of the cache and trust the GPG key that the binaries were signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
@@ -130,8 +120,7 @@ The ``@`` sigil is used to specify versions.
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: console
 
-The spec syntax is recursive -- any syntax we can specify for the
-"root" package (``zlib-ng``) we can also use for a dependency.
+The spec syntax is recursive -- any syntax we can specify for the "root" package (``zlib-ng``) we can also use for a dependency.
 
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: console
@@ -166,12 +155,9 @@ This approach helps us avoid unnecessary rebuilds of common dependencies, which 
 .. literalinclude:: outputs/basics/tcl.out
    :language: console
 
-Sometimes it is simpler to specify dependencies without caring whether
-they are direct or transitive dependencies. To do that, use the ``^``
-sigil. Note that a dependency specified by ``^`` is always applied to
-the root package, whereas a direct dependency specified by ``%`` is
-applied to either the root or any intervening dependency specified by
-``^``.
+Sometimes it is simpler to specify dependencies without caring whether they are direct or transitive dependencies.
+To do that, use the ``^`` sigil.
+Note that a dependency specified by ``^`` is always applied to the root package, whereas a direct dependency specified by ``%`` is applied to either the root or any intervening dependency specified by ``^``.
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: console
@@ -192,21 +178,18 @@ Note that each package has a top-level entry, even if it also appears as a depen
 .. literalinclude:: outputs/basics/find-ldf.out
    :language: console
 
-Spack models the dependencies of packages as a directed acyclic graph
-(DAG). The ``spack find -d`` command shows the tree representation of
-that graph, which loses some dependency relationship information. We
-can also use the ``spack graph`` command to view the entire DAG as a
-graph.
+Spack models the dependencies of packages as a directed acyclic graph (DAG).
+The ``spack find -d`` command shows the tree representation of that graph, which loses some dependency relationship information.
+We can also use the ``spack graph`` command to view the entire DAG as a graph.
 
 .. literalinclude:: outputs/basics/graph-tcl.out
    :language: console
 
-Let's move on to slightly more complicated packages. HDF5 is a good
-example of a more complicated package, with an MPI dependency. If we
-install it with default settings it will build with OpenMPI. We can
-check the install plan in advance to ensure it's what we want to
-install using the ``spack spec`` command. The ``spack spec`` command
-accepts the same spec syntax.
+Let's move on to slightly more complicated packages.
+HDF5 is a good example of a more complicated package, with an MPI dependency.
+If we install it with default settings it will build with OpenMPI.
+We can check the install plan in advance to ensure it's what we want to install using the ``spack spec`` command.
+The ``spack spec`` command accepts the same spec syntax.
 
 .. literalinclude:: outputs/basics/hdf5-spec.out
    :language: console
@@ -236,20 +219,14 @@ Spack also supports versioning of virtual dependencies.
 A package can depend on the MPI interface at version 3 (e.g., ``hdf5 ^mpi@3``), and provider packages specify what version of the interface *they* provide.
 The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementation packages that provide MPI version 3.
 
-We've actually already been using virtual packages when we changed
-compilers earlier. Compilers are providers for virtual packages like
-``c``, ``cxx``, and ``fortran``. Because these are often provided by
-the same package but we might want to use C and C++ from one compiler
-and Fortran from another, we need a syntax to specify which virtual a
-package provides. We call this "virtual assignment", and can be
-specified by ``%virtual=provider`` or ``^virtual=provider``.
+We've actually already been using virtual packages when we changed compilers earlier.
+Compilers are providers for virtual packages like ``c``, ``cxx``, and ``fortran``.
+Because these are often provided by the same package but we might want to use C and C++ from one compiler and Fortran from another, we need a syntax to specify which virtual a package provides.
+We call this "virtual assignment", and can be specified by ``%virtual=provider`` or ``^virtual=provider``.
 
-We will now install HDF5 with MPI support provided by MPICH, ensuring
-that the C and C++ components of HDF5 are compiled with ``gcc``. We
-could use the same syntax for ``^mpi=mpich``, but there's no need
-because the only way for ``hdf5`` to depend on ``mpich`` is to provide
-``mpi``. This is also why we didn't care to specify which virtuals
-``gcc`` and ``clang`` provided earlier when building simpler packages.
+We will now install HDF5 with MPI support provided by MPICH, ensuring that the C and C++ components of HDF5 are compiled with ``gcc``.
+We could use the same syntax for ``^mpi=mpich``, but there's no need because the only way for ``hdf5`` to depend on ``mpich`` is to provide ``mpi``.
+This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
 
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
    :language: console
