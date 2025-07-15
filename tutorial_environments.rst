@@ -306,7 +306,7 @@ We can customize the selection of the ``mpi`` provider using `concretization pre
 
 Let's start by examining our environment's configuration using ``spack config edit``:
 
-.. literalinclude:: outputs/environments/config-edit-1.out
+.. literalinclude:: outputs/environments/config-get-1.out
    :emphasize-lines: 8-13
 
 The output shows the special ``spack.yaml`` configuration file that Spack uses to store environment configurations.
