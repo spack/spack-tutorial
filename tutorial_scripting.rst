@@ -116,12 +116,6 @@ Notice that the concretized spec now:
 - has a single entry in its ``versions`` list
 - the operating system is now ``ubuntu22.04``
 
-It's not necessary to store the intermediate abstract spec, we can use the ``.concretize_one()`` method as shorthand:
-
-.. literalinclude:: outputs/scripting/spack-python-sans-intermediate.out
-   :language: console
-   :emphasize-lines: 1-2
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Querying the Spack database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
