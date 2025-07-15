@@ -52,11 +52,17 @@ Goals of this Tutorial
 ----------------------
 
 This tutorial will teach you the fundamentals of creating and using Spack environments.
+
 We'll cover:
+
 1. Command line basics -- Creating and managing environments with Spack commands.
+
 2. Configuration files -- Editing ``spack.yaml`` and understanding ``spack.lock``.
+
 3. Environment types -- Understanding Spack-managed vs. independent environments.
+
 4. Reproducible builds -- Sharing and recreating environments across systems.
+
 
 -------------------
 Environment Basics
@@ -403,9 +409,9 @@ We can also add and install specs to an environment incrementally. For example:
 If we create environments incrementally, Spack ensures that already installed roots are not re-concretized.
 So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
 
-Adding and installing specs incrementally leads to greedy concretization, meaning that the environment may concain different package versions compared to an environment created all at once.
+Adding and installing specs incrementally leads to greedy concretization, meaning that the environment may have different package versions compared to an environment created all at once.
 
-When you first install ``python`` in an environment, Spack will pick a recent version for it.
+When you first install ``python`` in an environment, Spack will pick a recent version.
 If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize:
 
 .. literalinclude:: outputs/environments/incremental-1.out
@@ -417,7 +423,7 @@ The solution is to re-concretize the environment as a whole, which causes ``pyth
    :language: console
 
 .. note::
-   There are advantages to concretizing and installing an environment all at once:
+   There are other advantages to concretizing and installing an environment all at once:
 
    * If you have a number of specs that can be installed together,
      adding them first and installing them together enables them to
