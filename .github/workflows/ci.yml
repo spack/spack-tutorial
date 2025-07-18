@@ -59,6 +59,8 @@ jobs:
       || startsWith(github.ref, 'refs/tags/'))
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
+    with:
+      with_pr_container: ${{ needs.container.result }}
 
   style:
     if: ${{ needs.changes.outputs.style == 'true' }}
