@@ -60,7 +60,7 @@ jobs:
     needs: [ changes, container ]
     uses: ./.github/workflows/outputs.yml
     with:
-      with_pr_container: ${{ needs.container.result }} == "success"
+      with_pr_container: ${{ needs.container.result == "success" }}
 
   style:
     if: ${{ needs.changes.outputs.style == 'true' }}
