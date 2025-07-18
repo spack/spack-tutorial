@@ -4,7 +4,7 @@ on:
     inputs:
       with_pr_container:
         required: true
-        type: string
+        type: boolean
 
 jobs:
   re-generate:
@@ -44,14 +44,14 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
     - name: Download container from artifact if PR
-      if: github.event_name == 'pull_request' && inputs.with_pr_container == 'true'
+      if: github.event_name == 'pull_request' && inputs.with_pr_container
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
       with:
         name: tutorial-container
         path: /tmp
 
     - name: Import container from PR artifact
-      if: github.event_name == 'pull_request' && inputs.with_pr_container == 'true'
+      if: github.event_name == 'pull_request' && inputs.with_pr_container
       run: |
         docker load --input /tmp/tutorial-container.tar
         docker image ls -a
