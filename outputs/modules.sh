@@ -120,8 +120,8 @@ example --tee modules/lmod-intro-conflict  "module list"
 cp "$PROJECT/module-configs/lmod.1.yaml" ~/.spack/modules.yaml
 example      modules/lmod-refresh-1     "spack module lmod refresh --delete-tree -y"
 module purge
-module unuse "$HOME/spack/share/spack/modules/linux-ubuntu22.04-x86_64_v3"
-module use "$HOME/spack/share/spack/lmod/linux-ubuntu22.04-x86_64/Core"
+module unuse "$HOME/spack/share/spack/modules/*"
+module use "$HOME/spack/share/spack/lmod/*/Core"
 example --tee modules/module-avail-6     "module avail"
 
 
