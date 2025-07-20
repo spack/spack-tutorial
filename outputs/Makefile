@@ -32,15 +32,16 @@ update-outputs: run
 		cat $$raw | perl -pe 's/\x1b]0;.+?\x07//g' | perl -pe 's/\x1b\[\d+F\x1b\[J//g' | perl -pe 's/\033\[([01];)?\d+m//g' | col -bp | sed '/^==> Waiting for/d' > $$out; \
 	done
 
-run: run-scripting
+# run: run-scripting
+run: run-stacks
 
-run-scripting: run-cache scripting.sh
-run-cache: run-dev cache.sh
-run-dev: run-packaging dev.sh
-run-packaging: run-stacks packaging.sh
-run-stacks: run-environments stacks.sh
-run-environments: run-basics environments.sh
-run-basics: basics.sh init_spack.sh defs.sh
+# run-scripting: run-cache scripting.sh
+# run-cache: run-dev cache.sh
+# run-dev: run-packaging dev.sh
+# run-packaging: run-stacks packaging.sh
+# run-stacks: run-environments stacks.sh
+# run-environments: run-basics environments.sh
+# run-basics: basics.sh init_spack.sh defs.sh
 
 local: local-scripting
 local-scripting: local-cache scripting.sh
