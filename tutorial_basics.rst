@@ -166,9 +166,23 @@ Note that each package has a top-level entry, even if it also appears as a depen
 .. literalinclude:: outputs/basics/find-ldf.out
    :language: console
 
+Spack models the dependencies of packages as a directed acyclic graph (DAG).
+The ``spack find -d`` command shows the tree representation of that graph, which loses some dependency relationship information.
+We can also use the ``spack graph`` command to view the entire DAG as a graph.
+
+.. literalinclude:: outputs/basics/graph-tcl.out
+   :language: console
+
 Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
 If we install it with default settings it will build with OpenMPI.
+We can check the install plan in advance to ensure it's what we want to install using the ``spack spec`` command.
+The ``spack spec`` command accepts the same spec syntax.
+
+.. literalinclude:: outputs/basics/hdf5-spec.out
+   :language: console
+
+Assuming we're happy with that configuration, we will now install it.
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: console
@@ -199,13 +213,6 @@ The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementatio
 We'll do a quick check in on what we have installed so far.
 
 .. literalinclude:: outputs/basics/find-ldf-2.out
-   :language: console
-
-Spack models the dependencies of packages as a directed acyclic graph (DAG).
-The ``spack find -d`` command shows the tree representation of that graph.
-We can also use the ``spack graph`` command to view the entire DAG as a graph.
-
-.. literalinclude:: outputs/basics/graph-hdf5.out
    :language: console
 
 HDF5 is more complicated than our basic example of zlib-ng and Tcl, but it's still within the realm of software that an experienced HPC user could reasonably expect to manually install given a bit of time.
