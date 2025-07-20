@@ -92,6 +92,8 @@ example --tee stacks/modules-1 "module --version"
 cat "$project/stacks/examples/8.spack.stack.yaml" > ~/stacks/spack.yaml
 spack module lmod refresh -y
 module use "~/stacks/modules/*/Core"
+echo $MODULEPATH
+ls "~/stacks/modules/*/Core"
 
 example --tee stacks/modules-2 "module av"
 
