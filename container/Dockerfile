@@ -2,20 +2,22 @@ FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install AWS cli
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     gcc gfortran g++ \
     gcc-10 gfortran-10 g++-10 \
     clang \
     libc-dev \
-    awscli \
     bash-completion \
+    python3 \
+    python3-pip \
     emacs \
     jq \
     less \
     vim \
     && rm -rf /var/lib/apt/lists/*
+
+RUN pip3 --no-cache-dir install --upgrade awscli
 
 # Download the buildcache
 RUN mkdir /mirror
