@@ -156,7 +156,7 @@ There are a few gotchas with the ``spack develop`` command
   package as a dev package. Spack needs to know the version of the dev
   package so it can supply the correct flags for the package's build
   system. If a version is not supplied, then Spack will take the maximum version
-  defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide.html#version-comparison>`_ like ``develop`` and ``main``
+  defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main``
   have a higher value than the numeric versions.
 * You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
   ``spack add <package>`` with the matching version you want to develop is a way to ensure
