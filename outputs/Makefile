@@ -37,8 +37,8 @@ run: run-scripting
 run-scripting: run-cache scripting.sh
 run-cache: run-dev cache.sh
 run-dev: run-packaging dev.sh
-run-packaging: run-environments packaging.sh
-#run-stacks: run-environments stacks.sh
+run-packaging: run-stacks packaging.sh
+run-stacks: run-environments stacks.sh
 run-environments: run-basics environments.sh
 run-basics: basics.sh init_spack.sh defs.sh
 

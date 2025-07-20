@@ -37,4 +37,6 @@ USER spack
 
 WORKDIR /home/spack
 
+ENV MODULEPATH=/home/spack/spack/share/spack/lmod
+
 ENTRYPOINT [ "bash" ]
