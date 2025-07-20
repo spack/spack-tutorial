@@ -10,19 +10,17 @@ RUN apt-get update -y && \
     libc-dev \
     bash-completion \
     python3 \
-    python3-pip \
-    python3-setuptools \
+    rclone \
     emacs \
     jq \
     less \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip3 --no-cache-dir install --upgrade awscli
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN aws --region us-east-1 --no-sign-request s3 sync --only-show-errors s3://spack-binaries/v0.23.1/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/v0.23.1/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
