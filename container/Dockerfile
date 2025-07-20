@@ -10,6 +10,7 @@ RUN apt-get update -y && \
     emacs \
     gcc gfortran g++ \
     gcc-10 gfortran-10 g++-10 \
+    git \
     jq \
     less \
     libc-dev \
