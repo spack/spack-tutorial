@@ -1,37 +1,46 @@
   >>> import spack.store
   >>> help(spack.store.STORE.db.query)
-    Help on method query in module spack.database:
+  Help on method query in module spack.database:
 
-    query(*args, **kwargs) method of spack.database.Database instance
-        Queries the Spack database including all upstream databases.
+  query(*args, **kwargs) method of spack.database.Database instance
+      Query the Spack database including all upstream databases.
 
-        Args:
-            query_spec:  if query_spec is ``None``, match all specs in the database.
-                If it is a spec, return all specs matching ``spec.satisfies(query_spec)``.
+      Args:
+          query_spec: queries iterate through specs in the database and
+              return those that satisfy the supplied ``query_spec``. If
+              query_spec is `any`, This will match all specs in the
+              database.  If it is a spec, we'll evaluate
+              ``spec.satisfies(query_spec)``
 
-            predicate_fn: optional predicate taking an InstallRecord as argument, and returning
-                whether that record is selected for the query. It can be used to craft criteria
-                that need some data for selection not provided by the Database itself.
+          known (bool or any, optional): Specs that are "known" are those
+              for which Spack can locate a ``package.py`` file -- i.e.,
+              Spack "knows" how to install them.  Specs that are unknown may
+              represent packages that existed in a previous version of
+              Spack, but have since either changed their name or
+              been removed
 
-            installed: if ``True``, includes only installed specs in the search. If ``False`` only
-                missing specs, and if ``any``, all specs in database. If an InstallStatus or
-                iterable of InstallStatus, returns specs whose install status matches at least
-                one of the InstallStatus.
+          installed (bool or any, or InstallStatus or iterable of
+              InstallStatus, optional): if ``True``, includes only installed
+              specs in the search; if ``False`` only missing specs, and if
+              ``any``, all specs in database. If an InstallStatus or iterable
+              of InstallStatus, returns specs whose install status
+              (installed, deprecated, or missing) matches (one of) the
+              InstallStatus. (default: True)
 
-            explicit: a spec that was installed following a specific user request is marked as
-                explicit. If instead it was pulled-in as a dependency of a user requested spec
-                it's considered implicit.
+          explicit (bool or any, optional): A spec that was installed
+              following a specific user request is marked as explicit. If
+              instead it was pulled-in as a dependency of a user requested
+              spec it's considered implicit.
 
-            start_date: if set considers only specs installed from the starting date.
+          start_date (datetime, optional): filters the query discarding
+              specs that have been installed before ``start_date``.
 
-            end_date: if set considers only specs installed until the ending date.
+          end_date (datetime, optional): filters the query discarding
+              specs that have been installed after ``end_date``.
 
-            in_buildcache: specs that are marked in this database as part of an associated binary
-                cache are ``in_buildcache``. All other specs are not. This field is used for
-                querying mirror indices. By default, it does not check this status.
+          hashes (container): list or set of hashes that we can use to
+              restrict the search
 
-            hashes: list of hashes used to restrict the search
-
-            install_tree: query 'all' (default), 'local', 'upstream', or upstream path
-
-            origin: origin of the spec
+      Returns:
+          list of specs that match the query
+  (END)

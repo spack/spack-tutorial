@@ -127,7 +127,7 @@ Let's see the documentation available for ``query()`` using Python's built-in ``
 
 .. literalinclude:: outputs/scripting/spack-python-db-query-help.out
    :language: console
-   :emphasize-lines: 1-2,9-10
+   :emphasize-lines: 1-2,9-13
 
 We'll primarily make use of the ``query_spec`` argument.
 
