@@ -1,19 +1,21 @@
-FROM ghcr.io/spack/tutorial-ubuntu-22.04:v2024-05-07
+FROM ubuntu:24.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install AWS cli
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
+    gcc gfortran g++ \
+    gcc-10 gfortran-10 g++-10 \
+    clang \
+    libc-dev \
     awscli \
     bash-completion \
     emacs \
     jq \
     less \
-    vim
-
-# Remove GCC 12 from container
-RUN apt-get remove -y gcc-12
+    vim \
+    && rm -rf /var/lib/apt/lists/*
 
 # Download the buildcache
 RUN mkdir /mirror
