@@ -76,6 +76,7 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 
 This is a complete, but cluttered list of all our installed packages and their dependencies.
 It contains packages built with both ``openmpi`` and ``mpich``, as well as multiple variants of other packages, like ``hdf5`` and ``zlib-ng``.
+
 The query mechanism we learned about with ``spack find`` can help, but it would be nice if we could see only the software that is relevant to our current project instead of seeing everything on the machine.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -155,6 +156,8 @@ Let's try it:
    :language: console
 
 Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment. **Root specs** are packages that we've explicitly requested to be installed in an environment.
+
+
 They're called **"roots"** because they sit at the top of the dependency graph---when Spack installs these packages, with their respective dependency packages sitting below them.
 
 Now, let's install:
@@ -172,38 +175,6 @@ Let's now confirm the contents of the environment using ``spack find``:
    :language: console
 
 We can see that the roots and all their dependencies have been installed.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an environment incrementally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We can also add and install specs to an environment incrementally. For example:
-
-.. code-block:: console
-
-   $ spack install --add tcl
-   $ spack install --add trilinos
-
-If we create environments incrementally, Spack ensures that already installed roots are not re-concretized.
-So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
-
-.. note::
-
-   Incrementally creating an environment may give us different package
-   versions from an environment created all at once.
-   We'll cover this later in the tutorial after we've discussed different
-   concretization strategies.
-
-   Further, there are two other advantages of concretizing and installing an
-   environment all at once:
-
-
-   * If you have a number of specs that can be installed together,
-     adding them first and installing them together enables them to
-     share dependencies and reduces total installation time.
-
-   * You can launch all builds in parallel by taking advantage of Spack's
-     `install-level build parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
 
 ^^^^^^^^^^^^^^
 Using Packages
@@ -305,15 +276,10 @@ In this section, we'll learn how to enforce that all the packages in our environ
 
 We can customize the selection of the ``mpi`` provider using `concretization preferences <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_ to change the behavior of the concretizer.
 
-.. note::
 
-   Before proceeding, make sure your ``EDITOR`` environment variable
-   is set to the path of your preferred text editor.
-
-Let's start by examining our environment's configuration using ``spack config edit``:
+Let's start by examining our environment's configuration using ``spack config get``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
-   :emphasize-lines: 8-13
 
 The output shows the special ``spack.yaml`` configuration file that Spack uses to store environment configurations.
 
@@ -342,9 +308,14 @@ The ``concretizer:unify:true`` setting controls how Spack resolves dependencies 
 Editing environment configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider.
+.. note::
 
-You should have the above file open in your editor.
+   Before proceeding, make sure your ``EDITOR`` environment variable
+   is set to the path of your preferred text editor.
+
+Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider using ``spack config edit``.
+
+You should now have the above file open in your editor.
 Change it to include the ``packages:mpi:require`` entry below:
 
 .. code-block:: yaml
