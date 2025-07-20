@@ -11,6 +11,7 @@ RUN apt-get update -y && \
     bash-completion \
     python3 \
     python3-pip \
+    python3-setuptools \
     emacs \
     jq \
     less \

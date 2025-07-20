@@ -10,21 +10,6 @@ jobs:
       packages: write
 
     steps:
-      - name: Remove pre-installed apps to make space for build
-        run: |
-          sudo apt-get remove -y '^llvm-.*'
-          sudo apt-get remove -y '^dotnet-.*'
-          sudo apt-get remove -y 'php.*'
-          sudo apt-get remove -y '^mongodb-.*'
-          sudo apt-get remove -y '^mysql-.*'
-          sudo apt-get autoremove -y
-          sudo apt-get clean
-          sudo rm -rf /usr/share/dotnet/
-          sudo rm -rf /usr/local/share/powershell
-          sudo rm -rf /usr/local/share/chromium
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf /usr/local/lib/node_modules
-
       - name: Set up QEMU
         uses: docker/setup-qemu-action@49b3bc8e6bdd4a60e6116a5414239cba5943d3cf
 
