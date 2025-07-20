@@ -4,16 +4,17 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
+    bash-completion \
+    ca-certificates \
+    clang \
+    emacs \
     gcc gfortran g++ \
     gcc-10 gfortran-10 g++-10 \
-    clang \
-    libc-dev \
-    bash-completion \
-    python3 \
-    rclone \
-    emacs \
     jq \
     less \
+    libc-dev \
+    python3 \
+    rclone \
     vim \
     && rm -rf /var/lib/apt/lists/*
 
