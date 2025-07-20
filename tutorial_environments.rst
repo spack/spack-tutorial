@@ -157,7 +157,6 @@ Let's try it:
 
 Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment. **Root specs** are packages that we've explicitly requested to be installed in an environment.
 
-
 They're called **"roots"** because they sit at the top of the dependency graph---when Spack installs these packages, with their respective dependency packages sitting below them.
 
 Now, let's install:
@@ -275,7 +274,6 @@ So far, ``myproject`` relies on configuration defaults, but these can be overrid
 In this section, we'll learn how to enforce that all the packages in our environment depending on ``mpi`` build with ``mpich`` by modifying our configuration.
 
 We can customize the selection of the ``mpi`` provider using `concretization preferences <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_ to change the behavior of the concretizer.
-
 
 Let's start by examining our environment's configuration using ``spack config get``:
 
