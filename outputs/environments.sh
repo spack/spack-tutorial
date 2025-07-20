@@ -91,7 +91,7 @@ example --tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
 
-example environments/config-get-1    "spack config get"
+example environments/config-get-1    "spack config get | head -12"
 
 # The file is edited by hand here
 # We mock that by using `spack config add`

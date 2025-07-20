@@ -52,11 +52,17 @@ Goals of this Tutorial
 ----------------------
 
 This tutorial will teach you the fundamentals of creating and using Spack environments.
+
 We'll cover:
+
 1. Command line basics -- Creating and managing environments with Spack commands.
+
 2. Configuration files -- Editing ``spack.yaml`` and understanding ``spack.lock``.
+
 3. Environment types -- Understanding Spack-managed vs. independent environments.
+
 4. Reproducible builds -- Sharing and recreating environments across systems.
+
 
 -------------------
 Environment Basics
@@ -70,6 +76,7 @@ Let's look at the output of ``spack find`` at this point in the tutorial.
 
 This is a complete, but cluttered list of all our installed packages and their dependencies.
 It contains packages built with both ``openmpi`` and ``mpich``, as well as multiple variants of other packages, like ``hdf5`` and ``zlib-ng``.
+
 The query mechanism we learned about with ``spack find`` can help, but it would be nice if we could see only the software that is relevant to our current project instead of seeing everything on the machine.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -149,6 +156,7 @@ Let's try it:
    :language: console
 
 Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment. **Root specs** are packages that we've explicitly requested to be installed in an environment.
+
 They're called **"roots"** because they sit at the top of the dependency graph---when Spack installs these packages, with their respective dependency packages sitting below them.
 
 Now, let's install:
@@ -166,38 +174,6 @@ Let's now confirm the contents of the environment using ``spack find``:
    :language: console
 
 We can see that the roots and all their dependencies have been installed.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an environment incrementally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We can also add and install specs to an environment incrementally. For example:
-
-.. code-block:: console
-
-   $ spack install --add tcl
-   $ spack install --add trilinos
-
-If we create environments incrementally, Spack ensures that already installed roots are not re-concretized.
-So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
-
-.. note::
-
-   Incrementally creating an environment may give us different package
-   versions from an environment created all at once.
-   We'll cover this later in the tutorial after we've discussed different
-   concretization strategies.
-
-   Further, there are two other advantages of concretizing and installing an
-   environment all at once:
-
-
-   * If you have a number of specs that can be installed together,
-     adding them first and installing them together enables them to
-     share dependencies and reduces total installation time.
-
-   * You can launch all builds in parallel by taking advantage of Spack's
-     `install-level build parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
 
 ^^^^^^^^^^^^^^
 Using Packages
@@ -302,7 +278,6 @@ We can customize the selection of the ``mpi`` provider using `concretization pre
 Let's start by examining our environment's configuration using ``spack config get``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
-   :emphasize-lines: 8-13
 
 The output shows the special ``spack.yaml`` configuration file that Spack uses to store environment configurations.
 
@@ -388,11 +363,24 @@ Let's run ``spack concretize --force`` (or ``-f`` in short) to make Spack re-con
 
 All the specs are now concrete **and** ready to be installed with ``mpich`` as the MPI implementation.
 
-Re-concretization is sometimes also necessary when creating an environment *incrementally* with unification enabled.
-Spack makes sure that already concretized specs in the environment are not modified when adding something new.
 
-Adding and installing specs one by one leads to greedy concretization.
-When you first install ``python`` in an environment, Spack will pick a recent version for it.
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating an environment incrementally
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+We can also add and install specs to an environment incrementally. For example:
+
+.. code-block:: console
+
+   $ spack install --add python
+   $ spack install --add py-numpy@1.20
+
+If we create environments incrementally, Spack ensures that already installed roots are not re-concretized.
+So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
+
+Adding and installing specs incrementally leads to greedy concretization, meaning that the environment may have different package versions compared to an environment created all at once.
+
+When you first install ``python`` in an environment, Spack will pick a recent version.
 If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize:
 
 .. literalinclude:: outputs/environments/incremental-1.out
@@ -402,6 +390,16 @@ The solution is to re-concretize the environment as a whole, which causes ``pyth
 
 .. literalinclude:: outputs/environments/incremental-2.out
    :language: console
+
+.. note::
+   There are other advantages to concretizing and installing an environment all at once:
+
+   * If you have a number of specs that can be installed together,
+     adding them first and installing them together enables them to
+     share dependencies and reduces total installation time.
+
+   * You can launch all builds in parallel by taking advantage of Spack's
+     `install-level build parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
 
 ------------------------
 Building in environments
