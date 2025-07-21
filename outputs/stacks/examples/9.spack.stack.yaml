@@ -53,6 +53,8 @@ spack:
         - mpi
         - lapack
         hash_length: 0
+        core_specs:
+        - 'gcc@12.3.0'
         include:
         - gcc
         exclude:
