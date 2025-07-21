@@ -1,20 +1,13 @@
-FROM ubuntu:24.04
+FROM ghcr.io/spack/tutorial-ubuntu-22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     bash-completion \
-    ca-certificates \
-    clang \
     emacs \
-    gcc gfortran g++ \
-    gcc-10 gfortran-10 g++-10 \
-    git \
     jq \
     less \
-    libc-dev \
-    python3 \
     rclone \
     vim \
     && rm -rf /var/lib/apt/lists/*
