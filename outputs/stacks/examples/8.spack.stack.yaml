@@ -50,7 +50,9 @@ spack:
         lmod: modules
       lmod:
         core_compilers:
-          - 'gcc'
+        - 'gcc@12.3.0'
+        core_specs:
+        - 'gcc'
         hierarchy:
         - mpi
         - lapack
