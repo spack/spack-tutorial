@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `ISC High Performance 25 Conference <https://isc-hpc.com/>`_ June 13, 2025.
-The event was a half-day tutorial.
+It was last presented at the `Practice and Experience in Advanced Research Computing (PEARC) 25 Conference <https://pearc.acm.org/pearc25/>`_ July 21, 2025.
+The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -18,17 +18,17 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/isc25-tutorial-slide-preview.jpg
-   :target: _static/slides/spack-isc25-tutorial-slides.pdf
+.. image:: tutorial/images/pearc25-tutorial-slide-preview.png
+   :target: _static/slides/spack-pearc25-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-isc25-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-pearc25-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Alec Scott, Massimiliano Culpo, Adam Stewart, Harmen Stoppels, and Michael Kuhn.
+**Full citation:** Todd Gamblin, Alec Scott, Kathleen Shea, Caetano Melone.
 Managing HPC Software Complexity with Spack.
-ISC High Performance 2025 (ISC25), Hamburg, Germany, June 13, 2025.
+Practice and Experience in Advanced Research Computing 2025 (PEARC25), Columbus, Ohio, July 21, 2025.
 
 .. _video:
 
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:isc25
-   $ docker run -it ghcr.io/spack/tutorial:isc25
+   $ docker pull ghcr.io/spack/tutorial:pearc25
+   $ docker run -it ghcr.io/spack/tutorial:pearc25
 
 to start using the container. You should now be ready to run through our demo scripts:
 
