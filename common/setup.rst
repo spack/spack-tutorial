@@ -2,11 +2,11 @@
 
    If you have not done the prior sections, you'll need to start the docker image::
 
-       docker run -it ghcr.io/spack/tutorial:isc25
+       docker run -it ghcr.io/spack/tutorial:pearc25
 
    and then set Spack up like this::
 
-       git clone --depth=100 --branch=releases/v0.23 https://github.com/spack/spack
+       git clone --depth=20 --branch=releases/v0.23 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
        spack tutorial -y
        spack bootstrap now
