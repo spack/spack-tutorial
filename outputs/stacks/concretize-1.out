@@ -1,33 +1,57 @@
 $ spack concretize
 ==> No new specs to concretize.
 $ spack find -l
-==> In environment /home/spack5/stacks
+==> In environment /home/spack/stacks
 ==> 5 root specs
 -- no arch / gcc@11 ---------------------------------------------
 [+] jjgfqpd gcc@12%gcc@11
 
 -- no arch / gcc@12 ---------------------------------------------
-[+] bx3g36n netlib-scalapack%gcc@12  [+] me353po netlib-scalapack%gcc@12  [+] 5fvq6fg netlib-scalapack%gcc@12  [+] wpymlkh netlib-scalapack%gcc@12
+[+] bx3g36n netlib-scalapack%gcc@12  [+] 5fvq6fg netlib-scalapack%gcc@12
+[+] me353po netlib-scalapack%gcc@12  [+] wpymlkh netlib-scalapack%gcc@12
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-vgucajy autoconf@2.72		     lljulvx diffutils@3.10	 jj2atvs gdbm@1.23	 bsga3no libiconv@1.17	  qoauga4 mpc@1.3.1    oplsmxr pkgconf@2.2.0  fhud6vq zlib-ng@2.2.1
-6s34ic3 autoconf-archive@2023.02.20  2sbkhch findutils@4.9.0	 bexdfw2 gettext@0.22.5	 ea6qziv libsigsegv@2.14  mdfsfjy mpfr@4.2.1   aylebxv readline@8.2   t7h6imj zstd@1.5.6
-awgfaon automake@1.16.5		     x6mwj3l gawk@5.3.1		 a7drdl4 glibc@2.35	 tt3byem libtool@2.4.7	  rvg7j6b ncurses@6.5  mmv6i4n tar@1.34
-cexlioh berkeley-db@18.1.40	     jjgfqpd gcc@12.3.0		 srkzfjr gmake@4.4.1	 wozcmyn libxml2@2.13.4	  cwpt5ec perl@5.40.0  ljsbwjc texinfo@7.1
-ewqc7cx bzip2@1.0.8		     hshzy76 gcc-runtime@11.4.0	 5webgya gmp@6.3.0	 qaspjyq m4@1.4.19	  pcwnu2w pigz@2.8     2fvrfr6 xz@5.4.6
+vgucajy autoconf@2.72		     bexdfw2 gettext@0.22.5   rvg7j6b ncurses@6.5
+6s34ic3 autoconf-archive@2023.02.20  a7drdl4 glibc@2.35	      cwpt5ec perl@5.40.0
+awgfaon automake@1.16.5		     srkzfjr gmake@4.4.1      pcwnu2w pigz@2.8
+cexlioh berkeley-db@18.1.40	     5webgya gmp@6.3.0	      oplsmxr pkgconf@2.2.0
+ewqc7cx bzip2@1.0.8		     bsga3no libiconv@1.17    aylebxv readline@8.2
+lljulvx diffutils@3.10		     ea6qziv libsigsegv@2.14  mmv6i4n tar@1.34
+2sbkhch findutils@4.9.0		     tt3byem libtool@2.4.7    ljsbwjc texinfo@7.1
+x6mwj3l gawk@5.3.1		     wozcmyn libxml2@2.13.4   2fvrfr6 xz@5.4.6
+jjgfqpd gcc@12.3.0		     qaspjyq m4@1.4.19	      fhud6vq zlib-ng@2.2.1
+hshzy76 gcc-runtime@11.4.0	     qoauga4 mpc@1.3.1	      t7h6imj zstd@1.5.6
+jj2atvs gdbm@1.23		     mdfsfjy mpfr@4.2.1
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-yfxrc66 autoconf@2.72			    ttyuhau gdbm@1.23		  cpmq5md libmd@1.0.4		  5fvq6fg netlib-scalapack@2.2.0  wxt7aps python@3.13.0
-e4u6ql7 automake@1.16.5			    jbitwpt gettext@0.22.5	  ybxtd2t libpciaccess@0.17	  bx3g36n netlib-scalapack@2.2.0  tb7zvuf readline@8.2
-4mqvw3u berkeley-db@18.1.40		    gkoh6ax glibc@2.35		  u2gofvq libsigsegv@2.14	  ippbbwu nghttp2@1.63.0	  b63y5mx sqlite@3.46.0
-fky4vih bison@3.8.2			    zoiouai gmake@4.4.1		  xfe5xho libtool@2.4.7		  n4nt7lo numactl@2.0.18	  j5dljnv tar@1.34
-j3fd4z5 bzip2@1.0.8			    2fvcggi hwloc@2.11.1	  apxktfa libxcrypt@4.4.35	  aliqr5t openblas@0.3.28	  64aenca util-linux-uuid@2.40.2
-xilbvuy ca-certificates-mozilla@2023-05-30  frb66wn krb5@1.21.3		  4fawd6m libxml2@2.13.4	  suepxfz openmpi@5.0.5		  vau55h7 util-macros@1.20.1
-yempnaz cmake@3.30.5			    3oqufcr libbsd@0.12.2	  grpnckw m4@1.4.19		  3jdzvdm openssh@9.9p1		  ifvv7cz xz@5.4.6
-wsmx6sp curl@8.10.1			    ht5niwq libedit@3.1-20240808  ezes42n mpich@4.2.3		  i5fmca4 openssl@3.4.0		  ferxasc yaksa@0.3
-ioferp7 diffutils@3.10			    nftqerg libevent@2.1.12	  uajmsrc ncurses@6.5		  tt4vkz3 perl@5.40.0		  i4mwsvm zlib-ng@2.2.1
-vlatljj expat@2.6.4			    pvefo63 libfabric@1.22.0	  nn52q3b netlib-lapack@3.11.0	  zgwe2ua pigz@2.8		  yk3lkd4 zstd@1.5.6
-wqmzrke findutils@4.9.0			    4ga47g7 libffi@3.4.6	  me353po netlib-scalapack@2.2.0  gutpiwq pkgconf@2.2.0
-w5nlv2k gcc-runtime@12.3.0		    gdtmvyu libiconv@1.17	  wpymlkh netlib-scalapack@2.2.0  t7gzekh pmix@5.0.3
+yfxrc66 autoconf@2.72			    4fawd6m libxml2@2.13.4
+e4u6ql7 automake@1.16.5			    grpnckw m4@1.4.19
+4mqvw3u berkeley-db@18.1.40		    ezes42n mpich@4.2.3
+fky4vih bison@3.8.2			    uajmsrc ncurses@6.5
+j3fd4z5 bzip2@1.0.8			    nn52q3b netlib-lapack@3.11.0
+xilbvuy ca-certificates-mozilla@2023-05-30  me353po netlib-scalapack@2.2.0
+yempnaz cmake@3.30.5			    wpymlkh netlib-scalapack@2.2.0
+wsmx6sp curl@8.10.1			    5fvq6fg netlib-scalapack@2.2.0
+ioferp7 diffutils@3.10			    bx3g36n netlib-scalapack@2.2.0
+vlatljj expat@2.6.4			    ippbbwu nghttp2@1.63.0
+wqmzrke findutils@4.9.0			    n4nt7lo numactl@2.0.18
+w5nlv2k gcc-runtime@12.3.0		    aliqr5t openblas@0.3.28
+ttyuhau gdbm@1.23			    suepxfz openmpi@5.0.5
+jbitwpt gettext@0.22.5			    3jdzvdm openssh@9.9p1
+gkoh6ax glibc@2.35			    i5fmca4 openssl@3.4.0
+zoiouai gmake@4.4.1			    tt4vkz3 perl@5.40.0
+2fvcggi hwloc@2.11.1			    zgwe2ua pigz@2.8
+frb66wn krb5@1.21.3			    gutpiwq pkgconf@2.2.0
+3oqufcr libbsd@0.12.2			    t7gzekh pmix@5.0.3
+ht5niwq libedit@3.1-20240808		    wxt7aps python@3.13.0
+nftqerg libevent@2.1.12			    tb7zvuf readline@8.2
+pvefo63 libfabric@1.22.0		    b63y5mx sqlite@3.46.0
+4ga47g7 libffi@3.4.6			    j5dljnv tar@1.34
+gdtmvyu libiconv@1.17			    64aenca util-linux-uuid@2.40.2
+cpmq5md libmd@1.0.4			    vau55h7 util-macros@1.20.1
+ybxtd2t libpciaccess@0.17		    ifvv7cz xz@5.4.6
+u2gofvq libsigsegv@2.14			    ferxasc yaksa@0.3
+xfe5xho libtool@2.4.7			    i4mwsvm zlib-ng@2.2.1
+apxktfa libxcrypt@4.4.35		    yk3lkd4 zstd@1.5.6
 ==> 90 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)
