@@ -36,7 +36,7 @@ include_spec = Spec(sys.argv[1])
 exclude_spec = Spec(sys.argv[2])
 
 all_included = database.query(include_spec)
-result = filter(lambda spec: not spec.satisfies(exclude_spec), all_included)
+result = [spec for spec in all_included if not spec.satisfies(exclude_spec)]
 
 spack.cmd.display_specs(result)
 EOF
