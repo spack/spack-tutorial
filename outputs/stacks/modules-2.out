@@ -1,22 +1,68 @@
 $ module av
 
----------------------------------------------------------------- /home/spack5/stacks/modules/linux-ubuntu22.04-x86_64/Core ----------------------------------------------------------------
-   autoconf-archive/2023.02.20-6s34ic3		 ed/1.4-p72c4zc		       gmp/6.3.0-5webgya		  lua/5.4.6-qcxkktp	    pkgconf/2.2.0-oplsmxr
-   autoconf/2.72-vgucajy			 findutils/4.9.0-2sbkhch       libiconv/1.17-bsga3no		  m4/1.4.19-qaspjyq	    readline/8.2-aylebxv
-   automake/1.16.5-awgfaon			 gawk/5.3.1-x6mwj3l	       libsigsegv/2.14-ea6qziv		  mpc/1.3.1-qoauga4	    tar/1.34-mmv6i4n
-   bc/1.07.1-jasonju				 gcc-runtime/11.4.0-hshzy76    libtool/2.4.7-tt3byem		  mpfr/4.2.1-mdfsfjy	    tcl/8.6.12-w4gwr4e
-   berkeley-db/18.1.40-cexlioh			 gcc/12.3.0-jjgfqpd	       libxcrypt/4.4.35-v64tnmr		  ncurses/6.5-rvg7j6b	    texinfo/7.1-ljsbwjc
-   bzip2/1.0.8-ewqc7cx				 gdbm/1.23-jj2atvs	       libxml2/2.13.4-wozcmyn		  nghttp2/1.63.0-t2qkug7    unzip/6.0-akxwy4w
-   ca-certificates-mozilla/2023-05-30-t2brqss	 gettext/0.22.5-bexdfw2	       lmod/8.7.18-saucmo6		  openssl/3.4.0-5gigqgw	    xz/5.4.6-2fvrfr6
-   curl/8.10.1-fpywomo				 glibc/2.35-a7drdl4	       lua-luafilesystem/1.8.0-4lpeywj	  perl/5.40.0-cwpt5ec	    zlib-ng/2.2.1-fhud6vq
-   diffutils/3.10-lljulvx			 gmake/4.4.1-srkzfjr	       lua-luaposix/36.1-hdnpce3	  pigz/2.8-pcwnu2w	    zstd/1.5.6-t7h6imj
+---- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core ----
+   autoconf-archive/2023.02.20-6s34ic3
+   autoconf/2.72-vgucajy
+   automake/1.16.5-awgfaon
+   bc/1.07.1-jasonju
+   berkeley-db/18.1.40-cexlioh
+   bzip2/1.0.8-ewqc7cx
+   ca-certificates-mozilla/2023-05-30-t2brqss
+   curl/8.10.1-fpywomo
+   diffutils/3.10-lljulvx
+   ed/1.4-p72c4zc
+   findutils/4.9.0-2sbkhch
+   gawk/5.3.1-x6mwj3l
+   gcc-runtime/11.4.0-hshzy76
+   gcc/12.3.0-jjgfqpd
+   gdbm/1.23-jj2atvs
+   gettext/0.22.5-bexdfw2
+   glibc/2.35-a7drdl4
+   gmake/4.4.1-srkzfjr
+   gmp/6.3.0-5webgya
+   libiconv/1.17-bsga3no
+   libsigsegv/2.14-ea6qziv
+   libtool/2.4.7-tt3byem
+   libxcrypt/4.4.35-v64tnmr
+   libxml2/2.13.4-wozcmyn
+   lmod/8.7.18-saucmo6
+   lua-luafilesystem/1.8.0-4lpeywj
+   lua-luaposix/36.1-hdnpce3
+   lua/5.4.6-qcxkktp
+   m4/1.4.19-qaspjyq
+   mpc/1.3.1-qoauga4
+   mpfr/4.2.1-mdfsfjy
+   ncurses/6.5-rvg7j6b
+   nghttp2/1.63.0-t2qkug7
+   openssl/3.4.0-5gigqgw
+   perl/5.40.0-cwpt5ec
+   pigz/2.8-pcwnu2w
+   pkgconf/2.2.0-oplsmxr
+   readline/8.2-aylebxv
+   tar/1.34-mmv6i4n
+   tcl/8.6.12-w4gwr4e
+   texinfo/7.1-ljsbwjc
+   unzip/6.0-akxwy4w
+   xz/5.4.6-2fvrfr6
+   zlib-ng/2.2.1-fhud6vq
+   zstd/1.5.6-t7h6imj
 
-If the avail list is too long consider trying:
+If the avail list is too long
+consider trying:
 
-"module --default avail" or "ml -d av" to just list the default modules.
-"module overview" or "ml ov" to display the number of modules for each name.
+"module --default avail" or
+"ml -d av" to just list the
+default modules.
+"module overview" or "ml ov"
+to display the number of
+modules for each name.
 
-Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module spider" to find
+all possible modules and
+extensions.
+Use "module keyword key1 key2
+..." to search for all
+possible modules matching any
+of the "keys".
 
 

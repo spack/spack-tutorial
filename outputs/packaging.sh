@@ -21,7 +21,7 @@ example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
-example packaging/info-mpileaks       "spack info tutorial-mpileaks"
+#example packaging/info-mpileaks       "spack info tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/2.package.py" "$mpileaks_package_py"
 example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
