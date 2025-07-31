@@ -1,6 +1,6 @@
   >>> gcc_query_spec = Spec('%gcc')
   >>> gcc_specs = spack.store.STORE.db.query(gcc_query_spec)
-  >>> result = filter(lambda spec: not spec.satisfies('^mpich'), gcc_specs)
+  >>> result = [spec for spec in gcc_specs if not spec.satisfies('^mpich')]
   >>> import spack.cmd
   >>> spack.cmd.display_specs(result)
   -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 -------------------------
