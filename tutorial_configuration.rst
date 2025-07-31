@@ -378,21 +378,22 @@ First, we will look at the default ``packages.yaml`` file.
 
 .. code-block:: console
 
-   $ spack config --scope defaults edit packages
+   $ spack config --scope=defaults:base edit packages
 
 
 .. literalinclude:: _spack_root/etc/spack/defaults/packages.yaml
    :language: yaml
-   :emphasize-lines: 18,45
+   :emphasize-lines: 51
 
 
-This sets the default preferences for compilers and for providers of virtual packages.
+This sets the default preferences for providers of virtual packages.
+We can edit this to change provider preferences and also to create a preference for compilers.
 To illustrate how this works, suppose we want to change the preferences to prefer the Clang compiler and to prefer MPICH over OpenMPI.
 Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
    :language: console
-   :emphasize-lines: 16
+   :emphasize-lines: 15
 
 
 Let's override these default preferences in an environment.
@@ -420,9 +421,12 @@ When you have an activated environment, you can edit the associated configuratio
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         require:
+         - one_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
 
@@ -431,7 +435,7 @@ Because of the configuration scoping we discussed earlier, this overrides the de
 
 .. literalinclude:: outputs/config/1.prefs.out
    :language: console
-   :emphasize-lines: 18
+   :emphasize-lines: 16
 
 
 ^^^^^^^^^^^^^^^^^^^
