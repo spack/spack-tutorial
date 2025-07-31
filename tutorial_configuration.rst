@@ -180,6 +180,7 @@ We can see overrides in action with:
   $ spack config blame config
 
 .. code-block:: yaml
+
    ---                                                   config:
    /home/spack/.spack/config.yaml:2                        aliases: {}
 
