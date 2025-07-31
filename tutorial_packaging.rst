@@ -24,7 +24,9 @@ They define properties and behavior of the build, such as:
 
 * where to find and how to retrieve the software;
 * its dependencies;
-* options for building from source; and
+* options (variants) for building from source;
+* known build constraints (conflicts);
+* known requirements (requires); and
 * build commands.
 
 They can also define checks of the installed software that can be performed after the installation.
@@ -35,13 +37,14 @@ Once we've specified a package's recipe, users can ask Spack to build the softwa
 Getting Started
 ---------------
 
-In order to avoid modifying your Spack installation with the package we are creating, add a **package repository** just for this tutorial by entering the following command:
+In order to avoid modifying your Spack installation with the package we are creating, let's create and add a **package repository** just for this tutorial using the following commands:
 
 .. literalinclude:: outputs/packaging/repo-add.out
    :language: console
 
 Doing this ensures changes we make here do not adversely affect other parts of the tutorial.
-You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_.
+You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ and the command at `spack repo <https://spack.readthedocs.io/en/latest/repositories.html#cmd-spack-repo>`_.
+
 
 -------------------------
 Creating the Package File
@@ -70,34 +73,33 @@ Spack will look at the contents of the tarball and generate a package when we ru
 
 You should now be in your text editor of choice, with the ``package.py`` file open for editing.
 
-Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your tutorial repository's ``packages`` directory, i.e., ``$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py``
+Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your tutorial repository's ``packages`` directory, i.e., ``./repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
 
 Take a moment to look over the file.
 
 As we can see from the skeleton contents, the Spack template:
 
-* provides instructions for how to contribute your package to
-  the Spack repository;
-* indicates that the software is built with Autotools;
+* provides information on the commands for installing and editing the package;
+* imports and inherits from the inferred build system package;
 * provides a docstring template;
 * provides an example homepage URL;
 * shows how to specify a list of package maintainers;
+* provides a template for the license;
 * specifies the version directive, with checksum, for the software;
-* shows a dependency directive example; and
+* listed the inferred language and other build dependencies;
+* provides a skeleton for another dependency;
+* provides a preliminary implementation of the ``autoreconf`` method; and
 * provides a skeleton ``configure_args`` method.
 
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 26,27,29-30,33-35,37-40,53-54,61-62
+   :emphasize-lines: 5-20,27,29-30,33-35,37-40,53-54,57,61-64
 
 .. note::
 
-   The ``maintainers`` field is a comma-separated list of GitHub user
-   names for those people who are willing to be notified when a change
-   is made to the package. This information is useful for developers who
-   maintain a Spack package for their own software and/or rely on software
-   maintained by others.
+   The ``maintainers`` field is a comma-separated list of **GitHub user name** for those people who are willing to be notified when a change is made to the package and given an opportunity to review the changes.
+   This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256`` calculation.
 Exit your editor to return to the command line and use the ``spack checksum`` command:
@@ -137,18 +139,16 @@ Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the ``spack 
 
 Let's make the following changes:
 
-* remove the instructions between dashed lines at the top;
+* remove the boilerplate between dashed lines at the top;
 * replace the first ``FIXME`` comment with a description of ``mpileaks``
   in the docstring;
-* replace the homepage property with the correct link; and
-* uncomment the ``maintainers`` directive and add your GitHub user name.
-* add the license of the project and your GitHub user name.
+* replace the homepage property with the correct link;
+* uncomment the ``maintainers`` directive and add your GitHub user name; and
+* add the license of the project along with your GitHub user name.
 
 .. note::
 
-   We will exclude the ``Copyright`` clause and license identifier in the
-   remainder of the package snippets here to reduce the length of the tutorial
-   documentation; however, the copyright **is required** for published packages.
+   We will exclude the ``Copyright`` clause and license identifier in the remainder of the package snippets here to reduce the length of the tutorial documentation; however, the copyright **is required** for packages contributed back to Spack.
 
 Now make the changes and additions to your ``package.py`` file.
 
@@ -156,7 +156,7 @@ The resulting package should contain the following information:
 
 .. literalinclude:: tutorial/examples/packaging/1.package.py
    :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
    :emphasize-lines: 5,7,10,12
 
@@ -169,31 +169,22 @@ Let's enter the ``spack info`` command for the package:
    :language: console
 
 Take a moment to look over the output.
-You should see the following information derived from the package:
+You should see the information derived from the package includes the description, homepage, maintainer, and license we provided.
 
-* it is an Autotools package;
-* it has the description, homepage, and maintainer(s) we provided;
-* it has the URL we gave the ``spack create`` command;
-* the preferred version was derived from the code;
-* the default Autotools package installation phases are listed;
-* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
-* both the link and run dependencies are ``None`` at this point; and
-* it uses the 3-clause BSD license.
+Also notice it shows:
+
+* the preferred version derived from the code;
+* the default Autotools package installation phases;
+* the ``gnuconfig`` build dependency inherited from ``AutotoolsPackage``; and
+* both the link and run dependencies are ``None`` at this point.
 
 As we fill in more information about the package, the ``spack info`` command will become more informative.
 
 .. note::
 
-   More information on using Autotools packages is provided in
-   `AutotoolsPackage
-   <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
+   More information on using Autotools packages is provided in `AutotoolsPackage <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
 
-   The full list of build systems known to Spack can be found at
-   `Build Systems
-   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
-
-   More information on the build-time tests can be found at
-   `<https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_.
+   The full list of build systems known to Spack can be found at `Build Systems <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
    Refer to the links at the end of this section for more information.
 
@@ -484,6 +475,10 @@ Installing again we can see we've fixed the problem.
 This only scratches the surface of testing an installation.
 We could leverage the examples from this package to add post-install phase tests and/or stand-alone tests.
 Refer to the links at the bottom for more information on checking an installation.
+
+.. note::
+
+   More information on the build-time tests can be found at `<https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_.
 
 
 ------------------------

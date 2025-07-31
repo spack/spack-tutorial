@@ -1,27 +1,26 @@
-$ spack info tutorial-mpileaks
 AutotoolsPackage:   tutorial-mpileaks
 
 Description:
-    Tool to detect and report MPI objects like MPI_Requests and
+    Tool to detect and report leaked MPI objects like MPI_Requests and
     MPI_Datatypes.
 
 Homepage: https://github.com/LLNL/mpileaks
 
 Preferred version:
-    1.0	   https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
+    1.0    https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
 
 Safe versions:
-    1.0	   https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
+    1.0    https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
 
 Deprecated versions:
     None
 
 Variants:
-    build_system [autotools]	    autotools
-	Build systems supported by the package
+    build_system [autotools]        autotools
+        Build systems supported by the package
 
 Build Dependencies:
-    autoconf  automake	gmake  gnuconfig  libtool  m4
+    autoconf  automake  c  cxx  fortran  gmake  gnuconfig  libtool  m4
 
 Link Dependencies:
     None
@@ -31,4 +30,3 @@ Run Dependencies:
 
 Licenses:
     BSD
-
