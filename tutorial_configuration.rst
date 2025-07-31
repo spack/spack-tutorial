@@ -276,7 +276,8 @@ You can use this new entry like so:
 
    $ spack spec openblas %clang_gfortran
 
-Note the identifier `clang_gfortran` is not itself a spec (you don't version it). You reference it in other specs.
+Note the identifier `clang_gfortran` is not itself a spec (you don't version it).
+You reference it in other specs.
 Note that without `when: '%fortran'`, you could not use `clang_gfortran` with packages unless they depended on Fortran (likewise for the `when` statements on c/cxx).
 
 .. These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
