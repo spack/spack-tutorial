@@ -1,9 +1,9 @@
-  >>> s = spack.concretize.concretize_one(s)
-  >>> s.concrete
+  >>> zlib_concrete = spack.concretize.concretize_one(zlib)
+  >>> zlib_concrete.concrete
   True
-  >>> s.version
+  >>> zlib_concrete.version
   Version('1.3.1')
-  >>> s.versions
+  >>> zlib_concrete.versions
   [Version('1.3.1')]
-  >>> str(s.architecture)
+  >>> str(zlib_concrete.architecture)
   linux-ubuntu22.04-x86_64_v3
