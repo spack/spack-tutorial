@@ -1,4 +1,4 @@
-  >>> s.concretize()
+  >>> s = spack.concretize.concretize_one(s)
   >>> s.concrete
   True
   >>> s.version
