@@ -17,4 +17,4 @@
    .. warning::
 
       The ``spack tutorial -y`` command is intended for use in a container or VM.
-      It replaces some configuration files in order to establish suitable settings for the tutorial.
+      Use with care in other environments since it replaces some configuration files in order to establish suitable settings for the tutorial.
