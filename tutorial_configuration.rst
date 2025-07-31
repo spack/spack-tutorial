@@ -147,58 +147,59 @@ YAML Format
 -----------
 
 Spack configurations are nested YAML dictionaries with a specified schema.
-The configuration is organized into sections based on theme (e.g., a 'compilers' section) and the highest-level keys of the dictionary specify the section.
+The configuration is organized into sections based on theme (e.g., a 'packages' section) and the highest-level keys of the dictionary specify the section.
 Spack generally maintains a separate file for each section, although environments keep them together (in ``spack.yaml``).
 
 When Spack checks its configuration, the configuration scopes are updated as dictionaries in increasing order of precedence, allowing higher precedence files to override lower.
 YAML dictionaries use a colon ":" to specify key-value pairs.
 Spack extends YAML syntax slightly to allow a double-colon "::" to specify a key-value pair.
 When a double-colon is used, instead of adding that section, Spack replaces what was in that section with the new value.
-For example, consider a user's compilers configuration file as follows:
+For example, look at high-level config:
+
+.. code-block:: console
+
+   $ spack config blame config
 
 .. code-block:: yaml
 
-   compilers::
-   - compiler:
-       spec: gcc@11.4.0
-       paths:
-         cc: /usr/bin/gcc
-         cxx: /usr/bin/g++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   ---                                                   config:
+   /etc/spack/config.yaml:2                                suppress_gpg_warnings: True
+   /home/spack/spack/etc/spack/defaults/config.yaml:19     install_tree:
+   /home/spack/spack/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+   ...
+   /home/spack/spack/etc/spack/defaults/config.yaml:238    aliases:
+   /home/spack/spack/etc/spack/defaults/config.yaml:239      concretise: concretize
+   /home/spack/spack/etc/spack/defaults/config.yaml:240      containerise: containerize
+   /home/spack/spack/etc/spack/defaults/config.yaml:241      rm: remove
 
+We can see overrides in action with:
 
-This ensures that no other compilers are used, as the user configuration scope is the last scope searched and the ``compilers::`` line replaces information from all previous configuration files.
-If the same configuration file had a single colon instead of the double colon, it would add the GCC version 11.3.0 compiler to whatever other compilers were listed in other configuration files.
+.. code-block:: console
+
+  $ spack config add config:aliases::{}
+  $ spack config blame config
+
+.. code-block:: yaml
+   ---                                                   config:
+   /home/spack/.spack/config.yaml:2                        aliases: {}
+
+The default write scope is the user scope, which overrides the defaults.
+You can undo this by editing the config section like:
+
+.. code-block:: console
+
+   $ spack config edit config
 
 A configuration section appears nearly the same when managed in an environment's ``spack.yaml`` file except that the section is nested 1 level underneath the top-level 'spack' key.
-For example the above ``compilers.yaml`` could be incorporated into an environment's ``spack.yaml`` like so:
+For example the above ``config.yaml`` could be incorporated into an environment's ``spack.yaml`` like so:
 
 .. code-block:: yaml
 
    spack:
      specs: []
      view: true
-     compilers::
-     - compiler:
-         spec: gcc@11.4.0
-         paths:
-           cc: /usr/bin/gcc
-           cxx: /usr/bin/g++
-           f77: /usr/bin/gfortran
-           fc: /usr/bin/gfortran
-         flags: {}
-         operating_system: ubuntu22.04
-         target: x86_64
-         modules: []
-         environment: {}
-         extra_rpaths: []
+     config:
+       aliases:: {}
 
 
 .. _configs-tutorial-compilers:
@@ -212,57 +213,42 @@ As discussed in the basic installation tutorial, we can also tell Spack where co
 However, in some circumstances, we want even more fine-grained control over the compilers available.
 This section will teach you how to exercise that control using the compilers configuration file.
 
-We will start by opening the compilers configuration file:
+We will start by opening the compilers configuration (which lives in the packages section):
 
 .. code-block:: console
 
-   $ spack config edit compilers
+   $ spack config edit packages
 
 
-We start with no active environment, so this will open a ``compilers.yaml`` file for editing (you can also do this with an active environment):
+We start with no active environment, so this will open a ``packages.yaml`` file for editing (you can also do this with an active environment):
 
 .. code-block:: yaml
 
-   compilers:
-   - compiler:
-       spec: clang@=14.0.0
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77:
-         fc:
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
-   - compiler:
-       spec: gcc@=10.5.0
-       paths:
-         cc: /usr/bin/gcc-10
-         cxx: /usr/bin/g++-10
-         f77: /usr/bin/gfortran-10
-         fc: /usr/bin/gfortran-10
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
-   - compiler:
-       spec: gcc@=11.4.0
-       paths:
-         cc: /usr/bin/gcc
-         cxx: /usr/bin/g++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@10.5.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc-10
+             cxx: /usr/bin/g++-10
+             fortran: /usr/bin/gfortran-10
+       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc
+             cxx: /usr/bin/g++
+             fortran: /usr/bin/gfortran
+     llvm:
+       externals:
+       - spec: llvm@14.0.0+clang~flang~lld~lldb
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/clang
+             cxx: /usr/bin/clang++
 
 This specifies two versions of the GCC compiler and one version of the Clang compiler with no Flang compiler.
 Now suppose we have a code that we want to compile with the Clang compiler for C/C++ code, but with gfortran for Fortran components.
