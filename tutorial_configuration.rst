@@ -211,7 +211,7 @@ Compiler Configuration
 For most tasks, we can use Spack with the compilers auto-detected the first time Spack runs on a system.
 As discussed in the basic installation tutorial, we can also tell Spack where compilers are located using the ``spack compiler add`` command.
 However, in some circumstances, we want even more fine-grained control over the compilers available.
-This section will teach you how to exercise that control using the compilers configuration file.
+This section will teach you how to exercise that control using the compilers configuration.
 
 We will start by opening the compilers configuration (which lives in the packages section):
 
@@ -252,56 +252,34 @@ We start with no active environment, so this will open a ``packages.yaml`` file 
 
 This specifies two versions of the GCC compiler and one version of the Clang compiler with no Flang compiler.
 Now suppose we have a code that we want to compile with the Clang compiler for C/C++ code, but with gfortran for Fortran components.
-We can do this by adding another entry to the ``compilers.yaml`` file:
+We can do this by adding creating a toolchain config:
+
+.. code-block:: console
+
+   $ spack config edit toolchains
 
 .. code-block:: yaml
-   :emphasize-lines: 2,6-7
 
-   - compiler:
-       spec: clang@=14.0.0-gfortran
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   toolchains:
+     clang_gfortran:
+     - spec: '%c=llvm@14.0.0'
+       when: '%c'
+     - spec: '%cxx=llvm@14.0.0'
+       when: '%cxx'
+     - spec: '%fortran=gcc@11.4.0'
+       when: '%fortran'
 
-
-Let's talk about the sections of this compiler entry that we've changed.
-The biggest change we've made is to the ``paths`` section.
-This lists the paths to the compilers to use for each language/specification.
-In this case, we point to the Clang compiler for C/C++ and the gfortran compiler for both specifications of Fortran.
-We've also changed the ``spec`` entry for this compiler.
-The ``spec`` entry is effectively the name of the compiler for Spack.
-It consists of a name and a version number, separated by the ``@`` sigil.
-The name must be one of the supported compiler names in Spack (aocc, apple-clang, arm, cce, clang, dpcpp, fj, gcc, intel, msvc, nag, nvhpc, oneapi, pgi, rocmcc, xl, xl_r).
-The version number can be an arbitrary string of alphanumeric characters, as well as ``-``, ``.``, and ``_``.
-The ``target`` and ``operating_system`` sections we leave unchanged.
-These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
-
-We can verify that our new compiler works by invoking it now:
+We are essentially saying "use Clang for c/c++, and use GCC for Fortran".
+You can use this new entry like so:
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@14.0.0-gfortran
-   ...
+   $ spack spec openblas %clang_gfortran
 
+Note the identifier `clang_gfortran` is not itself a spec (you don't version it). You reference it in other specs.
+Note that without `when: '%fortran'`, you could not use `clang_gfortran` with packages unless they depended on Fortran (likewise for the `when` statements on c/cxx).
 
-This new compiler also works on Fortran codes.
-We'll show this by compiling a small package using ``cmake%gcc@11.4.0`` as a build dependency, since it is already available in our binary cache:
-
-.. code-block:: console
-
-   $ spack install --reuse cmake %gcc@11.4.0
-   ...
-   $ spack install --no-cache --reuse json-fortran %clang@=14.0.0-gfortran ^cmake%gcc@11.4.0
-   ...
-
+.. These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
 
 ^^^^^^^^^^^^^^
 Compiler flags
@@ -315,22 +293,20 @@ As on the command line, the flags are set through the implicit build variables `
 Let's open our compilers configuration file again and add a compiler flag:
 
 .. code-block:: yaml
-   :emphasize-lines: 8-9
+   :emphasize-lines: 11-12
 
-   - compiler:
-       spec: clang@=14.0.0-gfortran
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags:
-         cppflags: -g
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc
+             cxx: /usr/bin/g++
+             fortran: /usr/bin/gfortran
+           flags:
+             cppflags: -g
 
 
 We can test this out using the ``spack spec`` command to show how the spec is concretized:
@@ -341,46 +317,45 @@ We can test this out using the ``spack spec`` command to show how the spec is co
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 
+.. It even added it to gcc-runtime, hmm...
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Advanced compiler configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are four fields of the compiler configuration entry that we have not yet talked about.
-
-The ``target`` field of the compiler defines the cpu architecture **family** that the compiler supports.
+Some additional fields not discussed yet, in an example:
 
 .. code-block:: yaml
+   :emphasize-lines: 6-7, 15-19
 
-   - compiler:
-       ...
-       target: ppc64le
-       ...
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+         prefix: /usr
+         modules:
+         - gcc/11.4.0
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc
+             cxx: /usr/bin/g++
+             fortran: /usr/bin/gfortran
+           flags:
+             cppflags: -g
+           extra_rpaths:
+           - /a/path/to/somewhere/important
+           environment:
+             set:
+               EG_A_LICENSE_FILE: 1713@license4
+
+.. The ``target`` field of the compiler defines the cpu architecture **family** that the compiler supports.
+.. (target isn't in the compiler schema in packages anymore: how do we say "target generic x86_64 whenever you use this compiler")
 
 The ``modules`` field of the compiler was originally designed to support older Cray systems, but can be useful on any system that has compilers that are only usable when a particular module is loaded.
-Any modules in the ``modules`` field of the compiler configuration will be loaded as part of the build environment for packages using that compiler:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       modules:
-       - PrgEnv-gnu
-       - gcc/5.3.0
-       ...
+Any modules in the ``modules`` field of the compiler configuration will be loaded as part of the build environment for packages using that compiler.
 
 The ``environment`` field of the compiler configuration is used for compilers that require environment variables to be set during build time.
-For example, if your Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server, you can set this in ``compilers.yaml`` as follows:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       environment:
-         set:
-           INTEL_LICENSE_FILE: 1713@license4
-       ...
-
-
+For example, if your Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server.
 In addition to ``set``, ``environment`` also supports ``unset``, ``prepend_path``, and ``append_path``.
 
 The ``extra_rpaths`` field of the compiler configuration is used for compilers that do not rpath all of their dependencies by default.
@@ -388,15 +363,6 @@ Since compilers are often installed externally to Spack, Spack is unable to mana
 This can lead to packages not finding link dependencies imposed by the compiler properly.
 For compilers that impose link dependencies on the resulting executables that are not rpath'ed into the executable automatically, the ``extra_rpaths`` field of the compiler configuration tells Spack which dependencies to rpath into every executable created by that compiler.
 The executables will then be able to find the link dependencies imposed by the compiler.
-As an example, this field can be set by:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       extra_rpaths:
-       - /apps/intel/ComposerXE2017/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin
-       ...
 
 
 .. _configs-tutorial-package-prefs:

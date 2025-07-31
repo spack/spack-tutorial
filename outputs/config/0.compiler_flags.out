@@ -1,24 +1,7 @@
-$ spack spec json-fortran%clang@14.0.0-gfortran
-Input spec
---------------------------------
- -   json-fortran%clang@14.0.0-gfortran
-
-Concretized
---------------------------------
- -   json-fortran@8.3.0%clang@14.0.0-gfortran cppflags="-g" ~ipo build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
- -       ^cmake@3.27.7%clang@14.0.0-gfortran cppflags="-g" ~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
- -           ^curl@8.4.0%clang@14.0.0-gfortran cppflags="-g" ~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
- -               ^nghttp2@1.57.0%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -               ^openssl@3.1.3%clang@14.0.0-gfortran cppflags="-g" ~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
- -                   ^ca-certificates-mozilla@2023-05-30%clang@14.0.0-gfortran cppflags="-g"  build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -                   ^perl@5.38.0%clang@14.0.0-gfortran cppflags="-g" +cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
- -                       ^berkeley-db@18.1.40%clang@14.0.0-gfortran cppflags="-g" +cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
- -                       ^bzip2@1.0.8%clang@14.0.0-gfortran cppflags="-g" ~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -                           ^diffutils@3.9%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -                               ^libiconv@1.17%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
- -                       ^gdbm@1.23%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -                           ^readline@8.2%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
- -               ^pkgconf@1.9.5%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -           ^ncurses@6.4%clang@14.0.0-gfortran cppflags="-g" ~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -           ^zlib-ng@2.1.4%clang@14.0.0-gfortran cppflags="-g" +compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -       ^gmake@4.4.1%clang@14.0.0-gfortran cppflags="-g" ~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
+$ spack spec zlib%gcc@11.4.0
+ -   zlib@1.3.1 cppflags=-g +optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64 %c,cxx=gcc@11.4.0
+ -       ^compiler-wrapper@1.0 build_system=generic arch=linux-ubuntu22.04-x86_64
+[e]      ^gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' arch=linux-ubuntu22.04-x86_64
+ -       ^gcc-runtime@11.4.0 cppflags=-g  build_system=generic arch=linux-ubuntu22.04-x86_64
+[e]      ^glibc@2.35 build_system=autotools arch=linux-ubuntu22.04-x86_64
+ -       ^gmake@4.4.1 cppflags=-g ~guile build_system=generic arch=linux-ubuntu22.04-x86_64 %c=gcc@11.4.0
