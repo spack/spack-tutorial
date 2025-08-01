@@ -73,7 +73,7 @@ Spack will look at the contents of the tarball and generate a package when we ru
 
 You should now be in your text editor of choice, with the ``package.py`` file open for editing.
 
-Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your tutorial repository's ``packages`` directory, i.e., ``./repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
+Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your tutorial repository's ``packages`` directory, i.e., ``/home/spack/repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
 
 Take a moment to look over the file.
 
@@ -85,8 +85,8 @@ As we can see from the skeleton contents, the Spack template:
 * provides an example homepage URL;
 * shows how to specify a list of package maintainers;
 * provides a template for the license;
-* specifies the version directive, with checksum, for the software;
-* listed the inferred language and other build dependencies;
+* specifies the version directive with the checksum;
+* lists the inferred language and other build dependencies;
 * provides a skeleton for another dependency;
 * provides a preliminary implementation of the ``autoreconf`` method; and
 * provides a skeleton ``configure_args`` method.
@@ -98,7 +98,8 @@ As we can see from the skeleton contents, the Spack template:
 
 .. note::
 
-   The ``maintainers`` field is a comma-separated list of **GitHub user name** for those people who are willing to be notified when a change is made to the package and given an opportunity to review the changes.
+   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of **GitHub user name** for those accounts willing to be notified when a change is made to the package.
+   They will be given an opportunity to review the changes.
    This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
 
 Since we are providing a ``url``, we can confirm the checksum, or ``sha256`` calculation.
@@ -107,15 +108,9 @@ Exit your editor to return to the command line and use the ``spack checksum`` co
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
 
-Note the entire ``version`` directive is provided for your convenience.
+where the entire ``version`` directive is provided for your convenience.
 
-We will now fill in the provided placeholders as we:
-
-* document some information about this package;
-* add dependencies; and
-* add the configuration arguments needed to build the package.
-
-For the moment, though, let's see what Spack does with the skeleton by trying to install the package using the ``spack install`` command:
+Before proceeding with changes, let's see what Spack does with the skeleton by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
@@ -123,7 +118,11 @@ For the moment, though, let's see what Spack does with the skeleton by trying to
 The build was unsuccessful.
 The error indicates ``configure`` is unable to find the installation location of a dependency.
 
-Let's start to customize the package for our software.
+We will now fill in the provided placeholders and customize the package for the software as we:
+
+* document some information about this package;
+* add dependencies; and
+* add the configuration arguments needed to build the package.
 
 ----------------------------
 Adding Package Documentation
@@ -131,7 +130,7 @@ Adding Package Documentation
 
 First, let's fill in the documentation.
 
-Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the ``spack edit`` command:
+Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -146,6 +145,8 @@ Let's make the following changes:
 * uncomment the ``maintainers`` directive and add your GitHub user name; and
 * add the license of the project along with your GitHub user name.
 
+It helps to have the `mpileaks <https://github.com/LLNL/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
+
 .. note::
 
    We will exclude the ``Copyright`` clause and license identifier in the remainder of the package snippets here to reduce the length of the tutorial documentation; however, the copyright **is required** for packages contributed back to Spack.
@@ -158,7 +159,7 @@ The resulting package should contain the following information:
    :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 5,7,10,12
+   :emphasize-lines: 6,8,11,13
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software; however, the information is now available for review.
@@ -169,14 +170,14 @@ Let's enter the ``spack info`` command for the package:
    :language: console
 
 Take a moment to look over the output.
-You should see the information derived from the package includes the description, homepage, maintainer, and license we provided.
+You should see the information derived from the package now includes the description, homepage, maintainer, and license we provided.
 
 Also notice it shows:
 
 * the preferred version derived from the code;
 * the default Autotools package installation phases;
-* the ``gnuconfig`` build dependency inherited from ``AutotoolsPackage``; and
-* both the link and run dependencies are ``None`` at this point.
+* the ``gmake`` and ``gnuconfig`` build dependencies inherited from ``AutotoolsPackage``; and
+* both the link and run dependencies are currently ``None``.
 
 As we fill in more information about the package, the ``spack info`` command will become more informative.
 
@@ -189,6 +190,10 @@ As we fill in more information about the package, the ``spack info`` command wil
    Refer to the links at the end of this section for more information.
 
 Now we're ready to start filling in the build recipe.
+
+.. note::
+
+   Refer to the `style guide <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#style-guidelines-for-packages>`_ for more information.
 
 -------------------
 Adding Dependencies
@@ -203,8 +208,7 @@ The ``mpileaks`` software relies on three third-party libraries:
 
 .. note::
 
-   Fortunately, all of these dependencies are built-in packages in Spack;
-   otherwise, we would have to create packages for them as well.
+   Fortunately, all of these dependencies are built-in packages in Spack; otherwise, we would have to create packages for them as well.
 
 Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
 
@@ -224,13 +228,11 @@ Adding dependencies tells Spack that it must ensure these packages are installed
 
 .. note::
 
-  The ``mpi`` dependency is different from the other two in that it is
-  a *virtual dependency*. That means Spack must satisfy the dependency
-  with a package that *provides* the ``mpi`` interface, such as ``openmpi``
-  or ``mvapich2``.
+  The ``mpi`` dependency is different from the other two in that it is a *virtual dependency*.
+  That means Spack must satisfy the dependency with a package that *provides* the ``mpi`` interface, such as ``openmpi`` or ``mvapich2``.
 
-  We call such packages **providers**. More information on virtual dependencies
-  can be found in the *Packaging Guide* linked at the bottom of this tutorial.
+  We call such packages `providers <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#provides>`_.
+  More information on virtual dependencies can be found in the *Packaging Guide* linked at the bottom of this tutorial.
 
 Let's check that dependencies are effectively built when we try to install ``tutorial-mpileaks``:
 
@@ -242,14 +244,14 @@ Let's check that dependencies are effectively built when we try to install ``tut
    This command may take a while to run and may produce more output if
    you don't already have an MPI installed or configured in Spack.
 
-We see that Spack has now identified and built all of our dependencies.
+We see that Spack identified and built all of our dependencies.
 It found that:
 
 * the ``openmpi`` package will satisfy our ``mpi`` dependency;
 * ``adept-utils`` is a concrete dependency; and
 * ``callpath`` is a concrete dependency.
 
-We are still not able to build the package.
+But we are still not able to build the package.
 
 ------------------------
 Debugging Package Builds
