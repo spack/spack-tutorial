@@ -1,2 +1,7 @@
-$ spack repo add $SPACK_ROOT/var/spack/repos/tutorial/
-==> Added repo with namespace 'tutorial'.
+$ mkdir repos
+$ spack repo create repos tutorial
+==> Created repo with namespace 'tutorial'.
+==> To register it with spack, run this command:
+  spack repo add /home/spack/repos/spack_repo/tutorial
+$ spack repo add /home/spack/repos/spack_repo/tutorial
+==> Added repo to config with name 'tutorial'.
