@@ -510,8 +510,7 @@ Let's tell Spack about this package and where it can be found:
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
-Finally, we set `buildable: false` to require that Spack not try to
-build its own.
+Finally, we set `buildable: false` to require that Spack not try to build its own.
 .. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
 .. literalinclude:: outputs/config/2.externals.out
