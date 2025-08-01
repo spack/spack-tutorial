@@ -277,9 +277,9 @@ You can use this new entry like so:
 
    $ spack spec openblas %clang_gfortran
 
-Note the identifier `clang_gfortran` is not itself a spec (you don't version it).
+Note the identifier ``clang_gfortran`` is not itself a spec (you don't version it).
 You reference it in other specs.
-Note that without `when: '%fortran'`, you could not use `clang_gfortran` with packages unless they depended on Fortran (likewise for the `when` statements on c/cxx).
+Note that without ``when: '%fortran'``, you could not use ``clang_gfortran`` with packages unless they depended on Fortran (likewise for the `when` statements on c/cxx).
 
 .. These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
 
@@ -510,7 +510,8 @@ Let's tell Spack about this package and where it can be found:
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
-Finally, we set `buildable: false` to require that Spack not try to build its own.
+Finally, we set ``buildable: false`` to require that Spack not try to build its own.
+
 .. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
 .. literalinclude:: outputs/config/2.externals.out
