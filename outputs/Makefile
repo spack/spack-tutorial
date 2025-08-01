@@ -25,7 +25,7 @@ sections := environments
 run_targets := $(addprefix run-,$(sections))
 
 # Entrypoint
-update-outputs: #run
+update-outputs: run
 	echo "Filtering raw outputs though col"
 	for raw in raw/*/*.out; do \
 		out=$$(echo $$raw | sed 's.raw/..'); \
@@ -34,8 +34,8 @@ update-outputs: #run
 
 run: run-scripting
 
-run-scripting: run-cache scripting.sh
-run-cache: run-dev cache.sh
+run-scripting: run-dev scripting.sh
+# run-cache: run-dev cache.sh
 run-dev: run-packaging dev.sh
 run-packaging: run-stacks packaging.sh
 run-stacks: run-environments stacks.sh
@@ -43,8 +43,8 @@ run-environments: run-basics environments.sh
 run-basics: basics.sh init_spack.sh defs.sh
 
 local: local-scripting
-local-scripting: local-cache scripting.sh
-local-cache: local-dev cache.sh
+local-scripting: local-dev scripting.sh
+# local-cache: local-dev cache.sh
 local-dev: local-packaging dev.sh
 local-packaging: local-stacks packaging.sh
 local-stacks: local-environments stacks.sh

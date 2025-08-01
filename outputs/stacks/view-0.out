@@ -1,58 +1,176 @@
 $ spack concretize
 ==> No new specs to concretize.
-==> Updating view at /home/spack5/stacks/views/default
-==> Updating view at /home/spack5/stacks/views/full
+==> Updating view at /home/spack/stacks/views/default
+==> Updating view at /home/spack/stacks/views/full
 $ ls ~/stacks/views/default
 bin  etc  include  lib	lib64  libexec	man  pyvenv.cfg	 sbin  share  var
 $ ls ~/stacks/views/default/lib
-cmake			    libevent_core.a		    libgettextlib.a	      libkdb5.so.10.0			   libmpi_usempif08.so		libopenblas.so.0	libtinfow.so.6
-gettext			    libevent_core.so		    libgettextlib.so	      libkrad.so			   libmpi_usempif08.so.40	libpanel.a		libtinfow.so.6.5
-krb5			    libevent_extra-2.1.so.7	    libgettextpo.a	      libkrad.so.0			   libmpi_usempif08.so.40.40.2	libpanel.so		libtinfow_g.a
-libasan.so.8		    libevent_extra-2.1.so.7.0.1	    libgettextpo.so	      libkrad.so.0.0			   libmpich.so			libpanel.so.6		libtmglib.so
-libasprintf.a		    libevent_extra.a		    libgettextpo.so.0	      libkrb5.so			   libmpichcxx.so		libpanel.so.6.5		libtmglib.so.3
-libasprintf.so		    libevent_extra.so		    libgettextpo.so.0.5.10    libkrb5.so.3			   libmpichf90.so		libpanel_g.a		libtmglib.so.3.11.0
-libasprintf.so.0	    libevent_openssl-2.1.so.7	    libgettextsrc-0.22.5.so   libkrb5.so.3.3			   libmpicxx.a			libpanelw.a		libtsan.so.2
-libasprintf.so.0.0.0	    libevent_openssl-2.1.so.7.0.1   libgettextsrc.a	      libkrb5support.so			   libmpicxx.so			libpanelw.so		libubsan.so.1
-libatomic.so.1		    libevent_openssl.a		    libgettextsrc.so	      libkrb5support.so.0		   libmpicxx.so.12		libpanelw.so.6		libuuid.a
-libblas.so		    libevent_openssl.so		    libgfortran.so.5	      libkrb5support.so.0.1		   libmpicxx.so.12.4.3		libpanelw.so.6.5	libuuid.so
-libblas.so.3		    libevent_pthreads-2.1.so.7	    libgomp.so.1	      liblapack.so			   libmpifort.a			libpanelw_g.a		libuuid.so.1
-libblas.so.3.11.0	    libevent_pthreads-2.1.so.7.0.1  libgssapi_krb5.so	      liblapack.so.3			   libmpifort.so		libpciaccess.a		libuuid.so.1.3.0
-libbsd-ctor.a		    libevent_pthreads.a		    libgssapi_krb5.so.2	      liblapack.so.3.11.0		   libmpifort.so.12		libpciaccess.so		libverto.so
-libbsd.a		    libevent_pthreads.so	    libgssapi_krb5.so.2.2     liblapacke.so			   libmpifort.so.12.4.3		libpciaccess.so.0	libverto.so.0
-libbsd.so		    libexpat.a			    libgssrpc.so	      liblapacke.so.3			   libmpl.so			libpciaccess.so.0.11.1	libverto.so.0.0
-libbsd.so.0		    libexpat.so			    libgssrpc.so.4	      liblapacke.so.3.11.0		   libncurses++.a		libpmix.a		libxml2.so
-libbsd.so.0.12.2	    libexpat.so.1		    libgssrpc.so.4.2	      liblsan.so.0			   libncurses++.so		libpmix.so		libxml2.so.2
-libbz2.a		    libexpat.so.1.10.0		    libhistory.a	      liblzma.a				   libncurses++.so.6		libpmix.so.2		libxml2.so.2.13.4
-libbz2.so		    libfabric.a			    libhistory.so	      liblzma.so			   libncurses++.so.6.5		libpmix.so.2.13.3	libyaksa.a
-libbz2.so.1		    libfabric.so		    libhistory.so.8	      liblzma.so.5			   libncurses++_g.a		libprrte.so		libyaksa.so
-libbz2.so.1.0		    libfabric.so.1		    libhistory.so.8.2	      liblzma.so.5.4.6			   libncurses++w.a		libprrte.so.3		libyaksa.so.0
-libbz2.so.1.0.8		    libfabric.so.1.25.0		    libhwloc.a		      libmd.a				   libncurses++w.so		libprrte.so.3.0.6	libyaksa.so.0.0.0
-libcblas.so		    libffi.a			    libhwloc.so		      libmd.so				   libncurses++w.so.6		libpython3.11.so	libz.a
-libcblas.so.3		    libffi.so			    libhwloc.so.15	      libmd.so.0			   libncurses++w.so.6.5		libpython3.11.so.1.0	libz.so
-libcblas.so.3.11.0	    libffi.so.8			    libhwloc.so.15.8.0	      libmd.so.0.0.5			   libncurses++w_g.a		libpython3.so		libz.so.1
-libcharset.a		    libffi.so.8.1.4		    libiconv.a		      libmenu.a				   libncurses.a			libquadmath.so.0	libz.so.1.3.1.zlib-ng
-libcharset.so		    libfmpich.so		    libiconv.so		      libmenu.so			   libncurses.so		libreadline.a		libzstd.a
-libcharset.so.1		    libform.a			    libiconv.so.2	      libmenu.so.6			   libncurses.so.6		libreadline.so		libzstd.so
-libcharset.so.1.0.0	    libform.so			    libiconv.so.2.6.1	      libmenu.so.6.5			   libncurses.so.6.5		libreadline.so.8	libzstd.so.1
-libcom_err.so		    libform.so.6		    libintl.a		      libmenu_g.a			   libncurses_g.a		libreadline.so.8.2	libzstd.so.1.5.6
-libcom_err.so.3		    libform.so.6.5		    libintl.so		      libmenuw.a			   libncursesw.a		libscalapack.so		mpi.mod
-libcom_err.so.3.0	    libform_g.a			    libintl.so.8	      libmenuw.so			   libncursesw.so		libsqlite3.a		mpi_ext.mod
-libcrypt.a		    libformw.a			    libintl.so.8.4.0	      libmenuw.so.6			   libncursesw.so.6		libsqlite3.so		mpi_f08.mod
-libcrypt.so		    libformw.so			    libitm.so.1		      libmenuw.so.6.5			   libncursesw.so.6.5		libsqlite3.so.0		mpi_f08_callbacks.mod
-libcrypt.so.2		    libformw.so.6		    libk5crypto.so	      libmenuw_g.a			   libncursesw_g.a		libsqlite3.so.0.8.6	mpi_f08_ext.mod
-libcrypt.so.2.0.0	    libformw.so.6.5		    libk5crypto.so.3	      libmpi.a				   libnuma.a			libstdc++.so.6		mpi_f08_interfaces.mod
-libcurses.so		    libformw_g.a		    libk5crypto.so.3.1	      libmpi.so				   libnuma.so			libtextstyle.a		mpi_f08_interfaces_callbacks.mod
-libedit.a		    libgcc_s.so.1		    libkadm5clnt.so	      libmpi.so.12			   libnuma.so.1			libtextstyle.so		mpi_f08_types.mod
-libedit.so		    libgdbm.a			    libkadm5clnt_mit.so	      libmpi.so.12.4.3			   libnuma.so.1.0.0		libtextstyle.so.0	mpi_types.mod
-libedit.so.0		    libgdbm.so			    libkadm5clnt_mit.so.12    libmpi.so.40			   libopa.so			libtextstyle.so.0.2.1	openmpi
-libedit.so.0.0.74	    libgdbm.so.6		    libkadm5clnt_mit.so.12.0  libmpi.so.40.40.5			   libopen-pal.so		libtinfo.a		pkgconfig
-libevent-2.1.so.7	    libgdbm.so.6.0.0		    libkadm5srv.so	      libmpi_mpifh.so			   libopen-pal.so.80		libtinfo.so		pmpi_f08_interfaces.mod
-libevent-2.1.so.7.0.1	    libgdbm_compat.a		    libkadm5srv_mit.so	      libmpi_mpifh.so.40		   libopen-pal.so.80.0.4	libtinfo.so.6		python3.11
-libevent.a		    libgdbm_compat.so		    libkadm5srv_mit.so.12     libmpi_mpifh.so.40.40.0		   libopenblas-r0.3.28.a	libtinfo.so.6.5		terminfo
-libevent.so		    libgdbm_compat.so.4		    libkadm5srv_mit.so.12.0   libmpi_usempi_ignore_tkr.so	   libopenblas-r0.3.28.so	libtinfo_g.a
-libevent_core-2.1.so.7	    libgdbm_compat.so.4.0.0	    libkdb5.so		      libmpi_usempi_ignore_tkr.so.40	   libopenblas.a		libtinfow.a
-libevent_core-2.1.so.7.0.1  libgettextlib-0.22.5.so	    libkdb5.so.10	      libmpi_usempi_ignore_tkr.so.40.40.0  libopenblas.so		libtinfow.so
+cmake				libmd.so
+gettext				libmd.so.0
+krb5				libmd.so.0.0.5
+libasan.so.8			libmenu.a
+libasprintf.a			libmenu.so
+libasprintf.so			libmenu.so.6
+libasprintf.so.0		libmenu.so.6.5
+libasprintf.so.0.0.0		libmenu_g.a
+libatomic.so.1			libmenuw.a
+libblas.so			libmenuw.so
+libblas.so.3			libmenuw.so.6
+libblas.so.3.11.0		libmenuw.so.6.5
+libbsd-ctor.a			libmenuw_g.a
+libbsd.a			libmpi.a
+libbsd.so			libmpi.so
+libbsd.so.0			libmpi.so.12
+libbsd.so.0.12.2		libmpi.so.12.4.3
+libbz2.a			libmpi.so.40
+libbz2.so			libmpi.so.40.40.5
+libbz2.so.1			libmpi_mpifh.so
+libbz2.so.1.0			libmpi_mpifh.so.40
+libbz2.so.1.0.8			libmpi_mpifh.so.40.40.0
+libcblas.so			libmpi_usempi_ignore_tkr.so
+libcblas.so.3			libmpi_usempi_ignore_tkr.so.40
+libcblas.so.3.11.0		libmpi_usempi_ignore_tkr.so.40.40.0
+libcharset.a			libmpi_usempif08.so
+libcharset.so			libmpi_usempif08.so.40
+libcharset.so.1			libmpi_usempif08.so.40.40.2
+libcharset.so.1.0.0		libmpich.so
+libcom_err.so			libmpichcxx.so
+libcom_err.so.3			libmpichf90.so
+libcom_err.so.3.0		libmpicxx.a
+libcrypt.a			libmpicxx.so
+libcrypt.so			libmpicxx.so.12
+libcrypt.so.2			libmpicxx.so.12.4.3
+libcrypt.so.2.0.0		libmpifort.a
+libcurses.so			libmpifort.so
+libedit.a			libmpifort.so.12
+libedit.so			libmpifort.so.12.4.3
+libedit.so.0			libmpl.so
+libedit.so.0.0.74		libncurses++.a
+libevent-2.1.so.7		libncurses++.so
+libevent-2.1.so.7.0.1		libncurses++.so.6
+libevent.a			libncurses++.so.6.5
+libevent.so			libncurses++_g.a
+libevent_core-2.1.so.7		libncurses++w.a
+libevent_core-2.1.so.7.0.1	libncurses++w.so
+libevent_core.a			libncurses++w.so.6
+libevent_core.so		libncurses++w.so.6.5
+libevent_extra-2.1.so.7		libncurses++w_g.a
+libevent_extra-2.1.so.7.0.1	libncurses.a
+libevent_extra.a		libncurses.so
+libevent_extra.so		libncurses.so.6
+libevent_openssl-2.1.so.7	libncurses.so.6.5
+libevent_openssl-2.1.so.7.0.1	libncurses_g.a
+libevent_openssl.a		libncursesw.a
+libevent_openssl.so		libncursesw.so
+libevent_pthreads-2.1.so.7	libncursesw.so.6
+libevent_pthreads-2.1.so.7.0.1	libncursesw.so.6.5
+libevent_pthreads.a		libncursesw_g.a
+libevent_pthreads.so		libnuma.a
+libexpat.a			libnuma.so
+libexpat.so			libnuma.so.1
+libexpat.so.1			libnuma.so.1.0.0
+libexpat.so.1.10.0		libopa.so
+libfabric.a			libopen-pal.so
+libfabric.so			libopen-pal.so.80
+libfabric.so.1			libopen-pal.so.80.0.4
+libfabric.so.1.25.0		libopenblas-r0.3.28.a
+libffi.a			libopenblas-r0.3.28.so
+libffi.so			libopenblas.a
+libffi.so.8			libopenblas.so
+libffi.so.8.1.4			libopenblas.so.0
+libfmpich.so			libpanel.a
+libform.a			libpanel.so
+libform.so			libpanel.so.6
+libform.so.6			libpanel.so.6.5
+libform.so.6.5			libpanel_g.a
+libform_g.a			libpanelw.a
+libformw.a			libpanelw.so
+libformw.so			libpanelw.so.6
+libformw.so.6			libpanelw.so.6.5
+libformw.so.6.5			libpanelw_g.a
+libformw_g.a			libpciaccess.a
+libgcc_s.so.1			libpciaccess.so
+libgdbm.a			libpciaccess.so.0
+libgdbm.so			libpciaccess.so.0.11.1
+libgdbm.so.6			libpmix.a
+libgdbm.so.6.0.0		libpmix.so
+libgdbm_compat.a		libpmix.so.2
+libgdbm_compat.so		libpmix.so.2.13.3
+libgdbm_compat.so.4		libprrte.so
+libgdbm_compat.so.4.0.0		libprrte.so.3
+libgettextlib-0.22.5.so		libprrte.so.3.0.6
+libgettextlib.a			libpython3.11.so
+libgettextlib.so		libpython3.11.so.1.0
+libgettextpo.a			libpython3.so
+libgettextpo.so			libquadmath.so.0
+libgettextpo.so.0		libreadline.a
+libgettextpo.so.0.5.10		libreadline.so
+libgettextsrc-0.22.5.so		libreadline.so.8
+libgettextsrc.a			libreadline.so.8.2
+libgettextsrc.so		libscalapack.so
+libgfortran.so.5		libsqlite3.a
+libgomp.so.1			libsqlite3.so
+libgssapi_krb5.so		libsqlite3.so.0
+libgssapi_krb5.so.2		libsqlite3.so.0.8.6
+libgssapi_krb5.so.2.2		libstdc++.so.6
+libgssrpc.so			libtextstyle.a
+libgssrpc.so.4			libtextstyle.so
+libgssrpc.so.4.2		libtextstyle.so.0
+libhistory.a			libtextstyle.so.0.2.1
+libhistory.so			libtinfo.a
+libhistory.so.8			libtinfo.so
+libhistory.so.8.2		libtinfo.so.6
+libhwloc.a			libtinfo.so.6.5
+libhwloc.so			libtinfo_g.a
+libhwloc.so.15			libtinfow.a
+libhwloc.so.15.8.0		libtinfow.so
+libiconv.a			libtinfow.so.6
+libiconv.so			libtinfow.so.6.5
+libiconv.so.2			libtinfow_g.a
+libiconv.so.2.6.1		libtmglib.so
+libintl.a			libtmglib.so.3
+libintl.so			libtmglib.so.3.11.0
+libintl.so.8			libtsan.so.2
+libintl.so.8.4.0		libubsan.so.1
+libitm.so.1			libuuid.a
+libk5crypto.so			libuuid.so
+libk5crypto.so.3		libuuid.so.1
+libk5crypto.so.3.1		libuuid.so.1.3.0
+libkadm5clnt.so			libverto.so
+libkadm5clnt_mit.so		libverto.so.0
+libkadm5clnt_mit.so.12		libverto.so.0.0
+libkadm5clnt_mit.so.12.0	libxml2.so
+libkadm5srv.so			libxml2.so.2
+libkadm5srv_mit.so		libxml2.so.2.13.4
+libkadm5srv_mit.so.12		libyaksa.a
+libkadm5srv_mit.so.12.0		libyaksa.so
+libkdb5.so			libyaksa.so.0
+libkdb5.so.10			libyaksa.so.0.0.0
+libkdb5.so.10.0			libz.a
+libkrad.so			libz.so
+libkrad.so.0			libz.so.1
+libkrad.so.0.0			libz.so.1.3.1.zlib-ng
+libkrb5.so			libzstd.a
+libkrb5.so.3			libzstd.so
+libkrb5.so.3.3			libzstd.so.1
+libkrb5support.so		libzstd.so.1.5.6
+libkrb5support.so.0		mpi.mod
+libkrb5support.so.0.1		mpi_ext.mod
+liblapack.so			mpi_f08.mod
+liblapack.so.3			mpi_f08_callbacks.mod
+liblapack.so.3.11.0		mpi_f08_ext.mod
+liblapacke.so			mpi_f08_interfaces.mod
+liblapacke.so.3			mpi_f08_interfaces_callbacks.mod
+liblapacke.so.3.11.0		mpi_f08_types.mod
+liblsan.so.0			mpi_types.mod
+liblzma.a			openmpi
+liblzma.so			pkgconfig
+liblzma.so.5			pmpi_f08_interfaces.mod
+liblzma.so.5.4.6		python3.11
+libmd.a				terminfo
 $ ls ~/stacks/views/full
 gcc-11.4.0  gcc-12.3.0
 $ ls ~/stacks/views/full/gcc-12.3.0
-bin  etc  include  lib	lib64  libexec	man  mpich-4.2.3-netlib-lapack-3.11.0  mpich-4.2.3-openblas-0.3.28  openmpi-5.0.5-netlib-lapack-3.11.0	openmpi-5.0.5-openblas-0.3.28  pyvenv.cfg  sbin	 share	var
+bin	 lib	  man				    openmpi-5.0.5-netlib-lapack-3.11.0	sbin
+etc	 lib64	  mpich-4.2.3-netlib-lapack-3.11.0  openmpi-5.0.5-openblas-0.3.28	share
+include	 libexec  mpich-4.2.3-openblas-0.3.28	    pyvenv.cfg				var
