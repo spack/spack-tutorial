@@ -444,17 +444,20 @@ Variant preferences
 
 As we've seen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
 If we were working on a project that would routinely need serial HDF5, that might get annoying quickly, having to type ``hdf5~mpi`` all the time.
-Instead, we'll update our preferences for HDF5.
+Instead, we'll update our config to force disable it:
 
 .. code-block:: yaml
-   :emphasize-lines: 9-10
+   :emphasize-lines: 12-13
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         require:
+         - one_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
@@ -465,7 +468,7 @@ Now hdf5 will concretize without an MPI dependency by default.
 
 .. literalinclude:: outputs/config/3.prefs.out
    :language: console
-   :emphasize-lines: 8
+   :emphasize-lines: 2
 
 
 In general, every attribute that we can set for all packages we can set separately for an individual package.
@@ -482,14 +485,17 @@ On these systems, we have a pre-installed curl.
 Let's tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 11-14
+   :emphasize-lines: 14-17
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         require:
+         - one_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
@@ -498,49 +504,15 @@ Let's tell Spack about this package and where it can be found:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
+         buildable: false
 
 
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
-
-.. literalinclude:: outputs/config/0.externals.out
-   :language: console
-
-
-You'll notice that Spack is now using the external Curl installation, but the compiler used to build Curl is now overriding our compiler preference of clang.
-If we explicitly specify Clang:
-
-.. literalinclude:: outputs/config/1.externals.out
-   :language: console
-
-Spack concretizes to both HDF5 and Curl being built with Clang.
-This has a side-effect of rebuilding Curl.
-If we want to force Spack to use the system Curl, we have two choices.
-We can either specify it on the command line, or we can tell Spack that it's not allowed to build its own Curl.
-We'll go with the latter.
-
-.. code-block:: yaml
-   :emphasize-lines: 15
-
-   spack:
-     specs: []
-     view: true
-     packages:
-       all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
-       hdf5:
-         require: ~mpi
-       curl:
-         externals:
-         - spec: curl@5.34.0 %gcc@11.4.0
-           prefix: /usr
-         buildable: false
-
-
-Now Spack will be forced to choose the external Curl.
+Finally, we set `buildable: false` to require that Spack not try to
+build its own.
+.. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
 .. literalinclude:: outputs/config/2.externals.out
    :language: console
@@ -560,14 +532,17 @@ To express that we don't want any other MPI installed, we can use the virtual ``
 While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be able to build with MPI again:
 
 .. code-block:: yaml
-   :emphasize-lines: 14-19
+   :emphasize-lines: 19-24
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
+         require:
+         - one_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        curl:
@@ -582,27 +557,25 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
        mpi:
          buildable: false
 
-Now that we have configured Spack not to build any possible provider for MPI, we can try again.
+.. 3.externals.out has mpich
+.. The concretization result is strange and enables some qt stuff that makes it huge
 
-.. literalinclude:: outputs/config/3.externals.out
-   :language: console
-   :emphasize-lines: 15
-
-Notice that we still haven't build ``hdf5`` with our external ``mpich``.
+If you run this as-is, you'll notice Spack still hasn't built ``hdf5`` with our external ``mpich``.
 The concretizer has instead turned off ``mpi`` support in ``hdf5``.
 To debug this, we will force Spack to use ``hdf5+mpi``.
 
 .. code-block:: console
 
-   $ spack spec hdf5%clang+mpi
-   ==> Error: concretization failed for the following reasons:
-
-      1. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-      2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-           required because conflict applies to spec ^mpich@4.0:4.0.3
-             required because hdf5%clang+mpi requested from CLI
+   $ spack spec hdf5+mpi
+   ==> Error: failed to concretize `hdf5+mpi` for the following reasons:
+        1. cannot satisfy a requirement for package 'mpich'.
+        2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
+        3. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
            required because conflict is triggered when +mpi
-             required because hdf5%clang+mpi requested from CLI
+             required because hdf5+mpi requested explicitly
+           required because conflict constraint ^mpich@4.0:4.0.3
+             required because mpich available as external when satisfying mpich@=4.0+hydra device=ch4 netmod=ofi
+             required because hdf5+mpi requested explicitly
 
 In this case, we cannot use the external mpich.
 The version is incompatible with ``hdf5``.
