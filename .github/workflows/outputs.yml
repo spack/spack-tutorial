@@ -42,20 +42,20 @@ jobs:
 
     - name: Re-generate outputs from tutorial scripts
       run: |
-        docker volume create spack
-        DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94 -v spack:/home/spack/spack"
         chmod -R a+w outputs
+        mkdir -p spack-home && chmod -R a+rwx spack-home
+        DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94 -v ./spack-home:/home/spack"
         make -C outputs -j $(nproc) DOCKER_RUN_OPTS="$DOCKER_RUN_OPTS" container=ghcr.io/spack/tutorial
 
     - name: Show diff of modified files
       run: |
-        git diff HEAD .
+        git diff HEAD outputs/
 
     - name: Push modified files to branch
       if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork )
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
+        git add outputs/
         git commit -m "Update generated outputs on behalf of [@${{ github.actor }}]"
         git push
