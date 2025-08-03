@@ -158,8 +158,8 @@ html_theme = "furo"
 # of the sidebar.
 html_theme_options = {
     "sidebar_hide_name": True,
-    "light_logo": "spack-logo-text.svg",
-    "dark_logo": "spack-logo-white-text.svg",
+    "light_logo": "images/spack-logo-text.svg",
+    "dark_logo": "images/spack-logo-white-text.svg",
 }
 
 # The name of an image file (within the static path) to use as favicon of the
