@@ -5,19 +5,20 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Install AWS cli
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
-    awscli \
     bash-completion \
+    ca-certificates \
     emacs \
     jq \
     less \
-    vim
+    vim \
+    rclone
 
 # Remove GCC 12 from container
 RUN apt-get remove -y gcc-12
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN aws --region us-east-1 --no-sign-request s3 sync --only-show-errors s3://spack-binaries/releases/v0.23/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/v0.23.1/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
