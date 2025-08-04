@@ -24,12 +24,10 @@ A partial list of some key configuration sections is provided below.
      - General settings (install location, number of build jobs, etc)
    * - concretizer
      - Specialization of the concretizer behavior (reuse, unification, etc)
-   * - compilers
-     - Define the compilers that Spack can use (required and system specific)
    * - Mirrors
      - Locations where spack can look for stashed source or binary distributions
    * - Packages
-     - Specific settings and rules for packages
+     - Define the compilers that Spack can use, and add rules/preferences for package concretization
    * - Modules
      - Naming, location and additional configuration of Spack generated modules
 
