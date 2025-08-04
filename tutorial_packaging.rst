@@ -132,7 +132,7 @@ Adding Package Documentation
 
 First, let's fill in the documentation.
 
-Bring mpileaks' ``package.py`` file back up in your editor with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up in your editor with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -158,7 +158,7 @@ Now make the changes and additions to your ``package.py`` file.
 The resulting package should contain the following information:
 
 .. literalinclude:: tutorial/examples/packaging/1.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 5-
    :language: python
    :emphasize-lines: 6,8,11,13
@@ -212,7 +212,7 @@ The ``mpileaks`` software relies on three third-party libraries:
 
    Fortunately, all of these dependencies are built-in packages in Spack; otherwise, we would have to create packages for them as well.
 
-Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -359,7 +359,7 @@ has a ``prefix`` property containing its installation path.
 
 So let's add the configuration arguments for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
 
-Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -413,7 +413,7 @@ Let's add the variant to expect an ``int`` value with a default of ``0``.
 Setting the default to ``0`` effectively disables the option.
 Change ``configure_args`` to retrieve the value and add the corresponding configure arguments when a non-zero value is provided by the user.
 
-Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -435,7 +435,7 @@ Now run the installation again with the ``--verbose`` install option -- to get m
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
 
-Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after mpileaks' ``Executing phase: 'configure'``.
+Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
 
 ------------
 Adding Tests
