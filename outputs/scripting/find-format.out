@@ -1,52 +1,102 @@
 $ spack find --format "{name} {version} {hash:10}"
-adept-utils 1.0.1 q5xl3h77oc		       gmp 6.3.0 5webgyazi3		   macsio 1.1 o4zotmuc52		   py-pythran 0.16.1 3bcgcevke7
-autoconf 2.72 vgucajy3lk		       hdf5 1.14.5 ckoh67fpzb		   meson 1.5.1 xfqgelb63r		   py-scipy 1.14.1 g53zrs6vom
-autoconf 2.72 yfxrc66azg		       hdf5 1.14.5 6ddnwvambf		   meson 1.5.1 tp5miymsew		   py-setuptools 69.2.0 snvbpkxkqt
-autoconf-archive 2023.02.20 6s34ic3cja	       hdf5 1.14.5 tgtmflo4s6		   mpc 1.3.1 qoauga4bfx			   py-setuptools 69.2.0 wbbopiponk
-automake 1.16.5 awgfaon3ds		       hwloc 2.11.1 fwtuzgpmp2		   mpfr 4.2.1 mdfsfjykvy		   py-wheel 0.41.2 pxniiekemg
-automake 1.16.5 e4u6ql7bme		       hwloc 2.11.1 2fvcggi3gq		   mpich 4.2.3 cqazuix44i		   py-wheel 0.41.2 gho4mpquga
-axl 0.9.0 z6q2ovzd5u			       intel-tbb 2021.12.0 u5vh5hcz3r	   mpich 4.2.3 ezes42nge7		   python 3.11.9 ct26uvgbvv
-bc 1.07.1 jasonjuuhs			       json-c 0.16 jiezkp3kmw		   munge 0.5.15 7ccb5fignq		   python 3.11.9 67g7nw4psf
-berkeley-db 18.1.40 cexliohp6a		       json-cwx 0.12 pvkmxcbrrq		   ncurses 6.5 rvg7j6bmer		   python 3.13.0 gfyestlsao
-berkeley-db 18.1.40 4mqvw3uqym		       kokkos 4.3.01 nxt5zthcpf		   ncurses 6.5 uajmsrcnww		   python 3.13.0 wxt7apsxjg
-bison 3.8.2 sllhx5naxi			       krb5 1.21.3 pq3as37xno		   netlib-lapack 3.11.0 nn52q3bloz	   python-venv 1.0 wylyhqnxcx
-bison 3.8.2 fky4vihmla			       krb5 1.21.3 frb66wnvsa		   netlib-scalapack 2.2.0 me353pomgl	   python-venv 1.0 pt3p7pdrin
-boost 1.72.0 bzwzix4qau			       kvtree 1.5.0 5ubm4uy3f5		   netlib-scalapack 2.2.0 wpymlkhhvz	   rankstr 0.4.0 r6xbtxcwl3
-bzip2 1.0.8 ewqc7cx44b			       libbsd 0.12.2 hwya6i63fv		   netlib-scalapack 2.2.0 5fvq6fgjha	   re2c 3.1 tpzsx34tj4
-bzip2 1.0.8 j3fd4z5i2t			       libbsd 0.12.2 3oqufcrjxa		   netlib-scalapack 2.2.0 bx3g36nfqn	   re2c 3.1 qgh7e7n6c3
-ca-certificates-mozilla 2023-05-30 t2brqssuwb  libdwarf 0.11.0 hz7ptvgac3	   nghttp2 1.63.0 t2qkug7u7i		   readline 8.2 aylebxvheu
-ca-certificates-mozilla 2023-05-30 xilbvuysbu  libedit 3.1-20240808 nhrbcomj5l	   nghttp2 1.63.0 ippbbwuh3a		   readline 8.2 tb7zvufjv2
-callpath 1.0.4 7hjlu6ddwm		       libedit 3.1-20240808 ht5niwqary	   ninja 1.12.1 xasrhuxnm5		   redset 0.4.0 wn6bxs77ba
-cmake 3.30.5 d2nwbxlz2q			       libevent 2.1.12 xbwxobi4cj	   ninja 1.12.1 myjhsx2n7x		   scr 2.0.0 inxkq6ww6n
-cmake 3.30.5 yempnazpum			       libevent 2.1.12 nftqerg373	   numactl 2.0.18 euqyy3hu6d		   scr 3.1.0 z6ndebu7r4
-curl 8.10.1 fpywomo74r			       libfabric 1.22.0 lr77ky6sw7	   numactl 2.0.18 n4nt7lopsr		   shuffile 0.4.0 6gdnjhlovk
-curl 8.10.1 wsmx6spfnt			       libfabric 1.22.0 pvefo63faf	   openblas 0.3.28 w2fghghowf		   silo 4.11.1 tf6qseltlk
-diffutils 3.10 lljulvxt5h		       libffi 3.4.6 ltl5sqyu2f		   openblas 0.3.28 aliqr5t6k2		   slurm 23-11-1-1 wtptlf72di
-diffutils 3.10 ioferp7x7e		       libffi 3.4.6 4ga47g7tj4		   openmpi 5.0.5 jvwxvxe7dg		   spath 0.4.0 phgpwllzdk
-dtcmp 1.1.5 m2vb6sgvtv			       libgcrypt 1.11.0 tau3vgrmq6	   openmpi 5.0.5 suepxfzmhy		   sqlite 3.46.0 ogdosm6dqm
-dyninst 13.0.0 idhmtve2yu		       libgpg-error 1.50 3g7e2nwelj	   openssh 9.9p1 wz7w27t54u		   sqlite 3.46.0 b63y5mxrvt
-ed 1.4 p72c4zcdrx			       libiberty 2.41 ojjef3cyse	   openssh 9.9p1 3jdzvdmyxc		   tar 1.34 mmv6i4naeg
-elfutils 0.191 zw2tlkv425		       libiconv 1.17 bsga3novxp		   openssl 3.4.0 5gigqgwld4		   tar 1.34 j5dljnv4mc
-er 0.5.0 vcbjtu7365			       libiconv 1.17 gdtmvyudyk		   openssl 3.4.0 i5fmca4xdy		   tcl 8.6.12 imrm45j44x
-expat 2.6.4 hj6jtyrxtq			       libmd 1.0.4 qcfzttdxov		   pcre2 10.44 pim2bkxw3c		   tcl 8.6.12 w4gwr4ezme
-expat 2.6.4 vlatljjv2t			       libmd 1.0.4 cpmq5mdiri		   pdsh 2.31 oe5lfjf4gn			   texinfo 7.1 ljsbwjcqdl
-findutils 4.9.0 2sbkhchnzz		       libpciaccess 0.17 omw5cc44g5	   perl 5.40.0 cwpt5ec6gc		   trilinos 16.0.0 ney6hmmpuf
-findutils 4.9.0 wqmzrkeupx		       libpciaccess 0.17 ybxtd2t7kr	   perl 5.40.0 tt4vkz363s		   trilinos 16.0.0 63sfm7p6ve
-gawk 5.3.1 x6mwj3lnzl			       libsigsegv 2.14 ea6qziv7ob	   pigz 2.8 pcwnu2wfae			   unzip 6.0 akxwy4wvo4
-gcc 12.3.0 jjgfqpdmih			       libsigsegv 2.14 u2gofvqdvw	   pigz 2.8 zgwe2uay3t			   util-linux-uuid 2.40.2 xesify5chx
-gcc-runtime 10.5.0 g7dc4oue6r		       libtool 2.4.7 tt3byemikn		   pkgconf 2.2.0 oplsmxryrc		   util-linux-uuid 2.40.2 64aencak6b
-gcc-runtime 11.4.0 hshzy762rn		       libtool 2.4.7 xfe5xhomit		   pkgconf 2.2.0 gutpiwqutu		   util-macros 1.20.1 vdnwjqe534
-gcc-runtime 12.3.0 w5nlv2kp2n		       libxcrypt 4.4.35 v64tnmrjg7	   pmix 5.0.3 5wqqmswtib		   util-macros 1.20.1 vau55h7rdi
-gdbm 1.23 jj2atvsdpr			       libxcrypt 4.4.35 apxktfacu5	   pmix 5.0.3 t7gzekhpro		   xz 5.4.6 2fvrfr67ah
-gdbm 1.23 ttyuhau65q			       libxml2 2.13.4 wozcmyn2bi	   py-beniget 0.4.1 oyzng5hw6k		   xz 5.4.6 ifvv7czmux
-gettext 0.22.5 bexdfw2vfc		       libxml2 2.13.4 4fawd6mhag	   py-cython 3.0.11 efpxrfoxiv		   yaksa 0.3 eogugqp4p6
-gettext 0.22.5 jbitwptksu		       libyogrt 1.35 gswz3l2d2q		   py-flit-core 3.9.0 ltdymw47r2	   yaksa 0.3 ferxascsq3
-glib 2.78.3 rf4t3xsios			       lmod 8.7.18 saucmo6quz		   py-gast 0.5.4 rbt72pqun5		   zlib-ng 2.0.7 ocxrmffc7q
-glibc 2.35 xvsfmyvk5j			       lua 5.4.6 qcxkktpc5l		   py-meson-python 0.16.0 jgr2tnqohn	   zlib-ng 2.0.7 umrbkwvnyd
-glibc 2.35 tcngwuvjec			       lua-luafilesystem 1.8.0 4lpeywju4b  py-numpy 2.1.2 ckezggl7xc		   zlib-ng 2.2.1 jjykcjtfyo
-glibc 2.35 a7drdl4tlx			       lua-luaposix 36.1 hdnpce3ade	   py-packaging 24.1 i5hagd3pwt		   zlib-ng 2.2.1 fhud6vqkh7
-glibc 2.35 gkoh6axllp			       lwgrp 1.0.6 euguteoau5		   py-pip 23.1.2 vdyo63uzwk		   zlib-ng 2.2.1 i4mwsvmsv2
-gmake 4.4.1 gcbcod5uik			       lz4 1.10.0 itxj6zzegx		   py-pip 23.1.2 3eaudob5lk		   zstd 1.5.6 t7h6imj35r
-gmake 4.4.1 he2qdcb6bg			       m4 1.4.19 qaspjyq5yq		   py-ply 3.11 ohaizhq76a		   zstd 1.5.6 yk3lkd4xdu
-gmake 4.4.1 srkzfjru5z			       m4 1.4.19 grpnckwm3e		   py-pybind11 2.13.5 bdx5tpnvwz
-gmake 4.4.1 zoiouaigyc			       macsio 1.1 523dspnnce		   py-pyproject-metadata 0.7.1 p27mstg5gu
+adept-utils 1.0.1 q5xl3h77oc		       macsio 1.1 2bgztqtjjv
+autoconf 2.72 vgucajy3lk		       macsio 1.1 o4zotmuc52
+autoconf 2.72 yfxrc66azg		       meson 1.5.1 xfqgelb63r
+autoconf-archive 2023.02.20 6s34ic3cja	       meson 1.5.1 tp5miymsew
+automake 1.16.5 awgfaon3ds		       mpc 1.3.1 qoauga4bfx
+automake 1.16.5 e4u6ql7bme		       mpfr 4.2.1 mdfsfjykvy
+axl 0.9.0 z6q2ovzd5u			       mpich 4.2.3 cqazuix44i
+bc 1.07.1 jasonjuuhs			       mpich 4.2.3 ezes42nge7
+berkeley-db 18.1.40 cexliohp6a		       munge 0.5.15 7ccb5fignq
+berkeley-db 18.1.40 4mqvw3uqym		       ncurses 6.5 rvg7j6bmer
+bison 3.8.2 sllhx5naxi			       ncurses 6.5 uajmsrcnww
+bison 3.8.2 fky4vihmla			       netlib-lapack 3.11.0 nn52q3bloz
+boost 1.72.0 bzwzix4qau			       netlib-scalapack 2.2.0 me353pomgl
+bzip2 1.0.8 ewqc7cx44b			       netlib-scalapack 2.2.0 wpymlkhhvz
+bzip2 1.0.8 j3fd4z5i2t			       netlib-scalapack 2.2.0 5fvq6fgjha
+ca-certificates-mozilla 2023-05-30 t2brqssuwb  netlib-scalapack 2.2.0 bx3g36nfqn
+ca-certificates-mozilla 2023-05-30 xilbvuysbu  nghttp2 1.63.0 t2qkug7u7i
+callpath 1.0.4 7hjlu6ddwm		       nghttp2 1.63.0 ippbbwuh3a
+cmake 3.30.5 d2nwbxlz2q			       ninja 1.12.1 xasrhuxnm5
+cmake 3.30.5 yempnazpum			       ninja 1.12.1 myjhsx2n7x
+curl 8.10.1 fpywomo74r			       numactl 2.0.18 euqyy3hu6d
+curl 8.10.1 wsmx6spfnt			       numactl 2.0.18 n4nt7lopsr
+diffutils 3.10 lljulvxt5h		       openblas 0.3.28 w2fghghowf
+diffutils 3.10 ioferp7x7e		       openblas 0.3.28 aliqr5t6k2
+dtcmp 1.1.5 m2vb6sgvtv			       openmpi 5.0.5 jvwxvxe7dg
+dyninst 13.0.0 idhmtve2yu		       openmpi 5.0.5 suepxfzmhy
+ed 1.4 p72c4zcdrx			       openssh 9.9p1 wz7w27t54u
+elfutils 0.191 zw2tlkv425		       openssh 9.9p1 3jdzvdmyxc
+er 0.5.0 vcbjtu7365			       openssl 3.4.0 5gigqgwld4
+expat 2.6.4 hj6jtyrxtq			       openssl 3.4.0 i5fmca4xdy
+expat 2.6.4 vlatljjv2t			       pcre2 10.44 pim2bkxw3c
+findutils 4.9.0 2sbkhchnzz		       pdsh 2.31 oe5lfjf4gn
+findutils 4.9.0 wqmzrkeupx		       perl 5.40.0 cwpt5ec6gc
+gawk 5.3.1 x6mwj3lnzl			       perl 5.40.0 tt4vkz363s
+gcc 12.3.0 jjgfqpdmih			       pigz 2.8 pcwnu2wfae
+gcc-runtime 10.5.0 g7dc4oue6r		       pigz 2.8 zgwe2uay3t
+gcc-runtime 11.4.0 hshzy762rn		       pkgconf 2.2.0 oplsmxryrc
+gcc-runtime 12.3.0 w5nlv2kp2n		       pkgconf 2.2.0 gutpiwqutu
+gdbm 1.23 jj2atvsdpr			       pmix 5.0.3 5wqqmswtib
+gdbm 1.23 ttyuhau65q			       pmix 5.0.3 t7gzekhpro
+gettext 0.22.5 bexdfw2vfc		       py-beniget 0.4.1 oyzng5hw6k
+gettext 0.22.5 jbitwptksu		       py-cython 3.0.11 efpxrfoxiv
+glib 2.78.3 rf4t3xsios			       py-flit-core 3.9.0 ltdymw47r2
+glibc 2.35 xvsfmyvk5j			       py-gast 0.5.4 rbt72pqun5
+glibc 2.35 tcngwuvjec			       py-meson-python 0.16.0 jgr2tnqohn
+glibc 2.35 a7drdl4tlx			       py-numpy 2.1.2 ckezggl7xc
+glibc 2.35 gkoh6axllp			       py-packaging 24.1 i5hagd3pwt
+gmake 4.4.1 gcbcod5uik			       py-pip 23.1.2 vdyo63uzwk
+gmake 4.4.1 he2qdcb6bg			       py-pip 23.1.2 3eaudob5lk
+gmake 4.4.1 srkzfjru5z			       py-ply 3.11 ohaizhq76a
+gmake 4.4.1 zoiouaigyc			       py-pybind11 2.13.5 bdx5tpnvwz
+gmp 6.3.0 5webgyazi3			       py-pyproject-metadata 0.7.1 p27mstg5gu
+hdf5 1.14.5 ckoh67fpzb			       py-pythran 0.16.1 3bcgcevke7
+hdf5 1.14.5 6ddnwvambf			       py-scipy 1.14.1 g53zrs6vom
+hdf5 1.14.5 tgtmflo4s6			       py-setuptools 69.2.0 snvbpkxkqt
+hwloc 2.11.1 fwtuzgpmp2			       py-setuptools 69.2.0 wbbopiponk
+hwloc 2.11.1 2fvcggi3gq			       py-wheel 0.41.2 pxniiekemg
+intel-tbb 2021.12.0 u5vh5hcz3r		       py-wheel 0.41.2 gho4mpquga
+json-c 0.16 jiezkp3kmw			       python 3.11.9 ct26uvgbvv
+json-cwx 0.12 pvkmxcbrrq		       python 3.11.9 67g7nw4psf
+kokkos 4.3.01 nxt5zthcpf		       python 3.13.0 gfyestlsao
+krb5 1.21.3 pq3as37xno			       python 3.13.0 wxt7apsxjg
+krb5 1.21.3 frb66wnvsa			       python-venv 1.0 wylyhqnxcx
+kvtree 1.5.0 5ubm4uy3f5			       python-venv 1.0 pt3p7pdrin
+libbsd 0.12.2 hwya6i63fv		       rankstr 0.4.0 r6xbtxcwl3
+libbsd 0.12.2 3oqufcrjxa		       re2c 3.1 tpzsx34tj4
+libdwarf 0.11.0 hz7ptvgac3		       re2c 3.1 qgh7e7n6c3
+libedit 3.1-20240808 nhrbcomj5l		       readline 8.2 aylebxvheu
+libedit 3.1-20240808 ht5niwqary		       readline 8.2 tb7zvufjv2
+libevent 2.1.12 xbwxobi4cj		       redset 0.4.0 wn6bxs77ba
+libevent 2.1.12 nftqerg373		       scr 2.0.0 inxkq6ww6n
+libfabric 1.22.0 lr77ky6sw7		       scr 3.1.0 tmcrn4e2mf
+libfabric 1.22.0 pvefo63faf		       shuffile 0.4.0 6gdnjhlovk
+libffi 3.4.6 ltl5sqyu2f			       silo 4.11.1 tf6qseltlk
+libffi 3.4.6 4ga47g7tj4			       slurm 23-11-1-1 wtptlf72di
+libgcrypt 1.11.0 tau3vgrmq6		       spath 0.4.0 phgpwllzdk
+libgpg-error 1.50 3g7e2nwelj		       sqlite 3.46.0 ogdosm6dqm
+libiberty 2.41 ojjef3cyse		       sqlite 3.46.0 b63y5mxrvt
+libiconv 1.17 bsga3novxp		       tar 1.34 mmv6i4naeg
+libiconv 1.17 gdtmvyudyk		       tar 1.34 j5dljnv4mc
+libmd 1.0.4 qcfzttdxov			       tcl 8.6.12 imrm45j44x
+libmd 1.0.4 cpmq5mdiri			       tcl 8.6.12 w4gwr4ezme
+libpciaccess 0.17 omw5cc44g5		       texinfo 7.1 ljsbwjcqdl
+libpciaccess 0.17 ybxtd2t7kr		       trilinos 16.0.0 ney6hmmpuf
+libsigsegv 2.14 ea6qziv7ob		       trilinos 16.0.0 63sfm7p6ve
+libsigsegv 2.14 u2gofvqdvw		       unzip 6.0 akxwy4wvo4
+libtool 2.4.7 tt3byemikn		       util-linux-uuid 2.40.2 xesify5chx
+libtool 2.4.7 xfe5xhomit		       util-linux-uuid 2.40.2 64aencak6b
+libxcrypt 4.4.35 v64tnmrjg7		       util-macros 1.20.1 vdnwjqe534
+libxcrypt 4.4.35 apxktfacu5		       util-macros 1.20.1 vau55h7rdi
+libxml2 2.13.4 wozcmyn2bi		       xz 5.4.6 2fvrfr67ah
+libxml2 2.13.4 4fawd6mhag		       xz 5.4.6 ifvv7czmux
+libyogrt 1.35 gswz3l2d2q		       yaksa 0.3 eogugqp4p6
+lmod 8.7.18 saucmo6quz			       yaksa 0.3 ferxascsq3
+lua 5.4.6 qcxkktpc5l			       zlib-ng 2.0.7 ocxrmffc7q
+lua-luafilesystem 1.8.0 4lpeywju4b	       zlib-ng 2.0.7 umrbkwvnyd
+lua-luaposix 36.1 hdnpce3ade		       zlib-ng 2.2.1 jjykcjtfyo
+lwgrp 1.0.6 euguteoau5			       zlib-ng 2.2.1 fhud6vqkh7
+lz4 1.10.0 itxj6zzegx			       zlib-ng 2.2.1 i4mwsvmsv2
+m4 1.4.19 qaspjyq5yq			       zstd 1.5.6 t7h6imj35r
+m4 1.4.19 grpnckwm3e			       zstd 1.5.6 yk3lkd4xdu

@@ -1,41 +1,72 @@
 $ spack remove trilinos
-==> trilinos has been removed from /home/spack5/spack/var/spack/environments/myproject2/spack.yaml
+==> trilinos has been removed from /home/spack/spack/var/spack/environments/myproject2/spack.yaml
 $ spack find
 ==> In environment myproject2
 ==> 1 root specs
 [+] scr
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-autoconf@2.72			    dtcmp@1.1.5		gmake@4.4.1	      libgcrypt@1.11.0	 lwgrp@1.0.6	 openblas@0.3.28  py-pip@23.1.2		tar@1.34
-autoconf-archive@2023.02.20	    elfutils@0.191	gmp@6.3.0	      libgpg-error@1.50	 lz4@1.10.0	 openmpi@5.0.5	  py-setuptools@69.2.0	texinfo@7.1
-automake@1.16.5			    expat@2.6.4		hwloc@2.11.1	      libiconv@1.17	 m4@1.4.19	 openssh@9.9p1	  py-wheel@0.41.2	trilinos@16.0.0
-berkeley-db@18.1.40		    findutils@4.9.0	json-c@0.16	      libmd@1.0.4	 meson@1.5.1	 openssl@3.4.0	  python@3.11.9		util-linux-uuid@2.40.2
-bison@3.8.2			    gawk@5.3.1		kokkos@4.3.01	      libpciaccess@0.17	 mpfr@4.2.1	 pcre2@10.44	  python-venv@1.0	util-macros@1.20.1
-bzip2@1.0.8			    gcc-runtime@11.4.0	krb5@1.21.3	      libsigsegv@2.14	 munge@0.5.15	 pdsh@2.31	  re2c@3.1		xz@5.4.6
-ca-certificates-mozilla@2023-05-30  gdbm@1.23		libbsd@0.12.2	      libtool@2.4.7	 ncurses@6.5	 perl@5.40.0	  readline@8.2		zlib-ng@2.2.1
-cmake@3.30.5			    gettext@0.22.5	libedit@3.1-20240808  libxcrypt@4.4.35	 nghttp2@1.63.0	 pigz@2.8	  scr@2.0.0		zstd@1.5.6
-curl@8.10.1			    glib@2.78.3		libevent@2.1.12	      libxml2@2.13.4	 ninja@1.12.1	 pkgconf@2.2.0	  slurm@23-11-1-1
-diffutils@3.10			    glibc@2.35		libffi@3.4.6	      libyogrt@1.35	 numactl@2.0.18	 pmix@5.0.3	  sqlite@3.46.0
+autoconf@2.72			    libbsd@0.12.2	  openssh@9.9p1
+autoconf-archive@2023.02.20	    libedit@3.1-20240808  openssl@3.4.0
+automake@1.16.5			    libevent@2.1.12	  pcre2@10.44
+berkeley-db@18.1.40		    libffi@3.4.6	  pdsh@2.31
+bison@3.8.2			    libgcrypt@1.11.0	  perl@5.40.0
+bzip2@1.0.8			    libgpg-error@1.50	  pigz@2.8
+ca-certificates-mozilla@2023-05-30  libiconv@1.17	  pkgconf@2.2.0
+cmake@3.30.5			    libmd@1.0.4		  pmix@5.0.3
+curl@8.10.1			    libpciaccess@0.17	  py-pip@23.1.2
+diffutils@3.10			    libsigsegv@2.14	  py-setuptools@69.2.0
+dtcmp@1.1.5			    libtool@2.4.7	  py-wheel@0.41.2
+elfutils@0.191			    libxcrypt@4.4.35	  python@3.11.9
+expat@2.6.4			    libxml2@2.13.4	  python-venv@1.0
+findutils@4.9.0			    libyogrt@1.35	  re2c@3.1
+gawk@5.3.1			    lwgrp@1.0.6		  readline@8.2
+gcc-runtime@11.4.0		    lz4@1.10.0		  scr@2.0.0
+gdbm@1.23			    m4@1.4.19		  slurm@23-11-1-1
+gettext@0.22.5			    meson@1.5.1		  sqlite@3.46.0
+glib@2.78.3			    mpfr@4.2.1		  tar@1.34
+glibc@2.35			    munge@0.5.15	  texinfo@7.1
+gmake@4.4.1			    ncurses@6.5		  trilinos@16.0.0
+gmp@6.3.0			    nghttp2@1.63.0	  util-linux-uuid@2.40.2
+hwloc@2.11.1			    ninja@1.12.1	  util-macros@1.20.1
+json-c@0.16			    numactl@2.0.18	  xz@5.4.6
+kokkos@4.3.01			    openblas@0.3.28	  zlib-ng@2.2.1
+krb5@1.21.3			    openmpi@5.0.5	  zstd@1.5.6
 ==> 78 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)
 $ spack concretize
 ==> No new specs to concretize.
-==> Updating view at /home/spack5/spack/var/spack/environments/myproject2/.spack-env/view
+==> Updating view at /home/spack/spack/var/spack/environments/myproject2/.spack-env/view
 $ spack find
 ==> In environment myproject2
 ==> 1 root specs
 [+] scr
 
 -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-autoconf@2.72			    dtcmp@1.1.5		gmake@4.4.1	      libgpg-error@1.50	 lz4@1.10.0	 openssh@9.9p1	       py-wheel@0.41.2	util-linux-uuid@2.40.2
-autoconf-archive@2023.02.20	    elfutils@0.191	gmp@6.3.0	      libiconv@1.17	 m4@1.4.19	 openssl@3.4.0	       python@3.11.9	util-macros@1.20.1
-automake@1.16.5			    expat@2.6.4		hwloc@2.11.1	      libmd@1.0.4	 meson@1.5.1	 pcre2@10.44	       python-venv@1.0	xz@5.4.6
-berkeley-db@18.1.40		    findutils@4.9.0	json-c@0.16	      libpciaccess@0.17	 mpfr@4.2.1	 pdsh@2.31	       re2c@3.1		zlib-ng@2.2.1
-bison@3.8.2			    gawk@5.3.1		krb5@1.21.3	      libsigsegv@2.14	 munge@0.5.15	 perl@5.40.0	       readline@8.2	zstd@1.5.6
-bzip2@1.0.8			    gcc-runtime@11.4.0	libbsd@0.12.2	      libtool@2.4.7	 ncurses@6.5	 pigz@2.8	       scr@2.0.0
-ca-certificates-mozilla@2023-05-30  gdbm@1.23		libedit@3.1-20240808  libxcrypt@4.4.35	 nghttp2@1.63.0	 pkgconf@2.2.0	       slurm@23-11-1-1
-cmake@3.30.5			    gettext@0.22.5	libevent@2.1.12	      libxml2@2.13.4	 ninja@1.12.1	 pmix@5.0.3	       sqlite@3.46.0
-curl@8.10.1			    glib@2.78.3		libffi@3.4.6	      libyogrt@1.35	 numactl@2.0.18	 py-pip@23.1.2	       tar@1.34
-diffutils@3.10			    glibc@2.35		libgcrypt@1.11.0      lwgrp@1.0.6	 openmpi@5.0.5	 py-setuptools@69.2.0  texinfo@7.1
+autoconf@2.72			    libbsd@0.12.2	  openssh@9.9p1
+autoconf-archive@2023.02.20	    libedit@3.1-20240808  openssl@3.4.0
+automake@1.16.5			    libevent@2.1.12	  pcre2@10.44
+berkeley-db@18.1.40		    libffi@3.4.6	  pdsh@2.31
+bison@3.8.2			    libgcrypt@1.11.0	  perl@5.40.0
+bzip2@1.0.8			    libgpg-error@1.50	  pigz@2.8
+ca-certificates-mozilla@2023-05-30  libiconv@1.17	  pkgconf@2.2.0
+cmake@3.30.5			    libmd@1.0.4		  pmix@5.0.3
+curl@8.10.1			    libpciaccess@0.17	  py-pip@23.1.2
+diffutils@3.10			    libsigsegv@2.14	  py-setuptools@69.2.0
+dtcmp@1.1.5			    libtool@2.4.7	  py-wheel@0.41.2
+elfutils@0.191			    libxcrypt@4.4.35	  python@3.11.9
+expat@2.6.4			    libxml2@2.13.4	  python-venv@1.0
+findutils@4.9.0			    libyogrt@1.35	  re2c@3.1
+gawk@5.3.1			    lwgrp@1.0.6		  readline@8.2
+gcc-runtime@11.4.0		    lz4@1.10.0		  scr@2.0.0
+gdbm@1.23			    m4@1.4.19		  slurm@23-11-1-1
+gettext@0.22.5			    meson@1.5.1		  sqlite@3.46.0
+glib@2.78.3			    mpfr@4.2.1		  tar@1.34
+glibc@2.35			    munge@0.5.15	  texinfo@7.1
+gmake@4.4.1			    ncurses@6.5		  util-linux-uuid@2.40.2
+gmp@6.3.0			    nghttp2@1.63.0	  util-macros@1.20.1
+hwloc@2.11.1			    ninja@1.12.1	  xz@5.4.6
+json-c@0.16			    numactl@2.0.18	  zlib-ng@2.2.1
+krb5@1.21.3			    openmpi@5.0.5	  zstd@1.5.6
 ==> 75 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)

@@ -1,676 +1,1350 @@
 $ spack list 'py-*'
-py-3to2					  py-eventlet			     py-munkres					  py-pyupgrade
-py-4suite-xml				  py-evodiff			     py-murmurhash				  py-pyusb
-py-a2wsgi				  py-exarl			     py-mutagen					  py-pyutilib
-py-abcpy				  py-exceptiongroup		     py-mx					  py-pyuwsgi
-py-abipy				  py-execnet			     py-mxfold2					  py-pyvcf
-py-about-time				  py-executing			     py-myhdl					  py-pyvista
-py-absl-py				  py-exhale			     py-mypy					  py-pyvistaqt
-py-accelerate				  py-exifread			     py-mypy-extensions				  py-pyviz-comms
-py-accessible-pygments			  py-exodus-bundler		     py-mysql-connector-python			  py-pyvolve
-py-accimage				  py-expecttest			     py-mysqlclient				  py-pywavelets
-py-acme-tiny				  py-extension-helpers		     py-mysqldb1				  py-pywcs
-py-adal					  py-extras			     py-myst-parser				  py-pywin32
-py-adb-enhanced				  py-ez-setup			     py-namex					  py-pyworld
-py-addict				  py-f90nml			     py-nanobind				  py-pyxlsb
-py-adios				  py-f90wrap			     py-nanoget					  py-pyyaml
-py-advancedhtmlparser			  py-fabric			     py-nanomath				  py-pyyaml-env-tag
-py-aenum				  py-fabric3			     py-nanoplot				  py-pyzmq
-py-affine				  py-fair-esm			     py-nanostat				  py-qdldl
-py-agate				  py-fairscale			     py-nanotime				  py-qiskit-aer
-py-agate-dbf				  py-faker			     py-nara-wpe				  py-qiskit-ibm-provider
-py-agate-excel				  py-falcon			     py-narwhals				  py-qiskit-nature
-py-agate-sql				  py-fallocate			     py-natsort					  py-qiskit-terra
-py-ahpy					  py-fastai			     py-nbclassic				  py-qmtest
-py-aiobotocore				  py-fastaindex			     py-nbclient				  py-qpsolvers
-py-aiocontextvars			  py-fastapi			     py-nbconvert				  py-qpth
-py-aiodns				  py-fastapi-utils		     py-nbdime					  py-qrcode
-py-aiofiles				  py-fastavro			     py-nbformat				  py-qsymm
-py-aiohttp				  py-fastcache			     py-nbmake					  py-qtawesome
-py-aiohttp-cors				  py-fastcluster		     py-nbqa					  py-qtconsole
-py-aioitertools				  py-fastcore			     py-nbsphinx				  py-qtpy
-py-aioredis				  py-fastcov			     py-nbstripout				  py-quantiphy
-py-aiosignal				  py-fastdownload		     py-nbval					  py-quantities
-py-aiosqlite				  py-fastdtw			     py-nc-time-axis				  py-quantum-blackbird
-py-alabaster				  py-fasteners			     py-ncbi-genome-download			  py-quantum-xir
-py-alembic				  py-fastfold			     py-ndg-httpsclient				  py-quart
-py-alive-progress			  py-fastjsonschema		     py-ndindex					  py-quast
-py-alpaca-eval				  py-fastpath			     py-neo					  py-quaternionic
-py-alpaca-farm				  py-fastprogress		     py-neobolt					  py-qudida
-py-alphafold				  py-fastremap			     py-neotime					  py-queryablelist
-py-altair				  py-fastrlock			     py-neovim-remote				  py-querystring-parser
-py-altgraph				  py-faststructure		     py-neptune-client				  py-questionary
-py-amici				  py-fava			     py-nest-asyncio				  py-qutip
-py-amityping				  py-fenics-basix		     py-nestle					  py-qutip-qip
-py-amplpy				  py-fenics-dijitso		     py-netaddr					  py-radiant-mlhub
-py-ampltools				  py-fenics-dolfinx		     py-netcdf4					  py-radical-entk
-py-amqp					  py-fenics-ffc			     py-netifaces				  py-radical-gtod
-py-amrex				  py-fenics-ffcx		     py-netket					  py-radical-pilot
-py-angel				  py-fenics-fiat		     py-netpyne					  py-radical-saga
-py-aniso8601				  py-fenics-instant		     py-networkit				  py-radical-utils
-py-anndata				  py-fenics-ufl			     py-networkx				  py-ranger-fm
-py-annexremote				  py-fenics-ufl-legacy		     py-neuralgcm				  py-rapidfuzz
-py-annotated-types			  py-ffmpy			     py-neurokit2				  py-rapidfuzz-capi
-py-annoy				  py-file-magic			     py-neurolab				  py-rarfile
-py-ansi2html				  py-filecheck			     py-neurom					  py-rasterio
-py-ansible				  py-filelock			     py-neurora					  py-rasterstats
-py-ansimarkup				  py-filemagic			     py-neurotools				  py-ratelim
-py-ansiwrap				  py-filetype			     py-nexus-sdk				  py-ratelimiter
-py-antlr4-python3-runtime		  py-filterpy			     py-nexusforge				  py-raven
-py-antspyx				  py-find-libpython		     py-nglview					  py-ray
-py-anuga				  py-findlibs			     py-ngs-tools				  py-rbtools
-py-anvio				  py-fiona			     py-nibabel					  py-rdflib
-py-anybadge				  py-fire			     py-nibetaseries				  py-rdflib-jsonld
-py-anyio				  py-fireworks			     py-nilearn					  py-rdt
-py-anytree				  py-fiscalyear			     py-ninja					  py-reacton
-py-apache-beam				  py-fisher			     py-nipype					  py-readchar
-py-apache-libcloud			  py-fits-tools			     py-nistats					  py-readme-renderer
-py-apex					  py-fitter			     py-nitransforms				  py-recommonmark
-py-apeye				  py-fixtures			     py-niworkflows				  py-redis
-py-apeye-core				  py-flake8			     py-nltk					  py-referencing
-py-apipkg				  py-flake8-import-order	     py-node-semver				  py-refgenconf
-py-apispec				  py-flake8-polyfill		     py-nodeenv					  py-refgenie
-py-appdirs				  py-flaky			     py-non-regression-test-tools		  py-regex
-py-applicationinsights			  py-flameprof			     py-nose					  py-regionmask
-py-appnope				  py-flash-attn			     py-nose-cov				  py-reindent
-py-apptools				  py-flask			     py-nose2					  py-reportlab
-py-apscheduler				  py-flask-babel		     py-nosexcover				  py-reportseff
-py-arcgis				  py-flask-compress		     py-notebook				  py-repoze-lru
-py-arch					  py-flask-cors			     py-notebook-shim				  py-reproject
-py-archspec				  py-flask-paginate		     py-nptyping				  py-requests
-py-arcp					  py-flask-restful		     py-npx					  py-requests-cache
-py-argcomplete				  py-flask-socketio		     py-ntlm-auth				  py-requests-file
-py-argh					  py-flask-sqlalchemy		     py-ntplib					  py-requests-ftp
-py-argon2-cffi				  py-flatbuffers		     py-nugraph					  py-requests-futures
-py-argon2-cffi-bindings			  py-flatten-dict		     py-nuitka					  py-requests-kerberos
-py-argparse-dataclass			  py-flawfinder			     py-num2words				  py-requests-mock
-py-argparse-manpage			  py-flax			     py-numba					  py-requests-ntlm
-py-args					  py-flexmock			     py-numba4jax				  py-requests-oauthlib
-py-arm-pyart				  py-flexx			     py-numcodecs				  py-requests-toolbelt
-py-arpeggio				  py-flit			     py-numdifftools				  py-requests-unixsocket
-py-arrow				  py-flit-core			     py-numexpr					  py-requirements-parser
-py-art					  py-flit-scm			     py-numexpr3				  py-reretry
-py-arviz				  py-flufl-lock			     py-numl					  py-resampy
-py-asciitree				  py-fluiddyn			     py-numpy					  py-resize-right
-py-asdf					  py-fluidfft			     py-numpy-groupies				  py-resolvelib
-py-asdf-standard			  py-fluidfft-builder		     py-numpy-quaternion			  py-responses
-py-asdf-transform-schemas		  py-fluidfft-fftw		     py-numpy-stl				  py-resultsfile
-py-asdf-unit-schemas			  py-fluidfft-fftwmpi		     py-numpydoc				  py-retry
-py-asdfghjkl				  py-fluidfft-mpi-with-fftw	     py-nvidia-dali				  py-retry-decorator
-py-ase					  py-fluidfft-p3dfft		     py-nvidia-ml-py				  py-retrying
-py-asgiref				  py-fluidfft-pfft		     py-nvidia-ml-py3				  py-retworkx
-py-asn1crypto				  py-fluidsim			     py-nvidia-modulus				  py-rfc3339-validator
-py-aspy-yaml				  py-fluidsim-core		     py-nvtx					  py-rfc3986
-py-asserts				  py-flye			     py-oauth2client				  py-rfc3986-validator
-py-asteval				  py-fn-py			     py-oauthlib				  py-rich
-py-astor				  py-folium			     py-obspy					  py-rich-argparse
-py-astpretty				  py-fonttools			     py-ocnn					  py-rich-click
-py-astroid				  py-ford			     py-ocp-models				  py-rios
-py-astropy				  py-formatizer			     py-odc-geo					  py-rioxarray
-py-astropy-healpix			  py-formulaic			     py-odfpy					  py-rise
-py-astropy-helpers			  py-fortls			     py-ogb					  py-river
-py-astropy-iers-data			  py-fortran-language-server	     py-okada-wrapper				  py-rmm
-py-asttokens				  py-fortranformat		     py-olcf-velocity				  py-rnc2rng
-py-astunparse				  py-fparser			     py-olefile					  py-robocrys
-py-async-generator			  py-fprettify			     py-omegaconf				  py-robotframework
-py-async-lru				  py-fqdn			     py-onnx					  py-rocrate
-py-async-timeout			  py-fracridge			     py-onnx-opcounter				  py-roifile
-py-asyncio				  py-fraction			     py-onnxconverter-common			  py-rope
-py-asynctest				  py-freezegun			     py-onnxmltools				  py-rosdep
-py-atomicwrites				  py-frozendict			     py-onnxruntime				  py-rosdistro
-py-atpublic				  py-frozenlist			     py-ont-fast5-api				  py-rosinstall
-py-atropos				  py-fs				     py-opcodes					  py-rosinstall-generator
-py-ats					  py-fsspec			     py-open-clip-torch				  py-rospkg
-py-attmap				  py-fsspec-xrootd		     py-openai					  py-rotary-embedding-torch
-py-attrs				  py-ftfy			     py-openapi-schema-pydantic			  py-routes
-py-audioread				  py-ftputil			     py-opencensus				  py-rpds-py
-py-auditwheel				  py-funcy			     py-opencensus-context			  py-rply
-py-autocfg				  py-furo			     py-opendatalab				  py-rpy2
-py-autodocsumm				  py-fury			     py-openidc-client				  py-rq
-py-autograd				  py-fusepy			     py-openmc					  py-rsa
-py-autograd-gamma			  py-future			     py-openmesh				  py-rsatoolbox
-py-automat				  py-fuzzywuzzy			     py-openmim					  py-rseqc
-py-autopep8				  py-fypp			     py-openpmd-validator			  py-rst2pdf
-py-autoray				  py-galaxy-containers		     py-openpmd-viewer				  py-rtoml
-py-auxlib				  py-galaxy-job-metrics		     py-openpyxl				  py-rtree
-py-avro					  py-galaxy-objectstore		     py-openslide-python			  py-ruamel-ordereddict
-py-avro-json-serializer			  py-galaxy-sequence-utils	     py-opentree				  py-ruamel-yaml
-py-avro-python3				  py-galaxy-tool-util		     py-opentuner				  py-ruamel-yaml-clib
-py-awesome-slugify			  py-galaxy-util		     py-opppy					  py-ruamel-yaml-jinja2
-py-awkward				  py-galaxy2cwl			     py-ops					  py-rucio-clients
-py-awkward-cpp				  py-gast			     py-opt-einsum				  py-ruff
-py-awkward0				  py-gcovr			     py-optax					  py-rustworkx
-py-awscrt				  py-gcs-oauth2-boto-plugin	     py-optree					  py-rx
-py-ax-platform				  py-gcsfs			     py-optuna					  py-s3cmd
-py-azote				  py-gdbgui			     py-or-tools				  py-s3fs
-py-azure-batch				  py-gdc-client			     py-oracledb				  py-s3transfer
-py-azure-cli				  py-gdown			     py-orbax-checkpoint			  py-sacrebleu
-py-azure-cli-command-modules-nspkg	  py-gee-asset-manager		     py-ordered-set				  py-sacremoses
-py-azure-cli-core			  py-geeadd			     py-orjson					  py-safetensors
-py-azure-cli-nspkg			  py-geeup			     py-os-service-types			  py-salib
-py-azure-cli-telemetry			  py-gemmforge			     py-oset					  py-sanic
-py-azure-common				  py-genders			     py-oslo-config				  py-scandir
-py-azure-core				  py-geneimpacts		     py-oslo-i18n				  py-scanpy
-py-azure-cosmos				  py-generateds			     py-oslo-serialization			  py-schema
-py-azure-datalake-store			  py-genshi			     py-oslo-utils				  py-schema-salad
-py-azure-functions-devops-build		  py-gensim			     py-osqp					  py-scientificpython
-py-azure-graphrbac			  py-geoalchemy2		     py-outdated				  py-scikit-build
-py-azure-identity			  py-geocube			     py-overpy					  py-scikit-build-core
-py-azure-keyvault			  py-geographiclib		     py-overrides				  py-scikit-fmm
-py-azure-keyvault-certificates		  py-geomdl			     py-owlrl					  py-scikit-fuzzy
-py-azure-keyvault-keys			  py-geopandas			     py-owslib					  py-scikit-image
-py-azure-keyvault-nspkg			  py-geoplot			     py-oyaml					  py-scikit-learn
-py-azure-keyvault-secrets		  py-geopmdpy			     py-pacifica-downloader			  py-scikit-learn-extra
-py-azure-loganalytics			  py-geopmpy			     py-pacifica-namespace			  py-scikit-optimize
-py-azure-mgmt-advisor			  py-geopy			     py-pacifica-uploader			  py-scikit-sparse
-py-azure-mgmt-apimanagement		  py-gevent			     py-packaging				  py-scikits-odes
-py-azure-mgmt-appconfiguration		  py-gf256			     py-pager					  py-scine-chemoton
-py-azure-mgmt-applicationinsights	  py-gffutils			     py-palettable				  py-scine-puffin
-py-azure-mgmt-authorization		  py-ghp-import			     py-pamela					  py-scinum
-py-azure-mgmt-batch			  py-gidgethub			     py-panaroo					  py-scipy
-py-azure-mgmt-batchai			  py-gidgetlab			     py-pandas					  py-scooby
-py-azure-mgmt-billing			  py-gimmik			     py-pandas-datareader			  py-scoop
-py-azure-mgmt-botservice		  py-gin-config			     py-pandas-stubs				  py-scp
-py-azure-mgmt-cdn			  py-git-review			     py-pandocfilters				  py-screed
-py-azure-mgmt-cognitiveservices		  py-gitdb			     py-panedr					  py-scs
-py-azure-mgmt-compute			  py-gitpython			     py-panel					  py-sdmetrics
-py-azure-mgmt-consumption		  py-glean-parser		     py-papermill				  py-sdv
-py-azure-mgmt-containerinstance		  py-glean-sdk			     py-paralleltask				  py-seaborn
-py-azure-mgmt-containerregistry		  py-glmnet			     py-param					  py-secretstorage
-py-azure-mgmt-containerservice		  py-glmnet-python		     py-parameterized				  py-seekpath
-py-azure-mgmt-core			  py-glmsingle			     py-paramiko				  py-segmentation-models-pytorch
-py-azure-mgmt-cosmosdb			  py-glob2			     py-paramz					  py-selenium
-py-azure-mgmt-datalake-analytics	  py-globus-cli			     py-parasail				  py-semantic-version
-py-azure-mgmt-datalake-store		  py-globus-sdk			     py-parmed					  py-semver
-py-azure-mgmt-datamigration		  py-gluoncv			     py-parse					  py-send2trash
-py-azure-mgmt-deploymentmanager		  py-glymur			     py-parse-type				  py-sentencepiece
-py-azure-mgmt-devtestlabs		  py-gmsh			     py-parsedatetime				  py-sentry-sdk
-py-azure-mgmt-dns			  py-gmsh-interop		     py-parsimonious				  py-seqeval
-py-azure-mgmt-eventgrid			  py-gmxapi			     py-parsl					  py-sequence-models
-py-azure-mgmt-eventhub			  py-gnuplot			     py-parsley					  py-seriate
-py-azure-mgmt-hdinsight			  py-goatools			     py-parso					  py-serpent
-py-azure-mgmt-imagebuilder		  py-gooey			     py-partd					  py-session-info
-py-azure-mgmt-iotcentral		  py-google			     py-particle				  py-setproctitle
-py-azure-mgmt-iothub			  py-google-api-core		     py-paste					  py-setupmeta
-py-azure-mgmt-iothubprovisioningservices  py-google-api-python-client	     py-pastedeploy				  py-setuptools
-py-azure-mgmt-keyvault			  py-google-apitools		     py-pastel					  py-setuptools-cpp
-py-azure-mgmt-kusto			  py-google-auth		     py-pastml					  py-setuptools-git
-py-azure-mgmt-loganalytics		  py-google-auth-httplib2	     py-patch					  py-setuptools-git-versioning
-py-azure-mgmt-managedservices		  py-google-auth-oauthlib	     py-patch-ng				  py-setuptools-rust
-py-azure-mgmt-managementgroups		  py-google-cloud-appengine-logging  py-path-py					  py-setuptools-scm
-py-azure-mgmt-maps			  py-google-cloud-audit-log	     py-pathlib2				  py-setuptools-scm-git-archive
-py-azure-mgmt-marketplaceordering	  py-google-cloud-batch		     py-pathml					  py-sfepy
-py-azure-mgmt-media			  py-google-cloud-core		     py-pathos					  py-sgp4
-py-azure-mgmt-monitor			  py-google-cloud-logging	     py-pathspec				  py-sh
-py-azure-mgmt-msi			  py-google-cloud-storage	     py-pathtools				  py-shap
-py-azure-mgmt-netapp			  py-google-crc32c		     py-pathy					  py-shapely
-py-azure-mgmt-network			  py-google-pasta		     py-patool					  py-shellescape
-py-azure-mgmt-nspkg			  py-google-reauth		     py-patsy					  py-shellingham
-py-azure-mgmt-policyinsights		  py-google-resumable-media	     py-pauvre					  py-shiboken
-py-azure-mgmt-privatedns		  py-googleapis-common-protos	     py-pbr					  py-shiboken2
-py-azure-mgmt-rdbms			  py-googledrivedownloader	     py-pdb-tools				  py-shippinglabel
-py-azure-mgmt-recoveryservices		  py-gosam			     py-pdbfixer				  py-shortbred
-py-azure-mgmt-recoveryservicesbackup	  py-gpaw			     py-pdf2image				  py-shortuuid
-py-azure-mgmt-redhatopenshift		  py-gpustat			     py-pdm-backend				  py-shroud
-py-azure-mgmt-redis			  py-gputil			     py-pdm-pep517				  py-shtab
-py-azure-mgmt-relay			  py-gpy			     py-pdoc3					  py-sierrapy
-py-azure-mgmt-reservations		  py-gpyopt			     py-peachpy					  py-simpervisor
-py-azure-mgmt-resource			  py-gpytorch			     py-pebble					  py-simpleeval
-py-azure-mgmt-search			  py-gql			     py-pem					  py-simplegeneric
-py-azure-mgmt-security			  py-gradio			     py-pennylane				  py-simplejson
-py-azure-mgmt-servicebus		  py-gradio-client		     py-pennylane-lightning			  py-simplekml
-py-azure-mgmt-servicefabric		  py-grandalf			     py-pennylane-lightning-kokkos		  py-simpletraj
-py-azure-mgmt-signalr			  py-graphcast			     py-pep517					  py-simpy
-py-azure-mgmt-sql			  py-grapheme			     py-pep8					  py-singledispatchmethod
-py-azure-mgmt-sqlvirtualmachine		  py-graphene			     py-pep8-naming				  py-sip
-py-azure-mgmt-storage			  py-graphene-tornado		     py-performance				  py-six
-py-azure-mgmt-trafficmanager		  py-graphlib-backport		     py-periodictable				  py-skl2onnx
-py-azure-mgmt-web			  py-graphql-core		     py-petastorm				  py-slepc4py
-py-azure-multiapi-storage		  py-graphql-relay		     py-petname					  py-slicer
-py-azure-nspkg				  py-graphql-ws			     py-petsc4py				  py-slurm-pipeline
-py-azure-storage-blob			  py-graphviz			     py-pexpect					  py-smac
-py-azure-storage-common			  py-gravity			     py-pfzy					  py-smart-open
-py-azure-storage-nspkg			  py-grayskull			     py-pgzip					  py-smartredis
-py-azureml-automl-core			  py-greenlet			     py-phanotate				  py-smartsim
-py-azureml-core				  py-grequests			     py-phonenumbers				  py-smartypants
-py-azureml-dataprep			  py-griddataformats		     py-phonopy					  py-smmap
-py-azureml-dataprep-native		  py-griffe			     py-photutils				  py-smote-variants
-py-azureml-dataprep-rslex		  py-grpc-google-iam-v1		     py-phydms					  py-snakemake-executor-plugin-azure-batch
-py-azureml-dataset-runtime		  py-grpcio			     py-phylophlan				  py-snakemake-executor-plugin-cluster-generic
-py-azureml-pipeline			  py-grpcio-status		     py-pickle5					  py-snakemake-executor-plugin-cluster-sync
-py-azureml-pipeline-core		  py-grpcio-tools		     py-pickleshare				  py-snakemake-executor-plugin-drmaa
-py-azureml-pipeline-steps		  py-gsd			     py-picmistandard				  py-snakemake-executor-plugin-flux
-py-azureml-sdk				  py-gssapi			     py-picrust2				  py-snakemake-executor-plugin-googlebatch
-py-azureml-telemetry			  py-gsutil			     py-pid					  py-snakemake-executor-plugin-kubernetes
-py-azureml-train			  py-gtdbtk			     py-pika					  py-snakemake-executor-plugin-slurm
-py-azureml-train-automl-client		  py-gunicorn			     py-pillow					  py-snakemake-executor-plugin-slurm-jobstep
-py-azureml-train-core			  py-gxformat2			     py-pillow-simd				  py-snakemake-executor-plugin-tes
-py-azureml-train-restclients-hyperdrive	  py-gym			     py-pint					  py-snakemake-interface-common
-py-babel				  py-h11			     py-pint-xarray				  py-snakemake-interface-executor-plugins
-py-backcall				  py-h2				     py-pip					  py-snakemake-interface-report-plugins
-py-backoff				  py-h5glance			     py-pipdeptree				  py-snakemake-interface-storage-plugins
-py-backpack-for-pytorch			  py-h5io			     py-piper					  py-snakemake-storage-plugin-azure
-py-backports-abc			  py-h5netcdf			     py-pipits					  py-snakemake-storage-plugin-fs
-py-backports-cached-property		  py-h5py			     py-pispino					  py-snakemake-storage-plugin-ftp
-py-backports-entry-points-selectable	  py-h5sh			     py-pivy					  py-snakemake-storage-plugin-gcs
-py-backports-lzma			  py-hacking			     py-pkgconfig				  py-snakemake-storage-plugin-http
-py-backports-os				  py-hail			     py-pkginfo					  py-snakemake-storage-plugin-s3
-py-backports-ssl-match-hostname		  py-handy-archives		     py-pkgutil-resolve-name			  py-snakemake-storage-plugin-sftp
-py-backports-tempfile			  py-haphpipe			     py-plac					  py-snakemake-storage-plugin-zenodo
-py-backports-weakref			  py-hatch			     py-planar					  py-snappy
-py-backports-zoneinfo			  py-hatch-cython		     py-planet					  py-sncosmo
-py-bagit				  py-hatch-fancy-pypi-readme	     py-planetary-computer			  py-sniffio
-py-bagit-profile			  py-hatch-jupyter-builder	     py-platformdirs				  py-snoop
-py-bakta				  py-hatch-nodejs-version	     py-plotext					  py-snowballstemmer
-py-bandit				  py-hatch-requirements-txt	     py-plotille				  py-snuggs
-py-barectf				  py-hatch-vcs			     py-plotly					  py-sobol-seq
-py-basemap				  py-hatchet			     py-plotnine				  py-social-auth-core
-py-bash-kernel				  py-hatchling			     py-pluggy					  py-sonlib
-py-basis-set-exchange			  py-hclust2			     py-plum-dispatch				  py-sortedcollections
-py-batchspawner				  py-hdbscan			     py-ply					  py-sortedcontainers
-py-bayesian-optimization		  py-hdfs			     py-pmw					  py-soundfile
-py-bcbio-gff				  py-healpy			     py-pmw-patched				  py-soupsieve
-py-bcolz				  py-heapdict			     py-pockets					  py-soyclustering
-py-bcrypt				  py-heat			     py-poetry					  py-spacy
-py-bdbag				  py-hep-ml			     py-poetry-core				  py-spacy-legacy
-py-beaker				  py-hepdata-converter		     py-poetry-dynamic-versioning		  py-spacy-loggers
-py-beancount				  py-hepdata-lib		     py-poetry-plugin-export			  py-spacy-models-en-core-web-sm
-py-beartype				  py-hepdata-validator		     py-poetry-plugin-tweak-dependencies-version  py-spacy-models-en-vectors-web-lg
-py-beautifulsoup4			  py-hepunits			     py-polars					  py-sparse
-py-beniget				  py-hieroglyph			     py-pomegranate				  py-spatialist
-py-bids-validator			  py-hiredis			     py-pooch					  py-spatialite
-py-bidscoin				  py-hist			     py-portalocker				  py-spdlog
-py-bidskit				  py-histbook			     py-portend					  py-spectra
-py-bigdft				  py-histogrammar		     py-portpicker				  py-spectral
-py-bigfloat				  py-histoprint			     py-postcactus				  py-speech-recognition
-py-billiard				  py-hjson			     py-poster					  py-spefile
-py-binaryornot				  py-hmmlearn			     py-pot					  py-spgl1
-py-bintrees				  py-holland-backup		     py-pox					  py-spglib
-py-binwalk				  py-horovod			     py-poxy					  py-spherical
-py-biobb-common				  py-hpack			     py-poyo					  py-sphinx
-py-biobb-gromacs			  py-hpbandster			     py-ppft					  py-sphinx-argparse
-py-biobb-io				  py-hpccm			     py-pprintpp				  py-sphinx-autodoc-typehints
-py-biobb-model				  py-hstspreload		     py-pre-commit				  py-sphinx-basic-ng
-py-biobb-structure-checking		  py-htgettoken			     py-preshed					  py-sphinx-book-theme
-py-biobb-structure-utils		  py-html2text			     py-pretrainedmodels			  py-sphinx-bootstrap-theme
-py-bioblend				  py-html5lib			     py-pretty-errors				  py-sphinx-click
-py-biom-format				  py-htmlgen			     py-prettytable				  py-sphinx-copybutton
-py-biomine				  py-htseq			     py-priority				  py-sphinx-design
-py-biopandas				  py-httpbin			     py-profilehooks				  py-sphinx-fortran
-py-biopython				  py-httpcore			     py-proglog					  py-sphinx-gallery
-py-biotite				  py-httplib2			     py-progress				  py-sphinx-immaterial
-py-biotraj				  py-httpretty			     py-progressbar2				  py-sphinx-jinja2-compat
-py-bitarray				  py-httpstan			     py-progressbar33				  py-sphinx-multiversion
-py-bitshuffle				  py-httptools			     py-projectq				  py-sphinx-prompt
-py-bitstring				  py-httpx			     py-prokaryote				  py-sphinx-removed-in
-py-bitstruct				  py-huggingface-hub		     py-prometheus-client			  py-sphinx-rtd-dark-mode
-py-black				  py-humanfriendly		     py-prometheus-flask-exporter		  py-sphinx-rtd-theme
-py-bleach				  py-humanize			     py-promise					  py-sphinx-tabs
-py-blessed				  py-hvac			     py-prompt-toolkit				  py-sphinx-theme-builder
-py-blessings				  py-hydra-core			     py-properscoring				  py-sphinx-toolbox
-py-blight				  py-hypercorn			     py-proto-plus				  py-sphinxautomodapi
-py-blinker				  py-hyperframe			     py-protobuf				  py-sphinxcontrib-applehelp
-py-blis					  py-hyperlink			     py-protoc-gen-swagger			  py-sphinxcontrib-bibtex
-py-blosc				  py-hyperopt			     py-prov					  py-sphinxcontrib-devhelp
-py-blosc2				  py-hypothesis			     py-prwlock					  py-sphinxcontrib-htmlhelp
-py-blosum				  py-ibm-cloud-sdk-core		     py-psalg					  py-sphinxcontrib-issuetracker
-py-bluepyefe				  py-ibm-watson			     py-psana					  py-sphinxcontrib-jquery
-py-bluepyemodel				  py-ics			     py-psij-python				  py-sphinxcontrib-jsmath
-py-bluepyopt				  py-identify			     py-psmon					  py-sphinxcontrib-mermaid
-py-bmap-tools				  py-idna			     py-pspamm					  py-sphinxcontrib-moderncmakedomain
-py-bmtk					  py-idna-ssl			     py-psutil					  py-sphinxcontrib-napoleon
-py-bokeh				  py-igor			     py-psyclone				  py-sphinxcontrib-programoutput
-py-boltons				  py-igor2			     py-psycopg2				  py-sphinxcontrib-qthelp
-py-boom-boot-manager			  py-igraph			     py-ptyprocess				  py-sphinxcontrib-serializinghtml
-py-boost-histogram			  py-igv-notebook		     py-pubchempy				  py-sphinxcontrib-spelling
-py-boto					  py-illumina-utils		     py-pudb					  py-sphinxcontrib-trio
-py-boto3				  py-ilmbase			     py-pulp					  py-sphinxcontrib-websupport
-py-botocore				  py-imagecodecs		     py-pulsar-galaxy-lib			  py-sphinxemoji
-py-botorch				  py-imagehash			     py-pure-eval				  py-sphobjinv
-py-bottle				  py-imageio			     py-pure-sasl				  py-spykeutils
-py-bottleneck				  py-imageio-ffmpeg		     py-puremagic				  py-spython
-py-braceexpand				  py-imagesize			     py-py					  py-sqlalchemy
-py-brain-indexer			  py-imbalanced-learn		     py-py-cpuinfo				  py-sqlalchemy-migrate
-py-branca				  py-imgaug			     py-py-spy					  py-sqlalchemy-stubs
-py-bravado				  py-iminuit			     py-py-tes					  py-sqlalchemy-utils
-py-bravado-core				  py-immutabledict		     py-py2bit					  py-sqlitedict
-py-breakseq2				  py-immutables			     py-py2neo					  py-sqlparse
-py-breathe				  py-importlib-metadata		     py-py4j					  py-srsly
-py-brian				  py-importlib-resources	     py-py6s					  py-sseclient
-py-brian2				  py-incremental		     py-pyabel					  py-sshtunnel
-py-brotli				  py-inflect			     py-pyaestro				  py-sspilib
-py-brotlipy				  py-inheritance		     py-pyamg					  py-stack-data
-py-bsddb3				  py-iniconfig			     py-pyaml					  py-starlette
-py-build				  py-iniparse			     py-pyaml-env				  py-starlette-context
-py-bx-python				  py-inquirer			     py-pyani					  py-starsessions
-py-cachecontrol				  py-inquirerpy			     py-pyarrow					  py-stashcp
-py-cached-property			  py-installer			     py-pyasn1					  py-statmorph
-py-cachetools				  py-instrain			     py-pyasn1-modules				  py-statsmodels
-py-cachy				  py-intbitset			     py-pyassimp				  py-stdlib-list
-py-cairocffi				  py-intel-openmp		     py-pyautogui				  py-stestr
-py-cairosvg				  py-intensity-normalization	     py-pybedtools				  py-stevedore
-py-caliper-reader			  py-interface-meta		     py-pybids					  py-stomp-py
-py-callmonitor				  py-interlap			     py-pybigwig				  py-stopit
-py-calver				  py-intervaltree		     py-pybind11				  py-storm
-py-cantoolz				  py-invoke			     py-pybind11-stubgen			  py-stratify
-py-carputils				  py-iocapture			     py-pybktree				  py-strawberryfields
-py-cartopy				  py-iopath			     py-pybobyqa				  py-streamlit
-py-casadi				  py-ipaddress			     py-pybrain					  py-striprtf
-py-catalogue				  py-ipdb			     py-pybtex					  py-stsci-distutils
-py-catkin-pkg				  py-ipycanvas			     py-pybtex-docutils				  py-stui
-py-cattrs				  py-ipyevents			     py-pybv					  py-submitit
-py-cclib				  py-ipykernel			     py-pycairo					  py-subrosa
-py-cdo					  py-ipympl			     py-pycares					  py-subword-nmt
-py-cdsapi				  py-ipyparallel		     py-pycbc					  py-superqt
-py-cekit				  py-ipyrad			     py-pychecker				  py-supervisor
-py-celery				  py-ipython			     py-pycifrw					  py-svgpath
-py-cellprofiler				  py-ipython-cluster-helper	     py-pycm					  py-svgpathtools
-py-cellprofiler-core			  py-ipython-genutils		     py-pycmd					  py-svgutils
-py-centrosome				  py-ipyvtk-simple		     py-pycocotools				  py-svgwrite
-py-cerberus				  py-ipyvue			     py-pycodestyle				  py-swagger-spec-validator
-py-certifi				  py-ipyvuetify			     py-pycollada				  py-symengine
-py-certipy				  py-ipywidgets			     py-pycompadre				  py-symfit
-py-cf-units				  py-irpf90			     py-pycorenlp				  py-sympy
-py-cf-xarray				  py-isa-rwval			     py-pycortex				  py-syned
-py-cffconvert				  py-isal			     py-pycosat					  py-sysrsync
-py-cffi					  py-iso8601			     py-pycparser				  py-systemd-python
-py-cfgrib				  py-isodate			     py-pycrypto				  py-tables
-py-cfgv					  py-isoduration		     py-pycryptodome				  py-tabulate
-py-cftime				  py-isort			     py-pyct					  py-tatsu
-py-cgen					  py-iterative-stats		     py-pycubexr				  py-tblib
-py-chai					  py-itk			     py-pycuda					  py-tbparse
-py-chainer				  py-itolapi			     py-pycurl					  py-tempita
-py-chainforgecodegen			  py-itsdangerous		     py-pydantic				  py-templateflow
-py-chainmap				  py-jacobi			     py-pydantic-core				  py-tempora
-py-chalice				  py-jaconv			     py-pydantic-tes				  py-tenacity
-py-chardet				  py-jamo			     py-pydap					  py-tensorboard
-py-charm4py				  py-janus			     py-pydata-sphinx-theme			  py-tensorboard-data-server
-py-charset-normalizer			  py-jaraco-classes		     py-pydatalog				  py-tensorboard-plugin-wit
-py-chart-studio				  py-jaraco-functools		     py-pydeface				  py-tensorboardx
-py-cheap-repr				  py-jarowinkler		     py-pydeprecate				  py-tensorflow
-py-checkm-genome			  py-jarvis-util		     py-pydeps					  py-tensorflow-datasets
-py-cheetah3				  py-javaproperties		     py-pydevtool				  py-tensorflow-estimator
-py-chemfiles				  py-jax			     py-pydftracer				  py-tensorflow-hub
-py-cheroot				  py-jaxlib			     py-pydicom					  py-tensorflow-metadata
-py-cherrypy				  py-jaxtyping			     py-pydispatcher				  py-tensorflow-probability
-py-chex					  py-jcb			     py-pydmd					  py-tensorly
-py-chronyk				  py-jdatetime			     py-pydocstyle				  py-tensorstore
-py-ci-info				  py-jdcal			     py-pydoe					  py-termcolor
-py-ci-sdr				  py-jedi			     py-pydoe2					  py-termgraph
-py-cig-pythia				  py-jeepney			     py-pydot					  py-terminado
-py-cinema-lib				  py-jellyfish			     py-pydot2					  py-terminaltables
-py-cinemasci				  py-jinja2			     py-pydotplus				  py-tern
-py-circus				  py-jinja2-cli			     py-pydub					  py-tesorter
-py-citeproc-py				  py-jinja2-time		     py-pydv					  py-testfixtures
-py-clean-text				  py-jiter			     py-pyeda					  py-testinfra
-py-cleo					  py-jmespath			     py-pyedr					  py-testpath
-py-click				  py-jmp			     py-pyee					  py-testrepository
-py-click-didyoumean			  py-joblib			     py-pyelftools				  py-testresources
-py-click-option-group			  py-jplephem			     py-pyem					  py-testscenarios
-py-click-plugins			  py-jproperties		     py-pyenchant				  py-testtools
-py-click-repl				  py-jprops			     py-pyepsg					  py-tetoolkit
-py-cligj				  py-jpype1			     py-pyerfa					  py-text-unidecode
-py-clikit				  py-jraph			     py-pyeventsystem				  py-textblob
-py-climate				  py-jsmin			     py-pyface					  py-texttable
-py-climax				  py-json-get			     py-pyfaidx					  py-textual
-py-clint				  py-json2html			     py-pyfasta					  py-textwrap3
-py-clip-anytorch			  py-json5			     py-pyfastaq				  py-textx
-py-clipboard				  py-jsonargparse		     py-pyfftw					  py-tfdlpack
-py-cloudauthz				  py-jsondiff			     py-pyfiglet				  py-theano
-py-cloudbridge				  py-jsonlines			     py-pyfits					  py-thewalrus
-py-cloudpickle				  py-jsonpatch			     py-pyflakes				  py-thinc
-py-clustershell				  py-jsonpath-ng		     py-pyfr					  py-thop
-py-cma					  py-jsonpickle			     py-pygame					  py-threadpoolctl
-py-cmaes				  py-jsonpointer		     py-pygdal					  py-throttler
-py-cmake				  py-jsonref			     py-pygdbmi					  py-tidynamics
-py-cmake-format				  py-jsonschema			     py-pygelf					  py-tifffile
-py-cmocean				  py-jsonschema-specifications	     py-pygeos					  py-tiktoken
-py-cmseq				  py-junit-xml			     py-pygetwindow				  py-timm
-py-cmsml				  py-junit2html			     py-pygit2					  py-tinyarray
-py-cmyt					  py-jupyter			     py-pygithub				  py-tinycss2
-py-coapthon3				  py-jupyter-client		     py-pyglet					  py-tinydb
-py-coca-pytorch				  py-jupyter-console		     py-pygments				  py-tldextract
-py-coclust				  py-jupyter-core		     py-pygments-pytest				  py-tokenize-rt
-py-codepy				  py-jupyter-events		     py-pygmsh					  py-tokenizers
-py-codespell				  py-jupyter-lsp		     py-pygmt					  py-toml
-py-coilmq				  py-jupyter-packaging		     py-pygobject				  py-tomli
-py-colabtools				  py-jupyter-server		     py-pygps					  py-tomli-w
-py-colorama				  py-jupyter-server-mathjax	     py-pygpu					  py-tomlkit
-py-colorcet				  py-jupyter-server-proxy	     py-pygraphviz				  py-tomopy
-py-colorclass				  py-jupyter-server-terminals	     py-pygresql				  py-toolz
-py-colored				  py-jupyter-telemetry		     py-pygtrie					  py-topiary-asr
-py-colored-traceback			  py-jupyterhub			     py-pyh5md					  py-toposort
-py-coloredlogs				  py-jupyterlab			     py-pyhdf					  py-torch
-py-colorful				  py-jupyterlab-pygments	     py-pyheadtail				  py-torch-cluster
-py-colorio				  py-jupyterlab-server		     py-pyhmmer					  py-torch-fidelity
-py-colorlog				  py-jupyterlab-widgets		     py-pyhull					  py-torch-geometric
-py-colorlover				  py-jupytext			     py-pyinstrument				  py-torch-harmonics
-py-colormath				  py-jwcrypto			     py-pyinstrument-cext			  py-torch-nvidia-apex
-py-colorpy				  py-kaggle			     py-pyisemail				  py-torch-scatter
-py-colorspacious			  py-kaldiio			     py-pyjnius					  py-torch-sparse
-py-colossalai				  py-kaleido			     py-pyjwt					  py-torch-spline-conv
-py-comm					  py-kb-python			     py-pyke					  py-torchaudio
-py-common				  py-keras			     py-pykerberos				  py-torchbenchmark
-py-commonmark				  py-keras-applications		     py-pykml					  py-torchdata
-py-conan				  py-keras-preprocessing	     py-pykokkos-base				  py-torchdiffeq
-py-conda-inject				  py-keras2onnx			     py-pykwalify				  py-torchfile
-py-conda-souschef			  py-kerberos			     py-pylab-sdk				  py-torchgeo
-py-confection				  py-keyboard			     py-pylatex					  py-torchmeta
-py-configargparse			  py-keyring			     py-pyld					  py-torchmetrics
-py-configobj				  py-keyrings-alt		     py-pylev					  py-torchseg
-py-configparser				  py-keystoneauth1		     py-pylibmagic				  py-torchsummary
-py-configspace				  py-kitchen			     py-pylikwid				  py-torchtext
-py-connectionpool			  py-kiwisolver			     py-pylint					  py-torchvision
-py-consolekit				  py-kmodes			     py-pylint-gitlab				  py-tornado
-py-constantly				  py-knack			     py-pylith					  py-tox
-py-contextily				  py-kneaddata			     py-pylops					  py-toyplot
-py-contextlib2				  py-kombu			     py-pymatgen				  py-toytree
-py-contexttimer				  py-kornia			     py-pymatreader				  py-tpot
-py-continuum				  py-kornia-rs			     py-pymbolic				  py-tqdm
-py-contourpy				  py-kosh			     py-pymc3					  py-traceback2
-py-control				  py-krb5			     py-pymdown-extensions			  py-traitlets
-py-convertdate				  py-kt-legacy			     py-pymeeus					  py-traits
-py-convokit				  py-kubernetes			     py-pyminifier				  py-traitsui
-py-cookiecutter				  py-lagom			     py-pymol					  py-transformer-engine
-py-copulas				  py-langcodes			     py-pymongo					  py-transformers
-py-corner				  py-langsmith			     py-pymoo					  py-transforms3d
-py-correctionlib			  py-lap			     py-pymorph					  py-transonic
-py-counter				  py-laplace-torch		     py-pympler					  py-tree
-py-cov-core				  py-lark			     py-pymsgbox				  py-tree-math
-py-coverage				  py-lark-parser		     py-pymummer				  py-treehash
-py-coveralls				  py-laspy			     py-pymumps					  py-treelib
-py-cppheaderparser			  py-latexcodec			     py-pymysql					  py-triangle
-py-cppy					  py-law			     py-pynacl					  py-trieregex
-py-crashtest				  py-lazy			     py-pynio					  py-trimesh
-py-crcmod				  py-lazy-loader		     py-pynisher				  py-triton
-py-croniter				  py-lazy-object-proxy		     py-pynn					  py-trojanzoo-sphinx-theme
-py-crossmap				  py-lazy-property		     py-pynndescent				  py-trove-classifiers
-py-cryolobm				  py-lazyarray			     py-pynpm					  py-trx-python
-py-cryptography				  py-lcls-krtc			     py-pynrrd					  py-tuiview
-py-css-parser				  py-ldap3			     py-pynucleus				  py-tuspy
-py-cssselect				  py-leather			     py-pynvim					  py-tuswsgi
-py-cssselect2				  py-lerc			     py-pynvml					  py-tweedledum
-py-cssutils				  py-lfpykit			     py-pynvtx					  py-twine
-py-csvkit				  py-lhsmdu			     py-pyodbc					  py-twisted
-py-ctgan				  py-liac-arff			     py-pyogrio					  py-typed-ast
-py-cudf					  py-libclang			     py-pyomo					  py-typeguard
-py-cufflinks				  py-libconf			     py-pyopencl				  py-typer
-py-cuml					  py-libcst			     py-pyopengl				  py-types-dataclasses
-py-cupy					  py-libensemble		     py-pyopenssl				  py-types-pkg-resources
-py-current				  py-liblas			     py-pypar					  py-types-psutil
-py-currentscape				  py-librosa			     py-pyparsing				  py-types-python-dateutil
-py-curvlinops-for-pytorch		  py-libsonata			     py-pypdf					  py-types-pytz
-py-custodian				  py-lifelines			     py-pypdf2					  py-types-requests
-py-custom-inherit			  py-lightgbm			     py-pypeflow				  py-types-setuptools
-py-cutadapt				  py-lightly			     py-pypeg2					  py-types-typed-ast
-py-cvxopt				  py-lightly-utils		     py-pyperclip				  py-types-urllib3
-py-cvxpy				  py-lightning			     py-pyperf					  py-typesentry
-py-cwl-upgrader				  py-lightning-api-access	     py-pypinyin				  py-typeshed-client
-py-cwl-utils				  py-lightning-cloud		     py-pypng					  py-typing-extensions
-py-cwltool				  py-lightning-fabric		     py-pyppeteer				  py-typing-inspect
-py-cx-oracle				  py-lightning-lite		     py-pyprecice				  py-typish
-py-cycler				  py-lightning-uq-box		     py-pyprof2html				  py-tzdata
-py-cykhash				  py-lightning-utilities	     py-pyproj					  py-tzlocal
-py-cylc-flow				  py-ligo-segments		     py-pyproject-hooks				  py-ubiquerg
-py-cylc-rose				  py-line-profiler		     py-pyproject-metadata			  py-uc-micro-py
-py-cylc-uiserver			  py-linear-operator		     py-pyproject-parser			  py-ucsf-pyem
-py-cylp					  py-linecache2			     py-pypulse					  py-ucx-py
-py-cymem				  py-lineenhancer		     py-pyqi					  py-uhi
-py-cyordereddict			  py-linkchecker		     py-pyqt-builder				  py-ujson
-py-cython				  py-linkify-it-py		     py-pyqt4					  py-ultralytics
-py-cython-bbox				  py-lit			     py-pyqt5					  py-umalqurra
-py-cyvcf2				  py-littleutils		     py-pyqt5-sip				  py-umap-learn
-py-d2to1				  py-lizard			     py-pyqt6					  py-umi-tools
-py-dace					  py-llnl-sina			     py-pyqt6-sip				  py-uncertainties
-py-dadi					  py-llvmlite			     py-pyqtgraph				  py-uncertainty-toolbox
-py-dalib				  py-lmdb			     py-pyquaternion				  py-unfoldnd
-py-damask				  py-lmfit			     py-pyreadline				  py-unicycler
-py-darshan				  py-lmodule			     py-pyrect					  py-unidecode
-py-dasbus				  py-localcider			     py-pyrevolve				  py-unittest2py3k
-py-dash					  py-locket			     py-pyrfr					  py-unshare
-py-dash-bootstrap-components		  py-lockfile			     py-pyro-api				  py-unyt
-py-dash-svg				  py-logilab-common		     py-pyro-ppl				  py-update-checker
-py-dask					  py-logmuse			     py-pyro4					  py-uproot
-py-dask-glm				  py-loguru			     py-pyrocko					  py-uproot3
-py-dask-ml				  py-loompy			     py-pyrodigal				  py-uproot3-methods
-py-dask-mpi				  py-looseversion		     py-pyrr					  py-uri-template
-py-dask-sphinx-theme			  py-louie			     py-pyrsistent				  py-uritemplate
-py-databricks-cli			  py-lpips			     py-pysam					  py-url-normalize
-py-dataclasses				  py-lru-dict			     py-pyscaf					  py-urllib3
-py-dataclasses-json			  py-lscsoft-glue		     py-pyscf					  py-urllib3-secure-extra
-py-datacube				  py-luigi			     py-pyscipopt				  py-urwid
-py-datalad				  py-lvis			     py-pyscreeze				  py-us
-py-datalad-container			  py-lws			     py-pyseer					  py-userpath
-py-datalad-deprecated			  py-lxml			     py-pyserial				  py-usgs
-py-datalad-hirni			  py-lz4			     py-pysftp					  py-utils
-py-datalad-metadata-model		  py-lzstring			     py-pyshacl					  py-uv
-py-datalad-metalad			  py-m2r			     py-pyshp					  py-uvicorn
-py-datalad-neuroimaging			  py-macholib			     py-pyside					  py-uvloop
-py-datalad-webapp			  py-machotools			     py-pyside2					  py-uvw
-py-datasets				  py-macs2			     py-pysimdjson				  py-uwsgi
-py-dateparser				  py-macs3			     py-pysmartdl				  py-validators
-py-dateutils				  py-maestrowf			     py-pysocks					  py-vascpy
-py-datrie				  py-mahotas			     py-pysolar					  py-vcf-kit
-py-dbf					  py-mailchecker		     py-pyspark					  py-vcrpy
-py-dbfread				  py-make			     py-pyspellchecker				  py-vcstool
-py-dcm2bids				  py-mako			     py-pyspnego				  py-vcstools
-py-deap					  py-mapbox-earcut		     py-pyspoa					  py-vcversioner
-py-debtcollector			  py-mapclassify		     py-pysqlite3				  py-vector
-py-debugpy				  py-mariadb			     py-pystac					  py-vector-quantize-pytorch
-py-decorator				  py-markdown			     py-pystac-client				  py-vermin
-py-deepdiff				  py-markdown-include		     py-pystache				  py-versioneer
-py-deepecho				  py-markdown-it-py		     py-pystan					  py-versioneer-518
-py-deephyper				  py-markdown2			     py-pysurfer				  py-verspec
-py-deepsig				  py-markov-clustering		     py-pytailf					  py-vine
-py-deepsig-biocomp			  py-markovify			     py-pytaridx				  py-virtualenv
-py-deepspeed				  py-markupsafe			     py-pytecplot				  py-virtualenv-clone
-py-deeptools				  py-marshmallow		     py-pytesseract				  py-virtualenvwrapper
-py-deeptoolsintervals			  py-matminer			     py-pytest					  py-visdom
-py-defusedxml				  py-matplotlib			     py-pytest-aiohttp				  py-vl-convert-python
-py-demjson				  py-matplotlib-inline		     py-pytest-allclose				  py-voluptuous
-py-dendropy				  py-matplotlib-scalebar	     py-pytest-arraydiff			  py-vsc-base
-py-deprecated				  py-maturin			     py-pytest-astropy				  py-vsc-install
-py-deprecation				  py-mayavi			     py-pytest-astropy-header			  py-vsts
-py-deprecation-alias			  py-mccabe			     py-pytest-asyncio				  py-vsts-cd-manager
-py-descartes				  py-md-environ			     py-pytest-benchmark			  py-waitress
-py-devito				  py-mda-xdrlib			     py-pytest-cache				  py-walinuxagent
-py-devlib				  py-mdanalysis			     py-pytest-check-links			  py-wand
-py-dgl					  py-mdanalysistests		     py-pytest-cov				  py-wandb
-py-dh-scikit-optimize			  py-mdit-py-plugins		     py-pytest-cpp				  py-warlock
-py-dict2css				  py-mdurl			     py-pytest-datadir				  py-warpx
-py-dictdiffer				  py-meautility			     py-pytest-doctestplus			  py-wasabi
-py-dictobj				  py-mechanize			     py-pytest-fail-slow			  py-watchdog
-py-dill					  py-medaka			     py-pytest-filter-subpackage		  py-watchfiles
-py-dinosaur				  py-meldmd			     py-pytest-flake8				  py-wcsaxes
-py-dipy					  py-melissa-core		     py-pytest-flakes				  py-wcwidth
-py-dirtyjson				  py-memory-profiler		     py-pytest-forked				  py-webargs
-py-discover				  py-memprof			     py-pytest-html				  py-webcolors
-py-diskcache				  py-memray			     py-pytest-httpbin				  py-webdataset
-py-dist-meta				  py-mercantile			     py-pytest-isort				  py-webencodings
-py-distance				  py-mergedeep			     py-pytest-metadata				  py-webkit-server
-py-distlib				  py-merlin			     py-pytest-mock				  py-weblogo
-py-distributed				  py-meshio			     py-pytest-mpi				  py-webob
-py-distro				  py-meshpy			     py-pytest-mypy				  py-websocket-client
-py-django				  py-meson-python		     py-pytest-openfiles			  py-websockets
-py-dlcpar				  py-metaphlan			     py-pytest-parallel				  py-werkzeug
-py-dlio-profiler-py			  py-metasv			     py-pytest-pep8				  py-wesanderson
-py-dm-haiku				  py-metomi-isodatetime		     py-pytest-pylint				  py-wget
-py-dm-tree				  py-metomi-rose		     py-pytest-qt				  py-whatshap
-py-dnaio				  py-metpy			     py-pytest-random-order			  py-wheel
-py-dnspython				  py-metric-learn		     py-pytest-regtest				  py-whey
-py-docker				  py-metrics			     py-pytest-remotedata			  py-whey-pth
-py-dockerpy-creds			  py-mffpy			     py-pytest-runner				  py-whichcraft
-py-docopt				  py-mg-rast-tools		     py-pytest-subprocess			  py-whoosh
-py-docopt-ng				  py-mgmetis			     py-pytest-timeout				  py-widgetsnbextension
-py-docstring-parser			  py-mido			     py-pytest-workflow				  py-win-unicode-console
-py-docstring-to-markdown		  py-mikado			     py-pytest-xdist				  py-wincertstore
-py-docutils				  py-mike			     py-python-benedict				  py-word2number
-py-docutils-stubs			  py-minio			     py-python-bioformats			  py-wordcloud
-py-dogpile-cache			  py-minisom			     py-python-box				  py-workload-automation
-py-doit					  py-minkowskiengine		     py-python-calamine				  py-wradlib
-py-dom-toml				  py-minrpc			     py-python-certifi-win32			  py-wrapt
-py-domdf-python-tools			  py-misk			     py-python-constraint			  py-wsproto
-py-dominate				  py-misopy			     py-python-crfsuite				  py-wstool
-py-dotmap				  py-mistletoe			     py-python-daemon				  py-wub
-py-dotnetcore2				  py-mistune			     py-python-dateutil				  py-wurlitzer
-py-downhill				  py-mizani			     py-python-deprecated			  py-ww
-py-doxypypy				  py-mkdocs			     py-python-docs-theme			  py-wxflow
-py-dpath				  py-mkdocs-autorefs		     py-python-dotenv				  py-wxmplot
-py-drep					  py-mkdocs-jupyter		     py-python-editor				  py-wxpython
-py-drmaa				  py-mkdocs-material		     py-python-engineio				  py-x-clip
-py-dryscrape				  py-mkdocs-material-extensions	     py-python-fmask				  py-x21
-py-duecredit				  py-mkdocstrings		     py-python-fsutil				  py-xanadu-cloud-client
-py-dulwich				  py-mkdocstrings-python	     py-python-gitlab				  py-xarray
-py-dunamai				  py-ml-collections		     py-python-hostlist				  py-xarray-tensorstore
-py-dvc					  py-ml-dtypes			     py-python-igraph				  py-xattr
-py-dxchange				  py-mlflow			     py-python-javabridge			  py-xdot
-py-dxfile				  py-mlperf-logging		     py-python-jenkins				  py-xenv
-py-dynaconf				  py-mlxtend			     py-python-jose				  py-xesmf
-py-dynim				  py-mmcv			     py-python-json-logger			  py-xgboost
-py-earth2mip				  py-mmtf-python		     py-python-keystoneclient			  py-xhistogram
-py-earthengine-api			  py-mne			     py-python-ldap				  py-xlrd
-py-easybuild-easyblocks			  py-mne-bids			     py-python-levenshtein			  py-xlsxwriter
-py-easybuild-easyconfigs		  py-mo-pack			     py-python-libsbml				  py-xlwt
-py-easybuild-framework			  py-moarchiving		     py-python-logstash				  py-xmlplain
-py-eccodes				  py-mock			     py-python-louvain				  py-xmlrunner
-py-ecdsa				  py-model-index		     py-python-lsp-jsonrpc			  py-xmltodict
-py-ecmwf-opendata			  py-modepy			     py-python-lsp-server			  py-xonsh
-py-ecmwflibs				  py-modin			     py-python-lzo				  py-xopen
-py-ecos					  py-modred			     py-python-magic				  py-xpyb
-py-edam-ontology			  py-modules-gui		     py-python-mapnik				  py-xrootdpyfs
-py-edffile				  py-moltemplate		     py-python-markdown-math			  py-xskillscore
-py-edfio				  py-monai			     py-python-memcached			  py-xtb
-py-edflib-python			  py-monkeytype			     py-python-multipart			  py-xvfbwrapper
-py-editables				  py-monotonic			     py-python-oauth2				  py-xxhash
-py-editdistance				  py-monty			     py-python-picard				  py-xyzservices
-py-edlib				  py-more-itertools		     py-python-pptx				  py-yacman
-py-eeglabio				  py-morph-tool			     py-python-ptrace				  py-yacs
-py-efel					  py-morphio			     py-python-rapidjson			  py-yahmm
-py-efficientnet-pytorch			  py-motmetrics			     py-python-slugify				  py-yajl
-py-eg					  py-motor			     py-python-socketio				  py-yamlreader
-py-einconv				  py-mouseinfo			     py-python-sotools				  py-yapf
-py-einops				  py-moviepy			     py-python-subunit				  py-yarl
-py-elastic-transport			  py-mpi4jax			     py-python-swiftclient			  py-yaspin
-py-elasticsearch			  py-mpi4py			     py-python-utils				  py-yolk3k
-py-elasticsearch-dsl			  py-mpld3			     py-python-xlib				  py-your
-py-elephant				  py-mpldock			     py-python-xmp-toolkit			  py-youtube-dl
-py-ema-pytorch				  py-mplhep			     py-python3-openid				  py-yq
-py-email-validator			  py-mplhep-data		     py-python3-xlib				  py-yt
-py-embedding-reader			  py-mpmath			     py-pythonqwt				  py-yte
-py-emcee				  py-mrcfile			     py-pythonsollya				  py-ytopt
-py-emoji				  py-msal			     py-pythran					  py-ytopt-autotune
-py-empy					  py-msal-extensions		     py-pytimeparse				  py-z3-solver
-py-entrypoints				  py-msgpack			     py-pytng					  py-zarr
-py-enum-tools				  py-msgpack-numpy		     py-pytoml					  py-zc-buildout
-py-envisage				  py-msrest			     py-pytools					  py-zc-lockfile
-py-ephem				  py-msrestazure		     py-pytorch-gradual-warmup-lr		  py-zfit
-py-eprosima-fastdds			  py-multi-imbalance		     py-pytorch-lightning			  py-zfit-interface
-py-epydoc				  py-multi-key-dict		     py-pytorch-sphinx-theme			  py-zict
-py-equation				  py-multidict			     py-pytorch-warmup				  py-zipfile-deflate64
-py-espresso				  py-multiecho			     py-pyts					  py-zipp
-py-espressopp				  py-multipledispatch		     py-pytweening				  py-zipstream-new
-py-et-xmlfile				  py-multiprocess		     py-pytz					  py-zope-event
-py-ete3					  py-multiqc			     py-pyu2f					  py-zope-interface
-py-etelemetry				  py-multiurl			     py-pyudev					  py-zstandard
-py-etils				  py-munch			     py-pyugrid					  py-zxcvbn
+py-3to2					  py-munkres
+py-4suite-xml				  py-murmurhash
+py-a2wsgi				  py-mutagen
+py-abcpy				  py-mx
+py-abipy				  py-mxfold2
+py-about-time				  py-myhdl
+py-absl-py				  py-mypy
+py-accelerate				  py-mypy-extensions
+py-accessible-pygments			  py-mysql-connector-python
+py-accimage				  py-mysqlclient
+py-acme-tiny				  py-mysqldb1
+py-adal					  py-myst-parser
+py-adb-enhanced				  py-namex
+py-addict				  py-nanobind
+py-adios				  py-nanoget
+py-advancedhtmlparser			  py-nanomath
+py-aenum				  py-nanoplot
+py-affine				  py-nanostat
+py-agate				  py-nanotime
+py-agate-dbf				  py-nara-wpe
+py-agate-excel				  py-narwhals
+py-agate-sql				  py-natsort
+py-ahpy					  py-nbclassic
+py-aiobotocore				  py-nbclient
+py-aiocontextvars			  py-nbconvert
+py-aiodns				  py-nbdime
+py-aiofiles				  py-nbformat
+py-aiohttp				  py-nbmake
+py-aiohttp-cors				  py-nbqa
+py-aioitertools				  py-nbsphinx
+py-aioredis				  py-nbstripout
+py-aiosignal				  py-nbval
+py-aiosqlite				  py-nc-time-axis
+py-alabaster				  py-ncbi-genome-download
+py-alembic				  py-ndg-httpsclient
+py-alive-progress			  py-ndindex
+py-alpaca-eval				  py-neo
+py-alpaca-farm				  py-neobolt
+py-alphafold				  py-neotime
+py-altair				  py-neovim-remote
+py-altgraph				  py-neptune-client
+py-amici				  py-nest-asyncio
+py-amityping				  py-nestle
+py-amplpy				  py-netaddr
+py-ampltools				  py-netcdf4
+py-amqp					  py-netifaces
+py-amrex				  py-netket
+py-angel				  py-netpyne
+py-aniso8601				  py-networkit
+py-anndata				  py-networkx
+py-annexremote				  py-neuralgcm
+py-annotated-types			  py-neurokit2
+py-annoy				  py-neurolab
+py-ansi2html				  py-neurom
+py-ansible				  py-neurora
+py-ansimarkup				  py-neurotools
+py-ansiwrap				  py-nexus-sdk
+py-antlr4-python3-runtime		  py-nexusforge
+py-antspyx				  py-nglview
+py-anuga				  py-ngs-tools
+py-anvio				  py-nibabel
+py-anybadge				  py-nibetaseries
+py-anyio				  py-nilearn
+py-anytree				  py-ninja
+py-apache-beam				  py-nipype
+py-apache-libcloud			  py-nistats
+py-apex					  py-nitransforms
+py-apeye				  py-niworkflows
+py-apeye-core				  py-nltk
+py-apipkg				  py-node-semver
+py-apispec				  py-nodeenv
+py-appdirs				  py-non-regression-test-tools
+py-applicationinsights			  py-nose
+py-appnope				  py-nose-cov
+py-apptools				  py-nose2
+py-apscheduler				  py-nosexcover
+py-arcgis				  py-notebook
+py-arch					  py-notebook-shim
+py-archspec				  py-nptyping
+py-arcp					  py-npx
+py-argcomplete				  py-ntlm-auth
+py-argh					  py-ntplib
+py-argon2-cffi				  py-nugraph
+py-argon2-cffi-bindings			  py-nuitka
+py-argparse-dataclass			  py-num2words
+py-argparse-manpage			  py-numba
+py-args					  py-numba4jax
+py-arm-pyart				  py-numcodecs
+py-arpeggio				  py-numdifftools
+py-arrow				  py-numexpr
+py-art					  py-numexpr3
+py-arviz				  py-numl
+py-asciitree				  py-numpy
+py-asdf					  py-numpy-groupies
+py-asdf-standard			  py-numpy-quaternion
+py-asdf-transform-schemas		  py-numpy-stl
+py-asdf-unit-schemas			  py-numpydoc
+py-asdfghjkl				  py-nvidia-dali
+py-ase					  py-nvidia-ml-py
+py-asgiref				  py-nvidia-ml-py3
+py-asn1crypto				  py-nvidia-modulus
+py-aspy-yaml				  py-nvtx
+py-asserts				  py-oauth2client
+py-asteval				  py-oauthlib
+py-astor				  py-obspy
+py-astpretty				  py-ocnn
+py-astroid				  py-ocp-models
+py-astropy				  py-odc-geo
+py-astropy-healpix			  py-odfpy
+py-astropy-helpers			  py-ogb
+py-astropy-iers-data			  py-okada-wrapper
+py-asttokens				  py-olcf-velocity
+py-astunparse				  py-olefile
+py-async-generator			  py-omegaconf
+py-async-lru				  py-onnx
+py-async-timeout			  py-onnx-opcounter
+py-asyncio				  py-onnxconverter-common
+py-asynctest				  py-onnxmltools
+py-atomicwrites				  py-onnxruntime
+py-atpublic				  py-ont-fast5-api
+py-atropos				  py-opcodes
+py-ats					  py-open-clip-torch
+py-attmap				  py-openai
+py-attrs				  py-openapi-schema-pydantic
+py-audioread				  py-opencensus
+py-auditwheel				  py-opencensus-context
+py-autocfg				  py-opendatalab
+py-autodocsumm				  py-openidc-client
+py-autograd				  py-openmc
+py-autograd-gamma			  py-openmesh
+py-automat				  py-openmim
+py-autopep8				  py-openpmd-validator
+py-autoray				  py-openpmd-viewer
+py-auxlib				  py-openpyxl
+py-avro					  py-openslide-python
+py-avro-json-serializer			  py-opentree
+py-avro-python3				  py-opentuner
+py-awesome-slugify			  py-opppy
+py-awkward				  py-ops
+py-awkward-cpp				  py-opt-einsum
+py-awkward0				  py-optax
+py-awscrt				  py-optree
+py-ax-platform				  py-optuna
+py-azote				  py-or-tools
+py-azure-batch				  py-oracledb
+py-azure-cli				  py-orbax-checkpoint
+py-azure-cli-command-modules-nspkg	  py-ordered-set
+py-azure-cli-core			  py-orjson
+py-azure-cli-nspkg			  py-os-service-types
+py-azure-cli-telemetry			  py-oset
+py-azure-common				  py-oslo-config
+py-azure-core				  py-oslo-i18n
+py-azure-cosmos				  py-oslo-serialization
+py-azure-datalake-store			  py-oslo-utils
+py-azure-functions-devops-build		  py-osqp
+py-azure-graphrbac			  py-outdated
+py-azure-identity			  py-overpy
+py-azure-keyvault			  py-overrides
+py-azure-keyvault-certificates		  py-owlrl
+py-azure-keyvault-keys			  py-owslib
+py-azure-keyvault-nspkg			  py-oyaml
+py-azure-keyvault-secrets		  py-pacifica-downloader
+py-azure-loganalytics			  py-pacifica-namespace
+py-azure-mgmt-advisor			  py-pacifica-uploader
+py-azure-mgmt-apimanagement		  py-packaging
+py-azure-mgmt-appconfiguration		  py-pager
+py-azure-mgmt-applicationinsights	  py-palettable
+py-azure-mgmt-authorization		  py-pamela
+py-azure-mgmt-batch			  py-panaroo
+py-azure-mgmt-batchai			  py-pandas
+py-azure-mgmt-billing			  py-pandas-datareader
+py-azure-mgmt-botservice		  py-pandas-stubs
+py-azure-mgmt-cdn			  py-pandocfilters
+py-azure-mgmt-cognitiveservices		  py-panedr
+py-azure-mgmt-compute			  py-panel
+py-azure-mgmt-consumption		  py-papermill
+py-azure-mgmt-containerinstance		  py-paralleltask
+py-azure-mgmt-containerregistry		  py-param
+py-azure-mgmt-containerservice		  py-parameterized
+py-azure-mgmt-core			  py-paramiko
+py-azure-mgmt-cosmosdb			  py-paramz
+py-azure-mgmt-datalake-analytics	  py-parasail
+py-azure-mgmt-datalake-store		  py-parmed
+py-azure-mgmt-datamigration		  py-parse
+py-azure-mgmt-deploymentmanager		  py-parse-type
+py-azure-mgmt-devtestlabs		  py-parsedatetime
+py-azure-mgmt-dns			  py-parsimonious
+py-azure-mgmt-eventgrid			  py-parsl
+py-azure-mgmt-eventhub			  py-parsley
+py-azure-mgmt-hdinsight			  py-parso
+py-azure-mgmt-imagebuilder		  py-partd
+py-azure-mgmt-iotcentral		  py-particle
+py-azure-mgmt-iothub			  py-paste
+py-azure-mgmt-iothubprovisioningservices  py-pastedeploy
+py-azure-mgmt-keyvault			  py-pastel
+py-azure-mgmt-kusto			  py-pastml
+py-azure-mgmt-loganalytics		  py-patch
+py-azure-mgmt-managedservices		  py-patch-ng
+py-azure-mgmt-managementgroups		  py-path-py
+py-azure-mgmt-maps			  py-pathlib2
+py-azure-mgmt-marketplaceordering	  py-pathml
+py-azure-mgmt-media			  py-pathos
+py-azure-mgmt-monitor			  py-pathspec
+py-azure-mgmt-msi			  py-pathtools
+py-azure-mgmt-netapp			  py-pathy
+py-azure-mgmt-network			  py-patool
+py-azure-mgmt-nspkg			  py-patsy
+py-azure-mgmt-policyinsights		  py-pauvre
+py-azure-mgmt-privatedns		  py-pbr
+py-azure-mgmt-rdbms			  py-pdb-tools
+py-azure-mgmt-recoveryservices		  py-pdbfixer
+py-azure-mgmt-recoveryservicesbackup	  py-pdf2image
+py-azure-mgmt-redhatopenshift		  py-pdm-backend
+py-azure-mgmt-redis			  py-pdm-pep517
+py-azure-mgmt-relay			  py-pdoc3
+py-azure-mgmt-reservations		  py-peachpy
+py-azure-mgmt-resource			  py-pebble
+py-azure-mgmt-search			  py-pem
+py-azure-mgmt-security			  py-pennylane
+py-azure-mgmt-servicebus		  py-pennylane-lightning
+py-azure-mgmt-servicefabric		  py-pennylane-lightning-kokkos
+py-azure-mgmt-signalr			  py-pep517
+py-azure-mgmt-sql			  py-pep8
+py-azure-mgmt-sqlvirtualmachine		  py-pep8-naming
+py-azure-mgmt-storage			  py-performance
+py-azure-mgmt-trafficmanager		  py-periodictable
+py-azure-mgmt-web			  py-petastorm
+py-azure-multiapi-storage		  py-petname
+py-azure-nspkg				  py-petsc4py
+py-azure-storage-blob			  py-pexpect
+py-azure-storage-common			  py-pfzy
+py-azure-storage-nspkg			  py-pgzip
+py-azureml-automl-core			  py-phanotate
+py-azureml-core				  py-phonenumbers
+py-azureml-dataprep			  py-phonopy
+py-azureml-dataprep-native		  py-photutils
+py-azureml-dataprep-rslex		  py-phydms
+py-azureml-dataset-runtime		  py-phylophlan
+py-azureml-pipeline			  py-pickle5
+py-azureml-pipeline-core		  py-pickleshare
+py-azureml-pipeline-steps		  py-picmistandard
+py-azureml-sdk				  py-picrust2
+py-azureml-telemetry			  py-pid
+py-azureml-train			  py-pika
+py-azureml-train-automl-client		  py-pillow
+py-azureml-train-core			  py-pillow-simd
+py-azureml-train-restclients-hyperdrive	  py-pint
+py-babel				  py-pint-xarray
+py-backcall				  py-pip
+py-backoff				  py-pipdeptree
+py-backpack-for-pytorch			  py-piper
+py-backports-abc			  py-pipits
+py-backports-cached-property		  py-pispino
+py-backports-entry-points-selectable	  py-pivy
+py-backports-lzma			  py-pkgconfig
+py-backports-os				  py-pkginfo
+py-backports-ssl-match-hostname		  py-pkgutil-resolve-name
+py-backports-tempfile			  py-plac
+py-backports-weakref			  py-planar
+py-backports-zoneinfo			  py-planet
+py-bagit				  py-planetary-computer
+py-bagit-profile			  py-platformdirs
+py-bakta				  py-plotext
+py-bandit				  py-plotille
+py-barectf				  py-plotly
+py-basemap				  py-plotnine
+py-bash-kernel				  py-pluggy
+py-basis-set-exchange			  py-plum-dispatch
+py-batchspawner				  py-ply
+py-bayesian-optimization		  py-pmw
+py-bcbio-gff				  py-pmw-patched
+py-bcolz				  py-pockets
+py-bcrypt				  py-poetry
+py-bdbag				  py-poetry-core
+py-beaker				  py-poetry-dynamic-versioning
+py-beancount				  py-poetry-plugin-export
+py-beartype				  py-poetry-plugin-tweak-dependencies-version
+py-beautifulsoup4			  py-polars
+py-beniget				  py-pomegranate
+py-bids-validator			  py-pooch
+py-bidscoin				  py-portalocker
+py-bidskit				  py-portend
+py-bigdft				  py-portpicker
+py-bigfloat				  py-postcactus
+py-billiard				  py-poster
+py-binaryornot				  py-pot
+py-bintrees				  py-pox
+py-binwalk				  py-poxy
+py-biobb-common				  py-poyo
+py-biobb-gromacs			  py-ppft
+py-biobb-io				  py-pprintpp
+py-biobb-model				  py-pre-commit
+py-biobb-structure-checking		  py-preshed
+py-biobb-structure-utils		  py-pretrainedmodels
+py-bioblend				  py-pretty-errors
+py-biom-format				  py-prettytable
+py-biomine				  py-priority
+py-biopandas				  py-profilehooks
+py-biopython				  py-proglog
+py-biotite				  py-progress
+py-biotraj				  py-progressbar2
+py-bitarray				  py-progressbar33
+py-bitshuffle				  py-projectq
+py-bitstring				  py-prokaryote
+py-bitstruct				  py-prometheus-client
+py-black				  py-prometheus-flask-exporter
+py-bleach				  py-promise
+py-blessed				  py-prompt-toolkit
+py-blessings				  py-properscoring
+py-blight				  py-proto-plus
+py-blinker				  py-protobuf
+py-blis					  py-protoc-gen-swagger
+py-blosc				  py-prov
+py-blosc2				  py-prwlock
+py-blosum				  py-psalg
+py-bluepyefe				  py-psana
+py-bluepyemodel				  py-psij-python
+py-bluepyopt				  py-psmon
+py-bmap-tools				  py-pspamm
+py-bmtk					  py-psutil
+py-bokeh				  py-psyclone
+py-boltons				  py-psycopg2
+py-boom-boot-manager			  py-ptyprocess
+py-boost-histogram			  py-pubchempy
+py-boto					  py-pudb
+py-boto3				  py-pulp
+py-botocore				  py-pulsar-galaxy-lib
+py-botorch				  py-pure-eval
+py-bottle				  py-pure-sasl
+py-bottleneck				  py-puremagic
+py-braceexpand				  py-py
+py-brain-indexer			  py-py-cpuinfo
+py-branca				  py-py-spy
+py-bravado				  py-py-tes
+py-bravado-core				  py-py2bit
+py-breakseq2				  py-py2neo
+py-breathe				  py-py4j
+py-brian				  py-py6s
+py-brian2				  py-pyabel
+py-brotli				  py-pyaestro
+py-brotlipy				  py-pyamg
+py-bsddb3				  py-pyaml
+py-build				  py-pyaml-env
+py-bx-python				  py-pyani
+py-cachecontrol				  py-pyarrow
+py-cached-property			  py-pyasn1
+py-cachetools				  py-pyasn1-modules
+py-cachy				  py-pyassimp
+py-cairocffi				  py-pyautogui
+py-cairosvg				  py-pybedtools
+py-caliper-reader			  py-pybids
+py-callmonitor				  py-pybigwig
+py-calver				  py-pybind11
+py-cantoolz				  py-pybind11-stubgen
+py-carputils				  py-pybktree
+py-cartopy				  py-pybobyqa
+py-casadi				  py-pybrain
+py-catalogue				  py-pybtex
+py-catkin-pkg				  py-pybtex-docutils
+py-cattrs				  py-pybv
+py-cclib				  py-pycairo
+py-cdo					  py-pycares
+py-cdsapi				  py-pycbc
+py-cekit				  py-pychecker
+py-celery				  py-pycifrw
+py-cellprofiler				  py-pycm
+py-cellprofiler-core			  py-pycmd
+py-centrosome				  py-pycocotools
+py-cerberus				  py-pycodestyle
+py-certifi				  py-pycollada
+py-certipy				  py-pycompadre
+py-cf-units				  py-pycorenlp
+py-cf-xarray				  py-pycortex
+py-cffconvert				  py-pycosat
+py-cffi					  py-pycparser
+py-cfgrib				  py-pycrypto
+py-cfgv					  py-pycryptodome
+py-cftime				  py-pyct
+py-cgen					  py-pycubexr
+py-chai					  py-pycuda
+py-chainer				  py-pycurl
+py-chainforgecodegen			  py-pydantic
+py-chainmap				  py-pydantic-core
+py-chalice				  py-pydantic-tes
+py-chardet				  py-pydap
+py-charm4py				  py-pydata-sphinx-theme
+py-charset-normalizer			  py-pydatalog
+py-chart-studio				  py-pydeface
+py-cheap-repr				  py-pydeprecate
+py-checkm-genome			  py-pydeps
+py-cheetah3				  py-pydevtool
+py-chemfiles				  py-pydftracer
+py-cheroot				  py-pydicom
+py-cherrypy				  py-pydispatcher
+py-chex					  py-pydmd
+py-chronyk				  py-pydocstyle
+py-ci-info				  py-pydoe
+py-ci-sdr				  py-pydoe2
+py-cig-pythia				  py-pydot
+py-cinema-lib				  py-pydot2
+py-cinemasci				  py-pydotplus
+py-circus				  py-pydub
+py-citeproc-py				  py-pydv
+py-clean-text				  py-pyeda
+py-cleo					  py-pyedr
+py-click				  py-pyee
+py-click-didyoumean			  py-pyelftools
+py-click-option-group			  py-pyem
+py-click-plugins			  py-pyenchant
+py-click-repl				  py-pyepsg
+py-cligj				  py-pyerfa
+py-clikit				  py-pyeventsystem
+py-climate				  py-pyface
+py-climax				  py-pyfaidx
+py-clint				  py-pyfasta
+py-clip-anytorch			  py-pyfastaq
+py-clipboard				  py-pyfftw
+py-cloudauthz				  py-pyfiglet
+py-cloudbridge				  py-pyfits
+py-cloudpickle				  py-pyflakes
+py-clustershell				  py-pyfr
+py-cma					  py-pygame
+py-cmaes				  py-pygdal
+py-cmake				  py-pygdbmi
+py-cmake-format				  py-pygelf
+py-cmocean				  py-pygeos
+py-cmseq				  py-pygetwindow
+py-cmsml				  py-pygit2
+py-cmyt					  py-pygithub
+py-coapthon3				  py-pyglet
+py-coca-pytorch				  py-pygments
+py-coclust				  py-pygments-pytest
+py-codepy				  py-pygmsh
+py-codespell				  py-pygmt
+py-coilmq				  py-pygobject
+py-colabtools				  py-pygps
+py-colorama				  py-pygpu
+py-colorcet				  py-pygraphviz
+py-colorclass				  py-pygresql
+py-colored				  py-pygtrie
+py-colored-traceback			  py-pyh5md
+py-coloredlogs				  py-pyhdf
+py-colorful				  py-pyheadtail
+py-colorio				  py-pyhmmer
+py-colorlog				  py-pyhull
+py-colorlover				  py-pyinstrument
+py-colormath				  py-pyinstrument-cext
+py-colorpy				  py-pyisemail
+py-colorspacious			  py-pyjnius
+py-colossalai				  py-pyjwt
+py-comm					  py-pyke
+py-common				  py-pykerberos
+py-commonmark				  py-pykml
+py-conan				  py-pykokkos-base
+py-conda-inject				  py-pykwalify
+py-conda-souschef			  py-pylab-sdk
+py-confection				  py-pylatex
+py-configargparse			  py-pyld
+py-configobj				  py-pylev
+py-configparser				  py-pylibmagic
+py-configspace				  py-pylikwid
+py-connectionpool			  py-pylint
+py-consolekit				  py-pylint-gitlab
+py-constantly				  py-pylith
+py-contextily				  py-pylops
+py-contextlib2				  py-pymatgen
+py-contexttimer				  py-pymatreader
+py-continuum				  py-pymbolic
+py-contourpy				  py-pymc3
+py-control				  py-pymdown-extensions
+py-convertdate				  py-pymeeus
+py-convokit				  py-pyminifier
+py-cookiecutter				  py-pymol
+py-copulas				  py-pymongo
+py-corner				  py-pymoo
+py-correctionlib			  py-pymorph
+py-counter				  py-pympler
+py-cov-core				  py-pymsgbox
+py-coverage				  py-pymummer
+py-coveralls				  py-pymumps
+py-cppheaderparser			  py-pymysql
+py-cppy					  py-pynacl
+py-crashtest				  py-pynio
+py-crcmod				  py-pynisher
+py-croniter				  py-pynn
+py-crossmap				  py-pynndescent
+py-cryolobm				  py-pynpm
+py-cryptography				  py-pynrrd
+py-css-parser				  py-pynucleus
+py-cssselect				  py-pynvim
+py-cssselect2				  py-pynvml
+py-cssutils				  py-pynvtx
+py-csvkit				  py-pyodbc
+py-ctgan				  py-pyogrio
+py-cudf					  py-pyomo
+py-cufflinks				  py-pyopencl
+py-cuml					  py-pyopengl
+py-cupy					  py-pyopenssl
+py-current				  py-pypar
+py-currentscape				  py-pyparsing
+py-curvlinops-for-pytorch		  py-pypdf
+py-custodian				  py-pypdf2
+py-custom-inherit			  py-pypeflow
+py-cutadapt				  py-pypeg2
+py-cvxopt				  py-pyperclip
+py-cvxpy				  py-pyperf
+py-cwl-upgrader				  py-pypinyin
+py-cwl-utils				  py-pypng
+py-cwltool				  py-pyppeteer
+py-cx-oracle				  py-pyprecice
+py-cycler				  py-pyprof2html
+py-cykhash				  py-pyproj
+py-cylc-flow				  py-pyproject-hooks
+py-cylc-rose				  py-pyproject-metadata
+py-cylc-uiserver			  py-pyproject-parser
+py-cylp					  py-pypulse
+py-cymem				  py-pyqi
+py-cyordereddict			  py-pyqt-builder
+py-cython				  py-pyqt4
+py-cython-bbox				  py-pyqt5
+py-cyvcf2				  py-pyqt5-sip
+py-d2to1				  py-pyqt6
+py-dace					  py-pyqt6-sip
+py-dadi					  py-pyqtgraph
+py-dalib				  py-pyquaternion
+py-damask				  py-pyreadline
+py-darshan				  py-pyrect
+py-dasbus				  py-pyrevolve
+py-dash					  py-pyrfr
+py-dash-bootstrap-components		  py-pyro-api
+py-dash-svg				  py-pyro-ppl
+py-dask					  py-pyro4
+py-dask-glm				  py-pyrocko
+py-dask-ml				  py-pyrodigal
+py-dask-mpi				  py-pyrr
+py-dask-sphinx-theme			  py-pyrsistent
+py-databricks-cli			  py-pysam
+py-dataclasses				  py-pyscaf
+py-dataclasses-json			  py-pyscf
+py-datacube				  py-pyscipopt
+py-datalad				  py-pyscreeze
+py-datalad-container			  py-pyseer
+py-datalad-deprecated			  py-pyserial
+py-datalad-hirni			  py-pysftp
+py-datalad-metadata-model		  py-pyshacl
+py-datalad-metalad			  py-pyshp
+py-datalad-neuroimaging			  py-pyside
+py-datalad-webapp			  py-pyside2
+py-datasets				  py-pysimdjson
+py-dateparser				  py-pysmartdl
+py-dateutils				  py-pysocks
+py-datrie				  py-pysolar
+py-dbf					  py-pyspark
+py-dbfread				  py-pyspellchecker
+py-dcm2bids				  py-pyspnego
+py-deap					  py-pyspoa
+py-debtcollector			  py-pysqlite3
+py-debugpy				  py-pystac
+py-decorator				  py-pystac-client
+py-deepdiff				  py-pystache
+py-deepecho				  py-pystan
+py-deephyper				  py-pysurfer
+py-deepsig				  py-pytailf
+py-deepsig-biocomp			  py-pytaridx
+py-deepspeed				  py-pytecplot
+py-deeptools				  py-pytesseract
+py-deeptoolsintervals			  py-pytest
+py-defusedxml				  py-pytest-aiohttp
+py-demjson				  py-pytest-allclose
+py-dendropy				  py-pytest-arraydiff
+py-deprecated				  py-pytest-astropy
+py-deprecation				  py-pytest-astropy-header
+py-deprecation-alias			  py-pytest-asyncio
+py-descartes				  py-pytest-benchmark
+py-devito				  py-pytest-cache
+py-devlib				  py-pytest-check-links
+py-dgl					  py-pytest-cov
+py-dh-scikit-optimize			  py-pytest-cpp
+py-dict2css				  py-pytest-datadir
+py-dictdiffer				  py-pytest-doctestplus
+py-dictobj				  py-pytest-fail-slow
+py-dill					  py-pytest-filter-subpackage
+py-dinosaur				  py-pytest-flake8
+py-dipy					  py-pytest-flakes
+py-dirtyjson				  py-pytest-forked
+py-discover				  py-pytest-html
+py-diskcache				  py-pytest-httpbin
+py-dist-meta				  py-pytest-isort
+py-distance				  py-pytest-metadata
+py-distlib				  py-pytest-mock
+py-distributed				  py-pytest-mpi
+py-distro				  py-pytest-mypy
+py-django				  py-pytest-openfiles
+py-dlcpar				  py-pytest-parallel
+py-dlio-profiler-py			  py-pytest-pep8
+py-dm-haiku				  py-pytest-pylint
+py-dm-tree				  py-pytest-qt
+py-dnaio				  py-pytest-random-order
+py-dnspython				  py-pytest-regtest
+py-docker				  py-pytest-remotedata
+py-dockerpy-creds			  py-pytest-runner
+py-docopt				  py-pytest-subprocess
+py-docopt-ng				  py-pytest-timeout
+py-docstring-parser			  py-pytest-workflow
+py-docstring-to-markdown		  py-pytest-xdist
+py-docutils				  py-python-benedict
+py-docutils-stubs			  py-python-bioformats
+py-dogpile-cache			  py-python-box
+py-doit					  py-python-calamine
+py-dom-toml				  py-python-certifi-win32
+py-domdf-python-tools			  py-python-constraint
+py-dominate				  py-python-crfsuite
+py-dotmap				  py-python-daemon
+py-dotnetcore2				  py-python-dateutil
+py-downhill				  py-python-deprecated
+py-doxypypy				  py-python-docs-theme
+py-dpath				  py-python-dotenv
+py-drep					  py-python-editor
+py-drmaa				  py-python-engineio
+py-dryscrape				  py-python-fmask
+py-duecredit				  py-python-fsutil
+py-dulwich				  py-python-gitlab
+py-dunamai				  py-python-hostlist
+py-dvc					  py-python-igraph
+py-dxchange				  py-python-javabridge
+py-dxfile				  py-python-jenkins
+py-dynaconf				  py-python-jose
+py-dynim				  py-python-json-logger
+py-earth2mip				  py-python-keystoneclient
+py-earthengine-api			  py-python-ldap
+py-easybuild-easyblocks			  py-python-levenshtein
+py-easybuild-easyconfigs		  py-python-libsbml
+py-easybuild-framework			  py-python-logstash
+py-eccodes				  py-python-louvain
+py-ecdsa				  py-python-lsp-jsonrpc
+py-ecmwf-opendata			  py-python-lsp-server
+py-ecmwflibs				  py-python-lzo
+py-ecos					  py-python-magic
+py-edam-ontology			  py-python-mapnik
+py-edffile				  py-python-markdown-math
+py-edfio				  py-python-memcached
+py-edflib-python			  py-python-multipart
+py-editables				  py-python-oauth2
+py-editdistance				  py-python-picard
+py-edlib				  py-python-pptx
+py-eeglabio				  py-python-ptrace
+py-efel					  py-python-rapidjson
+py-efficientnet-pytorch			  py-python-slugify
+py-eg					  py-python-socketio
+py-einconv				  py-python-sotools
+py-einops				  py-python-subunit
+py-elastic-transport			  py-python-swiftclient
+py-elasticsearch			  py-python-utils
+py-elasticsearch-dsl			  py-python-xlib
+py-elephant				  py-python-xmp-toolkit
+py-ema-pytorch				  py-python3-openid
+py-email-validator			  py-python3-xlib
+py-embedding-reader			  py-pythonqwt
+py-emcee				  py-pythonsollya
+py-emoji				  py-pythran
+py-empy					  py-pytimeparse
+py-entrypoints				  py-pytng
+py-enum-tools				  py-pytoml
+py-envisage				  py-pytools
+py-ephem				  py-pytorch-gradual-warmup-lr
+py-eprosima-fastdds			  py-pytorch-lightning
+py-epydoc				  py-pytorch-sphinx-theme
+py-equation				  py-pytorch-warmup
+py-espresso				  py-pyts
+py-espressopp				  py-pytweening
+py-et-xmlfile				  py-pytz
+py-ete3					  py-pyu2f
+py-etelemetry				  py-pyudev
+py-etils				  py-pyugrid
+py-eventlet				  py-pyupgrade
+py-evodiff				  py-pyusb
+py-exarl				  py-pyutilib
+py-exceptiongroup			  py-pyuwsgi
+py-execnet				  py-pyvcf
+py-executing				  py-pyvista
+py-exhale				  py-pyvistaqt
+py-exifread				  py-pyviz-comms
+py-exodus-bundler			  py-pyvolve
+py-expecttest				  py-pywavelets
+py-extension-helpers			  py-pywcs
+py-extras				  py-pywin32
+py-ez-setup				  py-pyworld
+py-f90nml				  py-pyxlsb
+py-f90wrap				  py-pyyaml
+py-fabric				  py-pyyaml-env-tag
+py-fabric3				  py-pyzmq
+py-fair-esm				  py-qdldl
+py-fairscale				  py-qiskit-aer
+py-faker				  py-qiskit-ibm-provider
+py-falcon				  py-qiskit-nature
+py-fallocate				  py-qiskit-terra
+py-fastai				  py-qmtest
+py-fastaindex				  py-qpsolvers
+py-fastapi				  py-qpth
+py-fastapi-utils			  py-qrcode
+py-fastavro				  py-qsymm
+py-fastcache				  py-qtawesome
+py-fastcluster				  py-qtconsole
+py-fastcore				  py-qtpy
+py-fastcov				  py-quantiphy
+py-fastdownload				  py-quantities
+py-fastdtw				  py-quantum-blackbird
+py-fasteners				  py-quantum-xir
+py-fastfold				  py-quart
+py-fastjsonschema			  py-quast
+py-fastpath				  py-quaternionic
+py-fastprogress				  py-qudida
+py-fastremap				  py-queryablelist
+py-fastrlock				  py-querystring-parser
+py-faststructure			  py-questionary
+py-fava					  py-qutip
+py-fenics-basix				  py-qutip-qip
+py-fenics-dijitso			  py-radiant-mlhub
+py-fenics-dolfinx			  py-radical-entk
+py-fenics-ffc				  py-radical-gtod
+py-fenics-ffcx				  py-radical-pilot
+py-fenics-fiat				  py-radical-saga
+py-fenics-instant			  py-radical-utils
+py-fenics-ufl				  py-ranger-fm
+py-fenics-ufl-legacy			  py-rapidfuzz
+py-ffmpy				  py-rapidfuzz-capi
+py-file-magic				  py-rarfile
+py-filecheck				  py-rasterio
+py-filelock				  py-rasterstats
+py-filemagic				  py-ratelim
+py-filetype				  py-ratelimiter
+py-filterpy				  py-raven
+py-find-libpython			  py-ray
+py-findlibs				  py-rbtools
+py-fiona				  py-rdflib
+py-fire					  py-rdflib-jsonld
+py-fireworks				  py-rdt
+py-fiscalyear				  py-reacton
+py-fisher				  py-readchar
+py-fits-tools				  py-readme-renderer
+py-fitter				  py-recommonmark
+py-fixtures				  py-redis
+py-flake8				  py-referencing
+py-flake8-import-order			  py-refgenconf
+py-flake8-polyfill			  py-refgenie
+py-flaky				  py-regex
+py-flameprof				  py-regionmask
+py-flash-attn				  py-reindent
+py-flask				  py-reportlab
+py-flask-babel				  py-reportseff
+py-flask-compress			  py-repoze-lru
+py-flask-cors				  py-reproject
+py-flask-paginate			  py-requests
+py-flask-restful			  py-requests-cache
+py-flask-socketio			  py-requests-file
+py-flask-sqlalchemy			  py-requests-ftp
+py-flatbuffers				  py-requests-futures
+py-flatten-dict				  py-requests-kerberos
+py-flawfinder				  py-requests-mock
+py-flax					  py-requests-ntlm
+py-flexmock				  py-requests-oauthlib
+py-flexx				  py-requests-toolbelt
+py-flit					  py-requests-unixsocket
+py-flit-core				  py-requirements-parser
+py-flit-scm				  py-reretry
+py-flufl-lock				  py-resampy
+py-fluiddyn				  py-resize-right
+py-fluidfft				  py-resolvelib
+py-fluidfft-builder			  py-responses
+py-fluidfft-fftw			  py-resultsfile
+py-fluidfft-fftwmpi			  py-retry
+py-fluidfft-mpi-with-fftw		  py-retry-decorator
+py-fluidfft-p3dfft			  py-retrying
+py-fluidfft-pfft			  py-retworkx
+py-fluidsim				  py-rfc3339-validator
+py-fluidsim-core			  py-rfc3986
+py-flye					  py-rfc3986-validator
+py-fn-py				  py-rich
+py-folium				  py-rich-argparse
+py-fonttools				  py-rich-click
+py-ford					  py-rios
+py-formatizer				  py-rioxarray
+py-formulaic				  py-rise
+py-fortls				  py-river
+py-fortran-language-server		  py-rmm
+py-fortranformat			  py-rnc2rng
+py-fparser				  py-robocrys
+py-fprettify				  py-robotframework
+py-fqdn					  py-rocrate
+py-fracridge				  py-roifile
+py-fraction				  py-rope
+py-freezegun				  py-rosdep
+py-frozendict				  py-rosdistro
+py-frozenlist				  py-rosinstall
+py-fs					  py-rosinstall-generator
+py-fsspec				  py-rospkg
+py-fsspec-xrootd			  py-rotary-embedding-torch
+py-ftfy					  py-routes
+py-ftputil				  py-rpds-py
+py-funcy				  py-rply
+py-furo					  py-rpy2
+py-fury					  py-rq
+py-fusepy				  py-rsa
+py-future				  py-rsatoolbox
+py-fuzzywuzzy				  py-rseqc
+py-fypp					  py-rst2pdf
+py-galaxy-containers			  py-rtoml
+py-galaxy-job-metrics			  py-rtree
+py-galaxy-objectstore			  py-ruamel-ordereddict
+py-galaxy-sequence-utils		  py-ruamel-yaml
+py-galaxy-tool-util			  py-ruamel-yaml-clib
+py-galaxy-util				  py-ruamel-yaml-jinja2
+py-galaxy2cwl				  py-rucio-clients
+py-gast					  py-ruff
+py-gcovr				  py-rustworkx
+py-gcs-oauth2-boto-plugin		  py-rx
+py-gcsfs				  py-s3cmd
+py-gdbgui				  py-s3fs
+py-gdc-client				  py-s3transfer
+py-gdown				  py-sacrebleu
+py-gee-asset-manager			  py-sacremoses
+py-geeadd				  py-safetensors
+py-geeup				  py-salib
+py-gemmforge				  py-sanic
+py-genders				  py-scandir
+py-geneimpacts				  py-scanpy
+py-generateds				  py-schema
+py-genshi				  py-schema-salad
+py-gensim				  py-scientificpython
+py-geoalchemy2				  py-scikit-build
+py-geocube				  py-scikit-build-core
+py-geographiclib			  py-scikit-fmm
+py-geomdl				  py-scikit-fuzzy
+py-geopandas				  py-scikit-image
+py-geoplot				  py-scikit-learn
+py-geopmdpy				  py-scikit-learn-extra
+py-geopmpy				  py-scikit-optimize
+py-geopy				  py-scikit-sparse
+py-gevent				  py-scikits-odes
+py-gf256				  py-scine-chemoton
+py-gffutils				  py-scine-puffin
+py-ghp-import				  py-scinum
+py-gidgethub				  py-scipy
+py-gidgetlab				  py-scooby
+py-gimmik				  py-scoop
+py-gin-config				  py-scp
+py-git-review				  py-screed
+py-gitdb				  py-scs
+py-gitpython				  py-sdmetrics
+py-glean-parser				  py-sdv
+py-glean-sdk				  py-seaborn
+py-glmnet				  py-secretstorage
+py-glmnet-python			  py-seekpath
+py-glmsingle				  py-segmentation-models-pytorch
+py-glob2				  py-selenium
+py-globus-cli				  py-semantic-version
+py-globus-sdk				  py-semver
+py-gluoncv				  py-send2trash
+py-glymur				  py-sentencepiece
+py-gmsh					  py-sentry-sdk
+py-gmsh-interop				  py-seqeval
+py-gmxapi				  py-sequence-models
+py-gnuplot				  py-seriate
+py-goatools				  py-serpent
+py-gooey				  py-session-info
+py-google				  py-setproctitle
+py-google-api-core			  py-setupmeta
+py-google-api-python-client		  py-setuptools
+py-google-apitools			  py-setuptools-cpp
+py-google-auth				  py-setuptools-git
+py-google-auth-httplib2			  py-setuptools-git-versioning
+py-google-auth-oauthlib			  py-setuptools-rust
+py-google-cloud-appengine-logging	  py-setuptools-scm
+py-google-cloud-audit-log		  py-setuptools-scm-git-archive
+py-google-cloud-batch			  py-sfepy
+py-google-cloud-core			  py-sgp4
+py-google-cloud-logging			  py-sh
+py-google-cloud-storage			  py-shap
+py-google-crc32c			  py-shapely
+py-google-pasta				  py-shellescape
+py-google-reauth			  py-shellingham
+py-google-resumable-media		  py-shiboken
+py-googleapis-common-protos		  py-shiboken2
+py-googledrivedownloader		  py-shippinglabel
+py-gosam				  py-shortbred
+py-gpaw					  py-shortuuid
+py-gpustat				  py-shroud
+py-gputil				  py-shtab
+py-gpy					  py-sierrapy
+py-gpyopt				  py-simpervisor
+py-gpytorch				  py-simpleeval
+py-gql					  py-simplegeneric
+py-gradio				  py-simplejson
+py-gradio-client			  py-simplekml
+py-grandalf				  py-simpletraj
+py-graphcast				  py-simpy
+py-grapheme				  py-singledispatchmethod
+py-graphene				  py-sip
+py-graphene-tornado			  py-six
+py-graphlib-backport			  py-skl2onnx
+py-graphql-core				  py-slepc4py
+py-graphql-relay			  py-slicer
+py-graphql-ws				  py-slurm-pipeline
+py-graphviz				  py-smac
+py-gravity				  py-smart-open
+py-grayskull				  py-smartredis
+py-greenlet				  py-smartsim
+py-grequests				  py-smartypants
+py-griddataformats			  py-smmap
+py-griffe				  py-smote-variants
+py-grpc-google-iam-v1			  py-snakemake-executor-plugin-azure-batch
+py-grpcio				  py-snakemake-executor-plugin-cluster-generic
+py-grpcio-status			  py-snakemake-executor-plugin-cluster-sync
+py-grpcio-tools				  py-snakemake-executor-plugin-drmaa
+py-gsd					  py-snakemake-executor-plugin-flux
+py-gssapi				  py-snakemake-executor-plugin-googlebatch
+py-gsutil				  py-snakemake-executor-plugin-kubernetes
+py-gtdbtk				  py-snakemake-executor-plugin-slurm
+py-gunicorn				  py-snakemake-executor-plugin-slurm-jobstep
+py-gxformat2				  py-snakemake-executor-plugin-tes
+py-gym					  py-snakemake-interface-common
+py-h11					  py-snakemake-interface-executor-plugins
+py-h2					  py-snakemake-interface-report-plugins
+py-h5glance				  py-snakemake-interface-storage-plugins
+py-h5io					  py-snakemake-storage-plugin-azure
+py-h5netcdf				  py-snakemake-storage-plugin-fs
+py-h5py					  py-snakemake-storage-plugin-ftp
+py-h5sh					  py-snakemake-storage-plugin-gcs
+py-hacking				  py-snakemake-storage-plugin-http
+py-hail					  py-snakemake-storage-plugin-s3
+py-handy-archives			  py-snakemake-storage-plugin-sftp
+py-haphpipe				  py-snakemake-storage-plugin-zenodo
+py-hatch				  py-snappy
+py-hatch-cython				  py-sncosmo
+py-hatch-fancy-pypi-readme		  py-sniffio
+py-hatch-jupyter-builder		  py-snoop
+py-hatch-nodejs-version			  py-snowballstemmer
+py-hatch-requirements-txt		  py-snuggs
+py-hatch-vcs				  py-sobol-seq
+py-hatchet				  py-social-auth-core
+py-hatchling				  py-sonlib
+py-hclust2				  py-sortedcollections
+py-hdbscan				  py-sortedcontainers
+py-hdfs					  py-soundfile
+py-healpy				  py-soupsieve
+py-heapdict				  py-soyclustering
+py-heat					  py-spacy
+py-hep-ml				  py-spacy-legacy
+py-hepdata-converter			  py-spacy-loggers
+py-hepdata-lib				  py-spacy-models-en-core-web-sm
+py-hepdata-validator			  py-spacy-models-en-vectors-web-lg
+py-hepunits				  py-sparse
+py-hieroglyph				  py-spatialist
+py-hiredis				  py-spatialite
+py-hist					  py-spdlog
+py-histbook				  py-spectra
+py-histogrammar				  py-spectral
+py-histoprint				  py-speech-recognition
+py-hjson				  py-spefile
+py-hmmlearn				  py-spgl1
+py-holland-backup			  py-spglib
+py-horovod				  py-spherical
+py-hpack				  py-sphinx
+py-hpbandster				  py-sphinx-argparse
+py-hpccm				  py-sphinx-autodoc-typehints
+py-hstspreload				  py-sphinx-basic-ng
+py-htgettoken				  py-sphinx-book-theme
+py-html2text				  py-sphinx-bootstrap-theme
+py-html5lib				  py-sphinx-click
+py-htmlgen				  py-sphinx-copybutton
+py-htseq				  py-sphinx-design
+py-httpbin				  py-sphinx-fortran
+py-httpcore				  py-sphinx-gallery
+py-httplib2				  py-sphinx-immaterial
+py-httpretty				  py-sphinx-jinja2-compat
+py-httpstan				  py-sphinx-multiversion
+py-httptools				  py-sphinx-prompt
+py-httpx				  py-sphinx-removed-in
+py-huggingface-hub			  py-sphinx-rtd-dark-mode
+py-humanfriendly			  py-sphinx-rtd-theme
+py-humanize				  py-sphinx-tabs
+py-hvac					  py-sphinx-theme-builder
+py-hydra-core				  py-sphinx-toolbox
+py-hypercorn				  py-sphinxautomodapi
+py-hyperframe				  py-sphinxcontrib-applehelp
+py-hyperlink				  py-sphinxcontrib-bibtex
+py-hyperopt				  py-sphinxcontrib-devhelp
+py-hypothesis				  py-sphinxcontrib-htmlhelp
+py-ibm-cloud-sdk-core			  py-sphinxcontrib-issuetracker
+py-ibm-watson				  py-sphinxcontrib-jquery
+py-ics					  py-sphinxcontrib-jsmath
+py-identify				  py-sphinxcontrib-mermaid
+py-idna					  py-sphinxcontrib-moderncmakedomain
+py-idna-ssl				  py-sphinxcontrib-napoleon
+py-igor					  py-sphinxcontrib-programoutput
+py-igor2				  py-sphinxcontrib-qthelp
+py-igraph				  py-sphinxcontrib-serializinghtml
+py-igv-notebook				  py-sphinxcontrib-spelling
+py-illumina-utils			  py-sphinxcontrib-trio
+py-ilmbase				  py-sphinxcontrib-websupport
+py-imagecodecs				  py-sphinxemoji
+py-imagehash				  py-sphobjinv
+py-imageio				  py-spykeutils
+py-imageio-ffmpeg			  py-spython
+py-imagesize				  py-sqlalchemy
+py-imbalanced-learn			  py-sqlalchemy-migrate
+py-imgaug				  py-sqlalchemy-stubs
+py-iminuit				  py-sqlalchemy-utils
+py-immutabledict			  py-sqlitedict
+py-immutables				  py-sqlparse
+py-importlib-metadata			  py-srsly
+py-importlib-resources			  py-sseclient
+py-incremental				  py-sshtunnel
+py-inflect				  py-sspilib
+py-inheritance				  py-stack-data
+py-iniconfig				  py-starlette
+py-iniparse				  py-starlette-context
+py-inquirer				  py-starsessions
+py-inquirerpy				  py-stashcp
+py-installer				  py-statmorph
+py-instrain				  py-statsmodels
+py-intbitset				  py-stdlib-list
+py-intel-openmp				  py-stestr
+py-intensity-normalization		  py-stevedore
+py-interface-meta			  py-stomp-py
+py-interlap				  py-stopit
+py-intervaltree				  py-storm
+py-invoke				  py-stratify
+py-iocapture				  py-strawberryfields
+py-iopath				  py-streamlit
+py-ipaddress				  py-striprtf
+py-ipdb					  py-stsci-distutils
+py-ipycanvas				  py-stui
+py-ipyevents				  py-submitit
+py-ipykernel				  py-subrosa
+py-ipympl				  py-subword-nmt
+py-ipyparallel				  py-superqt
+py-ipyrad				  py-supervisor
+py-ipython				  py-svgpath
+py-ipython-cluster-helper		  py-svgpathtools
+py-ipython-genutils			  py-svgutils
+py-ipyvtk-simple			  py-svgwrite
+py-ipyvue				  py-swagger-spec-validator
+py-ipyvuetify				  py-symengine
+py-ipywidgets				  py-symfit
+py-irpf90				  py-sympy
+py-isa-rwval				  py-syned
+py-isal					  py-sysrsync
+py-iso8601				  py-systemd-python
+py-isodate				  py-tables
+py-isoduration				  py-tabulate
+py-isort				  py-tatsu
+py-iterative-stats			  py-tblib
+py-itk					  py-tbparse
+py-itolapi				  py-tempita
+py-itsdangerous				  py-templateflow
+py-jacobi				  py-tempora
+py-jaconv				  py-tenacity
+py-jamo					  py-tensorboard
+py-janus				  py-tensorboard-data-server
+py-jaraco-classes			  py-tensorboard-plugin-wit
+py-jaraco-functools			  py-tensorboardx
+py-jarowinkler				  py-tensorflow
+py-jarvis-util				  py-tensorflow-datasets
+py-javaproperties			  py-tensorflow-estimator
+py-jax					  py-tensorflow-hub
+py-jaxlib				  py-tensorflow-metadata
+py-jaxtyping				  py-tensorflow-probability
+py-jcb					  py-tensorly
+py-jdatetime				  py-tensorstore
+py-jdcal				  py-termcolor
+py-jedi					  py-termgraph
+py-jeepney				  py-terminado
+py-jellyfish				  py-terminaltables
+py-jinja2				  py-tern
+py-jinja2-cli				  py-tesorter
+py-jinja2-time				  py-testfixtures
+py-jiter				  py-testinfra
+py-jmespath				  py-testpath
+py-jmp					  py-testrepository
+py-joblib				  py-testresources
+py-jplephem				  py-testscenarios
+py-jproperties				  py-testtools
+py-jprops				  py-tetoolkit
+py-jpype1				  py-text-unidecode
+py-jraph				  py-textblob
+py-jsmin				  py-texttable
+py-json-get				  py-textual
+py-json2html				  py-textwrap3
+py-json5				  py-textx
+py-jsonargparse				  py-tfdlpack
+py-jsondiff				  py-theano
+py-jsonlines				  py-thewalrus
+py-jsonpatch				  py-thinc
+py-jsonpath-ng				  py-thop
+py-jsonpickle				  py-threadpoolctl
+py-jsonpointer				  py-throttler
+py-jsonref				  py-tidynamics
+py-jsonschema				  py-tifffile
+py-jsonschema-specifications		  py-tiktoken
+py-junit-xml				  py-timm
+py-junit2html				  py-tinyarray
+py-jupyter				  py-tinycss2
+py-jupyter-client			  py-tinydb
+py-jupyter-console			  py-tldextract
+py-jupyter-core				  py-tokenize-rt
+py-jupyter-events			  py-tokenizers
+py-jupyter-lsp				  py-toml
+py-jupyter-packaging			  py-tomli
+py-jupyter-server			  py-tomli-w
+py-jupyter-server-mathjax		  py-tomlkit
+py-jupyter-server-proxy			  py-tomopy
+py-jupyter-server-terminals		  py-toolz
+py-jupyter-telemetry			  py-topiary-asr
+py-jupyterhub				  py-toposort
+py-jupyterlab				  py-torch
+py-jupyterlab-pygments			  py-torch-cluster
+py-jupyterlab-server			  py-torch-fidelity
+py-jupyterlab-widgets			  py-torch-geometric
+py-jupytext				  py-torch-harmonics
+py-jwcrypto				  py-torch-nvidia-apex
+py-kaggle				  py-torch-scatter
+py-kaldiio				  py-torch-sparse
+py-kaleido				  py-torch-spline-conv
+py-kb-python				  py-torchaudio
+py-keras				  py-torchbenchmark
+py-keras-applications			  py-torchdata
+py-keras-preprocessing			  py-torchdiffeq
+py-keras2onnx				  py-torchfile
+py-kerberos				  py-torchgeo
+py-keyboard				  py-torchmeta
+py-keyring				  py-torchmetrics
+py-keyrings-alt				  py-torchseg
+py-keystoneauth1			  py-torchsummary
+py-kitchen				  py-torchtext
+py-kiwisolver				  py-torchvision
+py-kmodes				  py-tornado
+py-knack				  py-tox
+py-kneaddata				  py-toyplot
+py-kombu				  py-toytree
+py-kornia				  py-tpot
+py-kornia-rs				  py-tqdm
+py-kosh					  py-traceback2
+py-krb5					  py-traitlets
+py-kt-legacy				  py-traits
+py-kubernetes				  py-traitsui
+py-lagom				  py-transformer-engine
+py-langcodes				  py-transformers
+py-langsmith				  py-transforms3d
+py-lap					  py-transonic
+py-laplace-torch			  py-tree
+py-lark					  py-tree-math
+py-lark-parser				  py-treehash
+py-laspy				  py-treelib
+py-latexcodec				  py-triangle
+py-law					  py-trieregex
+py-lazy					  py-trimesh
+py-lazy-loader				  py-triton
+py-lazy-object-proxy			  py-trojanzoo-sphinx-theme
+py-lazy-property			  py-trove-classifiers
+py-lazyarray				  py-trx-python
+py-lcls-krtc				  py-tuiview
+py-ldap3				  py-tuspy
+py-leather				  py-tuswsgi
+py-lerc					  py-tweedledum
+py-lfpykit				  py-twine
+py-lhsmdu				  py-twisted
+py-liac-arff				  py-typed-ast
+py-libclang				  py-typeguard
+py-libconf				  py-typer
+py-libcst				  py-types-dataclasses
+py-libensemble				  py-types-pkg-resources
+py-liblas				  py-types-psutil
+py-librosa				  py-types-python-dateutil
+py-libsonata				  py-types-pytz
+py-lifelines				  py-types-requests
+py-lightgbm				  py-types-setuptools
+py-lightly				  py-types-typed-ast
+py-lightly-utils			  py-types-urllib3
+py-lightning				  py-typesentry
+py-lightning-api-access			  py-typeshed-client
+py-lightning-cloud			  py-typing-extensions
+py-lightning-fabric			  py-typing-inspect
+py-lightning-lite			  py-typish
+py-lightning-uq-box			  py-tzdata
+py-lightning-utilities			  py-tzlocal
+py-ligo-segments			  py-ubiquerg
+py-line-profiler			  py-uc-micro-py
+py-linear-operator			  py-ucsf-pyem
+py-linecache2				  py-ucx-py
+py-lineenhancer				  py-uhi
+py-linkchecker				  py-ujson
+py-linkify-it-py			  py-ultralytics
+py-lit					  py-umalqurra
+py-littleutils				  py-umap-learn
+py-lizard				  py-umi-tools
+py-llnl-sina				  py-uncertainties
+py-llvmlite				  py-uncertainty-toolbox
+py-lmdb					  py-unfoldnd
+py-lmfit				  py-unicycler
+py-lmodule				  py-unidecode
+py-localcider				  py-unittest2py3k
+py-locket				  py-unshare
+py-lockfile				  py-unyt
+py-logilab-common			  py-update-checker
+py-logmuse				  py-uproot
+py-loguru				  py-uproot3
+py-loompy				  py-uproot3-methods
+py-looseversion				  py-uri-template
+py-louie				  py-uritemplate
+py-lpips				  py-url-normalize
+py-lru-dict				  py-urllib3
+py-lscsoft-glue				  py-urllib3-secure-extra
+py-luigi				  py-urwid
+py-lvis					  py-us
+py-lws					  py-userpath
+py-lxml					  py-usgs
+py-lz4					  py-utils
+py-lzstring				  py-uv
+py-m2r					  py-uvicorn
+py-macholib				  py-uvloop
+py-machotools				  py-uvw
+py-macs2				  py-uwsgi
+py-macs3				  py-validators
+py-maestrowf				  py-vascpy
+py-mahotas				  py-vcf-kit
+py-mailchecker				  py-vcrpy
+py-make					  py-vcstool
+py-mako					  py-vcstools
+py-mapbox-earcut			  py-vcversioner
+py-mapclassify				  py-vector
+py-mariadb				  py-vector-quantize-pytorch
+py-markdown				  py-vermin
+py-markdown-include			  py-versioneer
+py-markdown-it-py			  py-versioneer-518
+py-markdown2				  py-verspec
+py-markov-clustering			  py-vine
+py-markovify				  py-virtualenv
+py-markupsafe				  py-virtualenv-clone
+py-marshmallow				  py-virtualenvwrapper
+py-matminer				  py-visdom
+py-matplotlib				  py-vl-convert-python
+py-matplotlib-inline			  py-voluptuous
+py-matplotlib-scalebar			  py-vsc-base
+py-maturin				  py-vsc-install
+py-mayavi				  py-vsts
+py-mccabe				  py-vsts-cd-manager
+py-md-environ				  py-waitress
+py-mda-xdrlib				  py-walinuxagent
+py-mdanalysis				  py-wand
+py-mdanalysistests			  py-wandb
+py-mdit-py-plugins			  py-warlock
+py-mdurl				  py-warpx
+py-meautility				  py-wasabi
+py-mechanize				  py-watchdog
+py-medaka				  py-watchfiles
+py-meldmd				  py-wcsaxes
+py-melissa-core				  py-wcwidth
+py-memory-profiler			  py-webargs
+py-memprof				  py-webcolors
+py-memray				  py-webdataset
+py-mercantile				  py-webencodings
+py-mergedeep				  py-webkit-server
+py-merlin				  py-weblogo
+py-meshio				  py-webob
+py-meshpy				  py-websocket-client
+py-meson-python				  py-websockets
+py-metaphlan				  py-werkzeug
+py-metasv				  py-wesanderson
+py-metomi-isodatetime			  py-wget
+py-metomi-rose				  py-whatshap
+py-metpy				  py-wheel
+py-metric-learn				  py-whey
+py-metrics				  py-whey-pth
+py-mffpy				  py-whichcraft
+py-mg-rast-tools			  py-whoosh
+py-mgmetis				  py-widgetsnbextension
+py-mido					  py-win-unicode-console
+py-mikado				  py-wincertstore
+py-mike					  py-word2number
+py-minio				  py-wordcloud
+py-minisom				  py-workload-automation
+py-minkowskiengine			  py-wradlib
+py-minrpc				  py-wrapt
+py-misk					  py-wsproto
+py-misopy				  py-wstool
+py-mistletoe				  py-wub
+py-mistune				  py-wurlitzer
+py-mizani				  py-ww
+py-mkdocs				  py-wxflow
+py-mkdocs-autorefs			  py-wxmplot
+py-mkdocs-jupyter			  py-wxpython
+py-mkdocs-material			  py-x-clip
+py-mkdocs-material-extensions		  py-x21
+py-mkdocstrings				  py-xanadu-cloud-client
+py-mkdocstrings-python			  py-xarray
+py-ml-collections			  py-xarray-tensorstore
+py-ml-dtypes				  py-xattr
+py-mlflow				  py-xdot
+py-mlperf-logging			  py-xenv
+py-mlxtend				  py-xesmf
+py-mmcv					  py-xgboost
+py-mmtf-python				  py-xhistogram
+py-mne					  py-xlrd
+py-mne-bids				  py-xlsxwriter
+py-mo-pack				  py-xlwt
+py-moarchiving				  py-xmlplain
+py-mock					  py-xmlrunner
+py-model-index				  py-xmltodict
+py-modepy				  py-xonsh
+py-modin				  py-xopen
+py-modred				  py-xpyb
+py-modules-gui				  py-xrootdpyfs
+py-moltemplate				  py-xskillscore
+py-monai				  py-xtb
+py-monkeytype				  py-xvfbwrapper
+py-monotonic				  py-xxhash
+py-monty				  py-xyzservices
+py-more-itertools			  py-yacman
+py-morph-tool				  py-yacs
+py-morphio				  py-yahmm
+py-motmetrics				  py-yajl
+py-motor				  py-yamlreader
+py-mouseinfo				  py-yapf
+py-moviepy				  py-yarl
+py-mpi4jax				  py-yaspin
+py-mpi4py				  py-yolk3k
+py-mpld3				  py-your
+py-mpldock				  py-youtube-dl
+py-mplhep				  py-yq
+py-mplhep-data				  py-yt
+py-mpmath				  py-yte
+py-mrcfile				  py-ytopt
+py-msal					  py-ytopt-autotune
+py-msal-extensions			  py-z3-solver
+py-msgpack				  py-zarr
+py-msgpack-numpy			  py-zc-buildout
+py-msrest				  py-zc-lockfile
+py-msrestazure				  py-zfit
+py-multi-imbalance			  py-zfit-interface
+py-multi-key-dict			  py-zict
+py-multidict				  py-zipfile-deflate64
+py-multiecho				  py-zipp
+py-multipledispatch			  py-zipstream-new
+py-multiprocess				  py-zope-event
+py-multiqc				  py-zope-interface
+py-multiurl				  py-zstandard
+py-munch				  py-zxcvbn
 ==> 2696 packages
