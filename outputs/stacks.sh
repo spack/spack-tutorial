@@ -72,7 +72,7 @@ example stacks/view-0       "spack concretize"
 example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
-example stacks/view-0       "ls ~/stacks/views/full/gcc-12.3.0"
+example stacks/view-0       "ls ~/stacks/views/full/gcc-12.5.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 
