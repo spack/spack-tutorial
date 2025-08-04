@@ -21,6 +21,9 @@ spack config add "config:suppress_gpg_warnings:true"
 
 example basics/source-setup     ". share/spack/setup-env.sh"
 
+# pin repository to release
+example basics/repo            "spack repo update --tag $packages_release"
+
 # spack list
 example basics/list            "spack list"
 example basics/list-py         "spack list 'py-*'"

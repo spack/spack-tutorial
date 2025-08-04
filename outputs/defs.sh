@@ -15,6 +15,7 @@ raw_outputs="${PROJECT}/raw"
 
 # used by scripts
 tutorial_branch=releases/v1.0
+packages_release=v2025.07.0
 
 print_status() {
     printf "\n%b: %s\n\n" "\033[1;35m$1\033[0m" "$2"

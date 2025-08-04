@@ -18,7 +18,7 @@ RUN apt-get remove -y gcc-12
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/v1.0.0/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/v2025.07.0/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
