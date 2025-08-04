@@ -91,6 +91,8 @@ As we can see from the skeleton contents, the Spack template:
 * provides a preliminary implementation of the `autoreconf method <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#using-a-custom-autoreconf-phase>`_; and
 * provides a skeleton `configure_args method <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_.
 
+The areas we need to modify are highlighted in the figure below.
+
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
