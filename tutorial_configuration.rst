@@ -424,7 +424,7 @@ When you have an activated environment, you can edit the associated configuratio
      packages:
        all:
          require:
-         - one_of: ["%llvm", "%gcc"]
+         - any_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
 
@@ -455,13 +455,16 @@ Instead, we'll update our config to force disable it:
      packages:
        all:
          require:
-         - one_of: ["%llvm", "%gcc"]
+         - any_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         require: ~mpi
+         require:
+         - spec: "~mpi"
+         - any_of: ["%llvm", "gcc"]
 
 
+Note that defining ``hdf5`` overrides everything under ``all``, so the Clang preference must be reintroduced.
 Now hdf5 will concretize without an MPI dependency by default.
 
 .. literalinclude:: outputs/config/3.prefs.out
@@ -493,22 +496,27 @@ Let's tell Spack about this package and where it can be found:
      packages:
        all:
          require:
-         - one_of: ["%llvm", "%gcc"]
+         - any_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        hdf5:
-         require: ~mpi
+         require:
+         - spec: "~mpi"
+         - any_of: ["%llvm", "gcc"]
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
-
+       cmake:
+         require:
+         - spec: "~qtgui"
 
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
 Finally, we set ``buildable: false`` to require that Spack not try to build its own.
+The cmake config isn't strictly required, but you might get a strange concretization without it.
 
 .. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
@@ -540,7 +548,7 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
      packages:
        all:
          require:
-         - one_of: ["%llvm", "%gcc"]
+         - any_of: ["%llvm", "%gcc"]
          providers:
            mpi: [mpich, openmpi]
        curl:
@@ -548,6 +556,9 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
+       cmake:
+         require:
+         - spec: "~qtgui"
        mpich:
          externals:
          - spec: mpich@4.0+hydra device=ch4 netmod=ofi
