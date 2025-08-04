@@ -39,11 +39,11 @@ Setup the compiler
 The first step to build our stack is to setup the compiler we want to use later.
 This is currently an iterative process that can be done in two ways:
 
-1. Install the compiler first, then register it in the environment
-2. Use a second environment just for the compiler
+ 1. Install the compiler first, then install the rest of the environment
+ 2. Install the compiler outside the environment (either in another environment or standalone)
 
 Below, we'll use the first approach.
-For people interested, an example of the latter approach can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
+For people interested, an example of composing a compiler from another environment can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
 
 Let's start by creating an environment in a directory of our choice:
 
@@ -66,27 +66,6 @@ The next step is to concretize and install our compiler:
 
 .. literalinclude:: outputs/stacks/setup-2.out
    :language: console
-
-Finally, let's register it as a new compiler in the environment:
-
-.. literalinclude:: outputs/stacks/compiler-find-0.out
-   :language: console
-
-The ``spack location -i`` command returns the installation prefix for the spec being queried:
-
-.. literalinclude:: outputs/stacks/compiler-find-1.out
-   :language: console
-
-This might be useful in general when scripting Spack commands, as the example above shows.
-Listing the compilers now shows the presence of ``gcc@12.3.0``:
-
-.. literalinclude:: outputs/stacks/compiler-list-0.out
-   :language: console
-
-The manifest file at this point looks like:
-
-.. literalinclude:: outputs/stacks/examples/1.spack.stack.yaml
-   :language: yaml
 
 We are ready to build more software with our newly installed GCC!
 
@@ -350,7 +329,7 @@ Edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 44-54
+   :emphasize-lines: 30-40
 
 In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
@@ -370,7 +349,7 @@ If we set the option to "roots", Spack links only the root packages into the vie
 
 .. literalinclude:: outputs/stacks/examples/7.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 49
+   :emphasize-lines: 35
 
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
@@ -412,7 +391,7 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
 
 .. literalinclude:: outputs/stacks/examples/8.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 45-54
+   :emphasize-lines: 31-40
 
 In these few lines of additional configuration we told Spack to generate ``lmod`` module files in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
 
@@ -444,7 +423,7 @@ To address all these needs we can complicate our ``modules`` configuration a bit
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 55-70
+   :emphasize-lines: 41-56
 
 Regenerate the modules again:
 
