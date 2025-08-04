@@ -52,8 +52,7 @@ Creating the Package File
 
 .. note::
 
-   Before proceeding, make sure your ``EDITOR`` environment variable
-   is set to the name or path of your preferred text editor.
+   Before proceeding, make sure your ``VISUAL`` or ``EDITOR`` environment variable is set to the name or path of your preferred text editor.
 
 
 Suppose you want to install software that depends on mpileaks but found Spack did not already have a built-in package for it.
@@ -130,7 +129,7 @@ Adding Package Documentation
 
 First, let's fill in the documentation.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring mpileaks' ``package.py`` file back up in your editor with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -210,7 +209,7 @@ The ``mpileaks`` software relies on three third-party libraries:
 
    Fortunately, all of these dependencies are built-in packages in Spack; otherwise, we would have to create packages for them as well.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -357,7 +356,7 @@ has a ``prefix`` property containing its installation path.
 
 So let's add the configuration arguments for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -411,7 +410,7 @@ Let's add the variant to expect an ``int`` value with a default of ``0``.
 Setting the default to ``0`` effectively disables the option.
 Change ``configure_args`` to retrieve the value and add the corresponding configure arguments when a non-zero value is provided by the user.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring mpileaks' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
