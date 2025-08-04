@@ -1,107 +1,107 @@
 $ spack install tutorial-mpileaks
 [+] /usr (external glibc-2.35-a7drdl4tlx4bu3mzhor75pskvd3pdot6)
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
-==> Installing boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase [3/47]
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-runtime-11.4.0-hshzy762rns57ibvxiyi3qqvc4nehse2
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-rvg7j6bmergf3is4yoacm5sgsi7l4tvm
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-v64tnmrjg7o5beyhae6x42vqlcxzdon6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-2.2.0-oplsmxryrcg6ackisqtpszdarzch6a6t
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-2sbkhchnzzj4a43ykj5jkwctwjc6b7lm
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-cexliohp6aqckxeq4bqy5wrmxzyrfzqc
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-bsga3novxptycgb4bpv4mldtq3f5m7mj
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
+==> Installing boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase [11/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase.spack
 ==> Extracting boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase from binary cache
 ==> boost: Successfully installed boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase
-  Search: 0.00s.  Fetch: 0.16s.	 Install: 2.71s.  Extract: 2.65s.  Relocate: 0.02s.  Total: 2.87s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/findutils-4.9.0-2sbkhchnzzj4a43ykj5jkwctwjc6b7lm
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxcrypt-4.4.35-v64tnmrjg7o5beyhae6x42vqlcxzdon6
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/bzip2-1.0.8-ewqc7cx44b63asa742p2asywp2k6rfto
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-ea6qziv7obmf5fq3mxy42rhxptoiwfb6
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiconv-1.17-bsga3novxptycgb4bpv4mldtq3f5m7mj
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pkgconf-2.2.0-oplsmxryrcg6ackisqtpszdarzch6a6t
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-t7h6imj35ruac562vr7snzvli2h2tzup
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-2fvrfr67ahyx5vqg6hyd3dachcl3nl2k
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.18-euqyy3hu6d7yiuf67q6xgmiwtlgfkanp
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-tt3byemiknxgeuaadpxrltepvic7xsms
+  Search: 0.00s.  Fetch: 0.13s.	 Install: 2.68s.  Extract: 2.63s.  Relocate: 0.01s.  Total: 2.81s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/boost-1.72.0-bzwzix4qauzxltjlvug3vkpzt6kfyase
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-omw5cc44g5qrphf7aqyjpdpmw2b3tr4i
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-aylebxvheua4djgtfzzqi2ialcjt5mw7
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.63.0-t2qkug7u7irxunnirgisvdu4mdoerrxt
 ==> Installing libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta [15/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta.spack
 ==> Extracting libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta from binary cache
 ==> libiberty: Successfully installed libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.08s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.09s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libpciaccess-0.17-omw5cc44g5qrphf7aqyjpdpmw2b3tr4i
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-qaspjyq5yqcso6yatgyhvm7j632ez7md
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/ncurses-6.5-rvg7j6bmergf3is4yoacm5sgsi7l4tvm
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/berkeley-db-18.1.40-cexliohp6aqckxeq4bqy5wrmxzyrfzqc
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/nghttp2-1.63.0-t2qkug7u7irxunnirgisvdu4mdoerrxt
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20240808-nhrbcomj5lgnql2itckj7py3hi6wuz5d
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/readline-8.2-aylebxvheua4djgtfzzqi2ialcjt5mw7
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.4.0-5gigqgwld4jgaxb46pzeavxuicamdgvw
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-pcwnu2wfae7nfv5isb3kcl7otav2m5zy
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.13.4-wozcmyn2bivorr7geiwavaqeosmwmaow
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-xbwxobi4cjizcuch7ukmi4igoosktbma
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.10.1-fpywomo74ruadasuelzpvql7zj6rufeo
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-mmv6i4naeg746pk2xpypdpejwvypmegb
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.11.1-fwtuzgpmp2dy3udiekh6nwnbcld22kmk
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.30.5-d2nwbxlz2qe2hqu7yy4v6vlgiz6qihwj
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-bexdfw2vfc64r6u72mqestm6olahfr6e
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.3-5wqqmswtibbhuilr356mzviq4flzdc3z
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw
-==> Installing libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k [37/47]
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k.spec.json.sig
-==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-0.11.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k.spack
-==> Extracting libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k from binary cache
-==> libdwarf: Successfully installed libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.09s.  Extract: 0.03s.  Relocate: 0.02s.  Total: 0.09s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.06s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.07s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libiberty-2.41-ojjef3cyseiyid7u6jf7dk4mzyxsm5ta
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libedit-3.1-20240808-nhrbcomj5lgnql2itckj7py3hi6wuz5d
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libtool-2.4.7-tt3byemiknxgeuaadpxrltepvic7xsms
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/xz-5.4.6-2fvrfr67ahyx5vqg6hyd3dachcl3nl2k
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libsigsegv-2.14-ea6qziv7obmf5fq3mxy42rhxptoiwfb6
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zstd-1.5.6-t7h6imj35ruac562vr7snzvli2h2tzup
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.2.1-fhud6vqkh7jaesckalgqg5xxml72in6i
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gdbm-1.23-jj2atvsdprz6qvh2n43326zfxv42iw7n
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/numactl-2.0.18-euqyy3hu6d7yiuf67q6xgmiwtlgfkanp
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/m4-1.4.19-qaspjyq5yqcso6yatgyhvm7j632ez7md
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssl-3.4.0-5gigqgwld4jgaxb46pzeavxuicamdgvw
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libxml2-2.13.4-wozcmyn2bivorr7geiwavaqeosmwmaow
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pigz-2.8-pcwnu2wfae7nfv5isb3kcl7otav2m5zy
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/perl-5.40.0-cwpt5ec6gcal6ftcrrxcecnt74fdjfhi
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/curl-8.10.1-fpywomo74ruadasuelzpvql7zj6rufeo
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libevent-2.1.12-xbwxobi4cjizcuch7ukmi4igoosktbma
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hwloc-2.11.1-fwtuzgpmp2dy3udiekh6nwnbcld22kmk
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tar-1.34-mmv6i4naeg746pk2xpypdpejwvypmegb
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-awgfaon3dsdj54pighglmrv7gnex7jko
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/cmake-3.30.5-d2nwbxlz2qe2hqu7yy4v6vlgiz6qihwj
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/pmix-5.0.3-5wqqmswtibbhuilr356mzviq4flzdc3z
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gettext-0.22.5-bexdfw2vfc64r6u72mqestm6olahfr6e
 ==> Installing intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y [38/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-tbb-2021.12.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y.spack
 ==> Extracting intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y from binary cache
 ==> intel-tbb: Successfully installed intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.12s.  Extract: 0.05s.  Relocate: 0.03s.  Total: 0.13s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.191-zw2tlkv4255rxzdcnziuyodhjcnk7arp
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.21.3-pq3as37xnogsfkivav3r6phgtsuwhjlb
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/automake-1.16.5-awgfaon3dsdj54pighglmrv7gnex7jko
-==> Installing dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq [42/47]
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.10s.  Extract: 0.05s.  Relocate: 0.02s.  Total: 0.11s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/intel-tbb-2021.12.0-u5vh5hcz3rg7kg4qmgozni66up7bke5y
+==> Installing libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k [39/47]
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k.spec.json.sig
+==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-0.11.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k.spack
+==> Extracting libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k from binary cache
+==> libdwarf: Successfully installed libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.03s.  Relocate: 0.01s.  Total: 0.07s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/libdwarf-0.11.0-hz7ptvgac3xb3gczyob462mpmtq7ki7k
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/krb5-1.21.3-pq3as37xnogsfkivav3r6phgtsuwhjlb
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/elfutils-0.191-zw2tlkv4255rxzdcnziuyodhjcnk7arp
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.9p1-wz7w27t54u5lcphpvtwvv43vmhwmqwkn
+==> Installing dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq [43/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-13.0.0/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq.spack
 ==> Extracting dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq from binary cache
 ==> dyninst: Successfully installed dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.42s.  Extract: 0.32s.  Relocate: 0.06s.  Total: 0.43s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openssh-9.9p1-wz7w27t54u5lcphpvtwvv43vmhwmqwkn
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.30s.  Extract: 0.22s.  Relocate: 0.05s.  Total: 0.31s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/dyninst-13.0.0-idhmtve2yuxvjsnv3e4kytfiggmifdkq
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea
 ==> Installing adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55 [45/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55.spack
 ==> Extracting adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55 from binary cache
 ==> adept-utils: Successfully installed adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.27s.  Extract: 0.03s.  Relocate: 0.20s.  Total: 0.28s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.22s.  Extract: 0.03s.  Relocate: 0.15s.  Total: 0.23s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/adept-utils-1.0.1-q5xl3h77ochzhs4f5ebpjdsnetuvze55
 ==> Installing callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j [46/47]
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j.spec.json.sig
 ==> Fetching file:///mirror/build_cache/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4/linux-ubuntu22.04-x86_64_v3-gcc-11.4.0-callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j.spack
 ==> Extracting callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j from binary cache
 ==> callpath: Successfully installed callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.15s.  Extract: 0.04s.  Relocate: 0.06s.  Total: 0.16s
-[+] /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.12s.  Extract: 0.04s.  Relocate: 0.04s.  Total: 0.12s
+[+] /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/callpath-1.0.4-7hjlu6ddwmsb3mrwzfibjpg3fg7tpu6j
 ==> Installing tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b [47/47]
 ==> No binary for tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b found: installing from source
-==> Using cached archive: /home/spack5/spack/var/spack/cache/_source-cache/archive/24/24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9.tar.gz
+==> Using cached archive: /home/spack/spack/var/spack/cache/_source-cache/archive/24/24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9.tar.gz
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
 ==> tutorial-mpileaks: Executing phase: 'configure'
 ==> Error: ProcessError: Command exited with status 1:
-    '/tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure' '--prefix=/home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b'
+    '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b'
 
 13 errors found in build log:
      16	   libtoolize: copying file 'm4/lt~obsolete.m4'
      17	   autoreconf: configure.ac: not using Intltool
      18	   autoreconf: configure.ac: not using Gtkdoc
      19	   autoreconf: running: aclocal --force -I m4
-     20	   autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoconf --force
+     20	   autoreconf: running: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoconf --force
      21	   configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
   >> 22	   configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
   >> 23	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
@@ -115,7 +115,7 @@ $ spack install tutorial-mpileaks
   >> 31	   configure.ac:47: You should run autoupdate.
   >> 32	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/spack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
   >> 33	   configure.ac:47: the top level
-     34	   autoreconf: running: /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoheader --force
+     34	   autoreconf: running: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/autoconf-2.72-vgucajy3lkmspohhktsvmzgzttgzwqnw/bin/autoheader --force
      35	   autoreconf: running: automake --add-missing --copy --force-missing
   >> 36	   configure.ac:26: installing 'config/compile'
   >> 37	   configure.ac:19: installing 'config/missing'
@@ -128,16 +128,14 @@ $ spack install tutorial-mpileaks
 
      ...
 
-     71	   checking whether the compiler supports GNU C++... yes
-     72	   checking whether /home/spack5/spack/lib/spack/env/gcc/g++ accepts -g... yes
-     73	   checking for /home/spack5/spack/lib/spack/env/gcc/g++ option to enable C++11 features... none needed
-     74	   checking dependency style of /home/spack5/spack/lib/spack/env/gcc/g++... gcc3
-     75	   checking for /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc... /home/spack5/spack/opt/spack/linux
-	   -ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc
-     76	   Checking whether /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc responds to '-showme:compile'...
-	   yes
-  >> 77	   configure: error: unable to locate adept-utils installation
+     73	   checking whether the compiler supports GNU C++... yes
+     74	   checking whether /home/spack/spack/lib/spack/env/gcc/g++ accepts -g... yes
+     75	   checking for /home/spack/spack/lib/spack/env/gcc/g++ option to enable C++11 features... none needed
+     76	   checking dependency style of /home/spack/spack/lib/spack/env/gcc/g++... gcc3
+     77	   checking for /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc... /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc
+     78	   Checking whether /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/openmpi-5.0.5-jvwxvxe7dgexcutl2wtjaibbrnpys3ea/bin/mpicc responds to '-showme:compile'... yes
+  >> 79	   configure: error: unable to locate adept-utils installation
 
 See build log for details:
-  /tmp/spack5/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-build-out.txt
+  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-yycbswnziaqf7y2aprkhwxl4n6il6s3b/spack-build-out.txt
 
