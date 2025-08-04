@@ -314,13 +314,13 @@ Developers can achieve builds of both cases from a single ``spack install`` as l
 
 .. code-block:: console
 
-  # First we have to allow repeat specs in the environment
-  $ spack config add concretizer:unify:false
-  # Next we need to specify the specs we want ('==' propagates the variant to deps)
-  $ spack change macsio build_type==Release
-  $ spack add macsio+scr build_type==Debug
-  # Inspect the graph for multiple dev_path=
-  $ spack concretize -f
+   # First we have to allow repeat specs in the environment
+   $ spack config add concretizer:unify:false
+   # Next we need to specify the specs we want ('==' propagates the variant to deps)
+   $ spack change macsio build_type==Release
+   $ spack add macsio+scr build_type==Debug
+   # Inspect the graph for multiple dev_path=
+   $ spack concretize -f
 
 While we won't build out this example it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
