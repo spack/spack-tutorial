@@ -285,22 +285,22 @@ This command is particularly useful in developer environments—it allows develo
 The additional features of the install command are unnecessary when tightly iterating between building and testing a particular package.
 For example, the workflow modifying ``scr`` that we just went through can be simplified to:
 
- .. code-block:: console
+.. code-block:: console
 
-    $ spack build-env scr -- bash
-    # Shell wrappers didn't propagate to the subshell
-    $ source $SPACK_ROOT/share/spack/setup-env.sh
-    # Lets look at navigation features
-    $ spack cd --help
-    $ spack cd -c scr
-    $ touch src/scr_copy.c
-    $ spack cd -b scr
-    # Lets look at whats here
-    $ ls
-    # Build and run tests
-    $ make -j2
-    $ make test
-    $ exit
+   $ spack build-env scr -- bash
+   # Shell wrappers didn't propagate to the subshell
+   $ source $SPACK_ROOT/share/spack/setup-env.sh
+   # Lets look at navigation features
+   $ spack cd --help
+   $ spack cd -c scr
+   $ touch src/scr_copy.c
+   $ spack cd -b scr
+   # Lets look at whats here
+   $ ls
+   # Build and run tests
+   $ make -j2
+   $ make test
+   $ exit
 
 Working with the build environment and along with Spack navigation features provides a nice way to iterate quickly and navigate through the hash-heavy Spack directory structures.
 
@@ -314,13 +314,13 @@ Developers can achieve builds of both cases from a single ``spack install`` as l
 
 .. code-block:: console
 
-   # First we have to allow repeat specs in the environment
-   $ spack config add concretizer:unify:false
-   # Next we need to specify the specs we want ('==' propagates the variant to deps)
-   $ spack change macsio build_type==Release
-   $ spack add macsio+scr build_type==Debug
-   # Inspect the graph for multiple dev_path=
-   $ spack concretize -f
+  # First we have to allow repeat specs in the environment
+  $ spack config add concretizer:unify:false
+  # Next we need to specify the specs we want ('==' propagates the variant to deps)
+  $ spack change macsio build_type==Release
+  $ spack add macsio+scr build_type==Debug
+  # Inspect the graph for multiple dev_path=
+  $ spack concretize -f
 
 While we won't build out this example it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
