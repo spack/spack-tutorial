@@ -22,8 +22,8 @@ fake_example stacks/setup-1 "spack config edit" "/bin/true"
 example stacks/setup-2 "spack concretize"
 example stacks/setup-2 "spack install"
 
-example stacks/compiler-find-0 'spack compiler find "$(spack location -i gcc)"'
-example stacks/compiler-find-1 "spack location -i gcc"
+example stacks/compiler-find-0 'spack compiler find "$(spack location -i gcc@12)"'
+example stacks/compiler-find-1 "spack location -i gcc@12"
 
 example stacks/compiler-list-0 "spack compiler list"
 
