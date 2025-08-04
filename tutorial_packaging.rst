@@ -100,12 +100,12 @@ The areas we need to modify are highlighted in the figure below.
 
 .. note::
 
-   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of **GitHub user name** for those accounts willing to be notified when a change is made to the package.
+   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of **GitHub user name**s for those accounts willing to be notified when a change is made to the package.
    They will be given an opportunity to review the changes.
    This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
 
-Since we are providing a ``url``, we can confirm the checksum, or ``sha256`` calculation.
-Exit your editor to return to the command line and use the ``spack checksum`` command:
+Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256`` calculation.
+Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
