@@ -43,8 +43,8 @@ jobs:
     - name: Re-generate outputs from tutorial scripts
       run: |
         chmod -R a+w outputs
-        mkdir spack && sudo chown -R 1000:1000 spack
-        DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94 -v $(pwd)/spack:/home/spack/spack"
+        mkdir spack-home && sudo chown -R 1000:1000 spack-home
+        DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94 -v $(pwd)/spack-home:/home/spack"
         make -C outputs -j $(nproc) DOCKER_RUN_OPTS="$DOCKER_RUN_OPTS" container=ghcr.io/spack/tutorial
 
     - name: Show diff of modified files
