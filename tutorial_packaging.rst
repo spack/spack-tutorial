@@ -22,14 +22,14 @@ Spack packages are installation scripts, which are essentially recipes for build
 
 They define properties and behavior of the build, such as:
 
-* where to find and how to retrieve the software;
-* its dependencies;
-* options (variants) for building from source;
-* known build constraints (conflicts);
-* known requirements (requires); and
-* build commands.
+* where to find and how to `retrieve the software <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#fetching-from-code-repositories>`_;
+* its `dependencies <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#dependencies>`_;
+* options (`variants <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_) for building from source;
+* known build constraints (`conflicts <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#conflicts>`_);
+* known requirements (`requires <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#requires>`_); and
+* `build commands <https://spack.readthedocs.io/en/latest/packaging_guide_build.html>`_.
 
-They can also define checks of the installed software that can be performed after the installation.
+They can also define `checks <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html>`_ of the installed software that can be performed after the installation.
 
 Once we've specified a package's recipe, users can ask Spack to build the software with different features on any of the supported systems.
 
@@ -52,7 +52,8 @@ Creating the Package File
 
 .. note::
 
-   Before proceeding, make sure your ``VISUAL`` or ``EDITOR`` environment variable is set to the name or path of your preferred text editor.
+   Before proceeding, make sure your ``SPACK_EDITOR``, ``VISUAL``, or ``EDITOR`` environment variable is set to the name or path of your preferred text editor.
+   Details can be found at `<https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
 
 Suppose you want to install software that depends on mpileaks but found Spack did not already have a built-in package for it.
@@ -60,9 +61,9 @@ This means you are going to have to create one.
 
 Spack's *create* command builds a new package from a template by taking the location of the package's source code and using it to:
 
-* fetch the code;
+* `fetch the code <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#fetching-from-code-repositories>`_;
 * create a package skeleton; and
-* open the file in your editor of choice.
+* open the file in your `editor of choice <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
 The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
@@ -79,16 +80,16 @@ Take a moment to look over the file.
 As we can see from the skeleton contents, the Spack template:
 
 * provides information on the commands for installing and editing the package;
-* imports and inherits from the inferred build system package;
+* imports and inherits from the inferred `build system package <https://spack.readthedocs.io/en/latest/build_systems.html>`_;
 * provides a docstring template;
 * provides an example homepage URL;
-* shows how to specify a list of package maintainers;
-* provides a template for the license;
-* specifies the version directive with the checksum;
-* lists the inferred language and other build dependencies;
+* shows how to specify a list of package `maintainers <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_;
+* provides a template for the `license <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#license-information>`_;
+* specifies the `version directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#versions-and-urls>`_ with the `checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_;
+* lists the inferred language and other build `dependencies <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#dependencies>`_;
 * provides a skeleton for another dependency;
-* provides a preliminary implementation of the ``autoreconf`` method; and
-* provides a skeleton ``configure_args`` method.
+* provides a preliminary implementation of the `autoreconf method <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#using-a-custom-autoreconf-phase>`_; and
+* provides a skeleton `configure_args method <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_.
 
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
