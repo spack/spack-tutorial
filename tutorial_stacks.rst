@@ -39,8 +39,8 @@ Setup the compiler
 The first step to build our stack is to setup the compiler we want to use later.
 This is currently an iterative process that can be done in two ways:
 
- 1. Install the compiler first, then register it in the environment
- 2. Use a second environment just for the compiler
+1. Install the compiler first, then register it in the environment
+2. Use a second environment just for the compiler
 
 Below, we'll use the first approach.
 For people interested, an example of the latter approach can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.

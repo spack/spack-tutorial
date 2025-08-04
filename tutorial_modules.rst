@@ -634,8 +634,8 @@ This layout is quite simple to deploy, but you can see from the above snippet th
 
 Even if ``conflicts`` directives are carefully placed in module files, they:
 
-  - won't enforce a consistent environment, but will just report an error
-  - need constant updates, for instance as soon as a new compiler or MPI library is installed
+- won't enforce a consistent environment, but will just report an error
+- need constant updates, for instance as soon as a new compiler or MPI library is installed
 
 `Hierarchical module files <http://lmod.readthedocs.io/en/latest/080_hierarchy.html>`_ try to overcome these shortcomings by showing at start-up only a restricted view of what is available on the system: more specifically, only the software that has been installed with OS provided compilers.
 Among this software, there will be other -- usually more recent -- compilers that, once loaded, will prepend new directories to ``MODULEPATH``, unlocking all the software that was compiled with them.
@@ -648,11 +648,11 @@ Core/Compiler/MPI
 The most widely used hierarchy is the so called ``Core/Compiler/MPI`` where, on top of the compilers, different MPI libraries also unlock software linked to them.
 There are just a few steps needed to adapt the ``modules.yaml`` file we used previously:
 
-  #. enable the ``lmod`` file generator
-  #. change the ``tcl`` tag to ``lmod``
-  #. remove the ``tcl`` specific ``conflict`` directive
-  #. declare which compilers are considered ``core_compilers``
-  #. remove the ``mpi`` related suffixes in projections (as they will be substituted by hierarchies)
+#. enable the ``lmod`` file generator
+#. change the ``tcl`` tag to ``lmod``
+#. remove the ``tcl`` specific ``conflict`` directive
+#. declare which compilers are considered ``core_compilers``
+#. remove the ``mpi`` related suffixes in projections (as they will be substituted by hierarchies)
 
 After these modifications your configuration file should look like:
 
