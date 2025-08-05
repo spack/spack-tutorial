@@ -224,7 +224,7 @@ Compilers are providers for virtual packages like ``c``, ``cxx``, and ``fortran`
 Because these are often provided by the same package but we might want to use C and C++ from one compiler and Fortran from another, we need a syntax to specify which virtual a package provides.
 We call this "virtual assignment", and can be specified by ``%virtual=provider`` or ``^virtual=provider``.
 
-We will now install HDF5 with MPI support provided by MPICH, ensuring that the C and C++ components of HDF5 are compiled with ``gcc``.
+We will now install HDF5 with MPI support provided by MPICH, ensuring that the C component of HDF5 is compiled with ``gcc``.
 We could use the same syntax for ``^mpi=mpich``, but there's no need because the only way for ``hdf5`` to depend on ``mpich`` is to provide ``mpi``.
 This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
 
