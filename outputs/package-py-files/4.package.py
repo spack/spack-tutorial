@@ -2,6 +2,7 @@
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
+from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
 from spack.package import *
 
 
@@ -49,10 +50,7 @@ class TutorialMpileaks(AutotoolsPackage):
         stackstart = int(self.spec.variants["stackstart"].value)
         if stackstart:
             args.extend(
-                [
-                    f"--with-stack-start-c={stackstart}",
-                    f"--with-stack-start-fortran={stackstart}",
-                ]
+                [f"--with-stack-start-c={stackstart}", f"--with-stack-start-fortran={stackstart}"]
             )
 
         return args
