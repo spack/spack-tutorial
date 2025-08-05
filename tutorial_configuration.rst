@@ -120,26 +120,6 @@ An example use case is managing two sets of configurations, one for development 
 
 Settings specified on the command line have precedence over all other configuration scopes.
 
-^^^^^^^^^^^^^^^^^^^^^^^^
-Platform-specific scopes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some facilities manage multiple platforms from a single shared file system.
-In order to handle this, each of the configuration scopes listed above has two *sub-scopes*: platform-specific and platform-independent.
-For example, compiler settings can be stored in the following locations:
-
-#. ``$ENVIRONMENT_ROOT/spack.yaml``
-#. ``~/.spack/<platform>/compilers.yaml``
-#. ``~/.spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
-#. ``/etc/spack/<platform>/compilers.yaml``
-#. ``/etc/spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
-
-These files are listed in decreasing order of precedence, so files in ``~/.spack/<platform>`` will override settings in ``~/.spack``.
-
 -----------
 YAML Format
 -----------
