@@ -62,7 +62,7 @@ example basics/hdf5-spec       "spack spec hdf5"
 example basics/hdf5            "spack install hdf5"
 example basics/hdf5-no-mpi     "spack install hdf5~mpi"
 
-example basics/hdf5-hl-mpi     "spack install hdf5+hl+mpi %c,cxx=gcc ^mpich"
+example basics/hdf5-hl-mpi     "spack install hdf5+hl+mpi ^mpich"
 
 example basics/find-ldf-2      "spack find -ldf"
 
