@@ -43,6 +43,12 @@ In order to avoid modifying your Spack installation with the package we are crea
    :language: console
 
 Doing this ensures changes we make here do not adversely affect other parts of the tutorial.
+
+Now let's look at the available repositories to us using the `spack repo list` command:
+
+.. literalinclude:: outputs/packaging/repo-list.out
+   :language: console
+
 You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ and the command at `spack repo <https://spack.readthedocs.io/en/latest/repositories.html#cmd-spack-repo>`_.
 
 
