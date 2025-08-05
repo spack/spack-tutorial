@@ -461,7 +461,7 @@ Instead, we'll update our config to force disable it:
        hdf5:
          require:
          - spec: "~mpi"
-         - any_of: ["%llvm", "gcc"]
+         - any_of: ["%llvm", "%gcc"]
 
 
 Note that defining ``hdf5`` overrides everything under ``all``, so the Clang preference must be reintroduced.
@@ -486,7 +486,7 @@ On these systems, we have a pre-installed curl.
 Let's tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 14-17
+   :emphasize-lines: 16-20
 
    spack:
      specs: []
@@ -502,7 +502,7 @@ Let's tell Spack about this package and where it can be found:
        hdf5:
          require:
          - spec: "~mpi"
-         - any_of: ["%llvm", "gcc"]
+         - any_of: ["%llvm", "%gcc"]
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
