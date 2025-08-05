@@ -285,22 +285,22 @@ This command is particularly useful in developer environments—it allows develo
 The additional features of the install command are unnecessary when tightly iterating between building and testing a particular package.
 For example, the workflow modifying ``scr`` that we just went through can be simplified to:
 
- .. code-block:: console
+.. code-block:: console
 
-    $ spack build-env scr -- bash
-    # Shell wrappers didn't propagate to the subshell
-    $ source $SPACK_ROOT/share/spack/setup-env.sh
-    # Lets look at navigation features
-    $ spack cd --help
-    $ spack cd -c scr
-    $ touch src/scr_copy.c
-    $ spack cd -b scr
-    # Lets look at whats here
-    $ ls
-    # Build and run tests
-    $ make -j2
-    $ make test
-    $ exit
+   $ spack build-env scr -- bash
+   # Shell wrappers didn't propagate to the subshell
+   $ source $SPACK_ROOT/share/spack/setup-env.sh
+   # Lets look at navigation features
+   $ spack cd --help
+   $ spack cd -c scr
+   $ touch src/scr_copy.c
+   $ spack cd -b scr
+   # Lets look at whats here
+   $ ls
+   # Build and run tests
+   $ make -j2
+   $ make test
+   $ exit
 
 Working with the build environment and along with Spack navigation features provides a nice way to iterate quickly and navigate through the hash-heavy Spack directory structures.
 

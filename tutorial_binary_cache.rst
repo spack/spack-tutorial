@@ -116,9 +116,9 @@ look very similar to a container image --- we will get to that in a bit.
    You can change the visibility to ``public`` by going to GitHub Packages from your GitHub account, selecting the ``buildcache`` package, go to ``package settings``, and change the visibility to ``public`` in the ``Danger Zone`` section.
    This page can also be directly accessed by going to
 
-      .. code-block:: text
+   .. code-block:: text
 
-         https://github.com/users/<user>/packages/container/buildcache/settings
+      https://github.com/users/<user>/packages/container/buildcache/settings
 
 
 -------------------------------
