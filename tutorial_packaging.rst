@@ -44,10 +44,19 @@ In order to avoid modifying your Spack installation with the package we are crea
 
 Doing this ensures changes we make here do not adversely affect other parts of the tutorial.
 
-Now let's look at the available repositories to us using the `spack repo list` command:
+Now let's look at the available repositories using ``spack repo list``:
 
 .. literalinclude:: outputs/packaging/repo-list.out
    :language: console
+
+Notice we now have two repositories: ``tutorial`` and ``builtin``.
+
+We can see how they are configured using ``spack config get repos``:
+
+.. literalinclude:: outputs/packaging/repo-config.out
+   :language: console
+
+Notice the default ``builtin`` repository is checked out at the latest release branch.
 
 You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ and the command at `spack repo <https://spack.readthedocs.io/en/latest/repositories.html#cmd-spack-repo>`_.
 
