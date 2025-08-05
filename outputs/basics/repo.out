@@ -1,0 +1,24 @@
+$ spack repo update builtin --tag v2025.07.0
+remote: Enumerating objects: 22170, done.K
+remote: Counting objects: 100% (22170/22170), done.K
+remote: Compressing objects: 100% (11457/11457), done.K
+remote: Total 22170 (delta 3138), reused 15819 (delta 2156), pack-reused 0 (from 0)K
+Note: switching to 'v2025.07.0'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 4b8bb351 turn off all hipblaslt dependents
+==> builtin: Updated sucessfully.

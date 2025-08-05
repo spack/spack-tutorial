@@ -1,17 +1,32 @@
 $ spack graph tcl
-o tcl@8.6.12/w4gwr4e
+o tcl@8.6.12/6wkjgx5
 |\
 | |\
 | | |\
-o | | | zlib-ng@2.2.1/fhud6vq
-|\| | |
-|\ \ \ \
-| |_|/ /
-|/| | |
-| |/ /
-| | o gmake@4.4.1/srkzfjr
-| |/|
-|/|/
-| o gcc-runtime@11.4.0/hshzy76
-|/
-o glibc@2.35/a7drdl4
+| | | |\
+| | | | |\
+o | | | | | zlib-ng@2.2.4/g7ixtqy
+|\| | | | |
+|\ \ \ \ \ \
+| |_|/ / / /
+|/| | | | |
+| |\ \ \ \ \
+| | |_|/ / /
+| |/| | | |
+| | |\ \ \ \
+| | | |_|/ /
+| | |/| | |
+| | | |/ /
+| | | | o gmake@4.4.1/5vb6e4b
+| |_|_|/|
+|/| |_|/|
+| |/| |/|
+| | |/|/
+| | | o compiler-wrapper@1.0/rwnqbli
+| | |
+| o | gcc-runtime@11.4.0/3c5xh7d
+|/| |
+| |/
+| o gcc@11.4.0/j7ykyvm
+|
+o glibc@2.35/epwvtix

@@ -6,5 +6,5 @@ fi
 
 cd ~/spack || exit
 . share/spack/setup-env.sh
-spack tutorial -y
+# spack tutorial -y
 spack bootstrap now

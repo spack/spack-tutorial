@@ -22,8 +22,8 @@ fake_example stacks/setup-1 "spack config edit" "/bin/true"
 example stacks/setup-2 "spack concretize"
 example stacks/setup-2 "spack install"
 
-example stacks/compiler-find-0 'spack compiler find "$(spack location -i gcc)"'
-example stacks/compiler-find-1 "spack location -i gcc"
+example stacks/compiler-find-0 'spack compiler find "$(spack location -i gcc@12)"'
+example stacks/compiler-find-1 "spack location -i gcc@12"
 
 example stacks/compiler-list-0 "spack compiler list"
 
@@ -72,7 +72,7 @@ example stacks/view-0       "spack concretize"
 example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
-example stacks/view-0       "ls ~/stacks/views/full/gcc-12.3.0"
+example stacks/view-0       "ls ~/stacks/views/full/gcc-12.5.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 

@@ -35,6 +35,11 @@ Spack has some nice command line integration tools, so instead of simply prepend
 
   $ . share/spack/setup-env.sh
 
+For this tutorial we'll also pin the packages repository to ``2025.07.0`` to make use of the binary caches later on by running:
+
+.. literalinclude:: outputs/basics/repo.out
+   :language: console
+
 And now we're good to go!
 
 -----------------
@@ -224,7 +229,13 @@ Compilers are providers for virtual packages like ``c``, ``cxx``, and ``fortran`
 Because these are often provided by the same package but we might want to use C and C++ from one compiler and Fortran from another, we need a syntax to specify which virtual a package provides.
 We call this "virtual assignment", and can be specified by ``%virtual=provider`` or ``^virtual=provider``.
 
-We will now install HDF5 with MPI support provided by MPICH, ensuring that the C and C++ components of HDF5 are compiled with ``gcc``.
+For example if we wanted to install hdf5 using GCC for the C and C++ components but Intel OneAPI for the Fortran compiler we could write:
+
+.. code-block:: none
+
+   hdf5 %c,cxx=gcc %fortran=oneapi
+
+However, we'll keep it simple for now and install HDF5 with MPI support provided by MPICH.
 We could use the same syntax for ``^mpi=mpich``, but there's no need because the only way for ``hdf5`` to depend on ``mpich`` is to provide ``mpi``.
 This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
 

@@ -1,4 +1,4 @@
-FROM ghcr.io/spack/tutorial-ubuntu-22.04:v2024-05-07
+FROM ghcr.io/spack/tutorial-ubuntu-22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -18,7 +18,7 @@ RUN apt-get remove -y gcc-12
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/v0.23.1/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/v2025.07.0/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
