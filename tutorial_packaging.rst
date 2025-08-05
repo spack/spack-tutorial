@@ -197,7 +197,7 @@ You should see the information derived from the package now includes the descrip
 Also notice it shows:
 
 * the preferred version derived from the code;
-* the default ``Autotools`` package `installation phases <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_;
+* the default ``AutotoolsBuilder`` package `installation phases <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_;
 * the `gmake <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L62>`_ and `gnuconfig <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L60>`_ build dependencies inherited from ``AutotoolsPackage``; and
 * both link and run dependencies are currently ``None``.
 
