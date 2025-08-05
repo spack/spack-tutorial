@@ -275,7 +275,7 @@ In this section, we'll learn how to enforce that all the packages in our environ
 
 We can customize the selection of the ``mpi`` provider using `concretization preferences <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_ to change the behavior of the concretizer.
 
-Let's start by examining our environment's configuration using ``spack config get``:
+Let's start by examining our environment's configuration using ``spack config edit``:
 
 .. literalinclude:: outputs/environments/config-get-1.out
 
@@ -544,7 +544,7 @@ which indicates the active environment by highlighting it in green.
 We can also see from the listing above that the current environment directory contains both of the environment files: ``spack.yaml`` and ``spack.lock``.
 This is because ``spack.lock`` was generated when we concretized the environment.
 
-If we ``cat`` the ``spack.yaml`` file, we'll see the same specs and view options previously shown by ``spack config get``:
+If we ``cat`` the ``spack.yaml`` file, we'll see the same specs and view options previously shown by ``spack config edit``:
 
 .. literalinclude:: outputs/environments/cat-config-1.out
    :language: console
@@ -613,7 +613,7 @@ Now activate the environment and install the packages:
 
 Notice that Spack concretized the specs before installing them and their dependencies.
 It also updated the environment's view.
-Since we already installed all these packages outside of the environment, their links were simply added to it.
+Since we already installed all these packages outside of the environment, their links were simply added to the view.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Updating an installed environment
@@ -632,9 +632,10 @@ Notice that ``spack add`` added the package to our active environment and it app
 
 .. note::
 
-   You'll need to run ``spack install`` to install added packages
+   You'll need to run ``spack concretize`` and ``spack install`` to install added packages
    in your environment because ``spack add`` only adds it to the
-   configuration.
+   configuration and ``spack install`` only automatically concretizes the first time an
+   environment is used.
 
 Now use ``spack remove`` to remove the spec from the configuration:
 
@@ -726,6 +727,21 @@ Since we created the environment from our ``spack.lock`` file, not only do we ge
 
    Use of ``spack.lock`` to reproduce a build (currently) requires you
    to be on the same type of machine.
+
+--------
+Clean-up
+--------
+
+The later sections of this tutorial are not designed to be run in whatever environment we happened to be in, so we will despacktivate now to avoid accidentally running in this environment later.
+
+.. code-block::
+   :language: console
+
+   spack env deactivate
+
+.. warning::
+
+   If you do not deactivate the environment, you will get errors in later sections of the tutorial.
 
 -------------------
 More information

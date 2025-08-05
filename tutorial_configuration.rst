@@ -120,26 +120,6 @@ An example use case is managing two sets of configurations, one for development 
 
 Settings specified on the command line have precedence over all other configuration scopes.
 
-^^^^^^^^^^^^^^^^^^^^^^^^
-Platform-specific scopes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some facilities manage multiple platforms from a single shared file system.
-In order to handle this, each of the configuration scopes listed above has two *sub-scopes*: platform-specific and platform-independent.
-For example, compiler settings can be stored in the following locations:
-
-#. ``$ENVIRONMENT_ROOT/spack.yaml``
-#. ``~/.spack/<platform>/compilers.yaml``
-#. ``~/.spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
-#. ``/etc/spack/<platform>/compilers.yaml``
-#. ``/etc/spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
-
-These files are listed in decreasing order of precedence, so files in ``~/.spack/<platform>`` will override settings in ``~/.spack``.
-
 -----------
 YAML Format
 -----------
@@ -298,13 +278,13 @@ Let's open our compilers configuration file again and add a compiler flag:
    packages:
      gcc:
        externals:
-       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+       - spec: gcc@10.5.0 languages:='c,c++,fortran'
          prefix: /usr
          extra_attributes:
            compilers:
-             c: /usr/bin/gcc
-             cxx: /usr/bin/g++
-             fortran: /usr/bin/gfortran
+             c: /usr/bin/gcc-10
+             cxx: /usr/bin/g++-10
+             fortran: /usr/bin/gfortran-10
            flags:
              cppflags: -g
 
@@ -511,7 +491,6 @@ Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
 Finally, we set ``buildable: false`` to require that Spack not try to build its own.
-The cmake config isn't strictly required, but you might get a strange concretization without it.
 
 .. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
@@ -533,7 +512,7 @@ To express that we don't want any other MPI installed, we can use the virtual ``
 While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be able to build with MPI again:
 
 .. code-block:: yaml
-   :emphasize-lines: 19-24
+   :emphasize-lines: 12,18-21
 
    spack:
      specs: []
@@ -546,6 +525,7 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          - "%llvm"
        mpi:
          require: mpich
+         buildable: false
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
@@ -555,8 +535,6 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          externals:
          - spec: mpich@4.0+hydra device=ch4 netmod=ofi
            prefix: /usr
-       mpi:
-         buildable: false
 
 .. 3.externals.out has mpich
 .. The concretization result is strange and enables some qt stuff that makes it huge
