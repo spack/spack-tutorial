@@ -1,4 +1,4 @@
-$ spack config get | head -12
+$ cat "$(spack location -e)/spack.yaml"
 # This is a Spack Environment file.
 #
 # It describes a set of packages to be installed, along with
@@ -11,7 +11,3 @@ spack:
   view: true
   concretizer:
     unify: true
-==> Error: cannot dump Spack YAML configuration
-[Errno 32] Broken pipe
-Exception ignored in: <_io.TextIOWrapper name='<stdout>' mode='w' encoding='utf-8'>
-BrokenPipeError: [Errno 32] Broken pipe

@@ -1,13 +1,24 @@
 $ spack find -lf
--- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
-xvsfmyv glibc@2.35%clang  gcbcod5 gmake@4.4.1%clang  jjykcjt zlib-ng@2.2.1%clang
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
+bzi3xc7 zlib-ng@2.0.7  rdf7ff3 zlib-ng@2.2.4
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@10.5.0 ---------------------
-g7dc4ou gcc-runtime@10.5.0%gcc	he2qdcb gmake@4.4.1%gcc
-tcngwuv glibc@2.35%gcc		aiapvpp zlib-ng@2.2.1%gcc
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@10.5.0 --------------
+f53jcgx zlib-ng@2.2.4
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-hshzy76 gcc-runtime@11.4.0%gcc	ocxrmff zlib-ng@2.0.7%gcc
-a7drdl4 glibc@2.35%gcc		umrbkwv zlib-ng@2.0.7%gcc  cflags=-O3
-srkzfjr gmake@4.4.1%gcc
-==> 12 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
+yq5p6pl zlib-ng@2.0.7  cflags=-O3
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=clang@14.0.0 ----------------
+4gp5ttd gmake@4.4.1
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
+haeogmc gmake@4.4.1
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
+5vb6e4b gmake@4.4.1
+
+-- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
+rwnqbli compiler-wrapper@1.0  ekeebbi gcc-runtime@10.5.0  oc4qy2f llvm@14.0.0
+7w652un gcc@10.5.0	      3c5xh7d gcc-runtime@11.4.0
+j7ykyvm gcc@11.4.0	      epwvtix glibc@2.35
+==> 14 installed packages
