@@ -425,11 +425,12 @@ When you have an activated environment, you can edit the associated configuratio
        all:
          prefer:
          - "%llvm"
-         providers:
-           mpi: [mpich, openmpi]
+       mpi:
+         require: mpich
 
+We see if we retry that we now get what we want without getting any more specific on the command line.
 
-Because of the configuration scoping we discussed earlier, this overrides the default settings just for these two items.
+.. Because of the configuration scoping we discussed earlier, this overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
    :language: console
@@ -445,7 +446,7 @@ If we were working on a project that would routinely need serial HDF5, that migh
 Instead, we'll update our config to force disable it:
 
 .. code-block:: yaml
-   :emphasize-lines: 12-13
+   :emphasize-lines: 12-14
 
    spack:
      specs: []
@@ -456,15 +457,14 @@ Instead, we'll update our config to force disable it:
        all:
          prefer:
          - "%llvm"
-         providers:
-           mpi: [mpich, openmpi]
+       mpi:
+         require: mpich
        hdf5:
          require:
          - spec: "~mpi"
 
 
-Note that defining ``hdf5`` overrides everything under ``all``, so the Clang preference must be reintroduced.
-Now hdf5 will concretize without an MPI dependency by default.
+Note if you define ``require`` under ``all`` and ``hdf5``, you must reintroduce any requirements in ``hdf5``.
 
 .. literalinclude:: outputs/config/3.prefs.out
    :language: console
@@ -485,7 +485,7 @@ On these systems, we have a pre-installed curl.
 Let's tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 16-20
+   :emphasize-lines: 15-19
 
    spack:
      specs: []
@@ -496,8 +496,8 @@ Let's tell Spack about this package and where it can be found:
        all:
          prefer:
          - "%llvm"
-         providers:
-           mpi: [mpich, openmpi]
+       mpi:
+         require: mpich
        hdf5:
          require:
          - spec: "~mpi"
@@ -544,8 +544,8 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
        all:
          prefer:
          - "%llvm"
-         providers:
-           mpi: [mpich, openmpi]
+       mpi:
+         require: mpich
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
