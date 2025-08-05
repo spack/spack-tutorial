@@ -1,15 +1,18 @@
 $ spack find -px
--- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
-zlib-ng@2.2.1  /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/clang-14.0.0/zlib-ng-2.2.1-jjykcjtfyoezsckykaklun6a75bzd24o
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
+trilinos@16.1.0	 /home/spack/spack/opt/spack/linux-x86_64_v3/trilinos-16.1.0-s2kwzuheczjgviwbclggzscozvxqbuu4
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-gmake@4.4.1	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gmake-4.4.1-srkzfjru5z55bl5gy24dbjsrvqwg5fom
-hdf5@1.14.5	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.5-ckoh67fpzb5gn7mti2xzruvlxd424par
-hdf5@1.14.5	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.5-6ddnwvambfcyhhhs7ehog6gkftrkljnt
-hdf5@1.14.5	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/hdf5-1.14.5-tgtmflo4s6hqenvkle7urqiz2w6rumph
-tcl@8.6.12	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-imrm45j44xmboxdqpj7akq2lwkwza4vo
-tcl@8.6.12	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/tcl-8.6.12-w4gwr4ezmenbvt7u5zdyjdkfzapsz5lt
-trilinos@16.0.0	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/trilinos-16.0.0-63sfm7p6vebucsnbmwfnx36hiyal7e3e
-zlib-ng@2.0.7	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.0.7-ocxrmffc7qnibijshhygluei5qiycvja
-zlib-ng@2.0.7	 /home/spack5/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/zlib-ng-2.0.7-umrbkwvnydtpljzy4isoednibe4mwcvz
-==> 10 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
+zlib-ng@2.2.4  /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-rdf7ff3uwefab3p5ytw4djjvhh2us3rf
+
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
+tcl@8.6.12     /home/spack/spack/opt/spack/linux-x86_64_v3/tcl-8.6.12-gbhibagbyjfszvdwowyojvj6qph4pfai
+tcl@8.6.12     /home/spack/spack/opt/spack/linux-x86_64_v3/tcl-8.6.12-6wkjgx5kzib6kcz22r5rujkzooaveotr
+zlib-ng@2.0.7  /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.0.7-yq5p6pli22i3gvxfncajif4jejdxjfhh
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
+gmake@4.4.1  /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-5vb6e4beeoff4jan2t7edfjyi3hf3p7g
+hdf5@1.14.6  /home/spack/spack/opt/spack/linux-x86_64_v3/hdf5-1.14.6-53lfqwufrtzyov5n622fv3zyflkif37o
+hdf5@1.14.6  /home/spack/spack/opt/spack/linux-x86_64_v3/hdf5-1.14.6-rewh52tlwwwh3oazs7rmml6jo2fxsbcu
+hdf5@1.14.6  /home/spack/spack/opt/spack/linux-x86_64_v3/hdf5-1.14.6-p3ly6asjcve2wpfd2d47greimdojmy3n
+==> 9 installed packages

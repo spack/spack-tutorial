@@ -163,9 +163,9 @@ These packages are handled by the ``MakefilePackage`` subclass which provides co
 
 A ``MakefilePackage`` build has three phases that can be overridden by the packager:
 
-    1. ``edit()``
-    2. ``build()``
-    3. ``install()``
+1. ``edit()``
+2. ``build()``
+3. ``install()``
 
 Packagers then have the ability to control how a ``Makefile`` is edited, and what targets to include for the build phase or install phase.
 

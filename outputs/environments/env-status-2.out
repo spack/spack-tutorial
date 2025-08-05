@@ -2,19 +2,42 @@ $ despacktivate	   # short alias for 'spack env deactivate'
 $ spack env status
 ==> No active environment
 $ spack find
--- linux-ubuntu22.04-x86_64_v3 / clang@14.0.0 -------------------
-glibc@2.35  gmake@4.4.1	 zlib-ng@2.2.1
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
+mpich@4.3.0  openblas@0.3.29  openmpi@5.0.8  trilinos@16.1.0
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@10.5.0 ---------------------
-gcc-runtime@10.5.0  glibc@2.35	gmake@4.4.1
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
+zlib-ng@2.2.4
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 ---------------------
-autoconf@2.72			    curl@8.10.1		gettext@0.22.5	kokkos@4.3.01	      libmd@1.0.4	 mpfr@4.2.1	  openssl@3.4.0	 tar@1.34		 yaksa@0.3
-autoconf-archive@2023.02.20	    diffutils@3.10	glibc@2.35	krb5@1.21.3	      libpciaccess@0.17	 mpich@4.2.3	  perl@5.40.0	 tcl@8.6.12		 zlib-ng@2.0.7
-automake@1.16.5			    expat@2.6.4		gmake@4.4.1	libbsd@0.12.2	      libsigsegv@2.14	 ncurses@6.5	  pigz@2.8	 tcl@8.6.12		 zlib-ng@2.0.7
-berkeley-db@18.1.40		    findutils@4.9.0	gmp@6.3.0	libedit@3.1-20240808  libtool@2.4.7	 nghttp2@1.63.0	  pkgconf@2.2.0	 texinfo@7.1		 zlib-ng@2.2.1
-bison@3.8.2			    gawk@5.3.1		hdf5@1.14.5	libevent@2.1.12	      libxcrypt@4.4.35	 numactl@2.0.18	  pmix@5.0.3	 trilinos@16.0.0	 zstd@1.5.6
-bzip2@1.0.8			    gcc@12.3.0		hdf5@1.14.5	libfabric@1.22.0      libxml2@2.13.4	 openblas@0.3.28  python@3.13.0	 util-linux-uuid@2.40.2
-ca-certificates-mozilla@2023-05-30  gcc-runtime@11.4.0	hdf5@1.14.5	libffi@3.4.6	      m4@1.4.19		 openmpi@5.0.5	  readline@8.2	 util-macros@1.20.1
-cmake@3.30.5			    gdbm@1.23		hwloc@2.11.1	libiconv@1.17	      mpc@1.3.1		 openssh@9.9p1	  sqlite@3.46.0	 xz@5.4.6
-==> 75 installed packages
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
+berkeley-db@18.1.40  gettext@0.23.1  libffi@3.4.8    openssl@3.4.1  zlib-ng@2.0.7
+bison@3.8.2	     gmp@6.3.0	     m4@1.4.20	     python@3.13.5  zlib-ng@2.2.4
+cmake@3.31.8	     hwloc@2.11.1    ncurses@6.5     tcl@8.6.12	    zstd@1.5.7
+curl@8.11.1	     kokkos@4.5.01   nghttp2@1.65.0  tcl@8.6.12
+expat@2.7.1	     krb5@1.21.3     openssh@9.9p1   texinfo@7.1
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=clang@14.0.0 ----------------
+gmake@4.4.1
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
+gmake@4.4.1
+
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
+automake@1.16.5	  hdf5@1.14.6		libtool@2.4.7	  pmix@5.0.5
+bzip2@1.0.8	  libbsd@0.12.2		libxcrypt@4.4.38  readline@8.2
+diffutils@3.10	  libedit@3.1-20240808	libxml2@2.13.5	  sqlite@3.46.0
+findutils@4.10.0  libevent@2.1.12	mpc@1.3.1	  tar@1.35
+gawk@5.3.1	  libfabric@2.2.0	mpfr@4.2.1	  util-linux-uuid@2.41
+gdbm@1.23	  libiconv@1.18		numactl@2.0.18	  xz@5.6.3
+gmake@4.4.1	  libmd@1.1.0		perl@5.40.0	  yaksa@0.3
+hdf5@1.14.6	  libpciaccess@0.17	pigz@2.8
+hdf5@1.14.6	  libsigsegv@2.14	pkgconf@2.3.0
+
+-- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
+kokkos-kernels@4.5.01
+
+-- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
+autoconf@2.72			    gcc@10.5.0		glibc@2.35
+autoconf-archive@2023.02.20	    gcc@11.4.0		llvm@14.0.0
+ca-certificates-mozilla@2025-05-20  gcc-runtime@10.5.0	util-macros@1.20.1
+compiler-wrapper@1.0		    gcc-runtime@11.4.0
+==> 76 installed packages

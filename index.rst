@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `Practice and Experience in Advanced Research Computing (PEARC) 25 Conference <https://pearc.acm.org/pearc25/>`_ July 21, 2025.
-The event was a full-day tutorial.
+It was last presented at the `HPCIC 2025 HPC Tutorials <https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials>`_ August 5, 2025.
+The event was two online half-day tutorials..
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -18,17 +18,17 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/pearc25-tutorial-slide-preview.png
-   :target: _static/slides/spack-pearc25-tutorial-slides.pdf
+.. image:: tutorial/images/hpcic25-tutorial-slide-preview.png
+   :target: _static/slides/spack-hpcic25-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-pearc25-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-hpcic25-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Alec Scott, Kathleen Shea, Caetano Melone.
+**Full citation:** Alec Scott, Greg Becker, Kathleen Shea, Caetano Melone, Tamara Dahlgren, Peter Scheibel.
 Managing HPC Software Complexity with Spack.
-Practice and Experience in Advanced Research Computing 2025 (PEARC25), Columbus, Ohio, July 21, 2025.
+HPCIC Tutorials 2025, Livermore, California, August 5-6, 2025.
 
 .. _video:
 
@@ -48,25 +48,25 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:pearc25
-   $ docker run -it ghcr.io/spack/tutorial:pearc25
+   $ docker pull ghcr.io/spack/tutorial:hpcic25
+   $ docker run -it ghcr.io/spack/tutorial:hpcic25
 
 to start using the container. You should now be ready to run through our demo scripts:
 
-  #. :ref:`basics-tutorial`
-  #. :ref:`environments-tutorial`
-  #. :ref:`configs-tutorial`
-  #. :ref:`packaging-tutorial`
-  #. :ref:`stacks-tutorial`
-  #. :ref:`developer-workflows-tutorial`
-  #. :ref:`binary-cache-tutorial`
-  #. :ref:`spack-scripting-tutorial`
+#. :ref:`basics-tutorial`
+#. :ref:`environments-tutorial`
+#. :ref:`configs-tutorial`
+#. :ref:`packaging-tutorial`
+#. :ref:`stacks-tutorial`
+#. :ref:`developer-workflows-tutorial`
+#. :ref:`binary-cache-tutorial`
+#. :ref:`spack-scripting-tutorial`
 
 Other sections from past tutorials are also available, although they may not be kept up-to-date as frequently:
 
-  #. :ref:`modules-tutorial`
-  #. :ref:`build-systems-tutorial`
-  #. :ref:`advanced-packaging-tutorial`
+#. :ref:`modules-tutorial`
+#. :ref:`build-systems-tutorial`
+#. :ref:`advanced-packaging-tutorial`
 
 Full contents:
 

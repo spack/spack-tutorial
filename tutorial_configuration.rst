@@ -24,12 +24,10 @@ A partial list of some key configuration sections is provided below.
      - General settings (install location, number of build jobs, etc)
    * - concretizer
      - Specialization of the concretizer behavior (reuse, unification, etc)
-   * - compilers
-     - Define the compilers that Spack can use (required and system specific)
    * - Mirrors
      - Locations where spack can look for stashed source or binary distributions
    * - Packages
-     - Specific settings and rules for packages
+     - Define the compilers that Spack can use, and add rules/preferences for package concretization
    * - Modules
      - Naming, location and additional configuration of Spack generated modules
 
@@ -122,83 +120,65 @@ An example use case is managing two sets of configurations, one for development 
 
 Settings specified on the command line have precedence over all other configuration scopes.
 
-^^^^^^^^^^^^^^^^^^^^^^^^
-Platform-specific scopes
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Some facilities manage multiple platforms from a single shared file system.
-In order to handle this, each of the configuration scopes listed above has two *sub-scopes*: platform-specific and platform-independent.
-For example, compiler settings can be stored in the following locations:
-
-#. ``$ENVIRONMENT_ROOT/spack.yaml``
-#. ``~/.spack/<platform>/compilers.yaml``
-#. ``~/.spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/spack/compilers.yaml``
-#. ``/etc/spack/<platform>/compilers.yaml``
-#. ``/etc/spack/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/<platform>/compilers.yaml``
-#. ``$SPACK_ROOT/etc/defaults/compilers.yaml``
-
-These files are listed in decreasing order of precedence, so files in ``~/.spack/<platform>`` will override settings in ``~/.spack``.
-
 -----------
 YAML Format
 -----------
 
 Spack configurations are nested YAML dictionaries with a specified schema.
-The configuration is organized into sections based on theme (e.g., a 'compilers' section) and the highest-level keys of the dictionary specify the section.
+The configuration is organized into sections based on theme (e.g., a 'packages' section) and the highest-level keys of the dictionary specify the section.
 Spack generally maintains a separate file for each section, although environments keep them together (in ``spack.yaml``).
 
 When Spack checks its configuration, the configuration scopes are updated as dictionaries in increasing order of precedence, allowing higher precedence files to override lower.
 YAML dictionaries use a colon ":" to specify key-value pairs.
 Spack extends YAML syntax slightly to allow a double-colon "::" to specify a key-value pair.
 When a double-colon is used, instead of adding that section, Spack replaces what was in that section with the new value.
-For example, consider a user's compilers configuration file as follows:
+For example, look at high-level config:
+
+.. code-block:: console
+
+   $ spack config blame config
 
 .. code-block:: yaml
 
-   compilers::
-   - compiler:
-       spec: gcc@11.4.0
-       paths:
-         cc: /usr/bin/gcc
-         cxx: /usr/bin/g++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   ---                                                   config:
+   /etc/spack/config.yaml:2                                suppress_gpg_warnings: True
+   /home/spack/spack/etc/spack/defaults/config.yaml:19     install_tree:
+   /home/spack/spack/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+   ...
+   /home/spack/spack/etc/spack/defaults/config.yaml:238    aliases:
+   /home/spack/spack/etc/spack/defaults/config.yaml:239      concretise: concretize
+   /home/spack/spack/etc/spack/defaults/config.yaml:240      containerise: containerize
+   /home/spack/spack/etc/spack/defaults/config.yaml:241      rm: remove
 
+We can see overrides in action with:
 
-This ensures that no other compilers are used, as the user configuration scope is the last scope searched and the ``compilers::`` line replaces information from all previous configuration files.
-If the same configuration file had a single colon instead of the double colon, it would add the GCC version 11.3.0 compiler to whatever other compilers were listed in other configuration files.
+.. code-block:: console
+
+  $ spack config add config:aliases::{}
+  $ spack config blame config
+
+.. code-block:: yaml
+
+   ---                                                   config:
+   /home/spack/.spack/config.yaml:2                        aliases: {}
+
+The default write scope is the user scope, which overrides the defaults.
+You can undo this by editing the config section like:
+
+.. code-block:: console
+
+   $ spack config edit config
 
 A configuration section appears nearly the same when managed in an environment's ``spack.yaml`` file except that the section is nested 1 level underneath the top-level 'spack' key.
-For example the above ``compilers.yaml`` could be incorporated into an environment's ``spack.yaml`` like so:
+For example the above ``config.yaml`` could be incorporated into an environment's ``spack.yaml`` like so:
 
 .. code-block:: yaml
 
    spack:
      specs: []
      view: true
-     compilers::
-     - compiler:
-         spec: gcc@11.4.0
-         paths:
-           cc: /usr/bin/gcc
-           cxx: /usr/bin/g++
-           f77: /usr/bin/gfortran
-           fc: /usr/bin/gfortran
-         flags: {}
-         operating_system: ubuntu22.04
-         target: x86_64
-         modules: []
-         environment: {}
-         extra_rpaths: []
+     config:
+       aliases:: {}
 
 
 .. _configs-tutorial-compilers:
@@ -210,112 +190,76 @@ Compiler Configuration
 For most tasks, we can use Spack with the compilers auto-detected the first time Spack runs on a system.
 As discussed in the basic installation tutorial, we can also tell Spack where compilers are located using the ``spack compiler add`` command.
 However, in some circumstances, we want even more fine-grained control over the compilers available.
-This section will teach you how to exercise that control using the compilers configuration file.
+This section will teach you how to exercise that control using the compilers configuration.
 
-We will start by opening the compilers configuration file:
+We will start by opening the compilers configuration (which lives in the packages section):
 
 .. code-block:: console
 
-   $ spack config edit compilers
+   $ spack config edit packages
 
 
-We start with no active environment, so this will open a ``compilers.yaml`` file for editing (you can also do this with an active environment):
+We start with no active environment, so this will open a ``packages.yaml`` file for editing (you can also do this with an active environment):
 
 .. code-block:: yaml
 
-   compilers:
-   - compiler:
-       spec: clang@=14.0.0
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77:
-         fc:
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
-   - compiler:
-       spec: gcc@=10.5.0
-       paths:
-         cc: /usr/bin/gcc-10
-         cxx: /usr/bin/g++-10
-         f77: /usr/bin/gfortran-10
-         fc: /usr/bin/gfortran-10
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
-   - compiler:
-       spec: gcc@=11.4.0
-       paths:
-         cc: /usr/bin/gcc
-         cxx: /usr/bin/g++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@10.5.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc-10
+             cxx: /usr/bin/g++-10
+             fortran: /usr/bin/gfortran-10
+       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc
+             cxx: /usr/bin/g++
+             fortran: /usr/bin/gfortran
+     llvm:
+       externals:
+       - spec: llvm@14.0.0+clang~flang~lld~lldb
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/clang
+             cxx: /usr/bin/clang++
 
 This specifies two versions of the GCC compiler and one version of the Clang compiler with no Flang compiler.
 Now suppose we have a code that we want to compile with the Clang compiler for C/C++ code, but with gfortran for Fortran components.
-We can do this by adding another entry to the ``compilers.yaml`` file:
+We can do this by adding creating a toolchain config:
+
+.. code-block:: console
+
+   $ spack config edit toolchains
 
 .. code-block:: yaml
-   :emphasize-lines: 2,6-7
 
-   - compiler:
-       spec: clang@=14.0.0-gfortran
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags: {}
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   toolchains:
+     clang_gfortran:
+     - spec: '%c=llvm@14.0.0'
+       when: '%c'
+     - spec: '%cxx=llvm@14.0.0'
+       when: '%cxx'
+     - spec: '%fortran=gcc@11.4.0'
+       when: '%fortran'
 
-
-Let's talk about the sections of this compiler entry that we've changed.
-The biggest change we've made is to the ``paths`` section.
-This lists the paths to the compilers to use for each language/specification.
-In this case, we point to the Clang compiler for C/C++ and the gfortran compiler for both specifications of Fortran.
-We've also changed the ``spec`` entry for this compiler.
-The ``spec`` entry is effectively the name of the compiler for Spack.
-It consists of a name and a version number, separated by the ``@`` sigil.
-The name must be one of the supported compiler names in Spack (aocc, apple-clang, arm, cce, clang, dpcpp, fj, gcc, intel, msvc, nag, nvhpc, oneapi, pgi, rocmcc, xl, xl_r).
-The version number can be an arbitrary string of alphanumeric characters, as well as ``-``, ``.``, and ``_``.
-The ``target`` and ``operating_system`` sections we leave unchanged.
-These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
-
-We can verify that our new compiler works by invoking it now:
+We are essentially saying "use Clang for c/c++, and use GCC for Fortran".
+You can use this new entry like so:
 
 .. code-block:: console
 
-   $ spack install --no-cache zlib %clang@14.0.0-gfortran
-   ...
+   $ spack spec openblas %clang_gfortran
 
+Note the identifier ``clang_gfortran`` is not itself a spec (you don't version it).
+You reference it in other specs.
+Note that without ``when: '%fortran'``, you could not use ``clang_gfortran`` with packages unless they depended on Fortran (likewise for the `when` statements on c/cxx).
 
-This new compiler also works on Fortran codes.
-We'll show this by compiling a small package using ``cmake%gcc@11.4.0`` as a build dependency, since it is already available in our binary cache:
-
-.. code-block:: console
-
-   $ spack install --reuse cmake %gcc@11.4.0
-   ...
-   $ spack install --no-cache --reuse json-fortran %clang@=14.0.0-gfortran ^cmake%gcc@11.4.0
-   ...
-
+.. These sections specify when Spack can use different compilers, and are primarily useful for configuration files that will be used across multiple systems.
 
 ^^^^^^^^^^^^^^
 Compiler flags
@@ -329,22 +273,20 @@ As on the command line, the flags are set through the implicit build variables `
 Let's open our compilers configuration file again and add a compiler flag:
 
 .. code-block:: yaml
-   :emphasize-lines: 8-9
+   :emphasize-lines: 11-12
 
-   - compiler:
-       spec: clang@=14.0.0-gfortran
-       paths:
-         cc: /usr/bin/clang
-         cxx: /usr/bin/clang++
-         f77: /usr/bin/gfortran
-         fc: /usr/bin/gfortran
-       flags:
-         cppflags: -g
-       operating_system: ubuntu22.04
-       target: x86_64
-       modules: []
-       environment: {}
-       extra_rpaths: []
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@10.5.0 languages:='c,c++,fortran'
+         prefix: /usr
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc-10
+             cxx: /usr/bin/g++-10
+             fortran: /usr/bin/gfortran-10
+           flags:
+             cppflags: -g
 
 
 We can test this out using the ``spack spec`` command to show how the spec is concretized:
@@ -355,46 +297,45 @@ We can test this out using the ``spack spec`` command to show how the spec is co
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
 
+.. It even added it to gcc-runtime, hmm...
+
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Advanced compiler configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-There are four fields of the compiler configuration entry that we have not yet talked about.
-
-The ``target`` field of the compiler defines the cpu architecture **family** that the compiler supports.
+Some additional fields not discussed yet, in an example:
 
 .. code-block:: yaml
+   :emphasize-lines: 6-7, 15-19
 
-   - compiler:
-       ...
-       target: ppc64le
-       ...
+   packages:
+     gcc:
+       externals:
+       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+         prefix: /usr
+         modules:
+         - gcc/11.4.0
+         extra_attributes:
+           compilers:
+             c: /usr/bin/gcc
+             cxx: /usr/bin/g++
+             fortran: /usr/bin/gfortran
+           flags:
+             cppflags: -g
+           extra_rpaths:
+           - /a/path/to/somewhere/important
+           environment:
+             set:
+               EG_A_LICENSE_FILE: 1713@license4
+
+.. The ``target`` field of the compiler defines the cpu architecture **family** that the compiler supports.
+.. (target isn't in the compiler schema in packages anymore: how do we say "target generic x86_64 whenever you use this compiler")
 
 The ``modules`` field of the compiler was originally designed to support older Cray systems, but can be useful on any system that has compilers that are only usable when a particular module is loaded.
-Any modules in the ``modules`` field of the compiler configuration will be loaded as part of the build environment for packages using that compiler:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       modules:
-       - PrgEnv-gnu
-       - gcc/5.3.0
-       ...
+Any modules in the ``modules`` field of the compiler configuration will be loaded as part of the build environment for packages using that compiler.
 
 The ``environment`` field of the compiler configuration is used for compilers that require environment variables to be set during build time.
-For example, if your Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server, you can set this in ``compilers.yaml`` as follows:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       environment:
-         set:
-           INTEL_LICENSE_FILE: 1713@license4
-       ...
-
-
+For example, if your Intel compiler suite requires the ``INTEL_LICENSE_FILE`` environment variable to point to the proper license server.
 In addition to ``set``, ``environment`` also supports ``unset``, ``prepend_path``, and ``append_path``.
 
 The ``extra_rpaths`` field of the compiler configuration is used for compilers that do not rpath all of their dependencies by default.
@@ -402,15 +343,6 @@ Since compilers are often installed externally to Spack, Spack is unable to mana
 This can lead to packages not finding link dependencies imposed by the compiler properly.
 For compilers that impose link dependencies on the resulting executables that are not rpath'ed into the executable automatically, the ``extra_rpaths`` field of the compiler configuration tells Spack which dependencies to rpath into every executable created by that compiler.
 The executables will then be able to find the link dependencies imposed by the compiler.
-As an example, this field can be set by:
-
-.. code-block:: yaml
-
-   - compiler:
-       ...
-       extra_rpaths:
-       - /apps/intel/ComposerXE2017/compilers_and_libraries_2017.5.239/linux/compiler/lib/intel64_lin
-       ...
 
 
 .. _configs-tutorial-package-prefs:
@@ -424,21 +356,22 @@ First, we will look at the default ``packages.yaml`` file.
 
 .. code-block:: console
 
-   $ spack config --scope defaults edit packages
+   $ spack config --scope=defaults:base edit packages
 
 
 .. literalinclude:: _spack_root/etc/spack/defaults/packages.yaml
    :language: yaml
-   :emphasize-lines: 18,45
+   :emphasize-lines: 51
 
 
-This sets the default preferences for compilers and for providers of virtual packages.
+This sets the default preferences for providers of virtual packages.
+We can edit this to change provider preferences and also to create a preference for compilers.
 To illustrate how this works, suppose we want to change the preferences to prefer the Clang compiler and to prefer MPICH over OpenMPI.
 Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
    :language: console
-   :emphasize-lines: 16
+   :emphasize-lines: 15
 
 
 Let's override these default preferences in an environment.
@@ -466,18 +399,22 @@ When you have an activated environment, you can edit the associated configuratio
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
+         prefer:
+         - "%llvm"
+       mpi:
+         require: mpich
 
+We see if we retry that we now get what we want without getting any more specific on the command line.
 
-Because of the configuration scoping we discussed earlier, this overrides the default settings just for these two items.
+.. Because of the configuration scoping we discussed earlier, this overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
    :language: console
-   :emphasize-lines: 18
+   :emphasize-lines: 16
 
 
 ^^^^^^^^^^^^^^^^^^^
@@ -486,28 +423,32 @@ Variant preferences
 
 As we've seen throughout this tutorial, HDF5 builds with MPI enabled by default in Spack.
 If we were working on a project that would routinely need serial HDF5, that might get annoying quickly, having to type ``hdf5~mpi`` all the time.
-Instead, we'll update our preferences for HDF5.
+Instead, we'll update our config to force disable it:
 
 .. code-block:: yaml
-   :emphasize-lines: 9-10
+   :emphasize-lines: 12-14
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
+         prefer:
+         - "%llvm"
+       mpi:
+         require: mpich
        hdf5:
-         require: ~mpi
+         require:
+         - spec: "~mpi"
 
 
-Now hdf5 will concretize without an MPI dependency by default.
+Note if you define ``require`` under ``all`` and ``hdf5``, you must reintroduce any requirements in ``hdf5``.
 
 .. literalinclude:: outputs/config/3.prefs.out
    :language: console
-   :emphasize-lines: 8
+   :emphasize-lines: 2
 
 
 In general, every attribute that we can set for all packages we can set separately for an individual package.
@@ -524,65 +465,34 @@ On these systems, we have a pre-installed curl.
 Let's tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 11-14
+   :emphasize-lines: 15-19
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
+         prefer:
+         - "%llvm"
+       mpi:
+         require: mpich
        hdf5:
-         require: ~mpi
+         require:
+         - spec: "~mpi"
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
-
+         buildable: false
 
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
+Finally, we set ``buildable: false`` to require that Spack not try to build its own.
 
-.. literalinclude:: outputs/config/0.externals.out
-   :language: console
-
-
-You'll notice that Spack is now using the external Curl installation, but the compiler used to build Curl is now overriding our compiler preference of clang.
-If we explicitly specify Clang:
-
-.. literalinclude:: outputs/config/1.externals.out
-   :language: console
-
-Spack concretizes to both HDF5 and Curl being built with Clang.
-This has a side-effect of rebuilding Curl.
-If we want to force Spack to use the system Curl, we have two choices.
-We can either specify it on the command line, or we can tell Spack that it's not allowed to build its own Curl.
-We'll go with the latter.
-
-.. code-block:: yaml
-   :emphasize-lines: 15
-
-   spack:
-     specs: []
-     view: true
-     packages:
-       all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
-       hdf5:
-         require: ~mpi
-       curl:
-         externals:
-         - spec: curl@5.34.0 %gcc@11.4.0
-           prefix: /usr
-         buildable: false
-
-
-Now Spack will be forced to choose the external Curl.
+.. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
 .. literalinclude:: outputs/config/2.externals.out
    :language: console
@@ -602,16 +512,20 @@ To express that we don't want any other MPI installed, we can use the virtual ``
 While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be able to build with MPI again:
 
 .. code-block:: yaml
-   :emphasize-lines: 14-19
+   :emphasize-lines: 12,18-21
 
    spack:
      specs: []
      view: true
+     concretizer:
+       unify: true
      packages:
        all:
-         compiler: [clang, gcc, intel, pgi, xl, nag, fj]
-         providers:
-           mpi: [mpich, openmpi]
+         prefer:
+         - "%llvm"
+       mpi:
+         require: mpich
+         buildable: false
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
@@ -621,30 +535,26 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          externals:
          - spec: mpich@4.0+hydra device=ch4 netmod=ofi
            prefix: /usr
-       mpi:
-         buildable: false
 
-Now that we have configured Spack not to build any possible provider for MPI, we can try again.
+.. 3.externals.out has mpich
+.. The concretization result is strange and enables some qt stuff that makes it huge
 
-.. literalinclude:: outputs/config/3.externals.out
-   :language: console
-   :emphasize-lines: 15
-
-Notice that we still haven't build ``hdf5`` with our external ``mpich``.
+If you run this as-is, you'll notice Spack still hasn't built ``hdf5`` with our external ``mpich``.
 The concretizer has instead turned off ``mpi`` support in ``hdf5``.
 To debug this, we will force Spack to use ``hdf5+mpi``.
 
 .. code-block:: console
 
-   $ spack spec hdf5%clang+mpi
-   ==> Error: concretization failed for the following reasons:
-
-      1. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-      2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-           required because conflict applies to spec ^mpich@4.0:4.0.3
-             required because hdf5%clang+mpi requested from CLI
+   $ spack spec hdf5+mpi
+   ==> Error: failed to concretize `hdf5+mpi` for the following reasons:
+        1. cannot satisfy a requirement for package 'mpich'.
+        2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
+        3. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
            required because conflict is triggered when +mpi
-             required because hdf5%clang+mpi requested from CLI
+             required because hdf5+mpi requested explicitly
+           required because conflict constraint ^mpich@4.0:4.0.3
+             required because mpich available as external when satisfying mpich@=4.0+hydra device=ch4 netmod=ofi
+             required because hdf5+mpi requested explicitly
 
 In this case, we cannot use the external mpich.
 The version is incompatible with ``hdf5``.

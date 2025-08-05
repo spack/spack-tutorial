@@ -1,24 +1,21 @@
 $ spack spec hdf5
-Input spec
---------------------------------
- -   hdf5
-
-Concretized
---------------------------------
- -   hdf5@1.14.3%clang@14.0.0-gfortran cppflags="-g" ~cxx~fortran~hl~ipo~java~map~mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64_v3
- -       ^cmake@3.27.7%clang@14.0.0-gfortran cppflags="-g" ~doc+ncurses+ownlibs build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64_v3
- -           ^curl@8.4.0%clang@14.0.0-gfortran cppflags="-g" ~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs=shared,static tls=openssl arch=linux-ubuntu22.04-x86_64_v3
- -               ^nghttp2@1.57.0%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -               ^openssl@3.1.3%clang@14.0.0-gfortran cppflags="-g" ~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64_v3
- -                   ^ca-certificates-mozilla@2023-05-30%clang@14.0.0-gfortran cppflags="-g"  build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -                   ^perl@5.38.0%clang@14.0.0-gfortran cppflags="-g" +cpanm+opcode+open+shared+threads build_system=generic patches=714e4d1 arch=linux-ubuntu22.04-x86_64_v3
- -                       ^berkeley-db@18.1.40%clang@14.0.0-gfortran cppflags="-g" +cxx~docs+stl build_system=autotools patches=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3
- -                       ^bzip2@1.0.8%clang@14.0.0-gfortran cppflags="-g" ~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -                           ^diffutils@3.9%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -                               ^libiconv@1.17%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools libs=shared,static arch=linux-ubuntu22.04-x86_64_v3
- -                       ^gdbm@1.23%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -                           ^readline@8.2%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools patches=bbf97f1 arch=linux-ubuntu22.04-x86_64_v3
- -           ^ncurses@6.4%clang@14.0.0-gfortran cppflags="-g" ~symlinks+termlib abi=none build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -       ^gmake@4.4.1%clang@14.0.0-gfortran cppflags="-g" ~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3
- -       ^pkgconf@1.9.5%clang@14.0.0-gfortran cppflags="-g"  build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -       ^zlib-ng@2.1.4%clang@14.0.0-gfortran cppflags="-g" +compat+opt build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
+ -   hdf5@1.14.6~cxx~fortran~hl~ipo~java~map~mpi+shared~szip~threadsafe+tools api=default build_system=cmake build_type=Release generator=make arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -       ^cmake@3.31.8~doc+ncurses+ownlibs~qtgui build_system=generic build_type=Release arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -           ^curl@8.11.1~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -               ^nghttp2@1.65.0 build_system=autotools arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -                   ^diffutils@3.10 build_system=autotools arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -                       ^libiconv@1.18 build_system=autotools libs:=shared,static arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -               ^openssl@3.4.1~docs+shared build_system=generic certs=mozilla arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -                   ^ca-certificates-mozilla@2025-05-20 build_system=generic arch=linux-ubuntu22.04-x86_64
+ -                   ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -                       ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -                       ^bzip2@1.0.8~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -                       ^gdbm@1.23 build_system=autotools arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -                           ^readline@8.3 build_system=autotools patches:=21f0a03 arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -           ^ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0
+ -       ^compiler-wrapper@1.0 build_system=generic arch=linux-ubuntu22.04-x86_64
+[e]      ^glibc@2.35 build_system=autotools arch=linux-ubuntu22.04-x86_64
+ -       ^gmake@4.4.1~guile build_system=generic arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+[e]      ^llvm@14.0.0+clang~cuda~flang+gold+libomptarget~libomptarget_debug~link_llvm_dylib~lld~lldb+llvm_dylib+lua~mlir+polly~python~split_dwarf~z3 build_system=cmake build_type=Release compiler-rt=runtime generator=ninja libcxx=runtime libunwind=runtime openmp=runtime patches:=1f42874,25bc503,6379168,8248141,b216cff,cb8e645 shlib_symbol_version=none targets:=all version_suffix=none arch=linux-ubuntu22.04-x86_64
+ -       ^pkgconf@2.5.1 build_system=autotools arch=linux-ubuntu22.04-x86_64 %c=clang@14.0.0
+ -       ^zlib-ng@2.2.4+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64 %c,cxx=clang@14.0.0

@@ -1,6 +1,10 @@
 name: Generate outputs
 on:
   workflow_call:
+    inputs:
+      with_pr_container:
+        required: true
+        type: boolean
 
 jobs:
   re-generate:
@@ -10,22 +14,6 @@ jobs:
       contents: write
 
     steps:
-    - name: Remove pre-installed apps to make space for build
-      run: |
-        sudo apt-get remove -y '^llvm-.*'
-        sudo apt-get remove -y '^dotnet-.*'
-        sudo apt-get remove -y 'php.*'
-        sudo apt-get remove -y '^mongodb-.*'
-        sudo apt-get remove -y '^mysql-.*'
-        sudo apt-get autoremove -y
-        sudo apt-get clean
-        sudo rm -rf /usr/share/dotnet/
-        sudo rm -rf /usr/local/share/powershell
-        sudo rm -rf /usr/local/share/chromium
-        sudo rm -rf /usr/local/lib/android
-        sudo rm -rf /usr/local/lib/node_modules
-        sudo docker system prune -af
-
     - name: Checkout (Push)
       if: github.event_name != 'pull_request'
       uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332
@@ -40,14 +28,14 @@ jobs:
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
     - name: Download container from artifact if PR
-      if: github.event_name == 'pull_request' && needs.container.result == 'success'
+      if: github.event_name == 'pull_request' && inputs.with_pr_container
       uses: actions/download-artifact@fa0a91b85d4f404e444e00e005971372dc801d16
       with:
         name: tutorial-container
         path: /tmp
 
     - name: Import container from PR artifact
-      if: github.event_name == 'pull_request' && needs.container.result == 'success'
+      if: github.event_name == 'pull_request' && inputs.with_pr_container
       run: |
         docker load --input /tmp/tutorial-container.tar
         docker image ls -a
@@ -55,17 +43,19 @@ jobs:
     - name: Re-generate outputs from tutorial scripts
       run: |
         chmod -R a+w outputs
-        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94" container=ghcr.io/spack/tutorial
+        mkdir spack-home && sudo chown -R 1000:1000 spack-home
+        DOCKER_RUN_OPTS="-e COLUMNS=94 -e COLIFY_SIZE=24x94 -v $(pwd)/spack-home:/home/spack"
+        make -C outputs -j $(nproc) DOCKER_RUN_OPTS="$DOCKER_RUN_OPTS" container=ghcr.io/spack/tutorial
 
     - name: Show diff of modified files
       run: |
-        git diff HEAD .
+        git diff HEAD outputs/
 
     - name: Push modified files to branch
       if: ( github.event_name == 'pull_request' && ! github.event.pull_request.head.repo.fork )
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add .
+        git add outputs/
         git commit -m "Update generated outputs on behalf of [@${{ github.actor }}]"
         git push
