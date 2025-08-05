@@ -423,8 +423,8 @@ When you have an activated environment, you can edit the associated configuratio
        unify: true
      packages:
        all:
-         require:
-         - any_of: ["%llvm", "%gcc"]
+         prefer:
+         - "%llvm"
          providers:
            mpi: [mpich, openmpi]
 
@@ -454,14 +454,13 @@ Instead, we'll update our config to force disable it:
        unify: true
      packages:
        all:
-         require:
-         - any_of: ["%llvm", "%gcc"]
+         prefer:
+         - "%llvm"
          providers:
            mpi: [mpich, openmpi]
        hdf5:
          require:
          - spec: "~mpi"
-         - any_of: ["%llvm", "%gcc"]
 
 
 Note that defining ``hdf5`` overrides everything under ``all``, so the Clang preference must be reintroduced.
@@ -495,22 +494,18 @@ Let's tell Spack about this package and where it can be found:
        unify: true
      packages:
        all:
-         require:
-         - any_of: ["%llvm", "%gcc"]
+         prefer:
+         - "%llvm"
          providers:
            mpi: [mpich, openmpi]
        hdf5:
          require:
          - spec: "~mpi"
-         - any_of: ["%llvm", "%gcc"]
        curl:
          externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
-       cmake:
-         require:
-         - spec: "~qtgui"
 
 Here, we've told Spack that Curl 7.81.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
@@ -547,8 +542,8 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
        unify: true
      packages:
        all:
-         require:
-         - any_of: ["%llvm", "%gcc"]
+         prefer:
+         - "%llvm"
          providers:
            mpi: [mpich, openmpi]
        curl:
@@ -556,9 +551,6 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
-       cmake:
-         require:
-         - spec: "~qtgui"
        mpich:
          externals:
          - spec: mpich@4.0+hydra device=ch4 netmod=ofi
