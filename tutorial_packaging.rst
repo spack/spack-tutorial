@@ -590,7 +590,7 @@ Spack has thousands of built-in packages that can serve as examples to guide the
 
 .. tip::
 
-   You can find these packages under the `spack/spack-packages <https://github.com/spack/spack-packages> repository's ``repos/spack_repo/builtin/packages`` directory.
+   You can find these packages under the :ref:`spack/spack-packages <https://github.com/spack/spack-packages>` repository's ``repos/spack_repo/builtin/packages`` directory.
 
    Or use `spack pkg grep <https://spack.readthedocs.io/en/latest/command_index.html#spack-pkg>`_ to perform a query.
    For example, to find the paths to all builtin ``AutotoolsPackage`` packages, you can enter ``spack pkg grep AutotoolsPackage | sed "s/:.*//g" | sort -u``, which will search the packages in all of your configured repositories.
