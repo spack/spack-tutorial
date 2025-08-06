@@ -1,5 +1,6 @@
 $ spack uninstall -ay tutorial-mpileaks
-==> Successfully uninstalled tutorial-mpileaks@1.0%gcc@11.4.0 build_system=autotools stackstart=0 arch=linux-ubuntu22.04-x86_64_v3/vzdlgth
+==> Warning: /home/spack/repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py:23: default value for variant 'stackstart' is not a boolean or string: default=0. Did you mean default='0'?
+==> Successfully uninstalled tutorial-mpileaks@1.0 build_system=autotools stackstart=0 arch=linux-ubuntu22.04-x86_64_v3/uupqnsf
 $ spack repo remove tutorial
-==> Removed repository /home/spack/mypkgs/spack_repo/tutorial with namespace 'tutorial'.
-$ rm -rf mypkgs
+==> Removed repository 'tutorial'.
+$ rm -rf /home/spack/repos/spack_repo/tutorial
