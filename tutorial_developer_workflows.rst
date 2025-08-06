@@ -142,7 +142,7 @@ First, we tell Spack that we'd like to check out the version of scr that we want
 In this case, it will be the 3.1.0 release that we want to write a patch for:
 
 .. literalinclude:: outputs/dev/develop-1.out
-   :language: console
+   :language: spec
 
 The ``spack develop`` command marks the package as being a "development" package in the ``spack.yaml``.
 This adds a special ``dev_path=`` attribute to the spec for the package, so Spack remembers where the source code for this package is located.
@@ -237,17 +237,15 @@ When we're done developing, we simply tell Spack that it no longer needs to keep
 .. literalinclude:: outputs/dev/wrapup.out
    :language: console
 
--------------------
 Workflow Summary
--------------------
+----------------
 
 Use the ``spack develop`` command with an environment to make a reproducible build environment for your development workflow.
 Spack will set up all the dependencies for you and link all your packages together.
 Within a development environment, ``spack install`` works similarly to ``make`` in that it will check file times to rebuild the minimum number of Spack packages necessary to reflect the changes to your build.
 
--------------------
 Optional: Tips and Tricks
--------------------
+-------------------------
 
 This section will cover some additional features that are useful additions to the core tutorial above.
 Many of these items are very useful to specific projects and developers.
@@ -258,7 +256,7 @@ A list of the options for the ``spack develop`` can be viewed below:
    $ spack develop --help
 
 Source Code Management
-----------
+----------------------
 
 ``spack develop`` allows users to manipulate the source code locations The default behavior is to let Spack manage its location and cloning operations, but software developers often want more control over these.
 
@@ -276,7 +274,7 @@ This allows developers to pre-clone the software or use preferred paths as they 
    $ spack concretize -f
 
 Navigation and the Build Environment
-----------
+------------------------------------
 
 Diving into the build environment was introduced previously in the packaging section with the ``spack build-env scr -- bash`` command.
 This is a helpful function because it allows you to run commands inside the build environment.
@@ -285,10 +283,10 @@ This command is particularly useful in developer environments—it allows develo
 The additional features of the install command are unnecessary when tightly iterating between building and testing a particular package.
 For example, the workflow modifying ``scr`` that we just went through can be simplified to:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack build-env scr -- bash
-   # Shell wrappers didn't propagate to the subshell
+   # Shell wrappers did not propagate to the subshell
    $ source $SPACK_ROOT/share/spack/setup-env.sh
    # Lets look at navigation features
    $ spack cd --help
@@ -305,14 +303,14 @@ For example, the workflow modifying ``scr`` that we just went through can be sim
 Working with the build environment and along with Spack navigation features provides a nice way to iterate quickly and navigate through the hash-heavy Spack directory structures.
 
 Combinatorics
-------------
+-------------
 
 The final note we will look at in this tutorial will be the power of combinatoric development builds.
 There are many instances where developers want to see how a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``, ``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
 
 Developers can achieve builds of both cases from a single ``spack install`` as long as the develop spec is generic enough to cover the packages' spec variations
 
-.. code-block:: console
+.. code-block:: spec
 
    # First we have to allow repeat specs in the environment
    $ spack config add concretizer:unify:false

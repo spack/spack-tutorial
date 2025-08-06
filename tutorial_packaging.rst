@@ -258,7 +258,7 @@ Adding dependencies tells Spack that it must ensure those packages are installed
 Let's check that dependencies are effectively built when we try to install ``tutorial-mpileaks``:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-2.out
-   :language: console
+   :language: spec
 
 .. note::
 
@@ -401,7 +401,7 @@ Since this is an ``AutotoolsPackage``, the arguments returned from the method wi
 Now let's try the build again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-3.out
-   :language: console
+   :language: spec
 
 Success!
 
@@ -456,7 +456,7 @@ Also note that the value provided by the user is accessed by the entry's ``value
 Now run the installation again with the ``--verbose`` install option -- to get more output during the build -- and the new ``stackstart`` package option:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
-   :language: console
+   :language: spec
 
 Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
 
@@ -492,7 +492,7 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_, we'll need to uninstall the package so we can re-run it with tests enabled:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-5.out
-   :language: console
+   :language: spec
 
 Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks. No such directory in prefix: shar``.
 
@@ -507,7 +507,7 @@ Now let's properly fix the error:
 And try again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-6.out
-   :language: console
+   :language: spec
 
 Success!
 
@@ -672,7 +672,7 @@ Before leaving this tutorial, let's ensure that our work does not interfere with
 Undo the work we've done here by entering the following commands:
 
 .. literalinclude:: outputs/packaging/cleanup.out
-   :language: console
+   :language: spec
 
 --------------------
 More information

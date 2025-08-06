@@ -75,7 +75,7 @@ To install a software package, type:
 Let's go ahead and install ``gmake``,
 
 .. literalinclude:: outputs/basics/gmake.out
-   :language: console
+   :language: spec
 
 You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
@@ -108,7 +108,7 @@ The ``%`` sigil is used to specify direct dependencies like a package's compiler
 For example, we can install zlib (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
 
 .. literalinclude:: outputs/basics/zlib-clang.out
-   :language: console
+   :language: spec
 
 Notice that this installation is located separately from the previous one.
 We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
@@ -118,17 +118,17 @@ Before we install additional versions, we can check the versions available to us
 Let's check what versions of zlib-ng are available, and then we'll install a different version to demonstrate Spack's flexibility in managing multiple package versions.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
-   :language: console
+   :language: spec
 
 The ``@`` sigil is used to specify versions.
 
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
-   :language: console
+   :language: spec
 
 The spec syntax is recursive -- any syntax we can specify for the "root" package (``zlib-ng``) we can also use for a dependency.
 
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
-   :language: console
+   :language: spec
 
 The spec syntax in Spack also supports compiler flags.
 We can specify parameters such as ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs``.
@@ -136,7 +136,7 @@ If any of these values contain spaces, we'll need to enclose them in quotes on t
 Spack’s compiler wrappers will automatically inject these flags into the appropriate compilation commands.
 
 .. literalinclude:: outputs/basics/zlib-O3.out
-   :language: console
+   :language: spec
 
 After installing packages, we can use the ``spack find`` command to query which packages are installed.
 Notice that by default, some installed packages appear identical in the output.
@@ -144,10 +144,10 @@ To help distinguish between them, we can add the ``-l`` flag to display each pac
 Additionally, if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 .. literalinclude:: outputs/basics/find.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/find-lf.out
-   :language: console
+   :language: spec
 
 Spack generates a unique hash for each spec.
 This hash reflects the complete provenance of the package, so any change to the spec—such as compiler version, build options, or dependencies—will result in a different hash.
@@ -158,14 +158,14 @@ By default, Spack prioritizes reusing installations that already exist, whether 
 This approach helps us avoid unnecessary rebuilds of common dependencies, which is especially valuable if we update Spack frequently.
 
 .. literalinclude:: outputs/basics/tcl.out
-   :language: console
+   :language: spec
 
 Sometimes it is simpler to specify dependencies without caring whether they are direct or transitive dependencies.
 To do that, use the ``^`` sigil.
 Note that a dependency specified by ``^`` is always applied to the root package, whereas a direct dependency specified by ``%`` is applied to either the root or any intervening dependency specified by ``^``.
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
-   :language: console
+   :language: spec
 
 We can also refer to packages from the command line by their package hash.
 Earlier, when we used the ``spack find -lf`` command, we saw that the hash for our optimized installation of zlib-ng (with ``cflags="-O3"``) began with ``umrbkwv``.
@@ -175,20 +175,20 @@ Similar to tools like Git, we do not need to enter the entire hash on the comman
 If the prefix we provide matches more than one installed package, Spack will report an error and prompt us to be more specific.
 
 .. literalinclude:: outputs/basics/tcl-zlib-hash.out
-   :language: console
+   :language: spec
 
 The ``spack find`` command can also take a ``-d`` flag, which can show dependency information.
 Note that each package has a top-level entry, even if it also appears as a dependency.
 
 .. literalinclude:: outputs/basics/find-ldf.out
-   :language: console
+   :language: spec
 
 Spack models the dependencies of packages as a directed acyclic graph (DAG).
 The ``spack find -d`` command shows the tree representation of that graph, which loses some dependency relationship information.
 We can also use the ``spack graph`` command to view the entire DAG as a graph.
 
 .. literalinclude:: outputs/basics/graph-tcl.out
-   :language: console
+   :language: spec
 
 Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
@@ -197,12 +197,12 @@ We can check the install plan in advance to ensure it's what we want to install 
 The ``spack spec`` command accepts the same spec syntax.
 
 .. literalinclude:: outputs/basics/hdf5-spec.out
-   :language: console
+   :language: spec
 
 Assuming we're happy with that configuration, we will now install it.
 
 .. literalinclude:: outputs/basics/hdf5.out
-   :language: console
+   :language: spec
 
 Spack packages can also have build options, called variants.
 Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-``
@@ -212,7 +212,7 @@ Variants (boolean or otherwise) can also be specified using the same syntax as c
 Here we can install HDF5 without MPI support.
 
 .. literalinclude:: outputs/basics/hdf5-no-mpi.out
-   :language: console
+   :language: spec
 
 We might also want to install HDF5 with a different MPI implementation.
 While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
@@ -231,7 +231,7 @@ We call this "virtual assignment", and can be specified by ``%virtual=provider``
 
 For example if we wanted to install hdf5 using GCC for the C and C++ components but Intel OneAPI for the Fortran compiler we could write:
 
-.. code-block:: none
+.. code-block:: spec
 
    hdf5 %c,cxx=gcc %fortran=oneapi
 
@@ -240,7 +240,7 @@ We could use the same syntax for ``^mpi=mpich``, but there's no need because the
 This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
 
 .. literalinclude:: outputs/basics/hdf5-hl-mpi.out
-   :language: console
+   :language: spec
 
 .. note::
 
@@ -252,13 +252,13 @@ This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` 
 We'll do a quick check in on what we have installed so far.
 
 .. literalinclude:: outputs/basics/find-ldf-2.out
-   :language: console
+   :language: spec
 
 HDF5 is more complicated than our basic example of zlib-ng and Tcl, but it's still within the realm of software that an experienced HPC user could reasonably expect to manually install given a bit of time.
 Now let's look at an even more complicated package.
 
 .. literalinclude:: outputs/basics/trilinos.out
-   :language: console
+   :language: spec
 
 Now we're starting to see the power of Spack.
 Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
@@ -270,19 +270,19 @@ Every MPI dependency will be satisfied by the same configuration of MPI, etc.
 If we install Trilinos again specifying a dependency on our previous HDF5 built with MPICH:
 
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
-   :language: console
+   :language: spec
 
 We see that every package in the Trilinos DAG that depends on MPI now uses MPICH.
 
 .. literalinclude:: outputs/basics/find-d-trilinos.out
-   :language: console
+   :language: spec
 
 As we discussed before, the ``spack find -d`` command shows the dependency information as a tree.
 While that is often sufficient, many complicated packages, including Trilinos, have dependencies that cannot be fully represented as a tree.
 Again, the ``spack graph`` command shows the full DAG of the dependency information.
 
 .. literalinclude:: outputs/basics/graph-trilinos.out
-   :language: console
+   :language: spec
 
 You can control how the output is displayed with a number of options.
 
@@ -303,18 +303,18 @@ Earlier we installed many configurations each of zlib-ng and Tcl.
 Now we will go through and uninstall some of those packages that we didn't really need.
 
 .. literalinclude:: outputs/basics/find-d-tcl.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/find-zlib.out
-   :language: console
+   :language: spec
 
 We can uninstall packages by spec using the same syntax as install.
 
 .. literalinclude:: outputs/basics/uninstall-zlib.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/find-lf-zlib.out
-   :language: console
+   :language: spec
 
 We can also uninstall packages by referring only to their hash.
 
@@ -323,19 +323,19 @@ Use ``--force`` to remove just the specified package, leaving dependents broken.
 Use ``--dependents`` to remove the specified package and all of its dependents.
 
 .. literalinclude:: outputs/basics/uninstall-needed.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
-   :language: console
+   :language: spec
 
 Spack will not uninstall packages that are not sufficiently specified (i.e., if the spec is ambiguous and matches multiple installed packages).
 The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an ambiguous spec.
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/uninstall-specific.out
-   :language: console
+   :language: spec
 
 -----------------------------
 Advanced ``spack find`` Usage
@@ -348,17 +348,17 @@ The ``spack find`` command can accept what we call "anonymous specs." These are 
 For example, ``spack find ^mpich`` will return every installed package that depends on MPICH, and ``spack find cflags="-O3"`` will return every package which was built with ``cflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/find-O3.out
-   :language: console
+   :language: spec
 
 The ``find`` command can also show which packages were installed explicitly (rather than pulled in as a dependency) using the lowercase ``-x`` flag.
 The uppercase ``-X`` flag shows implicit installs only.
 The ``find`` command can also show the path to which a Spack package was installed using the ``-p`` flag.
 
 .. literalinclude:: outputs/basics/find-px.out
-   :language: console
+   :language: spec
 
 ---------------------
 Customizing Compilers
@@ -375,22 +375,22 @@ Later in the tutorial we will discuss how to configure external compilers by han
 Spack can also use compilers built by Spack to compile later packages.
 
 .. literalinclude:: outputs/basics/install-gcc-12.1.0.out
-   :language: console
+   :language: spec
 
 .. literalinclude:: outputs/basics/compilers-2.out
-   :language: console
+   :language: spec
 
 Because this compiler is a newer version than the external compilers Spack knows about, it will be the new default compiler.
 We will discuss changing these defaults in a later section.
 We can check that this compiler is preferred by looking at the install plan for a package that isn't being reused from binary.
 
 .. literalinclude:: outputs/basics/spec-zziplib
-   :language: console
+   :language: spec
 
 For the test of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it. For now, we will uninstall it to avoid using it in the next section.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
-   :language: console
+   :language: spec
 
 .. note::
 
