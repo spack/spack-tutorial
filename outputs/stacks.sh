@@ -68,7 +68,7 @@ example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
 example stacks/view-0       "ls ~/stacks/views/full/gcc/"
-example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.5.0"
+example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.5.0-gcc-11.4.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 
