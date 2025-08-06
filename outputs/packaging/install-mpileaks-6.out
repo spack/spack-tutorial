@@ -2,51 +2,51 @@ $ spack install --test=root tutorial-mpileaks
 ==> Warning: /home/spack/repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py:23: default value for variant 'stackstart' is not a boolean or string: default=0. Did you mean default='0'?
 [+] /usr (external glibc-2.35-epwvtixhoxdeufu6kbbrpaigv2p6iav4)
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-rwnqblirwn5aenlmsbvsieo7mzw672ee
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-12.5.0-zubbt4yxn35hmaarhmzluk6cb6gkujee
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-10.5.0-ekeebbieporufbv2ersvvhgqxsljzqpg
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-3c5xh7dqudxmyorlsrsfmjyggqk57vnr
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-haeogmcedfgt33rxdkcybfkvordw63wj
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-zx3x4nm3djw5jdqxcsimfpxykoxdijhj
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxcrypt-4.4.38-iundcaqxew2asagohzi27rxmh2zbk4qo
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pkgconf-2.3.0-xoghzadcbbqi6ccvlnfkghrutmid3eav
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-10.5.0-ekeebbieporufbv2ersvvhgqxsljzqpg
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-12.5.0-zubbt4yxn35hmaarhmzluk6cb6gkujee
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiberty-2.41-cvva4qyqow7p7qoti2k5rbcsb44rdtoo
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/numactl-2.0.18-74aq3kxwhmje2sqvk27v73d7525q2enn
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pkgconf-2.3.0-xoghzadcbbqi6ccvlnfkghrutmid3eav
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/boost-1.72.0-x4ntqhhem4kqmrxwnywu65jji2wr2dhr
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpfr-4.2.1-abjn4yec4cwckmwvwwtg45keufsqyhya
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-w5iqeddpn6xfxfm3grear6sow3p6eaa5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiberty-2.41-cvva4qyqow7p7qoti2k5rbcsb44rdtoo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/boost-1.72.0-x4ntqhhem4kqmrxwnywu65jji2wr2dhr
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxcrypt-4.4.38-iundcaqxew2asagohzi27rxmh2zbk4qo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-zx3x4nm3djw5jdqxcsimfpxykoxdijhj
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-haeogmcedfgt33rxdkcybfkvordw63wj
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.4.1-kphogwy3wlzx3rl6ddmjwui5qs77qvys
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-w5iqeddpn6xfxfm3grear6sow3p6eaa5
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.20-ypq2dyeslmkos5za6z46ti5u4gf7kdya
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libdwarf-2.0.0-uirapsmqr52qork6p3cupyuyyu727ygz
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpc-1.3.1-mkqx7budcw2rpbdzo63hsoxhhszx366g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libedit-3.1-20240808-h766azt27z6p7yvfxwb22r23cxvtj3gj
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.11.1-jhcvb6nk7guze7u7zojqrp5oxovharww
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libevent-2.1.12-dvz3n3eojbnxt74he2ky2rj75gukcgfh
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libedit-3.1-20240808-h766azt27z6p7yvfxwb22r23cxvtj3gj
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpfr-4.2.1-abjn4yec4cwckmwvwwtg45keufsqyhya
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-l2jtwyuivfhutipzs462o4ny7ctu4f5c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.11.1-jhcvb6nk7guze7u7zojqrp5oxovharww
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-soasbhmurzckxvnvfcqm22jsegvmh4jv
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/intel-tbb-2022.0.0-3g2dqp5itvsq3easbbs6bgtv4zni4uya
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpc-1.3.1-mkqx7budcw2rpbdzo63hsoxhhszx366g
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/pmix-5.0.5-msnkjumpg75ybnv7uinrcbbkt4slvt3e
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/elfutils-0.192-bqadq4z3npndbqqzkms7abk2ziqeteid
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-5xgjgaemj5ur5z5mr7anba35jcy2n5rm
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/intel-tbb-2022.0.0-3g2dqp5itvsq3easbbs6bgtv4zni4uya
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/krb5-1.21.3-zo73rgnlq3dcwy76ebibj2ubnzkhia2c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/dyninst-13.0.0-np3n5uf2baeyrmdmavuruvrpkxh6ztmr
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.16.5-vorbe53mrrx354udsx5hpelstxeduh53
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/elfutils-0.192-bqadq4z3npndbqqzkms7abk2ziqeteid
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssh-9.9p1-2s7eddoqitn34vgpljqsrca3s7w7s6ud
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/dyninst-13.0.0-np3n5uf2baeyrmdmavuruvrpkxh6ztmr
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-5xgjgaemj5ur5z5mr7anba35jcy2n5rm
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.16.5-vorbe53mrrx354udsx5hpelstxeduh53
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.8-ezkzlw5tyusqajx2xapuphy7ijdp5ubz
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/adept-utils-1.0.1-yjgv7u3uwfnlcqm7j3yusuxzu333r7hv
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/callpath-1.0.4-yokxcwu2j5dvmjxfayf5tbzhjan4ntsr
@@ -59,5 +59,5 @@ $ spack install --test=root tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'build'
 ==> tutorial-mpileaks: Executing phase: 'install'
 ==> tutorial-mpileaks: Successfully installed tutorial-mpileaks-1.0-uupqnsfgxcutprkhdobnxpxif5u6ge67
-  Stage: 0.01s.	 Autoreconf: 3.91s.  Configure: 3.26s.	Build: 10.20s.	Install: 0.27s.	 Post-install: 0.03s.  Total: 17.75s
+  Stage: 0.01s.	 Autoreconf: 3.85s.  Configure: 3.13s.	Build: 9.73s.  Install: 0.25s.	Post-install: 0.03s.  Total: 17.06s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-uupqnsfgxcutprkhdobnxpxif5u6ge67

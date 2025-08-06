@@ -3,108 +3,108 @@ $ spack install hdf5+hl+mpi ^mpich
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-rwnqblirwn5aenlmsbvsieo7mzw672ee
 [+] /usr (external gcc-11.4.0-j7ykyvm5ancnn5rt7f35ggs6hwoslo42)
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-3c5xh7dqudxmyorlsrsfmjyggqk57vnr
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/nghttp2-1.65.0-hpkxq4qziany2xflz5lpbo7ejwmchp6g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-w5iqeddpn6xfxfm3grear6sow3p6eaa5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-5vb6e4beeoff4jan2t7edfjyi3hf3p7g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
 ==> Fetching file:///mirror/blobs/sha256/8a/8a5f43902042786df239a4c2c4683a08e45729af2cb6e8370979fa55f07056bd
-    [100%]   61.27 MB @	 930.9 MB/s
+    [100%]   61.27 MB @	 953.9 MB/s
 ==> Extracting libfabric-2.2.0-lublgehlipl4wcvbminfu67obsifaxuv from binary cache
 ==> libfabric: Successfully installed libfabric-2.2.0-lublgehlipl4wcvbminfu67obsifaxuv
-  Search: 0.00s.  Fetch: 0.10s.	 Install: 0.12s.  Extract: 0.09s.  Relocate: 0.01s.  Total: 0.22s
+  Search: 0.00s.  Fetch: 0.10s.	 Install: 0.11s.  Extract: 0.09s.  Relocate: 0.01s.  Total: 0.21s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libfabric-2.2.0-lublgehlipl4wcvbminfu67obsifaxuv
-==> Installing libfabric-2.2.0-lublgehlipl4wcvbminfu67obsifaxuv [18/43]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.4.1-kphogwy3wlzx3rl6ddmjwui5qs77qvys
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-l2jtwyuivfhutipzs462o4ny7ctu4f5c
-==> Fetching file:///mirror/blobs/sha256/b4/b4a13050406bba36b095bc70b3117a99fde0b9c3393e521fd4448da46400c0e7
-    [100%]   89.78 KB @	 368.8 MB/s
-==> Extracting libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn from binary cache
-==> libffi: Successfully installed libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn
-==> Installing libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn [22/43]
+==> Installing libfabric-2.2.0-lublgehlipl4wcvbminfu67obsifaxuv [9/43]
 ==> Fetching file:///mirror/blobs/sha256/d6/d66d80b7adf32baff6aea342f0bdd3ded3421a6d59a7820e5170828c7bf310af
-    [100%]  180.11 KB @	 492.2 MB/s
+    [100%]  180.11 KB @	 589.3 MB/s
 ==> Extracting libmd-1.1.0-7x6ozmzda7ayboscqolsuovymlsib5fx from binary cache
 ==> libmd: Successfully installed libmd-1.1.0-7x6ozmzda7ayboscqolsuovymlsib5fx
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.04s
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.04s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libmd-1.1.0-7x6ozmzda7ayboscqolsuovymlsib5fx
-==> Installing libmd-1.1.0-7x6ozmzda7ayboscqolsuovymlsib5fx [23/43]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pkgconf-2.3.0-xoghzadcbbqi6ccvlnfkghrutmid3eav
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
+==> Installing libmd-1.1.0-7x6ozmzda7ayboscqolsuovymlsib5fx [10/43]
+==> Fetching file:///mirror/blobs/sha256/b4/b4a13050406bba36b095bc70b3117a99fde0b9c3393e521fd4448da46400c0e7
+    [100%]   89.78 KB @	 385.0 MB/s
+==> Extracting libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn from binary cache
+==> libffi: Successfully installed libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.03s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn
+==> Installing libffi-3.4.8-4466i2xl4jqgqujxp4gefwnekgekq2tn [11/43]
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.20-ypq2dyeslmkos5za6z46ti5u4gf7kdya
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
-==> Fetching file:///mirror/blobs/sha256/19/19960c11dfa7661a26cff4fbb1d57d203630e78940647ef60161d4715a3ad67f
-    [100%]   11.48 MB @	 381.3 GB/s
-==> Extracting sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox from binary cache
-==> sqlite: Successfully installed sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox
-  Search: 0.00s.  Fetch: 0.02s.	 Install: 0.25s.  Extract: 0.22s.  Relocate: 0.02s.  Total: 0.28s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox
-==> Installing sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox [28/43]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pkgconf-2.3.0-xoghzadcbbqi6ccvlnfkghrutmid3eav
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
 ==> Fetching file:///mirror/blobs/sha256/1f/1f240e7978ea388c8b2aad0c5569abce06224dcc860f26d74fc5dc6fcc8723ae
-    [100%]  473.29 KB @	 726.4 MB/s
+    [100%]  473.29 KB @	 756.0 MB/s
 ==> Extracting libbsd-0.12.2-bcrniixykrt6nuyyxxpeyql3eew2b4qo from binary cache
 ==> libbsd: Successfully installed libbsd-0.12.2-bcrniixykrt6nuyyxxpeyql3eew2b4qo
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.08s
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.07s.  Extract: 0.05s.  Relocate: 0.01s.  Total: 0.07s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libbsd-0.12.2-bcrniixykrt6nuyyxxpeyql3eew2b4qo
-==> Installing libbsd-0.12.2-bcrniixykrt6nuyyxxpeyql3eew2b4qo [29/43]
+==> Installing libbsd-0.12.2-bcrniixykrt6nuyyxxpeyql3eew2b4qo [20/43]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/nghttp2-1.65.0-hpkxq4qziany2xflz5lpbo7ejwmchp6g
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-w5iqeddpn6xfxfm3grear6sow3p6eaa5
 ==> Fetching file:///mirror/blobs/sha256/82/82a4345ab83c5e8e69e16aceca1ffd422760c57bcbb2be36f3c50c9dd35784d6
-    [100%]   63.83 MB @	 391.2 GB/s
+    [100%]   63.83 MB @	 361.2 GB/s
 ==> Extracting util-linux-uuid-2.41-o26ozsqsvcsshbvkfqqfzayrbsvqrv56 from binary cache
 ==> util-linux-uuid: Successfully installed util-linux-uuid-2.41-o26ozsqsvcsshbvkfqqfzayrbsvqrv56
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.12s.  Extract: 0.10s.  Relocate: 0.01s.  Total: 0.13s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/util-linux-uuid-2.41-o26ozsqsvcsshbvkfqqfzayrbsvqrv56
-==> Installing util-linux-uuid-2.41-o26ozsqsvcsshbvkfqqfzayrbsvqrv56 [30/43]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.11.1-jhcvb6nk7guze7u7zojqrp5oxovharww
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/curl-8.11.1-7xf5wleip2cn6wxcvm7rzjxbkj6b54a2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
+==> Installing util-linux-uuid-2.41-o26ozsqsvcsshbvkfqqfzayrbsvqrv56 [24/43]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-l2jtwyuivfhutipzs462o4ny7ctu4f5c
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.4.1-kphogwy3wlzx3rl6ddmjwui5qs77qvys
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
 ==> Fetching file:///mirror/blobs/sha256/ea/eaf9c27e4f1933ec815aa41c2c7ae3b5721b0ff19b6ddce422fddc52557c5d91
-    [100%]  665.46 KB @	 828.2 MB/s
+    [100%]  665.46 KB @	 909.8 MB/s
 ==> Extracting expat-2.7.1-ut2qx6nkwctdtdl5ntd3ph4cpg7am4h3 from binary cache
 ==> expat: Successfully installed expat-2.7.1-ut2qx6nkwctdtdl5ntd3ph4cpg7am4h3
   Search: 0.00s.  Fetch: 0.01s.	 Install: 0.04s.  Extract: 0.02s.  Relocate: 0.01s.  Total: 0.05s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/expat-2.7.1-ut2qx6nkwctdtdl5ntd3ph4cpg7am4h3
-==> Installing expat-2.7.1-ut2qx6nkwctdtdl5ntd3ph4cpg7am4h3 [35/43]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.8-usc3vzrzieyct5ep3kiyypm6vrc2s2ir
+==> Installing expat-2.7.1-ut2qx6nkwctdtdl5ntd3ph4cpg7am4h3 [29/43]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
+==> Fetching file:///mirror/blobs/sha256/19/19960c11dfa7661a26cff4fbb1d57d203630e78940647ef60161d4715a3ad67f
+    [100%]   11.48 MB @	 411.3 GB/s
+==> Extracting sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox from binary cache
+==> sqlite: Successfully installed sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox
+  Search: 0.00s.  Fetch: 0.02s.	 Install: 0.25s.  Extract: 0.22s.  Relocate: 0.02s.  Total: 0.27s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox
+==> Installing sqlite-3.46.0-zjvsjg7we5sw7bnbnlmkoncxr4oifuox [31/43]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/curl-8.11.1-7xf5wleip2cn6wxcvm7rzjxbkj6b54a2
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.11.1-jhcvb6nk7guze7u7zojqrp5oxovharww
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-soasbhmurzckxvnvfcqm22jsegvmh4jv
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.8-usc3vzrzieyct5ep3kiyypm6vrc2s2ir
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-5xgjgaemj5ur5z5mr7anba35jcy2n5rm
 ==> Fetching file:///mirror/blobs/sha256/33/339da73a5dc3db2099c871401fc1fe066e1c76e10c3f5e3b013dd83925228d28
-    [100%]   92.43 MB @	 341.4 GB/s
+    [100%]   92.43 MB @	 431.4 GB/s
 ==> Extracting python-3.13.5-dcljl7pmhihbarcc2byuiij64bjq3orz from binary cache
 ==> python: Successfully installed python-3.13.5-dcljl7pmhihbarcc2byuiij64bjq3orz
-  Search: 0.00s.  Fetch: 0.14s.	 Install: 3.25s.  Extract: 2.89s.  Relocate: 0.34s.  Total: 3.39s
+  Search: 0.00s.  Fetch: 0.14s.	 Install: 3.21s.  Extract: 2.89s.  Relocate: 0.13s.  Total: 3.35s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/python-3.13.5-dcljl7pmhihbarcc2byuiij64bjq3orz
 ==> Installing python-3.13.5-dcljl7pmhihbarcc2byuiij64bjq3orz [39/43]
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.16.5-vorbe53mrrx354udsx5hpelstxeduh53
 ==> Fetching file:///mirror/blobs/sha256/9c/9c3631a33ebfb11aba9f249c9f94f0c2e01d2081bfda466cdd50a05689eb3857
-    [100%]   17.87 MB @	 381.3 GB/s
+    [100%]   17.87 MB @	 391.4 GB/s
 ==> Extracting yaksa-0.3-at3giizyfe7zbpa6b45dt46qcwv3zdb3 from binary cache
 ==> yaksa: Successfully installed yaksa-0.3-at3giizyfe7zbpa6b45dt46qcwv3zdb3
-  Search: 0.00s.  Fetch: 0.03s.	 Install: 0.44s.  Extract: 0.38s.  Relocate: 0.04s.  Total: 0.48s
+  Search: 0.00s.  Fetch: 0.03s.	 Install: 0.44s.  Extract: 0.39s.  Relocate: 0.04s.  Total: 0.48s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/yaksa-0.3-at3giizyfe7zbpa6b45dt46qcwv3zdb3
 ==> Installing yaksa-0.3-at3giizyfe7zbpa6b45dt46qcwv3zdb3 [41/43]
 ==> Fetching file:///mirror/blobs/sha256/a8/a8afe0d1949e4453e13aa2e160ddcf09cd5734a1d7f33947bde0f29d99a86837
-    [100%]   15.45 MB @	 411.3 GB/s
+    [100%]   15.45 MB @	 411.4 GB/s
 ==> Extracting mpich-4.3.0-l2h74uyzojy65qxlme6kbiq23lcclun5 from binary cache
 ==> mpich: Successfully installed mpich-4.3.0-l2h74uyzojy65qxlme6kbiq23lcclun5
-  Search: 0.00s.  Fetch: 0.03s.	 Install: 0.94s.  Extract: 0.89s.  Relocate: 0.04s.  Total: 0.97s
+  Search: 0.00s.  Fetch: 0.03s.	 Install: 0.95s.  Extract: 0.89s.  Relocate: 0.04s.  Total: 0.97s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpich-4.3.0-l2h74uyzojy65qxlme6kbiq23lcclun5
 ==> Installing mpich-4.3.0-l2h74uyzojy65qxlme6kbiq23lcclun5 [42/43]
 ==> Fetching file:///mirror/blobs/sha256/2e/2e74309dea9f500182c8bb6a5b8aeee3a5c5851ffa3f9a085da971b27a4c5c1c
-    [100%]   65.87 MB @	 441.1 GB/s
+    [100%]   65.87 MB @	 351.3 GB/s
 ==> Extracting hdf5-1.14.6-p3ly6asjcve2wpfd2d47greimdojmy3n from binary cache
 ==> hdf5: Successfully installed hdf5-1.14.6-p3ly6asjcve2wpfd2d47greimdojmy3n
-  Search: 0.00s.  Fetch: 0.02s.	 Install: 0.20s.  Extract: 0.14s.  Relocate: 0.04s.  Total: 0.21s
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.20s.  Extract: 0.14s.  Relocate: 0.04s.  Total: 0.21s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/hdf5-1.14.6-p3ly6asjcve2wpfd2d47greimdojmy3n
 ==> Installing hdf5-1.14.6-p3ly6asjcve2wpfd2d47greimdojmy3n [43/43]
