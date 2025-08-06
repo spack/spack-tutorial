@@ -321,7 +321,7 @@ Edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 30-40
+   :emphasize-lines: 30-43
 
 In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.

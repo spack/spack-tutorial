@@ -39,5 +39,5 @@ spack:
         ^lapack: '{name}/{name}-{version}-{^c.name}-{^c.version}-{^lapack.name}-{^lapack.version}'
         '%c': '{name}/{name}-{version}-{^c.name}-{^c.version}'
         '%cxx': '{name}/{name}-{version}-{^cxx.name}-{^cxx.version}'
-        '%c': '{name}/{name}-{version}-{^fortran.name}-{^fortran.version}'
+        '%fortran': '{name}/{name}-{version}-{^fortran.name}-{^fortran.version}'
         all: '{name}/{name}-{version}'
