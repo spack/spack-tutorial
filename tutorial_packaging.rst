@@ -42,9 +42,6 @@ In order to avoid modifying your Spack installation with the package we are crea
 .. literalinclude:: outputs/packaging/repo-create.out
    :language: console
 
-.. literalinclude:: outputs/packaging/repo-add.out
-   :language: console
-
 Doing this ensures changes we make here do not adversely affect other parts of the tutorial.
 
 Now let's look at the available repositories using ``spack repo list``:
