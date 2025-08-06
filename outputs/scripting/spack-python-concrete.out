@@ -1,3 +1,4 @@
+  >>> from spack.concretize import concretize_one
   >>> zlib_concrete = spack.concretize.concretize_one(zlib)
   >>> zlib_concrete.concrete
   True
