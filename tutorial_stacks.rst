@@ -39,11 +39,11 @@ Setup the compiler
 The first step to build our stack is to setup the compiler we want to use later.
 This is currently an iterative process that can be done in two ways:
 
-1. Install the compiler first, then register it in the environment
-2. Use a second environment just for the compiler
+ 1. Install the compiler first, then install the rest of the environment
+ 2. Install the compiler outside the environment (either in another environment or standalone)
 
 Below, we'll use the first approach.
-For people interested, an example of the latter approach can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
+For people interested, an example of composing a compiler from another environment can be found `at this link <https://github.com/haampie/spack-intermediate-gcc-example/>`_.
 
 Let's start by creating an environment in a directory of our choice:
 
@@ -67,27 +67,6 @@ The next step is to concretize and install our compiler:
 .. literalinclude:: outputs/stacks/setup-2.out
    :language: console
 
-Finally, let's register it as a new compiler in the environment:
-
-.. literalinclude:: outputs/stacks/compiler-find-0.out
-   :language: console
-
-The ``spack location -i`` command returns the installation prefix for the spec being queried:
-
-.. literalinclude:: outputs/stacks/compiler-find-1.out
-   :language: console
-
-This might be useful in general when scripting Spack commands, as the example above shows.
-Listing the compilers now shows the presence of ``gcc@12.3.0``:
-
-.. literalinclude:: outputs/stacks/compiler-list-0.out
-   :language: console
-
-The manifest file at this point looks like:
-
-.. literalinclude:: outputs/stacks/examples/1.spack.stack.yaml
-   :language: yaml
-
 We are ready to build more software with our newly installed GCC!
 
 ------------------------
@@ -100,18 +79,8 @@ We'll start by trying to add different versions of ``netlib-scalapack``, linked 
 .. literalinclude:: outputs/stacks/unify-0.out
    :language: spec
 
-If we try to concretize the environment, we'll get an error:
-
-.. literalinclude:: outputs/stacks/unify-1.out
-   :language: spec
-
-The error message is quite verbose and complicated, but it ultimately gives a useful hint:
-
-.. code-block::
-
-   You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
-
-Let's examine what that means.
+If we try to concretize the environment, we'll get an error.
+We cannot unify an environment with two different configurations of the same package.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tuning concretizer options for a stack
@@ -317,8 +286,9 @@ to be able to re-build the specs from sources. Alternatively, to create a buildc
 Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
 By default, Spack installs one package at a time, using the ``-j`` option where it can.
-If you are installing a large environment, and have at disposal a beefy build node, you might need to start more installations in parallel to make an optimal use of the resources.
-This can be done by creating a ``depfile``, when the environment is active:
+The ``spack install`` command has an optional ``-p`` option for the number of packages to build in parallel.
+Note that each parallel package may consume the number of threads of the ``-j`` option.
+You can use node resources more optimally by creating a ``depfile``, when the environment is active:
 
 .. code-block:: console
 
@@ -327,6 +297,7 @@ This can be done by creating a ``depfile``, when the environment is active:
 The result is a makefile that starts multiple Spack instances, and the resources are shared through the GNU jobserver.
 More information of this feature can be found `in our documentation <https://spack.readthedocs.io/en/latest/environments.html#generating-depfiles-from-environments>`_.
 This might cut down your build time by a fair amount, if you build frequently from sources.
+Expect this feature to be streamlined in future versions of Spack.
 
 -----------------------------------
 Make the software stack easy to use
@@ -350,7 +321,7 @@ Edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 44-54
+   :emphasize-lines: 30-40
 
 In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
@@ -370,7 +341,7 @@ If we set the option to "roots", Spack links only the root packages into the vie
 
 .. literalinclude:: outputs/stacks/examples/7.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 49
+   :emphasize-lines: 35
 
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
@@ -412,9 +383,10 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
 
 .. literalinclude:: outputs/stacks/examples/8.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 45-54
+   :emphasize-lines: 31-40
 
 In these few lines of additional configuration we told Spack to generate ``lmod`` module files in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
+We've also configured it to place all specs built with our system compiler into the ``Core`` designation in the lmod hierarchy.
 
 We can generate the module files and use them with the following commands:
 
@@ -429,7 +401,7 @@ Now we should be able to see the module files that have been generated:
    :language: console
 
 The set of modules is already usable, and the hierarchy already works.
-For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12.3.0``:
+For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console
@@ -444,7 +416,7 @@ To address all these needs we can complicate our ``modules`` configuration a bit
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 55-70
+   :emphasize-lines: 41-56
 
 Regenerate the modules again:
 

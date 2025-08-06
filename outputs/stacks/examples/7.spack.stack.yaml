@@ -27,20 +27,6 @@ spack:
     - "py-scipy ^netlib-lapack"
   concretizer:
     unify: false
-  compilers:
-  - compiler:
-      spec: gcc@=12.3.0
-      paths:
-        cc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gcc
-        cxx: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/g++
-        f77: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gfortran
-        fc: /home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-hc3fmfiuomxfx4gnvorj3z3y2gjf2doh/bin/gfortran
-      flags: {}
-      operating_system: ubuntu22.04
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
   view:
     default:
       root: views/default
@@ -50,6 +36,9 @@ spack:
     full:
       root: views/full
       projections:
-        ^mpi^lapack: '{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}-{^lapack.name}-{^lapack.version}'
-        ^lapack: '{compiler.name}-{compiler.version}/{^lapack.name}-{^lapack.version}'
-        all: '{compiler.name}-{compiler.version}/'
+        ^mpi^lapack: '{name}/{name}-{version}-{^c.name}-{^c.version}-{^mpi.name}-{^mpi.version}-{^lapack.name}-{^lapack.version}'
+        ^lapack: '{name}/{name}-{version}-{^c.name}-{^c.version}-{^lapack.name}-{^lapack.version}'
+        '%c': '{name}/{name}-{version}-{^c.name}-{^c.version}'
+        '%cxx': '{name}/{name}-{version}-{^cxx.name}-{^cxx.version}'
+        '%c': '{name}/{name}-{version}-{^fortran.name}-{^fortran.version}'
+        all: '{name}/{name}-{version}'
