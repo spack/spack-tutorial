@@ -49,7 +49,7 @@ Build a module tool
 The first thing that we need is the module tool itself.
 In this tutorial, we will use ``lmod`` because it can work with both hierarchical and non-hierarchical layouts.
 
-.. code-block:: console
+.. code-block:: spec
 
   $ spack install lmod
 
@@ -69,6 +69,7 @@ Now we can re-source the setup file, and Spack modules will be put in our module
 .. FIXME: this needs bootstrap support for ``lmod``
 
 .. FIXME: check the docs here, update them if necessary
+
 If you need to install Lmod or Environment Modules, you can refer to the documentation `here <https://spack.readthedocs.io/en/latest/getting_started.html#installenvironmentmodules>`_.
 
 
@@ -81,7 +82,7 @@ On first use, Spack scans the environment and automatically locates the compiler
 For this tutorial, however, we want to use ``gcc@12.3.0``.
 
 
-.. code-block:: console
+.. code-block:: spec
 
   $ spack install gcc@12.3.0
 
@@ -115,7 +116,7 @@ Build the software that will be used in the tutorial
 
 Finally, we will use Spack to install the packages used in the examples:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install netlib-scalapack ^openmpi ^openblas
    $ spack install netlib-scalapack ^mpich ^openblas
@@ -165,7 +166,7 @@ Environment Modules
 This is the original modules tool.
 It can be installed with Spack using the following command:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install environment-modules
 
@@ -180,7 +181,7 @@ Lmod
 Lmod is a module system written in Lua, originally created  at the "Texas Advanced Computing Center" (TACC) by Robert McLay.
 You can get it with:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install lmod
 

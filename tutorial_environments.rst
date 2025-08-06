@@ -145,7 +145,7 @@ Now that we understand how creation and activation work, let's go back to our ``
 Let's try the usual install commands we learned earlier:
 
 .. literalinclude:: outputs/environments/env-fail-install-1.out
-   :language: console
+   :language: spec
 
 Environments are special in that we must *add* specs to the an environment before we can install them. This additional step helps prevent us from accidentally modifying a shared environment when installing new software.
 
@@ -153,7 +153,7 @@ Environments are special in that we must *add* specs to the an environment befor
 Let's try it:
 
 .. literalinclude:: outputs/environments/env-add-1.out
-   :language: console
+   :language: spec
 
 Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment. **Root specs** are packages that we've explicitly requested to be installed in an environment.
 
@@ -226,7 +226,7 @@ Imagine we have two projects:
 Let's start by creating the ``myproject2`` environment and installing both ``scr`` and ``trilinos``:
 
 .. literalinclude:: outputs/environments/env-create-2.out
-   :language: console
+   :language: spec
 
 
 Now we have two environments with different package combinations:
@@ -237,7 +237,7 @@ Now we have two environments with different package combinations:
 Now let's attempt to uninstall ``trilinos`` from ``myproject2`` and examine what happens:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
-   :language: console
+   :language: spec
 
 
 Notice that ``trilinos`` won't be uninstalled because it's still referenced in ``myproject``. This safety feature prevents accidental removal of packages that other environments depend on.
@@ -370,7 +370,7 @@ Creating an environment incrementally
 
 We can also add and install specs to an environment incrementally. For example:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install --add python
    $ spack install --add py-numpy@1.20
@@ -384,12 +384,12 @@ When you first install ``python`` in an environment, Spack will pick a recent ve
 If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize:
 
 .. literalinclude:: outputs/environments/incremental-1.out
-   :language: console
+   :language: spec
 
 The solution is to re-concretize the environment as a whole, which causes ``python`` to downgrade to a version compatible with ``py-numpy``:
 
 .. literalinclude:: outputs/environments/incremental-2.out
-   :language: console
+   :language: spec
 
 .. note::
    There are other advantages to concretizing and installing an environment all at once:
@@ -465,7 +465,7 @@ We also see that ``Hello world`` is output for each of the ranks and the version
 We can confirm the version of ``zlib`` used to build the program is in our environment using ``spack find``:
 
 .. literalinclude:: outputs/environments/myproject-zlib-ng-1.out
-   :language: console
+   :language: spec
 
 Note that the reported version *does* match that of our installation.
 
@@ -547,7 +547,7 @@ This is because ``spack.lock`` was generated when we concretized the environment
 If we ``cat`` the ``spack.yaml`` file, we'll see the same specs and view options previously shown by ``spack config edit``:
 
 .. literalinclude:: outputs/environments/cat-config-1.out
-   :language: console
+   :language: spec
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -570,7 +570,7 @@ As we can see in the activation command, since the environment is independent, i
 Let's see what really happened with this command by listing the directory contents and looking at the configuration file:
 
 .. literalinclude:: outputs/environments/independent-create-2.out
-   :language: console
+   :language: spec
 
 
 Notice that Spack created a ``spack.yaml`` file in the *code* directory.
@@ -625,7 +625,7 @@ You are free to add and remove specs just as you would outside of the environmen
 For example, let's add ``hdf5`` and look at our file:
 
 .. literalinclude:: outputs/environments/add-independent-1.out
-   :language: console
+   :language: spec
 
 
 Notice that ``spack add`` added the package to our active environment and it appears in the configuration file's spec list.
@@ -640,7 +640,7 @@ Notice that ``spack add`` added the package to our active environment and it app
 Now use ``spack remove`` to remove the spec from the configuration:
 
 .. literalinclude:: outputs/environments/remove-independent-1.out
-   :language: console
+   :language: spec
 
 and we see that the spec *was* removed from the spec list of our environment.
 
@@ -734,8 +734,7 @@ Clean-up
 
 The later sections of this tutorial are not designed to be run in whatever environment we happened to be in, so we will despacktivate now to avoid accidentally running in this environment later.
 
-.. code-block::
-   :language: console
+.. code-block:: console
 
    spack env deactivate
 

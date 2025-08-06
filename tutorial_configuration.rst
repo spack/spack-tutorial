@@ -251,7 +251,7 @@ We can do this by adding creating a toolchain config:
 We are essentially saying "use Clang for c/c++, and use GCC for Fortran".
 You can use this new entry like so:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack spec openblas %clang_gfortran
 
@@ -292,7 +292,7 @@ Let's open our compilers configuration file again and add a compiler flag:
 We can test this out using the ``spack spec`` command to show how the spec is concretized:
 
 .. literalinclude:: outputs/config/0.compiler_flags.out
-   :language: console
+   :language: spec
 
 
 We can see that ``cppflags="-g"`` has been added to every node in the DAG.
@@ -370,7 +370,7 @@ To illustrate how this works, suppose we want to change the preferences to prefe
 Currently, we prefer GCC and OpenMPI.
 
 .. literalinclude:: outputs/config/0.prefs.out
-   :language: console
+   :language: spec
    :emphasize-lines: 15
 
 
@@ -413,7 +413,7 @@ We see if we retry that we now get what we want without getting any more specifi
 .. Because of the configuration scoping we discussed earlier, this overrides the default settings just for these two items.
 
 .. literalinclude:: outputs/config/1.prefs.out
-   :language: console
+   :language: spec
    :emphasize-lines: 16
 
 
@@ -447,7 +447,7 @@ Instead, we'll update our config to force disable it:
 Note if you define ``require`` under ``all`` and ``hdf5``, you must reintroduce any requirements in ``hdf5``.
 
 .. literalinclude:: outputs/config/3.prefs.out
-   :language: console
+   :language: spec
    :emphasize-lines: 2
 
 
@@ -495,7 +495,7 @@ Finally, we set ``buildable: false`` to require that Spack not try to build its 
 .. The weighting/preferences dont work quite the same so I skipped right to buildable:false
 
 .. literalinclude:: outputs/config/2.externals.out
-   :language: console
+   :language: spec
 
 
 This gets slightly more complicated with virtual dependencies.
@@ -543,7 +543,7 @@ If you run this as-is, you'll notice Spack still hasn't built ``hdf5`` with our 
 The concretizer has instead turned off ``mpi`` support in ``hdf5``.
 To debug this, we will force Spack to use ``hdf5+mpi``.
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack spec hdf5+mpi
    ==> Error: failed to concretize `hdf5+mpi` for the following reasons:
@@ -654,7 +654,7 @@ One last setting that may be of interest to many users is the ability to customi
 By default, Spack installs all packages in parallel with the number of jobs equal to the number of cores on the node (up to a maximum of 16).
 For example, on a node with 16 cores, this will look like:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
@@ -686,7 +686,7 @@ To limit the number of cores our build uses, set ``build_jobs`` like so:
 
 If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib-ng
    ==> Installing zlib

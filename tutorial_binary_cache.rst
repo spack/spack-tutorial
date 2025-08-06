@@ -17,7 +17,7 @@ Spack supports a range of storage backends, such as an ordinary filesystem, Amaz
 
 Before we configure a build cache, let's install the ``julia`` package, which is an interesting example because it has some non-trivial dependencies like ``llvm``, and features an interactive REPL that we can use to verify that the installation works.
 
-.. code-block:: console
+.. code-block:: spec
 
    $ mkdir ~/myenv && cd ~/myenv
    $ spack env create --with-view view .
@@ -145,7 +145,7 @@ The easiest way to do this is to override the ``mirrors`` config section in the 
 
 An "overwrite install" should be enough to show that the build cache is used (output will vary based on your specific configuration):
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack -e . install --overwrite julia
    ==> Fetching https://ghcr.io/v2/<user>/buildcache-<user>-<host>/blobs/sha256:34f4aa98d0a2c370c30fbea169a92dd36978fc124ef76b0a6575d190330fda51
@@ -251,7 +251,7 @@ Let's add a simple text editor like ``vim`` to our previous environment next to 
    You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid
    a source build of ``vim`` --- but a source build should be quick.
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack -e . install --add vim
 

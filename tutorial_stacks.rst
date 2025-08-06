@@ -54,7 +54,7 @@ We can add from the command line a new compiler.
 We'll also disable the generation of views for the time being, as we'll come back to this topic later in the tutorial:
 
 .. literalinclude:: outputs/stacks/setup-1.out
-   :language: console
+   :language: spec
 
 What you should see on screen now is the following ``spack.yaml`` file:
 
@@ -98,12 +98,12 @@ Now that we have a compiler ready, the next objective is to build software with 
 We'll start by trying to add different versions of ``netlib-scalapack``, linked against different MPI implementations:
 
 .. literalinclude:: outputs/stacks/unify-0.out
-   :language: console
+   :language: spec
 
 If we try to concretize the environment, we'll get an error:
 
 .. literalinclude:: outputs/stacks/unify-1.out
-   :language: console
+   :language: spec
 
 The error message is quite verbose and complicated, but it ultimately gives a useful hint:
 
@@ -166,7 +166,7 @@ Let's further expand our stack and consider also linking against different LAPAC
 We could, of course, add new specs explicitly:
 
 .. literalinclude:: outputs/stacks/unify-4.out
-   :language: console
+   :language: spec
 
 This way of proceeding, though, will become very tedious once more software is requested.
 The best way to express a cross-product like this in Spack is instead through a matrix:
@@ -244,7 +244,7 @@ Concretize the environment and install the specs again:
 At this point, the environment contains only ``py-scipy ^openblas``. Verify it:
 
 .. literalinclude:: outputs/stacks/concretize-4.out
-   :language: console
+   :language: spec
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Conditional definitions
@@ -279,7 +279,7 @@ Different definitions of lists with the same name are concatenated, so we can de
 First, check what happens when we concretize and don't set any environment variable:
 
 .. literalinclude:: outputs/stacks/concretize-5.out
-   :language: console
+   :language: spec
 
 As we expected we are only using ``mpich`` as an MPI provider.
 To get ``openmpi`` back we need to set the appropriate environment variable:
@@ -391,7 +391,7 @@ There we discuss the general architecture of module file generation in Spack and
 
 Let's start by adding ``lmod`` to the software installed with the system compiler:
 
-.. code-block:: console
+.. code-block:: spec
 
    $ spack add lmod%gcc@11
    $ spack concretize

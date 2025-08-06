@@ -20,6 +20,10 @@ import os
 
 from sphinx.domains.python import PythonDomain
 
+from pygments.lexer import RegexLexer, default
+from pygments.token import *
+
+
 # -- Spack customizations -----------------------------------------------------
 # Add the Spack bin directory to the path so that we can use its output in docs.
 os.environ["SPACK_ROOT"] = os.path.abspath("_spack_root")
@@ -29,8 +33,79 @@ os.environ["PATH"] += f"{os.pathsep}{os.path.abspath('_spack_root/bin')}"
 os.environ["COLIFY_SIZE"] = "25x120"
 os.environ["COLUMNS"] = "120"
 
+sys.path.insert(0, os.path.abspath("_spack_root/lib/spack/"))
+
 # Enable todo items
 todo_include_todos = True
+
+from spack.spec_parser import SpecTokens
+
+
+class SpecLexer(RegexLexer):
+    """A custom lexer for Spack spec strings and spack commands."""
+
+    name = "Spack spec"
+    aliases = ["spec"]
+    filenames = []
+    tokens = {
+        "root": [
+            # Looks for `$ command`, which may need spec highlighting.
+            (r"^\$\s+", Generic.Prompt, "command"),
+            (r"#.*?\n", Comment.Single),
+            # Alternatively, we just get a literal spec string, so we move to spec mode. We just
+            # look ahead here, without consuming the spec string.
+            (r"(?=\S+)", Generic.Prompt, "spec"),
+        ],
+        "command": [
+            # A spack install command is followed by a spec string, which we highlight.
+            (
+                r"spack(?:\s+(?:-[eC]\s+\S+|--?\S+))*\s+(?:install|uninstall|spec|load|unload|find|info|list|versions|providers|mark|diff|add|develop)(?: +(?:--?\S+)?)*",
+                Text,
+                "spec",
+            ),
+            # Comment
+            (r"\s+#.*?\n", Comment.Single, "command_output"),
+            # Escaped newline should leave us in this mode
+            (r".*?\\\n", Text),
+            # Otherwise, it's the end of the command
+            (r".*?\n", Text, "command_output"),
+        ],
+        "command_output": [
+            (r"^\$\s+", Generic.Prompt, "#pop"),  # new command
+            (r"#.*?\n", Comment.Single),  # comments
+            (r".*?\n", Generic.Output),  # command output
+        ],
+        "spec": [
+            # New line terminates the spec string
+            (r"\s*?$", Text, "#pop"),
+            # Dependency, with optional virtual assignment specifier
+            (SpecTokens.START_EDGE_PROPERTIES.regex, Name.Variable, "edge_properties"),
+            (SpecTokens.DEPENDENCY.regex, Name.Variable),
+            # versions
+            (SpecTokens.VERSION_HASH_PAIR.regex, Keyword.Pseudo),
+            (SpecTokens.GIT_VERSION.regex, Keyword.Pseudo),
+            (SpecTokens.VERSION.regex, Keyword.Pseudo),
+            # variants
+            (SpecTokens.PROPAGATED_BOOL_VARIANT.regex, Name.Function),
+            (SpecTokens.BOOL_VARIANT.regex, Name.Function),
+            (SpecTokens.PROPAGATED_KEY_VALUE_PAIR.regex, Name.Function),
+            (SpecTokens.KEY_VALUE_PAIR.regex, Name.Function),
+            # filename
+            (SpecTokens.FILENAME.regex, Text),
+            # Package name
+            (SpecTokens.FULLY_QUALIFIED_PACKAGE_NAME.regex, Name.Class),
+            (SpecTokens.UNQUALIFIED_PACKAGE_NAME.regex, Name.Class),
+            # DAG hash
+            (SpecTokens.DAG_HASH.regex, Text),
+            (SpecTokens.WS.regex, Text),
+            # Also stop at unrecognized tokens (without consuming them)
+            default("#pop"),
+        ],
+        "edge_properties": [
+            (SpecTokens.KEY_VALUE_PAIR.regex, Name.Function),
+            (SpecTokens.END_EDGE_PROPERTIES.regex, Name.Variable, "#pop"),
+        ],
+    }
 
 
 #
@@ -47,6 +122,7 @@ class PatchedPythonDomain(PythonDomain):
 
 def setup(sphinx):
     sphinx.add_domain(PatchedPythonDomain, override=True)
+    sphinx.add_lexer("spec", SpecLexer)
 
 
 # -- General configuration -----------------------------------------------------
@@ -143,6 +219,8 @@ exclude_patterns = ["_build", "_spack_root", "view", "._view"]
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = "furo"
+pygments_style = "default"
+pygments_dark_style = "monokai"
 
 # Add any paths that contain custom themes here, relative to this directory.
 # html_theme_path = ["_themes"]

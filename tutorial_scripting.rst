@@ -52,7 +52,7 @@ Alternatively, we can get a serialized version of ``Spec`` objects in the `JSON`
 For example, to get attributes for all installations of ``zlib-ng``:
 
 .. literalinclude:: outputs/scripting/find-json.out
-   :language: console
+   :language: spec
 
 This command provides complete information about any spec of interest in a structured format.
 The output of ``spack find --json`` can be piped to JSON filtering tools like ``jq`` to extract specific information.
