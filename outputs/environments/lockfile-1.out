@@ -12,18 +12,18 @@ $ jq < spack.lock | head -30
   },
   "roots": [
     {
-      "hash": "5agd4kt5c453sjitipevfkzaqcbq3m5r",
-      "spec": "trilinos"
-    },
-    {
       "hash": "ezkzlw5tyusqajx2xapuphy7ijdp5ubz",
       "spec": "openmpi"
+    },
+    {
+      "hash": "5agd4kt5c453sjitipevfkzaqcbq3m5r",
+      "spec": "trilinos"
     }
   ],
   "concrete_specs": {
-    "5agd4kt5c453sjitipevfkzaqcbq3m5r": {
-      "name": "trilinos",
-      "version": "16.1.0",
+    "ezkzlw5tyusqajx2xapuphy7ijdp5ubz": {
+      "name": "openmpi",
+      "version": "5.0.8",
       "arch": {
 	"platform": "linux",
 	"platform_os": "ubuntu22.04",

@@ -6,11 +6,12 @@ project="$(dirname "$0")"
 
 rm -rf "${raw_outputs:?}/packaging"
 . "$project/init_spack.sh"
-mpileaks_package_py="$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py"
+mpileaks_package_py="$HOME/repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py"
 
 export SPACK_COLOR=never
 
-example packaging/repo-add   "spack repo add \$SPACK_ROOT/var/spack/repos/tutorial/"
+example packaging/repo-create   "spack repo create $HOME/repos tutorial"
+example packaging/repo-add   "spack repo add $HOME/repos/spack_repo/tutorial"
 
 # make the editor automatically exit
 export EDITOR=true
@@ -21,7 +22,7 @@ example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
 #cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
-#example packaging/info-mpileaks       "spack info tutorial-mpileaks"
+#example packaging/info-mpileaks       "spack info --phases tutorial-mpileaks"
 
 cp "$PROJECT/package-py-files/2.package.py" "$mpileaks_package_py"
 example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
@@ -49,4 +50,4 @@ example packaging/install-mpileaks-6  "spack install --test=root tutorial-mpilea
 
 example packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
 example packaging/cleanup  "spack repo remove tutorial"
-example packaging/cleanup  "rm -rf \$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks"
+example packaging/cleanup  "rm -rf $HOME/repos/spack_repo/tutorial"

@@ -1,0 +1,7 @@
+$ spack config get repos
+repos:
+  tutorial: /home/spack/mypkgs/spack_repo/tutorial
+  builtin:
+    tag: v2025.07.0
+    git: https://github.com/spack/spack-packages.git
+    branch: releases/v2025.07

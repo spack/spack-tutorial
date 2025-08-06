@@ -22,12 +22,14 @@ Spack packages are installation scripts, which are essentially recipes for build
 
 They define properties and behavior of the build, such as:
 
-* where to find and how to retrieve the software;
-* its dependencies;
-* options for building from source; and
-* build commands.
+* where to find and how to `retrieve the software <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#fetching-from-code-repositories>`_;
+* its `dependencies <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#dependencies>`_;
+* options (`variants <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_) for building from source;
+* known build constraints (`conflicts <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#conflicts>`_);
+* known requirements (`requires <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#requires>`_); and
+* `build commands <https://spack.readthedocs.io/en/latest/packaging_guide_build.html>`_.
 
-They can also define checks of the installed software that can be performed after the installation.
+They can also define `checks <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html>`_ of the installed software that can be performed after the installation.
 
 Once we've specified a package's recipe, users can ask Spack to build the software with different features on any of the supported systems.
 
@@ -35,13 +37,32 @@ Once we've specified a package's recipe, users can ask Spack to build the softwa
 Getting Started
 ---------------
 
-In order to avoid modifying your Spack installation with the package we are creating, add a **package repository** just for this tutorial by entering the following command:
+In order to avoid modifying your Spack installation with the package we are creating, let's create and add a **package repository** just for this tutorial using the following commands:
+
+.. literalinclude:: outputs/packaging/repo-create.out
+   :language: console
 
 .. literalinclude:: outputs/packaging/repo-add.out
    :language: console
 
 Doing this ensures changes we make here do not adversely affect other parts of the tutorial.
-You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_.
+
+Now let's look at the available repositories using ``spack repo list``:
+
+.. literalinclude:: outputs/packaging/repo-list.out
+   :language: console
+
+Notice we now have two repositories: ``tutorial`` and ``builtin``.
+
+We can see how they are configured using ``spack config get repos``:
+
+.. literalinclude:: outputs/packaging/repo-config.out
+   :language: console
+
+Notice the default ``builtin`` repository is checked out at the latest release branch.
+
+You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ and the command at `spack repo <https://spack.readthedocs.io/en/latest/repositories.html#cmd-spack-repo>`_.
+
 
 -------------------------
 Creating the Package File
@@ -49,8 +70,8 @@ Creating the Package File
 
 .. note::
 
-   Before proceeding, make sure your ``EDITOR`` environment variable
-   is set to the name or path of your preferred text editor.
+   Before proceeding, make sure your ``SPACK_EDITOR``, ``VISUAL``, or ``EDITOR`` environment variable is set to the name or path of your preferred text editor.
+   Details can be found at `Controlling the Editor <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
 
 Suppose you want to install software that depends on mpileaks but found Spack did not already have a built-in package for it.
@@ -58,9 +79,9 @@ This means you are going to have to create one.
 
 Spack's *create* command builds a new package from a template by taking the location of the package's source code and using it to:
 
-* fetch the code;
+* `fetch the code <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#fetching-from-code-repositories>`_;
 * create a package skeleton; and
-* open the file in your editor of choice.
+* open the file in your `editor of choice <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
 The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
@@ -70,50 +91,47 @@ Spack will look at the contents of the tarball and generate a package when we ru
 
 You should now be in your text editor of choice, with the ``package.py`` file open for editing.
 
-Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your tutorial repository's ``packages`` directory, i.e., ``$SPACK_ROOT/var/spack/repos/tutorial/packages/tutorial-mpileaks/package.py``
+Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your ``tutorial`` repository's ``packages`` directory, i.e., ``/home/spack/mypkgs/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
 
 Take a moment to look over the file.
 
 As we can see from the skeleton contents, the Spack template:
 
-* provides instructions for how to contribute your package to
-  the Spack repository;
-* indicates that the software is built with Autotools;
+* provides the **required** Spack copyright and license;
+* provides boilerplate information on the commands for installing and editing the package;
+* imports and inherits from the inferred `build system package <https://spack.readthedocs.io/en/latest/build_systems.html>`_;
 * provides a docstring template;
 * provides an example homepage URL;
-* shows how to specify a list of package maintainers;
-* specifies the version directive, with checksum, for the software;
-* shows a dependency directive example; and
-* provides a skeleton ``configure_args`` method.
+* shows how to specify a list of package `maintainers <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_;
+* provides a template for the `license <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#license-information>`_;
+* specifies the `version directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#versions-and-urls>`_ with the `checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_;
+* lists the inferred language and other build `dependencies <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#dependencies>`_;
+* provides a skeleton for another dependency;
+* provides a preliminary implementation of the `autoreconf <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#using-a-custom-autoreconf-phase>`_ method; and
+* provides a skeleton `configure_args <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_ method.
+
+The areas we need to modify are highlighted in the figure below.
 
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 26,27,29-30,33-35,37-40,53-54,61-62
+   :emphasize-lines: 5-20,27,29-30,33-35,37-40,53-54,57,61-64
 
 .. note::
 
-   The ``maintainers`` field is a comma-separated list of GitHub user
-   names for those people who are willing to be notified when a change
-   is made to the package. This information is useful for developers who
-   maintain a Spack package for their own software and/or rely on software
-   maintained by others.
+   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of GitHub user names for those accounts willing to be notified when a change is made to the package.
+   They will also be given an opportunity to review the changes.
+   This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
 
-Since we are providing a ``url``, we can confirm the checksum, or ``sha256`` calculation.
-Exit your editor to return to the command line and use the ``spack checksum`` command:
+Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256`` calculation.
+Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
    :language: console
 
-Note the entire ``version`` directive is provided for your convenience.
+where the entire ``version`` directive is provided for your convenience.
 
-We will now fill in the provided placeholders as we:
-
-* document some information about this package;
-* add dependencies; and
-* add the configuration arguments needed to build the package.
-
-For the moment, though, let's see what Spack does with the skeleton by trying to install the package using the ``spack install`` command:
+Before proceeding with changes, let's see what Spack does with the skeleton by trying to install the package using the ``spack install`` command:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-1.out
    :language: console
@@ -121,7 +139,11 @@ For the moment, though, let's see what Spack does with the skeleton by trying to
 The build was unsuccessful.
 The error indicates ``configure`` is unable to find the installation location of a dependency.
 
-Let's start to customize the package for our software.
+We will now fill in the provided placeholders and customize the package for the software as we:
+
+* document key information about this package;
+* add dependencies; and
+* add the configuration arguments needed to build the package.
 
 ----------------------------
 Adding Package Documentation
@@ -129,7 +151,7 @@ Adding Package Documentation
 
 First, let's fill in the documentation.
 
-Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up in your editor with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -137,74 +159,71 @@ Bring mpileaks' ``package.py`` file back into your ``$EDITOR`` with the ``spack 
 
 Let's make the following changes:
 
-* remove the instructions between dashed lines at the top;
+* remove the boilerplate comments between and including the dashed lines at the top;
 * replace the first ``FIXME`` comment with a description of ``mpileaks``
   in the docstring;
-* replace the homepage property with the correct link; and
-* uncomment the ``maintainers`` directive and add your GitHub user name.
-* add the license of the project and your GitHub user name.
+* replace the ``homepage`` property with the correct link;
+* uncomment the ``maintainers`` directive and replace the placeholder with your GitHub user name; and
+* replace the ``license`` of the project with the correct name and the placeholder with your GitHub user name.
+
+.. tip::
+
+   It helps to have the `mpileaks <https://github.com/LLNL/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
 
 .. note::
 
-   We will exclude the ``Copyright`` clause and license identifier in the
-   remainder of the package snippets here to reduce the length of the tutorial
-   documentation; however, the copyright **is required** for published packages.
+   We will exclude the ``Copyright`` clause and license identifier in the remainder of the package snippets here to reduce the length of the tutorial documentation; however, the copyright **is required** for packages contributed back to Spack.
 
 Now make the changes and additions to your ``package.py`` file.
 
-The resulting package should contain the following information:
+The resulting package should contain -- sans the copyright and license -- the following information:
 
 .. literalinclude:: tutorial/examples/packaging/1.package.py
-   :caption: mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
-   :lines: 6-
+   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
+   :lines: 5-
    :language: python
-   :emphasize-lines: 5,7,10,12
+   :emphasize-lines: 6,8,11,13
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software; however, the information is now available for review.
 
-Let's enter the ``spack info`` command for the package:
+.. _info_mpileaks:
+
+Let's enter the `spack info <https://spack.readthedocs.io/en/latest/package_fundamentals.html#cmd-spack-info>`_ command for the package:
 
 .. literalinclude:: outputs/packaging/info-mpileaks.out
    :language: console
 
 Take a moment to look over the output.
-You should see the following information derived from the package:
+You should see the information derived from the package now includes the description, homepage, maintainer, and license we provided.
 
-* it is an Autotools package;
-* it has the description, homepage, and maintainer(s) we provided;
-* it has the URL we gave the ``spack create`` command;
-* the preferred version was derived from the code;
-* the default Autotools package installation phases are listed;
-* the ``gnuconfig`` build dependency is inherited from ``AutotoolsPackage``;
-* both the link and run dependencies are ``None`` at this point; and
-* it uses the 3-clause BSD license.
+Also notice it shows:
+
+* the preferred version derived from the code;
+* the default ``AutotoolsBuilder`` package `installation phases <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_;
+* the `gmake <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L62>`_ and `gnuconfig <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L60>`_ build dependencies inherited from ``AutotoolsPackage``; and
+* both link and run dependencies are currently ``None``.
 
 As we fill in more information about the package, the ``spack info`` command will become more informative.
 
 .. note::
 
-   More information on using Autotools packages is provided in
-   `AutotoolsPackage
-   <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_.
+   More information on this build system package is provided in `AutotoolsPackage <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#autotools>`_.
 
-   The full list of build systems known to Spack can be found at
-   `Build Systems
-   <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
-
-   More information on the build-time tests can be found at
-   `<https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_.
-
-   Refer to the links at the end of this section for more information.
+   The full list of build systems known to Spack can be found at `Build Systems <https://spack.readthedocs.io/en/latest/build_systems.html>`_.
 
 Now we're ready to start filling in the build recipe.
+
+.. tip::
+
+   Refer to the `style guide <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#style-guidelines-for-packages>`_ for Spack's guidelines.
 
 -------------------
 Adding Dependencies
 -------------------
 
 First we'll add the dependencies determined by reviewing documentation in the software's repository (https://github.com/LLNL/mpileaks).
-The ``mpileaks`` software relies on three third-party libraries:
+We can see from the ``README`` file's instructions, ``mpileaks`` software relies on three third-party libraries:
 
 * ``mpi``,
 * ``adept-utils``, and
@@ -212,10 +231,9 @@ The ``mpileaks`` software relies on three third-party libraries:
 
 .. note::
 
-   Fortunately, all of these dependencies are built-in packages in Spack;
-   otherwise, we would have to create packages for them as well.
+   Fortunately, all of these dependencies are built-in packages in Spack; otherwise, we would have to create packages for them as well.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -225,21 +243,17 @@ and add the dependencies by specifying them using the ``depends_on`` directive a
 
 .. literalinclude:: tutorial/examples/packaging/2.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
-   :emphasize-lines: 25-27
+   :emphasize-lines: 26-28
 
-Adding dependencies tells Spack that it must ensure these packages are installed *before* it can build our package.
+Adding dependencies tells Spack that it must ensure those packages are installed *before* it can build our package.
 
 .. note::
 
-  The ``mpi`` dependency is different from the other two in that it is
-  a *virtual dependency*. That means Spack must satisfy the dependency
-  with a package that *provides* the ``mpi`` interface, such as ``openmpi``
-  or ``mvapich2``.
-
-  We call such packages **providers**. More information on virtual dependencies
-  can be found in the *Packaging Guide* linked at the bottom of this tutorial.
+  The ``mpi`` dependency is different from the other two in that it is a `virtual dependency <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#virtual-dependencies>`_.
+  That means Spack must satisfy the dependency with a package that *provides* the ``mpi`` interface, such as ``openmpi`` or ``mvapich2``.
+  We call such packages **providers** since they implement the virtual dependency's interface.
 
 Let's check that dependencies are effectively built when we try to install ``tutorial-mpileaks``:
 
@@ -251,14 +265,14 @@ Let's check that dependencies are effectively built when we try to install ``tut
    This command may take a while to run and may produce more output if
    you don't already have an MPI installed or configured in Spack.
 
-We see that Spack has now identified and built all of our dependencies.
+While Spack was unable to install our package, we do see that it identified and built all of our dependencies.
 It found that:
 
 * the ``openmpi`` package will satisfy our ``mpi`` dependency;
 * ``adept-utils`` is a concrete dependency; and
 * ``callpath`` is a concrete dependency.
 
-We are still not able to build the package.
+At this point we need to debug the build problem to determine why Spack cannot install the software.
 
 ------------------------
 Debugging Package Builds
@@ -266,11 +280,15 @@ Debugging Package Builds
 
 Our ``tutorial-mpileaks`` package is still not building due to the ``adept-utils`` package's ``configure`` error.
 Experienced Autotools developers will likely already see the problem and its solution.
+
 Let's take this opportunity to use Spack features to investigate the problem.
 Our options for proceeding are:
 
 * review the build log; and
 * build the package manually.
+
+
+.. _reviewing_build_log:
 
 ~~~~~~~~~~~~~~~~~~~~~~~
 Reviewing the Build Log
@@ -284,14 +302,13 @@ The build log might yield some clues so let's look at the contents of the ``spac
 In this case the error conveniently appears on the last line of the log *and* the output from `spack install`.
 
 Here we also see a number of checks performed by the ``configure`` command.
-Most importantly, the last line is very clear: the installation path of the ``adept-utils`` dependency cannot be found.
+Most importantly, the last line is very clear: ``configure: error: unable to locate adept-utils installation``.
+In other words, the installation path of the ``adept-utils`` dependency cannot be found.
 
 .. note::
 
-   Spack automatically adds standard include and library directories
-   to the compiler's search path *but* it is not uncommon for this
-   information to not get picked up. Some software, like ``mpileaks``,
-   requires the paths to be explicitly provided on the command line.
+   Spack automatically adds standard include and library directories to the compiler's search path *but* it is not uncommon for this information to not get picked up.
+   Some software, like ``mpileaks``, requires the paths to be **explicitly** provided on the command line.
 
 Let's investigate further from the staged build directory.
 
@@ -320,24 +337,25 @@ This command spawned a new shell containing the same environment that Spack used
 
 .. note::
 
-   If you are running using an AWS instance, you'll want to
-   substitute your home directory for ``/home/spack`` below.
+   If you are running using an AWS instance, you'll want to substitute your home directory for ``/home/spack`` below.
 
-From here we can manually re-run the build using the ``configure`` command:
+From here we can manually re-run the build using the ``configure`` command with the ``--prefix`` option that Spack passed in the failed build.
+If you aren't sure, check the appropriate line under ``Executing phase: 'configure'`` in the build log in :ref:`reviewing_build_log`.
 
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
 
-And we get the same results as before.
-Unfortunately, the output does not provide any additional information that can help us with the build.
+Unfortunately we get the same results as before and the output does not provide any additional information that can help us with the build.
 
-Given that this is a simple package built with ``configure`` and we know that installation directories need to be specified, we can use its help to see what command line options are available for the software.
+Given that this is a simple package built with ``configure`` and we know that installation directories need to be specified, we can use the command's ``--help`` to see what options are available for the software.
+
+.. _mpileaks_configure_help:
 
 .. literalinclude:: outputs/packaging/configure-help.out
    :language: console
    :emphasize-lines: 80-81
 
-Note that you can specify the paths for the two concrete dependencies with the following options:
+The output shows that you can specify the paths for the two concrete dependencies with the following options:
 
 * ``--with-adept-utils=PATH``
 * ``--with-callpath=PATH``
@@ -362,9 +380,9 @@ The ``self.spec`` property holds the package's directed acyclic graph
 (DAG) of its dependencies. Each dependency's ``Spec``, accessed by name,
 has a ``prefix`` property containing its installation path.
 
-So let's add the configuration arguments for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
+So let's add the `configuration arguments <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_ for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -374,9 +392,9 @@ and add the ``--with-adept-utils`` and ``--with-callpath`` arguments in the ``co
 
 .. literalinclude:: tutorial/examples/packaging/3.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
-   :emphasize-lines: 32-36
+   :emphasize-lines: 34-37
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the method will automatically get passed to ``configure`` during the build.
 
@@ -387,7 +405,7 @@ Now let's try the build again:
 
 Success!
 
-All we needed to do was add the path arguments for the two concrete packages for configure to perform a simple, simple build.
+All we needed to do was add the path arguments for the two concrete packages for configure to perform a simple build.
 
 Is that all we can do to help other users build our software?
 
@@ -395,10 +413,10 @@ Is that all we can do to help other users build our software?
 Adding Variants
 ---------------
 
-What if we want to expose the software's optional features in the package?
-We can do this by adding build-time options using package *variants*.
+Suppose we want to expose the software's optional features in the package?
+We can do this by adding build-time options using package `variants <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_).
 
-Recall from configure's help output for ``tutorial-mpileaks`` that the software has several optional features and packages that we could support in Spack.
+Recall from :ref:`configure's help output <mpileaks_configure_help>` for ``tutorial-mpileaks`` that the software has several optional features and packages that we could support in Spack.
 Two stand out for tutorial purposes because they both take integers, as opposed to allowing them to be enabled or disabled.
 
 .. literalinclude:: outputs/packaging/configure-build-options.out
@@ -411,14 +429,14 @@ For simplicity, we'll use one variant to supply the value for both arguments.
 
 Supporting this optional feature will require two changes to the package:
 
-* add a ``variant`` directive; and
+* add a `variant directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_; and
 * change the configure options to use the value.
 
 Let's add the variant to expect an ``int`` value with a default of ``0``.
 Setting the default to ``0`` effectively disables the option.
 Change ``configure_args`` to retrieve the value and add the corresponding configure arguments when a non-zero value is provided by the user.
 
-Bring mpileaks' ``package.py`` file back up in your ``$EDITOR`` with the ``spack edit`` command:
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command:
 
 .. code-block:: console
 
@@ -428,9 +446,9 @@ and add the ``variant`` directive and associated arguments as follows:
 
 .. literalinclude:: tutorial/examples/packaging/4.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
-   :emphasize-lines: 16-21,45-52
+   :emphasize-lines: 17-22,46-53
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary in ``self.spec``.
 Also note that the value provided by the user is accessed by the entry's ``value`` property.
@@ -440,50 +458,61 @@ Now run the installation again with the ``--verbose`` install option -- to get m
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: console
 
-Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after mpileaks' ``Executing phase: 'configure'``.
+Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
+
+.. note::
+
+   Not all packages have such simple options.
+   Fortunately, ``Autotools`` is one of several packages that implement `helper functions <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#helper-functions>`_ to simplify setting arguments tied to boolean and multi-valued variants..
+
+Now that we have a package we can build, it's time to consider adding tests that can be used to gain confidence that the software works.
 
 ------------
 Adding Tests
 ------------
 
-The simplest tests we can add are sanity checks, which can be used to ensure the directories and files we expect to be installed for all versions of the package actually exist.
-If we look at a successful installation, we can see that the following directories will be installed:
+The simplest tests we can add are `sanity checks <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#adding-sanity-checks>`_, which can be used to ensure the directories and or files we expect to be installed for all versions of the package actually exist.
+
+If we look at a successful installation, we can see that the following directories are installed:
 
 * bin
 * lib
 * share
 
-So let's add a simple sanity check to ensure they are present, but let's enter a typo to see what happens:
+So let's add a simple sanity check to ensure they are present, **but** let's enter a typo to see what happens.
+
+Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command and add the following ``sanity_check_is_dir`` list:
 
 .. literalinclude:: tutorial/examples/packaging/5.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
-   :emphasize-lines: 14
+   :emphasize-lines: 15
 
-We'll need to uninstall the package so we can re-run it with tests enabled:
+Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_, we'll need to uninstall the package so we can re-run it with tests enabled:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-5.out
    :language: console
 
-Notice the installation fails due to the missing directory.
+Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks. No such directory in prefix: shar``.
 
-Now let's fix the error and try again:
+Now let's properly fix the error:
 
 .. literalinclude:: tutorial/examples/packaging/6.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
-   :lines: 6-
+   :lines: 5-
    :language: python
-   :emphasize-lines: 14
+   :emphasize-lines: 15
 
-Installing again we can see we've fixed the problem.
+And try again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-6.out
    :language: console
 
-This only scratches the surface of testing an installation.
-We could leverage the examples from this package to add post-install phase tests and/or stand-alone tests.
-Refer to the links at the bottom for more information on checking an installation.
+Success!
+
+The material covered here only scratches the surface of testing an installation.
+We could leverage the examples from this package to add `post-install phase tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#adding-installation-phase-tests>`_ and/or `stand-alone tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_.
 
 
 ------------------------
@@ -494,10 +523,10 @@ As packages evolve and are ported to different systems, build recipes often need
 This is where the package's ``Spec`` comes in.
 
 Previously, we've looked at getting the paths for dependencies and values of variants from the ``Spec``; however, there is more to consider.
-The package's ``self.spec``, property allows you to query information about the package build, such as:
+The package's ``self.spec`` property allows you to query information about the package build, such as:
 
 * how a package's dependencies were built;
-* what compiler was being used;
+* what compiler was used;
 * what version of a package is being installed; and
 * what variants were specified (implicitly or explicitly).
 
@@ -507,8 +536,8 @@ Examples of common queries are provided below.
 Querying Spec Versions
 ~~~~~~~~~~~~~~~~~~~~~~
 
-You can customize the build based on the version of the package, compiler, and dependencies.
-Examples of each are:
+You can customize the build based on the version of the package, compiler, and dependencies using `version constraints <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#specifying-version-constraints>`_.
+Examples of each customization are:
 
 * Am I building my package with version ``1.1`` or greater?
 
@@ -535,10 +564,10 @@ Examples of each are:
 Querying Spec Names
 ~~~~~~~~~~~~~~~~~~~
 
-If the build has to be customized to the concrete version of an abstract ``Spec`` you can use its ``name`` property.
+If the build has to be customized to the concrete version of a virtual dependency, you can use the ``name`` property of the ``Spec``.
 For example:
 
-* Is ``openmpi`` the MPI I'm building with?
+* Is ``openmpi`` the MPI implementation I'm building with?
 
 .. code-block:: python
 
@@ -561,32 +590,45 @@ Adjusting build options based on enabled variants can be done by querying the ``
 
 These are just a few examples of ``Spec`` queries.
 Spack has thousands of built-in packages that can serve as examples to guide the development of your package.
-You can find these packages in ``$SPACK_ROOT/var/spack/repos/builtin/packages``.
+
+.. tip::
+
+   You can find these packages under the :ref:`spack/spack-packages <https://github.com/spack/spack-packages>` repository's ``repos/spack_repo/builtin/packages`` directory.
+
+   Or use `spack pkg grep <https://spack.readthedocs.io/en/latest/command_index.html#spack-pkg>`_ to perform a query.
+   For example, to find the paths to all builtin ``AutotoolsPackage`` packages, you can enter ``spack pkg grep AutotoolsPackage | sed "s/:.*//g" | sort -u``, which will search the packages in all of your configured repositories.
 
 ----------------------
 Multiple Build Systems
 ----------------------
 
-There are cases where software actively supports two build systems, or changes build systems as it evolves, or needs different build systems on different platforms.
-Spack also allows you to write a single, concise recipe for these cases.
-It will require only a slight change in the recipe's structure compared to what we have seen so far.
+There are cases where software actively supports two build systems; changes build systems as it evolves; or needs different build systems on different platforms.
+Spack allows you to write a single, concise recipe for these cases that generally require minor changes to the package structure.
 
-Let's take ``uncrustify``, a source code beautifier, as an example.
-This software used to build with Autotools until version 0.63, and then switched build systems to CMake at version 0.64.
+Let's take a simplified look at ``uncrustify``, a source code beautifier, as an example.
+This software builds with ``Autotools`` up through version 0.63 but switches to ``CMake`` at version 0.64.
 
-Compared to previous recipes in this tutorial, in this case we need ``Uncrustify`` to inherit from both ``CMakePackage`` and ``AutotoolsPackage``.
-We also need to explicitly specify the ``build_system`` directive, and add conditional dependencies based on build system:
+Therefore ``Uncrustify`` needs to inherit from **both** ``CMakePackage`` and ``AutotoolsPackage``.
+We also need to explicitly specify the ``build_system`` directive, and add conditional dependencies accordingly:
 
 .. code-block:: python
+   :emphasize-lines: 1,17-21,23-26
 
    class Uncrustify(CMakePackage, AutotoolsPackage):
        """Source Code Beautifier for C, C++, C#, ObjectiveC, Java, and others."""
 
        homepage = "http://uncrustify.sourceforge.net/"
        git = "https://github.com/uncrustify/uncrustify"
+       url = "https://sourceforge.net/projects/uncrustify/files/uncrustify/uncrustify-0.69/uncrustify-0.69.tar.gz"
 
-       version("0.64", commit="1d7d97")
-       version("0.63", commit="44ce0f")
+       license("GPL-2.0-or-later")
+
+       version("0.69", commit="a7a8fb35d653e0b49e1c86f2eb8a2970025d5989")
+       version("0.64", commit="1d7d97fb637dcb05ebc5fe57ee1020e2a659210d")
+       version("0.63", commit="44ce0f156396b79ddf3ed9242023a14e9665b76f")
+
+       depends_on("c", type="build")
+       depends_on("cxx", type="build")
 
        build_system(
            conditional("cmake", when="@0.64:"),
@@ -594,19 +636,21 @@ We also need to explicitly specify the ``build_system`` directive, and add condi
            default="cmake",
        )
 
-       with when("build_system=cmake"):
-           depends_on("cmake@3.18:", type="build")
+       with when("build_system=autotools"):
+           depends_on("automake", type="build")
+           depends_on("autoconf", type="build")
+           depends_on("libtools", type="build")
 
-We haven't mentioned previously, but each spec has a ``build_system`` variant that specifies the build system it uses.
+As we saw with :ref:`tutorial-mpileaks <info_mpileaks>`, each spec has a ``build_system`` variant that specifies the build system it uses.
 In most cases that variant has a single allowed value, inherited from the corresponding base package - so, usually, you don't have to think about it.
 
-When your package supports more than one build system though, you have to explicitly declare which ones are allowed and under which conditions.
+When your package supports more than one build system though, you have to explicitly declare which ones are allowed and under what conditions.
 In the example above it's ``cmake`` for version 0.64 and higher and ``autotools`` for version 0.63 and lower.
 
 The ``build_system`` variant can also be used to declare other properties which are conditional on the build system being selected.
-For instance, above we declare that when using ``cmake``, CMake 3.18+ is required.
+For instance, above we declare that when using ``autotools``, the build requires ``automake``, ``autoconf``, and ``libtools``.
 
-The other relevant difference, compared to the previous recipes we have seen so far, is that the code prescribing the installation procedure will live into two separate classes:
+The other relevant difference, compared to previous recipes we have seen so far, is that the code prescribing the installation procedure will live into two separate classes:
 
 .. code-block:: python
 
@@ -635,9 +679,14 @@ More information
 --------------------
 
 This tutorial module only scratches the surface of defining Spack package recipes.
-The `Packaging Guide <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#>`_ covers packaging topics more thoroughly.
+The packaging guide, split over four sections, covers packaging topics more thoroughly:
 
-Additional information on key topics can be found at the links below.
+* `creation <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html>`_;
+* `build customization <https://spack.readthedocs.io/en/latest/packaging_guide_build.html>`_;
+* `testing <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html>`_; and
+* `advanced topics <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html>`_, such as multiple build systems and external detection.
+
+Additional information on key topics can be found in the embedded keys above and at the links below.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Customizing package-related environments
@@ -654,9 +703,12 @@ Customizing package-related environments
 Testing an installation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Checking an installation
-  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#checking-an-installation>`_:
-  for more information on adding tests that run at build-time and against an installation.
+* `Build-time tests
+  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_:
+  for sanity checks and pre-/post- ``build`` and or ``install`` phase tests.
+* `Stand-alone tests
+  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_:
+  for tests that can run against any installed Spack package.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Using other build systems
@@ -675,8 +727,8 @@ Using other build systems
   <https://spack.readthedocs.io/en/latest/developer_guide.html#package-class-architecture>`_:
   for more insight on the inner workings of ``Package`` and ``Builder`` classes.
 * `The GDAL Package
-  <https://github.com/spack/spack/blob/develop/var/spack/repos/builtin/packages/gdal/package.py>`_:
-  for an example of a complex package which extends Python and supports two build systems.
+  <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/gdal/package.py>`_:
+  for an example of a complex package that extends Python while supporting two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
