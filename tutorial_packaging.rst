@@ -39,6 +39,9 @@ Getting Started
 
 In order to avoid modifying your Spack installation with the package we are creating, let's create and add a **package repository** just for this tutorial using the following commands:
 
+.. literalinclude:: outputs/packaging/repo-create.out
+   :language: console
+
 .. literalinclude:: outputs/packaging/repo-add.out
    :language: console
 

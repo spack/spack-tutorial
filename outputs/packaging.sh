@@ -6,11 +6,12 @@ project="$(dirname "$0")"
 
 rm -rf "${raw_outputs:?}/packaging"
 . "$project/init_spack.sh"
-mpileaks_package_py="$HOME/repos/spack_repo/tutorial/packages/tutorial-mpileaks/package.py"
+mpileaks_package_py="$HOME/repos/spack_repo/tutorial/packages/tutorial_mpileaks/package.py"
 
 export SPACK_COLOR=never
 
-example packaging/repo-add   "spack repo create $HOME/repos/spack_repo/tutorial/ tutorial"
+example packaging/repo-create   "spack repo create $HOME/repos tutorial"
+example packaging/repo-add   "spack repo add $HOME/repos/spack_repo/tutorial"
 
 # make the editor automatically exit
 export EDITOR=true
