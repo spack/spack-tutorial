@@ -36,6 +36,9 @@ spack:
     full:
       root: views/full
       projections:
-        ^mpi^lapack: '{compiler.name}-{compiler.version}/{^mpi.name}-{^mpi.version}-{^lapack.name}-{^lapack.version}'
-        ^lapack: '{compiler.name}-{compiler.version}/{^lapack.name}-{^lapack.version}'
-        all: '{compiler.name}-{compiler.version}/'
+        ^mpi^lapack: '{name}/{name}-{version}-{^c.name}-{^c.version}-{^mpi.name}-{^mpi.version}-{^lapack.name}-{^lapack.version}'
+        ^lapack: '{name}/{name}-{version}-{^c.name}-{^c.version}-{^lapack.name}-{^lapack.version}'
+        '%c': '{name}/{name}-{version}-{^c.name}-{^c.version}'
+        '%cxx': '{name}/{name}-{version}-{^cxx.name}-{^cxx.version}'
+        '%c': '{name}/{name}-{version}-{^fortran.name}-{^fortran.version}'
+        all: '{name}/{name}-{version}'
