@@ -91,7 +91,7 @@ Spack will look at the contents of the tarball and generate a package when we ru
 
 You should now be in your text editor of choice, with the ``package.py`` file open for editing.
 
-Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your ``tutorial`` repository's ``packages`` directory, i.e., ``/home/spack/mypkgs/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
+Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your ``tutorial`` repository's ``packages`` directory, i.e., ``$HOME/mypkgs/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
 
 Take a moment to look over the file.
 
@@ -110,6 +110,12 @@ As we can see from the skeleton contents, the Spack template:
 * provides a preliminary implementation of the `autoreconf <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#using-a-custom-autoreconf-phase>`_ method; and
 * provides a skeleton `configure_args <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_ method.
 
+.. note::
+
+   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of GitHub user names for those accounts willing to be notified when a change is made to the package.
+   They will also be given an opportunity to review the changes.
+   This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
+
 The areas we need to modify are highlighted in the figure below.
 
 .. literalinclude:: tutorial/examples/packaging/0.package.py
@@ -119,9 +125,14 @@ The areas we need to modify are highlighted in the figure below.
 
 .. note::
 
-   The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of GitHub user names for those accounts willing to be notified when a change is made to the package.
-   They will also be given an opportunity to review the changes.
-   This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
+   You will get a different ``sha256`` if you paste the other ``tar.gz`` URL
+   from the repository but retention of the ``autoreconf()`` implementation
+   should allow either to work.
+
+   We generally recommend you use the project-prepared archive url instead of
+   the ``GitHub``-generated ``Source code (tar.gz)`` url, when available,
+   since they are less volatile in the face of GitHub shasum algorithm changes.
+
 
 Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256`` calculation.
 Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
@@ -342,6 +353,8 @@ This command spawned a new shell containing the same environment that Spack used
 From here we can manually re-run the build using the ``configure`` command with the ``--prefix`` option that Spack passed in the failed build.
 If you aren't sure, check the appropriate line under ``Executing phase: 'configure'`` in the build log in :ref:`reviewing_build_log`.
 
+.. TODO: The output for build-env-configure.out must be manually generated.
+
 .. literalinclude:: outputs/packaging/build-env-configure.out
    :language: console
 
@@ -463,7 +476,7 @@ Notice the addition of the two stack start arguments in the configure command th
 .. note::
 
    Not all packages have such simple options.
-   Fortunately, ``Autotools`` is one of several packages that implement `helper functions <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#helper-functions>`_ to simplify setting arguments tied to boolean and multi-valued variants..
+   Fortunately, ``Autotools`` is one of several base packages with `helper functions <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#helper-functions>`_ to simplify setting arguments tied to boolean, single- and multi-valued variants.
 
 Now that we have a package we can build, it's time to consider adding tests that can be used to gain confidence that the software works.
 
@@ -593,10 +606,10 @@ Spack has thousands of built-in packages that can serve as examples to guide the
 
 .. tip::
 
-   You can find these packages under the :ref:`spack/spack-packages <https://github.com/spack/spack-packages>` repository's ``repos/spack_repo/builtin/packages`` directory.
+   You can find these packages under the :ref:`spack/spack-packages <https://github.com/spack/spack-packages>`_ repository's ``repos/spack_repo/builtin/packages`` directory.
 
    Or use `spack pkg grep <https://spack.readthedocs.io/en/latest/command_index.html#spack-pkg>`_ to perform a query.
-   For example, to find the paths to all builtin ``AutotoolsPackage`` packages, you can enter ``spack pkg grep AutotoolsPackage | sed "s/:.*//g" | sort -u``, which will search the packages in all of your configured repositories.
+   For example, to find the paths to all ``AutotoolsPackage`` packages in your configured repositories, you can enter ``spack pkg grep AutotoolsPackage | sed "s/:.*//g" | sort -u`` at the command line.
 
 ----------------------
 Multiple Build Systems
@@ -605,14 +618,20 @@ Multiple Build Systems
 There are cases where software actively supports two build systems; changes build systems as it evolves; or needs different build systems on different platforms.
 Spack allows you to write a single, concise recipe for these cases that generally require minor changes to the package structure.
 
-Let's take a simplified look at ``uncrustify``, a source code beautifier, as an example.
+Let's take a look at a *simplified* package for ``uncrustify``, which is a source code beautifier.
 This software builds with ``Autotools`` up through version 0.63 but switches to ``CMake`` at version 0.64.
 
-Therefore ``Uncrustify`` needs to inherit from **both** ``CMakePackage`` and ``AutotoolsPackage``.
+Therefore ``Uncrustify`` needs to import and inherit from **both** ``CMakePackage`` and ``AutotoolsPackage``.
 We also need to explicitly specify the ``build_system`` directive, and add conditional dependencies accordingly:
 
 .. code-block:: python
-   :emphasize-lines: 1,17-21,23-26
+   :emphasize-lines: 1-2,7,23-27,29-32
+
+   from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
+   from spack_repo.builtin.build_systems.cmake import CMakePackage
+
+   from spack.package import *
+
 
    class Uncrustify(CMakePackage, AutotoolsPackage):
        """Source Code Beautifier for C, C++, C#, ObjectiveC, Java, and others."""
@@ -648,17 +667,22 @@ When your package supports more than one build system though, you have to explic
 In the example above it's ``cmake`` for version 0.64 and higher and ``autotools`` for version 0.63 and lower.
 
 The ``build_system`` variant can also be used to declare other properties which are conditional on the build system being selected.
-For instance, above we declare that when using ``autotools``, the build requires ``automake``, ``autoconf``, and ``libtools``.
+For instance, above we use the ``when`` context manager to declare that ``autotools`` builds depend on ``automake``, ``autoconf``, and ``libtools`` being installed first.
 
-The other relevant difference, compared to previous recipes we have seen so far, is that the code prescribing the installation procedure will live into two separate classes:
+The other relevant difference, compared to previous recipes we have seen so far, is that the code prescribing the installation procedure will live in two separate classes:
 
 .. code-block:: python
 
-   class CMakeBuilder(spack.build_systems.cmake.CMakeBuilder):
+   # Be sure to include the corresponding imports at the top of the package.
+   from spack_repo.builtin.build_systems import autotools, cmake
+
+   ...
+
+   class CMakeBuilder(cmake.CMakeBuilder):
       def cmake_args(self):
           pass
 
-   class AutotoolsBuilder(spack.build_systems.autotools.AutotoolsBuilder):
+   class AutotoolsBuilder(autotools.AutotoolsBuilder):
       def configure_args(self):
           pass
 
