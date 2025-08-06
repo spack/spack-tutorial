@@ -6,11 +6,11 @@
 
    and then set Spack up like this::
 
-       git clone --depth=20 --branch=releases/v1.0 https://github.com/spack/spack
+       git clone --depth=2 --branch=releases/v1.0 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack tutorial -y
-       spack bootstrap now
-       spack compiler find
+       spack repo update builtin --tag v2025.07.0
+       spack mirror add tutorial /mirror
+       spack buildcache keys --install --trust
 
    See the :ref:`basics-tutorial` for full details on setup. For more help, join us in the ``#tutorial`` channel on Slack -- get an invitation at `slack.spack.io <https://slack.spack.io/>`_
 
