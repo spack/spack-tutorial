@@ -416,7 +416,7 @@ To address all these needs we can complicate our ``modules`` configuration a bit
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 41-56
+   :emphasize-lines: 41-58
 
 Regenerate the modules again:
 
