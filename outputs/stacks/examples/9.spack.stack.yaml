@@ -38,6 +38,8 @@ spack:
         hierarchy:
         - mpi
         - lapack
+        core_specs:
+        - '%gcc@11'
         hash_length: 0
         include:
         - gcc
