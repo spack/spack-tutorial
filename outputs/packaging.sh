@@ -10,7 +10,7 @@ mpileaks_package_py="$HOME/repos/spack_repo/tutorial/packages/tutorial-mpileaks/
 
 export SPACK_COLOR=never
 
-example packaging/repo-add   "spack repo add \$HOME/repos/spack_repo/tutorial/"
+example packaging/repo-add   "spack repo create $HOME/repos/spack_repo/tutorial/ tutorial"
 
 # make the editor automatically exit
 export EDITOR=true
@@ -49,4 +49,4 @@ example packaging/install-mpileaks-6  "spack install --test=root tutorial-mpilea
 
 example packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
 example packaging/cleanup  "spack repo remove tutorial"
-example packaging/cleanup  "rm -rf \$HOME/repos/spack_repo/tutorial/packages/tutorial-mpileaks"
+example packaging/cleanup  "rm -rf $HOME/repos/spack_repo/tutorial"
