@@ -296,8 +296,9 @@ to be able to re-build the specs from sources. Alternatively, to create a buildc
 Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
 By default, Spack installs one package at a time, using the ``-j`` option where it can.
-If you are installing a large environment, and have at disposal a beefy build node, you might need to start more installations in parallel to make an optimal use of the resources.
-This can be done by creating a ``depfile``, when the environment is active:
+The ``spack install`` command has an optional ``-p`` option for the number of packages to build in parallel.
+Note that each parallel package may consume the number of threads of the ``-j`` option.
+You can use node resources more optimally by creating a ``depfile``, when the environment is active:
 
 .. code-block:: console
 
@@ -306,6 +307,7 @@ This can be done by creating a ``depfile``, when the environment is active:
 The result is a makefile that starts multiple Spack instances, and the resources are shared through the GNU jobserver.
 More information of this feature can be found `in our documentation <https://spack.readthedocs.io/en/latest/environments.html#generating-depfiles-from-environments>`_.
 This might cut down your build time by a fair amount, if you build frequently from sources.
+Expect this feature to be streamlined in future versions of Spack.
 
 -----------------------------------
 Make the software stack easy to use
