@@ -242,7 +242,7 @@ and add the dependencies by specifying them using the ``depends_on`` directive a
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 25-27
+   :emphasize-lines: 26-28
 
 Adding dependencies tells Spack that it must ensure those packages are installed *before* it can build our package.
 
@@ -391,7 +391,7 @@ and add the ``--with-adept-utils`` and ``--with-callpath`` arguments in the ``co
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 33-36
+   :emphasize-lines: 34-37
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the method will automatically get passed to ``configure`` during the build.
 
@@ -445,7 +445,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 16-21,45-52
+   :emphasize-lines: 17-22,46-53
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary in ``self.spec``.
 Also note that the value provided by the user is accessed by the entry's ``value`` property.
@@ -484,7 +484,7 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 14
+   :emphasize-lines: 15
 
 Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_, we'll need to uninstall the package so we can re-run it with tests enabled:
 
@@ -493,18 +493,20 @@ Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packag
 
 Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks. No such directory in prefix: shar``.
 
-Now let's properly fix the error and try again:
+Now let's properly fix the error:
 
 .. literalinclude:: tutorial/examples/packaging/6.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 14
+   :emphasize-lines: 15
 
-Success!
+And try again:
 
 .. literalinclude:: outputs/packaging/install-mpileaks-6.out
    :language: console
+
+Success!
 
 The material covered here only scratches the surface of testing an installation.
 We could leverage the examples from this package to add `post-install phase tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#adding-installation-phase-tests>`_ and/or `stand-alone tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_.
