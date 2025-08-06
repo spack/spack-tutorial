@@ -79,18 +79,8 @@ We'll start by trying to add different versions of ``netlib-scalapack``, linked 
 .. literalinclude:: outputs/stacks/unify-0.out
    :language: spec
 
-If we try to concretize the environment, we'll get an error:
-
-.. literalinclude:: outputs/stacks/unify-1.out
-   :language: spec
-
-The error message is quite verbose and complicated, but it ultimately gives a useful hint:
-
-.. code-block::
-
-   You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
-
-Let's examine what that means.
+If we try to concretize the environment, we'll get an error.
+We cannot unify an environment with two different configurations of the same package.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Tuning concretizer options for a stack
