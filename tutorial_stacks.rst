@@ -321,7 +321,7 @@ Edit our ``spack.yaml`` file again.
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 30-40
+   :emphasize-lines: 30-43
 
 In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
@@ -383,7 +383,7 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
 
 .. literalinclude:: outputs/stacks/examples/8.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 31-40
+   :emphasize-lines: 31-42
 
 In these few lines of additional configuration we told Spack to generate ``lmod`` module files in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
 We've also configured it to place all specs built with our system compiler into the ``Core`` designation in the lmod hierarchy.
@@ -416,7 +416,7 @@ To address all these needs we can complicate our ``modules`` configuration a bit
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 41-56
+   :emphasize-lines: 41-58
 
 Regenerate the modules again:
 
