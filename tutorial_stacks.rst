@@ -410,7 +410,7 @@ Now we should be able to see the module files that have been generated:
    :language: console
 
 The set of modules is already usable, and the hierarchy already works.
-For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12.3.0``:
+For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console
