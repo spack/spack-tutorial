@@ -383,7 +383,7 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
 
 .. literalinclude:: outputs/stacks/examples/8.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 31-40
+   :emphasize-lines: 31-42
 
 In these few lines of additional configuration we told Spack to generate ``lmod`` module files in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
 We've also configured it to place all specs built with our system compiler into the ``Core`` designation in the lmod hierarchy.
