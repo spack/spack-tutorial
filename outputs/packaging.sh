@@ -1,24 +1,29 @@
 #!/bin/bash
 
 # Source definitions
+dir="mypkgs"
+# Use \$HOME to make  copying-and-pasting from the examples easier
+repo_root="\$HOME/$dir"
 name="tutorial"
-repo_root="\$HOME/mypkgs"
-tutorial_root="$repo_root/spack_repo/$name"
+tutorial_subdir="spack_repo/$name"
+
 project="$(dirname "$0")"
 . "$project/defs.sh"
 
 rm -rf "${raw_outputs:?}/packaging"
 . "$project/init_spack.sh"
-mpileaks_package_py="$tutorial_root/packages/tutorial_mpileaks/package.py"
+# Cannot use \$HOME (in CI)
+mpileaks_package_py="$HOME/$dir/$tutorial_subdir/packages/tutorial_mpileaks/package.py"
 
 export SPACK_COLOR=never
 
+# Packaging commands
 example packaging/repo-create   "spack repo create $repo_root $name"
-example packaging/repo-create   "spack repo add $tutorial_root"
+example packaging/repo-create   "spack repo add $repo_root/$tutorial_subdir"
 
 # make the editor automatically exit
 export EDITOR=true
-# use the archive file that has autoreconf
+# use the project-prepared archive file
 example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
