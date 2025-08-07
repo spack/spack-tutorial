@@ -1,5 +1,5 @@
 $ spack concretize
 ==> Error: Spack concretizer internal error. Please submit a bug report and include the command, environment if applicable and the following error message.
-    [netlib-scalapack%gcc@12 ^mpich ^openblas, netlib-scalapack%gcc@12 ^openblas ^openmpi, gcc@12.3.0/jjgfqpdmihb2cq5ca7txia5oshruq56q] is unsatisfiable, errors are:
-    internal_error("Imposing constraint outside of imposed_nodes")
+    [netlib-scalapack %gcc@12 ^openblas ^openmpi, netlib-scalapack %gcc@12 ^mpich ^openblas, gcc@12.5.0/fmxnit5ggu45byub6wlsuienth2dkboh] is unsatisfiable, errors are:
+    internal_error("must have exactly one condition_set for literals")
     internal_error("nodes in root condition set must be associated with root"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.

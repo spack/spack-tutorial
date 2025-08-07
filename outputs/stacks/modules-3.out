@@ -1,133 +1,131 @@
 $ module load gcc
 $ which gcc
-/home/spack/spack/opt/spack/linux-ubuntu22.04-x86_64_v3/gcc-11.4.0/gcc-12.3.0-jjgfqpdmihb2cq5ca7txia5oshruq56q/bin/gcc
+/home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh/bin/gcc
 $ gcc --version
-gcc (Spack GCC) 12.3.0
+gcc (Spack GCC) 12.5.0
 Copyright (C) 2022 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $ module av
 
----- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 ----
-   autoconf/2.72-yfxrc66		      (D)
-   automake/1.16.5-e4u6ql7		      (D)
-   berkeley-db/18.1.40-4mqvw3u		      (D)
-   bison/3.8.2-fky4vih
-   bzip2/1.0.8-j3fd4z5			      (D)
-   ca-certificates-mozilla/2023-05-30-xilbvuy (D)
-   cmake/3.30.5-yempnaz
-   curl/8.10.1-wsmx6sp			      (D)
-   diffutils/3.10-ioferp7
-   expat/2.6.4-vlatljj
-   findutils/4.9.0-wqmzrke
-   gcc-runtime/12.3.0-w5nlv2k		      (D)
-   gdbm/1.23-ttyuhau			      (D)
-   gettext/0.22.5-jbitwpt		      (D)
-   glibc/2.35-gkoh6ax			      (D)
-   gmake/4.4.1-zoiouai			      (D)
-   hwloc/2.11.1-2fvcggi
-   krb5/1.21.3-frb66wn
-   libbsd/0.12.2-3oqufcr
-   libedit/3.1-20240808-ht5niwq
-   libevent/2.1.12-nftqerg
-   libfabric/1.22.0-pvefo63
-   libffi/3.4.6-4ga47g7
-   libiconv/1.17-gdtmvyu		      (D)
-   libmd/1.0.4-cpmq5md
-   libpciaccess/0.17-ybxtd2t
-   libsigsegv/2.14-u2gofvq		      (D)
-   libtool/2.4.7-xfe5xho		      (D)
-   libxcrypt/4.4.35-apxktfa
-   libxml2/2.13.4-4fawd6m		      (D)
-   m4/1.4.19-grpnckw
-   meson/1.5.1-tp5miym
-   mpich/4.2.3-ezes42n
-   ncurses/6.5-uajmsrc			      (D)
-   netlib-lapack/3.11.0-nn52q3b
-   nghttp2/1.63.0-ippbbwu
-   ninja/1.12.1-myjhsx2
-   numactl/2.0.18-n4nt7lo
-   openblas/0.3.28-aliqr5t
-   openmpi/5.0.5-suepxfz
-   openssh/9.9p1-3jdzvdm
-   openssl/3.4.0-i5fmca4
-   perl/5.40.0-tt4vkz3			      (D)
-   pigz/2.8-zgwe2ua			      (D)
-   pkgconf/2.2.0-gutpiwq
-   pmix/5.0.3-t7gzekh
-   py-beniget/0.4.1-oyzng5h
-   py-cython/3.0.11-efpxrfo
-   py-flit-core/3.9.0-ltdymw4
-   py-gast/0.5.4-rbt72pq
-   py-meson-python/0.16.0-jgr2tnq
-   py-packaging/24.1-i5hagd3
-   py-pip/23.1.2-3eaudob
-   py-ply/3.11-ohaizhq
-   py-pybind11/2.13.5-bdx5tpn
-   py-pyproject-metadata/0.7.1-p27mstg
-   py-setuptools/69.2.0-wbbopip
-   py-wheel/0.41.2-gho4mpq
-   python-venv/1.0-pt3p7pd
-   python/3.11.9-67g7nw4
-   python/3.13.0-wxt7aps		      (D)
-   re2c/3.1-qgh7e7n
-   readline/8.2-tb7zvuf			      (D)
-   sqlite/3.46.0-b63y5mx
-   tar/1.34-j5dljnv
-   util-linux-uuid/2.40.2-64aenca
-   util-macros/1.20.1-vau55h7
-   xz/5.4.6-ifvv7cz
-   yaksa/0.3-ferxasc
-   zlib-ng/2.2.1-i4mwsvm		      (D)
-   zstd/1.5.6-yk3lkd4			      (D)
+---- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.5.0 ----
+   autoconf/2.72-krgi7jf
+   automake/1.16.5-jgeyxwq
+   berkeley-db/18.1.40-ikx4n4c
+   bison/3.8.2-acgafis
+   bzip2/1.0.8-3kql5yq		       (D)
+   cmake/3.31.8-yxjigtd
+   curl/8.11.1-etcxzzk
+   diffutils/3.10-6lfrh36	       (D)
+   expat/2.7.1-lfwqiuw
+   findutils/4.10.0-vhsfohm	       (D)
+   gdbm/1.23-cxbuzxk
+   gettext/0.23.1-goyejxw
+   gmake/4.4.1-xvxobm5
+   hwloc/2.11.1-3e4kpzp
+   krb5/1.21.3-nm4trzq
+   libbsd/0.12.2-es3e2le
+   libedit/3.1-20240808-wspzmod
+   libevent/2.1.12-alldwq4
+   libfabric/2.2.0-atjn3er
+   libffi/3.4.8-ddom6iu
+   libiconv/1.18-m2sseei	       (D)
+   libmd/1.1.0-bqguhkf
+   libpciaccess/0.17-j336pb5
+   libsigsegv/2.14-ffctxur
+   libtool/2.4.7-7z4rzcr	       (D)
+   libxcrypt/4.4.38-qhnn6wr	       (D)
+   libxml2/2.13.5-f2wxsch
+   m4/1.4.20-rpphs4i
+   meson/1.7.0-tqc2ju3
+   mpich/4.3.0-3bsqfey
+   ncurses/6.5-56rxnkf		       (D)
+   netlib-lapack/3.12.1-xx23tbf
+   nghttp2/1.65.0-2v5o3ra	       (D)
+   ninja/1.12.1-pn35lwa
+   numactl/2.0.18-naapp6h
+   openblas/0.3.29-z3ynokz
+   openmpi/5.0.8-qdunbui
+   openssh/9.9p1-sgecnst
+   openssl/3.4.1-osxtmvl	       (D)
+   perl/5.40.0-txcbw3f		       (D)
+   pigz/2.8-zia4xj2		       (D)
+   pkgconf/2.3.0-qz3jy42
+   pmix/5.0.5-wqd5fdu
+   py-beniget/0.4.1-yjbwas7
+   py-cython/3.0.12-33ypsy5
+   py-flit-core/3.12.0-bw467tx
+   py-gast/0.5.4-xwt2et7
+   py-meson-python/0.16.0-bi3kygb
+   py-packaging/25.0-4edf37k
+   py-pip/25.1.1-nne5hgs
+   py-ply/3.11-cg53hr3
+   py-pybind11/2.13.6-lgys3sh
+   py-pyproject-metadata/0.9.1-vlo72hf
+   py-setuptools/80.9.0-hjettfg
+   py-wheel/0.45.1-wjtuyuo
+   python-venv/1.0-xmpetx7
+   python/3.13.5-musqpuq
+   re2c/3.1-cjnodvg
+   readline/8.2-lxvqq5o
+   sqlite/3.46.0-brglstm
+   tar/1.35-4do6jx7		       (D)
+   util-linux-uuid/2.41-v2nef6x
+   xz/5.6.3-3kvqody		       (D)
+   yaksa/0.3-5r6tuoo
+   zlib-ng/2.2.4-6xddq3y	       (D)
+   zstd/1.5.7-2jhx5gu		       (D)
 
 ---- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core ----
-   autoconf-archive/2023.02.20-6s34ic3
-   autoconf/2.72-vgucajy
-   automake/1.16.5-awgfaon
-   bc/1.07.1-jasonju
-   berkeley-db/18.1.40-cexlioh
-   bzip2/1.0.8-ewqc7cx
-   ca-certificates-mozilla/2023-05-30-t2brqss
-   curl/8.10.1-fpywomo
-   diffutils/3.10-lljulvx		      (D)
-   ed/1.4-p72c4zc
-   findutils/4.9.0-2sbkhch		      (D)
-   gawk/5.3.1-x6mwj3l
-   gcc-runtime/11.4.0-hshzy76		      (L)
-   gcc/12.3.0-jjgfqpd			      (L)
-   gdbm/1.23-jj2atvs
-   gettext/0.22.5-bexdfw2
-   glibc/2.35-a7drdl4			      (L)
-   gmake/4.4.1-srkzfjr
-   gmp/6.3.0-5webgya			      (L)
-   libiconv/1.17-bsga3no
-   libsigsegv/2.14-ea6qziv
-   libtool/2.4.7-tt3byem
-   libxcrypt/4.4.35-v64tnmr		      (D)
-   libxml2/2.13.4-wozcmyn
-   lmod/8.7.18-saucmo6
-   lua-luafilesystem/1.8.0-4lpeywj
-   lua-luaposix/36.1-hdnpce3
-   lua/5.4.6-qcxkktp
-   m4/1.4.19-qaspjyq			      (D)
-   mpc/1.3.1-qoauga4			      (L)
-   mpfr/4.2.1-mdfsfjy			      (L)
-   ncurses/6.5-rvg7j6b
-   nghttp2/1.63.0-t2qkug7		      (D)
-   openssl/3.4.0-5gigqgw		      (D)
-   perl/5.40.0-cwpt5ec
-   pigz/2.8-pcwnu2w
-   pkgconf/2.2.0-oplsmxr		      (D)
-   readline/8.2-aylebxv
-   tar/1.34-mmv6i4n			      (D)
-   tcl/8.6.12-w4gwr4e
-   texinfo/7.1-ljsbwjc
-   unzip/6.0-akxwy4w
-   xz/5.4.6-2fvrfr6			      (D)
-   zlib-ng/2.2.1-fhud6vq		      (L)
-   zstd/1.5.6-t7h6imj			      (L)
+   autoconf-archive/2023.02.20-u24n5ok
+   automake/1.16.5-vorbe53		      (D)
+   bc/1.07.1-vbae3vx
+   berkeley-db/18.1.40-k5bepow		      (D)
+   bzip2/1.0.8-vy2ggzh
+   ca-certificates-mozilla/2025-05-20-s3bxsw4
+   compiler-wrapper/1.0-rwnqbli
+   curl/8.11.1-7xf5wle			      (D)
+   diffutils/3.10-pptkbjb
+   ed/1.4-iktf6j2
+   findutils/4.10.0-ga3qiej
+   gawk/5.3.1-jxq6uva
+   gcc-runtime/11.4.0-3c5xh7d		      (L)
+   gcc-runtime/12.5.0-zubbt4y		      (D)
+   gcc/11.4.0-j7ykyvm
+   gcc/12.5.0-fmxnit5			      (L,D)
+   gdbm/1.23-5yo63cn			      (D)
+   gettext/0.23.1-soasbhm		      (D)
+   glibc/2.35-epwvtix			      (L)
+   gmake/4.4.1-5vb6e4b			      (D)
+   gmp/6.3.0-zx3x4nm			      (L)
+   libiconv/1.18-kgw5nks
+   libsigsegv/2.14-vefpsal		      (D)
+   libtool/2.4.7-l2jtwyu
+   libxcrypt/4.4.38-iundcaq
+   libxml2/2.13.5-7mdlpgu		      (D)
+   lmod/8.7.18-gegst44
+   lua-luafilesystem/1.8.0-clpxqjm
+   lua-luaposix/36.1-xtcb4fb
+   lua/5.4.6-cvp4vnc
+   m4/1.4.20-ypq2dye			      (D)
+   mpc/1.3.1-mkqx7bu			      (L)
+   mpfr/4.2.1-abjn4ye			      (L)
+   ncurses/6.5-u7sn2jt
+   nghttp2/1.65.0-hpkxq4q
+   openssl/3.4.1-kphogwy
+   perl/5.40.0-nsqyer7
+   pigz/2.8-prsofdp
+   pkgconf/2.3.0-xoghzad		      (D)
+   readline/8.2-skysn5p			      (D)
+   tar/1.35-ye5hcpf
+   tcl/8.6.12-6wkjgx5
+   texinfo/7.1-z47kihj
+   unzip/6.0-hvxekp5
+   util-macros/1.20.1-kbleacp
+   xz/5.6.3-zeynpnj
+   zlib-ng/2.2.4-g7ixtqy		      (L)
+   zstd/1.5.7-bmaw6fn			      (L)
 
   Where:
    D:  Default Module

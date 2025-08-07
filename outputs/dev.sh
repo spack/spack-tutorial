@@ -7,6 +7,8 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/dev"
 . "$project/init_spack.sh"
 
+export SPACK_COLOR=never
+
 example dev/setup-scr "cd ~"
 cd ~ || exit
 example dev/setup-scr "mkdir devel-env"

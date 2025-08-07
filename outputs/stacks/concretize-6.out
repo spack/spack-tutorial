@@ -3,16 +3,12 @@ $ spack concretize
 $ spack find -cl netlib-scalapack
 ==> In environment /home/spack/stacks
 ==> 6 root specs
--- no arch / gcc@11 ---------------------------------------------
-[+] jjgfqpd gcc@12%gcc@11
+-- no arch / no compilers ---------------------------------------
+[+] fmxnit5 gcc@12	      [+] tl5f6ke netlib-scalapack  [+] nimjflq netlib-scalapack
+[+] igwbxq4 netlib-scalapack  [+] hk7ftpc netlib-scalapack  [+] qbiffx7 py-scipy
 
--- no arch / gcc@12 ---------------------------------------------
-[+] bx3g36n netlib-scalapack%gcc@12  [+] wpymlkh netlib-scalapack%gcc@12
-[+] me353po netlib-scalapack%gcc@12  [+] g53zrs6 py-scipy%gcc@12
-[+] 5fvq6fg netlib-scalapack%gcc@12
-
--- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-[+]  me353po netlib-scalapack@2.2.0  [+]  5fvq6fg netlib-scalapack@2.2.0
-[+]  wpymlkh netlib-scalapack@2.2.0  [+]  bx3g36n netlib-scalapack@2.2.0
+-- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.5.0 ----------
+[+]  igwbxq4 netlib-scalapack@2.2.2  [+]  hk7ftpc netlib-scalapack@2.2.2
+[+]  tl5f6ke netlib-scalapack@2.2.2  [+]  nimjflq netlib-scalapack@2.2.2
 ==> 4 installed packages
 ==> 0 concretized packages to be installed

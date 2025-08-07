@@ -1,84 +1,120 @@
 $ spack find -ld py-scipy
 ==> In environment /home/spack/stacks
 ==> 6 root specs
--- no arch / gcc@11 ---------------------------------------------
-[+] jjgfqpd gcc@12%gcc@11
+-- no arch / no compilers ---------------------------------------
+[+] fmxnit5 gcc@12
+     -	------- gcc@11
 
-
--- no arch / gcc@12 ---------------------------------------------
-[+] bx3g36n netlib-scalapack%gcc@12
+[+] igwbxq4 netlib-scalapack
+     -	------- gcc@12
      -	------- mpich
      -	------- netlib-lapack
 
-[+] me353po netlib-scalapack%gcc@12
+[+] tl5f6ke netlib-scalapack
+     -	------- gcc@12
      -	------- mpich
      -	------- openblas
 
-[+] 5fvq6fg netlib-scalapack%gcc@12
+[+] hk7ftpc netlib-scalapack
+     -	------- gcc@12
      -	------- netlib-lapack
      -	------- openmpi
 
-[+] wpymlkh netlib-scalapack%gcc@12
+[+] nimjflq netlib-scalapack
+     -	------- gcc@12
      -	------- openblas
      -	------- openmpi
 
-[+] g53zrs6 py-scipy%gcc@12
+[+] qbiffx7 py-scipy
+     -	------- gcc@12
      -	------- openblas
 
 
--- linux-ubuntu22.04-x86_64_v3 / gcc@12.3.0 ---------------------
-g53zrs6 py-scipy@1.14.1
-w5nlv2k	    gcc-runtime@12.3.0
-gkoh6ax	    glibc@2.35
-aliqr5t	    openblas@0.3.28
-zoiouai		gmake@4.4.1
-gutpiwq	    pkgconf@2.2.0
-efpxrfo	    py-cython@3.0.11
-wbbopip		py-setuptools@69.2.0
-jgr2tnq	    py-meson-python@0.16.0
-tp5miym		meson@1.5.1
-i5hagd3		py-packaging@24.1
-ltdymw4		    py-flit-core@3.9.0
-p27mstg		py-pyproject-metadata@0.7.1
-ckezggl	    py-numpy@2.1.2
-3eaudob	    py-pip@23.1.2
-bdx5tpn	    py-pybind11@2.13.5
-yempnaz		cmake@3.30.5
-wsmx6sp		    curl@8.10.1
-ippbbwu			nghttp2@1.63.0
-myjhsx2		ninja@1.12.1
-qgh7e7n		    re2c@3.1
-3bcgcev	    py-pythran@0.16.1
-oyzng5h		py-beniget@0.4.1
-rbt72pq		py-gast@0.5.4
-ohaizhq		py-ply@3.11
-gho4mpq	    py-wheel@0.41.2
-67g7nw4	    python@3.11.9
-j3fd4z5		bzip2@1.0.8
-ioferp7		    diffutils@3.10
-vlatljj		expat@2.6.4
-3oqufcr		    libbsd@0.12.2
-cpmq5md			libmd@1.0.4
-ttyuhau		gdbm@1.23
-jbitwpt		gettext@0.22.5
-gdtmvyu		    libiconv@1.17
-4fawd6m		    libxml2@2.13.4
-j5dljnv		    tar@1.34
-zgwe2ua			pigz@2.8
-yk3lkd4			zstd@1.5.6
-4ga47g7		libffi@3.4.6
-apxktfa		libxcrypt@4.4.35
-tt4vkz3		    perl@5.40.0
-4mqvw3u			berkeley-db@18.1.40
-uajmsrc		ncurses@6.5
-i5fmca4		openssl@3.4.0
-xilbvuy		    ca-certificates-mozilla@2023-05-30
-tb7zvuf		readline@8.2
-b63y5mx		sqlite@3.46.0
-64aenca		util-linux-uuid@2.40.2
-ifvv7cz		xz@5.4.6
-i4mwsvm		zlib-ng@2.2.1
-pt3p7pd	    python-venv@1.0
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.5.0 ------
+qbiffx7 py-scipy@1.16.0
+rwnqbli	    compiler-wrapper@1.0
+fmxnit5	    gcc@12.5.0
+pptkbjb		diffutils@3.10
+kgw5nks		    libiconv@1.18
+jxq6uva		gawk@5.3.1
+vefpsal		    libsigsegv@2.14
+skysn5p		    readline@8.2
+j7ykyvm		gcc@11.4.0
+3c5xh7d		gcc-runtime@11.4.0
+5vb6e4b		gmake@4.4.1
+zx3x4nm		gmp@6.3.0
+5xgjgae		    autoconf@2.72
+vorbe53		    automake@1.16.5
+ypq2dye		    m4@1.4.20
+l2jtwyu		libtool@2.4.7
+ga3qiej		    findutils@4.10.0
+mkqx7bu		mpc@1.3.1
+abjn4ye		mpfr@4.2.1
+u24n5ok		    autoconf-archive@2023.02.20
+nsqyer7		perl@5.40.0
+k5bepow		    berkeley-db@18.1.40
+vy2ggzh		    bzip2@1.0.8
+5yo63cn		    gdbm@1.23
+z47kihj		texinfo@7.1
+soasbhm		    gettext@0.23.1
+7mdlpgu			libxml2@2.13.5
+ye5hcpf			tar@1.35
+prsofdp			    pigz@2.8
+zeynpnj			xz@5.6.3
+u7sn2jt		    ncurses@6.5
+xoghzad			pkgconf@2.3.0
+g7ixtqy		zlib-ng@2.2.4
+bmaw6fn		zstd@1.5.7
+zubbt4y	    gcc-runtime@12.5.0
+epwvtix	    glibc@2.35
+z3ynokz	    openblas@0.3.29
+xvxobm5		gmake@4.4.1
+qz3jy42	    pkgconf@2.3.0
+33ypsy5	    py-cython@3.0.12
+hjettfg		py-setuptools@80.9.0
+bi3kygb	    py-meson-python@0.16.0
+tqc2ju3		meson@1.7.0
+pn35lwa		ninja@1.12.1
+cjnodvg		    re2c@3.1
+4edf37k		py-packaging@25.0
+bw467tx		    py-flit-core@3.12.0
+vlo72hf		py-pyproject-metadata@0.9.1
+7cmuxbw	    py-numpy@2.3.1
+nne5hgs	    py-pip@25.1.1
+lgys3sh	    py-pybind11@2.13.6
+yxjigtd		cmake@3.31.8
+etcxzzk		    curl@8.11.1
+2v5o3ra			nghttp2@1.65.0
+y2j3wh4	    py-pythran@0.16.1
+yjbwas7		py-beniget@0.4.1
+xwt2et7		py-gast@0.5.4
+cg53hr3		py-ply@3.11
+wjtuyuo	    py-wheel@0.45.1
+musqpuq	    python@3.13.5
+3kql5yq		bzip2@1.0.8
+6lfrh36		    diffutils@3.10
+lfwqiuw		expat@2.7.1
+es3e2le		    libbsd@0.12.2
+bqguhkf			libmd@1.1.0
+cxbuzxk		gdbm@1.23
+goyejxw		gettext@0.23.1
+m2sseei		    libiconv@1.18
+f2wxsch		    libxml2@2.13.5
+4do6jx7		    tar@1.35
+zia4xj2			pigz@2.8
+2jhx5gu			zstd@1.5.7
+ddom6iu		libffi@3.4.8
+56rxnkf		ncurses@6.5
+osxtmvl		openssl@3.4.1
+s3bxsw4		    ca-certificates-mozilla@2025-05-20
+txcbw3f		    perl@5.40.0
+ikx4n4c			berkeley-db@18.1.40
+lxvqq5o		readline@8.2
+brglstm		sqlite@3.46.0
+v2nef6x		util-linux-uuid@2.41
+3kvqody		xz@5.6.3
+6xddq3y		zlib-ng@2.2.4
+xmpetx7	    python-venv@1.0
 
 ==> 1 installed package
 ==> 0 concretized packages to be installed (show with `spack find -c`)
