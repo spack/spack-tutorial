@@ -2,7 +2,7 @@
 
 # Source definitions
 dir="mypkgs"
-# Use \$HOME to make  copying-and-pasting from the examples easier
+# Use \$HOME to make copying-and-pasting from the examples easier in most cases
 repo_root="\$HOME/$dir"
 name="tutorial"
 tutorial_subdir="spack_repo/$name"
@@ -23,15 +23,14 @@ example packaging/repo-create   "spack repo add $repo_root/$tutorial_subdir"
 
 # make the editor automatically exit
 export EDITOR=true
-# use the project-prepared archive file
-example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz"
+example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
 example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
-# This gets a failure ("Error: invalid width -2 (must be > 0)") in CI that
-# does not occur when run at the command line.
+# This fails ("Error: invalid width -2 (must be > 0)") in CI when preparing
+# variants BUT not when run on the command line.
 #cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
 #example packaging/info-mpileaks       "spack info --phases tutorial-mpileaks"
 
