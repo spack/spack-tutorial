@@ -42,7 +42,7 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
 
 prefix=$(spack python -c \
-    'import spack.spec; print(spack.spec.Spec("tutorial-mpileaks").concretized().prefix)')
+    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
 
 run_configure() (
     spack cd tutorial-mpileaks
