@@ -120,16 +120,15 @@ The areas we need to modify are highlighted in the figure below.
    :language: python
    :emphasize-lines: 5-20,27,29-30,33-35,37-40,53-54,57,61-64
 
-.. note::
+.. tip::
 
-   You will get a different ``sha256`` if you paste the other ``tar.gz`` URL
-   from the repository but retention of the ``autoreconf()`` implementation
-   should allow either to work.
+   We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` url since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
 
-   We generally recommend you use the project-prepared archive url instead of
-   the ``GitHub``-generated ``Source code (tar.gz)`` url, when available,
-   since they are less volatile in the face of GitHub shasum algorithm changes.
-
+   In this case, that would mean using the ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz`` url.
+   Since the file has special build customizations, the ``sha256`` is different.
+   Key among the changes is the presence of ``autogen.sh``, which is a convenience script projects use to customize their Autotools reconfiguration process.
+   Consequently, you would replace the more general call to ``autoreconf()`` here with an invocation of the ``autogen.sh`` script.
+   An example of setting up and using such a script can be found in the `sos <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/sos/package.py>`_ package.
 
 Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256`` calculation.
 Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
