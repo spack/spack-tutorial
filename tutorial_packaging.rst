@@ -88,7 +88,7 @@ Spack will look at the contents of the tarball and generate a package when we ru
 
 You should now be in your text editor of choice, with the ``package.py`` file open for editing.
 
-Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your ``tutorial`` repository's ``packages`` directory, i.e., ``$HOME/mypkgs/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
+Your ``package.py`` file should reside in the ``tutorial-mpileaks`` subdirectory of your ``tutorial`` repository's ``packages`` directory, i.e., ``$HOME/my_pkgs/spack_repo/tutorial/packages/tutorial_mpileaks/package.py``.
 
 Take a moment to look over the file.
 

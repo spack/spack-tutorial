@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Source definitions
-dir="mypkgs"
+dir="my_pkgs"
 # Use \$HOME to make copying-and-pasting from the examples easier in most cases
 repo_root="\$HOME/$dir"
 name="tutorial"
