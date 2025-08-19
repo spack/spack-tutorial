@@ -124,11 +124,11 @@ The areas we need to modify are highlighted in the figure below.
 
    We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
 
-   In this case, that would mean using the ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz`` url.
-   Since the file has special build customizations, the ``sha256`` is different.
-   Key among the changes is the presence of ``autogen.sh``, which is a convenience script projects use to customize their Autotools reconfiguration process.
-   Consequently, you would replace the more general call to ``autoreconf()`` here with an invocation of the ``autogen.sh`` script.
-   An example of setting up and using such a script can be found in the `sos <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/sos/package.py>`_ package.
+   In this case, that would mean copying the url labeled ``mpileaks-1.0.tar.gz`` under the ``v1.0`` release assets, or simply ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz``.
+   The ``sha256`` is different since the file has build customizations.
+   A key difference is the presence of ``autogen.sh``, which is a convenience script Autotools projects can create to customize their reconfiguration process.
+   If you choose to use that URL, you should replace the more general call to ``autoreconf()`` with an invocation of the ``autogen.sh`` script.
+   An example of setting up and using the script can be found in the `sos <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/sos/package.py>`_ package.
 
 Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256``, calculation.
 Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
