@@ -48,9 +48,9 @@ example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpi
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
-# TODO: Update build-env-configure output manually since automation fails.
+# TODO: Update build-env-configure.out manually since automation fails.
 #
-# 1. Original approach fails since configure cannot be found.
+# 1. Original approach fails claiming configure cannot be found.
 #prefix=$(spack python -c \
 #    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
 #spack cd tutorial-mpileaks
@@ -58,15 +58,15 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 #
 # 2. Using a bash function .. seems to encounter excessive delays on the order
 #    of over 10 minutes when watched in CI
-#run_configure() (
-#    prefix=$(spack python -c \
-#        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
-#    spack cd tutorial-mpileaks
-#    spack build-env tutorial-mpileaks bash
-#    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
-#    cd $PROJECT
-#)
-#run_configure
+run_configure() (
+    prefix=$(spack python -c \
+        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
+    spack cd tutorial-mpileaks
+    spack build-env tutorial-mpileaks bash
+    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
+    cd $PROJECT
+)
+run_configure
 
 cp "$PROJECT/package-py-files/3.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
