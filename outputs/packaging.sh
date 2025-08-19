@@ -29,7 +29,8 @@ example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
 example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
-# TODO: Update this output manually since automation fails.
+# TODO: Update info-mpileaks.out output manually since automation fails.
+#
 # This fails ("Error: invalid width -2 (must be > 0)") in CI when preparing
 # variants BUT not when run on the command line.
 #cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
@@ -41,12 +42,16 @@ example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpi
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
-prefix=$(spack python -c \
-    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
-spack cd tutorial-mpileaks
-echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env tutorial-mpileaks -- bash"
-# Unfortunately cannot use a function since it appears to cause excessive delays
-# in output regeneration.
+# TODO: Update build-env-configure output manually since automation fails.
+#
+# 1. Original approach fails since configure cannot be found.
+#prefix=$(spack python -c \
+#    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
+#spack cd tutorial-mpileaks
+#echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env tutorial-mpileaks -- bash"
+#
+# 2. Using a bash function .. seems to encounter excessive delays on the order
+#    of over 10 minutes when watched in CI
 #run_configure() (
 #    prefix=$(spack python -c \
 #        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')

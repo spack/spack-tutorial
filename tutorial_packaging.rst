@@ -122,7 +122,7 @@ The areas we need to modify are highlighted in the figure below.
 
 .. tip::
 
-   We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` url since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
+   We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
 
    In this case, that would mean using the ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz`` url.
    Since the file has special build customizations, the ``sha256`` is different.
@@ -130,7 +130,7 @@ The areas we need to modify are highlighted in the figure below.
    Consequently, you would replace the more general call to ``autoreconf()`` here with an invocation of the ``autogen.sh`` script.
    An example of setting up and using such a script can be found in the `sos <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/sos/package.py>`_ package.
 
-Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256`` calculation.
+Since we are providing a ``url``, we can `confirm the checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_, or ``sha256``, calculation.
 Exit your editor to return to the command line and use the `spack checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#spack-checksum>`_ command:
 
 .. literalinclude:: outputs/packaging/checksum-mpileaks-1.out
@@ -195,6 +195,8 @@ At this point we've only updated key documentation within the package.
 It won't help us build the software; however, the information is now available for review.
 
 .. _info_mpileaks:
+
+.. TODO: The output to info-mpileaks.out must be manually generated.
 
 Let's enter the `spack info <https://spack.readthedocs.io/en/latest/package_fundamentals.html#cmd-spack-info>`_ command for the package:
 
