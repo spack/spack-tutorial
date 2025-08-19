@@ -29,6 +29,7 @@ example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
 example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
+# TODO: Update this output manually since automation fails.
 # This fails ("Error: invalid width -2 (must be > 0)") in CI when preparing
 # variants BUT not when run on the command line.
 #cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
@@ -40,17 +41,15 @@ example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpi
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
-
-prefix=$(spack python -c \
-    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
-
 run_configure() (
+    prefix=$(spack python -c \
+        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
     spack cd tutorial-mpileaks
     spack build-env tutorial-mpileaks bash
     example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
+    cd $PROJECT
 )
 run_configure
-cd $PROJECT
 
 cp "$PROJECT/package-py-files/3.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
