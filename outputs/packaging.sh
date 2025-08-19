@@ -41,15 +41,21 @@ example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpi
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 
-run_configure() (
-    prefix=$(spack python -c \
-        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
-    spack cd tutorial-mpileaks
-    spack build-env tutorial-mpileaks bash
-    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
-    cd $PROJECT
-)
-run_configure
+prefix=$(spack python -c \
+    'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
+spack cd tutorial-mpileaks
+echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env tutorial-mpileaks -- bash"
+# Unfortunately cannot use a function since it appears to cause excessive delays
+# in output regeneration.
+#run_configure() (
+#    prefix=$(spack python -c \
+#        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
+#    spack cd tutorial-mpileaks
+#    spack build-env tutorial-mpileaks bash
+#    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
+#    cd $PROJECT
+#)
+#run_configure
 
 cp "$PROJECT/package-py-files/3.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
