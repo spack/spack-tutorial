@@ -18,8 +18,14 @@ mpileaks_package_py="$HOME/$dir/$tutorial_subdir/packages/tutorial_mpileaks/pack
 export SPACK_COLOR=never
 
 # Packaging commands
+
+# tutorial repository set up
 example packaging/repo-create   "spack repo create $repo_root $name"
 example packaging/repo-create   "spack repo add $repo_root/$tutorial_subdir"
+
+example packaging/repo-list     "spack repo list"
+
+example packaging/repo-config   "spack config get repos"
 
 # make the editor automatically exit
 export EDITOR=true
