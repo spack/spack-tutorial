@@ -1,4 +1,6 @@
-$ spack repo create /home/spack/repos tutorial
+$ spack repo create $HOME/my_pkgs tutorial
 ==> Created repo with namespace 'tutorial'.
 ==> To register it with spack, run this command:
-  spack repo add /home/spack/repos/spack_repo/tutorial
+  spack repo add /home/spack/my_pkgs/spack_repo/tutorial
+$ spack repo add $HOME/my_pkgs/spack_repo/tutorial
+==> Added repo to config with name 'tutorial'.

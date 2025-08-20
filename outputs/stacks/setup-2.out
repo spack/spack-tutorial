@@ -40,22 +40,22 @@ $ spack install
 [+] /usr (external glibc-2.35-epwvtixhoxdeufu6kbbrpaigv2p6iav4)
 [+] /usr (external gcc-11.4.0-j7ykyvm5ancnn5rt7f35ggs6hwoslo42)
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-3c5xh7dqudxmyorlsrsfmjyggqk57vnr
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-5vb6e4beeoff4jan2t7edfjyi3hf3p7g
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-zx3x4nm3djw5jdqxcsimfpxykoxdijhj
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-zx3x4nm3djw5jdqxcsimfpxykoxdijhj
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-l2jtwyuivfhutipzs462o4ny7ctu4f5c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/diffutils-3.10-pptkbjbkikngjuyusssjuvn2mqzl663q
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/diffutils-3.10-pptkbjbkikngjuyusssjuvn2mqzl663q
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpfr-4.2.1-abjn4yec4cwckmwvwwtg45keufsqyhya
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
@@ -65,10 +65,10 @@ $ spack install
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/texinfo-7.1-z47kihjvhlc67ukoxtgtju72dcnhxn2z
 ==> Fetching file:///mirror/blobs/sha256/21/210bde294ec907128aa196cee83edfee0dcd8338971388101e38683f7e03d13d
-    [100%]  641.04 MB @	 331.1 GB/s
+    [100%]  641.04 MB @	 381.4 GB/s
 ==> Extracting gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh from binary cache
 ==> Wrote new spec file to /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh/lib/gcc/x86_64-pc-linux-gnu/12.5.0/specs
 ==> gcc: Successfully installed gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
-  Search: 0.00s.  Fetch: 1.38s.	 Install: 12.74s.  Extract: 11.41s.  Relocate: 1.28s.  Total: 14.13s
+  Search: 0.00s.  Fetch: 1.25s.	 Install: 12.57s.  Extract: 11.28s.  Relocate: 1.25s.  Total: 13.82s
 [+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
 ==> Installing gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh [29/29]

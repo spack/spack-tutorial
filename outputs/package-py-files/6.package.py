@@ -7,7 +7,7 @@ from spack.package import *
 
 
 class TutorialMpileaks(AutotoolsPackage):
-    """Tool to detect and report MPI objects like MPI_Requests and MPI_Datatypes."""
+    """Tool to detect and report leaked MPI objects like MPI_Requests and MPI_Datatypes."""
 
     homepage = "https://github.com/LLNL/mpileaks"
     url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
@@ -23,7 +23,7 @@ class TutorialMpileaks(AutotoolsPackage):
     variant(
         "stackstart",
         values=int,
-        default=0,
+        default="0",
         description="Specify the number of stack frames to truncate",
     )
 
