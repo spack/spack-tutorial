@@ -56,17 +56,17 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 #spack cd tutorial-mpileaks
 #echo "configure --prefix=$prefix" | example packaging/build-env-configure "spack build-env tutorial-mpileaks -- bash"
 #
-# 2. Using a bash function .. seems to encounter excessive delays on the order
-#    of over 10 minutes when watched in CI
-run_configure() (
-    prefix=$(spack python -c \
-        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
-    spack cd tutorial-mpileaks
-    spack build-env tutorial-mpileaks bash
-    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
-    cd $PROJECT
-)
-run_configure
+# 2. Using a bash function .. confirmed this appears to cause the regeneration
+#    to hang!
+#run_configure() (
+#    prefix=$(spack python -c \
+#        'import spack.concretize; print(spack.concretize.concretize_one("tutorial-mpileaks").prefix)')
+#    spack cd tutorial-mpileaks
+#    spack build-env tutorial-mpileaks bash
+#    example --expect-error $PROJECT/packaging/build-env-configure "./configure --prefix=$prefix"
+#    cd $PROJECT
+#)
+#run_configure
 
 cp "$PROJECT/package-py-files/3.package.py" "$mpileaks_package_py"
 example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
