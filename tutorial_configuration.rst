@@ -386,12 +386,7 @@ When you have an activated environment, you can edit the associated configuratio
 
 .. warning::
 
-   You will get exactly the same effects if you make these changes
-   without using an environment, but you must delete the
-   associated ``packages.yaml`` file after the config tutorial or
-   the commands you run in later tutorial sections will not
-   produce the same output (because they weren't run with the
-   configuration changes made here)
+   You will get exactly the same effects if you make these changes without using an environment, but you must delete the associated ``packages.yaml`` file after the config tutorial or the commands you run in later tutorial sections will not produce the same output (because they weren't run with the configuration changes made here)
 
 
 .. code-block:: yaml
@@ -596,9 +591,7 @@ At this point we want to discard the configuration changes we made in this tutor
 
 .. warning::
 
-   If you do not deactivate the ``config-env`` environment, then
-   specs will be concretized differently in later tutorial sections
-   and your results will not match.
+   If you do not deactivate the ``config-env`` environment, then specs will be concretized differently in later tutorial sections and your results will not match.
 
 
 -----------------
@@ -632,12 +625,9 @@ If you have a fast scratch file system, you can run builds from this file system
 
 .. note::
 
-   It is important to distinguish the build stage directory from other
-   directories in your scratch space to ensure ``spack clean`` does not
-   inadvertently remove unrelated files.  This can be accomplished by
-   including a combination of ``spack`` and or ``stage`` in each path
-   as shown in the default settings and documented examples.  See
-   `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
+   It is important to distinguish the build stage directory from other directories in your scratch space to ensure ``spack clean`` does not inadvertently remove unrelated files.
+   This can be accomplished by including a combination of ``spack`` and or ``stage`` in each path as shown in the default settings and documented examples.
+   See `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
 
 
 On systems with compilers that absolutely *require* environment variables like ``LD_LIBRARY_PATH``, it is possible to prevent Spack from cleaning the build environment with the ``dirty`` setting:

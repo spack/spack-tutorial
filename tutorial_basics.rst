@@ -205,9 +205,8 @@ Assuming we're happy with that configuration, we will now install it.
    :language: spec
 
 Spack packages can also have build options, called variants.
-Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-``
-(disable) sigils. There are two sigils for "disable" to avoid conflicts
-with shell parsing in different situations.
+Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
+There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
 Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
 Here we can install HDF5 without MPI support.
 
@@ -216,7 +215,8 @@ Here we can install HDF5 without MPI support.
 
 We might also want to install HDF5 with a different MPI implementation.
 While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
-Spack handles these through "virtual dependencies." A package, such as HDF5, can depend on the ``mpi`` virtual package (the interface).
+Spack handles these through "virtual dependencies."
+A package, such as HDF5, can depend on the ``mpi`` virtual package (the interface).
 Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the MPI interface.
 Any of these providers can be requested to satisfy an MPI dependency.
 For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
@@ -244,10 +244,8 @@ This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` 
 
 .. note::
 
-   It is frequently sufficient to specify ``%gcc`` even for packages
-   that use multiple languages, because Spack prefers to minimize the
-   number of packages needed for a build. Later on we will discuss
-   more complex compiler requests, and how and when they are useful.
+   It is frequently sufficient to specify ``%gcc`` even for packages that use multiple languages, because Spack prefers to minimize the number of packages needed for a build.
+   Later on we will discuss more complex compiler requests, and how and when they are useful.
 
 We'll do a quick check in on what we have installed so far.
 
@@ -341,10 +339,10 @@ The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an
 Advanced ``spack find`` Usage
 -----------------------------
 
-We will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and
-:ref:`basics-tutorial-uninstall` sections.
+We will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and :ref:`basics-tutorial-uninstall` sections.
 
-The ``spack find`` command can accept what we call "anonymous specs." These are expressions in spec syntax that do not contain a package name.
+The ``spack find`` command can accept what we call "anonymous specs."
+These are expressions in spec syntax that do not contain a package name.
 For example, ``spack find ^mpich`` will return every installed package that depends on MPICH, and ``spack find cflags="-O3"`` will return every package which was built with ``cflags="-O3"``.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
@@ -387,7 +385,8 @@ We can check that this compiler is preferred by looking at the install plan for 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec
 
-For the rest of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it. For now, we will uninstall it to avoid using it in the next section.
+For the rest of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it.
+For now, we will uninstall it to avoid using it in the next section.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec

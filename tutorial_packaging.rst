@@ -167,8 +167,7 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up in your editor with the
 Let's make the following changes:
 
 * remove the boilerplate comments between and including the dashed lines at the top;
-* replace the first ``FIXME`` comment with a description of ``mpileaks``
-  in the docstring;
+* replace the first ``FIXME`` comment with a description of ``mpileaks`` in the docstring;
 * replace the ``homepage`` property with the correct link;
 * uncomment the ``maintainers`` directive and replace the placeholder with your GitHub user name; and
 * replace the ``license`` of the project with the correct name and the placeholder with your GitHub user name.
@@ -271,8 +270,7 @@ Let's check that dependencies are effectively built when we try to install ``tut
 
 .. note::
 
-   This command may take a while to run and may produce more output if
-   you don't already have an MPI installed or configured in Spack.
+   This command may take a while to run and may produce more output if you don't already have an MPI installed or configured in Spack.
 
 While Spack was unable to install our package, we do see that it identified and built all of our dependencies.
 It found that:
@@ -342,7 +340,8 @@ Now let's ensure the environment is properly set up using the ``spack build-env`
 
   $ spack build-env tutorial-mpileaks bash
 
-This command spawned a new shell containing the same environment that Spack used to build the ``tutorial-mpileaks`` package. (Feel free to substitute your favorite shell for ``bash``.)
+This command spawned a new shell containing the same environment that Spack used to build the ``tutorial-mpileaks`` package.
+(Feel free to substitute your favorite shell for ``bash``.)
 
 .. note::
 
@@ -387,9 +386,8 @@ Specifying Configure Arguments
 We now know which options we need to pass to ``configure``, but how do we know where to find the installation paths for the package's dependencies from within the ``package.py`` file?
 
 Fortunately, we can query the package's concrete ``Spec`` instance.
-The ``self.spec`` property holds the package's directed acyclic graph
-(DAG) of its dependencies. Each dependency's ``Spec``, accessed by name,
-has a ``prefix`` property containing its installation path.
+The ``self.spec`` property holds the package's directed acyclic graph (DAG) of its dependencies.
+Each dependency's ``Spec``, accessed by name, has a ``prefix`` property containing its installation path.
 
 So let's add the `configuration arguments <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_ for specifying the paths to the two concrete dependencies in the ``configure_args`` method of our package.
 
@@ -505,7 +503,8 @@ Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packag
 .. literalinclude:: outputs/packaging/install-mpileaks-5.out
    :language: spec
 
-Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks. No such directory in prefix: shar``.
+Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks.
+No such directory in prefix: shar``.
 
 Now let's properly fix the error:
 
@@ -714,48 +713,28 @@ Additional information on key topics can be found in the embedded keys above and
 Customizing package-related environments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Retrieving Library Information
-  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_:
-  for supporting unique configuration options needed to locate libraries.
-* `Modifying a Package's Build Environment
-  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_:
-  for customizing package and dependency build and run environments.
+* `Retrieving Library Information <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#retrieving-library-information>`_: for supporting unique configuration options needed to locate libraries.
+* `Modifying a Package's Build Environment <https://spack-tutorial.readthedocs.io/en/latest/tutorial_advanced_packaging.html#modifying-a-package-s-build-environment>`_: for customizing package and dependency build and run environments.
 
 ~~~~~~~~~~~~~~~~~~~~~~~
 Testing an installation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Build-time tests
-  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_:
-  for sanity checks and pre-/post- ``build`` and or ``install`` phase tests.
-* `Stand-alone tests
-  <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_:
-  for tests that can run against any installed Spack package.
+* `Build-time tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_: for sanity checks and pre-/post- ``build`` and or ``install`` phase tests.
+* `Stand-alone tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_: for tests that can run against any installed Spack package.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 Using other build systems
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Build Systems
-  <https://spack.readthedocs.io/en/latest/build_systems.html>`_:
-  for the full list of built-in build systems.
-* `Spack Package Build Systems tutorial
-  <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_:
-  for tutorials on common build systems.
-* `Multiple Build Systems
-  <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#multiple-build-systems>`_:
-  for a reference on writing packages with multiple build systems.
-* `Package Class Architecture
-  <https://spack.readthedocs.io/en/latest/developer_guide.html#package-class-architecture>`_:
-  for more insight on the inner workings of ``Package`` and ``Builder`` classes.
-* `The GDAL Package
-  <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/gdal/package.py>`_:
-  for an example of a complex package that extends Python while supporting two build systems.
+* `Build Systems <https://spack.readthedocs.io/en/latest/build_systems.html>`_: for the full list of built-in build systems.
+* `Spack Package Build Systems tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_buildsystems.html>`_: for tutorials on common build systems.
+* `Multiple Build Systems <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#multiple-build-systems>`_: for a reference on writing packages with multiple build systems.
+* `Package Class Architecture <https://spack.readthedocs.io/en/latest/developer_guide.html#package-class-architecture>`_: for more insight on the inner workings of ``Package`` and ``Builder`` classes.
+* `The GDAL Package <https://github.com/spack/spack-packages/blob/develop/repos/spack_repo/builtin/packages/gdal/package.py>`_: for an example of a complex package that extends Python while supporting two build systems.
 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Making a package externally detectable
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-* `Making a package externally discoverable
-  <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#making-a-package-discoverable-with-spack-external-find>`_:
-  for making a package discoverable using the ``spack external find`` command.
+* `Making a package externally discoverable <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#making-a-package-discoverable-with-spack-external-find>`_: for making a package discoverable using the ``spack external find`` command.

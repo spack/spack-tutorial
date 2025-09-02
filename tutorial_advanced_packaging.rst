@@ -22,8 +22,7 @@ Setup for the Tutorial
 
 .. note::
 
-  We do not recommend doing this section of the tutorial in a
-  production Spack instance.
+  We do not recommend doing this section of the tutorial in a production Spack instance.
 
 The tutorial uses custom package definitions with missing sections that will be filled in during the tutorial.
 These package definitions are stored in a separate package repository, which can be enabled with:
@@ -53,11 +52,10 @@ Now, you are ready to set your preferred ``EDITOR`` and continue with the rest o
 
 .. note::
 
-  Several of these packages depend on an MPI implementation. You can use
-  OpenMPI if you install it from scratch, but this is slow (>10 min.).
-  A binary cache of MPICH may be provided, in which case you can force
-  the package to use it and install quickly. All tutorial examples with
-  packages that depend on MPICH include the spec syntax for building with it.
+  Several of these packages depend on an MPI implementation.
+  You can use OpenMPI if you install it from scratch, but this is slow (>10 min.).
+  A binary cache of MPICH may be provided, in which case you can force the package to use it and install quickly.
+  All tutorial examples with packages that depend on MPICH include the spec syntax for building with it.
 
 .. _adv_pkg_tutorial_start:
 
@@ -75,9 +73,7 @@ Set environment variables in dependent packages at build-time
 Dependencies can set environment variables that are required when their dependents build.
 For example, when a package depends on a python extension like py-numpy, Spack's ``python`` package will add it to ``PYTHONPATH`` so it is available at build time; this is required because the default setup that Spack does is not sufficient for python to import modules.
 
-To provide environment setup for a dependent, a package can implement the
-:py:func:`setup_dependent_build_environment
-<spack.package.PackageBase.setup_dependent_build_environment>` and/or :py:func:`setup_dependent_run_environment <spack.package.PackageBase.setup_dependent_run_environment>` functions.
+To provide environment setup for a dependent, a package can implement the :py:func:`setup_dependent_build_environment <spack.package.PackageBase.setup_dependent_build_environment>` and/or :py:func:`setup_dependent_run_environment <spack.package.PackageBase.setup_dependent_run_environment>` functions.
 These functions take as a parameter a :py:class:`EnvironmentModifications <spack.util.environment.EnvironmentModifications>` object, which includes convenience methods to update the environment.
 For example, an MPI implementation can set ``MPICC`` for build-time use for packages that depend on it:
 
@@ -87,9 +83,7 @@ For example, an MPI implementation can set ``MPICC`` for build-time use for pack
       env.set('MPICC', join_path(self.prefix.bin, 'mpicc'))
 
 In this case packages that depend on ``mpi`` will have ``MPICC`` defined in their environment when they build.
-This section is focused on modifying the build-time environment represented by ``env``, but it's worth noting that modifications to the run-time environment, made through the
-:py:func:`setup_dependent_run_environment
-<spack.package.PackageBase.setup_dependent_run_environment>` function's ``env`` parameter, are included in Spack's automatically-generated module files.
+This section is focused on modifying the build-time environment represented by ``env``, but it's worth noting that modifications to the run-time environment, made through the :py:func:`setup_dependent_run_environment <spack.package.PackageBase.setup_dependent_run_environment>` function's ``env`` parameter, are included in Spack's automatically-generated module files.
 
 We can practice by editing the ``mpich`` package to set the ``MPICC`` environment variable in the build-time environment of dependent packages.
 
@@ -136,11 +130,7 @@ and double check the environment logs to verify that every variable was set to t
 Set environment variables in your own package
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Packages can modify their own build-time environment by implementing the
-:py:func:`setup_build_environment 
-<spack.package.PackageBase.setup_build_environment` function and run-time environment by implementing the
-:py:func:`setup_run_environment
-<spack.package.PackageBase.setup_run_environment` function.
+Packages can modify their own build-time environment by implementing the :py:func:`setup_build_environment <spack.package.PackageBase.setup_build_environment` function and run-time environment by implementing the :py:func:`setup_run_environment <spack.package.PackageBase.setup_run_environment` function.
 For ``qt`` this looks like:
 
 .. code-block:: python
@@ -382,8 +372,7 @@ Build tools also usually provide a set of executables that can be used when anot
 Spack gives you the opportunity to monkey-patch dependent modules and attach attributes to them.
 This helps make the packager's experience as similar as possible to what would have been the manual installation of the same package.
 
-An example here is the ``automake`` package, which overrides
-:py:func:`setup_dependent_package <spack.package.PackageBase.setup_dependent_package>`:
+An example here is the ``automake`` package, which overrides :py:func:`setup_dependent_package <spack.package.PackageBase.setup_dependent_package>`:
 
 .. code-block:: python
 

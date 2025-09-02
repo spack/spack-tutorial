@@ -90,8 +90,8 @@ Let's take a quick look at some of the internals of the ``Autotools`` class:
 This will open the ``AutotoolsPackage`` file in your text editor.
 
 .. note::
-    The examples showing code for these classes are abridged to avoid having
-    long examples. We only show what is relevant to the packager.
+    The examples showing code for these classes are abridged to avoid having long examples.
+    We only show what is relevant to the packager.
 
 
 .. literalinclude:: _spack_packages/repos/spack_repo/builtin/build_systems/autotools.py

@@ -25,8 +25,7 @@ We'll consider how the software we install might be consumed by our users, and s
 
 .. note::
 
-   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your
-   preferred editor, for instance:
+   Before we start this hands-on, make sure the ``EDITOR`` environment variable is set to your preferred editor, for instance:
 
    .. code-block:: console
 
@@ -210,7 +209,8 @@ Concretize the environment and install the specs again:
 .. literalinclude:: outputs/stacks/concretize-3.out
    :language: console
 
-At this point, the environment contains only ``py-scipy ^openblas``. Verify it:
+At this point, the environment contains only ``py-scipy ^openblas``.
+Verify it:
 
 .. literalinclude:: outputs/stacks/concretize-4.out
    :language: spec
@@ -276,7 +276,8 @@ Later you can move this mirror to e.g. an air-gapped machine and:
 
    $ spack mirror add <name> <stacks-mirror>
 
-to be able to re-build the specs from sources. Alternatively, to create a buildcache you can:
+to be able to re-build the specs from sources.
+Alternatively, to create a buildcache you can:
 
 .. code-block:: console
 
@@ -327,7 +328,8 @@ In the configuration above we created two views, named ``default`` and ``full``.
 The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
 As we can see, we can both *include* and *exclude* specs using constraints.
 
-The ``full`` view contains a more complex projection, so to put each spec into an appropriate subdirectory, according to the first constraint that the spec matches. ``all`` is the default projection, and has always the lowest priority, independent of the order in which it appears.
+The ``full`` view contains a more complex projection, so to put each spec into an appropriate subdirectory, according to the first constraint that the spec matches.
+``all`` is the default projection, and has always the lowest priority, independent of the order in which it appears.
 To avoid confusion, we advise always keeping it last in projections.
 
 Concretize to regenerate the views, and check their structure:

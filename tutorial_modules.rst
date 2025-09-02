@@ -209,9 +209,8 @@ Spack comes with `Jinja2 <http://jinja.pocoo.org/docs/2.9/>`_, an external templ
 Modules vs ``spack load``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You may have noticed that we used ``spack load`` in the
-:ref:`module_file_tutorial_prerequisites` section above. This is a
-built-in mechanism of Spack's -- it's designed so that users on a cluster or a laptop can quickly get a package into their path, and it understands Spack's spec syntax.
+You may have noticed that we used ``spack load`` in the :ref:`module_file_tutorial_prerequisites` section above.
+This is a built-in mechanism of Spack's -- it's designed so that users on a cluster or a laptop can quickly get a package into their path, and it understands Spack's spec syntax.
 It does *not* require modules, as Spack needs to work regardless of whether modules are set up on the system.
 
 As you might expect, you can see what is loaded via ``spack load`` using ``spack find``:
@@ -343,7 +342,8 @@ To specify exceptions to the ``exclude`` rules you can use ``include``:
             - "FC"
             - "F77"
 
-``include`` rules always have precedence over ``exclude`` rules. If you regenerate the modules again:
+``include`` rules always have precedence over ``exclude`` rules.
+If you regenerate the modules again:
 
 .. literalinclude:: outputs/modules/tcl-refresh-3.out
    :language: console
@@ -411,9 +411,7 @@ If you try to regenerate the module files now you will get an error:
 .. note::
    We try to check for errors up front!
 
-   In Spack we check for errors upfront whenever possible, so don't worry
-   about your module files: as a name clash was detected nothing has been
-   changed on disk.
+   In Spack we check for errors upfront whenever possible, so don't worry about your module files: as a name clash was detected nothing has been changed on disk.
 
 The problem here is that without the hashes the four different flavors of ``netlib-scalapack`` map to the same module file name.
 We can change how the names are formatted to differentiate them:
@@ -455,8 +453,7 @@ This allows us to match specs by their dependencies, and format them based on th
    :language: console
 
 .. note::
-   The ``conflict`` directive is Tcl-specific and can't be used in the
-   ``lmod`` section of the configuration file.
+   The ``conflict`` directive is Tcl-specific and can't be used in the ``lmod`` section of the configuration file.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Add custom environment modifications
@@ -498,11 +495,8 @@ You can achieve this with Spack by adding an ``environment`` directive to the co
 Under the hood Spack uses the :meth:`~spack.spec.Spec.format` API to substitute tokens in either environment variable names or values.
 There are two caveats though:
 
-- The set of allowed tokens in variable names is restricted to
-  ``name``, ``version``, ``compiler``, ``compiler.name``,
-  ``compiler.version``, ``architecture``
-- Any token expanded in a variable name is made uppercase, but other than that
-  case sensitivity is preserved
+- The set of allowed tokens in variable names is restricted to ``name``, ``version``, ``compiler``, ``compiler.name``, ``compiler.version``, ``architecture``
+- Any token expanded in a variable name is made uppercase, but other than that case sensitivity is preserved
 
 Regenerating the module files results in something like:
 
@@ -695,10 +689,7 @@ After these modifications your configuration file should look like:
 
 .. note::
   Double colon in configuration files
-    The double colon after ``enable`` is intentional, and it serves the
-    purpose of overriding the default list of enabled generators so
-    that only ``lmod`` will be active (see `Overriding entire sections <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for more
-    details).
+    The double colon after ``enable`` is intentional, and it serves the purpose of overriding the default list of enabled generators so that only ``lmod`` will be active (see `Overriding entire sections <https://spack.readthedocs.io/en/latest/configuration.html#config-overrides>`_ for more details).
 
 The directive ``core_compilers`` accepts a list of compilers.
 Everything built using these compilers will create a module in the ``Core`` part of the hierarchy, which is the entry point for hierarchical module files.
@@ -848,7 +839,8 @@ In the case of hierarchical module files it's:
   :lines: 1-6
 
 The statements within double curly brackets ``{{ ... }}`` denote `expressions <http://jinja.pocoo.org/docs/2.9/templates/#expressions>`_ that will be evaluated and substituted at module generation time.
-The rest of the file is then divided into `blocks <http://jinja.pocoo.org/docs/2.9/templates/#template-inheritance>`_ that can be overridden or extended by users, if need be. `Control structures <http://jinja.pocoo.org/docs/2.9/templates/#list-of-control-structures>`_ , delimited by ``{% ... %}``, are also permitted in the template language:
+The rest of the file is then divided into `blocks <http://jinja.pocoo.org/docs/2.9/templates/#template-inheritance>`_ that can be overridden or extended by users, if need be.
+`Control structures <http://jinja.pocoo.org/docs/2.9/templates/#list-of-control-structures>`_ , delimited by ``{% ... %}``, are also permitted in the template language:
 
 .. literalinclude:: _spack_root/share/spack/templates/modules/modulefile.lua
   :language: jinja
@@ -894,7 +886,8 @@ Next, we need to create our custom template extension in the folder listed above
   end
   {% endblock %}
 
-Let's name this file ``group-restricted.lua``. The line:
+Let's name this file ``group-restricted.lua``.
+The line:
 
 .. code-block:: jinja
 
