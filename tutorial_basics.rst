@@ -387,7 +387,7 @@ We can check that this compiler is preferred by looking at the install plan for 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec
 
-For the test of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it. For now, we will uninstall it to avoid using it in the next section.
+For the rest of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it. For now, we will uninstall it to avoid using it in the next section.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
