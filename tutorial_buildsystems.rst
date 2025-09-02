@@ -94,7 +94,7 @@ This will open the ``AutotoolsPackage`` file in your text editor.
     long examples. We only show what is relevant to the packager.
 
 
-.. literalinclude:: _spack_root/lib/spack/spack/build_systems/autotools.py
+.. literalinclude:: _spack_packages/repos/spack_repo/builtin/build_systems/autotools.py
     :emphasize-lines: 2,4,28-37
     :lines: 138-158,589-617
     :linenos:
@@ -178,7 +178,7 @@ Let's also take a look inside the ``MakefilePackage`` class:
 Take note of the following:
 
 
-.. literalinclude:: _spack_root/lib/spack/spack/build_systems/makefile.py
+.. literalinclude:: _spack_packages/repos/spack_repo/builtin/build_systems/makefile.py
    :language: python
    :emphasize-lines: 60,64,69
    :lines: 40-111
@@ -445,7 +445,7 @@ Let's look at these defaults in the ``CMakePackage`` class in the ``_std_args()`
 
     $ spack edit --build-system cmake
 
-.. literalinclude:: _spack_root/lib/spack/spack/build_systems/cmake.py
+.. literalinclude:: _spack_packages/repos/spack_repo/builtin/build_systems/cmake.py
    :language: python
    :lines: 167-300
    :emphasize-lines: 87,96

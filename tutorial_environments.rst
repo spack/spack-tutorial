@@ -473,7 +473,7 @@ Note that the reported version *does* match that of our installation.
 Reproducing builds
 ------------------
 
-Spack environments provide users with *virtual environments* similar to `Python venv <https://docs.python.org/3/library/venv.html>`_ and `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#>`_).
+Spack environments provide users with *virtual environments* similar to `Python venv <https://docs.python.org/3/library/venv.html>`_ and `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`__).
 The goal is to ensure packages in one environment are kept separate from those of another.
 These environments can be managed by Spack or independent.
 In either case, their environment files can be used to reproduce builds by other users and on other machines.

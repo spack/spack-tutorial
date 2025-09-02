@@ -359,7 +359,7 @@ First, we will look at the default ``packages.yaml`` file.
    $ spack config --scope=defaults:base edit packages
 
 
-.. literalinclude:: _spack_root/etc/spack/defaults/packages.yaml
+.. literalinclude:: _spack_root/etc/spack/defaults/base/packages.yaml
    :language: yaml
    :emphasize-lines: 51
 
