@@ -148,10 +148,10 @@ Matrices will expand to the cross-product of their rows, so this matrix:
 .. code-block:: yaml
 
    - matrix:
-    - ["netlib-scalapack"]
-    - ["^openmpi", "^mpich"]
-    - ["^openblas", "^netlib-lapack"]
-    - ["%gcc@12"]
+     - ["netlib-scalapack"]
+     - ["^openmpi", "^mpich"]
+     - ["^openblas", "^netlib-lapack"]
+     - ["%gcc@12"]
 
 is equivalent to this list of specs:
 

@@ -293,23 +293,23 @@ In our ``esmf`` example we set two environment variables in our ``edit()`` metho
 
     def edit(self, spec, prefix):
         for var in os.environ:
-            if var.startswith('ESMF_'):
+            if var.startswith("ESMF_"):
                 os.environ.pop(var)
 
         # More code ...
 
-        if self.compiler.name == 'gcc':
-            os.environ['ESMF_COMPILER'] = 'gfortran'
-        elif self.compiler.name == 'intel':
-            os.environ['ESMF_COMPILER'] = 'intel'
-        elif self.compiler.name == 'clang':
-            os.environ['ESMF_COMPILER'] = 'gfortranclang'
-        elif self.compiler.name == 'nag':
-            os.environ['ESMF_COMPILER'] = 'nag'
-        elif self.compiler.name == 'pgi':
-            os.environ['ESMF_COMPILER'] = 'pgi'
+        if self.compiler.name == "gcc":
+            os.environ["ESMF_COMPILER"] = "gfortran"
+        elif self.compiler.name == "intel":
+            os.environ["ESMF_COMPILER"] = "intel"
+        elif self.compiler.name == "clang":
+            os.environ["ESMF_COMPILER"] = "gfortranclang"
+        elif self.compiler.name == "nag":
+            os.environ["ESMF_COMPILER"] = "nag"
+        elif self.compiler.name == "pgi":
+            os.environ["ESMF_COMPILER"] = "pgi"
         else:
-            msg  = "The compiler you are building with, "
+            msg = "The compiler you are building with, "
             msg += "'{0}', is not supported by ESMF."
             raise InstallError(msg.format(self.compiler.name))
 
@@ -327,85 +327,79 @@ Let's look at an example of this in the ``elk`` package:
 
 .. code-block:: python
 
-        def edit(self, spec, prefix):
-            # Dictionary of configuration options
-            config = {
-                'MAKE': 'make',
-                'AR':   'ar'
-            }
+   def edit(self, spec, prefix):
+       # Dictionary of configuration options
+       config = {"MAKE": "make", "AR": "ar"}
 
-            # Compiler-specific flags
-            flags = ''
-            if self.compiler.name == 'intel':
-                flags = '-O3 -ip -unroll -no-prec-div'
-            elif self.compiler.name == 'gcc':
-                flags = '-O3 -ffast-math -funroll-loops'
-            elif self.compiler.name == 'pgi':
-                flags = '-O3 -lpthread'
-            elif self.compiler.name == 'g95':
-                flags = '-O3 -fno-second-underscore'
-            elif self.compiler.name == 'nag':
-                flags = '-O4 -kind=byte -dusty -dcfuns'
-            elif self.compiler.name == 'xl':
-                flags = '-O3'
-            config['F90_OPTS'] = flags
-            config['F77_OPTS'] = flags
+       # Compiler-specific flags
+       flags = ""
+       if self.compiler.name == "intel":
+           flags = "-O3 -ip -unroll -no-prec-div"
+       elif self.compiler.name == "gcc":
+           flags = "-O3 -ffast-math -funroll-loops"
+       elif self.compiler.name == "pgi":
+           flags = "-O3 -lpthread"
+       elif self.compiler.name == "g95":
+           flags = "-O3 -fno-second-underscore"
+       elif self.compiler.name == "nag":
+           flags = "-O4 -kind=byte -dusty -dcfuns"
+       elif self.compiler.name == "xl":
+           flags = "-O3"
+       config["F90_OPTS"] = flags
+       config["F77_OPTS"] = flags
 
-            # BLAS/LAPACK support
-            # Note: BLAS/LAPACK must be compiled with OpenMP support
-            # if the +openmp variant is chosen
-            blas = 'blas.a'
-            lapack = 'lapack.a'
-            if '+blas' in spec:
-                blas = spec['blas'].libs.joined()
-            if '+lapack' in spec:
-                lapack = spec['lapack'].libs.joined()
-            # lapack must come before blas
-            config['LIB_LPK'] = ' '.join([lapack, blas])
+       # BLAS/LAPACK support
+       # Note: BLAS/LAPACK must be compiled with OpenMP support
+       # if the +openmp variant is chosen
+       blas = "blas.a"
+       lapack = "lapack.a"
+       if "+blas" in spec:
+           blas = spec["blas"].libs.joined()
+       if "+lapack" in spec:
+           lapack = spec["lapack"].libs.joined()
+       # lapack must come before blas
+       config["LIB_LPK"] = " ".join([lapack, blas])
 
-            # FFT support
-            if '+fft' in spec:
-                config['LIB_FFT'] = join_path(spec['fftw'].prefix.lib,
-                                            'libfftw3.so')
-                config['SRC_FFT'] = 'zfftifc_fftw.f90'
-            else:
-                config['LIB_FFT'] = 'fftlib.a'
-                config['SRC_FFT'] = 'zfftifc.f90'
+       # FFT support
+       if "+fft" in spec:
+           config["LIB_FFT"] = join_path(spec["fftw"].prefix.lib, "libfftw3.so")
+           config["SRC_FFT"] = "zfftifc_fftw.f90"
+       else:
+           config["LIB_FFT"] = "fftlib.a"
+           config["SRC_FFT"] = "zfftifc.f90"
 
-            # MPI support
-            if '+mpi' in spec:
-                config['F90'] = spec['mpi'].mpifc
-                config['F77'] = spec['mpi'].mpif77
-            else:
-                config['F90'] = spack_fc
-                config['F77'] = spack_f77
-                config['SRC_MPI'] = 'mpi_stub.f90'
+       # MPI support
+       if "+mpi" in spec:
+           config["F90"] = spec["mpi"].mpifc
+           config["F77"] = spec["mpi"].mpif77
+       else:
+           config["F90"] = spack_fc
+           config["F77"] = spack_f77
+           config["SRC_MPI"] = "mpi_stub.f90"
 
-            # OpenMP support
-            if '+openmp' in spec:
-                config['F90_OPTS'] += ' ' + self.compiler.openmp_flag
-                config['F77_OPTS'] += ' ' + self.compiler.openmp_flag
-            else:
-                config['SRC_OMP'] = 'omp_stub.f90'
+       # OpenMP support
+       if "+openmp" in spec:
+           config["F90_OPTS"] += " " + self.compiler.openmp_flag
+           config["F77_OPTS"] += " " + self.compiler.openmp_flag
+       else:
+           config["SRC_OMP"] = "omp_stub.f90"
 
-            # Libxc support
-            if '+libxc' in spec:
-                config['LIB_libxc'] = ' '.join([
-                    join_path(spec['libxc'].prefix.lib, 'libxcf90.so'),
-                    join_path(spec['libxc'].prefix.lib, 'libxc.so')
-                ])
-                config['SRC_libxc'] = ' '.join([
-                    'libxc_funcs.f90',
-                    'libxc.f90',
-                    'libxcifc.f90'
-                ])
-            else:
-                config['SRC_libxc'] = 'libxcifc_stub.f90'
+       # Libxc support
+       if "+libxc" in spec:
+           config["LIB_libxc"] = " ".join(
+               [
+                   join_path(spec["libxc"].prefix.lib, "libxcf90.so"),
+                   join_path(spec["libxc"].prefix.lib, "libxc.so"),
+               ]
+           )
+           config["SRC_libxc"] = " ".join(["libxc_funcs.f90", "libxc.f90", "libxcifc.f90"])
+       else:
+           config["SRC_libxc"] = "libxcifc_stub.f90"
 
-            # Write configuration options to include file
-            with open('make.inc', 'w') as inc:
-                for key in config:
-                    inc.write('{0} = {1}\n'.format(key, config[key]))
+       # Write configuration options to include file
+       with open("make.inc", "w") as inc:
+           for key in config:
+               inc.write("{0} = {1}\n".format(key, config[key]))
 
 ``config`` is just a Python dictionary that we populate with key-value pairs.
 By the end of the ``edit()`` method, we write the contents of our dictionary to the ``make.inc`` file, which the package's ``Makefile`` then includes.
@@ -570,7 +564,7 @@ In the ``install()`` method, we have to manually install our targets so we overr
     def install(self, spec, prefix):
         mkdir(prefix.bin)
         src = "bin/sniffles-core-{0}".format(spec.version.dotted)
-        binaries = ['sniffles', 'sniffles-debug']
+        binaries = ["sniffles", "sniffles-debug"]
         for b in binaries:
             install(join_path(src, b), join_path(prefix.bin, b))
 
@@ -629,7 +623,7 @@ Dependencies are usually listed in ``setup.py``.
 You can find the dependencies by searching for ``install_requires`` keyword in that file.
 Here it is for ``Pandas``:
 
-.. code-block:: python
+.. code-block:: text
 
     # ... code
     if sys.version_info[0] >= 3:

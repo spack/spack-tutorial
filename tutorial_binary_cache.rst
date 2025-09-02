@@ -73,12 +73,12 @@ Your ``spack.yaml`` file should now contain the following:
      specs:
      - julia
      mirrors:
-        my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
-           access_pair:
-              id: <user>
-              secret_variable: MY_OCI_TOKEN
-           signed: false
+       my-mirror:
+         url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+         access_pair:
+           id: <user>
+           secret_variable: MY_OCI_TOKEN
+         signed: false
 
 Let's push ``julia`` and its dependencies to the build cache
 
@@ -136,12 +136,12 @@ The easiest way to do this is to override the ``mirrors`` config section in the 
      specs:
      - julia
      mirrors::  # <- note the double colon
-        my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
-           access_pair:
-              id: <user>
-              secret_variable: MY_OCI_TOKEN
-           signed: false
+       my-mirror:
+         url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+         access_pair:
+           id: <user>
+           secret_variable: MY_OCI_TOKEN
+         signed: false
 
 An "overwrite install" should be enough to show that the build cache is used (output will vary based on your specific configuration):
 

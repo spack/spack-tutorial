@@ -138,7 +138,7 @@ For example, look at high-level config:
 
    $ spack config blame config
 
-.. code-block:: yaml
+.. code-block:: text
 
    ---                                                   config:
    /etc/spack/config.yaml:2                                suppress_gpg_warnings: True
@@ -157,7 +157,7 @@ We can see overrides in action with:
   $ spack config add config:aliases::{}
   $ spack config blame config
 
-.. code-block:: yaml
+.. code-block:: text
 
    ---                                                   config:
    /home/spack/.spack/config.yaml:2                        aliases: {}
@@ -620,7 +620,7 @@ If you have a fast scratch file system, you can run builds from this file system
 
    config:
      build_stage:
-       - /scratch/$user/spack-stage
+     - /scratch/$user/spack-stage
 
 
 .. note::
@@ -694,9 +694,9 @@ Obviously, if you want to build everything in serial for whatever reason, you wo
 
 Last, we'll unset ``concretizer:reuse:false`` since we'll want to enable concretizer reuse for the rest of this tutorial.
 
-.. code-block:: yaml
+.. code-block:: console
 
-  $ spack config rm concretizer:reuse
+   $ spack config rm concretizer:reuse
 
 .. warning::
 

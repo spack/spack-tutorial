@@ -301,7 +301,7 @@ To do this you should add the ``exclude`` keyword to ``${SPACK_ROOT}/etc/spack/m
     default:
       tcl:
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -331,9 +331,9 @@ To specify exceptions to the ``exclude`` rules you can use ``include``:
     default:
       tcl:
         include:
-        -  gcc
+        - gcc
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -364,9 +364,9 @@ In this case you only need to add the following line:
       tcl:
         exclude_implicits: true
         include:
-        -  gcc
+        - gcc
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -392,9 +392,9 @@ To reduce the length of the hash or remove it altogether you can use the ``hash_
       tcl:
         hash_length: 0
         include:
-        -  gcc
+        - gcc
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           filter:
             exclude_env_vars:
@@ -424,9 +424,9 @@ We can change how the names are formatted to differentiate them:
       tcl:
         hash_length: 0
         include:
-        -  gcc
+        - gcc
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -437,9 +437,9 @@ We can change how the names are formatted to differentiate them:
             - "FC"
             - "F77"
         projections:
-          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          all: '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 As you can see, it is possible to specify rules that apply only to a restricted set of packages using `anonymous specs <https://spack.readthedocs.io/en/latest/module_file_support.html#anonymous-specs>`_ like ``^python^lapack``.
 Here we declare a conflict between any two modules with the same name, so they cannot be loaded together.
@@ -471,9 +471,9 @@ You can achieve this with Spack by adding an ``environment`` directive to the co
         hash_length: 0
         naming_scheme: '{name}/{version}-{compiler.name}-{compiler.version}'
         include:
-        -  gcc
+        - gcc
         exclude:
-        -  '%gcc@11'
+        - '%gcc@11'
         all:
           conflict:
           - '{name}'
@@ -487,9 +487,9 @@ You can achieve this with Spack by adding an ``environment`` directive to the co
             set:
               '{name}_ROOT': '{prefix}'
         projections:
-          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          all: '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 
 Under the hood Spack uses the :meth:`~spack.spec.Spec.format` API to substitute tokens in either environment variable names or values.
@@ -541,9 +541,9 @@ You can for instance apply modifications to the ``openmpi`` module as follows:
               SLURM_MPI_TYPE: pmi2
               OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
         projections:
-          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          all: '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
 
 This time we will be more selective and regenerate only the ``openmpi`` module file:
 
@@ -594,11 +594,11 @@ You can, for instance, generate python modules that load their dependencies by a
               SLURM_MPI_TYPE: pmi2
               OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
         projections:
-          all:               '{name}/{version}-{compiler.name}-{compiler.version}'
-          netlib-scalapack:  '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
-          ^python^lapack:    '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
+          all: '{name}/{version}-{compiler.name}-{compiler.version}'
+          netlib-scalapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}-{^mpi.name}'
+          ^python^lapack: '{name}/{version}-{compiler.name}-{compiler.version}-{^lapack.name}'
         ^python:
-          autoload:  direct
+          autoload: direct
 
 and regenerating the module files for every package that depends on ``python``:
 
@@ -657,7 +657,7 @@ After these modifications your configuration file should look like:
   modules:
     default:
       enable::
-        - lmod
+      - lmod
       lmod:
         core_compilers:
         - 'gcc@11'
@@ -683,8 +683,8 @@ After these modifications your configuration file should look like:
               SLURM_MPI_TYPE: pmi2
               OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
         projections:
-          all:          '{name}/{version}'
-          ^lapack:      '{name}/{version}-{^lapack.name}'
+          all: '{name}/{version}'
+          ^lapack: '{name}/{version}-{^lapack.name}'
 
 
 .. note::
@@ -799,7 +799,7 @@ Coming back to our example, let's add ``lapack`` to the hierarchy and remove the
               SLURM_MPI_TYPE: pmi2
               OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
         projections:
-          all:          '{name}/{version}'
+          all: '{name}/{version}'
 
 After module files have been regenerated as usual:
 
@@ -868,7 +868,7 @@ Let's create the file ``${SPACK_ROOT}/etc/spack/config.yaml`` with the content:
 
   config:
     template_dirs:
-      - $HOME/.spack/templates
+    - $HOME/.spack/templates
 
 This tells Spack to also search another location when looking for template files.
 Next, we need to create our custom template extension in the folder listed above:
@@ -917,25 +917,25 @@ For the sake of illustration let's assume it's ``netlib-scalapack``:
 
   modules:
     enable::
-      - lmod
+    - lmod
     lmod:
       core_compilers:
-        - 'gcc@11'
+      - 'gcc@11'
       hierarchy:
-        - mpi
-        - lapack
+      - mpi
+      - lapack
       hash_length: 0
       include:
-        - gcc
+      - gcc
       exclude:
-        - '%gcc@11'
-        - readline
+      - '%gcc@11'
+      - readline
       all:
         filter:
           exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+          - "C_INCLUDE_PATH"
+          - "CPLUS_INCLUDE_PATH"
+          - "LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'

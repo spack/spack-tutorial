@@ -555,6 +555,7 @@ Examples of each customization are:
 
    if self.spec.satisfies("@1.1:"):
        # Do things needed for version 1.1 or newer
+       ...
 
 * Am I building with a ``gcc`` version up to ``5.0``?
 
@@ -562,6 +563,7 @@ Examples of each customization are:
 
    if self.spec.satisfies("%gcc@:5.0"):
        # Add arguments specific to gcc's up to 5.0
+       ...
 
 * Is my ``dyninst`` dependency at least version ``8.0``?
 
@@ -569,6 +571,7 @@ Examples of each customization are:
 
    if self.spec["dyninst"].satisfies("@8.0:"):
        # Use newest dyninst options
+       ...
 
 ~~~~~~~~~~~~~~~~~~~
 Querying Spec Names
@@ -583,6 +586,7 @@ For example:
 
    if self.spec["mpi"].name == "openmpi":
        # Do openmpi things
+       ...
 
 ~~~~~~~~~~~~~~~~~
 Querying Variants
@@ -596,6 +600,7 @@ Adjusting build options based on enabled variants can be done by querying the ``
 
    if "+debug" in self.spec:
        # Add -g option to configure flags
+       ...
 
 
 These are just a few examples of ``Spec`` queries.
@@ -675,13 +680,15 @@ The other relevant difference, compared to previous recipes we have seen so far,
 
    ...
 
+
    class CMakeBuilder(cmake.CMakeBuilder):
-      def cmake_args(self):
-          pass
+       def cmake_args(self):
+           pass
+
 
    class AutotoolsBuilder(autotools.AutotoolsBuilder):
-      def configure_args(self):
-          pass
+       def configure_args(self):
+           pass
 
 Depending on the ``spec``, and more specifically on the value of the ``build_system`` directive, a ``Builder`` object will be instantiated from one of the two classes when an installation is requested from a user.
 

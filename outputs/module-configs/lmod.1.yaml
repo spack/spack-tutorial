@@ -1,23 +1,23 @@
 modules:
   default:
     enable::
-      - lmod
+    - lmod
     lmod:
       core_compilers:
-        - 'gcc@11'
+      - 'gcc@11'
       hierarchy:
-        - mpi
+      - mpi
       hash_length: 0
       include:
-        - gcc
+      - gcc
       exclude:
-        - '%gcc@11.3.0'
+      - '%gcc@11.3.0'
       all:
         filter:
           exclude_env_vars:
-            - "C_INCLUDE_PATH"
-            - "CPLUS_INCLUDE_PATH"
-            - "LIBRARY_PATH"
+          - "C_INCLUDE_PATH"
+          - "CPLUS_INCLUDE_PATH"
+          - "LIBRARY_PATH"
         environment:
           set:
             '{name}_ROOT': '{prefix}'
@@ -27,5 +27,5 @@ modules:
             SLURM_MPI_TYPE: pmi2
             OMPI_MCA_btl_openib_warn_default_gid_prefix: '0'
       projections:
-        all:          '{name}/{version}'
-        ^lapack:      '{name}/{version}-{^lapack.name}'
+        all: '{name}/{version}'
+        ^lapack: '{name}/{version}-{^lapack.name}'
