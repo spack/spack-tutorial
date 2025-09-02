@@ -14,8 +14,3 @@
 
    See the :ref:`basics-tutorial` for full details on setup.
    For more help, join us in the ``#tutorial`` channel on Slack -- get an invitation at `slack.spack.io <https://slack.spack.io/>`_
-
-   .. warning::
-
-      The ``spack tutorial -y`` command is intended for use in a container or VM.
-      Use with care in other environments since it replaces some configuration files in order to establish suitable settings for the tutorial.
