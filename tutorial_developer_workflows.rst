@@ -21,7 +21,8 @@ Installing from local source
 The ``spack install`` command, as you know, fetches source code from a mirror or the internet before building and installing your package.
 As developers, we want to build from local source, which we will constantly change, build, and test.
 
-Let's imagine, for a second, we're working on ``scr``.  ``scr`` is a library used to implement scalable checkpointing in application codes.
+Let's imagine, for a second, we're working on ``scr``.
+``scr`` is a library used to implement scalable checkpointing in application codes.
 It supports writing/reading checkpoints quickly and efficiently using MPI and high-bandwidth file I/O.
 We'd like to test changes to ``scr`` within an actual application, so we'll test with ``macsio``, a proxy application written to mimic typical HPC I/O workloads.
 We've chosen ``scr`` and ``macsio`` because together they are quick to build.
@@ -152,20 +153,13 @@ You can change the location of this source directory by modifying the ``path:`` 
 
 There are a few gotchas with the ``spack develop`` command
 
-* You often specify the package version manually when specifying a
-  package as a dev package. Spack needs to know the version of the dev
-  package so it can supply the correct flags for the package's build
-  system. If a version is not supplied, then Spack will take the maximum version
-  defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main``
-  have a higher value than the numeric versions.
+* You often specify the package version manually when specifying a package as a dev package.
+  Spack needs to know the version of the dev package so it can supply the correct flags for the package's build system.
+  If a version is not supplied, then Spack will take the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
 * You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
-  ``spack add <package>`` with the matching version you want to develop is a way to ensure
-  the develop spec is satisfied in the ``spack.yaml`` environments file. This is because
-  develop specs are not concretization constraints but rather criteria for adding
-  the ``dev_path=`` variant to existing spec.
-* You'll need to re-concretize the environment so that the version
-  number and the ``dev_path=`` attributes are properly added to the
-  cached spec in ``spack.lock``.
+  ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
+  This is because develop specs are not concretization constraints but rather criteria for adding the ``dev_path=`` variant to existing spec.
+* You'll need to re-concretize the environment so that the version number and the ``dev_path=`` attributes are properly added to the cached spec in ``spack.lock``.
 
 .. literalinclude:: outputs/dev/develop-conc.out
    :language: console
@@ -207,15 +201,9 @@ Taking advantage of iterative builds with Spack requires cooperation from your b
 When Spack performs a rebuild on a development package, it reruns all the build stages for your package without cleaning the source and build directories to a pristine state.
 If your build system can take advantage of the previously compiled object files then you'll end up with an iterative build.
 
-- If your package just uses make, you also should get iterative builds
-  for free when running ``spack develop``.
-- If your package uses CMake with the typical ``cmake`` / ``build`` /
-  ``install`` build stages, you'll get iterative builds for free with
-  Spack because CMake doesn’t modify the filetime on the
-  ``CMakeCache.txt`` file if your cmake flags haven't changed.
-- If your package uses autoconf, then rerunning the typical
-  ``autoreconf`` stage typically modifies the filetime of
-  ``config.h``, which can trigger a cascade of rebuilding.
+- If your package just uses make, you also should get iterative builds for free when running ``spack develop``.
+- If your package uses CMake with the typical ``cmake`` / ``build`` / ``install`` build stages, you'll get iterative builds for free with Spack because CMake doesn’t modify the filetime on the ``CMakeCache.txt`` file if your cmake flags haven't changed.
+- If your package uses autoconf, then rerunning the typical ``autoreconf`` stage typically modifies the filetime of ``config.h``, which can trigger a cascade of rebuilding.
 
 Multiple packages can also be marked as develop.
 If we were co-developing ``macsio``, we could run

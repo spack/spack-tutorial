@@ -51,7 +51,8 @@ You can invoke
    $ docker pull ghcr.io/spack/tutorial:hpcic25
    $ docker run -it ghcr.io/spack/tutorial:hpcic25
 
-to start using the container. You should now be ready to run through our demo scripts:
+to start using the container.
+You should now be ready to run through our demo scripts:
 
 #. :ref:`basics-tutorial`
 #. :ref:`environments-tutorial`

@@ -197,7 +197,8 @@ Exit the editor and add execute permissions to the script before running it as f
    :emphasize-lines: 1-2
 
 If we're lucky, it ran successfully, but there's no guarantee this will work for every system.
-Some systems only support a single argument on the shebang line (see `here <https://www.in-ulm.de/~mascheck/various/shebang/>`_). ``spack-python``, which is a wrapper script for ``spack python``, solves this issue.
+Some systems only support a single argument on the shebang line (see `here <https://www.in-ulm.de/~mascheck/various/shebang/>`_).
+``spack-python``, which is a wrapper script for ``spack python``, solves this issue.
 
 Bring up the file in the editor again and change the ``env`` argument to ``spack-python`` as follows:
 

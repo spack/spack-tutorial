@@ -73,12 +73,12 @@ Your ``spack.yaml`` file should now contain the following:
      specs:
      - julia
      mirrors:
-        my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
-           access_pair:
-              id: <user>
-              secret_variable: MY_OCI_TOKEN
-           signed: false
+       my-mirror:
+         url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+         access_pair:
+           id: <user>
+           secret_variable: MY_OCI_TOKEN
+         signed: false
 
 Let's push ``julia`` and its dependencies to the build cache
 
@@ -136,12 +136,12 @@ The easiest way to do this is to override the ``mirrors`` config section in the 
      specs:
      - julia
      mirrors::  # <- note the double colon
-        my-mirror:
-           url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
-           access_pair:
-              id: <user>
-              secret_variable: MY_OCI_TOKEN
-           signed: false
+       my-mirror:
+         url: oci://ghcr.io/<github_user>/buildcache-<user>-<host>
+         access_pair:
+           id: <user>
+           secret_variable: MY_OCI_TOKEN
+         signed: false
 
 An "overwrite install" should be enough to show that the build cache is used (output will vary based on your specific configuration):
 
@@ -248,8 +248,7 @@ Let's add a simple text editor like ``vim`` to our previous environment next to 
 
 .. note::
 
-   You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid
-   a source build of ``vim`` --- but a source build should be quick.
+   You may want to change ``mirrors::`` to ``mirrors:`` in the ``spack.yaml`` file to avoid a source build of ``vim`` --- but a source build should be quick.
 
 .. code-block:: spec
 
@@ -291,8 +290,10 @@ For those familiar with ``Dockerfile`` syntax, it would structurally look like t
 
 This approach is still valid, and the ``spack containerize`` command continues to exist, but it has a few downsides:
 
-* When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning that all dependencies that did install successfully are lost. Troubleshooting the build typically means starting from scratch either within a ``docker run`` session or on the host system.
-* In certain CI environments, it is not possible to use ``docker build`` directly. For example, the CI script itself may already run in a Docker container, and running ``docker build`` *safely* inside a container (Docker-in-Docker) is tricky.
+* When ``RUN spack -e /root/env install`` fails, ``docker`` will not cache the layer, meaning that all dependencies that did install successfully are lost.
+  Troubleshooting the build typically means starting from scratch either within a ``docker run`` session or on the host system.
+* In certain CI environments, it is not possible to use ``docker build`` directly.
+  For example, the CI script itself may already run in a Docker container, and running ``docker build`` *safely* inside a container (Docker-in-Docker) is tricky.
 
 The takeaway is that Spack decouples the steps that ``docker build`` combines: build isolation, running the build, and creating an image.
 You can run ``spack install`` on your host machine or in a container, and run ``spack buildcache push`` separately to create an image.
