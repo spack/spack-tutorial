@@ -384,7 +384,7 @@ Because this compiler is a newer version than the external compilers Spack knows
 We will discuss changing these defaults in a later section.
 We can check that this compiler is preferred by looking at the install plan for a package that isn't being reused from binary.
 
-.. literalinclude:: outputs/basics/spec-zziplib
+.. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec
 
 For the test of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it. For now, we will uninstall it to avoid using it in the next section.
