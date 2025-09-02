@@ -1,7 +1,6 @@
 # Copyright Spack Project Developers. See COPYRIGHT file for details.
 #
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
-
 # flake8: noqa
 # -*- coding: utf-8 -*-
 #
@@ -15,14 +14,15 @@
 #
 # All configuration values have a default; values that are commented out
 # serve to show the default.
-import sys
+
 import os
+import sys
 
-from sphinx.domains.python import PythonDomain
-
+from pygments.formatters.html import HtmlFormatter
 from pygments.lexer import RegexLexer, default
 from pygments.token import *
-
+from sphinx.domains.python import PythonDomain
+from sphinx.highlighting import PygmentsBridge
 
 # -- Spack customizations -----------------------------------------------------
 # Add the Spack bin directory to the path so that we can use its output in docs.
@@ -34,6 +34,25 @@ os.environ["COLIFY_SIZE"] = "25x120"
 os.environ["COLUMNS"] = "120"
 
 sys.path.insert(0, os.path.abspath("_spack_root/lib/spack/"))
+
+
+class NoWhitespaceHtmlFormatter(HtmlFormatter):
+    """HTML formatter that suppresses redundant span elements for Text.Whitespace tokens."""
+
+    def _get_css_classes(self, ttype):
+        # For Text.Whitespace return an empty string, which avoids <span class="w"> </span>
+        # elements from being generated.
+        return "" if ttype is Text.Whitespace else super()._get_css_classes(ttype)
+
+
+class CustomPygmentsBridge(PygmentsBridge):
+    def get_formatter(self, **options):
+        return NoWhitespaceHtmlFormatter(**options)
+
+
+# Use custom HTML formatter to avoid redundant <span class="w"> </span> elements.
+# See https://github.com/pygments/pygments/issues/1905#issuecomment-3170486995.
+PygmentsBridge.html_formatter = NoWhitespaceHtmlFormatter
 
 # Enable todo items
 todo_include_todos = True
@@ -112,12 +131,10 @@ class SpecLexer(RegexLexer):
 # Disable duplicate cross-reference warnings.
 #
 class PatchedPythonDomain(PythonDomain):
-    def resolve_xref(self, env, fromdocname, builder, typ, target, node, contnode):
+    def resolve_xref(self, env, fromdocname, builder, type, target, node, contnode):
         if "refspecific" in node:
             del node["refspecific"]
-        return super(PatchedPythonDomain, self).resolve_xref(
-            env, fromdocname, builder, typ, target, node, contnode
-        )
+        return super().resolve_xref(env, fromdocname, builder, type, target, node, contnode)
 
 
 def setup(sphinx):
@@ -127,7 +144,7 @@ def setup(sphinx):
 
 # -- General configuration -----------------------------------------------------
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = "1.8"
+needs_sphinx = "3.4"
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
@@ -135,6 +152,8 @@ extensions = [
     "sphinx.ext.graphviz",
     "sphinx.ext.todo",
     "sphinx_copybutton",
+    "sphinx_last_updated_by_git",
+    "sphinx_sitemap",
 ]
 
 # Set default graphviz options
@@ -287,7 +306,7 @@ html_last_updated_fmt = "%b %d, %Y"
 # html_show_sourcelink = True
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
-# html_show_sphinx = False
+html_show_sphinx = False
 
 # If true, "(C) Copyright ..." is shown in the HTML footer. Default is True.
 # html_show_copyright = True
@@ -300,19 +319,27 @@ html_last_updated_fmt = "%b %d, %Y"
 # This is the file name suffix for HTML files (e.g. ".xhtml").
 # html_file_suffix = None
 
+# Base URL for the documentation, used to generate <link rel="canonical"/> for better indexing
+html_baseurl = "https://spack-tutorial.readthedocs.io/en/latest/"
+
 # Output file base name for HTML help builder.
 htmlhelp_basename = "Spackdoc"
+
+# Sitemap settings
+sitemap_show_lastmod = True
+sitemap_url_scheme = "{link}"
+sitemap_excludes = ["search.html"]
 
 
 # -- Options for LaTeX output --------------------------------------------------
 
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
-    #'papersize': 'letterpaper',
+    # 'papersize': 'letterpaper',
     # The font size ('10pt', '11pt' or '12pt').
-    #'pointsize': '10pt',
+    # 'pointsize': '10pt',
     # Additional stuff for the LaTeX preamble.
-    #'preamble': '',
+    # 'preamble': '',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
