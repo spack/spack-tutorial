@@ -350,7 +350,7 @@ If we set the option to "roots", Spack links only the root packages into the vie
 
 Now we see only the root libraries in the default view.
 The rest are hidden, but are still available in the full view.
-The complete documentation on views can be found `here <https://spack.readthedocs.io/en/latest/environments.html#filesystem-views>`_.
+The complete documentation on views can be found `here <https://spack.readthedocs.io/en/latest/environments.html#environment-views>`_.
 
 ^^^^^^^^^^^^
 Module files
