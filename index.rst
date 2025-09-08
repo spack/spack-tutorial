@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `HPCIC 2025 HPC Tutorials <https://hpcic.llnl.gov/tutorials/2025-hpc-tutorials>`_ August 5, 2025.
-The event was two online half-day tutorials..
+It was last presented at the `International Conference on Parallel Processing 2025 (54th ICPP) <https://icpp2025.sdsc.edu/program>`_ September 8, 2025.
+The event was full day in-person tutorial..
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -18,17 +18,17 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/hpcic25-tutorial-slide-preview.png
-   :target: _static/slides/spack-hpcic25-tutorial-slides.pdf
+.. image:: tutorial/images/icpp25-tutorial-slide-preview.png
+   :target: _static/slides/spack-icpp25-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-hpcic25-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-icpp25-tutorial-slides.pdf>`.
 
-**Full citation:** Alec Scott, Greg Becker, Kathleen Shea, Caetano Melone, Tamara Dahlgren, Peter Scheibel.
+**Full citation:** Alec Scott, Kathleen Shea, Caetano Melone.
 Managing HPC Software Complexity with Spack.
-HPCIC Tutorials 2025, Livermore, California, August 5-6, 2025.
+International Conference on Parallel Processing 2025 (54th ICPP), San Diego, California, September 8, 2025.
 
 .. _video:
 
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:hpcic25
-   $ docker run -it ghcr.io/spack/tutorial:hpcic25
+   $ docker pull ghcr.io/spack/tutorial:icpp25
+   $ docker run -it ghcr.io/spack/tutorial:icpp25
 
 to start using the container.
 You should now be ready to run through our demo scripts:
