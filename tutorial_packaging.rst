@@ -285,7 +285,7 @@ At this point we need to debug the build problem to determine why Spack cannot i
 Debugging Package Builds
 ------------------------
 
-Our ``tutorial-mpileaks`` package is still not building due to the ``adept-utils`` package's ``configure`` error.
+Our ``tutorial-mpileaks`` package is still not building due to an error in the ``configure`` phase related to ``adept-utils``.
 Experienced Autotools developers will likely already see the problem and its solution.
 
 Let's take this opportunity to use Spack features to investigate the problem.
