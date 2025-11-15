@@ -6,7 +6,7 @@
 
    and then set Spack up like this::
 
-       git clone --depth=2 --branch=releases/v1.0 https://github.com/spack/spack
+       git clone --depth=2 --branch=releases/v1.1 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
        spack repo update builtin --tag v2025.07.0
        spack tutorial -y
