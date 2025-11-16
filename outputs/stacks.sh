@@ -68,7 +68,7 @@ example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
 example stacks/view-0       "ls ~/stacks/views/full/gcc/"
-example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.5.0-gcc-11.4.0"
+example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.3.0-gcc-11.4.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 
@@ -100,17 +100,21 @@ example --tee stacks/modules-3 "module av"
 example --tee stacks/modules-3 "module unload gcc"
 module unload gcc
 
-cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
-example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
+# TODO: Spack v1.1 compiler mixing causes name clashes in module files
+# Need to write a work around in the tutorial to teach audience how
+# to deal with this.
 
-example --tee stacks/modules-5 "module load gcc"
-module load gcc
-example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
-example --tee stacks/modules-5 "module av"
-module load openmpi openblas netlib-scalapack
-example --tee stacks/modules-5 "module load mpich"
-module load mpich
-example --tee stacks/modules-5 "module load netlib-lapack"
-module load netlib-lapack
-example --tee stacks/modules-5 "module purge"
-module purge
+# cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
+# example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
+
+# example --tee stacks/modules-5 "module load gcc"
+# module load gcc
+# example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
+# example --tee stacks/modules-5 "module av"
+# module load openmpi openblas netlib-scalapack
+# example --tee stacks/modules-5 "module load mpich"
+# module load mpich
+# example --tee stacks/modules-5 "module load netlib-lapack"
+# module load netlib-lapack
+# example --tee stacks/modules-5 "module purge"
+# module purge

@@ -1,66 +1,77 @@
 $ spack python find_exclude.py %gcc ^mpich
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
-mpich@4.3.0  openblas@0.3.29  openmpi@5.0.8  scr@2.0.0	silo@4.11.1  trilinos@16.1.0
+mpich@4.3.2	 openmpi@5.0.8	scr@2.0.0    trilinos@16.1.0
+openblas@0.3.30	 scr@2.0.0	silo@4.11.1
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.5.0 ------
-mpich@4.3.0  openblas@0.3.29  openmpi@5.0.8  py-scipy@1.16.0  scr@3.1.0
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.3.0 ------
+mpich@4.3.2  openblas@0.3.30  openmpi@5.0.8  py-scikit-build-core@0.11.5  py-scipy@1.16.3
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-adept-utils@1.0.1    elfutils@0.192	 kokkos@4.5.01	 macsio@1.1	 tcl@8.6.12
-berkeley-db@18.1.40  expat@2.7.1	 krb5@1.21.3	 ncurses@6.5	 tcl@8.6.12
-bison@3.8.2	     gcc@12.5.0		 libdwarf@2.0.0	 nghttp2@1.65.0	 texinfo@7.1
-boost@1.72.0	     gettext@0.23.1	 libffi@3.4.8	 ninja@1.12.1	 unzip@6.0
-callpath@1.0.4	     glib@2.82.5	 libiberty@2.41	 openssh@9.9p1	 zlib-ng@2.0.7
-cmake@3.31.8	     gmp@6.3.0		 lua@5.4.6	 openssl@3.4.1	 zlib-ng@2.2.4
-curl@8.11.1	     hwloc@2.11.1	 lz4@1.10.0	 python@3.13.5	 zstd@1.5.7
-dyninst@13.0.0	     intel-tbb@2022.0.0	 m4@1.4.20	 re2c@3.1
+adept-utils@1.0.1    dyninst@13.0.0	    intel-tbb@2022.3.0	  openssh@9.9p1
+adept-utils@1.0.1    ed@1.4		    krb5@1.21.3		  openssl@3.6.0
+berkeley-db@18.1.40  elfutils@0.193	    libdwarf@2.1.0	  openssl@3.6.0
+bison@3.8.2	     expat@2.7.3	    libdwarf@2.1.0	  python@3.11.14
+boost@1.72.0	     flex@2.6.3		    libffi@3.5.2	  python@3.14.0
+callpath@1.0.4	     gcc@12.3.0		    libiberty@2.41	  re2c@3.1
+callpath@1.0.4	     gettext@0.23.1	    lua@5.4.6		  tcl@8.6.17
+cmake@3.31.9	     gettext@0.23.1	    lz4@1.10.0		  tcl@8.6.17
+cmake@3.31.9	     glib@2.86.1	    m4@1.4.20		  texinfo@7.2
+cmake@3.31.9	     glib-bootstrap@2.86.1  macsio@1.1		  zlib-ng@2.0.7
+curl@8.15.0	     gmp@6.3.0		    macsio@1.1		  zlib-ng@2.2.4
+curl@8.15.0	     hwloc@2.12.2	    ncurses@6.5-20250705  zstd@1.5.7
+curl@8.15.0	     hwloc@2.12.2	    nghttp2@1.48.0
+dyninst@13.0.0	     intel-tbb@2022.3.0	    ninja@1.13.0
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.5.0 --------------
-axl@0.9.0	     expat@2.7.1     m4@1.4.20	     openssl@3.4.1     redset@0.4.0
-berkeley-db@18.1.40  gettext@0.23.1  macsio@1.1	     py-cython@3.0.12  shuffile@0.4.0
-bison@3.8.2	     hwloc@2.11.1    ncurses@6.5     py-numpy@2.3.1    spath@0.4.0
-cmake@3.31.8	     krb5@1.21.3     nghttp2@1.65.0  python@3.13.5     zlib-ng@2.2.4
-curl@8.11.1	     kvtree@1.5.0    ninja@1.12.1    rankstr@0.4.0     zstd@1.5.7
-er@0.5.0	     libffi@3.4.8    openssh@9.9p1   re2c@3.1
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.3.0 --------------
+cmake@3.31.9  gettext@0.23.1  libffi@3.5.2	    openssl@3.6.0    python@3.14.0
+curl@8.15.0   hwloc@2.12.2    ncurses@6.5-20250705  py-cython@3.1.3  zlib-ng@2.2.4
+expat@2.7.3   krb5@1.21.3     openssh@9.9p1	    py-numpy@2.3.4   zstd@1.5.7
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@11.4.0 ----------
 libyogrt@1.35
 
--- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.5.0 ----------
+-- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.3.0 ----------
 netlib-lapack@3.12.1  netlib-scalapack@2.2.2  netlib-scalapack@2.2.2
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
 gmake@4.4.1
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5	  json-c@0.18		libtool@2.4.7		 pdsh@2.31
-bc@1.07.1	  json-cwx@0.12		libxcrypt@4.4.38	 perl@5.40.0
-bzip2@1.0.8	  libbsd@0.12.2		libxml2@2.13.5		 pigz@2.8
-diffutils@3.10	  libedit@3.1-20240808	lmod@8.7.18		 pkgconf@2.3.0
-dtcmp@1.1.5	  libevent@2.1.12	lua-luafilesystem@1.8.0	 pmix@5.0.5
-ed@1.4		  libfabric@2.2.0	lua-luaposix@36.1	 readline@8.2
-findutils@4.10.0  libgcrypt@1.11.1	lwgrp@1.0.6		 slurm@23-11-1-1
-gawk@5.3.1	  libgpg-error@1.55	mpc@1.3.1		 sqlite@3.46.0
-gdbm@1.23	  libiconv@1.18		mpfr@4.2.1		 tar@1.35
-gmake@4.4.1	  libmd@1.1.0		munge@0.5.15		 util-linux-uuid@2.41
-hdf5@1.14.6	  libpciaccess@0.17	numactl@2.0.18		 xz@5.6.3
-hdf5@1.14.6	  libsigsegv@2.14	pcre2@10.44		 yaksa@0.3
+automake@1.16.5		      libfabric@2.3.1	       numactl@2.0.18
+automake@1.16.5		      libgcrypt@1.11.2	       pcre2@10.44
+bc@1.07.1		      libgpg-error@1.55	       pdsh@2.31
+bzip2@1.0.8		      libiconv@1.18	       perl@5.42.0
+diffutils@3.12		      libmd@1.1.0	       perl@5.42.0
+dtcmp@1.1.5		      libpciaccess@0.17	       pigz@2.8
+findutils@4.10.0	      libsigsegv@2.14	       pigz@2.8
+gawk@5.3.1		      libssh2@1.11.1	       pkgconf@2.5.1
+gdbm@1.25		      libtool@2.4.7	       pmix@6.0.0
+gmake@4.4.1		      libxcrypt@4.4.38	       prrte@4.0.0
+gmake@4.4.1		      libxml2@2.13.5	       readline@8.3
+gobject-introspection@1.86.0  libxml2@2.13.5	       slurm@25-05-1-1
+hdf5@1.14.6		      lmod@8.7.18	       sqlite@3.50.4
+hdf5@1.14.6		      lua-luafilesystem@1.8.0  sqlite@3.50.4
+hdf5@1.14.6		      lua-luaposix@36.1	       tar@1.35
+json-c@0.18		      lwgrp@1.0.6	       tar@1.35
+json-cwx@0.12		      mbedtls@2.28.9	       unzip@6.0
+libbsd@0.12.2		      mpc@1.3.1		       util-linux-uuid@2.41
+libedit@3.1-20240808	      mpfr@4.2.1	       xz@5.6.3
+libevent@2.1.12		      munge@0.5.15	       yaksa@0.4
 
--- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.5.0 ------------------
-automake@1.16.5	      libevent@2.1.12	 libxml2@2.13.5		 sqlite@3.46.0
-bzip2@1.0.8	      libfabric@2.2.0	 numactl@2.0.18		 tar@1.35
-diffutils@3.10	      libiconv@1.18	 perl@5.40.0		 util-linux-uuid@2.41
-findutils@4.10.0      libmd@1.1.0	 pigz@2.8		 xz@5.6.3
-gdbm@1.23	      libpciaccess@0.17	 pkgconf@2.3.0		 yaksa@0.3
-gmake@4.4.1	      libsigsegv@2.14	 pmix@5.0.5
-libbsd@0.12.2	      libtool@2.4.7	 py-meson-python@0.16.0
-libedit@3.1-20240808  libxcrypt@4.4.38	 readline@8.2
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.3.0 ------------------
+automake@1.16.5	      libevent@2.1.12	 libxcrypt@4.4.38  py-meson-python@0.18.0
+bzip2@1.0.8	      libfabric@2.3.1	 libxml2@2.13.5	   readline@8.3
+diffutils@3.12	      libiconv@1.18	 numactl@2.0.18	   sqlite@3.50.4
+gdbm@1.25	      libidn2@2.3.7	 perl@5.42.0	   tar@1.35
+git@2.48.1	      libmd@1.1.0	 pigz@2.8	   util-linux-uuid@2.41
+libbsd@0.12.2	      libpciaccess@0.17	 pmix@6.0.0	   xz@5.6.3
+libedit@3.1-20240808  libunistring@1.2	 prrte@4.0.0	   yaksa@0.4
 
 -- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
-kokkos-kernels@4.5.01
+kokkos@4.5.01  kokkos@4.5.01  kokkos-kernels@4.5.01  kokkos-kernels@4.5.01
 
--- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@12.5.0 ----------------
-py-pybind11@2.13.6  py-pythran@0.16.1
+-- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@12.3.0 ----------------
+py-pybind11@3.0.1  py-pythran@0.18.0
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
-gcc-runtime@10.5.0  gcc-runtime@11.4.0	gcc-runtime@12.5.0
+gcc-runtime@10.5.0  gcc-runtime@11.4.0	gcc-runtime@11.4.0  gcc-runtime@12.3.0

@@ -17,7 +17,7 @@ libatomic.so.1			libmenuw_g.a
 libblas.so			libmpi.a
 libblas.so.3			libmpi.so
 libblas.so.3.12.0		libmpi.so.12
-libbsd-ctor.a			libmpi.so.12.5.0
+libbsd-ctor.a			libmpi.so.12.5.2
 libbsd.a			libmpi.so.40
 libbsd.so			libmpi.so.40.40.7
 libbsd.so.0			libmpi_mpifh.so
@@ -35,11 +35,11 @@ libcharset.so			libmpichf90.so
 libcharset.so.1			libmpicxx.a
 libcharset.so.1.0.0		libmpicxx.so
 libcom_err.so			libmpicxx.so.12
-libcom_err.so.3			libmpicxx.so.12.5.0
+libcom_err.so.3			libmpicxx.so.12.5.2
 libcom_err.so.3.0		libmpifort.a
 libcrypt.a			libmpifort.so
 libcrypt.so			libmpifort.so.12
-libcrypt.so.2			libmpifort.so.12.5.0
+libcrypt.so.2			libmpifort.so.12.5.2
 libcrypt.so.2.0.0		libmpl.so
 libcurses.so			libncurses++.a
 libedit.a			libncurses++.so
@@ -69,11 +69,11 @@ libevent_pthreads.so		libopa.so
 libexpat.a			libopen-pal.so
 libexpat.so			libopen-pal.so.80
 libexpat.so.1			libopen-pal.so.80.0.5
-libexpat.so.1.10.2		libopenblas-r0.3.29.a
-libfabric.a			libopenblas-r0.3.29.so
-libfabric.so			libopenblas.a
-libfabric.so.1			libopenblas.so
-libfabric.so.1.28.0		libopenblas.so.0
+libexpat.so.1.11.1		libopenblas.a
+libfabric.a			libopenblas.so
+libfabric.so			libopenblas.so.0
+libfabric.so.1			libopenblasp-r0.3.30.a
+libfabric.so.1.29.1		libopenblasp-r0.3.30.so
 libfmpich.so			libpanel.a
 libform.a			libpanel.so
 libform.so			libpanel.so.6
@@ -91,92 +91,92 @@ libgdbm.so			libpciaccess.so.0.11.1
 libgdbm.so.6			libpmix.a
 libgdbm.so.6.0.0		libpmix.so
 libgdbm_compat.a		libpmix.so.2
-libgdbm_compat.so		libpmix.so.2.13.5
-libgdbm_compat.so.4		libprrte.so
-libgdbm_compat.so.4.0.0		libprrte.so.3
-libgettextlib-0.23.1.so		libprrte.so.3.0.11
-libgettextlib.a			libpython3.13.so
-libgettextlib.so		libpython3.13.so.1.0
-libgettextpo.a			libpython3.so
-libgettextpo.so			libquadmath.so.0
-libgettextpo.so.0		libreadline.a
-libgettextpo.so.0.5.12		libreadline.so
-libgettextsrc-0.23.1.so		libreadline.so.8
-libgettextsrc.a			libreadline.so.8.2
-libgettextsrc.so		libscalapack.so
-libgfortran.so.5		libscalapack.so.2.2
-libgomp.so.1			libscalapack.so.2.2.1
-libgssapi_krb5.so		libsqlite3.a
-libgssapi_krb5.so.2		libsqlite3.so
-libgssapi_krb5.so.2.2		libsqlite3.so.0
-libgssrpc.so			libsqlite3.so.0.8.6
-libgssrpc.so.4			libssp.so.0
-libgssrpc.so.4.2		libstdc++.so.6
-libhistory.a			libtextstyle.a
-libhistory.so			libtextstyle.so
-libhistory.so.8			libtextstyle.so.0
-libhistory.so.8.2		libtextstyle.so.0.2.3
-libhwloc.a			libtinfo.a
-libhwloc.so			libtinfo.so
-libhwloc.so.15			libtinfo.so.6
-libhwloc.so.15.8.0		libtinfo.so.6.5
-libiconv.a			libtinfo_g.a
-libiconv.so			libtinfow.a
-libiconv.so.2			libtinfow.so
-libiconv.so.2.7.0		libtinfow.so.6
-libintl.a			libtinfow.so.6.5
-libintl.so			libtinfow_g.a
-libintl.so.8			libtmglib.so
-libintl.so.8.4.2		libtmglib.so.3
-libitm.so.1			libtmglib.so.3.12.0
-libk5crypto.so			libtsan.so.2
-libk5crypto.so.3		libubsan.so.1
-libk5crypto.so.3.1		libuuid.a
-libkadm5clnt.so			libuuid.so
-libkadm5clnt_mit.so		libuuid.so.1
-libkadm5clnt_mit.so.12		libuuid.so.1.3.0
-libkadm5clnt_mit.so.12.0	libverto.so
-libkadm5srv.so			libverto.so.0
-libkadm5srv_mit.so		libverto.so.0.0
-libkadm5srv_mit.so.12		libxml2.so
-libkadm5srv_mit.so.12.0		libxml2.so.2
-libkdb5.so			libxml2.so.2.13.5
-libkdb5.so.10			libyaksa.a
-libkdb5.so.10.0			libyaksa.so
-libkrad.so			libyaksa.so.0
-libkrad.so.0			libyaksa.so.0.0.0
-libkrad.so.0.0			libz.a
-libkrb5.so			libz.so
-libkrb5.so.3			libz.so.1
-libkrb5.so.3.3			libz.so.1.3.1.zlib-ng
-libkrb5support.so		libzstd.a
-libkrb5support.so.0		libzstd.so
-libkrb5support.so.0.1		libzstd.so.1
-liblapack.so			libzstd.so.1.5.7
-liblapack.so.3			mpi.mod
-liblapack.so.3.12.0		mpi_ext.mod
-liblapacke.so			mpi_f08.mod
-liblapacke.so.3			mpi_f08_callbacks.mod
-liblapacke.so.3.12.0		mpi_f08_ext.mod
-liblsan.so.0			mpi_f08_interfaces.mod
-liblzma.a			mpi_f08_interfaces_callbacks.mod
-liblzma.so			mpi_f08_types.mod
-liblzma.so.5			mpi_types.mod
-liblzma.so.5.6.3		openmpi
-libmd.a				pkgconfig
-libmd.so			pmpi_f08_interfaces.mod
-libmd.so.0			python3.13
-libmd.so.0.1.0			terminfo
-libmenu.a
+libgdbm_compat.so		libpmix.so.2.18.0
+libgdbm_compat.so.4		libprrte.a
+libgdbm_compat.so.4.0.0		libprrte.so
+libgettextlib-0.23.1.so		libprrte.so.4
+libgettextlib.a			libprrte.so.4.0.0
+libgettextlib.so		libpython3.14.so
+libgettextpo.a			libpython3.14.so.1.0
+libgettextpo.so			libpython3.so
+libgettextpo.so.0		libquadmath.so.0
+libgettextpo.so.0.5.12		libreadline.a
+libgettextsrc-0.23.1.so		libreadline.so
+libgettextsrc.a			libreadline.so.8
+libgettextsrc.so		libreadline.so.8.3
+libgfortran.so.5		libscalapack.so
+libgomp.so.1			libscalapack.so.2.2
+libgssapi_krb5.so		libscalapack.so.2.2.1
+libgssapi_krb5.so.2		libsqlite3.a
+libgssapi_krb5.so.2.2		libsqlite3.so
+libgssrpc.so			libsqlite3.so.0
+libgssrpc.so.4			libsqlite3.so.3.50.4
+libgssrpc.so.4.2		libssp.so.0
+libhistory.a			libstdc++.so.6
+libhistory.so			libtextstyle.a
+libhistory.so.8			libtextstyle.so
+libhistory.so.8.3		libtextstyle.so.0
+libhwloc.a			libtextstyle.so.0.2.3
+libhwloc.so			libtinfo.a
+libhwloc.so.15			libtinfo.so
+libhwloc.so.15.10.1		libtinfo.so.6
+libiconv.a			libtinfo.so.6.5
+libiconv.so			libtinfo_g.a
+libiconv.so.2			libtinfow.a
+libiconv.so.2.7.0		libtinfow.so
+libintl.a			libtinfow.so.6
+libintl.so			libtinfow.so.6.5
+libintl.so.8			libtinfow_g.a
+libintl.so.8.4.2		libtmglib.so
+libitm.so.1			libtmglib.so.3
+libk5crypto.so			libtmglib.so.3.12.0
+libk5crypto.so.3		libtsan.so.2
+libk5crypto.so.3.1		libubsan.so.1
+libkadm5clnt.so			libuuid.a
+libkadm5clnt_mit.so		libuuid.so
+libkadm5clnt_mit.so.12		libuuid.so.1
+libkadm5clnt_mit.so.12.0	libuuid.so.1.3.0
+libkadm5srv.so			libverto.so
+libkadm5srv_mit.so		libverto.so.0
+libkadm5srv_mit.so.12		libverto.so.0.0
+libkadm5srv_mit.so.12.0		libxml2.so
+libkdb5.so			libxml2.so.2
+libkdb5.so.10			libxml2.so.2.13.5
+libkdb5.so.10.0			libyaksa.a
+libkrad.so			libyaksa.so
+libkrad.so.0			libyaksa.so.0
+libkrad.so.0.0			libyaksa.so.0.0.0
+libkrb5.so			libz.a
+libkrb5.so.3			libz.so
+libkrb5.so.3.3			libz.so.1
+libkrb5support.so		libz.so.1.3.1.zlib-ng
+libkrb5support.so.0		libzstd.a
+libkrb5support.so.0.1		libzstd.so
+liblapack.so			libzstd.so.1
+liblapack.so.3			libzstd.so.1.5.7
+liblapack.so.3.12.0		mpi.mod
+liblapacke.so			mpi_ext.mod
+liblapacke.so.3			mpi_f08.mod
+liblapacke.so.3.12.0		mpi_f08_callbacks.mod
+liblsan.so.0			mpi_f08_ext.mod
+liblzma.a			mpi_f08_interfaces.mod
+liblzma.so			mpi_f08_interfaces_callbacks.mod
+liblzma.so.5			mpi_f08_types.mod
+liblzma.so.5.6.3		mpi_types.mod
+libmd.a				openmpi
+libmd.so			pkgconfig
+libmd.so.0			pmpi_f08_interfaces.mod
+libmd.so.0.1.0			python3.14
+libmenu.a			terminfo
 $ ls ~/stacks/views/full
-bzip2	     hwloc	libiconv      mpich		openssh	  tar
-expat	     krb5	libmd	      ncurses		openssl	  util-linux-uuid
-gcc	     libbsd	libpciaccess  netlib-lapack	pigz	  xz
-gcc-runtime  libedit	libxcrypt     netlib-scalapack	pmix	  yaksa
-gdbm	     libevent	libxml2	      numactl		python	  zlib-ng
-gettext	     libfabric	mpc	      openblas		readline  zstd
-gmp	     libffi	mpfr	      openmpi		sqlite
+bzip2	     hwloc	libiconv      mpich		openssh	  sqlite
+expat	     krb5	libmd	      ncurses		openssl	  tar
+gcc	     libbsd	libpciaccess  netlib-lapack	pigz	  util-linux-uuid
+gcc-runtime  libedit	libxcrypt     netlib-scalapack	pmix	  xz
+gdbm	     libevent	libxml2	      numactl		prrte	  yaksa
+gettext	     libfabric	mpc	      openblas		python	  zlib-ng
+gmp	     libffi	mpfr	      openmpi		readline  zstd
 $ ls ~/stacks/views/full/gcc/
-gcc-12.5.0-gcc-11.4.0
-$ ls ~/stacks/views/full/gcc/gcc-12.5.0-gcc-11.4.0
+gcc-12.3.0-gcc-11.4.0
+$ ls ~/stacks/views/full/gcc/gcc-12.3.0-gcc-11.4.0
 bin  include  lib  lib64  libexec  share

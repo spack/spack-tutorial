@@ -1,58 +1,61 @@
 $ spack install trilinos
-[+] /usr (external glibc-2.35-epwvtixhoxdeufu6kbbrpaigv2p6iav4)
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-rwnqblirwn5aenlmsbvsieo7mzw672ee
-[+] /usr (external gcc-11.4.0-j7ykyvm5ancnn5rt7f35ggs6hwoslo42)
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-3c5xh7dqudxmyorlsrsfmjyggqk57vnr
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-w5iqeddpn6xfxfm3grear6sow3p6eaa5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/nghttp2-1.65.0-hpkxq4qziany2xflz5lpbo7ejwmchp6g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/numactl-2.0.18-74aq3kxwhmje2sqvk27v73d7525q2enn
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-5vb6e4beeoff4jan2t7edfjyi3hf3p7g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libedit-3.1-20240808-h766azt27z6p7yvfxwb22r23cxvtj3gj
-==> Fetching file:///mirror/blobs/sha256/dc/dca0ea35ad05123fd92b7acf529169b19eaf7450206b5f97d5e6e4b9949a453f
-    [100%]   23.43 MB @	 401.3 GB/s
-==> Extracting openblas-0.3.29-77haeboy74aw25ppazorgiman2aedjjp from binary cache
-==> openblas: Successfully installed openblas-0.3.29-77haeboy74aw25ppazorgiman2aedjjp
-  Search: 0.00s.  Fetch: 0.13s.	 Install: 0.63s.  Extract: 0.57s.  Relocate: 0.04s.  Total: 0.76s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openblas-0.3.29-77haeboy74aw25ppazorgiman2aedjjp
-==> Installing openblas-0.3.29-77haeboy74aw25ppazorgiman2aedjjp [13/33]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxcrypt-4.4.38-iundcaqxew2asagohzi27rxmh2zbk4qo
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.4.1-kphogwy3wlzx3rl6ddmjwui5qs77qvys
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.11.1-jhcvb6nk7guze7u7zojqrp5oxovharww
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libevent-2.1.12-dvz3n3eojbnxt74he2ky2rj75gukcgfh
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/curl-8.11.1-7xf5wleip2cn6wxcvm7rzjxbkj6b54a2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pmix-5.0.5-msnkjumpg75ybnv7uinrcbbkt4slvt3e
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.8-usc3vzrzieyct5ep3kiyypm6vrc2s2ir
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-soasbhmurzckxvnvfcqm22jsegvmh4jv
-==> Fetching file:///mirror/blobs/sha256/14/147389e734e31a0fb8ce4d9e9d34442247f592eb31f2e738f1f0273fb1e61e28
-    [100%]   61.03 MB @	 411.0 GB/s
-==> Extracting kokkos-4.5.01-53vnflrbksyxejviovyvekzbwt2vzzvf from binary cache
-==> kokkos: Successfully installed kokkos-4.5.01-53vnflrbksyxejviovyvekzbwt2vzzvf
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.13s.  Extract: 0.11s.  Relocate: 0.01s.  Total: 0.14s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/kokkos-4.5.01-53vnflrbksyxejviovyvekzbwt2vzzvf
-==> Installing kokkos-4.5.01-53vnflrbksyxejviovyvekzbwt2vzzvf [28/33]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/krb5-1.21.3-zo73rgnlq3dcwy76ebibj2ubnzkhia2c
-==> Fetching file:///mirror/blobs/sha256/cc/cc6c456699f815e4484f508753a90d14209a93a835bcb438f84a1c68121902cb
-    [100%]   61.16 MB @	 371.0 GB/s
-==> Extracting kokkos-kernels-4.5.01-wudwbac7p6jcsvf62a6obt74bxzaio5z from binary cache
-==> kokkos-kernels: Successfully installed kokkos-kernels-4.5.01-wudwbac7p6jcsvf62a6obt74bxzaio5z
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.18s.  Extract: 0.16s.  Relocate: 0.01s.  Total: 0.19s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/kokkos-kernels-4.5.01-wudwbac7p6jcsvf62a6obt74bxzaio5z
-==> Installing kokkos-kernels-4.5.01-wudwbac7p6jcsvf62a6obt74bxzaio5z [30/33]
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssh-9.9p1-2s7eddoqitn34vgpljqsrca3s7w7s6ud
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.8-ezkzlw5tyusqajx2xapuphy7ijdp5ubz
-==> Fetching file:///mirror/blobs/sha256/06/06b0d1b3244f18ae3abfe7b13e4bee2014a9c448fcb636df36491b31bdfee5df
-    [100%]   38.40 MB @	 411.4 GB/s
-==> Extracting trilinos-16.1.0-5agd4kt5c453sjitipevfkzaqcbq3m5r from binary cache
-==> trilinos: Successfully installed trilinos-16.1.0-5agd4kt5c453sjitipevfkzaqcbq3m5r
-  Search: 0.00s.  Fetch: 0.06s.	 Install: 1.45s.  Extract: 1.30s.  Relocate: 0.13s.  Total: 1.51s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/trilinos-16.1.0-5agd4kt5c453sjitipevfkzaqcbq3m5r
-==> Installing trilinos-16.1.0-5agd4kt5c453sjitipevfkzaqcbq3m5r [33/33]
+[+] /usr (external glibc-2.35-qg7qyazcn2fwrck5vgr3mxq3i4uxkhlo)
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-ntccuj2fi3y7asqifeq3i4iylrbxakw2
+[+] /usr (external gcc-11.4.0-ml7cem5pfeoluzbhb7jsiisemvoauaz5)
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-x7t4najic2jb46srjiebkrf55utda3nl
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-foiizhdg2mc4jdjtuddksbzvr64roxea
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-yzaocbs7geczi5d7qyvmqwrxi4r7dvph
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/numactl-2.0.18-yzbm5q6nblzcjccy7kddijqdnkgkxvtp
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-qtepnkrdvqazp3jmfnheapckbemejrhq
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-txbwcin227323qmxmg4opnj4r4tvenz4
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mbedtls-2.28.9-bz3ghzheol2ecbi3vpldgbb3yd7yblle
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxcrypt-4.4.38-yiij42powrfh2mwjebwiqxmkvinutofr
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.0.7-qlavhjbsgqyboovfvsultjdwzz5nvthw
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-20250705-ncdxq3juvboefpavgmovg5rb5bx76ohz
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/nghttp2-1.48.0-ft5kpbdiz6kctcooz4ksam37pskskehg
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.6.0-gv7wpik32unrnickoxbgm5iqza572w6s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-5trxrsws5dig3bf63uc4xzcbsywsqtjo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-kaz756eya6nj3ardls4b6aiaclkaux7i
+==> Fetching file:///mirror/blobs/sha256/d9/d966a88895b095541c290ecfce5555fdfdb74d87d83bef2e08f25cec5c7cbd2f
+    [100%]   23.97 MB @	 431.3 GB/s
+==> Extracting openblas-0.3.30-qz3ay7bveep7fy2v7vcln2zxc5ajfjxt from binary cache
+==> openblas: Successfully installed openblas-0.3.30-qz3ay7bveep7fy2v7vcln2zxc5ajfjxt
+  Search: 0.00s.  Fetch: 0.20s.	 Install: 0.64s.  Extract: 0.58s.  Relocate: 0.04s.  Total: 0.85s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openblas-0.3.30-qz3ay7bveep7fy2v7vcln2zxc5ajfjxt
+==> Installing openblas-0.3.30-qz3ay7bveep7fy2v7vcln2zxc5ajfjxt [20/36]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libssh2-1.11.1-txa2olxuoxfkv7jdjrdw27djcf6fa5sz
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libedit-3.1-20240808-hdzcfgipukcqxsw7hjkksstbbz5otx3x
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libevent-2.1.12-lprginh6npwjirdhmghjqjckaa7ukrri
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.12.2-4hos3725nynk2bsskofvtcmk6pmtcjg4
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-lfgvgvawnpdxxz7prdfn4vsfgtwruxjc
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/curl-8.15.0-6uqd6hxvleneurgdgpsa4mdixxbsn2jo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pmix-6.0.0-yqlblh6p4u6vwmfhtffyrnxyqrliw2jm
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-cakgj4ntlncc4zsgty5z6sa7f7mwvlt7
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.9-6mcg35zwz2jgg26ihk57467slldmanb7
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/prrte-4.0.0-buin62mintd2cczzj6vsvai45vhpgg6w
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/krb5-1.21.3-hnmy4fwwly5s4xifp5roodj6opppwwiu
+==> Fetching file:///mirror/blobs/sha256/01/01136d1f59205ae19c58f1f882a77f67d9846dee1a3675fe1745aa8e70970423
+    [100%]   61.03 MB @	 994.7 MB/s
+==> Extracting kokkos-4.5.01-d4moul4nn4patxfe5ejjawectshc4yjx from binary cache
+==> kokkos: Successfully installed kokkos-4.5.01-d4moul4nn4patxfe5ejjawectshc4yjx
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.14s.  Extract: 0.12s.  Relocate: 0.01s.  Total: 0.15s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/kokkos-4.5.01-d4moul4nn4patxfe5ejjawectshc4yjx
+==> Installing kokkos-4.5.01-d4moul4nn4patxfe5ejjawectshc4yjx [32/36]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssh-9.9p1-cxdcxo5pdxc2nk7domxigdqiygg4757e
+==> Fetching file:///mirror/blobs/sha256/ad/ad5c249f46779381be266e11f16b4b9384c1f7ad528cc40b626c67988a5f6402
+    [100%]   61.16 MB @	 391.1 GB/s
+==> Extracting kokkos-kernels-4.5.01-7io5z72u4swegsahxd4yi7ndi77ylvmd from binary cache
+==> kokkos-kernels: Successfully installed kokkos-kernels-4.5.01-7io5z72u4swegsahxd4yi7ndi77ylvmd
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.19s.  Extract: 0.16s.  Relocate: 0.01s.  Total: 0.20s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/kokkos-kernels-4.5.01-7io5z72u4swegsahxd4yi7ndi77ylvmd
+==> Installing kokkos-kernels-4.5.01-7io5z72u4swegsahxd4yi7ndi77ylvmd [34/36]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.8-tqxbnvoiw3nzds4xypcualamx3cvisln
+==> Fetching file:///mirror/blobs/sha256/67/671eea093ebf85b6b96f9cdcfdeffbac4de8d70b2702e752b15eccdaf8c85018
+    [100%]   38.94 MB @	 441.4 GB/s
+==> Extracting trilinos-16.1.0-scm33h7j7boxpf2xkpj4spomyyl55ldx from binary cache
+==> trilinos: Successfully installed trilinos-16.1.0-scm33h7j7boxpf2xkpj4spomyyl55ldx
+  Search: 0.00s.  Fetch: 0.06s.	 Install: 1.53s.  Extract: 1.35s.  Relocate: 0.15s.  Total: 1.59s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/trilinos-16.1.0-scm33h7j7boxpf2xkpj4spomyyl55ldx
+==> Installing trilinos-16.1.0-scm33h7j7boxpf2xkpj4spomyyl55ldx [36/36]

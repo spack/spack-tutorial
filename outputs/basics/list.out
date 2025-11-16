@@ -57,6 +57,7 @@ alluxio
 alpaka
 alpgen
 alps
+alpscore
 alquimia
 alsa-lib
 aluminum
@@ -107,7 +108,6 @@ aom
 aotriton
 apache-tvm
 apachetop
-apcomp
 ape
 aperture-photometry
 apex
@@ -129,6 +129,8 @@ arbor
 arborx
 arc
 archer
+aretomo
+aretomo2
 argobots
 argon2
 argp-standalone
@@ -184,7 +186,6 @@ autoconf-archive
 autodiff
 autodock-gpu
 autodock-vina
-autofact
 autogen
 automaded
 automake
@@ -202,6 +203,7 @@ azcopy
 babelflow
 babelstream
 babeltrace
+babeltrace2
 babl
 bacio
 backupninja
@@ -230,7 +232,6 @@ bbmap
 bc
 bcache
 bcftools
-bcl2fastq2
 bdftopcf
 bdii
 bdsim
@@ -281,7 +282,6 @@ bitsery
 blackhat
 blake3
 blaspp
-blast-legacy
 blast-plus
 blast2go
 blat
@@ -510,6 +510,7 @@ codes
 codipack
 coevp
 cohmm
+cohomcalg
 coin3d
 coinhsl
 coinutils
@@ -524,7 +525,6 @@ commons-lang3
 commons-logging
 compadre
 compiler-wrapper
-compiz
 composable-kernel
 compose
 compositeproto
@@ -571,6 +571,7 @@ cppcodec
 cppcoro
 cppgsl
 cpprestsdk
+cpptrace
 cppunit
 cppzmq
 cpr
@@ -589,6 +590,7 @@ cray-mvapich2
 cray-pmi
 creduce
 crmc
+croc
 cromwell
 cromwell-womtool
 cronie
@@ -615,16 +617,19 @@ cube-blade
 cubelib
 cubew
 cubist
+cublasmp
 cuda
 cuda-memtest
 cudd
 cudnn
 cudss
 cufflinks
+cufftmp
 cunit
-cupla
 cups
 curl
+cusolvermp
+cusparselt
 cusz
 cutensor
 cutlass
@@ -667,8 +672,8 @@ dcm2niix
 dcmtk
 dctz
 dd4hep
+ddc
 ddd
-ddt
 dealii
 dealii-parameter-gui
 debbuild
@@ -682,6 +687,7 @@ delly2
 delphes
 delta
 demuxlet
+deno
 denovogear
 detray
 dfelibs
@@ -732,6 +738,7 @@ docbook-xml
 docbook-xsl
 dock
 doctest
+dolfinx-mpc
 dorado
 dorian3d-dlib
 dos2unix
@@ -742,12 +749,12 @@ double-batched-fft-library
 double-conversion
 doxygen
 dpdk
+dplasma
 dpmjet
 draco
 dracut
 dramsim2
 dramsim3
-dray
 dri2proto
 dri3proto
 drill
@@ -805,6 +812,7 @@ egl
 eigen
 eigenexa
 elasticsearch
+elastix
 elbencho
 elfio
 elfutils
@@ -838,6 +846,7 @@ eprosima-fastdds
 epsic
 eq-r
 er
+erf
 erfa
 erlang
 ermod
@@ -858,11 +867,9 @@ everytrace
 everytrace-example
 evieext
 evtgen
-exa
 exabayes
 exaca
 exago
-examinimd
 examl
 exampm
 exasp2
@@ -893,6 +900,9 @@ fabulous
 faircmakemodules
 fairlogger
 fairmq
+fairroot
+fairsoft-bundle
+fairsoft-config
 faiss
 fakechroot
 faketime
@@ -917,6 +927,7 @@ fastme
 fastor
 fastp
 fastphase
+fastplong
 fastq-screen
 fastqc
 fastqvalidator
@@ -1044,6 +1055,7 @@ freesurfer
 freetype
 freexl
 fribidi
+frobby
 frontier-client
 frontistr
 frugally-deep
@@ -1068,6 +1080,7 @@ funhpc
 funwave
 fuse-overlayfs
 fusion-io
+fwq
 fxdiv
 fxt
 fyba
@@ -1118,7 +1131,6 @@ gcc-runtime
 gccmakedep
 gccxml
 gchp
-gconf
 gcta
 gdal
 gdb
@@ -1130,6 +1142,7 @@ geant3
 geant4
 geant4-data
 geant4-vmc
+geany
 gearshifft
 gegelati
 gegl
@@ -1149,7 +1162,6 @@ genometools
 genomeworks
 genrich
 geode
-geoip
 geoip-api-c
 geomodel
 geopm-runtime
@@ -1183,12 +1195,14 @@ git-filter-repo
 git-imerge
 git-lfs
 gitconddb
+givaro
 gl2ps
 glab
 glew
 glfmultiples
 glfw
 glib
+glib-bootstrap
 glib-networking
 glibc
 glibmm
@@ -1248,6 +1262,7 @@ gnutls
 go
 go-bootstrap
 go-md2man
+go-sh
 goaccess
 gobject-introspection
 goblin-hmc-sim
@@ -1284,7 +1299,6 @@ grackle
 gradle
 grads
 grafana
-grandr
 graph500
 graphblast
 graphicsmagick
@@ -1294,10 +1308,12 @@ graphmap
 graphviz
 grass
 graylog2-server
+green-mbpt
+green-seet
 greenx
 grep
-grib-api
 grib-util
+gribjump
 grid
 gridlab-d
 grnboost
@@ -1313,6 +1329,7 @@ gsl
 gsl-lite
 gslib
 gsoap
+gspell
 gtfsort
 gtk-doc
 gtkmm
@@ -1448,6 +1465,7 @@ hpl
 hpx
 hpx-kokkos
 hpx5
+hsa-amd-aqlprofile
 hsa-rocr-dev
 hsakmt
 hsakmt-roct
@@ -1516,6 +1534,7 @@ imake
 imath
 imgui
 imlib2
+imod
 imp
 impalajit
 improved-rdock
@@ -1558,7 +1577,6 @@ ior
 iotaa
 iozone
 ip
-ip2
 ipcalc
 iperf2
 iperf3
@@ -1609,6 +1627,7 @@ jimtcl
 jline3
 jmol
 jogl
+jonquil
 jose
 jpegoptim
 jq
@@ -1627,6 +1646,7 @@ julea
 julia
 jump
 junit4
+just
 justbuild
 jwt-cpp
 jxrlib-debian
@@ -1651,6 +1671,7 @@ kea
 kealib
 keepalived
 keepassxc
+kenlm
 kentutils
 keyutils
 khmer
@@ -1666,8 +1687,6 @@ knem
 kokkos
 kokkos-fft
 kokkos-kernels
-kokkos-kernels-legacy
-kokkos-legacy
 kokkos-nvcc-wrapper
 kokkos-tools
 kraken
@@ -1682,6 +1701,7 @@ kumi
 kvasir-mpl
 kvtree
 kylin
+kynema
 kyotocabinet
 ladot
 laghos
@@ -1703,7 +1723,6 @@ lazyten
 lbann
 lbfgspp
 lbxproxy
-lbzip2
 lc-framework
 lcals
 lcc
@@ -1806,15 +1825,18 @@ libfms
 libfontenc
 libfort
 libfs
+libftdi
 libfuse
 libfyaml
 libgain
 libgcrypt
 libgd
 libgdsii
+libgee
 libgeotiff
 libgff
 libgit2
+libgit2-glib
 libgpg-error
 libgpiod
 libgpuarray
@@ -1824,6 +1846,7 @@ libgta
 libgtextutils
 libgtop
 libgudev
+libhandy
 libharu
 libhbaapi
 libheif
@@ -1871,6 +1894,9 @@ libmcrypt
 libmd
 libmesh
 libmetalink
+libmetatensor
+libmetatensor-torch
+libmetatomic-torch
 libmicrodns
 libmicrohttpd
 libmmtf-cpp
@@ -1998,7 +2024,6 @@ liburing
 libusb
 libusbmuxd
 libuser
-libuuid
 libuv
 libuv-julia
 libva
@@ -2166,6 +2191,7 @@ maker
 mallocmc
 maloc
 malt
+mamba
 man-db
 mapl
 mapnik
@@ -2204,12 +2230,10 @@ mefit
 megadock
 megahit
 melissa
-melissa-api
 memaxes
 memcached
 meme
 memkind
-memsurfer
 memtester
 mepo
 meraculous
@@ -2242,7 +2266,6 @@ mgardx
 mgcfd-op2
 mgis
 microbiomeutil
-micromamba
 microsocks
 migraphx
 migrate
@@ -2253,11 +2276,9 @@ mimalloc
 minc-toolkit
 minced
 mindthegap
-miniaero
 miniamr
 miniapp-ascent
 miniasm
-miniconda2
 miniconda3
 minife
 miniforge3
@@ -2298,6 +2319,7 @@ mmv
 moab
 mochi-margo
 mochi-thallium
+model-angelo
 model-traits
 modeltest-ng
 modern-wheel
@@ -2309,7 +2331,6 @@ molden
 molgw
 mongo-c-driver
 mongo-cxx-driver
-mongodb
 mongodb-async-driver
 mono
 montage
@@ -2323,6 +2344,7 @@ motif
 motioncor2
 mount-point-attributes
 mozjpeg
+mozjs
 mpark-variant
 mpas-model
 mpb
@@ -2361,6 +2383,7 @@ mrcpp
 mrnet
 mrtrix3
 mruby
+mscclpp
 mscgen
 msgpack-c
 mshadow
@@ -2369,6 +2392,7 @@ msmc2
 msmpi
 msr-safe
 mstk
+mstore
 msvc
 mt-metis
 mtn
@@ -2396,8 +2420,6 @@ mutationpp
 mvapich
 mvapich-plus
 mvapich2
-mvapich2-gdr
-mvapich2x
 mxm
 mxml
 mxnet
@@ -2504,7 +2526,7 @@ nlcglib
 nlohmann-json
 nlohmann-json-schema-validator
 nlopt
-nmap
+nmad
 nn-c
 nnn
 nnpack
@@ -2534,6 +2556,7 @@ nvbandwidth
 nvcomp
 nvdimmsim
 nvhpc
+nvidia-container-toolkit
 nvidia-nsight-systems
 nvpl-blas
 nvpl-fft
@@ -2548,7 +2571,6 @@ nyancat
 ocaml
 ocamlbuild
 occa
-oce
 oci-systemd-hook
 ocl-icd
 oclgrind
@@ -2619,6 +2641,7 @@ openfast
 openfdtd
 openfoam
 openfoam-org
+openfpgaloader
 openfst
 opengl
 openglu
@@ -2655,7 +2678,6 @@ opensta
 openstf
 opensubdiv
 opentsdb
-openturbine
 openturns
 openvdb
 openvkl
@@ -2708,6 +2730,7 @@ packmol
 pacparser
 pacvim
 paddle
+padicotm
 pagit
 pagmo
 pagmo2
@@ -2736,14 +2759,12 @@ parallel-hashmap
 parallel-netcdf
 parallelio
 parallelmergetree
-paraver
 paraview
 pareval
 parflow
 parmetis
 parmgridgen
 parmmg
-parquet-cpp
 parquet-format
 parsec
 parsimonator
@@ -2762,6 +2783,7 @@ pbbam
 pblat
 pbmpi
 pbwt
+pbzip2
 pciutils
 pcl
 pcma
@@ -2795,7 +2817,6 @@ perl-algorithm-diff
 perl-alien-build
 perl-alien-build-plugin-download-gitlab
 perl-alien-libxml2
-perl-alien-svn
 perl-any-uri-escape
 perl-apache-logformat-compiler
 perl-app-cmd
@@ -3332,6 +3353,7 @@ pilon
 pindel
 pinentry
 pinfo
+pioman
 pipework
 pipx
 piranha
@@ -3367,6 +3389,7 @@ poamsa
 pocl
 podio
 podman
+podman-compose
 poke
 polymake
 polyml
@@ -3453,6 +3476,8 @@ psrdada
 pstreams
 pthreadpool
 pugixml
+puk
+pukabi
 pulseaudio
 pumgen
 pumi
@@ -3472,10 +3497,12 @@ py-accelerate
 py-accessible-pygments
 py-accimage
 py-acme-tiny
+py-acres
 py-adal
 py-adb-enhanced
 py-addict
 py-adios
+py-adios4dolfinx
 py-advancedhtmlparser
 py-aenum
 py-affine
@@ -3528,13 +3555,15 @@ py-anvio
 py-anybadge
 py-anyio
 py-anytree
-py-apache-beam
+py-anywidget
 py-apache-libcloud
+py-apebench
 py-apex
 py-apeye
 py-apeye-core
 py-apipkg
 py-apispec
+py-app-model
 py-appdirs
 py-applicationinsights
 py-appnope
@@ -3600,6 +3629,7 @@ py-autograd-gamma
 py-automat
 py-autopep8
 py-autoray
+py-autoreject
 py-auxlib
 py-avro
 py-avro-json-serializer
@@ -3612,7 +3642,6 @@ py-awscrt
 py-ax-platform
 py-azote
 py-azure-batch
-py-azure-cli
 py-azure-cli-command-modules-nspkg
 py-azure-cli-core
 py-azure-cli-nspkg
@@ -3699,21 +3728,6 @@ py-azure-nspkg
 py-azure-storage-blob
 py-azure-storage-common
 py-azure-storage-nspkg
-py-azureml-automl-core
-py-azureml-core
-py-azureml-dataprep
-py-azureml-dataprep-native
-py-azureml-dataprep-rslex
-py-azureml-dataset-runtime
-py-azureml-pipeline
-py-azureml-pipeline-core
-py-azureml-pipeline-steps
-py-azureml-sdk
-py-azureml-telemetry
-py-azureml-train
-py-azureml-train-automl-client
-py-azureml-train-core
-py-azureml-train-restclients-hyperdrive
 py-babel
 py-backcall
 py-backoff
@@ -3724,6 +3738,7 @@ py-backports-entry-points-selectable
 py-backports-lzma
 py-backports-os
 py-backports-ssl-match-hostname
+py-backports-tarfile
 py-backports-tempfile
 py-backports-weakref
 py-backports-zoneinfo
@@ -3746,12 +3761,16 @@ py-beancount
 py-beartype
 py-beautifulsoup4
 py-beniget
+py-bidict
 py-bids-validator
+py-bids-validator-deno
 py-bidscoin
 py-bidskit
+py-bidsschematools
 py-bigdft
 py-bigfloat
 py-billiard
+py-binary
 py-binaryornot
 py-bintrees
 py-binwalk
@@ -3766,6 +3785,7 @@ py-biom-format
 py-biomine
 py-biopandas
 py-biopython
+py-biosppy
 py-biotite
 py-biotraj
 py-bitarray
@@ -3773,6 +3793,7 @@ py-bitshuffle
 py-bitstring
 py-bitstruct
 py-black
+py-blake3
 py-bleach
 py-blessed
 py-blessings
@@ -3815,6 +3836,7 @@ py-bx-python
 py-cachecontrol
 py-cached-property
 py-cachetools
+py-cachey
 py-cachy
 py-cairocffi
 py-cairosvg
@@ -3828,6 +3850,7 @@ py-casadi
 py-catalogue
 py-catkin-pkg
 py-cattrs
+py-cbor2
 py-cclib
 py-cdo
 py-cdsapi
@@ -3863,6 +3886,7 @@ py-chemfiles
 py-cheroot
 py-cherrypy
 py-chex
+py-choreographer
 py-chronyk
 py-ci-info
 py-ci-sdr
@@ -3903,6 +3927,7 @@ py-coclust
 py-codebasin
 py-codepy
 py-codespell
+py-coherent-licensed
 py-coilmq
 py-colabtools
 py-colorama
@@ -3950,12 +3975,15 @@ py-corner
 py-correctionlib
 py-corrfunc
 py-counter
+py-courlan
 py-cov-core
 py-coverage
 py-coveralls
 py-cppheaderparser
 py-cppy
+py-cramjam
 py-crashtest
+py-crc32c
 py-crcmod
 py-croniter
 py-crossmap
@@ -3967,6 +3995,7 @@ py-cssselect2
 py-cssutils
 py-csvkit
 py-ctgan
+py-cuda-bindings
 py-cudf
 py-cufflinks
 py-cuml
@@ -3987,7 +4016,6 @@ py-cycler
 py-cykhash
 py-cylc-flow
 py-cylc-rose
-py-cylc-uiserver
 py-cylp
 py-cymem
 py-cyordereddict
@@ -4006,8 +4034,11 @@ py-dash
 py-dash-bootstrap-components
 py-dash-svg
 py-dask
+py-dask-awkward
 py-dask-expr
 py-dask-glm
+py-dask-histogram
+py-dask-jobqueue
 py-dask-ml
 py-dask-mpi
 py-dask-sphinx-theme
@@ -4023,8 +4054,10 @@ py-datalad-metadata-model
 py-datalad-metalad
 py-datalad-neuroimaging
 py-datalad-webapp
+py-dataproperty
 py-datasets
 py-datashader
+py-datatrove
 py-dateparser
 py-dateutils
 py-datrie
@@ -4038,7 +4071,6 @@ py-decorator
 py-deepdiff
 py-deepecho
 py-deephyper
-py-deepsig
 py-deepsig-biocomp
 py-deepspeed
 py-deeptools
@@ -4072,7 +4104,6 @@ py-distributed
 py-distro
 py-django
 py-dlcpar
-py-dlio-profiler-py
 py-dm-haiku
 py-dm-tree
 py-dnaio
@@ -4087,6 +4118,7 @@ py-docutils
 py-docutils-stubs
 py-dogpile-cache
 py-doit
+py-dolfinx-mpc
 py-dom-toml
 py-domdf-python-tools
 py-dominate
@@ -4156,6 +4188,8 @@ py-et-xmlfile
 py-ete3
 py-etelemetry
 py-etils
+py-eval-type-backport
+py-evaluate
 py-eventlet
 py-evodiff
 py-ewah-bool-utils
@@ -4168,6 +4202,7 @@ py-exifread
 py-exodus-bundler
 py-expandvars
 py-expecttest
+py-exponax
 py-extension-helpers
 py-extras
 py-ez-setup
@@ -4198,7 +4233,9 @@ py-fastpath
 py-fastprogress
 py-fastremap
 py-fastrlock
-py-faststructure
+py-fasttext-numpy2
+py-fasttext-numpy2-wheel
+py-faust-cchardet
 py-fava
 py-fenics-basix
 py-fenics-dijitso
@@ -4245,7 +4282,9 @@ py-flatbuffers
 py-flatten-dict
 py-flawfinder
 py-flax
+py-flexcache
 py-flexmock
+py-flexparser
 py-flexx
 py-flit
 py-flit-core
@@ -4277,6 +4316,7 @@ py-fprettify
 py-fqdn
 py-fracridge
 py-fraction
+py-freetype-py
 py-freezegun
 py-frozendict
 py-frozenlist
@@ -4303,7 +4343,6 @@ py-gast
 py-gcovr
 py-gcs-oauth2-boto-plugin
 py-gcsfs
-py-gdbgui
 py-gdc-client
 py-gdown
 py-gee-asset-manager
@@ -4366,6 +4405,7 @@ py-google-auth-oauthlib
 py-google-cloud-appengine-logging
 py-google-cloud-audit-log
 py-google-cloud-batch
+py-google-cloud-bigquery
 py-google-cloud-core
 py-google-cloud-logging
 py-google-cloud-storage
@@ -4377,6 +4417,7 @@ py-googleapis-common-protos
 py-googledrivedownloader
 py-gosam
 py-gpaw
+py-gpaw-data
 py-gpustat
 py-gputil
 py-gpy
@@ -4389,7 +4430,6 @@ py-grandalf
 py-graphcast
 py-grapheme
 py-graphene
-py-graphene-tornado
 py-graphlib-backport
 py-graphql-core
 py-graphql-relay
@@ -4401,6 +4441,7 @@ py-greenlet
 py-grequests
 py-griddataformats
 py-griffe
+py-gromacswrapper
 py-grpc-google-iam-v1
 py-grpcio
 py-grpcio-status
@@ -4422,7 +4463,6 @@ py-h5sh
 py-hacking
 py-hail
 py-handy-archives
-py-haphpipe
 py-hatch
 py-hatch-cython
 py-hatch-fancy-pypi-readme
@@ -4446,6 +4486,7 @@ py-hepdata-validator
 py-hepstats
 py-hepunits
 py-hf-transfer
+py-hf-xet
 py-hieroglyph
 py-hiredis
 py-hist
@@ -4460,10 +4501,12 @@ py-horovod
 py-hpack
 py-hpbandster
 py-hpccm
+py-hsluv
 py-hstspreload
 py-htgettoken
 py-html2text
 py-html5lib
+py-htmldate
 py-htmlgen
 py-htseq
 py-httpbin
@@ -4509,6 +4552,8 @@ py-immutabledict
 py-immutables
 py-importlib-metadata
 py-importlib-resources
+py-imutils
+py-in-n-out
 py-incremental
 py-inflect
 py-inheritance
@@ -4516,6 +4561,7 @@ py-iniconfig
 py-iniparse
 py-inquirer
 py-inquirerpy
+py-inscriptis
 py-installer
 py-instrain
 py-intbitset
@@ -4540,6 +4586,7 @@ py-ipyrad
 py-ipython
 py-ipython-cluster-helper
 py-ipython-genutils
+py-ipython-pygments-lexers
 py-ipytree
 py-ipyvtk-simple
 py-ipyvue
@@ -4561,6 +4608,7 @@ py-jaconv
 py-jamo
 py-janus
 py-jaraco-classes
+py-jaraco-context
 py-jaraco-functools
 py-jarowinkler
 py-jarvis-util
@@ -4588,6 +4636,7 @@ py-jpype1
 py-jraph
 py-jsmin
 py-json-get
+py-json-tricks
 py-json2html
 py-json5
 py-jsonargparse
@@ -4621,6 +4670,7 @@ py-jupyterlab-pygments
 py-jupyterlab-server
 py-jupyterlab-widgets
 py-jupytext
+py-justext
 py-jwcrypto
 py-kaggle
 py-kaldiio
@@ -4689,6 +4739,7 @@ py-lightning-lite
 py-lightning-uq-box
 py-lightning-utilities
 py-ligo-segments
+py-lil-aretomo
 py-line-profiler
 py-linear-operator
 py-linear-tree
@@ -4709,6 +4760,7 @@ py-localcider
 py-locket
 py-lockfile
 py-logilab-common
+py-logistro
 py-logmuse
 py-loguru
 py-loky
@@ -4731,9 +4783,11 @@ py-machotools
 py-macs2
 py-macs3
 py-maestrowf
+py-magicgui
 py-mahotas
 py-mailchecker
 py-make
+py-makefun
 py-mako
 py-mapbox-earcut
 py-mapclassify
@@ -4752,6 +4806,7 @@ py-matplotlib-inline
 py-matplotlib-scalebar
 py-maturin
 py-mayavi
+py-mbstrdecoder
 py-mccabe
 py-md-environ
 py-mda-xdrlib
@@ -4759,6 +4814,7 @@ py-mdanalysis
 py-mdanalysistests
 py-mdi
 py-mdit-py-plugins
+py-mdocfile
 py-mdurl
 py-meautility
 py-mechanize
@@ -4776,6 +4832,11 @@ py-meshpy
 py-meson-python
 py-metaphlan
 py-metasv
+py-metatensor-core
+py-metatensor-learn
+py-metatensor-operations
+py-metatensor-torch
+py-metatomic-torch
 py-metis
 py-metomi-isodatetime
 py-metomi-rose
@@ -4785,6 +4846,7 @@ py-metrics
 py-mffpy
 py-mg-rast-tools
 py-mgmetis
+py-microsoft-aurora
 py-mido
 py-mikado
 py-mike
@@ -4829,8 +4891,8 @@ py-monty
 py-more-itertools
 py-morph-tool
 py-morphio
+py-morphosamplers
 py-motmetrics
-py-motor
 py-mouseinfo
 py-moviepy
 py-mpi4jax
@@ -4855,6 +4917,7 @@ py-multipledispatch
 py-multiprocess
 py-multiqc
 py-multiurl
+py-mumps4py
 py-munch
 py-munkres
 py-murmurhash
@@ -4866,7 +4929,6 @@ py-mypy
 py-mypy-extensions
 py-mysql-connector-python
 py-mysqlclient
-py-mysqldb1
 py-myst-parser
 py-namex
 py-nanobind
@@ -4876,6 +4938,11 @@ py-nanoplot
 py-nanostat
 py-nanotime
 py-nanotron
+py-napari
+py-napari-console
+py-napari-plugin-engine
+py-napari-plugin-manager
+py-napari-svg
 py-nara-wpe
 py-narwhals
 py-natsort
@@ -4918,12 +4985,10 @@ py-nexus-sdk
 py-nexusforge
 py-nglview
 py-ngs-tools
+py-nh3
 py-nibabel
-py-nibetaseries
 py-nilearn
-py-ninja
 py-nipype
-py-nistats
 py-nitransforms
 py-niworkflows
 py-nltk
@@ -4936,6 +5001,7 @@ py-nose2
 py-nosexcover
 py-notebook
 py-notebook-shim
+py-npe2
 py-nptyping
 py-npx
 py-ntlm-auth
@@ -4945,13 +5011,16 @@ py-nuitka
 py-num2words
 py-numba
 py-numba4jax
+py-numbagg
 py-numcodecs
 py-numdifftools
 py-numexpr
 py-numexpr3
+py-numkit
 py-numl
 py-numpy
 py-numpy-groupies
+py-numpy-indexed
 py-numpy-quaternion
 py-numpy-stl
 py-numpydoc
@@ -4959,13 +5028,15 @@ py-nvidia-dali
 py-nvidia-ml-py
 py-nvidia-ml-py3
 py-nvidia-modulus
+py-nvidia-nvimagecodec
+py-nvidia-nvjpeg2k
+py-nvidia-nvtiff
 py-nvitop
 py-nvtx
 py-oauth2client
 py-oauthlib
 py-obspy
 py-ocnn
-py-ocp-models
 py-odc-geo
 py-odfpy
 py-ogb
@@ -4985,6 +5056,7 @@ py-openai
 py-openapi-schema-pydantic
 py-opencensus
 py-opencensus-context
+py-opencv-python
 py-opendatalab
 py-openidc-client
 py-openmc
@@ -5026,6 +5098,7 @@ py-pacifica-namespace
 py-pacifica-uploader
 py-packaging
 py-pager
+py-paho-mqtt
 py-palettable
 py-pamela
 py-panaroo
@@ -5064,6 +5137,7 @@ py-pathml
 py-pathos
 py-pathspec
 py-pathtools
+py-pathvalidate
 py-pathy
 py-patool
 py-patsy
@@ -5071,11 +5145,13 @@ py-pauvre
 py-pbr
 py-pdb-tools
 py-pdbfixer
+py-pdequinox
 py-pdf2image
 py-pdm-backend
 py-pdm-pep517
 py-pdoc3
 py-peachpy
+py-peakutils
 py-pebble
 py-pem
 py-pennylane
@@ -5184,6 +5260,7 @@ py-pspamm
 py-psutil
 py-psyclone
 py-psycopg2
+py-psygnal
 py-ptyprocess
 py-pubchempy
 py-pudb
@@ -5202,6 +5279,7 @@ py-py4j
 py-py6s
 py-pyabel
 py-pyaestro
+py-pyahocorasick
 py-pyamg
 py-pyaml
 py-pyaml-env
@@ -5227,12 +5305,14 @@ py-pycares
 py-pycbc
 py-pychecker
 py-pycifrw
+py-pyclibrary
 py-pycm
 py-pycmd
 py-pycocotools
 py-pycodestyle
 py-pycollada
 py-pycompadre
+py-pyconify
 py-pycorenlp
 py-pycortex
 py-pycosat
@@ -5244,6 +5324,7 @@ py-pycubexr
 py-pycuda
 py-pycurl
 py-pydantic
+py-pydantic-compat
 py-pydantic-core
 py-pydantic-extra-types
 py-pydantic-settings
@@ -5266,7 +5347,6 @@ py-pydot
 py-pydot2
 py-pydotplus
 py-pydub
-py-pydv
 py-pyeda
 py-pyedr
 py-pyee
@@ -5303,6 +5383,7 @@ py-pygps
 py-pygpu
 py-pygraphviz
 py-pygresql
+py-pygrib
 py-pygtrie
 py-pyh5md
 py-pyhdf
@@ -5371,7 +5452,9 @@ py-pypeflow
 py-pypeg2
 py-pyperclip
 py-pyperf
+py-pypinfo
 py-pypinyin
+py-pypistats
 py-pypng
 py-pyppeteer
 py-pyprecice
@@ -5411,10 +5494,10 @@ py-pyserial
 py-pysftp
 py-pyshacl
 py-pyshp
-py-pyside
 py-pyside2
 py-pysimdjson
 py-pysmartdl
+py-pysmiles
 py-pysocks
 py-pysolar
 py-pyspark
@@ -5428,6 +5511,7 @@ py-pystac-client
 py-pystache
 py-pystan
 py-pysurfer
+py-pytablewriter
 py-pytailf
 py-pytaridx
 py-pytecplot
@@ -5455,6 +5539,7 @@ py-pytest-html
 py-pytest-httpbin
 py-pytest-isort
 py-pytest-lazy-fixture
+py-pytest-memray
 py-pytest-metadata
 py-pytest-mock
 py-pytest-mpi
@@ -5617,6 +5702,9 @@ py-regex
 py-regionmask
 py-regions
 py-reindent
+py-relion
+py-relion-blush
+py-relion-classranker
 py-repligit
 py-reportlab
 py-reportseff
@@ -5668,11 +5756,11 @@ py-rosinstall
 py-rosinstall-generator
 py-rospkg
 py-rotary-embedding-torch
+py-rouge-score
 py-routes
 py-rpds-py
 py-rply
 py-rpy2
-py-rq
 py-rsa
 py-rsatoolbox
 py-rseqc
@@ -5694,12 +5782,12 @@ py-sacrebleu
 py-sacremoses
 py-safetensors
 py-salib
-py-sanic
 py-scandir
 py-scanpy
 py-schema
 py-schema-salad
 py-scientificpython
+py-scifem
 py-scikit-build
 py-scikit-build-core
 py-scikit-fmm
@@ -5707,6 +5795,7 @@ py-scikit-fuzzy
 py-scikit-image
 py-scikit-learn
 py-scikit-learn-extra
+py-scikit-matter
 py-scikit-optimize
 py-scikit-sparse
 py-scikits-odes
@@ -5742,6 +5831,7 @@ py-setuptools
 py-setuptools-cpp
 py-setuptools-git
 py-setuptools-git-versioning
+py-setuptools-reproducible
 py-setuptools-rust
 py-setuptools-scm
 py-setuptools-scm-git-archive
@@ -5752,21 +5842,21 @@ py-shap
 py-shapely
 py-shellescape
 py-shellingham
-py-shiboken
 py-shiboken2
 py-shippinglabel
 py-shortbred
 py-shortuuid
 py-shroud
 py-shtab
-py-sierrapy
 py-simpervisor
+py-simple-slurm
 py-simpleeval
 py-simplegeneric
 py-simplejson
 py-simplekml
 py-simpletraj
 py-simpy
+py-simsimd
 py-singledispatchmethod
 py-sip
 py-six
@@ -5803,6 +5893,7 @@ py-snakemake-storage-plugin-http
 py-snakemake-storage-plugin-s3
 py-snakemake-storage-plugin-sftp
 py-snakemake-storage-plugin-zenodo
+py-snakeviz
 py-snappy
 py-sncosmo
 py-sniffio
@@ -5888,6 +5979,7 @@ py-sseclient
 py-sshtunnel
 py-sspilib
 py-stack-data
+py-starfile
 py-starlette
 py-starlette-context
 py-starsessions
@@ -5903,6 +5995,7 @@ py-storm
 py-stratify
 py-strawberryfields
 py-streamlit
+py-stringzilla
 py-striprtf
 py-stsci-distutils
 py-stui
@@ -5922,11 +6015,13 @@ py-sympy
 py-syned
 py-sysrsync
 py-systemd-python
+py-tabledata
 py-tables
 py-tabulate
 py-tatsu
 py-tblib
 py-tbparse
+py-tcolorpy
 py-tempita
 py-templateflow
 py-tempora
@@ -5961,6 +6056,7 @@ py-text-unidecode
 py-textblob
 py-texttable
 py-textual
+py-textual-plotext
 py-textwrap3
 py-textx
 py-tf-keras
@@ -5974,10 +6070,13 @@ py-throttler
 py-tidynamics
 py-tifffile
 py-tiktoken
+py-tilelang
 py-timm
 py-tinyarray
 py-tinycss2
 py-tinydb
+py-tinyrecord
+py-tld
 py-tldextract
 py-tokenize-rt
 py-tokenizers
@@ -6009,6 +6108,7 @@ py-torchmetrics
 py-torchseg
 py-torchsummary
 py-torchtext
+py-torchtoolbox
 py-torchvision
 py-tornado
 py-tox
@@ -6017,6 +6117,8 @@ py-toytree
 py-tpot
 py-tqdm
 py-traceback2
+py-trafilatura
+py-trainax
 py-traitlets
 py-traits
 py-traitsui
@@ -6049,6 +6151,7 @@ py-twine
 py-twisted
 py-typed-ast
 py-typeguard
+py-typepy
 py-typer
 py-types-dataclasses
 py-types-pkg-resources
@@ -6082,6 +6185,7 @@ py-unfoldnd
 py-unicycler
 py-unidecode
 py-unittest2py3k
+py-universal-pathlib
 py-unshare
 py-unyt
 py-update-checker
@@ -6114,14 +6218,17 @@ py-vcversioner
 py-vector
 py-vector-quantize-pytorch
 py-vermin
+py-vermouth-martinize
 py-versioneer
 py-versioneer-518
 py-verspec
+py-vesin
 py-vine
 py-virtualenv
 py-virtualenv-clone
 py-virtualenvwrapper
 py-visdom
+py-vispy
 py-vl-convert-python
 py-voluptuous
 py-vsc-base
@@ -6133,6 +6240,7 @@ py-waitress
 py-walinuxagent
 py-wand
 py-wandb
+py-warcio
 py-warlock
 py-wasabi
 py-watchdog
@@ -6182,10 +6290,12 @@ py-xarray
 py-xarray-regrid
 py-xarray-tensorstore
 py-xattr
+py-xcdat
 py-xdot
 py-xenv
 py-xesmf
 py-xgboost
+py-xgcm
 py-xhistogram
 py-xlrd
 py-xlsxwriter
@@ -6196,7 +6306,6 @@ py-xmltodict
 py-xonsh
 py-xopen
 py-xpyb
-py-xrootdpyfs
 py-xskillscore
 py-xtb
 py-xvfbwrapper
@@ -6243,7 +6352,6 @@ python
 python-venv
 q-e-sirius
 qb3
-qbank
 qca
 qcachegrind
 qcat
@@ -6285,6 +6393,7 @@ quantum-espresso
 quartz
 qucs
 quda
+quest
 quickjs
 quicksilver
 quo-vadis
@@ -6821,7 +6930,6 @@ r-jquerylib
 r-jsonify
 r-jsonlite
 r-kableextra
-r-kegg-db
 r-kegggraph
 r-keggrest
 r-kernlab
@@ -7135,6 +7243,7 @@ r-readr
 r-readxl
 r-reams
 r-recipes
+r-reformulas
 r-registry
 r-rematch
 r-rematch2
@@ -7508,6 +7617,7 @@ redundans
 reframe
 regale
 regcm
+regenie
 regtools
 relax
 relion
@@ -7516,6 +7626,7 @@ rempi
 rename
 rendercheck
 renderproto
+repeatafterme
 repeatmasker
 repeatmodeler
 repeatscout
@@ -7619,6 +7730,7 @@ rtax
 rtmpdump
 ruby
 ruby-asciidoctor
+ruby-charlock-holmes
 ruby-erubis
 ruby-gist
 ruby-gnuplot
@@ -7658,6 +7770,7 @@ samrai
 samtools
 samurai
 sandbox
+sandia-micro-benchmarks
 sartre
 sarus
 satsuma2
@@ -7693,6 +7806,7 @@ scitokens-cpp
 scnlib
 scons
 scorec-core
+scorecard
 scorep
 scorpio
 scotch
@@ -7753,9 +7867,9 @@ sherpa
 shiro
 shocklibs
 shoremap
-shortbred
 shortstack
 showfont
+shred
 shtools
 shuffile
 sicer2
@@ -7777,10 +7891,9 @@ simsipm
 simul
 simulationio
 sina
-singularity
+singular-factory
 singularity-eos
 singularity-hpc
-singularity-legacy
 singularityce
 sio
 sionlib
@@ -7819,7 +7932,6 @@ soapdenovo2
 socat
 soci
 sofa-c
-sollve
 sollya
 solr
 somatic-sniper
@@ -7838,10 +7950,11 @@ sp
 spaceranger
 spack
 spack-configs-dav-sdk
+spack-configs-facilities
+spack-configs-tools-sdk
 spades
 span-lite
 spark
-sparrow
 sparse
 sparsehash
 sparskit
@@ -7941,7 +8054,6 @@ superlu
 superlu-dist
 superlu-mt
 supermagic
-supernova
 surfer
 survey
 sw4
@@ -7994,9 +8106,11 @@ tb-lmto
 tbl2asn
 tblite
 tcl
+tcl-bwidget
 tcl-itcl
 tcl-tcllib
 tcl-tclxml
+tcl-togl
 tclap
 tcoffee
 tcpdump
@@ -8009,6 +8123,7 @@ teckit
 tecplot
 telegraf
 telocal
+tempestextremes
 tempestremap
 templight
 templight-tools
@@ -8017,9 +8132,9 @@ tengine
 tensorflow-serving-client
 tensorpipe
 termcap
+terminalimageviewer
 tesseract
 test-drive
-testdfsio
 tests-sos
 testu01
 tetgen
@@ -8077,7 +8192,10 @@ toml-f
 toml11
 tomlplusplus
 topaz
+topaz-3dem
+topcom
 tophat
+torch-scatter
 torque
 totalview
 toybox
@@ -8113,6 +8231,7 @@ trnascan-se
 trompeloeil
 truchas
 tskit
+tsne-cuda
 tulip
 tumbler
 turbine
@@ -8217,7 +8336,6 @@ vigra
 vim
 vir-simd
 virtualgl
-virtuoso
 visit
 visit-cgns
 visit-ffp
@@ -8234,12 +8352,6 @@ volk
 voms
 voropp
 votca
-votca-csg
-votca-csg-tutorials
-votca-csgapps
-votca-ctp
-votca-tools
-votca-xtp
 vpfft
 vpic
 vsearch
@@ -8324,6 +8436,7 @@ xcmiscproto
 xcmsdb
 xcompmgr
 xconsole
+xcrysden
 xcursor-themes
 xcursorgen
 xdbedizzy
@@ -8426,7 +8539,6 @@ xsbench
 xscope
 xsd
 xsdk
-xsdk-examples
 xset
 xsetmode
 xsetpointer
@@ -8498,4 +8610,4 @@ zuo
 zycore-c
 zydis
 zziplib
-==> 8499 packages
+==> 8611 packages

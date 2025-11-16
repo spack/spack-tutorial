@@ -1,106 +1,129 @@
 $ spack find -ldf
+-- linux-ubuntu22.04-x86_64 / no compilers ----------------------
+rpw3buk gcc@11.4.0
+
+vjnqll7 glibc@2.35
+
+
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
-xm5va4z tcl@8.6.12
-rwnqbli	    compiler-wrapper@1.0
-epwvtix	    glibc@2.35
-4gp5ttd	    gmake@4.4.1
-oc4qy2f	    llvm@14.0.0
-bzi3xc7	    zlib-ng@2.0.7
+jtvri57 tcl@8.6.17
+ntccuj2	    compiler-wrapper@1.0
+qg7qyaz	    glibc@2.35
+ufbescp	    gmake@4.4.1
+ntkvysy		gcc@10.5.0
+ahapkrs		gcc-runtime@10.5.0
+qr2e4rd	    llvm@14.0.0
+wbmduay	    zlib-ng@2.0.7
 
-bzi3xc7 zlib-ng@2.0.7
-rwnqbli	    compiler-wrapper@1.0
-epwvtix	    glibc@2.35
-4gp5ttd	    gmake@4.4.1
-oc4qy2f	    llvm@14.0.0
+wbmduay zlib-ng@2.0.7
+ntccuj2	    compiler-wrapper@1.0
+qg7qyaz	    glibc@2.35
+ufbescp	    gmake@4.4.1
+ntkvysy		gcc@10.5.0
+ahapkrs		gcc-runtime@10.5.0
+qr2e4rd	    llvm@14.0.0
 
-rdf7ff3 zlib-ng@2.2.4
-rwnqbli	    compiler-wrapper@1.0
-epwvtix	    glibc@2.35
-4gp5ttd	    gmake@4.4.1
-oc4qy2f	    llvm@14.0.0
+um7p6tr zlib-ng@2.0.7
+ntccuj2	    compiler-wrapper@1.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
+ml7cem5		gcc@11.4.0
+nokfxva		gcc-runtime@11.4.0
+qr2e4rd	    llvm@14.0.0
+
+ct2r7xm zlib-ng@2.2.4
+ntccuj2	    compiler-wrapper@1.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
+ml7cem5		gcc@11.4.0
+nokfxva		gcc-runtime@11.4.0
+qr2e4rd	    llvm@14.0.0
 
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@10.5.0 --------------
-f53jcgx zlib-ng@2.2.4
-rwnqbli	    compiler-wrapper@1.0
-7w652un	    gcc@10.5.0
-ekeebbi	    gcc-runtime@10.5.0
-epwvtix	    glibc@2.35
-haeogmc	    gmake@4.4.1
+updxeye zlib-ng@2.2.4
+ntccuj2	    compiler-wrapper@1.0
+ntkvysy	    gcc@10.5.0
+ahapkrs	    gcc-runtime@10.5.0
+qg7qyaz	    glibc@2.35
+ufbescp	    gmake@4.4.1
 
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-gbhibag tcl@8.6.12
-rwnqbli	    compiler-wrapper@1.0
-j7ykyvm	    gcc@11.4.0
-3c5xh7d	    gcc-runtime@11.4.0
-epwvtix	    glibc@2.35
-5vb6e4b	    gmake@4.4.1
-yq5p6pl	    zlib-ng@2.0.7  cflags=-O3
+x74vmgr tcl@8.6.17
+ntccuj2	    compiler-wrapper@1.0
+ml7cem5	    gcc@11.4.0
+nokfxva	    gcc-runtime@11.4.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
+qlavhjb	    zlib-ng@2.0.7  cflags=-O3
 
-6wkjgx5 tcl@8.6.12
-rwnqbli	    compiler-wrapper@1.0
-j7ykyvm	    gcc@11.4.0
-3c5xh7d	    gcc-runtime@11.4.0
-epwvtix	    glibc@2.35
-5vb6e4b	    gmake@4.4.1
-g7ixtqy	    zlib-ng@2.2.4
+tsq4fjj tcl@8.6.17
+ntccuj2	    compiler-wrapper@1.0
+ml7cem5	    gcc@11.4.0
+nokfxva	    gcc-runtime@11.4.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
+zk6kesh	    zlib-ng@2.2.4
 
-yq5p6pl zlib-ng@2.0.7  cflags=-O3
-rwnqbli	    compiler-wrapper@1.0
-j7ykyvm	    gcc@11.4.0
-3c5xh7d	    gcc-runtime@11.4.0
-epwvtix	    glibc@2.35
-5vb6e4b	    gmake@4.4.1
+qlavhjb zlib-ng@2.0.7  cflags=-O3
+ntccuj2	    compiler-wrapper@1.0
+ml7cem5	    gcc@11.4.0
+nokfxva	    gcc-runtime@11.4.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
 
-g7ixtqy zlib-ng@2.2.4
-rwnqbli	    compiler-wrapper@1.0
-j7ykyvm	    gcc@11.4.0
-3c5xh7d	    gcc-runtime@11.4.0
-epwvtix	    glibc@2.35
-5vb6e4b	    gmake@4.4.1
-
-
--- linux-ubuntu22.04-x86_64_v3 / %c=clang@14.0.0 ----------------
-4gp5ttd gmake@4.4.1
-rwnqbli	    compiler-wrapper@1.0
-epwvtix	    glibc@2.35
-oc4qy2f	    llvm@14.0.0
+zk6kesh zlib-ng@2.2.4
+ntccuj2	    compiler-wrapper@1.0
+ml7cem5	    gcc@11.4.0
+nokfxva	    gcc-runtime@11.4.0
+qg7qyaz	    glibc@2.35
+4obn7cg	    gmake@4.4.1
 
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
-haeogmc gmake@4.4.1
-rwnqbli	    compiler-wrapper@1.0
-7w652un	    gcc@10.5.0
-ekeebbi	    gcc-runtime@10.5.0
-epwvtix	    glibc@2.35
+ufbescp gmake@4.4.1
+ntccuj2	    compiler-wrapper@1.0
+ntkvysy	    gcc@10.5.0
+ahapkrs	    gcc-runtime@10.5.0
+qg7qyaz	    glibc@2.35
 
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-5vb6e4b gmake@4.4.1
-rwnqbli	    compiler-wrapper@1.0
-j7ykyvm	    gcc@11.4.0
-3c5xh7d	    gcc-runtime@11.4.0
-epwvtix	    glibc@2.35
+vsq3oi3 gmake@4.4.1
+ntccuj2	    compiler-wrapper@1.0
+rpw3buk	    gcc@11.4.0
+qmbrryi	    gcc-runtime@11.4.0
+vjnqll7	    glibc@2.35
+
+4obn7cg gmake@4.4.1
+ntccuj2	    compiler-wrapper@1.0
+ml7cem5	    gcc@11.4.0
+nokfxva	    gcc-runtime@11.4.0
+qg7qyaz	    glibc@2.35
 
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
-rwnqbli compiler-wrapper@1.0
+ntccuj2 compiler-wrapper@1.0
 
-7w652un gcc@10.5.0
+ntkvysy gcc@10.5.0
 
-j7ykyvm gcc@11.4.0
+ml7cem5 gcc@11.4.0
 
-ekeebbi gcc-runtime@10.5.0
-7w652un	    gcc@10.5.0
-epwvtix	    glibc@2.35
+ahapkrs gcc-runtime@10.5.0
+ntkvysy	    gcc@10.5.0
+qg7qyaz	    glibc@2.35
 
-3c5xh7d gcc-runtime@11.4.0
-j7ykyvm	    gcc@11.4.0
-epwvtix	    glibc@2.35
+qmbrryi gcc-runtime@11.4.0
+rpw3buk	    gcc@11.4.0
+vjnqll7	    glibc@2.35
 
-epwvtix glibc@2.35
+nokfxva gcc-runtime@11.4.0
+ml7cem5	    gcc@11.4.0
+qg7qyaz	    glibc@2.35
 
-oc4qy2f llvm@14.0.0
+qg7qyaz glibc@2.35
 
-==> 18 installed packages
+qr2e4rd llvm@14.0.0
+
+==> 22 installed packages
