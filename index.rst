@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `International Conference on Parallel Processing 2025 (54th ICPP) <https://icpp2025.sdsc.edu/program>`_ September 8, 2025.
-The event was full day in-person tutorial..
+It was last presented at the `The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC25) <https://sc25.conference-program.com/presentation/?id=tut176&sess=sess276>`_ November 17, 2025.
+The event was full day in-person tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -26,9 +26,9 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 :download:`Download Slides <_static/slides/spack-icpp25-tutorial-slides.pdf>`.
 
-**Full citation:** Alec Scott, Kathleen Shea, Caetano Melone.
+**Full citation:** Todd Gamblin, Greg Becker, Alec Scott, Kathleen Shea, Caetano Melone, Phil Sakievich.
 Managing HPC Software Complexity with Spack.
-International Conference on Parallel Processing 2025 (54th ICPP), San Diego, California, September 8, 2025.
+The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC25), Saint Louis, Missouri, November 17, 2025.
 
 .. _video:
 
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:icpp25
-   $ docker run -it ghcr.io/spack/tutorial:icpp25
+   $ docker pull ghcr.io/spack/tutorial:sc25
+   $ docker run -it ghcr.io/spack/tutorial:sc25
 
 to start using the container.
 You should now be ready to run through our demo scripts:
