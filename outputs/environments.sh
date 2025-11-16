@@ -103,7 +103,11 @@ example environments/concretize-f-1 "spack concretize --force"
 example --tee environments/incremental-1 "spack env activate --temp"
 spack env activate --temp
 example environments/incremental-1 "spack install --add python"
-example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
+
+# v1.1: Spack concretizer regression causes the following command to hang
+# seemingly indefinitely. (Have tested waiting 1h 15m before giving up.)
+# example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
+
 example environments/incremental-2 "spack add py-numpy@1.20"
 example environments/incremental-2 "spack concretize -f"
 spack env deactivate
