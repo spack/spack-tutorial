@@ -103,6 +103,6 @@ example basics/install-gcc-12.1.0   "spack install gcc@12"
 
 example basics/compilers-2           "spack compilers"
 
-example basics/spec-zziplib          "spack spec zziplib"
+example basics/spec-zziplib          "spack spec zziplib %gcc@12"
 
 echo y | example basics/compiler-uninstall       'spack uninstall gcc@12'
