@@ -150,8 +150,10 @@ Develop specs are listed in their own ``develop`` section inside the ``spack.yam
 The mechanics of how this section is used to enforce develpoment are as follows:
 
 1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
-2. Any specs selected in step 1 receive a ``dev_path=`` variant. This variant tells Spack where to find the source code for the spec.
-3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
+2. Any specs selected in step 1 receive a ``dev_path=`` variant.
+   This variant tells Spack where to find the source code for the spec.
+3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
+   Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
 If the environment is already concretized ``spack develop`` performs step 1 and 2 insitu and updates the ``spack.lock`` file unless the ``--no-modify-concrete-specs`` option is passed.
 If ``--no-modify-concrete-specs`` is passed, the environment is not yet concretized, or needs to be futher changed to satisfy the develop specs (i.e. change version of the package) then selection of develop specs and assignment of ``dev_path`` are handled by the concretizer.
@@ -217,35 +219,44 @@ We will use this as an opportunity to introduce another ``spack develop`` featur
    :language: console
 
 ``spack develop --recursive`` can only be used with a concrete environment.
-When called Spack traces the graph from the supplied develop spec to every root in the graph that transitivley depends on the develop package.
-Using ``--recursive`` can be very powerful wehn developing applications deep in a graph.
+When called Spack traces the graph from the supplied develop spec to every root in the graph that transitively depends on the develop package.
+Using ``--recursive`` can be very powerful when developing applications deep in a graph.
 In this case our development point is very close to the root spec so we could have called ``spack develop macsio`` and gotten the same result.
 
 Pre-configuring development environments
 ----------------------------------------
 
-So far all of our calls to ``spack develop`` have been on a concretized environment, and we have allowed spack to automatically update the build specs for us.
+So far all of our calls to ``spack develop`` have been on a concretized environment, and we have allowed Spack to automatically update the build specs for us.
 If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
-This will require you to force concretize an environment to have the develop specs take affect.
+Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
+
+Examples of where we might want to use this feature are:
+- The package we wish to develop is repeated in our environment and we need to be more selective.
+- We want to mark a develop spec that doesn't exist yet in the environment.
+
+We will show an example of the latter, and how to update the local source if you decide to change the version.
+Let's say we plan to extend our environment to develop the ``nekbone`` package.
 
 .. literalinclude:: outputs/dev/develop-6.out
    :language: console
 
-This example is to show a few gotchas with the ``spack develop`` command
+Admittedly, this example is a bit contrived and is primarily to show a few gotchas with the ``spack develop`` command
 
 * You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
   ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
   This is because develop specs are not concretization constraints but rather criteria for adding the ``dev_path=`` variant to existing spec.
 * Spack needs to know the version of the dev package so it can supply the correct flags for the package's build system.
   If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
+* The source code located at the spec's ``dev_path`` is the users responsibility to manage.
+  Spack does provide an initial clone of the source code, but it makes no guarantees or additional verification of the source beyond that.
+  Users can manage the code locally via a version control system like ``git``, or can trigger a re-stage by calling ``spack develop --force``.
 
-If we really wanted to change to developing ``macsio@develop`` we need to change the root spec in the environment and then reconcretize.
 
 Sharing development environments
 --------------------------------
 
 Using development workflows also lets us ship our whole development process to another developer on the team.
-They can simply take our spack.yaml, create a new environment, and use this to replicate our build process.
+They can simply take our ``spack.yaml``, create a new environment, and use this to replicate our build process.
 For example, we'll make another development environment here.
 
 .. literalinclude:: outputs/dev/otherdevel.out

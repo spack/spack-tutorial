@@ -42,13 +42,9 @@ example dev/develop-4 "spack install"
 example dev/develop-5 "spack develop --recursive scr"
 example dev/develop-5 "spack find -cv macsio"
 
-example dev/develop-6 "# This time let's add the version"
-example dev/develop-6 "spack change macsio@develop"
-example dev/develop-6 "spack concretize -f"
-example dev/develop-6 "spack develop macsio@develop"
-example dev/develop-6 "spack find -cv macsio"
-example dev/develop-6 "spack concretize -f"
-example dev/develop-6 "spack find -cv macsio"
+example dev/develop-6 "spack develop nekbone"
+example dev/develop-6 "# Not the verison we wanted. This time lets add a version"
+example dev/develop-6 "spack develop --force nekbone@17.0"`
 
 example dev/otherdevel "cd ~"
 cd ~ || exit
