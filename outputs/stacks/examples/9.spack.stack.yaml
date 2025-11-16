@@ -45,6 +45,7 @@ spack:
         - gcc
         exclude:
         - '%gcc@11.4.0'
+        - '%gcc-runtime@11.4.0'
         all:
           environment:
             set:
