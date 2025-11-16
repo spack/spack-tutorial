@@ -1,11 +1,9 @@
-$ spack develop scr@3.1.0
-==> Cloning source code for scr@=3.1.0
-==> Fetching https://mirror.spack.io/_source-cache/archive/ca/ca1f37c84e0ff7a307e68f213c8cc868974d7fb30f16826853a711c7c3a55ffa.tar.gz
-    [100%]   61.27 MB @	 125.1 MB/s
-$ grep -3 develop: spack.yaml
-  packages:
-    all:
-      variants: ~fortran
-  develop:
-    scr:
-      spec: scr@=3.1.0
+$ spack develop scr
+==> Cloning source code for scr@=2.0.0
+==> Fetching https://mirror.spack.io/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
+    [100%]  955.92 KB @	  87.6 MB/s
+==> Updating view at /home/spack/devel-env/.spack-env/view
+$ spack config blame develop
+---				     develop:
+/home/spack/devel-env/spack.yaml:16    scr:
+/home/spack/devel-env/spack.yaml:17	 spec: scr@=2.0.0

@@ -6,26 +6,26 @@ $ spack find
 [+] openmpi  [+] trilinos
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
-openblas@0.3.29	 openmpi@5.0.8	trilinos@16.1.0
+openblas@0.3.30	 openmpi@5.0.8	trilinos@16.1.0
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  curl@8.11.1     kokkos@4.5.01  ncurses@6.5	    openssl@3.4.1
-bison@3.8.2	     gettext@0.23.1  krb5@1.21.3    nghttp2@1.65.0  zlib-ng@2.2.4
-cmake@3.31.8	     hwloc@2.11.1    m4@1.4.20	    openssh@9.9p1   zstd@1.5.7
+berkeley-db@18.1.40  curl@8.15.0     hwloc@2.12.2  ncurses@6.5-20250705	 openssl@3.6.0
+bison@3.8.2	     flex@2.6.3	     krb5@1.21.3   nghttp2@1.48.0	 zlib-ng@2.0.7
+cmake@3.31.9	     gettext@0.23.1  m4@1.4.20	   openssh@9.9p1	 zstd@1.5.7
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5	  gmake@4.4.1		libsigsegv@2.14	  perl@5.40.0	 tar@1.35
-bzip2@1.0.8	  libedit@3.1-20240808	libtool@2.4.7	  pigz@2.8	 xz@5.6.3
-diffutils@3.10	  libevent@2.1.12	libxcrypt@4.4.38  pkgconf@2.3.0
-findutils@4.10.0  libiconv@1.18		libxml2@2.13.5	  pmix@5.0.5
-gdbm@1.23	  libpciaccess@0.17	numactl@2.0.18	  readline@8.2
+automake@1.16.5	  gmake@4.4.1		libsigsegv@2.14	  mbedtls@2.28.9  pmix@6.0.0
+bzip2@1.0.8	  libedit@3.1-20240808	libssh2@1.11.1	  numactl@2.0.18  prrte@4.0.0
+diffutils@3.12	  libevent@2.1.12	libtool@2.4.7	  perl@5.42.0	  readline@8.3
+findutils@4.10.0  libiconv@1.18		libxcrypt@4.4.38  pigz@2.8	  tar@1.35
+gdbm@1.25	  libpciaccess@0.17	libxml2@2.13.5	  pkgconf@2.5.1	  xz@5.6.3
 
 -- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
-kokkos-kernels@4.5.01
+kokkos@4.5.01  kokkos-kernels@4.5.01
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
 autoconf@2.72			    gcc@11.4.0		util-macros@1.20.1
-ca-certificates-mozilla@2025-05-20  gcc-runtime@11.4.0
+ca-certificates-mozilla@2025-08-12  gcc-runtime@11.4.0
 compiler-wrapper@1.0		    glibc@2.35
-==> 48 installed packages
+==> 52 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)

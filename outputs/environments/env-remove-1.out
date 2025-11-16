@@ -7,40 +7,42 @@ $ spack find
 [+] scr
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
-openblas@0.3.29	 openmpi@5.0.8	scr@2.0.0  trilinos@16.1.0
+openblas@0.3.30	 openmpi@5.0.8	scr@2.0.0  trilinos@16.1.0
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  expat@2.7.1     kokkos@4.5.01  ncurses@6.5	    python@3.13.5
-bison@3.8.2	     gettext@0.23.1  krb5@1.21.3    nghttp2@1.65.0  re2c@3.1
-cmake@3.31.8	     glib@2.82.5     libffi@3.4.8   ninja@1.12.1    texinfo@7.1
-curl@8.11.1	     gmp@6.3.0	     lz4@1.10.0	    openssh@9.9p1   zlib-ng@2.2.4
-elfutils@0.192	     hwloc@2.11.1    m4@1.4.20	    openssl@3.4.1   zstd@1.5.7
+berkeley-db@18.1.40  elfutils@0.193	    gmp@6.3.0	  ncurses@6.5-20250705	re2c@3.1
+bison@3.8.2	     expat@2.7.3	    hwloc@2.12.2  nghttp2@1.48.0	texinfo@7.2
+cmake@3.31.9	     flex@2.6.3		    krb5@1.21.3	  ninja@1.13.0		zlib-ng@2.0.7
+cmake@3.31.9	     gettext@0.23.1	    libffi@3.5.2  openssh@9.9p1		zstd@1.5.7
+curl@8.15.0	     glib@2.86.1	    lz4@1.10.0	  openssl@3.6.0
+curl@8.15.0	     glib-bootstrap@2.86.1  m4@1.4.20	  python@3.11.14
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@11.4.0 ----------
 libyogrt@1.35
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5	  libedit@3.1-20240808	libxml2@2.13.5	pmix@5.0.5
-bzip2@1.0.8	  libevent@2.1.12	lwgrp@1.0.6	readline@8.2
-diffutils@3.10	  libgcrypt@1.11.1	mpfr@4.2.1	slurm@23-11-1-1
-dtcmp@1.1.5	  libgpg-error@1.55	munge@0.5.15	sqlite@3.46.0
-findutils@4.10.0  libiconv@1.18		numactl@2.0.18	tar@1.35
-gawk@5.3.1	  libmd@1.1.0		pcre2@10.44	util-linux-uuid@2.41
-gdbm@1.23	  libpciaccess@0.17	pdsh@2.31	xz@5.6.3
-gmake@4.4.1	  libsigsegv@2.14	perl@5.40.0
-json-c@0.18	  libtool@2.4.7		pigz@2.8
-libbsd@0.12.2	  libxcrypt@4.4.38	pkgconf@2.3.0
+automake@1.16.5		      libedit@3.1-20240808  libxml2@2.13.5  pmix@6.0.0
+bzip2@1.0.8		      libevent@2.1.12	    lwgrp@1.0.6	    prrte@4.0.0
+diffutils@3.12		      libgcrypt@1.11.2	    mbedtls@2.28.9  readline@8.3
+dtcmp@1.1.5		      libgpg-error@1.55	    mpfr@4.2.1	    slurm@25-05-1-1
+findutils@4.10.0	      libiconv@1.18	    munge@0.5.15    sqlite@3.50.4
+gawk@5.3.1		      libmd@1.1.0	    numactl@2.0.18  tar@1.35
+gdbm@1.25		      libpciaccess@0.17	    pcre2@10.44	    util-linux-uuid@2.41
+gmake@4.4.1		      libsigsegv@2.14	    pdsh@2.31	    xz@5.6.3
+gobject-introspection@1.86.0  libssh2@1.11.1	    perl@5.42.0
+json-c@0.18		      libtool@2.4.7	    pigz@2.8
+libbsd@0.12.2		      libxcrypt@4.4.38	    pkgconf@2.5.1
 
 -- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
-kokkos-kernels@4.5.01
+kokkos@4.5.01  kokkos-kernels@4.5.01
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
 autoconf@2.72			    gcc-runtime@11.4.0	  py-wheel@0.45.1
 autoconf-archive@2023.02.20	    glibc@2.35		  python-venv@1.0
-ca-certificates-mozilla@2025-05-20  meson@1.7.0		  util-macros@1.20.1
+ca-certificates-mozilla@2025-08-12  meson@1.8.5		  util-macros@1.20.1
 compiler-wrapper@1.0		    py-pip@25.1.1
 gcc@11.4.0			    py-setuptools@80.9.0
-==> 81 installed packages
+==> 89 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)
 $ spack concretize
 ==> No new specs to concretize.
@@ -55,32 +57,35 @@ $ spack find
 openmpi@5.0.8  scr@2.0.0
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  expat@2.7.1     krb5@1.21.3   nghttp2@1.65.0  re2c@3.1
-bison@3.8.2	     gettext@0.23.1  libffi@3.4.8  ninja@1.12.1	   texinfo@7.1
-cmake@3.31.8	     glib@2.82.5     lz4@1.10.0	   openssh@9.9p1   zlib-ng@2.2.4
-curl@8.11.1	     gmp@6.3.0	     m4@1.4.20	   openssl@3.4.1   zstd@1.5.7
-elfutils@0.192	     hwloc@2.11.1    ncurses@6.5   python@3.13.5
+berkeley-db@18.1.40  gettext@0.23.1	    lz4@1.10.0		  python@3.11.14
+bison@3.8.2	     glib@2.86.1	    m4@1.4.20		  re2c@3.1
+cmake@3.31.9	     glib-bootstrap@2.86.1  ncurses@6.5-20250705  texinfo@7.2
+curl@8.15.0	     gmp@6.3.0		    nghttp2@1.48.0	  zlib-ng@2.0.7
+elfutils@0.193	     hwloc@2.12.2	    ninja@1.13.0	  zstd@1.5.7
+expat@2.7.3	     krb5@1.21.3	    openssh@9.9p1
+flex@2.6.3	     libffi@3.5.2	    openssl@3.6.0
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@11.4.0 ----------
 libyogrt@1.35
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5	  libedit@3.1-20240808	libxml2@2.13.5	pmix@5.0.5
-bzip2@1.0.8	  libevent@2.1.12	lwgrp@1.0.6	readline@8.2
-diffutils@3.10	  libgcrypt@1.11.1	mpfr@4.2.1	slurm@23-11-1-1
-dtcmp@1.1.5	  libgpg-error@1.55	munge@0.5.15	sqlite@3.46.0
-findutils@4.10.0  libiconv@1.18		numactl@2.0.18	tar@1.35
-gawk@5.3.1	  libmd@1.1.0		pcre2@10.44	util-linux-uuid@2.41
-gdbm@1.23	  libpciaccess@0.17	pdsh@2.31	xz@5.6.3
-gmake@4.4.1	  libsigsegv@2.14	perl@5.40.0
-json-c@0.18	  libtool@2.4.7		pigz@2.8
-libbsd@0.12.2	  libxcrypt@4.4.38	pkgconf@2.3.0
+automake@1.16.5		      libedit@3.1-20240808  libxml2@2.13.5  pmix@6.0.0
+bzip2@1.0.8		      libevent@2.1.12	    lwgrp@1.0.6	    prrte@4.0.0
+diffutils@3.12		      libgcrypt@1.11.2	    mbedtls@2.28.9  readline@8.3
+dtcmp@1.1.5		      libgpg-error@1.55	    mpfr@4.2.1	    slurm@25-05-1-1
+findutils@4.10.0	      libiconv@1.18	    munge@0.5.15    sqlite@3.50.4
+gawk@5.3.1		      libmd@1.1.0	    numactl@2.0.18  tar@1.35
+gdbm@1.25		      libpciaccess@0.17	    pcre2@10.44	    util-linux-uuid@2.41
+gmake@4.4.1		      libsigsegv@2.14	    pdsh@2.31	    xz@5.6.3
+gobject-introspection@1.86.0  libssh2@1.11.1	    perl@5.42.0
+json-c@0.18		      libtool@2.4.7	    pigz@2.8
+libbsd@0.12.2		      libxcrypt@4.4.38	    pkgconf@2.5.1
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
 autoconf@2.72			    gcc-runtime@11.4.0	  py-wheel@0.45.1
 autoconf-archive@2023.02.20	    glibc@2.35		  python-venv@1.0
-ca-certificates-mozilla@2025-05-20  meson@1.7.0		  util-macros@1.20.1
+ca-certificates-mozilla@2025-08-12  meson@1.8.5		  util-macros@1.20.1
 compiler-wrapper@1.0		    py-pip@25.1.1
 gcc@11.4.0			    py-setuptools@80.9.0
-==> 77 installed packages
+==> 83 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)

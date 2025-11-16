@@ -1,74 +1,74 @@
 $ spack concretize
 ==> Concretized 1 spec:
- -   fmxnit5  gcc@12.5.0~binutils+bootstrap~graphite~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  rwnqbli	  ^compiler-wrapper@1.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[+]  pptkbjb	  ^diffutils@3.10 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  kgw5nks	      ^libiconv@1.18 build_system=autotools libs:=shared,static arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  jxq6uva	  ^gawk@5.3.1~nls build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  vefpsal	      ^libsigsegv@2.14 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  skysn5p	      ^readline@8.2 build_system=autotools patches:=1ea4349,24f587b,3d9885e,5911a5b,622ba38,6c8adf8,758e2ec,79572ee,a177edc,bbf97f1,c7b45ff,e0013d9,e065038 arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[e]  j7ykyvm	  ^gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' arch=linux-ubuntu22.04-x86_64_v3
-[+]  3c5xh7d	  ^gcc-runtime@11.4.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]  epwvtix	  ^glibc@2.35 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  5vb6e4b	  ^gmake@4.4.1~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  zx3x4nm	  ^gmp@6.3.0+cxx build_system=autotools libs:=shared,static arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  5xgjgae	      ^autoconf@2.72 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  vorbe53	      ^automake@1.16.5 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  ypq2dye	      ^m4@1.4.20+sigsegv build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  l2jtwyu	  ^libtool@2.4.7 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  ga3qiej	      ^findutils@4.10.0 build_system=autotools patches:=440b954 arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  mkqx7bu	  ^mpc@1.3.1 build_system=autotools libs:=shared,static arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  abjn4ye	  ^mpfr@4.2.1 build_system=autotools libs:=shared,static patches:=3ec29a6 arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  u24n5ok	      ^autoconf-archive@2023.02.20 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
-[+]  nsqyer7	  ^perl@5.40.0+cpanm+opcode+open+shared+threads build_system=generic arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  k5bepow	      ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  vy2ggzh	      ^bzip2@1.0.8~debug~pic+shared build_system=generic arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  5yo63cn	      ^gdbm@1.23 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  z47kihj	  ^texinfo@7.1 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  soasbhm	      ^gettext@0.23.1+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  7mdlpgu		  ^libxml2@2.13.5~http+pic~python+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  ye5hcpf		  ^tar@1.35 build_system=autotools zip=pigz arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  prsofdp		      ^pigz@2.8 build_system=makefile arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  zeynpnj		  ^xz@5.6.3~pic build_system=autotools libs:=shared,static arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  u7sn2jt	      ^ncurses@6.5~symlinks+termlib abi=none build_system=autotools patches:=7a351bc arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  xoghzad		  ^pkgconf@2.3.0 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@11.4.0
-[+]  g7ixtqy	  ^zlib-ng@2.2.4+compat+new_strategies+opt+pic+shared build_system=autotools arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  bmaw6fn	  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@11.4.0
+ -   fmnvqo4  gcc@12.3.0~binutils+bootstrap~graphite~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  ntccuj2	  ^compiler-wrapper@1.0 build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3
+[+]  cih4xrz	  ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  qtepnkr	      ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  irhvzch	  ^gawk@5.3.1~nls build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  bs5ujst	      ^libsigsegv@2.14 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  c6d2zlj	      ^readline@8.3 build_system=autotools patches:=21f0a03 platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[e]  ml7cem5	  ^gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu22.04 target=x86_64_v3
+[+]  nokfxva	  ^gcc-runtime@11.4.0 build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3
+[e]  qg7qyaz	  ^glibc@2.35 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3
+[+]  4obn7cg	  ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  mj4re3l	  ^gmp@6.3.0+cxx build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  fgsf5ij	      ^autoconf@2.72 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3
+[+]  pzmnwzm	      ^automake@1.16.5 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  lxvpwti	      ^m4@1.4.20+sigsegv build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  yt7ajy4	  ^libtool@2.4.7 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  irvryts	      ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  sczvrku	  ^mpc@1.3.1 build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  m3nwalt	  ^mpfr@4.2.1 build_system=autotools libs:=shared,static patches:=3ec29a6 platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  7p7gq7u	      ^autoconf-archive@2023.02.20 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3
+[+]  62kt5y4	  ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  vdgigsw	      ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  x7t4naj	      ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  aq7qwy6	      ^gdbm@1.25 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  k6ygirs	  ^texinfo@7.2~xs build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  cakgj4n	      ^gettext@0.23.1+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  5trxrsw		  ^libxml2@2.13.5~http+pic~python+shared build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  lfgvgva		  ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  kaz756e		      ^pigz@2.8 build_system=makefile platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  yzaocbs		  ^xz@5.6.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  ncdxq3j	      ^ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  f4qiprw		  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
+[+]  qlavhjb	  ^zlib-ng@2.0.7 cflags=-O3 +compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[+]  foiizhd	  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
 
 $ spack install
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-rwnqblirwn5aenlmsbvsieo7mzw672ee
-[+] /usr (external glibc-2.35-epwvtixhoxdeufu6kbbrpaigv2p6iav4)
-[+] /usr (external gcc-11.4.0-j7ykyvm5ancnn5rt7f35ggs6hwoslo42)
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-3c5xh7dqudxmyorlsrsfmjyggqk57vnr
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-vefpsalwx43ol7ppom7svfbsfqv3jit4
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-k5bepowzfoxlz67vuctewwbxlrj5sgji
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-5vb6e4beeoff4jan2t7edfjyi3hf3p7g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-ga3qiejil4e74fukhmtwcq5vrvzgmwmk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-g7ixtqygrfip5uzt526b565dqxs6ze3x
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-zeynpnjapluctm4lxzuwo7en5jmdzt6c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-u7sn2jtlvafr3vqli4m7i7ysecwkwepd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-kgw5nkswdpf7k2itwhjwegwyszj3v56s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-vy2ggzhuzo7pav5clvz6dvamexpeaadk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-zx3x4nm3djw5jdqxcsimfpxykoxdijhj
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-bmaw6fn2i5mbbfujq6kf7bomodh4iudq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-l2jtwyuivfhutipzs462o4ny7ctu4f5c
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-prsofdph5zl75k54hjwgcr34lipeyuh5
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.2-skysn5ppmam2ipxq4zlzwjxm42kurky2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-7mdlpguaingjbgxrvtgjnv3y6372tofw
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/diffutils-3.10-pptkbjbkikngjuyusssjuvn2mqzl663q
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpfr-4.2.1-abjn4yec4cwckmwvwwtg45keufsqyhya
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-ye5hcpfjk5svng6s2sjj4n6huwokazfk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.23-5yo63cnvgytwmsoiwoilhfgnyaffncmz
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpc-1.3.1-mkqx7budcw2rpbdzo63hsoxhhszx366g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gawk-5.3.1-jxq6uva54usdixrtzlkwa6dxfaqeaeww
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-soasbhmurzckxvnvfcqm22jsegvmh4jv
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.40.0-nsqyer7nqsmv3ams4gk5mubo74maob3z
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/texinfo-7.1-z47kihjvhlc67ukoxtgtju72dcnhxn2z
-==> Fetching file:///mirror/blobs/sha256/21/210bde294ec907128aa196cee83edfee0dcd8338971388101e38683f7e03d13d
-    [100%]  641.04 MB @	 381.4 GB/s
-==> Extracting gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh from binary cache
-==> Wrote new spec file to /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh/lib/gcc/x86_64-pc-linux-gnu/12.5.0/specs
-==> gcc: Successfully installed gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
-  Search: 0.00s.  Fetch: 1.25s.	 Install: 12.57s.  Extract: 11.28s.  Relocate: 1.25s.  Total: 13.82s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh
-==> Installing gcc-12.5.0-fmxnit5ggu45byub6wlsuienth2dkboh [29/29]
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-ntccuj2fi3y7asqifeq3i4iylrbxakw2
+[+] /usr (external glibc-2.35-qg7qyazcn2fwrck5vgr3mxq3i4uxkhlo)
+[+] /usr (external gcc-11.4.0-ml7cem5pfeoluzbhb7jsiisemvoauaz5)
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-foiizhdg2mc4jdjtuddksbzvr64roxea
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.0.7-qlavhjbsgqyboovfvsultjdwzz5nvthw
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-irvrytslmleivpkraggqq5brluhluert
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-bs5ujst3rrdcbj3r726bekzjfdddck4w
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-qtepnkrdvqazp3jmfnheapckbemejrhq
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-vdgigswy4fvttrivbedl4cp7bl72esma
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-20250705-ncdxq3juvboefpavgmovg5rb5bx76ohz
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-x7t4najic2jb46srjiebkrf55utda3nl
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-kaz756eya6nj3ardls4b6aiaclkaux7i
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-yt7ajy4c3zwh2ks6dawvycaxrydjibel
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-c6d2zljdklrjdya4xy236brmpdonc2xo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/diffutils-3.12-cih4xrzw7ysoceclj2x33hdgo23nuvmk
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-yzaocbs7geczi5d7qyvmqwrxi4r7dvph
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmp-6.3.0-mj4re3lp3bqk56rx5yblhufkzpmppdsu
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.25-aq7qwy6yezwhtwdrsyqen65rmjmlth27
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-5trxrsws5dig3bf63uc4xzcbsywsqtjo
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-lfgvgvawnpdxxz7prdfn4vsfgtwruxjc
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpfr-4.2.1-m3nwaltjkwzqahxlfylauzm5nxkuk2ud
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.42.0-62kt5y4kl7uhwljviixr3m4dyf5vre7t
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-cakgj4ntlncc4zsgty5z6sa7f7mwvlt7
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gawk-5.3.1-irhvzcha2sysowm6prf7zkvjitpykaxd
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/mpc-1.3.1-sczvrkuwv7wbcfnejrzrwt5yzbuk5hog
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/texinfo-7.2-k6ygirswvbp5fb5ijcgwyfck6hax5xix
+==> Fetching file:///mirror/blobs/sha256/1f/1fc94cabbbd6e9c052ea3a10d368fcbd30d3b2c4f18da478323a5e354cec9596
+    [100%]  651.91 MB @	 141.3 GB/s
+==> Extracting gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc from binary cache
+==> Wrote new spec file to /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc/lib/gcc/x86_64-pc-linux-gnu/12.3.0/specs
+==> gcc: Successfully installed gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc
+  Search: 0.00s.  Fetch: 1.29s.	 Install: 12.70s.  Extract: 11.07s.  Relocate: 1.59s.  Total: 13.99s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc
+==> Installing gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc [29/29]

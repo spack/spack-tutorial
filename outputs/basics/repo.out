@@ -1,9 +1,9 @@
-$ spack repo update builtin --tag v2025.07.0
-remote: Enumerating objects: 23021, done.K
-remote: Counting objects: 100% (23021/23021), done.K
-remote: Compressing objects: 100% (11700/11700), done.K
-remote: Total 23021 (delta 3517), reused 16349 (delta 2441), pack-reused 0 (from 0)K
-Note: switching to 'v2025.07.0'.
+$ spack repo update builtin --tag v2025.11.0
+remote: Enumerating objects: 27728, done.K
+remote: Counting objects: 100% (27728/27728), done.K
+remote: Compressing objects: 100% (13954/13954), done.K
+remote: Total 27728 (delta 5407), reused 19862 (delta 3219), pack-reused 0 (from 0)K
+Note: switching to 'v2025.11.0'.
 
 You are in 'detached HEAD' state. You can look around, make experimental
 changes and commit them, and you can discard any commits you make in this
@@ -20,5 +20,5 @@ Or undo this operation with:
 
 Turn off this advice by setting config variable advice.detachedHead to false
 
-HEAD is now at 4b8bb351 turn off all hipblaslt dependents
+HEAD is now at 119680ae SPACK_CHECKOUT_VERSION: use associated spack release branch
 ==> builtin: Updated sucessfully.

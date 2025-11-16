@@ -1,20 +1,28 @@
 $ spack install zlib-ng %clang
-==> Fetching file:///mirror/blobs/sha256/c4/c4b11cd40034b34f52272a3f0fdcaf267f44f5548940861bfb4d1a2f5d09415f
-    [100%]  334.82 KB @	 694.9 MB/s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-rwnqblirwn5aenlmsbvsieo7mzw672ee
-[+] /usr (external glibc-2.35-epwvtixhoxdeufu6kbbrpaigv2p6iav4)
-[+] /usr (external llvm-14.0.0-oc4qy2fa3ev6uf3hrf5khutfgs6ogkup)
-==> Fetching file:///mirror/blobs/sha256/16/1657d5838e6a75a98841136715f6be66608f9af950e292ccb2df9de5f395f069
-    [100%]  359.81 KB @	 661.3 MB/s
-==> Extracting gmake-4.4.1-4gp5ttded7qxa26qdw4eohyaildrj54n from binary cache
-==> gmake: Successfully installed gmake-4.4.1-4gp5ttded7qxa26qdw4eohyaildrj54n
-  Search: 0.00s.  Fetch: 0.10s.	 Install: 0.05s.  Extract: 0.04s.  Relocate: 0.00s.  Total: 0.14s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-4gp5ttded7qxa26qdw4eohyaildrj54n
-==> Installing gmake-4.4.1-4gp5ttded7qxa26qdw4eohyaildrj54n [4/5]
-==> Fetching file:///mirror/blobs/sha256/a0/a09307053c27c996ebdecea3325064ee7123b8880d87b0bb9117ce03289e5d36
-    [100%]  237.49 KB @	 634.9 MB/s
-==> Extracting zlib-ng-2.2.4-rdf7ff3uwefab3p5ytw4djjvhh2us3rf from binary cache
-==> zlib-ng: Successfully installed zlib-ng-2.2.4-rdf7ff3uwefab3p5ytw4djjvhh2us3rf
-  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.00s.  Total: 0.02s
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-rdf7ff3uwefab3p5ytw4djjvhh2us3rf
-==> Installing zlib-ng-2.2.4-rdf7ff3uwefab3p5ytw4djjvhh2us3rf [5/5]
+==> Fetching file:///mirror/blobs/sha256/bf/bf065e8601fb3663d8426d27afc4ba2152b9439b6ecb166bb7b8728f2ae61257
+    [100%]  410.73 KB @	 725.7 MB/s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-ntccuj2fi3y7asqifeq3i4iylrbxakw2
+[+] /usr (external glibc-2.35-qg7qyazcn2fwrck5vgr3mxq3i4uxkhlo)
+[+] /usr (external gcc-11.4.0-ml7cem5pfeoluzbhb7jsiisemvoauaz5)
+[+] /usr (external llvm-14.0.0-qr2e4rdcbjmj4zokqhkstk3yitfyba7v)
+==> Fetching file:///mirror/blobs/sha256/cc/cc94a1eb6710d8556df7f38940e55a2496551b567ad5cbc6c1be80d24ad02c99
+    [100%]   10.48 MB @	 401.3 GB/s
+==> Extracting gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh from binary cache
+==> gcc-runtime: Successfully installed gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
+  Search: 0.00s.  Fetch: 0.18s.	 Install: 0.26s.  Extract: 0.23s.  Relocate: 0.03s.  Total: 0.43s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
+==> Installing gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh [5/7]
+==> Fetching file:///mirror/blobs/sha256/fd/fd27cb50518ba7449532809cf527a065fd7a84fae10042d1aa53b929899cc007
+    [100%]  462.31 KB @	 751.3 MB/s
+==> Extracting gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma from binary cache
+==> gmake: Successfully installed gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma
+==> Installing gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma [6/7]
+==> Fetching file:///mirror/blobs/sha256/be/be279bb783c2fc29d9943d4fa11aab2704e9c0114c91f2aabd882d16b36fa2c6
+    [100%]  240.79 KB @	 571.6 MB/s
+==> Extracting zlib-ng-2.2.4-ct2r7xmldphegkos5g43flc6lm2nltcd from binary cache
+==> zlib-ng: Successfully installed zlib-ng-2.2.4-ct2r7xmldphegkos5g43flc6lm2nltcd
+  Search: 0.00s.  Fetch: 0.01s.	 Install: 0.02s.  Extract: 0.01s.  Relocate: 0.01s.  Total: 0.03s
+[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-ct2r7xmldphegkos5g43flc6lm2nltcd
+==> Installing zlib-ng-2.2.4-ct2r7xmldphegkos5g43flc6lm2nltcd [7/7]
