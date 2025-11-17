@@ -42,8 +42,7 @@ example dev/develop-4 "spack install"
 example dev/develop-5 "spack develop --recursive scr"
 example dev/develop-5 "spack find -cv macsio"
 
-fake_example dev/develop-6 "spack develop scr build_type=Debug" "/bin/true"
-spack develop scr build_type=Debug
+example --expect-error dev/develop-6 "spack develop scr build_type=Debug"
 example dev/develop-6 "spack develop --no-modify-concrete-specs scr build_type=Debug"
 
 example dev/develop-7 "# Not the verison we wanted. This time lets add a version"
