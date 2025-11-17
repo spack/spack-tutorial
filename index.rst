@@ -18,8 +18,8 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/icpp25-tutorial-slide-preview.png
-   :target: _static/slides/spack-icpp25-tutorial-slides.pdf
+.. image:: tutorial/images/sc25-tutorial-slide-preview.png
+   :target: _static/slides/spack-sc25-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
