@@ -373,7 +373,7 @@ Spack can also use compilers built by Spack to compile later packages.
 .. literalinclude:: outputs/basics/compilers-2.out
    :language: spec
 
-Now ``gcc@12`` is immediately available to use. 
+Now ``gcc@12`` is immediately available to use.
 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec
