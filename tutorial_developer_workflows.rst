@@ -152,11 +152,12 @@ The mechanics of how this section is used to enforce develpoment are as follows:
 1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
 2. Any specs selected in step 1 receive a ``dev_path=`` variant.
    This variant tells Spack where to find the source code for the spec.
+   Adding the variant modifies the DAG hash of the spec and all of its downstream dependencies.
 3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
 4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
-If the environment is already concretized ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file unless the ``--no-modify-concrete-specs`` option is passed.
-If ``--no-modify-concrete-specs`` is passed, the environment is not yet concretized, or needs to be futher changed to satisfy the develop specs (i.e. change version of the package) then selection of develop specs and assignment of ``dev_path`` are handled by the concretizer.
+If the environment is already concretized ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
+If the environment is not yet concretized the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
 
 So how does Spack determine the value of the ``dev_path`` variant?
 By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
@@ -211,9 +212,10 @@ Multi-package development
 -------------------------
 
 You may have noticed that ``macsio`` is restaged and fully rebuilt each time we call ``spack install``.
-This is an unnecessary expense for cross package development.
-Luckily, Spack has tools to reduce this expense.
-We will use this as an opportunity to introduce another ``spack develop`` feature: the ``--recursive`` option.
+Usually developers do not want to fully rebuild the canonical source every time; either for performance or because they are co-developing the two packages.
+Spack does not limit how many packages can be developed so ``spack develop`` can be applied to any spec in our environment including ``macsio``.
+The ``--recursive`` option provides a convenient way to mark all downstream dependencies as develop specs.
+
 
 .. literalinclude:: outputs/dev/develop-5.out
    :language: console
@@ -230,11 +232,8 @@ So far all of our calls to ``spack develop`` have been on a concretized environm
 If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
 Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
 
-Examples of where we might want to use this feature are:
-- The package we wish to develop is repeated in our environment and we need to be more selective.
-- We want to mark a develop spec that doesn't exist yet in the environment.
-
-We will show an example of the latter, and how to update the local source if you decide to change the version.
+There are a limited set of use-cases where one might want to use this option.
+It can be useful for debugging unexpected behavior and For illustrative purposes We will show an example of adding a develop spec that is not yet in the environment, and how to update the local source if you decide to change the version.
 Let's say we plan to extend our environment to develop the ``nekbone`` package.
 
 .. literalinclude:: outputs/dev/develop-6.out
