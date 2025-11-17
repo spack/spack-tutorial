@@ -13,7 +13,7 @@ Module Files Tutorial
 This tutorial illustrates how Spack can be used to generate module files for the software that has been installed.
 Both hierarchical and non-hierarchical deployments will be discussed in detail and we will show how to customize the content and naming of each module file.
 
-At the end of the tutorial readers should have a clear understanding of:
+At the end of the tutorial, readers will have a clear understanding of:
 
 * What module files are and how they are used on HPC clusters
 * How Spack generates module files for the software it installs
@@ -178,7 +178,7 @@ For further details we refer to its `documentation <https://modules.readthedocs.
 """"
 Lmod
 """"
-Lmod is a module system written in Lua, originally created  at the "Texas Advanced Computing Center" (TACC) by Robert McLay.
+Lmod is a module system written in Lua, originally created at the Texas Advanced Computing Center (TACC) by Robert McLay.
 You can get it with:
 
 .. code-block:: spec
@@ -210,7 +210,7 @@ Modules vs ``spack load``
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You may have noticed that we used ``spack load`` in the :ref:`module_file_tutorial_prerequisites` section above.
-This is a built-in mechanism of Spack's -- it's designed so that users on a cluster or a laptop can quickly get a package into their path, and it understands Spack's spec syntax.
+This is a built-in mechanism of Spack -- it's designed so that users on a cluster or a laptop can quickly get a package into their path, and it understands Spack's spec syntax.
 It does *not* require modules, as Spack needs to work regardless of whether modules are set up on the system.
 
 As you might expect, you can see what is loaded via ``spack load`` using ``spack find``:
@@ -411,7 +411,7 @@ If you try to regenerate the module files now you will get an error:
 .. note::
    We try to check for errors up front!
 
-   In Spack we check for errors upfront whenever possible, so don't worry about your module files: as a name clash was detected nothing has been changed on disk.
+   In Spack we check for errors up front whenever possible, so don't worry about your module files: as a name clash was detected nothing has been changed on disk.
 
 The problem here is that without the hashes the four different flavors of ``netlib-scalapack`` map to the same module file name.
 We can change how the names are formatted to differentiate them:
@@ -859,7 +859,7 @@ Extend the default templates
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Let's assume one of our software is protected by group membership: allowed users belong to the same Linux group, and access is granted at the group level.
-Wouldn't it be nice if people that are not yet entitled to use it could receive a helpful message at module load time that tells them who to contact in your organization to be inserted in the group?
+Wouldn't it be nice if people who are not yet entitled to use it could receive a helpful message at module load time that tells them who to contact in your organization to be inserted in the group?
 
 To automate the generation of module files with such site-specific behavior we'll start by extending the list of locations where Spack looks for module files.
 Let's create the file ``${SPACK_ROOT}/etc/spack/config.yaml`` with the content:

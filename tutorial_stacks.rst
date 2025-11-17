@@ -181,7 +181,7 @@ Reusable definitions
 So far, we have seen how we can use spec matrices to generate cross-product specs from rows containing a list of constraints.
 A common situation you will encounter with large deployments is the necessity to add multiple matrices to the list of specs, that possibly share some of those rows.
 
-To reduce the amount of duplication needed in the manifest file, and thus the maintenance burden for people maintaining it, Spack allows to *define* lists of constraints under the ``definitions`` attribute, and expand them later when needed.
+To reduce the amount of duplication needed in the manifest file, and thus the maintenance burden, Spack allows to *define* lists of constraints under the ``definitions`` attribute, and expand them later when needed.
 Let's rewrite our manifest accordingly:
 
 .. literalinclude:: outputs/stacks/examples/3.spack.stack.yaml
@@ -220,7 +220,7 @@ Conditional definitions
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Spec list definitions can also be conditioned on a ``when`` clause.
-The ``when`` clause is a python conditional that is evaluated in a restricted environment.
+The ``when`` clause is a Python conditional that is evaluated in a restricted environment.
 The variables available in ``when`` clauses are:
 
 ================= ===========

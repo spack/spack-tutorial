@@ -181,7 +181,7 @@ Using Packages
 Spack environments provide a convenient way to use your installed packages by automatically making them available in your shell environment.
 This is accomplished through a feature called **environment views**.
 
-An environment view is a directory structure mirroring a standard linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in your Spack environment.
+An environment view is a directory structure mirroring a standard Linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in your Spack environment.
 When you activate an environment with ``spack env activate``, Spack automatically:
 
 * Prepends the view's ``bin`` directory to your ``PATH`` environment variable
