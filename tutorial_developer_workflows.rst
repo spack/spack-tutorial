@@ -155,7 +155,7 @@ The mechanics of how this section is used to enforce develpoment are as follows:
 3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
 4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
-If the environment is already concretized ``spack develop`` performs step 1 and 2 insitu and updates the ``spack.lock`` file unless the ``--no-modify-concrete-specs`` option is passed.
+If the environment is already concretized ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file unless the ``--no-modify-concrete-specs`` option is passed.
 If ``--no-modify-concrete-specs`` is passed, the environment is not yet concretized, or needs to be futher changed to satisfy the develop specs (i.e. change version of the package) then selection of develop specs and assignment of ``dev_path`` are handled by the concretizer.
 
 So how does Spack determine the value of the ``dev_path`` variant?
