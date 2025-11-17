@@ -140,7 +140,7 @@ Development iteration cycles
 
 Let's assume that ``scr`` has a bug, and we'd like to patch ``scr`` to find out what the problem is.
 First, we tell Spack that we'd like to check out the version of ``scr`` in our environment.
-In this case, it will be the 3.1.0 release that we want to write a patch for:
+In this case, it will be the 2.0.0 release that we want to write a patch for:
 
 .. literalinclude:: outputs/dev/develop-1.out
    :language: spec
@@ -191,8 +191,11 @@ If the file times are newer, it will rebuild ``scr`` and any other package that 
    :language: console
 
 Here, the build failed as expected.
-We can look at the output for the build in ``scr/spack-build-out.txt`` to find out why, or we can launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr -- bash``.
-If that's too much to remember, then sourcing ``scr/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
+We can look at the output for the build in the stage directory ``scr/build-linux-*/spack-build-out.txt`` to find out why.
+The ``build-linux-*`` directory inside the source tree is a symlink to the spec's stage directory where all the logs are stored.
+The full name of this directory can be found with ``spack location --stage scr`` or quickly navigated to with ``spack cd --stage scr``.
+We can also launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr -- bash``.
+If that's too much to remember, then sourcing ``scr/build-linux-*/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
 Now let's fix it and rebuild directly.
 
 .. literalinclude:: outputs/dev/develop-4.out
