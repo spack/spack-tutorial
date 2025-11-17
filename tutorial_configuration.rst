@@ -55,7 +55,7 @@ Configuration from the command line
 -----------------------------------
 
 You can run ``spack config blame [section]`` at any point in time to see what your current configuration is.
-If you omit the section, then spack will dump all the configurations settings to your screen.
+If you omit the section, then Spack will dump all the configuration settings to your screen.
 Let's go ahead and run this for the ``concretizer`` section.
 
 .. code-block:: console
@@ -248,7 +248,7 @@ We can do this by adding creating a toolchain config:
      - spec: '%fortran=gcc@11.4.0'
        when: '%fortran'
 
-We are essentially saying "use Clang for c/c++, and use GCC for Fortran".
+We are essentially saying "use Clang for C/C++, and use GCC for Fortran".
 You can use this new entry like so:
 
 .. code-block:: spec

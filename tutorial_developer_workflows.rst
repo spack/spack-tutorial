@@ -147,7 +147,7 @@ In this case, it will be the 2.0.0 release that we want to write a patch for:
 
 The ``spack develop`` command marks the package as being a "development" package based on the supplied ``develop spec``.
 Develop specs are listed in their own ``develop`` section inside the ``spack.yaml``.
-The mechanics of how this section is used to enforce develpoment are as follows:
+The mechanics of how this section is used to enforce development are as follows:
 
 1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
 2. Any specs selected in step 1 receive a ``dev_path=`` variant.
@@ -156,8 +156,8 @@ The mechanics of how this section is used to enforce develpoment are as follows:
 3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
 4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
-If the environment is already concretized ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
-If the environment is not yet concretized the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
+If the environment is already concretized, ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
+If the environment is not yet concretized, the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
 
 So how does Spack determine the value of the ``dev_path`` variant?
 By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
@@ -235,7 +235,7 @@ So far all of our calls to ``spack develop`` have been on a concretized environm
 If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
 Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
 
-There are a limited set of use-cases where one might want to use this option.
+There is a limited set of use-cases where one might want to use this option.
 Some example cases include:
 
 - Updating a develop spec before updating the environment to change a variant or version
