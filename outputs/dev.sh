@@ -42,9 +42,13 @@ example dev/develop-4 "spack install"
 example dev/develop-5 "spack develop --recursive scr"
 example dev/develop-5 "spack find -cv macsio"
 
-example dev/develop-6 "spack develop nekbone"
-example dev/develop-6 "# Not the verison we wanted. This time lets add a version"
-example dev/develop-6 "spack develop --force nekbone@17.0"`
+fake_example dev/develop-6 "spack develop scr build_type=Debug"
+spack develop scr build_type=Debug
+example dev/develop-6 "spack develop --no-modify-concrete-specs scr build_type=Debug"
+
+example dev/develop-7 "# Not the verison we wanted. This time lets add a version"
+example dev/develop-7 "spack develop --no-modify-concrete-specs scr@3.1.0 build_type=Debug"
+example dev/develop-7 "spack concretize --force"
 
 example dev/otherdevel "cd ~"
 cd ~ || exit

@@ -233,14 +233,24 @@ If we don't want Spack to update the concrete environment's specs we can pass th
 Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
 
 There are a limited set of use-cases where one might want to use this option.
-It can be useful for debugging unexpected behavior and For illustrative purposes We will show an example of adding a develop spec that is not yet in the environment, and how to update the local source if you decide to change the version.
-Let's say we plan to extend our environment to develop the ``nekbone`` package.
+Some example cases include:
+
+- Updating a develop spec before updating the environment to change a variant or version
+- Adding a develop spec that is not yet in the environment
+- Debugging unexpected behavior
+
+For illustrative purposes we will show an example of switching ``scr`` to a debug build via the ``build_type=Debug`` variant.
 
 .. literalinclude:: outputs/dev/develop-6.out
    :language: console
 
-The ``spack develop`` command only has any effect if the developed package appears in the environment, as a root or dependency.
-Some additional concerns to use the ``spack develop`` command  effectively:
+We see that naively updating the develops spec, resulted first in an error and then an undesired version change.
+To preserve the version and get the new variant added we run the following commands:
+
+.. literalinclude:: outputs/dev/develop-7.out
+   :language: console
+
+Some additional concerns to navigate for effective use of the ``spack develop`` command include:
 
 * ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
 * If the spec is not already concrete in the environment, you need to provide Spack a spec version so it can supply the correct flags for the package's build system.
