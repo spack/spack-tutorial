@@ -240,13 +240,12 @@ Let's say we plan to extend our environment to develop the ``nekbone`` package.
 .. literalinclude:: outputs/dev/develop-6.out
    :language: console
 
-Admittedly, this example is a bit contrived and is primarily to show a few gotchas with the ``spack develop`` command
+The ``spack develop`` command only has any effect if the developed package appears in the environment, as a root or dependency.
+Some additional concerns to use the ``spack develop`` command  effectively:
 
-* You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
-  ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
-  This is because develop specs are not concretization constraints but rather criteria for adding the ``dev_path=`` variant to existing spec.
-* Spack needs to know the version of the dev package so it can supply the correct flags for the package's build system.
-  If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
+* ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
+* If the spec is not already concrete in the environment, you need to provide Spack a spec version so it can supply the correct flags for the package's build system.
+* If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
 * The source code located at the spec's ``dev_path`` is the users responsibility to manage.
   Spack does provide an initial clone of the source code, but it makes no guarantees or additional verification of the source beyond that.
   Users can manage the code locally via a version control system like ``git``, or can trigger a re-stage by calling ``spack develop --force``.
