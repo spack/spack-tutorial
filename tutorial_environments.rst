@@ -373,10 +373,19 @@ So, adding specs to an environment at a later point in time will not cause exist
 Adding and installing specs incrementally leads to greedy concretization, meaning that the environment may have different package versions compared to an environment created all at once.
 
 When you first install ``python`` in an environment, Spack will pick a recent version.
-If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize:
+
 
 .. literalinclude:: outputs/environments/incremental-1.out
    :language: spec
+
+If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize:
+
+.. code-block:: spec
+
+   $ spack install --add py-numpy@1.20 2>&1 | tail -n1
+   internal_error("version weights must exist and be unique"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
+
+There is a performance bug in Spack that will cause the above command to hang, so there's no need to run it for this tutorial.
 
 The solution is to re-concretize the environment as a whole, which causes ``python`` to downgrade to a version compatible with ``py-numpy``:
 
