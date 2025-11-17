@@ -108,10 +108,9 @@ example environments/incremental-1 "spack install --add python"
 # seemingly indefinitely. (Have tested waiting 1h 15m before giving up.)
 # example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
 
-# v1.1: Spack failed to concretize the environment after adding py-numpy
-# https://github.com/spack/spack-tutorial/actions/runs/19397756937/job/55500422438?pr=501
-# example environments/incremental-2 "spack add py-numpy@1.20"
-# example environments/incremental-2 "spack concretize -f"
+# These commands should be fine, although we had a transient failure with them
+example environments/incremental-2 "spack add py-numpy@1.20"
+example environments/incremental-2 "spack concretize -f"
 
 spack env deactivate
 

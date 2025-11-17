@@ -1,6 +1,6 @@
 $ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-build-out.txt
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
-==> [2025-11-17-01:31:22.019137] '/home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-fgsf5ijzhnbaj2fqngm57aoe6civ72uz/bin/autoreconf' '--install' '--verbose' '--force'
+==> [2025-11-17-05:40:51.004682] '/home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-fgsf5ijzhnbaj2fqngm57aoe6civ72uz/bin/autoreconf' '--install' '--verbose' '--force'
 autoreconf: export WARNINGS=
 autoreconf: Entering directory '.'
 autoreconf: configure.ac: not using Gettext
@@ -43,13 +43,13 @@ autoreconf: 'config/config.sub' is updated
 autoreconf: 'config/config.guess' is updated
 autoreconf: Leaving directory '.'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2025-11-17-01:31:25.934651] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src'] ['configure']
-==> [2025-11-17-01:31:25.935485] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src'] ['configure']
-==> [2025-11-17-01:31:25.936034] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2025-11-17-01:31:25.956757] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2025-11-17-01:31:25.976759] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2025-11-17-01:31:25.996710] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "lt_cv_apple_cc_single_mod=no"]
-==> [2025-11-17-01:31:26.017380] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2'
+==> [2025-11-17-05:40:54.941364] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src'] ['configure']
+==> [2025-11-17-05:40:54.942190] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src'] ['configure']
+==> [2025-11-17-05:40:54.942708] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2025-11-17-05:40:54.962464] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2025-11-17-05:40:54.981616] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2025-11-17-05:40:55.000412] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure [replacing "lt_cv_apple_cc_single_mod=no"]
+==> [2025-11-17-05:40:55.022116] '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-7eebjmaajx5lz6xmhlntk5lk3he7yxp2'
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
