@@ -6,15 +6,15 @@ gcc@11.4.0  glibc@2.35
 mpich@4.3.2  openblas@0.3.30  openmpi@5.0.8  trilinos@16.1.0
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
-zlib-ng@2.0.7  zlib-ng@2.2.4
+zlib-ng@2.2.4
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  curl@8.15.0     gmp@6.3.0	   ncurses@6.5-20250705	 tcl@8.6.17
-bison@3.8.2	     curl@8.15.0     hwloc@2.12.2  nghttp2@1.48.0	 tcl@8.6.17
-cmake@3.31.9	     expat@2.7.3     hwloc@2.12.2  openssh@9.9p1	 texinfo@7.2
-cmake@3.31.9	     flex@2.6.3	     krb5@1.21.3   openssl@3.6.0	 zlib-ng@2.0.7
-cmake@3.31.9	     gettext@0.23.1  libffi@3.5.2  openssl@3.6.0	 zlib-ng@2.2.4
-curl@8.15.0	     gettext@0.23.1  m4@1.4.20	   python@3.14.0	 zstd@1.5.7
+berkeley-db@18.1.40  expat@2.7.3     hwloc@2.12.2	   openssh@9.9p1  texinfo@7.2
+bison@3.8.2	     flex@2.6.3	     krb5@1.21.3	   openssl@3.6.0  zlib-ng@2.0.7
+cmake@3.31.9	     gettext@0.23.1  libffi@3.5.2	   openssl@3.6.0  zlib-ng@2.2.4
+cmake@3.31.9	     gettext@0.23.1  m4@1.4.20		   python@3.14.0  zstd@1.5.7
+curl@8.15.0	     gmp@6.3.0	     ncurses@6.5-20250705  tcl@8.6.17
+curl@8.15.0	     hwloc@2.12.2    nghttp2@1.48.0	   tcl@8.6.17
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
 gmake@4.4.1
@@ -33,7 +33,7 @@ hdf5@1.14.6	  libssh2@1.11.1	pigz@2.8	  yaksa@0.4
 hdf5@1.14.6	  libtool@2.4.7		pigz@2.8
 
 -- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
-kokkos@4.5.01  kokkos@4.5.01  kokkos-kernels@4.5.01  kokkos-kernels@4.5.01
+kokkos@4.5.01  kokkos-kernels@4.5.01
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
 autoconf@2.72			    gcc@10.5.0		glibc@2.35
@@ -41,4 +41,4 @@ autoconf@2.72			    gcc@11.4.0		llvm@14.0.0
 autoconf-archive@2023.02.20	    gcc-runtime@10.5.0	util-macros@1.20.1
 ca-certificates-mozilla@2025-08-12  gcc-runtime@11.4.0
 compiler-wrapper@1.0		    gcc-runtime@11.4.0
-==> 99 installed packages
+==> 94 installed packages
