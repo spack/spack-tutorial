@@ -83,7 +83,7 @@ example basics/uninstall-zlib "spack uninstall -y zlib-ng %gcc@10"
 example basics/find-lf-zlib   "spack find -lf zlib-ng"
 
 zlib_hash="$(spack find --format '{hash:3}' zlib-ng@2.0.7 %clang)"
-example --expect-error basics/uninstall-needed "spack uninstall zlib-ng/$zlib_hash"
+example --expect-error basics/uninstall-needed "spack uninstall -y zlib-ng/$zlib_hash"
 example basics/uninstall-r-needed "spack uninstall -y -R zlib-ng/$zlib_hash"
 
 example --expect-error basics/uninstall-ambiguous "spack uninstall trilinos"
