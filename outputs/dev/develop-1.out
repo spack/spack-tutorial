@@ -1,9 +1,19 @@
 $ spack develop scr
 ==> Cloning source code for scr@=2.0.0
 ==> Fetching https://mirror.spack.io/_source-cache/archive/47/471978ae0afb56a20847d3989b994fbd680d1dea21e77a5a46a964b6e3deed6b.tar.gz
-    [100%]  955.92 KB @	 123.3 MB/s
+    [100%]  955.92 KB @	  81.0 MB/s
 ==> Updating view at /home/spack/devel-env/.spack-env/view
 $ spack config blame develop
 ---				     develop:
 /home/spack/devel-env/spack.yaml:16    scr:
 /home/spack/devel-env/spack.yaml:17	 spec: scr@=2.0.0
+$ spack find -cv scr
+==> In environment /home/spack/devel-env
+==> 1 root specs
+-- no arch / no compilers ---------------------------------------
+ -  macsio+scr
+
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
+ -   scr@2.0.0+dtcmp~fortran~ipo+libyogrt async_api=NONE build_system=cmake build_type=Release cache_base=/dev/shm cntl_base=/dev/shm copy_config=none dev_path=/home/spack/devel-env/scr file_lock=FLOCK generator=make resource_manager=SLURM scr_config=scr.conf
+==> 0 installed packages
+==> 1 concretized package to be installed

@@ -45,6 +45,7 @@ spack:
         - gcc
         exclude:
         - '%gcc@11.4.0'
+        - 'autoconf'
         all:
           environment:
             set:

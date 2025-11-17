@@ -25,7 +25,9 @@ example stacks/setup-2 "spack install"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^openmpi"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^mpich"
 
-example --expect-error stacks/unify-1 "spack concretize"
+# Can't be concretized due to unify: true, but not worth showing because it's slow and leads to
+# an "internal concretizer error" that confuses users.
+# example --expect-error stacks/unify-1 "spack concretize"
 
 example stacks/unify-2 "spack config get concretizer | grep unify"
 
@@ -104,17 +106,17 @@ module unload gcc
 # Need to write a work around in the tutorial to teach audience how
 # to deal with this.
 
-# cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
-# example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
+cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
+example stacks/modules-4 "spack module lmod refresh --delete-tree -y"
 
-# example --tee stacks/modules-5 "module load gcc"
-# module load gcc
-# example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
-# example --tee stacks/modules-5 "module av"
-# module load openmpi openblas netlib-scalapack
-# example --tee stacks/modules-5 "module load mpich"
-# module load mpich
-# example --tee stacks/modules-5 "module load netlib-lapack"
-# module load netlib-lapack
-# example --tee stacks/modules-5 "module purge"
-# module purge
+example --tee stacks/modules-5 "module load gcc"
+module load gcc
+example --tee stacks/modules-5 "module load openmpi openblas netlib-scalapack py-scipy"
+example --tee stacks/modules-5 "module av"
+module load openmpi openblas netlib-scalapack
+example --tee stacks/modules-5 "module load mpich"
+module load mpich
+example --tee stacks/modules-5 "module load netlib-lapack"
+module load netlib-lapack
+example --tee stacks/modules-5 "module purge"
+module purge

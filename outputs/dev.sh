@@ -21,9 +21,11 @@ example dev/setup-scr "# for now, disable fortran support in all packages"
 example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example dev/setup-scr "spack add macsio+scr"
 example dev/setup-scr "spack install"
+example dev/setup-scr "spack find -cv scr"
 
 example dev/develop-1 "spack develop scr"
 example dev/develop-1 "spack config blame develop"
+example dev/develop-1 "spack find -cv scr"
 
 example dev/develop-2 "spack install"
 
@@ -37,9 +39,15 @@ fake_example dev/develop-4 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\)|\1;|' scr/src/scr_copy.c | head -n 70
 example dev/develop-4 "spack install"
 
-example dev/develop-5 "# This time let's leave off the version"
-example dev/develop-5 "spack develop macsio"
-example dev/develop-5 "spack concretize -f"
+example dev/develop-5 "spack develop --recursive scr"
+example dev/develop-5 "spack find -cv macsio"
+
+example --expect-error dev/develop-6 "spack develop scr build_type=Debug"
+example dev/develop-6 "spack develop --no-modify-concrete-specs scr build_type=Debug"
+
+example dev/develop-7 "# Not the verison we wanted. This time lets add a version"
+example dev/develop-7 "spack develop --no-modify-concrete-specs scr@3.1.0 build_type=Debug"
+example dev/develop-7 "spack concretize --force"
 
 example dev/otherdevel "cd ~"
 cd ~ || exit

@@ -138,28 +138,31 @@ Now we are ready to begin work on the actual application.
 Development iteration cycles
 -----------------------------
 
-Let's assume that scr has a bug, and we'd like to patch scr to find out what the problem is.
-First, we tell Spack that we'd like to check out the version of scr that we want to work on.
-In this case, it will be the 3.1.0 release that we want to write a patch for:
+Let's assume that ``scr`` has a bug, and we'd like to patch ``scr`` to find out what the problem is.
+First, we tell Spack that we'd like to check out the version of ``scr`` in our environment.
+In this case, it will be the 2.0.0 release that we want to write a patch for:
 
 .. literalinclude:: outputs/dev/develop-1.out
    :language: spec
 
-The ``spack develop`` command marks the package as being a "development" package in the ``spack.yaml``.
-This adds a special ``dev_path=`` attribute to the spec for the package, so Spack remembers where the source code for this package is located.
-The develop command also downloads/checks out the source code for the package.
-By default, the source code is downloaded into a subdirectory of the environment.
-You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment.
+The ``spack develop`` command marks the package as being a "development" package based on the supplied ``develop spec``.
+Develop specs are listed in their own ``develop`` section inside the ``spack.yaml``.
+The mechanics of how this section is used to enforce develpoment are as follows:
 
-There are a few gotchas with the ``spack develop`` command
+1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
+2. Any specs selected in step 1 receive a ``dev_path=`` variant.
+   This variant tells Spack where to find the source code for the spec.
+   Adding the variant modifies the DAG hash of the spec and all of its downstream dependencies.
+3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
+4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
-* You often specify the package version manually when specifying a package as a dev package.
-  Spack needs to know the version of the dev package so it can supply the correct flags for the package's build system.
-  If a version is not supplied, then Spack will take the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
-* You should ensure a spec for the package you are developing appears in the DAG of at least one of the roots of the environment with the same version that you are developing.
-  ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
-  This is because develop specs are not concretization constraints but rather criteria for adding the ``dev_path=`` variant to existing spec.
-* You'll need to re-concretize the environment so that the version number and the ``dev_path=`` attributes are properly added to the cached spec in ``spack.lock``.
+If the environment is already concretized ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
+If the environment is not yet concretized the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
+
+So how does Spack determine the value of the ``dev_path`` variant?
+By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
+You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment or by passing the ``--path`` options when calling ``spack develop``.
+
 
 .. literalinclude:: outputs/dev/develop-conc.out
    :language: console
@@ -188,8 +191,11 @@ If the file times are newer, it will rebuild ``scr`` and any other package that 
    :language: console
 
 Here, the build failed as expected.
-We can look at the output for the build in ``scr/spack-build-out.txt`` to find out why, or we can launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr@2.0 -- bash``.
-If that's too much to remember, then sourcing ``scr/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
+We can look at the output for the build in the stage directory ``scr/build-linux-*/spack-build-out.txt`` to find out why.
+The ``build-linux-*`` directory inside the source tree is a symlink to the spec's stage directory where all the logs are stored.
+The full name of this directory can be found with ``spack location --stage scr`` or quickly navigated to with ``spack cd --stage scr``.
+We can also launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr -- bash``.
+If that's too much to remember, then sourcing ``scr/build-linux-*/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
 Now let's fix it and rebuild directly.
 
 .. literalinclude:: outputs/dev/develop-4.out
@@ -205,14 +211,63 @@ If your build system can take advantage of the previously compiled object files 
 - If your package uses CMake with the typical ``cmake`` / ``build`` / ``install`` build stages, you'll get iterative builds for free with Spack because CMake doesn’t modify the filetime on the ``CMakeCache.txt`` file if your cmake flags haven't changed.
 - If your package uses autoconf, then rerunning the typical ``autoreconf`` stage typically modifies the filetime of ``config.h``, which can trigger a cascade of rebuilding.
 
-Multiple packages can also be marked as develop.
-If we were co-developing ``macsio``, we could run
+Multi-package development
+-------------------------
+
+You may have noticed that ``macsio`` is restaged and fully rebuilt each time we call ``spack install``.
+Usually developers do not want to fully rebuild the canonical source every time; either for performance or because they are co-developing the two packages.
+Spack does not limit how many packages can be developed so ``spack develop`` can be applied to any spec in our environment including ``macsio``.
+The ``--recursive`` option provides a convenient way to mark all downstream dependencies as develop specs.
+
 
 .. literalinclude:: outputs/dev/develop-5.out
    :language: console
 
+``spack develop --recursive`` can only be used with a concrete environment.
+When called Spack traces the graph from the supplied develop spec to every root in the graph that transitively depends on the develop package.
+Using ``--recursive`` can be very powerful when developing applications deep in a graph.
+In this case our development point is very close to the root spec so we could have called ``spack develop macsio`` and gotten the same result.
+
+Pre-configuring development environments
+----------------------------------------
+
+So far all of our calls to ``spack develop`` have been on a concretized environment, and we have allowed Spack to automatically update the build specs for us.
+If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
+Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
+
+There are a limited set of use-cases where one might want to use this option.
+Some example cases include:
+
+- Updating a develop spec before updating the environment to change a variant or version
+- Adding a develop spec that is not yet in the environment
+- Debugging unexpected behavior
+
+For illustrative purposes we will show an example of switching ``scr`` to a debug build via the ``build_type=Debug`` variant.
+
+.. literalinclude:: outputs/dev/develop-6.out
+   :language: console
+
+We see that naively updating the develops spec, resulted first in an error and then an undesired version change.
+To preserve the version and get the new variant added we run the following commands:
+
+.. literalinclude:: outputs/dev/develop-7.out
+   :language: console
+
+Some additional concerns to navigate for effective use of the ``spack develop`` command include:
+
+* ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
+* If the spec is not already concrete in the environment, you need to provide Spack a spec version so it can supply the correct flags for the package's build system.
+* If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
+* The source code located at the spec's ``dev_path`` is the users responsibility to manage.
+  Spack does provide an initial clone of the source code, but it makes no guarantees or additional verification of the source beyond that.
+  Users can manage the code locally via a version control system like ``git``, or can trigger a re-stage by calling ``spack develop --force``.
+
+
+Sharing development environments
+--------------------------------
+
 Using development workflows also lets us ship our whole development process to another developer on the team.
-They can simply take our spack.yaml, create a new environment, and use this to replicate our build process.
+They can simply take our ``spack.yaml``, create a new environment, and use this to replicate our build process.
 For example, we'll make another development environment here.
 
 .. literalinclude:: outputs/dev/otherdevel.out
@@ -225,6 +280,7 @@ When we're done developing, we simply tell Spack that it no longer needs to keep
 .. literalinclude:: outputs/dev/wrapup.out
    :language: console
 
+----------------
 Workflow Summary
 ----------------
 
@@ -232,6 +288,7 @@ Use the ``spack develop`` command with an environment to make a reproducible bui
 Spack will set up all the dependencies for you and link all your packages together.
 Within a development environment, ``spack install`` works similarly to ``make`` in that it will check file times to rebuild the minimum number of Spack packages necessary to reflect the changes to your build.
 
+-------------------------
 Optional: Tips and Tricks
 -------------------------
 
