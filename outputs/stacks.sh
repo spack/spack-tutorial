@@ -25,7 +25,9 @@ example stacks/setup-2 "spack install"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^openmpi"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^mpich"
 
-example --expect-error stacks/unify-1 "spack concretize"
+# Can't be concretized due to unify: true, but not worth showing because it's slow and leads to
+# an "internal concretizer error" that confuses users.
+# example --expect-error stacks/unify-1 "spack concretize"
 
 example stacks/unify-2 "spack config get concretizer | grep unify"
 
