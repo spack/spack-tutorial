@@ -9,7 +9,7 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC25) <https://sc25.conference-program.com/presentation/?id=tut176&sess=sess276>`_ November 17, 2025.
+It was last presented at the `SCA/HPCAsia 2026 Conference <https://www.sca-hpcasia2026.jp>`_ Conference on January 26, 2026.
 The event was full day in-person tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
@@ -19,16 +19,17 @@ You can use these materials to teach a course on Spack at your own site, or you 
 .. rubric:: Slides
 
 .. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/spack-sc25-tutorial-slides.pdf
+   :target: _static/slides/./spack-sca-hpcasia26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-icpp25-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/./spack-sca-hpcasia26-tutorial-slides.pdf>`.
 
-**Full citation:** Todd Gamblin, Greg Becker, Alec Scott, Kathleen Shea, Caetano Melone, Phil Sakievich.
+**Full citation:** Gregory Becker, Kathleen Shea, and Todd Gamblin.
 Managing HPC Software Complexity with Spack.
-The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC25), Saint Louis, Missouri, November 17, 2025.
+SCA/HPCAsia 2026.
+Osaka, Japan, January 26-29, 2026.
 
 .. _video:
 
