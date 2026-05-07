@@ -163,10 +163,6 @@ So how does Spack determine the value of the ``dev_path`` variant?
 By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
 You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment or by passing the ``--path`` options when calling ``spack develop``.
 
-
-.. literalinclude:: outputs/dev/develop-conc.out
-   :language: console
-
 Now that we have this done, we tell Spack to rebuild both ``scr`` and ``macsio`` by running ``spack install``.
 
 .. literalinclude:: outputs/dev/develop-2.out
