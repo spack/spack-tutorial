@@ -14,7 +14,7 @@ fi
 raw_outputs="${PROJECT}/raw"
 
 # used by scripts
-tutorial_branch=releases/v1.1
+tutorial_branch=releases/v1.1 # bump to v1.1.1
 packages_release=v2025.11.0
 
 print_status() {
