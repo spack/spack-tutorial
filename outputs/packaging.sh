@@ -29,7 +29,7 @@ example packaging/repo-config   "spack config get repos"
 
 # make the editor automatically exit
 export EDITOR=true
-example packaging/create     "spack create --name tutorial-mpileaks https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
+example packaging/create     "spack create --name tutorial-mpileaks --namespace $name https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 

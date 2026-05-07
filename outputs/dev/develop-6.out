@@ -1,0 +1,7 @@
+$ spack develop scr build_type=Debug
+==> Defaulting to highest version: scr@develop
+==> Skipping developer download of scr because its path /home/spack/devel-env/scr already exists.
+==> Error: Develop spec 'scr@=develop build_type=Debug' conflicts with concrete specs in environment. Try again with 'spack develop --no-modify-concrete-specs' and run 'spack concretize --force' to apply your changes.
+$ spack develop --no-modify-concrete-specs scr build_type=Debug
+==> Defaulting to highest version: scr@develop
+==> Skipping developer download of scr because its path /home/spack/devel-env/scr already exists.

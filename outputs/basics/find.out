@@ -1,4 +1,7 @@
 $ spack find
+-- linux-ubuntu22.04-x86_64 / no compilers ----------------------
+gcc@11.4.0  glibc@2.35
+
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=clang@14.0.0 ------------
 zlib-ng@2.0.7  zlib-ng@2.2.4
 
@@ -8,16 +11,13 @@ zlib-ng@2.2.4
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
 zlib-ng@2.0.7
 
--- linux-ubuntu22.04-x86_64_v3 / %c=clang@14.0.0 ----------------
-gmake@4.4.1
-
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@10.5.0 ------------------
 gmake@4.4.1
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-gmake@4.4.1
+gmake@4.4.1  gmake@4.4.1
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
-compiler-wrapper@1.0  gcc@11.4.0	  gcc-runtime@11.4.0  llvm@14.0.0
-gcc@10.5.0	      gcc-runtime@10.5.0  glibc@2.35
-==> 14 installed packages
+compiler-wrapper@1.0  gcc@11.4.0	  gcc-runtime@11.4.0  glibc@2.35
+gcc@10.5.0	      gcc-runtime@10.5.0  gcc-runtime@11.4.0  llvm@14.0.0
+==> 17 installed packages

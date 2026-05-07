@@ -21,9 +21,6 @@ spack config add "config:suppress_gpg_warnings:true"
 
 example basics/source-setup     ". share/spack/setup-env.sh"
 
-# pin repository to release
-example basics/repo            "spack repo update builtin --tag $packages_release"
-
 # spack list
 example basics/list            "spack list"
 example basics/list-py         "spack list 'py-*'"
@@ -103,6 +100,6 @@ example basics/install-gcc-12.1.0   "spack install gcc@12"
 
 example basics/compilers-2           "spack compilers"
 
-example basics/spec-zziplib          "spack spec zziplib"
+example basics/spec-zziplib          "spack spec zziplib %gcc@12"
 
 echo y | example basics/compiler-uninstall       'spack uninstall gcc@12'

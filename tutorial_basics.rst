@@ -23,7 +23,7 @@ Installing Spack
 ----------------
 
 Spack is ready to use immediately after installation.
-To get started, we simply clone the Spack repository and check out the latest release, v1.0.
+To get started, we simply clone the Spack repository and check out the latest release, v1.1.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -34,11 +34,6 @@ Spack has some nice command line integration tools, so instead of simply prepend
 .. code-block:: console
 
   $ . share/spack/setup-env.sh
-
-For this tutorial we'll also pin the packages repository to ``2025.07.0`` to make use of the binary caches later on by running:
-
-.. literalinclude:: outputs/basics/repo.out
-   :language: console
 
 And now we're good to go!
 
@@ -378,9 +373,7 @@ Spack can also use compilers built by Spack to compile later packages.
 .. literalinclude:: outputs/basics/compilers-2.out
    :language: spec
 
-Because this compiler is a newer version than the external compilers Spack knows about, it will be the new default compiler.
-We will discuss changing these defaults in a later section.
-We can check that this compiler is preferred by looking at the install plan for a package that isn't being reused from binary.
+Now ``gcc@12`` is immediately available to use.
 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec

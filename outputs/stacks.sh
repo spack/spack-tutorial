@@ -25,7 +25,9 @@ example stacks/setup-2 "spack install"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^openmpi"
 example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^mpich"
 
-example --expect-error stacks/unify-1 "spack concretize"
+# Can't be concretized due to unify: true, but not worth showing because it's slow and leads to
+# an "internal concretizer error" that confuses users.
+# example --expect-error stacks/unify-1 "spack concretize"
 
 example stacks/unify-2 "spack config get concretizer | grep unify"
 
@@ -68,7 +70,7 @@ example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
 example stacks/view-0       "ls ~/stacks/views/full/gcc/"
-example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.5.0-gcc-11.4.0"
+example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.3.0-gcc-11.4.0"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 
@@ -99,6 +101,10 @@ example --tee stacks/modules-3 "module av"
 
 example --tee stacks/modules-3 "module unload gcc"
 module unload gcc
+
+# TODO: Spack v1.1 compiler mixing causes name clashes in module files
+# Need to write a work around in the tutorial to teach audience how
+# to deal with this.
 
 cat "$project/stacks/examples/9.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/modules-4 "spack module lmod refresh --delete-tree -y"

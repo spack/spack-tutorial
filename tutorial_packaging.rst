@@ -301,7 +301,7 @@ Our options for proceeding are:
 Reviewing the Build Log
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-The build log might yield some clues so let's look at the contents of the ``spack-build-out.txt`` file at the path recommended above by our failed installation:
+The build log might yield some clues, so let's look at the contents of the ``spack-build-out.txt`` file at the path recommended above by our failed installation:
 
 .. literalinclude:: outputs/packaging/build-output.out
    :language: console
@@ -617,7 +617,7 @@ Spack has thousands of built-in packages that can serve as examples to guide the
 Multiple Build Systems
 ----------------------
 
-There are cases where software actively supports two build systems; changes build systems as it evolves; or needs different build systems on different platforms.
+There are cases where software actively supports two build systems, changes build systems as it evolves, or needs different build systems on different platforms.
 Spack allows you to write a single, concise recipe for these cases that generally require minor changes to the package structure.
 
 Let's take a look at a *simplified* package for ``uncrustify``, which is a source code beautifier.

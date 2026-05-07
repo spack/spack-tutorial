@@ -5,42 +5,40 @@ $ spack find
 [+] gcc@12	      [+] netlib-scalapack  [+] netlib-scalapack
 [+] netlib-scalapack  [+] netlib-scalapack
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.5.0 ------
-mpich@4.3.0  openblas@0.3.29  openmpi@5.0.8
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.3.0 ------
+mpich@4.3.2  openblas@0.3.30  openmpi@5.0.8
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  gettext@0.23.1  m4@1.4.20	  texinfo@7.1	 zstd@1.5.7
-gcc@12.5.0	     gmp@6.3.0	     ncurses@6.5  zlib-ng@2.2.4
+berkeley-db@18.1.40  gcc@12.3.0	     m4@1.4.20		   texinfo@7.2
+bison@3.8.2	     gettext@0.23.1  ncurses@6.5-20250705  zlib-ng@2.0.7
+flex@2.6.3	     gmp@6.3.0	     nghttp2@1.48.0	   zstd@1.5.7
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.5.0 --------------
-berkeley-db@18.1.40  expat@2.7.1     libffi@3.4.8    openssh@9.9p1  zstd@1.5.7
-bison@3.8.2	     gettext@0.23.1  m4@1.4.20	     openssl@3.4.1
-cmake@3.31.8	     hwloc@2.11.1    ncurses@6.5     python@3.13.5
-curl@8.11.1	     krb5@1.21.3     nghttp2@1.65.0  zlib-ng@2.2.4
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.3.0 --------------
+cmake@3.31.9  gettext@0.23.1  libffi@3.5.2	    openssl@3.6.0  zstd@1.5.7
+curl@8.15.0   hwloc@2.12.2    ncurses@6.5-20250705  python@3.14.0
+expat@2.7.3   krb5@1.21.3     openssh@9.9p1	    zlib-ng@2.2.4
 
--- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.5.0 ----------
+-- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.3.0 ----------
 netlib-lapack@3.12.1	netlib-scalapack@2.2.2	netlib-scalapack@2.2.2
 netlib-scalapack@2.2.2	netlib-scalapack@2.2.2
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5	  gawk@5.3.1	 libsigsegv@2.14  mpfr@4.2.1	 readline@8.2
-bzip2@1.0.8	  gdbm@1.23	 libtool@2.4.7	  perl@5.40.0	 tar@1.35
-diffutils@3.10	  gmake@4.4.1	 libxml2@2.13.5	  pigz@2.8	 xz@5.6.3
-findutils@4.10.0  libiconv@1.18	 mpc@1.3.1	  pkgconf@2.3.0
+automake@1.16.5	  gawk@5.3.1	 libsigsegv@2.14  mpfr@4.2.1	 readline@8.3
+bzip2@1.0.8	  gdbm@1.25	 libtool@2.4.7	  perl@5.42.0	 tar@1.35
+diffutils@3.12	  gmake@4.4.1	 libxml2@2.13.5	  pigz@2.8	 xz@5.6.3
+findutils@4.10.0  libiconv@1.18	 mpc@1.3.1	  pkgconf@2.5.1
 
--- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.5.0 ------------------
-automake@1.16.5	  libedit@3.1-20240808	libtool@2.4.7	  pmix@5.0.5
-bzip2@1.0.8	  libevent@2.1.12	libxcrypt@4.4.38  readline@8.2
-diffutils@3.10	  libfabric@2.2.0	libxml2@2.13.5	  sqlite@3.46.0
-findutils@4.10.0  libiconv@1.18		numactl@2.0.18	  tar@1.35
-gdbm@1.23	  libmd@1.1.0		perl@5.40.0	  util-linux-uuid@2.41
-gmake@4.4.1	  libpciaccess@0.17	pigz@2.8	  xz@5.6.3
-libbsd@0.12.2	  libsigsegv@2.14	pkgconf@2.3.0	  yaksa@0.3
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.3.0 ------------------
+automake@1.16.5	 libedit@3.1-20240808  libpciaccess@0.17  pigz@2.8	 tar@1.35
+bzip2@1.0.8	 libevent@2.1.12       libxcrypt@4.4.38	  pmix@6.0.0	 util-linux-uuid@2.41
+diffutils@3.12	 libfabric@2.3.1       libxml2@2.13.5	  prrte@4.0.0	 xz@5.6.3
+gdbm@1.25	 libiconv@1.18	       numactl@2.0.18	  readline@8.3	 yaksa@0.4
+libbsd@0.12.2	 libmd@1.1.0	       perl@5.42.0	  sqlite@3.50.4
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
 autoconf@2.72			    compiler-wrapper@1.0  glibc@2.35
 autoconf@2.72			    gcc@11.4.0		  util-macros@1.20.1
 autoconf-archive@2023.02.20	    gcc-runtime@11.4.0
-ca-certificates-mozilla@2025-05-20  gcc-runtime@12.5.0
-==> 91 installed packages
+ca-certificates-mozilla@2025-08-12  gcc-runtime@12.3.0
+==> 86 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)

@@ -4,56 +4,54 @@ $ spack find -l
 ==> In environment /home/spack/stacks
 ==> 5 root specs
 -- no arch / no compilers ---------------------------------------
-[+] fmxnit5 gcc@12	      [+] tl5f6ke netlib-scalapack  [+] nimjflq netlib-scalapack
-[+] igwbxq4 netlib-scalapack  [+] hk7ftpc netlib-scalapack
+[+] fmnvqo4 gcc@12	      [+] 3t7cajd netlib-scalapack  [+] yxweja4 netlib-scalapack
+[+] pglf7pu netlib-scalapack  [+] apaz22o netlib-scalapack
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.5.0 ------
-3bsqfey mpich@4.3.0  z3ynokz openblas@0.3.29  qdunbui openmpi@5.0.8
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@12.3.0 ------
+uaioo2h mpich@4.3.2  dwjd7g2 openblas@0.3.30  p2gmhau openmpi@5.0.8
 
 -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-k5bepow berkeley-db@18.1.40  zx3x4nm gmp@6.3.0	  z47kihj texinfo@7.1
-fmxnit5 gcc@12.5.0	     ypq2dye m4@1.4.20	  g7ixtqy zlib-ng@2.2.4
-soasbhm gettext@0.23.1	     u7sn2jt ncurses@6.5  bmaw6fn zstd@1.5.7
+vdgigsw berkeley-db@18.1.40  cakgj4n gettext@0.23.1	   ft5kpbd nghttp2@1.48.0
+n7yzkyl bison@3.8.2	     mj4re3l gmp@6.3.0		   k6ygirs texinfo@7.2
+gmhq65u flex@2.6.3	     lxvpwti m4@1.4.20		   qlavhjb zlib-ng@2.0.7
+fmnvqo4 gcc@12.3.0	     ncdxq3j ncurses@6.5-20250705  foiizhd zstd@1.5.7
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.5.0 --------------
-ikx4n4c berkeley-db@18.1.40  3e4kpzp hwloc@2.11.1    sgecnst openssh@9.9p1
-acgafis bison@3.8.2	     nm4trzq krb5@1.21.3     osxtmvl openssl@3.4.1
-yxjigtd cmake@3.31.8	     ddom6iu libffi@3.4.8    musqpuq python@3.13.5
-etcxzzk curl@8.11.1	     rpphs4i m4@1.4.20	     6xddq3y zlib-ng@2.2.4
-lfwqiuw expat@2.7.1	     56rxnkf ncurses@6.5     2jhx5gu zstd@1.5.7
-goyejxw gettext@0.23.1	     2v5o3ra nghttp2@1.65.0
+-- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@12.3.0 --------------
+4a7thjg cmake@3.31.9	onmo4bv krb5@1.21.3	      yvs3szq python@3.14.0
+zianoaa curl@8.15.0	s56v4gf libffi@3.5.2	      4tglvhv zlib-ng@2.2.4
+ikeoatl expat@2.7.3	ytk4y2k ncurses@6.5-20250705  fj5u5hm zstd@1.5.7
+3f5v73y gettext@0.23.1	lip7jtp openssh@9.9p1
+wkj6z6m hwloc@2.12.2	q4fenfo openssl@3.6.0
 
--- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.5.0 ----------
-xx23tbf netlib-lapack@3.12.1	hk7ftpc netlib-scalapack@2.2.2
-igwbxq4 netlib-scalapack@2.2.2	nimjflq netlib-scalapack@2.2.2
-tl5f6ke netlib-scalapack@2.2.2
+-- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.3.0 ----------
+rhz3uek netlib-lapack@3.12.1	apaz22o netlib-scalapack@2.2.2
+pglf7pu netlib-scalapack@2.2.2	yxweja4 netlib-scalapack@2.2.2
+3t7cajd netlib-scalapack@2.2.2
 
 -- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-vorbe53 automake@1.16.5	  kgw5nks libiconv@1.18	   prsofdp pigz@2.8
-vy2ggzh bzip2@1.0.8	  vefpsal libsigsegv@2.14  xoghzad pkgconf@2.3.0
-pptkbjb diffutils@3.10	  l2jtwyu libtool@2.4.7	   skysn5p readline@8.2
-ga3qiej findutils@4.10.0  7mdlpgu libxml2@2.13.5   ye5hcpf tar@1.35
-jxq6uva gawk@5.3.1	  mkqx7bu mpc@1.3.1	   zeynpnj xz@5.6.3
-5yo63cn gdbm@1.23	  abjn4ye mpfr@4.2.1
-5vb6e4b gmake@4.4.1	  nsqyer7 perl@5.40.0
+pzmnwzm automake@1.16.5	  qtepnkr libiconv@1.18	   kaz756e pigz@2.8
+x7t4naj bzip2@1.0.8	  bs5ujst libsigsegv@2.14  f4qiprw pkgconf@2.5.1
+cih4xrz diffutils@3.12	  yt7ajy4 libtool@2.4.7	   c6d2zlj readline@8.3
+irvryts findutils@4.10.0  5trxrsw libxml2@2.13.5   lfgvgva tar@1.35
+irhvzch gawk@5.3.1	  sczvrku mpc@1.3.1	   yzaocbs xz@5.6.3
+aq7qwy6 gdbm@1.25	  m3nwalt mpfr@4.2.1
+4obn7cg gmake@4.4.1	  62kt5y4 perl@5.42.0
 
--- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.5.0 ------------------
-jgeyxwq automake@1.16.5	      m2sseei libiconv@1.18	 qz3jy42 pkgconf@2.3.0
-3kql5yq bzip2@1.0.8	      bqguhkf libmd@1.1.0	 wqd5fdu pmix@5.0.5
-6lfrh36 diffutils@3.10	      j336pb5 libpciaccess@0.17	 lxvqq5o readline@8.2
-vhsfohm findutils@4.10.0      ffctxur libsigsegv@2.14	 brglstm sqlite@3.46.0
-cxbuzxk gdbm@1.23	      7z4rzcr libtool@2.4.7	 4do6jx7 tar@1.35
-xvxobm5 gmake@4.4.1	      qhnn6wr libxcrypt@4.4.38	 v2nef6x util-linux-uuid@2.41
-es3e2le libbsd@0.12.2	      f2wxsch libxml2@2.13.5	 3kvqody xz@5.6.3
-wspzmod libedit@3.1-20240808  naapp6h numactl@2.0.18	 5r6tuoo yaksa@0.3
-alldwq4 libevent@2.1.12	      txcbw3f perl@5.40.0
-atjn3er libfabric@2.2.0	      zia4xj2 pigz@2.8
+-- linux-ubuntu22.04-x86_64_v3 / %c=gcc@12.3.0 ------------------
+zmzk4bb automake@1.16.5	      g3zxoz6 libiconv@1.18	 76oyav4 pmix@6.0.0
+zom5syd bzip2@1.0.8	      cq4lpjp libmd@1.1.0	 zalt7cs prrte@4.0.0
+msusunh diffutils@3.12	      p7g23cj libpciaccess@0.17	 eyfbskp readline@8.3
+y5bsvao gdbm@1.25	      drjmmlw libxcrypt@4.4.38	 plzt2nd sqlite@3.50.4
+zb37a5t libbsd@0.12.2	      idam6zh libxml2@2.13.5	 wfarfth tar@1.35
+c5o6gvv libedit@3.1-20240808  t2nikrt numactl@2.0.18	 b4npzn6 util-linux-uuid@2.41
+fn26hil libevent@2.1.12	      jpuw66s perl@5.42.0	 643vviq xz@5.6.3
+7imejdf libfabric@2.3.1	      bs2taxm pigz@2.8		 7jn3viv yaksa@0.4
 
 -- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
-5xgjgae autoconf@2.72			    j7ykyvm gcc@11.4.0
-krgi7jf autoconf@2.72			    3c5xh7d gcc-runtime@11.4.0
-u24n5ok autoconf-archive@2023.02.20	    zubbt4y gcc-runtime@12.5.0
-s3bxsw4 ca-certificates-mozilla@2025-05-20  epwvtix glibc@2.35
-rwnqbli compiler-wrapper@1.0		    kbleacp util-macros@1.20.1
-==> 91 installed packages
+nzbffup autoconf@2.72			    ml7cem5 gcc@11.4.0
+fgsf5ij autoconf@2.72			    nokfxva gcc-runtime@11.4.0
+7p7gq7u autoconf-archive@2023.02.20	    pgwnyw7 gcc-runtime@12.3.0
+etqlnw5 ca-certificates-mozilla@2025-08-12  qg7qyaz glibc@2.35
+ntccuj2 compiler-wrapper@1.0		    hwxnwvm util-macros@1.20.1
+==> 86 installed packages
 ==> 0 concretized packages to be installed (show with `spack find -c`)
