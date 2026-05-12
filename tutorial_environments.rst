@@ -329,7 +329,7 @@ Change it to include the ``packages:mpi:require`` entry below:
 .. note::
 
    We introduce this here to show you how environment configuration can affect concretization.
-   Configuration options are covered in much more detail in the :ref:`configuration tutorial <configs-tutorial>`.
+   Configuration options are covered in much more detail in the configuration tutorial.
 
 
 We've only scratched the surface here by requiring a specific ``mpi`` provider for packages depending on ``mpi``.

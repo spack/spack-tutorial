@@ -4,9 +4,9 @@
 
 .. _spack-101:
 
-========================
-Spack Tutorial — CINECA26
-========================
+==========================
+Spack Tutorial CINECA 2026
+==========================
 
 3-day EasyBuild + EESSI + Spack tutorial/hackathon in Bologna (19–21 May 2026).
 In-person training/hackathon on EasyBuild, EESSI, and Spack, organised in collaboration with MaX EuroHPC Centre of Excellence.

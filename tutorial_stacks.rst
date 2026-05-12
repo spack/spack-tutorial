@@ -359,7 +359,7 @@ Module files
 Module files are another very popular way to use software on HPC systems.
 In this section we'll show how to configure and generate a hierarchical module structure, suitable for ``lmod``.
 
-A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
+A more in-depth tutorial, focused only on module files, can be found in the modules tutorial.
 There we discuss the general architecture of module file generation in Spack and we highlight differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
 
 Let's start by adding ``lmod`` to the software installed with the system compiler:
