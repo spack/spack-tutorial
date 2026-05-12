@@ -4,73 +4,22 @@
 
 .. _spack-101:
 
-===================
-Tutorial: Spack 101
-===================
+========================
+Spack Tutorial — CINECA26
+========================
 
-This is an introduction to Spack with lectures and live demos.
-It was last presented at the `SCA/HPCAsia 2026 Conference <https://www.sca-hpcasia2026.jp>`_ Conference on January 26, 2026.
-The event was full day in-person tutorial.
-
-You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
-
-.. _slides:
-
-.. rubric:: Slides
-
-.. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/./spack-sca-hpcasia26-tutorial-slides.pdf
-   :height: 72px
-   :align: left
-   :alt: Slide Preview
-
-:download:`Download Slides <_static/slides/./spack-sca-hpcasia26-tutorial-slides.pdf>`.
-
-**Full citation:** Gregory Becker, Kathleen Shea, and Todd Gamblin.
-Managing HPC Software Complexity with Spack.
-SCA/HPCAsia 2026.
-Osaka, Japan, January 26-29, 2026.
-
-.. _video:
-
-.. rubric:: Video
-
-For the last recorded video of this tutorial, see the `HPCIC Tutorial 2024 version <https://spack-tutorial.readthedocs.io/en/hpcic24/>`_.
+3-day EasyBuild + EESSI + Spack tutorial/hackathon in Bologna (19–21 May 2026).
+In-person training/hackathon on EasyBuild, EESSI, and Spack, organised in collaboration with MaX EuroHPC Centre of Excellence.
 
 .. _live-demos:
 
 .. rubric:: Live Demos
 
-We provide scripts that take you step-by-step through basic Spack tasks.
-They correspond to sections in the slides above.
-
-To run through the scripts, we provide the `spack/tutorial <https://ghcr.io/spack/tutorial>`_ container image.
-You can invoke
-
-.. code-block:: console
-
-   $ docker pull ghcr.io/spack/tutorial:sc25
-   $ docker run -it ghcr.io/spack/tutorial:sc25
-
-to start using the container.
-You should now be ready to run through our demo scripts:
-
-#. :ref:`basics-tutorial`
 #. :ref:`environments-tutorial`
-#. :ref:`configs-tutorial`
 #. :ref:`packaging-tutorial`
 #. :ref:`stacks-tutorial`
 #. :ref:`developer-workflows-tutorial`
 #. :ref:`binary-cache-tutorial`
-#. :ref:`spack-scripting-tutorial`
-
-Other sections from past tutorials are also available, although they may not be kept up-to-date as frequently:
-
-#. :ref:`modules-tutorial`
-#. :ref:`build-systems-tutorial`
-#. :ref:`advanced-packaging-tutorial`
-
-Full contents:
 
 .. toctree::
    :maxdepth: 2
@@ -80,21 +29,15 @@ Full contents:
 
 .. toctree::
    :maxdepth: 3
-   :caption: Tutorial
+   :caption: Day 1: Environments & Packaging
 
-   tutorial_basics
    tutorial_environments
-   tutorial_configuration
    tutorial_packaging
-   tutorial_stacks
-   tutorial_developer_workflows
-   tutorial_binary_cache
-   tutorial_scripting
 
 .. toctree::
    :maxdepth: 3
-   :caption: Additional sections
+   :caption: Day 2: CI/CD, Dev Workflows & Containers
 
-   tutorial_modules
-   tutorial_buildsystems
-   tutorial_advanced_packaging
+   tutorial_stacks
+   tutorial_developer_workflows
+   tutorial_binary_cache
