@@ -6,9 +6,9 @@
 
    and then set Spack up like this::
 
-       git clone --depth=2 --branch=releases/v1.1 https://github.com/spack/spack
+       git clone --depth=2 --branch=develop https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack repo update builtin --tag v2025.11.0
+       spack repo update builtin --commit 79fd9821dceebf719a4cb544ba67c3b2f39132ca
        spack tutorial -y
        spack bootstrap now
        spack compiler find

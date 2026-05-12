@@ -14,8 +14,8 @@ fi
 raw_outputs="${PROJECT}/raw"
 
 # used by scripts
-tutorial_branch=releases/v1.1
-packages_release=v2025.11.0
+spack_commit=83d07ab0079c16e7ca874466a41aac4978bd4cd3
+packages_commit=79fd9821dceebf719a4cb544ba67c3b2f39132ca
 
 print_status() {
     printf "\n%b: %s\n\n" "\033[1;35m$1\033[0m" "$2"
