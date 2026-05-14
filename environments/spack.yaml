@@ -1,0 +1,57 @@
+spack:
+  view: false
+  config:
+    install_tree:
+      root: /spack
+  concretizer:
+    unify: false
+  specs:
+  - group: compiler
+    specs:
+    - gcc@16 build_type=Release +profiled +strip
+  - group: gcc-15-specs
+    specs:
+    - quantum-espresso
+    - quantum-espresso +elpa
+    - quantum-espresso +elpa %elpa +openmp
+    - py-numpy
+    override:
+      packages:
+        c:
+          prefer: [gcc@15]
+        cxx:
+          prefer: [gcc@15]
+        fortran:
+          prefer: [gcc@15]
+  - group: gcc-16-specs
+    needs: [compiler]
+    specs:
+    - quantum-espresso %mpi=mpich
+    override:
+      packages:
+        c:
+          prefer: [gcc@16]
+        cxx:
+          prefer: [gcc@16]
+        fortran:
+          prefer: [gcc@16]
+  packages:
+    all:
+      target: [x86_64_v3]
+    python:
+      prefer: [+optimizations]
+    openblas:
+      prefer: [threads=openmp]
+    gcc:
+      externals:
+      - spec: gcc@15.2.0 languages:='c,c++,fortran'
+        prefix: /usr
+        extra_attributes:
+          compilers:
+            c: /usr/bin/gcc
+            cxx: /usr/bin/g++
+            fortran: /usr/bin/gfortran
+  mirrors:
+    local:
+      url: ./bc
+      signed: false
