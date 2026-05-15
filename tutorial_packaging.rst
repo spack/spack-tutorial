@@ -100,6 +100,88 @@ Installing the spec is immediate, since every dependency is available in ``/buil
    ...
    [+] zia4bn3 quantum-espresso@7.5 /root/spack/opt/spack/.../quantum-espresso-7.5-zia4bn3... (8s)
 
+-----------------------------------------
+Inspecting the recipe with ``spack info``
+-----------------------------------------
+
+Before opening the recipe in an editor, ``spack info`` shows a digested view of what the recipe declares.
+The output below is abbreviated; running the command in the container gives the full version.
+
+.. code-block:: console
+
+   $ spack info quantum-espresso
+   CMakePackage:   quantum-espresso
+
+   Description:
+       Quantum ESPRESSO is an integrated suite of Open-Source computer codes
+       for electronic-structure calculations and materials modeling at the
+       nanoscale. ...
+
+   Homepage: https://quantum-espresso.org
+
+   Preferred version:
+       7.5        https://gitlab.com/QEF/q-e/-/archive/qe-7.5/q-e-qe-7.5.tar.gz
+
+   Safe versions:
+       develop    [git] https://gitlab.com/QEF/q-e.git on branch develop
+       7.5        https://gitlab.com/QEF/q-e/-/archive/qe-7.5/q-e-qe-7.5.tar.gz
+       7.4.1      https://gitlab.com/QEF/q-e/-/archive/qe-7.4.1/...
+       ...
+
+   Variants:
+       build_system [cmake]   cmake, generic
+           Build systems supported by the package
+
+       mpi [true]             false, true
+           Builds with mpi support
+
+       openmp [true]          false, true
+           Enables OpenMP support
+
+       scalapack [true]       false, true
+         when +mpi
+           Enables scalapack support
+
+       elpa [false]           false, true
+         when +scalapack
+           Uses elpa as an eigenvalue solver
+
+       hdf5 [none]            none, parallel, serial
+           Orbital and density data I/O with HDF5
+       ...
+
+   Dependencies:
+       blas                   build, link
+       elpa                   build, link
+         when +elpa+openmp build_system=generic
+       elpa~openmp            build, link
+         when +elpa build_system=cmake
+       elpa~openmp            build, link
+         when +elpa~openmp build_system=generic
+       fftw-api@3             build, link
+       mpi                    build, link
+         when +mpi
+       scalapack              build, link
+         when +scalapack
+       ...
+
+Several things in this output are worth recognising before we open the file.
+
+Variants are listed with their default in square brackets and the set of allowed values to the right.
+Multi-valued variants like ``hdf5`` appear with the same syntax; their allowed values happen to be strings rather than booleans.
+
+Some variants carry a ``when`` clause: ``scalapack`` only exists ``when +mpi``, and ``elpa`` only exists ``when +scalapack``.
+A variant scoped this way is not a knob the user can always turn; it only becomes available when its parent variant is enabled.
+``build_system`` itself appears as a variant with two allowed values, which is why the concretized spec carries an explicit ``build_system=cmake``.
+
+The Dependencies block is organised similarly.
+The ``elpa`` dependency appears three times with different constraints, each guarded by a different ``when`` clause that combines Quantum ESPRESSO's own variants.
+This is the structure responsible for the surprising concretization in the next section.
+
+A general point worth keeping in mind while reading any Spack recipe: nearly everything is conditional.
+Variants exist only ``when`` some other variant is set; dependencies are pulled in only ``when`` they apply; patches are attached only ``when`` a specific version range and variant combination is selected; and ``build_system`` itself is just another variant the concretizer chooses.
+Most of the interesting behaviour of a recipe is encoded in those ``when`` clauses rather than in the unconditional statements at the top of the file.
+
 -------------------------
 Opening ``package.py``
 -------------------------
@@ -138,7 +220,7 @@ The top of the file maps fairly directly onto the spec line we saw above:
 A Spack recipe is a Python class whose body consists largely of **directives**: function-call-shaped declarations that the concretizer reads.
 Three of them are visible in the snippet above.
 
-The ``version(...)`` directive declares an installable version of the upstream software, and ``spack info quantum-espresso`` lists them all.
+The ``version(...)`` directive declares an installable version of the upstream software; the recipe carries one such directive for each release listed by ``spack info``.
 The concretizer picked ``7.5`` because it is the highest non-development tagged version and nothing in our manifest constrains the choice.
 The ``maintainers(...)`` and ``license(...)`` directives are metadata and do not influence the build.
 
@@ -218,8 +300,7 @@ The relevant block is the following:
 Reading the block from the outside in:
 
 The ``variant("elpa", default=False, ...)`` directive declares the ``+elpa`` / ``~elpa`` switch we just used.
-It is nested inside ``with when("+scalapack"):``, which means the variant only exists when Quantum ESPRESSO is built with ScaLAPACK.
-For this reason ``spack info quantum-espresso`` shows ``elpa`` only conditionally; it is not an unconditional knob.
+It is nested inside ``with when("+scalapack"):``, which is why ``spack info`` reported ``elpa`` only ``when +scalapack``: the variant only exists when Quantum ESPRESSO is built with ScaLAPACK.
 
 The ``with when("+elpa"):`` block scopes several directives to the case in which ELPA is enabled.
 Inside that scope, the recipe declares dependencies that are themselves conditioned on other variants of Quantum ESPRESSO:
