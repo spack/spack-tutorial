@@ -47,3 +47,43 @@ div.version-switch select:hover {
 .highlight .go {
   color: #333;
 }
+
+/* --- Landing page: day schedule cards --- */
+.day-card.container {
+  border: 1px solid var(--color-background-border);
+  border-radius: 0.5rem;
+  padding: 1rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.day-card .rubric {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.day-card dl {
+  margin-bottom: 0;
+}
+
+.day-card dt {
+  margin-top: 0.5rem;
+}
+
+.day-card dt:first-child {
+  margin-top: 0;
+}
+
+.day-card dd {
+  margin-left: 1.5rem;
+  margin-bottom: 0;
+}
+
+.day-card dd p {
+  margin-bottom: 0.25rem;
+}
+
+.day-card > p:last-child {
+  margin-bottom: 0;
+}
