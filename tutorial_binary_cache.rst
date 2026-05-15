@@ -10,10 +10,10 @@
 Binary Caches Tutorial
 ==================================
 
-In this section of the tutorial you will learn how to share Spack-built binaries across machines and users using **build caches**.
+This section covers how to share Spack-built binaries across machines and users using **build caches**.
 
-Spack supports a range of storage backends for build caches: an ordinary filesystem, Amazon S3, Google Cloud Storage, and any OCI-compatible container registry (Docker Hub, GitHub Packages, a local ``docker registry``, ...).
-We will start with a filesystem mirror that has been pre-populated for the workshop, and then move on to OCI registries, which have the additional benefit that the same artifacts can also be used as runnable container images.
+Spack supports a range of storage backends for build caches: an ordinary filesystem, Amazon S3, Google Cloud Storage, and any OCI-compatible container registry (Docker Hub, GitHub Packages, a local ``docker registry``, and so on).
+We begin with a filesystem mirror that has been pre-populated for the workshop, and then move on to OCI registries, which carry the additional property that the same artifacts can be used as runnable container images.
 
 .. note::
 
@@ -43,9 +43,10 @@ Because the workshop image is minimal, we start by cloning Spack into the contai
 A filesystem build cache: ``/buildcache``
 -------------------------------------------
 
-We will use ``quantum-espresso`` together with ``py-numpy`` as the running example: between them they pull in a representative slice of an HPC stack (``openmpi``, ``openblas``, ``netlib-scalapack``, ``fftw``, ``python``) plus a Python package.
+We use ``quantum-espresso`` together with ``py-numpy`` as the running example.
+Between them they pull in a representative slice of an HPC stack (``openmpi``, ``openblas``, ``netlib-scalapack``, ``fftw``, ``python``) together with a Python package.
 
-Create an environment directory and drop a ``spack.yaml`` into it:
+Create an environment directory and write a ``spack.yaml`` into it:
 
 .. code-block:: console
 
@@ -71,18 +72,19 @@ Create an environment directory and drop a ``spack.yaml`` into it:
          prefer: [gcc@15]
    EOF
 
-A few things worth pointing out in this manifest:
+Two things in this manifest are worth noting.
 
-* The ``mirrors`` section adds ``/buildcache`` as an *unsigned* mirror.
-  For a workshop cache this is fine; for production caches you typically do want GPG-signed binaries.
-* The ``packages:{c,cxx,fortran}:prefer`` keys steer the concretizer toward specs that already exist in the cache, so we get a fully reusable solution rather than a partial source build.
+The ``mirrors`` section adds ``/buildcache`` as an *unsigned* mirror.
+This is acceptable for a workshop cache; production caches should normally use GPG-signed binaries.
+
+The ``packages:{c,cxx,fortran}:prefer`` keys steer the concretizer toward specs that already exist in the cache, so that the concretization is fully reusable rather than a partial source build.
 
 .. note::
 
-   We talk about *mirrors* and *build caches* almost interchangeably, because every build cache is a binary mirror.
-   Source mirrors exist too, which we will not cover in this tutorial.
+   The terms *mirror* and *build cache* are used almost interchangeably, since every build cache is a binary mirror.
+   Source mirrors also exist but are not covered in this tutorial.
 
-Now install:
+Install the environment:
 
 .. code-block:: console
 
@@ -92,9 +94,9 @@ Now install:
    [+] zia4bn3 quantum-espresso@7.5 ... (7s)
 
 Both packages, and every transitive dependency, are fetched and relocated from ``/buildcache``; nothing is built from source.
-That is Spack's concretizer doing its job: given a buildcache, it prefers concrete specs for which binaries already exist.
+Given a build cache, the concretizer prefers concrete specs for which binaries already exist.
 
-Let's confirm the executables work via the environment's view:
+Confirm that the executables work through the environment's view:
 
 .. code-block:: console
 
@@ -113,11 +115,12 @@ Let's confirm the executables work via the environment's view:
 Setting up a local OCI build cache
 -------------------------------------------------
 
-So far we have *consumed* binaries from a build cache.
-Next we will *publish* binaries to one, using an **OCI container registry** as the backend.
+The previous section consumed binaries from a build cache.
+This section covers publishing binaries to one, using an **OCI container registry** as the backend.
 
-OCI registries are interesting because the *same* artifacts can be used both as a Spack build cache and as runnable container images.
-Most people associate OCI with Docker Hub, GitHub Container Registry (GHCR), Amazon ECR, etc., but for this tutorial we will run a registry **locally** in a separate Docker container, so we don't need to deal with authentication.
+OCI registries are useful in this role because the same artifacts can serve both as a Spack build cache and as runnable container images.
+OCI registries in common use include Docker Hub, GitHub Container Registry (GHCR), and Amazon ECR.
+For this tutorial we run a registry locally in a separate Docker container, which avoids authentication.
 
 In another terminal *on the host*, start the registry:
 
@@ -128,7 +131,7 @@ In another terminal *on the host*, start the registry:
 This is the official `registry image <https://hub.docker.com/_/registry>`_ from Docker Hub.
 It serves an empty OCI registry on ``http://localhost:5000``.
 
-Inside the tutorial container (which we started with ``--network host``), the registry is reachable on the same port.
+Inside the tutorial container, which was started with ``--network host``, the registry is reachable on the same port.
 Add it as a second mirror:
 
 .. code-block:: console
@@ -137,12 +140,12 @@ Add it as a second mirror:
 
 The URL has three parts:
 
-* ``oci+http://``: an OCI registry over plain HTTP (no TLS).
-  For a real remote registry you would use ``oci://`` (HTTPS).
+* ``oci+http://``: an OCI registry over plain HTTP, without TLS.
+  A remote registry would normally use ``oci://`` (HTTPS).
 * ``localhost:5000``: the registry's host and port.
-* ``/buildcache``: the *image name* under which Spack will publish all artifacts.
+* ``/buildcache``: the image name under which Spack publishes all artifacts.
 
-Your ``spack.yaml`` now has two mirrors:
+The manifest now contains two mirrors:
 
 .. code-block:: yaml
 
@@ -158,7 +161,7 @@ Your ``spack.yaml`` now has two mirrors:
 Pushing to the OCI build cache
 -------------------------------------
 
-Let's push the environment to the local registry:
+Push the environment to the local registry:
 
 .. code-block:: console
 
@@ -169,14 +172,15 @@ Let's push the environment to the local registry:
    ==> [37/38] Tagged py-numpy@2.4.4/6t26kli as localhost:5000/buildcache:py-numpy-2.4.4-6t26kli6wzzkm6jjfll6pjhtdfimsb7e.spack
    ==> [38/38] Tagged quantum-espresso@7.5/zia4bn3 as localhost:5000/buildcache:quantum-espresso-7.5-zia4bn3lvraagxfnu77ysgewykavwnsc.spack
 
-A few things to note:
+Two things about this invocation are worth noting.
 
-* We pass ``--without-build-dependencies`` because we installed Quantum ESPRESSO *from a binary cache*, so build-only dependencies like ``cmake`` or ``bison`` are not present on this machine.
-  Without the flag, Spack would complain that those packages are not installed.
-* Each spec gets its own image tag of the form ``<image>:<name>-<version>-<hash>.spack``.
-  The package hash makes the tag unique, which is exactly the property we need for content-addressed binary distribution.
+The ``--without-build-dependencies`` flag is passed because Quantum ESPRESSO was installed from a binary cache, so build-only dependencies like ``cmake`` or ``bison`` are not present on this machine.
+Without the flag, Spack would report that those packages are not installed.
 
-We can re-run the push and Spack will detect that nothing needs to be uploaded:
+Each spec receives its own image tag of the form ``<image>:<name>-<version>-<hash>.spack``.
+The package hash makes the tag unique, which is the property required for content-addressed binary distribution.
+
+Re-running the push detects that nothing needs to be uploaded:
 
 .. code-block:: console
 
@@ -189,7 +193,7 @@ We can re-run the push and Spack will detect that nothing needs to be uploaded:
 Reinstalling from the OCI build cache
 -------------------------------------------
 
-To prove that the OCI mirror actually works as a build cache, we can reinstall ``quantum-espresso`` with ``--overwrite``:
+To confirm that the OCI mirror functions as a build cache, reinstall ``quantum-espresso`` with ``--overwrite``:
 
 .. code-block:: console
 
@@ -199,37 +203,38 @@ To prove that the OCI mirror actually works as a build cache, we can reinstall `
    [ ] zia4bn3 quantum-espresso@7.5 relocating (1s)
    [+] zia4bn3 quantum-espresso@7.5 ... (7s)
 
-Two blobs are fetched per spec: a JSON manifest and the actual binary tarball.
-OCI registries are content-addressed, which is why we see ``sha256:...`` hashes rather than human-readable filenames.
+Two blobs are fetched per spec: a JSON manifest and the binary tarball.
+OCI registries are content-addressed, hence the ``sha256:...`` identifiers rather than human-readable filenames.
 
 ----------------------------------
 Creating runnable container images
 ----------------------------------
 
-So far the OCI registry has only been used as a Spack build cache.
-But because the artifacts are valid OCI images, we can also pull them with ``docker``.
+So far the OCI registry has been used only as a Spack build cache.
+Since the artifacts are also valid OCI images, they can be pulled directly with ``docker``.
 
-Let's try the obvious thing first, *without* a base image:
+Consider what happens when running an image without a base image:
 
 .. code-block:: console
 
    $ docker run --rm localhost:5000/buildcache:quantum-espresso-7.5-zia4bn3lvraagxfnu77ysgewykavwnsc.spack pw.x
    exec /root/spack/opt/spack/linux-x86_64_v3/quantum-espresso-7.5-.../bin/pw.x: no such file or directory
 
-It fails: the layers we pushed contain the Spack-built artifacts, but not the host's ``glibc``, which Spack always treats as an external package.
-Without a base image there is no ``/lib`` at all in the container, hence the cryptic error.
+The run fails because the layers we pushed contain the Spack-built artifacts but not the host's ``glibc``, which Spack always treats as an external package.
+Without a base image the container has no ``/lib`` directory at all, which produces the error above.
 
-The fix is to push again with ``--base-image`` pointing at a minimal distribution that provides a compatible ``glibc``:
+The resolution is to push again with ``--base-image`` pointing at a minimal distribution that provides a compatible ``glibc``:
 
 .. code-block:: console
 
    $ spack -e . buildcache push --force --without-build-dependencies \
          --base-image ubuntu:26.04 my-registry
 
-The base image's ``libc`` must be at least as new as the one used at build time, or the binaries will fail at runtime with errors like ``version `GLIBC_2.43' not found``.
-The distribution itself does not have to match. Try ``archlinux:latest`` for instance, which ships a recent enough ``glibc`` while giving you a very different userland (``pacman`` instead of ``apt``, etc.).
+The base image's ``libc`` must be at least as new as the one used at build time, otherwise the binaries fail at runtime with errors of the form ``version `GLIBC_2.43' not found``.
+The distribution itself need not match.
+``archlinux:latest``, for example, ships a sufficiently recent ``glibc`` while providing a different userland (``pacman`` instead of ``apt``, and so on).
 
-Now the image runs:
+The image now runs:
 
 .. code-block:: console
 
@@ -240,16 +245,16 @@ Now the image runs:
         This program is part of the open-source Quantum ESPRESSO suite
         ...
 
-Beyond ``glibc``, the base image also gives us a shell and standard utilities, which is convenient.
+In addition to ``glibc``, the base image provides a shell and the standard utilities.
 
 --------------------------------------
 Spack environments as container images
 --------------------------------------
 
-So far we've created an image per package.
-Often we want a single image that contains a *combination* of packages, the full environment.
+The preceding section produced one image per package.
+For most uses a single image containing the full environment is more convenient.
 
-Pass ``--tag`` to give the environment image a human-readable name:
+Pass ``--tag`` to assign the environment image a human-readable name:
 
 .. code-block:: console
 
@@ -261,10 +266,10 @@ Pass ``--tag`` to give the environment image a human-readable name:
    ==> Tagged localhost:5000/buildcache:qe-and-numpy
 
 Spack publishes each package as its own image layer.
-Layers are shared between image tags, so the combined image is essentially free in storage terms.
+Layers are shared between image tags, so the combined image takes almost no extra storage.
 Unlike Docker, where each ``RUN`` line creates a layer that depends on the previous one, Spack package layers are independent and can be combined in any order.
 
-Pull and run:
+Pulling and running the combined image:
 
 .. code-block:: console
 
@@ -276,14 +281,14 @@ Pull and run:
         This program is part of the open-source Quantum ESPRESSO suite
    numpy 2.4.4
 
-Both Quantum ESPRESSO and NumPy are immediately usable because Spack writes a ``PATH`` and ``PYTHONPATH`` into the image's environment that points at each package's install prefix.
-Note that Spack does *not* materialize the environment's view inside the image; the packages live at their original Spack prefixes, just like on the host.
+Both Quantum ESPRESSO and NumPy are immediately usable because Spack writes ``PATH`` and ``PYTHONPATH`` into the image's environment, pointing at each package's install prefix.
+Spack does not materialize the environment's view inside the image; the packages live at their original Spack prefixes, identical to those on the host.
 
-------------------------------------
-Do I need ``docker`` or ``buildah``?
-------------------------------------
+----------------------------------------
+Relation to ``docker build`` workflows
+----------------------------------------
 
-In older versions of Spack it was common practice to generate a ``Dockerfile`` from a Spack environment using ``spack containerize`` and then build the image with ``docker build``:
+In earlier versions of Spack the common practice was to generate a ``Dockerfile`` from a Spack environment using ``spack containerize`` and then build the image with ``docker build``:
 
 .. code-block:: Dockerfile
 
@@ -294,30 +299,30 @@ In older versions of Spack it was common practice to generate a ``Dockerfile`` f
    FROM <base image>
    COPY --from=build /opt/spack/opt /opt/spack/opt
 
-This approach still works and ``spack containerize`` still exists, but it has a few downsides:
+This approach still works and ``spack containerize`` is still available, but it has several drawbacks:
 
-* If ``RUN spack -e /root/env install`` fails, Docker discards the whole layer, so successfully built dependencies are lost.
-  Troubleshooting typically means starting from scratch in a ``docker run`` session.
-* In some CI environments you cannot run ``docker build`` safely, for example when the CI script itself runs inside a container ("Docker-in-Docker").
+* If ``RUN spack -e /root/env install`` fails, Docker discards the whole layer, including any successfully built dependencies.
+  Troubleshooting typically requires starting from scratch in a ``docker run`` session.
+* Some CI environments cannot run ``docker build`` safely — for example, when the CI script itself runs inside a container ("Docker-in-Docker").
 
-The OCI build cache approach decouples the three things ``docker build`` combines: build isolation, running the build, and creating an image.
-You run ``spack install`` wherever you like (host, sandbox, container) and then ``spack buildcache push`` to turn the result into images.
+The OCI build cache approach decouples the three responsibilities that ``docker build`` combines: build isolation, running the build, and producing an image.
+``spack install`` can be run in any environment (host, sandbox, container), and ``spack buildcache push`` then turns the result into images.
 
 ----------
 Relocation
 ----------
 
-Spack lets users install packages into any prefix they like, typically ``~/spack/opt/spack/...``.
-That makes it more flexible than most package managers, but it also means binaries contain *absolute paths* to machine-specific locations, which must be rewritten when the binary is reinstalled somewhere else.
+Spack installs packages under an arbitrary prefix, typically ``~/spack/opt/spack/...``.
+This is more flexible than most package managers, but it also means that binaries contain absolute paths to machine-specific locations, which must be rewritten when the binary is reinstalled elsewhere.
 
-Spack handles this automatically when installing from a binary cache.
-But when you *produce* binaries that are meant to be redistributed, remember: Spack can only relocate paths in a binary if the **target prefix is no longer than the prefix used during the build**.
+Spack does this rewriting automatically when installing from a binary cache.
+When producing binaries that are meant to be redistributed, one constraint applies: Spack can only relocate paths in a binary if the target prefix is no longer than the prefix used at build time.
 
-The reason is that absolute paths typically live in the binary's string table, a list of null-terminated strings referenced by offset.
+The reason is that absolute paths typically reside in the binary's string table — a list of null-terminated strings referenced by offset.
 Strings can be edited in place, but they cannot grow without overwriting their neighbors.
 
-To maximize the chances of successful relocation, build in a relatively long path.
-Spack can pad install prefixes for you:
+To maximize the likelihood of successful relocation, build in a relatively long path.
+Spack can pad install prefixes automatically:
 
 .. code-block:: console
 
@@ -327,10 +332,10 @@ Spack can pad install prefixes for you:
 Using build caches in CI
 ------------------------
 
-Build caches are also a great way to speed up CI pipelines.
-Both GitHub Actions and GitLab CI support container registries, so the same workflow we used here works in CI.
+Build caches also speed up CI pipelines.
+Both GitHub Actions and GitLab CI support container registries, so the workflow described above applies directly in CI.
 
-Spack provides a basic GitHub Action that wires up a shared build cache for you:
+Spack provides a GitHub Action that configures a shared build cache:
 
 .. code-block:: yaml
 
@@ -348,9 +353,9 @@ See the `setup-spack readme <https://github.com/spack/setup-spack>`_ for instruc
 Summary
 -------
 
-In this tutorial we have:
+This tutorial covered:
 
-* consumed a pre-populated **filesystem** build cache at ``/buildcache`` to install Quantum ESPRESSO and NumPy without any source builds;
-* set up a **local OCI registry** as a second build cache and pushed our environment to it;
-* reinstalled from the OCI cache to confirm it works as a regular Spack mirror;
-* used the same OCI artifacts as **runnable container images**, both per-package and as a combined environment with ``--tag``.
+* consuming a pre-populated filesystem build cache at ``/buildcache`` to install Quantum ESPRESSO and NumPy without any source builds;
+* setting up a local OCI registry as a second build cache and pushing the environment to it;
+* reinstalling from the OCI cache to confirm that it functions as a regular Spack mirror;
+* using the same OCI artifacts as runnable container images, both per-package and as a combined environment with ``--tag``.
