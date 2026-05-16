@@ -1,0 +1,81 @@
+$ spack -v install --until cmake | cat
+[ ] hmsexao quantum-espresso@7.5 fetching from build cache (1s)
+[ ] hmsexao quantum-espresso@7.5 no binary available (1s)
+[ ] hmsexao quantum-espresso@7.5 staging (0s)
+==> No patches needed for quantum-espresso
+[ ] hmsexao quantum-espresso@7.5 cmake (0s)
+==> quantum-espresso: Executing phase: 'cmake'
+==> [2026-05-16-16:53:53.227544] /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.11-ri2m7723md6nm3bre52yawb4jpi4sxbc/bin/cmake -G 'Unix Makefiles' -DCMAKE_INSTALL_PREFIX:STRING=/home/spack/spack/opt/spack/linux-x86_64_v3/quantum-espresso-7.5-hmsexaohfxeqaaj3rgky7ywleefneoru -DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=ON '-DCMAKE_INSTALL_RPATH:STRING=/home/spack/spack/opt/spack/linux-x86_64_v3/quantum-espresso-7.5-hmsexaohfxeqaaj3rgky7ywleefneoru/lib;/home/spack/spack/opt/spack/linux-x86_64_v3/quantum-espresso-7.5-hmsexaohfxeqaaj3rgky7ywleefneoru/lib64' '-DCMAKE_PREFIX_PATH:STRING=/home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.11-ri2m7723md6nm3bre52yawb4jpi4sxbc;/home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-vmbs3iehtzm7chfvgfiz22hgov3ei7xn;/home/spack/spack/opt/spack/linux-x86_64_v3/elpa-2026.02.001-nkefiie62gr4m2zudf5cjlucs7joda5r;/home/spack/spack/opt/spack/linux-x86_64_v3/fftw-3.3.11-6zwro7e4cuns5akdpxgqu2oc5aepbk67;/home/spack/spack/opt/spack/linux-x86_64_v3/git-2.53.0-fmvesdsdxq5swexs3k6m2neq2awsdzxd;/home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-hpi7opdhh7pvtpin5dcrmmwpmvc2bjde;/home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.21-qgn357vq5bd4lsjeoc6myxe4wgyd2ud7;/home/spack/spack/opt/spack/linux-x86_64_v3/netlib-scalapack-2.2.3-i6kndj23e52qndbsf4sdi4ctjnactxyu;/home/spack/spack/opt/spack/linux-x86_64_v3/openblas-0.3.33-tqv4kp2xd3h53gg4areyle6eudzbyllw;/home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-k3wh5o73q72f57ssyafoibmepkilxtxw;/home/spack/spack/opt/spack/linux-x86_64_v3/numactl-2.0.19-bst3thhfinaercnqikedgcdyovzxqef2;/home/spack/spack/opt/spack/linux-x86_64_v3/prrte-4.1.0-xtxw5gycxhy3jt6qh2ddwku3wp343xrf;/home/spack/spack/opt/spack/linux-x86_64_v3/pmix-6.1.0-7jhebfqqzs3crbiuxizqgyq2h4bz5swd;/home/spack/spack/opt/spack/linux-x86_64_v3/hwloc-2.13.0-elbtvucjt44wpu6unqbc7cacgfri7ekn;/home/spack/spack/opt/spack/linux-x86_64_v3/libevent-2.1.12-3uq57ew3w45dztv5kseb6mf7fq2d75gh;/home/spack/spack/opt/spack/linux-x86_64_v3/libpciaccess-0.17-3xnffqkwxqafjzwkc3hbw7q33gktskip;/home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.15.1-s3j44vc3ofwl3wl7zfe73htbesolu7c4;/home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.6-5hhowykt4cgr2mqhqccitzbit5str6mz;/home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.6.1-mobrgls6c3voqutblhvrlbart4x44b4b;/home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-icwlhjjjiujg7h3fzc4hyuiogmhyferf;/home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.8.3-negwj4w6lxr52kwzjdsk3zbgkm7ynqk6;/home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.3.3-dg3p72gdhzbzppyrefmcqe45eqtyxjd6;/home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-15.2.0-jt44prex7twoxuszkmhqyzh3hub5ffev' -DCMAKE_BUILD_TYPE:STRING=Release -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON -DCMAKE_INTERPROCEDURAL_OPTIMIZATION:BOOL=OFF -DCMAKE_POLICY_DEFAULT_CMP0090:STRING=NEW -DCMAKE_FIND_USE_PACKAGE_REGISTRY:BOOL=OFF -DCMAKE_EXPORT_COMPILE_COMMANDS:BOOL=ON -DQE_ENABLE_MPI:BOOL=ON -DQE_ENABLE_OPENMP:BOOL=ON -DQE_ENABLE_SCALAPACK:BOOL=ON -DQE_ENABLE_ELPA:BOOL=ON -DQE_ENABLE_LIBXC:BOOL=OFF '' -DQE_ENABLE_PROFILE_NVTX:BOOL=OFF -DQE_CLOCK_SECONDS:BOOL=OFF '' -DCMAKE_C_COMPILER:STRING=/home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-k3wh5o73q72f57ssyafoibmepkilxtxw/bin/mpicc -DCMAKE_Fortran_COMPILER:STRING=/home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-k3wh5o73q72f57ssyafoibmepkilxtxw/bin/mpif90 /home/spack/q-e
+CMake Warning:
+  Ignoring empty string ("") provided on the command line.
+
+
+CMake Warning:
+  Ignoring empty string ("") provided on the command line.
+
+
+-- Enable sanitizer QE_ENABLE_SANITIZER=none
+-- C preprocessor used by qe_preprocess_source in qeHelpers.cmake: /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-vmbs3iehtzm7chfvgfiz22hgov3ei7xn/libexec/spack/cpp
+-- Selected the Fortran 'mpi' module. QE_ENABLE_MPI_MODULE=ON
+-- MPI settings used by CTest
+     MPIEXEC_EXECUTABLE : /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-k3wh5o73q72f57ssyafoibmepkilxtxw/bin/mpiexec
+     MPIEXEC_NUMPROC_FLAG : -n
+     MPIEXEC_PREFLAGS :
+   Tests run as : /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-k3wh5o73q72f57ssyafoibmepkilxtxw/bin/mpiexec -n <NUM_PROCS>  <EXECUTABLE>
+-- Source files are cloned from a git repository.
+   sed supports -E
+   Git branch: qe-7.5-dev
+   Git commit hash: 770a0b2d12928a67048e2f3da8d10d057e52179e-dirty
+-- Trying to find LAPACK from Intel MKL
+-- Could NOT find BLAS (missing: BLAS_LIBRARIES)
+-- Could NOT find LAPACK (missing: LAPACK_LIBRARIES)
+    Reason given by package: LAPACK could not be found because dependency BLAS could not be found.
+
+-- Trying to find alternative LAPACK libraries
+-- Looking for Fortran pdgemm
+-- Looking for Fortran pdgemm - not found
+-- Looking for Fortran pdgemm
+-- Looking for Fortran pdgemm - found
+-- Found SCALAPACK: /home/spack/spack/opt/spack/linux-x86_64_v3/netlib-scalapack-2.2.3-i6kndj23e52qndbsf4sdi4ctjnactxyu/lib/libscalapack.so;/home/spack/spack/opt/spack/linux-x86_64_v3/openblas-0.3.33-tqv4kp2xd3h53gg4areyle6eudzbyllw/lib/libopenblas.so;-lm;-ldl;/home/spack/spack/opt/spack/linux-x86_64_v3/openblas-0.3.33-tqv4kp2xd3h53gg4areyle6eudzbyllw/lib/libopenblas.so;
+-- Globing elpa.h on versioned paths found /home/spack/spack/opt/spack/linux-x86_64_v3/elpa-2026.02.001-nkefiie62gr4m2zudf5cjlucs7joda5r/include/elpa_openmp-2026.02.001/elpa/elpa.h
+-- ELPA version string extracted from ELPA_INCLUDE_DIRS : 2026.02.001
+-- Found ELPA: /home/spack/spack/opt/spack/linux-x86_64_v3/elpa-2026.02.001-nkefiie62gr4m2zudf5cjlucs7joda5r/lib/libelpa_openmp.so (found version "2026.02.001")
+-- Add ELPA flag : __ELPA
+Project C_FLAGS:  -O3 -DNDEBUG
+Project Fortran_FLAGS:	-fallow-argument-mismatch -O3
+Project INCLUDE_DIRECTORIES: /home/spack/q-e/include
+Project EXE_LINKER_FLAGS:
+Project SHARED_LINKER_FLAGS:
+-- Installing Wannier90 via submodule
+Submodule 'external/wannier90' (https://github.com/wannier-developers/wannier90.git) registered for path 'external/wannier90'
+Cloning into '/home/spack/q-e/external/wannier90'...
+From https://github.com/wannier-developers/wannier90
+ * branch	     1d6b187374a2d50b509e5e79e2cab01a79ff7ce1 -> FETCH_HEAD
+Submodule path 'external/wannier90': checked out '1d6b187374a2d50b509e5e79e2cab01a79ff7ce1'
+-- Installing MBD via submodule
+Submodule 'external/mbd' (https://github.com/libmbd/libmbd.git) registered for path 'external/mbd'
+Cloning into '/home/spack/q-e/external/mbd'...
+Submodule path 'external/mbd': checked out '89a3cc199c0a200c9f0f688c3229ef6b9a8d63bd'
+-- Found Git: /home/spack/spack/opt/spack/linux-x86_64_v3/git-2.53.0-fmvesdsdxq5swexs3k6m2neq2awsdzxd/bin/git (found version "2.53.0")
+-- Setting version tag to 0.13.0-2-g89a3cc1 from Git
+-- Installing DeviceXlib via submodule
+Submodule 'external/devxlib' (https://gitlab.com/max-centre/components/devicexlib.git) registered for path 'external/devxlib'
+Cloning into '/home/spack/q-e/external/devxlib'...
+From https://gitlab.com/max-centre/components/devicexlib
+ * branch	     a6b89ef77b1ceda48e967921f1f5488d2df9226d -> FETCH_HEAD
+Submodule path 'external/devxlib': checked out 'a6b89ef77b1ceda48e967921f1f5488d2df9226d'
+-- Could NOT find VendorFFTW (missing: VendorFFTW_LIBRARIES VendorFFTW_INCLUDE_DIRS VendorFFTW_ID)
+-- Could NOT find PkgConfig (missing: PKG_CONFIG_EXECUTABLE)
+-- Found FFTW3: /home/spack/spack/opt/spack/linux-x86_64_v3/fftw-3.3.11-6zwro7e4cuns5akdpxgqu2oc5aepbk67/lib/libfftw3.so;/home/spack/spack/opt/spack/linux-x86_64_v3/fftw-3.3.11-6zwro7e4cuns5akdpxgqu2oc5aepbk67/lib/libfftw3_omp.so
+-- Looking for mallinfo
+-- Looking for mallinfo - found
+-- Enabling tests in test-suite
+
+Only pw and cp results from ctest are reliable, we are working on making the rest tests work reliably with ctest. To run non-pw/cp tests, make a softlink of the bin directory to the root of QE source tree and run tests in the test-suite directory under that root.
+
+-- generating tests in pw category
+-- generating tests in cp category
+-- Configuring done (30.9s)
+-- Generating done (0.7s)
+-- Build files have been written to: /tmp/spack/spack-stage/spack-stage-quantum-espresso-7.5-hmsexaohfxeqaaj3rgky7ywleefneoru/spack-build-hmsexao
+[ ] hmsexao quantum-espresso@7.5 stopped after cmake (32s)

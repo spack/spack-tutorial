@@ -1,0 +1,73 @@
+diff --git a/cmake/FindELPA.cmake b/cmake/FindELPA.cmake
+index 91a31d98ed3d9098353307f4bfd08169d8a63420..212781bff776a194cb141d76df14c8d4c1ce297f 100644
+--- a/cmake/FindELPA.cmake
++++ b/cmake/FindELPA.cmake
+@@ -67,6 +67,21 @@ else()
+     set(CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES_SAV})
+ endif()
+ 
++# ELPA built with --enable-openmp installs as libelpa_openmp, with headers
++# under include/elpa_openmp-YYYY.MM.NNN and a pkg-config file named
++# elpa_openmp.pc. The two flavors can be installed side-by-side, so when QE
++# itself is configured with OpenMP we must look for the _openmp variant.
++if(NOT DEFINED ELPA_OPENMP)
++    set(ELPA_OPENMP ${QE_ENABLE_OPENMP})
++endif()
++if(ELPA_OPENMP)
++    set(_ELPA_LIB_NAME elpa_openmp)
++    set(_ELPA_INCLUDE_PREFIX elpa_openmp)
++else()
++    set(_ELPA_LIB_NAME elpa)
++    set(_ELPA_INCLUDE_PREFIX elpa)
++endif()
++
+ # ELPA depends on SCALAPACK anyway, try to find it
+ if(NOT SCALAPACK_FOUND)
+     if(ELPA_FIND_REQUIRED)
+@@ -96,7 +111,7 @@ macro(glob_elpa_header_file)
+     foreach(DIR ${ARGN_EXPANDED})
+         message(DEBUG "globing ${DIR}")
+         if(NOT ELPA_elpa.h_FILEPATH AND DIR)
+-            file(GLOB ELPA_elpa.h_FILEPATH "${DIR}/include/elpa-20*/elpa/elpa.h")
++            file(GLOB ELPA_elpa.h_FILEPATH "${DIR}/include/${_ELPA_INCLUDE_PREFIX}-20*/elpa/elpa.h")
+         endif()
+     endforeach()
+ endmacro()
+@@ -122,10 +137,10 @@ if(NOT ELPA_INCLUDE_DIRS)
+     find_package(PkgConfig QUIET)
+     if(PKG_CONFIG_FOUND)
+         if(NOT PKG_ELPA_FOUND AND ELPA_PKGCONFIG_VERSION)
+-            pkg_search_module(PKG_ELPA elpa-${ELPA_PKGCONFIG_VERSION})
++            pkg_search_module(PKG_ELPA ${_ELPA_LIB_NAME}-${ELPA_PKGCONFIG_VERSION})
+         endif()
+         if(NOT PKG_ELPA_FOUND)
+-            pkg_search_module(PKG_ELPA elpa)
++            pkg_search_module(PKG_ELPA ${_ELPA_LIB_NAME})
+         endif()
+         if(NOT ELPA_FIND_QUIETLY)
+             if(PKG_ELPA_FOUND)
+@@ -145,7 +160,7 @@ find_path(
+     ELPA_INCLUDE_DIRS
+     NAMES "elpa/elpa.h"
+     HINTS ${PKG_ELPA_INCLUDE_DIRS}
+-    PATH_SUFFIXES "include" "include/elpa")
++    PATH_SUFFIXES "include" "include/${_ELPA_INCLUDE_PREFIX}")
+ 
+ if(ELPA_INCLUDE_DIRS)
+     # Looking for module directory based on elpa.mod
+@@ -165,13 +180,13 @@ endif()
+ 
+ find_library(
+     ELPA_LIBRARIES
+-    NAMES elpa
++    NAMES ${_ELPA_LIB_NAME}
+     HINTS ${PKG_ELPA_LIBRARY_DIRS}
+     PATH_SUFFIXES "lib" "lib64")
+ 
+ # extract version string from ELPA_INCLUDE_DIRS
+ if(ELPA_INCLUDE_DIRS)
+-    string(REGEX MATCH "elpa-20[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9]" CMAKE_MATCH_ELPA_VER "${ELPA_INCLUDE_DIRS}")
++    string(REGEX MATCH "${_ELPA_INCLUDE_PREFIX}-20[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9]" CMAKE_MATCH_ELPA_VER "${ELPA_INCLUDE_DIRS}")
+     string(REGEX MATCH "20[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9]" ELPA_VERSION_FROM_INCLUDE_DIRS
+                  "${CMAKE_MATCH_ELPA_VER}")
+ endif()

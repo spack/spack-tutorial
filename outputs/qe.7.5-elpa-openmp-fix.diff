@@ -1,0 +1,23 @@
+diff --git a/repos/spack_repo/builtin/packages/quantum_espresso/package.py b/repos/spack_repo/builtin/packages/quantum_espresso/package.py
+index cf74fa7c..5dc32d1e 100644
+--- a/repos/spack_repo/builtin/packages/quantum_espresso/package.py
++++ b/repos/spack_repo/builtin/packages/quantum_espresso/package.py
+@@ -139,10 +139,14 @@ class QuantumEspresso(CMakePackage, Package):
+ 
+     with when("+elpa"):
+         # CMake builds only support elpa without openmp
+-        depends_on("elpa~openmp", when="build_system=cmake")
+-        with when("build_system=generic"):
+-            depends_on("elpa", when="+openmp")
+-            depends_on("elpa~openmp", when="~openmp")
++        depends_on("elpa", when="+openmp")
++        depends_on("elpa~openmp", when="~openmp")
++        # Fix issue with elpa+openmp and CMake
++        patch(
++            "https://gitlab.com/haampie/q-e/-/commit/517a7bba47628af8f93f985765d7ab7d23077c4c.diff",
++            sha256="e297b3b391dfd5ec3b9f41ef882be77571c32266891322a126ebe1f22d75083a",
++            when="@7.5 +elpa build_system=cmake"
++        )
+         # Elpa is formally supported by @:5.4.0, but QE configure searches
+         # for it in the wrong folders (or tries to download it within
+         # the build directory). Instead of patching Elpa to provide the

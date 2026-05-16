@@ -6,363 +6,408 @@
 
 .. _developer-workflows-tutorial:
 
-============================
-Developer Workflows Tutorial
-============================
+===================
+Developer Workflows
+===================
 
-This tutorial will guide you through the process of using the ``spack develop`` command to develop software from local source code within a Spack environment.
-With this command, Spack will manage your dependencies while you focus on testing changes to your library and/or application.
+In the packaging chapter, ``quantum-espresso/package.py`` was opened but never
+modified: the concretizer's choices were traced through three builds by reading
+the recipe, not changing it.
+
+This chapter follows the same recipe through a real upstream fix.  
+The developer workflow uses ``spack develop`` to point Spack at a local clone, investigates a build failure, and authors a patch.  
+Once that patch is submitted as a merge request, it can be encoded as a ``patch()`` directive in the recipe.
+In this way  non-developers get the fix automatically when they install, without maintaining a clone.
+
+The ``dev_path=`` attribute set by ``spack develop`` and the ``patch()`` directive share the same conditional machinery introduced on Day 1.
+Both accept a ``when=`` clause that scopes their effect to specific versions or variants.
+
+------------------------------------
+The CMake / ELPA / OpenMP constraint
+------------------------------------
+
+On Day 1, requesting ``quantum-espresso +elpa %elpa +openmp`` caused the concretizer to switch from ``build_system=cmake`` to ``build_system=generic``.
+The driving directive in the recipe is:
+
+.. code-block:: python
+
+   with when("+elpa"):
+       # CMake builds only support elpa without openmp
+       depends_on("elpa~openmp", when="build_system=cmake")
+       with when("build_system=generic"):
+           depends_on("elpa", when="+openmp")
+           depends_on("elpa~openmp", when="~openmp")
+
+The comment asserts that the CMake build does not support an OpenMP build of ELPA, but gives no reason.  
+This chapter investigates whether the limitation is intrinsic or merely unimplemented, and fixes it if the latter.
+
+--------------------------
+Setting up the environment
+--------------------------
+
+Create a fresh environment for this session:
+
+.. code-block:: console
+
+   $ spack env activate --create qe-dev
+   $ spack config edit
+
+Replace the contents of ``spack.yaml`` with the following manifest:
+
+.. code-block:: yaml
+
+   spack:
+     specs:
+     - quantum-espresso +elpa %elpa +openmp
+     view: view
+     concretizer:
+       unify: true
+     packages:
+       c:
+         prefer: [gcc@15]
+       cxx:
+         prefer: [gcc@15]
+       fortran:
+         prefer: [gcc@15]
+
+Concretize to confirm the starting point:
+
+.. literalinclude:: outputs/dev/setup.out
+   :language: console
+
+The first line of the concretized spec shows ``build_system=generic``.
+The:
+
+.. code-block:: python
+
+   depends_on("elpa~openmp", when="build_system=cmake")
+   
+constraint in the recipe prevents the concretizer from selecting ``build_system=cmake`` when ELPA is built with OpenMP.
+
+---------------------------
+Building from a local clone
+---------------------------
+
+Investigating the build failure requires a modifiable source tree: diagnosing a CMake configuration problem often involves editing the source, rebuilding, and inspecting the result in a tight loop.
+Spack's developer workflow supports this through ``spack develop``, which directs the concretizer to build from a local directory instead of a downloaded tarball, and makes subsequent builds incremental — only files changed since the last ``spack install`` are recompiled.
+
+Three steps prepare the workspace: 
+
+1. Cloning the upstream source to have a git working tree, 
+2. Registering that clone with Spack, and 
+3. Relaxing the recipe constraint so the concretizer can select ``build_system=cmake`` together with ``+elpa`` and ``%elpa +openmp``.
+
+^^^^^^^^^^^^^^^^^^^
+Cloning the sources
+^^^^^^^^^^^^^^^^^^^
+
+Move to the home directory:
+
+.. code-block:: console
+
+   $ cd ~
+
+and clone Quantum ESPRESSO at the ``qe-7.5`` tag:
+
+.. literalinclude:: outputs/dev/clone.out
+   :language: console
+
+Two aspects of this invocation are worth noting:
+
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Option
+     - Effect
+   * - ``--depth 2``
+     - Fetches a shallow history (tag commit and one parent), keeping the download small while giving ``git apply`` enough context to work.
+   * - ``-c advice.detachedHead=false``
+     - Suppresses the detached HEAD notice that git prints when checking out a tag rather than a branch.
+
+``git switch -c qe-7.5-dev`` immediately creates a named branch at that commit, so edits and commits land on a branch that can be pushed as a merge request.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Register the clone with Spack
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Register the clone as the build tree for ``quantum-espresso@7.5``:
+
+.. literalinclude:: outputs/dev/develop.out
+   :language: console
+
+``--path`` tells Spack where to find the source.  
+Because the path already exists, Spack skips the download and records a ``dev_path=`` attribute in the ``develop:`` section of ``spack.yaml``, marking the spec for incremental builds from that source:
+
+.. code-block:: yaml
+
+   develop:
+     quantum-espresso:
+       spec: quantum-espresso@7.5 +elpa %elpa+openmp
+       path: ~/q-e
+
+Without ``--path``, ``spack develop quantum-espresso@7.5`` clones the source into the environment directory automatically.
+This is convenient when the goal is to iterate on the recipe's build logic rather than contribute to upstream.
+
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Relax the recipe constraint
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Edit the recipe to remove the constraint that blocks the combination under investigation:
+
+.. literalinclude:: outputs/dev/relax.out
+   :language: console
+
+The final result reads:
+
+.. code-block:: python
+
+   with when("+elpa"):
+       # CMake builds only support elpa without openmp
+       depends_on("elpa", when="+openmp")
+       depends_on("elpa~openmp", when="~openmp")
+
+We removed:
+
+1. The ``depends_on("elpa~openmp", when="build_system=cmake")`` line 
+2. The ``with when("build_system=generic"):`` block that scoped the remaining two lines to ``build_system=generic``
+
+The concretizer is now free to pair ``build_system=cmake`` with ``elpa+openmp``.
+Concretize the relaxed environment:
+
+.. literalinclude:: outputs/dev/build-fail-concretize.out
+   :language: console
+   :lines: 1-5
+
+After the constraint is removed, the concretizer selects ``build_system=cmake`` and ``elpa+openmp`` as the dependency.
+
+------------------
+Diagnosing the bug
+------------------
+
+Now install to see if the build fails:
+
+.. literalinclude:: outputs/dev/build-fail-install.out
+   :language: console
+   :lines: 1,148-
+
+The build then fails inside CMake's ``FindELPA`` module.
+The log excerpt printed by Spack names all four missing components (``ELPA_LIBRARIES``, ``ELPA_INCLUDE_DIRS``, ``ELPA_Fortran_MODS_DIR``, and ``ELPA_VERSION``) indicating the finder returned empty-handed rather than partially failing.
+
+The full CMake output is in the build log, whose path is printed at the end of the install output.
+Alternatively, the stage directory can be located with:
+
+.. code-block:: console
+
+   $ spack location --stage quantum-espresso
+
+Reading ``cmake/FindELPA.cmake`` in the stage directory reveals the cause.
+The finder searches unconditionally for a library named ``elpa`` and headers under ``include/elpa-*``.
+
+Inspecting the ELPA installation prefix:
+
+.. code-block:: console
+
+   $ spack location -i elpa
+
+shows that an OpenMP build of ELPA installs as ``libelpa_openmp``, with headers under ``include/elpa_openmp-*``.
+*The two names never match, so all four finder variables remain unset*.
+
+If interactive diagnosis was needed:
+
+.. code-block:: console
+   
+   $ spack build-env quantum-espresso -- bash
+
+opens a shell with all of QE's build-time environment variables set, making it straightforward to re-run CMake manually or inspect the ELPA prefix directly.
 
 
 -----------------------------
-Installing from local source
+Fixing the FindELPA module
 -----------------------------
 
-The ``spack install`` command, as you know, fetches source code from a mirror or the internet before building and installing your package.
-As developers, we want to build from local source, which we will constantly change, build, and test.
+The fix is to detect which ELPA variant is installed and substitute the appropriate library name and header prefix throughout the finder.  
+Edit ``q-e/cmake/FindELPA.cmake``:
 
-Let's imagine, for a second, we're working on ``scr``.
-``scr`` is a library used to implement scalable checkpointing in application codes.
-It supports writing/reading checkpoints quickly and efficiently using MPI and high-bandwidth file I/O.
-We'd like to test changes to ``scr`` within an actual application, so we'll test with ``macsio``, a proxy application written to mimic typical HPC I/O workloads.
-We've chosen ``scr`` and ``macsio`` because together they are quick to build.
-
-We'll start by making an environment for our development.
-We need to build ``macsio`` with ``scr`` support, and we'd like everything to be built without Fortran support for the time being.
-Let's set up that development workflow.
-
-.. literalinclude:: outputs/dev/setup-scr.out
+.. literalinclude:: outputs/dev/fix.out
    :language: console
 
-Before we do any work, we verify that this all builds.
-Spack ends up building the entire development tree below, and links everything together for you.
+The patch introduces ``_ELPA_LIB_NAME`` (``elpa`` or ``elpa_openmp``) and ``_ELPA_INCLUDE_PREFIX``, selected by testing the ``QE_ENABLE_OPENMP`` CMake variable.
+It then replaces every hardcoded occurrence of ``elpa`` in path suffixes, library searches, and version extraction with these variables:
 
+.. code-block:: diff
 
-.. graphviz::
+   diff --git a/cmake/FindELPA.cmake b/cmake/FindELPA.cmake
+   --- a/cmake/FindELPA.cmake
+   +++ b/cmake/FindELPA.cmake
+   @@ -67,6 +67,21 @@ else()
+        set(CMAKE_FIND_LIBRARY_SUFFIXES ${CMAKE_FIND_LIBRARY_SUFFIXES_SAV})
+    endif()
 
-    digraph G {
-      labelloc = "b"
-      rankdir = "TB"
-      ranksep = "1"
-      edge[
-         penwidth=4  ]
-      node[
-         fontname=Monaco,
-         penwidth=4,
-         fontsize=24,
-         margin=.2,
-         shape=box,
-         fillcolor=lightblue,
-         style="rounded,filled"  ]
+   +# ELPA built with --enable-openmp installs as libelpa_openmp, with headers
+   +# under include/elpa_openmp-YYYY.MM.NNN and a pkg-config file named
+   +# elpa_openmp.pc. The two flavors can be installed side-by-side, so when QE
+   +# itself is configured with OpenMP we must look for the _openmp variant.
+   +if(NOT DEFINED ELPA_OPENMP)
+   +    set(ELPA_OPENMP ${QE_ENABLE_OPENMP})
+   +endif()
+   +if(ELPA_OPENMP)
+   +    set(_ELPA_LIB_NAME elpa_openmp)
+   +    set(_ELPA_INCLUDE_PREFIX elpa_openmp)
+   +else()
+   +    set(_ELPA_LIB_NAME elpa)
+   +    set(_ELPA_INCLUDE_PREFIX elpa)
+   +endif()
+   +
+    # ELPA depends on SCALAPACK anyway, try to find it
+    if(NOT SCALAPACK_FOUND)
+        if(ELPA_FIND_REQUIRED)
+   @@ -96,7 +111,7 @@ macro(glob_elpa_header_file)
+        foreach(DIR ${ARGN_EXPANDED})
+            message(DEBUG "globing ${DIR}")
+            if(NOT ELPA_elpa.h_FILEPATH AND DIR)
+   -            file(GLOB ELPA_elpa.h_FILEPATH "${DIR}/include/elpa-20*/elpa/elpa.h")
+   +            file(GLOB ELPA_elpa.h_FILEPATH "${DIR}/include/${_ELPA_INCLUDE_PREFIX}-20*/elpa/elpa.h")
+            endif()
+        endforeach()
+    endmacro()
+   @@ -122,10 +137,10 @@ if(NOT ELPA_INCLUDE_DIRS)
+        find_package(PkgConfig QUIET)
+        if(PKG_CONFIG_FOUND)
+            if(NOT PKG_ELPA_FOUND AND ELPA_PKGCONFIG_VERSION)
+   -            pkg_search_module(PKG_ELPA elpa-${ELPA_PKGCONFIG_VERSION})
+   +            pkg_search_module(PKG_ELPA ${_ELPA_LIB_NAME}-${ELPA_PKGCONFIG_VERSION})
+            endif()
+            if(NOT PKG_ELPA_FOUND)
+   -            pkg_search_module(PKG_ELPA elpa)
+   +            pkg_search_module(PKG_ELPA ${_ELPA_LIB_NAME})
+            endif()
+   @@ -145,7 +160,7 @@ find_path(
+        ELPA_INCLUDE_DIRS
+        NAMES "elpa/elpa.h"
+        HINTS ${PKG_ELPA_INCLUDE_DIRS}
+   -    PATH_SUFFIXES "include" "include/elpa")
+   +    PATH_SUFFIXES "include" "include/${_ELPA_INCLUDE_PREFIX}")
 
-      "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7" [label="pkgconf"]
-      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" [label="json-cwx"]
-      "4ihuiazsglf22f3pntq5hc4kyszqzexn" [label="berkeley-db"]
-      "jearpk4xci4zc7dkrza4fufaqfkq7rfl" [label="libiconv"]
-      "d2krmb5gweivlnztcymhklzsqbrpatt6" [label="automake"]
-      "gs6ag7ktdoiirb62t7bcagjw62szrrg2" [label="util-macros"]
-      "yn2r3wfhiilelyulh5toteicdtxjhw7d" [label="libxml2"]
-      "lbrx7lnfz46ukewxbhxnucmx76g23c6q" [label="libsigsegv"]
-      "bob4o5m3uku6vtdil5imasprgy775zg7" [label="libpciaccess"]
-      "pmsyupw6w3gql4loaor25gfumlmvkl25" [label="openmpi"]
-      "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" [label="m4"]
-      "jdxbjftheiotj6solpomva7dowrhlerl" [label="libtool"]
-      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" [label="autoconf"]
-      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" [label="perl"]
-      "t54jzdy2jj4snltjazlm3br2urcilc6v" [label="readline"]
-      "4av4gywgpaspkhy3dvbb62nulqogtzbb" [label="gdbm"]
-      "crhlefo3dv7lmsv5pf4icsy4gepkdorm" [label="ncurses"]
-      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" [label="cmake"]
-      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" [label="hwloc"]
-      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" [label="hdf5"]
-      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" [label="numactl"]
-      "komekkmyciga3kl24edjmredhj3uyt7v" [label="xz"]
-      "es377uqsqougfc67jyg7yfjyyuukin52" [label="openssl"]
-      "vfrf7asfclt7epufnoxibfqbkntbk5k3" [label="silo"]
-      "smoyzzo2qhzpn6mg6rd3l2p7b23enshg" [label="zlib"]
-      "sz72vygmht66khd5aa4kihz5alg4nrbm" [label="macsio"]
+   @@ -165,13 +180,13 @@ endif()
 
-      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "jdxbjftheiotj6solpomva7dowrhlerl"
-      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
-      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "vfrf7asfclt7epufnoxibfqbkntbk5k3"
-      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "t54jzdy2jj4snltjazlm3br2urcilc6v"
-      "crhlefo3dv7lmsv5pf4icsy4gepkdorm" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
-      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
-      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
-      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh"
-      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6"
-      "es377uqsqougfc67jyg7yfjyyuukin52" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
-      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm"
-      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
-      "es377uqsqougfc67jyg7yfjyyuukin52" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
-      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "jdxbjftheiotj6solpomva7dowrhlerl"
-      "mkc3u4x2p2wie6jfhuku7g5rkovcrxps" -> "lbrx7lnfz46ukewxbhxnucmx76g23c6q"
-      "bltycqwh5oofai4f6o42q4uuj4w5zb3j" -> "es377uqsqougfc67jyg7yfjyyuukin52"
-      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
-      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "d2krmb5gweivlnztcymhklzsqbrpatt6"
-      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4av4gywgpaspkhy3dvbb62nulqogtzbb"
-      "vedchc5aoqyu3ydbp346qrbpe6kg46rq" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
-      "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
-      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "jdxbjftheiotj6solpomva7dowrhlerl"
-      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "komekkmyciga3kl24edjmredhj3uyt7v"
-      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
-      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
-      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "vedchc5aoqyu3ydbp346qrbpe6kg46rq"
-      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "gs6ag7ktdoiirb62t7bcagjw62szrrg2"
-      "d2krmb5gweivlnztcymhklzsqbrpatt6" -> "zfdvt2jjuaees43ffrrtphqs2ky3o22t"
-      "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh" -> "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd"
-      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
-      "zfdvt2jjuaees43ffrrtphqs2ky3o22t" -> "4ihuiazsglf22f3pntq5hc4kyszqzexn"
-      "bob4o5m3uku6vtdil5imasprgy775zg7" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
-      "vfrf7asfclt7epufnoxibfqbkntbk5k3" -> "pmsyupw6w3gql4loaor25gfumlmvkl25"
-      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "bob4o5m3uku6vtdil5imasprgy775zg7"
-      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "jearpk4xci4zc7dkrza4fufaqfkq7rfl"
-      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "bltycqwh5oofai4f6o42q4uuj4w5zb3j"
-      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh"
-      "sz72vygmht66khd5aa4kihz5alg4nrbm" -> "7tkgwjvu2mi4ea2wsdetunq7g4k4r2nh"
-      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "smoyzzo2qhzpn6mg6rd3l2p7b23enshg"
-      "t54jzdy2jj4snltjazlm3br2urcilc6v" -> "crhlefo3dv7lmsv5pf4icsy4gepkdorm"
-      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu"
-      "4av4gywgpaspkhy3dvbb62nulqogtzbb" -> "t54jzdy2jj4snltjazlm3br2urcilc6v"
-      "jdxbjftheiotj6solpomva7dowrhlerl" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
-      "yn2r3wfhiilelyulh5toteicdtxjhw7d" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
-      "mm33a3ocsv3jsh2tfxc4mlab4xsurtdd" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
-      "zqwfzhw5k2ollygh6nrjpsi7u4d4g6lu" -> "yn2r3wfhiilelyulh5toteicdtxjhw7d"
-      "pmsyupw6w3gql4loaor25gfumlmvkl25" -> "4sh6pymrm2ms4auu3ajbjjr6fiuhz5g7"
-      "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
-    }
+    find_library(
+        ELPA_LIBRARIES
+   -    NAMES elpa
+   +    NAMES ${_ELPA_LIB_NAME}
+        HINTS ${PKG_ELPA_LIBRARY_DIRS}
+        PATH_SUFFIXES "lib" "lib64")
 
-Now we are ready to begin work on the actual application.
+    # extract version string from ELPA_INCLUDE_DIRS
+    if(ELPA_INCLUDE_DIRS)
+   -    string(REGEX MATCH "elpa-20[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9]" CMAKE_MATCH_ELPA_VER "${ELPA_INCLUDE_DIRS}")
+   +    string(REGEX MATCH "${_ELPA_INCLUDE_PREFIX}-20[0-9][0-9]\.[0-9][0-9]\.[0-9][0-9][0-9]" CMAKE_MATCH_ELPA_VER "${ELPA_INCLUDE_DIRS}")
 
------------------------------
-Development iteration cycles
------------------------------
+With the finder corrected, reconfigure Quantum ESPRESSO from the local source tree.
 
-Let's assume that ``scr`` has a bug, and we'd like to patch ``scr`` to find out what the problem is.
-First, we tell Spack that we'd like to check out the version of ``scr`` in our environment.
-In this case, it will be the 2.0.0 release that we want to write a patch for:
-
-.. literalinclude:: outputs/dev/develop-1.out
-   :language: spec
-
-The ``spack develop`` command marks the package as being a "development" package based on the supplied ``develop spec``.
-Develop specs are listed in their own ``develop`` section inside the ``spack.yaml``.
-The mechanics of how this section is used to enforce development are as follows:
-
-1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
-2. Any specs selected in step 1 receive a ``dev_path=`` variant.
-   This variant tells Spack where to find the source code for the spec.
-   Adding the variant modifies the DAG hash of the spec and all of its downstream dependencies.
-3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
-4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
-
-If the environment is already concretized, ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
-If the environment is not yet concretized, the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
-
-So how does Spack determine the value of the ``dev_path`` variant?
-By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
-You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment or by passing the ``--path`` options when calling ``spack develop``.
-
-Now that we have this done, we tell Spack to rebuild both ``scr`` and ``macsio`` by running ``spack install``.
-
-.. literalinclude:: outputs/dev/develop-2.out
+.. literalinclude:: outputs/dev/build-ok.out
    :language: console
 
-This rebuilds ``scr`` from the subdirectory we specified.
-If your package uses CMake, Spack will build the package in a build directory that matches the hash for your package.
-From here you can change into the appropriate directory and perform your own build/test cycles.
+``--until cmake`` stops the build after the configure phase so the output is not overwhelmed by compilation messages.
+The key lines confirm that the patched finder now locates the correct library and header tree: ``Found ELPA: .../libelpa_openmp.so``.
 
-Now, we can develop our code.
-For the sake of this demo, we're just going to intentionally introduce an error.
-Let's edit a file and remove the first semi-colon we find.
+-------------------------------------------------
+Encoding the fix: the ``patch()`` directive
+-------------------------------------------------
 
-.. literalinclude:: outputs/dev/edit-1.out
+The fix is self-contained and applies cleanly to the upstream ``@7.5`` tarball.
+Encoding it in the recipe means that any user concretizing ``quantum-espresso +elpa build_system=cmake`` picks it up automatically, without maintaining a local clone.
+
+Once the fix has been pushed or submitted as a pull request upstream, it can be referenced it in the recipe.
+Compute the patch's sha256 hash:
+
+.. code-block:: console
+
+   $ curl -sL https://gitlab.com/haampie/q-e/-/commit/517a7bba47628af8f93f985765d7ab7d23077c4c.diff \
+         | sha256sum
+   e297b3b391dfd5ec3b9f41ef882be77571c32266891322a126ebe1f22d75083a  -
+
+Then edit the recipe to add the ``patch()`` directive:
+
+.. code-block:: python
+
+   patch(
+       "https://gitlab.com/haampie/q-e/-/commit/"
+       "517a7bba47628af8f93f985765d7ab7d23077c4c.diff",
+       sha256="e297b3b391dfd5ec3b9f41ef882be77571c32266891322a126ebe1f22d75083a",
+       when="+elpa build_system=cmake",
+   )
+
+The ``when=`` clause on ``patch()`` uses the same conditional machinery seen throughout Day 1.
+The patch is applied only when the concretized spec satisfies ``+elpa build_system=cmake``.  
+
+Concretize and verify that the recipe encodes the fix correctly:
+
+.. literalinclude:: outputs/dev/reinstall-concretize.out
+   :language: console
+   :lines: 1-5
+
+The concretized spec carries ``patches:=e297b3b``, the sha256 prefix of the new directive.
+
+When you install:
+
+.. literalinclude:: outputs/dev/reinstall-install.out
    :language: console
 
-Once you have a development package, ``spack install`` also works much like "make".
-Since Spack knows the source code directory of the package, it checks the filetimes on the source directory to see if we've made recent changes.
-If the file times are newer, it will rebuild ``scr`` and any other package that depends on ``scr``.
+Spack fetches and unpacks the ``@7.5`` release, applies the patch, and the CMake configure step finds ``libelpa_openmp.so`` without a local clone.
 
-.. literalinclude:: outputs/dev/develop-3.out
-   :language: console
+---------------------------
+Comparing the two workflows
+---------------------------
 
-Here, the build failed as expected.
-We can look at the output for the build in the stage directory ``scr/build-linux-*/spack-build-out.txt`` to find out why.
-The ``build-linux-*`` directory inside the source tree is a symlink to the spec's stage directory where all the logs are stored.
-The full name of this directory can be found with ``spack location --stage scr`` or quickly navigated to with ``spack cd --stage scr``.
-We can also launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr -- bash``.
-If that's too much to remember, then sourcing ``scr/build-linux-*/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
-Now let's fix it and rebuild directly.
+The two approaches serve different stages of the development cycle.
 
-.. literalinclude:: outputs/dev/develop-4.out
-   :language: console
+``spack develop --path`` is appropriate while a change is in flight.
+Spack reuses compiled objects across ``spack install`` invocations, so builds are incremental, and the source directory is a full git working tree that can be pushed to a fork and turned into a merge request.
 
-You'll notice here that Spack rebuilt both ``scr`` and ``macsio``, as expected.
+``patch()`` is appropriate once a change has been submitted upstream.
+It encodes the fix in the recipe alongside the ``when=`` conditions that scope its application, and any user of the recipe picks up the fix automatically.
 
-Taking advantage of iterative builds with Spack requires cooperation from your build system.
-When Spack performs a rebuild on a development package, it reruns all the build stages for your package without cleaning the source and build directories to a pristine state.
-If your build system can take advantage of the previously compiled object files then you'll end up with an iterative build.
+The source tree managed by ``dev_path=`` is the user's responsibility. 
+Spack provides the initial clone but makes no further guarantees.  
+Calling ``spack undevelop`` and reinstalling returns the spec to a reproducible, tarball-based build.
 
-- If your package just uses make, you also should get iterative builds for free when running ``spack develop``.
-- If your package uses CMake with the typical ``cmake`` / ``build`` / ``install`` build stages, you'll get iterative builds for free with Spack because CMake doesn’t modify the filetime on the ``CMakeCache.txt`` file if your cmake flags haven't changed.
-- If your package uses autoconf, then rerunning the typical ``autoreconf`` stage typically modifies the filetime of ``config.h``, which can trigger a cascade of rebuilding.
+------------------------------------
+Developing multiple packages at once
+------------------------------------
 
-Multi-package development
--------------------------
+The scenario in this chapter required modifying only one package: QE's ``FindELPA.cmake`` finder.
+Had the fix required changing the ELPA library itself (for example, correcting the pkg-config file it installs) the same ``spack develop`` mechanism applies to dependencies.
 
-You may have noticed that ``macsio`` is restaged and fully rebuilt each time we call ``spack install``.
-Usually developers do not want to fully rebuild the canonical source every time; either for performance or because they are co-developing the two packages.
-Spack does not limit how many packages can be developed so ``spack develop`` can be applied to any spec in our environment including ``macsio``.
-The ``--recursive`` option provides a convenient way to mark all downstream dependencies as develop specs.
+Multiple ``develop:`` entries in ``spack.yaml`` are supported.
+Adding a second entry for ELPA alongside the existing one for QE registers both packages for incremental builds from local source trees.
+Spack respects the dependency graph: a rebuild of ELPA triggers recompilation of any package that depends on it, including QE, without requiring a full reinstall of the rest of the graph.
 
+This is most useful when a bug spans a package boundary --- an interface change in a library that requires a coordinated fix in the consumer.
+The iteration loop is the same as for a single package: edit source, run ``spack install``, inspect the result.
+Only the packages registered under ``develop:`` are built from source.
+All other dependencies continue to install from the binary cache.
 
-.. literalinclude:: outputs/dev/develop-5.out
-   :language: console
+-----------
+Cleaning up
+-----------
 
-``spack develop --recursive`` can only be used with a concrete environment.
-When called Spack traces the graph from the supplied develop spec to every root in the graph that transitively depends on the develop package.
-Using ``--recursive`` can be very powerful when developing applications deep in a graph.
-In this case our development point is very close to the root spec so we could have called ``spack develop macsio`` and gotten the same result.
-
-Pre-configuring development environments
-----------------------------------------
-
-So far all of our calls to ``spack develop`` have been on a concretized environment, and we have allowed Spack to automatically update the build specs for us.
-If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
-Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
-
-There is a limited set of use-cases where one might want to use this option.
-Some example cases include:
-
-- Updating a develop spec before updating the environment to change a variant or version
-- Adding a develop spec that is not yet in the environment
-- Debugging unexpected behavior
-
-For illustrative purposes we will show an example of switching ``scr`` to a debug build via the ``build_type=Debug`` variant.
-
-.. literalinclude:: outputs/dev/develop-6.out
-   :language: console
-
-We see that naively updating the develops spec, resulted first in an error and then an undesired version change.
-To preserve the version and get the new variant added we run the following commands:
-
-.. literalinclude:: outputs/dev/develop-7.out
-   :language: console
-
-Some additional concerns to navigate for effective use of the ``spack develop`` command include:
-
-* ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
-* If the spec is not already concrete in the environment, you need to provide Spack a spec version so it can supply the correct flags for the package's build system.
-* If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
-* The source code located at the spec's ``dev_path`` is the users responsibility to manage.
-  Spack does provide an initial clone of the source code, but it makes no guarantees or additional verification of the source beyond that.
-  Users can manage the code locally via a version control system like ``git``, or can trigger a re-stage by calling ``spack develop --force``.
-
-
-Sharing development environments
---------------------------------
-
-Using development workflows also lets us ship our whole development process to another developer on the team.
-They can simply take our ``spack.yaml``, create a new environment, and use this to replicate our build process.
-For example, we'll make another development environment here.
-
-.. literalinclude:: outputs/dev/otherdevel.out
-   :language: console
-
-Here, ``spack develop`` with no arguments will check out or download the source code and place it in the appropriate places.
-
-When we're done developing, we simply tell Spack that it no longer needs to keep a development version of the package.
+Deactivate and remove the environment:
 
 .. literalinclude:: outputs/dev/wrapup.out
    :language: console
 
 ----------------
-Workflow Summary
+More information
 ----------------
 
-Use the ``spack develop`` command with an environment to make a reproducible build environment for your development workflow.
-Spack will set up all the dependencies for you and link all your packages together.
-Within a development environment, ``spack install`` works similarly to ``make`` in that it will check file times to rebuild the minimum number of Spack packages necessary to reflect the changes to your build.
-
--------------------------
-Optional: Tips and Tricks
--------------------------
-
-This section will cover some additional features that are useful additions to the core tutorial above.
-Many of these items are very useful to specific projects and developers.
-A list of the options for the ``spack develop`` can be viewed below:
-
-.. code-block:: console
-
-   $ spack develop --help
-
-Source Code Management
-----------------------
-
-``spack develop`` allows users to manipulate the source code locations The default behavior is to let Spack manage its location and cloning operations, but software developers often want more control over these.
-
-The source directory can be set with the ``--path`` argument when calling ``spack develop``.
-If this directory already exists then ``spack develop`` will not attempt to fetch the code for you.
-This allows developers to pre-clone the software or use preferred paths as they wish.
-
-.. code-block:: console
-
-   # pre-clone the source code and then point spack develop to it
-   # note that we can clone into any repo/branch combination desired
-   $ git clone https://github.com/llnl/scr.git $SPACK_ENV/code
-   # note that with `--path` the code directory and package name can be different
-   $ spack develop --path $SPACK_ENV/code scr@3.1.0
-   $ spack concretize -f
-
-Navigation and the Build Environment
-------------------------------------
-
-Diving into the build environment was introduced previously in the packaging section with the ``spack build-env scr -- bash`` command.
-This is a helpful function because it allows you to run commands inside the build environment.
-In the packages section of the tutorial this was combined with ``spack cd`` to produce a manual build outside of Spack's automated Process.
-This command is particularly useful in developer environments—it allows developers a streamlined workflow when iterating on a single package without the overhead of the ``spack install`` command.
-The additional features of the install command are unnecessary when tightly iterating between building and testing a particular package.
-For example, the workflow modifying ``scr`` that we just went through can be simplified to:
-
-.. code-block:: spec
-
-   $ spack build-env scr -- bash
-   # Shell wrappers did not propagate to the subshell
-   $ source $SPACK_ROOT/share/spack/setup-env.sh
-   # Lets look at navigation features
-   $ spack cd --help
-   $ spack cd -c scr
-   $ touch src/scr_copy.c
-   $ spack cd -b scr
-   # Lets look at whats here
-   $ ls
-   # Build and run tests
-   $ make -j2
-   $ make test
-   $ exit
-
-Working with the build environment and along with Spack navigation features provides a nice way to iterate quickly and navigate through the hash-heavy Spack directory structures.
-
-Combinatorics
--------------
-
-The final note we will look at in this tutorial will be the power of combinatoric development builds.
-There are many instances where developers want to see how a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``, ``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
-
-Developers can achieve builds of both cases from a single ``spack install`` as long as the develop spec is generic enough to cover the packages' spec variations
-
-.. code-block:: spec
-
-   # First we have to allow repeat specs in the environment
-   $ spack config add concretizer:unify:false
-   # Next we need to specify the specs we want ('==' propagates the variant to deps)
-   $ spack change macsio build_type==Release
-   $ spack add macsio+scr build_type==Debug
-   # Inspect the graph for multiple dev_path=
-   $ spack concretize -f
-
-While we won't build out this example it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
-
-Now if we want to do most of our incremental builds using the ``Release`` build and periodically check the results using the ``Debug`` build we can combine the workflow from the previous example: dive into the ``Release`` versions build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
-Note that since there are two ``scr`` specs in the environment we must distinguish which one we want for these commands.
-When we are ready to check our changes for the debug build, we can exit out of the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build through our method of choice.
+* `Developer workflow
+  <https://spack.readthedocs.io/en/latest/developer_guide.html>`_:
+  ``spack develop`` reference, including ``--path``, ``--force``, and the
+  ``develop:`` section in ``spack.yaml``.
+* `Packaging guide — patches
+  <https://spack.readthedocs.io/en/latest/packaging_guide.html#patching>`_:
+  ``patch()`` directive arguments, URL patches, and archive patches.
+* `Multiple Build Systems
+  <https://spack.readthedocs.io/en/latest/packaging_guide_advanced.html#multiple-build-systems>`_:
+  ``build_system(...)`` directive reference.

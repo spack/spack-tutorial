@@ -9,87 +9,121 @@ rm -rf "${raw_outputs:?}/dev"
 
 export SPACK_COLOR=never
 
-example dev/setup-scr "cd ~"
+echo $PWD
+. share/spack/setup-env.sh
+spack mirror add --unsigned cineca26 /buildcache
+
+# ---------------------------------------------------------------------------
+# Setup: create and populate the qe-dev environment
+# ---------------------------------------------------------------------------
+
 cd ~ || exit
-example dev/setup-scr "mkdir devel-env"
-example dev/setup-scr "cd devel-env"
-cd devel-env || exit
-example dev/setup-scr "spack env create -d ."
-fake_example dev/setup-scr "spacktivate ." "spack env activate ."
-spack env activate .
-example dev/setup-scr "# for now, disable fortran support in all packages"
-example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
-example dev/setup-scr "spack add macsio+scr"
-example dev/setup-scr "spack install"
-example dev/setup-scr "spack find -cv scr"
 
-example dev/develop-1 "spack develop scr"
-example dev/develop-1 "spack config blame develop"
-example dev/develop-1 "spack find -cv scr"
+spack env create qe-dev
 
-example dev/develop-2 "spack install"
+# Write the manifest directly (mirrors what the user does via spack config edit)
+cat > "$(spack location -e qe-dev)/spack.yaml" << 'YAML'
+spack:
+  specs:
+  - quantum-espresso +elpa %elpa +openmp
+  view: view
+  concretizer:
+    unify: true
+  mirrors:
+    local:
+      url: /buildcache
+      signed: false
+  packages:
+    c:
+      prefer: [gcc@15]
+    cxx:
+      prefer: [gcc@15]
+    fortran:
+      prefer: [gcc@15]
+YAML
 
-export EDITOR=true
-fake_example dev/edit-1 '$EDITOR scr/src/scr_copy.c' "/bin/true"
-sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\);|\1|' scr/src/scr_copy.c | head -n 70
+spack env activate qe-dev
 
-example --expect-error dev/develop-3 "spack install"
+example dev/setup "spack concretize"
 
-fake_example dev/develop-4 '$EDITOR scr/src/scr_copy.c' "/bin/true"
-sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\)|\1;|' scr/src/scr_copy.c | head -n 70
-example dev/develop-4 "spack install"
+# ---------------------------------------------------------------------------
+# Clone upstream QE at the qe-7.5 tag (shallow to reduce size)
+# ---------------------------------------------------------------------------
 
-example dev/develop-5 "spack develop --recursive scr"
-example dev/develop-5 "spack find -cv macsio"
+example dev/clone "git clone -c advice.detachedHead=false --depth 2 --branch qe-7.5 https://gitlab.com/QEF/q-e.git"
+example dev/clone "git -C q-e switch -c qe-7.5-dev"
 
-example --expect-error dev/develop-6 "spack develop scr build_type=Debug"
-example dev/develop-6 "spack develop --no-modify-concrete-specs scr build_type=Debug"
+# ---------------------------------------------------------------------------
+# Register the clone as the dev_path for quantum-espresso@7.5.
+# --no-clone tells spack develop to use the existing source at the given
+# path without downloading or overwriting it.
+# ---------------------------------------------------------------------------
 
-example dev/develop-7 "# Not the verison we wanted. This time lets add a version"
-example dev/develop-7 "spack develop --no-modify-concrete-specs scr@3.1.0 build_type=Debug"
-example dev/develop-7 "spack concretize --force"
+example dev/develop "spack develop --path ~/q-e quantum-espresso@7.5 +elpa %elpa+openmp"
 
-example dev/otherdevel "cd ~"
-cd ~ || exit
-example dev/otherdevel "mkdir devel-other"
-example dev/otherdevel "cd devel-other"
-cd devel-other || exit
-example dev/otherdevel "cp ../devel-env/spack.yaml ."
-fake_example dev/otherdevel "spacktivate ." "spack env activate ."
-spack env activate .
-example dev/otherdevel "spack develop"
-example dev/otherdevel "ls"
+# ---------------------------------------------------------------------------
+# Relax the recipe constraint so cmake+elpa+openmp is concretizable.
+# Shown as spack edit (no output); real action is a targeted sed.
+# Following the old tutorial pattern: do the real edit first, then
+# fake_example records the "shown" command with a no-op real command.
+# ---------------------------------------------------------------------------
 
-example dev/wrapup "spack undevelop scr macsio"
+spack cd --repo builtin
+git apply /project/qe.7.5-elpa-openmp-relax.diff
+cd - || exit
 
-# example dev/optional-intro "spack develop --help"
+fake_example dev/relax "spack edit quantum-espresso" "true"
 
-# example dev/setting-src-path '# pre-clone the source code and then point spack develop to it'
-# example dev/setting-src-path '# note that we can clone into any repo/branch combination desired'
-# example dev/setting-src-path 'git clone https://github.com/llnl/scr.git $SPACK_ENV/code'
-# example dev/setting-src-path '# note that with `--path` the code directory and package name can be different'
-# example dev/setting-src-path 'spack develop --path $SPACK_ENV/code scr@3.1.0'
-# example dev/setting-src-path 'spack concretize -f'
+# ---------------------------------------------------------------------------
+# Update the env spec and concretize, then attempt the build (expected to fail)
+# ---------------------------------------------------------------------------
 
-# fake_example dev/navigation-and-build-env "spack build-env scr -- bash" "/bin/true"
-# example dev/navigation-and-build-env "# Shell wrappers didn't propagate to the subshell"
-# example dev/navigation-and-build-env "source $SPACK_ROOT/share/spack/setup-env.sh"
-# example dev/navigation-and-build-env "# Let's look at navigation features"
-# example dev/navigation-and-build-env "spack cd --help"
-# example dev/navigation-and-build-env "spack cd -c scr"
-# fake_example dev/navigation-and-build-env "touch src/scr_copy.c" "/bin/true"
-# fake_example dev/navigation-and-build-env "spack cd -b scr" "/bin/true"
-# example dev/navigation-and-build-env "# Let's look at what's here"
-# example dev/navigation-and-build-env "ls"
-# example dev/navigation-and-build-env "# Build and run tests"
-# fake_example dev/navigation-and-build-env "make -j2" "/bin/true"
-# fake_example dev/navigation-and-build-env "make test" "/bin/true"
-# fake_example dev/navigation-and-build-env "exit" "/bin/true"
+example dev/build-fail-concretize "spack concretize -f"
 
-# example dev/combinatorics "# First we have to allow repeat specs in the environment"
-# example dev/combinatorics "spack config add concretizer:unify:false"
-# example dev/combinatorics "# Next we need to specify the specs we want ('==' propagates the variant to deps)"
-# example dev/combinatorics "spack change macsio build_type==Release"
-# example dev/combinatorics "spack add macsio+scr build_type==Debug"
-# example dev/combinatorics "# Inspect the graph for multiple dev_path="
-# example dev/combinatorics "spack concretize -f"
+example dev/build-fail-install "spack install | cat"
+
+# ---------------------------------------------------------------------------
+# Apply the FindELPA fix to the local clone.
+# Shown as $EDITOR (no output); real action fetches and applies the patch.
+# ---------------------------------------------------------------------------
+
+git -C ~/q-e apply /project/517a7bba47628af8f93f985765d7ab7d23077c4c.diff
+
+fake_example dev/fix "\$EDITOR q-e/cmake/FindELPA.cmake" "true"
+
+# ---------------------------------------------------------------------------
+# Rebuild from the patched local source (should succeed)
+# ---------------------------------------------------------------------------
+
+example dev/build-ok "spack -v install --until cmake | cat"
+
+# ---------------------------------------------------------------------------
+# Drop the dev_path registration
+# ---------------------------------------------------------------------------
+
+example dev/undevelop "spack undevelop quantum-espresso"
+
+# ---------------------------------------------------------------------------
+# Add patch() directive and narrow the depends_on constraint in the recipe.
+# Shown as spack edit (no output); real action uses python to modify the file.
+# ---------------------------------------------------------------------------
+
+spack cd --repo builtin
+git stash
+git apply /project/qe.7.5-elpa-openmp-fix.diff
+cd - || exit
+
+# ---------------------------------------------------------------------------
+# Reinstall from the upstream tarball + patch (no local clone required)
+# ---------------------------------------------------------------------------
+
+example dev/reinstall-concretize "spack concretize -f --fresh-roots"
+example dev/reinstall-install "spack install | cat"
+
+# ---------------------------------------------------------------------------
+# Cleanup
+# ---------------------------------------------------------------------------
+
+spack env deactivate
+fake_example dev/wrapup "despacktivate" "true"
+example dev/wrapup "spack env rm -y qe-dev"

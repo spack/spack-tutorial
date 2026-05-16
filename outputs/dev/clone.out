@@ -1,0 +1,12 @@
+$ git clone -c advice.detachedHead=false --depth 2 --branch qe-7.5 https://gitlab.com/QEF/q-e.git
+Cloning into 'q-e'...
+remote: Enumerating objects: 8448, done.K
+remote: Counting objects: 100% (8448/8448), done.K
+remote: Compressing objects: 100% (6079/6079), done.K
+remote:nTotale8448 (delta83217),4reused.5538i(delta.2291),/pack-reused 0 (from 0)K
+Receiving objects: 100% (8448/8448), 71.53 MiB | 13.19 MiB/s, done.
+Resolving deltas: 100% (3217/3217), done.
+warning: refs/tags/qe-7.5 17975e6f2ba19aec6f50d99c1fc677361d7c8b3a is not a commit!
+Updating files: 100% (7229/7229), done.
+$ git -C q-e switch -c qe-7.5-dev
+Switched to a new branch 'qe-7.5-dev'
