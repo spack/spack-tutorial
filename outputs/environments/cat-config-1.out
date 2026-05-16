@@ -6,11 +6,8 @@ $ cat spack.yaml
 spack:
   # add package specs to the `specs` list
   specs:
-  - tcl
-  - trilinos
+  - quantum-espresso
+  - py-numpy
   view: true
   concretizer:
     unify: true
-  packages:
-    mpi:
-      require: [mpich]

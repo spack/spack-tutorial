@@ -1,4 +1,4 @@
-FROM ghcr.io/spack/tutorial-ubuntu-22.04
+FROM ghcr.io/haampie/cineca-2026-base:latest@sha256:8c45cfae569be8c75603ff6c851d3e69653bb73633dedade14dd8a5e65a46b92
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -13,14 +13,12 @@ RUN apt-get update -y && \
     vim \
     rclone
 
-# Remove GCC 12 from container
-RUN apt-get remove -y gcc-12
 
 # Download the buildcache
-RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/v2025.11.0/tutorial /mirror
+# RUN mkdir /mirror
+# RUN rclone copy :s3:spack-binaries/v2025.11.0/tutorial /mirror
 
-RUN chmod -R go+r /mirror
+RUN chmod -R go+r /buildcache
 
 COPY packages.yaml /etc/spack/packages.yaml
 COPY config.yaml /etc/spack/config.yaml

@@ -1,0 +1,26 @@
+$ spack concretize
+==> No new specs to concretize.
+==> Updating view at /home/spack/spack/var/spack/environments/myproject/.spack-env/view
+$ spack find
+==> In environment myproject (1 root spec)
+[+] quantum-espresso
+
+-- linux-ubuntu26.04-x86_64 / no compilers ----------------------
+gcc@15.2.0  glibc@2.43
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+openblas@0.3.33  openmpi@5.0.10  quantum-espresso@7.5
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+expat@2.8.0  gettext@1.0  hwloc@2.13.0	krb5@1.22.2  ncurses@6.6  openssh@10.3p1  openssl@3.6.1  zlib-ng@2.3.3	zstd@1.5.7
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,fortran=gcc@15.2.0 ----------
+fftw@3.3.11  netlib-scalapack@2.2.3
+
+-- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
+bzip2@1.0.8  gdbm@1.26	libbsd@0.12.2  libedit@20251016-3.1  libevent@2.1.12  libiconv@1.18  libmd@1.1.0  libpciaccess@0.17  libxcrypt@4.5.2  libxml2@2.15.1  numactl@2.0.19  pigz@2.8	pmix@6.1.0  prrte@4.1.0  readline@8.3  tar@1.35  xz@5.8.3
+
+-- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
+gcc-runtime@15.2.0
+==> 34 installed packages
+==> 25 concretized packages to be installed (show with `spack find -c`)

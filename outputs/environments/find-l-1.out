@@ -1,0 +1,24 @@
+$ spack find -l
+==> In environment myproject (2 root specs)
+[+] 6t26kli py-numpy  [+] zia4bn3 quantum-espresso
+
+-- linux-ubuntu26.04-x86_64 / no compilers ----------------------
+rpza6xq gcc@15.2.0  ublhg65 glibc@2.43
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+tqv4kp2 openblas@0.3.33  k3wh5o7 openmpi@5.0.10  zia4bn3 quantum-espresso@7.5
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+5z3hv5f expat@2.8.0  vlxjoxi gettext@1.0  elbtvuc hwloc@2.13.0	aoonm2m krb5@1.22.2  2fkfnyh libffi@3.5.2  5hhowyk ncurses@6.6	nzwxr5y openssh@10.3p1	mobrgls openssl@3.6.1  6t26kli py-numpy@2.4.4  3lmz6sv python@3.14.3  dg3p72g zlib-ng@2.3.3  cypnftc zstd@1.5.7
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,fortran=gcc@15.2.0 ----------
+6zwro7e fftw@3.3.11  i6kndj2 netlib-scalapack@2.2.3
+
+-- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
+3776hwe bzip2@1.0.8  axvtee5 libbsd@0.12.2	   3uq57ew libevent@2.1.12  s3i77ec libmd@1.1.0        rflsj6p libxcrypt@4.5.2	bst3thh numactl@2.0.19	7jhebfq pmix@6.1.0   pi45asb readline@8.3   ex72qqs tar@1.35		  negwj4w xz@5.8.3
+a4ajhha gdbm@1.26    o6pltnc libedit@20251016-3.1  icwlhjj libiconv@1.18    3xnffqk libpciaccess@0.17  s3j44vc libxml2@2.15.1	vdefud6 pigz@2.8	xtxw5gy prrte@4.1.0  473ea6u sqlite@3.53.1  x4feden util-linux-uuid@2.41
+
+-- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
+jt44pre gcc-runtime@15.2.0  voe4mbu python-venv@1.0
+==> 40 installed packages
+==> 36 concretized packages to be installed (show with `spack find -c`)

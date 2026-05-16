@@ -6,26 +6,26 @@ $ jq < spack.lock | head -30
     "specfile-version": 5
   },
   "spack": {
-    "version": "1.1.0",
+    "version": "1.2.0.dev0",
     "type": "git",
-    "commit": "89b3f0baae13477ee5384cd30ebf512489a69890"
+    "commit": "afd4002255cdaceaac1b7368119eea8613b0ba45"
   },
   "roots": [
     {
-      "hash": "tqxbnvoiw3nzds4xypcualamx3cvisln",
-      "spec": "openmpi"
+      "hash": "zia4bn3lvraagxfnu77ysgewykavwnsc",
+      "spec": "quantum-espresso"
     },
     {
-      "hash": "tj433utqwna4zgloncl5jwlabsqgghcv",
-      "spec": "trilinos"
+      "hash": "6t26kli6wzzkm6jjfll6pjhtdfimsb7e",
+      "spec": "py-numpy"
     }
   ],
   "concrete_specs": {
-    "tqxbnvoiw3nzds4xypcualamx3cvisln": {
-      "name": "openmpi",
-      "version": "5.0.8",
+    "zia4bn3lvraagxfnu77ysgewykavwnsc": {
+      "name": "quantum-espresso",
+      "version": "7.5",
       "arch": {
 	"platform": "linux",
-	"platform_os": "ubuntu22.04",
+	"platform_os": "ubuntu26.04",
 	"target": "x86_64_v3"
       },
