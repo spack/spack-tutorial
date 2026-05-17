@@ -2,7 +2,6 @@ FROM ghcr.io/haampie/cineca-2026-base:latest@sha256:8c45cfae569be8c75603ff6c851d
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install AWS cli
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     bash-completion \
@@ -10,13 +9,8 @@ RUN apt-get update -y && \
     emacs \
     jq \
     less \
-    vim \
-    rclone
+    vim
 
-
-# Download the buildcache
-# RUN mkdir /mirror
-# RUN rclone copy :s3:spack-binaries/v2025.11.0/tutorial /mirror
 
 RUN chmod -R go+r /buildcache
 
