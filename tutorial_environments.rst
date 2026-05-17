@@ -14,7 +14,7 @@ Reproducing a working build on a different machine, or sharing it with a collabo
 A Spack environment records that information in two files: ``spack.yaml`` holds the abstract requirements and configuration, ``spack.lock`` captures every concretization decision.
 Both can be versioned and shared, making the same software stack reproducible on another system.
 
-This tutorial covers creating and configuring environments and sharing them across systems and uses Quantum ESPRESSO as the working example throughout.
+This tutorial covers creating, configuring, and sharing Spack environments, using Quantum ESPRESSO as the working example throughout.
 
 -------------
 Initial Setup
@@ -44,7 +44,7 @@ Check that the setup is working before proceeding:
 The output lists the compilers Spack has detected and all currently installed packages.
 With a fresh installation, no packages are present and only a single compiler is available.
 
-For help, join the ``#tutorial`` channel on Slack — get an invitation at `slack.spack.io <https://slack.spack.io/>`_.
+For help, join the ``#tutorial`` channel on Slack (invitation at `slack.spack.io <https://slack.spack.io/>`_).
 
 ------------------------------------
 Creating and Activating Environments
@@ -71,11 +71,9 @@ Once an environment is active, ``spack find`` shows only what it contains:
 .. literalinclude:: outputs/environments/find-env-1.out
    :language: console
 
-The output confirms the active environment is ``myproject`` and, because it was just created, shows no installed packages.
-While an environment is active, Spack commands such as ``spack find`` and ``spack install`` operate within its scope and are unaware of packages outside it.
-
-It also states that there are **no** *root specs*.
-Root specs are the packages explicitly added to the environment. Dependencies are resolved automatically.
+The output confirms the active environment is ``myproject`` and, because it was just created, shows no installed packages and no root specs.
+Root specs are the packages explicitly added to the environment; dependencies are resolved automatically.
+While an environment is active, ``spack find`` and ``spack install`` operate within its scope and are unaware of packages outside it.
 
 To check which environment is active without the full package listing, use ``spack env status``:
 
@@ -139,8 +137,7 @@ Root specs appear at the top. The remaining packages are dependencies that Spack
 Using Packages
 --------------
 
-Spack environments provide a convenient way to use your installed packages by automatically making them available in your shell environment.
-This is accomplished through a feature called **environment views**.
+Activating a Spack environment makes all its installed packages available in the shell through a feature called **environment views**.
 
 An environment view is a directory structure mirroring a standard Linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in your Spack environment.
 When you activate an environment with ``spack env activate``, Spack automatically:
@@ -151,7 +148,7 @@ When you activate an environment with ``spack env activate``, Spack automaticall
 
 This means that executables, libraries, and other files from your environment's packages become immediately accessible from the command line without any module loads or manual path changes.
 
-Quantum ESPRESSO's ``pw.x`` executable is a direct example:
+After activation, ``pw.x`` is accessible directly on ``PATH``:
 
 .. literalinclude:: outputs/environments/use-pwx-1.out
    :language: console
@@ -197,7 +194,7 @@ Removing Packages
 -----------------
 
 Spack environments hold references to shared package installations, not the packages themselves.
-Removing a spec from an environment's manifest therefore does not uninstall it from disk and other environments referencing the same package are unaffected.
+Removing a spec from an environment's manifest therefore does not uninstall it from disk. Other environments referencing the same package are unaffected.
 
 Use ``spack remove`` to drop a spec from the manifest:
 
@@ -245,7 +242,6 @@ Two files define a Spack environment:
    * - ``spack.lock``
      - Fully *concrete* specs generated during concretization.
 
-Both can be versioned in a repository and shared, making them the basis for reproducing builds by other users and on other machines.
 Environments created by Spack are stored by default in the ``var/spack/environments`` directory of your Spack instance.
 Navigate to ``myproject``'s directory with ``spack cd``:
 
@@ -282,7 +278,7 @@ Inspect the top 30 lines:
 
 While it is still readable, it consists of over 1900 lines representing the actual configurations for each of the environment's packages.
 
-Environments created by Spack are *managed* environments, meaning that Spack automatically handles their storage and reference.
+Environments created with ``spack env create <name>`` are *managed* environments: Spack stores them under ``var/spack/environments`` and tracks them by name.
 You can also create *independent* environments with:
 
 .. code-block:: console
@@ -296,7 +292,7 @@ which allows you to store the environment files in any directory you choose and 
 Sharing environments
 --------------------
 
-Passing either files to ``spack env create`` recreates the environment.
+Passing either of these files to ``spack env create`` recreates the environment.
 The ``spack.yaml`` file preserves the abstract requirements but allows the concretizer to adapt to a new platform.
 The ``spack.lock`` file fixes every concretization decision and reproduces the build exactly.
 
@@ -374,7 +370,7 @@ Replace the contents of ``spack.yaml`` with:
      concretizer:
        unify: true
 
-The ``needs`` key declares that a group is concretized and installed after the listed groups — used here to ensure ``gcc@16`` is available before building with it.
+The ``needs`` key declares that a group is concretized and installed after the listed groups, ensuring ``gcc@16`` is available before Quantum ESPRESSO builds with it.
 The ``override`` key sets package configuration that applies only to the specs within that group.
 Re-concretize to apply the new configuration:
 
@@ -394,10 +390,9 @@ Spack installs ``gcc@16`` first, then builds ``quantum-espresso`` with it:
 
 Concretizing and installing all specs together allows Spack to share dependencies across groups and enables `install-level parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
 
-With ``view: false``, no executables are added to ``PATH`` on activation.
-For a simple environment with one group, ``view: true`` suffices.
 When multiple groups install packages built with different compilers, a single flat view directory produces symlink conflicts: two builds of the same file compete for the same path.
-Named views assign a separate directory to each group.
+Named views assign a separate directory to each group, avoiding the conflict.
+With ``view: false``, no executables are added to ``PATH`` on activation; for a single-group environment, ``view: true`` suffices.
 Update ``spack.yaml`` to replace ``view: false`` with:
 
 .. code-block:: yaml
