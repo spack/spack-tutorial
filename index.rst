@@ -45,6 +45,7 @@ For the main Spack documentation, see
 
    Unstructured time to work through tutorial material, experiment with Spack
    on your own projects, and ask questions of the instructors.
+   Suggested exercises: :ref:`hackathon-tutorial`.
 
 .. toctree::
    :hidden:
@@ -67,3 +68,9 @@ For the main Spack documentation, see
    tutorial_developer_workflows
    tutorial_binary_cache
    tutorial_reproducible_builds
+
+.. toctree::
+   :hidden:
+   :caption: Day 3: Open Hands-on Session
+
+   tutorial_hackathon
