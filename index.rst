@@ -57,6 +57,7 @@ For the main Spack documentation, see
    :hidden:
    :caption: Day 1: Introduction to Spack
 
+   tutorial_introduction
    tutorial_environments
    tutorial_packaging
 
