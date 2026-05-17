@@ -49,9 +49,9 @@ For the main Spack documentation, see
 
 .. toctree::
    :hidden:
-   :caption: Links
+   :caption: Overview
 
-   Main Spack Documentation <https://spack.readthedocs.io>
+   self
 
 .. toctree::
    :hidden:
@@ -74,3 +74,9 @@ For the main Spack documentation, see
    :caption: Day 3: Open Hands-on Session
 
    tutorial_hackathon
+
+.. toctree::
+   :hidden:
+   :caption: Links
+
+   Main Spack Documentation <https://spack.readthedocs.io>
