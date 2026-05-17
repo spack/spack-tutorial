@@ -4,8 +4,12 @@
 
 .. _stacks-tutorial:
 
-===============
-Stacks Tutorial
-===============
+========================================
+Software Deployment and CI/CD with Spack
+========================================
 
-.. todo:: Add link to the stacks slide deck.
+.. image:: _static/images/cineca26-cicd-slide-preview.png
+   :target: _static/slides/./cineca-workshop-26-day2.pdf
+   :height: 288px
+   :align: left
+   :alt: Slide Preview
