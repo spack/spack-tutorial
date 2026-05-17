@@ -24,7 +24,8 @@ Start the tutorial container:
 
 .. code-block:: console
 
-   $ docker run -it spack/tutorial:latest
+   $ docker pull ghcr.io/spack/tutorial:cineca26
+   $ docker run -it ghcr.io/spack/tutorial:cineca26
 
 Set up Spack inside the container:
 
@@ -35,6 +36,7 @@ Set up Spack inside the container:
    $ spack repo update builtin --commit 79fd9821dceebf719a4cb544ba67c3b2f39132ca
    $ spack bootstrap now
    $ spack compiler find
+   $ spack mirror add --unsigned tutorial /buildcache
 
 Check that the setup is working before proceeding:
 
