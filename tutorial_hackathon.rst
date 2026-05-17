@@ -71,11 +71,8 @@ The final shape of the ``with when("+elpa"):`` block is documented in :ref:`deve
 Run ``spack install --until cmake`` to confirm the configure step fails: the relevant log line names ``ELPA_LIBRARIES``, ``ELPA_INCLUDE_DIRS``, ``ELPA_Fortran_MODS_DIR``, and ``ELPA_VERSION`` as unset.
 The cause is in ``q-e/cmake/FindELPA.cmake``, which searches unconditionally for ``libelpa`` while the OpenMP build of ELPA installs as ``libelpa_openmp``.
 
-The diff that fixes the finder is reproduced in :ref:`developer-workflows-tutorial`; transcribe it into ``cmake/FindELPA.cmake`` and rerun ``spack install --until cmake``.
+The diff that fixes the finder is reproduced in :ref:`developer-workflows-tutorial`; transcribe it into ``cmake/FindELPA.cmake`` and rerun ``spack install``.
 The configure output should now print ``Found ELPA: .../libelpa_openmp.so``.
-
-Stretch goal: drop ``--until cmake``, let the build finish, and run ``spack load quantum-espresso && pw.x -h`` to confirm the resulting binary works.
-Attendees who want to push the fix upstream can commit on ``qe-7.5-dev``, push to a fork of `gitlab.com/QEF/q-e <https://gitlab.com/QEF/q-e>`_, and open a merge request.
 
 -----------------------------------------------------
 Exercise 2: Two independent builds of the same spec
