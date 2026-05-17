@@ -17,6 +17,7 @@ RUN chmod -R go+r /buildcache
 COPY packages.yaml /etc/spack/packages.yaml
 COPY config.yaml /etc/spack/config.yaml
 COPY concretizer.yaml /etc/spack/concretizer.yaml
+COPY find_elpa_fix.diff /etc/patches/find_elpa_fix.diff
 
 RUN useradd -ms /bin/bash spack && \
     chmod -R go+r /etc/spack

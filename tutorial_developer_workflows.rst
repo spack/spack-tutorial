@@ -189,7 +189,6 @@ Now install to see if the build fails:
 
 .. literalinclude:: outputs/dev/build-fail-install.out
    :language: console
-   :lines: 1,148-
 
 The build then fails inside CMake's ``FindELPA`` module.
 The log excerpt printed by Spack names all four missing components (``ELPA_LIBRARIES``, ``ELPA_INCLUDE_DIRS``, ``ELPA_Fortran_MODS_DIR``, and ``ELPA_VERSION``) indicating the finder returned empty-handed rather than partially failing.
