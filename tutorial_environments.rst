@@ -27,13 +27,13 @@ Start the tutorial container:
    $ docker pull ghcr.io/spack/tutorial:cineca26
    $ docker run -it ghcr.io/spack/tutorial:cineca26
 
-Set up Spack inside the container:
+Set up Spack inside your home directory:
 
 .. code-block:: console
 
-   $ git clone --depth=2 --branch=develop https://github.com/spack/spack
+   $ git clone --depth=2 --branch=workshops/cineca26 https://github.com/spack/spack
    $ . spack/share/spack/setup-env.sh
-   $ spack repo update builtin --commit 79fd9821dceebf719a4cb544ba67c3b2f39132ca
+   $ spack repo update builtin --branch workshops/cineca26
    $ spack bootstrap now
    $ spack compiler find
    $ spack mirror add --unsigned tutorial /buildcache
@@ -278,7 +278,7 @@ Inspect the top 30 lines:
 .. literalinclude:: outputs/environments/lockfile-1.out
    :language: console
 
-While it is still readable, it consists of over 1900 lines representing the actual configurations for each of the environment's packages.
+While it is still readable, it consists of over 8000 lines representing the actual configurations for each of the environment's packages.
 
 Environments created with ``spack env create <name>`` are *managed* environments: Spack stores them under ``var/spack/environments`` and tracks them by name.
 You can also create *independent* environments with:

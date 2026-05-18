@@ -7,9 +7,9 @@
 
    and then set Spack up like this::
 
-       git clone --depth=2 --branch=develop https://github.com/spack/spack
+       git clone --depth=2 --branch=workshops/cineca26 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack repo update builtin --commit 79fd9821dceebf719a4cb544ba67c3b2f39132ca
+       spack repo update builtin --branch workshops/cineca26
        spack bootstrap now
        spack compiler find
        spack mirror add --unsigned tutorial /buildcache
