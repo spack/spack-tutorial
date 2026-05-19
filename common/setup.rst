@@ -9,9 +9,6 @@
 
        git clone --depth=2 --branch=workshops/cineca26 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack repo update builtin --branch workshops/cineca26
-       spack bootstrap now
-       spack compiler find
        spack mirror add --unsigned tutorial /buildcache
 
    See the basics tutorial for full details on setup.
