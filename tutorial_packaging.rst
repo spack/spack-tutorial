@@ -18,16 +18,6 @@ Rather than write a recipe from scratch, we will use the existing Quantum ESPRES
 Over the course of the chapter we concretize ``quantum-espresso`` three times with slightly different constraints, and each time we open ``package.py`` to explain the result.
 The recipe also happens to support two different build systems for the same software, and we will see the concretizer switch between them in response to a constraint we add.
 
-.. note::
-
-   We assume you are inside the same workshop container as the rest of this tutorial:
-
-   .. code-block:: console
-
-      $ docker run -it --network host ghcr.io/haampie/cineca-2026-base
-
-   and that you have Spack cloned and sourced as in the environments section.
-   The filesystem build cache mounted at ``/buildcache`` already contains every spec we concretize below, so each ``spack install`` will return in seconds.
 
 -----------------------------
 Setting up the environment
