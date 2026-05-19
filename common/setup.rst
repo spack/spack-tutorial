@@ -11,5 +11,3 @@
        . spack/share/spack/setup-env.sh
        spack mirror add --unsigned tutorial /buildcache
 
-   See the basics tutorial for full details on setup.
-   For more help, join us in the ``#tutorial`` channel on Slack -- get an invitation at `slack.spack.io <https://slack.spack.io/>`_
