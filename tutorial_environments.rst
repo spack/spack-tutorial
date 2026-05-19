@@ -49,8 +49,6 @@ Check that the setup is working before proceeding:
 The output lists the compilers Spack has detected and all currently installed packages.
 With a fresh installation, no packages are present and only a single compiler is available.
 
-For help, join the ``#tutorial`` channel on Slack (invitation at `slack.spack.io <https://slack.spack.io/>`_).
-
 ------------------------------------
 Creating and Activating Environments
 ------------------------------------
