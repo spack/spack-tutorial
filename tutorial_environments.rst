@@ -156,11 +156,11 @@ After activation, ``pw.x`` is accessible directly on ``PATH``:
    :language: console
 
 The path goes through the environment's ``view`` directory, which is where Spack maintains symlinks to all installed executables.
+The full set of path-related changes performed by activation is visible with:
 
-The full set of path-related variables set by activation is visible with ``env | grep PATH``:
+.. code-block:: console
 
-.. literalinclude:: outputs/environments/show-paths-1.out
-   :language: console
+   $ spack env activate --sh myproject
 
 Deactivating the environment removes those directories from the shell's path variables, cleanly isolating the installation from the rest of the system:
 
@@ -439,10 +439,7 @@ More information
 ----------------
 
 * `Environments <https://spack.readthedocs.io/en/latest/environments.html>`_: reference docs
-* `Configuration tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_configuration.html>`_: for customizing your environment
-* `Spack stacks tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for combinatorial environments and large deployments
 * `Install-level parallel builds <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_: for launching ``spack install`` in parallel
-* `Developer workflows <https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html>`_: for developing code inside an environment
 * `GitLab CI pipelines with Spack environments <https://spack.readthedocs.io/en/latest/pipelines.html>`_: for generating CI pipelines from environments
 * `Container Images <https://spack.readthedocs.io/en/latest/containers.html>`_: for creating containers from environments
 * `Spack Stack Catalog <https://spack.github.io/spack-stack-catalog/>`_: for discovering environments on GitHub
