@@ -35,6 +35,12 @@ Set up Spack inside your home directory:
    $ . spack/share/spack/setup-env.sh
    $ spack mirror add --unsigned tutorial /buildcache
 
+Search for available compilers
+
+.. code-block:: console
+
+   $ spack compiler find
+
 Check that the setup is working before proceeding:
 
 .. literalinclude:: outputs/environments/find-no-env-1.out
