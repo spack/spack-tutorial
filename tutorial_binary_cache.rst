@@ -15,17 +15,6 @@ This section covers how to share Spack-built binaries across machines and users 
 Spack supports a range of storage backends for build caches: an ordinary filesystem, Amazon S3, Google Cloud Storage, and any OCI-compatible container registry (Docker Hub, GitHub Packages, a local ``docker registry``, and so on).
 We begin with a filesystem mirror that has been pre-populated for the workshop, and then move on to OCI registries, which carry the additional property that the same artifacts can be used as runnable container images.
 
-.. note::
-
-   For this tutorial we assume you have started the workshop container in interactive mode, e.g.
-
-   .. code-block:: console
-
-      $ docker run -it --network host ghcr.io/haampie/cineca-2026-base
-
-   The image is intentionally minimal: it does *not* contain Spack itself.
-   The directory ``/buildcache`` inside the container is a filesystem build cache that has been populated and indexed ahead of time with binaries for the packages used in this tutorial.
-
 -------------------------
 Cloning Spack
 -------------------------
