@@ -48,10 +48,6 @@ Create an environment directory and write a ``spack.yaml`` into it:
      view: view
      concretizer:
        unify: true
-     mirrors:
-       local:
-         url: /buildcache
-         signed: false
      packages:
        c:
          prefer: [gcc@15]
@@ -139,7 +135,7 @@ The manifest now contains two mirrors:
 .. code-block:: yaml
 
    mirrors:
-     local:
+     tutorial:
        url: /buildcache
        signed: false
      my-registry:
