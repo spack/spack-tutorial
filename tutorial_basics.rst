@@ -9,6 +9,16 @@ Basic Installation Tutorial
 =========================================
 
 This tutorial will provide a step-by-step guide for installing software with Spack.
+
+A few fundamental ideas underpin everything that follows:
+
+1. Spack builds software either from source or from prebuilt binaries.
+2. Spack keeps every configuration of a package isolated from every other, so many versions, compilers, and build options can coexist on the same machine.
+3. Each configuration is identified by a hash of its full provenance.
+4. Spack reuses an existing build whenever it can, instead of rebuilding from scratch.
+
+Keep these points in mind, as we'll illustrate them with examples.
+
 We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack’s spec syntax and the flexibility it offers users.
 Next, we will demonstrate how to use the ``spack find`` command to view installed packages, as well as the ``spack uninstall`` command to remove them.
 
@@ -107,11 +117,6 @@ The Spec Syntax
 
 So far we've installed packages with their default configuration.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
-
-Before we dive into the syntax, it helps to understand how Spack treats these configurations.
-Every spec Spack builds is recorded with a unique hash that captures its full configuration: its version, build options, compiler, and the specs of all its dependencies.
-Spack installs each distinct spec in its own directory, identified by that hash, so configurations that differ in any way coexist side by side instead of overwriting one another.
-When we request a spec, Spack reuses an already-installed or cached build that satisfies it whenever possible, and only builds something new when nothing suitable exists.
 
 The ``%`` sigil is used to specify direct dependencies like a package's compiler.
 For example, we can install zlib-ng (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
