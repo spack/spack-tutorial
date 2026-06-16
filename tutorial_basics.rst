@@ -77,7 +77,7 @@ To install a software package, type:
 
   $ spack install <package_name>
 
-Let's go ahead and install ``gmake``,
+Let's go ahead and install ``gmake``:
 
 .. literalinclude:: outputs/basics/gmake.out
    :language: spec
@@ -85,7 +85,7 @@ Let's go ahead and install ``gmake``,
 You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
 These do not represent separate software builds from source, but are records of the compiler runtime components Spack used for the install.
-For the rest of this section, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
+For the rest of this tutorial, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
 
 The ``gcc`` package was found on the system and Spack used it because ``gmake`` requires a compiler to build from source.
 In Spack, compilers are treated as ordinary package dependencies rather than a special case: ``gmake`` depends on a compiler just as it depends on any other package.
@@ -97,29 +97,30 @@ We can run ``spack compiler list`` or simply ``spack compilers`` to show all the
 
 All compilers that Spack found will be configured as external packages -- we'll talk more about externals in the "Spack Concepts" slides and in :ref:`Configuration Tutorial <configs-tutorial>` later on.
 
-^^^^^^^^^^^^^^^^^^^^^
-Using a Binary Mirror
-^^^^^^^^^^^^^^^^^^^^^
-
 Spack can install software either from source or from a binary cache.
+Since we just installed our first package from source, let's set up a faster binary cache for the rest of the tutorial.
 Packages in the binary cache are signed with GPG for security.
-For this tutorial we have prepared a binary cache so we don't have to wait for slow compilation from source.
 To enable installation from the binary cache, we'll need to configure Spack with the location of the cache and trust the GPG key that the binaries were signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages in the tutorial from the cache using the same ``spack install`` command.
+We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages from the cache using the same ``spack install`` command.
 By default, this will install the binary cached version if it exists and fall back to installing the package from source if it does not.
 
-^^^^^^^^^^^^^^^
+---------------
 The Spec Syntax
-^^^^^^^^^^^^^^^
+---------------
 
 So far we've installed packages with their default configuration.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
 
-The ``%`` sigil is used to specify direct dependencies like a package's compiler.
+^^^^^^^^^^^^^^^^^^^
+Direct Dependencies
+^^^^^^^^^^^^^^^^^^^
+
+The ``%`` sigil specifies a direct dependency of the package we're installing.
+The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for first.
 For example, we can install zlib-ng (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
 
 .. literalinclude:: outputs/basics/zlib-clang.out
@@ -127,6 +128,10 @@ For example, we can install zlib-ng (a commonly used compression library), but i
 
 Notice that this installation is located separately from the previous one.
 As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
+
+^^^^^^^^
+Versions
+^^^^^^^^
 
 We can also install multiple versions of the same package side by side.
 Before installing another version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
@@ -144,6 +149,10 @@ The spec syntax is recursive -- any syntax we can specify for the "root" package
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: spec
 
+^^^^^^^^^^^^^^
+Compiler Flags
+^^^^^^^^^^^^^^
+
 The spec syntax in Spack also supports compiler flags.
 We can specify parameters such as ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs``.
 If any of these values contain spaces, we'll need to enclose them in quotes on the command line.
@@ -151,6 +160,10 @@ Spack’s compiler wrappers will automatically inject these flags into the appro
 
 .. literalinclude:: outputs/basics/zlib-O3.out
    :language: spec
+
+^^^^^^^^^^^^^^^^^^^^^^
+Querying Installations
+^^^^^^^^^^^^^^^^^^^^^^
 
 After installing packages, we can use the ``spack find`` command to query which packages are installed.
 Notice that by default, some installed packages appear identical in the output.
@@ -166,6 +179,10 @@ Additionally, if we include the ``-f`` flag, Spack will show any non-empty compi
 Spack generates a unique hash for each spec.
 This hash reflects the complete provenance of the package, so any change to the spec—such as compiler version, build options, or dependencies—will result in a different hash.
 Spack uses these hashes both to compare specs and to create unique installation directories for every possible configuration.
+
+^^^^^^^^^^^^^^^^^^^^^^^
+Transitive Dependencies
+^^^^^^^^^^^^^^^^^^^^^^^
 
 As we work with more complex packages that have multiple software dependencies, we will see that Spack efficiently reuses existing packages to satisfy dependency requirements.
 By default, Spack prioritizes reusing installations that already exist, whether they are stored locally or available from configured remote binary caches.
