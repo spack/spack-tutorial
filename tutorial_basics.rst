@@ -88,7 +88,8 @@ These do not represent separate software builds from source, but are records of 
 For the rest of this section, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
 
 The ``gcc`` package was found on the system and Spack used it because ``gmake`` requires a compiler to build from source.
-Compilers are handled somewhat specially in Spack; Spack searches the ``PATH`` environment variable for compilers automatically.
+In Spack, compilers are treated as ordinary package dependencies rather than a special case: ``gmake`` depends on a compiler just as it depends on any other package.
+The one convenience Spack adds is that it automatically searches the ``PATH`` environment variable for installed compilers, so those already on the system are ready to use.
 We can run ``spack compiler list`` or simply ``spack compilers`` to show all the compilers Spack found.
 
 .. literalinclude:: outputs/basics/compiler-list.out
@@ -125,7 +126,7 @@ For example, we can install zlib-ng (a commonly used compression library), but i
    :language: spec
 
 Notice that this installation is located separately from the previous one.
-We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
+As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
 We can also install multiple versions of the same package side by side.
 Before installing another version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
