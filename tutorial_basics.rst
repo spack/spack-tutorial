@@ -113,7 +113,10 @@ The Spec Syntax
 ---------------
 
 So far we've installed packages with their default configuration.
-Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
+Spack's *spec syntax* is the interface by which we can request specific configurations of a package.
+A *spec* describes a package together with any constraints we want to place on how it is built: its version, its build options, the compiler it uses, and even the configuration of its dependencies.
+We express each kind of constraint with its own sigil -- ``@`` for versions, ``+`` and ``~`` for variants, ``%`` for direct dependencies such as compilers, and ``^`` for dependencies anywhere in the graph.
+The subsections below introduce these one at a time, building up from a bare package name to fully constrained dependency graphs.
 
 ^^^^^^^^
 Versions
@@ -194,7 +197,7 @@ We can also refer to packages from the command line by their hash.
 Spack generates a unique hash for each spec, reflecting its complete provenance.
 Any change to the spec -- such as compiler version, build options, or dependencies -- results in a different hash, and Spack uses these hashes to give every configuration its own installation directory.
 Each build of zlib-ng we installed therefore has a distinct hash.
-Instead of typing out the entire spec, we can depend on a specific build -- for example our ``zlib-ng %gcc@10`` build -- by using the ``/`` sigil followed by its hash.
+Instead of typing out the entire spec, we can depend on a specific build -- for example our ``zlib-ng %gcc@14`` build -- by using the ``/`` sigil followed by its hash.
 
 Similar to tools like Git, we do not need to enter the entire hash on the command line—just enough digits to uniquely identify the package.
 If the prefix we provide matches more than one installed package, Spack will report an error and prompt us to be more specific.
@@ -415,7 +418,7 @@ Spack can also use compilers built by Spack to compile later packages.
 .. literalinclude:: outputs/basics/compilers-2.out
    :language: spec
 
-Now ``gcc@12`` is immediately available to use.
+Now ``gcc@16`` is immediately available to use.
 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec

@@ -43,12 +43,12 @@ example basics/zlib-ipo        "spack install zlib-ng +ipo"
 example basics/zlib-build-type "spack install zlib-ng build_type=Debug"
 
 example basics/zlib-clang     "spack install zlib-ng %clang"
-example basics/zlib-gcc-10    "spack install zlib-ng %gcc@10"
+example basics/zlib-gcc-10    "spack install zlib-ng %gcc@14"
 
 example basics/tcl             "spack install tcl"
 example basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 
-zlib_hash=$(spack find --format "{hash:3}" zlib-ng %gcc@10)
+zlib_hash=$(spack find --format "{hash:3}" zlib-ng %gcc@14)
 example basics/tcl-zlib-hash  "spack install tcl ^/${zlib_hash}"
 
 example basics/find-ldf        "spack find -ldf"
@@ -81,7 +81,7 @@ example basics/find-d-tcl      "spack find -d tcl"
 
 example basics/find-zlib      "spack find zlib-ng"
 
-example basics/uninstall-zlib "spack uninstall -y zlib-ng %gcc@10"
+example basics/uninstall-zlib "spack uninstall -y zlib-ng %gcc@14"
 
 example basics/find-lf-zlib   "spack find -lf zlib-ng"
 
@@ -96,10 +96,10 @@ echo y | example basics/uninstall-specific  "spack uninstall /$trilinos_hash"
 
 example basics/compilers           "spack compilers"
 
-example basics/install-gcc-12.1.0   "spack install gcc@12"
+example basics/install-gcc-12.1.0   "spack install gcc@16"
 
 example basics/compilers-2           "spack compilers"
 
-example basics/spec-zziplib          "spack spec zziplib %gcc@12"
+example basics/spec-zziplib          "spack spec zziplib %gcc@16"
 
-echo y | example basics/compiler-uninstall       'spack uninstall gcc@12'
+echo y | example basics/compiler-uninstall       'spack uninstall gcc@16'
