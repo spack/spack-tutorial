@@ -24,7 +24,7 @@ Next, we will demonstrate how to use the ``spack find`` command to view installe
 
 Additionally, we will discuss how Spack manages compilers, with a particular focus on using Spack-built compilers within the Spack environment.
 Throughout the tutorial, we will present complete command outputs; however, we will often emphasize only the most relevant sections or simply confirm successful execution.
-All examples and outputs are based on an Ubuntu 22.04 Docker image.
+All examples and outputs are based on an Ubuntu 26.04 Docker image.
 
 .. _basics-tutorial-install:
 
@@ -33,7 +33,7 @@ Installing Spack
 ----------------
 
 Spack is ready to use immediately after installation.
-To get started, we simply clone the Spack repository and check out the latest release, v1.2.
+To get started, we simply clone the Spack repository and check out the latest v1.2 release:
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
@@ -82,7 +82,7 @@ Let's go ahead and install ``gmake``:
 .. literalinclude:: outputs/basics/gmake.out
    :language: spec
 
-You will see Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
+Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
 The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
 These do not represent separate software builds from source, but are records of the compiler runtime components Spack used for the install.
 For the rest of this tutorial, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
@@ -412,7 +412,7 @@ These compilers are maintained in a YAML file.
 Later in the tutorial we will discuss how to configure external compilers by hand for special cases.
 Spack can also use compilers built by Spack to compile later packages.
 
-.. literalinclude:: outputs/basics/install-gcc-12.1.0.out
+.. literalinclude:: outputs/basics/install-gcc-16.out
    :language: spec
 
 .. literalinclude:: outputs/basics/compilers-2.out

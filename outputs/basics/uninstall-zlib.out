@@ -1,2 +1,43 @@
-$ spack uninstall -y zlib-ng %gcc@10
-==> Successfully uninstalled zlib-ng@2.2.4+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3/updxeye
+$ spack uninstall -y zlib-ng %gcc@14
+Script started on 2026-06-16 15:42:15+00:00 [COMMAND="spack uninstall -y zlib-ng %gcc@14" TERM="xterm" TTY="/dev/pts/0" COLUMNS="-1" LINES="-1"]
+==> Error: zlib-ng %gcc@14 matches multiple packages:
+
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@14.3.0 --------------
+    z7qz2gt zlib-ng@2.3.3  slhcf4i zlib-ng@2.3.3
+
+==> Error: You can either:
+    a) use a more specific spec, or
+    b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
+    c) use `spack uninstall --all` to uninstall ALL matching specs.
+
+
+Script done on 2026-06-16 15:42:16+00:00 [COMMAND_EXIT_CODE="1"]
+$ spack uninstall -y zlib-ng %gcc@14
+Script started on 2026-06-16 15:49:17+00:00 [COMMAND="spack uninstall -y zlib-ng %gcc@14" TERM="xterm" TTY="/dev/pts/0" COLUMNS="201" LINES="55"]
+==> Error: zlib-ng %gcc@14 matches multiple packages:
+
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@14.3.0 --------------
+    z7qz2gt zlib-ng@2.3.3  slhcf4i zlib-ng@2.3.3
+
+==> Error: You can either:
+    a) use a more specific spec, or
+    b) specify the spec by its hash (e.g. `spack uninstall /hash`), or
+    c) use `spack uninstall --all` to uninstall ALL matching specs.
+
+
+Script done on 2026-06-16 15:49:18+00:00 [COMMAND_EXIT_CODE="1"]
+$ spack uninstall -y zlib-ng %gcc@14
+Script started on 2026-06-16 16:13:46+00:00 [COMMAND="spack uninstall -y zlib-ng %gcc@14" TERM="xterm" TTY="/dev/pts/0" COLUMNS="201" LINES="55"]
+==> Refusing to uninstall the following specs
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@14.3.0 --------------
+    slhcf4i zlib-ng@2.3.3
+
+==> The following dependents are still installed:
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+    jmv6sxq tcl@8.6.17
+
+==> Error: There are still dependents.
+  use `spack uninstall --dependents` to remove dependents too
+  use `spack uninstall --force` to override
+
+Script done on 2026-06-16 16:13:46+00:00 [COMMAND_EXIT_CODE="1"]

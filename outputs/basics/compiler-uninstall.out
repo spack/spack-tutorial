@@ -1,6 +1,6 @@
-$ spack uninstall gcc@12
+$ spack uninstall gcc@16
 y
-    -- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-    fmnvqo4 gcc@12.3.0
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+    vlwdxlj gcc@16.1.0
 
-==> 1 packages will be uninstalled. Do you want to proceed? [y/N] ==> Successfully uninstalled gcc@12.3.0~binutils+bootstrap~graphite~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu22.04 target=x86_64_v3/fmnvqo4
+==> 1 packages will be uninstalled. Do you want to proceed? [y/N] ==> Successfully uninstalled gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3/vlwdxlj
