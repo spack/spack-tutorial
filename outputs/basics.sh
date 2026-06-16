@@ -37,8 +37,8 @@ example basics/mirror          "spack mirror add --unsigned tutorial /mirror"
 
 # NOTE: specs reordered (spec-syntax subsections regrouped; querying moved to its
 # own section after the spec syntax; zlib-ng variant examples added; hdf5 moved to
-# the virtual-dependencies block; spack info added to Variants). Outputs under
-# outputs/basics/ need regeneration.
+# the virtual-dependencies block; spack info added to Variants; trilinos moved to its own
+# section after Querying). Outputs under outputs/basics/ need regeneration.
 example basics/versions-zlib  "spack versions zlib-ng"
 example --tee basics/zlib-2.0.7       "spack install zlib-ng@2.0.7"
 
@@ -65,27 +65,25 @@ example basics/find-ldf        "spack find -ldf"
 
 example basics/graph-tcl       "spack graph tcl"
 
+example basics/providers-mpi   "spack providers mpi"
 example basics/hdf5-spec       "spack spec hdf5"
 example --tee basics/hdf5            "spack install hdf5"
 example --tee basics/hdf5-no-mpi     "spack install hdf5~mpi"
 
-example --tee basics/hdf5-hl-mpi     "spack install hdf5+hl+mpi ^mpich"
+example --tee basics/hdf5-mpich      "spack install hdf5 ^mpich"
+example basics/spec-hdf5-compilers   "spack spec hdf5 %c,cxx=clang %fortran=gcc"
 
-example basics/find-ldf-2      "spack find -ldf"
-
-example --tee basics/trilinos        "spack install trilinos"
-
-example --tee basics/trilinos-hdf5   "spack install trilinos +hdf5 ^hdf5+hl+mpi ^mpich"
-
-example basics/find-d-trilinos "spack find -d trilinos"
-
-example basics/graph-trilinos  "spack graph trilinos"
-
-# Querying Installations (now its own doc section, after The Spec Syntax)
+# Querying Installations (now its own doc section, after The Spec Syntax). These run
+# BEFORE trilinos is installed, so their outputs reflect a pre-trilinos state.
 example basics/find            "spack find"
 example basics/find-lf         "spack find -l"
 example basics/find-dep-mpich  "spack find ^mpich"
 example basics/find-px         "spack find -px"
+
+# A Realistic Example (Trilinos) -- its own doc section, after Querying, before Uninstalling.
+example --tee basics/trilinos        "spack install trilinos"
+example --tee basics/trilinos-hdf5   "spack install trilinos +hdf5 ^mpich"
+example basics/trilinos-find-mpich   "spack find ^mpich"
 
 example basics/find-d-tcl      "spack find -d tcl"
 

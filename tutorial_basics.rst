@@ -164,12 +164,18 @@ Some variants are *conditional*: the indented ``when`` lines in the ``spack info
 Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` -- that is, when zlib-ng is built with CMake instead of Autotools.
 Requesting one of them, as we just did with ``+ipo``, therefore also selects the CMake build system.
 
+.. note::
+
+   The spec syntax can also set compiler flags directly on a build.
+   Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` -- and its compiler wrappers inject them into the appropriate compilation commands (values containing spaces must be quoted on the command line).
+   This is an escape hatch for special cases rather than the usual way to configure a build: most of the time a package's variants and build system already select appropriate options, so reach for explicit flags only when you genuinely need them.
+
 ^^^^^^^^^^^^^^^^^^^
 Direct Dependencies
 ^^^^^^^^^^^^^^^^^^^
 
 The ``%`` sigil specifies a direct dependency of the package we're installing.
-The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for first.
+The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for here.
 So far we've let Spack choose the compiler, building ``zlib-ng`` with GCC just as we did for gmake.
 This time we'll build it with Clang instead, using ``%clang``:
 
@@ -192,7 +198,7 @@ Transitive Dependencies
 The ``^`` sigil can constrain any dependency of a root spec, whether direct or transitive.
 
 We need a package with dependencies to try it on.
-The ``tcl`` package depends on ``zlib-ng``, so let's preview how Spack would build ``tcl`` with a request on that ``zlib-ng`` using ``spack spec``; the ``-l`` flag adds each node's hash:
+The ``tcl`` package depends on ``zlib-ng``, so let's preview how Spack would build ``tcl`` with constraints on its ``zlib-ng`` dependency using ``spack spec``; the ``-l`` flag adds each node's hash:
 
 .. literalinclude:: outputs/basics/spec-tcl-zlib-clang.out
    :language: spec
@@ -234,105 +240,40 @@ Virtual Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
 Let's move on to a more complicated package.
-HDF5 is a good example: it depends on MPI, but ``mpi`` is not an ordinary package.
+``hdf5`` is a good example: it depends on ``mpi``, but ``mpi`` is not an ordinary package.
 It is a *virtual package* -- an interface that several real packages provide -- and Spack handles dependencies on such interfaces through "virtual dependencies".
 
-Because HDF5 is more involved than the packages we've installed so far, let's preview its concretized install plan with ``spack spec`` before building.
-
-.. literalinclude:: outputs/basics/hdf5-spec.out
-   :language: spec
-
-With default settings HDF5 builds against OpenMPI, so installing it also brings in an MPI implementation.
+By default ``hdf5`` builds against ``openmpi``:
 
 .. literalinclude:: outputs/basics/hdf5.out
    :language: spec
 
-HDF5 controls this through a boolean ``mpi`` variant; disabling it with ``~mpi`` drops the MPI dependency entirely.
+but we might want to build it against a *different* ``mpi`` implementation.
+To see which packages provide the ``mpi`` interface, ask Spack with ``spack providers``:
 
-.. literalinclude:: outputs/basics/hdf5-no-mpi.out
+.. literalinclude:: outputs/basics/providers-mpi.out
+   :language: console
+
+Any of these providers can be requested to satisfy an MPI dependency.
+For example, we can build ``hdf5`` with MPI support provided by MPICH by specifying a dependency on ``mpich``:
+
+.. literalinclude:: outputs/basics/hdf5-mpich.out
    :language: spec
-
-We might instead want HDF5 built against a *different* MPI implementation.
-Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the ``mpi`` interface, and any of these providers can be requested to satisfy an MPI dependency.
-For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
-Spack also supports versioning of virtual dependencies.
-A package can depend on the MPI interface at version 3 (e.g., ``hdf5 ^mpi@3``), and provider packages specify what version of the interface *they* provide.
-The partial spec ``^mpi@3`` can be satisfied by any of several MPI implementation packages that provide MPI version 3.
 
 We've actually already been using virtual packages when we changed compilers earlier.
 Compilers are providers for virtual packages like ``c``, ``cxx``, and ``fortran``.
 Because these are often provided by the same package but we might want to use C and C++ from one compiler and Fortran from another, we need a syntax to specify which virtual a package provides.
-We call this "virtual assignment", and can be specified by ``%virtual=provider`` or ``^virtual=provider``.
+We call this "virtual assignment", which can be specified with ``%virtual=provider`` or ``^virtual=provider``.
 
-For example if we wanted to install hdf5 using GCC for the C and C++ components but Intel OneAPI for the Fortran compiler we could write:
+For example, we can ask Spack for an ``hdf5`` that uses Clang for the C and C++ components but GCC for Fortran:
 
-.. code-block:: spec
-
-   hdf5 %c,cxx=gcc %fortran=oneapi
-
-However, we'll keep it simple for now and install HDF5 with MPI support provided by MPICH.
-We could use the same syntax for ``^mpi=mpich``, but there's no need because the only way for ``hdf5`` to depend on ``mpich`` is to provide ``mpi``.
-This is also why we didn't care to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
-
-.. literalinclude:: outputs/basics/hdf5-hl-mpi.out
+.. literalinclude:: outputs/basics/spec-hdf5-compilers.out
    :language: spec
+   :lines: 1-2
 
-.. note::
-
-   It is frequently sufficient to specify ``%gcc`` even for packages that use multiple languages, because Spack prefers to minimize the number of packages needed for a build.
-   Later on we will discuss more complex compiler requests, and how and when they are useful.
-
-We'll do a quick check in on what we have installed so far.
-
-.. literalinclude:: outputs/basics/find-ldf-2.out
-   :language: spec
-
-HDF5 is more complicated than our basic example of zlib-ng and Tcl, but it's still within the realm of software that an experienced HPC user could reasonably expect to manually install given a bit of time.
-Now let's look at an even more complicated package.
-
-.. literalinclude:: outputs/basics/trilinos.out
-   :language: spec
-
-Now we're starting to see the power of Spack.
-Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
-Installing more complex packages can take days or weeks even for an experienced user.
-Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
-
-Spack manages consistency of the entire DAG.
-Every MPI dependency will be satisfied by the same configuration of MPI, etc.
-If we install Trilinos again specifying a dependency on our previous HDF5 built with MPICH:
-
-.. literalinclude:: outputs/basics/trilinos-hdf5.out
-   :language: spec
-
-We see that every package in the Trilinos DAG that depends on MPI now uses MPICH.
-
-.. literalinclude:: outputs/basics/find-d-trilinos.out
-   :language: spec
-
-As we discussed before, the ``spack find -d`` command shows the dependency information as a tree.
-While that is often sufficient, many complicated packages, including Trilinos, have dependencies that cannot be fully represented as a tree.
-Again, the ``spack graph`` command shows the full DAG of the dependency information.
-
-.. literalinclude:: outputs/basics/graph-trilinos.out
-   :language: spec
-
-You can control how the output is displayed with a number of options.
-
-The ASCII output from ``spack graph`` can be difficult to parse for complicated packages.
-The output can be changed to the Graphviz ``.dot`` format using the ``--dot`` flag.
-
-.. code-block:: console
-
-  $ spack graph --dot trilinos | dot -Tpdf > trilinos_graph.pdf
-
-^^^^^^^^^^^^^^
-Compiler Flags
-^^^^^^^^^^^^^^
-
-As an aside, the spec syntax can also set compiler flags directly on a build.
-Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` -- and its compiler wrappers inject them into the appropriate compilation commands (values containing spaces must be quoted on the command line).
-This is an escape hatch for special cases rather than the usual way to configure a build: most of the time a package's variants and build system already select appropriate options, so reach for explicit flags only when you genuinely need them.
+The same syntax works for ``mpi``: we could have written ``hdf5 ^mpi=mpich`` instead of ``hdf5 ^mpich``.
+There's no need, though, because the only way for ``hdf5`` to depend on ``mpich`` is for ``mpich`` to provide ``mpi``.
+This is also why we didn't have to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
 
 .. _basics-tutorial-query:
 
@@ -364,6 +305,41 @@ It can also show the path to which a package was installed using the ``-p`` flag
 
 .. literalinclude:: outputs/basics/find-px.out
    :language: spec
+
+.. _basics-tutorial-trilinos:
+
+-------------------
+A Realistic Example
+-------------------
+
+Now that we know the spec syntax and how to query installations, let's put them to work on a realistic package.
+
+.. literalinclude:: outputs/basics/trilinos.out
+   :language: spec
+
+Now we're starting to see the power of Spack.
+Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
+Installing more complex packages can take days or weeks even for an experienced user.
+Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
+
+Spack manages the consistency of the entire DAG: every package that depends on MPI is satisfied by the same MPI.
+Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
+
+.. literalinclude:: outputs/basics/trilinos-hdf5.out
+   :language: spec
+
+Only ``trilinos`` itself was installed -- the rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
+We can confirm that the whole graph uses MPICH with the anonymous spec ``spack find ^mpich``:
+
+.. literalinclude:: outputs/basics/trilinos-find-mpich.out
+   :language: spec
+
+A dependency graph this large is unreadable as ASCII art.
+We can instead render it as an image with ``spack graph --dot``:
+
+.. code-block:: console
+
+  $ spack graph --dot trilinos | dot -Tsvg > trilinos_graph.svg
 
 .. _basics-tutorial-uninstall:
 
