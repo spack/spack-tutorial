@@ -107,6 +107,12 @@ The Spec Syntax
 
 So far we've installed packages with their default configuration.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
+
+Before we dive into the syntax, it helps to understand how Spack treats these configurations.
+Every spec Spack builds is recorded with a unique hash that captures its full configuration: its version, build options, compiler, and the specs of all its dependencies.
+Spack installs each distinct spec in its own directory, identified by that hash, so configurations that differ in any way coexist side by side instead of overwriting one another.
+When we request a spec, Spack reuses an already-installed or cached build that satisfies it whenever possible, and only builds something new when nothing suitable exists.
+
 The ``%`` sigil is used to specify direct dependencies like a package's compiler.
 For example, we can install zlib-ng (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
 
