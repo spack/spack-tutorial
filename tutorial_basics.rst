@@ -23,7 +23,7 @@ Installing Spack
 ----------------
 
 Spack is ready to use immediately after installation.
-To get started, we simply clone the Spack repository and check out the latest release, v1.1.
+To get started, we simply clone the Spack repository and check out the latest release, v1.2.
 
 .. literalinclude:: outputs/basics/clone.out
    :language: console
