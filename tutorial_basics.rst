@@ -86,6 +86,10 @@ We can run ``spack compiler list`` or simply ``spack compilers`` to show all the
 
 All compilers that Spack found will be configured as external packages -- we'll talk more about externals in the "Spack Concepts" slides and in :ref:`Configuration Tutorial <configs-tutorial>` later on.
 
+^^^^^^^^^^^^^^^^^^^^^
+Using a Binary Mirror
+^^^^^^^^^^^^^^^^^^^^^
+
 Spack can install software either from source or from a binary cache.
 Packages in the binary cache are signed with GPG for security.
 For this tutorial we have prepared a binary cache so we don't have to wait for slow compilation from source.
@@ -97,10 +101,14 @@ To enable installation from the binary cache, we'll need to configure Spack with
 We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages in the tutorial from the cache using the same ``spack install`` command.
 By default, this will install the binary cached version if it exists and fall back to installing the package from source if it does not.
 
-Now that we understand how Spack handles installations, let's explore how we can customize what gets installed.
+^^^^^^^^^^^^^^^
+The Spec Syntax
+^^^^^^^^^^^^^^^
+
+So far we've installed packages with their default configuration.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
 The ``%`` sigil is used to specify direct dependencies like a package's compiler.
-For example, we can install zlib (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
+For example, we can install zlib-ng (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
 
 .. literalinclude:: outputs/basics/zlib-clang.out
    :language: spec
@@ -108,9 +116,8 @@ For example, we can install zlib (a commonly used compression library), but inst
 Notice that this installation is located separately from the previous one.
 We'll explore this concept in more detail later, but this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-Now that we've seen how Spack handles separate installations, let's explore this capability by installing multiple versions of the same package.
-Before we install additional versions, we can check the versions available to us using the ``spack versions`` command.
-Let's check what versions of zlib-ng are available, and then we'll install a different version to demonstrate Spack's flexibility in managing multiple package versions.
+We can also install multiple versions of the same package side by side.
+Before installing another version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: spec
@@ -185,6 +192,10 @@ We can also use the ``spack graph`` command to view the entire DAG as a graph.
 .. literalinclude:: outputs/basics/graph-tcl.out
    :language: spec
 
+^^^^^^^^
+Variants
+^^^^^^^^
+
 Let's move on to slightly more complicated packages.
 HDF5 is a good example of a more complicated package, with an MPI dependency.
 If we install it with default settings it will build with OpenMPI.
@@ -207,6 +218,10 @@ Here we can install HDF5 without MPI support.
 
 .. literalinclude:: outputs/basics/hdf5-no-mpi.out
    :language: spec
+
+^^^^^^^^^^^^^^^^^^^^
+Virtual Dependencies
+^^^^^^^^^^^^^^^^^^^^
 
 We might also want to install HDF5 with a different MPI implementation.
 While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
