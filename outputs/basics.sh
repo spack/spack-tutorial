@@ -37,26 +37,28 @@ example basics/mirror          "spack mirror add --unsigned tutorial /mirror"
 
 # NOTE: specs reordered (spec-syntax subsections regrouped; querying moved to its
 # own section after the spec syntax; zlib-ng variant examples added; hdf5 moved to
-# the virtual-dependencies block). Outputs under outputs/basics/ need regeneration.
+# the virtual-dependencies block; spack info added to Variants). Outputs under
+# outputs/basics/ need regeneration.
 example basics/versions-zlib  "spack versions zlib-ng"
 example --tee basics/zlib-2.0.7       "spack install zlib-ng@2.0.7"
+
+example basics/info-zlib      "spack info --no-dependencies --no-versions zlib-ng"
 
 example --tee basics/zlib-ipo        "spack install zlib-ng +ipo"
 example --tee basics/zlib-build-type "spack install zlib-ng build_type=Debug"
 
 example --tee basics/zlib-clang     "spack install zlib-ng %clang"
-example --tee basics/zlib-gcc-10    "spack install zlib-ng %gcc@14"
+example --tee basics/zlib-gcc-14    "spack install zlib-ng %gcc@14"
 
-# Capture the hash now, before installing tcl. Installing tcl pulls a
-# zlib-ng@2.3.3 %gcc@14 from the build cache as a dependency, which would otherwise
-# make this query ambiguous (matching both the cache dependency and our explicit
-# %gcc@14 build above).
-zlib_hash=$(spack find --format "{hash:3}" zlib-ng %gcc@14)
-
+example basics/spec-tcl             "spack spec -l tcl"
 example --tee basics/tcl            "spack install tcl"
+example basics/spec-tcl-zlib-clang  "spack spec -l tcl ^zlib-ng@2.0.7 %clang"
 example --tee basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 
-example --tee basics/tcl-zlib-hash  "spack install tcl ^/${zlib_hash}"
+# Refer to the zlib-ng@2.0.7 %clang build we just installed by its hash. This spec
+# is unambiguous (the other zlib-ng@2.0.7 build uses gcc), so the query is safe here.
+zlib_hash=$(spack find --format "{hash:3}" zlib-ng@2.0.7 %clang)
+example basics/spec-tcl-zlib-hash   "spack spec tcl ^/${zlib_hash}"
 
 example basics/find-ldf        "spack find -ldf"
 

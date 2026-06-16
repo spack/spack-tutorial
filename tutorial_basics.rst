@@ -115,7 +115,7 @@ The Spec Syntax
 ---------------
 
 So far we've installed packages with their default configuration.
-Spack's *spec syntax* is the interface by which we can request specific configurations of a package.
+Spack's *spec syntax* is how we request a specific configuration of a package.
 A *spec* describes a package together with any constraints we want to place on how it is built: its version, its build options, the compiler it uses, and even the configuration of its dependencies.
 We express each kind of constraint with its own sigil -- ``@`` for versions, ``+`` and ``~`` for variants, ``%`` for direct dependencies such as compilers, and ``^`` for dependencies anywhere in the graph.
 The subsections below introduce these one at a time, building up from a bare package name to fully constrained dependency graphs.
@@ -130,31 +130,39 @@ Before installing a specific version, let's check which versions of ``zlib-ng`` 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: spec
 
-The ``@`` sigil is used to specify versions.
+We select one with the ``@`` sigil:
 
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: spec
+
+The ``@`` sigil also accepts ranges -- such as ``@2.1:`` (2.1 or newer), ``@:2.1`` (up to 2.1), or ``@2.0:2.2`` (anywhere in between 2.0 and 2.2) -- letting Spack pick any version that satisfies the constraint.
 
 ^^^^^^^^
 Variants
 ^^^^^^^^
 
-Besides versions, packages expose build options called variants.
-Boolean variants are toggled with the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
-There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
-For example, ``zlib-ng`` has an ``ipo`` variant that enables interprocedural optimization, which we turn on with ``+ipo``.
+Besides versions, packages expose build options called *variants*.
+To see which variants a package defines, along with their defaults, use ``spack info``:
+
+.. literalinclude:: outputs/basics/info-zlib.out
+   :language: console
+
+Boolean variants are enabled with the ``+`` sigil and disabled with the ``~`` sigil.
+For example, ``zlib-ng`` has an ``ipo`` variant that enables interprocedural optimization, which we can turn on with ``+ipo``:
 
 .. literalinclude:: outputs/basics/zlib-ipo.out
    :language: spec
 
 Not every variant is boolean.
-Some take a value, which we set with the same ``name=value`` syntax used for compiler flags.
+Some take a value, which we assign with ``name=value`` syntax.
 Here we build ``zlib-ng`` in debug mode through its ``build_type`` variant.
 
 .. literalinclude:: outputs/basics/zlib-build-type.out
    :language: spec
 
-The ``ipo`` and ``build_type`` options come from zlib-ng's CMake build system, so requesting either one builds it with CMake rather than its default Autotools build.
+Some variants are *conditional*: the indented ``when`` lines in the ``spack info`` output mark them.
+Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` -- that is, when zlib-ng is built with CMake instead of Autotools.
+Requesting one of them, as we just did with ``+ipo``, therefore also selects the CMake build system.
 
 ^^^^^^^^^^^^^^^^^^^
 Direct Dependencies
@@ -163,62 +171,70 @@ Direct Dependencies
 The ``%`` sigil specifies a direct dependency of the package we're installing.
 The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for first.
 So far we've let Spack choose the compiler, building ``zlib-ng`` with GCC just as we did for gmake.
-This time we'll install it with ``%clang`` to build it with the clang compiler instead.
+This time we'll build it with Clang instead, using ``%clang``:
 
 .. literalinclude:: outputs/basics/zlib-clang.out
    :language: spec
 
-Notice that this installation is located separately from the previous one.
+This installation is located separately from the previous one.
 As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-The spec syntax is recursive -- any syntax we can specify for the "root" package we can also use for a dependency.
-For example, because a compiler is just another dependency, we can pin the version Spack builds with:
+**The spec syntax is recursive** -- any syntax we can specify for the "root" package we can also use for a dependency.
+For example, since a compiler is just another dependency, we can pin its version with ``@``, just as we did for ``zlib-ng``:
 
-.. literalinclude:: outputs/basics/zlib-gcc-10.out
+.. literalinclude:: outputs/basics/zlib-gcc-14.out
    :language: spec
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Transitive Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-As we work with more complex packages that have multiple software dependencies, we will see that Spack efficiently reuses existing packages to satisfy dependency requirements.
-By default, Spack prioritizes reusing installations that already exist, whether they are stored locally or available from configured remote binary caches.
-This approach helps us avoid unnecessary rebuilds of common dependencies, which is especially valuable if we update Spack frequently.
+So far we've installed packages with few dependencies of their own.
+``tcl`` is our first package with a runtime dependency -- it depends on ``zlib-ng``.
+Let's preview what will be installed with ``spack spec``:
+
+.. literalinclude:: outputs/basics/spec-tcl.out
+   :language: spec
+
+This is the *concretized* spec.
+Spack has filled in every dependency, along with its version, variants, and compiler.
+Now let's install it:
 
 .. literalinclude:: outputs/basics/tcl.out
    :language: spec
 
-Sometimes it is simpler to specify dependencies without caring whether they are direct or transitive dependencies.
-To do that, use the ``^`` sigil.
-Note that a dependency specified by ``^`` is always applied to the root package, whereas a direct dependency specified by ``%`` is applied to either the root or any intervening dependency specified by ``^``.
+By default, Spack installs from a binary cache when it can, rather than building from source.
+In the plan above, ``[+]`` marks specs that are already installed, ``[e]`` those provided externally by the system, and ``[b]`` those available in a cache but not yet installed.
+So although the plan lists ``zlib-ng`` and several other packages, installing ``tcl`` fetched only ``tcl`` from the cache: its runtime dependency ``zlib-ng`` was already installed and reused, while the build-only dependencies a source build needs (such as ``gmake``) are skipped for a prebuilt binary.
+
+The ``^`` sigil can constrain any dependency of a root spec, whether direct or transitive.
+For example, let's build ``tcl`` against a ``zlib-ng`` compiled with Clang, previewing again to see how Spack resolves it:
+
+.. literalinclude:: outputs/basics/spec-tcl-zlib-clang.out
+   :language: spec
+
+Notice that ``%`` binds to the spec it follows: because ``%clang`` comes after ``^zlib-ng@2.0.7``, only ``zlib-ng`` is built with Clang, while ``tcl`` itself keeps the default compiler.
+Installing executes that plan:
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: spec
 
-We can also refer to packages from the command line by their hash.
-Spack generates a unique hash for each spec, reflecting its complete provenance.
-Any change to the spec -- such as compiler version, build options, or dependencies -- results in a different hash, and Spack uses these hashes to give every configuration its own installation directory.
-Each build of zlib-ng we installed therefore has a distinct hash.
-Instead of typing out the entire spec, we can depend on a specific build -- for example our ``zlib-ng %gcc@14`` build -- by using the ``/`` sigil followed by its hash.
+Each build has a unique hash, shown in the ``-l`` output above, reflecting its complete provenance: any change to the spec -- version, build options, compiler, or a dependency -- produces a different hash and its own installation directory.
+We can refer to a build directly by its hash with the ``/`` sigil, instead of retyping its full spec.
+For example, rather than writing ``^zlib-ng@2.0.7 %clang`` again, we can point ``tcl`` at that exact build by its hash:
 
-Similar to tools like Git, we do not need to enter the entire hash on the command line—just enough digits to uniquely identify the package.
-If the prefix we provide matches more than one installed package, Spack will report an error and prompt us to be more specific.
-
-.. literalinclude:: outputs/basics/tcl-zlib-hash.out
+.. literalinclude:: outputs/basics/spec-tcl-zlib-hash.out
    :language: spec
 
-The ``spack find`` command can take a ``-d`` flag, which shows dependency information.
-Note that each package has a top-level entry, even if it also appears as a dependency.
+As with Git, we only need enough leading digits to identify the build uniquely; if the prefix matches more than one installed package, Spack reports an error and asks us to be more specific.
 
-.. literalinclude:: outputs/basics/find-ldf.out
-   :language: spec
-
-Spack models the dependencies of packages as a directed acyclic graph (DAG).
-The ``spack find -d`` command shows the tree representation of that graph, which loses some dependency relationship information.
-We can also use the ``spack graph`` command to view the entire DAG as a graph.
+The ``spack spec`` output above lists these dependencies as a tree, but Spack actually models them as a directed acyclic graph (DAG): a package can be shared by several dependents, which a tree can't show.
+The ``spack graph`` command renders that full graph:
 
 .. literalinclude:: outputs/basics/graph-tcl.out
    :language: spec
+
+For more complex packages, ``spack graph`` can also emit Graphviz output (``--dot``) to render as an SVG, and ``--color`` draws build-only dependencies in a different color from link and run dependencies.
 
 ^^^^^^^^^^^^^^^^^^^^
 Virtual Dependencies
@@ -228,7 +244,7 @@ Let's move on to a more complicated package.
 HDF5 is a good example: it depends on MPI, but ``mpi`` is not an ordinary package.
 It is a *virtual package* -- an interface that several real packages provide -- and Spack handles dependencies on such interfaces through "virtual dependencies".
 
-Because HDF5 is more involved than the packages we've installed so far, let's preview the concretized install plan before building, using the ``spack spec`` command (which accepts the same spec syntax as ``spack install``).
+Because HDF5 is more involved than the packages we've installed so far, let's preview its concretized install plan with ``spack spec`` before building.
 
 .. literalinclude:: outputs/basics/hdf5-spec.out
    :language: spec
