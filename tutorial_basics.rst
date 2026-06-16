@@ -189,37 +189,29 @@ For example, since a compiler is just another dependency, we can pin its version
 Transitive Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-So far we've installed packages with few dependencies of their own.
-``tcl`` is our first package with a runtime dependency -- it depends on ``zlib-ng``.
-Let's preview what will be installed with ``spack spec``:
-
-.. literalinclude:: outputs/basics/spec-tcl.out
-   :language: spec
-
-This is the *concretized* spec.
-Spack has filled in every dependency, along with its version, variants, and compiler.
-Now let's install it:
-
-.. literalinclude:: outputs/basics/tcl.out
-   :language: spec
-
-By default, Spack installs from a binary cache when it can, rather than building from source.
-In the plan above, ``[+]`` marks specs that are already installed, ``[e]`` those provided externally by the system, and ``[b]`` those available in a cache but not yet installed.
-So although the plan lists ``zlib-ng`` and several other packages, installing ``tcl`` fetched only ``tcl`` from the cache: its runtime dependency ``zlib-ng`` was already installed and reused, while the build-only dependencies a source build needs (such as ``gmake``) are skipped for a prebuilt binary.
-
 The ``^`` sigil can constrain any dependency of a root spec, whether direct or transitive.
-For example, let's build ``tcl`` against a ``zlib-ng`` compiled with Clang, previewing again to see how Spack resolves it:
+
+We need a package with dependencies to try it on.
+The ``tcl`` package depends on ``zlib-ng``, so let's preview how Spack would build ``tcl`` with a request on that ``zlib-ng`` using ``spack spec``; the ``-l`` flag adds each node's hash:
 
 .. literalinclude:: outputs/basics/spec-tcl-zlib-clang.out
    :language: spec
 
-Notice that ``%`` binds to the spec it follows: because ``%clang`` comes after ``^zlib-ng@2.0.7``, only ``zlib-ng`` is built with Clang, while ``tcl`` itself keeps the default compiler.
-Installing executes that plan:
+This is the *concretized* spec: Spack has filled in every dependency, along with its version, variants, and compiler.
+In the output, ``[+]`` marks specs already installed, ``[e]`` those provided externally by the system, and ``[b]`` those available in a cache but not yet installed.
+Notice also that ``%`` binds to the spec it follows.
+Because ``%clang`` comes after ``^zlib-ng@2.0.7``, only ``zlib-ng`` is built with Clang, while ``tcl`` keeps the default compiler.
+
+Now let's install it:
 
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: spec
 
-Each build has a unique hash, shown in the ``-l`` output above, reflecting its complete provenance: any change to the spec -- version, build options, compiler, or a dependency -- produces a different hash and its own installation directory.
+By default, Spack installs from a binary cache when it can, rather than building from source.
+The build-only dependencies a source build needs (such as ``gmake``) are skipped for a prebuilt binary.
+
+Each build has a unique hash, shown in the ``-l`` output above, reflecting its complete provenance.
+Any change to the spec (version, build options, compiler, or a dependency) produces a different hash and its own installation directory.
 We can refer to a build directly by its hash with the ``/`` sigil, instead of retyping its full spec.
 For example, rather than writing ``^zlib-ng@2.0.7 %clang`` again, we can point ``tcl`` at that exact build by its hash:
 
@@ -228,7 +220,8 @@ For example, rather than writing ``^zlib-ng@2.0.7 %clang`` again, we can point `
 
 As with Git, we only need enough leading digits to identify the build uniquely; if the prefix matches more than one installed package, Spack reports an error and asks us to be more specific.
 
-The ``spack spec`` output above lists these dependencies as a tree, but Spack actually models them as a directed acyclic graph (DAG): a package can be shared by several dependents, which a tree can't show.
+The ``spack spec`` output above lists these dependencies as a tree, but Spack actually models them as a directed acyclic graph (DAG).
+A package can be shared by several dependents, which a tree can't show.
 The ``spack graph`` command renders that full graph:
 
 .. literalinclude:: outputs/basics/graph-tcl.out

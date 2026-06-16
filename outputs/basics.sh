@@ -50,7 +50,8 @@ example --tee basics/zlib-build-type "spack install zlib-ng build_type=Debug"
 example --tee basics/zlib-clang     "spack install zlib-ng %clang"
 example --tee basics/zlib-gcc-14    "spack install zlib-ng %gcc@14"
 
-example basics/spec-tcl             "spack spec -l tcl"
+# tcl.out is no longer shown in the prose, but the default tcl install is kept:
+# the Uninstalling section needs multiple tcl configurations installed.
 example --tee basics/tcl            "spack install tcl"
 example basics/spec-tcl-zlib-clang  "spack spec -l tcl ^zlib-ng@2.0.7 %clang"
 example --tee basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
