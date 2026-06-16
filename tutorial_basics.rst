@@ -70,43 +70,45 @@ For example, let's view all available Python packages.
 Installing Packages
 -------------------
 
-Installing a package with Spack is very simple.
-To install a software package, type:
+Installing a package is as simple as typing ``spack install`` followed by its name:
 
 .. code-block:: console
 
   $ spack install <package_name>
 
-Let's go ahead and install ``gmake``:
+Let's install ``gmake``:
 
 .. literalinclude:: outputs/basics/gmake.out
    :language: spec
 
-Spack installed ``gmake``, ``gcc``, ``gcc-runtime``, and ``glibc``.
-The ``glibc`` and ``gcc-runtime`` packages are automatically tracked by Spack to manage consistency requirements among compiler runtimes.
-These do not represent separate software builds from source, but are records of the compiler runtime components Spack used for the install.
-For the rest of this tutorial, we'll ignore these components and focus on the packages explicitly installed and their listed dependencies.
+In the output, the ``[e]`` marker denotes a package that was found on the system rather than built by Spack.
+Spack's output lists ``gmake``, ``gcc``, ``gcc-runtime``, ``glibc``, and ``compiler-wrapper``:
 
-The ``gcc`` package was found on the system and Spack used it because ``gmake`` requires a compiler to build from source.
-In Spack, compilers are treated as ordinary package dependencies rather than a special case: ``gmake`` depends on a compiler just as it depends on any other package.
-The one convenience Spack adds is that it automatically searches the ``PATH`` environment variable for installed compilers, so those already on the system are ready to use.
-We can run ``spack compiler list`` or simply ``spack compilers`` to show all the compilers Spack found.
+* ``gmake`` is the package we requested.
+* ``gcc`` is the compiler used to build ``gmake``, which needs a C compiler.
+* The ``gcc-runtime`` and ``glibc`` packages are records of the compiler runtime Spack used, which it tracks to keep those components consistent across a build.
+* ``compiler-wrapper`` is a wrapper Spack uses to inject the right include, library, and RPATH flags when it invokes the compiler.
+
+**In Spack a compiler is an ordinary dependency rather than a special case**, so ``gmake`` depends on one just as it depends on anything else.
+Spack automatically searches your ``PATH`` for installed compilers, so the ones already on the system are ready to use.
+Run ``spack compiler list`` (or simply ``spack compilers``) to see the ones it found:
 
 .. literalinclude:: outputs/basics/compiler-list.out
    :language: console
 
-All compilers that Spack found will be configured as external packages -- we'll talk more about externals in the "Spack Concepts" slides and in :ref:`Configuration Tutorial <configs-tutorial>` later on.
+All compilers Spack found are configured as *external packages*.
+We'll cover externals in the "Spack Concepts" slides and in the :ref:`Configuration Tutorial <configs-tutorial>` later on.
 
-Spack can install software either from source or from a binary cache.
-Since we just installed our first package from source, let's set up a faster binary cache for the rest of the tutorial.
-Packages in the binary cache are signed with GPG for security.
-To enable installation from the binary cache, we'll need to configure Spack with the location of the cache and trust the GPG key that the binaries were signed with.
+**Spack can install software either from source or from a binary cache.**
+We just built ``gmake`` from source.
+To speed up the rest of the tutorial, let's add a binary cache:
+
+.. Its packages are signed with GPG, so enabling it takes two steps: telling Spack where the cache lives and trusting the key the binaries were signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
 
-We'll learn more about configuring Spack later in the tutorial, but for now we can install the rest of the packages from the cache using the same ``spack install`` command.
-By default, this will install the binary cached version if it exists and fall back to installing the package from source if it does not.
+From here on, the same ``spack install`` command will fetch a package from the cache when a matching binary exists and fall back to building from source when it doesn't.
 
 ---------------
 The Spec Syntax
