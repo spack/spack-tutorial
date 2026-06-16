@@ -50,9 +50,6 @@ example --tee basics/zlib-build-type "spack install zlib-ng build_type=Debug"
 example --tee basics/zlib-clang     "spack install zlib-ng %clang"
 example --tee basics/zlib-gcc-14    "spack install zlib-ng %gcc@14"
 
-# tcl.out is no longer shown in the prose, but the default tcl install is kept:
-# the Uninstalling section needs multiple tcl configurations installed.
-example --tee basics/tcl            "spack install tcl"
 example basics/spec-tcl-zlib-clang  "spack spec -l tcl ^zlib-ng@2.0.7 %clang"
 example --tee basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 
@@ -60,8 +57,6 @@ example --tee basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 # is unambiguous (the other zlib-ng@2.0.7 build uses gcc), so the query is safe here.
 zlib_hash=$(spack find --format "{hash:3}" zlib-ng@2.0.7 %clang)
 example basics/spec-tcl-zlib-hash   "spack spec tcl ^/${zlib_hash}"
-
-example basics/find-ldf        "spack find -ldf"
 
 example basics/graph-tcl       "spack graph tcl"
 
@@ -76,7 +71,8 @@ example basics/spec-hdf5-compilers   "spack spec hdf5 %c,cxx=clang %fortran=gcc"
 # Querying Installations (now its own doc section, after The Spec Syntax). These run
 # BEFORE trilinos is installed, so their outputs reflect a pre-trilinos state.
 example basics/find            "spack find"
-example basics/find-lf         "spack find -l"
+example basics/find-l          "spack find -l"
+example basics/find-d-tcl      "spack find -d tcl"
 example basics/find-dep-mpich  "spack find ^mpich"
 example basics/find-px         "spack find -px"
 
@@ -85,11 +81,9 @@ example --tee basics/trilinos        "spack install trilinos"
 example --tee basics/trilinos-hdf5   "spack install trilinos +hdf5 ^mpich"
 example basics/trilinos-find-mpich   "spack find ^mpich"
 
-example basics/find-d-tcl      "spack find -d tcl"
-
 example basics/find-zlib      "spack find zlib-ng"
 
-#example basics/uninstall-zlib "spack uninstall -y zlib-ng %gcc@14"
+example basics/uninstall-zlib "spack uninstall -y zlib-ng %gcc@14"
 
 example basics/find-lf-zlib   "spack find -lf zlib-ng"
 

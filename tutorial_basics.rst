@@ -286,13 +286,20 @@ Now that we have installed a variety of packages, we can use the ``spack find`` 
 .. literalinclude:: outputs/basics/find.out
    :language: spec
 
+Spack groups the output by architecture and by the compiler used to build each package.
 Notice that by default, some installed packages appear identical in the output.
 To help distinguish between them, we can add the ``-l`` flag to display each package's unique hash.
 
-.. literalinclude:: outputs/basics/find-lf.out
+.. literalinclude:: outputs/basics/find-l.out
    :language: spec
 
 As we saw when referring to builds by hash, every installed package has a distinct hash, so configurations that look alike in the default output still occupy separate installations.
+
+``spack find`` can also show what each installed package depends on with the ``-d`` flag.
+For example, here is the ``tcl`` we installed, shown with its dependency tree:
+
+.. literalinclude:: outputs/basics/find-d-tcl.out
+   :language: spec
 
 The ``spack find`` command can also accept what we call "anonymous specs": expressions in spec syntax that do not contain a package name.
 For example, ``spack find ^mpich`` will return every installed package that depends on MPICH.
@@ -319,7 +326,8 @@ Now that we know the spec syntax and how to query installations, let's put them 
 
 Now we're starting to see the power of Spack.
 Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
-Installing more complex packages can take days or weeks even for an experienced user.
+Only a handful are built here, though: the rest of that large graph was already installed earlier in the tutorial, so Spack reuses those builds instead of repeating them.
+Installing a package this complex by hand can take an experienced user days or weeks.
 Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
 
 Spack manages the consistency of the entire DAG: every package that depends on MPI is satisfied by the same MPI.
@@ -347,11 +355,8 @@ We can instead render it as an image with ``spack graph --dot``:
 Uninstalling Packages
 ---------------------
 
-Earlier we installed many configurations each of zlib-ng and Tcl.
+Earlier we installed several configurations of ``zlib-ng``.
 Now we will go through and uninstall some of those packages that we didn't really need.
-
-.. literalinclude:: outputs/basics/find-d-tcl.out
-   :language: spec
 
 .. literalinclude:: outputs/basics/find-zlib.out
    :language: spec
@@ -364,23 +369,24 @@ We can uninstall packages by spec using the same syntax as install.
 .. literalinclude:: outputs/basics/find-lf-zlib.out
    :language: spec
 
-We can also uninstall packages by referring only to their hash.
-
-We can use either the ``--force`` (or ``-f``) flag or the ``--dependents`` (or ``-R``) flag to remove packages that are required by another installed package.
-Use ``--force`` to remove just the specified package, leaving dependents broken.
-Use ``--dependents`` to remove the specified package and all of its dependents.
+We can also refer to a package by its hash instead of a full spec.
+But Spack won't remove a package that another installed package still needs:
 
 .. literalinclude:: outputs/basics/uninstall-needed.out
    :language: spec
 
+To remove it anyway, use ``--force`` (or ``-f``) to delete just that package and leave its dependents broken, or ``--dependents`` (or ``-R``) to remove it together with everything that depends on it:
+
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
    :language: spec
 
-Spack will not uninstall packages that are not sufficiently specified (i.e., if the spec is ambiguous and matches multiple installed packages).
-The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an ambiguous spec.
+Spack refuses to uninstall a package when the spec is ambiguous -- when it matches more than one installed package:
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out
    :language: spec
+
+As the error suggests, we can disambiguate with a more specific spec, refer to the exact build by its hash, or pass ``--all`` (or ``-a``) to remove every match.
+Here we remove one of the two Trilinos builds by its hash:
 
 .. literalinclude:: outputs/basics/uninstall-specific.out
    :language: spec
@@ -389,29 +395,28 @@ The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an
 Customizing Compilers
 ---------------------
 
-Spack manages a list of available compilers on the system, detected automatically from the user's ``PATH`` variable.
-The ``spack compilers`` command is an alias for ``spack compiler list``.
+In the *Installing Packages* section, we saw that Spack manages a list of available compilers on the system, detected automatically from the user's ``PATH`` variable:
 
 .. literalinclude:: outputs/basics/compilers.out
    :language: console
 
-These compilers are maintained in a YAML file.
-Later in the tutorial we will discuss how to configure external compilers by hand for special cases.
-Spack can also use compilers built by Spack to compile later packages.
+Spack can also build a compiler itself and then use it to compile other packages.
 
 .. literalinclude:: outputs/basics/install-gcc-16.out
    :language: spec
 
-.. literalinclude:: outputs/basics/compilers-2.out
-   :language: spec
+Once installed, it appears with a ``[+]`` in the list of available compilers:
 
-Now ``gcc@16`` is immediately available to use.
+.. literalinclude:: outputs/basics/compilers-2.out
+   :language: console
+
+The ``gcc@16`` compiler is immediately available to use:
 
 .. literalinclude:: outputs/basics/spec-zziplib.out
    :language: spec
+   :lines: 1-2
 
-For the rest of the tutorial we will sometimes use this new compiler, and sometimes we want to demonstrate things without it.
-For now, we will uninstall it to avoid using it in the next section.
+We won't need this compiler in the next section, so we'll uninstall it for now.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
@@ -419,7 +424,7 @@ For now, we will uninstall it to avoid using it in the next section.
 .. note::
 
    The spec syntax may be confusing for new users.
-   Spack can provide information about commands you run frequently.
+   Spack can provide information about the commands you run.
    For instance, see the output of ``spack help --spec``:
 
    .. literalinclude:: outputs/basics/help-spec.out
