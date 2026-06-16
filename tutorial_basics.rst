@@ -134,28 +134,22 @@ The ``@`` sigil is used to specify versions.
 Variants
 ^^^^^^^^
 
-Let's move on to slightly more complicated packages.
-HDF5 is a good example of a more complicated package, with an MPI dependency.
-If we install it with default settings it will build with OpenMPI.
-We can check the install plan in advance to ensure it's what we want to install using the ``spack spec`` command.
-The ``spack spec`` command accepts the same spec syntax.
-
-.. literalinclude:: outputs/basics/hdf5-spec.out
-   :language: spec
-
-Assuming we're happy with that configuration, we will now install it.
-
-.. literalinclude:: outputs/basics/hdf5.out
-   :language: spec
-
-Spack packages can also have build options, called variants.
-Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
+Besides versions, packages expose build options called variants.
+Boolean variants are toggled with the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
 There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
-Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
-Here we can install HDF5 without MPI support.
+For example, ``zlib-ng`` has an ``ipo`` variant that enables interprocedural optimization, which we turn on with ``+ipo``.
 
-.. literalinclude:: outputs/basics/hdf5-no-mpi.out
+.. literalinclude:: outputs/basics/zlib-ipo.out
    :language: spec
+
+Not every variant is boolean.
+Some take a value, which we set with the same ``name=value`` syntax used for compiler flags.
+Here we build ``zlib-ng`` in debug mode through its ``build_type`` variant.
+
+.. literalinclude:: outputs/basics/zlib-build-type.out
+   :language: spec
+
+The ``ipo`` and ``build_type`` options come from zlib-ng's CMake build system, so requesting either one builds it with CMake rather than its default Autotools build.
 
 ^^^^^^^^^^^^^^^^^^^
 Direct Dependencies
@@ -178,24 +172,6 @@ For example, because a compiler is just another dependency, we can pin the versi
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: spec
 
-^^^^^^^^^^^^^^^^^^^^^^
-Querying Installations
-^^^^^^^^^^^^^^^^^^^^^^
-
-After installing packages, we can use the ``spack find`` command to query which packages are installed.
-Notice that by default, some installed packages appear identical in the output.
-To help distinguish between them, we can add the ``-l`` flag to display each package’s unique hash.
-
-.. literalinclude:: outputs/basics/find.out
-   :language: spec
-
-.. literalinclude:: outputs/basics/find-lf.out
-   :language: spec
-
-Spack generates a unique hash for each spec.
-This hash reflects the complete provenance of the package, so any change to the spec—such as compiler version, build options, or dependencies—will result in a different hash.
-Spack uses these hashes both to compare specs and to create unique installation directories for every possible configuration.
-
 ^^^^^^^^^^^^^^^^^^^^^^^
 Transitive Dependencies
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -214,8 +190,10 @@ Note that a dependency specified by ``^`` is always applied to the root package,
 .. literalinclude:: outputs/basics/tcl-zlib-clang.out
    :language: spec
 
-We can also refer to packages from the command line by their package hash.
-Earlier, when we used the ``spack find -l`` command, each installed build of zlib-ng showed a distinct hash.
+We can also refer to packages from the command line by their hash.
+Spack generates a unique hash for each spec, reflecting its complete provenance.
+Any change to the spec -- such as compiler version, build options, or dependencies -- results in a different hash, and Spack uses these hashes to give every configuration its own installation directory.
+Each build of zlib-ng we installed therefore has a distinct hash.
 Instead of typing out the entire spec, we can depend on a specific build -- for example our ``zlib-ng %gcc@10`` build -- by using the ``/`` sigil followed by its hash.
 
 Similar to tools like Git, we do not need to enter the entire hash on the command line—just enough digits to uniquely identify the package.
@@ -224,7 +202,7 @@ If the prefix we provide matches more than one installed package, Spack will rep
 .. literalinclude:: outputs/basics/tcl-zlib-hash.out
    :language: spec
 
-The ``spack find`` command can also take a ``-d`` flag, which can show dependency information.
+The ``spack find`` command can take a ``-d`` flag, which shows dependency information.
 Note that each package has a top-level entry, even if it also appears as a dependency.
 
 .. literalinclude:: outputs/basics/find-ldf.out
@@ -241,12 +219,27 @@ We can also use the ``spack graph`` command to view the entire DAG as a graph.
 Virtual Dependencies
 ^^^^^^^^^^^^^^^^^^^^
 
-We might also want to install HDF5 with a different MPI implementation.
-While ``mpi`` itself is a virtual package representing an interface, other packages can depend on such abstract interfaces.
-Spack handles these through "virtual dependencies."
-A package, such as HDF5, can depend on the ``mpi`` virtual package (the interface).
-Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the MPI interface.
-Any of these providers can be requested to satisfy an MPI dependency.
+Let's move on to a more complicated package.
+HDF5 is a good example: it depends on MPI, but ``mpi`` is not an ordinary package.
+It is a *virtual package* -- an interface that several real packages provide -- and Spack handles dependencies on such interfaces through "virtual dependencies".
+
+Because HDF5 is more involved than the packages we've installed so far, let's preview the concretized install plan before building, using the ``spack spec`` command (which accepts the same spec syntax as ``spack install``).
+
+.. literalinclude:: outputs/basics/hdf5-spec.out
+   :language: spec
+
+With default settings HDF5 builds against OpenMPI, so installing it also brings in an MPI implementation.
+
+.. literalinclude:: outputs/basics/hdf5.out
+   :language: spec
+
+HDF5 controls this through a boolean ``mpi`` variant; disabling it with ``~mpi`` drops the MPI dependency entirely.
+
+.. literalinclude:: outputs/basics/hdf5-no-mpi.out
+   :language: spec
+
+We might instead want HDF5 built against a *different* MPI implementation.
+Actual MPI implementation packages (like ``openmpi``, ``mpich``, ``mvapich2``, etc.) provide the ``mpi`` interface, and any of these providers can be requested to satisfy an MPI dependency.
 For example, we can build HDF5 with MPI support provided by MPICH by specifying a dependency on ``mpich`` (e.g., ``hdf5 ^mpich``).
 Spack also supports versioning of virtual dependencies.
 A package can depend on the MPI interface at version 3 (e.g., ``hdf5 ^mpi@3``), and provider packages specify what version of the interface *they* provide.
@@ -327,6 +320,37 @@ As an aside, the spec syntax can also set compiler flags directly on a build.
 Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` -- and its compiler wrappers inject them into the appropriate compilation commands (values containing spaces must be quoted on the command line).
 This is an escape hatch for special cases rather than the usual way to configure a build: most of the time a package's variants and build system already select appropriate options, so reach for explicit flags only when you genuinely need them.
 
+.. _basics-tutorial-query:
+
+----------------------
+Querying Installations
+----------------------
+
+Now that we have installed a variety of packages, we can use the ``spack find`` command to query which packages are installed.
+
+.. literalinclude:: outputs/basics/find.out
+   :language: spec
+
+Notice that by default, some installed packages appear identical in the output.
+To help distinguish between them, we can add the ``-l`` flag to display each package's unique hash.
+
+.. literalinclude:: outputs/basics/find-lf.out
+   :language: spec
+
+As we saw when referring to builds by hash, every installed package has a distinct hash, so configurations that look alike in the default output still occupy separate installations.
+
+The ``spack find`` command can also accept what we call "anonymous specs": expressions in spec syntax that do not contain a package name.
+For example, ``spack find ^mpich`` will return every installed package that depends on MPICH.
+
+.. literalinclude:: outputs/basics/find-dep-mpich.out
+   :language: spec
+
+The ``find`` command can show which packages were installed explicitly (rather than pulled in as a dependency) using the lowercase ``-x`` flag; the uppercase ``-X`` flag shows implicit installs only.
+It can also show the path to which a package was installed using the ``-p`` flag.
+
+.. literalinclude:: outputs/basics/find-px.out
+   :language: spec
+
 .. _basics-tutorial-uninstall:
 
 ---------------------
@@ -369,26 +393,6 @@ The ``--all`` (or ``-a``) flag can be used to uninstall all packages matching an
    :language: spec
 
 .. literalinclude:: outputs/basics/uninstall-specific.out
-   :language: spec
-
------------------------------
-Advanced ``spack find`` Usage
------------------------------
-
-We will go over some additional uses for the ``spack find`` command not already covered in the :ref:`basics-tutorial-install` and :ref:`basics-tutorial-uninstall` sections.
-
-The ``spack find`` command can accept what we call "anonymous specs."
-These are expressions in spec syntax that do not contain a package name.
-For example, ``spack find ^mpich`` will return every installed package that depends on MPICH.
-
-.. literalinclude:: outputs/basics/find-dep-mpich.out
-   :language: spec
-
-The ``find`` command can also show which packages were installed explicitly (rather than pulled in as a dependency) using the lowercase ``-x`` flag.
-The uppercase ``-X`` flag shows implicit installs only.
-The ``find`` command can also show the path to which a Spack package was installed using the ``-p`` flag.
-
-.. literalinclude:: outputs/basics/find-px.out
    :language: spec
 
 ---------------------

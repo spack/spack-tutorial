@@ -33,18 +33,17 @@ example basics/compiler-list   "spack compilers"
 example basics/mirror          "spack mirror add tutorial /mirror"
 example basics/mirror          "spack buildcache keys --install --trust"
 
+# NOTE: specs reordered (spec-syntax subsections regrouped; querying moved to its
+# own section after the spec syntax; zlib-ng variant examples added; hdf5 moved to
+# the virtual-dependencies block). Outputs under outputs/basics/ need regeneration.
 example basics/versions-zlib  "spack versions zlib-ng"
 example basics/zlib-2.0.7       "spack install zlib-ng@2.0.7"
 
-example basics/hdf5-spec       "spack spec hdf5"
-example basics/hdf5            "spack install hdf5"
-example basics/hdf5-no-mpi     "spack install hdf5~mpi"
+example basics/zlib-ipo        "spack install zlib-ng +ipo"
+example basics/zlib-build-type "spack install zlib-ng build_type=Debug"
 
 example basics/zlib-clang     "spack install zlib-ng %clang"
 example basics/zlib-gcc-10    "spack install zlib-ng %gcc@10"
-
-example basics/find            "spack find"
-example basics/find-lf         "spack find -l"
 
 example basics/tcl             "spack install tcl"
 example basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
@@ -55,6 +54,10 @@ example basics/tcl-zlib-hash  "spack install tcl ^/${zlib_hash}"
 example basics/find-ldf        "spack find -ldf"
 
 example basics/graph-tcl       "spack graph tcl"
+
+example basics/hdf5-spec       "spack spec hdf5"
+example basics/hdf5            "spack install hdf5"
+example basics/hdf5-no-mpi     "spack install hdf5~mpi"
 
 example basics/hdf5-hl-mpi     "spack install hdf5+hl+mpi ^mpich"
 
@@ -67,6 +70,12 @@ example basics/trilinos-hdf5   "spack install trilinos +hdf5 ^hdf5+hl+mpi ^mpich
 example basics/find-d-trilinos "spack find -d trilinos"
 
 example basics/graph-trilinos  "spack graph trilinos"
+
+# Querying Installations (now its own doc section, after The Spec Syntax)
+example basics/find            "spack find"
+example basics/find-lf         "spack find -l"
+example basics/find-dep-mpich  "spack find ^mpich"
+example basics/find-px         "spack find -px"
 
 example basics/find-d-tcl      "spack find -d tcl"
 
@@ -84,10 +93,6 @@ example --expect-error basics/uninstall-ambiguous "spack uninstall trilinos"
 
 trilinos_hash="$(spack find --format '{hash:3}' trilinos ^openmpi)"
 echo y | example basics/uninstall-specific  "spack uninstall /$trilinos_hash"
-
-example basics/find-dep-mpich      "spack find ^mpich"
-
-example basics/find-px             "spack find -px"
 
 example basics/compilers           "spack compilers"
 
