@@ -115,26 +115,12 @@ The Spec Syntax
 So far we've installed packages with their default configuration.
 Spack's "spec" syntax is the interface by which we can request specific configurations of a package.
 
-^^^^^^^^^^^^^^^^^^^
-Direct Dependencies
-^^^^^^^^^^^^^^^^^^^
-
-The ``%`` sigil specifies a direct dependency of the package we're installing.
-The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for first.
-For example, we can install zlib-ng (a commonly used compression library), but instead of building it with the GCC compiler as we did for gmake previously, we'll install it with ``%clang`` to build it with the clang compiler.
-
-.. literalinclude:: outputs/basics/zlib-clang.out
-   :language: spec
-
-Notice that this installation is located separately from the previous one.
-As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
-
 ^^^^^^^^
 Versions
 ^^^^^^^^
 
-We can also install multiple versions of the same package side by side.
-Before installing another version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
+We can install multiple versions of the same package side by side.
+Before installing a specific version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: spec
@@ -144,7 +130,50 @@ The ``@`` sigil is used to specify versions.
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: spec
 
-The spec syntax is recursive -- any syntax we can specify for the "root" package (``zlib-ng``) we can also use for a dependency.
+^^^^^^^^
+Variants
+^^^^^^^^
+
+Let's move on to slightly more complicated packages.
+HDF5 is a good example of a more complicated package, with an MPI dependency.
+If we install it with default settings it will build with OpenMPI.
+We can check the install plan in advance to ensure it's what we want to install using the ``spack spec`` command.
+The ``spack spec`` command accepts the same spec syntax.
+
+.. literalinclude:: outputs/basics/hdf5-spec.out
+   :language: spec
+
+Assuming we're happy with that configuration, we will now install it.
+
+.. literalinclude:: outputs/basics/hdf5.out
+   :language: spec
+
+Spack packages can also have build options, called variants.
+Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
+There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
+Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
+Here we can install HDF5 without MPI support.
+
+.. literalinclude:: outputs/basics/hdf5-no-mpi.out
+   :language: spec
+
+^^^^^^^^^^^^^^^^^^^
+Direct Dependencies
+^^^^^^^^^^^^^^^^^^^
+
+The ``%`` sigil specifies a direct dependency of the package we're installing.
+The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for first.
+So far we've let Spack choose the compiler, building ``zlib-ng`` with GCC just as we did for gmake.
+This time we'll install it with ``%clang`` to build it with the clang compiler instead.
+
+.. literalinclude:: outputs/basics/zlib-clang.out
+   :language: spec
+
+Notice that this installation is located separately from the previous one.
+As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
+
+The spec syntax is recursive -- any syntax we can specify for the "root" package we can also use for a dependency.
+For example, because a compiler is just another dependency, we can pin the version Spack builds with:
 
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: spec
@@ -206,33 +235,6 @@ The ``spack find -d`` command shows the tree representation of that graph, which
 We can also use the ``spack graph`` command to view the entire DAG as a graph.
 
 .. literalinclude:: outputs/basics/graph-tcl.out
-   :language: spec
-
-^^^^^^^^
-Variants
-^^^^^^^^
-
-Let's move on to slightly more complicated packages.
-HDF5 is a good example of a more complicated package, with an MPI dependency.
-If we install it with default settings it will build with OpenMPI.
-We can check the install plan in advance to ensure it's what we want to install using the ``spack spec`` command.
-The ``spack spec`` command accepts the same spec syntax.
-
-.. literalinclude:: outputs/basics/hdf5-spec.out
-   :language: spec
-
-Assuming we're happy with that configuration, we will now install it.
-
-.. literalinclude:: outputs/basics/hdf5.out
-   :language: spec
-
-Spack packages can also have build options, called variants.
-Boolean variants can be specified using the ``+`` (enable) and ``~`` or ``-`` (disable) sigils.
-There are two sigils for "disable" to avoid conflicts with shell parsing in different situations.
-Variants (boolean or otherwise) can also be specified using the same syntax as compiler flags.
-Here we can install HDF5 without MPI support.
-
-.. literalinclude:: outputs/basics/hdf5-no-mpi.out
    :language: spec
 
 ^^^^^^^^^^^^^^^^^^^^
