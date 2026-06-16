@@ -39,16 +39,14 @@ example basics/versions-zlib  "spack versions zlib-ng"
 example basics/zlib-2.0.7       "spack install zlib-ng@2.0.7"
 example basics/zlib-gcc-10    "spack install zlib-ng %gcc@10"
 
-example basics/zlib-O3        "spack install zlib-ng@2.0.7 cflags=-O3"
-
 example basics/find            "spack find"
-example basics/find-lf         "spack find -lf"
+example basics/find-lf         "spack find -l"
 
 example basics/tcl             "spack install tcl"
 
 example basics/tcl-zlib-clang "spack install tcl ^zlib-ng@2.0.7 %clang"
 
-zlib_hash=$(spack find --format "{hash:3}" zlib-ng cflags=-O3)
+zlib_hash=$(spack find --format "{hash:3}" zlib-ng %gcc@10)
 example basics/tcl-zlib-hash  "spack install tcl ^/${zlib_hash}"
 
 example basics/find-ldf        "spack find -ldf"
@@ -89,8 +87,6 @@ trilinos_hash="$(spack find --format '{hash:3}' trilinos ^openmpi)"
 echo y | example basics/uninstall-specific  "spack uninstall /$trilinos_hash"
 
 example basics/find-dep-mpich      "spack find ^mpich"
-
-example basics/find-O3             "spack find cflags=-O3"
 
 example basics/find-px             "spack find -px"
 

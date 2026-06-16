@@ -149,18 +149,6 @@ The spec syntax is recursive -- any syntax we can specify for the "root" package
 .. literalinclude:: outputs/basics/zlib-gcc-10.out
    :language: spec
 
-^^^^^^^^^^^^^^
-Compiler Flags
-^^^^^^^^^^^^^^
-
-The spec syntax in Spack also supports compiler flags.
-We can specify parameters such as ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs``.
-If any of these values contain spaces, we'll need to enclose them in quotes on the command line.
-Spack’s compiler wrappers will automatically inject these flags into the appropriate compilation commands.
-
-.. literalinclude:: outputs/basics/zlib-O3.out
-   :language: spec
-
 ^^^^^^^^^^^^^^^^^^^^^^
 Querying Installations
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -168,7 +156,6 @@ Querying Installations
 After installing packages, we can use the ``spack find`` command to query which packages are installed.
 Notice that by default, some installed packages appear identical in the output.
 To help distinguish between them, we can add the ``-l`` flag to display each package’s unique hash.
-Additionally, if we include the ``-f`` flag, Spack will show any non-empty compiler flags that were used during installation.
 
 .. literalinclude:: outputs/basics/find.out
    :language: spec
@@ -199,8 +186,8 @@ Note that a dependency specified by ``^`` is always applied to the root package,
    :language: spec
 
 We can also refer to packages from the command line by their package hash.
-Earlier, when we used the ``spack find -lf`` command, we saw that the hash for our optimized installation of zlib-ng (with ``cflags="-O3"``) began with ``umrbkwv``.
-Instead of typing out the entire spec, we can now build explicitly with that package by using the ``/`` sigil followed by its hash.
+Earlier, when we used the ``spack find -l`` command, each installed build of zlib-ng showed a distinct hash.
+Instead of typing out the entire spec, we can depend on a specific build -- for example our ``zlib-ng %gcc@10`` build -- by using the ``/`` sigil followed by its hash.
 
 Similar to tools like Git, we do not need to enter the entire hash on the command line—just enough digits to uniquely identify the package.
 If the prefix we provide matches more than one installed package, Spack will report an error and prompt us to be more specific.
@@ -330,6 +317,14 @@ The output can be changed to the Graphviz ``.dot`` format using the ``--dot`` fl
 
   $ spack graph --dot trilinos | dot -Tpdf > trilinos_graph.pdf
 
+^^^^^^^^^^^^^^
+Compiler Flags
+^^^^^^^^^^^^^^
+
+As an aside, the spec syntax can also set compiler flags directly on a build.
+Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` -- and its compiler wrappers inject them into the appropriate compilation commands (values containing spaces must be quoted on the command line).
+This is an escape hatch for special cases rather than the usual way to configure a build: most of the time a package's variants and build system already select appropriate options, so reach for explicit flags only when you genuinely need them.
+
 .. _basics-tutorial-uninstall:
 
 ---------------------
@@ -382,12 +377,9 @@ We will go over some additional uses for the ``spack find`` command not already 
 
 The ``spack find`` command can accept what we call "anonymous specs."
 These are expressions in spec syntax that do not contain a package name.
-For example, ``spack find ^mpich`` will return every installed package that depends on MPICH, and ``spack find cflags="-O3"`` will return every package which was built with ``cflags="-O3"``.
+For example, ``spack find ^mpich`` will return every installed package that depends on MPICH.
 
 .. literalinclude:: outputs/basics/find-dep-mpich.out
-   :language: spec
-
-.. literalinclude:: outputs/basics/find-O3.out
    :language: spec
 
 The ``find`` command can also show which packages were installed explicitly (rather than pulled in as a dependency) using the lowercase ``-x`` flag.
