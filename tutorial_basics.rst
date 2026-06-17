@@ -19,7 +19,7 @@ A few fundamental ideas underpin everything that follows:
 
 Keep these points in mind, as we'll illustrate them with examples.
 
-We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack’s spec syntax and the flexibility it offers users.
+We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack's spec syntax and the flexibility it offers users.
 Next, we will demonstrate how to use the ``spack find`` command to view installed packages, as well as the ``spack uninstall`` command to remove them.
 
 Additionally, we will discuss how Spack manages compilers, with a particular focus on using Spack-built compilers within the Spack environment.
@@ -101,8 +101,6 @@ We'll cover externals in the "Spack Concepts" slides and in the :ref:`Configurat
 **Spack can install software either from source or from a binary cache.**
 We just built ``gmake`` from source.
 To speed up the rest of the tutorial, let's add a binary cache:
-
-.. Its packages are signed with GPG, so enabling it takes two steps: telling Spack where the cache lives and trusting the key the binaries were signed with.
 
 .. literalinclude:: outputs/basics/mirror.out
    :language: console
@@ -343,7 +341,7 @@ Now that we know the spec syntax and how to query installations, let's put them 
 
 Now we're starting to see the power of Spack.
 Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
-Only a handful are built here, though: the rest of that large graph was already installed earlier in the tutorial, so Spack reuses those builds instead of repeating them.
+Only a handful are new here, though: the rest of that large graph was already installed earlier in the tutorial, so Spack reuses those builds instead of repeating them.
 Installing a package this complex by hand can take an experienced user days or weeks.
 Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
 
@@ -413,7 +411,7 @@ Customizing Compilers
 ---------------------
 
 In the :ref:`Installing Packages <basics-tutorial-install-packages>` section, we saw that Spack detects the compilers already on your ``PATH`` and configures them as external packages.
-Spack can also build a compiler itself and then use it to compile other packages.
+Spack can also install a compiler itself and then use it to compile other packages.
 
 .. literalinclude:: outputs/basics/install-gcc-16.out
    :language: spec
@@ -429,7 +427,16 @@ The ``gcc@16`` compiler is immediately available to use:
    :language: spec
    :lines: 1-2
 
-We won't need this compiler in the next section, so we'll uninstall it for now.
+We won't need this compiler in the next chapter, so we'll uninstall it for now.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
+
+----------
+Next Steps
+----------
+
+You can now install packages from source or from a binary cache, request specific configurations with the spec syntax, query what is installed, uninstall what you no longer need, and have Spack build and use its own compilers.
+These commands work one package at a time, which is enough to get started but quickly becomes unwieldy for a whole software stack.
+
+The :ref:`Environments Tutorial <environments-tutorial>` is the natural next step: it shows how to group specs into a documented, reproducible collection that you can install, share, and rebuild as a unit.
