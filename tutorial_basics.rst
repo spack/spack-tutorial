@@ -29,10 +29,10 @@ All examples and outputs are based on an Ubuntu 26.04 Docker image.
 .. _basics-tutorial-install:
 
 ----------------
-Installing Spack
+Setting Up Spack
 ----------------
 
-Spack is ready to use immediately after installation.
+Spack is ready to use immediately -- there is no separate build or install step.
 To get started, we simply clone the Spack repository and check out the latest v1.2 release:
 
 .. literalinclude:: outputs/basics/clone.out
@@ -47,10 +47,13 @@ Spack has some nice command line integration tools, so instead of simply prepend
 
 And now we're good to go!
 
------------------
-What is in Spack?
------------------
+.. _basics-tutorial-install-packages:
 
+-------------------
+Installing Packages
+-------------------
+
+Before installing anything, let's see what Spack has to offer.
 The ``spack list`` command shows available packages.
 
 .. literalinclude:: outputs/basics/list.out
@@ -66,11 +69,7 @@ For example, let's view all available Python packages.
    :language: console
    :lines: 1-6
 
--------------------
-Installing Packages
--------------------
-
-Installing a package is as simple as typing ``spack install`` followed by its name:
+Once we've found a package, installing it is as simple as typing ``spack install`` followed by its name:
 
 .. code-block:: console
 
@@ -117,8 +116,7 @@ The Spec Syntax
 So far we've installed packages with their default configuration.
 Spack's *spec syntax* is how we request a specific configuration of a package.
 A *spec* describes a package together with any constraints we want to place on how it is built: its version, its build options, the compiler it uses, and even the configuration of its dependencies.
-We express each kind of constraint with its own sigil -- ``@`` for versions, ``+`` and ``~`` for variants, ``%`` for direct dependencies such as compilers, and ``^`` for dependencies anywhere in the graph.
-The subsections below introduce these one at a time, building up from a bare package name to fully constrained dependency graphs.
+Each kind of constraint has its own sigil, which the subsections below introduce one at a time, building up from a bare package name to fully constrained dependency graphs.
 
 ^^^^^^^^
 Versions
@@ -166,9 +164,8 @@ Requesting one of them, as we just did with ``+ipo``, therefore also selects the
 
 .. note::
 
-   The spec syntax can also set compiler flags directly on a build.
-   Spack accepts ``cppflags``, ``cflags``, ``cxxflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` -- and its compiler wrappers inject them into the appropriate compilation commands (values containing spaces must be quoted on the command line).
-   This is an escape hatch for special cases rather than the usual way to configure a build: most of the time a package's variants and build system already select appropriate options, so reach for explicit flags only when you genuinely need them.
+   The same ``name=value`` syntax also sets compiler flags on a build: Spack accepts ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` (quote values containing spaces) -- and its compiler wrappers inject them into the right commands.
+   This is an escape hatch, though: a package's variants and build system usually select appropriate options already, so reach for explicit flags only when you genuinely need them.
 
 ^^^^^^^^^^^^^^^^^^^
 Direct Dependencies
@@ -274,6 +271,26 @@ For example, we can ask Spack for an ``hdf5`` that uses Clang for the C and C++ 
 The same syntax works for ``mpi``: we could have written ``hdf5 ^mpi=mpich`` instead of ``hdf5 ^mpich``.
 There's no need, though, because the only way for ``hdf5`` to depend on ``mpich`` is for ``mpich`` to provide ``mpi``.
 This is also why we didn't have to specify which virtuals ``gcc`` and ``clang`` provided earlier when building simpler packages.
+
+^^^^^^^^^^^^^^^^^^^^^
+Spec Syntax Reference
+^^^^^^^^^^^^^^^^^^^^^
+
+We have now seen every piece of the spec syntax.
+Taken together, the sigils let us constrain any part of a build:
+
+* ``@`` selects a version or a version range.
+* ``+`` and ``~`` toggle boolean variants, and ``name=value`` sets the others.
+* ``%`` constrains a direct dependency, such as a compiler.
+* ``^`` constrains any dependency in the graph, whether direct or transitive.
+* ``/`` refers to an already-installed build by its hash.
+* ``%virtual=provider`` and ``^virtual=provider`` pick which package provides a virtual.
+
+Because the syntax is recursive, each of these can be applied to a dependency just as it is to the root package.
+There is no need to memorize all of this: ``spack help --spec`` prints a concise summary you can return to whenever you need it.
+
+.. literalinclude:: outputs/basics/help-spec.out
+   :language: console
 
 .. _basics-tutorial-query:
 
@@ -395,11 +412,7 @@ Here we remove one of the two Trilinos builds by its hash:
 Customizing Compilers
 ---------------------
 
-In the *Installing Packages* section, we saw that Spack manages a list of available compilers on the system, detected automatically from the user's ``PATH`` variable:
-
-.. literalinclude:: outputs/basics/compilers.out
-   :language: console
-
+In the :ref:`Installing Packages <basics-tutorial-install-packages>` section, we saw that Spack detects the compilers already on your ``PATH`` and configures them as external packages.
 Spack can also build a compiler itself and then use it to compile other packages.
 
 .. literalinclude:: outputs/basics/install-gcc-16.out
@@ -420,12 +433,3 @@ We won't need this compiler in the next section, so we'll uninstall it for now.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
-
-.. note::
-
-   The spec syntax may be confusing for new users.
-   Spack can provide information about the commands you run.
-   For instance, see the output of ``spack help --spec``:
-
-   .. literalinclude:: outputs/basics/help-spec.out
-      :language: console
