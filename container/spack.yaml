@@ -60,11 +60,6 @@ spack:
           prefer: [gcc@16]
         fortran:
           prefer: [gcc@16]
-  # Miscellaneous specs use the default group
-  # - zlib-ng@2.2.4%gcc@10
-  #- matrix:
-  #  - [ zlib-ng@2.2.4, tcl ^zlib-ng@2.0.7 ]
-  #  - [ '%clang@14' ]
 
   concretizer:
     unify: false
@@ -83,10 +78,3 @@ spack:
       padded_length: 256
       projections:
         all: "{architecture.platform}-{architecture.target}/{name}-{version}-{hash}"
-
-#  ci:
-#    pipeline-gen:
-#    - build-job:
-#        image:
-#          name: ghcr.io/spack/tutorial-ubuntu-26.04:v2026-06-09
-#          entrypoint: ['']
