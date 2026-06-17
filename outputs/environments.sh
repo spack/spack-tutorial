@@ -11,29 +11,7 @@ export SPACK_COLOR=never
 . "$project/init_spack.sh"
 . share/spack/setup-env.sh
 
-####
-# Introduction for "basic" installation if basics section not being used
-####
-#example environments/clone           "git clone --depth=100 --branch=$tutorial_branch https://github.com/spack/spack.git ~/spack"
-#example environments/clone           "cd ~/spack"
-
-#cd ~/spack || exit
-#export SPACK_ROOT=~/spack
-
-#. share/spack/setup-env.sh
-#spack config add "config:suppress_gpg_warnings:true"
-
-#example environments/source-setup     ". share/spack/setup-env.sh"
-
-#example environments/gmake      "spack install gmake"
-
-#example environments/gmake-1    "spack install gmake@4.3"
-
-#example environments/find-gmake "spack find -p gmake"
-
-#example environments/ls-dot-spack 'ls "$(spack location -i gmake@4.4)/.spack"'
-
-#example environments/mirror     "spack mirror add tutorial /mirror"
+# spack mirror add --unsigned tutorial /mirror
 #example environments/mirror     "spack buildcache keys --install --trust"
 
 ####
@@ -60,13 +38,13 @@ example environments/env-status-2    "spack find"
 
 example --tee environments/env-fail-install-1   "spack env activate myproject"
 spack env activate myproject
-example --expect-error environments/env-fail-install-1   "spack install tcl"
+example --tee --expect-error environments/env-fail-install-1   "spack install tcl"
 
 example environments/env-add-1            "spack add tcl"
 example environments/env-add-1            "spack add trilinos"
 example environments/env-add-1            "spack find"
 
-example environments/env-install-1        "spack install"
+example --tee environments/env-install-1        "spack install"
 
 example environments/find-env-2           "spack find"
 
@@ -76,7 +54,7 @@ example environments/env-create-2         "spack env create myproject2"
 example --tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
 example environments/env-create-2    "spack add scr trilinos"
-example environments/env-create-2    "spack install"
+example --tee environments/env-create-2    "spack install"
 example environments/env-create-2    "spack find"
 
 example --expect-error environments/env-uninstall-1 "spack uninstall -y trilinos"
@@ -102,7 +80,7 @@ example environments/concretize-f-1 "spack concretize --force"
 
 example --tee environments/incremental-1 "spack env activate --temp"
 spack env activate --temp
-example environments/incremental-1 "spack install --add python"
+example --tee environments/incremental-1 "spack install --add python"
 
 # v1.1: Spack concretizer regression causes the following command to hang
 # seemingly indefinitely. (Have tested waiting 1h 15m before giving up.)
@@ -173,9 +151,9 @@ spack env activate .
 # mock a hand-edit from before we activated
 spack add trilinos
 spack add openmpi
-example environments/install-independent-1 "spack install"
+example --tee environments/install-independent-1 "spack install"
 
-example environments/add-independent-1     "spack add hdf5@5.5.1"
+example environments/add-independent-1     "spack add hdf5"
 example environments/add-independent-1     "cat spack.yaml"
 
 example environments/remove-independent-1     "spack remove hdf5"

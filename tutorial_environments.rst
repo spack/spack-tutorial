@@ -172,7 +172,8 @@ Let's now confirm the contents of the environment using ``spack find``:
 .. literalinclude:: outputs/environments/find-env-2.out
    :language: console
 
-We can see that the roots and all their dependencies have been installed.
+We can see that the roots and their dependencies have been installed.
+The packages reported as *concretized packages to be installed* are build-only dependencies, which Spack skips when it installs from binaries.
 
 ^^^^^^^^^^^^^^
 Using Packages
@@ -712,10 +713,12 @@ Now let's create a concrete environment, called ``concrete``, from the file:
 
 Here we see that Spack again created a managed environment with the provided name.
 
-Since we created the environment from our ``spack.lock`` file, not only do we get the same root specs, all of the packages are installed in the environment as we can see from calling ``spack find`` **after** activating the environment:
+Since we created the environment from our ``spack.lock`` file, not only do we get the same root specs, the packages are installed in the environment too, as we can see from calling ``spack find`` **after** activating the environment:
 
 .. literalinclude:: outputs/environments/find-env-concrete-1.out
    :language: console
+
+As before, the *concretized packages to be installed* are build-only dependencies that Spack does not fetch from the cache.
 
 .. note::
 

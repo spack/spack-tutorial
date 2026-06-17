@@ -1,7 +1,7 @@
 $ spack uninstall -y trilinos
 ==> Refusing to uninstall the following specs
-    -- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
-    tj433ut trilinos@16.1.0
+    -- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+    u43pchx trilinos@17.1.1
 
 ==> The following environments still reference these specs:
     myproject
@@ -11,47 +11,28 @@ $ spack uninstall -y trilinos
   use `spack env remove` to remove environments
   use `spack uninstall --force` to override
 $ spack find
-==> In environment myproject2
-==> 2 root specs
--- no arch / no compilers ---------------------------------------
+==> In environment myproject2 (2 root specs)
 [+] scr	 [+] trilinos
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx,fortran=gcc@11.4.0 ------
-openblas@0.3.30	 openmpi@5.0.8	scr@2.0.0  trilinos@16.1.0
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+openblas@0.3.33	 openmpi@5.0.10	 scr@2.0.0  trilinos@17.1.1
 
--- linux-ubuntu22.04-x86_64_v3 / %c,cxx=gcc@11.4.0 --------------
-berkeley-db@18.1.40  gettext@0.23.1	    lz4@1.10.0		  python@3.11.14
-bison@3.8.2	     glib@2.86.1	    m4@1.4.20		  re2c@3.1
-cmake@3.31.9	     glib-bootstrap@2.86.1  ncurses@6.5-20250705  texinfo@7.2
-curl@8.15.0	     gmp@6.3.0		    nghttp2@1.48.0	  zlib-ng@2.0.7
-elfutils@0.193	     hwloc@2.12.2	    ninja@1.13.0	  zstd@1.5.7
-expat@2.7.3	     krb5@1.21.3	    openssh@9.9p1
-flex@2.6.3	     libffi@3.5.2	    openssl@3.6.0
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+berkeley-db@18.1.40  elfutils@0.194  gettext@1.0  gmp@6.3.0	krb5@1.22.2   lz4@1.10.0   nghttp2@1.67.1  openssl@3.6.1  zlib-ng@2.3.3
+curl@8.20.0	     expat@2.8.1     glib@2.88.1  hwloc@2.13.0	libffi@3.5.2  ncurses@6.6  openssh@10.3p1  python@3.14.5  zstd@1.5.7
 
--- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@11.4.0 ----------
+-- linux-ubuntu26.04-x86_64_v3 / %c,fortran=gcc@15.2.0 ----------
 libyogrt@1.35
 
--- linux-ubuntu22.04-x86_64_v3 / %c=gcc@11.4.0 ------------------
-automake@1.16.5		      libedit@3.1-20240808  libxml2@2.13.5  pmix@6.0.0
-bzip2@1.0.8		      libevent@2.1.12	    lwgrp@1.0.6	    prrte@4.0.0
-diffutils@3.12		      libgcrypt@1.11.2	    mbedtls@2.28.9  readline@8.3
-dtcmp@1.1.5		      libgpg-error@1.55	    mpfr@4.2.1	    slurm@25-05-1-1
-findutils@4.10.0	      libiconv@1.18	    munge@0.5.15    sqlite@3.50.4
-gawk@5.3.1		      libmd@1.1.0	    numactl@2.0.18  tar@1.35
-gdbm@1.25		      libpciaccess@0.17	    pcre2@10.44	    util-linux-uuid@2.41
-gmake@4.4.1		      libsigsegv@2.14	    pdsh@2.31	    xz@5.6.3
-gobject-introspection@1.86.0  libssh2@1.11.1	    perl@5.42.0
-json-c@0.18		      libtool@2.4.7	    pigz@2.8
-libbsd@0.12.2		      libxcrypt@4.4.38	    pkgconf@2.5.1
+-- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
+bzip2@1.0.8  json-c@0.18    libedit@3.1-20251016  libgpg-error@1.61  libpciaccess@0.17	lwgrp@1.0.6   numactl@2.0.19  perl@5.42.0    pmix@6.1.0	   slurm@25-05-1-1  util-linux-uuid@2.41
+dtcmp@1.1.5  less@692	    libevent@2.1.12	  libiconv@1.18	     libxcrypt@4.5.2	mpfr@4.2.2    pcre2@10.44     pigz@2.8	     prrte@4.1.0   sqlite@3.53.1    xz@5.8.3
+gdbm@1.26    libbsd@0.12.2  libgcrypt@1.12.2	  libmd@1.1.0	     libxml2@2.15.3	munge@0.5.18  pdsh@2.35	      pkgconf@2.5.1  readline@8.3  tar@1.35
 
--- linux-ubuntu22.04-x86_64_v3 / %cxx=gcc@11.4.0 ----------------
-kokkos@4.5.01  kokkos-kernels@4.5.01
+-- linux-ubuntu26.04-x86_64_v3 / %cxx=gcc@15.2.0 ----------------
+kokkos@5.1.1  kokkos-kernels@5.1.1
 
--- linux-ubuntu22.04-x86_64_v3 / no compilers -------------------
-autoconf@2.72			    gcc-runtime@11.4.0	  py-wheel@0.45.1
-autoconf-archive@2023.02.20	    glibc@2.35		  python-venv@1.0
-ca-certificates-mozilla@2025-08-12  meson@1.8.5		  util-macros@1.20.1
-compiler-wrapper@1.0		    py-pip@25.1.1
-gcc@11.4.0			    py-setuptools@80.9.0
-==> 87 installed packages
-==> 0 concretized packages to be installed (show with `spack find -c`)
+-- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
+compiler-wrapper@1.1.0	gcc@15.2.0  gcc-runtime@15.2.0	glibc@2.43  python-venv@1.0
+==> 62 installed packages
+==> 25 concretized packages to be installed (show with `spack find -c`)

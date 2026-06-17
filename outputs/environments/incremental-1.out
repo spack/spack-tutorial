@@ -1,58 +1,134 @@
 $ spack env activate --temp
-==> Created and activated temporary environment in /tmp/spack-vsjhw26x
+==> Created and activated temporary environment in /tmp/spack-6jy0jpo2
 $ spack install --add python
 ==> Concretized 1 spec
-[+]  pazbuxs  python@3.14.0+bz2+ctypes+dbm~debug+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  x7t4naj	  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  cih4xrz	      ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  ntccuj2	  ^compiler-wrapper@1.0 build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3
-[+]  7yr5v6w	  ^expat@2.7.3+libbsd build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  ucrhsyw	      ^libbsd@0.12.2 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  gth3ii5		  ^libmd@1.1.0 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[e]  ml7cem5	  ^gcc@11.4.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu22.04 target=x86_64_v3
-[+]  nokfxva	  ^gcc-runtime@11.4.0 build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3
-[+]  aq7qwy6	  ^gdbm@1.25 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  xxxc56n	  ^gettext@0.23.1+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  qtepnkr	      ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  lguldtj	      ^libxml2@2.13.5~http+pic~python+shared build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  e3ajmyq	      ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  zjrnsfo		  ^pigz@2.8 build_system=makefile platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[e]  qg7qyaz	  ^glibc@2.35 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3
-[+]  4obn7cg	  ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  zgro4tw	  ^libffi@3.5.2 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  ncdxq3j	  ^ncurses@6.5-20250705~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  oa4vrqq	  ^openssl@3.6.0~docs+shared build_system=generic certs=mozilla platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  etqlnw5	      ^ca-certificates-mozilla@2025-08-12 build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3
-[+]  cvuukni	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  vdgigsw		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  f4qiprw	  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  c6d2zlj	  ^readline@8.3 build_system=autotools patches:=21f0a03 platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  a4zeurp	  ^sqlite@3.50.4+column_metadata+fts+rtree build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  n45otd3	  ^util-linux-uuid@2.41 build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  yzaocbs	  ^xz@5.6.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c=gcc@11.4.0
-[+]  zk6kesh	  ^zlib-ng@2.2.4+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
-[+]  foiizhd	  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu22.04 target=x86_64_v3 %c,cxx=gcc@11.4.0
+[b]  afnel7p  python@3.14.5+bz2+ctypes+dbm~debug~freethreading+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~static~tests~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  ofahxlj	  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  djpmji7	      ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[+]  mmywg7x	  ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  xkvh6gd	  ^expat@2.8.1+libbsd build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  t623nqz	      ^libbsd@0.12.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  w3w22wx		  ^libmd@1.1.0 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  vlwdxlj	  ^gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  cuzgmus	      ^binutils@2.46.0~debuginfod+gas~gprofng~headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  yvl6jpi		  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  ao2onuz	      ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  vbwvgwx		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  z7wqeps	      ^gawk@5.4.0~nls build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  k25xiih		  ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[e]  yjlog5x	      ^gcc@15.2.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3
+[+]  xm76mt3	      ^gcc-runtime@15.2.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  r4lhaok	      ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  xpmsy5x	      ^gmp@6.3.0+cxx build_system=autotools libs:=shared,static patches:=28a6673 platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  jo3eg4r		  ^autoconf@2.72 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  yhkgfai		  ^automake@1.18.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  y6uqrto		  ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  phcmfqk		      ^libsigsegv@2.15 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  3gdq456	      ^libtool@2.5.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  mguwetc		  ^file@5.46+static build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  hhjyyqy		      ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  punbqrx		  ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  gxmoxea	      ^mpc@1.4.1 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  melg7ga	      ^mpfr@4.2.2 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  sf5iutv		  ^autoconf-archive@2024.10.16 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[+]  bvphs3b	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  27d4iyp		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  cbtgjrh		  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  cq4dkuc		  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  ohmdb2l		  ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  jvlaabk	      ^texinfo@7.2~xs build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  sle3ix4		  ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  ujlg2ua		      ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  f5xe4px		      ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  afklka7			  ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  ekvivpv		  ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  g72d7i3	      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  63aruxk	      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  ghfita3	  ^gcc-runtime@16.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  2af63my	  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  g3gt6ze	  ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  qs6av53	      ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  cxesrxa	      ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  tw6253j	      ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  4diropt		  ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[e]  yc4n2pp	  ^glibc@2.43 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  6hzfsbp	  ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  jgqwv65	  ^libffi@3.5.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  iehcspo	  ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  yoq4amm	  ^openssl@3.6.1~docs+shared build_system=generic certs=mozilla platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  axeuqg3	      ^ca-certificates-mozilla@2026-03-19 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  xxg272q	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  aev2xm7		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  3w5zzn3		  ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  xp6fyih	  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  cbnh7bw	  ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  uliuxbf	  ^sqlite@3.53.1+column_metadata+fts+rtree build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  v3sdaph	  ^util-linux-uuid@2.41 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  bf6e7x2	  ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  yd7lgm7	  ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  lq6tsmz	  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 
-[+] /usr (external glibc-2.35-qg7qyazcn2fwrck5vgr3mxq3i4uxkhlo)
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-20250705-ncdxq3juvboefpavgmovg5rb5bx76ohz
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libmd-1.1.0-gth3ii5boey5akbsen5la4rgqpeaqkmx
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-foiizhdg2mc4jdjtuddksbzvr64roxea
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.6.3-yzaocbs7geczi5d7qyvmqwrxi4r7dvph
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-x7t4najic2jb46srjiebkrf55utda3nl
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-qtepnkrdvqazp3jmfnheapckbemejrhq
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libffi-3.5.2-zgro4twqg3qnq6hx6ohsjlejatth3rxa
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-zk6keshnphcta4rwsmvvexg5e25uqnbd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/util-linux-uuid-2.41-n45otd3wy4fv7iawv52hiogfs63hxfpz
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-c6d2zljdklrjdya4xy236brmpdonc2xo
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libbsd-0.12.2-ucrhsywwalxwcqigisozcu2xvvhx3zwx
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-zjrnsfoh55fgq4mulondeam2eqf3pd2f
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.6.0-oa4vrqqj43a7pvuq7pyjgnnd3tesfmwk
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.13.5-lguldtjks3wogzgqmuuoen2om3tywxr6
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.25-aq7qwy6yezwhtwdrsyqen65rmjmlth27
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/sqlite-3.50.4-a4zeurpolt7jzq5322xemecmfmtlhk7d
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/expat-2.7.3-7yr5v6w2xu5f4bohfxjcsnb2snnwwj5m
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-e3ajmyqkyiuwvvht2psujrfw5loh4our
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-0.23.1-xxxc56npfdu7iblnylvrzbetpjm3kr2n
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/python-3.14.0-pazbuxsobovm6zqkhuwf3nv3sopvo52q
-==> Updating view at /tmp/spack-dsf2z9ol/.spack-env/view
+[ ] ghfita3 gcc-runtime@16.1.0 fetching from build cache (0s)
+[ ] ghfita3 gcc-runtime@16.1.0 relocating (0s)
+[+] ghfita3 gcc-runtime@16.1.0 /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-16.1.0-ghfita36diqcbps7me6eh5im5crijl3g (0s)
+[ ] v3sdaph util-linux-uuid@2.41 fetching from build cache (0s)
+[ ] v3sdaph util-linux-uuid@2.41 relocating (0s)
+[ ] yd7lgm7 zlib-ng@2.3.3 fetching from build cache (0s)
+[ ] yd7lgm7 zlib-ng@2.3.3 relocating (0s)
+[ ] qs6av53 libiconv@1.18 fetching from build cache (0s)
+[ ] qs6av53 libiconv@1.18 relocating (0s)
+[ ] bf6e7x2 xz@5.8.3 fetching from build cache (0s)
+[ ] bf6e7x2 xz@5.8.3 relocating (0s)
+[ ] lq6tsmz zstd@1.5.7 fetching from build cache (0s)
+[ ] jgqwv65 libffi@3.5.2 fetching from build cache (0s)
+[ ] lq6tsmz zstd@1.5.7 relocating (0s)
+[ ] w3w22wx libmd@1.1.0 fetching from build cache (0s)
+[ ] jgqwv65 libffi@3.5.2 relocating (0s)
+[ ] iehcspo ncurses@6.6 fetching from build cache (0s)
+[ ] w3w22wx libmd@1.1.0 relocating (0s)
+[ ] ofahxlj bzip2@1.0.8 fetching from build cache (0s)
+[ ] iehcspo ncurses@6.6 relocating (0s)
+[ ] ofahxlj bzip2@1.0.8 relocating (0s)
+[+] yd7lgm7 zlib-ng@2.3.3 /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.3.3-yd7lgm73h2wqb74e6pz2sdszwkubvpzd (0s)
+[+] v3sdaph util-linux-uuid@2.41 /home/spack/spack/opt/spack/linux-x86_64_v3/util-linux-uuid-2.41-v3sdaph4k3onzfo5nbhk6gt3typaycl7 (0s)
+[+] qs6av53 libiconv@1.18 /home/spack/spack/opt/spack/linux-x86_64_v3/libiconv-1.18-qs6av53jc6wvykpse3q7o7sm2dazibpv (0s)
+[+] jgqwv65 libffi@3.5.2 /home/spack/spack/opt/spack/linux-x86_64_v3/libffi-3.5.2-jgqwv653kext2ew4mzjg3cbmlflyhdbb (0s)
+[+] lq6tsmz zstd@1.5.7 /home/spack/spack/opt/spack/linux-x86_64_v3/zstd-1.5.7-lq6tsmzmnrljkb52otacw2o4iqmskxn5 (0s)
+[ ] 4diropt pigz@2.8 fetching from build cache (0s)
+[+] w3w22wx libmd@1.1.0 /home/spack/spack/opt/spack/linux-x86_64_v3/libmd-1.1.0-w3w22wxnstajwmg2wmtfm6nayugxqbvo (0s)
+[ ] yoq4amm openssl@3.6.1 fetching from build cache (0s)
+[+] bf6e7x2 xz@5.8.3 /home/spack/spack/opt/spack/linux-x86_64_v3/xz-5.8.3-bf6e7x2te7rdq6kt43maxjnnntvnkpza (0s)
+[ ] 4diropt pigz@2.8 relocating (0s)
+[+] ofahxlj bzip2@1.0.8 /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-ofahxljg6r4dtlyfgtolxexpmnw4cnkz (0s)
+[ ] yoq4amm openssl@3.6.1 relocating (0s)
+[ ] t623nqz libbsd@0.12.2 fetching from build cache (0s)
+[ ] cxesrxa libxml2@2.15.3 fetching from build cache (0s)
+[ ] t623nqz libbsd@0.12.2 relocating (0s)
+[ ] cxesrxa libxml2@2.15.3 relocating (0s)
+[+] 4diropt pigz@2.8 /home/spack/spack/opt/spack/linux-x86_64_v3/pigz-2.8-4diroptd5kjfnmxyjlgutr4sh7m53ctf (0s)
+[ ] tw6253j tar@1.35 fetching from build cache (0s)
+[ ] tw6253j tar@1.35 relocating (0s)
+[+] t623nqz libbsd@0.12.2 /home/spack/spack/opt/spack/linux-x86_64_v3/libbsd-0.12.2-t623nqzi6s364pdvgvf7ooygtsagc7ue (0s)
+[+] cxesrxa libxml2@2.15.3 /home/spack/spack/opt/spack/linux-x86_64_v3/libxml2-2.15.3-cxesrxalf2jcma3g5dew6ovwxyqqgdqn (0s)
+[+] yoq4amm openssl@3.6.1 /home/spack/spack/opt/spack/linux-x86_64_v3/openssl-3.6.1-yoq4ammrtbfxojt6fms67bekd7a5izst (0s)
+[ ] xkvh6gd expat@2.8.1 fetching from build cache (0s)
+[ ] xkvh6gd expat@2.8.1 relocating (0s)
+[+] tw6253j tar@1.35 /home/spack/spack/opt/spack/linux-x86_64_v3/tar-1.35-tw6253j6xqn7udhufev2afnhjepbunqh (0s)
+[+] xkvh6gd expat@2.8.1 /home/spack/spack/opt/spack/linux-x86_64_v3/expat-2.8.1-xkvh6gdnqgwccukuhsyvfry63qseotlz (0s)
+[+] iehcspo ncurses@6.6 /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.6-iehcspoirzcldubv7budljlbeiooqvpa (0s)
+[ ] cbnh7bw readline@8.3 fetching from build cache (0s)
+[ ] g3gt6ze gettext@1.0 fetching from build cache (0s)
+[ ] cbnh7bw readline@8.3 relocating (0s)
+[ ] g3gt6ze gettext@1.0 relocating (0s)
+[+] cbnh7bw readline@8.3 /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-cbnh7bwdfvbzqpoww77ltp2s54nizaxx (0s)
+[ ] uliuxbf sqlite@3.53.1 fetching from build cache (0s)
+[ ] 2af63my gdbm@1.26 fetching from build cache (0s)
+[ ] uliuxbf sqlite@3.53.1 relocating (1s)
+[ ] 2af63my gdbm@1.26 relocating (1s)
+[+] 2af63my gdbm@1.26 /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.26-2af63myyx6xsgd5vuwqhj7ibwmnptibj (1s)
+[+] uliuxbf sqlite@3.53.1 /home/spack/spack/opt/spack/linux-x86_64_v3/sqlite-3.53.1-uliuxbfvj27y6podjxir7af7frdjuord (1s)
+[+] g3gt6ze gettext@1.0 /home/spack/spack/opt/spack/linux-x86_64_v3/gettext-1.0-g3gt6ze7gojves2utbt43mddfmx3evv3 (1s)
+[ ] afnel7p python@3.14.5 fetching from build cache (0s)
+[ ] afnel7p python@3.14.5 relocating (0s)
+[+] afnel7p python@3.14.5 /home/spack/spack/opt/spack/linux-x86_64_v3/python-3.14.5-afnel7povb4oermf4jcb5pchgjqkmmux (1s)
+==> Updating view at /tmp/spack-5m5hllfy/.spack-env/view
