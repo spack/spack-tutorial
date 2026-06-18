@@ -18,7 +18,7 @@ RUN apt-get remove -y gcc-14
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy --max-age 9d :s3:spack-binaries/develop/tutorial /mirror
+RUN rclone copy --max-age 10d :s3:spack-binaries/develop/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
@@ -27,8 +27,7 @@ COPY config.yaml /etc/spack/config.yaml
 COPY concretizer.yaml /etc/spack/concretizer.yaml
 
 RUN useradd -ms /bin/bash spack && \
-    chmod -R go+r /etc/spack && \
-    chown -R spack:spack /home/spack
+    chmod -R go+r /etc/spack
 
 USER spack
 
