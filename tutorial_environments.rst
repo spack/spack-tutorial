@@ -63,18 +63,11 @@ To see all of our environments we've created so far we can run ``spack env list`
 .. literalinclude:: outputs/environments/env-list-1.out
    :language: console
 
-
-.. note::
-   Once we activate an environment it will show up highlighted in green in the list of environments.
-
-Now let's **activate** our environment by running the ``spack env activate`` command or ``spacktivate`` alias:
+Now let's **activate** our environment by running the ``spack env activate`` command or ``spacktivate`` alias.
+The ``-p`` flag prepends the environment name to our shell prompt, which is a handy reminder of which environment we are in:
 
 .. literalinclude:: outputs/environments/env-activate-1.out
    :language: console
-
-.. note::
-   If we use the ``-p`` option for ``spack env activate``, Spack will prepend the environment name to our shell prompt.
-   This is a handy way to be reminded if and which environment you are in.
 
 .. note::
    For quick experiments you don't intend to keep, ``spack env activate --temp`` creates and activates a fresh, unnamed environment in a temporary directory.
@@ -86,9 +79,7 @@ For example, because we just created this environment the output below doesn't s
 .. literalinclude:: outputs/environments/find-env-1.out
    :language: console
 
-.. note::
-   Although Spack doesn't show all installed software packages when in an active environment, Spack will reuse packages across environments to save disk space and reduce build times.
-
+Although Spack doesn't show all installed software when in an active environment, it will reuse packages across environments to save disk space and reduce build times.
 Additionally the output now tells us that we're in the ``myproject`` environment, so there is no need to panic when we no longer see our previously installed packages.
 It also states that there are **no** *root specs*.
 We'll get back to what that means later.
