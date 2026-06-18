@@ -19,7 +19,7 @@ So far in this tutorial, we've covered the basic commands for managing individua
 .. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
-Now we'll explore Spack Environments --- a powerful feature that let's us manage collections of packages together in a documented and reproducible way.
+Now we'll explore Spack Environments --- a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
 Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda Environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
 
 -------------------------------
@@ -141,21 +141,21 @@ Now that we understand how creation and activation work, let's go back to our ``
 Let's try the usual install commands we learned earlier:
 
 .. literalinclude:: outputs/environments/env-fail-install-1.out
-   :language: spec
+   :language: console
 
-Environments are special in that we must *add* specs to the an environment before we can install them.
+Environments are special in that we must *add* specs to an environment before we can install them.
 This additional step helps prevent us from accidentally modifying a shared environment when installing new software.
 
 ``spack add`` allows us to queue up several specs to be installed together.
 Let's try it:
 
 .. literalinclude:: outputs/environments/env-add-1.out
-   :language: spec
+   :language: console
 
 Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment.
 **Root specs** are packages that we've explicitly requested to be installed in an environment.
 
-They're called **"roots"** because they sit at the top of the dependency graph---when Spack installs these packages, with their respective dependency packages sitting below them.
+They're called **"roots"** because they sit at the top of the dependency graph, with their dependency packages sitting below them.
 
 Now, let's install:
 
@@ -269,7 +269,7 @@ We can see that ``myproject`` still has ``trilinos`` as a root spec.
 The ``spack.yaml`` file
 -----------------------
 
-An environment is more than just a list of root specs --- it includes **configuration settings** that control how Spack behaves when the environment it activated.
+An environment is more than just a list of root specs --- it includes **configuration settings** that control how Spack behaves when the environment is activated.
 So far, ``myproject`` relies on configuration defaults, but these can be overridden to customize our environment's behavior.
 
 In this section, we'll learn how to enforce that all the packages in our environment depending on ``mpi`` build with ``mpich`` by modifying our configuration.
@@ -293,7 +293,7 @@ The ``specs`` list should look familiar --- these are the package specs we've be
 The ``concretizer:unify:true`` setting controls how Spack resolves dependencies across packages specs in an environment:
 
 * ``true`` (default): specs are concretized *together*, ensuring there is only one version of each package in the environment.
-* ``false``: specs are concretized *independently* from each other, potentially allowing multiple versions of the package to appear in the environment twice.
+* ``false``: specs are concretized *independently* from each other, potentially allowing multiple versions of the same package to appear in the environment.
 * ``when_possible``: A middle ground --- Spack attempts to unify dependencies as possible but will backoff to allow duplicates when root specs require incompatible versions of dependencies.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -353,7 +353,7 @@ Let's run ``spack concretize --force`` (or ``-f`` in short) to make Spack re-con
    :language: console
 
 
-All the specs are now concrete **and** ready to be installed with ``mpich`` as the MPI implementation.
+All the specs are now concrete with ``mpich`` as the MPI implementation, ready to be installed.
 
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -465,8 +465,8 @@ We also see that ``Hello world`` is output for each of the ranks and the version
 
 We can confirm the version of ``zlib`` used to build the program is in our environment using ``spack find``:
 
-.. literalinclude:: outputs/environments/myproject-zlib-ng-1.out
-   :language: spec
+.. literalinclude:: outputs/environments/myproject2-zlib-ng-1.out
+   :language: console
 
 Note that the reported version *does* match that of our installation.
 
@@ -474,8 +474,7 @@ Note that the reported version *does* match that of our installation.
 Reproducing builds
 ------------------
 
-Spack environments provide users with *virtual environments* similar to `Python venv <https://docs.python.org/3/library/venv.html>`_ and `Conda environments <https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html>`__).
-The goal is to ensure packages in one environment are kept separate from those of another.
+As mentioned earlier, Spack environments behave like the *virtual environments* provided by Python venv or Conda, keeping the packages in one environment separate from those of another.
 These environments can be managed by Spack or independent.
 In either case, their environment files can be used to reproduce builds by other users and on other machines.
 Since those files are key to reproducing builds, let's start with them.
@@ -484,15 +483,10 @@ Since those files are key to reproducing builds, let's start with them.
 Environment files
 ^^^^^^^^^^^^^^^^^
 
-There are two key files tracking the contents of environments: ``spack.yaml`` and ``spack.lock``.
-The ``spack.yaml`` file holds the environment configuration that we previously edited through ``spack config edit``.
-The ``spack.lock`` file is automatically generated during concretization.
+As we saw at the start of this tutorial, two key files track the contents of an environment:
 
-The two files represent two fundamental concepts:
-
-* ``spack.yaml``: *abstract* specs and configuration to install; and
-* ``spack.lock``: all fully *concrete* specs.
-
+* ``spack.yaml``: the *abstract* specs and configuration we previously edited through ``spack config edit``; and
+* ``spack.lock``: all fully *concrete* specs, generated automatically during concretization.
 
 These files are intended to be used by developers and administrators to manage the environments in a reproducible way.
 We will cover their reuse later.

@@ -123,7 +123,7 @@ EOF
 example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib-ng)/include'
 example environments/use-mpi-1       "mpirun -n 2 ./a.out"
 
-example environments/myproject-zlib-ng-1     "spack find zlib-ng"
+example environments/myproject2-zlib-ng-1     "spack find zlib-ng"
 
 example --tee environments/filenames-1     "spack cd -e myproject"
 spack cd -e myproject
