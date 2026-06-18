@@ -106,6 +106,10 @@ Now let's **activate** our environment by running the ``spack env activate`` com
    If we use the ``-p`` option for ``spack env activate``, Spack will prepend the environment name to our shell prompt.
    This is a handy way to be reminded if and which environment you are in.
 
+.. note::
+   For quick experiments you don't intend to keep, ``spack env activate --temp`` creates and activates a fresh, unnamed environment in a temporary directory.
+   We'll use a regular named environment throughout this tutorial, but ``--temp`` is handy when you just want to try something out.
+
 Once we activate an environment, ``spack find`` will only show what is in the current environment.
 For example, because we just created this environment the output below doesn't show any installed packages.
 
@@ -360,37 +364,31 @@ All the specs are now concrete with ``mpich`` as the MPI implementation, ready t
 Creating an environment incrementally
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We can also add and install specs to an environment incrementally.
-For example:
-
-.. code-block:: spec
-
-   $ spack install --add python
-   $ spack install --add py-numpy@1.20
-
-If we create environments incrementally, Spack ensures that already installed roots are not re-concretized.
-So, adding specs to an environment at a later point in time will not cause existing packages to rebuild.
-
-Adding and installing specs incrementally leads to greedy concretization, meaning that the environment may have different package versions compared to an environment created all at once.
-
-When you first install ``python`` in an environment, Spack will pick a recent version.
-
+So far we have added all of an environment's specs before installing them.
+We can also build an environment up incrementally, adding and installing specs one at a time.
+To experiment without disturbing ``myproject``, let's create a throwaway environment named ``greedy`` and install ``python`` in it:
 
 .. literalinclude:: outputs/environments/incremental-1.out
    :language: spec
 
-If you then add ``py-numpy``, it may be in conflict with the ``python`` version already installed, and fail to concretize.
+Installed on its own, ``python`` gets a recent version.
+
+Adding specs one at a time leads to *greedy* concretization: each new spec is concretized against the versions already chosen, rather than all of them together.
+Spack also guarantees that already-installed roots are never re-concretized, so adding a spec later never rebuilds existing packages.
+The trade-off is that the environment can end up with different versions than if everything had been concretized at once.
+
+For instance, ``py-numpy@1.20`` needs an older ``python`` than the one we just locked in, so adding it next leaves the environment impossible to concretize as it stands:
 
 .. warning::
 
-   There is a known bug in Spack that causes this set of specs to take over an hour to concretize, so there is no need to run it for this tutorial.
+   Reproducing this failure directly currently triggers a known concretizer bug that hangs for over an hour, so there is no need to run the command below yourself.
 
 .. code-block:: spec
 
    $ spack install --add py-numpy@1.20 2>&1 | tail -n1
    internal_error("version weights must exist and be unique"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
 
-The solution is to re-concretize the environment as a whole, which causes ``python`` to downgrade to a version compatible with ``py-numpy``:
+The fix is to re-concretize the whole environment, which lets ``python`` downgrade to a version compatible with ``py-numpy``:
 
 .. literalinclude:: outputs/environments/incremental-2.out
    :language: spec
