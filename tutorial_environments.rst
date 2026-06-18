@@ -22,46 +22,16 @@ So far in this tutorial, we've covered the basic commands for managing individua
 Now we'll explore Spack Environments --- a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
 Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda Environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
 
--------------------------------
-What Makes a Spack Environment?
--------------------------------
+Managing a software stack with many packages and varying configuration can quickly become hard to track by hand.
+An environment lets you:
 
-Spack environments are based around two key files that can be easily shared and reused across different systems:
+* Establish a standard set of requirements for a project,
+* Install and use them together as a unit,
+* Reproduce the same build on another machine, and
+* Document your software stack for collaborators, CI/CD pipelines, and releases.
 
-* ``spack.yaml`` -- The main configuration file where we specify which packages to install, compilers to use, and other Spack settings.
-
-* ``spack.lock`` -- A lockfile that captures the complete provenance of your environment, enabling reproduction of software environments.
-
----------------------
-Why Use Environments?
----------------------
-
-Managing complex software setups with multiple packages and varying configuration (like different MPI) can quickly become overwhelming.
-Spack environments solve this by letting you:
-
-* Establish standard software requirements for your project(s)
-* Set up consistent runtime environments for your users
-* Maintain reproducible development environments
-* Configure packages for CI/CD pipelines
-* Share and reproduce builds across different machines
-* Document your software stack for collaboration
-* And much more
-
-----------------------
-Goals of this Tutorial
-----------------------
-
-This tutorial will teach you the fundamentals of creating and using Spack environments.
-
-We'll cover:
-
-1. Command line basics -- Creating and managing environments with Spack commands.
-
-2. Configuration files -- Editing ``spack.yaml`` and understanding ``spack.lock``.
-
-3. Environment types -- Understanding Spack-managed vs. independent environments.
-
-4. Reproducible builds -- Sharing and recreating environments across systems.
+Each environment is captured in two shareable files: ``spack.yaml`` records the requested specs and configuration, while ``spack.lock`` captures the fully concrete build for reproducibility.
+We'll look at both in detail later in this tutorial.
 
 
 -------------------
@@ -123,7 +93,7 @@ Additionally the output now tells us that we're in the ``myproject`` environment
 It also states that there are **no** *root specs*.
 We'll get back to what that means later.
 
-While this detailed output is useful, if we *only* want to check what environment we're are in, we can use ``spack env status``:
+While this detailed output is useful, if we *only* want to check what environment we are in, we can use ``spack env status``:
 
 .. literalinclude:: outputs/environments/env-status-1.out
    :language: console
