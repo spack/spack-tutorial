@@ -18,7 +18,7 @@ RUN apt-get remove -y gcc-14
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/develop/tutorial /mirror
+RUN rclone copy --max-age 9d :s3:spack-binaries/develop/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
