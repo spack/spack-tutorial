@@ -352,7 +352,7 @@ Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
    :language: spec
 
-Only ``trilinos`` itself was installed. 
+Only ``trilinos`` itself was installed.
 The rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
 We can confirm that the whole graph uses MPICH with the anonymous spec ``spack find ^mpich``:
 
