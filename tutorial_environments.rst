@@ -107,7 +107,7 @@ After deactivating, we can see everything installed in this Spack instance:
    :language: console
 
 ^^^^^^^^^^^^^^^^^^^
-Installing packages
+Installing Packages
 ^^^^^^^^^^^^^^^^^^^
 
 Now that we understand how creation and activation work, let's go back to our ``myproject`` environment and install a couple of packages, specifically ``tcl`` and ``trilinos``.
@@ -166,6 +166,7 @@ The packages reported as *concretized packages to be installed* are build-only d
 
    We walked through the three steps separately, but in practice ``spack install`` concretizes for you, so ``spack add`` followed by ``spack install`` is all you need.
    You must still add a spec before installing it, which prevents you from accidentally changing a shared environment.
+   Adding all specs before installing also lets Spack concretize them together, so they share dependencies and can all build in parallel.
 
 ^^^^^^^^^^^^^^
 Using Packages
@@ -302,6 +303,7 @@ The directory holds the two files that define the environment:
 .. literalinclude:: outputs/environments/cat-config-1.out
    :language: spec
 
+The ``concretizer:unify: true`` setting ensures all specs in the environment share a single version of each dependency.
 ``spack.lock`` records the fully concretized environment (every package, version, variant, and dependency) so the build can be reproduced exactly.
 It is machine-readable JSON:
 
@@ -322,25 +324,11 @@ We will come back to both files when we reproduce environments later.
 Configuring environments
 ------------------------
 
-We've seen ``spack.yaml`` as a record of the environment state.
-It also controls **configuration settings** that shape how Spack behaves when the environment is active, and we can edit it directly to customize concretization.
-The ``concretizer:unify`` key we saw earlier is one such setting:
+We've seen ``spack.yaml`` contains the root specs of the environment.
+It also controls **configuration settings** that shape how Spack behaves when the environment is used.
 
-* ``true`` (default): specs are concretized *together*, ensuring there is only one version of each package in the environment.
-* ``false``: specs are concretized *independently* from each other, potentially allowing multiple versions of the same package to appear in the environment.
-* ``when_possible``: A middle ground --- Spack attempts to unify dependencies as much as possible but will back off to allow duplicates when root specs require incompatible versions of dependencies.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Editing environment configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. note::
-
-   Before proceeding, make sure your ``EDITOR`` environment variable is set to the path of your preferred text editor.
-
-Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider using ``spack config edit``.
-
-You should now have the above file open in your editor.
+Let's edit ``spack.yaml`` to *require* ``mpich`` as our ``mpi`` provider using ``spack config edit`` (make sure ``EDITOR`` is set first).
+You should now have ``spack.yaml`` open in your editor.
 Change it to include the ``packages:mpi:require`` entry below:
 
 .. code-block:: yaml
@@ -360,75 +348,23 @@ Change it to include the ``packages:mpi:require`` entry below:
      - tcl
      - trilinos
 
+The environment is now out of sync: ``myproject`` was installed with ``openmpi``, but the configuration now requires ``mpich``.
+If we run ``spack concretize``, Spack sees the existing concretization is still valid and does nothing:
 
-.. note::
+.. literalinclude:: outputs/environments/concretize-1.out
+   :language: console
 
-   We introduce this here to show you how environment configuration can affect concretization.
-   Configuration options are covered in much more detail in the :ref:`configuration tutorial <configs-tutorial>`.
-
-
-We've only scratched the surface here by requiring a specific ``mpi`` provider for packages depending on ``mpi``.
-There are many other customizations you can make to an environment.
-Refer to the links at the end of this section for more information.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Re-concretizing the environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You may need to re-install packages in the environment after making significant changes to the configuration, such as changing virtual providers.
-This can be accomplished by forcing Spack to re-concretize the environment and re-install the specs.
-
-For example, the packages installed in our ``myproject`` environment are now out of sync with our new configuration since we already installed part of the environment with ``openmpi``.
-Suppose we want to install everything in ``myproject`` with ``mpich``.
-
-Let's run ``spack concretize --force`` (or ``-f`` in short) to make Spack re-concretize all the environment's specs:
+To force Spack to re-concretize from scratch, use ``spack concretize --force``:
 
 .. literalinclude:: outputs/environments/concretize-f-1.out
    :language: console
 
-
 All the specs are now concrete with ``mpich`` as the MPI implementation, ready to be installed.
 
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an environment incrementally
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-So far we have added all of an environment's specs before installing them.
-We can also build an environment up incrementally, adding and installing specs one at a time.
-To experiment without disturbing ``myproject``, let's create a throwaway environment named ``greedy`` and install ``python`` in it:
-
-.. literalinclude:: outputs/environments/incremental-1.out
-   :language: spec
-
-Installed on its own, ``python`` gets a recent version.
-
-Adding specs one at a time leads to *greedy* concretization: each new spec is concretized against the versions already chosen, rather than all of them together.
-Spack also guarantees that already-installed roots are never re-concretized, so adding a spec later never rebuilds existing packages.
-The trade-off is that the environment can end up with different versions than if everything had been concretized at once.
-
-For instance, ``py-numpy@1.20`` needs an older ``python`` than the one we just locked in, so adding it next leaves the environment impossible to concretize as it stands:
-
-.. warning::
-
-   Reproducing this failure directly currently triggers a known concretizer bug that hangs for over an hour, so there is no need to run the command below yourself.
-
-.. code-block:: spec
-
-   $ spack install --add py-numpy@1.20 2>&1 | tail -n1
-   internal_error("version weights must exist and be unique"). Couldn't concretize without changing the existing environment. If you are ok with changing it, try `spack concretize --force`. You could consider setting `concretizer:unify` to `when_possible` or `false` to allow multiple versions of some packages.
-
-The fix is to re-concretize the whole environment, which lets ``python`` downgrade to a version compatible with ``py-numpy``:
-
-.. literalinclude:: outputs/environments/incremental-2.out
-   :language: spec
-
 .. note::
-   There are other advantages to concretizing and installing an environment all at once:
 
-   * If you have a number of specs that can be installed together, adding them first and installing them together enables them to share dependencies and reduces total installation time.
-
-   * You can launch all builds in parallel by taking advantage of Spack's `install-level build parallelism <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_.
+   In general, when building an environment it is also possible to add and install specs one at a time, but Spack will then concretize each new spec *greedily* against the versions already locked in.
+   This can lead to a different (and sometimes less optimal) result than concretizing everything together.
 
 ------------------------
 Building in environments

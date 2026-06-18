@@ -94,25 +94,9 @@ cd
 # We mock that by using `spack config add`
 spack config add packages:mpi:require:[mpich]
 
+example environments/concretize-1 "spack concretize"
 example environments/concretize-f-1 "spack concretize --force"
 # spack install
-
-# Use a throwaway named environment so we don't disturb myproject; remove it below.
-example --tee environments/incremental-1 "spack env create greedy"
-example --tee environments/incremental-1 "spack env activate greedy"
-spack env activate greedy
-example --tee environments/incremental-1 "spack install --add python"
-
-# v1.1: Spack concretizer regression causes the following command to hang
-# seemingly indefinitely. (Have tested waiting 1h 15m before giving up.)
-# example environments/incremental-1 "spack install --add py-numpy@1.20 2>&1 | tail -n1"
-
-# These commands should be fine, although we had a transient failure with them
-example environments/incremental-2 "spack add py-numpy@1.20"
-example environments/incremental-2 "spack concretize -f"
-
-spack env deactivate
-spack env remove -y greedy
 
 example --tee environments/show-mpicc-1      "spack env activate myproject"
 spack env activate myproject
