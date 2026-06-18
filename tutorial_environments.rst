@@ -19,7 +19,7 @@ So far in this tutorial, we've covered the basic commands for managing individua
 .. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
-Now we'll explore Spack Environments --- a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
+Now we'll explore Spack Environments, a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
 Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda Environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
 
 Managing a software stack with many packages and varying configuration can quickly become hard to track by hand.
@@ -125,10 +125,11 @@ First, we *add* our two specs with ``spack add``:
 .. literalinclude:: outputs/environments/env-add-1.out
    :language: console
 
-``tcl`` and ``trilinos`` are now registered as **root specs** --- the packages we've explicitly requested.
+``tcl`` and ``trilinos`` are now registered as **root specs** i.e. the packages we've explicitly requested.
 They're called **"roots"** because they sit at the top of the dependency graph, with their dependency packages sitting below them.
 
-If we run ``spack find`` now, it lists them as roots but reports nothing concretized yet --- adding a spec only records our intent:
+If we run ``spack find`` now, it lists them as roots but reports nothing concretized yet.
+Adding a spec only records our intent:
 
 .. literalinclude:: outputs/environments/env-add-find-1.out
    :language: console
@@ -163,7 +164,7 @@ The packages reported as *concretized packages to be installed* are build-only d
 
 .. note::
 
-   We walked through the three steps separately, but in practice ``spack install`` concretizes for you, so ``spack add`` followed by ``spack install`` --- or ``spack install --add <spec>`` in one go --- is all you need.
+   We walked through the three steps separately, but in practice ``spack install`` concretizes for you, so ``spack add`` followed by ``spack install`` is all you need.
    You must still add a spec before installing it, which prevents you from accidentally changing a shared environment.
 
 ^^^^^^^^^^^^^^
@@ -239,7 +240,8 @@ Let's start with the simplest case.
    :language: console
 
 That only updates the environment's configuration, though.
-Right afterward, ``spack find`` still lists ``scr`` --- it is no longer a root, but it is still part of the environment:
+Right afterward, ``spack find`` still lists ``scr``.
+It is no longer a root, but it is still part of the environment:
 
 .. literalinclude:: outputs/environments/env-remove-scr-2.out
    :language: console
