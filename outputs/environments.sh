@@ -57,14 +57,17 @@ example environments/env-create-2         "spack env create myproject2"
 example --tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
 example environments/env-create-2    "spack add scr trilinos"
-example --tee environments/env-create-2    "spack install"
-example environments/env-create-2    "spack find"
+# concretize + install are shown as a code-block in the docs; run them here without capturing
+spack concretize
+spack install
 
-# Basic removal workflow on scr (used only by myproject2)
+example environments/env-create-2-find    "spack find"
+
+# Basic removal workflow on scr (used only by myproject2), split for the docs
 example environments/env-remove-scr-1    "spack remove scr"
-example environments/env-remove-scr-1    "spack find"
-example environments/env-remove-scr-1    "spack concretize"
-example environments/env-remove-scr-1    "spack find"
+example environments/env-remove-scr-2    "spack find"
+example environments/env-remove-scr-3    "spack concretize"
+example environments/env-remove-scr-4    "spack find"
 
 # trilinos is shared with myproject: uninstalling it is refused
 example --expect-error environments/env-uninstall-1 "spack uninstall -y trilinos"

@@ -212,21 +212,47 @@ Spack offers two ways to get rid of a package in an environment:
 * ``spack uninstall`` deletes the installed files *from disk*
 
 In a setup with several environments these behave quite differently, so let's create a second environment to see how.
-We'll give ``myproject2`` both ``scr`` and ``trilinos``:
+We'll create ``myproject2``, activate it, and add both ``scr`` and ``trilinos``:
 
 .. literalinclude:: outputs/environments/env-create-2.out
-   :language: spec
+   :language: console
+
+then concretize and install as usual:
+
+.. code-block:: console
+
+   $ spack concretize
+   $ spack install
+
+``spack find`` lets us confirm the environment now holds both roots and their dependencies:
+
+.. literalinclude:: outputs/environments/env-create-2-find.out
+   :language: console
 
 So ``myproject`` contains ``tcl`` and ``trilinos``, while ``myproject2`` contains ``scr`` and ``trilinos``.
 
 Let's start with the simplest case.
-``scr`` is used only by ``myproject2``, so we can remove it cleanly with ``spack remove``:
+``scr`` is used only by ``myproject2``, so we can remove it cleanly.
+``spack remove`` is the counterpart to ``spack add``: it drops ``scr`` as a root spec.
 
 .. literalinclude:: outputs/environments/env-remove-scr-1.out
    :language: console
 
-Notice that ``spack remove`` only drops ``scr`` as a root, but ``spack find`` still lists it immediately afterward.
-Reconcretizing the environment then prunes it, along with any dependencies nothing else needs, and it no longer appears.
+That only updates the environment's configuration, though.
+Right afterward, ``spack find`` still lists ``scr`` --- it is no longer a root, but it is still part of the environment:
+
+.. literalinclude:: outputs/environments/env-remove-scr-2.out
+   :language: console
+
+To actually drop it, we reconcretize the environment:
+
+.. literalinclude:: outputs/environments/env-remove-scr-3.out
+   :language: console
+
+Now ``scr``, along with any dependencies nothing else needs, has been pruned, and ``spack find`` no longer lists it:
+
+.. literalinclude:: outputs/environments/env-remove-scr-4.out
+   :language: console
 
 ``trilinos`` is a more interesting case, because ``myproject`` uses it too.
 Environments only *point to* shared installations rather than owning the files, so Spack won't let us delete one out from under another environment.
@@ -269,15 +295,15 @@ There are several important parts of this file:
 
 * ``specs:`` The list of package specs to install in the environment.
 * ``view:`` Controls whether the environment generates a *view* (the directory tree with symlinks to installed packages we discussed earlier).
-* ``concretizer:unify:`` Determines how package specs in the environment are concretized together to reduce duplicated dependencies when possible.
+* ``concretizer:unify:`` Controls how the environment's specs are concretized together (detailed below).
 
 The ``specs`` list should look familiar --- these are the package specs we've been modifying previously with ``spack add`` and ``spack install``.
 
-The ``concretizer:unify:true`` setting controls how Spack resolves dependencies across packages specs in an environment:
+The ``concretizer:unify:true`` setting controls how Spack resolves dependencies across package specs in an environment:
 
 * ``true`` (default): specs are concretized *together*, ensuring there is only one version of each package in the environment.
 * ``false``: specs are concretized *independently* from each other, potentially allowing multiple versions of the same package to appear in the environment.
-* ``when_possible``: A middle ground --- Spack attempts to unify dependencies as possible but will backoff to allow duplicates when root specs require incompatible versions of dependencies.
+* ``when_possible``: A middle ground --- Spack attempts to unify dependencies as much as possible but will back off to allow duplicates when root specs require incompatible versions of dependencies.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Editing environment configuration
