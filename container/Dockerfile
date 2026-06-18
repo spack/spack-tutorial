@@ -27,7 +27,8 @@ COPY config.yaml /etc/spack/config.yaml
 COPY concretizer.yaml /etc/spack/concretizer.yaml
 
 RUN useradd -ms /bin/bash spack && \
-    chmod -R go+r /etc/spack
+    chmod -R go+r /etc/spack && \
+    chown -R spack:spack /home/spack
 
 USER spack
 
