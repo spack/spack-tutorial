@@ -15,15 +15,15 @@ spack env activate --create ~/stacks
 fake_example stacks/setup-0 "spack env activate --create ~/stacks" "/bin/true"
 example stacks/setup-0 "spack env status"
 
-example stacks/setup-1 "spack add gcc@12 %gcc@11"
+example stacks/setup-1 "spack add gcc@16 %gcc@15"
 example stacks/setup-1 "spack env view disable"
 fake_example stacks/setup-1 "spack config edit" "/bin/true"
 
 example stacks/setup-2 "spack concretize"
-example stacks/setup-2 "spack install"
+example --tee stacks/setup-2 "spack install"
 
-example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^openmpi"
-example stacks/unify-0 "spack add netlib-scalapack %gcc@12 ^openblas ^mpich"
+example stacks/unify-0 "spack add netlib-scalapack %gcc@16 ^openblas ^openmpi"
+example stacks/unify-0 "spack add netlib-scalapack %gcc@16 ^openblas ^mpich"
 
 # Can't be concretized due to unify: true, but not worth showing because it's slow and leads to
 # an "internal concretizer error" that confuses users.
@@ -34,12 +34,12 @@ example stacks/unify-2 "spack config get concretizer | grep unify"
 example stacks/unify-3 "spack config add concretizer:unify:false"
 example stacks/unify-3 "spack concretize"
 
-example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^openmpi"
-example stacks/unify-4 "spack add netlib-scalapack %gcc@12 ^netlib-lapack ^mpich"
+example stacks/unify-4 "spack add netlib-scalapack %gcc@16 ^netlib-lapack ^openmpi"
+example stacks/unify-4 "spack add netlib-scalapack %gcc@16 ^netlib-lapack ^mpich"
 
 cat "$project/stacks/examples/2.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-0 "spack concretize"
-example stacks/concretize-0 "spack install"
+example --tee stacks/concretize-0 "spack install"
 
 example stacks/concretize-01 "spack find"
 
@@ -49,7 +49,7 @@ example stacks/concretize-1 "spack find -l"
 
 cat "$project/stacks/examples/4bis.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-3 "spack concretize"
-example stacks/concretize-3 "spack install"
+example --tee stacks/concretize-3 "spack install"
 
 example stacks/concretize-4 "spack find -ld py-scipy"
 
@@ -70,7 +70,8 @@ example stacks/view-0       "ls ~/stacks/views/default"
 example stacks/view-0       "ls ~/stacks/views/default/lib"
 example stacks/view-0       "ls ~/stacks/views/full"
 example stacks/view-0       "ls ~/stacks/views/full/gcc/"
-example stacks/view-0       "ls ~/stacks/views/full/gcc/gcc-12.3.0-gcc-11.4.0"
+gcc_dir=$(ls ~/stacks/views/full/gcc/ | head -1)
+example stacks/view-0       "ls ~/stacks/views/full/gcc/$gcc_dir"
 
 cat "$project/stacks/examples/7.spack.stack.yaml" > ~/stacks/spack.yaml
 
@@ -79,9 +80,9 @@ example stacks/view-1       "ls ~/stacks/views/default"
 example stacks/view-1       "ls ~/stacks/views/default/lib"
 example stacks/view-1       "ls ~/stacks/views/full"
 
-example stacks/modules-0 "spack add lmod@8.7.18 %gcc@11"
+example stacks/modules-0 "spack add lmod@8.7.67 %gcc@15"
 example stacks/modules-0 "spack concretize"
-example stacks/modules-0 "spack install"
+example --tee stacks/modules-0 "spack install"
 
 . "$(spack location -i lmod)/lmod/lmod/init/bash"
 
@@ -89,7 +90,7 @@ example --tee stacks/modules-1 "module --version"
 
 cat "$project/stacks/examples/8.spack.stack.yaml" > ~/stacks/spack.yaml
 spack module lmod refresh -y
-module use "$HOME/stacks/modules/linux-ubuntu22.04-x86_64/Core"
+module use "$HOME/stacks/modules/linux-ubuntu26.04-x86_64/Core"
 
 example --tee stacks/modules-2 "module av"
 

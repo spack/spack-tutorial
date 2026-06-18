@@ -151,16 +151,16 @@ Matrices will expand to the cross-product of their rows, so this matrix:
      - ["netlib-scalapack"]
      - ["^openmpi", "^mpich"]
      - ["^openblas", "^netlib-lapack"]
-     - ["%gcc@12"]
+     - ["%gcc@16"]
 
 is equivalent to this list of specs:
 
 .. code-block:: yaml
 
-   - "netlib-scalapack %gcc@12 ^openblas ^openmpi"
-   - "netlib-scalapack %gcc@12 ^openblas ^mpich"
-   - "netlib-scalapack %gcc@12 ^netlib-lapack ^openmpi"
-   - "netlib-scalapack %gcc@12 ^netlib-lapack ^mpich"
+   - "netlib-scalapack %gcc@16 ^openblas ^openmpi"
+   - "netlib-scalapack %gcc@16 ^openblas ^mpich"
+   - "netlib-scalapack %gcc@16 ^netlib-lapack ^openmpi"
+   - "netlib-scalapack %gcc@16 ^netlib-lapack ^mpich"
 
 We are now ready to concretize and install the environment:
 
@@ -325,7 +325,7 @@ Edit our ``spack.yaml`` file again.
    :emphasize-lines: 30-43
 
 In the configuration above we created two views, named ``default`` and ``full``.
-The ``default`` view consists of all the packages that are compiled with ``gcc@12``, but do not depend on either ``mpich`` or ``netlib-lapack``.
+The ``default`` view consists of all the packages that are compiled with ``gcc@16``, but do not depend on either ``mpich`` or ``netlib-lapack``.
 As we can see, we can both *include* and *exclude* specs using constraints.
 
 The ``full`` view contains a more complex projection, so to put each spec into an appropriate subdirectory, according to the first constraint that the spec matches.
@@ -366,7 +366,7 @@ Let's start by adding ``lmod`` to the software installed with the system compile
 
 .. code-block:: spec
 
-   $ spack add lmod%gcc@11
+   $ spack add lmod@8.7.67%gcc@15
    $ spack concretize
    $ spack install
 
@@ -395,7 +395,7 @@ We can generate the module files and use them with the following commands:
 .. code-block:: console
 
    $ spack module lmod refresh -y
-   $ module use $PWD/stacks/modules/linux-ubuntu22.04-x86_64/Core
+   $ module use $PWD/stacks/modules/linux-ubuntu26.04-x86_64/Core
 
 Now we should be able to see the module files that have been generated:
 
@@ -403,7 +403,7 @@ Now we should be able to see the module files that have been generated:
    :language: console
 
 The set of modules is already usable, and the hierarchy already works.
-For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@12``:
+For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in out path and we have a lot of modules available - all the ones compiled with ``gcc@16``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console

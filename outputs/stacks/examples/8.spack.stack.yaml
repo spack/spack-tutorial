@@ -8,12 +8,12 @@ spack:
     - mpis: [openmpi]
       when: 'env.get("SPACK_STACK_USE_OPENMPI", "") == "1"'
     - lapacks: [ openblas, netlib-lapack ]
-    - compilers: [ "gcc@12" ]
+    - compilers: [ "gcc@16" ]
     - mpi_packages: [ netlib-scalapack ]
     - serial_packages: [py-scipy]
 
   specs:
-  - gcc@12%gcc@11
+  - gcc@16%gcc@15
   - matrix:
     - [$mpi_packages]
     - [$^mpis]
@@ -39,4 +39,4 @@ spack:
         - mpi
         - lapack
         core_specs:
-        - '%gcc@11'
+        - '%gcc@15'

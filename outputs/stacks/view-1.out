@@ -4,12 +4,8 @@ $ spack concretize
 $ ls ~/stacks/views/default
 lib
 $ ls ~/stacks/views/default/lib
-cmake  libscalapack.so	libscalapack.so.2.2  libscalapack.so.2.2.1  pkgconfig  python3.14
+cmake  libscalapack.so	libscalapack.so.2.2  libscalapack.so.2.2.3  pkgconfig  python3.14
 $ ls ~/stacks/views/full
-bzip2	     hwloc	libiconv      mpich		openssh	  sqlite
-expat	     krb5	libmd	      ncurses		openssl	  tar
-gcc	     libbsd	libpciaccess  netlib-lapack	pigz	  util-linux-uuid
-gcc-runtime  libedit	libxcrypt     netlib-scalapack	pmix	  xz
-gdbm	     libevent	libxml2	      numactl		prrte	  yaksa
-gettext	     libfabric	mpc	      openblas		python	  zlib-ng
-gmp	     libffi	mpfr	      openmpi		readline  zstd
+binutils  gcc	       gettext	krb5	 libevent   libiconv	  libxcrypt  mpfr     netlib-lapack	openblas  openssl  prrte     sqlite	      xz
+bzip2	  gcc-runtime  gmp	libbsd	 libfabric  libmd	  libxml2    mpich    netlib-scalapack	openmpi	  pigz	   python    tar	      zlib-ng
+expat	  gdbm	       hwloc	libedit	 libffi	    libpciaccess  mpc	     ncurses  numactl		openssh	  pmix	   readline  util-linux-uuid  zstd

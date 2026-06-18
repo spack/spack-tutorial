@@ -4,12 +4,12 @@
 # configuration settings.
 spack:
   specs:
-  - gcc@12%gcc@11
+  - gcc@16%gcc@15
   - matrix:
     - [netlib-scalapack]
     - [^openmpi, ^mpich]
     - [^openblas, ^netlib-lapack]
-    - ["%gcc@12"]
+    - ["%gcc@16"]
   view: false
   concretizer:
     unify: false
