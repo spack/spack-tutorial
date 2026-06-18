@@ -168,41 +168,58 @@ The packages reported as *concretized packages to be installed* are build-only d
    You must still add a spec before installing it, which prevents you from accidentally changing a shared environment.
    Adding all specs before installing also lets Spack concretize them together, so they share dependencies and can all build in parallel.
 
-^^^^^^^^^^^^^^
-Using Packages
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
+Using installed packages
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-Spack environments provide a convenient way to use our installed packages by automatically making them available in our shell environment.
-This is accomplished through a feature called **environment views**.
+Activating an environment adds all of its installed software to our shell search paths through a feature called *environment views*.
+A view is a directory tree of symlinks to all installed packages, structured like a standard Linux filesystem (``bin/``, ``lib/``, ``include/``, ...).
 
-An environment view is a directory structure mirroring a standard Linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in our Spack environment.
-When we activate an environment with ``spack env activate``, Spack automatically:
-
-* Prepends the view's ``bin`` directory to our ``PATH`` environment variable
-* Adds the view's ``man`` directory to our ``MANPATH`` for manual pages
-* Updates ``CMAKE_PREFIX_PATH`` and ``PKG_CONFIG_PATH`` so build tools find the view's libraries and headers
-
-This means that executables, libraries, and other files from our environment's packages become immediately accessible from the command line, just as if they were installed system-wide.
-
-Let's explore how views work using the ``tcl`` package we just installed in our ``myproject`` environment.
-The Tcl package includes a shell-like application called ``tclsh``.
-
-To see the path to ``tclsh`` let's use the ``which`` command:
+For example, ``tcl`` ships a shell called ``tclsh``.
+Activating ``myproject`` puts it on our ``PATH``:
 
 .. literalinclude:: outputs/environments/use-tcl-1.out
    :language: console
 
+Notice the path includes the environment name and a ``view`` subdirectory.
+With ``openmpi`` installed in ``myproject``, ``mpicc`` is also on our ``PATH``:
 
-Notice its path includes the name of our environment *and* a ``view`` subdirectory.
+.. literalinclude:: outputs/environments/show-mpicc-1.out
+   :language: console
 
-We can now run ``tclsh`` just like any other program on our ``PATH``:
+This means we can compile code against the environment's packages without any manual ``-I`` or ``-L`` flags.
+Let's build a small program that uses both MPI and ``zlib``:
 
-.. code-block:: console
+.. code-block:: c
 
-    $ tclsh
-    % echo "hello world!"
-    hello world!
-    % exit
+    #include <stdio.h>
+    #include <mpi.h>
+    #include <zlib.h>
+
+    int main(int argc, char **argv) {
+      int rank;
+      MPI_Init(&argc, &argv);
+
+      MPI_Comm_rank(MPI_COMM_WORLD, &rank);
+      printf("Hello world from rank %d\n", rank);
+
+      if (rank == 0) {
+        printf("zlib version: %s\n", ZLIB_VERSION);
+        printf("zlib-ng version: %s\n", ZLIBNG_VERSION);
+      }
+
+      MPI_Finalize();
+    }
+
+.. literalinclude:: outputs/environments/use-mpi-1.out
+   :language: console
+
+If we look at the full set of path variables activation set:
+
+.. literalinclude:: outputs/environments/show-paths-1.out
+   :language: console
+
+we find ``CMAKE_PREFIX_PATH`` and ``PKG_CONFIG_PATH`` too, so build tools find the environment's libraries and headers automatically.
 
 ^^^^^^^^^^^^^^^^^
 Removing Packages
@@ -365,72 +382,6 @@ All the specs are now concrete with ``mpich`` as the MPI implementation, ready t
 
    In general, when building an environment it is also possible to add and install specs one at a time, but Spack will then concretize each new spec *greedily* against the versions already locked in.
    This can lead to a different (and sometimes less optimal) result than concretizing everything together.
-
-------------------------
-Building in environments
-------------------------
-
-Earlier we ran programs that the environment had installed.
-Activation also turns an environment into a ready-to-use *build* environment: the compilers, headers, and libraries it provides sit on the standard search paths, so we can compile our own code against them.
-
-Suppose you want to compile some MPI programs.
-We have an MPI implementation installed in our ``myproject`` environment, so ``mpicc`` is available in our path.
-We can confirm this using ``which``:
-
-.. literalinclude:: outputs/environments/show-mpicc-1.out
-   :language: console
-
-
-Beyond ``PATH``, activation also sets the variables a build uses to locate libraries and headers, such as ``CMAKE_PREFIX_PATH`` and ``PKG_CONFIG_PATH``.
-Let's look at the path-related variables it set, using ``env | grep PATH``:
-
-.. literalinclude:: outputs/environments/show-paths-1.out
-   :language: console
-
-
-We can demonstrate use of these environment settings by building a really simple MPI program.
-
-Let's create a program called ``mpi-hello.c`` that contains the following code:
-
-.. code-block:: c
-
-    #include <stdio.h>
-    #include <mpi.h>
-    #include <zlib.h>
-
-    int main(int argc, char **argv) {
-      int rank;
-      MPI_Init(&argc, &argv);
-
-      MPI_Comm_rank(MPI_COMM_WORLD, &rank);
-      printf("Hello world from rank %d\n", rank);
-
-      if (rank == 0) {
-        printf("zlib version: %s\n", ZLIB_VERSION);
-            printf("zlib-ng version: %s\n", ZLIBNG_VERSION);
-      }
-
-      MPI_Finalize();
-    }
-
-This program includes headers from ``mpi`` and ``zlib``.
-It also prints out a message from each MPI rank and the version of ``zlib``.
-
-Let's build and run our program:
-
-.. literalinclude:: outputs/environments/use-mpi-1.out
-   :language: console
-
-
-Notice that we only needed to pass the include path to the compiler.
-We also see that ``Hello world`` is output for each of the ranks and the version of ``zlib`` used to build the program is printed.
-
-We can confirm the version of ``zlib`` used to build the program is in our environment using ``spack find``:
-
-.. literalinclude:: outputs/environments/myproject-zlib-ng-1.out
-   :language: console
-
-Note that the reported version *does* match that of our installation.
 
 ------------------
 Reproducing builds
