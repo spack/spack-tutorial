@@ -182,7 +182,7 @@ Activating ``myproject`` puts it on our ``PATH``:
    :language: console
 
 Notice the path includes the environment name and a ``view`` subdirectory.
-With ``openmpi`` installed in ``myproject``, ``mpicc`` is also on our ``PATH``:
+With ``openmpi`` installed in ``myproject`` as a dependency of ``trilinos``, ``mpicc`` is also on our ``PATH``:
 
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
@@ -377,6 +377,7 @@ To force Spack to re-concretize from scratch, use ``spack concretize --force``:
    :language: console
 
 All the specs are now concrete with ``mpich`` as the MPI implementation, ready to be installed.
+Next you'd run ``spack install`` to rebuild the environment with the new MPI provider.
 
 .. note::
 
@@ -391,7 +392,8 @@ The ``spack.yaml`` and ``spack.lock`` files we have been working with are not ju
 You can commit them to version control, hand them to a colleague, or drop them into a CI/CD pipeline.
 Anyone with a Spack installation can recreate the environment from them.
 
-To demonstrate, let's build a fresh independent environment in a new ``code/`` directory:
+To demonstrate, we'll play the role of the recipient of a shared environment.
+Let's build a fresh independent environment in a new ``code/`` directory — it stands in for a project a colleague has shared with us:
 
 .. literalinclude:: outputs/environments/independent-create-1.out
    :language: console
