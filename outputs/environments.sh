@@ -36,13 +36,16 @@ spack env deactivate
 example environments/env-status-2    "spack env status"
 example environments/env-status-2    "spack find"
 
-example --tee environments/env-fail-install-1   "spack env activate myproject"
 spack env activate myproject
-example --tee --expect-error environments/env-fail-install-1   "spack install tcl"
 
 example environments/env-add-1            "spack add tcl"
 example environments/env-add-1            "spack add trilinos"
-example environments/env-add-1            "spack find"
+
+example environments/env-add-find-1       "spack find"
+
+example environments/env-concretize-1     "spack concretize"
+
+example environments/env-find-c-1         "spack find -c"
 
 example --tee environments/env-install-1        "spack install"
 
@@ -57,13 +60,18 @@ example environments/env-create-2    "spack add scr trilinos"
 example --tee environments/env-create-2    "spack install"
 example environments/env-create-2    "spack find"
 
-example --expect-error environments/env-uninstall-1 "spack uninstall -y trilinos"
-example environments/env-uninstall-1 "spack find"
+# Basic removal workflow on scr (used only by myproject2)
+example environments/env-remove-scr-1    "spack remove scr"
+example environments/env-remove-scr-1    "spack find"
+example environments/env-remove-scr-1    "spack concretize"
+example environments/env-remove-scr-1    "spack find"
 
+# trilinos is shared with myproject: uninstalling it is refused
+example --expect-error environments/env-uninstall-1 "spack uninstall -y trilinos"
+
+# spack remove takes it out of myproject2 without deleting the shared install
 example environments/env-remove-1    "spack remove trilinos"
-example environments/env-remove-1    "spack find"
 example environments/env-remove-1    "spack concretize"
-example environments/env-remove-1    "spack find"
 
 example --tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
@@ -95,8 +103,8 @@ example environments/incremental-2 "spack concretize -f"
 spack env deactivate
 spack env remove -y greedy
 
-example --tee environments/show-mpicc-1      "spack env activate myproject2"
-spack env activate myproject2
+example --tee environments/show-mpicc-1      "spack env activate myproject"
+spack env activate myproject
 example environments/show-mpicc-1    "spack env status"
 example environments/show-mpicc-1    "which mpicc"
 
@@ -126,7 +134,7 @@ EOF
 example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i zlib-ng)/include'
 example environments/use-mpi-1       "mpirun -n 2 ./a.out"
 
-example environments/myproject2-zlib-ng-1     "spack find zlib-ng"
+example environments/myproject-zlib-ng-1     "spack find zlib-ng"
 
 example --tee environments/filenames-1     "spack cd -e myproject"
 spack cd -e myproject

@@ -1,5 +1,5 @@
 $ spack add py-numpy@1.20
-==> Adding py-numpy@1.20 to environment /tmp/spack-5m5hllfy
+==> Adding py-numpy@1.20 to environment greedy
 $ spack concretize -f
 ==> Warning: using "python@3.9.25" which is a deprecated version
 ==> Concretized 2 specs:
@@ -43,4 +43,4 @@ $ spack concretize -f
 [+]  hhjyyqy	  ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  g72d7i3	  ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 
-==> Updating view at /tmp/spack-5m5hllfy/.spack-env/view
+==> Updating view at /home/spack/spack/var/spack/environments/greedy/.spack-env/view

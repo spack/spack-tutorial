@@ -34,9 +34,9 @@ Each environment is captured in two shareable files: ``spack.yaml`` records the 
 We'll look at both in detail later in this tutorial.
 
 
--------------------
-Environment Basics
--------------------
+-------------------------
+Working with Environments
+-------------------------
 
 Let's look at the output of ``spack find`` at this point in the tutorial.
 
@@ -110,38 +110,50 @@ After deactivating, we can see everything installed in this Spack instance:
 Installing packages
 ^^^^^^^^^^^^^^^^^^^
 
-Now that we understand how creation and activation work, let's go back to our ``myproject`` environment and *install* a couple of packages, specifically, ``tcl`` and ``trilinos``.
+Now that we understand how creation and activation work, let's go back to our ``myproject`` environment and install a couple of packages, specifically ``tcl`` and ``trilinos``.
 
-Let's try the usual install commands we learned earlier:
+Installing software in an environment follows three steps:
 
-.. literalinclude:: outputs/environments/env-fail-install-1.out
-   :language: console
+1. **add** the specs we want, registering them as *root specs* of the environment;
+2. **concretize** the environment, resolving every root and its dependencies into a concrete set; and
+3. **install** the concretized specs.
 
-Environments are special in that we must *add* specs to an environment before we can install them.
-This additional step helps prevent us from accidentally modifying a shared environment when installing new software.
+We'll walk through them one at a time.
 
-``spack add`` allows us to queue up several specs to be installed together.
-Let's try it:
+First, we *add* our two specs with ``spack add``:
 
 .. literalinclude:: outputs/environments/env-add-1.out
    :language: console
 
-Now, ``tcl`` and ``trilinos`` have been registered as **root specs** in our environment.
-**Root specs** are packages that we've explicitly requested to be installed in an environment.
-
+``tcl`` and ``trilinos`` are now registered as **root specs** --- the packages we've explicitly requested.
 They're called **"roots"** because they sit at the top of the dependency graph, with their dependency packages sitting below them.
 
-Now, let's install:
+If we run ``spack find`` now, it lists them as roots but reports nothing concretized yet --- adding a spec only records our intent:
+
+.. literalinclude:: outputs/environments/env-add-find-1.out
+   :language: console
+
+Next, we *concretize* the environment, resolving those roots and all their dependencies into a concrete set:
+
+.. literalinclude:: outputs/environments/env-concretize-1.out
+   :language: console
+
+The ``spack find`` above hinted at this with *show with* ``spack find -c``.
+Now that the environment is concretized, that command lists the concrete set, including the packages still to be installed:
+
+.. literalinclude:: outputs/environments/env-find-c-1.out
+   :language: console
+
+Finally, we *install*:
 
 .. literalinclude:: outputs/environments/env-install-1.out
    :language: console
 
 We can see that Spack reused existing installations of ``tcl`` and the dependencies of ``trilinos`` that were already present on the system, rather than rebuilding them from scratch.
-
 Additionally, the environment's view was automatically updated to include the installations.
 This means all the software in this environment has been added to our PATH, making the installed packages readily accessible from the command line while we have the environment activated.
 
-Let's now confirm the contents of the environment using ``spack find``:
+Let's confirm the contents of the environment using ``spack find``:
 
 .. literalinclude:: outputs/environments/find-env-2.out
    :language: console
@@ -149,21 +161,26 @@ Let's now confirm the contents of the environment using ``spack find``:
 We can see that the roots and their dependencies have been installed.
 The packages reported as *concretized packages to be installed* are build-only dependencies, which Spack skips when it installs from binaries.
 
+.. note::
+
+   We walked through the three steps separately, but in practice ``spack install`` concretizes for you, so ``spack add`` followed by ``spack install`` --- or ``spack install --add <spec>`` in one go --- is all you need.
+   You must still add a spec before installing it, which prevents you from accidentally changing a shared environment.
+
 ^^^^^^^^^^^^^^
 Using Packages
 ^^^^^^^^^^^^^^
 
-Spack environments provide a convenient way to use your installed packages by automatically making them available in your shell environment.
+Spack environments provide a convenient way to use our installed packages by automatically making them available in our shell environment.
 This is accomplished through a feature called **environment views**.
 
-An environment view is a directory structure mirroring a standard Linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in your Spack environment.
-When you activate an environment with ``spack env activate``, Spack automatically:
+An environment view is a directory structure mirroring a standard Linux root filesystem with directories like ``/bin`` and ``/usr`` that contain symbolic links to all the packages installed in our Spack environment.
+When we activate an environment with ``spack env activate``, Spack automatically:
 
-* Prepends the view's ``bin`` directory to your ``PATH`` environment variable
-* Adds the view's ``man`` directory to your ``MANPATH`` for manual pages
-* Updates ``CMAKE_PREFIX_PATH`` to include the view's root directory
+* Prepends the view's ``bin`` directory to our ``PATH`` environment variable
+* Adds the view's ``man`` directory to our ``MANPATH`` for manual pages
+* Updates ``CMAKE_PREFIX_PATH`` and ``PKG_CONFIG_PATH`` so build tools find the view's libraries and headers
 
-This means that executables, libraries, and other files from your environment's packages become immediately accessible from your command line, just as if they were installed system-wide.
+This means that executables, libraries, and other files from our environment's packages become immediately accessible from the command line, just as if they were installed system-wide.
 
 Let's explore how views work using the ``tcl`` package we just installed in our ``myproject`` environment.
 The Tcl package includes a shell-like application called ``tclsh``.
@@ -176,7 +193,7 @@ To see the path to ``tclsh`` let's use the ``which`` command:
 
 Notice its path includes the name of our environment *and* a ``view`` subdirectory.
 
-We can now run ``tclsh`` just like you would any other program that is in your path:
+We can now run ``tclsh`` just like any other program on our ``PATH``:
 
 .. code-block:: console
 
@@ -185,59 +202,51 @@ We can now run ``tclsh`` just like you would any other program that is in your p
     hello world!
     % exit
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Removing Packages from Environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
+Removing Packages
+^^^^^^^^^^^^^^^^^
 
-One of Spack's key features is that you can safely remove packages from specific environments without affecting other environments.
-This works because Spack environments only create links to shared package installations---they don't contain the actual package files.
+Spack offers two ways to get rid of a package in an environment:
 
-Let's demonstrate this capability by creating a second environment.
-Imagine we have two projects:
+* ``spack remove`` takes a spec *out of the environment*
+* ``spack uninstall`` deletes the installed files *from disk*
 
-* ``myproject`` - requires ``trilinos``
-* ``myproject2`` - previously needed ``trilinos`` but no longer requires it
-
-Let's start by creating the ``myproject2`` environment and installing both ``scr`` and ``trilinos``:
+In a setup with several environments these behave quite differently, so let's create a second environment to see how.
+We'll give ``myproject2`` both ``scr`` and ``trilinos``:
 
 .. literalinclude:: outputs/environments/env-create-2.out
    :language: spec
 
+So ``myproject`` contains ``tcl`` and ``trilinos``, while ``myproject2`` contains ``scr`` and ``trilinos``.
 
-Now we have two environments with different package combinations:
+Let's start with the simplest case.
+``scr`` is used only by ``myproject2``, so we can remove it cleanly with ``spack remove``:
 
-* The ``myproject`` environment contains ``tcl`` and ``trilinos``
-* The ``myproject2`` environment contains ``scr`` and ``trilinos``
+.. literalinclude:: outputs/environments/env-remove-scr-1.out
+   :language: console
 
-Now let's attempt to uninstall ``trilinos`` from ``myproject2`` and examine what happens:
+Notice that ``spack remove`` only drops ``scr`` as a root, but ``spack find`` still lists it immediately afterward.
+Reconcretizing the environment then prunes it, along with any dependencies nothing else needs, and it no longer appears.
+
+``trilinos`` is a more interesting case, because ``myproject`` uses it too.
+Environments only *point to* shared installations rather than owning the files, so Spack won't let us delete one out from under another environment.
+If we try to uninstall ``trilinos`` from ``myproject2``, Spack refuses, since ``myproject`` still references it:
 
 .. literalinclude:: outputs/environments/env-uninstall-1.out
-   :language: spec
+   :language: console
 
-
-Notice that ``trilinos`` won't be uninstalled because it's still referenced in ``myproject``.
-This safety feature prevents accidental removal of packages that other environments depend on.
-
-Instead, if we want to remove ``trilinos`` from the ``myproject2`` environment (without affecting it in other environments), we need to use ``spack remove``:
+As the error suggests, ``spack remove`` is the right tool: it takes ``trilinos`` out of ``myproject2`` without touching the shared installation.
 
 .. literalinclude:: outputs/environments/env-remove-1.out
    :language: console
 
-After running ``spack remove`` we'll see that ``trilinos`` is no longer a root but is still present in the installed specs.
-Reconcretizing the environment, we'll see the vestigial ``trilinos`` and its dependencies will be pruned and will no longer be listed in the environment at all.
-
-We know ``trilinos`` is still needed for the ``myproject`` environment, so let's switch back to that environment to confirm that it is still installed.
+We know ``trilinos`` is still needed by ``myproject``, so let's switch back and confirm it's still there:
 
 .. literalinclude:: outputs/environments/env-swap-1.out
    :language: console
 
+``myproject`` still has ``trilinos`` as a root spec.
 
-Phew!
-We can see that ``myproject`` still has ``trilinos`` as a root spec.
-
-.. note::
-
-   You can also uninstall a package and remove it from the environment in one go with ``spack uninstall --remove trilinos``.
 
 -----------------------
 The ``spack.yaml`` file
@@ -374,21 +383,19 @@ The fix is to re-concretize the whole environment, which lets ``python`` downgra
 Building in environments
 ------------------------
 
-Activated environments allow you to invoke any programs installed in them as if they were installed on the system.
-In this section, we will take advantage of that feature.
+Earlier we ran programs that the environment had installed.
+Activation also turns an environment into a ready-to-use *build* environment: the compilers, headers, and libraries it provides sit on the standard search paths, so we can compile our own code against them.
 
 Suppose you want to compile some MPI programs.
-We have an MPI implementation installed in our ``myproject2`` environment, so ``mpicc`` is available in our path.
+We have an MPI implementation installed in our ``myproject`` environment, so ``mpicc`` is available in our path.
 We can confirm this using ``which``:
 
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
 
 
-As mentioned before, activating the environment sets a number of environment variables.
-That includes variables like ``PATH``, ``MANPATH``, and ``CMAKE_PREFIX_PATH``, which allows you to easily find package executables and libraries installed in the environment.
-
-Let's look specifically at path-related environment variables using ``env | grep PATH``:
+Beyond ``PATH``, activation also sets the variables a build uses to locate libraries and headers, such as ``CMAKE_PREFIX_PATH`` and ``PKG_CONFIG_PATH``.
+Let's look at the path-related variables it set, using ``env | grep PATH``:
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
@@ -433,7 +440,7 @@ We also see that ``Hello world`` is output for each of the ranks and the version
 
 We can confirm the version of ``zlib`` used to build the program is in our environment using ``spack find``:
 
-.. literalinclude:: outputs/environments/myproject2-zlib-ng-1.out
+.. literalinclude:: outputs/environments/myproject-zlib-ng-1.out
    :language: console
 
 Note that the reported version *does* match that of our installation.

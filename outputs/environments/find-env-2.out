@@ -6,11 +6,13 @@ $ spack find
 openblas@0.3.33	 openmpi@5.0.10	 trilinos@17.1.1
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
-gettext@1.0  hwloc@2.13.0  krb5@1.22.2	ncurses@6.6  openssh@10.3p1  openssl@3.6.1  tcl@8.6.17	zlib-ng@2.3.3  zstd@1.5.7
+gettext@1.0   krb5@1.22.2  openssh@10.3p1  tcl@8.6.17	  zstd@1.5.7
+hwloc@2.13.0  ncurses@6.6  openssl@3.6.1   zlib-ng@2.3.3
 
 -- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
-bzip2@1.0.8	      libevent@2.1.12  libpciaccess@0.17  libxml2@2.15.3  pigz@2.8	 pmix@6.1.0   tar@1.35
-libedit@3.1-20251016  libiconv@1.18    libxcrypt@4.5.2	  numactl@2.0.19  pkgconf@2.5.1	 prrte@4.1.0  xz@5.8.3
+bzip2@1.0.8	      libiconv@1.18	 libxml2@2.15.3	 pkgconf@2.5.1	tar@1.35
+libedit@3.1-20251016  libpciaccess@0.17	 numactl@2.0.19	 pmix@6.1.0	xz@5.8.3
+libevent@2.1.12	      libxcrypt@4.5.2	 pigz@2.8	 prrte@4.1.0
 
 -- linux-ubuntu26.04-x86_64_v3 / %cxx=gcc@15.2.0 ----------------
 kokkos@5.1.1  kokkos-kernels@5.1.1
