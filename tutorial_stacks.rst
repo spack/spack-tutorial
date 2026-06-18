@@ -25,7 +25,7 @@ and compiled with ``gcc@16``, which is newer than the system-provided ``gcc@15``
 We'll also install ``py-scipy`` linked against ``openblas``.
 
 We'll first focus on how to configure and install the software correctly.
-Then we'll discuss how to make it accessible to users through environment views and module files.
+Then we'll discuss how to make it accessible to users through filesystem views and module files.
 
 ----------------------------
 Installing a Software Stack
@@ -98,12 +98,12 @@ Now we add a second MPI variant to the stack, listing both ``^openmpi`` and ``^m
    :language: yaml
    :emphasize-lines: 22-23
 
-The ``stack`` group now has two conflicting configurations, so before concretizing let's check the ``concretizer:unify`` option:
+The ``stack`` group now has two conflicting configurations, so, before concretizing, let's check the ``concretizer:unify`` option:
 
 .. literalinclude:: outputs/stacks/unify-2.out
    :language: console
 
-With ``unify:true``, the concretizer restricts the environment to a single configuration of each package within its *root unification set*: the nodes reachable from the root specs via link or run edges.
+With ``unify: true``, the concretizer restricts the environment to a single configuration of each package within its *root unification set*: the nodes reachable from the root specs via link or run edges.
 Pure build dependencies, which fall outside the set, are not affected:
 
 .. image:: _static/images/stacks-unify.svg
@@ -192,7 +192,7 @@ Concretizing confirms the result is identical:
    :language: console
 
 Now that we have definitions, we can add a second matrix for serial packages that link against LAPACK but not MPI.
-In a real deployment this list might include many packages but here we use just ``py-scipy`` as an example.
+In a real deployment this list might include many packages, but here we use just ``py-scipy`` as an example.
 Not every combination is meaningful though: ``py-scipy ^netlib-lapack`` is not a useful build, so we use ``exclude`` to drop that specific entry from the cross-product:
 
 .. literalinclude:: outputs/stacks/examples/4bis.spack.stack.yaml
@@ -223,7 +223,7 @@ variable name     value
 ``target``        The default spack target string for this machine
 ``architecture``  The default spack architecture string platform-os-target for this machine
 ``arch``          Alias for ``architecture``
-``env``           A dictionary representing the users environment variables
+``env``           A dictionary representing the user's environment variables
 ``re``            The python ``re`` module for regex
 ``hostname``      The hostname of this node
 ================= ===========
@@ -334,6 +334,11 @@ Module Files
 Module files are the standard mechanism for managing multiple software versions on HPC systems.
 In this section we'll show how to configure and generate a hierarchical module structure with ``lmod``.
 
+.. note::
+
+   A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
+   It covers the general architecture and differences between ``environment-modules`` and ``lmod`` that are out of scope here.
+
 Since ``lmod`` is already part of our compiler group and has been installed, we just need to add the ``module`` command to our shell:
 
 .. code-block:: console
@@ -353,9 +358,8 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
 
 This configuration tells Spack to:
 
-- generate ``lmod`` module files under ``modules/``
-- with a hierarchy based on ``mpi`` and ``lapack``
-- and to place all specs built with the system compiler ``%gcc@15`` into ``Core``
+- generate ``lmod`` module files under ``modules/``, with a hierarchy based on ``mpi`` and ``lapack``
+- place all specs built with the system compiler (``%gcc@15``) into the ``Core`` designation
 
 We can generate the module files and use them with the following commands:
 
@@ -364,7 +368,7 @@ We can generate the module files and use them with the following commands:
    $ spack module lmod refresh -y
    $ module use $PWD/stacks/modules/linux-ubuntu26.04-x86_64/Core
 
-Now we should be able to see the module files that have been generated:
+Let's check the generated module files:
 
 .. literalinclude:: outputs/stacks/modules-2.out
    :language: console
@@ -392,17 +396,12 @@ Regenerate the modules:
 .. literalinclude:: outputs/stacks/modules-4.out
    :language: console
 
-Now we have a set of module files without hashes, with a correct hierarchy, and with all our custom modifications:
+Now we have module files without hashes, a correct hierarchy, and our custom environment variables:
 
 .. literalinclude:: outputs/stacks/modules-5.out
    :language: console
 
-This concludes the quick tour of module file generation, and the tutorial on stacks.
-
-.. note::
-
-    A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
-    It covers the general architecture and differences between ``environment-modules`` and ``lmod`` that are out of scope here.
+This concludes the stacks tutorial.
 
 -------
 Summary
