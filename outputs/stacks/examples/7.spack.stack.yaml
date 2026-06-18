@@ -44,8 +44,8 @@ spack:
           prefer: [gcc@16]
         fortran:
           prefer: [gcc@16]
-  concretizer:
-    unify: false
+      concretizer:
+        unify: false
   view:
     default:
       root: views/default

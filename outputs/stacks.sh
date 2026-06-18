@@ -40,13 +40,10 @@ example stacks/concretize-0 "spack concretize"
 # Reusable definitions section
 cat "$project/stacks/examples/3.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-1 "spack concretize"
-example stacks/concretize-1 "spack find -cl"
 
 # py-scipy with exclude
 cat "$project/stacks/examples/4bis.spack.stack.yaml" > ~/stacks/spack.yaml
 example stacks/concretize-3 "spack concretize"
-
-example stacks/concretize-4 "spack find -cld py-scipy"
 
 # Conditional definitions section
 cat "$project/stacks/examples/5.spack.stack.yaml" > ~/stacks/spack.yaml

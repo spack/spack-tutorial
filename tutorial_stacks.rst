@@ -111,11 +111,11 @@ Pure build dependencies, which fall outside the set, are not affected:
 This is the right default for a single-user environment, since it ensures a filesystem view can be built without conflicts.
 A software stack, however, requires multiple configurations of the same package by design, so we need to relax this constraint.
 
-Let's update ``spack.yaml`` to set ``unify: false`` and concretize:
+Since only the ``stack`` group has conflicting configurations, we add ``unify: false`` to its ``override`` block and concretize:
 
 .. literalinclude:: outputs/stacks/examples/1.spack.stack.yaml
    :language: yaml
-   :emphasize-lines: 33-34
+   :emphasize-lines: 32-33
 
 .. literalinclude:: outputs/stacks/unify-3.out
    :language: console
@@ -124,13 +124,15 @@ With ``unify: false``, Spack concretizes each root spec independently and merges
 
 .. note::
 
-   If the environment is expected to have only a few duplicate nodes, there is another option to consider:
+   If the stack is expected to have only a few duplicate nodes, ``when_possible`` is a less aggressive alternative:
 
-   .. code-block:: console
+   .. code-block:: yaml
 
-      $ spack config add concretizer:unify:when_possible
+      override:
+        concretizer:
+          unify: when_possible
 
-   With this option Spack tries to unify the environment in an eager, multi-round process.
+   With this option Spack tries to unify the group in an eager, multi-round process.
    The concretization at round ``n`` contains all the specs that could not be unified at round ``n-1``, and considers all the specs from previous rounds for reuse.
 
 ^^^^^^^^^^^^^
@@ -202,10 +204,8 @@ Concretize the environment again:
 .. literalinclude:: outputs/stacks/concretize-3.out
    :language: console
 
-The exclusion worked: the environment contains only ``py-scipy ^openblas``:
+The exclusion worked: the environment contains only ``py-scipy ^openblas``.
 
-.. literalinclude:: outputs/stacks/concretize-4.out
-   :language: spec
 
 ^^^^^^^^^^^^^^^^^^^^^^^
 Conditional definitions
@@ -286,22 +286,23 @@ Alternatively, to create a buildcache you can:
 
 Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
--------------------
-Environment Views
--------------------
+--------------------------
+Multiple Filesystem Views
+--------------------------
 
-A simple view won't work with a stack: we have multiple configurations of the same package, and they would conflict if linked into the same directory tree.
-What we can do instead is create *multiple views*, using view descriptors that specify which packages are included and how they are projected onto the filesystem.
+Views give users access to the installed software through standard filesystem paths, without requiring them to interact with Spack directly.
+A stack, however, contains multiple configurations of the same package, which would conflict in a single merged directory tree.
+Instead, we define *multiple views*, each covering a curated subset of the stack, with optional projections that control the directory layout.
 
-Edit our ``spack.yaml`` to add view descriptors:
+Let's add view descriptors to our ``spack.yaml``:
 
 .. literalinclude:: outputs/stacks/examples/6.spack.stack.yaml
    :language: yaml
    :emphasize-lines: 49-62
 
-In the configuration above we created two views, named ``default`` and ``full``.
-The ``default`` view consists of all the packages compiled with ``gcc@16``, but excluding those that depend on ``mpich`` or ``netlib-lapack``.
-As we can see, we can both *include* and *exclude* specs using constraints.
+We defined two views, ``default`` and ``full``.
+The ``default`` view consists of all the packages compiled with ``gcc@16``, excluding those that depend on ``mpich`` or ``netlib-lapack``.
+View descriptors accept both ``select`` and ``exclude`` constraints.
 
 The ``full`` view uses a more complex projection to place each spec into an appropriate subdirectory, according to the first constraint that matches.
 ``all`` is the default projection and always has the lowest priority, regardless of the order in which it appears.
@@ -312,9 +313,8 @@ Concretize to regenerate the views and check their structure:
 .. literalinclude:: outputs/stacks/view-0.out
    :language: console
 
-The view descriptor also contains a ``link`` key.
-The default behavior, as we have seen, is to link all packages — including implicit link and run dependencies — into the view.
-If we set the option to ``"roots"``, Spack links only the root packages into the view:
+By default, a view includes all packages, link and run dependencies included.
+Setting ``link: roots`` restricts it to root specs only:
 
 .. literalinclude:: outputs/stacks/examples/7.spack.stack.yaml
    :language: yaml
@@ -323,19 +323,16 @@ If we set the option to ``"roots"``, Spack links only the root packages into the
 .. literalinclude:: outputs/stacks/view-1.out
    :language: console
 
-Now we see only the root libraries in the default view.
+Now we see only the root packages in the default view.
 The rest are hidden, but are still available in the full view.
-The complete documentation on views can be found `here <https://spack.readthedocs.io/en/latest/environments.html#environment-views>`_.
+Full documentation on views is available in the `Spack environments guide <https://spack.readthedocs.io/en/latest/environments.html#environment-views>`_.
 
 ------------
 Module Files
 ------------
 
-Module files are another very popular way to use software on HPC systems.
-In this section we'll show how to configure and generate a hierarchical module structure, suitable for ``lmod``.
-
-A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
-There we discuss the general architecture of module file generation in Spack and we highlight differences between ``environment-modules`` and ``lmod`` that won't be covered in this section.
+Module files are the standard mechanism for managing multiple software versions on HPC systems.
+In this section we'll show how to configure and generate a hierarchical module structure with ``lmod``.
 
 Since ``lmod`` is already part of our compiler group and has been installed, we just need to add the ``module`` command to our shell:
 
@@ -343,7 +340,7 @@ Since ``lmod`` is already part of our compiler group and has been installed, we 
 
    $ . $(spack location -i lmod)/lmod/lmod/init/bash
 
-If everything worked out correctly you should have the module command available in your shell:
+You should now have the ``module`` command available:
 
 .. literalinclude:: outputs/stacks/modules-1.out
    :language: console
@@ -354,8 +351,11 @@ The next step is to add some basic configuration to our ``spack.yaml`` to genera
    :language: yaml
    :emphasize-lines: 50-61
 
-In these few lines of additional configuration we told Spack to generate ``lmod`` module files in a subdirectory named ``modules``, using a hierarchy comprising both ``lapack`` and ``mpi``.
-We've also configured it to place all specs built with our system compiler into the ``Core`` designation in the lmod hierarchy.
+This configuration tells Spack to:
+
+- generate ``lmod`` module files under ``modules/``
+- with a hierarchy based on ``mpi`` and ``lapack``
+- and to place all specs built with the system compiler ``%gcc@15`` into ``Core``
 
 We can generate the module files and use them with the following commands:
 
@@ -370,18 +370,18 @@ Now we should be able to see the module files that have been generated:
    :language: console
 
 The set of modules is already usable, and the hierarchy already works.
-For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in our path and a lot of modules available — all the ones compiled with ``gcc@16``:
+For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in our path and a lot of modules available, all compiled with ``gcc@16``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console
 
-There are a few issues though.
-For instance, we have a lot of modules generated from dependencies of ``gcc`` that are cluttering the view, and won't likely be needed directly by users.
-Then, module names contain hashes, which prevent users from being able to reuse the same script in similar, but not equal, environments.
+The default configuration has a few rough edges, though:
 
-Also, some of the modules might need to set custom environment variables, which are specific to deployment aspects not captured by the hash — for instance a policy at the deploying site.
+- dependency modules from ``gcc`` clutter the listing with packages users will never load directly
+- hashes in module names make scripts non-portable across similar environments
+- some modules may need custom environment variables specific to site policy
 
-To address all these needs we can extend our ``modules`` configuration:
+To address all these needs, we can extend our ``modules`` configuration:
 
 .. literalinclude:: outputs/stacks/examples/9.spack.stack.yaml
    :language: yaml
@@ -399,11 +399,19 @@ Now we have a set of module files without hashes, with a correct hierarchy, and 
 
 This concludes the quick tour of module file generation, and the tutorial on stacks.
 
+.. note::
+
+    A more in-depth tutorial, focused only on module files, can be found at :ref:`modules-tutorial`.
+    It covers the general architecture and differences between ``environment-modules`` and ``lmod`` that are out of scope here.
+
 -------
 Summary
 -------
 
-In this tutorial, we configured Spack to install a stack of software built on a cross-product of different MPI and LAPACK libraries, using a compiler newer than the one provided by the system.
-We used spec groups to organize the environment into a compiler group and a stack group, leveraging the ``needs`` and ``override`` keys to control build order and compiler selection.
-We used spec matrices and definitions to express the cross-product concisely, and conditional definitions to make the MPI selection configurable at concretization time.
-Finally, we discussed how to make the software accessible to users through filesystem views and module files.
+In this tutorial we built a realistic HPC software stack: a cross-product of MPI and LAPACK libraries, compiled with a newer compiler than the system default.
+Along the way we used:
+
+- **Spec groups** with ``needs`` and ``override`` to control build order and compiler selection per group
+- **Spec matrices** and **definitions** to express the cross-product concisely
+- **Conditional definitions** to make the MPI selection configurable at concretization time
+- **Filesystem views** and **module files** to make the software accessible to users
