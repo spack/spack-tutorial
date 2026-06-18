@@ -32,7 +32,7 @@ All examples and outputs are based on an Ubuntu 26.04 Docker image.
 Setting Up Spack
 ----------------
 
-Spack is ready to use immediately -- there is no separate build or install step.
+Spack is ready to use immediately: there is no separate build or install step.
 To get started, we simply clone the Spack repository and check out the latest v1.2 release:
 
 .. literalinclude:: outputs/basics/clone.out
@@ -157,12 +157,12 @@ Here we build ``zlib-ng`` in debug mode through its ``build_type`` variant.
    :language: spec
 
 Some variants are *conditional*: the indented ``when`` lines in the ``spack info`` output mark them.
-Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` -- that is, when zlib-ng is built with CMake instead of Autotools.
+Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` i.e. when zlib-ng is built with CMake instead of Autotools.
 Requesting one of them, as we just did with ``+ipo``, therefore also selects the CMake build system.
 
 .. note::
 
-   The same ``name=value`` syntax also sets compiler flags on a build: Spack accepts ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` (quote values containing spaces) -- and its compiler wrappers inject them into the right commands.
+   The same ``name=value`` syntax also sets compiler flags on a build: Spack accepts ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs`` and its compiler wrappers inject them into the right commands.
    This is an escape hatch, though: a package's variants and build system usually select appropriate options already, so reach for explicit flags only when you genuinely need them.
 
 ^^^^^^^^^^^^^^^^^^^
@@ -170,7 +170,7 @@ Direct Dependencies
 ^^^^^^^^^^^^^^^^^^^
 
 The ``%`` sigil specifies a direct dependency of the package we're installing.
-The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for here.
+The most common direct dependency is a compiler, so that is what we will use ``%`` for here.
 So far we've let Spack choose the compiler, building ``zlib-ng`` with GCC just as we did for gmake.
 This time we'll build it with Clang instead, using ``%clang``:
 
@@ -180,7 +180,7 @@ This time we'll build it with Clang instead, using ``%clang``:
 This installation is located separately from the previous one.
 As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-**The spec syntax is recursive** -- any syntax we can specify for the "root" package we can also use for a dependency.
+**The spec syntax is recursive**: any syntax we can specify for the "root" package we can also use for a dependency.
 For example, since a compiler is just another dependency, we can pin its version with ``@``, just as we did for ``zlib-ng``:
 
 .. literalinclude:: outputs/basics/zlib-gcc-14.out
@@ -236,7 +236,8 @@ Virtual Dependencies
 
 Let's move on to a more complicated package.
 ``hdf5`` is a good example: it depends on ``mpi``, but ``mpi`` is not an ordinary package.
-It is a *virtual package* -- an interface that several real packages provide -- and Spack handles dependencies on such interfaces through "virtual dependencies".
+It is a *virtual package*: an interface that several real packages provide.
+Spack handles dependencies on such interfaces through "virtual dependencies".
 
 By default ``hdf5`` builds against ``openmpi``:
 
@@ -351,7 +352,8 @@ Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
    :language: spec
 
-Only ``trilinos`` itself was installed -- the rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
+Only ``trilinos`` itself was installed. 
+The rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
 We can confirm that the whole graph uses MPICH with the anonymous spec ``spack find ^mpich``:
 
 .. literalinclude:: outputs/basics/trilinos-find-mpich.out
@@ -395,7 +397,7 @@ To remove it anyway, use ``--force`` (or ``-f``) to delete just that package and
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
    :language: spec
 
-Spack refuses to uninstall a package when the spec is ambiguous -- when it matches more than one installed package:
+Spack refuses to uninstall a package when the spec is ambiguous i.e. when it matches more than one installed package:
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out
    :language: spec
