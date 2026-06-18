@@ -80,7 +80,15 @@ example --tee environments/env-swap-1      "spack env activate myproject"
 spack env activate myproject
 example environments/env-swap-1      "spack find"
 
-example environments/config-get-1    'EDITOR=cat spack config edit'
+# Environments on disk: myproject's directory and files, captured before the mpich edit
+example --tee environments/filenames-1     "spack cd -e myproject"
+spack cd -e myproject
+example environments/filenames-1     "pwd"
+example environments/filenames-1     "ls"
+example environments/cat-config-1    "cat spack.yaml"
+example environments/lockfile-1      "jq < spack.lock | head -30"
+example environments/env-list-2      "spack env list"
+cd
 
 # The file is edited by hand here
 # We mock that by using `spack config add`
@@ -139,15 +147,6 @@ example environments/use-mpi-1       "mpirun -n 2 ./a.out"
 
 example environments/myproject-zlib-ng-1     "spack find zlib-ng"
 
-example --tee environments/filenames-1     "spack cd -e myproject"
-spack cd -e myproject
-example environments/filenames-1     "pwd"
-example environments/filenames-1     "ls"
-
-example environments/env-list-2      "spack env list"
-
-example environments/cat-config-1 "cat spack.yaml"
-
 example environments/independent-create-1 "cd"
 cd || exit
 example environments/independent-create-1 "mkdir code"
@@ -172,8 +171,6 @@ example environments/add-independent-1     "cat spack.yaml"
 
 example environments/remove-independent-1     "spack remove hdf5"
 example environments/remove-independent-1     "cat spack.yaml"
-
-example environments/lockfile-1          "jq < spack.lock | head -30"
 
 example environments/create-from-file-1  "spack env create abstract spack.yaml"
 

@@ -274,32 +274,55 @@ We know ``trilinos`` is still needed by ``myproject``, so let's switch back and 
 ``myproject`` still has ``trilinos`` as a root spec.
 
 
------------------------
-The ``spack.yaml`` file
------------------------
+.. _environments-on-disk:
 
-An environment is more than just a list of root specs --- it includes **configuration settings** that control how Spack behaves when the environment is activated.
-So far, ``myproject`` relies on configuration defaults, but these can be overridden to customize our environment's behavior.
+--------------------
+Environments on disk
+--------------------
 
-In this section, we'll learn how to enforce that all the packages in our environment depending on ``mpi`` build with ``mpich`` by modifying our configuration.
+We have been treating an environment as an abstraction, but it is really just a directory on disk.
+``spack cd -e`` takes us to ``myproject``'s directory:
 
-We can customize the selection of the ``mpi`` provider using `concretization preferences <https://spack.readthedocs.io/en/latest/build_settings.html#concretization-preferences>`_ to change the behavior of the concretizer.
+.. literalinclude:: outputs/environments/filenames-1.out
+   :language: console
 
-Let's start by examining our environment's configuration using ``spack config edit``:
+Because we created ``myproject`` with ``spack env create <name>``, it lives under ``var/spack/environments`` inside the Spack installation.
+This is what makes it a *managed* environment: we can refer to it by name.
+Environments can also be *independent*, with their files placed in any directory of our choosing.
 
-.. literalinclude:: outputs/environments/config-get-1.out
+The directory holds the two files that define the environment:
 
-The output shows the special ``spack.yaml`` configuration file that Spack uses to store environment configurations.
+* ``spack.yaml``: the *manifest* file containing the abstract specs we asked for plus configuration settings.
+* ``spack.lock``: the *lockfile* contaning the concrete specs generated whenever the environment is concretized.
 
-There are several important parts of this file:
+``spack.yaml`` is the human-readable file we have been editing indirectly with ``spack add`` and ``spack remove``:
 
-* ``specs:`` The list of package specs to install in the environment.
-* ``view:`` Controls whether the environment generates a *view* (the directory tree with symlinks to installed packages we discussed earlier).
-* ``concretizer:unify:`` Controls how the environment's specs are concretized together (detailed below).
+.. literalinclude:: outputs/environments/cat-config-1.out
+   :language: spec
 
-The ``specs`` list should look familiar --- these are the package specs we've been modifying previously with ``spack add`` and ``spack install``.
+``spack.lock`` records the fully concretized environment (every package, version, variant, and dependency) so the build can be reproduced exactly.
+It is machine-readable JSON:
 
-The ``concretizer:unify:true`` setting controls how Spack resolves dependencies across package specs in an environment:
+.. literalinclude:: outputs/environments/lockfile-1.out
+   :language: console
+
+The full file runs to thousands of lines.
+A hidden ``.spack-env`` directory (not shown by ``ls``) sits alongside these files and holds Spack's bookkeeping, including the view we used earlier.
+
+Managed environments also appear by name in ``spack env list``, with the active one highlighted:
+
+.. literalinclude:: outputs/environments/env-list-2.out
+   :language: console
+
+We will come back to both files when we reproduce environments later.
+
+------------------------
+Configuring environments
+------------------------
+
+We've seen ``spack.yaml`` as a record of the environment state.
+It also controls **configuration settings** that shape how Spack behaves when the environment is active, and we can edit it directly to customize concretization.
+The ``concretizer:unify`` key we saw earlier is one such setting:
 
 * ``true`` (default): specs are concretized *together*, ensuring there is only one version of each package in the environment.
 * ``false``: specs are concretized *independently* from each other, potentially allowing multiple versions of the same package to appear in the environment.
@@ -475,74 +498,9 @@ Note that the reported version *does* match that of our installation.
 Reproducing builds
 ------------------
 
-As mentioned earlier, Spack environments behave like the *virtual environments* provided by Python venv or Conda, keeping the packages in one environment separate from those of another.
-These environments can be managed by Spack or independent.
-In either case, their environment files can be used to reproduce builds by other users and on other machines.
-Since those files are key to reproducing builds, let's start with them.
-
-^^^^^^^^^^^^^^^^^
-Environment files
-^^^^^^^^^^^^^^^^^
-
-As we saw at the start of this tutorial, two key files track the contents of an environment:
-
-* ``spack.yaml``: the *abstract* specs and configuration we previously edited through ``spack config edit``; and
-* ``spack.lock``: all fully *concrete* specs, generated automatically during concretization.
-
-These files are intended to be used by developers and administrators to manage the environments in a reproducible way.
-We will cover their reuse later.
-
-.. note::
-
-   Both environment files can be versioned in repositories, shared, and used to install the same set of software by different users and on other machines.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Managed versus independent environments
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Environments are either Spack-managed or independent.
-Both types of environments are defined by their environment files.
-So far, we have only created managed environments.
-This section describes their differences.
-
-*Managed environments* are created using ``spack env create <name>``.
-They are automatically created in the ``var/spack/environments`` subdirectory and can be referenced by their names.
-
-*Independent environments* can be created in one of two ways.
-First, the Spack environment file(s) can be placed in any directory (other than ``var/spack/environments``).
-Alternatively, you can use ``spack env create -d <directory>`` to specify the directory (``<directory>``) in which the files should reside.
-Independent environments are not named.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Reviewing a managed environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-We created the ``myproject`` environment earlier using ``spack env create myproject`` so let's mainly focus on its environment files in this section.
-
-Earlier, when we changed the environment's configuration using ``spack config edit``, we were actually editing its ``spack.yaml`` file.
-We can move to the directory containing the file using ``spack cd``:
-
-.. literalinclude:: outputs/environments/filenames-1.out
-   :language: console
-
-
-Notice that ``myproject`` is a subdirectory of ``var/spack/environments`` within the Spack installation making it a *managed* environment.
-Consequently, it can be referenced by name.
-It will also show up when running ``spack env list``:
-
-.. literalinclude:: outputs/environments/env-list-2.out
-   :language: console
-
-which indicates the active environment by highlighting it in green.
-
-We can also see from the listing above that the current environment directory contains both of the environment files: ``spack.yaml`` and ``spack.lock``.
-This is because ``spack.lock`` was generated when we concretized the environment.
-
-If we ``cat`` the ``spack.yaml`` file, we'll see the same specs and view options previously shown by ``spack config edit``:
-
-.. literalinclude:: outputs/environments/cat-config-1.out
-   :language: spec
-
+As we saw in :ref:`environments-on-disk`, an environment is fully described by its ``spack.yaml`` and ``spack.lock`` files.
+Because those files are plain text, they can be versioned, shared, and used to reproduce the same set of software on other machines.
+Let's now create an *independent* environment and use its files to reproduce it elsewhere.
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating an independent environment
@@ -639,33 +597,9 @@ and we see that the spec *was* removed from the spec list of our environment.
 
    You can also edit the ``spack.yaml`` file directly instead of using the ``spack add`` and ``spack remove`` commands.
 
-^^^^^^^^^^^^^^^^^^^^^^^^
-Reviewing ``spack.lock``
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-Now let's turn our attention from the abstract to the concrete.
-
-Our focus so far has been on the abstract environment configuration represented by the ``spack.yaml`` file.
-Once that file is concretized, Spack *generates* a corresponding ``spack.lock`` file representing the full concretized state of the environment.
-
-This file is intended to be a machine-readable representation of the information needed to *reproduce* the build of an environment.
-As such, it is written in ``json``, which is less readable than ``yaml``.
-
-Let's look at the top 30 lines of our current environment:
-
-.. literalinclude:: outputs/environments/lockfile-1.out
-   :language: console
-
-
-While it is still readable, it consists of over 1900 lines of information representing the actual configurations for each of the environment's packages.
-
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Reproducing an environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Now that we've described the contents of the environment files we can discuss how they can be used to reproduce environments.
-You may want to do this yourself on a different machine, or use an environment built by someone else.
-The process is the same in either case.
 
 You can recreate an environment by passing either of the environment files to ``spack env create``.
 The file you choose depends on whether you want to approximate the build using the abstract specs or an *exact* build based on the concrete specs.
