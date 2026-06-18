@@ -393,7 +393,7 @@ You can commit them to version control, hand them to a colleague, or drop them i
 Anyone with a Spack installation can recreate the environment from them.
 
 To demonstrate, we'll play the role of the recipient of a shared environment.
-Let's build a fresh independent environment in a new ``code/`` directory — it stands in for a project a colleague has shared with us:
+Let's build a fresh independent environment in a new ``code/`` directory, which stands in for a project a colleague has shared with us:
 
 .. literalinclude:: outputs/environments/independent-create-1.out
    :language: console
@@ -432,7 +432,7 @@ Recreating from ``spack.yaml`` preserves the root specs but leaves dependency re
 .. literalinclude:: outputs/environments/create-from-file-1.out
    :language: console
 
-The new environment has no installed packages yet — only the root specs from the file are registered:
+The new environment has no installed packages yet, only the root specs from the file are registered:
 
 .. literalinclude:: outputs/environments/find-env-abstract-1.out
    :language: console
