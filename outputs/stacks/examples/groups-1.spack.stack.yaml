@@ -20,7 +20,6 @@ spack:
     needs: [compiler]
     specs:
     - netlib-scalapack ^openblas ^openmpi
-    - netlib-scalapack ^openblas ^mpich
     override:
       packages:
         c:
@@ -30,5 +29,3 @@ spack:
         fortran:
           prefer: [gcc@16]
   view: false
-  concretizer:
-    unify: false

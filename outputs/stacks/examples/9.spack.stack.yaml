@@ -4,27 +4,46 @@
 # configuration settings.
 spack:
   definitions:
-    - mpis: [mpich]
-    - mpis: [openmpi]
-      when: 'env.get("SPACK_STACK_USE_OPENMPI", "") == "1"'
-    - lapacks: [ openblas, netlib-lapack ]
-    - compilers: [ "gcc@16" ]
-    - mpi_packages: [ netlib-scalapack ]
-    - serial_packages: [py-scipy]
+  - mpis: [mpich]
+  - mpis: [openmpi]
+    when: 'env.get("SPACK_STACK_USE_OPENMPI", "") == "1"'
+  - lapacks: [openblas, netlib-lapack]
+  - mpi_packages: [netlib-scalapack]
+  - serial_packages: [py-scipy]
 
   specs:
-  - gcc@16%gcc@15
-  - matrix:
-    - [$mpi_packages]
-    - [$^mpis]
-    - [$^lapacks]
-    - [$%compilers]
-  - matrix:
-    - [$serial_packages]
-    - [$^lapacks]
-    - [$%compilers]
-    exclude:
-    - "py-scipy ^netlib-lapack"
+  - group: compiler
+    specs:
+    - gcc@16
+    - lmod@8.7.67
+    override:
+      packages:
+        c:
+          prefer: [gcc@15]
+        cxx:
+          prefer: [gcc@15]
+        fortran:
+          prefer: [gcc@15]
+  - group: stack
+    needs: [compiler]
+    specs:
+    - matrix:
+      - [$mpi_packages]
+      - [$^mpis]
+      - [$^lapacks]
+    - matrix:
+      - [$serial_packages]
+      - [$^lapacks]
+      exclude:
+      - "py-scipy ^netlib-lapack"
+    override:
+      packages:
+        c:
+          prefer: [gcc@16]
+        cxx:
+          prefer: [gcc@16]
+        fortran:
+          prefer: [gcc@16]
   view: false
   concretizer:
     unify: false
@@ -45,7 +64,7 @@ spack:
         - gcc
         exclude:
         - '%gcc@15'
-        - 'autoconf'
+        - autoconf
         all:
           environment:
             set:

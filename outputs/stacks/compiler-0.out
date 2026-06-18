@@ -1,8 +1,7 @@
 $ spack concretize
-==> Concretized 1 spec:
+==> Concretized 2 specs:
 [b]  vlwdxlj  gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  cuzgmus	  ^binutils@2.46.0~debuginfod+gas~gprofng~headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
-[+]  yvl6jpi	      ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  mmywg7x	  ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
 [b]  ao2onuz	  ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  vbwvgwx	      ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
@@ -37,8 +36,51 @@ $ spack concretize
 [+]  ekvivpv	      ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  g72d7i3	  ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  63aruxk	  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  wf22jsg  lmod@8.7.67+auto_swap~redirect build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  ywyq4f5	  ^bc@1.08.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  litd2mh	      ^ed@1.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  q66mudl	  ^lua@5.4.8+shared build_system=makefile fetcher=curl platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  j2fa7xl	      ^curl@8.20.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  4lyasaz		  ^nghttp2@1.67.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  33yozp5		  ^openssl@3.6.1~docs+shared build_system=generic certs=mozilla platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[b]  axeuqg3		      ^ca-certificates-mozilla@2026-03-19 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  4qgksuy	      ^unzip@6.0 build_system=makefile patches:=179330d,24582ff,251d575,3371314,44599c8,47e9def,4e5a081,59c0983,64f6498,74bc961,7d8e5c7,81ca46c,881d2ed,aced0f2,b6f64d7,b7a14c3,c9a863e,ee9e260,f6f6236,f88b9d4,fde8f9d platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  su5b2hs	  ^lua-luafilesystem@1.9.0 build_system=lua platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  egzwtik	  ^lua-luaposix@36.3 build_system=lua platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  bkzcu2s	      ^libxcrypt@4.5.2~obsolete_api build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  yvl6jpi	  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  ci53fkm	  ^procps@4.0.6+nls build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  a27iqiv	  ^sed@4.9 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  d4ibosb	  ^tcl@8.6.17 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 
 $ spack install
+[ ] d4ibosb tcl@8.6.17 fetching from build cache (0s)
+[ ] 4qgksuy unzip@6.0 fetching from build cache (0s)
+[ ] k25xiih readline@8.3 fetching from build cache (0s)
+[ ] 4lyasaz nghttp2@1.67.1 fetching from build cache (0s)
+[ ] 4qgksuy unzip@6.0 relocating (0s)
+[ ] d4ibosb tcl@8.6.17 relocating (0s)
 [ ] vlwdxlj gcc@16.1.0 fetching from build cache (0s)
+[ ] k25xiih readline@8.3 relocating (0s)
+[ ] 4lyasaz nghttp2@1.67.1 relocating (0s)
+[+] 4qgksuy unzip@6.0 /home/spack/spack/opt/spack/linux-x86_64_v3/unzip-6.0-4qgksuyohalb7cfo76mqqjlmndeh3tyg (0s)
+[+] 4lyasaz nghttp2@1.67.1 /home/spack/spack/opt/spack/linux-x86_64_v3/nghttp2-1.67.1-4lyasazuklpnvidiw4ty5wvybxvkh7na (0s)
+[+] k25xiih readline@8.3 /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-k25xiihp5dun6qwe3e5ouzdigwr5yuvz (0s)
 [ ] vlwdxlj gcc@16.1.0 relocating (0s)
+[ ] j2fa7xl curl@8.20.0 fetching from build cache (0s)
+[ ] j2fa7xl curl@8.20.0 relocating (0s)
+[+] j2fa7xl curl@8.20.0 /home/spack/spack/opt/spack/linux-x86_64_v3/curl-8.20.0-j2fa7xlzdvkagqked76erodvcmcd2oqp (0s)
+[ ] q66mudl lua@5.4.8 fetching from build cache (0s)
+[ ] q66mudl lua@5.4.8 relocating (0s)
+[+] q66mudl lua@5.4.8 /home/spack/spack/opt/spack/linux-x86_64_v3/lua-5.4.8-q66mudlsappt33u2frzcijegjay54ep3 (0s)
+[ ] egzwtik lua-luaposix@36.3 fetching from build cache (0s)
+[ ] su5b2hs lua-luafilesystem@1.9.0 fetching from build cache (0s)
+[ ] egzwtik lua-luaposix@36.3 relocating (0s)
+[ ] su5b2hs lua-luafilesystem@1.9.0 relocating (0s)
+[+] su5b2hs lua-luafilesystem@1.9.0 /home/spack/spack/opt/spack/linux-x86_64_v3/lua-luafilesystem-1.9.0-su5b2hsgwgk2a4b7hkys2r23kf3me6lh (1s)
+[+] egzwtik lua-luaposix@36.3 /home/spack/spack/opt/spack/linux-x86_64_v3/lua-luaposix-36.3-egzwtikjsfubsjiqpwdjemys3xqv2ytf (1s)
+[+] d4ibosb tcl@8.6.17 /home/spack/spack/opt/spack/linux-x86_64_v3/tcl-8.6.17-d4ibosbgfm7536ij2dmdu6nnll5g5zpm (1s)
+[ ] wf22jsg lmod@8.7.67 fetching from build cache (0s)
+[ ] wf22jsg lmod@8.7.67 relocating (0s)
+[+] wf22jsg lmod@8.7.67 /home/spack/spack/opt/spack/linux-x86_64_v3/lmod-8.7.67-wf22jsggn5vfsyoyuqm6ban76y7333we (0s)
 [+] vlwdxlj gcc@16.1.0 /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-16.1.0-vlwdxljzbis42fjrlecvyo4tmuq5eebn (1s)

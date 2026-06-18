@@ -52,9 +52,9 @@ libevent.a		libgettextlib-1.0.so		libkrad.so		  libmpi_usempif08.so		       libo
 libevent.so		libgettextlib.a			libkrad.so.0		  libmpi_usempif08.so.40	       libopenblas.so.0	       libtinfo.so.6
 libevent_core-2.1.so.7	libgettextlib.so		libkrad.so.0.0		  libmpi_usempif08.so.40.40.3	       libpanel.a	       libtinfo.so.6.6
 $ ls ~/stacks/views/full
-binutils  gcc	       gettext	krb5	 libevent   libiconv	  libxcrypt  mpfr     netlib-lapack	openblas  openssl  prrte     sqlite	      xz
-bzip2	  gcc-runtime  gmp	libbsd	 libfabric  libmd	  libxml2    mpich    netlib-scalapack	openmpi	  pigz	   python    tar	      zlib-ng
-expat	  gdbm	       hwloc	libedit	 libffi	    libpciaccess  mpc	     ncurses  numactl		openssh	  pmix	   readline  util-linux-uuid  zstd
+binutils  expat	       gdbm	hwloc	libedit	   libffi    libpciaccess  lmod	 mpfr	  netlib-lapack	    numactl   openssh  pmix    readline	 tcl		  xz
+bzip2	  gcc	       gettext	krb5	libevent   libiconv  libxcrypt	   lua	 mpich	  netlib-scalapack  openblas  openssl  prrte   sqlite	 unzip		  zlib-ng
+curl	  gcc-runtime  gmp	libbsd	libfabric  libmd     libxml2	   mpc	 ncurses  nghttp2	    openmpi   pigz     python  tar	 util-linux-uuid  zstd
 $ ls ~/stacks/views/full/gcc/
 gcc-16.1.0-gcc-15.2.0
 $ ls ~/stacks/views/full/gcc/gcc-16.1.0-gcc-15.2.0
