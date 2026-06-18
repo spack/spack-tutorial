@@ -383,53 +383,21 @@ All the specs are now concrete with ``mpich`` as the MPI implementation, ready t
    In general, when building an environment it is also possible to add and install specs one at a time, but Spack will then concretize each new spec *greedily* against the versions already locked in.
    This can lead to a different (and sometimes less optimal) result than concretizing everything together.
 
-------------------
-Reproducing builds
-------------------
+--------------------
+Sharing environments
+--------------------
 
-As we saw in :ref:`environments-on-disk`, an environment is fully described by its ``spack.yaml`` and ``spack.lock`` files.
-Because those files are plain text, they can be versioned, shared, and used to reproduce the same set of software on other machines.
-Let's now create an *independent* environment and use its files to reproduce it elsewhere.
+The ``spack.yaml`` and ``spack.lock`` files we have been working with are not just a record of the environment: they are also the mechanism for sharing it.
+You can commit them to version control, hand them to a colleague, or drop them into a CI/CD pipeline.
+Anyone with a Spack installation can recreate the environment from them.
 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an independent environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Environments do not have to be created in or managed by a Spack instance.
-Rather, their environment files can be placed in any directory.
-This feature can be quite helpful for use cases such as environment-based software releases and CI/CD.
-
-Let's create an *independent* environment from scratch for a simple project:
+To demonstrate, let's build a fresh independent environment in a new ``code/`` directory:
 
 .. literalinclude:: outputs/environments/independent-create-1.out
    :language: console
 
-
-Notice that the command shows Spack created the environment, updated the view, and printed the command needed to activate it.
-As we can see in the activation command, since the environment is independent, it must be referenced by its directory path.
-
-Let's see what really happened with this command by listing the directory contents and looking at the configuration file:
-
-.. literalinclude:: outputs/environments/independent-create-2.out
-   :language: spec
-
-
-Notice that Spack created a ``spack.yaml`` file in the *code* directory.
-Also note that the configuration file has an empty spec list (i.e., ``[]``).
-That list is intended to contain only the *root specs* of the environment.
-
-We can confirm that it is not a managed environment by running ``spack env list``:
-
-.. literalinclude:: outputs/environments/env-list-3.out
-   :language: console
-
-and noting that the path does not appear in the output.
-
-Now let's add some specs to the environment.
-Suppose your project depends on ``trilinos`` and ``openmpi``.
-Add these packages to the spec list using your favorite text editor.
-The dash syntax for a YAML list is used in our example.
-Your package should now contain the following entries:
+Since the environment is independent, it must be activated by path, not by name.
+Edit the ``spack.yaml`` created in the directory to add ``trilinos`` and ``openmpi``:
 
 .. code-block:: yaml
 
@@ -446,115 +414,58 @@ Your package should now contain the following entries:
      concretizer:
        unify: true
 
-Now activate the environment and install the packages:
-
 .. literalinclude:: outputs/environments/install-independent-1.out
    :language: console
 
+Passing either of these files to ``spack env create`` recreates the environment.
+The ``spack.yaml`` file preserves the abstract requirements but allows the concretizer to adapt to a new platform.
+The ``spack.lock`` file fixes every concretization decision and reproduces the build exactly.
 
-Notice that Spack concretized the specs before installing them and their dependencies.
-It also updated the environment's view.
-Since we already installed all these packages outside of the environment, their links were simply added to the view.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Updating an installed environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Spack supports tweaking an environment even after the initial specs are installed.
-You are free to add and remove specs just as you would outside of the environment using the command line interface as before.
-
-For example, let's add ``hdf5`` and look at our file:
-
-.. literalinclude:: outputs/environments/add-independent-1.out
-   :language: spec
-
-
-Notice that ``spack add`` added the package to our active environment and it appears in the configuration file's spec list.
-
-.. note::
-
-   You'll need to run ``spack concretize`` and ``spack install`` to install added packages in your environment because ``spack add`` only adds it to the configuration and ``spack install`` only automatically concretizes the first time an environment is used.
-
-Now use ``spack remove`` to remove the spec from the configuration:
-
-.. literalinclude:: outputs/environments/remove-independent-1.out
-   :language: spec
-
-and we see that the spec *was* removed from the spec list of our environment.
-
-.. note::
-
-   You can also edit the ``spack.yaml`` file directly instead of using the ``spack add`` and ``spack remove`` commands.
-
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-Reproducing an environment
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You can recreate an environment by passing either of the environment files to ``spack env create``.
-The file you choose depends on whether you want to approximate the build using the abstract specs or an *exact* build based on the concrete specs.
-
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 Using ``spack.yaml``
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 
-An approximate build is created using the ``spack.yaml`` file.
-This approach is relevant when we want to build the same specs on a new platform, for example.
-It allows you to reproduce the environment by preserving the abstract requirements in the file.
-However, the software may actually build differently in part because the concretizer may choose different dependencies.
-
-Let's use ``spack env create`` to create an abstract environment from the file that we'll call ``abstract``:
+Recreating from ``spack.yaml`` preserves the root specs but leaves dependency resolution to the concretizer, which may produce different versions on a new platform or as packages are updated:
 
 .. literalinclude:: outputs/environments/create-from-file-1.out
    :language: console
 
-
-Here we see that Spack created a managed environment with the name we provided.
-
-And, since it is a newly created environment, it does not have any *installed* specs yet as we can see from calling ``spack find`` **after** activating the environment:
+The new environment has no installed packages yet — only the root specs from the file are registered:
 
 .. literalinclude:: outputs/environments/find-env-abstract-1.out
    :language: console
 
-Notice that we have the same root specs as were listed in the ``spack.yaml`` file.
-
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 Using ``spack.lock``
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 
-The ``spack.lock`` file is used for an exact reproduction of the original build.
-It can replicate the build because it contains the information for all the decisions made during concretization.
-
-Now let's create a concrete environment, called ``concrete``, from the file:
+Recreating from ``spack.lock`` reproduces the exact build, and thus requires the same machine architecture.
+All packages recorded in the lockfile are installed without a separate install step:
 
 .. literalinclude:: outputs/environments/create-from-file-2.out
    :language: console
 
-Here we see that Spack again created a managed environment with the provided name.
-
-Since we created the environment from our ``spack.lock`` file, not only do we get the same root specs, the packages are installed in the environment too, as we can see from calling ``spack find`` **after** activating the environment:
+Since the environment was created from ``spack.lock``, the root specs and all their dependencies are already installed:
 
 .. literalinclude:: outputs/environments/find-env-concrete-1.out
    :language: console
 
-As before, the *concretized packages to be installed* are build-only dependencies that Spack does not fetch from the cache.
+---------------------
+Removing environments
+---------------------
 
-.. note::
-
-   Use of ``spack.lock`` to reproduce a build (currently) requires you to be on the same type of machine.
-
---------
-Clean-up
---------
-
-The later sections of this tutorial are not designed to be run in whatever environment we happened to be in, so we will despacktivate now to avoid accidentally running in this environment later.
+Let's clean up the environments we created during the tutorial.
+First, deactivate the current environment:
 
 .. code-block:: console
 
-   spack env deactivate
+   $ spack env deactivate
 
-.. warning::
+Then remove all the managed environments at once:
 
-   If you do not deactivate the environment, you will get errors in later sections of the tutorial.
+.. code-block:: console
+
+   $ spack env rm myproject myproject2 abstract concrete
 
 -------------------
 More information
@@ -569,7 +480,7 @@ Setting up and building environments
 
 * `Environments <https://spack.readthedocs.io/en/latest/environments.html>`_: reference docs
 * `Configuration tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_configuration.html>`_: for customizing your environment
-* `Spack stacks tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for configuring combinatorial environments (e.g., same packages across a list of compilers)
+* `Spack stacks tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for configuring combinatorial environments
 * `Install-level parallel builds <https://spack.readthedocs.io/en/latest/config_yaml.html#build-jobs>`_: for how to launch ``spack install`` to build your environment in parallel
 
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -579,7 +490,6 @@ Using environments
 * `Developer workflows <https://spack-tutorial.readthedocs.io/en/latest/tutorial_developer_workflows.html>`_: for developing code in an environment
 * `GitLab CI pipelines with Spack environments <https://spack.readthedocs.io/en/latest/pipelines.html>`_: for using environments to generate CI pipelines
 * `Container Images <https://spack.readthedocs.io/en/latest/containers.html>`_: for creating containers from environments
-* `Spack stacks tutorial <https://spack-tutorial.readthedocs.io/en/latest/tutorial_stacks.html>`_: for managing large deployments of software
 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Finding examples of environments
