@@ -1,166 +1,42 @@
 $ module load gcc
 $ which gcc
-/home/spack/spack/opt/spack/linux-x86_64_v3/gcc-12.3.0-fmnvqo44pcnyj4dpc6kng6rhp5uwdrwc/bin/gcc
+/home/spack/spack/opt/spack/linux-x86_64_v3/gcc-16.1.0-vlwdxljzbis42fjrlecvyo4tmuq5eebn/bin/gcc
 $ gcc --version
-gcc (Spack GCC) 12.3.0
-Copyright (C) 2022 Free Software Foundation, Inc.
+gcc (Spack GCC) 16.1.0
+Copyright (C) 2026 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 
 $ module av
 
----- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/gcc/12.3.0 ----
-   automake/1.16.5-zmzk4bb		     (D)
-   bzip2/1.0.8-zom5syd			     (D)
-   cmake/3.31.9-4a7thjg
-   curl/8.15.0-zianoaa			     (D)
-   diffutils/3.12-msusunh		     (D)
-   expat/2.7.3-ikeoatl
-   gdbm/1.25-y5bsvao			     (D)
-   gettext/0.23.1-3f5v73y		     (D)
-   git/2.48.1-aim3224
-   hwloc/2.12.2-wkj6z6m
-   krb5/1.21.3-onmo4bv
-   libbsd/0.12.2-zb37a5t		     (D)
-   libedit/3.1-20240808-c5o6gvv
-   libevent/2.1.12-fn26hil
-   libfabric/2.3.1-7imejdf
-   libffi/3.5.2-s56v4gf
-   libiconv/1.18-g3zxoz6
-   libidn2/2.3.7-gntupl3
-   libmd/1.1.0-cq4lpjp
-   libpciaccess/0.17-p7g23cj
-   libunistring/1.2-x5b7oet
-   libxcrypt/4.4.38-drjmmlw
-   libxml2/2.13.5-idam6zh
-   mpich/4.3.2-uaioo2h
-   ncurses/6.5-20250705-ytk4y2k		     (D)
-   netlib-lapack/3.12.1-rhz3uek
-   numactl/2.0.18-t2nikrt
-   openblas/0.3.30-dwjd7g2
-   openmpi/5.0.8-p2gmhau
-   openssh/9.9p1-lip7jtp
-   openssl/3.6.0-q4fenfo		     (D)
-   perl/5.42.0-jpuw66s
-   pigz/2.8-bs2taxm
-   pmix/6.0.0-76oyav4
-   prrte/4.0.0-zalt7cs
-   py-beniget/0.4.2.post1-g6mqwbr
-   py-calver/2025.4.17-gnnyu6h
-   py-cython/3.1.3-apuchub
-   py-flit-core/3.12.0-55omqj2
-   py-gast/0.6.0-xrd6sez
-   py-hatch-vcs/0.5.0-44uhp2g
-   py-hatchling/1.27.0-qb7x6jy
-   py-meson-python/0.18.0-o6u3um7
-   py-packaging/25.0-j3t7cjg
-   py-pathspec/0.12.1-wvr3fhe
-   py-pip/25.1.1-qwew5rg
-   py-pluggy/1.6.0-2c2amjc
-   py-ply/3.11-xgx3hu4
-   py-pybind11/3.0.1-b7sx7ll
-   py-pyproject-metadata/0.9.1-sypchiv
-   py-scikit-build-core/0.11.5-5r47zyp
-   py-setuptools-scm/8.2.1-xcq4max
-   py-setuptools/80.9.0-urwrpfo
-   py-trove-classifiers/2025.9.11.17-cwn5qw7
-   py-wheel/0.45.1-vs4xbx3
-   python-venv/1.0-nrdm37j
-   python/3.14.0-yvs3szq		     (D)
-   readline/8.3-eyfbskp			     (D)
-   sqlite/3.50.4-plzt2nd		     (D)
-   tar/1.35-wfarfth			     (D)
-   util-linux-uuid/2.41-b4npzn6
-   xz/5.6.3-643vviq			     (D)
-   yaksa/0.4-7jn3viv
-   zlib-ng/2.2.4-4tglvhv		     (D)
-   zstd/1.5.7-fj5u5hm
+-------------------------------------------------------------------- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/gcc/16.1.0 --------------------------------------------------------------------
+   bzip2/1.0.8-ofahxlj	 (D)	libedit/3.1-20251016-4c4uuub	libxcrypt/4.5.2-44jhzjg	     (D)    openmpi/5.0.10-nzr6pd7	     python-venv/1.0-bcclnnz		 zlib-ng/2.3.3-yd7lgm7 (D)
+   expat/2.8.1-xkvh6gd		libevent/2.1.12-m5ts755		libxml2/2.15.3-cxesrxa		    openssh/10.3p1-kjx2nfr	     python/3.14.5-afnel7p		 zstd/1.5.7-lq6tsmz
+   gdbm/1.26-2af63my		libfabric/2.5.1-s6cemsy		mpich/5.0.1-bovk7dt		    openssl/3.6.1-yoq4amm	     readline/8.3-cbnh7bw
+   gettext/1.0-g3gt6ze		libffi/3.5.2-jgqwv65		ncurses/6.6-iehcspo	     (D)    pigz/2.8-4diropt	      (D)    sqlite/3.53.1-uliuxbf
+   hwloc/2.13.0-nn3ymay		libiconv/1.18-qs6av53		netlib-lapack/3.12.1-zknpbz3	    pmix/6.1.0-qcxnkrd		     tar/1.35-tw6253j		  (D)
+   krb5/1.22.2-awic2yh		libmd/1.1.0-w3w22wx		numactl/2.0.19-swhw6f5		    prrte/4.1.0-cj2ohvh		     util-linux-uuid/2.41-v3sdaph
+   libbsd/0.12.2-t623nqz	libpciaccess/0.17-cmgnxt6	openblas/0.3.33-kdylbqh		    py-pybind11/3.0.2-3iqsk4i	     xz/5.8.3-bf6e7x2
 
----- /home/spack/stacks/modules/linux-ubuntu22.04-x86_64/Core ----
-   autoconf-archive/2023.02.20-7p7gq7u
-   automake/1.16.5-pzmnwzm
-   bc/1.07.1-s3qhnq4
-   berkeley-db/18.1.40-vdgigsw
-   bison/3.8.2-n7yzkyl
-   bzip2/1.0.8-x7t4naj
-   ca-certificates-mozilla/2025-08-12-etqlnw5
-   compiler-wrapper/1.0-ntccuj2
-   curl/8.15.0-isdtvvd
-   diffutils/3.12-cih4xrz
-   ed/1.4-4cbvnhd
-   expat/2.7.3-7yr5v6w			      (D)
-   findutils/4.10.0-irvryts
-   flex/2.6.3-gmhq65u
-   gawk/5.3.1-irhvzch
-   gcc-runtime/11.4.0-nokfxva		      (L)
-   gcc-runtime/12.3.0-pgwnyw7		      (D)
-   gcc/11.4.0-ml7cem5
-   gcc/12.3.0-fmnvqo4			      (L,D)
-   gdbm/1.25-aq7qwy6
-   gettext/0.23.1-cakgj4n
-   glibc/2.35-qg7qyaz			      (L)
-   gmake/4.4.1-4obn7cg
-   gmp/6.3.0-mj4re3l			      (L)
-   libbsd/0.12.2-ucrhsyw
-   libffi/3.5.2-zgro4tw			      (D)
-   libiconv/1.18-qtepnkr		      (D)
-   libmd/1.1.0-gth3ii5			      (D)
-   libsigsegv/2.14-bs5ujst
-   libssh2/1.11.1-txa2olx
-   libtool/2.4.7-yt7ajy4
-   libxcrypt/4.4.38-yiij42p		      (D)
-   libxml2/2.13.5-5trxrsw		      (D)
-   lmod/8.7.18-gbpxgjw
-   lua-luafilesystem/1.8.0-nsymk62
-   lua-luaposix/36.1-bubs6lu
-   lua/5.4.6-hdxlqej
-   m4/1.4.20-lxvpwti
-   mbedtls/2.28.9-bz3ghzh
-   mpc/1.3.1-sczvrku			      (L)
-   mpfr/4.2.1-m3nwalt			      (L)
-   ncurses/6.5-20250705-ncdxq3j
-   nghttp2/1.48.0-ft5kpbd
-   ninja/1.13.0-2stmhpc
-   openssl/3.6.0-gv7wpik
-   pcre2/10.44-z5vjj7q
-   perl/5.42.0-62kt5y4			      (D)
-   pigz/2.8-kaz756e			      (D)
-   pkgconf/2.5.1-f4qiprw
-   python/3.11.14-rbf2x4i
-   re2c/3.1-axmwics
-   readline/8.3-c6d2zlj
-   sqlite/3.50.4-elvodyb
-   tar/1.35-lfgvgva
-   tcl/8.6.17-x74vmgr
-   texinfo/7.2-k6ygirs
-   unzip/6.0-5gxay2a
-   util-linux-uuid/2.41-n45otd3		      (D)
-   util-macros/1.20.1-hwxnwvm
-   xz/5.6.3-yzaocbs
-   zlib-ng/2.0.7-qlavhjb		      (L)
-   zstd/1.5.7-foiizhd			      (L,D)
+----------------------------------------------------------------------- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/Core -----------------------------------------------------------------------
+   binutils/2.46.0-cuzgmus	  (L)	 gcc/15.2.0-yjlog5x		libxcrypt/4.5.2-bkzcu2s		       mpc/1.4.1-gxmoxea      (L)    pkgconf/2.5.1-yvl6jpi	  zlib-ng/2.3.3-g72d7i3 (L)
+   bzip2/1.0.8-cbtgjrh			 gcc/16.1.0-vlwdxlj    (L,D)	libxml2/2.15.3-ujlg2ua		(D)    mpfr/4.2.2-melg7ga     (L)    readline/8.3-k25xiih  (D)	  zstd/1.5.7-63aruxk	(L,D)
+   compiler-wrapper/1.1.0-mmywg7x	 gettext/1.0-sle3ix4   (D)	lmod/8.7.67-wf22jsg		       ncurses/6.6-ekvivpv	     tar/1.35-f5xe4px
+   curl/8.20.0-j2fa7xl			 glibc/2.43-yc4n2pp    (L)	lua-luafilesystem/1.9.0-su5b2hs	       nghttp2/1.67.1-4lyasaz	     tcl/8.6.17-d4ibosb
+   gcc-runtime/15.2.0-xm76mt3	  (L)	 gmp/6.3.0-xpmsy5x     (L)	lua-luaposix/36.3-egzwtik	       openssl/3.6.1-33yozp5  (D)    unzip/6.0-4qgksuy
+   gcc-runtime/16.1.0-ghfita3	  (D)	 libiconv/1.18-vbwvgwx (D)	lua/5.4.8-q66mudl		       pigz/2.8-afklka7		     xz/5.8.3-hhjyyqy	   (D)
 
   Where:
    D:  Default Module
    L:  Module is loaded
 
-If the avail list is too long
-consider trying:
+If the avail list is too long consider trying:
 
-"module --default avail" or
-"ml -d av" to just list the
-default modules.
-"module overview" or "ml ov"
-to display the number of
-modules for each name.
+"module --default avail" or "ml -d av" to just list the default modules.
+"module overview" or "ml ov" to display the number of modules for each name.
 
-Use "module spider" to find
-all possible modules and
-extensions.
-Use "module keyword key1 key2
-..." to search for all
-possible modules matching any
-of the "keys".
+Use "module spider" to find all possible modules and extensions.
+Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
 
 
 $ module unload gcc

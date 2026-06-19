@@ -1,0 +1,31 @@
+$ spack find -c
+==> In environment myproject (2 root specs)
+[b] tcl	 [b] trilinos
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+[+]  openblas@0.3.33  [+]  openmpi@5.0.10  [b]	trilinos@17.1.1
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+[b]  berkeley-db@18.1.40  [b]  flex@2.6.3    [b]  m4@1.4.21	  [+]  openssl@3.6.1
+[b]  bison@3.8.2	  [+]  gettext@1.0   [+]  ncurses@6.6	  [b]  tcl@8.6.17
+[b]  cmake@3.31.11	  [+]  hwloc@2.13.0  [b]  nghttp2@1.67.1  [+]  zlib-ng@2.3.3
+[b]  curl@8.20.0	  [+]  krb5@1.22.2   [+]  openssh@10.3p1  [+]  zstd@1.5.7
+
+-- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
+[b]  automake@1.18.1   [b]  less@692		  [+]  libxcrypt@4.5.2	[+]  prrte@4.1.0
+[+]  bzip2@1.0.8       [+]  libedit@3.1-20251016  [+]  libxml2@2.15.3	[b]  readline@8.3
+[b]  diffutils@3.12    [+]  libevent@2.1.12	  [+]  numactl@2.0.19	[+]  tar@1.35
+[b]  file@5.46	       [+]  libiconv@1.18	  [b]  perl@5.42.0	[+]  xz@5.8.3
+[b]  findutils@4.10.0  [+]  libpciaccess@0.17	  [+]  pigz@2.8
+[b]  gdbm@1.26	       [b]  libsigsegv@2.15	  [+]  pkgconf@2.5.1
+[b]  gmake@4.4.1       [b]  libtool@2.5.4	  [+]  pmix@6.1.0
+
+-- linux-ubuntu26.04-x86_64_v3 / %cxx=gcc@15.2.0 ----------------
+[+]  kokkos@5.1.1  [+]	kokkos-kernels@5.1.1
+
+-- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
+[b]  autoconf@2.72			 [e]  gcc@15.2.0	  [b]  util-macros@1.20.2
+[b]  ca-certificates-mozilla@2026-03-19	 [+]  gcc-runtime@15.2.0
+[+]  compiler-wrapper@1.1.0		 [e]  glibc@2.43
+==> 30 installed packages
+==> 23 concretized packages to be installed

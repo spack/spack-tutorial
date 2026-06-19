@@ -4,7 +4,31 @@
 # configuration settings.
 spack:
   specs:
-  - gcc@12%gcc@11
+  - group: compiler
+    specs:
+    - gcc@16
+    - lmod@8.7.67
+    override:
+      packages:
+        c:
+          prefer: [gcc@15]
+        cxx:
+          prefer: [gcc@15]
+        fortran:
+          prefer: [gcc@15]
+  - group: stack
+    needs: [compiler]
+    specs:
+    - netlib-scalapack ^openblas ^openmpi
+    - netlib-scalapack ^openblas ^mpich
+    override:
+      packages:
+        c:
+          prefer: [gcc@16]
+        cxx:
+          prefer: [gcc@16]
+        fortran:
+          prefer: [gcc@16]
+      concretizer:
+        unify: false
   view: false
-  concretizer:
-    unify: true
