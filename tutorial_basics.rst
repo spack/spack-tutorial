@@ -12,14 +12,15 @@ This tutorial will provide a step-by-step guide for installing software with Spa
 
 A few fundamental ideas underpin everything that follows:
 
-1. Spack builds software either from source or from prebuilt binaries.
-2. Spack keeps every configuration of a package isolated from every other, so many versions, compilers, and build options can coexist on the same machine.
-3. Each configuration is identified by a hash of its full provenance.
+1. Spack can install software either from source or a prebuilt binary.
+2. Spack isolates each package's installation.
+   This allows many versions, compilers, and build options to coexist on the same machine.
+3. Each installation is identified by a hash of its full provenance.
 4. Spack reuses an existing build whenever it can, instead of rebuilding from scratch.
 
 Keep these points in mind, as we'll illustrate them with examples.
 
-We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack's spec syntax and the flexibility it offers users.
+We will begin by introducing the ``spack install`` command, showcasing the flexibility of Spack's spec syntax.
 Next, we will demonstrate how to use the ``spack find`` command to view installed packages, as well as the ``spack uninstall`` command to remove them.
 
 Additionally, we will discuss how Spack manages compilers, with a particular focus on using Spack-built compilers within the Spack environment.
@@ -32,7 +33,7 @@ All examples and outputs are based on an Ubuntu 26.04 Docker image.
 Setting Up Spack
 ----------------
 
-Spack is ready to use immediately -- there is no separate build or install step.
+Spack is ready to use immediately: there is no separate build or install step.
 To get started, we simply clone the Spack repository and check out the latest v1.2 release:
 
 .. literalinclude:: outputs/basics/clone.out
@@ -61,9 +62,8 @@ The ``spack list`` command shows available packages.
    :lines: 1-6
 
 
-The ``spack list`` command can also take a query string.
-Spack automatically adds wildcards to both ends of the string, or we can add our own wildcards for more advanced searches.
-For example, let's view all available Python packages.
+Pass a substring to narrow the list.
+For example, to see all Python packages:
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -120,13 +120,13 @@ Each kind of constraint has its own sigil, which the subsections below introduce
 Versions
 ^^^^^^^^
 
-We can install multiple versions of the same package side by side.
+Spack can install multiple versions of the same package.
 Before installing a specific version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: spec
 
-We select one with the ``@`` sigil:
+We specify versions with the ``@`` sigil:
 
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: spec
@@ -157,12 +157,12 @@ Here we build ``zlib-ng`` in debug mode through its ``build_type`` variant.
    :language: spec
 
 Some variants are *conditional*: the indented ``when`` lines in the ``spack info`` output mark them.
-Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` -- that is, when zlib-ng is built with CMake instead of Autotools.
+Here ``build_type``, ``generator``, and ``ipo`` are available only ``when build_system=cmake`` i.e. when zlib-ng is built with CMake instead of Autotools.
 Requesting one of them, as we just did with ``+ipo``, therefore also selects the CMake build system.
 
 .. note::
 
-   The same ``name=value`` syntax also sets compiler flags on a build: Spack accepts ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs`` -- written like ``cflags="-O3"`` (quote values containing spaces) -- and its compiler wrappers inject them into the right commands.
+   The same ``name=value`` syntax also sets compiler flags on a build: Spack accepts ``cflags``, ``cxxflags``, ``cppflags``, ``fflags``, ``ldflags``, and ``ldlibs`` and its compiler wrappers inject them into the right commands.
    This is an escape hatch, though: a package's variants and build system usually select appropriate options already, so reach for explicit flags only when you genuinely need them.
 
 ^^^^^^^^^^^^^^^^^^^
@@ -170,7 +170,7 @@ Direct Dependencies
 ^^^^^^^^^^^^^^^^^^^
 
 The ``%`` sigil specifies a direct dependency of the package we're installing.
-The most common direct dependency is a compiler -- every package built from source needs one -- so that is what we will use ``%`` for here.
+The most common direct dependency is a compiler, so that is what we will use ``%`` for here.
 So far we've let Spack choose the compiler, building ``zlib-ng`` with GCC just as we did for gmake.
 This time we'll build it with Clang instead, using ``%clang``:
 
@@ -180,7 +180,7 @@ This time we'll build it with Clang instead, using ``%clang``:
 This installation is located separately from the previous one.
 As described in the overview, this separation is fundamental to how Spack supports multiple configurations and versions of software packages simultaneously.
 
-**The spec syntax is recursive** -- any syntax we can specify for the "root" package we can also use for a dependency.
+**The spec syntax is recursive**: any syntax we can specify for the "root" package we can also use for a dependency.
 For example, since a compiler is just another dependency, we can pin its version with ``@``, just as we did for ``zlib-ng``:
 
 .. literalinclude:: outputs/basics/zlib-gcc-14.out
@@ -199,7 +199,7 @@ The ``tcl`` package depends on ``zlib-ng``, so let's preview how Spack would bui
    :language: spec
 
 This is the *concretized* spec: Spack has filled in every dependency, along with its version, variants, and compiler.
-In the output, ``[+]`` marks specs already installed, ``[e]`` those provided externally by the system, and ``[b]`` those available in a cache but not yet installed.
+In the output, ``[+]`` marks specs already installed, ``[e]`` marks those provided externally by the system, and ``[b]`` marks those available in a cache but not yet installed.
 Notice also that ``%`` binds to the spec it follows.
 Because ``%clang`` comes after ``^zlib-ng@2.0.7``, only ``zlib-ng`` is built with Clang, while ``tcl`` keeps the default compiler.
 
@@ -236,7 +236,8 @@ Virtual Dependencies
 
 Let's move on to a more complicated package.
 ``hdf5`` is a good example: it depends on ``mpi``, but ``mpi`` is not an ordinary package.
-It is a *virtual package* -- an interface that several real packages provide -- and Spack handles dependencies on such interfaces through "virtual dependencies".
+It is a *virtual package*: an interface that several real packages provide.
+Spack handles dependencies on such interfaces through "virtual dependencies".
 
 By default ``hdf5`` builds against ``openmpi``:
 
@@ -330,11 +331,11 @@ It can also show the path to which a package was installed using the ``-p`` flag
 
 .. _basics-tutorial-trilinos:
 
--------------------
-A Realistic Example
--------------------
+--------------------------------
+Trilinos: A More Complex Example
+--------------------------------
 
-Now that we know the spec syntax and how to query installations, let's put them to work on a realistic package.
+Now that we know the spec syntax and how to query installations, let's put them to work on Trilinos:
 
 .. literalinclude:: outputs/basics/trilinos.out
    :language: spec
@@ -343,7 +344,7 @@ Now we're starting to see the power of Spack.
 Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
 Only a handful are new here, though: the rest of that large graph was already installed earlier in the tutorial, so Spack reuses those builds instead of repeating them.
 Installing a package this complex by hand can take an experienced user days or weeks.
-Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
+Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack may take hours (depending on the system), but only a few seconds of programmer time.
 
 Spack manages the consistency of the entire DAG: every package that depends on MPI is satisfied by the same MPI.
 Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
@@ -351,7 +352,8 @@ Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
 .. literalinclude:: outputs/basics/trilinos-hdf5.out
    :language: spec
 
-Only ``trilinos`` itself was installed -- the rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
+Only ``trilinos`` itself was installed.
+The rest of the graph, including our MPICH-based ``hdf5``, was already present and reused.
 We can confirm that the whole graph uses MPICH with the anonymous spec ``spack find ^mpich``:
 
 .. literalinclude:: outputs/basics/trilinos-find-mpich.out
@@ -395,7 +397,7 @@ To remove it anyway, use ``--force`` (or ``-f``) to delete just that package and
 .. literalinclude:: outputs/basics/uninstall-r-needed.out
    :language: spec
 
-Spack refuses to uninstall a package when the spec is ambiguous -- when it matches more than one installed package:
+Spack refuses to uninstall a package when the spec is ambiguous i.e. when it matches more than one installed package:
 
 .. literalinclude:: outputs/basics/uninstall-ambiguous.out
    :language: spec
@@ -427,7 +429,7 @@ The ``gcc@16`` compiler is immediately available to use:
    :language: spec
    :lines: 1-2
 
-We won't need this compiler in the next chapter, so we'll uninstall it for now.
+We won't need this compiler in the next section, so we'll uninstall it for now.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
