@@ -2,14 +2,13 @@
 
    If you have not done the prior sections, you'll need to start the docker image::
 
-       docker run -it ghcr.io/spack/tutorial:sc25
+       docker run -it ghcr.io/spack/tutorial:isc26
 
    and then set Spack up like this::
 
        git clone --depth=2 --branch=releases/v1.2 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack repo update builtin --tag v2025.11.0
-       spack tutorial -y
+       spack mirror add --unsigned tutorial /mirror
        spack bootstrap now
        spack compiler find
 
