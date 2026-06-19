@@ -331,11 +331,11 @@ It can also show the path to which a package was installed using the ``-p`` flag
 
 .. _basics-tutorial-trilinos:
 
--------------------
-A Realistic Example
--------------------
+--------------------------------
+Trilinos: A More Complex Example
+--------------------------------
 
-Now that we know the spec syntax and how to query installations, let's put them to work on a realistic package.
+Now that we know the spec syntax and how to query installations, let's put them to work on Trilinos:
 
 .. literalinclude:: outputs/basics/trilinos.out
    :language: spec
@@ -344,7 +344,7 @@ Now we're starting to see the power of Spack.
 Depending on the spec, Trilinos can have over 30 direct dependencies, many of which have dependencies of their own.
 Only a handful are new here, though: the rest of that large graph was already installed earlier in the tutorial, so Spack reuses those builds instead of repeating them.
 Installing a package this complex by hand can take an experienced user days or weeks.
-Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack takes about 3 hours (depending on the system), but only 20 seconds of programmer time.
+Although we've done a binary installation for the tutorial, a source installation of Trilinos using Spack may take hours (depending on the system), but only a few seconds of programmer time.
 
 Spack manages the consistency of the entire DAG: every package that depends on MPI is satisfied by the same MPI.
 Let's install Trilinos again, this time reusing the HDF5 we built with MPICH:
