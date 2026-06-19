@@ -31,7 +31,7 @@ example basics/gmake           "spack install gmake"
 example basics/compiler-list   "spack compilers"
 
 example basics/mirror          "spack mirror add tutorial /mirror"
-example basics/mirror          "spack buildcache keys --install --trust"
+example basics/mirror          "spack buildcache keys --install --trust --yes-to-all"
 
 example basics/zlib-clang     "spack install zlib-ng %clang"
 
