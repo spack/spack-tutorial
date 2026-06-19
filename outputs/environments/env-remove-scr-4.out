@@ -1,14 +1,13 @@
-$ spack env activate myproject
 $ spack find
-==> In environment myproject (2 root specs)
-[+] tcl	 [+] trilinos
+==> In environment myproject2 (1 root spec)
+[+] trilinos
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
 openblas@0.3.33	 openmpi@5.0.10	 trilinos@17.1.1
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
-berkeley-db@18.1.40  gettext@1.0   krb5@1.22.2	nghttp2@1.67.1	openssl@3.6.1  zlib-ng@2.3.3
-curl@8.20.0	     hwloc@2.13.0  ncurses@6.6	openssh@10.3p1	tcl@8.6.17     zstd@1.5.7
+berkeley-db@18.1.40  gettext@1.0   krb5@1.22.2	nghttp2@1.67.1	openssl@3.6.1  zstd@1.5.7
+curl@8.20.0	     hwloc@2.13.0  ncurses@6.6	openssh@10.3p1	zlib-ng@2.3.3
 
 -- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
 bzip2@1.0.8	      libevent@2.1.12	 libxml2@2.15.3	 pkgconf@2.5.1	tar@1.35
@@ -21,5 +20,5 @@ kokkos@5.1.1  kokkos-kernels@5.1.1
 
 -- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
 compiler-wrapper@1.1.0	gcc@15.2.0  gcc-runtime@15.2.0	glibc@2.43
-==> 39 installed packages
+==> 38 installed packages
 ==> 14 concretized packages to be installed (show with `spack find -c`)

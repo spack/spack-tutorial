@@ -1,0 +1,32 @@
+$ spack find
+==> In environment myproject2 (1 root spec)
+[+] trilinos
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
+openblas@0.3.33	 openmpi@5.0.10	 scr@2.0.0  trilinos@17.1.1
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
+berkeley-db@18.1.40  expat@2.8.1  gmp@6.3.0	libffi@3.5.2  nghttp2@1.67.1  python@3.14.5
+curl@8.20.0	     gettext@1.0  hwloc@2.13.0	lz4@1.10.0    openssh@10.3p1  zlib-ng@2.3.3
+elfutils@0.194	     glib@2.88.1  krb5@1.22.2	ncurses@6.6   openssl@3.6.1   zstd@1.5.7
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,fortran=gcc@15.2.0 ----------
+libyogrt@1.35
+
+-- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
+bzip2@1.0.8	      libgcrypt@1.12.2	 mpfr@4.2.2	 pmix@6.1.0
+dtcmp@1.1.5	      libgpg-error@1.61	 munge@0.5.18	 prrte@4.1.0
+gdbm@1.26	      libiconv@1.18	 numactl@2.0.19	 readline@8.3
+json-c@0.18	      libmd@1.1.0	 pcre2@10.44	 slurm@25-05-1-1
+less@692	      libpciaccess@0.17	 pdsh@2.35	 sqlite@3.53.1
+libbsd@0.12.2	      libxcrypt@4.5.2	 perl@5.42.0	 tar@1.35
+libedit@3.1-20251016  libxml2@2.15.3	 pigz@2.8	 util-linux-uuid@2.41
+libevent@2.1.12	      lwgrp@1.0.6	 pkgconf@2.5.1	 xz@5.8.3
+
+-- linux-ubuntu26.04-x86_64_v3 / %cxx=gcc@15.2.0 ----------------
+kokkos@5.1.1  kokkos-kernels@5.1.1
+
+-- linux-ubuntu26.04-x86_64_v3 / no compilers -------------------
+compiler-wrapper@1.1.0	gcc@15.2.0  gcc-runtime@15.2.0	glibc@2.43  python-venv@1.0
+==> 62 installed packages
+==> 25 concretized packages to be installed (show with `spack find -c`)
