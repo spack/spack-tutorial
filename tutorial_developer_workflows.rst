@@ -10,32 +10,31 @@
 Developer Workflows Tutorial
 ============================
 
-This tutorial will guide you through the process of using the ``spack develop`` command to develop software from local source code within a Spack environment.
-With this command, Spack will manage your dependencies while you focus on testing changes to your library and/or application.
+This tutorial will guide you through the process of using the ``spack develop`` command to work from local source code within a Spack environment.
+In this workflow, Spack uses a local source tree when you run ``spack install``, while continuing to manage the dependencies and build environment for your library or application.
 
 
 -----------------------------
 Installing from local source
 -----------------------------
 
-The ``spack install`` command, as you know, fetches source code from a mirror or the internet before building and installing your package.
-As developers, we want to build from local source, which we will constantly change, build, and test.
+The ``spack install`` command, as you know, normally fetches source code from a mirror or the internet before building and installing a package.
+In a development workflow, we instead want to change the source locally and have Spack rebuild the package and any affected dependents.
 
-Let's imagine, for a second, we're working on ``scr``.
-``scr`` is a library used to implement scalable checkpointing in application codes.
-It supports writing/reading checkpoints quickly and efficiently using MPI and high-bandwidth file I/O.
-We'd like to test changes to ``scr`` within an actual application, so we'll test with ``macsio``, a proxy application written to mimic typical HPC I/O workloads.
-We've chosen ``scr`` and ``macsio`` because together they are quick to build.
+Let's imagine that we're working on ``scr``.
+``scr`` is a library for scalable checkpointing in HPC applications.
+It supports writing and reading checkpoints efficiently using MPI and high-bandwidth file I/O.
+We'd like to test changes to ``scr`` within an actual application, so we'll use ``macsio``, a proxy application designed to mimic typical HPC I/O workloads.
 
-We'll start by making an environment for our development.
-We need to build ``macsio`` with ``scr`` support, and we'd like everything to be built without Fortran support for the time being.
+Let's start by making an environment for our development.
+We'll need to build ``macsio`` with ``scr`` support, and we'd like everything to be built without Fortran support for the time being.
 Let's set up that development workflow.
 
 .. literalinclude:: outputs/dev/setup-scr.out
    :language: console
 
-Before we do any work, we verify that this all builds.
-Spack ends up building the entire development tree below, and links everything together for you.
+Before we do any work, let's verify that this environment builds successfully.
+Spack ends up building the entire development tree below, and links everything together for us.
 
 
 .. graphviz::
@@ -132,22 +131,22 @@ Spack ends up building the entire development tree below, and links everything t
       "wbqbc5vw5sxzwhvu56p6x5nd5n4abrvh" -> "mkc3u4x2p2wie6jfhuku7g5rkovcrxps"
     }
 
-Now we are ready to begin work on the actual application.
+Now we are ready to begin modifying ``scr`` and ``macsio``.
 
 -----------------------------
 Development iteration cycles
 -----------------------------
 
-Let's assume that ``scr`` has a bug, and we'd like to patch ``scr`` to find out what the problem is.
-First, we tell Spack that we'd like to check out the version of ``scr`` in our environment.
-In this case, it will be the 2.0.0 release that we want to write a patch for:
+Let's assume that ``scr`` has a bug that we want to investigate.
+First, we'll tell Spack to develop the version of ``scr`` used in our environment.
+In this case, we want to modify the 2.0.0 release:
 
 .. literalinclude:: outputs/dev/develop-1.out
    :language: spec
 
-The ``spack develop`` command marks the package as being a "development" package based on the supplied ``develop spec``.
-Develop specs are listed in their own ``develop`` section inside the ``spack.yaml``.
-The mechanics of how this section is used to enforce development are as follows:
+The ``spack develop`` command marks a package for development based on the supplied develop spec.
+Develop specs are listed in their own ``develop`` section in ``spack.yaml``.
+Spack uses this information as follows:
 
 1. Specs in the environment that ``satisfy`` the develop specs are selected for development.
 2. Any specs selected in step 1 receive a ``dev_path=`` variant.
@@ -156,122 +155,118 @@ The mechanics of how this section is used to enforce development are as follows:
 3. Calls to ``spack install`` will now use the source code at ``dev_path`` when building that package.
 4. Spack doesn't clean this build up after a successful build so subsequent calls to ``spack install`` trigger incremental builds.
 
-If the environment is already concretized, ``spack develop`` performs step 1 and 2 in situ and updates the ``spack.lock`` file by default.
-If the environment is not yet concretized, the selection of develop specs and assignment of ``dev_path`` are handled during concretization.
+If the environment is already concretized, ``spack develop`` performs steps 1 and 2 in place and updates ``spack.lock`` by default.
+If the environment is not yet concretized, Spack selects the develop specs and assigns ``dev_path`` during concretization.
 
 So how does Spack determine the value of the ``dev_path`` variant?
-By default, the source code is downloaded into a subdirectory of the environment using Spack's staging functionality.
-You can change the location of this source directory by modifying the ``path:`` attribute of the develop configuration in the environment or by passing the ``--path`` options when calling ``spack develop``.
+By default, Spack downloads the source code into a subdirectory of the environment.
+You can change this location by setting the ``path:`` attribute in the develop configuration or by passing ``--path`` to ``spack develop``.
 
-Now that we have this done, we tell Spack to rebuild both ``scr`` and ``macsio`` by running ``spack install``.
+Now that our develop config is set up, we'll tell Spack to rebuild both ``scr`` and ``macsio`` by running ``spack install``.
 
 .. literalinclude:: outputs/dev/develop-2.out
    :language: console
 
-This rebuilds ``scr`` from the subdirectory we specified.
-If your package uses CMake, Spack will build the package in a build directory that matches the hash for your package.
-From here you can change into the appropriate directory and perform your own build/test cycles.
+This rebuilds ``scr`` using the source code from the subdirectory we specified.
 
-Now, we can develop our code.
-For the sake of this demo, we're just going to intentionally introduce an error.
-Let's edit a file and remove the first semi-colon we find.
+Now let's start making changes.
+For the sake of this demo, we'll intentionally introduce an error by editing a file and removing the first semicolon we find.
 
 .. literalinclude:: outputs/dev/edit-1.out
    :language: console
 
-Once you have a development package, ``spack install`` also works much like "make".
-Since Spack knows the source code directory of the package, it checks the filetimes on the source directory to see if we've made recent changes.
-If the file times are newer, it will rebuild ``scr`` and any other package that depends on ``scr``.
+Once you have a development package, ``spack install`` works much like ``make``.
+Since Spack knows the package's source directory, it checks the file times to see whether any files have changed.
+If they have, Spack rebuilds ``scr`` and any packages that depend on it.
 
 .. literalinclude:: outputs/dev/develop-3.out
    :language: console
 
-Here, the build failed as expected.
-We can look at the output for the build in the stage directory ``scr/build-linux-*/spack-build-out.txt`` to find out why.
-The ``build-linux-*`` directory inside the source tree is a symlink to the spec's stage directory where all the logs are stored.
-The full name of this directory can be found with ``spack location --stage scr`` or quickly navigated to with ``spack cd --stage scr``.
-We can also launch a shell directly with the appropriate environment variables to figure out what went wrong by using ``spack build-env scr -- bash``.
-If that's too much to remember, then sourcing ``scr/build-linux-*/spack-build-env.txt`` will also set all the appropriate environment variables so we can diagnose the build ourselves.
-Now let's fix it and rebuild directly.
+Here, the build failed as expected after removing that semicolon.
+If we didn't know what had caused the build to fail we could inspect ``scr/build-linux-*/spack-build-out.txt`` to find out why.
+The ``build-linux-*`` directory inside the source tree is a symlink generated by Spack to the spec's stage directory, where all the logs are stored.
+You can find its full name with ``spack location --stage scr`` or navigate to it with ``spack cd --stage scr``.
+We can also launch a shell with the appropriate environment variables by running ``spack build-env scr -- bash``.
+If that's too much to remember, sourcing ``scr/build-linux-*/spack-build-env.txt`` sets the same environment variables for manual debugging.
+Now let's fix the error and rebuild.
 
 .. literalinclude:: outputs/dev/develop-4.out
    :language: console
 
 You'll notice here that Spack rebuilt both ``scr`` and ``macsio``, as expected.
 
-Taking advantage of iterative builds with Spack requires cooperation from your build system.
-When Spack performs a rebuild on a development package, it reruns all the build stages for your package without cleaning the source and build directories to a pristine state.
-If your build system can take advantage of the previously compiled object files then you'll end up with an iterative build.
+Taking advantage of iterative builds with Spack requires support from your build system.
+When Spack rebuilds a development package, it reruns the build stages without cleaning the source and build directories back to a pristine state.
+If your build system can reuse previously compiled object files, you will get an iterative build, like ``make``.
 
-- If your package just uses make, you also should get iterative builds for free when running ``spack develop``.
 - If your package uses CMake with the typical ``cmake`` / ``build`` / ``install`` build stages, you'll get iterative builds for free with Spack because CMake doesn’t modify the filetime on the ``CMakeCache.txt`` file if your cmake flags haven't changed.
 - If your package uses autoconf, then rerunning the typical ``autoreconf`` stage typically modifies the filetime of ``config.h``, which can trigger a cascade of rebuilding.
 
 Multi-package development
 -------------------------
 
-You may have noticed that ``macsio`` is restaged and fully rebuilt each time we call ``spack install``.
-Usually developers do not want to fully rebuild the canonical source every time; either for performance or because they are co-developing the two packages.
-Spack does not limit how many packages can be developed so ``spack develop`` can be applied to any spec in our environment including ``macsio``.
-The ``--recursive`` option provides a convenient way to mark all downstream dependencies as develop specs.
+You may have noticed that ``macsio`` is restaged and fully rebuilt each time we run ``spack install``.
+Usually, developers do not want to fully rebuild the application every time, either for performance or because they are co-developing both packages.
+Spack does not limit how many packages can be developed, so ``spack develop`` can be applied to any spec in the environment, including ``macsio``.
+The ``--recursive`` option provides a convenient way to mark all downstream dependents as develop specs.
 
 
 .. literalinclude:: outputs/dev/develop-5.out
    :language: console
 
 ``spack develop --recursive`` can only be used with a concrete environment.
-When called Spack traces the graph from the supplied develop spec to every root in the graph that transitively depends on the develop package.
-Using ``--recursive`` can be very powerful when developing applications deep in a graph.
-In this case our development point is very close to the root spec so we could have called ``spack develop macsio`` and gotten the same result.
+When called, Spack traces the graph from the supplied develop spec to every root that transitively depends on the develop package.
+This can be especially useful when developing applications deep in the dependency graph.
+In this case, our development point is already close to the root spec, so we could have called ``spack develop macsio`` and gotten the same result.
 
 Pre-configuring development environments
 ----------------------------------------
 
-So far all of our calls to ``spack develop`` have been on a concretized environment, and we have allowed Spack to automatically update the build specs for us.
-If we don't want Spack to update the concrete environment's specs we can pass the ``---no-modify-concrete-spec``.
-Using ``---no-modify-concrete-spec`` will require you to force concretize an environment to have the develop specs take affect.
+So far, all of our calls to ``spack develop`` have been in a concretized environment, and we have allowed Spack to update the build specs automatically.
+If we do not want Spack to update the concrete environment's specs, we can pass ``--no-modify-concrete-spec``.
+Using ``--no-modify-concrete-spec`` requires you to force concretize the environment before the develop specs take effect.
 
-There is a limited set of use-cases where one might want to use this option.
-Some example cases include:
+There are a limited number of cases where you might want to use this option.
+For example:
 
 - Updating a develop spec before updating the environment to change a variant or version
 - Adding a develop spec that is not yet in the environment
 - Debugging unexpected behavior
 
-For illustrative purposes we will show an example of switching ``scr`` to a debug build via the ``build_type=Debug`` variant.
+For illustration, we will switch ``scr`` to a debug build using the ``build_type=Debug`` variant.
 
 .. literalinclude:: outputs/dev/develop-6.out
    :language: console
 
-We see that naively updating the develops spec, resulted first in an error and then an undesired version change.
-To preserve the version and get the new variant added we run the following commands:
+We can see that naively updating the develop spec first results in an error and then in an undesired version change.
+To preserve the version and add the new variant, we run the following commands:
 
 .. literalinclude:: outputs/dev/develop-7.out
    :language: console
 
-Some additional concerns to navigate for effective use of the ``spack develop`` command include:
+Here are a few additional points to keep in mind when using ``spack develop``:
 
-* ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environments file.
-* If the spec is not already concrete in the environment, you need to provide Spack a spec version so it can supply the correct flags for the package's build system.
-* If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than the numeric versions.
-* The source code located at the spec's ``dev_path`` is the users responsibility to manage.
+* ``spack add <package>`` with the matching version you want to develop is a way to ensure the develop spec is satisfied in the ``spack.yaml`` environment file.
+* If the spec is not already concrete in the environment, you need to provide Spack with a spec version so it can supply the correct flags for the package's build system.
+* If a version is not supplied or detectable in the environment, then Spack falls back to the maximum version defined in the package, where `infinity versions <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#version-comparison>`_ like ``develop`` and ``main`` have a higher value than numeric versions.
+* The source code located at the spec's ``dev_path`` is the user's responsibility to manage.
   Spack does provide an initial clone of the source code, but it makes no guarantees or additional verification of the source beyond that.
-  Users can manage the code locally via a version control system like ``git``, or can trigger a re-stage by calling ``spack develop --force``.
+  Users can manage the code locally via a version control system like ``git``, or they can trigger a re-stage by calling ``spack develop --force``.
 
 
 Sharing development environments
 --------------------------------
 
-Using development workflows also lets us ship our whole development process to another developer on the team.
-They can simply take our ``spack.yaml``, create a new environment, and use this to replicate our build process.
-For example, we'll make another development environment here.
+Development workflows also let us share our full development process with another developer on the team.
+They can take our ``spack.yaml``, create a new environment, and use it to replicate our build process.
+For example, we'll create another development environment here.
 
 .. literalinclude:: outputs/dev/otherdevel.out
    :language: console
 
-Here, ``spack develop`` with no arguments will check out or download the source code and place it in the appropriate places.
+Here, ``spack develop`` with no arguments checks out or downloads the source code and places it in the appropriate locations.
 
-When we're done developing, we simply tell Spack that it no longer needs to keep a development version of the package.
+When we're done developing, we tell Spack that it no longer needs to keep a development version of the package.
 
 .. literalinclude:: outputs/dev/wrapup.out
    :language: console
@@ -280,17 +275,17 @@ When we're done developing, we simply tell Spack that it no longer needs to keep
 Workflow Summary
 ----------------
 
-Use the ``spack develop`` command with an environment to make a reproducible build environment for your development workflow.
-Spack will set up all the dependencies for you and link all your packages together.
-Within a development environment, ``spack install`` works similarly to ``make`` in that it will check file times to rebuild the minimum number of Spack packages necessary to reflect the changes to your build.
+Use ``spack develop`` with an environment to create a reproducible build environment for your development workflow.
+Spack sets up all the dependencies for you and links your packages together.
+Within a development environment, ``spack install`` works similarly to ``make`` by checking file times and rebuilding the minimum number of Spack packages needed to reflect your changes.
 
 -------------------------
 Optional: Tips and Tricks
 -------------------------
 
-This section will cover some additional features that are useful additions to the core tutorial above.
-Many of these items are very useful to specific projects and developers.
-A list of the options for the ``spack develop`` can be viewed below:
+This section covers some additional features that build on the core tutorial above.
+Many of these are especially useful for specific projects and development workflows.
+A list of options for ``spack develop`` is shown below:
 
 .. code-block:: console
 
@@ -299,11 +294,12 @@ A list of the options for the ``spack develop`` can be viewed below:
 Source Code Management
 ----------------------
 
-``spack develop`` allows users to manipulate the source code locations The default behavior is to let Spack manage its location and cloning operations, but software developers often want more control over these.
+``spack develop`` lets users control source code locations.
+By default, Spack manages the source location and cloning operations, but developers often want more control over them.
 
-The source directory can be set with the ``--path`` argument when calling ``spack develop``.
-If this directory already exists then ``spack develop`` will not attempt to fetch the code for you.
-This allows developers to pre-clone the software or use preferred paths as they wish.
+You can set the source directory with the ``--path`` argument when calling ``spack develop``.
+If this directory already exists, ``spack develop`` will not attempt to fetch the code for you.
+This allows developers to pre-clone the software or use whichever paths they prefer.
 
 .. code-block:: console
 
@@ -317,12 +313,12 @@ This allows developers to pre-clone the software or use preferred paths as they 
 Navigation and the Build Environment
 ------------------------------------
 
-Diving into the build environment was introduced previously in the packaging section with the ``spack build-env scr -- bash`` command.
-This is a helpful function because it allows you to run commands inside the build environment.
-In the packages section of the tutorial this was combined with ``spack cd`` to produce a manual build outside of Spack's automated Process.
-This command is particularly useful in developer environments—it allows developers a streamlined workflow when iterating on a single package without the overhead of the ``spack install`` command.
-The additional features of the install command are unnecessary when tightly iterating between building and testing a particular package.
-For example, the workflow modifying ``scr`` that we just went through can be simplified to:
+We introduced the build environment earlier in the packaging section with the ``spack build-env scr -- bash`` command.
+This is useful because it allows you to run commands inside the build environment.
+In the packaging section, we combined it with ``spack cd`` to produce a manual build outside Spack's automated process.
+This command is particularly useful in development environments because it streamlines iteration on a single package without the overhead of ``spack install``.
+Those additional features are often unnecessary when you are iterating tightly between building and testing a particular package.
+For example, the workflow for modifying ``scr`` that we just went through can be simplified to:
 
 .. code-block:: spec
 
@@ -341,15 +337,15 @@ For example, the workflow modifying ``scr`` that we just went through can be sim
    $ make test
    $ exit
 
-Working with the build environment and along with Spack navigation features provides a nice way to iterate quickly and navigate through the hash-heavy Spack directory structures.
+Working in the build environment together with Spack's navigation features provides a convenient way to iterate quickly and move through Spack's hash-heavy directory structure.
 
 Combinatorics
 -------------
 
-The final note we will look at in this tutorial will be the power of combinatoric development builds.
-There are many instances where developers want to see how a single set of changes affects multiple builds i.e. ``+cuda`` vs ``~cuda``, ``%gcc`` vs ``%clang``, ``build_type=Release`` vs ``build_type=Debug``, etc.
+The final topic in this tutorial is combinatoric development builds.
+There are many cases where developers want to see how a single set of changes affects multiple builds, for example ``+cuda`` vs. ``~cuda``, ``%gcc`` vs. ``%clang``, or ``build_type=Release`` vs. ``build_type=Debug``.
 
-Developers can achieve builds of both cases from a single ``spack install`` as long as the develop spec is generic enough to cover the packages' spec variations
+Developers can build both cases from a single ``spack install`` as long as the develop spec is general enough to cover the package spec variations.
 
 .. code-block:: spec
 
@@ -361,8 +357,9 @@ Developers can achieve builds of both cases from a single ``spack install`` as l
    # Inspect the graph for multiple dev_path=
    $ spack concretize -f
 
-While we won't build out this example it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
+While we will not work through this example, it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
-Now if we want to do most of our incremental builds using the ``Release`` build and periodically check the results using the ``Debug`` build we can combine the workflow from the previous example: dive into the ``Release`` versions build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
-Note that since there are two ``scr`` specs in the environment we must distinguish which one we want for these commands.
-When we are ready to check our changes for the debug build, we can exit out of the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build through our method of choice.
+If we want to do most of our incremental builds with the ``Release`` build and periodically check the results with the ``Debug`` build, we can combine the workflow from the previous example.
+We can enter the ``Release`` build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
+Note that since there are two ``scr`` specs in the environment, we must distinguish which one we want for these commands.
+When we are ready to check our changes in the debug build, we can exit the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build using our preferred method.
