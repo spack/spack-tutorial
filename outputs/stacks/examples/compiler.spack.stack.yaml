@@ -1,0 +1,9 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  specs:
+  - gcc@16 %gcc@15
+  - lmod@8.7.67 %gcc@15
+  view: false
