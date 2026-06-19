@@ -1,13 +1,14 @@
 $ spack concretize
 ==> No new specs to concretize.
 $ spack find -cl netlib-scalapack
-==> In environment /home/spack/stacks
-==> 4 root specs
--- no arch / no compilers ---------------------------------------
-[+] fmnvqo4 gcc@12	      [+] 3t7cajd netlib-scalapack
-[+] pglf7pu netlib-scalapack  [+] igjijid py-scipy
+==> In environment /home/spack/stacks (5 root specs)
+-- root specs / compiler ----------------------------------------
+[+] vlwdxlj gcc@16  [+] wf22jsg lmod@8.7.67
 
--- linux-ubuntu22.04-x86_64_v3 / %c,fortran=gcc@12.3.0 ----------
-[+]  pglf7pu netlib-scalapack@2.2.2  [+]  3t7cajd netlib-scalapack@2.2.2
-==> 2 installed packages
-==> 0 concretized packages to be installed
+-- root specs / stack -------------------------------------------
+[b] v7thz7n netlib-scalapack  [b] x425zhl netlib-scalapack  [b] gouabck py-scipy
+
+-- linux-ubuntu26.04-x86_64_v3 / %c,fortran=gcc@16.1.0 ----------
+[b]  v7thz7n netlib-scalapack@2.2.3  [b]  x425zhl netlib-scalapack@2.2.3
+==> 0 installed packages
+==> 2 concretized packages to be installed

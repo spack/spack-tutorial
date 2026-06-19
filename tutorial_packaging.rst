@@ -56,7 +56,7 @@ We can see how they are configured using ``spack config get repos``:
 .. literalinclude:: outputs/packaging/repo-config.out
    :language: console
 
-Notice the default ``builtin`` repository is checked out at the latest release branch.
+Notice the ``tutorial`` repository points to a local path, while the ``builtin`` repository is fetched from its remote git location.
 
 You can find out more about repositories at `Package Repositories <https://spack.readthedocs.io/en/latest/repositories.html>`_ and the command at `spack repo <https://spack.readthedocs.io/en/latest/repositories.html#cmd-spack-repo>`_.
 
@@ -208,8 +208,8 @@ You should see the information derived from the package now includes the descrip
 Also notice it shows:
 
 * the preferred version derived from the code;
-* the default ``AutotoolsBuilder`` package `installation phases <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_;
-* the `gmake <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L62>`_ and `gnuconfig <https://github.com/spack/spack-packages/blob/c27b98c74c41e6b1000215d4fc5661aa6841694d/repos/spack_repo/builtin/build_systems/autotools.py#L60>`_ build dependencies inherited from ``AutotoolsPackage``; and
+* the default ``AutotoolsPackage`` `installation phases <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#phases>`_;
+* the `gmake <https://github.com/spack/spack-packages/blob/releases/v2025.11/repos/spack_repo/builtin/build_systems/autotools.py#L62>`_ and `gnuconfig <https://github.com/spack/spack-packages/blob/releases/v2025.11/repos/spack_repo/builtin/build_systems/autotools.py#L60>`_ build dependencies inherited from ``AutotoolsPackage``; and
 * both link and run dependencies are currently ``None``.
 
 As we fill in more information about the package, the ``spack info`` command will become more informative.
@@ -423,7 +423,7 @@ Adding Variants
 ---------------
 
 Suppose we want to expose the software's optional features in the package?
-We can do this by adding build-time options using package `variants <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_).
+We can do this by adding build-time options using package `variants <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#variants>`_.
 
 Recall from :ref:`configure's help output <mpileaks_configure_help>` for ``tutorial-mpileaks`` that the software has several optional features and packages that we could support in Spack.
 Two stand out for tutorial purposes because they both take integers, as opposed to allowing them to be enabled or disabled.
@@ -466,64 +466,15 @@ Now run the installation again with the ``--verbose`` install option -- to get m
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: spec
+   :lines: 1-57
+   :emphasize-lines: 57
 
-Notice the addition of the two stack start arguments in the configure command that appears at the end of the highlighted line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
+Notice the addition of the two stack start arguments in the configure command at the end of the emphasized line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
 
 .. note::
 
    Not all packages have such simple options.
    Fortunately, ``Autotools`` is one of several base packages with `helper functions <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#helper-functions>`_ to simplify setting arguments tied to boolean, single- and multi-valued variants.
-
-Now that we have a package we can build, it's time to consider adding tests that can be used to gain confidence that the software works.
-
-------------
-Adding Tests
-------------
-
-The simplest tests we can add are `sanity checks <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#adding-sanity-checks>`_, which can be used to ensure the directories and or files we expect to be installed for all versions of the package actually exist.
-
-If we look at a successful installation, we can see that the following directories are installed:
-
-* bin
-* lib
-* share
-
-So let's add a simple sanity check to ensure they are present, **but** let's enter a typo to see what happens.
-
-Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit`` command and add the following ``sanity_check_is_dir`` list:
-
-.. literalinclude:: tutorial/examples/packaging/5.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/5.package.py)
-   :lines: 5-
-   :language: python
-   :emphasize-lines: 15
-
-Since these are `build-time tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#build-time-tests>`_, we'll need to uninstall the package so we can re-run it with tests enabled:
-
-.. literalinclude:: outputs/packaging/install-mpileaks-5.out
-   :language: spec
-
-Notice the installation fails due to the missing directory with the error: ``Error: InstallError: Install failed for tutorial-mpileaks.
-No such directory in prefix: shar``.
-
-Now let's properly fix the error:
-
-.. literalinclude:: tutorial/examples/packaging/6.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/6.package.py)
-   :lines: 5-
-   :language: python
-   :emphasize-lines: 15
-
-And try again:
-
-.. literalinclude:: outputs/packaging/install-mpileaks-6.out
-   :language: spec
-
-Success!
-
-The material covered here only scratches the surface of testing an installation.
-We could leverage the examples from this package to add `post-install phase tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#adding-installation-phase-tests>`_ and/or `stand-alone tests <https://spack.readthedocs.io/en/latest/packaging_guide_testing.html#stand-alone-tests>`_.
-
 
 ------------------------
 Querying the Spec Object

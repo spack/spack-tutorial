@@ -1,0 +1,44 @@
+$ spack info --no-dependencies --no-versions zlib-ng
+AutotoolsPackage:   zlib-ng
+
+Description:
+    zlib replacement with optimizations for next generation systems.
+
+Homepage: https://github.com/zlib-ng/zlib-ng
+
+Variants:
+    build_system [autotools]	    autotools, cmake
+	Build systems supported by the package
+
+    build_type [Release]	    Debug, MinSizeRel, RelWithDebInfo, Release
+      when build_system=cmake
+	CMake build type
+
+    compat [true]		    false, true
+	Enable compatibility API
+
+    generator [make]		    none
+      when build_system=cmake
+	the build system generator to use
+
+    ipo [false] 		    false, true
+      when build_system=cmake %cmake@3.9:
+	CMake interprocedural optimization
+
+    new_strategies [true]	    false, true
+	Enable new deflate strategies
+
+    opt [true]			    false, true
+	Enable optimizations
+
+    pic [true]			    false, true
+	Enable position-independent code (PIC)
+
+    shared [true]		    false, true
+	Build shared library
+
+
+Licenses:
+    Zlib
+
+
