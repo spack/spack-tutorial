@@ -1,78 +1,96 @@
 $ spack install tutorial-mpileaks
-[+] /usr (external glibc-2.35-qg7qyazcn2fwrck5vgr3mxq3i4uxkhlo)
-[+] /usr (external gcc-11.4.0-ml7cem5pfeoluzbhb7jsiisemvoauaz5)
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.0-ntccuj2fi3y7asqifeq3i4iylrbxakw2
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gcc-runtime-11.4.0-nokfxvaa4aklxfhoymvz6hlvbqw3kwnh
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/ncurses-6.5-20250705-ncdxq3juvboefpavgmovg5rb5bx76ohz
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-irvrytslmleivpkraggqq5brluhluert
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.14-bs5ujst3rrdcbj3r726bekzjfdddck4w
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-4obn7cgqfwoxyvmnpeedud63bsjhoqma
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.4.7-yt7ajy4c3zwh2ks6dawvycaxrydjibel
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-vdgigswy4fvttrivbedl4cp7bl72esma
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.20-lxvpwtivihagmvso5cxgs3b7olqmac2g
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/bzip2-1.0.8-x7t4najic2jb46srjiebkrf55utda3nl
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-c6d2zljdklrjdya4xy236brmpdonc2xo
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/zlib-ng-2.2.4-zk6keshnphcta4rwsmvvexg5e25uqnbd
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.25-aq7qwy6yezwhtwdrsyqen65rmjmlth27
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.42.0-cvuukniutivcofp25gugkl2g5y7aur4o
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-r3ant5t3prottmtc7yneqj6cr5gs6vvt
-[+] /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.16.5-6ib4pvm3dvnewlphh52mrxjbd75oewev
-==> No binary for tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cwfy4xlos found: installing from source
-==> Installing tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cwfy4xlos [19/19]
-==> Fetching https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz
-    [100%]  339.70 KB @	  28.1 MB/s
-==> No patches needed for tutorial-mpileaks
-==> tutorial-mpileaks: Executing phase: 'autoreconf'
-==> tutorial-mpileaks: Executing phase: 'configure'
-==> Error: ProcessError: Command exited with status 1:
-    '/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cwfy4xlos/spack-src/configure' '--prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cwfy4xlos'
-
-13 errors found in build log:
-     16	   libtoolize: copying file 'm4/lt~obsolete.m4'
-     17	   autoreconf: configure.ac: not using Intltool
-     18	   autoreconf: configure.ac: not using Gtkdoc
-     19	   autoreconf: running: aclocal --force -I m4
-     20	   autoreconf: running: /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-r3a
-	   nt5t3prottmtc7yneqj6cr5gs6vvt/bin/autoconf --force
-     21	   configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
-  >> 22	   configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
-  >> 23	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-r3ant5t3prottmtc7yneqj6cr5gs6vvt/s
-	   pack-src/lib/autoconf/general.m4:2434: AC_DIAGNOSE is expanded from...
-  >> 24	   aclocal.m4:745: AM_CONFIG_HEADER is expanded from...
-  >> 25	   configure.ac:9: the top level
-     26	   configure.ac:38: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
-  >> 27	   configure.ac:38: You should run autoupdate.
-  >> 28	   m4/libtool.m4:100: AC_PROG_LIBTOOL is expanded from...
-  >> 29	   configure.ac:38: the top level
-     30	   configure.ac:47: warning: The macro 'AC_HEADER_STDC' is obsolete.
-  >> 31	   configure.ac:47: You should run autoupdate.
-  >> 32	   /tmp/root/spack-stage/spack-stage-autoconf-2.72-r3ant5t3prottmtc7yneqj6cr5gs6vvt/s
-	   pack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
-  >> 33	   configure.ac:47: the top level
-     34	   autoreconf: running: /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-r3a
-	   nt5t3prottmtc7yneqj6cr5gs6vvt/bin/autoheader --force
-     35	   autoreconf: running: automake --add-missing --copy --force-missing
-  >> 36	   configure.ac:26: installing 'config/compile'
-  >> 37	   configure.ac:19: installing 'config/missing'
-     38	   src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_C
-	   PPFLAGS')
-     39	   src/Makefile.am: installing 'config/depcomp'
-     40	   autoreconf: 'config/install-sh' is updated
-     41	   autoreconf: 'config/config.sub' is updated
-     42	   autoreconf: 'config/config.guess' is updated
-     43	   autoreconf: Leaving directory '.'
-
-     ...
-
-     80	   checking for mpipgcc... no
-     81	   Checking whether not-found responds to '-showme:compile'... no
-     82	   Checking whether not-found responds to '-showme'... no
-     83	   Checking whether not-found responds to '-compile-info'... no
-     84	   Checking whether not-found responds to '-show'... no
-     85	   /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cw
-	   fy4xlos/spack-src/configure: line 5935: Echo: command not found
-  >> 86	   configure: error: unable to locate adept-utils installation
-
-See build log for details:
-  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-f6zjbzmtbwk2ng2pdw5mdv6cwfy4xlos/spack-build-out.txt
-
+[ ] 5txfucc tutorial-mpileaks@1.0 fetching from build cache (0s)
+[ ] 5txfucc tutorial-mpileaks@1.0 no binary available (0s)
+[ ] r4lhaok gmake@4.4.1 fetching from build cache (0s)
+[ ] ohmdb2l less@692 fetching from build cache (0s)
+[ ] k25xiih readline@8.3 fetching from build cache (0s)
+[ ] r4lhaok gmake@4.4.1 relocating (0s)
+[ ] 27d4iyp berkeley-db@18.1.40 fetching from build cache (0s)
+[ ] ohmdb2l less@692 relocating (0s)
+[ ] phcmfqk libsigsegv@2.15 fetching from build cache (0s)
+[ ] punbqrx findutils@4.10.0 fetching from build cache (0s)
+[ ] mguwetc file@5.46 fetching from build cache (0s)
+[ ] k25xiih readline@8.3 relocating (0s)
+[ ] 27d4iyp berkeley-db@18.1.40 relocating (0s)
+[ ] phcmfqk libsigsegv@2.15 relocating (0s)
+[ ] punbqrx findutils@4.10.0 relocating (0s)
+[+] r4lhaok gmake@4.4.1 /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh (0s)
+[ ] mguwetc file@5.46 relocating (0s)
+[+] ohmdb2l less@692 /home/spack/spack/opt/spack/linux-x86_64_v3/less-692-ohmdb2lfmv2mghjfr7o22nlbaue23m6o (0s)
+[+] phcmfqk libsigsegv@2.15 /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.15-phcmfqkiobbdxotapv2famdv4vk5yvs7 (0s)
+[+] k25xiih readline@8.3 /home/spack/spack/opt/spack/linux-x86_64_v3/readline-8.3-k25xiihp5dun6qwe3e5ouzdigwr5yuvz (0s)
+[+] 27d4iyp berkeley-db@18.1.40 /home/spack/spack/opt/spack/linux-x86_64_v3/berkeley-db-18.1.40-27d4iypucirxwepjeco5bulvrej5l3bu (1s)
+[+] mguwetc file@5.46 /home/spack/spack/opt/spack/linux-x86_64_v3/file-5.46-mguwetco632vycva2piy7hmqoc26acsq (1s)
+[ ] y6uqrto m4@1.4.21 fetching from build cache (1s)
+[+] punbqrx findutils@4.10.0 /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-punbqrxx5vrhjry7gtdadymv34ryapi2 (1s)
+[ ] cq4dkuc gdbm@1.26 fetching from build cache (1s)
+[ ] y6uqrto m4@1.4.21 relocating (1s)
+[ ] cq4dkuc gdbm@1.26 relocating (1s)
+[ ] 3gdq456 libtool@2.5.4 fetching from build cache (0s)
+[ ] 3gdq456 libtool@2.5.4 relocating (0s)
+[+] y6uqrto m4@1.4.21 /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.21-y6uqrtoi6sjdfvvyxgmifksxwktsyx3t (1s)
+[+] cq4dkuc gdbm@1.26 /home/spack/spack/opt/spack/linux-x86_64_v3/gdbm-1.26-cq4dkucz57w6rd7gnkhgbzfqz4snldpy (1s)
+[ ] bvphs3b perl@5.42.0 fetching from build cache (0s)
+[+] 3gdq456 libtool@2.5.4 /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.5.4-3gdq456decrkzdhi7hwf3ndgvixvmu3n (0s)
+[ ] bvphs3b perl@5.42.0 relocating (0s)
+[+] bvphs3b perl@5.42.0 /home/spack/spack/opt/spack/linux-x86_64_v3/perl-5.42.0-bvphs3b3jahsyypadzj7kwfb23egjgb5 (0s)
+[ ] yhkgfai automake@1.18.1 fetching from build cache (0s)
+[ ] jo3eg4r autoconf@2.72 fetching from build cache (0s)
+[ ] yhkgfai automake@1.18.1 relocating (0s)
+[ ] jo3eg4r autoconf@2.72 relocating (0s)
+[+] yhkgfai automake@1.18.1 /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.18.1-yhkgfaibmqj5ww5wfesjkdtrwpndwdtm (0s)
+[+] jo3eg4r autoconf@2.72 /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj (0s)
+[ ] 5txfucc tutorial-mpileaks@1.0 staging (0s)
+[ ] 5txfucc tutorial-mpileaks@1.0 autoreconf (0s)
+[ ] 5txfucc tutorial-mpileaks@1.0 configure (3s)
+[x] 5txfucc tutorial-mpileaks@1.0 failed: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-usu4vg6q.log (4s)
+-- lines 1 to 7 --
+> /home/spack/spack/lib/spack/spack/build_environment.py:490: SpackAPIWarning: when setting environment variable SPACK_DEBUG_LOG_DIR=None: value is of type `NoneType`, but `str` was expected. This is deprecated and will be an error in Spack v1.0
+    env.set(SPACK_DEBUG_LOG_DIR, spack.paths.spack_working_dir)
+  ==> No patches needed for tutorial-mpileaks
+  ==> tutorial-mpileaks: Executing phase: 'autoreconf'
+  ==> [2026-06-19-08:14:27.539121] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/bin/autoreconf --install --verbose --force
+  autoreconf: export WARNINGS=
+  autoreconf: Entering directory '.'
+-- lines 18 to 46 --
+  libtoolize: copying file 'm4/ltversion.m4'
+  libtoolize: copying file 'm4/lt~obsolete.m4'
+  autoreconf: configure.ac: not using Intltool
+  autoreconf: configure.ac: not using Gtkdoc
+  autoreconf: running: aclocal --force -I m4
+  autoreconf: running: /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/bin/autoconf --force
+> configure.ac:9: warning: 'AM_CONFIG_HEADER': this macro is obsolete.
+> configure.ac:9: You should use the 'AC_CONFIG_HEADERS' macro instead.
+> aclocal.m4:708: AM_CONFIG_HEADER is expanded from...
+> configure.ac:9: the top level
+> configure.ac:38: warning: The macro 'AC_PROG_LIBTOOL' is obsolete.
+> configure.ac:38: You should run autoupdate.
+> m4/libtool.m4:100: AC_PROG_LIBTOOL is expanded from...
+> configure.ac:38: the top level
+> configure.ac:47: warning: The macro 'AC_HEADER_STDC' is obsolete.
+> configure.ac:47: You should run autoupdate.
+> /tmp/root/spack-stage/spack-stage-autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/spack-src/lib/autoconf/headers.m4:663: AC_HEADER_STDC is expanded from...
+> configure.ac:47: the top level
+  autoreconf: running: /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/bin/autoheader --force
+  autoreconf: running: automake --add-missing --copy --force-missing
+> configure.ac:26: installing 'config/compile'
+> configure.ac:19: installing 'config/missing'
+> src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*_CPPFLAGS')
+  src/Makefile.am: installing 'config/depcomp'
+  autoreconf: Leaving directory '.'
+  ==> tutorial-mpileaks: Executing phase: 'configure'
+  ==> [2026-06-19-08:14:30.242239] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
+  ==> [2026-06-19-08:14:30.242759] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
+  ==> [2026-06-19-08:14:30.243009] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+-- lines 85 to 93 --
+  checking for mpipgcc... no
+  Checking whether not-found responds to '-showme:compile'... no
+  Checking whether not-found responds to '-showme'... no
+  Checking whether not-found responds to '-compile-info'... no
+  Checking whether not-found responds to '-show'... no
+  /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure: line 6213: Echo: command not found
+> configure: error: unable to locate adept-utils installation
+  Command exited with status 1:
+      /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c
+==> Error: The following packages failed to install:
+tutorial-mpileaks@1.0/5txfucci42vvbfv3pw52fe2sf463qo7c: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-usu4vg6q.log
