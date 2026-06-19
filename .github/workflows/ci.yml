@@ -51,10 +51,8 @@ jobs:
     uses: ./.github/workflows/container.yml
 
   outputs:
-    # Output regeneration temporarily disabled — remove the `false` line below to re-enable.
     if: |
-      false
-      && !cancelled()
+      !cancelled()
       && contains(needs.*.result, 'success')
       && !contains(needs.*.result, 'failure')
       && (needs.changes.outputs.outputs == 'true'

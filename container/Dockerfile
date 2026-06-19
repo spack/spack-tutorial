@@ -1,4 +1,4 @@
-FROM ghcr.io/spack/tutorial-ubuntu-22.04
+FROM ghcr.io/spack/tutorial-ubuntu-26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -13,12 +13,9 @@ RUN apt-get update -y && \
     vim \
     rclone
 
-# Remove GCC 12 from container
-RUN apt-get remove -y gcc-12
-
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/v2025.11.0/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/releases/v2026.06/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 

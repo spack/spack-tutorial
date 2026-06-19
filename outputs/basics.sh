@@ -32,8 +32,8 @@ example --tee basics/gmake           "spack install gmake"
 
 example basics/compiler-list   "spack compilers"
 
-example basics/mirror          "spack mirror add --unsigned tutorial /mirror"
-#example basics/mirror          "spack buildcache keys --install --trust"
+example basics/mirror          "spack mirror add tutorial /mirror"
+example basics/mirror          "spack buildcache keys --install --trust --yes-to-all"
 
 # The Spec Syntax
 example basics/versions-zlib  "spack versions zlib-ng"
