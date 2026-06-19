@@ -1,20 +1,20 @@
 # These dependencies should be installed using pip in order
 # to build the documentation.
 sphinx==8.2.3
-sphinxcontrib-programoutput==0.18
+sphinxcontrib-programoutput==0.20
 sphinx-copybutton==0.5.2
-sphinx_design==0.6.1
+sphinx_design==0.7.0
 sphinx-last-updated-by-git==0.3.8
 sphinx-sitemap==2.9.0
 # fork of furo with a few changes that are not merged upstream
 git+https://github.com/haampie/furo.git@c1d161cb9e04b481ec3331db981aacfa132ecaa6#egg=furo
-python-levenshtein==0.27.1
+python-levenshtein==0.27.3
 docutils==0.21.2
 pygments==2.20.0
-urllib3==2.6.3
-pytest==9.0.3
+urllib3==2.7.0
+pytest==9.1.0
 isort==7.0.0
-black==26.3.1
+black==26.5.1
 flake8==7.3.0
-mypy==1.18.2
+mypy==2.1.0
 ruamel.yaml==0.18.15
