@@ -13,9 +13,6 @@ RUN apt-get update -y && \
     vim \
     rclone
 
-# Remove GCC 14 from container
-RUN apt-get remove -y gcc-14
-
 # Download the buildcache
 RUN mkdir /mirror
 RUN rclone copy --max-age 10d :s3:spack-binaries/develop/tutorial /mirror
