@@ -12,12 +12,11 @@ project="$(dirname "$0")"
 
 rm -rf "${raw_outputs:?}/packaging"
 . "$project/init_spack.sh"
+spack repo update
 # Cannot use \$HOME (in CI)
 mpileaks_package_py="$HOME/$dir/$tutorial_subdir/packages/tutorial_mpileaks/package.py"
 
 export SPACK_COLOR=never
-
-# Packaging commands
 
 # tutorial repository set up
 example packaging/repo-create   "spack repo create $repo_root $name"
@@ -27,23 +26,22 @@ example packaging/repo-list     "spack repo list"
 
 example packaging/repo-config   "spack config get repos"
 
+# spack create skeleton
 # make the editor automatically exit
 export EDITOR=true
 example packaging/create     "spack create --name tutorial-mpileaks --namespace $name https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
 example packaging/checksum-mpileaks-1  "spack checksum tutorial-mpileaks 1.0"
 
-example --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
+example --tee --expect-error packaging/install-mpileaks-1  "spack install tutorial-mpileaks"
 
-# TODO: Update info-mpileaks.out output manually since automation fails.
-#
-# This fails ("Error: invalid width -2 (must be > 0)") in CI when preparing
-# variants BUT not when run on the command line.
-#cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
-#example packaging/info-mpileaks       "spack info --phases tutorial-mpileaks"
+# add documentation
+cp "$PROJECT/package-py-files/1.package.py" "$mpileaks_package_py"
+example packaging/info-mpileaks "spack info --phases tutorial-mpileaks"
 
+# add dependencies
 cp "$PROJECT/package-py-files/2.package.py" "$mpileaks_package_py"
-example --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
+example --tee --expect-error packaging/install-mpileaks-2  "spack install tutorial-mpileaks"
 
 stage_dir="$(spack location -s tutorial-mpileaks)"
 example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
@@ -68,19 +66,24 @@ example packaging/build-output        "cat $stage_dir/spack-build-out.txt"
 #)
 #run_configure
 
+# configure arguments
 cp "$PROJECT/package-py-files/3.package.py" "$mpileaks_package_py"
-example packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
+example --tee packaging/install-mpileaks-3  "spack install tutorial-mpileaks"
 
+# variants
 cp "$PROJECT/package-py-files/4.package.py" "$mpileaks_package_py"
-example packaging/install-mpileaks-4  "spack install --verbose tutorial-mpileaks stackstart=4"
+example --tee packaging/install-mpileaks-4  "spack install --verbose tutorial-mpileaks stackstart=4"
 
-example packaging/install-mpileaks-5  "spack uninstall -ay tutorial-mpileaks"
-cp "$PROJECT/package-py-files/5.package.py" "$mpileaks_package_py"
-example --expect-error packaging/install-mpileaks-5  "spack install --test=root tutorial-mpileaks"
+# TODO: Re-enable once https://github.com/spack/spack/issues/52573 is resolved.
+# tests
+#example --tee packaging/install-mpileaks-5  "spack uninstall -ay tutorial-mpileaks"
+#cp "$PROJECT/package-py-files/5.package.py" "$mpileaks_package_py"
+#example --tee --expect-error packaging/install-mpileaks-5  "spack install --test=root tutorial-mpileaks"
+#
+#cp "$PROJECT/package-py-files/6.package.py" "$mpileaks_package_py"
+#example --tee packaging/install-mpileaks-6  "spack install --test=root tutorial-mpileaks"
 
-cp "$PROJECT/package-py-files/6.package.py" "$mpileaks_package_py"
-example packaging/install-mpileaks-6  "spack install --test=root tutorial-mpileaks"
-
-example packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
+# cleanup
+example --tee packaging/cleanup  "spack uninstall -ay tutorial-mpileaks"
 example packaging/cleanup  "spack repo remove $name"
 example packaging/cleanup  "rm -rf $repo_root"
