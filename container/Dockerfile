@@ -15,7 +15,7 @@ RUN apt-get update -y && \
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy --max-age 10d :s3:spack-binaries/develop/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/releases/v2026.06/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
