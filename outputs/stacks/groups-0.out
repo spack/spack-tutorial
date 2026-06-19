@@ -1,8 +1,7 @@
 $ spack concretize
 ==> Concretizing the 'compiler' group of specs
 ==> Concretizing the 'stack' group of specs
-==> Starting concretization pool with 2 processes
-==> Concretized 4 specs:
+==> Concretized 3 specs:
 [+]  vlwdxlj  gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  cuzgmus	  ^binutils@2.46.0~debuginfod+gas~gprofng~headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  mmywg7x	  ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
@@ -55,7 +54,7 @@ $ spack concretize
 [b]  ci53fkm	  ^procps@4.0.6+nls build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [b]  a27iqiv	  ^sed@4.9 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  d4ibosb	  ^tcl@8.6.17 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
-[b]  x425zhl  netlib-scalapack@2.2.3~ipo~pic+shared build_system=cmake build_type=Release generator=make platform=linux os=ubuntu26.04 target=x86_64_v3 %c,fortran=gcc@16.1.0
+[b]  b4nkwcf  netlib-scalapack@2.2.3~ipo~pic+shared build_system=cmake build_type=Release generator=make platform=linux os=ubuntu26.04 target=x86_64_v3 %c,fortran=gcc@16.1.0
 [b]  yonurps	  ^cmake@3.31.11~doc+ncurses+ownlibs~qtgui build_system=generic build_type=Release platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  6b5h3dv	      ^curl@8.20.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  iiwpnp7		  ^nghttp2@1.67.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
@@ -65,40 +64,26 @@ $ spack concretize
 [b]  yd7lgm7	      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  ghfita3	  ^gcc-runtime@16.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
 [b]  6hzfsbp	  ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  bovk7dt	  ^mpich@5.0.1~argobots~cuda+fortran+hwloc+hydra~level_zero+libxml2+pci~rocm+romio~slurm~vci~verbs+wrapperrpath~xpmem build_system=autotools datatype-engine=auto device=ch4 netmod=ofi pmi=default platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
-[b]  l3if3dy	      ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  g3gt6ze		  ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  tw6253j		      ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  4diropt			  ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  nn3ymay	      ^hwloc@2.13.0~cairo~cuda~gl~level_zero~libudev+libxml2~nvml~opencl+pci~rocm build_system=autotools libs:=shared,static patches:=b4db98b platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  s6cemsy	      ^libfabric@2.5.1~asan~cuda~debug~kdreg~level_zero~lsan~rocm~tsan~ubsan~uring build_system=autotools fabrics:=sockets,tcp,udp platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  cmgnxt6	      ^libpciaccess@0.17 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  cy6lybd		  ^util-macros@1.20.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  cxesrxa	      ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  qs6av53		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  bf6e7x2		  ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  xp6fyih	      ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  afnel7p	      ^python@3.14.5+bz2+ctypes+dbm~debug~freethreading+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~static~tests~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  ofahxlj		  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  xkvh6gd		  ^expat@2.8.1+libbsd build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  t623nqz		      ^libbsd@0.12.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  w3w22wx			  ^libmd@1.1.0 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  2af63my		  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  jgqwv65		  ^libffi@3.5.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  cbnh7bw		  ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  uliuxbf		  ^sqlite@3.53.1+column_metadata+fts+rtree build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  v3sdaph		  ^util-linux-uuid@2.41 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  lq6tsmz		  ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  kdylbqh	  ^openblas@0.3.33~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared~static build_system=makefile patches:=723ddc1 symbol_suffix=none threads=none platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
-[b]  b4nkwcf  netlib-scalapack@2.2.3~ipo~pic+shared build_system=cmake build_type=Release generator=make platform=linux os=ubuntu26.04 target=x86_64_v3 %c,fortran=gcc@16.1.0
 [b]  nzr6pd7	  ^openmpi@5.0.10+atomics~cuda~debug+fortran~gpfs~internal-hwloc~internal-libevent~internal-pmix~ipv6~java~lustre~memchecker~openshmem~rocm~romio+rsh~static~two_level_namespace+vt+wrapper-rpath build_system=autotools fabrics:=none patches:=646eb1a romio-filesystem:=none schedulers:=none platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
 [b]  yg7nv7p	      ^autoconf@2.72 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
 [b]  47vgtt5		  ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  r6vd65h		      ^libsigsegv@2.15 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  pdslnit	      ^automake@1.18.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  nn3ymay	      ^hwloc@2.13.0~cairo~cuda~gl~level_zero~libudev+libxml2~nvml~opencl+pci~rocm build_system=autotools libs:=shared,static patches:=b4db98b platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  cmgnxt6		  ^libpciaccess@0.17 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  cy6lybd		      ^util-macros@1.20.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  cxesrxa		  ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  qs6av53		      ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  bf6e7x2		      ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  m5ts755	      ^libevent@2.1.12+openssl build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  raf5qk6	      ^libtool@2.5.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  fc5ezqn		  ^file@5.46+static build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  lq6tsmz		      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  l3if3dy		  ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  g3gt6ze		      ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  tw6253j			  ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  4diropt			      ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  swhw6f5	      ^numactl@2.0.19 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  kjx2nfr	      ^openssh@10.3p1+gssapi build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  awic2yh		  ^krb5@1.22.2+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
@@ -107,7 +92,11 @@ $ spack concretize
 [b]  44jhzjg		  ^libxcrypt@4.5.2~obsolete_api build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  xxg272q	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  aev2xm7		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  ofahxlj		  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  2af63my		  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  cbnh7bw		      ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  3w5zzn3		  ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  xp6fyih	      ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  qcxnkrd	      ^pmix@6.1.0~munge~python build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  cj2ohvh	      ^prrte@4.1.0 build_system=autotools patches:=64faa1a,91b28f5 schedulers:=none platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
 [b]  4p7olya		  ^flex@2.6.3+lex~nls build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0

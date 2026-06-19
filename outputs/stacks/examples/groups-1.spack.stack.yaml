@@ -19,10 +19,7 @@ spack:
   - group: stack
     needs: [compiler]
     specs:
-    - matrix:
-      - [netlib-scalapack]
-      - [^openmpi, ^mpich]
-      - [^openblas, ^netlib-lapack]
+    - netlib-scalapack ^openblas ^openmpi
     override:
       packages:
         c:
@@ -31,6 +28,4 @@ spack:
           prefer: [gcc@16]
         fortran:
           prefer: [gcc@16]
-      concretizer:
-        unify: false
   view: false
