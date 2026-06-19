@@ -12,14 +12,15 @@ This tutorial will provide a step-by-step guide for installing software with Spa
 
 A few fundamental ideas underpin everything that follows:
 
-1. Spack builds software either from source or from prebuilt binaries.
-2. Spack keeps every configuration of a package isolated from every other, so many versions, compilers, and build options can coexist on the same machine.
-3. Each configuration is identified by a hash of its full provenance.
+1. Spack can install software either from source or a prebuilt binary.
+2. Spack isolates each package's installation.
+   This allows many versions, compilers, and build options to coexist on the same machine.
+3. Each installation is identified by a hash of its full provenance.
 4. Spack reuses an existing build whenever it can, instead of rebuilding from scratch.
 
 Keep these points in mind, as we'll illustrate them with examples.
 
-We will begin by introducing the ``spack install`` command, highlighting the versatility of Spack's spec syntax and the flexibility it offers users.
+We will begin by introducing the ``spack install`` command, showcasing the flexibility of Spack's spec syntax.
 Next, we will demonstrate how to use the ``spack find`` command to view installed packages, as well as the ``spack uninstall`` command to remove them.
 
 Additionally, we will discuss how Spack manages compilers, with a particular focus on using Spack-built compilers within the Spack environment.
@@ -61,9 +62,8 @@ The ``spack list`` command shows available packages.
    :lines: 1-6
 
 
-The ``spack list`` command can also take a query string.
-Spack automatically adds wildcards to both ends of the string, or we can add our own wildcards for more advanced searches.
-For example, let's view all available Python packages.
+Pass a substring to narrow the list.
+For example, to see all Python packages:
 
 .. literalinclude:: outputs/basics/list-py.out
    :language: console
@@ -120,13 +120,13 @@ Each kind of constraint has its own sigil, which the subsections below introduce
 Versions
 ^^^^^^^^
 
-We can install multiple versions of the same package side by side.
+Spack can install multiple versions of the same package.
 Before installing a specific version, let's check which versions of ``zlib-ng`` are available using the ``spack versions`` command.
 
 .. literalinclude:: outputs/basics/versions-zlib.out
    :language: spec
 
-We select one with the ``@`` sigil:
+We specify versions with the ``@`` sigil:
 
 .. literalinclude:: outputs/basics/zlib-2.0.7.out
    :language: spec
@@ -199,7 +199,7 @@ The ``tcl`` package depends on ``zlib-ng``, so let's preview how Spack would bui
    :language: spec
 
 This is the *concretized* spec: Spack has filled in every dependency, along with its version, variants, and compiler.
-In the output, ``[+]`` marks specs already installed, ``[e]`` those provided externally by the system, and ``[b]`` those available in a cache but not yet installed.
+In the output, ``[+]`` marks specs already installed, ``[e]`` marks those provided externally by the system, and ``[b]`` marks those available in a cache but not yet installed.
 Notice also that ``%`` binds to the spec it follows.
 Because ``%clang`` comes after ``^zlib-ng@2.0.7``, only ``zlib-ng`` is built with Clang, while ``tcl`` keeps the default compiler.
 
@@ -429,7 +429,7 @@ The ``gcc@16`` compiler is immediately available to use:
    :language: spec
    :lines: 1-2
 
-We won't need this compiler in the next chapter, so we'll uninstall it for now.
+We won't need this compiler in the next section, so we'll uninstall it for now.
 
 .. literalinclude:: outputs/basics/compiler-uninstall.out
    :language: spec
