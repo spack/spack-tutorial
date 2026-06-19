@@ -343,7 +343,10 @@ Combinatorics
 -------------
 
 The final topic in this tutorial is combinatoric development builds.
-There are many cases where developers want to see how a single set of changes affects multiple builds, for example ``+cuda`` vs. ``~cuda``, ``%gcc`` vs. ``%clang``, or ``build_type=Release`` vs. ``build_type=Debug``.
+There are many cases where developers want to see how a single set of changes affects multiple builds, for example ``+cuda`` vs.
+``~cuda``, ``%gcc`` vs.
+``%clang``, or ``build_type=Release`` vs.
+``build_type=Debug``.
 
 Developers can build both cases from a single ``spack install`` as long as the develop spec is general enough to cover the package spec variations.
 
