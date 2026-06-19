@@ -16,12 +16,10 @@ In this tutorial we will see how to use them to manage large deployments, a comm
 What usually characterizes these deployments, compared to a typical single-user environment, is the need to provide the same set of packages built against a variety of configurations: different MPI libraries, LAPACK implementations, or compilers.
 
 Below, we'll build a representative example of such a deployment.
-Our goal is to install ``netlib-scalapack`` against:
+Our goal is to install ``netlib-scalapack`` compiled with ``gcc@16``, which is newer than the system-provided ``gcc@15``, and linked against:
 
 - two MPI libraries (``openmpi`` and ``mpich``)
 - two LAPACK providers (``openblas`` and ``netlib-lapack``)
-
-and compiled with ``gcc@16``, which is newer than the system-provided ``gcc@15``.
 We'll also install ``py-scipy`` linked against ``openblas``.
 
 We'll first focus on how to configure and install the software correctly.
