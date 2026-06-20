@@ -19,8 +19,8 @@ So far in this tutorial, we've covered the basic commands for managing individua
 .. Customizing Spack's installation with configuration files, like
    `packages.yaml <https://spack.readthedocs.io/en/latest/build_settings.html#build-settings>`_, was also discussed.
 
-Now we'll explore Spack Environments, a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
-Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda Environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
+Now we'll explore Spack environments, a powerful feature that lets us manage collections of packages together in a documented and reproducible way.
+Spack environments are similar to *virtual environments* in other package managers (e.g., `Python venv <https://docs.python.org/3/library/venv.html>`_, `Conda environments <https://docs.conda.io/projects/conda/en/stable/user-guide/getting-started.html>`_, or `nix-env <https://nix.dev/manual/nix/2.24/command-ref/nix-env>`_).
 
 Managing a software stack with many packages and varying configuration can quickly become hard to track by hand.
 An environment lets you:
@@ -116,7 +116,7 @@ First, we *add* our two specs with ``spack add``:
 .. literalinclude:: outputs/environments/env-add-1.out
    :language: console
 
-``tcl`` and ``trilinos`` are now registered as **root specs** i.e. the packages we've explicitly requested.
+``tcl`` and ``trilinos`` are now registered as **root specs**, i.e., the packages we've explicitly requested.
 They're called **"roots"** because they sit at the top of the dependency graph, with their dependency packages sitting below them.
 
 If we run ``spack find`` now, it lists them as roots but reports nothing concretized yet.
@@ -205,7 +205,7 @@ Let's build a small program that uses both MPI and ``zlib``:
 .. literalinclude:: outputs/environments/use-mpi-1.out
    :language: console
 
-If we look at the full set of path variables activation set:
+If we look at the full set of path variables set by activation:
 
 .. literalinclude:: outputs/environments/show-paths-1.out
    :language: console
@@ -304,7 +304,7 @@ Environments can also be *independent*, with their files placed in any directory
 The directory holds the two files that define the environment:
 
 * ``spack.yaml``: the *manifest* file containing the abstract specs we asked for plus configuration settings.
-* ``spack.lock``: the *lockfile* contaning the concrete specs generated whenever the environment is concretized.
+* ``spack.lock``: the *lockfile* containing the concrete specs generated whenever the environment is concretized.
 
 ``spack.yaml`` is the human-readable file we have been editing indirectly with ``spack add`` and ``spack remove``:
 

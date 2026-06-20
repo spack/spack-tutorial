@@ -16,12 +16,11 @@ In this tutorial we will see how to use them to manage large deployments, a comm
 What usually characterizes these deployments, compared to a typical single-user environment, is the need to provide the same set of packages built against a variety of configurations: different MPI libraries, LAPACK implementations, or compilers.
 
 Below, we'll build a representative example of such a deployment.
-Our goal is to install ``netlib-scalapack`` against:
+Our goal is to install ``netlib-scalapack`` compiled with ``gcc@16``, which is newer than the system-provided ``gcc@15``, and linked against:
 
 - two MPI libraries (``openmpi`` and ``mpich``)
 - two LAPACK providers (``openblas`` and ``netlib-lapack``)
 
-and compiled with ``gcc@16``, which is newer than the system-provided ``gcc@15``.
 We'll also install ``py-scipy`` linked against ``openblas``.
 
 We'll first focus on how to configure and install the software correctly.
@@ -81,7 +80,7 @@ Spec groups offer a better tool: the ``override`` block, which scopes any Spack 
    :language: yaml
    :emphasize-lines: 11-18,23-30
 
-Here we used it to set compiler preferences at the language level, once for each group:
+Here we used the ``override`` block to set compiler preferences at the language level, once for each group:
 
 1. The ``compiler`` group prefers ``gcc@15``
 2. The ``stack`` group prefers ``gcc@16``
@@ -284,7 +283,7 @@ Alternatively, to create a buildcache you can:
    $ spack gpg create <name> <e-mail>
    $ spack buildcache push ./mirror
 
-Don't forget to set an appropriate value for the padding of the install tree, see `how to setup relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
+Don't forget to set an appropriate value for the padding of the install tree; see `how to set up relocation <https://spack.readthedocs.io/en/latest/binary_caches.html#relocation>`_ in our documentation.
 
 --------------------------
 Multiple Filesystem Views
@@ -374,7 +373,7 @@ Let's check the generated module files:
    :language: console
 
 The set of modules is already usable, and the hierarchy already works.
-For instance, we can load the ``gcc`` compiler and check that we have ``gcc`` in our path and a lot of modules available, all compiled with ``gcc@16``:
+For instance, we can load the ``gcc`` compiler and check that ``gcc`` is in our path and that many modules are available, all compiled with ``gcc@16``:
 
 .. literalinclude:: outputs/stacks/modules-3.out
    :language: console
