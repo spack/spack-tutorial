@@ -182,7 +182,7 @@ Let's make the following changes:
 
 Now make the changes and additions to your ``package.py`` file.
 
-The resulting package should contain -- sans the copyright and license -- the following information:
+The resulting package should contain the following information, omitting the copyright and license:
 
 .. literalinclude:: tutorial/examples/packaging/1.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
