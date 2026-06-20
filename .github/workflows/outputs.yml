@@ -16,20 +16,20 @@ jobs:
     steps:
     - name: Checkout (Push)
       if: github.event_name != 'pull_request'
-      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
       with:
         ref: ${{ github.head_ref }}
 
     - name: Checkout (PR)
       if: github.event_name == 'pull_request'
-      uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0
+      uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10  # v6.0.3
       with:
         ref: ${{ github.event.pull_request.head.ref }}
         repository: ${{ github.event.pull_request.head.repo.full_name }}
 
     - name: Download container from artifact if PR
       if: github.event_name == 'pull_request' && inputs.with_pr_container
-      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c
+      uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v4.1.7
       with:
         name: tutorial-container
         path: /tmp
@@ -52,7 +52,7 @@ jobs:
         git diff HEAD outputs/
 
     - name: Upload outputs as artifact
-      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+      uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v4.3.1
       with:
         name: generated-outputs
         path: outputs/
