@@ -25,7 +25,7 @@ jobs:
       style: ${{ steps.filter.outputs.style }}
 
     steps:
-      - uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # @v2
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # @v2
         if: ${{ github.event_name == 'push' }}
         with:
           fetch-depth: 0
