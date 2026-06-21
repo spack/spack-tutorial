@@ -20,24 +20,24 @@ spack env activate .
 example dev/setup-scr "# for now, disable fortran support in all packages"
 example dev/setup-scr 'spack config add "packages:all:variants: ~fortran"'
 example dev/setup-scr "spack add macsio+scr"
-example dev/setup-scr "spack install"
+example --tee dev/setup-scr "spack install"
 example dev/setup-scr "spack find -cv scr"
 
 example dev/develop-1 "spack develop scr"
 example dev/develop-1 "spack config blame develop"
 example dev/develop-1 "spack find -cv scr"
 
-example dev/develop-2 "spack install"
+example --tee dev/develop-2 "spack install"
 
 export EDITOR=true
 fake_example dev/edit-1 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\);|\1|' scr/src/scr_copy.c | head -n 70
 
-example --expect-error dev/develop-3 "spack install"
+example --tee --expect-error dev/develop-3 "spack install"
 
 fake_example dev/develop-4 '$EDITOR scr/src/scr_copy.c' "/bin/true"
 sed -i~ s'|\(static char hostname\[256\] = "UNKNOWN_HOST"\)|\1;|' scr/src/scr_copy.c | head -n 70
-example dev/develop-4 "spack install"
+example --tee dev/develop-4 "spack install"
 
 example dev/develop-5 "spack develop --recursive scr"
 example dev/develop-5 "spack find -cv macsio"
