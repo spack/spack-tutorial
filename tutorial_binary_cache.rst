@@ -192,17 +192,18 @@ The resolution is to push again with ``--base-image`` pointing at a minimal dist
 .. code-block:: console
 
    $ spack -e . buildcache push --force --without-build-dependencies \
-         --base-image ubuntu:24.04 my-registry
+         --base-image ubuntu:26.04 my-registry
 
 The base image's ``libc`` must be at least as new as the one used at build time, otherwise the binaries fail at runtime with errors of the form ``version `GLIBC_2.38' not found``.
 The distribution itself need not match.
 ``archlinux:latest``, for example, ships a sufficiently recent ``glibc`` while providing a different userland (``pacman`` instead of ``apt``, and so on).
 
-The image now runs:
+The image now runs.
+Because the tag was pushed once already, ``docker`` has the old single-layer image cached locally; ``--pull always`` forces it to fetch the rebuilt image with the base layer:
 
 .. code-block:: console
 
-   $ docker run --rm localhost:5000/buildcache:julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze.spack julia -e 'println(1 + 1)'
+   $ docker run --rm --pull always localhost:5000/buildcache:julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze.spack julia -e 'println(1 + 1)'
    2
 
 In addition to ``glibc``, the base image provides a shell and the standard utilities.
@@ -230,7 +231,7 @@ Pass ``--tag`` to assign the environment image a human-readable name:
 .. code-block:: console
 
    $ spack -e . buildcache push --without-build-dependencies \
-         --base-image ubuntu:24.04 \
+         --base-image ubuntu:26.04 \
          --tag julia-and-vim \
          my-registry
    ...
