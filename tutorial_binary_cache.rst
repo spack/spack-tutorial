@@ -44,7 +44,7 @@ Install the environment:
 
    $ spack -e . install
    ...
-   [+] dkvv7m3 julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze (3s)
+   [+] tkz5bvy julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi (3s)
 
 Both ``julia`` and every transitive dependency, including ``llvm``, are fetched and relocated from the ``tutorial`` mirror; nothing is built from source.
 Given a build cache, the concretizer prefers concrete specs for which binaries already exist.
@@ -112,15 +112,15 @@ Push the environment to the local registry:
 .. code-block:: console
 
    $ spack -e . buildcache push --without-build-dependencies my-registry
-   ==> Selected 62 specs to push to oci+http://localhost:5000/buildcache
+   ==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
    ==> Checking for existing specs in the buildcache
-   ==> [1/62] Pushed gcc-runtime@11.5.0/rcxunjn: sha256:c9362f6244e3... (0.08s, 125.76 MB/s)
+   ==> [ 1/29] Pushed libiconv@1.18/vbwvgwx: sha256:069f65751147... (0.09s, 23.52 MB/s)
    ...
-   ==> [62/62] Pushed julia@1.12.6/dkvv7m3: sha256:f8863558da07... (0.21s, 92.40 MB/s)
+   ==> [29/29] Pushed julia@1.12.6/tkz5bvy: sha256:0d3cdfaff6ff... (1.18s, 126.72 MB/s)
    ==> Uploading manifests
-   ==> [1/62] Tagged gcc-runtime@11.5.0/rcxunjn as localhost:5000/buildcache:gcc-runtime-11.5.0-rcxunjnw4voqkt5zieeerei767e4s7py.spack
+   ==> [ 1/29] Tagged libiconv@1.18/vbwvgwx as localhost:5000/buildcache:libiconv-1.18-vbwvgwxvjrccmptlen3ebo555lk5wior.spack
    ...
-   ==> [62/62] Tagged julia@1.12.6/dkvv7m3 as localhost:5000/buildcache:julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze.spack
+   ==> [29/29] Tagged julia@1.12.6/tkz5bvy as localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack
 
 Two things about this invocation are worth noting.
 
@@ -135,7 +135,7 @@ Re-running the push detects that nothing needs to be uploaded:
 .. code-block:: console
 
    $ spack -e . buildcache push --without-build-dependencies my-registry
-   ==> Selected 62 specs to push to oci+http://localhost:5000/buildcache
+   ==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
    ==> Checking for existing specs in the buildcache
    ==> All specs are already in the buildcache. Use --force to overwrite them.
 
@@ -156,19 +156,16 @@ The trailing ``::`` replaces, rather than extends, the mirrors inherited from Sp
 
 Reinstall ``julia`` with ``--overwrite``.
 Only ``julia`` is reinstalled; its dependencies remain installed and are not refetched.
-The default installer output does not report where a package comes from, so pass ``-v`` to surface the fetch:
 
 .. code-block:: console
 
-   $ spack -e . install -v --overwrite -y julia
-   [ ] dkvv7m3 julia@1.12.6 fetching from build cache (0s)
-   ==> Fetching http://localhost:5000/v2/buildcache/blobs/sha256:f8863558da07...
-   ==> Fetching http://localhost:5000/v2/buildcache/blobs/sha256:4af76428dc77...
-   [ ] dkvv7m3 julia@1.12.6 relocating (1s)
-   [+] dkvv7m3 julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze (3s)
+   $ spack -e . install --overwrite -y julia
+   [ ] tkz5bvy julia@1.12.6 fetching from build cache (0s)
+   [ ] tkz5bvy julia@1.12.6 relocating (2s)
+   [+] tkz5bvy julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi (9s)
 
-Two blobs are fetched per spec: a JSON manifest and the binary tarball.
-OCI registries are content-addressed, hence the ``sha256:...`` identifiers rather than human-readable filenames.
+Each spec is stored as two blobs: a JSON manifest and the binary tarball.
+OCI registries are content-addressed, hence the ``sha256:...`` identifiers shown in the push output rather than human-readable filenames.
 
 ----------------------------------
 Creating runnable container images
@@ -181,8 +178,8 @@ Consider what happens when running an image without a base image:
 
 .. code-block:: console
 
-   $ docker run --rm localhost:5000/buildcache:julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze.spack julia -e 'println(1 + 1)'
-   exec /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-dkvv7m3.../bin/julia: no such file or directory
+   $ docker run --rm localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack julia -e 'println(1 + 1)'
+   exec /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvy.../bin/julia: no such file or directory
 
 The run fails because the layers we pushed contain the Spack-built artifacts but not the host's ``glibc``, which Spack always treats as an external package.
 Without a base image the container has no ``/lib`` directory at all, which produces the error above.
@@ -203,7 +200,7 @@ Because the tag was pushed once already, ``docker`` has the old single-layer ima
 
 .. code-block:: console
 
-   $ docker run --rm --pull always localhost:5000/buildcache:julia-1.12.6-dkvv7m3wqj5xn2lphsc6tay8fbiruoze.spack julia -e 'println(1 + 1)'
+   $ docker run --rm --pull always localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack julia -e 'println(1 + 1)'
    2
 
 In addition to ``glibc``, the base image provides a shell and the standard utilities.
