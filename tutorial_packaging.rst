@@ -611,7 +611,7 @@ We also need to explicitly specify the ``build_system`` directive, and add condi
        with when("build_system=autotools"):
            depends_on("automake", type="build")
            depends_on("autoconf", type="build")
-           depends_on("libtools", type="build")
+           depends_on("libtool", type="build")
 
 As we saw with :ref:`tutorial-mpileaks <info_mpileaks>`, each spec has a ``build_system`` variant that specifies the build system it uses.
 In most cases that variant has a single allowed value, inherited from the corresponding base package - so, usually, you don't have to think about it.
@@ -620,7 +620,7 @@ When your package supports more than one build system though, you have to explic
 In the example above it's ``cmake`` for version 0.64 and higher and ``autotools`` for version 0.63 and lower.
 
 The ``build_system`` variant can also be used to declare other properties which are conditional on the build system being selected.
-For instance, above we use the ``when`` context manager to declare that ``autotools`` builds depend on ``automake``, ``autoconf``, and ``libtools`` being installed first.
+For instance, above we use the ``when`` context manager to declare that ``autotools`` builds depend on ``automake``, ``autoconf``, and ``libtool`` being installed first.
 
 The other relevant difference, compared to previous recipes we have seen so far, is that the code prescribing the installation procedure will live in two separate classes:
 
