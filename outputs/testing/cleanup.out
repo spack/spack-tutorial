@@ -1,0 +1,5 @@
+$ spack uninstall -ay mpileaks
+==> Successfully uninstalled mpileaks@1.0%gcc@7.5.0 arch=linux-ubuntu18.04-x86_64/dx5qx6s
+$ spack repo remove spack-tests
+==> Removed repository /home/spack/spack/spack-tests
+$ rm -rf $SPACK_ROOT/spack-tests
