@@ -28,7 +28,7 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 **Full citation:** Greg Becker, Alec Scott, Caetano Melone, Kathleen Shea, and Todd Gamblin.
 Managing HPC Software Complexity with Spack.
-HPCIC Tutorials 2026, Livermore, California, 2026.
+HPCIC Tutorials 2026, Livermore, California, July 7-8, 2026.
 
 .. _video:
 
