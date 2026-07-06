@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `ISC High Performance 2026 Conference <https://isc-hpc.com/>`_ Conference on June 22, 2026.
-The event was a half day in-person tutorial.
+It was last presented virtually at the `HPCIC 2026 HPC Tutorials <https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials>`_.
+The event was two online half-day tutorials.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -19,17 +19,16 @@ You can use these materials to teach a course on Spack at your own site, or you 
 .. rubric:: Slides
 
 .. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/./spack-isc26-tutorial-slides.pdf
+   :target: _static/slides/spack-isc26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/./spack-isc26-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-isc26-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Harmen Stoppels, Massimiliano Culpo, Alec Scott, Kathleen Shea, Adam Stewart, Michael Kuhn, and Todd Gamblin.
+**Full citation:** Greg Becker, Alec Scott, Caetano Melone, Kathleen Shea, and Todd Gamblin.
 Managing HPC Software Complexity with Spack.
-ISC-HPC 2026 (ISC26).
-Hamburg, Germany, June 22-25, 2026.
+HPCIC Tutorials 2026, Livermore, California, 2026.
 
 .. _video:
 
@@ -49,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:isc26
-   $ docker run -it ghcr.io/spack/tutorial:isc26
+   $ docker pull ghcr.io/spack/tutorial:hpcic26
+   $ docker run -it ghcr.io/spack/tutorial:hpcic26
 
 to start using the container.
 You should now be ready to run through our demo scripts:
