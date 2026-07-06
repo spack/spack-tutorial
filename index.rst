@@ -19,12 +19,12 @@ You can use these materials to teach a course on Spack at your own site, or you 
 .. rubric:: Slides
 
 .. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/spack-isc26-tutorial-slides.pdf
+   :target: _static/slides/spack-hpcic26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-isc26-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-hpcic26-tutorial-slides.pdf>`.
 
 **Full citation:** Greg Becker, Alec Scott, Caetano Melone, Kathleen Shea, and Todd Gamblin.
 Managing HPC Software Complexity with Spack.
