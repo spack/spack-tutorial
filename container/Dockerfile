@@ -15,7 +15,7 @@ RUN apt-get update -y && \
 
 # Download the buildcache
 RUN mkdir /mirror
-RUN rclone copy :s3:spack-binaries/releases/v2026.06/tutorial /mirror
+RUN rclone copy :s3:spack-binaries/v2026.06.0/tutorial /mirror
 
 RUN chmod -R go+r /mirror
 
