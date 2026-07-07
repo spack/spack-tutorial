@@ -365,7 +365,7 @@ First, we will look at the default ``packages.yaml`` file.
 
 .. literalinclude:: _spack_root/etc/spack/defaults/base/packages.yaml
    :language: yaml
-   :emphasize-lines: 52
+   :emphasize-lines: 51
 
 
 This sets the default preferences for providers of virtual packages.
@@ -513,7 +513,7 @@ To express that we don't want any other MPI installed, we can use the virtual ``
 While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be able to build with MPI again:
 
 .. code-block:: yaml
-   :emphasize-lines: 12,18-21
+   :emphasize-lines: 17-21
 
    spack:
      specs: []
