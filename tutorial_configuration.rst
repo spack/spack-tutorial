@@ -521,7 +521,7 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
      concretizer:
        unify: true
      packages:
-      curl:
+       curl:
         externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
