@@ -534,7 +534,7 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
          buildable: false
        mpich:
          externals:
-         - spec: mpich@4.0+hydra+verbs device=ch4 netmod=ucx
+         - spec: mpich@4.3.2+hydra+verbs device=ch4 netmod=ucx
            prefix: /usr
 
 
