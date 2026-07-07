@@ -150,6 +150,7 @@ For example, look at high-level config:
    /home/spack/spack/etc/spack/defaults/config.yaml:240      containerise: containerize
    /home/spack/spack/etc/spack/defaults/config.yaml:241      rm: remove
 
+
 We can see overrides in action with:
 
 .. code-block:: console
@@ -206,14 +207,14 @@ We start with no active environment, so this will open a ``packages.yaml`` file 
    packages:
      gcc:
        externals:
-       - spec: gcc@10.5.0 languages:='c,c++,fortran'
+       - spec: gcc@14.3.0 languages:='c,c++,fortran'
          prefix: /usr
          extra_attributes:
            compilers:
-             c: /usr/bin/gcc-10
-             cxx: /usr/bin/g++-10
-             fortran: /usr/bin/gfortran-10
-       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+             c: /usr/bin/gcc-14
+             cxx: /usr/bin/g++-14
+             fortran: /usr/bin/gfortran-14
+       - spec: gcc@15.2.0 languages:='c,c++,fortran'
          prefix: /usr
          extra_attributes:
            compilers:
@@ -222,12 +223,13 @@ We start with no active environment, so this will open a ``packages.yaml`` file 
              fortran: /usr/bin/gfortran
      llvm:
        externals:
-       - spec: llvm@14.0.0+clang~flang~lld~lldb
+       - spec: llvm@21.1.8+clang~flang~lld~lldb
          prefix: /usr
          extra_attributes:
            compilers:
              c: /usr/bin/clang
              cxx: /usr/bin/clang++
+
 
 This specifies two versions of the GCC compiler and one version of the Clang compiler with no Flang compiler.
 Now suppose we have a code that we want to compile with the Clang compiler for C/C++ code, but with gfortran for Fortran components.
@@ -241,12 +243,13 @@ We can do this by adding creating a toolchain config:
 
    toolchains:
      clang_gfortran:
-     - spec: '%c=llvm@14.0.0'
+     - spec: '%c=llvm@21.1.8'
        when: '%c'
-     - spec: '%cxx=llvm@14.0.0'
+     - spec: '%cxx=llvm@21.1.8'
        when: '%cxx'
-     - spec: '%fortran=gcc@11.4.0'
+     - spec: '%fortran=gcc@15.2.0'
        when: '%fortran'
+
 
 We are essentially saying "use Clang for C/C++, and use GCC for Fortran".
 You can use this new entry like so:
@@ -278,13 +281,13 @@ Let's open our compilers configuration file again and add a compiler flag:
    packages:
      gcc:
        externals:
-       - spec: gcc@10.5.0 languages:='c,c++,fortran'
+       - spec: gcc@14.3.0 languages:='c,c++,fortran'
          prefix: /usr
          extra_attributes:
            compilers:
-             c: /usr/bin/gcc-10
-             cxx: /usr/bin/g++-10
-             fortran: /usr/bin/gfortran-10
+             c: /usr/bin/gcc-14
+             cxx: /usr/bin/g++-14
+             fortran: /usr/bin/gfortran-14
            flags:
              cppflags: -g
 
@@ -311,10 +314,10 @@ Some additional fields not discussed yet, in an example:
    packages:
      gcc:
        externals:
-       - spec: gcc@11.4.0 languages:='c,c++,fortran'
+       - spec: gcc@15.2.0 languages:='c,c++,fortran'
          prefix: /usr
          modules:
-         - gcc/11.4.0
+         - gcc/15.2.0
          extra_attributes:
            compilers:
              c: /usr/bin/gcc
@@ -327,6 +330,7 @@ Some additional fields not discussed yet, in an example:
            environment:
              set:
                EG_A_LICENSE_FILE: 1713@license4
+
 
 .. The ``target`` field of the compiler defines the cpu architecture **family** that the compiler supports.
 .. (target isn't in the compiler schema in packages anymore: how do we say "target generic x86_64 whenever you use this compiler")
@@ -361,7 +365,7 @@ First, we will look at the default ``packages.yaml`` file.
 
 .. literalinclude:: _spack_root/etc/spack/defaults/base/packages.yaml
    :language: yaml
-   :emphasize-lines: 51
+   :emphasize-lines: 52
 
 
 This sets the default preferences for providers of virtual packages.
@@ -397,11 +401,12 @@ When you have an activated environment, you can edit the associated configuratio
      concretizer:
        unify: true
      packages:
-       all:
+       c:
          prefer:
-         - "%llvm"
+         - llvm
        mpi:
          require: mpich
+
 
 We see if we retry that we now get what we want without getting any more specific on the command line.
 
@@ -429,9 +434,9 @@ Instead, we'll update our config to force disable it:
      concretizer:
        unify: true
      packages:
-       all:
+       c:
          prefer:
-         - "%llvm"
+         - llvm
        mpi:
          require: mpich
        hdf5:
@@ -441,7 +446,7 @@ Instead, we'll update our config to force disable it:
 
 Note if you define ``require`` under ``all`` and ``hdf5``, you must reintroduce any requirements in ``hdf5``.
 
-.. literalinclude:: outputs/config/3.prefs.out
+.. literalinclude:: outputs/config/2.prefs.out
    :language: spec
    :emphasize-lines: 2
 
@@ -460,7 +465,7 @@ On these systems, we have a pre-installed curl.
 Let's tell Spack about this package and where it can be found:
 
 .. code-block:: yaml
-   :emphasize-lines: 15-19
+   :emphasize-lines: 7-11
 
    spack:
      specs: []
@@ -468,21 +473,22 @@ Let's tell Spack about this package and where it can be found:
      concretizer:
        unify: true
      packages:
-       all:
+       curl:
+         externals:
+         - spec: curl@8.18.0 %gcc@15.2.0
+           prefix: /usr
+         buildable: false
+       c:
          prefer:
-         - "%llvm"
+         - llvm
        mpi:
          require: mpich
        hdf5:
          require:
          - spec: "~mpi"
-       curl:
-         externals:
-         - spec: curl@7.81.0 %gcc@11.4.0
-           prefix: /usr
-         buildable: false
 
-Here, we've told Spack that Curl 7.81.0 is installed on our system.
+
+Here, we've told Spack that Curl 8.18.0 is installed on our system.
 We've also told it the installation prefix where Curl can be found.
 We don't know exactly which variants it was built with, but that's okay.
 Finally, we set ``buildable: false`` to require that Spack not try to build its own.
@@ -515,21 +521,22 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
      concretizer:
        unify: true
      packages:
-       all:
-         prefer:
-         - "%llvm"
-       mpi:
-         require: mpich
-         buildable: false
-       curl:
-         externals:
+      curl:
+        externals:
          - spec: curl@7.81.0 %gcc@11.4.0
            prefix: /usr
          buildable: false
+       c:
+         prefer:
+         - llvm
+       mpi:
+         require: mpich
+         buildable: false
        mpich:
          externals:
-         - spec: mpich@4.0+hydra device=ch4 netmod=ofi
+         - spec: mpich@4.0+hydra+verbs device=ch4 netmod=ucx
            prefix: /usr
+
 
 .. 3.externals.out has mpich
 .. The concretization result is strange and enables some qt stuff that makes it huge
@@ -542,14 +549,12 @@ To debug this, we will force Spack to use ``hdf5+mpi``.
 
    $ spack spec hdf5+mpi
    ==> Error: failed to concretize `hdf5+mpi` for the following reasons:
-        1. cannot satisfy a requirement for package 'mpich'.
-        2. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-        3. hdf5: '+mpi' conflicts with '^mpich@4.0:4.0.3'
-           required because conflict is triggered when +mpi
-             required because hdf5+mpi requested explicitly
-           required because conflict constraint ^mpich@4.0:4.0.3
-             required because mpich available as external when satisfying mpich@=4.0+hydra device=ch4 netmod=ofi
-             required because hdf5+mpi requested explicitly
+     1. 'hdf5' requires conflicting variant values '~mpi' and '+mpi'
+     2. 'hdf5' requires conflicting variant values '~mpi' and '+mpi'
+        required because hdf5+mpi requested explicitly
+        required because ~mpi is a requirement for package hdf5
+          required because hdf5+mpi requested explicitly
+
 
 In this case, we cannot use the external mpich.
 The version is incompatible with ``hdf5``.
@@ -641,7 +646,7 @@ On systems with compilers that absolutely *require* environment variables like `
 However, this is strongly discouraged, as it can pull unwanted libraries into the build.
 
 One last setting that may be of interest to many users is the ability to customize the parallelism of Spack builds.
-By default, Spack installs all packages in parallel with the number of jobs equal to the number of cores on the node (up to a maximum of 16).
+By default, Spack installs all packages in parallel with the number of jobs equal to the number of cores on the node.
 For example, on a node with 16 cores, this will look like:
 
 .. code-block:: spec
@@ -649,13 +654,13 @@ For example, on a node with 16 cores, this will look like:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs'
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-x86_64_v3/gcc-15.2.0/zlib-1.3.2-tbcolosea5jpwtkur56rxvk352jipg7r'
    ...
    ==> 'make' '-j16'
    ...
    ==> 'make' '-j16' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu22.04-x86_64/gcc-11.3.0/zlib-1.2.12-fntvsj6xevbz5gyq7kfa4xg7oxnaolxs
+   [+] /home/user/spack/opt/spack/linux-x86_64_v3/gcc-15.2.0/zlib-1.3.2-tbcolosea5jpwtkur56rxvk352jipg7r
 
 
 As you can see, we are building with all 16 cores on the node.
@@ -681,7 +686,7 @@ If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
    $ spack install --no-cache --verbose --overwrite --yes-to-all zlib-ng
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-ubuntu22.04...
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-x86_64_v3...
    ...
    ==> 'make' '-j2'
    ...
@@ -706,7 +711,7 @@ Last, we'll unset ``concretizer:reuse:false`` since we'll want to enable concret
 Conclusion
 ----------
 
-In this tutorial, we covered basic Spack configuration using ``compilers.yaml``, ``packages.yaml``, and ``config.yaml``.
+In this tutorial, we covered basic Spack configuration using ``packages.yaml``, and ``config.yaml``.
 Spack has many more configuration files, including ``modules.yaml``, which will be covered in the :ref:`modules-tutorial`.
 For more detailed documentation on Spack's many configuration settings, see `the configuration section <https://spack.readthedocs.io/en/latest/configuration.html>`_ of Spack's main documentation.
 

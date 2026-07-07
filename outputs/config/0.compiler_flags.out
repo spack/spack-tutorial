@@ -1,7 +1,7 @@
-$ spack spec zlib%gcc@10
- -   zlib@1.3.1 cppflags=-g +optimize+pic+shared build_system=makefile arch=linux-ubuntu22.04-x86_64_v3 %c,cxx=gcc@10.5.0
-[+]      ^compiler-wrapper@1.0 build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]      ^gcc@10.5.0~binutils+bootstrap~graphite~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' patches:=2c18531 arch=linux-ubuntu22.04-x86_64_v3
- -       ^gcc-runtime@10.5.0 cppflags=-g  build_system=generic arch=linux-ubuntu22.04-x86_64_v3
-[e]      ^glibc@2.35 build_system=autotools arch=linux-ubuntu22.04-x86_64_v3
- -       ^gmake@4.4.1 cppflags=-g ~guile build_system=generic arch=linux-ubuntu22.04-x86_64_v3 %c=gcc@10.5.0
+$ spack spec zlib%gcc@14
+ -   zlib@1.3.2 cppflags=-g +optimize+pic+shared build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@14.3.0
+[+]      ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[e]      ^gcc@14.3.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64
+ -       ^gcc-runtime@14.3.0 cppflags=-g  build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[e]      ^glibc@2.43 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64
+ -       ^gmake@4.4.1 cppflags=-g ~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@14.3.0
