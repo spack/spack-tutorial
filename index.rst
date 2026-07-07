@@ -83,17 +83,17 @@ Full contents:
 
    tutorial_basics
    tutorial_environments
-   tutorial_packaging
+   tutorial_configuration
    tutorial_stacks
+   tutorial_packaging
    tutorial_developer_workflows
    tutorial_binary_cache
+   tutorial_scripting
 
 .. toctree::
    :maxdepth: 3
    :caption: Additional sections
 
-   tutorial_configuration
    tutorial_modules
    tutorial_buildsystems
    tutorial_advanced_packaging
-   tutorial_scripting
