@@ -6,9 +6,9 @@ $ jq < spack.lock | head -30
     "specfile-version": 5
   },
   "spack": {
-    "version": "1.2.0.dev0",
+    "version": "1.2.1",
     "type": "git",
-    "commit": "3d24b94ef3d15a4864794f98807a7fcc17b83f48"
+    "commit": "2f80bed397c15a7f04607051315ea56881351ce4"
   },
   "roots": [
     {
@@ -16,7 +16,7 @@ $ jq < spack.lock | head -30
       "spec": "tcl"
     },
     {
-      "hash": "u43pchxcfkd7syptwimxl4lozm5jmy2h",
+      "hash": "66pfqb7gv754pttljbirkunpy7okr4kh",
       "spec": "trilinos"
     }
   ],

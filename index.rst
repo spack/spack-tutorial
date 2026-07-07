@@ -9,8 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented at the `ISC High Performance 2026 Conference <https://isc-hpc.com/>`_ Conference on June 22, 2026.
-The event was a half day in-person tutorial.
+It was last presented virtually at the `HPCIC 2026 HPC Tutorials <https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials>`_.
+The event was two online half-day tutorials.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
@@ -19,17 +19,16 @@ You can use these materials to teach a course on Spack at your own site, or you 
 .. rubric:: Slides
 
 .. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/./spack-isc26-tutorial-slides.pdf
+   :target: _static/slides/spack-hpcic26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/./spack-isc26-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-hpcic26-tutorial-slides.pdf>`.
 
-**Full citation:** Gregory Becker, Harmen Stoppels, Massimiliano Culpo, Alec Scott, Kathleen Shea, Adam Stewart, Michael Kuhn, and Todd Gamblin.
+**Full citation:** Greg Becker, Alec Scott, Caetano Melone, Kathleen Shea, and Todd Gamblin.
 Managing HPC Software Complexity with Spack.
-ISC-HPC 2026 (ISC26).
-Hamburg, Germany, June 22-25, 2026.
+HPCIC Tutorials 2026, Livermore, California, July 7-8, 2026.
 
 .. _video:
 
@@ -49,26 +48,26 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:isc26
-   $ docker run -it ghcr.io/spack/tutorial:isc26
+   $ docker pull ghcr.io/spack/tutorial:hpcic26
+   $ docker run -it ghcr.io/spack/tutorial:hpcic26
 
 to start using the container.
 You should now be ready to run through our demo scripts:
 
 #. :ref:`basics-tutorial`
 #. :ref:`environments-tutorial`
-#. :ref:`packaging-tutorial`
+#. :ref:`configs-tutorial`
 #. :ref:`stacks-tutorial`
+#. :ref:`packaging-tutorial`
 #. :ref:`developer-workflows-tutorial`
 #. :ref:`binary-cache-tutorial`
+#. :ref:`spack-scripting-tutorial`
 
 Other sections from past tutorials are also available, although they may not be kept up-to-date as frequently:
 
-#. :ref:`configs-tutorial`
 #. :ref:`modules-tutorial`
 #. :ref:`build-systems-tutorial`
 #. :ref:`advanced-packaging-tutorial`
-#. :ref:`spack-scripting-tutorial`
 
 Full contents:
 
@@ -84,17 +83,17 @@ Full contents:
 
    tutorial_basics
    tutorial_environments
-   tutorial_packaging
+   tutorial_configuration
    tutorial_stacks
+   tutorial_packaging
    tutorial_developer_workflows
    tutorial_binary_cache
+   tutorial_scripting
 
 .. toctree::
    :maxdepth: 3
    :caption: Additional sections
 
-   tutorial_configuration
    tutorial_modules
    tutorial_buildsystems
    tutorial_advanced_packaging
-   tutorial_scripting

@@ -3,7 +3,7 @@
   >>> result = [spec for spec in gcc_specs if not spec.satisfies('^mpich')]
   >>> import spack.cmd
   >>> spack.cmd.display_specs(result)
-  -- linux-ubuntu22.04-x86_64_v3 / gcc@11.4.0 -------------------------
+  -- linux-ubuntu26.04-x86_64_v3 / gcc@15.2.0 -------------------------
 autoconf@2.72                       gdbm@1.23             libsigsegv@2.14   perl@5.38.0
 automake@1.16.5                     gettext@0.22.5        libtool@2.4.7     pigz@2.8
 berkeley-db@18.1.40                 glibc@2.35            libxcrypt@4.4.35  pkgconf@2.2.0
