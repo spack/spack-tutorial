@@ -2,59 +2,54 @@ $ spack install
 [ ] bdhwshg scr@2.0.0 fetching from build cache (0s)
 [ ] bdhwshg scr@2.0.0 no binary available (0s)
 [ ] bdhwshg scr@2.0.0 staging (0s)
-[ ] bdhwshg scr@2.0.0 cmake (0s)
-[ ] bdhwshg scr@2.0.0 build (0s)
-[x] bdhwshg scr@2.0.0 failed: /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63-p_e81i_2.log (0s)
--- lines 1 to 7 --
-> /home/spack/spack/lib/spack/spack/build_environment.py:490: SpackAPIWarning: when setting environment variable SPACK_DEBUG_LOG_DIR=None: value is of type `NoneType`, but `str` was expected. This is deprecated and will be an error in Spack v1.0
-    env.set(SPACK_DEBUG_LOG_DIR, spack.paths.spack_working_dir)
-  ==> No patches needed for scr
-  ==> scr: Executing phase: 'cmake'
-  ==> [2026-06-21-22:54:40.565185] Incremental build criteria satisfied.Skipping CMake configure step. To force configuration run `spack clean scr`
-  ==> scr: Executing phase: 'build'
-  ==> [2026-06-21-22:54:40.565656] /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make
--- lines 160 to 191 --
-  make[2]: Nothing to be done for 'src/CMakeFiles/scr-static.dir/build'.
+[ ] bdhwshg scr@2.0.0 cmake (1s)
+[ ] bdhwshg scr@2.0.0 build (1s)
+[x] bdhwshg scr@2.0.0 failed: /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63-1fudqp8v.log (1s)
+-- lines 159 to 203 --
   make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   [ 82%] Built target scr
+  [ 83%] Built target scr-static
   /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f src/CMakeFiles/scr_have_restart.dir/build.make src/CMakeFiles/scr_have_restart.dir/depend
   /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f examples/CMakeFiles/test_api.dir/build.make examples/CMakeFiles/test_api.dir/depend
-  [ 83%] Built target scr-static
+  /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f examples/CMakeFiles/test_api_multiple.dir/build.make examples/CMakeFiles/test_api_multiple.dir/depend
 > /home/spack/devel-env/scr/src/scr_copy.c:44:1: error: expected ',' or ';' before 'int'
      44 | int print_usage()
 	| ^~~
   make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   cd /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg && /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.11-a4wqsr7jgutfmovf33lhff75e4qbpjgh/bin/cmake -E cmake_depends "Unix Makefiles" /home/spack/devel-env/scr /home/spack/devel-env/scr/src /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/src /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/src/CMakeFiles/scr_have_restart.dir/DependInfo.cmake "--color="
-  /home/spack/devel-env/scr/src/scr_copy.c: In function 'process_args':
-> /home/spack/devel-env/scr/src/scr_copy.c:135:9: error: implicit declaration of function 'print_usage' [-Wimplicit-function-declaration]
-    135 |	  print_usage();
-	|	  ^~~~~~~~~~~
-  /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f examples/CMakeFiles/test_api_multiple.dir/build.make examples/CMakeFiles/test_api_multiple.dir/depend
   make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   cd /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg && /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.11-a4wqsr7jgutfmovf33lhff75e4qbpjgh/bin/cmake -E cmake_depends "Unix Makefiles" /home/spack/devel-env/scr /home/spack/devel-env/scr/examples /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/examples /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/examples/CMakeFiles/test_api.dir/DependInfo.cmake "--color="
   make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   cd /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg && /home/spack/spack/opt/spack/linux-x86_64_v3/cmake-3.31.11-a4wqsr7jgutfmovf33lhff75e4qbpjgh/bin/cmake -E cmake_depends "Unix Makefiles" /home/spack/devel-env/scr /home/spack/devel-env/scr/examples /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/examples /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg/examples/CMakeFiles/test_api_multiple.dir/DependInfo.cmake "--color="
-  make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
-> make[2]: *** [src/CMakeFiles/scr_copy.dir/build.make:82: src/CMakeFiles/scr_copy.dir/scr_copy.c.o] Error 1
+  /home/spack/devel-env/scr/src/scr_copy.c: In function 'process_args':
+> /home/spack/devel-env/scr/src/scr_copy.c:135:9: error: implicit declaration of function 'print_usage' [-Wimplicit-function-declaration]
+    135 |	  print_usage();
+	|	  ^~~~~~~~~~~
   make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f src/CMakeFiles/scr_have_restart.dir/build.make src/CMakeFiles/scr_have_restart.dir/build
   make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
-> make[1]: *** [CMakeFiles/Makefile2:1336: src/CMakeFiles/scr_copy.dir/all] Error 2
-  make[1]: *** Waiting for unfinished jobs....
   /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f examples/CMakeFiles/test_api.dir/build.make examples/CMakeFiles/test_api.dir/build
   make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make  -f examples/CMakeFiles/test_api_multiple.dir/build.make examples/CMakeFiles/test_api_multiple.dir/build
   make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   make[2]: Nothing to be done for 'src/CMakeFiles/scr_have_restart.dir/build'.
--- lines 197 to 205 --
+  make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
+> make[2]: *** [src/CMakeFiles/scr_copy.dir/build.make:82: src/CMakeFiles/scr_copy.dir/scr_copy.c.o] Error 1
+  make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
+> make[1]: *** [CMakeFiles/Makefile2:1336: src/CMakeFiles/scr_copy.dir/all] Error 2
+  make[1]: *** Waiting for unfinished jobs....
+  make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
+  make[2]: Nothing to be done for 'examples/CMakeFiles/test_api.dir/build'.
+  make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
+  make[2]: Entering directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   make[2]: Nothing to be done for 'examples/CMakeFiles/test_api_multiple.dir/build'.
   make[2]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
   [ 85%] Built target scr_have_restart
-  [ 88%] Built target test_api
-  [ 91%] Built target test_api_multiple
+  [ 88%] Built target test_api_multiple
+  [ 91%] Built target test_api
   make[1]: Leaving directory '/tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63/spack-build-bdhwshg'
 > make: *** [Makefile:149: all] Error 2
   Command exited with status 2:
       /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh/bin/make
 ==> Error: The following packages failed to install:
-scr@2.0.0/bdhwshgs2z3yfptjcsyothwaf6pw3i63: /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63-p_e81i_2.log
+scr@2.0.0/bdhwshgs2z3yfptjcsyothwaf6pw3i63: /tmp/spack/spack-stage/spack-stage-scr-2.0.0-bdhwshgs2z3yfptjcsyothwaf6pw3i63-1fudqp8v.log

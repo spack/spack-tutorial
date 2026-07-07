@@ -2,10 +2,10 @@ $ spack concretize
 ==> Concretizing the 'stack' group of specs
 ==> Starting concretization
 ==> Concretized 1 spec:
-[b]  gouabck  py-scipy@1.17.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
+[b]  s2p5dpl  py-scipy@1.17.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
 [+]  mmywg7x	  ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
-[+]  vlwdxlj	  ^gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
-[+]  cuzgmus	      ^binutils@2.46.0~debuginfod+gas~gprofng~headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  hkkcdmj	  ^gcc@16.1.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs+profiled+strip build_system=autotools build_type=Release languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  6ene6zr	      ^binutils@2.46.1~debuginfod+gas~gprofng~headers~interwork+ld~libiberty~lto~nls~pgo+plugins build_system=autotools compress_debug_sections=zlib libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  yvl6jpi		  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [b]  ao2onuz	      ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  vbwvgwx		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
@@ -26,11 +26,11 @@ $ spack concretize
 [+]  gxmoxea	      ^mpc@1.4.1 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [+]  melg7ga	      ^mpfr@4.2.2 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [b]  sf5iutv		  ^autoconf-archive@2024.10.16 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  bvphs3b	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
-[b]  27d4iyp		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  bvphs3b	      ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  27d4iyp		  ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  cbtgjrh		  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
-[b]  cq4dkuc		  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
-[b]  ohmdb2l		  ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  cq4dkuc		  ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  ohmdb2l		  ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 [b]  jvlaabk	      ^texinfo@7.2~xs build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  sle3ix4		  ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  ujlg2ua		      ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
@@ -39,79 +39,79 @@ $ spack concretize
 [+]  ekvivpv		  ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  g72d7i3	      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
 [+]  63aruxk	      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
-[b]  ghfita3	  ^gcc-runtime@16.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  nn3xbub	  ^gcc-runtime@16.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
 [e]  yc4n2pp	  ^glibc@2.43 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  6mel4bl	  ^meson@1.11.1 build_system=python_pip patches:=0f0b1bd platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  yqhdh2x	      ^ninja@1.13.2+re2c build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  rcco4zy		  ^re2c@4.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  ytwnkqf	      ^py-setuptools@82.0.1 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  kdylbqh	  ^openblas@0.3.33~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared~static build_system=makefile patches:=723ddc1 symbol_suffix=none threads=none platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
-[b]  6hzfsbp	      ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  xp6fyih	  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  3ggpdjv	  ^py-cython@3.2.4 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  c6oww3b	  ^py-meson-python@0.19.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  x55wsqe	      ^py-packaging@26.2 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  hn6pbjh		  ^py-flit-core@3.12.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  cuihsxt	      ^py-pyproject-metadata@0.11.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  7g2cva3	  ^py-numpy@2.4.6 build_system=python_pip patches:=873745d platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  5p3frq3	  ^py-pip@26.1 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  3iqsk4i	  ^py-pybind11@3.0.2+ipo build_system=cmake build_type=Release generator=ninja platform=linux os=ubuntu26.04 target=x86_64_v3 %cxx=gcc@16.1.0
-[b]  yonurps	      ^cmake@3.31.11~doc+ncurses+ownlibs~qtgui build_system=generic build_type=Release platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  6b5h3dv		  ^curl@8.20.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  iiwpnp7		      ^nghttp2@1.67.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  5anzcvk	      ^py-scikit-build-core@0.12.2~pyproject build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
-[b]  4qnonii		  ^py-hatch-vcs@0.5.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  psffea6		      ^py-setuptools-scm@9.2.2+toml build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  loixb6c			  ^git@2.53.0+man+nls+perl+subtree~tcltk build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  yg7nv7p			      ^autoconf@2.72 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  pdslnit			      ^automake@1.18.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  6hwe4tz			      ^libidn2@2.3.8 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  iyz34h3				  ^libunistring@1.4.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  raf5qk6			      ^libtool@2.5.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  fc5ezqn				  ^file@5.46+static build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  l3if3dy				  ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  47vgtt5			      ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  r6vd65h				  ^libsigsegv@2.15 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  kjx2nfr			      ^openssh@10.3p1+gssapi build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  awic2yh				  ^krb5@1.22.2+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  yws52fh				      ^bison@3.8.2~color build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  4c4uuub				  ^libedit@3.1-20251016 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  44jhzjg				  ^libxcrypt@4.5.2~obsolete_api build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  wttcr2f			      ^pcre2@10.44~jit+multibyte+pic build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  dxgdks3		  ^py-hatchling@1.29.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  etdouzz		      ^py-pluggy@1.6.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  cj7d3wo		      ^py-trove-classifiers@2026.6.1.19 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  t7ufmfz			  ^py-calver@2025.10.20 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  ble4v64		  ^py-pathspec@1.1.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  36lyfl6	  ^py-pythran@0.18.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %cxx=gcc@16.1.0
-[b]  k7zfexy	      ^py-beniget@0.4.2.post1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  5nakdbl	      ^py-gast@0.6.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  kbtru35	      ^py-ply@3.11 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  yygojb3	  ^py-wheel@0.45.1 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  afnel7p	  ^python@3.14.5+bz2+ctypes+dbm~debug~freethreading+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~static~tests~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  ofahxlj	      ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  djpmji7		  ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  xkvh6gd	      ^expat@2.8.1+libbsd build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  t623nqz		  ^libbsd@0.12.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  w3w22wx		      ^libmd@1.1.0 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  2af63my	      ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  g3gt6ze	      ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  qs6av53		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  cxesrxa		  ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  tw6253j		  ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  4diropt		      ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  jgqwv65	      ^libffi@3.5.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  iehcspo	      ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  yoq4amm	      ^openssl@3.6.1~docs+shared build_system=generic certs=mozilla platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  wg3oazy	  ^meson@1.11.1 build_system=python_pip patches:=0f0b1bd platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  6zizggt	      ^ninja@1.13.2+re2c build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  cowskr3		  ^re2c@4.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  hkjqn4j	      ^py-setuptools@82.0.1 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  uh2kn3c	  ^openblas@0.3.33~bignuma~consistent_fpcsr+dynamic_dispatch+fortran~ilp64+locking+pic+shared~static build_system=makefile patches:=723ddc1 symbol_suffix=none threads=none platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
+[b]  lwhtcck	      ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  rws4suo	  ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  hvfq5pe	  ^py-cython@3.2.4 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  4udrsr2	  ^py-meson-python@0.19.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  hqlnorc	      ^py-packaging@26.2 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  kmkn7kg		  ^py-flit-core@3.12.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  ibs4tad	      ^py-pyproject-metadata@0.11.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  gvvfhjh	  ^py-numpy@2.4.6 build_system=python_pip patches:=873745d platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  kdvgwt6	  ^py-pip@26.1.2 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  jv2364q	  ^py-pybind11@3.0.2+ipo build_system=cmake build_type=Release generator=ninja platform=linux os=ubuntu26.04 target=x86_64_v3 %cxx=gcc@16.1.0
+[b]  kw6i4f4	      ^cmake@3.31.11~doc+ncurses+ownlibs~qtgui build_system=generic build_type=Release platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  i3sc4sa		  ^curl@8.20.0~gssapi~ldap~libidn2~librtmp~libssh~libssh2+nghttp2 build_system=autotools libs:=shared,static tls:=openssl platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  qjecybs		      ^nghttp2@1.67.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  mwv6jzs	      ^py-scikit-build-core@0.12.2~pyproject build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx,fortran=gcc@16.1.0
+[b]  fvkaky5		  ^py-hatch-vcs@0.5.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  jphx547		      ^py-setuptools-scm@9.2.2+toml build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  bpfangz			  ^git@2.53.0+man+nls+perl+subtree~tcltk build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  uesc5yd			      ^autoconf@2.72 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  qhb7ywb			      ^automake@1.18.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  6ajjy27			      ^libidn2@2.3.8 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  ob7hefb				  ^libunistring@1.4.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  wiglecf			      ^libtool@2.5.4 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  ra2jarr				  ^file@5.46+static build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  fep3wol				  ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  hkvksc3			      ^m4@1.4.21+sigsegv build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  4v4bncv				  ^libsigsegv@2.15 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  plgdjpa			      ^openssh@10.3p1+gssapi build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  7a4l5v5				  ^krb5@1.22.2+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  qu5uhax				      ^bison@3.8.2~color build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  4binz2p				  ^libedit@3.1-20251016 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  aca7p7l				  ^libxcrypt@4.5.2~obsolete_api build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  pjhxp26			      ^pcre2@10.44~jit+multibyte+pic build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  hqcsjrm		  ^py-hatchling@1.29.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  kyxtnxs		      ^py-pluggy@1.6.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  3spx2cq		      ^py-trove-classifiers@2026.6.1.19 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  3urylsu			  ^py-calver@2025.10.20 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  aydqe7l		  ^py-pathspec@1.1.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  l6vbm7d	  ^py-pythran@0.18.1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3 %cxx=gcc@16.1.0
+[b]  scwmymw	      ^py-beniget@0.4.2.post1 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  rzdh2tt	      ^py-gast@0.6.0 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  4auh5k2	      ^py-ply@3.11 build_system=python_pip platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  j6saqla	  ^py-wheel@0.45.1 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  vuoqpmo	  ^python@3.14.5+bz2+ctypes+dbm~debug~freethreading+libxml2+lzma~optimizations+pic+pyexpat+pythoncmd+readline+shared+sqlite3+ssl~static~tests~tkinter+uuid+zlib+zstd build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  5kv66tq	      ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  rzn5joe		  ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  kqm2d3g	      ^expat@2.8.1+libbsd build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  2zdnupj		  ^libbsd@0.12.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  ypuui7v		      ^libmd@1.1.0 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  2qw4v66	      ^gdbm@1.26 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  qdxpkom	      ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  xrsocgc		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  3rlsf7j		  ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  u62ty4d		  ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  7ppidie		      ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  pkl6qup	      ^libffi@3.5.2 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  romubi2	      ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  mladgc5	      ^openssl@3.6.1~docs+shared build_system=generic certs=mozilla platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
 [b]  axeuqg3		  ^ca-certificates-mozilla@2026-03-19 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
-[b]  xxg272q		  ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  aev2xm7		      ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  3w5zzn3		      ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  cbnh7bw	      ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  uliuxbf	      ^sqlite@3.53.1+column_metadata+fts+rtree build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  v3sdaph	      ^util-linux-uuid@2.41 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  bf6e7x2	      ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
-[b]  yd7lgm7	      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  lq6tsmz	      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
-[b]  bcclnnz	  ^python-venv@1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[b]  c6ebuxy		  ^perl@5.42.0+cpanm+opcode+open+shared+threads build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  zsx5k5v		      ^berkeley-db@18.1.40+cxx~docs+stl build_system=autotools patches:=26090f4,b231fcc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  d2d5je7		      ^less@692 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  teh56fo	      ^readline@8.3 build_system=autotools patches:=21f0a03,72dee13,e273643 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  qy73hym	      ^sqlite@3.53.1+column_metadata+fts+rtree build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  2wcnb6n	      ^util-linux-uuid@2.41 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  rrvhely	      ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@16.1.0
+[b]  gc236kh	      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  mzuiikv	      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@16.1.0
+[b]  iyp4doo	  ^python-venv@1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
 

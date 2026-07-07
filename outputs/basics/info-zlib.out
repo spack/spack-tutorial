@@ -21,7 +21,7 @@ Variants:
       when build_system=cmake
 	the build system generator to use
 
-    ipo [false] 		    false, true
+    ipo [false]			    false, true
       when build_system=cmake %cmake@3.9:
 	CMake interprocedural optimization
 

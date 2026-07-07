@@ -2,31 +2,80 @@ $ module load gcc
 $ module load openmpi openblas netlib-scalapack py-scipy
 $ module av
 
--------------------------------------------------------------------- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/gcc/16.1.0 --------------------------------------------------------------------
-   bzip2/1.0.8	  hwloc/2.13.0		  libevent/2.1.12    libmd/1.1.0	  mpich/5.0.1		  openblas/0.3.33    pigz/2.8		  python-venv/1.0    tar/1.35		     zstd/1.5.7
-   expat/2.8.1	  krb5/1.22.2		  libfabric/2.5.1    libpciaccess/0.17	  ncurses/6.6		  openmpi/5.0.10     pmix/6.1.0		  python/3.14.5	     util-linux-uuid/2.41
-   gdbm/1.26	  libbsd/0.12.2		  libffi/3.5.2	     libxcrypt/4.5.2	  netlib-lapack/3.12.1	  openssh/10.3p1     prrte/4.1.0	  readline/8.3	     xz/5.8.3
-   gettext/1.0	  libedit/3.1-20251016	  libiconv/1.18	     libxml2/2.15.3	  numactl/2.0.19	  openssl/3.6.1	     py-pybind11/3.0.2	  sqlite/3.53.1	     zlib-ng/2.3.3
+---- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/gcc/16.1.0 ----
+   bzip2/1.0.8
+   expat/2.8.1
+   gdbm/1.26
+   gettext/1.0
+   hwloc/2.13.0
+   krb5/1.22.2
+   libbsd/0.12.2
+   libedit/3.1-20251016
+   libevent/2.1.12
+   libfabric/2.5.1
+   libffi/3.5.2
+   libiconv/1.18
+   libmd/1.1.0
+   libpciaccess/0.17
+   libxcrypt/4.5.2
+   libxml2/2.15.3
+   mpich/5.0.1
+   ncurses/6.6
+   netlib-lapack/3.12.1
+   numactl/2.0.19
+   openblas/0.3.33
+   openmpi/5.0.10
+   openssh/10.3p1
+   openssl/3.6.1
+   pigz/2.8
+   pmix/6.1.0
+   prrte/4.1.0
+   py-pybind11/3.0.2
+   python-venv/1.0
+   python/3.14.5
+   readline/8.3
+   sqlite/3.53.1
+   tar/1.35
+   util-linux-uuid/2.41
+   xz/5.8.3
+   zlib-ng/2.3.3
+   zstd/1.5.7
 
------------------------------------------------------------------------ /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/Core -----------------------------------------------------------------------
-   compiler-wrapper/1.1.0    gcc-runtime/16.1.0	   gcc/15.2.0	 gcc/16.1.0 (L,D)    glibc/2.43 (L)
+---- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/Core ----
+   compiler-wrapper/1.1.0
+   gcc-runtime/16.1.0
+   gcc/15.2.0
+   gcc/16.1.0		  (L,D)
+   glibc/2.43		  (L)
 
   Where:
    D:  Default Module
    L:  Module is loaded
 
-If the avail list is too long consider trying:
+If the avail list is too long
+consider trying:
 
-"module --default avail" or "ml -d av" to just list the default modules.
-"module overview" or "ml ov" to display the number of modules for each name.
+"module --default avail" or
+"ml -d av" to just list the
+default modules.
+"module overview" or "ml ov"
+to display the number of
+modules for each name.
 
-Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module spider" to find
+all possible modules and
+extensions.
+Use "module keyword key1 key2
+..." to search for all
+possible modules matching any
+of the "keys".
 
 
 $ module load mpich
 
-Lmod is automatically replacing "openmpi/5.0.10" with "mpich/5.0.1".
+Lmod is automatically
+replacing "openmpi/5.0.10"
+with "mpich/5.0.1".
 
 
 Due to MODULEPATH changes, the following have been reloaded:
@@ -34,7 +83,9 @@ Due to MODULEPATH changes, the following have been reloaded:
 
 $ module load netlib-lapack
 
-Lmod is automatically replacing "openblas/0.3.33" with "netlib-lapack/3.12.1".
+Lmod is automatically
+replacing "openblas/0.3.33"
+with "netlib-lapack/3.12.1".
 
 
 Due to MODULEPATH changes, the following have been reloaded:

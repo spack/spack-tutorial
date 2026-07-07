@@ -1,8 +1,11 @@
 $ spack providers mpi
 mpi:
 -- no arch / no compilers ---------------------------------------
-cray-mpich@:8  hpcx-mpi 	 mpich@:1.1  mpich@:4.3     mpt     mvapich	   mvapich2@2.3:  openmpi@1.3:1.7.2	spectrum-mpi
-cray-mpich@9:  intel-oneapi-mpi  mpich@:1.2  mpich@5:	    mpt@1:  mvapich-plus   nmad 	  openmpi@1.7.3:1.7.4
-cray-mvapich2  mpi-serial	 mpich@:3.1  mpilander	    mpt@3:  mvapich2	   nvhpc	  openmpi@1.7.5:1.10.7
-fujitsu-mpi    mpich@:1.0	 mpich@:3.2  mpitrampoline  msmpi   mvapich2@2.1:  openmpi@:1.2   openmpi@2.0.0:
+cray-mpich@:8	  mpich@:1.0  mpilander	     mvapich-plus   openmpi@1.3:1.7.2
+cray-mpich@9:	  mpich@:1.1  mpitrampoline  mvapich2	    openmpi@1.7.3:1.7.4
+cray-mvapich2	  mpich@:1.2  mpt	     mvapich2@2.1:  openmpi@1.7.5:1.10.7
+fujitsu-mpi	  mpich@:3.1  mpt@1:	     mvapich2@2.3:  openmpi@2.0.0:
+hpcx-mpi	  mpich@:3.2  mpt@3:	     nmad	    spectrum-mpi
+intel-oneapi-mpi  mpich@:4.3  msmpi	     nvhpc
+mpi-serial	  mpich@5:    mvapich	     openmpi@:1.2
 

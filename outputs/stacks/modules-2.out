@@ -1,22 +1,62 @@
 $ module av
 
------------------------------------------------------------------------ /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/Core -----------------------------------------------------------------------
-   binutils/2.46.0-cuzgmus		 gcc/15.2.0-yjlog5x	      libxcrypt/4.5.2-bkzcu2s		 mpc/1.4.1-gxmoxea	   pkgconf/2.5.1-yvl6jpi    zlib-ng/2.3.3-g72d7i3
-   bzip2/1.0.8-cbtgjrh			 gcc/16.1.0-vlwdxlj    (D)    libxml2/2.15.3-ujlg2ua		 mpfr/4.2.2-melg7ga	   readline/8.3-k25xiih	    zstd/1.5.7-63aruxk
-   compiler-wrapper/1.1.0-mmywg7x	 gettext/1.0-sle3ix4	      lmod/8.7.67-wf22jsg		 ncurses/6.6-ekvivpv	   tar/1.35-f5xe4px
-   curl/8.20.0-j2fa7xl			 glibc/2.43-yc4n2pp	      lua-luafilesystem/1.9.0-su5b2hs	 nghttp2/1.67.1-4lyasaz	   tcl/8.6.17-d4ibosb
-   gcc-runtime/15.2.0-xm76mt3		 gmp/6.3.0-xpmsy5x	      lua-luaposix/36.3-egzwtik		 openssl/3.6.1-33yozp5	   unzip/6.0-4qgksuy
-   gcc-runtime/16.1.0-ghfita3	  (D)	 libiconv/1.18-vbwvgwx	      lua/5.4.8-q66mudl			 pigz/2.8-afklka7	   xz/5.8.3-hhjyyqy
+---- /home/spack/stacks/modules/linux-ubuntu26.04-x86_64/Core ----
+   berkeley-db/18.1.40-27d4iyp
+   binutils/2.46.1-6ene6zr
+   bzip2/1.0.8-cbtgjrh
+   compiler-wrapper/1.1.0-mmywg7x
+   curl/8.20.0-j2fa7xl
+   gcc-runtime/15.2.0-xm76mt3
+   gcc-runtime/16.1.0-nn3xbub	   (D)
+   gcc/15.2.0-yjlog5x
+   gcc/16.1.0-hkkcdmj		   (D)
+   gdbm/1.26-cq4dkuc
+   gettext/1.0-sle3ix4
+   glibc/2.43-yc4n2pp
+   gmp/6.3.0-xpmsy5x
+   less/692-ohmdb2l
+   libiconv/1.18-vbwvgwx
+   libxcrypt/4.5.2-bkzcu2s
+   libxml2/2.15.3-ujlg2ua
+   lmod/8.7.67-wf22jsg
+   lua-luafilesystem/1.9.0-su5b2hs
+   lua-luaposix/36.3-egzwtik
+   lua/5.4.8-q66mudl
+   mpc/1.4.1-gxmoxea
+   mpfr/4.2.2-melg7ga
+   ncurses/6.6-ekvivpv
+   nghttp2/1.67.1-4lyasaz
+   openssl/3.6.1-33yozp5
+   perl/5.42.0-bvphs3b
+   pigz/2.8-afklka7
+   pkgconf/2.5.1-yvl6jpi
+   readline/8.3-k25xiih
+   tar/1.35-f5xe4px
+   tcl/8.6.17-d4ibosb
+   unzip/6.0-4qgksuy
+   xz/5.8.3-hhjyyqy
+   zlib-ng/2.3.3-g72d7i3
+   zstd/1.5.7-63aruxk
 
   Where:
    D:  Default Module
 
-If the avail list is too long consider trying:
+If the avail list is too long
+consider trying:
 
-"module --default avail" or "ml -d av" to just list the default modules.
-"module overview" or "ml ov" to display the number of modules for each name.
+"module --default avail" or
+"ml -d av" to just list the
+default modules.
+"module overview" or "ml ov"
+to display the number of
+modules for each name.
 
-Use "module spider" to find all possible modules and extensions.
-Use "module keyword key1 key2 ..." to search for all possible modules matching any of the "keys".
+Use "module spider" to find
+all possible modules and
+extensions.
+Use "module keyword key1 key2
+..." to search for all
+possible modules matching any
+of the "keys".
 
 

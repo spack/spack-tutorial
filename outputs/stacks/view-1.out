@@ -6,6 +6,11 @@ lib
 $ ls ~/stacks/views/default/lib
 cmake  libscalapack.so	libscalapack.so.2.2  libscalapack.so.2.2.3  pkgconfig  python3.14
 $ ls ~/stacks/views/full
-binutils  expat	       gdbm	hwloc	libedit	   libffi    libpciaccess  lmod	 mpfr	  netlib-lapack	    numactl   openssh  pmix    readline	 tcl		  xz
-bzip2	  gcc	       gettext	krb5	libevent   libiconv  libxcrypt	   lua	 mpich	  netlib-scalapack  openblas  openssl  prrte   sqlite	 unzip		  zlib-ng
-curl	  gcc-runtime  gmp	libbsd	libfabric  libmd     libxml2	   mpc	 ncurses  nghttp2	    openmpi   pigz     python  tar	 util-linux-uuid  zstd
+binutils     gmp	libiconv      mpfr		openmpi	  sqlite
+bzip2	     hwloc	libmd	      mpich		openssh	  tar
+curl	     krb5	libpciaccess  ncurses		openssl	  tcl
+expat	     libbsd	libxcrypt     netlib-lapack	pigz	  unzip
+gcc	     libedit	libxml2	      netlib-scalapack	pmix	  util-linux-uuid
+gcc-runtime  libevent	lmod	      nghttp2		prrte	  xz
+gdbm	     libfabric	lua	      numactl		python	  zlib-ng
+gettext	     libffi	mpc	      openblas		readline  zstd
