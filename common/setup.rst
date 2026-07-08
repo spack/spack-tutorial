@@ -8,7 +8,8 @@
 
        git clone --depth=2 --branch=releases/v1.2 https://github.com/spack/spack
        . spack/share/spack/setup-env.sh
-       spack mirror add --unsigned tutorial /mirror
+       spack mirror add tutorial /mirror
+       spack buildcache keys --install --trust --yes-to-all
        spack bootstrap now
        spack compiler find
 
