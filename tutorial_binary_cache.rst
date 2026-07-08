@@ -27,11 +27,8 @@ Because that mirror is already active, ``julia`` and its dependencies are availa
 
 Create an environment with a view and add ``julia`` to it:
 
-.. code-block:: console
-
-   $ mkdir ~/myenv && cd ~/myenv
-   $ spack env create --with-view view .
-   $ spack -e . add julia
+.. literalinclude:: outputs/cache/install-julia.out
+   :language: console
 
 .. note::
 
@@ -40,21 +37,16 @@ Create an environment with a view and add ``julia`` to it:
 
 Install the environment:
 
-.. code-block:: console
-
-   $ spack -e . install
-   ...
-   [+] tkz5bvy julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi (3s)
+.. literalinclude:: outputs/cache/install.out
+   :language: spec
 
 Both ``julia`` and every transitive dependency, including ``llvm``, are fetched and relocated from the ``tutorial`` mirror; nothing is built from source.
 Given a build cache, the concretizer prefers concrete specs for which binaries already exist.
 
 Confirm that the executable works through the environment's view:
 
-.. code-block:: console
-
-   $ ./view/bin/julia -e 'println(1 + 1)'
-   2
+.. literalinclude:: outputs/cache/julia-run.out
+   :language: console
 
 .. note::
 
@@ -72,18 +64,16 @@ OCI registries are useful in this role because the same artifacts can serve both
 OCI registries in common use include Docker Hub, GitHub Container Registry (GHCR), and Amazon ECR.
 For this tutorial we run a registry locally, which avoids authentication:
 
-.. code-block:: console
-
-   $ docker run -d --rm -p 5000:5000 --name registry registry
+.. literalinclude:: outputs/cache/registry.out
+   :language: console
 
 This is the official `registry image <https://hub.docker.com/_/registry>`_ from Docker Hub.
 It serves an empty OCI registry on ``http://localhost:5000``.
 
 Add it as a second mirror:
 
-.. code-block:: console
-
-   $ spack -e . mirror add --unsigned my-registry oci+http://localhost:5000/buildcache
+.. literalinclude:: outputs/cache/mirror-add.out
+   :language: console
 
 The URL has three parts:
 
@@ -109,18 +99,8 @@ Pushing to the OCI build cache
 
 Push the environment to the local registry:
 
-.. code-block:: console
-
-   $ spack -e . buildcache push --without-build-dependencies my-registry
-   ==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
-   ==> Checking for existing specs in the buildcache
-   ==> [ 1/29] Pushed libiconv@1.18/vbwvgwx: sha256:069f65751147... (0.09s, 23.52 MB/s)
-   ...
-   ==> [29/29] Pushed julia@1.12.6/tkz5bvy: sha256:0d3cdfaff6ff... (1.18s, 126.72 MB/s)
-   ==> Uploading manifests
-   ==> [ 1/29] Tagged libiconv@1.18/vbwvgwx as localhost:5000/buildcache:libiconv-1.18-vbwvgwxvjrccmptlen3ebo555lk5wior.spack
-   ...
-   ==> [29/29] Tagged julia@1.12.6/tkz5bvy as localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack
+.. literalinclude:: outputs/cache/push.out
+   :language: console
 
 Two things about this invocation are worth noting.
 
@@ -132,12 +112,8 @@ Spack auto-generates one tag per spec, of the form ``<name>-<version>-<hash>.spa
 
 Re-running the push detects that nothing needs to be uploaded:
 
-.. code-block:: console
-
-   $ spack -e . buildcache push --without-build-dependencies my-registry
-   ==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
-   ==> Checking for existing specs in the buildcache
-   ==> All specs are already in the buildcache. Use --force to overwrite them.
+.. literalinclude:: outputs/cache/push-again.out
+   :language: console
 
 -------------------------------------------
 Reinstalling from the OCI build cache
@@ -157,12 +133,8 @@ The trailing ``::`` replaces, rather than extends, the mirrors inherited from Sp
 Reinstall ``julia`` with ``--overwrite``.
 Only ``julia`` is reinstalled; its dependencies remain installed and are not refetched.
 
-.. code-block:: console
-
-   $ spack -e . install --overwrite -y julia
-   [ ] tkz5bvy julia@1.12.6 fetching from build cache (0s)
-   [ ] tkz5bvy julia@1.12.6 relocating (2s)
-   [+] tkz5bvy julia@1.12.6 /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi (9s)
+.. literalinclude:: outputs/cache/reinstall.out
+   :language: spec
 
 Each spec is stored as two blobs: a JSON manifest and the binary tarball.
 OCI registries are content-addressed, hence the ``sha256:...`` identifiers shown in the push output rather than human-readable filenames.
@@ -176,20 +148,16 @@ Since the artifacts are also valid OCI images, they can be pulled directly with 
 
 Consider what happens when running an image without a base image:
 
-.. code-block:: console
-
-   $ docker run --rm localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack julia -e 'println(1 + 1)'
-   exec /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-tkz5bvy.../bin/julia: no such file or directory
+.. literalinclude:: outputs/cache/docker-run-fail.out
+   :language: console
 
 The run fails because the layers we pushed contain the Spack-built artifacts but not the host's ``glibc``, which Spack always treats as an external package.
 Without a base image the container has no ``/lib`` directory at all, which produces the error above.
 
 The resolution is to push again with ``--base-image`` pointing at a minimal distribution that provides a compatible ``glibc``:
 
-.. code-block:: console
-
-   $ spack -e . buildcache push --force --without-build-dependencies \
-         --base-image ubuntu:26.04 my-registry
+.. literalinclude:: outputs/cache/push-base-image.out
+   :language: console
 
 The base image's ``libc`` must be at least as new as the one used at build time, otherwise the binaries fail at runtime with errors of the form ``version `GLIBC_2.38' not found``.
 The distribution itself need not match.
@@ -198,10 +166,8 @@ The distribution itself need not match.
 The image now runs.
 Because the tag was pushed once already, ``docker`` has the old single-layer image cached locally; ``--pull always`` forces it to fetch the rebuilt image with the base layer:
 
-.. code-block:: console
-
-   $ docker run --rm --pull always localhost:5000/buildcache:julia-1.12.6-tkz5bvyysiy55em6skzeyhomxo6tttqi.spack julia -e 'println(1 + 1)'
-   2
+.. literalinclude:: outputs/cache/docker-run.out
+   :language: console
 
 In addition to ``glibc``, the base image provides a shell and the standard utilities.
 
@@ -214,9 +180,8 @@ For most uses a single image containing the full environment is more convenient.
 
 Add a text editor to the environment, so that the image can both edit and run Julia code:
 
-.. code-block:: console
-
-   $ spack -e . install --add vim
+.. literalinclude:: outputs/cache/install-vim.out
+   :language: spec
 
 .. note::
 
@@ -225,14 +190,8 @@ Add a text editor to the environment, so that the image can both edit and run Ju
 
 Pass ``--tag`` to assign the environment image a human-readable name:
 
-.. code-block:: console
-
-   $ spack -e . buildcache push --without-build-dependencies \
-         --base-image ubuntu:26.04 \
-         --tag julia-and-vim \
-         my-registry
-   ...
-   ==> Tagged localhost:5000/buildcache:julia-and-vim
+.. literalinclude:: outputs/cache/push-tag.out
+   :language: console
 
 Spack publishes each package as its own image layer.
 Layers are shared between image tags, so the combined image takes almost no extra storage.

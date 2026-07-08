@@ -11,7 +11,8 @@ RUN apt-get update -y && \
     jq \
     less \
     vim \
-    rclone
+    rclone \
+    docker.io
 
 # Download the buildcache
 RUN mkdir /mirror
