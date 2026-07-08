@@ -34,7 +34,7 @@ update-outputs: run
 
 run: run-scripting
 run-scripting: run-dev scripting.sh
-# run-cache: run-dev cache.sh
+run-cache: run-dev cache.sh
 run-dev: run-packaging dev.sh
 run-packaging: run-stacks packaging.sh
 run-stacks: run-environments stacks.sh
@@ -43,7 +43,7 @@ run-basics: basics.sh init_spack.sh defs.sh
 
 local: local-scripting
 local-scripting: local-dev scripting.sh
-# local-cache: local-dev cache.sh
+local-cache: local-dev cache.sh
 local-dev: local-packaging dev.sh
 local-packaging: local-environments packaging.sh
 # local-stacks: local-environments stacks.sh

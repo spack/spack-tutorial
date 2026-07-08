@@ -7,64 +7,62 @@ project="$(dirname "$0")"
 rm -rf "${raw_outputs:?}/cache"
 . "$project/init_spack.sh"
 
-example cache/mirror-list-0 "spack mirror list"
+export SPACK_COLOR=never
 
-example cache/setup-scr "cd ~"
-cd ~ || exit
-example cache/setup-scr "spack env create -d cache-env"
-example cache/setup-scr "cd cache-env"
-cd cache-env || exit
-fake_example cache/setup-scr "spacktivate ." "spack env activate ."
-spack env activate .
-example cache/setup-scr "# for now, disable fortran support in all packages"
-example cache/setup-scr 'spack config add "packages:all:variants: ~fortran"'
-example cache/setup-scr "spack add macsio+scr"
+# Clean up any state from a previous run
+rm -rf ~/myenv
+docker rm -f registry >/dev/null 2>&1 || true
 
-# The packages will already be installed by the dev tutorial
-spack install
-rm spack.lock
-example cache/setup-scr "spack install"
+# Installing julia from the build cache
+example cache/install-julia "mkdir ~/myenv && cd ~/myenv"
+mkdir -p ~/myenv
+cd ~/myenv || exit
+example cache/install-julia "spack env create --with-view view ."
+example cache/install-julia "spack -e . add julia"
 
-example cache/spack-mirror-single "spack mirror create -d ~/mirror scr"
+example --tee cache/install "spack -e . install"
 
-example cache/spack-mirror-config "spack mirror add mymirror ~/mirror"
+example cache/julia-run "./view/bin/julia -e 'println(1 + 1)'"
 
-example cache/spack-mirror-all "spack mirror create -d ~/mirror --all"
+# Setting up a local OCI build cache
+example cache/registry "docker run -d --rm -p 5000:5000 --name registry registry"
 
-example cache/spack-mirror-permissions "umask 750"
-example cache/spack-mirror-permissions "chmod -R g+rs ~/mirror"
-example cache/spack-mirror-permissions "chgrp -R spack ~/mirror"
+example cache/mirror-add "spack -e . mirror add --unsigned my-registry oci+http://localhost:5000/buildcache"
 
-example cache/spack-mirror-3 "spack add unzip"
-example cache/spack-mirror-3 "spack install"
+# Pushing to the OCI build cache
+example --tee cache/push "spack -e . buildcache push --without-build-dependencies my-registry"
 
-example cache/spack-mirror-4 "spack mirror create -d ~/mirror --all"
+# Re-running the push detects that nothing needs to be uploaded
+example --tee cache/push-again "spack -e . buildcache push --without-build-dependencies my-registry"
 
-example cache/trust "spack buildcache keys --install --trust --force"
+# Reinstalling from the OCI build cache
+# Disable the filesystem "tutorial" mirror by changing mirrors: to mirrors::
+sed -i~ 's/^\( *\)mirrors:$/\1mirrors::/' spack.yaml
 
-example cache/binary-cache-1 "cd ~"
-cd ~ || exit
-example cache/binary-cache-1 "mkdir cache-binary"
-example cache/binary-cache-1 "cd cache-binary"
-cd cache-binary || exit
-example cache/binary-cache-1 "spack env create -d ."
-fake_example cache/binary-cache-1 "spacktivate ." "spack env activate ."
-spack env activate .
-example cache/binary-cache-1 "spack add bzip2"
-example cache/binary-cache-1 "spack add zlib"
+example --tee cache/reinstall "spack -e . install --overwrite -y julia"
 
-example cache/binary-cache-2 'spack config add "config:install_tree:padded_length:128"'
-example cache/binary-cache-2 "spack install --no-cache"
+# Creating runnable container images
+julia_tag="$(spack -e . find --format '{name}-{version}-{hash}' julia).spack"
 
-example cache/binary-cache-3 'spack gpg create "My Name" "<my.email@my.domain.com>"'
+# Running the image without a base image fails: it has no glibc
+example --tee --expect-error cache/docker-run-fail "docker run --rm localhost:5000/buildcache:${julia_tag} julia -e 'println(1 + 1)'"
 
-example cache/binary-cache-3 'mkdir ~/private_gpg_backup'
-example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/*.gpg ~/private_gpg_backup'
-example cache/binary-cache-3 'cp ~/spack/opt/spack/gpg/pubring.* ~/mirror'
+# Push again with a base image that provides a compatible glibc
+example --tee cache/push-base-image "spack -e . buildcache push --force --without-build-dependencies --base-image ubuntu:26.04 my-registry"
 
-example cache/binary-cache-4 'spack buildcache push ~/mirror'
+# The image now runs; --pull always fetches the rebuilt image with the base layer
+example --tee cache/docker-run "docker run --rm --pull always localhost:5000/buildcache:${julia_tag} julia -e 'println(1 + 1)'"
 
-# Remove installations from customized prefix
-spack uninstall -ay
+# Spack environments as container images
+# Re-enable the "tutorial" mirror so vim is installed from the cache
+sed -i~ 's/^\( *\)mirrors::$/\1mirrors:/' spack.yaml
 
-example cache/bootstrap-1 'spack bootstrap mirror --binary-packages ~/mirror'
+example --tee cache/install-vim "spack -e . install --add vim"
+
+example --tee cache/push-tag "spack -e . buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry"
+
+# The combined image is run interactively in the tutorial:
+#   $ docker run -it --rm localhost:5000/buildcache:julia-and-vim
+
+# Clean up the local registry
+docker rm -f registry >/dev/null 2>&1 || true
