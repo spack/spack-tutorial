@@ -11,9 +11,6 @@ export SPACK_COLOR=never
 . "$project/init_spack.sh"
 . share/spack/setup-env.sh
 
-# spack mirror add --unsigned tutorial /mirror
-#example environments/mirror     "spack buildcache keys --install --trust"
-
 # Working with Environments
 
 example environments/find-no-env-1   "spack find"
