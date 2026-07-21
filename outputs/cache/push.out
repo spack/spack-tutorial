@@ -1,0 +1,62 @@
+$ spack -e . buildcache push --without-build-dependencies my-registry
+==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
+==> Checking for existing specs in the buildcache
+==> [ 1/29] Pushed libiconv@1.18/vbwvgwx: sha256:dcc7cd303c5faa30bdb079fe70e6a426a3a72e072d5f5c04187daf99aec5b1ca (0.04s, 56.49 MB/s)
+==> [ 2/29] Pushed ncurses@6.6/ekvivpv: sha256:19130f64570e8edc6f97feda9871178881c3d98dfc0fada58f4b88d5e549c580 (0.06s, 122.96 MB/s)
+==> [ 3/29] Pushed libxml2@2.15.3/ujlg2ua: sha256:6b04ad61a34307d551edb2d8a668d0558a0312dd0d55abe5c1b175688002eefa (0.02s, 98.64 MB/s)
+==> [ 4/29] Pushed libpciaccess@0.17/qzkk5ym: sha256:8758bd53dee435cf4ac1bfdd2ab038f850f28b3b371e51c059db3e8184c5a555 (0.02s, 11.88 MB/s)
+==> [ 5/29] Pushed metis@5.1.0/da5cneu: sha256:8eefa2c562fe328775e7de46c6c63992f13b2216f22a47bca97dfc1b779c8c17 (0.02s, 24.74 MB/s)
+==> [ 6/29] Pushed hwloc@2.13.0/ujctyey: sha256:fec3b5738e05882070791e2455a065314e60ddcec5de7e8ed56f883b061a72d8 (0.06s, 86.08 MB/s)
+==> [ 7/29] Pushed xz@5.8.3/hhjyyqy: sha256:30b1eec3f58496db7b0c49b4ba9173979eb2731f7cb4c64841c17af09fca56c5 (0.03s, 60.02 MB/s)
+==> [ 8/29] Pushed pcre@8.45/ruqu6gz: sha256:634247ca54b9bf20c87c2a4bbed2ecbc599596e11d1649eba73435f3a2f93a0b (0.03s, 99.38 MB/s)
+==> [ 9/29] Pushed zlib-ng@2.3.3/g72d7i3: sha256:e546b4461b491d10dd6894a2cd608338d48ee1b14eada50af112e0654fb8fa47 (0.02s, 15.28 MB/s)
+==> [10/29] Pushed utf8proc@2.10.0/mujkry5: sha256:214f2eeaaedfc39197c92c4a34117647d83e92152c16c5182d467c81ae21d3d7 (0.01s, 9.32 MB/s)
+==> [11/29] Pushed suite-sparse@7.8.3/xiro4iz: sha256:45fcb3848f3feeb5b30ade878a5fdaae78336101927a7c0b7f75ade5c24b8819 (0.05s, 93.41 MB/s)
+==> [12/29] Pushed pcre2@10.44/hxboy22: sha256:46032b1a40b16197220d5ca3e956a1485ee3feb3915cf5882e1630e36fb1a83b (0.02s, 75.35 MB/s)
+==> [13/29] Pushed p7zip@17.06/qnmjd2p: sha256:25054009b9743530eb9d75d9efb0436cf20c53babf852765a8e9a23c3762593f (0.06s, 83.92 MB/s)
+==> [14/29] Pushed openssl@3.5.5/wvrtpeg: sha256:7a37a6e2b2d29d186f2674a7fe603ee1c44f3c65d72d9a7b230e88df2e91724e (0.09s, 86.84 MB/s)
+==> [15/29] Pushed openlibm@0.8.7/iebfc2k: sha256:d1a0ffc081652e375991d44ce742cc5330d3f26c18b5a691c4c66dc39c1a1ddf (0.01s, 21.17 MB/s)
+==> [16/29] Pushed openblas@0.3.33/lkjmi5o: sha256:6337a03e6e93edff4bdcdd449e0764c2235e379654aecb0ded2654862e5e9d67 (0.13s, 176.04 MB/s)
+==> [17/29] Pushed nghttp2@1.64.0/7whskvy: sha256:bed6bafa5dc2cbb447b84c6811a07223113a605f237e9272e893357878122212 (0.02s, 53.03 MB/s)
+==> [18/29] Pushed mpfr@4.2.2/melg7ga: sha256:bdd3362c5809c565e63c3f2cbef0afa6757bdec445518701178eb2960e9309e1 (0.03s, 98.65 MB/s)
+==> [19/29] Pushed llvm@18.1.8/hnjjqjh: sha256:7592dac9dccaabe8d9ecb71f4593ebce0004fae3ee1fbcd0fed2b55df2ab5e24 (0.80s, 251.66 MB/s)
+==> [20/29] Pushed libuv-julia@1.48.1rc1/xpk7th3: sha256:c5f78da11cdbc9faa2c16ae7f2a7d434486ed9ee9496a3ba3aa3d7ae1ce23ef7 (0.02s, 35.88 MB/s)
+==> [21/29] Pushed libunwind@1.8.3/fimmpu2: sha256:964f64d88d50830622a4806de2e27840b807f72556f2e1692ca4fb0657814351 (0.03s, 62.82 MB/s)
+==> [22/29] Pushed libssh2@1.11.1/ub2blr6: sha256:99937d98ff5e7cd8267cd8b708efc479ffbbd47efbb96f61c690b6513c93b949 (0.03s, 52.03 MB/s)
+==> [23/29] Pushed libgit2@1.9.1/kpqpfzd: sha256:46532207b9e2168714e67328dff2ffd23d4790e2b8a5d4863b8ade8bb12f10bd (0.08s, 23.38 MB/s)
+==> [24/29] Pushed libblastrampoline@5.15.0/xy77gc4: sha256:78df85180220ebda16406cb2211e584d94d626ddbd841d388b367590258b4a7a (0.02s, 60.07 MB/s)
+==> [25/29] Pushed gmp@6.3.0/xpmsy5x: sha256:96cf8ca48a1515477cbee99ebdeb221030aaa1fcc4e18559067f78a513fdcadd (0.02s, 44.69 MB/s)
+==> [26/29] Pushed gcc-runtime@15.2.0/xm76mt3: sha256:ca677dae43593c3158f900ce83e932a2c95863c4bbe9aa99ddf751a258c0cd7e (0.08s, 187.75 MB/s)
+==> [27/29] Pushed dsfmt@2.2.5/j6vekwc: sha256:746f91ffc3c030ccccf06d4e893513b0b13a72c1fe123f8046450b2ea002817c (0.01s, 1.15 MB/s)
+==> [28/29] Pushed curl@8.20.0/lye3uga: sha256:e04350659f3378ff0ca7beed51053a29f3bc759a0364998c8d32436cf3471278 (0.03s, 46.47 MB/s)
+==> [29/29] Pushed julia@1.12.6/cwym5ww: sha256:57c8e3d1e3c05364d2f62c980f1ff0ce137728e02d3df5c872d4cf9edf7a01c9 (0.72s, 208.59 MB/s)
+==> Uploading manifests
+==> [ 1/29] Tagged libiconv@1.18/vbwvgwx as localhost:5000/buildcache:libiconv-1.18-vbwvgwxvjrccmptlen3ebo555lk5wior.spack
+==> [ 2/29] Tagged ncurses@6.6/ekvivpv as localhost:5000/buildcache:ncurses-6.6-ekvivpvwxpsfmbydk42j7me3ckftiheo.spack
+==> [ 3/29] Tagged libxml2@2.15.3/ujlg2ua as localhost:5000/buildcache:libxml2-2.15.3-ujlg2uai6quwrnqjswhpatdam2owxnzh.spack
+==> [ 4/29] Tagged libpciaccess@0.17/qzkk5ym as localhost:5000/buildcache:libpciaccess-0.17-qzkk5ymbu3z37kjhgylrkdy7w3hixzna.spack
+==> [ 5/29] Tagged metis@5.1.0/da5cneu as localhost:5000/buildcache:metis-5.1.0-da5cneuqtms6uthdt6a7hzbduvzx6672.spack
+==> [ 6/29] Tagged hwloc@2.13.0/ujctyey as localhost:5000/buildcache:hwloc-2.13.0-ujctyeyjzvata7o7oje5nefjmgqabosi.spack
+==> [ 7/29] Tagged xz@5.8.3/hhjyyqy as localhost:5000/buildcache:xz-5.8.3-hhjyyqygxtpzvdyoddyypk5sfyqdcmqe.spack
+==> [ 8/29] Tagged pcre@8.45/ruqu6gz as localhost:5000/buildcache:pcre-8.45-ruqu6gzi4z2vdlwg5vwydojqilgymc6i.spack
+==> [ 9/29] Tagged zlib-ng@2.3.3/g72d7i3 as localhost:5000/buildcache:zlib-ng-2.3.3-g72d7i3bvgfmroytbp2d6giv67ymputp.spack
+==> [10/29] Tagged utf8proc@2.10.0/mujkry5 as localhost:5000/buildcache:utf8proc-2.10.0-mujkry5ur3afukzumnbmy7e4hilb5i5n.spack
+==> [11/29] Tagged suite-sparse@7.8.3/xiro4iz as localhost:5000/buildcache:suite-sparse-7.8.3-xiro4iznwlfqb4ljvs4kscpuxgyfx7yg.spack
+==> [12/29] Tagged pcre2@10.44/hxboy22 as localhost:5000/buildcache:pcre2-10.44-hxboy227gopoyeoumjdkshzt5mwafkgg.spack
+==> [13/29] Tagged p7zip@17.06/qnmjd2p as localhost:5000/buildcache:p7zip-17.06-qnmjd2puutw7bxy33boxms3yvgsr3fb2.spack
+==> [14/29] Tagged openssl@3.5.5/wvrtpeg as localhost:5000/buildcache:openssl-3.5.5-wvrtpegflbg2z3e3obmyijvsz5lrbwy7.spack
+==> [15/29] Tagged openlibm@0.8.7/iebfc2k as localhost:5000/buildcache:openlibm-0.8.7-iebfc2ktmby7ukpcxvhzjn77kukqkxzv.spack
+==> [16/29] Tagged openblas@0.3.33/lkjmi5o as localhost:5000/buildcache:openblas-0.3.33-lkjmi5obqxtzb4urjbnbvo3jwk6wle4s.spack
+==> [17/29] Tagged nghttp2@1.64.0/7whskvy as localhost:5000/buildcache:nghttp2-1.64.0-7whskvybeoszzzc3loamck65rkmxf4to.spack
+==> [18/29] Tagged mpfr@4.2.2/melg7ga as localhost:5000/buildcache:mpfr-4.2.2-melg7gafkownovvlndh46ljc4nuf5puy.spack
+==> [19/29] Tagged llvm@18.1.8/hnjjqjh as localhost:5000/buildcache:llvm-18.1.8-hnjjqjhspgojwsgvilaxhlncxed5fdtn.spack
+==> [20/29] Tagged libuv-julia@1.48.1rc1/xpk7th3 as localhost:5000/buildcache:libuv-julia-1.48.1rc1-xpk7th3rhbls4h4jz537mfiblpar3oal.spack
+==> [21/29] Tagged libunwind@1.8.3/fimmpu2 as localhost:5000/buildcache:libunwind-1.8.3-fimmpu2hgdfoimc7xuwtq7zy7wfygggt.spack
+==> [22/29] Tagged libssh2@1.11.1/ub2blr6 as localhost:5000/buildcache:libssh2-1.11.1-ub2blr67mf5hf7sagudpzplbkft47oqi.spack
+==> [23/29] Tagged libgit2@1.9.1/kpqpfzd as localhost:5000/buildcache:libgit2-1.9.1-kpqpfzdjfu4cqozj5cpwey77utq6hbrd.spack
+==> [24/29] Tagged libblastrampoline@5.15.0/xy77gc4 as localhost:5000/buildcache:libblastrampoline-5.15.0-xy77gc4pablhhfiymlk36bjmkppltn2z.spack
+==> [25/29] Tagged gmp@6.3.0/xpmsy5x as localhost:5000/buildcache:gmp-6.3.0-xpmsy5xffenfvl6lc5shb5a5krckrznd.spack
+==> [26/29] Tagged gcc-runtime@15.2.0/xm76mt3 as localhost:5000/buildcache:gcc-runtime-15.2.0-xm76mt35elmqwrjdlibzhngqkiqnyq4p.spack
+==> [27/29] Tagged dsfmt@2.2.5/j6vekwc as localhost:5000/buildcache:dsfmt-2.2.5-j6vekwcsfysu45c2lle7vxnkytbsu6am.spack
+==> [28/29] Tagged curl@8.20.0/lye3uga as localhost:5000/buildcache:curl-8.20.0-lye3ugahqoory7dkwaj66lju7kuyipbk.spack
+==> [29/29] Tagged julia@1.12.6/cwym5ww as localhost:5000/buildcache:julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu.spack

@@ -1,0 +1,4 @@
+$ spack -e . buildcache push --without-build-dependencies my-registry
+==> Selected 29 specs to push to oci+http://localhost:5000/buildcache
+==> Checking for existing specs in the buildcache
+==> All specs are already in the buildcache. Use --force to overwrite them.

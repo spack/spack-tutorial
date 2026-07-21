@@ -1,0 +1,27 @@
+$ spack -e . install --add vim
+==> Warning: the mirror at oci+http://localhost:5000/buildcache cannot be used in concretization (no index found)
+==> Concretized 1 spec
+[b]  2w6tqad  vim@9.2.0000~cscope~gui~lua~perl~python~ruby~x build_system=autotools features=normal platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  mmywg7x	  ^compiler-wrapper@1.1.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[+]  punbqrx	  ^findutils@4.10.0 build_system=autotools patches:=440b954 platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  sle3ix4	      ^gettext@1.0+bzip2+curses+git~libunistring+libxml2+pic+shared+tar+xz build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  cbtgjrh		  ^bzip2@1.0.8~debug~pic+shared build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[b]  ao2onuz		      ^diffutils@3.12 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  vbwvgwx		  ^libiconv@1.18 build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  ujlg2ua		  ^libxml2@2.15.3+pic~python+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  g72d7i3		      ^zlib-ng@2.3.3+compat+new_strategies+opt+pic+shared build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  f5xe4px		  ^tar@1.35 build_system=autotools zip=pigz platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  afklka7		      ^pigz@2.8 build_system=makefile platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  63aruxk		      ^zstd@1.5.7+programs build_system=makefile compression:=none libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  hhjyyqy		  ^xz@5.8.3~pic build_system=autotools libs:=shared,static platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[e]  yjlog5x	  ^gcc@15.2.0+binutils+bootstrap~graphite+libsanitizer~mold~nvptx~piclibs~profiled~strip build_system=autotools build_type=RelWithDebInfo languages:='c,c++,fortran' platform=linux os=ubuntu26.04 target=x86_64_v3
+[+]  xm76mt3	  ^gcc-runtime@15.2.0 build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3
+[e]  yc4n2pp	  ^glibc@2.43 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3
+[+]  r4lhaok	  ^gmake@4.4.1~guile build_system=generic platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+[+]  ekvivpv	  ^ncurses@6.6~symlinks+termlib abi=none build_system=autotools patches:=7a351bc platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
+[+]  yvl6jpi	      ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
+
+[ ] 2w6tqad vim@9.2.0000 fetching from build cache (0s)
+[ ] 2w6tqad vim@9.2.0000 relocating (0s)
+[+] 2w6tqad vim@9.2.0000 /home/spack/spack/opt/spack/linux-x86_64_v3/vim-9.2.0000-2w6tqadqxniojqyzoe4j55jamd4pbbcp (1s)
+==> Updating view at /home/spack/myenv/view

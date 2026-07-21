@@ -1,0 +1,35 @@
+$ docker run --rm localhost:5000/buildcache:julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu.spack julia -e 'println(1 + 1)'
+Unable to find image 'localhost:5000/buildcache:julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu.spack' locally
+julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu.spack: Pulling from buildcache
+
+1B677dae4359: Pulling fs layer
+1B46b4461b49: Pulling fs layer
+1Bb1eec3f584: Pulling fs layer
+1Bc7cd303c5f: Pulling fs layer
+1Bcf8ca48a15: Pulling fs layer
+1B130f64570e: Pulling fs layer
+1B04ad61a343: Pulling fs layer
+1B58bd53dee4: Pulling fs layer
+1B37a6e2b2d2: Pulling fs layer
+1B37a03e6e93: Pulling fs layer
+1Bd3362c5809: Pulling fs layer
+1Befa2c562fe: Pulling fs layer
+1Bc3b5738e05: Pulling fs layer
+1B4247ca54b9: Pulling fs layer
+1B937d98ff5e: Pulling fs layer
+1Bd6bafa5dc2: Pulling fs layer
+1B4f2eeaaedf: Pulling fs layer
+1Bfcb3848f3f: Pulling fs layer
+1B032b1a40b1: Pulling fs layer
+1B054009b974: Pulling fs layer
+1Ba0ffc08165: Pulling fs layer
+1B92dac9dcca: Pulling fs layer
+1Bf78da11cdb: Pulling fs layer
+1B4f64d88d50: Pulling fs layer
+1B532207b9e2: Pulling fs layer
+1Bdf85180220: Pulling fs layer
+1B6f91ffc3c0: Pulling fs layer
+1B4350659f33: Pulling fs layer
+1BDigest:3sha256:1f7410e032fce4b2ac8bdbf30b797eb823c394596f73f098b0de4bbeda5ce19a58.4MB/158.4MBB
+Status: Downloaded newer image for localhost:5000/buildcache:julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu.spack
+exec /home/spack/spack/opt/spack/linux-x86_64_v3/julia-1.12.6-cwym5wwcr7mnaap6okxtqeljftjv3lpu/bin/julia: no such file or directory
