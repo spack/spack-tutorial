@@ -1,0 +1,31 @@
+# This is a Spack Environment file.
+#
+# It describes a set of packages to be installed, along with
+# configuration settings.
+spack:
+  specs:
+  - group: compiler
+    specs:
+    - gcc@16
+    - lmod@8.7.67
+    override:
+      packages:
+        c:
+          prefer: [gcc@15]
+        cxx:
+          prefer: [gcc@15]
+        fortran:
+          prefer: [gcc@15]
+  - group: stack
+    needs: [compiler]
+    specs:
+    - netlib-scalapack ^openblas ^openmpi
+    override:
+      packages:
+        c:
+          prefer: [gcc@16]
+        cxx:
+          prefer: [gcc@16]
+        fortran:
+          prefer: [gcc@16]
+  view: false
