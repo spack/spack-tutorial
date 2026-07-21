@@ -49,14 +49,14 @@ example --tee cache/reinstall "spack -e . install --overwrite -y julia"
 julia_tag="$(spack -e . find --format '{name}-{version}-{hash}' julia).spack"
 
 # Running the image without a base image fails: it has no glibc.
-example --tee --expect-error cache/docker-run-fail \
+example --expect-error cache/docker-run-fail \
     "docker run --rm localhost:5000/buildcache:${julia_tag} julia -e 'println(1 + 1)'"
 
 # Push again with a base image that provides a compatible glibc
 example --tee cache/push-base-image "spack -e . buildcache push --force --without-build-dependencies --base-image ubuntu:26.04 my-registry"
 
 # The image now runs; --pull always fetches the rebuilt image with the base layer
-example --tee cache/docker-run \
+example cache/docker-run \
     "docker run --rm --pull always localhost:5000/buildcache:${julia_tag} julia -e 'println(1 + 1)'"
 
 # Spack environments as container images
