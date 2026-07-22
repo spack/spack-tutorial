@@ -1,0 +1,12 @@
+$ spack -e . buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry
+==> Selected 30 specs to push to oci+http://localhost:5000/buildcache
+==> Checking for existing specs in the buildcache
+==> 1 specs need to be pushed to localhost:5000/buildcache
+==> Pushed vim@9.2.0000/2w6tqad: sha256:70cb96a70621c93e218eb507055f429d04785693c7b3811982e9a3c26a3230d8 (0.06s, 185.17 MB/s)
+==> Using cached archive: /home/spack/spack/var/spack/cache/blobs/sha256/de7345b16e942e22044c6ba053020ec85ae879984860a9918517d54eb6cef851
+==> Uploading manifests
+==> Tagged vim@9.2.0000/2w6tqad as localhost:5000/buildcache:vim-9.2.0000-2w6tqadqxniojqyzoe4j55jamd4pbbcp.spack
+==> The following 29 specs were skipped as they already exist in the buildcache:
+    libiconv@1.18/vbwvgwx, libxml2@2.15.3/ujlg2ua, libpciaccess@0.17/qzkk5ym, metis@5.1.0/da5cneu, ..., julia@1.12.6/cwym5ww
+    Use --force to overwrite them.
+==> Tagged localhost:5000/buildcache:julia-and-vim

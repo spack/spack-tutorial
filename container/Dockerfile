@@ -2,7 +2,7 @@ FROM ghcr.io/spack/tutorial-ubuntu-26.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Install AWS cli
+# Install extra tools used by the tutorial
 RUN apt-get update -y && \
     apt-get install -y --no-install-recommends \
     bash-completion \
@@ -11,7 +11,8 @@ RUN apt-get update -y && \
     jq \
     less \
     vim \
-    rclone
+    rclone \
+    docker.io
 
 # Download the buildcache
 RUN mkdir /mirror

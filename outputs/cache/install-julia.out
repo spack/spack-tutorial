@@ -1,0 +1,6 @@
+$ mkdir ~/myenv && cd ~/myenv
+$ spack env create --with-view view .
+==> Created independent environment in: /home/spack/myenv
+==> Activate with: spack env activate .
+$ spack -e . add julia
+==> Adding julia to environment /home/spack/myenv
