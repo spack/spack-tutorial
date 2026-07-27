@@ -546,7 +546,6 @@ Now, ``spack spec hdf5+mpi`` will show a dependency on the external MPICH spec.
 To demonstrate how constraints defined in configurations protect against unintended installations, we'll attempt to concretize HDF5 with OpenMPI as the MPI provider.
 
 .. code-block:: spec
-
    $ spack spec hdf5+mpi ^openmpi
    ==> Error: failed to concretize `hdf5+mpi ^openmpi` for the following reasons:
      1. cannot satisfy a requirement for package 'mpi'.
