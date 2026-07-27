@@ -178,7 +178,6 @@ With ``openmpi`` installed in ``myproject`` as a dependency of ``trilinos``, ``m
 .. literalinclude:: outputs/environments/show-mpicc-1.out
    :language: console
 
-This means we can compile code against the environment's packages without any manual ``-I`` or ``-L`` flags.
 Let's build a small program that uses both MPI and ``zlib``:
 
 .. code-block:: c
