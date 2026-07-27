@@ -9,7 +9,8 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented in-person at the `Practice and Experience in Advanced Research Computing (PEARC) 26 Conference <https://pearc.acm.org/pearc26/workshop-tutorials/>`_ July 27th, 2026. The event was a full-day tutorial.
+It was last presented in-person at the `Practice and Experience in Advanced Research Computing (PEARC) 26 Conference <https://pearc.acm.org/pearc26/workshop-tutorials/>`_ July 27th, 2026.
+The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
 
