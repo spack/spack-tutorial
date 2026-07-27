@@ -541,25 +541,17 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
 .. 3.externals.out has mpich
 .. The concretization result is strange and enables some qt stuff that makes it huge
 
-If you run this as-is, you'll notice Spack still hasn't built ``hdf5`` with our external ``mpich``.
-The concretizer has instead turned off ``mpi`` support in ``hdf5``.
-To debug this, we will force Spack to use ``hdf5+mpi``.
+Now, ``spack spec hdf5+mpi`` will show a dependency on the external MPICH spec.
+
+To demonstrate how constraints defined in configurations protect against unintended installations, we'll attempt to concretize HDF5 with OpenMPI as the MPI provider.
 
 .. code-block:: spec
 
-   $ spack spec hdf5+mpi
-   ==> Error: failed to concretize `hdf5+mpi` for the following reasons:
-     1. 'hdf5' requires conflicting variant values '~mpi' and '+mpi'
-     2. 'hdf5' requires conflicting variant values '~mpi' and '+mpi'
-        required because hdf5+mpi requested explicitly
-        required because ~mpi is a requirement for package hdf5
-          required because hdf5+mpi requested explicitly
+   $ spack spec hdf5+mpi ^openmpi
+   ==> Error: failed to concretize `hdf5+mpi ^openmpi` for the following reasons:
+     1. cannot satisfy a requirement for package 'mpi'.
 
-
-In this case, we cannot use the external mpich.
-The version is incompatible with ``hdf5``.
-At this point, the best option is to give up and let Spack build ``mpi`` for us.
-The alternative is to try to find a version of ``hdf5`` which doesn't have this conflict.
+Because we require the MPI provider in this environment to be MPICH, Spack will fail to concretize if we explicitly request the use of a different provider.
 
 By configuring most of our package preferences in ``packages.yaml``, we can cut down on the amount of work we need to do when specifying a spec on the command line.
 In addition to compiler and variant preferences, we can specify version preferences as well.
