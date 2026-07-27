@@ -48,7 +48,7 @@ Finally, we will give some brief attention to more generalized Spack configurati
 
 For all of these features, we will demonstrate how we build up a full configuration file.
 For some, we will then demonstrate how the configuration affects the install command, and for others we will use the ``spack spec`` command to demonstrate how the configuration changes have affected Spack's concretization algorithm.
-The provided output is all from a server running Ubuntu version 22.04.
+The provided output is all from a server running Ubuntu version 26.04.
 
 -----------------------------------
 Configuration from the command line
@@ -89,7 +89,7 @@ Configuration Scopes
 --------------------
 
 Depending on your use case, you may want to provide configuration settings common to everyone on your team, or you may want to set default behaviors specific to a single user account.
-Spack provides six configuration *scopes* to handle this customization.
+Spack provides seven configuration *scopes* to handle this customization.
 These scopes, in order of decreasing priority, are:
 
 ============   ===================================================
@@ -523,7 +523,7 @@ While we're editing the ``spack.yaml`` file, make sure to configure HDF5 to be a
      packages:
        curl:
         externals:
-         - spec: curl@7.81.0 %gcc@11.4.0
+         - spec: curl@8.18.0 %gcc@15.2.0
            prefix: /usr
          buildable: false
        c:
@@ -671,20 +671,20 @@ To limit the number of cores our build uses, set ``build_jobs`` like so:
      build_jobs: 2
 
 
-If we uninstall and reinstall zlib-ng, we see that it now uses only 2 cores:
+If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
 
 .. code-block:: spec
 
-   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib-ng
+   $ spack install --no-cache --verbose --overwrite --yes-to-all zlib
    ==> Installing zlib
    ==> Executing phase: 'install'
-   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-x86_64_v3...
+   ==> './configure' '--prefix=/home/user/spack/opt/spack/linux-x86_64_v3/gcc-15.2.0/zlib-1.3.2-tbcolosea5jpwtkur56rxvk352jipg7r'
    ...
    ==> 'make' '-j2'
    ...
    ==> 'make' '-j2' 'install'
    ...
-   [+] /home/user/spack/opt/spack/linux-ubuntu22.04...
+   [+] /home/user/spack/opt/spack/linux-x86_64_v3/gcc-15.2.0/zlib-1.3.2-tbcolosea5jpwtkur56rxvk352jipg7r
 
 
 Obviously, if you want to build everything in serial for whatever reason, you would set ``build_jobs`` to 1.
