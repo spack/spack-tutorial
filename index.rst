@@ -18,13 +18,13 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/spack-pearc26-tutorial-slides.pdf
+.. image:: tutorial/images/carla26-tutorial-slide-preview.png
+   :target: _static/slides/spack-carla26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-pearc26-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-carla26-tutorial-slides.pdf>`.
 
 **Full citation:** Caetano Melone and Fernando Posada.
 Managing HPC Software Complexity with Spack.
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:pearc26
-   $ docker run -it ghcr.io/spack/tutorial:pearc26
+   $ docker pull ghcr.io/spack/tutorial:carla26
+   $ docker run -it ghcr.io/spack/tutorial:carla26
 
 to start using the container.
 You should now be ready to run through our demo scripts:
