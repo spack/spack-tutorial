@@ -2,7 +2,7 @@
 
    If you have not done the prior sections, you'll need to start the docker image::
 
-       docker run -it ghcr.io/spack/tutorial:pearc26
+       docker run -it ghcr.io/spack/tutorial:carla26
 
    and then set Spack up like this::
 

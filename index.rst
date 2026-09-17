@@ -9,7 +9,7 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented in-person at the `Practice and Experience in Advanced Research Computing (PEARC) 26 Conference <https://pearc.acm.org/pearc26/workshop-tutorials/>`_ July 27th, 2026.
+It was last presented in-person at the `Latin American High Performance Computing Conference (CARLA 2026) <https://carlaconference.org/program-tutorials>`_ September 21st, 2026.
 The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
@@ -18,23 +18,23 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. rubric:: Slides
 
-.. image:: tutorial/images/sc25-tutorial-slide-preview.png
-   :target: _static/slides/spack-pearc26-tutorial-slides.pdf
+.. image:: tutorial/images/carla26-tutorial-slide-preview.png
+   :target: _static/slides/spack-carla26-tutorial-slides.pdf
    :height: 72px
    :align: left
    :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-pearc26-tutorial-slides.pdf>`.
+:download:`Download Slides <_static/slides/spack-carla26-tutorial-slides.pdf>`.
 
-**Full citation:** Alec Scott, Caetano Melone, and Kathleen Shea.
+**Full citation:** Caetano Melone and Fernando Posada.
 Managing HPC Software Complexity with Spack.
-Practice and Experience in Advanced Research Computing, Minneapolis, Minnesota, July 27, 2026.
+Latin American High Performance Computing Conference, Córdoba, Argentina, September 21, 2026.
 
 .. _video:
 
 .. rubric:: Video
 
-For the last recorded video of this tutorial, see the `HPCIC Tutorial 2025 version <https://spack-tutorial.readthedocs.io/en/hpcic25/>`_.
+For the last recorded version of this tutorial, see the `HPCIC Tutorial 2026 videos <https://hpcic.llnl.gov/tutorials/2026-hpc-tutorials/>`_.
 
 .. _live-demos:
 
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:pearc26
-   $ docker run -it ghcr.io/spack/tutorial:pearc26
+   $ docker pull ghcr.io/spack/tutorial:carla26
+   $ docker run -it ghcr.io/spack/tutorial:carla26
 
 to start using the container.
 You should now be ready to run through our demo scripts:
