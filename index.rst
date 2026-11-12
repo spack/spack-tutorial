@@ -9,7 +9,7 @@ Tutorial: Spack 101
 ===================
 
 This is an introduction to Spack with lectures and live demos.
-It was last presented in-person at the `Latin American High Performance Computing Conference (CARLA 2026) <https://carlaconference.org/program-tutorials>`_ September 21st, 2026.
+It was last presented in-person at `The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26) <https://sc26.supercomputing.org/>`_ November 16th, 2026.
 The event was a full-day tutorial.
 
 You can use these materials to teach a course on Spack at your own site, or you can just skip ahead and read the live demo scripts to see how Spack is used in practice.
@@ -26,9 +26,9 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 :download:`Download Slides <_static/slides/spack-carla26-tutorial-slides.pdf>`.
 
-**Full citation:** Caetano Melone and Fernando Posada.
+**Full citation:** Todd Gamblin, Kathleen Shea, Fernando Posada, Greg Becker, Caetano Melone, Phil Sakievich, and Alec Scott.
 Managing HPC Software Complexity with Spack.
-Latin American High Performance Computing Conference, Córdoba, Argentina, September 21, 2026.
+The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26), Chicago, Illinois, November 16, 2026.
 
 .. _video:
 
@@ -48,8 +48,8 @@ You can invoke
 
 .. code-block:: console
 
-   $ docker pull ghcr.io/spack/tutorial:carla26
-   $ docker run -it ghcr.io/spack/tutorial:carla26
+   $ docker pull ghcr.io/spack/tutorial:sc26
+   $ docker run -it ghcr.io/spack/tutorial:sc26
 
 to start using the container.
 You should now be ready to run through our demo scripts:
