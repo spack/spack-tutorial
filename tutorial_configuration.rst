@@ -89,8 +89,8 @@ Configuration Scopes
 --------------------
 
 Depending on your use case, you may want to provide configuration settings common to everyone on your team, or you may want to set default behaviors specific to a single user account.
-Spack provides seven configuration *scopes* to handle this customization.
-These scopes, in order of decreasing priority, are:
+Spack provides several configuration *scopes* to handle this customization.
+These scopes, in order of decreasing priority, include:
 
 ============   ===================================================
 Scope          Directory
@@ -98,13 +98,14 @@ Scope          Directory
 Command Line   N/A
 Environment    In environment base directory (in ``spack.yaml``)
 Custom         Custom directory, specified with ``--config-scope``
+Spack          ``$SPACK_ROOT/etc/spack/``
 User           ``~/.spack/``
-Site           ``$SPACK_ROOT/etc/spack/``
+Site           ``$SPACK_ROOT/etc/spack/site``
 System         ``/etc/spack/``
 Defaults       ``$SPACK_ROOT/etc/spack/defaults/``
 ============   ===================================================
 
-Spack's default configuration settings reside in ``$SPACK_ROOT/etc/spack/defaults``.
+Spack's default configuration settings reside in ``$SPACK_ROOT/etc/spack/defaults``, including platform-specific and base subdirectories/subscopes.
 These are useful for reference, but should never be directly edited.
 To override these settings, create new configuration files in any of the higher-priority configuration scopes.
 
