@@ -47,3 +47,45 @@ div.version-switch select:hover {
 .highlight .go {
   color: #333;
 }
+
+.rubric {
+  margin-top: 1.5rem;
+}
+
+.slides-card {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  margin: 1rem 0 2rem;
+}
+
+.slides-thumb {
+  flex: 0 0 160px;
+}
+
+.slides-thumb img {
+  display: block;
+  width: 160px;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--color-background-border);
+  border-radius: 4px;
+}
+
+.slides-thumb p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+.slides-citation {
+  flex: 1 1 18rem;
+}
+
+.slides-citation p {
+  margin-top: 0;
+}
+
+.slides-citation p:last-child {
+  margin-bottom: 0;         /* flex items don't collapse margins; avoid extra gap before next rubric */
+}
