@@ -16,15 +16,16 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
 .. _slides:
 
-.. rubric:: Slides
+Slides
+------
 
-.. image:: tutorial/images/carla26-tutorial-slide-preview.png
+.. figure:: tutorial/images/carla26-tutorial-slide-preview.png
    :target: _static/slides/spack-carla26-tutorial-slides.pdf
-   :height: 72px
+   :alt: Title slide of "Managing HPC Software Complexity with Spack"
+   :width: 244px
    :align: left
-   :alt: Slide Preview
 
-:download:`Download Slides <_static/slides/spack-carla26-tutorial-slides.pdf>`.
+   `Download slides (PDF) <_static/slides/spack-carla26-tutorial-slides.pdf>`_
 
 **Full citation:** Todd Gamblin, Kathleen Shea, Fernando Posada, Greg Becker, Caetano Melone, Phil Sakievich, and Alec Scott.
 Managing HPC Software Complexity with Spack.
