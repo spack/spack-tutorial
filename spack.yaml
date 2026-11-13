@@ -1,14 +1,12 @@
 spack:
   specs:
-  - py-sphinx@5
-  - py-sphinxcontrib-programoutput
-  - py-sphinx-rtd-theme
+  - py-sphinx@9
+  - py-docutils
+  - py-pygments
+  - py-furo
   - py-sphinx-copybutton
-  - py-python-levenshtein
-  # Newer py-docutils messes up the style?
-  - py-docutils@0.16
-  # Our hacky way to register styles only works on old pygments
-  - py-pygments@2.12
+  - py-sphinx-last-updated-by-git
+  - py-sphinx-sitemap
   - graphviz
   - py-codespell
   view: true
