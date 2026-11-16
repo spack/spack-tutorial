@@ -3,18 +3,21 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
+
 from spack.package import *
 
 
 class TutorialMpileaks(AutotoolsPackage):
     """Tool to detect and report leaked MPI objects like MPI_Requests and MPI_Datatypes."""
 
-    homepage = "https://github.com/LLNL/mpileaks"
-    url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
+    homepage = "https://github.com/llnl/mpileaks"
+    url = "https://github.com/llnl/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
-    maintainers("adamjstewart")
+    supplier = "Organization: LLNL"
 
-    license("BSD", checked_by="adamjstewart")
+    maintainers("cmelone")
+
+    license("BSD", checked_by="cmelone")
 
     version("1.0", sha256="24c706591bdcd84541e19389a9314813ce848035ee877e213d528b184f4b43f9")
 
@@ -22,13 +25,15 @@ class TutorialMpileaks(AutotoolsPackage):
     depends_on("cxx", type="build")
     depends_on("fortran", type="build")
 
-    depends_on("autoconf", type="build")
-    depends_on("automake", type="build")
-    depends_on("libtool", type="build")
-    depends_on("m4", type="build")
+    with default_args(type="build"):
+        depends_on("autoconf")
+        depends_on("automake")
+        depends_on("libtool")
+        depends_on("m4")
 
-    # FIXME: Add additional dependencies if required.
-    # depends_on("foo")
+    depends_on("mpi")
+    depends_on("adept-utils")
+    depends_on("callpath")
 
     def autoreconf(self, spec, prefix):
         # FIXME: Modify the autoreconf method as necessary

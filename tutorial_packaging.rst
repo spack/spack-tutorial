@@ -12,7 +12,7 @@ Package Creation Tutorial
 
 This tutorial walks you through the steps for creating and debugging a simple Spack package.
 We will develop and debug a package using an iterative approach to gain more experience with additional Spack commands.
-For consistency, we will create a package for ``mpileaks`` (https://github.com/LLNL/mpileaks), an MPI debugging tool.
+For consistency, we will create a package for ``mpileaks`` (https://github.com/llnl/mpileaks), an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
@@ -80,7 +80,7 @@ Spack's *create* command builds a new package from a template by taking the loca
 * create a package skeleton; and
 * open the file in your `editor of choice <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
-The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
+The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/llnl/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
 
 .. literalinclude:: outputs/packaging/create.out
@@ -99,6 +99,7 @@ As we can see from the skeleton contents, the Spack template:
 * imports and inherits from the inferred `build system package <https://spack.readthedocs.io/en/latest/build_systems.html>`_;
 * provides a docstring template;
 * provides an example homepage URL;
+* provides a placeholder for the upstream ``supplier``;
 * shows how to specify a list of package `maintainers <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_;
 * provides a template for the `license <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#license-information>`_;
 * specifies the `version directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#versions-and-urls>`_ with the `checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_;
@@ -109,22 +110,29 @@ As we can see from the skeleton contents, the Spack template:
 
 .. note::
 
+   The ``supplier`` field identifies the organization, project, or individual responsible for distributing the software, rather than the Spack package maintainer.
+   Spack uses this metadata in the `Software Bill of Materials (SBOM) <https://spack.readthedocs.io/en/latest/advanced_topics.html#sbom>`_ generated for each installation.
+   For ``mpileaks``, we use ``supplier = "Organization: LLNL"``.
+   If the supplier is unknown or inapplicable, remove the field and its placeholder comments.
+
+.. note::
+
    The `maintainers directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_ holds a comma-separated list of GitHub user names for those accounts willing to be notified when a change is made to the package.
    They will also be given an opportunity to review the changes.
    This information is useful for developers who maintain a Spack package for their own software and/or rely on software maintained by others.
 
 The areas we need to modify are highlighted in the figure below.
 
-.. literalinclude:: tutorial/examples/packaging/0.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
+.. literalinclude:: outputs/packaging/examples/0.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/0.package.py)
    :language: python
-   :emphasize-lines: 5-20,27,29-30,33-35,37-40,53-54,57,61-64
+   :emphasize-lines: 5-20,28,30-31,34-36,38-40,42-45,59-60,63,67-70
 
 .. tip::
 
    We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
 
-   In this case, that would mean copying the url labeled ``mpileaks-1.0.tar.gz`` under the ``v1.0`` release assets, or simply ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz``.
+   In this case, that would mean copying the url labeled ``mpileaks-1.0.tar.gz`` under the ``v1.0`` release assets, or simply ``https://github.com/llnl/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz``.
    The ``sha256`` is different since the file has build customizations.
    A key difference is the presence of ``autogen.sh``, which is a convenience script Autotools projects can create to customize their reconfiguration process.
    If you choose to use that URL, you should replace the more general call to ``autoreconf()`` with an invocation of the ``autogen.sh`` script.
@@ -169,12 +177,13 @@ Let's make the following changes:
 * remove the boilerplate comments between and including the dashed lines at the top;
 * replace the first ``FIXME`` comment with a description of ``mpileaks`` in the docstring;
 * replace the ``homepage`` property with the correct link;
+* uncomment the ``supplier`` field and set it to ``"Organization: LLNL"``;
 * uncomment the ``maintainers`` directive and replace the placeholder with your GitHub user name; and
 * replace the ``license`` of the project with the correct name and the placeholder with your GitHub user name.
 
 .. tip::
 
-   It helps to have the `mpileaks <https://github.com/LLNL/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
+   It helps to have the `mpileaks <https://github.com/llnl/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
 
 .. note::
 
@@ -184,11 +193,11 @@ Now make the changes and additions to your ``package.py`` file.
 
 The resulting package should contain the following information, omitting the copyright and license:
 
-.. literalinclude:: tutorial/examples/packaging/1.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
+.. literalinclude:: outputs/packaging/examples/1.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/1.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 6,8,11,13
+   :emphasize-lines: 7,9,12,14,16
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software; however, the information is now available for review.
@@ -230,7 +239,7 @@ Now we're ready to start filling in the build recipe.
 Adding Dependencies
 -------------------
 
-First we'll add the dependencies determined by reviewing documentation in the software's repository (https://github.com/LLNL/mpileaks).
+First we'll add the dependencies determined by reviewing documentation in the software's repository (https://github.com/llnl/mpileaks).
 We can see from the ``README`` file's instructions, ``mpileaks`` software relies on three third-party libraries:
 
 * ``mpi``,
@@ -249,11 +258,11 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the dependencies by specifying them using the ``depends_on`` directive as shown below:
 
-.. literalinclude:: tutorial/examples/packaging/2.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
+.. literalinclude:: outputs/packaging/examples/2.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/2.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 26-28
+   :emphasize-lines: 30-32
 
 Adding dependencies tells Spack that it must ensure those packages are installed *before* it can build our package.
 
@@ -399,11 +408,11 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments in the ``configure_args`` method as follows:
 
-.. literalinclude:: tutorial/examples/packaging/3.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
+.. literalinclude:: outputs/packaging/examples/3.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/3.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 34-37
+   :emphasize-lines: 38-41
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the method will automatically get passed to ``configure`` during the build.
 
@@ -432,7 +441,7 @@ Two stand out for tutorial purposes because they both take integers, as opposed 
    :language: console
    :emphasize-lines: 18-23
 
-According to the software's documentation (https://github.com/LLNL/mpileaks), the integer values for the ``--with-stack-start-*`` options represent the numbers of calls to shave off of the top of the stack traces for each language, effectively reducing the noise of internal mpileaks library function calls in generated traces.
+According to the software's documentation (https://github.com/llnl/mpileaks), the integer values for the ``--with-stack-start-*`` options represent the numbers of calls to shave off of the top of the stack traces for each language, effectively reducing the noise of internal mpileaks library function calls in generated traces.
 
 For simplicity, we'll use one variant to supply the value for both arguments.
 
@@ -453,11 +462,11 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the ``variant`` directive and associated arguments as follows:
 
-.. literalinclude:: tutorial/examples/packaging/4.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
+.. literalinclude:: outputs/packaging/examples/4.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/4.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 17-22,46-53
+   :emphasize-lines: 20-25,50-57
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary in ``self.spec``.
 Also note that the value provided by the user is accessed by the entry's ``value`` property.
