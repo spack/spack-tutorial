@@ -22,15 +22,15 @@ You can use these materials to teach a course on Spack at your own site, or you 
 
    .. container:: slides-thumb
 
-      .. image:: tutorial/images/carla26-tutorial-slide-preview.png
-         :target: _static/slides/spack-carla26-tutorial-slides.pdf
+      .. image:: tutorial/images/sc26-tutorial-slide-preview.png
+         :target: _static/slides/spack-sc26-tutorial-slides.pdf
          :alt: Title slide of "Managing HPC Software Complexity with Spack"
 
-      `Download slides (PDF) <_static/slides/spack-carla26-tutorial-slides.pdf>`_
+      `Download slides (PDF) <_static/slides/spack-sc26-tutorial-slides.pdf>`_
 
    .. container:: slides-citation
 
-      **Full citation:** Todd Gamblin, Kathleen Shea, Fernando Posada, Greg Becker, Caetano Melone, Phil Sakievich, and Alec Scott.
+      **Full citation:** Gregory Becker, Alec Scott, Kathleen Shea, Caetano Melone, Phil Sakievich, Fernando Posada, and Todd Gamblin.
       Managing HPC Software Complexity with Spack.
       The International Conference for High Performance Computing, Networking, Storage, and Analysis (SC26), Chicago, Illinois, November 16, 2026.
 
