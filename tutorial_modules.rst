@@ -848,7 +848,7 @@ The rest of the file is then divided into `blocks <http://jinja.pocoo.org/docs/2
 
 The locations where Spack looks for templates are specified in ``config.yaml``:
 
-.. literalinclude:: _spack_root/etc/spack/defaults/config.yaml
+.. literalinclude:: _spack_root/etc/spack/defaults/base/config.yaml
   :language: yaml
   :lines: 32-35
 
