@@ -11,6 +11,7 @@
   </script>
   {%- if READTHEDOCS %}
   <meta name="readthedocs-addons-api-version" content="1">
+  <script>const VERSION_DATES = {{ version_dates|tojson }};</script>
   <script src="{{ pathto('_static/js/versions.js', 1) }}"></script>
   {%- endif %}
 {% endblock %}

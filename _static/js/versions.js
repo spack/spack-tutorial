@@ -12,7 +12,10 @@ document.addEventListener("readthedocs-addons-data-ready", function (event) {
   const versionSwitch = document.querySelector(
     "div.version-switch",
   );
-  let versions = config.versions.active;
+  // newest first; tags are keyed by name, branches by branch name.
+  // Unknown refs (created after this build) are assumed newest.
+  const date = (v) => VERSION_DATES[v.type === "tag" ? v.slug : v.identifier] ?? Number.MAX_SAFE_INTEGER;
+  const versions = config.versions.active.sort((a, b) => date(b) - date(a));
   if (config.versions.current.hidden || config.versions.current.type === "external") {
     versions.unshift(config.versions.current);
   }

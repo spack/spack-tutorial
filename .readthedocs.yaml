@@ -18,6 +18,7 @@ build:
   jobs:
     post_checkout:
       - git fetch --unshallow || true  # get accurate "Last updated on" info
+      - git fetch origin '+refs/heads/*:refs/remotes/origin/*' '+refs/tags/*:refs/tags/*' || true  # date all versions for the picker
 
 # Build documentation in the "docs/" directory with Sphinx
 sphinx:
