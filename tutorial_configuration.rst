@@ -142,13 +142,13 @@ For example, look at high-level config:
 
    ---                                                   config:
    /etc/spack/config.yaml:2                                suppress_gpg_warnings: True
-   /home/spack/spack/etc/spack/defaults/config.yaml:19     install_tree:
-   /home/spack/spack/etc/spack/defaults/config.yaml:20       root: $spack/opt/spack
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:19     install_tree:
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:20       root: $spack/opt/spack
    ...
-   /home/spack/spack/etc/spack/defaults/config.yaml:238    aliases:
-   /home/spack/spack/etc/spack/defaults/config.yaml:239      concretise: concretize
-   /home/spack/spack/etc/spack/defaults/config.yaml:240      containerise: containerize
-   /home/spack/spack/etc/spack/defaults/config.yaml:241      rm: remove
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:238    aliases:
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:239      concretise: concretize
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:240      containerise: containerize
+   /home/spack/spack/etc/spack/defaults/base/config.yaml:241      rm: remove
 
 
 We can see overrides in action with:
