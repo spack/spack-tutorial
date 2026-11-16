@@ -31,6 +31,7 @@ spack env deactivate
 example environments/env-status-2    "spack env status"
 example environments/env-status-2    "spack find"
 
+example --tee environments/env-add-1 "spack env activate myproject"
 spack env activate myproject
 
 example environments/env-add-1            "spack add tcl"
@@ -42,18 +43,15 @@ example environments/env-concretize-1     "spack concretize"
 
 example environments/env-find-c-1         "spack find -c"
 
-example --tee environments/env-install-1        "spack install"
+example --tee environments/env-install-1  "spack install"
 
 example environments/find-env-2           "spack find"
 
-example environments/use-tcl-1       "which tclsh"
+example environments/use-tcl-1            "which tclsh"
 
-example --tee environments/show-mpicc-1      "spack env activate myproject"
-spack env activate myproject
-example environments/show-mpicc-1    "spack env status"
-example environments/show-mpicc-1    "which mpicc"
+example environments/show-mpicc-1         "which mpicc"
 
-example environments/show-paths-1    "env | grep PATH="
+example environments/show-paths-1         "env | grep PATH="
 
 # mock hand-edited file
 cat > mpi-hello.c <<EOF
@@ -80,8 +78,10 @@ example environments/use-mpi-1       'mpicc ./mpi-hello.c -I$(spack location -i 
 example environments/use-mpi-1       "mpirun -n 2 ./a.out"
 
 example environments/env-create-2         "spack env create myproject2"
+
 example --tee environments/env-create-2    "spack env activate myproject2"
 spack env activate myproject2
+
 example environments/env-create-2    "spack add scr trilinos"
 # concretize + install are shown as a code-block in the docs; run them here without capturing
 spack concretize
