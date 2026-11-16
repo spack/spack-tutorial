@@ -123,8 +123,8 @@ As we can see from the skeleton contents, the Spack template:
 
 The areas we need to modify are highlighted in the figure below.
 
-.. literalinclude:: tutorial/examples/packaging/0.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
+.. literalinclude:: outputs/packaging/examples/0.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/0.package.py)
    :language: python
    :emphasize-lines: 5-20,28,30-31,34-36,38-40,42-45,59-60,63,67-70
 
@@ -193,8 +193,8 @@ Now make the changes and additions to your ``package.py`` file.
 
 The resulting package should contain the following information, omitting the copyright and license:
 
-.. literalinclude:: tutorial/examples/packaging/1.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
+.. literalinclude:: outputs/packaging/examples/1.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/1.package.py)
    :lines: 5-
    :language: python
    :emphasize-lines: 7,9,12,14,16
@@ -258,8 +258,8 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the dependencies by specifying them using the ``depends_on`` directive as shown below:
 
-.. literalinclude:: tutorial/examples/packaging/2.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
+.. literalinclude:: outputs/packaging/examples/2.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/2.package.py)
    :lines: 5-
    :language: python
    :emphasize-lines: 30-32
@@ -408,8 +408,8 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the ``--with-adept-utils`` and ``--with-callpath`` arguments in the ``configure_args`` method as follows:
 
-.. literalinclude:: tutorial/examples/packaging/3.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
+.. literalinclude:: outputs/packaging/examples/3.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/3.package.py)
    :lines: 5-
    :language: python
    :emphasize-lines: 38-41
@@ -462,8 +462,8 @@ Bring ``tutorial-mpileaks``' ``package.py`` file back up with the ``spack edit``
 
 and add the ``variant`` directive and associated arguments as follows:
 
-.. literalinclude:: tutorial/examples/packaging/4.package.py
-   :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
+.. literalinclude:: outputs/packaging/examples/4.package.py
+   :caption: tutorial-mpileaks/package.py (from outputs/packaging/examples/4.package.py)
    :lines: 5-
    :language: python
    :emphasize-lines: 20-25,50-57
