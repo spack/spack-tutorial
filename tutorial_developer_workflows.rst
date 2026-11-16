@@ -354,15 +354,18 @@ Developers can build both cases from a single ``spack install`` as long as the d
 
    # First we have to allow repeat specs in the environment
    $ spack config add concretizer:unify:false
-   # Next we need to specify the specs we want ('==' propagates the variant to deps)
-   $ spack change macsio build_type==Release
-   $ spack add macsio+scr build_type==Debug
+   # Turn the view off since we will have duplicate specs (could have added a projection instead)
+   $ spack config add view:false
+   # Next we need to specify the specs we want
+   $ spack change macsio build_type=Release
+   $ spack add macsio+scr build_type=Debug
    # Inspect the graph for multiple dev_path=
    $ spack concretize -f
 
 While we will not work through this example, it illustrates how the ``dev_path`` for ``build_type=Release`` and ``build_type=Debug`` points to the same source code.
 
 If we want to do most of our incremental builds with the ``Release`` build and periodically check the results with the ``Debug`` build, we can combine the workflow from the previous example.
-We can enter the ``Release`` build environment using ``spack build-env scr build_type=Release -- bash`` and navigate with ``spack cd -b scr build_type=Release``.
-Note that since there are two ``scr`` specs in the environment, we must distinguish which one we want for these commands.
+We can enter the ``Release`` build environment using ``spack build-env macsio build_type=Release -- bash`` and navigate with ``spack cd -b macsio build_type=Release``.
+
+Note that since there are two ``macsio`` specs in the environment, we must distinguish which one we want for these commands.
 When we are ready to check our changes in the debug build, we can exit the build environment subshell, rerun ``spack install`` to rebuild everything, and then inspect the debug build using our preferred method.
