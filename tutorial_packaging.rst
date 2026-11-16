@@ -475,8 +475,8 @@ Now run the installation again with the ``--verbose`` install option -- to get m
 
 .. literalinclude:: outputs/packaging/install-mpileaks-4.out
    :language: spec
-   :lines: 1-57
-   :emphasize-lines: 57
+   :lines: 1-55
+   :emphasize-lines: 55
 
 Notice the addition of the two stack start arguments in the configure command at the end of the emphasized line after ``tutorial-mpileaks``' ``Executing phase: 'configure'``.
 
