@@ -16,6 +16,7 @@
 # serve to show the default.
 
 import os
+import subprocess
 import sys
 
 from pygments.formatters.html import HtmlFormatter
@@ -287,6 +288,22 @@ html_context = {}
 
 if os.environ.get("READTHEDOCS", "") == "True":
     html_context["READTHEDOCS"] = True
+    # Ref dates, used by _static/js/versions.js to sort the version picker by date
+    refs = subprocess.run(
+        [
+            "git",
+            "for-each-ref",
+            "--format=%(refname) %(creatordate:unix)",
+            "refs/remotes/origin",
+            "refs/tags",
+        ],
+        capture_output=True,
+        text=True,
+    ).stdout
+    html_context["version_dates"] = {
+        ref.removeprefix("refs/tags/").removeprefix("refs/remotes/origin/"): int(date)
+        for ref, date in map(str.split, refs.splitlines())
+    }
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
