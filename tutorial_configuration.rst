@@ -630,7 +630,7 @@ If you have a fast scratch file system, you can run builds from this file system
 One last setting that may be of interest to many users is the ability to customize the parallelism of Spack builds.
 By default, Spack installs all packages in parallel with the number of jobs equal to the number of cores on the node.
 
-This is easier to demonstrate using the old installer's output, so we'll switch to that for this example. 
+This is easier to demonstrate using the old installer's output, so we'll switch to that for this example.
 
 .. code-block:: console
 
