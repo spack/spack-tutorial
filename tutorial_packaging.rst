@@ -99,6 +99,7 @@ As we can see from the skeleton contents, the Spack template:
 * imports and inherits from the inferred `build system package <https://spack.readthedocs.io/en/latest/build_systems.html>`_;
 * provides a docstring template;
 * provides an example homepage URL;
+* provides a placeholder for the upstream ``supplier``;
 * shows how to specify a list of package `maintainers <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#maintainers>`_;
 * provides a template for the `license <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#license-information>`_;
 * specifies the `version directive <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#versions-and-urls>`_ with the `checksum <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#checksum-verification>`_;
@@ -106,6 +107,13 @@ As we can see from the skeleton contents, the Spack template:
 * provides a skeleton for another dependency;
 * provides a preliminary implementation of the `autoreconf <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#using-a-custom-autoreconf-phase>`_ method; and
 * provides a skeleton `configure_args <https://spack.readthedocs.io/en/latest/build_systems/autotoolspackage.html#adding-flags-to-configure>`_ method.
+
+.. note::
+
+   The ``supplier`` field identifies the organization, project, or individual responsible for distributing the software, rather than the Spack package maintainer.
+   Spack uses this metadata in the `Software Bill of Materials (SBOM) <https://spack.readthedocs.io/en/latest/advanced_topics.html#sbom>`_ generated for each installation.
+   For ``mpileaks``, we use ``supplier = "Organization: LLNL"``.
+   If the supplier is unknown or inapplicable, remove the field and its placeholder comments.
 
 .. note::
 
@@ -169,6 +177,7 @@ Let's make the following changes:
 * remove the boilerplate comments between and including the dashed lines at the top;
 * replace the first ``FIXME`` comment with a description of ``mpileaks`` in the docstring;
 * replace the ``homepage`` property with the correct link;
+* uncomment the ``supplier`` field and set it to ``"Organization: LLNL"``;
 * uncomment the ``maintainers`` directive and replace the placeholder with your GitHub user name; and
 * replace the ``license`` of the project with the correct name and the placeholder with your GitHub user name.
 
