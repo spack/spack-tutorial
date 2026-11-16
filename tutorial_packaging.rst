@@ -12,7 +12,7 @@ Package Creation Tutorial
 
 This tutorial walks you through the steps for creating and debugging a simple Spack package.
 We will develop and debug a package using an iterative approach to gain more experience with additional Spack commands.
-For consistency, we will create a package for ``mpileaks`` (https://github.com/LLNL/mpileaks), an MPI debugging tool.
+For consistency, we will create a package for ``mpileaks`` (https://github.com/llnl/mpileaks), an MPI debugging tool.
 
 ------------------------
 What is a Spack Package?
@@ -80,7 +80,7 @@ Spack's *create* command builds a new package from a template by taking the loca
 * create a package skeleton; and
 * open the file in your `editor of choice <https://spack.readthedocs.io/en/latest/packaging_guide_creation.html#controlling-the-editor>`_.
 
-The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/LLNL/mpileaks).
+The ``mpileaks`` source code is available in a tarball in the software's repository (https://github.com/llnl/mpileaks).
 Spack will look at the contents of the tarball and generate a package when we run ``spack create`` with the URL:
 
 .. literalinclude:: outputs/packaging/create.out
@@ -132,7 +132,7 @@ The areas we need to modify are highlighted in the figure below.
 
    We generally recommend you use the project-prepared archive url, when available, instead of the ``GitHub``-generated ``Source code (tar.gz)`` since those tend to be less volatile in the face of ``GitHub`` shasum algorithm changes.
 
-   In this case, that would mean copying the url labeled ``mpileaks-1.0.tar.gz`` under the ``v1.0`` release assets, or simply ``https://github.com/LLNL/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz``.
+   In this case, that would mean copying the url labeled ``mpileaks-1.0.tar.gz`` under the ``v1.0`` release assets, or simply ``https://github.com/llnl/mpileaks/releases/download/v1.0/mpileaks-1.0.tar.gz``.
    The ``sha256`` is different since the file has build customizations.
    A key difference is the presence of ``autogen.sh``, which is a convenience script Autotools projects can create to customize their reconfiguration process.
    If you choose to use that URL, you should replace the more general call to ``autoreconf()`` with an invocation of the ``autogen.sh`` script.
@@ -183,7 +183,7 @@ Let's make the following changes:
 
 .. tip::
 
-   It helps to have the `mpileaks <https://github.com/LLNL/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
+   It helps to have the `mpileaks <https://github.com/llnl/mpileaks>`_ repository up in your browser since you can copy-and-paste some of the values from it.
 
 .. note::
 
@@ -239,7 +239,7 @@ Now we're ready to start filling in the build recipe.
 Adding Dependencies
 -------------------
 
-First we'll add the dependencies determined by reviewing documentation in the software's repository (https://github.com/LLNL/mpileaks).
+First we'll add the dependencies determined by reviewing documentation in the software's repository (https://github.com/llnl/mpileaks).
 We can see from the ``README`` file's instructions, ``mpileaks`` software relies on three third-party libraries:
 
 * ``mpi``,
@@ -441,7 +441,7 @@ Two stand out for tutorial purposes because they both take integers, as opposed 
    :language: console
    :emphasize-lines: 18-23
 
-According to the software's documentation (https://github.com/LLNL/mpileaks), the integer values for the ``--with-stack-start-*`` options represent the numbers of calls to shave off of the top of the stack traces for each language, effectively reducing the noise of internal mpileaks library function calls in generated traces.
+According to the software's documentation (https://github.com/llnl/mpileaks), the integer values for the ``--with-stack-start-*`` options represent the numbers of calls to shave off of the top of the stack traces for each language, effectively reducing the noise of internal mpileaks library function calls in generated traces.
 
 For simplicity, we'll use one variant to supply the value for both arguments.
 

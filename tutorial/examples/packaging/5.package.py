@@ -10,8 +10,8 @@ from spack.package import *
 class TutorialMpileaks(AutotoolsPackage):
     """Tool to detect and report leaked MPI objects like MPI_Requests and MPI_Datatypes."""
 
-    homepage = "https://github.com/LLNL/mpileaks"
-    url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
+    homepage = "https://github.com/llnl/mpileaks"
+    url = "https://github.com/llnl/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
     supplier = "Organization: LLNL"
 
