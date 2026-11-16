@@ -24,36 +24,38 @@ cd ~/myenv || exit
 example cache/install-julia "spack env create --with-view view ."
 example cache/install-julia "spack -e . add julia"
 
-example --tee cache/install "spack -e . install"
+example --tee cache/install "spack env activate ."
+spack env activate .
+example --tee cache/install "spack install"
 
 example cache/julia-run "./view/bin/julia -e 'println(1 + 1)'"
 
 # Setting up a local OCI build cache
 example --tee cache/registry "docker run -d --rm -p 5000:5000 --name registry registry"
 
-example cache/mirror-add "spack -e . mirror add --unsigned my-registry oci+http://localhost:5000/buildcache"
+example cache/mirror-add "spack mirror add --unsigned my-registry oci+http://localhost:5000/buildcache"
 
 # Pushing to the OCI build cache
-example --tee cache/push "spack -e . buildcache push --without-build-dependencies my-registry"
+example --tee cache/push "spack buildcache push --without-build-dependencies my-registry"
 
 # Re-running the push detects that nothing needs to be uploaded
-example --tee cache/push-again "spack -e . buildcache push --without-build-dependencies my-registry"
+example --tee cache/push-again "spack buildcache push --without-build-dependencies my-registry"
 
 # Reinstalling from the OCI build cache
 # Disable the filesystem "tutorial" mirror by changing mirrors: to mirrors::
 sed -i~ 's/^\( *\)mirrors:$/\1mirrors::/' spack.yaml
 
-example --tee cache/reinstall "spack -e . install --overwrite -y julia"
+example --tee cache/reinstall "spack install --overwrite -y julia"
 
 # Creating runnable container images
-julia_tag="$(spack -e . find --format '{name}-{version}-{hash}' julia).spack"
+julia_tag="$(spack find --format '{name}-{version}-{hash}' julia).spack"
 
 # Running the image without a base image fails: it has no glibc.
 example --expect-error cache/docker-run-fail \
     "docker run --rm localhost:5000/buildcache:${julia_tag} julia -e 'println(1 + 1)'"
 
 # Push again with a base image that provides a compatible glibc
-example --tee cache/push-base-image "spack -e . buildcache push --force --without-build-dependencies --base-image ubuntu:26.04 my-registry"
+example --tee cache/push-base-image "spack buildcache push --force --without-build-dependencies --base-image ubuntu:26.04 my-registry"
 
 # The image now runs; --pull always fetches the rebuilt image with the base layer
 example cache/docker-run \
@@ -63,9 +65,9 @@ example cache/docker-run \
 # Re-enable the "tutorial" mirror so vim is installed from the cache
 sed -i~ 's/^\( *\)mirrors::$/\1mirrors:/' spack.yaml
 
-example --tee cache/install-vim "spack -e . install --add vim"
+example --tee cache/install-vim "spack install --add vim"
 
-example --tee cache/push-tag "spack -e . buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry"
+example --tee cache/push-tag "spack buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry"
 
 # The combined image is run interactively in the tutorial:
 #   $ docker run -it --rm localhost:5000/buildcache:julia-and-vim
