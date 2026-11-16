@@ -1,18 +1,18 @@
 $ spack install tutorial-mpileaks
 [ ] 52pdqqj boost@1.72.0 fetching from build cache (0s)
 [ ] rji2bti libdwarf@2.3.0 fetching from build cache (0s)
-[ ] ftcprn4 libiberty@2.46.0 fetching from build cache (0s)
-[ ] tf2gxcs intel-tbb@2023.0.0 fetching from build cache (0s)
-[ ] 52pdqqj boost@1.72.0 relocating (0s)
-[ ] ftcprn4 libiberty@2.46.0 relocating (0s)
-[ ] rji2bti libdwarf@2.3.0 relocating (0s)
-[ ] tf2gxcs intel-tbb@2023.0.0 relocating (0s)
-[+] ftcprn4 libiberty@2.46.0 /home/spack/spack/opt/spack/linux-x86_64_v3/libiberty-2.46.0-ftcprn47kvuxpcbvjd5vif65cwsjvlbs (0s)
-[+] rji2bti libdwarf@2.3.0 /home/spack/spack/opt/spack/linux-x86_64_v3/libdwarf-2.3.0-rji2bticj7x5325wtwkqpshluismdgnd (0s)
-[+] tf2gxcs intel-tbb@2023.0.0 /home/spack/spack/opt/spack/linux-x86_64_v3/intel-tbb-2023.0.0-tf2gxcsr5vyiegaieu6kjw2mrhnm265k (0s)
-[+] 52pdqqj boost@1.72.0 /home/spack/spack/opt/spack/linux-x86_64_v3/boost-1.72.0-52pdqqjhv3llivj6z7zj57d3ob3vfblp (5s)
-[ ] kurk3h3 dyninst@13.0.0 fetching from build cache (0s)
+[ ] ftcprn4 libiberty@2.46.0 fetching from build cache (1s)
+[ ] tf2gxcs intel-tbb@2023.0.0 fetching from build cache (1s)
+[ ] rji2bti libdwarf@2.3.0 relocating (1s)
+[ ] 52pdqqj boost@1.72.0 relocating (1s)
+[ ] ftcprn4 libiberty@2.46.0 relocating (1s)
+[ ] tf2gxcs intel-tbb@2023.0.0 relocating (1s)
+[+] rji2bti libdwarf@2.3.0 /home/spack/spack/opt/spack/linux-x86_64_v3/libdwarf-2.3.0-rji2bticj7x5325wtwkqpshluismdgnd (1s)
+[+] ftcprn4 libiberty@2.46.0 /home/spack/spack/opt/spack/linux-x86_64_v3/libiberty-2.46.0-ftcprn47kvuxpcbvjd5vif65cwsjvlbs (1s)
+[+] tf2gxcs intel-tbb@2023.0.0 /home/spack/spack/opt/spack/linux-x86_64_v3/intel-tbb-2023.0.0-tf2gxcsr5vyiegaieu6kjw2mrhnm265k (1s)
+[+] 52pdqqj boost@1.72.0 /home/spack/spack/opt/spack/linux-x86_64_v3/boost-1.72.0-52pdqqjhv3llivj6z7zj57d3ob3vfblp (6s)
 [ ] naehq6l adept-utils@1.0.1 fetching from build cache (0s)
+[ ] kurk3h3 dyninst@13.0.0 fetching from build cache (0s)
 [ ] naehq6l adept-utils@1.0.1 relocating (0s)
 [ ] kurk3h3 dyninst@13.0.0 relocating (0s)
 [+] naehq6l adept-utils@1.0.1 /home/spack/spack/opt/spack/linux-x86_64_v3/adept-utils-1.0.1-naehq6ldodlwm7gjgdnccsxchnuphuep (0s)
@@ -20,12 +20,12 @@ $ spack install tutorial-mpileaks
 [ ] xksxwmq callpath@1.0.4 fetching from build cache (0s)
 [ ] xksxwmq callpath@1.0.4 relocating (0s)
 [+] xksxwmq callpath@1.0.4 /home/spack/spack/opt/spack/linux-x86_64_v3/callpath-1.0.4-xksxwmqijjrelztluyq5oilu4tqkyxf6 (1s)
-[ ] olkbps3 tutorial-mpileaks@1.0 fetching from build cache (0s)
-[ ] olkbps3 tutorial-mpileaks@1.0 no binary available (0s)
-[ ] olkbps3 tutorial-mpileaks@1.0 staging (0s)
-[ ] olkbps3 tutorial-mpileaks@1.0 autoreconf (1s)
-[ ] olkbps3 tutorial-mpileaks@1.0 configure (5s)
-[x] olkbps3 tutorial-mpileaks@1.0 failed: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije-ry4cehan.log (6s)
+[ ] 7vkybk5 tutorial-mpileaks@1.0 fetching from build cache (0s)
+[ ] 7vkybk5 tutorial-mpileaks@1.0 no binary available (0s)
+[ ] 7vkybk5 tutorial-mpileaks@1.0 staging (0s)
+[ ] 7vkybk5 tutorial-mpileaks@1.0 autoreconf (0s)
+[ ] 7vkybk5 tutorial-mpileaks@1.0 configure (4s)
+[x] 7vkybk5 tutorial-mpileaks@1.0 failed: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl-tqb4yo29.log (6s)
 -- lines 16 to 44 --
   libtoolize: copying file 'm4/ltversion.m4'
   libtoolize: copying file 'm4/lt~obsolete.m4'
@@ -53,9 +53,9 @@ $ spack install tutorial-mpileaks
   src/Makefile.am: installing 'config/depcomp'
   autoreconf: Leaving directory '.'
   ==> tutorial-mpileaks: Executing phase: 'configure'
-  ==> [2026-07-07-04:22:41.112767] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src'] ['configure']
-  ==> [2026-07-07-04:22:41.113432] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src'] ['configure']
-  ==> [2026-07-07-04:22:41.113678] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+  ==> [2026-11-16-05:37:56.520576] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src'] ['configure']
+  ==> [2026-11-16-05:37:56.521197] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src'] ['configure']
+  ==> [2026-11-16-05:37:56.521465] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
 -- lines 76 to 84 --
   checking whether the compiler supports GNU C++... yes
   checking whether /home/spack/spack/opt/spack/linux-x86_64_v3/compiler-wrapper-1.1.0-mmywg7x4myxvxepmqe5go3ppxirmuijp/libexec/spack/gcc/g++ accepts -g... yes
@@ -65,6 +65,6 @@ $ spack install tutorial-mpileaks
   Checking whether /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-qfut5qqwp2fzaq3ymgk7nxvjv3qyrvml/bin/mpicc responds to '-showme:compile'... yes
 > configure: error: unable to locate adept-utils installation
   Command exited with status 1:
-      /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije
+      /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl
 ==> Error: The following packages failed to install:
-tutorial-mpileaks@1.0/olkbps3ghmpiiy4dserbxgj5hlsm5ije: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije-ry4cehan.log
+tutorial-mpileaks@1.0/7vkybk5tynrflh64v4acqgcgjhsqf7pl: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl-tqb4yo29.log

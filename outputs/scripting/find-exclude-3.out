@@ -1,19 +1,22 @@
 $ ./find_exclude.py %gcc ^mpich
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@15.2.0 ------
-mpich@5.0.1	 openmpi@5.0.10	 scr@2.0.0    trilinos@17.1.1
-openblas@0.3.33	 scr@2.0.0	 silo@4.12.0
+julia@1.12.6  openblas@0.3.33  openmpi@5.0.10  scr@2.0.0    suite-sparse@7.8.3
+mpich@5.0.1   openblas@0.3.33  scr@2.0.0       silo@4.12.0  trilinos@17.1.1
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx,fortran=gcc@16.1.0 ------
 mpich@5.0.1  openblas@0.3.33  openmpi@5.0.10  py-scipy@1.17.1
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@15.2.0 --------------
-adept-utils@1.0.1    dyninst@13.0.0  hwloc@2.13.0	 m4@1.4.21	 python@3.14.5
-berkeley-db@18.1.40  elfutils@0.194  intel-tbb@2023.0.0	 macsio@1.1	 tcl@8.6.17
-binutils@2.46.1	     expat@2.8.1     krb5@1.22.2	 macsio@1.1	 zlib-ng@2.0.7
-boost@1.72.0	     gcc@16.1.0	     libdwarf@2.3.0	 ncurses@6.6	 zlib-ng@2.3.3
-callpath@1.0.4	     gettext@1.0     libffi@3.5.2	 nghttp2@1.67.1	 zlib-ng@2.3.3
-cmake@3.31.11	     glib@2.88.1     libiberty@2.46.0	 openssh@10.3p1	 zlib-ng@2.3.3
-curl@8.20.0	     gmp@6.3.0	     lz4@1.10.0		 openssl@3.6.1	 zstd@1.5.7
+adept-utils@1.0.1    elfutils@0.194	 libffi@3.5.2	   nghttp2@1.64.0  vim@9.2.0000
+berkeley-db@18.1.40  expat@2.8.1	 libiberty@2.46.0  nghttp2@1.67.1  zlib-ng@2.0.7
+binutils@2.46.1	     gcc@16.1.0		 libunwind@1.8.3   openlibm@0.8.7  zlib-ng@2.3.3
+boost@1.72.0	     gettext@1.0	 llvm@18.1.8	   openssh@10.3p1  zlib-ng@2.3.3
+callpath@1.0.4	     glib@2.88.1	 lz4@1.10.0	   openssl@3.5.5   zlib-ng@2.3.3
+cmake@3.31.11	     gmp@6.3.0		 m4@1.4.21	   openssl@3.6.1   zstd@1.5.7
+curl@8.20.0	     hwloc@2.13.0	 macsio@1.1	   p7zip@17.06
+curl@8.20.0	     intel-tbb@2023.0.0	 macsio@1.1	   pcre@8.45
+dsfmt@2.2.5	     krb5@1.22.2	 metis@5.1.0	   python@3.14.5
+dyninst@13.0.0	     libdwarf@2.3.0	 ncurses@6.6	   tcl@8.6.17
 
 -- linux-ubuntu26.04-x86_64_v3 / %c,cxx=gcc@16.1.0 --------------
 expat@2.8.1  hwloc@2.13.0  libffi@3.5.2	 openssh@10.3p1	 py-numpy@2.4.6	 zlib-ng@2.3.3
@@ -26,19 +29,24 @@ libyogrt@1.35
 netlib-lapack@3.12.1  netlib-scalapack@2.2.3  netlib-scalapack@2.2.3
 
 -- linux-ubuntu26.04-x86_64_v3 / %c=gcc@15.2.0 ------------------
-automake@1.18.1	  libbsd@0.12.2		lmod@8.7.67		 pkgconf@2.5.1
-bzip2@1.0.8	  libedit@3.1-20251016	lua@5.4.8		 pmix@6.1.0
-dtcmp@1.1.5	  libevent@2.1.12	lua-luafilesystem@1.9.0	 prrte@4.1.0
-file@5.46	  libfabric@2.5.1	lua-luaposix@36.3	 readline@8.3
-findutils@4.10.0  libgcrypt@1.12.2	lwgrp@1.0.6		 slurm@25-05-1-1
-gdbm@1.26	  libgpg-error@1.61	mpc@1.4.1		 sqlite@3.53.1
-gmake@4.4.1	  libiconv@1.18		mpfr@4.2.2		 tar@1.35
-gmake@4.4.1	  libmd@1.1.0		munge@0.5.18		 unzip@6.0
-hdf5@1.14.6	  libpciaccess@0.17	numactl@2.0.19		 util-linux-uuid@2.41
-hdf5@1.14.6	  libsigsegv@2.15	pcre2@10.44		 xz@5.8.3
-json-c@0.18	  libtool@2.5.4		pdsh@2.35
-json-cwx@0.12	  libxcrypt@4.5.2	perl@5.42.0
-less@692	  libxml2@2.15.3	pigz@2.8
+automake@1.18.1		  libgcrypt@1.12.2	   mpfr@4.2.2
+bzip2@1.0.8		  libgit2@1.9.1		   munge@0.5.18
+dtcmp@1.1.5		  libgpg-error@1.61	   numactl@2.0.19
+file@5.46		  libiconv@1.18		   pcre2@10.44
+findutils@4.10.0	  libmd@1.1.0		   pdsh@2.35
+gdbm@1.26		  libpciaccess@0.17	   perl@5.42.0
+gmake@4.4.1		  libsigsegv@2.15	   pigz@2.8
+gmake@4.4.1		  libssh2@1.11.1	   pkgconf@2.5.1
+hdf5@1.14.6		  libtool@2.5.4		   pmix@6.1.0
+hdf5@1.14.6		  libuv-julia@1.48.1rc1	   prrte@4.1.0
+json-c@0.18		  libxcrypt@4.5.2	   readline@8.3
+json-cwx@0.12		  libxml2@2.15.3	   slurm@25-05-1-1
+less@692		  lmod@8.7.67		   sqlite@3.53.1
+libblastrampoline@5.15.0  lua@5.4.8		   tar@1.35
+libbsd@0.12.2		  lua-luafilesystem@1.9.0  unzip@6.0
+libedit@3.1-20251016	  lua-luaposix@36.3	   utf8proc@2.10.0
+libevent@2.1.12		  lwgrp@1.0.6		   util-linux-uuid@2.41
+libfabric@2.5.1		  mpc@1.4.1		   xz@5.8.3
 
 -- linux-ubuntu26.04-x86_64_v3 / %c=gcc@16.1.0 ------------------
 bzip2@1.0.8	      libevent@2.1.12  libpciaccess@0.17  pigz@2.8	sqlite@3.53.1

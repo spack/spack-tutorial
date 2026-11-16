@@ -1,27 +1,23 @@
 $ docker run -d --rm -p 5000:5000 --name registry registry
 Unable to find image 'registry:latest' locally
 latest: Pulling from library/registry
-e6f31ffc071e: Pulling fs layer
-47465c9fe4b1: Pulling fs layer
-269b60c1a347: Pulling fs layer
-f90c3e905677: Pulling fs layer
-8f4e1177a675: Pulling fs layer
-f90c3e905677: Waiting
-8f4e1177a675: Waiting
-47465c9fe4b1: Download complete
-e6f31ffc071e: Verifying Checksum
-e6f31ffc071e: Download complete
-269b60c1a347: Verifying Checksum
-269b60c1a347: Download complete
-e6f31ffc071e: Pull complete
-f90c3e905677: Verifying Checksum
-f90c3e905677: Download complete
-8f4e1177a675: Verifying Checksum
-8f4e1177a675: Download complete
-47465c9fe4b1: Pull complete
-269b60c1a347: Pull complete
-f90c3e905677: Pull complete
-8f4e1177a675: Pull complete
-Digest: sha256:1be55279f18a2fe1a74edf2664cac61c1bea305b7b4642dab412e7affdcb3e33
+ca774b37efed: Pulling fs layer
+77c315b2f195: Pulling fs layer
+91cd85cbb999: Pulling fs layer
+ccf28731d908: Pulling fs layer
+881fc932939e: Pulling fs layer
+ca774b37efed: Download complete
+91cd85cbb999: Download complete
+ccf28731d908: Download complete
+881fc932939e: Download complete
+77c315b2f195: Download complete
+41ca4e53b739: Download complete
+e7a3c6187b86: Download complete
+91cd85cbb999: Pull complete
+881fc932939e: Pull complete
+ca774b37efed: Pull complete
+ccf28731d908: Pull complete
+77c315b2f195: Pull complete
+Digest: sha256:82f6ff4a7f982960c8aa51617fea3aabc485df6e55cce80d22deb1de36f1bc3c
 Status: Downloaded newer image for registry:latest
-6de28741a083c587ef4ebe3616332480f7d67a33960b6a88145fcee851f9a5e8
+6871a1477ed1f96acb12ca6a7edf99fc41acbfeb44605c1f106fc36f13dfb092

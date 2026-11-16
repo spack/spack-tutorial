@@ -1,9 +1,9 @@
-$ spack -e . buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry
+$ spack buildcache push --without-build-dependencies --base-image ubuntu:26.04 --tag julia-and-vim my-registry
 ==> Selected 30 specs to push to oci+http://localhost:5000/buildcache
 ==> Checking for existing specs in the buildcache
 ==> 1 specs need to be pushed to localhost:5000/buildcache
-==> Pushed vim@9.2.0000/2w6tqad: sha256:70cb96a70621c93e218eb507055f429d04785693c7b3811982e9a3c26a3230d8 (0.06s, 185.17 MB/s)
-==> Using cached archive: /home/spack/spack/var/spack/cache/blobs/sha256/de7345b16e942e22044c6ba053020ec85ae879984860a9918517d54eb6cef851
+==> Pushed vim@9.2.0000/2w6tqad: sha256:2c94e1c2bba0fab4984de7819465ece7414a7265d742d8057aaeda755966b399 (0.06s, 195.21 MB/s)
+==> Using cached archive: /home/spack/spack/var/spack/cache/blobs/sha256/a8acf325a119cb4859b1ceb593341dd917bfdad2114561165e91a607ea2ba0c3
 ==> Uploading manifests
 ==> Tagged vim@9.2.0000/2w6tqad as localhost:5000/buildcache:vim-9.2.0000-2w6tqadqxniojqyzoe4j55jamd4pbbcp.spack
 ==> The following 29 specs were skipped as they already exist in the buildcache:
