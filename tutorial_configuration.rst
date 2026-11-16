@@ -604,7 +604,7 @@ You can see the default settings by running:
    $ spack config --scope defaults:base edit config
 
 
-.. literalinclude:: _spack_root/etc/spack/defaults/config.yaml
+.. literalinclude:: _spack_root/etc/spack/defaults/base/config.yaml
    :language: yaml
 
 
