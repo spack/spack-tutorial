@@ -601,7 +601,7 @@ You can see the default settings by running:
 
 .. code-block:: console
 
-   $ spack config --scope defaults edit config
+   $ spack config --scope defaults:base edit config
 
 
 .. literalinclude:: _spack_root/etc/spack/defaults/config.yaml
@@ -627,18 +627,15 @@ If you have a fast scratch file system, you can run builds from this file system
    See `Basic Settings <https://spack.readthedocs.io/en/latest/config_yaml.html#config-yaml>`_ for details.
 
 
-On systems with compilers that absolutely *require* environment variables like ``LD_LIBRARY_PATH``, it is possible to prevent Spack from cleaning the build environment with the ``dirty`` setting:
-
-.. code-block:: yaml
-
-   config:
-     dirty: true
-
-
-However, this is strongly discouraged, as it can pull unwanted libraries into the build.
-
 One last setting that may be of interest to many users is the ability to customize the parallelism of Spack builds.
 By default, Spack installs all packages in parallel with the number of jobs equal to the number of cores on the node.
+
+This is easier to demonstrate using the old installer's output, so we'll switch to that for this example. 
+
+.. code-block:: console
+
+   $ spack config add config:installer:old
+
 For example, on a node with 16 cores, this will look like:
 
 .. code-block:: spec
@@ -689,15 +686,16 @@ If we uninstall and reinstall zlib, we see that it now uses only 2 cores:
 
 Obviously, if you want to build everything in serial for whatever reason, you would set ``build_jobs`` to 1.
 
-Last, we'll unset ``concretizer:reuse:false`` since we'll want to enable concretizer reuse for the rest of this tutorial.
+Last, we'll unset ``concretizer:reuse:false`` and ``config:installer:old`` since we'll want to enable concretizer reuse and the terminal user interface for the rest of this tutorial.
 
 .. code-block:: console
 
    $ spack config rm concretizer:reuse
+   $ spack config rm config:installer
 
 .. warning::
 
-   If you do not do this step, the rest of the tutorial will not reuse binaries!
+   If you do not do this step, the rest of the tutorial will not reuse binaries or use the TUI!
 
 ----------
 Conclusion
