@@ -20,6 +20,7 @@
 # ----------------------------------------------------------------------------
 
 from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
+
 from spack.package import *
 
 
@@ -29,6 +30,10 @@ class TutorialMpileaks(AutotoolsPackage):
     # FIXME: Add a proper url for your package's homepage here.
     homepage = "https://www.example.com"
     url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
+
+    # FIXME: Uncomment and add the upstream supplier (organization or author).
+    # If unknown or inapplicable, remove this entire block.
+    # supplier = organization_or_author
 
     # FIXME: Add a list of GitHub accounts to
     # notify when the package is updated.
@@ -45,10 +50,11 @@ class TutorialMpileaks(AutotoolsPackage):
     depends_on("cxx", type="build")
     depends_on("fortran", type="build")
 
-    depends_on("autoconf", type="build")
-    depends_on("automake", type="build")
-    depends_on("libtool", type="build")
-    depends_on("m4", type="build")
+    with default_args(type="build"):
+        depends_on("autoconf")
+        depends_on("automake")
+        depends_on("libtool")
+        depends_on("m4")
 
     # FIXME: Add additional dependencies if required.
     # depends_on("foo")

@@ -118,7 +118,7 @@ The areas we need to modify are highlighted in the figure below.
 .. literalinclude:: tutorial/examples/packaging/0.package.py
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/0.package.py)
    :language: python
-   :emphasize-lines: 5-20,27,29-30,33-35,37-40,53-54,57,61-64
+   :emphasize-lines: 5-20,28,30-31,34-36,38-40,42-45,59-60,63,67-70
 
 .. tip::
 
@@ -188,7 +188,7 @@ The resulting package should contain the following information, omitting the cop
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/1.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 6,8,11,13
+   :emphasize-lines: 7,9,12,14,16
 
 At this point we've only updated key documentation within the package.
 It won't help us build the software; however, the information is now available for review.
@@ -253,7 +253,7 @@ and add the dependencies by specifying them using the ``depends_on`` directive a
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/2.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 26-28
+   :emphasize-lines: 30-32
 
 Adding dependencies tells Spack that it must ensure those packages are installed *before* it can build our package.
 
@@ -403,7 +403,7 @@ and add the ``--with-adept-utils`` and ``--with-callpath`` arguments in the ``co
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/3.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 34-37
+   :emphasize-lines: 38-41
 
 Since this is an ``AutotoolsPackage``, the arguments returned from the method will automatically get passed to ``configure`` during the build.
 
@@ -457,7 +457,7 @@ and add the ``variant`` directive and associated arguments as follows:
    :caption: tutorial-mpileaks/package.py (from tutorial/examples/packaging/4.package.py)
    :lines: 5-
    :language: python
-   :emphasize-lines: 17-22,46-53
+   :emphasize-lines: 20-25,50-57
 
 Notice that the ``variant`` directive is translated into a ``variants`` dictionary in ``self.spec``.
 Also note that the value provided by the user is accessed by the entry's ``value`` property.

@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: (Apache-2.0 OR MIT)
 
 from spack_repo.builtin.build_systems.autotools import AutotoolsPackage
+
 from spack.package import *
 
 
@@ -12,9 +13,11 @@ class TutorialMpileaks(AutotoolsPackage):
     homepage = "https://github.com/LLNL/mpileaks"
     url = "https://github.com/LLNL/mpileaks/archive/refs/tags/v1.0.tar.gz"
 
-    maintainers("adamjstewart")
+    supplier = "Organization: LLNL"
 
-    license("BSD", checked_by="adamjstewart")
+    maintainers("cmelone")
+
+    license("BSD", checked_by="cmelone")
 
     sanity_check_is_dir = ["bin", "lib", "shar"]
 
@@ -31,10 +34,11 @@ class TutorialMpileaks(AutotoolsPackage):
     depends_on("cxx", type="build")
     depends_on("fortran", type="build")
 
-    depends_on("autoconf", type="build")
-    depends_on("automake", type="build")
-    depends_on("libtool", type="build")
-    depends_on("m4", type="build")
+    with default_args(type="build"):
+        depends_on("autoconf")
+        depends_on("automake")
+        depends_on("libtool")
+        depends_on("m4")
 
     depends_on("mpi")
     depends_on("adept-utils")
