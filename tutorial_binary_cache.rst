@@ -35,6 +35,11 @@ Create an environment with a view and add ``julia`` to it:
    The terms *mirror* and *build cache* are used almost interchangeably, since every build cache is a binary mirror.
    Source mirrors also exist but are not covered in this tutorial.
 
+.. note::
+
+   ``spack -e .`` runs a single command against the environment in the current directory without activating it, which is convenient for one-off changes like adding ``julia``.
+   Repeating ``-e .`` on every command gets tedious, so from here on we activate the environment with ``spack env activate .`` and let subsequent ``spack`` commands apply to it automatically.
+
 Install the environment:
 
 .. literalinclude:: outputs/cache/install.out
