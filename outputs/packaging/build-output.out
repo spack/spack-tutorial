@@ -1,7 +1,7 @@
-$ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-build-out.txt
+$ cat /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-build-out.txt
 ==> No patches needed for tutorial-mpileaks
 ==> tutorial-mpileaks: Executing phase: 'autoreconf'
-==> [2026-07-07-04:22:37.141550] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/bin/autoreconf --install --verbose --force
+==> [2026-11-16-05:37:52.521150] /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj/bin/autoreconf --install --verbose --force
 autoreconf: export WARNINGS=
 autoreconf: Entering directory '.'
 autoreconf: configure.ac: not using Gettext
@@ -40,13 +40,13 @@ src/Makefile.am:14: warning: 'INCLUDES' is the old name for 'AM_CPPFLAGS' (or '*
 src/Makefile.am: installing 'config/depcomp'
 autoreconf: Leaving directory '.'
 ==> tutorial-mpileaks: Executing phase: 'configure'
-==> [2026-07-07-04:22:41.112767] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src'] ['configure']
-==> [2026-07-07-04:22:41.113432] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src'] ['configure']
-==> [2026-07-07-04:22:41.113678] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
-==> [2026-07-07-04:22:41.144242] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
-==> [2026-07-07-04:22:41.174826] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
-==> [2026-07-07-04:22:41.204877] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure [replacing "lt_cv_apple_cc_single_mod=no"]
-==> [2026-07-07-04:22:41.236447] /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije
+==> [2026-11-16-05:37:56.520576] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src'] ['configure']
+==> [2026-11-16-05:37:56.521197] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src'] ['configure']
+==> [2026-11-16-05:37:56.521465] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+==> [2026-11-16-05:37:56.554962] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure [replacing "^(\s*test x-R = )("\$p")(; then\s*)$"]
+==> [2026-11-16-05:37:56.589517] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure [replacing "^(\s*test \$p = "-R")(; then\s*)$"]
+==> [2026-11-16-05:37:56.619769] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure [replacing "lt_cv_apple_cc_single_mod=no"]
+==> [2026-11-16-05:37:56.651084] /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl
 checking metadata... no
 checking installation directory variables... yes
 checking for a BSD-compatible install... /usr/bin/install -c
@@ -82,4 +82,4 @@ checking for /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-qfut5qqw
 Checking whether /home/spack/spack/opt/spack/linux-x86_64_v3/openmpi-5.0.10-qfut5qqwp2fzaq3ymgk7nxvjv3qyrvml/bin/mpicc responds to '-showme:compile'... yes
 configure: error: unable to locate adept-utils installation
 Command exited with status 1:
-    /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-olkbps3ghmpiiy4dserbxgj5hlsm5ije
+    /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-7vkybk5tynrflh64v4acqgcgjhsqf7pl

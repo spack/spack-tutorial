@@ -7,28 +7,28 @@ $ spack install tutorial-mpileaks
 [ ] punbqrx findutils@4.10.0 fetching from build cache (0s)
 [ ] r4lhaok gmake@4.4.1 relocating (0s)
 [ ] phcmfqk libsigsegv@2.15 relocating (0s)
-[ ] yhkgfai automake@1.18.1 relocating (0s)
 [ ] punbqrx findutils@4.10.0 relocating (0s)
+[ ] yhkgfai automake@1.18.1 relocating (0s)
 [+] r4lhaok gmake@4.4.1 /home/spack/spack/opt/spack/linux-x86_64_v3/gmake-4.4.1-r4lhaokbvyicys3x6yxyhtxucmgzo7kh (0s)
 [+] phcmfqk libsigsegv@2.15 /home/spack/spack/opt/spack/linux-x86_64_v3/libsigsegv-2.15-phcmfqkiobbdxotapv2famdv4vk5yvs7 (0s)
 [ ] mguwetc file@5.46 fetching from build cache (0s)
 [ ] y6uqrto m4@1.4.21 fetching from build cache (0s)
-[+] yhkgfai automake@1.18.1 /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.18.1-yhkgfaibmqj5ww5wfesjkdtrwpndwdtm (0s)
 [+] punbqrx findutils@4.10.0 /home/spack/spack/opt/spack/linux-x86_64_v3/findutils-4.10.0-punbqrxx5vrhjry7gtdadymv34ryapi2 (0s)
-[ ] mguwetc file@5.46 relocating (0s)
-[ ] y6uqrto m4@1.4.21 relocating (0s)
-[+] mguwetc file@5.46 /home/spack/spack/opt/spack/linux-x86_64_v3/file-5.46-mguwetco632vycva2piy7hmqoc26acsq (0s)
-[+] y6uqrto m4@1.4.21 /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.21-y6uqrtoi6sjdfvvyxgmifksxwktsyx3t (0s)
+[+] yhkgfai automake@1.18.1 /home/spack/spack/opt/spack/linux-x86_64_v3/automake-1.18.1-yhkgfaibmqj5ww5wfesjkdtrwpndwdtm (0s)
+[ ] mguwetc file@5.46 relocating (1s)
+[ ] y6uqrto m4@1.4.21 relocating (1s)
+[+] mguwetc file@5.46 /home/spack/spack/opt/spack/linux-x86_64_v3/file-5.46-mguwetco632vycva2piy7hmqoc26acsq (1s)
+[+] y6uqrto m4@1.4.21 /home/spack/spack/opt/spack/linux-x86_64_v3/m4-1.4.21-y6uqrtoi6sjdfvvyxgmifksxwktsyx3t (1s)
 [ ] 3gdq456 libtool@2.5.4 fetching from build cache (0s)
 [ ] jo3eg4r autoconf@2.72 fetching from build cache (0s)
-[ ] 3gdq456 libtool@2.5.4 relocating (1s)
-[ ] jo3eg4r autoconf@2.72 relocating (1s)
-[+] jo3eg4r autoconf@2.72 /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj (1s)
-[+] 3gdq456 libtool@2.5.4 /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.5.4-3gdq456decrkzdhi7hwf3ndgvixvmu3n (1s)
+[ ] 3gdq456 libtool@2.5.4 relocating (0s)
+[ ] jo3eg4r autoconf@2.72 relocating (0s)
+[+] 3gdq456 libtool@2.5.4 /home/spack/spack/opt/spack/linux-x86_64_v3/libtool-2.5.4-3gdq456decrkzdhi7hwf3ndgvixvmu3n (0s)
+[+] jo3eg4r autoconf@2.72 /home/spack/spack/opt/spack/linux-x86_64_v3/autoconf-2.72-jo3eg4rjvufc6kzkann5rfyufgoc4lbj (0s)
 [ ] 5txfucc tutorial-mpileaks@1.0 staging (0s)
 [ ] 5txfucc tutorial-mpileaks@1.0 autoreconf (0s)
 [ ] 5txfucc tutorial-mpileaks@1.0 configure (4s)
-[x] 5txfucc tutorial-mpileaks@1.0 failed: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-4fpudkri.log (5s)
+[x] 5txfucc tutorial-mpileaks@1.0 failed: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-u2b5cgs2.log (5s)
 -- lines 16 to 44 --
   libtoolize: copying file 'm4/ltversion.m4'
   libtoolize: copying file 'm4/lt~obsolete.m4'
@@ -56,9 +56,9 @@ $ spack install tutorial-mpileaks
   src/Makefile.am: installing 'config/depcomp'
   autoreconf: Leaving directory '.'
   ==> tutorial-mpileaks: Executing phase: 'configure'
-  ==> [2026-07-07-04:22:14.517412] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
-  ==> [2026-07-07-04:22:14.518189] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
-  ==> [2026-07-07-04:22:14.518478] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
+  ==> [2026-11-16-05:37:29.275900] Find (max depth = None): ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
+  ==> [2026-11-16-05:37:29.276638] Find complete: ['/tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src'] ['configure']
+  ==> [2026-11-16-05:37:29.276931] FILTER FILE: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure [replacing "^(\s*if test x-L = )("\$p" \|\|\s*)$"]
 -- lines 83 to 91 --
   checking for mpipgcc... no
   Checking whether not-found responds to '-showme:compile'... no
@@ -70,4 +70,4 @@ $ spack install tutorial-mpileaks
   Command exited with status 1:
       /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c/spack-src/configure --prefix=/home/spack/spack/opt/spack/linux-x86_64_v3/tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c
 ==> Error: The following packages failed to install:
-tutorial-mpileaks@1.0/5txfucci42vvbfv3pw52fe2sf463qo7c: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-4fpudkri.log
+tutorial-mpileaks@1.0/5txfucci42vvbfv3pw52fe2sf463qo7c: /tmp/spack/spack-stage/spack-stage-tutorial-mpileaks-1.0-5txfucci42vvbfv3pw52fe2sf463qo7c-u2b5cgs2.log

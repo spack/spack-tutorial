@@ -1,4 +1,4 @@
-$ spack -e . install --add vim
+$ spack install --add vim
 ==> Warning: the mirror at oci+http://localhost:5000/buildcache cannot be used in concretization (no index found)
 ==> Concretized 1 spec
 [b]  2w6tqad  vim@9.2.0000~cscope~gui~lua~perl~python~ruby~x build_system=autotools features=normal platform=linux os=ubuntu26.04 target=x86_64_v3 %c,cxx=gcc@15.2.0
@@ -22,6 +22,6 @@ $ spack -e . install --add vim
 [+]  yvl6jpi	      ^pkgconf@2.5.1 build_system=autotools platform=linux os=ubuntu26.04 target=x86_64_v3 %c=gcc@15.2.0
 
 [ ] 2w6tqad vim@9.2.0000 fetching from build cache (0s)
-[ ] 2w6tqad vim@9.2.0000 relocating (0s)
-[+] 2w6tqad vim@9.2.0000 /home/spack/spack/opt/spack/linux-x86_64_v3/vim-9.2.0000-2w6tqadqxniojqyzoe4j55jamd4pbbcp (1s)
+[ ] 2w6tqad vim@9.2.0000 relocating (1s)
+[+] 2w6tqad vim@9.2.0000 /home/spack/spack/opt/spack/linux-x86_64_v3/vim-9.2.0000-2w6tqadqxniojqyzoe4j55jamd4pbbcp (2s)
 ==> Updating view at /home/spack/myenv/view
